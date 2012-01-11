@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Paparazzi UAV", "index.html", [
+    [ "Main Page", "index.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "ac_info_", "structac__info__.html", null ],
       [ "AccBuf", "structAccBuf.html", null ],
