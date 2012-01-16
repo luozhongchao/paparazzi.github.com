@@ -159,7 +159,7 @@ function toggleVisibility(linkObj) {
 <a name="l00037"></a><a class="code" href="max3100__hw_8h.html#acbbafbffce361cc8c43f79c6563b5723">00037</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <span class="keyword">volatile</span> <a class="code" href="max3100__hw_8c.html#afb18449e29d5cbe18d059b0738257107">max3100_tx_insert_idx</a>, <a class="code" href="max3100__hw_8c.html#a5ac06ec72a80731511c49635c3f06f7e">max3100_tx_extract_idx</a>;
 <a name="l00038"></a><a class="code" href="max3100__hw_8h.html#afb6fb838ddb66c76559199be202cc3cd">00038</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <span class="keyword">volatile</span> <a class="code" href="max3100__hw_8c.html#a1698f3b89fb458122d1bf5cd3bf02552">max3100_rx_insert_idx</a>, <a class="code" href="max3100__hw_8c.html#a9352403dc1ba8d2d9cb2d78ff761c2e5">max3100_rx_extract_idx</a>;
 <a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="max3100__hw_8h.html#a3c250acce7b74783ba23a9e0f3da5f9b">00040</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <span class="keyword">volatile</span> <a class="code" href="max3100__hw_8c.html#a5232e03d93cfd784ac19ccdb4fec01a4">max3100_tx_buf</a>[<a class="code" href="max3100__hw_8h.html#ab5ae01ae075d548fbcc0c5ca409ab740">MAX3100_TX_BUF_LEN</a>];
+<a name="l00040"></a><a class="code" href="max3100__hw_8h.html#a3c250acce7b74783ba23a9e0f3da5f9b">00040</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <span class="keyword">volatile</span> <a class="code" href="max3100__hw_8c.html#a5232e03d93cfd784ac19ccdb4fec01a4">max3100_tx_buf</a>[<a class="code" href="max3100__hw_8h.html#ab5ae01ae075d548fbcc0c5ca409ab740" title="I/O Buffers.">MAX3100_TX_BUF_LEN</a>];
 <a name="l00041"></a><a class="code" href="max3100__hw_8h.html#a230e2fa40492c89565d9127e2a85dc93">00041</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <span class="keyword">volatile</span> <a class="code" href="max3100__hw_8c.html#a84d6e1503d04379acd66f99f581e47e4">max3100_rx_buf</a>[<a class="code" href="max3100__hw_8h.html#a78353a1cb2b539960dd059a54a6e8b9c">MAX3100_RX_BUF_LEN</a>];
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043 
@@ -194,7 +194,7 @@ function toggleVisibility(linkObj) {
 <a name="l00072"></a>00072 <span class="preprocessor"></span>
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074 <span class="keywordtype">void</span> <a class="code" href="max3100__hw_8h.html#ad1bbf42fa15690ec0b799c4f804e95ea">max3100_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00075"></a>00075   <a class="code" href="max3100__hw_8c.html#aa99ee6ef01353de0fd12021e40127896">max3100_status</a> = <a class="code" href="max3100__hw_8h.html#a6f7d927196bb66933b197152075f1d5d">MAX3100_STATUS_IDLE</a>;
+<a name="l00075"></a>00075   <a class="code" href="max3100__hw_8c.html#aa99ee6ef01353de0fd12021e40127896">max3100_status</a> = <a class="code" href="max3100__hw_8h.html#a6f7d927196bb66933b197152075f1d5d" title="Max3100 protocol status.">MAX3100_STATUS_IDLE</a>;
 <a name="l00076"></a>00076   <a class="code" href="max3100__hw_8c.html#a1ec54788e5dd0c764ff4d4ff7b84df0e">max3100_data_available</a> = <span class="keyword">false</span>;
 <a name="l00077"></a>00077   <a class="code" href="max3100__hw_8c.html#a43c6356a84f38d13033763d51ae3e312">max3100_transmit_buffer_empty</a> = <span class="keyword">true</span>;
 <a name="l00078"></a>00078   <a class="code" href="max3100__hw_8c.html#afb18449e29d5cbe18d059b0738257107">max3100_tx_insert_idx</a> = 0;
@@ -276,7 +276,7 @@ function toggleVisibility(linkObj) {
 <a name="l00154"></a>00154   <a class="code" href="lpc21_2mcu__periph_2spi__arch_8h.html#a912a3f066ee968d9cb292dca1b0e8822">SpiDisableRti</a>();
 <a name="l00155"></a>00155   <a class="code" href="lpc21_2mcu__periph_2spi__arch_8h.html#ae7365ad851709e6cc7a2c8b769c83965">SpiDisable</a> ();
 <a name="l00156"></a>00156   <a class="code" href="max3100__hw_8h.html#ac6e144e7f994d71b4fccf6fbf7c85221">Max3100Unselect</a>();
-<a name="l00157"></a>00157   <a class="code" href="max3100__hw_8c.html#aa99ee6ef01353de0fd12021e40127896">max3100_status</a> = <a class="code" href="max3100__hw_8h.html#a6f7d927196bb66933b197152075f1d5d">MAX3100_STATUS_IDLE</a>;
+<a name="l00157"></a>00157   <a class="code" href="max3100__hw_8c.html#aa99ee6ef01353de0fd12021e40127896">max3100_status</a> = <a class="code" href="max3100__hw_8h.html#a6f7d927196bb66933b197152075f1d5d" title="Max3100 protocol status.">MAX3100_STATUS_IDLE</a>;
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159   <a class="code" href="LPC21xx_8h.html#aa11babfb092f15d15765591e9d4c8df2">VICVectAddr</a> = 0x00000000; <span class="comment">/* clear this interrupt from the VIC */</span>
 <a name="l00160"></a>00160   <a class="code" href="armVIC_8h.html#aecf650b1ba18540f94f7dc6affe73696">ISR_EXIT</a>();
@@ -290,7 +290,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="max3100__hw_8c.html">max3100_hw.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:50 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

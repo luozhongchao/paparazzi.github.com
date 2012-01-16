@@ -144,7 +144,7 @@ function toggleVisibility(linkObj) {
 <a name="l00022"></a>00022 <span class="comment"> */</span>
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="stabilization_8h.html">firmwares/rotorcraft/stabilization.h</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html">subsystems/ahrs.h</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="radio__control_8h.html">subsystems/radio_control.h</a>&quot;</span>
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 
@@ -230,7 +230,7 @@ function toggleVisibility(linkObj) {
 <a name="l00108"></a>00108     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a141d82bdde469aa835758b7d0a490884">stab_att_ref_euler</a>.<a class="code" href="structFloatEulers.html#a98f8790d7dbb4d3ef03e99cdf27f844e" title="in radians">theta</a>, (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>)),
 <a name="l00109"></a>00109     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a141d82bdde469aa835758b7d0a490884">stab_att_ref_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>,   (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>)) };
 <a name="l00110"></a>00110   <span class="keyword">struct </span><a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> att_err;
-<a name="l00111"></a>00111   <a class="code" href="pprz__algebra_8h.html#aa05e2d86379889bd3ca31eb1f50b12e9">EULERS_DIFF</a>(att_err, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09">ltp_to_body_euler</a>, att_ref_scaled);
+<a name="l00111"></a>00111   <a class="code" href="pprz__algebra_8h.html#aa05e2d86379889bd3ca31eb1f50b12e9">EULERS_DIFF</a>(att_err, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>, att_ref_scaled);
 <a name="l00112"></a>00112   <a class="code" href="pprz__algebra__int_8h.html#afafafd344e879ac5e7177086414524f3">INT32_ANGLE_NORMALIZE</a>(att_err.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
 <a name="l00113"></a>00113 
 <a name="l00114"></a>00114   <span class="keywordflow">if</span> (in_flight) {
@@ -248,7 +248,7 @@ function toggleVisibility(linkObj) {
 <a name="l00126"></a>00126     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#aa3575b0d9e11804fbd1f963d1b255699">stab_att_ref_rate</a>.<a class="code" href="structFloatRates.html#a128ab43f390d2a0ff80fe4bef003061a" title="in rad/s^2">q</a>, (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a6a9ac7c2e058fdcfbd5ec56c9979944e">REF_RATE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#acd293568d358a48f21774753cf9f095b">INT32_RATE_FRAC</a>)),
 <a name="l00127"></a>00127     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#aa3575b0d9e11804fbd1f963d1b255699">stab_att_ref_rate</a>.<a class="code" href="structFloatRates.html#a75e3090314c4ad6edf12f7c08d9c5c0a" title="in rad/s^2">r</a>, (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a6a9ac7c2e058fdcfbd5ec56c9979944e">REF_RATE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#acd293568d358a48f21774753cf9f095b">INT32_RATE_FRAC</a>)) };
 <a name="l00128"></a>00128   <span class="keyword">struct </span><a class="code" href="structInt32Rates.html" title="angular rates">Int32Rates</a> rate_err;
-<a name="l00129"></a>00129   <a class="code" href="pprz__algebra_8h.html#ac6c3c11439ce587fe4542f2d70fb585a">RATES_DIFF</a>(rate_err, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853">ahrs</a>.<a class="code" href="structAhrs.html#aec33279a39ff13923bc8af8b1cf42ffb">body_rate</a>, rate_ref_scaled);
+<a name="l00129"></a>00129   <a class="code" href="pprz__algebra_8h.html#ac6c3c11439ce587fe4542f2d70fb585a">RATES_DIFF</a>(rate_err, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#aec33279a39ff13923bc8af8b1cf42ffb" title="Rotational velocity in body frame.">body_rate</a>, rate_ref_scaled);
 <a name="l00130"></a>00130 
 <a name="l00131"></a>00131   <span class="comment">/* PID                  */</span>
 <a name="l00132"></a>00132   <a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_ROLL] =
@@ -293,7 +293,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__euler__int_8c.html">stabilization_attitude_euler_int.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:49 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:00 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -179,7 +179,7 @@ function toggleVisibility(linkObj) {
 <a name="l00066"></a>00066 <span class="preprocessor">#ifdef ACTUATORS</span>
 <a name="l00067"></a>00067 <span class="preprocessor"></span>  <a class="code" href="servos__4015__hw_8c.html#a7ba1bde30e3a87694e878b244de10c47">actuators_init</a>();
 <a name="l00068"></a>00068   <span class="comment">/* Load the failsafe defaults */</span>
-<a name="l00069"></a>00069   <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106">SetCommands</a>(<a class="code" href="commands_8c.html#a88b3a12659adc4151ddd6cbef8bd4187">commands_failsafe</a>);
+<a name="l00069"></a>00069   <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106" title="Storage of intermediate command values: these values come from the RC (MANUAL mode), from the autopilot (AUTO mode) or from control loops.">SetCommands</a>(<a class="code" href="commands_8c.html#a88b3a12659adc4151ddd6cbef8bd4187">commands_failsafe</a>);
 <a name="l00070"></a>00070   <a class="code" href="main__fbw_8c.html#a52feb6433e219a78c4d8963c5d86b3f4">fbw_new_actuators</a> = 1;
 <a name="l00071"></a>00071 <span class="preprocessor">#endif</span>
 <a name="l00072"></a>00072 <span class="preprocessor"></span><span class="preprocessor">#ifdef RADIO_CONTROL</span>
@@ -202,7 +202,7 @@ function toggleVisibility(linkObj) {
 <a name="l00089"></a>00089 
 <a name="l00090"></a><a class="code" href="main__fbw_8c.html#aefb594779e1a779cea2a57feec4ac7de">00090</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="main__fbw_8c.html#aefb594779e1a779cea2a57feec4ac7de">set_failsafe_mode</a>( <span class="keywordtype">void</span> ) {
 <a name="l00091"></a>00091   <a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> = <a class="code" href="main__fbw_8h.html#a07ef21a5a59d12a1bcc13711fd5db2c1">FBW_MODE_FAILSAFE</a>;
-<a name="l00092"></a>00092   <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106">SetCommands</a>(<a class="code" href="commands_8c.html#a88b3a12659adc4151ddd6cbef8bd4187">commands_failsafe</a>);
+<a name="l00092"></a>00092   <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106" title="Storage of intermediate command values: these values come from the RC (MANUAL mode), from the autopilot (AUTO mode) or from control loops.">SetCommands</a>(<a class="code" href="commands_8c.html#a88b3a12659adc4151ddd6cbef8bd4187">commands_failsafe</a>);
 <a name="l00093"></a>00093   <a class="code" href="main__fbw_8c.html#a52feb6433e219a78c4d8963c5d86b3f4">fbw_new_actuators</a> = 1;
 <a name="l00094"></a>00094 }
 <a name="l00095"></a>00095 
@@ -210,7 +210,7 @@ function toggleVisibility(linkObj) {
 <a name="l00097"></a>00097 <span class="preprocessor">#ifdef RADIO_CONTROL</span>
 <a name="l00098"></a>00098 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> handle_rc_frame( <span class="keywordtype">void</span> ) {
 <a name="l00099"></a>00099   <a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> = <a class="code" href="main__fbw_8h.html#a5fb604fbe3f678b18422a1460e2c3d46">FBW_MODE_OF_PPRZ</a>(<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a2fab1464ab1748edb2a45a08cf7c422a">RADIO_MODE</a>]);
-<a name="l00100"></a>00100   <span class="keywordflow">if</span> (<a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> == <a class="code" href="main__fbw_8h.html#aceb657ad51a850a59166bab21f85c819">FBW_MODE_MANUAL</a>)
+<a name="l00100"></a>00100   <span class="keywordflow">if</span> (<a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> == <a class="code" href="main__fbw_8h.html#aceb657ad51a850a59166bab21f85c819" title="Fly by wire modes.">FBW_MODE_MANUAL</a>)
 <a name="l00101"></a>00101   {
 <a name="l00102"></a>00102     SetCommandsFromRC(<a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>, <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values);
 <a name="l00103"></a>00103     <a class="code" href="main__fbw_8c.html#a52feb6433e219a78c4d8963c5d86b3f4">fbw_new_actuators</a> = 1;
@@ -240,7 +240,7 @@ function toggleVisibility(linkObj) {
 <a name="l00127"></a>00127       <a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> = <a class="code" href="main__fbw_8h.html#ae592cfc625e6b21adc57b1eddc15f9f1">FBW_MODE_AUTO</a>;
 <a name="l00128"></a>00128     }
 <a name="l00129"></a>00129     <span class="keywordflow">if</span> (<a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> == <a class="code" href="main__fbw_8h.html#ae592cfc625e6b21adc57b1eddc15f9f1">FBW_MODE_AUTO</a>) {
-<a name="l00130"></a>00130       <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106">SetCommands</a>(<a class="code" href="inter__mcu_8c.html#ac13671906f2663b39fde033f4cb4a410">ap_state</a>-&gt;commands);
+<a name="l00130"></a>00130       <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106" title="Storage of intermediate command values: these values come from the RC (MANUAL mode), from the autopilot (AUTO mode) or from control loops.">SetCommands</a>(<a class="code" href="inter__mcu_8c.html#ac13671906f2663b39fde033f4cb4a410">ap_state</a>-&gt;commands);
 <a name="l00131"></a>00131     }
 <a name="l00132"></a>00132 <span class="preprocessor">#ifdef SetApOnlyCommands</span>
 <a name="l00133"></a>00133 <span class="preprocessor"></span>    <span class="keywordflow">else</span>
@@ -297,7 +297,7 @@ function toggleVisibility(linkObj) {
 <a name="l00184"></a>00184 
 <a name="l00185"></a>00185 <span class="preprocessor">#ifdef RADIO_CONTROL</span>
 <a name="l00186"></a>00186 <span class="preprocessor"></span>  radio_control_periodic_task();
-<a name="l00187"></a>00187   <span class="keywordflow">if</span> (<a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> == <a class="code" href="main__fbw_8h.html#aceb657ad51a850a59166bab21f85c819">FBW_MODE_MANUAL</a> &amp;&amp; <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.status == RC_REALLY_LOST) {
+<a name="l00187"></a>00187   <span class="keywordflow">if</span> (<a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> == <a class="code" href="main__fbw_8h.html#aceb657ad51a850a59166bab21f85c819" title="Fly by wire modes.">FBW_MODE_MANUAL</a> &amp;&amp; <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.status == RC_REALLY_LOST) {
 <a name="l00188"></a>00188     <a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> = <a class="code" href="main__fbw_8h.html#ae592cfc625e6b21adc57b1eddc15f9f1">FBW_MODE_AUTO</a>;
 <a name="l00189"></a>00189   }
 <a name="l00190"></a>00190 <span class="preprocessor">#endif</span>
@@ -324,7 +324,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="main__fbw_8c.html">main_fbw.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:49 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:00 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

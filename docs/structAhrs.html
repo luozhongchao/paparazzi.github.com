@@ -124,6 +124,9 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <!-- doxytag: class="Ahrs" -->
+<p>Attitude and Heading Reference System state (fixed point version)  
+ <a href="structAhrs.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ahrs_8h_source.html">ahrs.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png"/> Collaboration diagram for Ahrs:</div>
@@ -138,18 +141,28 @@ function toggleVisibility(linkObj) {
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Quat.html">Int32Quat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrs.html#ad6ae7a4af1c1f0bea7525e4313c5cf51">ltp_to_imu_quat</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation from LocalTangentPlane to IMU frame as unit quaternion.  <a href="#ad6ae7a4af1c1f0bea7525e4313c5cf51"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Eulers.html">Int32Eulers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrs.html#a1e79a274903df738c6760966fbdfff63">ltp_to_imu_euler</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation from LocalTangentPlane to IMU frame as Euler angles.  <a href="#a1e79a274903df738c6760966fbdfff63"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32RMat.html">Int32RMat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrs.html#a92e24219cb10142edb3964285c91c4f4">ltp_to_imu_rmat</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation from LocalTangentPlane to IMU frame as Rotation Matrix.  <a href="#a92e24219cb10142edb3964285c91c4f4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Rates.html">Int32Rates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrs.html#a09b4e31ce5c123cb72a5c3c5691ea557">imu_rate</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotational velocity in IMU frame.  <a href="#a09b4e31ce5c123cb72a5c3c5691ea557"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Quat.html">Int32Quat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrs.html#a8d98df44dddf252ddfdfb1c8fef7de60">ltp_to_body_quat</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation from LocalTangentPlane to body frame as unit quaternion.  <a href="#a8d98df44dddf252ddfdfb1c8fef7de60"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Eulers.html">Int32Eulers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09">ltp_to_body_euler</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation from LocalTangentPlane to body frame as Euler angles.  <a href="#a20100bc5d0158e50db58f6d1eb57ae09"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32RMat.html">Int32RMat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrs.html#ad666424ee6810b1abe83849d06314642">ltp_to_body_rmat</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation from LocalTangentPlane to body frame as Rotation Matrix.  <a href="#ad666424ee6810b1abe83849d06314642"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Rates.html">Int32Rates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrs.html#aec33279a39ff13923bc8af8b1cf42ffb">body_rate</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotational velocity in body frame.  <a href="#aec33279a39ff13923bc8af8b1cf42ffb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrs.html#acb8bbf7c582667502e2941722e052d0e">status</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">status of the AHRS, AHRS_UNINIT or AHRS_RUNNING  <a href="#acb8bbf7c582667502e2941722e052d0e"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00038">38</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<div class="textblock"><p>Attitude and Heading Reference System state (fixed point version) </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00042">42</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 </div><hr/><h2>Field Documentation</h2>
 <a class="anchor" id="aec33279a39ff13923bc8af8b1cf42ffb"></a><!-- doxytag: member="Ahrs::body_rate" ref="aec33279a39ff13923bc8af8b1cf42ffb" args="" -->
 <div class="memitem">
@@ -162,7 +175,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00048">48</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<p>Rotational velocity in body frame. </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00052">52</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 
 <p>Referenced by <a class="el" href="ahrs__float__lkf_8c_source.html#l00213">ahrs_init()</a>, <a class="el" href="stabilization__attitude__euler__float_8c_source.html#l00086">stabilization_attitude_run()</a>, and <a class="el" href="stabilization__rate_8c_source.html#l00148">stabilization_rate_run()</a>.</p>
 
@@ -179,7 +194,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00043">43</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<p>Rotational velocity in IMU frame. </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00047">47</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 
 <p>Referenced by <a class="el" href="ahrs__float__lkf_8c_source.html#l00213">ahrs_init()</a>, <a class="el" href="ahrs__int__cmpl_8c_source.html#l00127">ahrs_propagate()</a>, and <a class="el" href="ahrs__int__cmpl_8c_source.html#l00160">ahrs_update_accel()</a>.</p>
 
@@ -196,7 +213,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00046">46</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<p>Rotation from LocalTangentPlane to body frame as Euler angles. </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00050">50</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 
 <p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00224">__attribute__()</a>, <a class="el" href="ahrs__float__lkf_8c_source.html#l00213">ahrs_init()</a>, <a class="el" href="booz__cam_8c_source.html#l00093">booz_cam_periodic()</a>, <a class="el" href="stabilization__attitude__ref__quat__int_8c_source.html#l00087">reset_psi_ref_from_body()</a>, <a class="el" href="stabilization__attitude__euler__float_8c_source.html#l00086">stabilization_attitude_run()</a>, and <a class="el" href="cam__track_8c_source.html#l00069">track_periodic_task()</a>.</p>
 
@@ -213,7 +232,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00045">45</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<p>Rotation from LocalTangentPlane to body frame as unit quaternion. </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00049">49</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 
 <p>Referenced by <a class="el" href="ahrs__float__lkf_8c_source.html#l00213">ahrs_init()</a>, <a class="el" href="quat__setpoint_8c_source.html#l00155">quat_setpoint_enter_absolute()</a>, <a class="el" href="quat__setpoint_8c_source.html#l00111">stabilization_attitude_read_rc_absolute()</a>, and <a class="el" href="stabilization__attitude__quat__int_8c_source.html#l00171">stabilization_attitude_run()</a>.</p>
 
@@ -230,7 +251,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00047">47</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<p>Rotation from LocalTangentPlane to body frame as Rotation Matrix. </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00051">51</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 
 <p>Referenced by <a class="el" href="ahrs__int__cmpl_8c_source.html#l00080">ahrs_init()</a>, <a class="el" href="hf__float_8c_source.html#l00421">b2_hff_propagate()</a>, and <a class="el" href="ins_8c_source.html#l00146">ins_propagate()</a>.</p>
 
@@ -247,7 +270,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00041">41</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<p>Rotation from LocalTangentPlane to IMU frame as Euler angles. </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00045">45</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 
 <p>Referenced by <a class="el" href="ahrs__int__cmpl_8c_source.html#l00291">__attribute__()</a>, <a class="el" href="ahrs__int__cmpl_8c_source.html#l00102">ahrs_align()</a>, <a class="el" href="ahrs__float__lkf_8c_source.html#l00213">ahrs_init()</a>, <a class="el" href="ahrs__int__cmpl__euler_8c_source.html#l00148">ahrs_propagate()</a>, and <a class="el" href="ahrs__int__cmpl__euler_8c_source.html#l00221">ahrs_update_mag()</a>.</p>
 
@@ -264,7 +289,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00040">40</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<p>Rotation from LocalTangentPlane to IMU frame as unit quaternion. </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00044">44</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 
 <p>Referenced by <a class="el" href="ahrs__int__cmpl_8c_source.html#l00291">__attribute__()</a>, <a class="el" href="ahrs__float__lkf_8c_source.html#l00213">ahrs_init()</a>, and <a class="el" href="ahrs__int__cmpl_8c_source.html#l00127">ahrs_propagate()</a>.</p>
 
@@ -281,7 +308,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00042">42</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<p>Rotation from LocalTangentPlane to IMU frame as Rotation Matrix. </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00046">46</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 
 <p>Referenced by <a class="el" href="ahrs__int__cmpl_8c_source.html#l00291">__attribute__()</a>, <a class="el" href="ahrs__int__cmpl_8c_source.html#l00080">ahrs_init()</a>, and <a class="el" href="ahrs__int__cmpl_8c_source.html#l00160">ahrs_update_accel()</a>.</p>
 
@@ -298,7 +327,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00050">50</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
+<p>status of the AHRS, AHRS_UNINIT or AHRS_RUNNING </p>
+
+<p>Definition at line <a class="el" href="ahrs_8h_source.html#l00054">54</a> of file <a class="el" href="ahrs_8h_source.html">ahrs.h</a>.</p>
 
 <p>Referenced by <a class="el" href="ahrs__float__cmpl__rmat_8c_source.html#l00071">ahrs_align()</a>, <a class="el" href="ahrs__float__cmpl__rmat_8c_source.html#l00046">ahrs_init()</a>, <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00209">on_accel_event()</a>, <a class="el" href="lisa__stm__passthrough__main_8c_source.html#l00291">on_gyro_accel_event()</a>, <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00217">on_gyro_event()</a>, and <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00257">on_mag_event()</a>.</p>
 
@@ -312,7 +343,7 @@ Data Fields</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="structAhrs.html">Ahrs</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:17:19 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:17 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

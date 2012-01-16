@@ -148,7 +148,7 @@ function toggleVisibility(linkObj) {
 <a name="l00030"></a>00030 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra.">math/pprz_algebra_float.h</a>&quot;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra.">math/pprz_algebra_int.h</a>&quot;</span>
-<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html">subsystems/ahrs.h</a>&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
 <a name="l00035"></a>00035 
 <a name="l00036"></a><a class="code" href="stabilization__attitude__quat__float_8c.html#a28a251342a8e3da5f5996a8895cc87e7">00036</a> <span class="keyword">struct </span><a class="code" href="structFloatAttitudeGains.html">FloatAttitudeGains</a> <a class="code" href="stabilization__attitude__euler__float_8c.html#a546abfe3403952cea36cb12d9240fa91">stabilization_gains</a>[STABILIZATION_ATTITUDE_FLOAT_GAIN_NB];
@@ -301,13 +301,13 @@ function toggleVisibility(linkObj) {
 <a name="l00183"></a>00183 
 <a name="l00184"></a>00184   <span class="comment">/* attitude error                          */</span>
 <a name="l00185"></a>00185   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> att_err;
-<a name="l00186"></a>00186   <a class="code" href="pprz__algebra__float_8h.html#a45c10889966e867daaf4373aa1a62dc1">FLOAT_QUAT_INV_COMP</a>(att_err, <a class="code" href="ahrs_8c.html#abbf9bb7c7916c29d3f88b026ade8316a">ahrs_float</a>.<a class="code" href="structAhrsFloat.html#a1938c149c770466d387c718398117b5e">ltp_to_body_quat</a>, <a class="code" href="stabilization__attitude__ref__float_8h.html#a2707cad913cea4d24a03372f14002341">stab_att_ref_quat</a>);
+<a name="l00186"></a>00186   <a class="code" href="pprz__algebra__float_8h.html#a45c10889966e867daaf4373aa1a62dc1">FLOAT_QUAT_INV_COMP</a>(att_err, <a class="code" href="ahrs_8c.html#abbf9bb7c7916c29d3f88b026ade8316a" title="global AHRS state (floating point version)">ahrs_float</a>.<a class="code" href="structAhrsFloat.html#a1938c149c770466d387c718398117b5e" title="Rotation from LocalTangentPlane to body frame as unit quaternion.">ltp_to_body_quat</a>, <a class="code" href="stabilization__attitude__ref__float_8h.html#a2707cad913cea4d24a03372f14002341">stab_att_ref_quat</a>);
 <a name="l00187"></a>00187   <span class="comment">/* wrap it in the shortest direction       */</span>
 <a name="l00188"></a>00188   <a class="code" href="pprz__algebra__float_8h.html#a577ad8069a4f72a9e6a820523cd3eb55">FLOAT_QUAT_WRAP_SHORTEST</a>(att_err);
 <a name="l00189"></a>00189 
 <a name="l00190"></a>00190   <span class="comment">/*  rate error                */</span>
 <a name="l00191"></a>00191   <span class="keyword">struct </span><a class="code" href="structFloatRates.html" title="angular rates">FloatRates</a> rate_err;
-<a name="l00192"></a>00192   <a class="code" href="pprz__algebra_8h.html#ac6c3c11439ce587fe4542f2d70fb585a">RATES_DIFF</a>(rate_err, <a class="code" href="ahrs_8c.html#abbf9bb7c7916c29d3f88b026ade8316a">ahrs_float</a>.<a class="code" href="structAhrsFloat.html#a6e12394daab2c8462cd2af0b223cc7ac">body_rate</a>, <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#aa3575b0d9e11804fbd1f963d1b255699">stab_att_ref_rate</a>);
+<a name="l00192"></a>00192   <a class="code" href="pprz__algebra_8h.html#ac6c3c11439ce587fe4542f2d70fb585a">RATES_DIFF</a>(rate_err, <a class="code" href="ahrs_8c.html#abbf9bb7c7916c29d3f88b026ade8316a" title="global AHRS state (floating point version)">ahrs_float</a>.<a class="code" href="structAhrsFloat.html#a6e12394daab2c8462cd2af0b223cc7ac" title="Rotational velocity in body frame.">body_rate</a>, <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#aa3575b0d9e11804fbd1f963d1b255699">stab_att_ref_rate</a>);
 <a name="l00193"></a>00193 
 <a name="l00194"></a>00194   <span class="comment">/* integrated error */</span>
 <a name="l00195"></a>00195   <span class="keywordflow">if</span> (enable_integrator) {
@@ -329,7 +329,7 @@ function toggleVisibility(linkObj) {
 <a name="l00211"></a>00211 
 <a name="l00212"></a>00212   <a class="code" href="stabilization__attitude__quat__float_8c.html#a112d2235c054e7eadd1659fa0a78e4f4">attitude_run_ff</a>(<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>, &amp;<a class="code" href="stabilization__attitude__euler__float_8c.html#a546abfe3403952cea36cb12d9240fa91">stabilization_gains</a>[<a class="code" href="stabilization__attitude__quat__float_8c.html#a88471162c0f269059f892bf96fbc7260">gain_idx</a>], &amp;<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a40375b94775800b50d2f5f4121a394d7">stab_att_ref_accel</a>);
 <a name="l00213"></a>00213 
-<a name="l00214"></a>00214   <a class="code" href="stabilization__attitude__quat__float_8c.html#abcf3f74ddd37dcf51e0df255d22c4a23">attitude_run_fb</a>(<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>, &amp;<a class="code" href="stabilization__attitude__euler__float_8c.html#a546abfe3403952cea36cb12d9240fa91">stabilization_gains</a>[gain_idx], &amp;att_err, &amp;rate_err, &amp;<a class="code" href="ahrs_8c.html#abbf9bb7c7916c29d3f88b026ade8316a">ahrs_float</a>.<a class="code" href="structAhrsFloat.html#a4e0fee72ceea405111060379754811f0">body_rate_d</a>, &amp;<a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>);
+<a name="l00214"></a>00214   <a class="code" href="stabilization__attitude__quat__float_8c.html#abcf3f74ddd37dcf51e0df255d22c4a23">attitude_run_fb</a>(<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>, &amp;<a class="code" href="stabilization__attitude__euler__float_8c.html#a546abfe3403952cea36cb12d9240fa91">stabilization_gains</a>[gain_idx], &amp;att_err, &amp;rate_err, &amp;<a class="code" href="ahrs_8c.html#abbf9bb7c7916c29d3f88b026ade8316a" title="global AHRS state (floating point version)">ahrs_float</a>.<a class="code" href="structAhrsFloat.html#a4e0fee72ceea405111060379754811f0">body_rate_d</a>, &amp;<a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>);
 <a name="l00215"></a>00215 
 <a name="l00216"></a>00216   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = COMMAND_ROLL; i &lt;= COMMAND_YAW_SURFACE; i++) {
 <a name="l00217"></a>00217     <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add">stabilization_cmd</a>[i] = <a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[i]+<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>[i];
@@ -340,7 +340,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__quat__float_8c.html">stabilization_attitude_quat_float.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:49 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:00 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -136,7 +136,7 @@ function toggleVisibility(linkObj) {
 <a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span>
 <a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2guidance_2guidance__v_8h.html">firmwares/fixedwing/guidance/guidance_v.h</a>&quot;</span>
 <a name="l00018"></a>00018 <span class="preprocessor">#include &quot;autopilot.h&quot;</span>
-<a name="l00019"></a>00019 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code.">subsystems/gps.h</a>&quot;</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
 <a name="l00020"></a>00020 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022 <span class="comment">//#include &lt;stdio.h&gt;</span>
@@ -190,7 +190,7 @@ function toggleVisibility(linkObj) {
 <a name="l00070"></a>00070   <span class="keywordflow">for</span> (i = 0; i &lt; <a class="code" href="traffic__info_8h.html#aa9ad271011923751218b103cae2e0bfd">NB_ACS</a>; ++i) {
 <a name="l00071"></a>00071     <span class="keywordflow">if</span> (<a class="code" href="traffic__info_8c.html#a5d2f881acad17721990736f728afd05d">the_acs</a>[i].<a class="code" href="jsbsim__hw_8c.html#ae48dcb18ba9b663b88a344e66536aa14">ac_id</a> == AC_ID) <span class="keywordflow">continue</span>;
 <a name="l00072"></a>00072     <span class="keyword">struct </span><a class="code" href="structac__info__.html">ac_info_</a> * ac = <a class="code" href="traffic__info_8c.html#a7e85d322af164f27094da0f8aca67b21">get_ac_info</a>(<a class="code" href="traffic__info_8c.html#a5d2f881acad17721990736f728afd05d">the_acs</a>[i].<a class="code" href="jsbsim__hw_8c.html#ae48dcb18ba9b663b88a344e66536aa14">ac_id</a>);
-<a name="l00073"></a>00073     <span class="keywordtype">float</span> delta_t = <a class="code" href="main__ap_8c.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>((<span class="keywordtype">int</span>)(<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="time of week in ms">tow</a> - ac-&gt;<a class="code" href="structac__info__.html#a2ac562d12dc606d1f44681238b106664">itow</a>) / 1000., 0.);
+<a name="l00073"></a>00073     <span class="keywordtype">float</span> delta_t = <a class="code" href="main__ap_8c.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>((<span class="keywordtype">int</span>)(<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="time of week in ms">tow</a> - ac-&gt;<a class="code" href="structac__info__.html#a2ac562d12dc606d1f44681238b106664">itow</a>) / 1000., 0.);
 <a name="l00074"></a>00074     <span class="comment">// if AC not responding for too long, continue, else compute force</span>
 <a name="l00075"></a>00075     <span class="keywordflow">if</span> (delta_t &gt; CARROT) <span class="keywordflow">continue</span>;
 <a name="l00076"></a>00076     <span class="keywordflow">else</span> {
@@ -222,7 +222,7 @@ function toggleVisibility(linkObj) {
 <a name="l00102"></a>00102   <span class="comment">//potential_force.alt /= nb;</span>
 <a name="l00103"></a>00103 
 <a name="l00104"></a>00104   <span class="comment">// set commands</span>
-<a name="l00105"></a>00105   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59">NavVerticalAutoThrottleMode</a>(0.);
+<a name="l00105"></a>00105   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59" title="Set the climb control to auto-throttle with the specified pitch pre-command.">NavVerticalAutoThrottleMode</a>(0.);
 <a name="l00106"></a>00106 
 <a name="l00107"></a>00107   <span class="comment">// carrot</span>
 <a name="l00108"></a>00108   <span class="keywordtype">float</span> dx = -<a class="code" href="potential_8c.html#ab854e51b04432e809f3d60e85d19ded3">force_pos_gain</a> * <a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a00bfcc3690af7acf47fb0d73e3293522">east</a>;
@@ -242,9 +242,9 @@ function toggleVisibility(linkObj) {
 <a name="l00122"></a>00122   <span class="comment">// climb loop</span>
 <a name="l00123"></a>00123   <a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a34f18f74f894ff50dc0dc262becdfb3e">climb</a> = -<a class="code" href="potential_8c.html#a733641d1fb4e79d1e4e80daf4c5e09d0">force_climb_gain</a> * <a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a827437d885654cccb823a5195b61c904">alt</a>;
 <a name="l00124"></a>00124   BoundAbs(<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a34f18f74f894ff50dc0dc262becdfb3e">climb</a>, V_CTL_ALTITUDE_MAX_CLIMB);
-<a name="l00125"></a>00125   <a class="code" href="navigation_8h.html#a2b27eca94ecb2d5b20d5af88bfdd4efe">NavVerticalClimbMode</a>(<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a34f18f74f894ff50dc0dc262becdfb3e">climb</a>);
+<a name="l00125"></a>00125   <a class="code" href="navigation_8h.html#a2b27eca94ecb2d5b20d5af88bfdd4efe" title="Set the vertical mode to climb control with the specified climb setpoint.">NavVerticalClimbMode</a>(<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a34f18f74f894ff50dc0dc262becdfb3e">climb</a>);
 <a name="l00126"></a>00126 
-<a name="l00127"></a>00127   DOWNLINK_SEND_POTENTIAL(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a00bfcc3690af7acf47fb0d73e3293522">east</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a0fce658c414e2c4ccbc13055e2f57e87">north</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a827437d885654cccb823a5195b61c904">alt</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a8ed78b56d29dec183917ffa8f59e0691">speed</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a34f18f74f894ff50dc0dc262becdfb3e">climb</a>);
+<a name="l00127"></a>00127   DOWNLINK_SEND_POTENTIAL(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a00bfcc3690af7acf47fb0d73e3293522">east</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a0fce658c414e2c4ccbc13055e2f57e87">north</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a827437d885654cccb823a5195b61c904">alt</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a8ed78b56d29dec183917ffa8f59e0691">speed</a>,&amp;<a class="code" href="potential_8c.html#a753b79403d8062c72077207382d8d3af">potential_force</a>.<a class="code" href="structforce__.html#a34f18f74f894ff50dc0dc262becdfb3e">climb</a>);
 <a name="l00128"></a>00128 
 <a name="l00129"></a>00129   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00130"></a>00130 }
@@ -254,7 +254,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="potential_8c.html">potential.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:51 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:02 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

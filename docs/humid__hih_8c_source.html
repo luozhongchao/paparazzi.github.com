@@ -169,10 +169,10 @@ function toggleVisibility(linkObj) {
 <a name="l00053"></a><a class="code" href="humid__hih_8h.html#ad568b53b95a1ce4d2c55ede2573555f7">00053</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="humid__hih_8c.html#ad568b53b95a1ce4d2c55ede2573555f7">adc_humid_hih</a>;
 <a name="l00054"></a><a class="code" href="humid__hih_8c.html#a97fa87a42640823c2a0146be4ef0a8a7">00054</a> <span class="keywordtype">float</span> <a class="code" href="humid__hih_8c.html#a97fa87a42640823c2a0146be4ef0a8a7">fhih_humid</a>;
 <a name="l00055"></a>00055 
-<a name="l00056"></a><a class="code" href="humid__hih_8c.html#aa22df465dcc7eafe232ff13587fe0c35">00056</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a> <a class="code" href="humid__hih_8c.html#aa22df465dcc7eafe232ff13587fe0c35">buf_humid_hih</a>;
+<a name="l00056"></a><a class="code" href="humid__hih_8c.html#aa22df465dcc7eafe232ff13587fe0c35">00056</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="humid__hih_8c.html#aa22df465dcc7eafe232ff13587fe0c35">buf_humid_hih</a>;
 <a name="l00057"></a>00057 
 <a name="l00058"></a><a class="code" href="humid__hih_8h.html#acb068afb2e3c2f0e3c6c1a7c3abeaddf">00058</a> <span class="keywordtype">void</span> <a class="code" href="humid__hih_8c.html#acb068afb2e3c2f0e3c6c1a7c3abeaddf">humid_hih_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00059"></a>00059   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(<a class="code" href="humid__hih_8c.html#a07c872fb0d3571e1106bad886bb0e300">ADC_CHANNEL_HUMID_HIH</a>, &amp;<a class="code" href="humid__hih_8c.html#aa22df465dcc7eafe232ff13587fe0c35">buf_humid_hih</a>, <a class="code" href="humid__hih_8c.html#a229c6a961354be19cf6d3fbdebdab01a">ADC_CHANNEL_HUMID_NB_SAMPLES</a>);
+<a name="l00059"></a>00059   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(<a class="code" href="humid__hih_8c.html#a07c872fb0d3571e1106bad886bb0e300">ADC_CHANNEL_HUMID_HIH</a>, &amp;<a class="code" href="humid__hih_8c.html#aa22df465dcc7eafe232ff13587fe0c35">buf_humid_hih</a>, <a class="code" href="humid__hih_8c.html#a229c6a961354be19cf6d3fbdebdab01a">ADC_CHANNEL_HUMID_NB_SAMPLES</a>);
 <a name="l00060"></a>00060 }
 <a name="l00061"></a>00061 
 <a name="l00062"></a><a class="code" href="humid__hih_8h.html#a08aae8974ca70fb46b6b9792c27ddbc0">00062</a> <span class="keywordtype">void</span> <a class="code" href="humid__hih_8c.html#a08aae8974ca70fb46b6b9792c27ddbc0">humid_hih_periodic</a>( <span class="keywordtype">void</span> ) {
@@ -193,7 +193,7 @@ function toggleVisibility(linkObj) {
 <a name="l00077"></a>00077   <span class="comment">/* temperature compensation */</span>
 <a name="l00078"></a>00078   <a class="code" href="humid__hih_8c.html#a97fa87a42640823c2a0146be4ef0a8a7">fhih_humid</a> = <a class="code" href="humid__hih_8c.html#a97fa87a42640823c2a0146be4ef0a8a7">fhih_humid</a>/(1.0546 - (0.00216 * fhih_temp));
 <a name="l00079"></a>00079 
-<a name="l00080"></a>00080   DOWNLINK_SEND_HIH_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;<a class="code" href="humid__hih_8c.html#ad568b53b95a1ce4d2c55ede2573555f7">adc_humid_hih</a>, &amp;<a class="code" href="humid__hih_8c.html#a97fa87a42640823c2a0146be4ef0a8a7">fhih_humid</a>, &amp;fhih_temp);
+<a name="l00080"></a>00080   DOWNLINK_SEND_HIH_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;<a class="code" href="humid__hih_8c.html#ad568b53b95a1ce4d2c55ede2573555f7">adc_humid_hih</a>, &amp;<a class="code" href="humid__hih_8c.html#a97fa87a42640823c2a0146be4ef0a8a7">fhih_humid</a>, &amp;fhih_temp);
 <a name="l00081"></a>00081 }
 <a name="l00082"></a>00082 
 </pre></div></div>
@@ -201,7 +201,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="humid__hih_8c.html">humid_hih.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:50 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

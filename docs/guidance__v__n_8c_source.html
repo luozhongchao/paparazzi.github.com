@@ -227,8 +227,8 @@ function toggleVisibility(linkObj) {
 <a name="l00111"></a>00111 
 <a name="l00112"></a><a class="code" href="guidance__v__n_8c.html#ac48c5fff2d5aca1dd1fc58622709d7eb">00112</a> <span class="keywordtype">void</span> <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ac48c5fff2d5aca1dd1fc58622709d7eb">v_ctl_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00113"></a>00113   <span class="comment">/* mode */</span>
-<a name="l00114"></a>00114   <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#afa5597f66c8d01e0afcfa047afe6964b">v_ctl_mode</a> = <a class="code" href="fixedwing_2guidance_2guidance__v_8h.html#a2904f40396f6ba3b4f0eddffaca927f8">V_CTL_MODE_MANUAL</a>;
-<a name="l00115"></a>00115   <a class="code" href="guidance__v__n_8c.html#aa4ebe07275990427a055a732e6f37740">v_ctl_speed_mode</a> = <a class="code" href="guidance__v__n_8h.html#a09f63f36c513da12a9022e1528b056b8">V_CTL_SPEED_THROTTLE</a>;
+<a name="l00114"></a>00114   <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#afa5597f66c8d01e0afcfa047afe6964b">v_ctl_mode</a> = <a class="code" href="fixedwing_2guidance_2guidance__v_8h.html#a2904f40396f6ba3b4f0eddffaca927f8" title="fixed wing vertical control">V_CTL_MODE_MANUAL</a>;
+<a name="l00115"></a>00115   <a class="code" href="guidance__v__n_8c.html#aa4ebe07275990427a055a732e6f37740">v_ctl_speed_mode</a> = <a class="code" href="guidance__v__n_8h.html#a09f63f36c513da12a9022e1528b056b8" title="fixed wing vertical control">V_CTL_SPEED_THROTTLE</a>;
 <a name="l00116"></a>00116 
 <a name="l00117"></a>00117   <span class="comment">/* outer loop */</span>
 <a name="l00118"></a>00118   <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a8ca3adfa488b360ca07396ef54c199f3">v_ctl_altitude_setpoint</a> = 0.;
@@ -285,7 +285,7 @@ function toggleVisibility(linkObj) {
 <a name="l00174"></a><a class="code" href="guidance__v__n_8c.html#a8947c45f82ecea519df689c79fa3e04a">00174</a> <span class="preprocessor"></span><span class="preprocessor">#define LEAD_CTRL_A 1.</span>
 <a name="l00175"></a><a class="code" href="guidance__v__n_8c.html#a8e8e746ea2aef75af16db484cf5b65f8">00175</a> <span class="preprocessor"></span><span class="preprocessor">#define LEAD_CTRL_Te (1./60.)</span>
 <a name="l00176"></a>00176 <span class="preprocessor"></span>
-<a name="l00177"></a><a class="code" href="guidance__v__n_8c.html#ab78a678ff1021823256d747800db3140">00177</a> <span class="keywordtype">void</span> <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ab78a678ff1021823256d747800db3140" title="Computes v_ctl_climb_setpoint and sets v_ctl_auto_throttle_submode.">v_ctl_altitude_loop</a>( <span class="keywordtype">void</span> ) {
+<a name="l00177"></a><a class="code" href="guidance__v__n_8c.html#ab78a678ff1021823256d747800db3140">00177</a> <span class="keywordtype">void</span> <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ab78a678ff1021823256d747800db3140" title="outer loop">v_ctl_altitude_loop</a>( <span class="keywordtype">void</span> ) {
 <a name="l00178"></a>00178   <span class="keyword">static</span> <span class="keywordtype">float</span> v_ctl_climb_setpoint_last = 0.;
 <a name="l00179"></a>00179   <span class="comment">//static float last_lead_input = 0.;</span>
 <a name="l00180"></a>00180 
@@ -437,7 +437,7 @@ function toggleVisibility(linkObj) {
 <a name="l00326"></a><a class="code" href="guidance__v__n_8c.html#a38f0bbceda8812281fc650c2c1aac6c8">00326</a> <span class="keywordtype">void</span> <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a38f0bbceda8812281fc650c2c1aac6c8">v_ctl_climb_loop</a> ( <span class="keywordtype">void</span> ) {
 <a name="l00327"></a>00327 
 <a name="l00328"></a>00328   <span class="keywordflow">switch</span> (<a class="code" href="guidance__v__n_8c.html#aa4ebe07275990427a055a732e6f37740">v_ctl_speed_mode</a>) {
-<a name="l00329"></a>00329   <span class="keywordflow">case</span> <a class="code" href="guidance__v__n_8h.html#a09f63f36c513da12a9022e1528b056b8">V_CTL_SPEED_THROTTLE</a>:
+<a name="l00329"></a>00329   <span class="keywordflow">case</span> <a class="code" href="guidance__v__n_8h.html#a09f63f36c513da12a9022e1528b056b8" title="fixed wing vertical control">V_CTL_SPEED_THROTTLE</a>:
 <a name="l00330"></a>00330     <span class="comment">// Set pitch</span>
 <a name="l00331"></a>00331     <a class="code" href="guidance__v__n_8c.html#a1e3fd0609be4d63ccd94d995a0db097a">v_ctl_set_pitch</a>();
 <a name="l00332"></a>00332     <span class="comment">// Set throttle</span>
@@ -482,7 +482,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="guidance__v__n_8c.html">guidance_v_n.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:49 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:17:59 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

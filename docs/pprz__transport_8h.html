@@ -155,6 +155,7 @@ function toggleVisibility(linkObj) {
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#aacd744a917e61146ec8b7175b4761683">STX</a>&#160;&#160;&#160;0x99</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#a8659f4bb1e438c8781e93bb7afd5954c">PprzTransportSizeOf</a>(_payload)&#160;&#160;&#160;(_payload+4)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">4 = STX + len + ck_a + ck_b  <a href="#a8659f4bb1e438c8781e93bb7afd5954c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#a47e4944466c78aef6910abcc7ca239fa">__Link</a>(dev, _x)&#160;&#160;&#160;dev##_x</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#af8deab09a4c1b6b97461365b62133d0d">_Link</a>(dev, _x)&#160;&#160;&#160;__Link(dev, _x)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#a0e2c29956ca6e65378539b5be178d81b">Link</a>(_x)&#160;&#160;&#160;_Link(DOWNLINK_DEVICE, _x)</td></tr>
@@ -185,6 +186,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#a38b0fd3814093032768fa4dc2637ffdd">PprzTransportPutUint32Array</a>(_n, _x)&#160;&#160;&#160;PprzTransportPutArray(PprzTransportPutUint32ByAddr, _n, _x)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#a1e1cff5875078df58158f8e961595eee">PprzTransportPutUint8Array</a>(_n, _x)&#160;&#160;&#160;PprzTransportPutArray(PprzTransportPutUint8ByAddr, _n, _x)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#a7668dedbc74a47bde384b2b911379073">UNINIT</a>&#160;&#160;&#160;0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiving pprz messages.  <a href="#a7668dedbc74a47bde384b2b911379073"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#a6bac978d2a28741610d8b5b5bd88799c">GOT_STX</a>&#160;&#160;&#160;1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#a74b9c2790d0a3e81489a3da279ccc98e">GOT_LENGTH</a>&#160;&#160;&#160;2</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pprz__transport_8h.html#a6d9ad6e4a25bbf5ef73a8dcefd5cc687">GOT_PAYLOAD</a>&#160;&#160;&#160;3</td></tr>
@@ -510,7 +512,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment">{ \
   <a class="code" href="pprz__transport_8h.html#a5d8208b5c30c0bbf3c2b592d47893541">PprzTransportPut1Byte</a>(<a class="code" href="pprz__transport_8h.html#aacd744a917e61146ec8b7175b4761683">STX</a>);       \
-  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_len = <a class="code" href="pprz__transport_8h.html#a8659f4bb1e438c8781e93bb7afd5954c">PprzTransportSizeOf</a>(payload_len); \
+  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_len = <a class="code" href="pprz__transport_8h.html#a8659f4bb1e438c8781e93bb7afd5954c" title="4 = STX + len + ck_a + ck_b">PprzTransportSizeOf</a>(payload_len); \
   <a class="code" href="pprz__transport_8h.html#a5d8208b5c30c0bbf3c2b592d47893541">PprzTransportPut1Byte</a>(msg_len);     \
   <a class="code" href="modem__hw_8c.html#a51ab444129c13f6f6f44765945b7c1f7">ck_a</a> = msg_len; <a class="code" href="modem__hw_8c.html#aaef6f57fdac39726811fd081a16fa711">ck_b</a> = msg_len;     \
 }
@@ -1093,6 +1095,7 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>4 = STX + len + ck_a + ck_b </p>
 
 <p>Definition at line <a class="el" href="pprz__transport_8h_source.html#l00050">50</a> of file <a class="el" href="pprz__transport_8h_source.html">pprz_transport.h</a>.</p>
@@ -1169,7 +1172,8 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Receiving pprz messages </p>
+
+<p>Receiving pprz messages. </p>
 
 <p>Definition at line <a class="el" href="pprz__transport_8h_source.html#l00140">140</a> of file <a class="el" href="pprz__transport_8h_source.html">pprz_transport.h</a>.</p>
 
@@ -1354,7 +1358,7 @@ Variables</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="pprz__transport_8h.html">pprz_transport.h</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:17:14 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:13 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

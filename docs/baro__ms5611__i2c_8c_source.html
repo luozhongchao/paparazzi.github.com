@@ -205,7 +205,7 @@ function toggleVisibility(linkObj) {
 <a name="l00089"></a>00089       <a class="code" href="baro__ms5611__i2c_8c.html#a86196c2d748d42e8d8a422f91f13447c">ms5611_status</a> = <a class="code" href="baro__ms5611__i2c_8h.html#a199931e57c60c0e068509298255221e5a76c92457123a08f51da7bf1b389cce1b">MS5611_CONV_D1</a>;
 <a name="l00090"></a>00090       <a class="code" href="baro__ms5611__i2c_8c.html#a227f8aae453b00f4825ca4cf63cb4e88">ms5611_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="baro__ms5611__i2c_8h.html#a1d497475691f33aee46953d0fc3003e4">MS5611_START_CONV_D1</a>;
 <a name="l00091"></a>00091       <a class="code" href="i2c_8h.html#ace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="baro__ms5611__i2c_8c.html#a35aa45219b866c3fa80653e777f41d90">MS5611_I2C_DEV</a>, <a class="code" href="baro__ms5611__i2c_8c.html#a227f8aae453b00f4825ca4cf63cb4e88">ms5611_trans</a>, <a class="code" href="baro__ms5611__i2c_8c.html#ad4db9d60ee8d2f86da0b10de667686db">MS5611_SLAVE_ADDR</a>, 1);
-<a name="l00092"></a>00092       RunOnceEvery((4*30), DOWNLINK_SEND_MS5611_COEFF(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,
+<a name="l00092"></a>00092       RunOnceEvery((4*30), DOWNLINK_SEND_MS5611_COEFF(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,
 <a name="l00093"></a>00093           &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[0], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[1], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[2], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[3],
 <a name="l00094"></a>00094           &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[4], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[5], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[6], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[7]));
 <a name="l00095"></a>00095     }
@@ -268,7 +268,7 @@ function toggleVisibility(linkObj) {
 <a name="l00152"></a>00152         <a class="code" href="baro__ms5611__i2c_8c.html#a227f8aae453b00f4825ca4cf63cb4e88">ms5611_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00153"></a>00153         <span class="comment">/* check prom crc */</span>
 <a name="l00154"></a>00154         <span class="keywordflow">if</span> (<a class="code" href="baro__ms5611__i2c_8c.html#ac92bb53a0de957a11772a19f68ea6189">baro_ms5611_crc</a>(<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>) == 0) {
-<a name="l00155"></a>00155           DOWNLINK_SEND_MS5611_COEFF(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,
+<a name="l00155"></a>00155           DOWNLINK_SEND_MS5611_COEFF(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,
 <a name="l00156"></a>00156               &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[0], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[1], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[2], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[3],
 <a name="l00157"></a>00157               &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[4], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[5], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[6], &amp;<a class="code" href="baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15">ms5611_c</a>[7]);
 <a name="l00158"></a>00158           <a class="code" href="baro__ms5611__i2c_8c.html#a86196c2d748d42e8d8a422f91f13447c">ms5611_status</a> = <a class="code" href="baro__ms5611__i2c_8h.html#a199931e57c60c0e068509298255221e5a07a4f473ce2a741bf5d719ab1a6661d9">MS5611_IDLE</a>;
@@ -336,7 +336,7 @@ function toggleVisibility(linkObj) {
 <a name="l00220"></a>00220 <span class="preprocessor">#ifdef SENSOR_SYNC_SEND</span>
 <a name="l00221"></a>00221 <span class="preprocessor"></span>      <a class="code" href="baro__ms5611__i2c_8c.html#a326d1071e8bed8a67a068d954eae5398">ftempms</a> = tempms / 100.;
 <a name="l00222"></a>00222       <a class="code" href="baro__ms5611__i2c_8c.html#a4cd87df09b5c003ea87e593e7be5d80f">fbaroms</a> = baroms / 100.;
-<a name="l00223"></a>00223       DOWNLINK_SEND_BARO_MS5611(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,
+<a name="l00223"></a>00223       DOWNLINK_SEND_BARO_MS5611(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,
 <a name="l00224"></a>00224                                 &amp;<a class="code" href="baro__ms5611__i2c_8c.html#a24037392396b4b16918790d39cd90f4f">ms5611_d1</a>, &amp;<a class="code" href="baro__ms5611__i2c_8c.html#a8a3741581212cb9d25085da07eedbfaf">ms5611_d2</a>, &amp;<a class="code" href="baro__ms5611__i2c_8c.html#a4cd87df09b5c003ea87e593e7be5d80f">fbaroms</a>, &amp;<a class="code" href="baro__ms5611__i2c_8c.html#a326d1071e8bed8a67a068d954eae5398">ftempms</a>);
 <a name="l00225"></a>00225 <span class="preprocessor">#endif</span>
 <a name="l00226"></a>00226 <span class="preprocessor"></span>      <span class="keywordflow">break</span>;
@@ -354,7 +354,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="baro__ms5611__i2c_8c.html">baro_ms5611_i2c.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:51 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:02 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

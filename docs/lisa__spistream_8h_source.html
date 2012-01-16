@@ -189,9 +189,9 @@ function toggleVisibility(linkObj) {
 <a name="l00067"></a>00067 
 <a name="l00068"></a>00068 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#a767aaa5118567856d97dc3e3937c3f1d">spistream_init</a>(<a class="code" href="lisa__spistream_8h.html#a45984324fe4f2beff45d6dc1eeae88fb">spistream_message_rx_handler_t</a> message_rx_handler,
 <a name="l00069"></a>00069                                   <a class="code" href="lisa__spistream_8h.html#abef07e868c1f77db731d03fe6f72b41d">spistream_message_tx_handler_t</a> message_tx_handler);
-<a name="l00070"></a>00070 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#ad56d7ad7c03b6038f5456e3e668f21c9">spistream_read_pkg</a>(<span class="keyword">struct</span> AutopilotMessagePTStream * pkg_in);
-<a name="l00071"></a>00071 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#af1349ed9a602bfb1697a5f3af132de33">spistream_write_pkg</a>(<span class="keyword">struct</span> AutopilotMessagePTStream * pkg_out);
-<a name="l00072"></a>00072 <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">spistream_send_msg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> num_bytes, <span class="keyword">enum</span> <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614e">spistream_flag</a>);
+<a name="l00070"></a>00070 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#ad56d7ad7c03b6038f5456e3e668f21c9" title="Read a single package into internal RX buffer.">spistream_read_pkg</a>(<span class="keyword">struct</span> AutopilotMessagePTStream * pkg_in);
+<a name="l00071"></a>00071 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#af1349ed9a602bfb1697a5f3af132de33" title="Fill given SPI package with next package from TX buffer.">spistream_write_pkg</a>(<span class="keyword">struct</span> AutopilotMessagePTStream * pkg_out);
+<a name="l00072"></a>00072 <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7" title="Used from userland: Send num_bytes bytes from buffer over spistream.">spistream_send_msg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> num_bytes, <span class="keyword">enum</span> <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614e">spistream_flag</a>);
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074 <span class="comment">/* Definitions */</span>
 <a name="l00075"></a>00075 
@@ -211,7 +211,7 @@ function toggleVisibility(linkObj) {
 <a name="l00089"></a>00089     <a class="code" href="lisa__spistream_8h.html#af1933286bba51297d7102db1975d823e">spistream_buffers</a>.<a class="code" href="structspistream__buffers__t.html#a473a9e2b792e6ee0f6316ece25a9bcf6">tx_num_packages</a> = 0;
 <a name="l00090"></a>00090 }
 <a name="l00091"></a>00091 
-<a name="l00099"></a><a class="code" href="lisa__spistream_8h.html#ad56d7ad7c03b6038f5456e3e668f21c9">00099</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#ad56d7ad7c03b6038f5456e3e668f21c9">spistream_read_pkg</a>(<span class="keyword">struct</span> AutopilotMessagePTStream * pkg_in)
+<a name="l00099"></a><a class="code" href="lisa__spistream_8h.html#ad56d7ad7c03b6038f5456e3e668f21c9">00099</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#ad56d7ad7c03b6038f5456e3e668f21c9" title="Read a single package into internal RX buffer.">spistream_read_pkg</a>(<span class="keyword">struct</span> AutopilotMessagePTStream * pkg_in)
 <a name="l00100"></a>00100 {
 <a name="l00101"></a>00101     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> package_cntd;
 <a name="l00102"></a>00102 
@@ -251,7 +251,7 @@ function toggleVisibility(linkObj) {
 <a name="l00136"></a>00136    }
 <a name="l00137"></a>00137 }
 <a name="l00138"></a>00138 
-<a name="l00143"></a><a class="code" href="lisa__spistream_8h.html#af1349ed9a602bfb1697a5f3af132de33">00143</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#af1349ed9a602bfb1697a5f3af132de33">spistream_write_pkg</a>(<span class="keyword">struct</span> AutopilotMessagePTStream * pkg_out)
+<a name="l00143"></a><a class="code" href="lisa__spistream_8h.html#af1349ed9a602bfb1697a5f3af132de33">00143</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#af1349ed9a602bfb1697a5f3af132de33" title="Fill given SPI package with next package from TX buffer.">spistream_write_pkg</a>(<span class="keyword">struct</span> AutopilotMessagePTStream * pkg_out)
 <a name="l00144"></a>00144 {
 <a name="l00145"></a>00145     <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#af1933286bba51297d7102db1975d823e">spistream_buffers</a>.<a class="code" href="structspistream__buffers__t.html#a473a9e2b792e6ee0f6316ece25a9bcf6">tx_num_packages</a> == 0) {
 <a name="l00146"></a>00146       memset(pkg_out, 0, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> AutopilotMessagePTStream));
@@ -274,7 +274,7 @@ function toggleVisibility(linkObj) {
 <a name="l00163"></a>00163     <a class="code" href="lisa__spistream_8h.html#af1933286bba51297d7102db1975d823e">spistream_buffers</a>.<a class="code" href="structspistream__buffers__t.html#a473a9e2b792e6ee0f6316ece25a9bcf6">tx_num_packages</a>--;
 <a name="l00164"></a>00164 }
 <a name="l00165"></a>00165 
-<a name="l00171"></a><a class="code" href="lisa__spistream_8h.html#a12c18ad5f48e3442a3e1a731c4e6e355">00171</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__spistream_8h.html#a12c18ad5f48e3442a3e1a731c4e6e355">spistream_enqueue_msg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data,
+<a name="l00171"></a><a class="code" href="lisa__spistream_8h.html#a12c18ad5f48e3442a3e1a731c4e6e355">00171</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__spistream_8h.html#a12c18ad5f48e3442a3e1a731c4e6e355" title="Enqueue given message in TX buffer.">spistream_enqueue_msg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data,
 <a name="l00172"></a>00172                                             <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> num_bytes,
 <a name="l00173"></a>00173                                             <span class="keyword">enum</span> <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614e">spistream_flag</a> wait_for_read)
 <a name="l00174"></a>00174 {
@@ -358,11 +358,11 @@ function toggleVisibility(linkObj) {
 <a name="l00252"></a><a class="code" href="lisa__spistream_8h.html#a149b9332279053d23e328dbd643644b9">00252</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__spistream_8h.html#a149b9332279053d23e328dbd643644b9">spistream_dequeue_msg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> message_id) {
 <a name="l00253"></a>00253 }
 <a name="l00254"></a>00254 
-<a name="l00263"></a><a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">00263</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">spistream_send_msg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data,
+<a name="l00263"></a><a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7">00263</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7" title="Used from userland: Send num_bytes bytes from buffer over spistream.">spistream_send_msg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data,
 <a name="l00264"></a>00264                                          <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> num_bytes,
 <a name="l00265"></a>00265                                          <span class="keyword">enum</span> <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614e">spistream_flag</a> wait_for_read)
 <a name="l00266"></a>00266 {
-<a name="l00267"></a>00267     <span class="keywordflow">return</span> <a class="code" href="lisa__spistream_8h.html#a12c18ad5f48e3442a3e1a731c4e6e355">spistream_enqueue_msg</a>(data, num_bytes, wait_for_read);
+<a name="l00267"></a>00267     <span class="keywordflow">return</span> <a class="code" href="lisa__spistream_8h.html#a12c18ad5f48e3442a3e1a731c4e6e355" title="Enqueue given message in TX buffer.">spistream_enqueue_msg</a>(data, num_bytes, wait_for_read);
 <a name="l00268"></a>00268 }
 <a name="l00269"></a>00269 
 <a name="l00270"></a>00270 <span class="preprocessor">#endif </span><span class="comment">/* SPISTREAM_PROTOCOL_H__ */</span>
@@ -372,7 +372,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="lisa__spistream_8h.html">lisa_spistream.h</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:49 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:00 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

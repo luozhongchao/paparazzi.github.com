@@ -145,19 +145,19 @@ function toggleVisibility(linkObj) {
 <a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00024"></a>00024 <span class="preprocessor"></span>
 <a name="l00025"></a>00025 <span class="preprocessor">#ifdef ADC_CHANNEL_GENERIC1</span>
-<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a> buf_generic1;
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> buf_generic1;
 <a name="l00027"></a>00027 <span class="preprocessor">#endif</span>
 <a name="l00028"></a>00028 <span class="preprocessor"></span>
 <a name="l00029"></a>00029 <span class="preprocessor">#ifdef ADC_CHANNEL_GENERIC2</span>
-<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a> buf_generic2;
+<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> buf_generic2;
 <a name="l00031"></a>00031 <span class="preprocessor">#endif</span>
 <a name="l00032"></a>00032 <span class="preprocessor"></span>
 <a name="l00033"></a><a class="code" href="adc__generic_8c.html#a5d3cd37fdd77f995b25ed0837831e829">00033</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8c.html#a5d3cd37fdd77f995b25ed0837831e829">adc_generic_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00034"></a>00034 <span class="preprocessor">#ifdef ADC_CHANNEL_GENERIC1</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(ADC_CHANNEL_GENERIC1, &amp;buf_generic1, <a class="code" href="adc__generic_8c.html#acb13ab9736ba7063ff44ba82e81515ab">ADC_CHANNEL_GENERIC_NB_SAMPLES</a>);
+<a name="l00035"></a>00035 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_GENERIC1, &amp;buf_generic1, <a class="code" href="adc__generic_8c.html#acb13ab9736ba7063ff44ba82e81515ab">ADC_CHANNEL_GENERIC_NB_SAMPLES</a>);
 <a name="l00036"></a>00036 <span class="preprocessor">#endif</span>
 <a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_GENERIC2</span>
-<a name="l00038"></a>00038 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(ADC_CHANNEL_GENERIC2, &amp;buf_generic2, <a class="code" href="adc__generic_8c.html#acb13ab9736ba7063ff44ba82e81515ab">ADC_CHANNEL_GENERIC_NB_SAMPLES</a>);
+<a name="l00038"></a>00038 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_GENERIC2, &amp;buf_generic2, <a class="code" href="adc__generic_8c.html#acb13ab9736ba7063ff44ba82e81515ab">ADC_CHANNEL_GENERIC_NB_SAMPLES</a>);
 <a name="l00039"></a>00039 <span class="preprocessor">#endif</span>
 <a name="l00040"></a>00040 <span class="preprocessor"></span>}
 <a name="l00041"></a>00041 
@@ -169,7 +169,7 @@ function toggleVisibility(linkObj) {
 <a name="l00047"></a>00047 <span class="preprocessor"></span>  <a class="code" href="jsbsim__hw_8c.html#aff1b8ec1532d47eb451b8803b0cca110">adc_generic_val2</a> = buf_generic2.sum / buf_generic2.av_nb_sample;
 <a name="l00048"></a>00048 <span class="preprocessor">#endif</span>
 <a name="l00049"></a>00049 <span class="preprocessor"></span>
-<a name="l00050"></a>00050   DOWNLINK_SEND_ADC_GENERIC(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;<a class="code" href="jsbsim__hw_8c.html#a921929cb395752c1d04927b087657679">adc_generic_val1</a>, &amp;<a class="code" href="jsbsim__hw_8c.html#aff1b8ec1532d47eb451b8803b0cca110">adc_generic_val2</a>);
+<a name="l00050"></a>00050   DOWNLINK_SEND_ADC_GENERIC(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;<a class="code" href="jsbsim__hw_8c.html#a921929cb395752c1d04927b087657679">adc_generic_val1</a>, &amp;<a class="code" href="jsbsim__hw_8c.html#aff1b8ec1532d47eb451b8803b0cca110">adc_generic_val2</a>);
 <a name="l00051"></a>00051 }
 <a name="l00052"></a>00052 
 </pre></div></div>
@@ -177,7 +177,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="adc__generic_8c.html">adc_generic.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:50 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

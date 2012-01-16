@@ -144,10 +144,10 @@ function toggleVisibility(linkObj) {
 <a name="l00022"></a>00022 <span class="comment"> *</span>
 <a name="l00023"></a>00023 <span class="comment"> */</span>
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="cam__track_8h.html">cam_track.h</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="cam__track_8h.html" title="blob tracking with cmucam">cam_track.h</a>&quot;</span>
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="ins_8h.html" title="Device independent INS code.">subsystems/ins.h</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html">subsystems/ahrs.h</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span>
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030 <span class="preprocessor">#ifdef USE_HFF</span>
 <a name="l00031"></a>00031 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="hf__float_8h.html">subsystems/ins/hf_float.h</a>&quot;</span>
@@ -194,7 +194,7 @@ function toggleVisibility(linkObj) {
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073   cmd_msg[c++] = <span class="charliteral">&#39;A&#39;</span>;
 <a name="l00074"></a>00074   cmd_msg[c++] = <span class="charliteral">&#39; &#39;</span>;
-<a name="l00075"></a>00075   <span class="keywordtype">float</span> phi = <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a>);
+<a name="l00075"></a>00075   <span class="keywordtype">float</span> phi = <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a>);
 <a name="l00076"></a>00076   <span class="keywordflow">if</span> (phi &gt; 0) cmd_msg[c++] = <span class="charliteral">&#39; &#39;</span>;
 <a name="l00077"></a>00077   <span class="keywordflow">else</span> { cmd_msg[c++] = <span class="charliteral">&#39;-&#39;</span>; phi = -phi; }
 <a name="l00078"></a>00078   cmd_msg[c++] = <span class="charliteral">&#39;0&#39;</span> + ((<span class="keywordtype">unsigned</span> int) phi % 10);
@@ -203,7 +203,7 @@ function toggleVisibility(linkObj) {
 <a name="l00081"></a>00081   cmd_msg[c++] = <span class="charliteral">&#39;0&#39;</span> + ((<span class="keywordtype">unsigned</span> int) (1000*phi) % 10);
 <a name="l00082"></a>00082   cmd_msg[c++] = <span class="charliteral">&#39;0&#39;</span> + ((<span class="keywordtype">unsigned</span> int) (10000*phi) % 10);
 <a name="l00083"></a>00083   cmd_msg[c++] = <span class="charliteral">&#39; &#39;</span>;
-<a name="l00084"></a>00084   <span class="keywordtype">float</span> theta = <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a>);
+<a name="l00084"></a>00084   <span class="keywordtype">float</span> theta = <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a>);
 <a name="l00085"></a>00085   <span class="keywordflow">if</span> (theta &gt; 0) cmd_msg[c++] = <span class="charliteral">&#39; &#39;</span>;
 <a name="l00086"></a>00086   <span class="keywordflow">else</span> { cmd_msg[c++] = <span class="charliteral">&#39;-&#39;</span>; theta = -theta; }
 <a name="l00087"></a>00087   cmd_msg[c++] = <span class="charliteral">&#39;0&#39;</span> + ((<span class="keywordtype">unsigned</span> int) theta % 10);
@@ -212,7 +212,7 @@ function toggleVisibility(linkObj) {
 <a name="l00090"></a>00090   cmd_msg[c++] = <span class="charliteral">&#39;0&#39;</span> + ((<span class="keywordtype">unsigned</span> int) (1000*theta) % 10);
 <a name="l00091"></a>00091   cmd_msg[c++] = <span class="charliteral">&#39;0&#39;</span> + ((<span class="keywordtype">unsigned</span> int) (10000*theta) % 10);
 <a name="l00092"></a>00092   cmd_msg[c++] = <span class="charliteral">&#39; &#39;</span>;
-<a name="l00093"></a>00093   <span class="keywordtype">float</span> psi = <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
+<a name="l00093"></a>00093   <span class="keywordtype">float</span> psi = <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
 <a name="l00094"></a>00094   <span class="keywordflow">if</span> (psi &gt; 0) cmd_msg[c++] = <span class="charliteral">&#39; &#39;</span>;
 <a name="l00095"></a>00095   <span class="keywordflow">else</span> { cmd_msg[c++] = <span class="charliteral">&#39;-&#39;</span>; psi = -psi; }
 <a name="l00096"></a>00096   cmd_msg[c++] = <span class="charliteral">&#39;0&#39;</span> + ((<span class="keywordtype">unsigned</span> int) psi % 10);
@@ -360,7 +360,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="cam__track_8c.html">cam_track.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:50 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

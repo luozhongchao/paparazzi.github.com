@@ -914,122 +914,122 @@ var NAVTREE =
       [ "sw/airborne/subsystems/sensors/infrared_i2c.h", "subsystems_2sensors_2infrared__i2c_8h.html", null ]
     ] ],
     [ "Directories", "dirs.html", [
-      [ "sw", "dir_ac4c3216bf0746f124bff219b4276102.html", [
-        [ "airborne", "dir_7729eb27f48d624ddcbae845b2a79f3e.html", [
-          [ "arch", "dir_8b2e2b134f17f5b3d599b7a146573b02.html", [
-            [ "lpc21", "dir_d96a03850b4c8da7a9bb0adfa7dbad7c.html", [
-              [ "include", "dir_cde90031dacdfb3f8074a3e445e66a38.html", null ],
-              [ "mcu_periph", "dir_de8593f6b0c18e6828e66db79cc323bc.html", null ],
-              [ "modules", "dir_5c101e99e605bb44756420aa39fa9fcd.html", [
-                [ "adcs", "dir_653a9465df917ecc179bd58feb61c40f.html", null ],
-                [ "core", "dir_101c6c048b840dce2f90276c2af7330a.html", null ],
-                [ "display", "dir_eb6cdbe2498251c1d0487f32fbd6f226.html", null ],
-                [ "sensors", "dir_8d9eb43e7bfa7cd5b0069508c251f718.html", null ]
+      [ "sw", "dir_8ff3da0822e71bc6043b27ed4463a31b.html", [
+        [ "airborne", "dir_657f00e59c5b7c473f48d4750968c2ed.html", [
+          [ "arch", "dir_8aae381a6e52d0be737a888f325210a9.html", [
+            [ "lpc21", "dir_3be9030b70597cfad0ddb5cce436b7f3.html", [
+              [ "include", "dir_b1c40e14735d459f266ab3a856b7497e.html", null ],
+              [ "mcu_periph", "dir_ae99601ac4abc7033aff4f6a5ca28a53.html", null ],
+              [ "modules", "dir_cf694791c4d4cb285ad925fc9596912e.html", [
+                [ "adcs", "dir_40a541a813f2b1ab6aa1904cc7554410.html", null ],
+                [ "core", "dir_75daf9b87e270add2b565b1f2bc7b9d7.html", null ],
+                [ "display", "dir_8de8a4c93e35f0462ded0b8bab5723df.html", null ],
+                [ "sensors", "dir_733075940aa5985862fa2faa8eecb351.html", null ]
               ] ],
-              [ "peripherals", "dir_de617697d36984771d2890c73dc4195c.html", null ],
-              [ "subsystems", "dir_e4bf6be31f9324f0b044c3a4ea841669.html", [
-                [ "imu", "dir_1918c12175d6e1b593f22df927f4bdaa.html", null ],
-                [ "radio_control", "dir_ed1b61e6eca1d98709ace4f49fe1ee83.html", null ]
+              [ "peripherals", "dir_131a921a33697f9c9ca8364f908371ef.html", null ],
+              [ "subsystems", "dir_87df97c08b68c5cb0c025a1bf4570906.html", [
+                [ "imu", "dir_b9ffcee28ba3530e1f7d0f406e882919.html", null ],
+                [ "radio_control", "dir_5b43935489f19908d11008b0392da8a0.html", null ]
               ] ]
             ] ],
-            [ "omap", "dir_4e65f1d5758c27ed33a1dd1b3fe2389e.html", [
-              [ "mcu_periph", "dir_66eccafa2cd20b50f32d9ba44f6c62d0.html", null ]
+            [ "omap", "dir_6268d59dd269dcdb8aabe86a816f40bf.html", [
+              [ "mcu_periph", "dir_43abcc28349379e6ecc8f7cda8ea7182.html", null ]
             ] ],
-            [ "sim", "dir_5e8c95fd270a9001b6ec23666db3eb7a.html", [
-              [ "mcu_periph", "dir_6139b1b82c29feefde816561bdd11a5b.html", null ],
-              [ "modules", "dir_f53fceda5db06b93be655b08c7998e88.html", [
-                [ "core", "dir_8d5cad289891ea9ac84de7242ff5bdc7.html", null ],
-                [ "enose", "dir_5217ac7c030a241bcdfbe161febe9edf.html", null ],
-                [ "ins", "dir_31c27d7626dfdfcd41a5c841c52a987b.html", null ]
+            [ "sim", "dir_80f7f9b3735ea683244aef8026c4ca68.html", [
+              [ "mcu_periph", "dir_62442b0085ad31a98ee5c96fab21b7cc.html", null ],
+              [ "modules", "dir_e5bd73f942dbf768f4764eee3020b9f5.html", [
+                [ "core", "dir_efb749eb8cff091aae8e2892eba50c66.html", null ],
+                [ "enose", "dir_0ceee06022c08e014dedc4a497b94796.html", null ],
+                [ "ins", "dir_a6117c975de22359b2c7c58bedf761d9.html", null ]
               ] ],
-              [ "peripherals", "dir_5ee953f1372582859d18fe1d79086c78.html", null ],
-              [ "subsystems", "dir_2a12bddbeae013851df4cc7f450822ae.html", [
-                [ "imu", "dir_e357a41610186179abe81809b5428daa.html", null ],
-                [ "radio_control", "dir_3a32809882d256d44dfde72845185ebd.html", null ]
+              [ "peripherals", "dir_0c309cb76a8267f75b6413ba1e0bb79a.html", null ],
+              [ "subsystems", "dir_09259e609eeb09ddf96bdc2a23f449bf.html", [
+                [ "imu", "dir_34b2c0c27ab5c1756a0ac1d3d896115d.html", null ],
+                [ "radio_control", "dir_c379f05a7bdf514734e712c932d78ad6.html", null ]
               ] ]
             ] ],
-            [ "stm32", "dir_684d25bbbbf4fda73e5a436bec65bf66.html", [
-              [ "mcu_periph", "dir_a4aa2ee90c2698cd5983e5342a922e12.html", null ],
-              [ "peripherals", "dir_95a3019296f23dce165375fab29b07c9.html", null ],
-              [ "subsystems", "dir_d9465a8f5e5010a3a1cd9b91e6304759.html", [
-                [ "imu", "dir_8ad6ef59e214d478d6a8c191d407f511.html", null ],
-                [ "radio_control", "dir_c1c191df9a98f8142158557d7f49f83d.html", null ]
+            [ "stm32", "dir_92efe7c582aa6f8192ca9cf17be66374.html", [
+              [ "mcu_periph", "dir_f8070f96734d8daaf719752977cdf7ff.html", null ],
+              [ "peripherals", "dir_a5735653cd783153d6e8ff2256956ab7.html", null ],
+              [ "subsystems", "dir_ea90606a667bc7ce2577c18fc95a60b6.html", [
+                [ "imu", "dir_1da9a0e302f516259c58a1e998673294.html", null ],
+                [ "radio_control", "dir_eadac08cb93a28ccfcb2ae61401c43e9.html", null ]
               ] ]
             ] ]
           ] ],
-          [ "boards", "dir_130a02911febe1b17deac8a1a57452ce.html", [
-            [ "booz", "dir_be874c34d0eee75a47cb1fe05bdbcf85.html", null ],
-            [ "lisa_l", "dir_dd6b0f608a4aa736b6507469bf0c4584.html", null ],
-            [ "lisa_m", "dir_207343616673055393d1194fbd6ada68.html", null ],
-            [ "navgo", "dir_7948920259ad1408d868a9070ebdfce5.html", null ],
-            [ "pc", "dir_a6dd81189798b4a76032d0eb427929d6.html", null ],
-            [ "umarim", "dir_cb498d6a803e60acd8c106fe4c3c9cf0.html", null ]
+          [ "boards", "dir_c3913457b001a0d9870d99fe543202f6.html", [
+            [ "booz", "dir_bbd14a7709bb85c12c4bda9f8092da69.html", null ],
+            [ "lisa_l", "dir_340f212aaafc601b0b9869161cbf3f46.html", null ],
+            [ "lisa_m", "dir_bfb7afceb40e354c29d573813fe189b6.html", null ],
+            [ "navgo", "dir_5a561588396fbe573c91813c5ce00789.html", null ],
+            [ "pc", "dir_03a148e0cfccde53df3b180d1b970227.html", null ],
+            [ "umarim", "dir_b78451e51265855ee8dcf187d48da20b.html", null ]
           ] ],
-          [ "firmwares", "dir_e8c711a968ea9362ce337335234d43cd.html", [
-            [ "fixedwing", "dir_8ad85609cc306ccf60007c969eb8a205.html", [
-              [ "guidance", "dir_a7a7117073431c111dafa50b19615d7e.html", null ],
-              [ "stabilization", "dir_ff5de173306645d27dd0fb20038545a4.html", null ]
+          [ "firmwares", "dir_002859af2513de2d6a73d8ad9e4bfcb2.html", [
+            [ "fixedwing", "dir_7e4fb0fbda367921db1b48c17d49184e.html", [
+              [ "guidance", "dir_ce9624ef4a46d29176ee75d4fb1f5992.html", null ],
+              [ "stabilization", "dir_49c231f7b89733e81b44963d2eb8ab80.html", null ]
             ] ],
-            [ "rotorcraft", "dir_b342f6ef587ef9f50f02681d086acc00.html", [
-              [ "actuators", "dir_40e03daad6fd511cbb9290439f2106b8.html", [
-                [ "arch", "dir_adc4454b5e2c4a37524732f39d780b31.html", [
-                  [ "sim", "dir_4be6acbfa0b4b287da13b85f8c07599c.html", null ],
-                  [ "stm32", "dir_7d5b434b4d18e4f7ae1363c21b57f8bc.html", null ]
+            [ "rotorcraft", "dir_5da8b6e937d19c276f0cb7c529fe7881.html", [
+              [ "actuators", "dir_8d366771428be46d25d54e11e341247e.html", [
+                [ "arch", "dir_6ad5d6632ba2d497354b68399af4c61b.html", [
+                  [ "sim", "dir_ab4b3170971a6d5be441699da612b7d6.html", null ],
+                  [ "stm32", "dir_267c94cdb02aad2fbe5979bd8db0a9ef.html", null ]
                 ] ]
               ] ],
-              [ "guidance", "dir_fbb626f7f0caf4fddac9e507f6cb16c3.html", null ],
-              [ "stabilization", "dir_99216e91b5e7ec384aefa42a04f59c5a.html", null ]
+              [ "guidance", "dir_efe62ff09f99dc4fef05e0bba6036435.html", null ],
+              [ "stabilization", "dir_e5e99597cef121834be03cc83f85205e.html", null ]
             ] ],
-            [ "setup", "dir_1f4abdd39c9e9e3c733d0feb6c2ea54a.html", null ],
-            [ "tutorial", "dir_6e2b7587710c03debb61ccd57e3cbc88.html", null ]
+            [ "setup", "dir_0dd04b07eec8c186d4524f68b3a3b693.html", null ],
+            [ "tutorial", "dir_e07713633f051df69c1c7075db248722.html", null ]
           ] ],
-          [ "lisa", "dir_f6341fc9b5b577ff32818612b9192792.html", [
-            [ "arch", "dir_ebdd5af24ecb62366199e23562c74619.html", [
-              [ "stm32", "dir_9614ecf9eac1392063f5f16e75385c02.html", null ]
+          [ "lisa", "dir_483c9221bfd82f598cedd406775e910c.html", [
+            [ "arch", "dir_fccb086989055babc652050b8e506b1a.html", [
+              [ "stm32", "dir_5ba72f1ac3ff972fa7107858ca119d2d.html", null ]
             ] ],
-            [ "test", "dir_13d19dad7b3877aafc5c5aef389ab7e1.html", null ]
+            [ "test", "dir_e992b4d848f350d650de33b6e78a03d8.html", null ]
           ] ],
-          [ "math", "dir_4b3035d5abc80c05568a18467e359356.html", null ],
-          [ "mcu_periph", "dir_672e96072af56c6b161a5be3a6b7d6d7.html", null ],
-          [ "modules", "dir_ac361ec9978cec8f27e23cd07b39843c.html", [
-            [ "adcs", "dir_cddc1604c26adae5d2a94ba1f984f0a9.html", null ],
-            [ "airborne_ant_track", "dir_88659631ebdbabc0eba6207bc1cb6438.html", null ],
-            [ "benchmark", "dir_07365d4c8cf102ba3d9be11a6842cc4b.html", null ],
-            [ "cam_control", "dir_32c393c2aea0e6139d1c3ffcae5ace8c.html", null ],
-            [ "cartography", "dir_2dc60b37521f7e1f99d9f6c351294cca.html", null ],
-            [ "com", "dir_8504b2576b90288289c466797e820d16.html", null ],
-            [ "core", "dir_caf8126264042610d3f43c7c99f4069a.html", null ],
-            [ "demo_module", "dir_6b33adb9cee1de95faf68c14348cbb92.html", null ],
-            [ "deploy_sonar_buoy", "dir_2ddf543f8ae74be2e57259b477d8c98c.html", null ],
-            [ "digital_cam", "dir_e17d187a2b480e136858e4718501541e.html", null ],
-            [ "display", "dir_e3ceef7310162a3e315f45c0dc932988.html", null ],
-            [ "drop", "dir_75ff2ce29d95592cf10b67a8e56a8975.html", null ],
-            [ "enose", "dir_c3b3a086021473152d41bf16ae3f5a2c.html", null ],
-            [ "gps", "dir_021b0281ca2f6f837f9a3faa2a8fbe41.html", null ],
-            [ "gps_i2c", "dir_c84e2825395e5f07fdbb66a845a2ba34.html", null ],
-            [ "gsm", "dir_8b308c59f550de84d721d136fa45d75e.html", null ],
-            [ "ins", "dir_3694b7ce52614b2eeac3bfa959aea73c.html", null ],
-            [ "light", "dir_f57e802a2e06f6f0758da4c8408133cb.html", null ],
-            [ "max3100", "dir_f1ee6f32cc538dfa27269a005ee530de.html", null ],
-            [ "meteo", "dir_d4f6d2211fbe58205e0eeac156df52a8.html", null ],
-            [ "MPPT", "dir_9a81b4b7e8472c7970c2c368bb26b47d.html", null ],
-            [ "multi", "dir_999a85da331576fc8b8d4490410d1bca.html", null ],
-            [ "poles", "dir_e66f7b76dbcec53f9a2af015257f4b2f.html", null ],
-            [ "sensors", "dir_2f54a98d4e9d8b53d893dace7eaf4c25.html", null ],
-            [ "servo_switch", "dir_1a61f0fa86221162c16c02b3c8b78603.html", null ],
-            [ "sonar", "dir_939f7a3e82b72c1acb873738f5f7ef71.html", null ],
-            [ "vehicle_interface", "dir_3ffc571dd1e5d2fa859b1c1b9eda5e42.html", null ]
+          [ "math", "dir_8ccb48727bdfe4419a5f8ff2c8eb61cf.html", null ],
+          [ "mcu_periph", "dir_e5a2608cf8c9b9a885f151aa09dc2e48.html", null ],
+          [ "modules", "dir_25ac6b134a50c7fd1d1d832b26218607.html", [
+            [ "adcs", "dir_aba1fed91d35a840cb3674af7cd7f71e.html", null ],
+            [ "airborne_ant_track", "dir_6fac3e121ead5ef7e675b89b61eb5248.html", null ],
+            [ "benchmark", "dir_a8467331d4d48bf0a5fbb14c2a5a5732.html", null ],
+            [ "cam_control", "dir_d6661c4fd7325d4ae59b36f1120422e4.html", null ],
+            [ "cartography", "dir_43d6c6b31a88b29e65ce700e906b5dc3.html", null ],
+            [ "com", "dir_a4fee57fa0e4a43b24fdc8b65ac02fdc.html", null ],
+            [ "core", "dir_1165d270231e4695e50b8a7dd6353a14.html", null ],
+            [ "demo_module", "dir_e56b675f668d002ac84e64a982e95427.html", null ],
+            [ "deploy_sonar_buoy", "dir_2b18b71737c4b13ff3e3b0e67ce6d9cd.html", null ],
+            [ "digital_cam", "dir_b0a6dc36ad708b7eb0ac5f4f91423f4f.html", null ],
+            [ "display", "dir_9338e72aff61543f64d7cfd61310e6e1.html", null ],
+            [ "drop", "dir_5568e7e74913bdb1fa95d526e834e26b.html", null ],
+            [ "enose", "dir_6f74ed3ebce2804f4c6abc477a9484d5.html", null ],
+            [ "gps", "dir_5c11c30cc9d7add0b3fc7d7491086c63.html", null ],
+            [ "gps_i2c", "dir_1ddfa9c3ec40f968392e739a5aacf8bf.html", null ],
+            [ "gsm", "dir_91fc5f806114ce8aedb562b496e53e27.html", null ],
+            [ "ins", "dir_4d92c274ae7d3f70da224acf13b07989.html", null ],
+            [ "light", "dir_51bafde96101197876a8fc18a0e04199.html", null ],
+            [ "max3100", "dir_177c9a49722cc88ac3e798dac0506c3a.html", null ],
+            [ "meteo", "dir_9f34ffe7189cadea513ea0c6bc7791d4.html", null ],
+            [ "MPPT", "dir_81339dca68a824a9ff6a4f01ddf888fc.html", null ],
+            [ "multi", "dir_34ee737e2aa5fdab7fd9b96cf3c98b36.html", null ],
+            [ "poles", "dir_86b8200e884909470e00f3e906ee72fe.html", null ],
+            [ "sensors", "dir_68b9de516cb772fb24d7e81f3096a2b2.html", null ],
+            [ "servo_switch", "dir_00a8a28398c521895c7e8f8c10b7eae4.html", null ],
+            [ "sonar", "dir_13adf436ec4bc1c7ff815a44e49658a9.html", null ],
+            [ "vehicle_interface", "dir_d4cc1f34dac3fdceb470ac99ea2cdd1f.html", null ]
           ] ],
-          [ "peripherals", "dir_b60bf0733fc3f1858386627a682f3d85.html", null ],
-          [ "sd_card", "dir_c1783b1536ecf8e4d8f251d8e19ce4ac.html", null ],
-          [ "subsystems", "dir_1d83663caa2ca447cc91351dc69732d5.html", [
-            [ "ahrs", "dir_768582fbe17d92530c1f13404ad41bae.html", null ],
-            [ "gps", "dir_30197bef392b76456dc009b4a5074bc0.html", null ],
-            [ "imu", "dir_06c4fdc301f851e70b034a55cf2fae01.html", null ],
-            [ "ins", "dir_3f1ff18a99ac9b370a7510b17676513d.html", null ],
-            [ "navigation", "dir_0c5b93e38c5a791fed2bd75f812d4e48.html", null ],
-            [ "radio_control", "dir_894fb2706f8a6b739957435f682b66b1.html", null ],
-            [ "sensors", "dir_f382974826928ff57c2a18d4ca17476e.html", null ]
+          [ "peripherals", "dir_1bcab1b301257be050026476bfc612d4.html", null ],
+          [ "sd_card", "dir_b038feb712491b64707ee2c79a9552da.html", null ],
+          [ "subsystems", "dir_bcb66e2bbfc0fbaa12f478da4d99c350.html", [
+            [ "ahrs", "dir_ece100209a7f6ef8f814c11be3d0a683.html", null ],
+            [ "gps", "dir_c0b13dc05f9b81befc548418ed7b9894.html", null ],
+            [ "imu", "dir_1d05e499c3fff3fbdd11acee17453918.html", null ],
+            [ "ins", "dir_967babe244f3cab1d68f797913cff195.html", null ],
+            [ "navigation", "dir_7459ea891ab8b15d898be5eecaef5022.html", null ],
+            [ "radio_control", "dir_fc44afda3401649dcfb5d2245ccaafac.html", null ],
+            [ "sensors", "dir_3c0c9e4e19b8fc78b8f5d25390513fda.html", null ]
           ] ]
         ] ]
       ] ]

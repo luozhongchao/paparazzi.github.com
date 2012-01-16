@@ -131,7 +131,7 @@ function toggleVisibility(linkObj) {
 <a name="l00009"></a><a class="code" href="jsbsim__transport_8c.html#a2743dcc4e9c41b9e1d64aab1b991b6fc">00009</a> <span class="preprocessor">#define MOfCm(_x) (((float)(_x))/100.)</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
 <a name="l00011"></a><a class="code" href="jsbsim__transport_8c.html#a4f18edf93208907ef66831f11a713302">00011</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a6ce28b583b28b4363ea1ec42e20a57b9">parse_dl_ping</a>(<span class="keywordtype">char</span>* argv[] <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused))) {
-<a name="l00012"></a>00012   DOWNLINK_SEND_PONG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>);
+<a name="l00012"></a>00012   DOWNLINK_SEND_PONG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>);
 <a name="l00013"></a>00013 }
 <a name="l00014"></a>00014 
 <a name="l00015"></a><a class="code" href="jsbsim__transport_8c.html#a2344cdf3c0fc153a5d11c8bd43568988">00015</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a82f8f9ad9ee6fb05a43e6769487a8703">parse_dl_acinfo</a>(<span class="keywordtype">char</span>* argv[] <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused))) {
@@ -152,13 +152,13 @@ function toggleVisibility(linkObj) {
 <a name="l00030"></a>00030   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> index = atoi(argv[2]);
 <a name="l00031"></a>00031   <span class="keywordtype">float</span> value = atof(argv[3]);
 <a name="l00032"></a>00032   DlSetting(index, value);
-<a name="l00033"></a>00033   DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,&amp;index, &amp;value);
+<a name="l00033"></a>00033   DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,&amp;index, &amp;value);
 <a name="l00034"></a>00034 }
 <a name="l00035"></a>00035 
 <a name="l00036"></a><a class="code" href="jsbsim__transport_8c.html#a56a22f92389e44e48c9be479a8456e36">00036</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a56a22f92389e44e48c9be479a8456e36">parse_dl_get_setting</a>(<span class="keywordtype">char</span>* argv[]) {
 <a name="l00037"></a>00037   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> index = atoi(argv[2]);
 <a name="l00038"></a>00038   <span class="keywordtype">float</span> value = settings_get_value(index);
-<a name="l00039"></a>00039   DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,&amp;index, &amp;value);
+<a name="l00039"></a>00039   DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,&amp;index, &amp;value);
 <a name="l00040"></a>00040 }
 <a name="l00041"></a>00041 
 <a name="l00042"></a><a class="code" href="jsbsim__transport_8c.html#a7d2da36f3444f34942882e6f6ee0b20e">00042</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a7d2da36f3444f34942882e6f6ee0b20e">parse_dl_block</a>(<span class="keywordtype">char</span>* argv[]) {
@@ -183,7 +183,7 @@ function toggleVisibility(linkObj) {
 <a name="l00061"></a>00061 <span class="comment">     coordinates */</span>
 <a name="l00062"></a>00062   utm.<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a> = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp_id].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a> + <a class="code" href="common__nav_8c.html#a3de43e2f62e53fe06e76fe5c22c017b5">nav_utm_east0</a>;
 <a name="l00063"></a>00063   utm.<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a> = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp_id].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a> + <a class="code" href="common__nav_8c.html#ace28d2afa409c13ff38275eac017698c">nav_utm_north0</a>;
-<a name="l00064"></a>00064   DOWNLINK_SEND_WP_MOVED(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;wp_id, &amp;utm.<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a>, &amp;utm.<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a>, &amp;a, &amp;<a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>);
+<a name="l00064"></a>00064   DOWNLINK_SEND_WP_MOVED(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;wp_id, &amp;utm.<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a>, &amp;utm.<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a>, &amp;a, &amp;<a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>);
 <a name="l00065"></a>00065 }
 <a name="l00066"></a>00066 
 </pre></div></div>
@@ -191,7 +191,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="jsbsim__transport_8c.html">jsbsim_transport.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:48 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:17:59 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -135,7 +135,7 @@ function toggleVisibility(linkObj) {
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 <span class="comment">// For centripedal corrections</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code.">subsystems/gps.h</a>&quot;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018 <span class="comment">// Telemetry</span>
 <a name="l00019"></a>00019 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
@@ -149,7 +149,7 @@ function toggleVisibility(linkObj) {
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="ins__module_8h.html">ins_module.h</a>&quot;</span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="imu__chimu_8h.html">imu_chimu.h</a>&quot;</span>
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code.">subsystems/gps.h</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032 
 <a name="l00033"></a><a class="code" href="ins__chimu__spi_8c.html#ad082bbcaad24f3e263c43c6f2328c00b">00033</a> <a class="code" href="structCHIMU__PARSER__DATA.html">CHIMU_PARSER_DATA</a> <a class="code" href="ins__chimu__spi_8c.html#ad082bbcaad24f3e263c43c6f2328c00b">CHIMU_DATA</a>;
@@ -214,7 +214,7 @@ function toggleVisibility(linkObj) {
 <a name="l00092"></a>00092       <span class="keywordflow">else</span> <span class="keywordflow">if</span>(CHIMU_DATA.<a class="code" href="structCHIMU__PARSER__DATA.html#a14982b7c3b220a15d0211b720a22f9e5">m_MsgID</a>==0x02)
 <a name="l00093"></a>00093       {
 <a name="l00094"></a>00094 
-<a name="l00095"></a>00095     RunOnceEvery(25,DOWNLINK_SEND_AHRS_EULER(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;CHIMU_DATA.<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a0a62dec0f8bc2b7633ba0699fac00510">rate</a>[0], &amp;CHIMU_DATA.<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a0a62dec0f8bc2b7633ba0699fac00510">rate</a>[1], &amp;CHIMU_DATA.<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a0a62dec0f8bc2b7633ba0699fac00510">rate</a>[2]));
+<a name="l00095"></a>00095     RunOnceEvery(25,DOWNLINK_SEND_AHRS_EULER(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;CHIMU_DATA.<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a0a62dec0f8bc2b7633ba0699fac00510">rate</a>[0], &amp;CHIMU_DATA.<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a0a62dec0f8bc2b7633ba0699fac00510">rate</a>[1], &amp;CHIMU_DATA.<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a0a62dec0f8bc2b7633ba0699fac00510">rate</a>[2]));
 <a name="l00096"></a>00096 
 <a name="l00097"></a>00097       }
 <a name="l00098"></a>00098     }
@@ -230,9 +230,9 @@ function toggleVisibility(linkObj) {
 <a name="l00108"></a>00108 
 <a name="l00109"></a>00109   <span class="keywordtype">float</span> gps_speed = 0;
 <a name="l00110"></a>00110 
-<a name="l00111"></a>00111   <span class="keywordflow">if</span> (<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d">gps</a>.<a class="code" href="structGpsState.html#afeffb02bdd18d27a87e96bb77175168f" title="status of fix">fix</a> == <a class="code" href="gps_8h.html#ac5e980c8325a29dd79a45ed26af404be">GPS_FIX_3D</a>)
+<a name="l00111"></a>00111   <span class="keywordflow">if</span> (<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#afeffb02bdd18d27a87e96bb77175168f" title="status of fix">fix</a> == <a class="code" href="gps_8h.html#ac5e980c8325a29dd79a45ed26af404be">GPS_FIX_3D</a>)
 <a name="l00112"></a>00112   {
-<a name="l00113"></a>00113     gps_speed = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d">gps</a>.<a class="code" href="structGpsState.html#a6bbd07d59ce79d19e1027b08e76dbcf9" title="norm of 3d speed in cm/s">speed_3d</a>/100.;
+<a name="l00113"></a>00113     gps_speed = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a6bbd07d59ce79d19e1027b08e76dbcf9" title="norm of 3d speed in cm/s">speed_3d</a>/100.;
 <a name="l00114"></a>00114   }
 <a name="l00115"></a>00115   gps_speed = <a class="code" href="imu__chimu_8h.html#a5bff2dac690c44d95339377f2074cf31">FloatSwap</a>(gps_speed);
 <a name="l00116"></a>00116 
@@ -250,7 +250,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="ins__chimu__spi_8c.html">ins_chimu_spi.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:50 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

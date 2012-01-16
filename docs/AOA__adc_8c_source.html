@@ -174,7 +174,7 @@ function toggleVisibility(linkObj) {
 <a name="l00052"></a><a class="code" href="AOA__adc_8c.html#a15b42a2a7df458702844ac9db12c8ba5">00052</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_AOA_NB_SAMPLES DEFAULT_AV_NB_SAMPLE</span>
 <a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00054"></a>00054 <span class="preprocessor"></span>
-<a name="l00055"></a><a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">00055</a> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a> <a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">buf_AOA</a>;
+<a name="l00055"></a><a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">00055</a> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">buf_AOA</a>;
 <a name="l00056"></a><a class="code" href="AOA__adc_8h.html#a12b74598190dbef179e45e10df2bde2f">00056</a> <span class="keywordtype">float</span> <a class="code" href="AOA__adc_8c.html#a12b74598190dbef179e45e10df2bde2f">AOA_offset</a>, <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a>;
 <a name="l00057"></a><a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">00057</a> <span class="keywordtype">float</span> <a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>, <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a>;
 <a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
@@ -185,7 +185,7 @@ function toggleVisibility(linkObj) {
 <a name="l00063"></a>00063   <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a> = AOA_FILTER;
 <a name="l00064"></a>00064   <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a> = 0;
 <a name="l00065"></a>00065 <span class="preprocessor">#ifndef SITL</span>
-<a name="l00066"></a>00066 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(ADC_CHANNEL_AOA, &amp;<a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">buf_AOA</a>, <a class="code" href="AOA__adc_8c.html#a15b42a2a7df458702844ac9db12c8ba5">ADC_CHANNEL_AOA_NB_SAMPLES</a>);
+<a name="l00066"></a>00066 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_AOA, &amp;<a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">buf_AOA</a>, <a class="code" href="AOA__adc_8c.html#a15b42a2a7df458702844ac9db12c8ba5">ADC_CHANNEL_AOA_NB_SAMPLES</a>);
 <a name="l00067"></a>00067 <span class="preprocessor">#endif</span>
 <a name="l00068"></a>00068 <span class="preprocessor"></span>}
 <a name="l00069"></a>00069 
@@ -197,7 +197,7 @@ function toggleVisibility(linkObj) {
 <a name="l00075"></a>00075   <a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a> = <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a> * <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a> + (1 - <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a>) * (<a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>*(2*M_PI)/1024-M_PI+<a class="code" href="AOA__adc_8c.html#a12b74598190dbef179e45e10df2bde2f">AOA_offset</a>);
 <a name="l00076"></a>00076   <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a> = <a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>;
 <a name="l00077"></a>00077 <span class="preprocessor">#endif</span>
-<a name="l00078"></a>00078 <span class="preprocessor"></span>  RunOnceEvery(30, DOWNLINK_SEND_AOA_adc(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;<a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>, &amp;<a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>));
+<a name="l00078"></a>00078 <span class="preprocessor"></span>  RunOnceEvery(30, DOWNLINK_SEND_AOA_adc(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;<a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>, &amp;<a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>));
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080 <span class="preprocessor">#ifdef USE_AOA</span>
 <a name="l00081"></a>00081 <span class="preprocessor"></span>  <a class="code" href="estimator_8h.html#a791ee4c5ee62cb27f27053e865162bab">EstimatorSetAOA</a>(<a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>);
@@ -208,7 +208,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="AOA__adc_8c.html">AOA_adc.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:51 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:02 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

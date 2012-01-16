@@ -191,7 +191,7 @@ function toggleVisibility(linkObj) {
 <a name="l00076"></a>00076       <a class="code" href="i2c_8h.html#ab01a8cb5cf13045d58e495056b3d2652">I2CTransceive</a>(<a class="code" href="ir__mlx_8c.html#ae878bfb8ea2ec6daae857ad3463e7ba3">MLX_I2C_DEV</a>, <a class="code" href="ir__mlx_8c.html#a5ea19bba8273250593e96b1d366b0d8e">mlx_trans</a>, <a class="code" href="ir__mlx_8c.html#af57cd108cf3cd4e21dc471263b2236ec">MLX90614_ADDR</a>, 1, 2);
 <a name="l00077"></a>00077       <a class="code" href="ir__mlx_8c.html#a7541daadfb86271b04e3163448570539">ir_mlx_status</a> = <a class="code" href="ir__mlx_8h.html#a76604b115855851177887708e56a17d8a773aa8da5e6b469f7dbb7c7c82931408">IR_MLX_RD_CASE_TEMP</a>;
 <a name="l00078"></a>00078       <span class="comment">/* send serial number every 30 seconds */</span>
-<a name="l00079"></a>00079       RunOnceEvery((8*30), DOWNLINK_SEND_MLX_SERIAL(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;<a class="code" href="ir__mlx_8c.html#aa899f97b2f53595095c859db6c4c26bf">ir_mlx_id_01</a>, &amp;<a class="code" href="ir__mlx_8c.html#a31ef18f3161dd7cab0f8490acb70961d">ir_mlx_id_23</a>));
+<a name="l00079"></a>00079       RunOnceEvery((8*30), DOWNLINK_SEND_MLX_SERIAL(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;<a class="code" href="ir__mlx_8c.html#aa899f97b2f53595095c859db6c4c26bf">ir_mlx_id_01</a>, &amp;<a class="code" href="ir__mlx_8c.html#a31ef18f3161dd7cab0f8490acb70961d">ir_mlx_id_23</a>));
 <a name="l00080"></a>00080     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ir__mlx_8c.html#a7541daadfb86271b04e3163448570539">ir_mlx_status</a> == <a class="code" href="ir__mlx_8h.html#a76604b115855851177887708e56a17d8a686ba51c188d0c035ddecfe44a5005eb">IR_MLX_UNINIT</a>) {
 <a name="l00081"></a>00081       <span class="comment">/* start two byte ID 0 */</span>
 <a name="l00082"></a>00082       <a class="code" href="ir__mlx_8c.html#a5ea19bba8273250593e96b1d366b0d8e">mlx_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="ir__mlx_8h.html#a6c4285e0e5b7dac88cdddbdc37bc8167">MLX90614_ID_0</a>;
@@ -241,7 +241,7 @@ function toggleVisibility(linkObj) {
 <a name="l00126"></a>00126       <a class="code" href="ir__mlx_8c.html#a31ef18f3161dd7cab0f8490acb70961d">ir_mlx_id_23</a> |= <a class="code" href="ir__mlx_8c.html#a5ea19bba8273250593e96b1d366b0d8e">mlx_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] &lt;&lt; 24;
 <a name="l00127"></a>00127       <a class="code" href="ir__mlx_8c.html#a7541daadfb86271b04e3163448570539">ir_mlx_status</a> = <a class="code" href="ir__mlx_8h.html#a76604b115855851177887708e56a17d8aeafe14f7b845cc8b586dfa506b507754">IR_MLX_IDLE</a>;
 <a name="l00128"></a>00128       <a class="code" href="ir__mlx_8c.html#a5ea19bba8273250593e96b1d366b0d8e">mlx_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
-<a name="l00129"></a>00129       DOWNLINK_SEND_MLX_SERIAL(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;<a class="code" href="ir__mlx_8c.html#aa899f97b2f53595095c859db6c4c26bf">ir_mlx_id_01</a>, &amp;<a class="code" href="ir__mlx_8c.html#a31ef18f3161dd7cab0f8490acb70961d">ir_mlx_id_23</a>);
+<a name="l00129"></a>00129       DOWNLINK_SEND_MLX_SERIAL(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;<a class="code" href="ir__mlx_8c.html#aa899f97b2f53595095c859db6c4c26bf">ir_mlx_id_01</a>, &amp;<a class="code" href="ir__mlx_8c.html#a31ef18f3161dd7cab0f8490acb70961d">ir_mlx_id_23</a>);
 <a name="l00130"></a>00130       <span class="keywordflow">break</span>;
 <a name="l00131"></a>00131 
 <a name="l00132"></a>00132     <span class="keywordflow">case</span> <a class="code" href="ir__mlx_8h.html#a76604b115855851177887708e56a17d8a773aa8da5e6b469f7dbb7c7c82931408">IR_MLX_RD_CASE_TEMP</a>:
@@ -263,7 +263,7 @@ function toggleVisibility(linkObj) {
 <a name="l00148"></a>00148       <a class="code" href="ir__mlx_8c.html#a0cc42ecc3e3a9e5ef236bd63f1d7b4ea">ir_mlx_temp_obj</a> = <a class="code" href="ir__mlx_8c.html#ad5cbf99ab54fe89af3cf8f4aadc7eeaf">ir_mlx_itemp_obj</a>*0.02 - 273.15;
 <a name="l00149"></a>00149       <a class="code" href="ir__mlx_8c.html#a5ea19bba8273250593e96b1d366b0d8e">mlx_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00150"></a>00150 
-<a name="l00151"></a>00151       DOWNLINK_SEND_MLX_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,
+<a name="l00151"></a>00151       DOWNLINK_SEND_MLX_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,
 <a name="l00152"></a>00152                               &amp;<a class="code" href="ir__mlx_8c.html#aa1951765b8475043dbc0b80c48faa8ce">ir_mlx_itemp_case</a>,
 <a name="l00153"></a>00153                               &amp;<a class="code" href="ir__mlx_8c.html#a75f31826fef149524553ab192ef52c06">ir_mlx_temp_case</a>,
 <a name="l00154"></a>00154                               &amp;<a class="code" href="ir__mlx_8c.html#ad5cbf99ab54fe89af3cf8f4aadc7eeaf">ir_mlx_itemp_obj</a>,
@@ -280,7 +280,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="ir__mlx_8c.html">ir_mlx.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:51 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

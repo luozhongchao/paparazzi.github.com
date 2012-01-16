@@ -152,7 +152,7 @@ function toggleVisibility(linkObj) {
 <a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
 <a name="l00044"></a>00044 <span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span>
 <a name="l00045"></a>00045 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
-<a name="l00046"></a>00046 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code.">subsystems/gps.h</a>&quot;</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048 <span class="comment">/* number of images taken since the last change of dc_mode */</span>
 <a name="l00049"></a>00049 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="dc_8c.html#aad20ee150705df0a4c9a790ba7be8bbe">dc_gps_count</a>;
@@ -252,20 +252,20 @@ function toggleVisibility(linkObj) {
 <a name="l00143"></a>00143 <span class="comment">/******************************************************************</span>
 <a name="l00144"></a>00144 <span class="comment"> * FUNCTIONS</span>
 <a name="l00145"></a>00145 <span class="comment"> *****************************************************************/</span>
-<a name="l00156"></a>00156 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="dc_8c.html#ac1d419ec639ffd43193ebcbd6e1131c0">dc_circle</a>(<span class="keywordtype">float</span> interval, <span class="keywordtype">float</span> start);
+<a name="l00156"></a>00156 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="dc_8c.html#ac1d419ec639ffd43193ebcbd6e1131c0" title="Sets the dc control in circle mode.">dc_circle</a>(<span class="keywordtype">float</span> interval, <span class="keywordtype">float</span> start);
 <a name="l00157"></a>00157 
 <a name="l00158"></a><a class="code" href="dc_8h.html#a4164a0425a0685b84c75b433ec138fe9">00158</a> <span class="preprocessor">#define dc_Circle(interval) dc_circle(interval, DC_IGNORE)</span>
 <a name="l00159"></a>00159 <span class="preprocessor"></span>
-<a name="l00176"></a>00176 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="dc_8c.html#a2b50d2725b576697bde98a8bdb358093">dc_survey</a>(<span class="keywordtype">float</span> interval, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);
+<a name="l00176"></a>00176 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="dc_8c.html#a2b50d2725b576697bde98a8bdb358093" title="Sets the dc control in distance mode.">dc_survey</a>(<span class="keywordtype">float</span> interval, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);
 <a name="l00177"></a>00177 
 <a name="l00178"></a><a class="code" href="dc_8h.html#a4dd1c5ffa5ca99523ce090e17d5ca9dc">00178</a> <span class="preprocessor">#define dc_Survey(interval) dc_survey(interval, DC_IGNORE, DC_IGNORE)</span>
 <a name="l00179"></a>00179 <span class="preprocessor"></span>
 <a name="l00180"></a>00180 
-<a name="l00185"></a>00185 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="dc_8c.html#a47c625a53743f8ad41baaf54a6fcf144">dc_stop</a>(<span class="keywordtype">void</span>);
+<a name="l00185"></a>00185 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="dc_8c.html#a47c625a53743f8ad41baaf54a6fcf144" title="Sets the dc control in inactive mode, stopping all current actions.">dc_stop</a>(<span class="keywordtype">void</span>);
 <a name="l00186"></a>00186 
 <a name="l00187"></a><a class="code" href="dc_8h.html#a9fa3be838c4c15559b76805ff40adae8">00187</a> <span class="preprocessor">#define dc_Stop(_) dc_stop()</span>
 <a name="l00188"></a>00188 <span class="preprocessor"></span>
-<a name="l00194"></a>00194 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="dc_8c.html#ab4b5d12f3c9829a0f0e538496ad5c547">dc_info</a>(<span class="keywordtype">void</span>);
+<a name="l00194"></a>00194 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="dc_8c.html#ab4b5d12f3c9829a0f0e538496ad5c547" title="Send an info message containing information about position, course, buffer and all other internal var...">dc_info</a>(<span class="keywordtype">void</span>);
 <a name="l00195"></a>00195 
 <a name="l00196"></a>00196 
 <a name="l00197"></a>00197 <span class="comment">/* get settings */</span>
@@ -316,7 +316,7 @@ function toggleVisibility(linkObj) {
 <a name="l00242"></a>00242 
 <a name="l00243"></a>00243   <span class="keywordflow">case</span> <a class="code" href="dc_8h.html#ad2b9a0aaeabb230dc5e972d96593cc09a02114e0ac803f8c14468c1d59205c0a2">DC_AUTOSHOOT_DISTANCE</a>:
 <a name="l00244"></a>00244   {
-<a name="l00245"></a>00245   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> dist_to_100m_grid = (<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d">gps</a>.<a class="code" href="structGpsState.html#a2cf3685a890a6200b334b2c399102ffa" title="position in UTM (north,east: cm; alt: mm over ellipsoid)">utm_pos</a>.<a class="code" href="structUtmCoor__i.html#af50ae798f5164c2e68d0ed0129d5d6dc" title="in centimeters">north</a> / 100) % 100;
+<a name="l00245"></a>00245   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> dist_to_100m_grid = (<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2cf3685a890a6200b334b2c399102ffa" title="position in UTM (north,east: cm; alt: mm over ellipsoid)">utm_pos</a>.<a class="code" href="structUtmCoor__i.html#af50ae798f5164c2e68d0ed0129d5d6dc" title="in centimeters">north</a> / 100) % 100;
 <a name="l00246"></a>00246   <span class="keywordflow">if</span> (dist_to_100m_grid &lt; <a class="code" href="dc_8c.html#a81528ed9ace9b9d5e49bc9aba4cf0399">dc_autoshoot_meter_grid</a> || 100 - dist_to_100m_grid &lt; <a class="code" href="dc_8c.html#a81528ed9ace9b9d5e49bc9aba4cf0399">dc_autoshoot_meter_grid</a>)
 <a name="l00247"></a>00247   {
 <a name="l00248"></a>00248       <a class="code" href="dc_8h.html#a99de571d22e98f2d4d1e118ade1d61f4">dc_send_command</a>(<a class="code" href="dc_8h.html#a5bcad6137b0e9f54ae973b52e8a94d34a8680b60f2e92d2e261a7e44e21b9c9c2">DC_SHOOT</a>);
@@ -376,7 +376,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="dc_8h.html">dc.h</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:50 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

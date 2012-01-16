@@ -147,7 +147,7 @@ function toggleVisibility(linkObj) {
 <a name="l00025"></a>00025 <span class="preprocessor"></span><span class="comment">//#define GUIDANCE_H_USE_REF</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="guidance__h_8h.html">firmwares/rotorcraft/guidance/guidance_h.h</a>&quot;</span>
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html">subsystems/ahrs.h</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="stabilization_8h.html">firmwares/rotorcraft/stabilization.h</a>&quot;</span>
 <a name="l00030"></a>00030 <span class="comment">// #include &quot;booz_fms.h&quot; FIXME</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="ins_8h.html" title="Device independent INS code.">subsystems/ins.h</a>&quot;</span>
@@ -373,8 +373,8 @@ function toggleVisibility(linkObj) {
 <a name="l00251"></a>00251 
 <a name="l00252"></a>00252   <span class="comment">/* Rotate to body frame */</span>
 <a name="l00253"></a>00253   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> s_psi, c_psi;
-<a name="l00254"></a>00254   <a class="code" href="pprz__trig__int_8h.html#a93cae514c09c8fb1398762d9abc17770">PPRZ_ITRIG_SIN</a>(s_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
-<a name="l00255"></a>00255   <a class="code" href="pprz__trig__int_8h.html#af2d7fb89c62c6d24200ee50618a6a139">PPRZ_ITRIG_COS</a>(c_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
+<a name="l00254"></a>00254   <a class="code" href="pprz__trig__int_8h.html#a93cae514c09c8fb1398762d9abc17770">PPRZ_ITRIG_SIN</a>(s_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
+<a name="l00255"></a>00255   <a class="code" href="pprz__trig__int_8h.html#af2d7fb89c62c6d24200ee50618a6a139">PPRZ_ITRIG_COS</a>(c_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
 <a name="l00256"></a>00256 
 <a name="l00257"></a>00257 
 <a name="l00258"></a>00258   <span class="comment">// INT32_TRIG_FRAC - 2: 100mm erreur, gain 100 -&gt; 10000 command | 2 degres = 36000, so multiply by 4</span>
@@ -470,8 +470,8 @@ function toggleVisibility(linkObj) {
 <a name="l00348"></a>00348 
 <a name="l00349"></a>00349   <span class="comment">/* Rotate to body frame */</span>
 <a name="l00350"></a>00350   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> s_psi, c_psi;
-<a name="l00351"></a>00351   <a class="code" href="pprz__trig__int_8h.html#a93cae514c09c8fb1398762d9abc17770">PPRZ_ITRIG_SIN</a>(s_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
-<a name="l00352"></a>00352   <a class="code" href="pprz__trig__int_8h.html#af2d7fb89c62c6d24200ee50618a6a139">PPRZ_ITRIG_COS</a>(c_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
+<a name="l00351"></a>00351   <a class="code" href="pprz__trig__int_8h.html#a93cae514c09c8fb1398762d9abc17770">PPRZ_ITRIG_SIN</a>(s_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
+<a name="l00352"></a>00352   <a class="code" href="pprz__trig__int_8h.html#af2d7fb89c62c6d24200ee50618a6a139">PPRZ_ITRIG_COS</a>(c_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
 <a name="l00353"></a>00353 
 <a name="l00354"></a>00354   <span class="comment">// Restore angle ref resolution after rotation</span>
 <a name="l00355"></a>00355   <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144">guidance_h_command_body</a>.<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a> =
@@ -525,7 +525,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="guidance__h_8c.html">guidance_h.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:49 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:00 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -235,7 +235,7 @@ function toggleVisibility(linkObj) {
 <a name="l00113"></a><a class="code" href="test__board_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">00113</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__board_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>( <span class="keywordtype">void</span> ) {
 <a name="l00114"></a>00114 
 <a name="l00115"></a>00115   <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();
-<a name="l00116"></a>00116   RunOnceEvery(256, {DOWNLINK_SEND_ALIVE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, 16, MD5SUM);});
+<a name="l00116"></a>00116   RunOnceEvery(256, {DOWNLINK_SEND_ALIVE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, 16, MD5SUM);});
 <a name="l00117"></a>00117 
 <a name="l00118"></a>00118   tests[<a class="code" href="test__board_8c.html#ae327491554de2d9c5359466a70e8990f">cur_test</a>].<a class="code" href="structTestFuns.html#ac8d05df08ed4ec552924a2df41590617">_periodic</a>();
 <a name="l00119"></a>00119 
@@ -243,7 +243,7 @@ function toggleVisibility(linkObj) {
 <a name="l00121"></a>00121 
 <a name="l00122"></a><a class="code" href="test__board_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">00122</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__board_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> ) {
 <a name="l00123"></a>00123 
-<a name="l00124"></a>00124   <a class="code" href="datalink_8h.html#a1e122bd87bd1f699141735e71a32d002">DatalinkEvent</a>();
+<a name="l00124"></a>00124   <a class="code" href="datalink_8h.html#a1e122bd87bd1f699141735e71a32d002" title="Should be called when chars are available in dl_buffer.">DatalinkEvent</a>();
 <a name="l00125"></a>00125 
 <a name="l00126"></a>00126   tests[<a class="code" href="test__board_8c.html#ae327491554de2d9c5359466a70e8990f">cur_test</a>].<a class="code" href="structTestFuns.html#a015ca7585de545da1fb3d7da335f976b">_event</a>();
 <a name="l00127"></a>00127 
@@ -278,7 +278,7 @@ function toggleVisibility(linkObj) {
 <a name="l00156"></a><a class="code" href="test__board_8c.html#aca3dbeb4d9a741ab66d40684f57305fe">00156</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test__board_8c.html#aca3dbeb4d9a741ab66d40684f57305fe">test_baro_periodic</a>(<span class="keywordtype">void</span>) {
 <a name="l00157"></a>00157   RunOnceEvery(2, {<a class="code" href="booz_2baro__board_8c.html#a23ed77c56ba44b3ed3cc3b8e378bdb00">baro_periodic</a>();});
 <a name="l00158"></a>00158   RunOnceEvery(100,{
-<a name="l00159"></a>00159       DOWNLINK_SEND_I2C_ERRORS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,
+<a name="l00159"></a>00159       DOWNLINK_SEND_I2C_ERRORS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,
 <a name="l00160"></a>00160                    &amp;i2c2_errors.ack_fail_cnt,
 <a name="l00161"></a>00161                    &amp;i2c2_errors.miss_start_stop_cnt,
 <a name="l00162"></a>00162                    &amp;i2c2_errors.arb_lost_cnt,
@@ -292,10 +292,10 @@ function toggleVisibility(linkObj) {
 <a name="l00170"></a>00170 }
 <a name="l00171"></a><a class="code" href="test__board_8c.html#ae573060ef74db3bf23a4dde7389f075d">00171</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test__board_8c.html#ae573060ef74db3bf23a4dde7389f075d">test_baro_event</a>(<span class="keywordtype">void</span>) {<a class="code" href="booz_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576">BaroEvent</a>(<a class="code" href="test__board_8c.html#abbe56ee11ef12122788136a637c3964f">test_baro_on_baro_abs</a>, <a class="code" href="test__board_8c.html#a72ca9477957f7c89bcd0479e3151b19d">test_baro_on_baro_diff</a>);}
 <a name="l00172"></a><a class="code" href="test__board_8c.html#abbe56ee11ef12122788136a637c3964f">00172</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__board_8c.html#abbe56ee11ef12122788136a637c3964f">test_baro_on_baro_abs</a>(<span class="keywordtype">void</span>) {
-<a name="l00173"></a>00173   RunOnceEvery(5,{DOWNLINK_SEND_BOOZ_BARO2_RAW(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.abs_raw, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.diff_raw);});
+<a name="l00173"></a>00173   RunOnceEvery(5,{DOWNLINK_SEND_BOOZ_BARO2_RAW(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.abs_raw, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.diff_raw);});
 <a name="l00174"></a>00174 }
 <a name="l00175"></a><a class="code" href="test__board_8c.html#a72ca9477957f7c89bcd0479e3151b19d">00175</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__board_8c.html#a72ca9477957f7c89bcd0479e3151b19d">test_baro_on_baro_diff</a>(<span class="keywordtype">void</span>) {
-<a name="l00176"></a>00176   RunOnceEvery(5,{DOWNLINK_SEND_BOOZ_BARO2_RAW(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.abs_raw, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.diff_raw);});
+<a name="l00176"></a>00176   RunOnceEvery(5,{DOWNLINK_SEND_BOOZ_BARO2_RAW(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.abs_raw, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.diff_raw);});
 <a name="l00177"></a>00177 }
 <a name="l00178"></a>00178 
 <a name="l00179"></a>00179 
@@ -312,7 +312,7 @@ function toggleVisibility(linkObj) {
 <a name="l00190"></a>00190   i2c1_transmit(0x58, 1, NULL);
 <a name="l00191"></a>00191 
 <a name="l00192"></a>00192   RunOnceEvery(100,{
-<a name="l00193"></a>00193       DOWNLINK_SEND_I2C_ERRORS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,
+<a name="l00193"></a>00193       DOWNLINK_SEND_I2C_ERRORS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,
 <a name="l00194"></a>00194                    &amp;i2c1_errors.ack_fail_cnt,
 <a name="l00195"></a>00195                    &amp;i2c1_errors.miss_start_stop_cnt,
 <a name="l00196"></a>00196                    &amp;i2c1_errors.arb_lost_cnt,
@@ -382,7 +382,7 @@ function toggleVisibility(linkObj) {
 <a name="l00260"></a>00260   <span class="keywordflow">if</span> (Uart3ChAvailable()) {
 <a name="l00261"></a>00261     <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>[<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>] = Uart3Getch();
 <a name="l00262"></a>00262     <span class="keywordflow">if</span> (<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>&lt;<span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) {
-<a name="l00263"></a>00263       DOWNLINK_SEND_DEBUG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>), <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>);
+<a name="l00263"></a>00263       DOWNLINK_SEND_DEBUG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>), <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>);
 <a name="l00264"></a>00264       <a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>++;
 <a name="l00265"></a>00265       <span class="keywordflow">if</span> (<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a> == <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) {
 <a name="l00266"></a>00266     <span class="keywordflow">if</span> ( memcmp(<a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>, <a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) ) {
@@ -400,7 +400,7 @@ function toggleVisibility(linkObj) {
 <a name="l00278"></a>00278   <span class="keywordflow">if</span> (Uart1ChAvailable()) {
 <a name="l00279"></a>00279     <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>[<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>] = Uart1Getch();
 <a name="l00280"></a>00280     <span class="keywordflow">if</span> (<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>&lt;<span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) {
-<a name="l00281"></a>00281       DOWNLINK_SEND_DEBUG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>), <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>);
+<a name="l00281"></a>00281       DOWNLINK_SEND_DEBUG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>), <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>);
 <a name="l00282"></a>00282       <a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>++;
 <a name="l00283"></a>00283       <span class="keywordflow">if</span> (<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a> == <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) {
 <a name="l00284"></a>00284     <span class="keywordflow">if</span> ( memcmp(<a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>, <a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) ) {
@@ -452,7 +452,7 @@ function toggleVisibility(linkObj) {
 <a name="l00330"></a>00330 
 <a name="l00331"></a>00331   <span class="keywordflow">case</span>  DL_PING:
 <a name="l00332"></a>00332     {
-<a name="l00333"></a>00333       DOWNLINK_SEND_PONG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>);
+<a name="l00333"></a>00333       DOWNLINK_SEND_PONG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>);
 <a name="l00334"></a>00334     }
 <a name="l00335"></a>00335     <span class="keywordflow">break</span>;
 <a name="l00336"></a>00336 
@@ -462,7 +462,7 @@ function toggleVisibility(linkObj) {
 <a name="l00340"></a>00340       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i = DL_SETTING_index(dl_buffer);
 <a name="l00341"></a>00341       <span class="keywordtype">float</span> var = DL_SETTING_value(dl_buffer);
 <a name="l00342"></a>00342       DlSetting(i, var);
-<a name="l00343"></a>00343       DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;i, &amp;var);
+<a name="l00343"></a>00343       DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;i, &amp;var);
 <a name="l00344"></a>00344     }
 <a name="l00345"></a>00345     <span class="keywordflow">break</span>;
 <a name="l00346"></a>00346 
@@ -475,7 +475,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="test__board_8c.html">test_board.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:49 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:00 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

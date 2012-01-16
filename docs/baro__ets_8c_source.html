@@ -165,7 +165,7 @@ function toggleVisibility(linkObj) {
 <a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span>
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045 <span class="preprocessor">#ifdef SITL</span>
-<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code.">subsystems/gps.h</a>&quot;</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
 <a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
 <a name="l00048"></a>00048 <span class="preprocessor"></span>
 <a name="l00049"></a><a class="code" href="baro__ets_8c.html#a27eb2e12a48754b86bf33f911890f8cc">00049</a> <span class="preprocessor">#define BARO_ETS_ADDR 0xE8</span>
@@ -220,7 +220,7 @@ function toggleVisibility(linkObj) {
 <a name="l00098"></a>00098     <a class="code" href="i2c_8h.html#a00a95780fb7894110f4a5ae895931ba6">I2CReceive</a>(<a class="code" href="baro__ets_8c.html#a4b686f70954e48661946a1895ef51a35">BARO_ETS_I2C_DEV</a>, <a class="code" href="baro__ets_8c.html#a4ddf405039552176e251f37d10213d4f">baro_ets_i2c_trans</a>, <a class="code" href="baro__ets_8c.html#a27eb2e12a48754b86bf33f911890f8cc">BARO_ETS_ADDR</a>, 2);
 <a name="l00099"></a>00099 <span class="preprocessor">#else // SITL</span>
 <a name="l00100"></a>00100 <span class="preprocessor"></span>  <a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a> = 0;
-<a name="l00101"></a>00101   <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d">gps</a>.<a class="code" href="structGpsState.html#a10af95f7fdab3171a789866838b0c8c3" title="height above mean sea level in mm">hmsl</a> / 1000.0;
+<a name="l00101"></a>00101   <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a10af95f7fdab3171a789866838b0c8c3" title="height above mean sea level in mm">hmsl</a> / 1000.0;
 <a name="l00102"></a>00102   <a class="code" href="baro__ets_8c.html#a4348fe7934d32b21fcfa4691ccf87a79">baro_ets_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00103"></a>00103   <a class="code" href="estimator_8h.html#ab328c266a556c34d5383ff77c8cd77b7">EstimatorSetAlt</a>(<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>);
 <a name="l00104"></a>00104 <span class="preprocessor">#endif</span>
@@ -269,11 +269,11 @@ function toggleVisibility(linkObj) {
 <a name="l00147"></a>00147     }
 <a name="l00148"></a>00148     <span class="comment">// Convert raw to m/s</span>
 <a name="l00149"></a>00149     <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a3903a8c3581b06e30bbd211016f64761">baro_ets_offset_init</a>) {
-<a name="l00150"></a>00150       <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = <a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2">ground_alt</a> + <a class="code" href="baro__ets_8c.html#a2af590c828781671589d89ae2fb831d1">BARO_ETS_SCALE</a> * (float)(<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a>-<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>);
+<a name="l00150"></a>00150       <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = <a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2" title="size == nb_waypoint, waypoint 0 is a dummy waypoint">ground_alt</a> + <a class="code" href="baro__ets_8c.html#a2af590c828781671589d89ae2fb831d1">BARO_ETS_SCALE</a> * (float)(<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a>-<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>);
 <a name="l00151"></a>00151       <span class="comment">// New value available</span>
 <a name="l00152"></a>00152       <a class="code" href="estimator_8h.html#ab328c266a556c34d5383ff77c8cd77b7">EstimatorSetAlt</a>(<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>);
 <a name="l00153"></a>00153 <span class="preprocessor">#ifdef BARO_ETS_TELEMETRY</span>
-<a name="l00154"></a>00154 <span class="preprocessor"></span>      DOWNLINK_SEND_BARO_ETS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>, &amp;<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a>, &amp;<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>);
+<a name="l00154"></a>00154 <span class="preprocessor"></span>      DOWNLINK_SEND_BARO_ETS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>, &amp;<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a>, &amp;<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>);
 <a name="l00155"></a>00155 <span class="preprocessor">#endif</span>
 <a name="l00156"></a>00156 <span class="preprocessor"></span>    } <span class="keywordflow">else</span> {
 <a name="l00157"></a>00157       <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = 0.0;
@@ -290,7 +290,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="baro__ets_8c.html">baro_ets.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:51 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:02 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -164,7 +164,7 @@ function toggleVisibility(linkObj) {
 <a name="l00042"></a>00042 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00043"></a>00043 <span class="preprocessor"></span>
 <a name="l00044"></a>00044 
-<a name="l00046"></a><a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a221063852f377a0f029077aa0d85d3fe">00046</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a>* <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a221063852f377a0f029077aa0d85d3fe">buffers</a>[<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4">NB_ADC</a>*2];
+<a name="l00046"></a><a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a221063852f377a0f029077aa0d85d3fe">00046</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a>* <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a221063852f377a0f029077aa0d85d3fe" title="First NB_ADC for bank 0, others for bank 2.">buffers</a>[<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4">NB_ADC</a>*2];
 <a name="l00047"></a>00047 
 <a name="l00048"></a><a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a070efa0119c718a6d3da4f285b522ba4">00048</a> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a070efa0119c718a6d3da4f285b522ba4">adc0_val</a>[<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4">NB_ADC</a>] = {1,  2,  3,  4,  5,  6,  7,  8};
 <a name="l00049"></a><a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a35f723be4d3cf467cfc8395c2a7b367e">00049</a> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a35f723be4d3cf467cfc8395c2a7b367e">adc1_val</a>[<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4">NB_ADC</a>] = {9, 10, 11, 12, 13, 14, 15, 16};
@@ -172,7 +172,7 @@ function toggleVisibility(linkObj) {
 <a name="l00051"></a><a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a5020bf7d8186fe55c08833bf69d23421">00051</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a5020bf7d8186fe55c08833bf69d23421">adcISR0</a> ( <span class="keywordtype">void</span> ) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
 <a name="l00052"></a>00052 <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a7197102040e60a099e91a01fa23f2af3">adcISR1</a> ( <span class="keywordtype">void</span> ) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="keywordtype">void</span> <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> adc_channel, struct <a class="code" href="structadc__buf.html">adc_buf</a>* s, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>) {
+<a name="l00054"></a>00054 <span class="keywordtype">void</span> <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> adc_channel, struct <a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a>* s, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>) {
 <a name="l00055"></a>00055   buffers[adc_channel] = s;
 <a name="l00056"></a>00056   s-&gt;<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a> = <a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>;
 <a name="l00057"></a>00057 }
@@ -307,7 +307,7 @@ function toggleVisibility(linkObj) {
 <a name="l00186"></a>00186 <span class="preprocessor">#endif</span>
 <a name="l00187"></a>00187 <span class="preprocessor"></span>;
 <a name="l00188"></a>00188 
-<a name="l00189"></a><a class="code" href="adc_8h.html#a2b815e6730e8723a6d1d06d9ef8f31c0">00189</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0">adc_init</a>( <span class="keywordtype">void</span> ) {
+<a name="l00189"></a><a class="code" href="adc_8h.html#a2b815e6730e8723a6d1d06d9ef8f31c0">00189</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0" title="Starts conversions.">adc_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00190"></a>00190 
 <a name="l00191"></a>00191   <span class="comment">/* connect pins for selected ADCs */</span>
 <a name="l00192"></a>00192   <a class="code" href="LPC21xx_8h.html#aff215b5e0d11d5a47354ecfad12a8902">PINSEL0</a> |= <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a54ae47ec33e92a1639213ece1c0f40ba">ADC_PINSEL0_ONES</a>;
@@ -353,7 +353,7 @@ function toggleVisibility(linkObj) {
 <a name="l00232"></a>00232   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> value = (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(tmp &gt;&gt; 6) &amp; 0x03FF;
 <a name="l00233"></a>00233   <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a070efa0119c718a6d3da4f285b522ba4">adc0_val</a>[<a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a>] = value;
 <a name="l00234"></a>00234 
-<a name="l00235"></a>00235   <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a>* buf = buffers[<a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a>];
+<a name="l00235"></a>00235   <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a>* buf = buffers[<a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a>];
 <a name="l00236"></a>00236   <span class="keywordflow">if</span> (buf) {
 <a name="l00237"></a>00237   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_head = buf-&gt;<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a> + 1;
 <a name="l00238"></a>00238   <span class="keywordflow">if</span> (new_head &gt;= buf-&gt;<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>) new_head = 0;
@@ -373,7 +373,7 @@ function toggleVisibility(linkObj) {
 <a name="l00252"></a>00252   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> channel = (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>)(tmp &gt;&gt; 24) &amp; 0x07;
 <a name="l00253"></a>00253   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> value = (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(tmp &gt;&gt; 6) &amp; 0x03FF;
 <a name="l00254"></a>00254   <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a35f723be4d3cf467cfc8395c2a7b367e">adc1_val</a>[<a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a>] = value;
-<a name="l00255"></a>00255   <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a>* buf = buffers[channel+<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4">NB_ADC</a>];
+<a name="l00255"></a>00255   <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a>* buf = buffers[channel+<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4">NB_ADC</a>];
 <a name="l00256"></a>00256   <span class="keywordflow">if</span> (buf) {
 <a name="l00257"></a>00257   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_head = buf-&gt;<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a> + 1;
 <a name="l00258"></a>00258   <span class="keywordflow">if</span> (new_head &gt;= buf-&gt;<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>) new_head = 0;
@@ -391,7 +391,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="lpc21_2mcu__periph_2adc__arch_8c.html">adc_arch.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:47 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:17:58 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

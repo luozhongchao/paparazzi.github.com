@@ -153,6 +153,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#a50fefced836460f1472dacaf398cc619">_ExtraLink</a>(dev, _x)&#160;&#160;&#160;__ExtraLink(dev, _x)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#abc86b23f332b4130ea1097c3dd3fd004">ExtraLink</a>(_x)&#160;&#160;&#160;_ExtraLink(EXTRA_DOWNLINK_DEVICE, _x)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#a374d6e7e7eec27ed5cc72786dda7c432">ExtraPprzTransportSizeOf</a>(_payload)&#160;&#160;&#160;(_payload+4)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">4 = STX + len + ck_a + ck_b  <a href="#a374d6e7e7eec27ed5cc72786dda7c432"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#a43386230e61d2b144331c64f8cdff2b1">ExtraPprzTransportCheckFreeSpace</a>(_x)&#160;&#160;&#160;ExtraLink(CheckFreeSpace(_x))</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#a278761bc4ff000b4d0a7c9d29fcdca8f">ExtraPprzTransportPut1Byte</a>(_x)&#160;&#160;&#160;ExtraLink(Transmit(_x))</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#a33de4e4f92ed54f263580ea14d2fae71">ExtraPprzTransportSendMessage</a>()&#160;&#160;&#160;ExtraLink(SendMessage())</td></tr>
@@ -192,6 +193,7 @@ Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#ad8680088f0f040ae68797e38be0b3b30">extra_pprz_payload</a> [PPRZ_PAYLOAD_LEN]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiving pprz messages.  <a href="#ad8680088f0f040ae68797e38be0b3b30"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#a636b5b741fba52f249228d9039eb4d41">extra_pprz_msg_received</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#a67cdf61b9e8a598b6734a2a9107e2cef">extra_pprz_ovrn</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="extra__pprz__dl_8h.html#a6ac82f85e3eaad626ccc441c01269b30">extra_pprz_error</a></td></tr>
@@ -436,7 +438,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment">{ \
   <a class="code" href="extra__pprz__dl_8h.html#a278761bc4ff000b4d0a7c9d29fcdca8f">ExtraPprzTransportPut1Byte</a>(<a class="code" href="pprz__transport_8h.html#aacd744a917e61146ec8b7175b4761683">STX</a>);        \
-  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_len = <a class="code" href="extra__pprz__dl_8h.html#a374d6e7e7eec27ed5cc72786dda7c432">ExtraPprzTransportSizeOf</a>(payload_len);  \
+  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_len = <a class="code" href="extra__pprz__dl_8h.html#a374d6e7e7eec27ed5cc72786dda7c432" title="4 = STX + len + ck_a + ck_b">ExtraPprzTransportSizeOf</a>(payload_len);  \
   <a class="code" href="extra__pprz__dl_8h.html#a278761bc4ff000b4d0a7c9d29fcdca8f">ExtraPprzTransportPut1Byte</a>(msg_len);      \
   <a class="code" href="modem__hw_8c.html#a51ab444129c13f6f6f44765945b7c1f7">ck_a</a> = msg_len; <a class="code" href="modem__hw_8c.html#aaef6f57fdac39726811fd081a16fa711">ck_b</a> = msg_len;     \
 }
@@ -1019,6 +1021,7 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>4 = STX + len + ck_a + ck_b </p>
 
 <p>Definition at line <a class="el" href="extra__pprz__dl_8h_source.html#l00048">48</a> of file <a class="el" href="extra__pprz__dl_8h_source.html">extra_pprz_dl.h</a>.</p>
@@ -1171,7 +1174,8 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Receiving pprz messages </p>
+
+<p>Receiving pprz messages. </p>
 
 <p>Definition at line <a class="el" href="extra__pprz__dl_8c_source.html#l00033">33</a> of file <a class="el" href="extra__pprz__dl_8c_source.html">extra_pprz_dl.c</a>.</p>
 
@@ -1201,7 +1205,7 @@ Variables</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="extra__pprz__dl_8h.html">extra_pprz_dl.h</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:17:07 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:11 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -144,7 +144,7 @@ function toggleVisibility(linkObj) {
 <a name="l00022"></a>00022 <span class="comment"> *</span>
 <a name="l00023"></a>00023 <span class="comment"> */</span>
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="sys__mon_8h.html">core/sys_mon.h</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="sys__mon_8h.html" title="System monitoring return cpu load, average exec time, ...">core/sys_mon.h</a>&quot;</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 <span class="preprocessor">#ifdef USE_USB_SERIAL</span>
@@ -161,7 +161,7 @@ function toggleVisibility(linkObj) {
 <a name="l00039"></a><a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">00039</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">time_periodic</a>, <a class="code" href="sys__mon_8c.html#aa265946d25fdcefb40baab1b0a61caee">time_event</a>;
 <a name="l00040"></a><a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">00040</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">sum_time_periodic</a>, <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d">sum_cycle_periodic</a>, <a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525">sum_time_event</a>, <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9">min_time_event</a>, <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a>;
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="sys__mon_8h.html#acb5edde6b801b04f23b2c89bd0117cde">00042</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#acb5edde6b801b04f23b2c89bd0117cde">init_sysmon</a>(<span class="keywordtype">void</span>) {
+<a name="l00042"></a><a class="code" href="sys__mon_8h.html#acb5edde6b801b04f23b2c89bd0117cde">00042</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#acb5edde6b801b04f23b2c89bd0117cde" title="Init system monitoring.">init_sysmon</a>(<span class="keywordtype">void</span>) {
 <a name="l00043"></a>00043   <a class="code" href="sys__mon_8c.html#aea83a6946e95bdf373a1f2a6148c4d64">cpu_load</a> = 0;
 <a name="l00044"></a>00044   <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a> = 0;
 <a name="l00045"></a>00045   <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a> = 0;
@@ -186,14 +186,14 @@ function toggleVisibility(linkObj) {
 <a name="l00064"></a>00064 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00065"></a>00065 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
 <a name="l00066"></a>00066 
-<a name="l00067"></a><a class="code" href="sys__mon_8h.html#ac92d4ce59d619452e70fd3a3a53fb7a0">00067</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#ac92d4ce59d619452e70fd3a3a53fb7a0">periodic_report_sysmon</a>(<span class="keywordtype">void</span>) {
+<a name="l00067"></a><a class="code" href="sys__mon_8h.html#ac92d4ce59d619452e70fd3a3a53fb7a0">00067</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#ac92d4ce59d619452e70fd3a3a53fb7a0" title="Report system status.">periodic_report_sysmon</a>(<span class="keywordtype">void</span>) {
 <a name="l00069"></a>00069   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a> &gt; 0) {
 <a name="l00070"></a>00070     <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a> = <a class="code" href="main__ap_8c.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(<a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">sum_time_periodic</a> / <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>, 1);
 <a name="l00071"></a>00071     <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a> = <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d">sum_cycle_periodic</a> / <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>;
 <a name="l00072"></a>00072     <a class="code" href="sys__mon_8c.html#aea83a6946e95bdf373a1f2a6148c4d64">cpu_load</a> = 100 * <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a> / <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a>;
 <a name="l00073"></a>00073     <a class="code" href="sys__mon_8c.html#a017451bfb845af77c9eecd69c4b1bb1f">event_number</a> = <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a> / <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>;
 <a name="l00074"></a>00074 
-<a name="l00075"></a>00075     DOWNLINK_SEND_SYS_MON(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,&amp;<a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a>,&amp;<a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a>,&amp;<a class="code" href="sys__mon_8c.html#a151be3d22a67aac08362dd599ea0aab9">periodic_cycle_min</a>,&amp;<a class="code" href="sys__mon_8c.html#ad4cfa05866b13c464f60630dc6e59882">periodic_cycle_max</a>,&amp;<a class="code" href="sys__mon_8c.html#a017451bfb845af77c9eecd69c4b1bb1f">event_number</a>,&amp;<a class="code" href="sys__mon_8c.html#aea83a6946e95bdf373a1f2a6148c4d64">cpu_load</a>);
+<a name="l00075"></a>00075     DOWNLINK_SEND_SYS_MON(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,&amp;<a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a>,&amp;<a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a>,&amp;<a class="code" href="sys__mon_8c.html#a151be3d22a67aac08362dd599ea0aab9">periodic_cycle_min</a>,&amp;<a class="code" href="sys__mon_8c.html#ad4cfa05866b13c464f60630dc6e59882">periodic_cycle_max</a>,&amp;<a class="code" href="sys__mon_8c.html#a017451bfb845af77c9eecd69c4b1bb1f">event_number</a>,&amp;<a class="code" href="sys__mon_8c.html#aea83a6946e95bdf373a1f2a6148c4d64">cpu_load</a>);
 <a name="l00076"></a>00076   }
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078   <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a> = 0;
@@ -204,7 +204,7 @@ function toggleVisibility(linkObj) {
 <a name="l00083"></a>00083   <a class="code" href="sys__mon_8c.html#ad4cfa05866b13c464f60630dc6e59882">periodic_cycle_max</a> = 0;
 <a name="l00084"></a>00084 }
 <a name="l00085"></a>00085 
-<a name="l00086"></a><a class="code" href="sys__mon_8h.html#abaa925469e5ec124a8333c7bce1c5c12">00086</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#abaa925469e5ec124a8333c7bce1c5c12">periodic_sysmon</a>(<span class="keywordtype">void</span>) {
+<a name="l00086"></a><a class="code" href="sys__mon_8h.html#abaa925469e5ec124a8333c7bce1c5c12">00086</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#abaa925469e5ec124a8333c7bce1c5c12" title="Analyse periodic calls Should be run at the highest frequency.">periodic_sysmon</a>(<span class="keywordtype">void</span>) {
 <a name="l00088"></a>00088   <a class="code" href="lpc21_2sys__time__hw_8h.html#abb950f6634af7da754fa0c6d99d689cb">SysTimeTimerStop</a>(<a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">time_periodic</a>);
 <a name="l00089"></a>00089   <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a> = <a class="code" href="lpc21_2sys__time__hw_8h.html#ac742fca323331ac0ebdd29ef69ede328">USEC_OF_SYS_TICS</a>(<a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">time_periodic</a>);
 <a name="l00090"></a>00090   <span class="comment">/* only periodic cycle : periodic_cycle = periodic_time - sum_time_event; */</span>
@@ -220,7 +220,7 @@ function toggleVisibility(linkObj) {
 <a name="l00100"></a>00100   <a class="code" href="lpc21_2sys__time__hw_8h.html#a0583c93a24eed5f81e1f647ca63a652a">SysTimeTimerStart</a>(<a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">time_periodic</a>);
 <a name="l00101"></a>00101 }
 <a name="l00102"></a>00102 
-<a name="l00103"></a><a class="code" href="sys__mon_8h.html#a5b750b36817e9e5d6717863bc4e61194">00103</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#a5b750b36817e9e5d6717863bc4e61194">event_sysmon</a>(<span class="keywordtype">void</span>) {
+<a name="l00103"></a><a class="code" href="sys__mon_8h.html#a5b750b36817e9e5d6717863bc4e61194">00103</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#a5b750b36817e9e5d6717863bc4e61194" title="Analyse event calls.">event_sysmon</a>(<span class="keywordtype">void</span>) {
 <a name="l00105"></a>00105   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a> &gt; 0) {
 <a name="l00106"></a>00106     <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> t = <a class="code" href="lpc21_2sys__time__hw_8h.html#ac742fca323331ac0ebdd29ef69ede328">USEC_OF_SYS_TICS</a>(<a class="code" href="lpc21_2sys__time__hw_8h.html#a2dfaf7d6ae83a19972aca429fc687e87">SysTimeTimer</a>(<a class="code" href="sys__mon_8c.html#aa265946d25fdcefb40baab1b0a61caee">time_event</a>));
 <a name="l00107"></a>00107     <span class="keywordflow">if</span> (t &lt; <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9">min_time_event</a>) <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9">min_time_event</a> = t;
@@ -235,7 +235,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="sys__mon_8c.html">sys_mon.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:50 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

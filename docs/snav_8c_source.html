@@ -128,7 +128,7 @@ function toggleVisibility(linkObj) {
 <a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="snav_8h.html">subsystems/navigation/snav.h</a>&quot;</span>
 <a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
 <a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code.">subsystems/gps.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
 <a name="l00010"></a>00010 
 <a name="l00011"></a><a class="code" href="snav_8c.html#a04f9ab35e2baf93187f05a576ee3ecde">00011</a> <span class="preprocessor">#define Sign(_x) ((_x) &gt; 0 ? 1 : (-1))</span>
 <a name="l00012"></a><a class="code" href="snav_8c.html#a9d26b9a8d6e9b268e247f2d601b450c8">00012</a> <span class="preprocessor"></span><span class="preprocessor">#define Norm2Pi(x) ({ uint8_t _i=1; float _x = x; while (_i &amp;&amp; _x &lt; 0.) { _i++;_x += 2*M_PI; } while (_i &amp;&amp; _x &gt; 2*M_PI) { _i++; _x -= 2*M_PI; } _x; })</span>
@@ -216,28 +216,28 @@ function toggleVisibility(linkObj) {
 <a name="l00094"></a>00094 
 <a name="l00095"></a><a class="code" href="snav_8h.html#ac14ae6946aa250ffb65064f0c479553c">00095</a> bool_t <a class="code" href="snav_8c.html#ac14ae6946aa250ffb65064f0c479553c">snav_circle1</a>(<span class="keywordtype">void</span>) {
 <a name="l00096"></a>00096   <span class="comment">/* circle around CD until QDR_TD */</span>
-<a name="l00097"></a>00097   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59">NavVerticalAutoThrottleMode</a>(0); <span class="comment">/* No pitch */</span>
-<a name="l00098"></a>00098   <a class="code" href="navigation_8h.html#ad8b75deb4546e944bed16b5b19455ff5">NavVerticalAltitudeMode</a>(wp_cd.a, 0.);
-<a name="l00099"></a>00099   <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe">nav_circle_XY</a>(wp_cd.x, wp_cd.y, <a class="code" href="snav_8c.html#aad9cde020f86248f197056a4abedbff2">d_radius</a>);
-<a name="l00100"></a>00100   <span class="keywordflow">return</span>(! <a class="code" href="navigation_8h.html#a9f9ad9045eda753a7ea58359bd6a0581">NavQdrCloseTo</a>(DegOfRad(<a class="code" href="snav_8c.html#a28df2c58098f1edd9f0aeddff13af3f7">qdr_td</a>)));
+<a name="l00097"></a>00097   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59" title="Set the climb control to auto-throttle with the specified pitch pre-command.">NavVerticalAutoThrottleMode</a>(0); <span class="comment">/* No pitch */</span>
+<a name="l00098"></a>00098   <a class="code" href="navigation_8h.html#ad8b75deb4546e944bed16b5b19455ff5" title="Set the vertical mode to altitude control with the specified altitude setpoint and climb pre-command...">NavVerticalAltitudeMode</a>(wp_cd.a, 0.);
+<a name="l00099"></a>00099   <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y).">nav_circle_XY</a>(wp_cd.x, wp_cd.y, <a class="code" href="snav_8c.html#aad9cde020f86248f197056a4abedbff2">d_radius</a>);
+<a name="l00100"></a>00100   <span class="keywordflow">return</span>(! <a class="code" href="navigation_8h.html#a9f9ad9045eda753a7ea58359bd6a0581" title="True if x (in degrees) is close to the current QDR (less than 10 degrees)">NavQdrCloseTo</a>(DegOfRad(<a class="code" href="snav_8c.html#a28df2c58098f1edd9f0aeddff13af3f7">qdr_td</a>)));
 <a name="l00101"></a>00101 }
 <a name="l00102"></a>00102 
 <a name="l00103"></a><a class="code" href="snav_8h.html#a74b915e272f1232d7ad01950b68557b1">00103</a> bool_t <a class="code" href="snav_8c.html#a74b915e272f1232d7ad01950b68557b1">snav_route</a>(<span class="keywordtype">void</span>) {
 <a name="l00104"></a>00104   <span class="comment">/* Straight route from TD to TA */</span>
-<a name="l00105"></a>00105   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59">NavVerticalAutoThrottleMode</a>(0); <span class="comment">/* No pitch */</span>
-<a name="l00106"></a>00106   <a class="code" href="navigation_8h.html#ad8b75deb4546e944bed16b5b19455ff5">NavVerticalAltitudeMode</a>(wp_cd.a, 0.);
+<a name="l00105"></a>00105   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59" title="Set the climb control to auto-throttle with the specified pitch pre-command.">NavVerticalAutoThrottleMode</a>(0); <span class="comment">/* No pitch */</span>
+<a name="l00106"></a>00106   <a class="code" href="navigation_8h.html#ad8b75deb4546e944bed16b5b19455ff5" title="Set the vertical mode to altitude control with the specified altitude setpoint and climb pre-command...">NavVerticalAltitudeMode</a>(wp_cd.a, 0.);
 <a name="l00107"></a>00107   <a class="code" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment.">nav_route_xy</a>(wp_td.x, wp_td.y, <a class="code" href="snav_8c.html#a686de5154e3c1082f2de26c201328689">wp_ta</a>.<a class="code" href="structpoint.html#a8293fd2de3ce739deb6d53691fd21fcf">x</a>, <a class="code" href="snav_8c.html#a686de5154e3c1082f2de26c201328689">wp_ta</a>.<a class="code" href="structpoint.html#a616ad85a2096d1566f5971666bbc3b3f">y</a>);
 <a name="l00108"></a>00108 
-<a name="l00109"></a>00109   <span class="keywordflow">return</span> (! <a class="code" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint. Computes dist2_to_wp and compare it to square ...">nav_approaching_xy</a>(<a class="code" href="snav_8c.html#a686de5154e3c1082f2de26c201328689">wp_ta</a>.<a class="code" href="structpoint.html#a8293fd2de3ce739deb6d53691fd21fcf">x</a>, <a class="code" href="snav_8c.html#a686de5154e3c1082f2de26c201328689">wp_ta</a>.<a class="code" href="structpoint.html#a616ad85a2096d1566f5971666bbc3b3f">y</a>, wp_td.x, wp_td.y, CARROT));
+<a name="l00109"></a>00109   <span class="keywordflow">return</span> (! <a class="code" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint.">nav_approaching_xy</a>(<a class="code" href="snav_8c.html#a686de5154e3c1082f2de26c201328689">wp_ta</a>.<a class="code" href="structpoint.html#a8293fd2de3ce739deb6d53691fd21fcf">x</a>, <a class="code" href="snav_8c.html#a686de5154e3c1082f2de26c201328689">wp_ta</a>.<a class="code" href="structpoint.html#a616ad85a2096d1566f5971666bbc3b3f">y</a>, wp_td.x, wp_td.y, CARROT));
 <a name="l00110"></a>00110 }
 <a name="l00111"></a>00111 
 <a name="l00112"></a><a class="code" href="snav_8h.html#acd06ffc96fc54df1e7cb4b835c4c2cdd">00112</a> bool_t <a class="code" href="snav_8c.html#acd06ffc96fc54df1e7cb4b835c4c2cdd">snav_circle2</a>(<span class="keywordtype">void</span>) {
 <a name="l00113"></a>00113   <span class="comment">/* circle around CA until QDR_A */</span>
-<a name="l00114"></a>00114   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59">NavVerticalAutoThrottleMode</a>(0); <span class="comment">/* No pitch */</span>
-<a name="l00115"></a>00115   <a class="code" href="navigation_8h.html#ad8b75deb4546e944bed16b5b19455ff5">NavVerticalAltitudeMode</a>(wp_cd.a, 0.);
-<a name="l00116"></a>00116   <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe">nav_circle_XY</a>(wp_ca.x, wp_ca.y, <a class="code" href="snav_8c.html#aae9d274b09176b2c2311ca27790c2ccf">a_radius</a>);
+<a name="l00114"></a>00114   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59" title="Set the climb control to auto-throttle with the specified pitch pre-command.">NavVerticalAutoThrottleMode</a>(0); <span class="comment">/* No pitch */</span>
+<a name="l00115"></a>00115   <a class="code" href="navigation_8h.html#ad8b75deb4546e944bed16b5b19455ff5" title="Set the vertical mode to altitude control with the specified altitude setpoint and climb pre-command...">NavVerticalAltitudeMode</a>(wp_cd.a, 0.);
+<a name="l00116"></a>00116   <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y).">nav_circle_XY</a>(wp_ca.x, wp_ca.y, <a class="code" href="snav_8c.html#aae9d274b09176b2c2311ca27790c2ccf">a_radius</a>);
 <a name="l00117"></a>00117 
-<a name="l00118"></a>00118   <span class="keywordflow">return</span>(! <a class="code" href="navigation_8h.html#a9f9ad9045eda753a7ea58359bd6a0581">NavQdrCloseTo</a>(DegOfRad(<a class="code" href="snav_8c.html#ae786a20d0336486a81e9f23100179645">qdr_a</a>)));
+<a name="l00118"></a>00118   <span class="keywordflow">return</span>(! <a class="code" href="navigation_8h.html#a9f9ad9045eda753a7ea58359bd6a0581" title="True if x (in degrees) is close to the current QDR (less than 10 degrees)">NavQdrCloseTo</a>(DegOfRad(<a class="code" href="snav_8c.html#ae786a20d0336486a81e9f23100179645">qdr_a</a>)));
 <a name="l00119"></a>00119 }
 <a name="l00120"></a>00120 
 <a name="l00121"></a><a class="code" href="snav_8c.html#aaaf4149e0c6f6cd045fc7eab557c0744">00121</a> <span class="preprocessor">#define NB_ANGLES 24</span>
@@ -272,7 +272,7 @@ function toggleVisibility(linkObj) {
 <a name="l00150"></a>00150 
 <a name="l00151"></a>00151   <span class="keywordtype">float</span> current_qdr = M_PI_2 - atan2(<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>-wp_ca.y, <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>-wp_ca.x);
 <a name="l00152"></a>00152   <span class="keywordtype">float</span> remaining_angle = <a class="code" href="snav_8c.html#a9d26b9a8d6e9b268e247f2d601b450c8">Norm2Pi</a>(<a class="code" href="snav_8c.html#a04f9ab35e2baf93187f05a576ee3ecde">Sign</a>(<a class="code" href="snav_8c.html#aae9d274b09176b2c2311ca27790c2ccf">a_radius</a>)*(<a class="code" href="snav_8c.html#ae786a20d0336486a81e9f23100179645">qdr_a</a> - current_qdr));
-<a name="l00153"></a>00153   <span class="keywordtype">float</span> remaining_time = <a class="code" href="snav_8c.html#afe0d9b3d8c14bb52150b4944d239a87e">snav_desired_tow</a> - <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="time of week in ms">tow</a> / 1000.;
+<a name="l00153"></a>00153   <span class="keywordtype">float</span> remaining_time = <a class="code" href="snav_8c.html#afe0d9b3d8c14bb52150b4944d239a87e">snav_desired_tow</a> - <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="time of week in ms">tow</a> / 1000.;
 <a name="l00154"></a>00154 
 <a name="l00155"></a>00155   <span class="comment">/* Use the nominal airspeed if the estimated one is not realistic */</span>
 <a name="l00156"></a>00156   <span class="keywordtype">float</span> airspeed = <a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77">estimator_airspeed</a>;
@@ -306,13 +306,13 @@ function toggleVisibility(linkObj) {
 <a name="l00184"></a>00184   <span class="keywordflow">if</span> (radius &gt; 2. * nominal_radius)
 <a name="l00185"></a>00185     radius = nominal_radius;
 <a name="l00186"></a>00186 
-<a name="l00187"></a>00187   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59">NavVerticalAutoThrottleMode</a>(0); <span class="comment">/* No pitch */</span>
-<a name="l00188"></a>00188   <a class="code" href="navigation_8h.html#ad8b75deb4546e944bed16b5b19455ff5">NavVerticalAltitudeMode</a>(wp_cd.a, 0.);
+<a name="l00187"></a>00187   <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59" title="Set the climb control to auto-throttle with the specified pitch pre-command.">NavVerticalAutoThrottleMode</a>(0); <span class="comment">/* No pitch */</span>
+<a name="l00188"></a>00188   <a class="code" href="navigation_8h.html#ad8b75deb4546e944bed16b5b19455ff5" title="Set the vertical mode to altitude control with the specified altitude setpoint and climb pre-command...">NavVerticalAltitudeMode</a>(wp_cd.a, 0.);
 <a name="l00189"></a>00189 
 <a name="l00190"></a>00190   radius *= <a class="code" href="snav_8c.html#a04f9ab35e2baf93187f05a576ee3ecde">Sign</a>(<a class="code" href="snav_8c.html#aae9d274b09176b2c2311ca27790c2ccf">a_radius</a>);
 <a name="l00191"></a>00191   wp_ca.x = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="snav_8c.html#a09c4031a2263a02d4ba3b5b0580db9e3">wp_a</a>) + radius * <a class="code" href="snav_8c.html#a6ffaeb29e2825a7f38417ee9109d3a65">u_a_ca_x</a>;
 <a name="l00192"></a>00192   wp_ca.y = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="snav_8c.html#a09c4031a2263a02d4ba3b5b0580db9e3">wp_a</a>) + radius * <a class="code" href="snav_8c.html#af5b82b9a455a98a12cafa72e73dce010">u_a_ca_y</a>;
-<a name="l00193"></a>00193   <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe">nav_circle_XY</a>(wp_ca.x, wp_ca.y, radius);
+<a name="l00193"></a>00193   <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y).">nav_circle_XY</a>(wp_ca.x, wp_ca.y, radius);
 <a name="l00194"></a>00194 
 <a name="l00195"></a>00195   <span class="comment">/* Stay in this mode until the end of time */</span>
 <a name="l00196"></a>00196   <span class="keywordflow">return</span>(remaining_time &gt; 0);
@@ -322,7 +322,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="snav_8c.html">snav.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:52 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:03 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

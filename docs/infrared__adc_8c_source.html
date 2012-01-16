@@ -154,11 +154,11 @@ function toggleVisibility(linkObj) {
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040 <span class="comment">// TODO Specific sim implementation</span>
 <a name="l00041"></a>00041 <span class="preprocessor">#if ! (defined SITL || defined HITL)</span>
-<a name="l00042"></a><a class="code" href="infrared__adc_8c.html#a3e1ff4a003990d5886e6200c674b7782">00042</a> <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a> <a class="code" href="infrared__adc_8c.html#a3e1ff4a003990d5886e6200c674b7782">buf_ir1</a>;
-<a name="l00043"></a><a class="code" href="infrared__adc_8c.html#a440e50b34afbf199202d2164e12f5dfa">00043</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a> <a class="code" href="infrared__adc_8c.html#a440e50b34afbf199202d2164e12f5dfa">buf_ir2</a>;
+<a name="l00042"></a><a class="code" href="infrared__adc_8c.html#a3e1ff4a003990d5886e6200c674b7782">00042</a> <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="infrared__adc_8c.html#a3e1ff4a003990d5886e6200c674b7782">buf_ir1</a>;
+<a name="l00043"></a><a class="code" href="infrared__adc_8c.html#a440e50b34afbf199202d2164e12f5dfa">00043</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="infrared__adc_8c.html#a440e50b34afbf199202d2164e12f5dfa">buf_ir2</a>;
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045 <span class="preprocessor">#ifdef ADC_CHANNEL_IR_TOP</span>
-<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a> buf_ir3;
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> buf_ir3;
 <a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
 <a name="l00048"></a>00048 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00049"></a>00049 <span class="preprocessor"></span>
@@ -182,10 +182,10 @@ function toggleVisibility(linkObj) {
 <a name="l00067"></a>00067 
 <a name="l00071"></a><a class="code" href="subsystems_2sensors_2infrared__adc_8h.html#afd9b914e78df4722702ab0113752a2b0">00071</a> <span class="keywordtype">void</span> <a class="code" href="infrared__adc_8c.html#afd9b914e78df4722702ab0113752a2b0" title="Initialisation of ir.">infrared_adc_init</a>(<span class="keywordtype">void</span>) {
 <a name="l00072"></a>00072 <span class="preprocessor">#if ! (defined SITL || defined HITL)</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(ADC_CHANNEL_IR1, &amp;<a class="code" href="infrared__adc_8c.html#a3e1ff4a003990d5886e6200c674b7782">buf_ir1</a>, <a class="code" href="infrared__adc_8c.html#aeef783659a6c1dc929542d65be5d7fc4">ADC_CHANNEL_IR_NB_SAMPLES</a>);
-<a name="l00074"></a>00074   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(ADC_CHANNEL_IR2, &amp;<a class="code" href="infrared__adc_8c.html#a440e50b34afbf199202d2164e12f5dfa">buf_ir2</a>, <a class="code" href="infrared__adc_8c.html#aeef783659a6c1dc929542d65be5d7fc4">ADC_CHANNEL_IR_NB_SAMPLES</a>);
+<a name="l00073"></a>00073 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_IR1, &amp;<a class="code" href="infrared__adc_8c.html#a3e1ff4a003990d5886e6200c674b7782">buf_ir1</a>, <a class="code" href="infrared__adc_8c.html#aeef783659a6c1dc929542d65be5d7fc4">ADC_CHANNEL_IR_NB_SAMPLES</a>);
+<a name="l00074"></a>00074   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_IR2, &amp;<a class="code" href="infrared__adc_8c.html#a440e50b34afbf199202d2164e12f5dfa">buf_ir2</a>, <a class="code" href="infrared__adc_8c.html#aeef783659a6c1dc929542d65be5d7fc4">ADC_CHANNEL_IR_NB_SAMPLES</a>);
 <a name="l00075"></a>00075 <span class="preprocessor">#ifdef ADC_CHANNEL_IR_TOP</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(ADC_CHANNEL_IR_TOP, &amp;buf_ir3, <a class="code" href="infrared__adc_8c.html#aeef783659a6c1dc929542d65be5d7fc4">ADC_CHANNEL_IR_NB_SAMPLES</a>);
+<a name="l00076"></a>00076 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_IR_TOP, &amp;buf_ir3, <a class="code" href="infrared__adc_8c.html#aeef783659a6c1dc929542d65be5d7fc4">ADC_CHANNEL_IR_NB_SAMPLES</a>);
 <a name="l00077"></a>00077 <span class="preprocessor">#endif</span>
 <a name="l00078"></a>00078 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00079"></a>00079 <span class="preprocessor"></span>
@@ -213,7 +213,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="infrared__adc_8c.html">infrared_adc.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:52 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:03 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

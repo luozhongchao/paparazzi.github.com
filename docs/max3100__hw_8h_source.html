@@ -170,7 +170,7 @@ function toggleVisibility(linkObj) {
 <a name="l00050"></a>00050 <span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="max3100__hw_8c.html#afb18449e29d5cbe18d059b0738257107">max3100_tx_insert_idx</a>, <a class="code" href="max3100__hw_8c.html#a5ac06ec72a80731511c49635c3f06f7e">max3100_tx_extract_idx</a>;
 <a name="l00051"></a>00051 <span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="max3100__hw_8c.html#a1698f3b89fb458122d1bf5cd3bf02552">max3100_rx_insert_idx</a>, <a class="code" href="max3100__hw_8c.html#a9352403dc1ba8d2d9cb2d78ff761c2e5">max3100_rx_extract_idx</a>;
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="max3100__hw_8c.html#a5232e03d93cfd784ac19ccdb4fec01a4">max3100_tx_buf</a>[<a class="code" href="max3100__hw_8h.html#ab5ae01ae075d548fbcc0c5ca409ab740">MAX3100_TX_BUF_LEN</a>];
+<a name="l00053"></a>00053 <span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="max3100__hw_8c.html#a5232e03d93cfd784ac19ccdb4fec01a4">max3100_tx_buf</a>[<a class="code" href="max3100__hw_8h.html#ab5ae01ae075d548fbcc0c5ca409ab740" title="I/O Buffers.">MAX3100_TX_BUF_LEN</a>];
 <a name="l00054"></a>00054 <span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="max3100__hw_8c.html#a84d6e1503d04379acd66f99f581e47e4">max3100_rx_buf</a>[<a class="code" href="max3100__hw_8h.html#a78353a1cb2b539960dd059a54a6e8b9c">MAX3100_RX_BUF_LEN</a>];
 <a name="l00055"></a>00055 
 <a name="l00056"></a>00056 <span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="max3100__hw_8h.html#a2376822d8c10c521017f353cb2fe71e3">read_byte1</a>, <a class="code" href="max3100__hw_8h.html#a6b813ff8dd1c3a7656dd9c7d45acbc37">read_byte2</a>;
@@ -241,7 +241,7 @@ function toggleVisibility(linkObj) {
 <a name="l00122"></a>00122 }
 <a name="l00123"></a>00123 
 <a name="l00124"></a><a class="code" href="max3100__hw_8h.html#acd8c2de9cd8d20fe9ff28409642da133">00124</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="max3100__hw_8h.html#acd8c2de9cd8d20fe9ff28409642da133">max3100_flush</a>( <span class="keywordtype">void</span> ) {
-<a name="l00125"></a>00125   <span class="keywordflow">if</span> (<a class="code" href="max3100__hw_8c.html#aa99ee6ef01353de0fd12021e40127896">max3100_status</a> == <a class="code" href="max3100__hw_8h.html#a6f7d927196bb66933b197152075f1d5d">MAX3100_STATUS_IDLE</a>
+<a name="l00125"></a>00125   <span class="keywordflow">if</span> (<a class="code" href="max3100__hw_8c.html#aa99ee6ef01353de0fd12021e40127896">max3100_status</a> == <a class="code" href="max3100__hw_8h.html#a6f7d927196bb66933b197152075f1d5d" title="Max3100 protocol status.">MAX3100_STATUS_IDLE</a>
 <a name="l00126"></a>00126       &amp;&amp; <a class="code" href="max3100__hw_8c.html#a5ac06ec72a80731511c49635c3f06f7e">max3100_tx_extract_idx</a> != <a class="code" href="max3100__hw_8c.html#afb18449e29d5cbe18d059b0738257107">max3100_tx_insert_idx</a>
 <a name="l00127"></a>00127       &amp;&amp; <a class="code" href="max3100__hw_8c.html#a43c6356a84f38d13033763d51ae3e312">max3100_transmit_buffer_empty</a>) {
 <a name="l00128"></a>00128     <a class="code" href="max3100__hw_8h.html#a6cf42bda656e897d84548f5ed8e73997">Max3100TransmitData</a>(<a class="code" href="max3100__hw_8c.html#a5232e03d93cfd784ac19ccdb4fec01a4">max3100_tx_buf</a>[<a class="code" href="max3100__hw_8c.html#a5ac06ec72a80731511c49635c3f06f7e">max3100_tx_extract_idx</a>]);
@@ -251,7 +251,7 @@ function toggleVisibility(linkObj) {
 <a name="l00132"></a>00132   }
 <a name="l00133"></a>00133 }
 <a name="l00134"></a>00134 
-<a name="l00136"></a><a class="code" href="max3100__hw_8h.html#a3e6219e4316fcdfdc4a366fbff9936a9">00136</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="max3100__hw_8h.html#a3e6219e4316fcdfdc4a366fbff9936a9">max3100_putconfchar</a>(<span class="keywordtype">char</span> <a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>) {
+<a name="l00136"></a><a class="code" href="max3100__hw_8h.html#a3e6219e4316fcdfdc4a366fbff9936a9">00136</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="max3100__hw_8h.html#a3e6219e4316fcdfdc4a366fbff9936a9" title="Warning: No bufferring; SPI must be available.">max3100_putconfchar</a>(<span class="keywordtype">char</span> <a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>) {
 <a name="l00137"></a>00137   <a class="code" href="max3100__hw_8h.html#a960d099ffbb9f46dec308eff64c1c2e8">Max3100TransmitConf</a>(c);
 <a name="l00138"></a>00138   <a class="code" href="max3100__hw_8c.html#aa99ee6ef01353de0fd12021e40127896">max3100_status</a> = <a class="code" href="max3100__hw_8h.html#a132c7b37d1999c8f49e235e6d256793e">MAX3100_STATUS_WRITING</a>;
 <a name="l00139"></a>00139 }
@@ -270,7 +270,7 @@ function toggleVisibility(linkObj) {
 <a name="l00152"></a>00152     <a class="code" href="max3100__hw_8c.html#a72b3a08d1d674204a3afad4b51da7766">read_bytes</a> = <span class="keyword">false</span>;
 <a name="l00153"></a>00153     <a class="code" href="max3100__hw_8c.html#a60b75144d77bfcbd80fb0d7a5ecfb40b">max3100_debug</a>();
 <a name="l00154"></a>00154   }
-<a name="l00155"></a>00155   <span class="keywordflow">if</span> (<a class="code" href="max3100__hw_8c.html#aa99ee6ef01353de0fd12021e40127896">max3100_status</a> == <a class="code" href="max3100__hw_8h.html#a6f7d927196bb66933b197152075f1d5d">MAX3100_STATUS_IDLE</a>) {
+<a name="l00155"></a>00155   <span class="keywordflow">if</span> (<a class="code" href="max3100__hw_8c.html#aa99ee6ef01353de0fd12021e40127896">max3100_status</a> == <a class="code" href="max3100__hw_8h.html#a6f7d927196bb66933b197152075f1d5d" title="Max3100 protocol status.">MAX3100_STATUS_IDLE</a>) {
 <a name="l00156"></a>00156     <span class="keywordflow">if</span> (<a class="code" href="max3100__hw_8c.html#a1ec54788e5dd0c764ff4d4ff7b84df0e">max3100_data_available</a>) {
 <a name="l00157"></a>00157       <a class="code" href="max3100__hw_8c.html#a1ec54788e5dd0c764ff4d4ff7b84df0e">max3100_data_available</a> = <span class="keyword">false</span>;
 <a name="l00158"></a>00158       <a class="code" href="max3100__hw_8h.html#ae9da393dec0684176439f1fe5ecf5d7b">max3100_read_data</a>();
@@ -286,7 +286,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="max3100__hw_8h.html">max3100_hw.h</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:50 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

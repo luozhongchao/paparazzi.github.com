@@ -169,14 +169,14 @@ function toggleVisibility(linkObj) {
 <a name="l00055"></a><a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">00055</a> <span class="keywordtype">float</span>    <a class="code" href="temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c">fref</a>[<a class="code" href="temp__tcouple__adc_8h.html#adf725e1ad99a8df544e01eb34cb62ab2">TCOUPLE_NB</a>], <a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">fval</a>[<a class="code" href="temp__tcouple__adc_8h.html#adf725e1ad99a8df544e01eb34cb62ab2">TCOUPLE_NB</a>];
 <a name="l00056"></a><a class="code" href="temp__tcouple__adc_8c.html#a1a5aa304ef337e9642e86d7f1762c878">00056</a> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>  <a class="code" href="temp__tcouple__adc_8c.html#a1a5aa304ef337e9642e86d7f1762c878">temp_cnt</a>;
 <a name="l00057"></a>00057 
-<a name="l00058"></a><a class="code" href="temp__tcouple__adc_8c.html#a74ef425eb1b47b9e0233cdae989111a7">00058</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a> <a class="code" href="temp__tcouple__adc_8c.html#a74ef425eb1b47b9e0233cdae989111a7">buf_temp_tcouple_ref</a>;
-<a name="l00059"></a><a class="code" href="temp__tcouple__adc_8c.html#a2cb3b08e903ce7917131ba2583fdb2d6">00059</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html">adc_buf</a> <a class="code" href="temp__tcouple__adc_8c.html#a2cb3b08e903ce7917131ba2583fdb2d6">buf_temp_tcouple_val</a>;
+<a name="l00058"></a><a class="code" href="temp__tcouple__adc_8c.html#a74ef425eb1b47b9e0233cdae989111a7">00058</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="temp__tcouple__adc_8c.html#a74ef425eb1b47b9e0233cdae989111a7">buf_temp_tcouple_ref</a>;
+<a name="l00059"></a><a class="code" href="temp__tcouple__adc_8c.html#a2cb3b08e903ce7917131ba2583fdb2d6">00059</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="temp__tcouple__adc_8c.html#a2cb3b08e903ce7917131ba2583fdb2d6">buf_temp_tcouple_val</a>;
 <a name="l00060"></a>00060 
 <a name="l00061"></a><a class="code" href="temp__tcouple__adc_8h.html#ad9927446cc531cf79cbd60506e2b715c">00061</a> <span class="keywordtype">void</span> <a class="code" href="temp__tcouple__adc_8c.html#ad9927446cc531cf79cbd60506e2b715c">temp_tcouple_adc_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00062"></a>00062   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(<a class="code" href="temp__tcouple__adc_8c.html#a7c154050cc6988807b95865a93390d42">ADC_CHANNEL_TEMP_REF</a>,
+<a name="l00062"></a>00062   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(<a class="code" href="temp__tcouple__adc_8c.html#a7c154050cc6988807b95865a93390d42">ADC_CHANNEL_TEMP_REF</a>,
 <a name="l00063"></a>00063                   &amp;<a class="code" href="temp__tcouple__adc_8c.html#a74ef425eb1b47b9e0233cdae989111a7">buf_temp_tcouple_ref</a>,
 <a name="l00064"></a>00064                   <a class="code" href="temp__tcouple__adc_8c.html#acdbb178df47cad5fefe61de2709f7c00">ADC_CHANNEL_TEMP_TCOUPLE_NB_SAMPLES</a>);
-<a name="l00065"></a>00065   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464">adc_buf_channel</a>(<a class="code" href="temp__tcouple__adc_8c.html#ac165a78e05ef09172afc90dc807796db">ADC_CHANNEL_TEMP_VAL</a>,
+<a name="l00065"></a>00065   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(<a class="code" href="temp__tcouple__adc_8c.html#ac165a78e05ef09172afc90dc807796db">ADC_CHANNEL_TEMP_VAL</a>,
 <a name="l00066"></a>00066                   &amp;<a class="code" href="temp__tcouple__adc_8c.html#a2cb3b08e903ce7917131ba2583fdb2d6">buf_temp_tcouple_val</a>,
 <a name="l00067"></a>00067                   <a class="code" href="temp__tcouple__adc_8c.html#acdbb178df47cad5fefe61de2709f7c00">ADC_CHANNEL_TEMP_TCOUPLE_NB_SAMPLES</a>);
 <a name="l00068"></a>00068   <a class="code" href="temp__tcouple__adc_8c.html#a1a5aa304ef337e9642e86d7f1762c878">temp_cnt</a> = 0;
@@ -194,7 +194,7 @@ function toggleVisibility(linkObj) {
 <a name="l00080"></a>00080                      * 100. - 13.;
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082   <span class="keywordflow">if</span> (++temp_cnt &gt;= <a class="code" href="temp__tcouple__adc_8h.html#adf725e1ad99a8df544e01eb34cb62ab2">TCOUPLE_NB</a>) {
-<a name="l00083"></a>00083     DOWNLINK_SEND_TEMP_TCOUPLE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>,
+<a name="l00083"></a>00083     DOWNLINK_SEND_TEMP_TCOUPLE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,
 <a name="l00084"></a>00084           &amp;<a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">fval</a>[0], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">fval</a>[1], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">fval</a>[2], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">fval</a>[3],
 <a name="l00085"></a>00085           &amp;<a class="code" href="temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c">fref</a>[0], &amp;<a class="code" href="temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c">fref</a>[1], &amp;<a class="code" href="temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c">fref</a>[2], &amp;<a class="code" href="temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c">fref</a>[3],
 <a name="l00086"></a>00086           &amp;<a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>[0], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>[1], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>[2], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>[3],
@@ -208,7 +208,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="temp__tcouple__adc_8c.html">temp_tcouple_adc.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:51 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

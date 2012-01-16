@@ -154,7 +154,7 @@ function toggleVisibility(linkObj) {
 <a name="l00037"></a><a class="code" href="uart_8h.html#a05f5d709605c6317c97e4974bec3402a">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define UART_TX_BUFFER_SIZE 128</span>
 <a name="l00038"></a><a class="code" href="uart_8h.html#a3051c7589823b3d87a8942c960ccada6">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define UART_DEV_NAME_SIZE 16</span>
 <a name="l00039"></a>00039 <span class="preprocessor"></span>
-<a name="l00043"></a><a class="code" href="structuart__periph.html">00043</a> <span class="keyword">struct </span><a class="code" href="structuart__periph.html">uart_periph</a> {
+<a name="l00043"></a><a class="code" href="structuart__periph.html">00043</a> <span class="keyword">struct </span><a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a> {
 <a name="l00044"></a>00044   <span class="comment">/* Receive buffer */</span>
 <a name="l00045"></a><a class="code" href="structuart__periph.html#aae582e1021f8139f7461a80477d1dc5b">00045</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structuart__periph.html#aae582e1021f8139f7461a80477d1dc5b">rx_buf</a>[<a class="code" href="uart_8h.html#a5bdd6772c246436bb14377095de79b31">UART_RX_BUFFER_SIZE</a>];
 <a name="l00046"></a><a class="code" href="structuart__periph.html#a07e22f6950e141077f44b435852f1f84">00046</a>   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="structuart__periph.html#a07e22f6950e141077f44b435852f1f84">rx_insert_idx</a>;
@@ -170,11 +170,11 @@ function toggleVisibility(linkObj) {
 <a name="l00056"></a><a class="code" href="structuart__periph.html#a646cfd0312fb4e9a1e55ce2594049970">00056</a>   <span class="keywordtype">char</span> <a class="code" href="structuart__periph.html#a646cfd0312fb4e9a1e55ce2594049970">dev</a>[<a class="code" href="uart_8h.html#a3051c7589823b3d87a8942c960ccada6">UART_DEV_NAME_SIZE</a>];
 <a name="l00057"></a>00057 };
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="uart_8c.html#a43baf084a9bcc968ef00790e25becbb7">uart_periph_init</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html">uart_periph</a>* p);
-<a name="l00060"></a>00060 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a3eff2a82ddc632e5626c04ad4e717e3b">uart_periph_set_baudrate</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html">uart_periph</a>* p, <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> baud);
+<a name="l00059"></a>00059 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="uart_8c.html#a43baf084a9bcc968ef00790e25becbb7">uart_periph_init</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p);
+<a name="l00060"></a>00060 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a3eff2a82ddc632e5626c04ad4e717e3b">uart_periph_set_baudrate</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p, <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> baud);
 <a name="l00061"></a>00061 <span class="comment">//extern void uart_periph_init_param(struct uart_periph* p, uint32_t baud, uint8_t mode, uint8_t fmode, char * dev);</span>
-<a name="l00062"></a>00062 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a916fbda270604fca87f8bc235ddcbaaa">uart_transmit</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html">uart_periph</a>* p, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> data);
-<a name="l00063"></a>00063 <span class="keyword">extern</span> bool_t <a class="code" href="uart_8c.html#abd3d741fab97eedc4b48bbda25b74e50">uart_check_free_space</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html">uart_periph</a>* p, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> len);
+<a name="l00062"></a>00062 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a916fbda270604fca87f8bc235ddcbaaa">uart_transmit</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> data);
+<a name="l00063"></a>00063 <span class="keyword">extern</span> bool_t <a class="code" href="uart_8c.html#abd3d741fab97eedc4b48bbda25b74e50">uart_check_free_space</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> len);
 <a name="l00064"></a>00064 
 <a name="l00065"></a><a class="code" href="uart_8h.html#a977d201f44102410cf4d5a36d859c66d">00065</a> <span class="preprocessor">#define UartChAvailable(_p) (_p.rx_insert_idx != _p.rx_extract_idx)</span>
 <a name="l00066"></a>00066 <span class="preprocessor"></span>
@@ -186,7 +186,7 @@ function toggleVisibility(linkObj) {
 <a name="l00072"></a>00072 <span class="preprocessor"></span>
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074 <span class="preprocessor">#ifdef USE_UART0</span>
-<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html">uart_periph</a> uart0;
+<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a> uart0;
 <a name="l00076"></a>00076 <span class="keyword">extern</span> <span class="keywordtype">void</span> uart0_init(<span class="keywordtype">void</span>);
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078 <span class="preprocessor">#define Uart0Init() uart_periph_init(&amp;uart0)</span>
@@ -211,7 +211,7 @@ function toggleVisibility(linkObj) {
 <a name="l00097"></a>00097 <span class="preprocessor">#endif // USE_UART0</span>
 <a name="l00098"></a>00098 <span class="preprocessor"></span>
 <a name="l00099"></a>00099 <span class="preprocessor">#ifdef USE_UART1</span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html">uart_periph</a> uart1;
+<a name="l00100"></a>00100 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a> uart1;
 <a name="l00101"></a>00101 <span class="keyword">extern</span> <span class="keywordtype">void</span> uart1_init(<span class="keywordtype">void</span>);
 <a name="l00102"></a>00102 
 <a name="l00103"></a>00103 <span class="preprocessor">#define Uart1Init() uart_periph_init(&amp;uart1)</span>
@@ -236,7 +236,7 @@ function toggleVisibility(linkObj) {
 <a name="l00122"></a>00122 <span class="preprocessor">#endif // USE_UART1</span>
 <a name="l00123"></a>00123 <span class="preprocessor"></span>
 <a name="l00124"></a>00124 <span class="preprocessor">#ifdef USE_UART2</span>
-<a name="l00125"></a>00125 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html">uart_periph</a> uart2;
+<a name="l00125"></a>00125 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a> uart2;
 <a name="l00126"></a>00126 <span class="keyword">extern</span> <span class="keywordtype">void</span> uart2_init(<span class="keywordtype">void</span>);
 <a name="l00127"></a>00127 
 <a name="l00128"></a>00128 <span class="preprocessor">#define Uart2Init() uart_periph_init(&amp;uart2)</span>
@@ -261,7 +261,7 @@ function toggleVisibility(linkObj) {
 <a name="l00147"></a>00147 <span class="preprocessor">#endif // USE_UART2</span>
 <a name="l00148"></a>00148 <span class="preprocessor"></span>
 <a name="l00149"></a>00149 <span class="preprocessor">#ifdef USE_UART3</span>
-<a name="l00150"></a>00150 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html">uart_periph</a> uart3;
+<a name="l00150"></a>00150 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a> uart3;
 <a name="l00151"></a>00151 <span class="keyword">extern</span> <span class="keywordtype">void</span> uart3_init(<span class="keywordtype">void</span>);
 <a name="l00152"></a>00152 
 <a name="l00153"></a>00153 <span class="preprocessor">#define Uart3Init() uart_periph_init(&amp;uart3)</span>
@@ -286,7 +286,7 @@ function toggleVisibility(linkObj) {
 <a name="l00172"></a>00172 <span class="preprocessor">#endif // USE_UART3</span>
 <a name="l00173"></a>00173 <span class="preprocessor"></span>
 <a name="l00174"></a>00174 <span class="preprocessor">#ifdef USE_UART5</span>
-<a name="l00175"></a>00175 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html">uart_periph</a> uart5;
+<a name="l00175"></a>00175 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a> uart5;
 <a name="l00176"></a>00176 <span class="keyword">extern</span> <span class="keywordtype">void</span> uart5_init(<span class="keywordtype">void</span>);
 <a name="l00177"></a>00177 
 <a name="l00178"></a>00178 <span class="preprocessor">#define Uart5Init() uart_periph_init(&amp;uart5)</span>
@@ -316,7 +316,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="uart_8h.html">uart.h</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:50 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:01 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

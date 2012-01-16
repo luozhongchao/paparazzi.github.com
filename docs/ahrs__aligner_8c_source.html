@@ -146,7 +146,7 @@ function toggleVisibility(linkObj) {
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="ahrs__aligner_8h.html">ahrs_aligner.h</a>&quot;</span>
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="preprocessor">#include &lt;stdlib.h&gt;</span> <span class="comment">/* for abs() */</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="imu_8h.html">subsystems/imu.h</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independant LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00029"></a>00029 
 <a name="l00030"></a><a class="code" href="ahrs__aligner_8h.html#a66a55f68c9554dcf5ae9dd4dbd4479e3">00030</a> <span class="keyword">struct </span><a class="code" href="structAhrsAligner.html">AhrsAligner</a> <a class="code" href="ahrs__aligner_8c.html#a66a55f68c9554dcf5ae9dd4dbd4479e3">ahrs_aligner</a>;
@@ -179,11 +179,11 @@ function toggleVisibility(linkObj) {
 <a name="l00057"></a>00057 <span class="preprocessor"></span>
 <a name="l00058"></a><a class="code" href="ahrs__aligner_8h.html#aa8c5b5a4ce38e0dd4e1234bad8adf92d">00058</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__aligner_8c.html#aa8c5b5a4ce38e0dd4e1234bad8adf92d">ahrs_aligner_run</a>(<span class="keywordtype">void</span>) {
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060   <a class="code" href="pprz__algebra_8h.html#ab25a21d173c4626c08a8de50024d6aff">RATES_ADD</a>(<a class="code" href="ahrs__aligner_8c.html#af1cca58ed89c86a319265f768f1b5e40">gyro_sum</a>,  <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc">imu</a>.<a class="code" href="structImu.html#a556257d57db669a3e42ccc6c77fff286">gyro</a>);
-<a name="l00061"></a>00061   <a class="code" href="pprz__algebra_8h.html#acd569a47a1928f04aeeddf167633ce35">VECT3_ADD</a>(<a class="code" href="ahrs__aligner_8c.html#a68b78ce4e010b1be5a93a9f23f6c1ec5">accel_sum</a>, <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc">imu</a>.<a class="code" href="structImu.html#aecac1be12d8d9c9c31be2ad9d5b90627">accel</a>);
-<a name="l00062"></a>00062   <a class="code" href="pprz__algebra_8h.html#acd569a47a1928f04aeeddf167633ce35">VECT3_ADD</a>(<a class="code" href="ahrs__aligner_8c.html#a2eb9f638b1725fb8ec7be2103e25f4b0">mag_sum</a>,   <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc">imu</a>.<a class="code" href="structImu.html#a6c4356739a6b97db247831e0be58849e">mag</a>);
+<a name="l00060"></a>00060   <a class="code" href="pprz__algebra_8h.html#ab25a21d173c4626c08a8de50024d6aff">RATES_ADD</a>(<a class="code" href="ahrs__aligner_8c.html#af1cca58ed89c86a319265f768f1b5e40">gyro_sum</a>,  <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a556257d57db669a3e42ccc6c77fff286" title="gyroscope measurements">gyro</a>);
+<a name="l00061"></a>00061   <a class="code" href="pprz__algebra_8h.html#acd569a47a1928f04aeeddf167633ce35">VECT3_ADD</a>(<a class="code" href="ahrs__aligner_8c.html#a68b78ce4e010b1be5a93a9f23f6c1ec5">accel_sum</a>, <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aecac1be12d8d9c9c31be2ad9d5b90627" title="accelerometer measurements">accel</a>);
+<a name="l00062"></a>00062   <a class="code" href="pprz__algebra_8h.html#acd569a47a1928f04aeeddf167633ce35">VECT3_ADD</a>(<a class="code" href="ahrs__aligner_8c.html#a2eb9f638b1725fb8ec7be2103e25f4b0">mag_sum</a>,   <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a6c4356739a6b97db247831e0be58849e" title="magnetometer measurements">mag</a>);
 <a name="l00063"></a>00063 
-<a name="l00064"></a>00064   <a class="code" href="ahrs__aligner_8c.html#add17db62c42b1076a998bac38c552708">ref_sensor_samples</a>[<a class="code" href="ahrs__aligner_8c.html#a57a40104e0a0d7509b45d80b6fafc82b">samples_idx</a>] = <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc">imu</a>.<a class="code" href="structImu.html#aecac1be12d8d9c9c31be2ad9d5b90627">accel</a>.<a class="code" href="structInt32Vect3.html#a5c1b16eb951fe60e8fe3f00217268c36">z</a>;
+<a name="l00064"></a>00064   <a class="code" href="ahrs__aligner_8c.html#add17db62c42b1076a998bac38c552708">ref_sensor_samples</a>[<a class="code" href="ahrs__aligner_8c.html#a57a40104e0a0d7509b45d80b6fafc82b">samples_idx</a>] = <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aecac1be12d8d9c9c31be2ad9d5b90627" title="accelerometer measurements">accel</a>.<a class="code" href="structInt32Vect3.html#a5c1b16eb951fe60e8fe3f00217268c36">z</a>;
 <a name="l00065"></a>00065   <a class="code" href="ahrs__aligner_8c.html#a57a40104e0a0d7509b45d80b6fafc82b">samples_idx</a>++;
 <a name="l00066"></a>00066 
 <a name="l00067"></a>00067 <span class="preprocessor">#ifdef AHRS_ALIGNER_LED</span>
@@ -234,7 +234,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="ahrs__aligner_8c.html">ahrs_aligner.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:51 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:02 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

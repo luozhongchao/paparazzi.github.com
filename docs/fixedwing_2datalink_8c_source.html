@@ -167,7 +167,7 @@ function toggleVisibility(linkObj) {
 <a name="l00049"></a>00049 <span class="preprocessor">#endif</span>
 <a name="l00050"></a>00050 <span class="preprocessor"></span>
 <a name="l00051"></a>00051 <span class="preprocessor">#ifdef HITL</span>
-<a name="l00052"></a>00052 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code.">subsystems/gps.h</a>&quot;</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
 <a name="l00053"></a>00053 <span class="preprocessor">#endif</span>
 <a name="l00054"></a>00054 <span class="preprocessor"></span>
 <a name="l00055"></a>00055 
@@ -211,7 +211,7 @@ function toggleVisibility(linkObj) {
 <a name="l00093"></a>00093 <span class="preprocessor">#endif</span>
 <a name="l00094"></a>00094 <span class="preprocessor"></span>
 <a name="l00095"></a>00095   <span class="keywordflow">if</span> (msg_id == DL_PING) {
-<a name="l00096"></a>00096     DOWNLINK_SEND_PONG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>);
+<a name="l00096"></a>00096     DOWNLINK_SEND_PONG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>);
 <a name="l00097"></a>00097   } <span class="keywordflow">else</span>
 <a name="l00098"></a>00098 <span class="preprocessor">#ifdef TRAFFIC_INFO</span>
 <a name="l00099"></a>00099 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (msg_id == DL_ACINFO &amp;&amp; DL_ACINFO_ac_id(dl_buffer) != AC_ID) {
@@ -244,10 +244,10 @@ function toggleVisibility(linkObj) {
 <a name="l00126"></a>00126 <span class="comment">       coordinates */</span>
 <a name="l00127"></a>00127     utm.<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a> = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp_id].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a> + <a class="code" href="common__nav_8c.html#a3de43e2f62e53fe06e76fe5c22c017b5">nav_utm_east0</a>;
 <a name="l00128"></a>00128     utm.<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a> = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp_id].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a> + <a class="code" href="common__nav_8c.html#ace28d2afa409c13ff38275eac017698c">nav_utm_north0</a>;
-<a name="l00129"></a>00129     DOWNLINK_SEND_WP_MOVED(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;wp_id, &amp;utm.<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a>, &amp;utm.<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a>, &amp;a, &amp;<a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>);
+<a name="l00129"></a>00129     DOWNLINK_SEND_WP_MOVED(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;wp_id, &amp;utm.<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a>, &amp;utm.<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a>, &amp;a, &amp;<a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>);
 <a name="l00130"></a>00130   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg_id == DL_BLOCK &amp;&amp; DL_BLOCK_ac_id(dl_buffer) == AC_ID) {
 <a name="l00131"></a>00131     <a class="code" href="common__flight__plan_8c.html#ad5b3972efdfb4b34574a534615be3db2">nav_goto_block</a>(DL_BLOCK_block_id(dl_buffer));
-<a name="l00132"></a>00132     <a class="code" href="ap__downlink_8h.html#ab2e356985e77c652029d07aac48f26fa">SEND_NAVIGATION</a>(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>);
+<a name="l00132"></a>00132     <a class="code" href="ap__downlink_8h.html#ab2e356985e77c652029d07aac48f26fa">SEND_NAVIGATION</a>(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>);
 <a name="l00133"></a>00133   } <span class="keywordflow">else</span>
 <a name="l00134"></a>00134 <span class="preprocessor">#endif </span>
 <a name="l00135"></a>00135 <span class="preprocessor">#ifdef WIND_INFO</span>
@@ -258,7 +258,7 @@ function toggleVisibility(linkObj) {
 <a name="l00140"></a>00140 <span class="preprocessor"></span>    <a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77">estimator_airspeed</a> = DL_WIND_INFO_airspeed(dl_buffer);
 <a name="l00141"></a>00141 <span class="preprocessor">#endif</span>
 <a name="l00142"></a>00142 <span class="preprocessor"></span><span class="preprocessor">#ifdef WIND_INFO_RET</span>
-<a name="l00143"></a>00143 <span class="preprocessor"></span>    DOWNLINK_SEND_WIND_INFO_RET(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;<a class="code" href="estimator_8c.html#a762006597eb119747d06f6b894e1b8dc">wind_east</a>, &amp;<a class="code" href="estimator_8c.html#a54d31e15c8165ef9082053e448d904e7">wind_north</a>, &amp;<a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77">estimator_airspeed</a>);
+<a name="l00143"></a>00143 <span class="preprocessor"></span>    DOWNLINK_SEND_WIND_INFO_RET(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;<a class="code" href="estimator_8c.html#a762006597eb119747d06f6b894e1b8dc">wind_east</a>, &amp;<a class="code" href="estimator_8c.html#a54d31e15c8165ef9082053e448d904e7">wind_north</a>, &amp;<a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77">estimator_airspeed</a>);
 <a name="l00144"></a>00144 <span class="preprocessor">#endif</span>
 <a name="l00145"></a>00145 <span class="preprocessor"></span>  } <span class="keywordflow">else</span>
 <a name="l00146"></a>00146 <span class="preprocessor">#endif </span>
@@ -286,11 +286,11 @@ function toggleVisibility(linkObj) {
 <a name="l00171"></a>00171     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i = DL_SETTING_index(dl_buffer);
 <a name="l00172"></a>00172     <span class="keywordtype">float</span> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a> = DL_SETTING_value(dl_buffer);
 <a name="l00173"></a>00173     DlSetting(i, val);
-<a name="l00174"></a>00174     DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;i, &amp;val);
+<a name="l00174"></a>00174     DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;i, &amp;val);
 <a name="l00175"></a>00175   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg_id == DL_GET_SETTING &amp;&amp; DL_GET_SETTING_ac_id(dl_buffer) == AC_ID) {
 <a name="l00176"></a>00176     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i = DL_GET_SETTING_index(dl_buffer);
 <a name="l00177"></a>00177     <span class="keywordtype">float</span> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a> = settings_get_value(i);
-<a name="l00178"></a>00178     DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">DefaultChannel</a>, &amp;i, &amp;val);
+<a name="l00178"></a>00178     DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, &amp;i, &amp;val);
 <a name="l00179"></a>00179   } <span class="keywordflow">else</span>
 <a name="l00180"></a>00180 <span class="preprocessor">#endif </span>
 <a name="l00181"></a>00181 <span class="preprocessor">#ifdef USE_JOYSTICK</span>
@@ -305,7 +305,7 @@ function toggleVisibility(linkObj) {
 <a name="l00190"></a>00190 <span class="preprocessor">#ifdef RADIO_CONTROL_DATALINK_LED</span>
 <a name="l00191"></a>00191 <span class="preprocessor"></span>      <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(RADIO_CONTROL_DATALINK_LED);
 <a name="l00192"></a>00192 <span class="preprocessor">#endif</span>
-<a name="l00193"></a>00193 <span class="preprocessor"></span>      <a class="code" href="subsystems_2radio__control_2rc__datalink_8c.html#a22105107236d00fa616659322bd89a02">parse_rc_3ch_datalink</a>(
+<a name="l00193"></a>00193 <span class="preprocessor"></span>      <a class="code" href="subsystems_2radio__control_2rc__datalink_8c.html#a22105107236d00fa616659322bd89a02" title="Decode datalink message to get rc values with RC_3CH message Mode and throttle are merge in the same ...">parse_rc_3ch_datalink</a>(
 <a name="l00194"></a>00194           DL_RC_3CH_throttle_mode(dl_buffer),
 <a name="l00195"></a>00195           DL_RC_3CH_roll(dl_buffer),
 <a name="l00196"></a>00196           DL_RC_3CH_pitch(dl_buffer));
@@ -314,7 +314,7 @@ function toggleVisibility(linkObj) {
 <a name="l00199"></a>00199 <span class="preprocessor">#ifdef RADIO_CONTROL_DATALINK_LED</span>
 <a name="l00200"></a>00200 <span class="preprocessor"></span>      <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(RADIO_CONTROL_DATALINK_LED);
 <a name="l00201"></a>00201 <span class="preprocessor">#endif</span>
-<a name="l00202"></a>00202 <span class="preprocessor"></span>      <a class="code" href="subsystems_2radio__control_2rc__datalink_8c.html#aa3d40235f29aab16121c0073217835a2">parse_rc_4ch_datalink</a>(
+<a name="l00202"></a>00202 <span class="preprocessor"></span>      <a class="code" href="subsystems_2radio__control_2rc__datalink_8c.html#aa3d40235f29aab16121c0073217835a2" title="Decode datalink message to get rc values with RC_4CH message.">parse_rc_4ch_datalink</a>(
 <a name="l00203"></a>00203           DL_RC_4CH_mode(dl_buffer),
 <a name="l00204"></a>00204           DL_RC_4CH_throttle(dl_buffer),
 <a name="l00205"></a>00205           DL_RC_4CH_roll(dl_buffer),
@@ -332,7 +332,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="fixedwing_2datalink_8c.html">datalink.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:48 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:17:59 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

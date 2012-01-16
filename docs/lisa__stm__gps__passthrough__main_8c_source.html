@@ -154,12 +154,12 @@ function toggleVisibility(linkObj) {
 <a name="l00032"></a>00032 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>(<span class="keywordtype">void</span>);
 <a name="l00033"></a>00033 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>(<span class="keywordtype">void</span>);
 <a name="l00034"></a>00034 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a319a645047f275499aa30b0bc08c6e10">main_event</a>(<span class="keywordtype">void</span>);
-<a name="l00035"></a>00035 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a673c138133952eaa8d725712998618db">uart_transfer_event</a>(<span class="keywordtype">void</span>);
+<a name="l00035"></a>00035 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a673c138133952eaa8d725712998618db" title="spistream stress test: Send big (500-700 bytes) messages with different message lengths for every cha...">uart_transfer_event</a>(<span class="keywordtype">void</span>);
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970">on_spistream_msg_received</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_id, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> num_bytes);
+<a name="l00037"></a>00037 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970" title="Handler for commands (messages from Overo-&gt;STM).">on_spistream_msg_received</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_id, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> num_bytes);
 <a name="l00038"></a>00038 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#accea76ca9b1788b525757170fb4a3267">on_spistream_msg_sent</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_id);
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115">on_overo_link_msg_received</a>(<span class="keywordtype">void</span>);
+<a name="l00040"></a>00040 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115" title="Every SPI transfer contains exactly two packages of type AutopilotMessagePTStream, one for each direction (up: STM-&gt;Overo, down: Overo-&gt;STM).">on_overo_link_msg_received</a>(<span class="keywordtype">void</span>);
 <a name="l00041"></a>00041 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a085b7a7e09c9e63d14a73bb376a7c70f">on_overo_link_lost</a>(<span class="keywordtype">void</span>);
 <a name="l00042"></a>00042 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a62bcf5ca6da8a0b5dc3b9f43060904ef">on_overo_link_crc_failed</a>(<span class="keywordtype">void</span>);
 <a name="l00043"></a>00043 
@@ -229,16 +229,16 @@ function toggleVisibility(linkObj) {
 <a name="l00107"></a>00107 <span class="preprocessor"></span>  uart_debug_transfer_init();
 <a name="l00108"></a>00108 <span class="preprocessor">#endif</span>
 <a name="l00109"></a>00109 <span class="preprocessor"></span>
-<a name="l00110"></a>00110   <a class="code" href="lisa__spistream_8h.html#a767aaa5118567856d97dc3e3937c3f1d">spistream_init</a>(&amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970">on_spistream_msg_received</a>,
+<a name="l00110"></a>00110   <a class="code" href="lisa__spistream_8h.html#a767aaa5118567856d97dc3e3937c3f1d">spistream_init</a>(&amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970" title="Handler for commands (messages from Overo-&gt;STM).">on_spistream_msg_received</a>,
 <a name="l00111"></a>00111                  &amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#accea76ca9b1788b525757170fb4a3267">on_spistream_msg_sent</a>);
 <a name="l00112"></a>00112 
 <a name="l00113"></a>00113 }
 <a name="l00114"></a>00114 
-<a name="l00120"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970">00120</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970">on_spistream_msg_received</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_id,
+<a name="l00120"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970">00120</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970" title="Handler for commands (messages from Overo-&gt;STM).">on_spistream_msg_received</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_id,
 <a name="l00121"></a>00121                                              <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data,
 <a name="l00122"></a>00122                                              <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> num_bytes)
 <a name="l00123"></a>00123 {
-<a name="l00124"></a>00124   <a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">spistream_send_msg</a>(data, num_bytes, <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614eaa03210e9870c0a6a931ba356c9ed606b">SPISTREAM_NO_WAIT</a>);
+<a name="l00124"></a>00124   <a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7" title="Used from userland: Send num_bytes bytes from buffer over spistream.">spistream_send_msg</a>(data, num_bytes, <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614eaa03210e9870c0a6a931ba356c9ed606b">SPISTREAM_NO_WAIT</a>);
 <a name="l00125"></a>00125 }
 <a name="l00126"></a>00126 
 <a name="l00127"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#accea76ca9b1788b525757170fb4a3267">00127</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#accea76ca9b1788b525757170fb4a3267">on_spistream_msg_sent</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_id) {
@@ -256,10 +256,10 @@ function toggleVisibility(linkObj) {
 <a name="l00139"></a>00139   });
 <a name="l00140"></a>00140 }
 <a name="l00141"></a>00141 
-<a name="l00152"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115">00152</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115">on_overo_link_msg_received</a>(<span class="keywordtype">void</span>)
+<a name="l00152"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115">00152</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115" title="Every SPI transfer contains exactly two packages of type AutopilotMessagePTStream, one for each direction (up: STM-&gt;Overo, down: Overo-&gt;STM).">on_overo_link_msg_received</a>(<span class="keywordtype">void</span>)
 <a name="l00153"></a>00153 {
-<a name="l00154"></a>00154   <a class="code" href="lisa__spistream_8h.html#ad56d7ad7c03b6038f5456e3e668f21c9">spistream_read_pkg</a>(&amp;<a class="code" href="lisa__overo__link_8c.html#a112a0d05fef7aba1a3b417fa75f7e3e2">overo_link</a>.<a class="code" href="structLisaOveroLink.html#a2a67b22a6913fa3b9d88838081c41450">down</a>.<a class="code" href="structLisaOveroLink.html#ae6cae29f4eb30631e6878d633198996e">msg</a>);
-<a name="l00155"></a>00155   <a class="code" href="lisa__spistream_8h.html#af1349ed9a602bfb1697a5f3af132de33">spistream_write_pkg</a>(&amp;<a class="code" href="lisa__overo__link_8c.html#a112a0d05fef7aba1a3b417fa75f7e3e2">overo_link</a>.<a class="code" href="structLisaOveroLink.html#a2d7e0751ac036b43a32f76473eeb2181">up</a>.<a class="code" href="structLisaOveroLink.html#ae6cae29f4eb30631e6878d633198996e">msg</a>);
+<a name="l00154"></a>00154   <a class="code" href="lisa__spistream_8h.html#ad56d7ad7c03b6038f5456e3e668f21c9" title="Read a single package into internal RX buffer.">spistream_read_pkg</a>(&amp;<a class="code" href="lisa__overo__link_8c.html#a112a0d05fef7aba1a3b417fa75f7e3e2">overo_link</a>.<a class="code" href="structLisaOveroLink.html#a2a67b22a6913fa3b9d88838081c41450">down</a>.<a class="code" href="structLisaOveroLink.html#ae6cae29f4eb30631e6878d633198996e">msg</a>);
+<a name="l00155"></a>00155   <a class="code" href="lisa__spistream_8h.html#af1349ed9a602bfb1697a5f3af132de33" title="Fill given SPI package with next package from TX buffer.">spistream_write_pkg</a>(&amp;<a class="code" href="lisa__overo__link_8c.html#a112a0d05fef7aba1a3b417fa75f7e3e2">overo_link</a>.<a class="code" href="structLisaOveroLink.html#a2d7e0751ac036b43a32f76473eeb2181">up</a>.<a class="code" href="structLisaOveroLink.html#ae6cae29f4eb30631e6878d633198996e">msg</a>);
 <a name="l00156"></a>00156 }
 <a name="l00157"></a>00157 
 <a name="l00158"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a085b7a7e09c9e63d14a73bb376a7c70f">00158</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a085b7a7e09c9e63d14a73bb376a7c70f">on_overo_link_lost</a>(<span class="keywordtype">void</span>) {
@@ -270,12 +270,12 @@ function toggleVisibility(linkObj) {
 <a name="l00163"></a>00163 
 <a name="l00164"></a>00164 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a319a645047f275499aa30b0bc08c6e10">main_event</a>(<span class="keywordtype">void</span>)
 <a name="l00165"></a>00165 {
-<a name="l00166"></a>00166   <a class="code" href="lisa__overo__link__arch_8h.html#a9d16852d48e98c09b669b8268833624f">OveroLinkEvent</a>(<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115">on_overo_link_msg_received</a>, <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a62bcf5ca6da8a0b5dc3b9f43060904ef">on_overo_link_crc_failed</a>);
+<a name="l00166"></a>00166   <a class="code" href="lisa__overo__link__arch_8h.html#a9d16852d48e98c09b669b8268833624f">OveroLinkEvent</a>(<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115" title="Every SPI transfer contains exactly two packages of type AutopilotMessagePTStream, one for each direction (up: STM-&gt;Overo, down: Overo-&gt;STM).">on_overo_link_msg_received</a>, <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a62bcf5ca6da8a0b5dc3b9f43060904ef">on_overo_link_crc_failed</a>);
 <a name="l00167"></a>00167 
 <a name="l00168"></a>00168 <span class="preprocessor">#ifdef SPISTREAM_DEBUG</span>
 <a name="l00169"></a>00169 <span class="preprocessor"></span>  uart_debug_transfer_event();
 <a name="l00170"></a>00170 <span class="preprocessor">#else</span>
-<a name="l00171"></a>00171 <span class="preprocessor"></span>  <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a673c138133952eaa8d725712998618db">uart_transfer_event</a>();
+<a name="l00171"></a>00171 <span class="preprocessor"></span>  <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a673c138133952eaa8d725712998618db" title="spistream stress test: Send big (500-700 bytes) messages with different message lengths for every cha...">uart_transfer_event</a>();
 <a name="l00172"></a>00172 <span class="preprocessor">#endif</span>
 <a name="l00173"></a>00173 <span class="preprocessor"></span>}
 <a name="l00174"></a>00174 
@@ -302,19 +302,19 @@ function toggleVisibility(linkObj) {
 <a name="l00202"></a>00202       <span class="keywordflow">if</span>(len &gt; 700) { len = 500; }
 <a name="l00203"></a>00203 
 <a name="l00204"></a>00204       spistream_debug_msg.uart_id = 1;
-<a name="l00205"></a>00205       <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;spistream_debug_msg,
+<a name="l00205"></a>00205       <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7" title="Used from userland: Send num_bytes bytes from buffer over spistream.">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;spistream_debug_msg,
 <a name="l00206"></a>00206                             len+1-20,
 <a name="l00207"></a>00207                             <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614ead60c7b6801fd6d7ae30ce27194e31aba">SPISTREAM_WAIT_FOR_READ</a>)) { <span class="comment">// +1 for UART id byte</span>
 <a name="l00208"></a>00208         <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#acf0b6ee5100b86f8851ed2af90715734">spistream_wait_for_num_transfers</a>++;
 <a name="l00209"></a>00209       }
 <a name="l00210"></a>00210       spistream_debug_msg.uart_id = 2;
-<a name="l00211"></a>00211       <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;spistream_debug_msg,
+<a name="l00211"></a>00211       <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7" title="Used from userland: Send num_bytes bytes from buffer over spistream.">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;spistream_debug_msg,
 <a name="l00212"></a>00212                             len+1,
 <a name="l00213"></a>00213                             <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614ead60c7b6801fd6d7ae30ce27194e31aba">SPISTREAM_WAIT_FOR_READ</a>)) { <span class="comment">// +1 for UART id byte</span>
 <a name="l00214"></a>00214         <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#acf0b6ee5100b86f8851ed2af90715734">spistream_wait_for_num_transfers</a>++;
 <a name="l00215"></a>00215       }
 <a name="l00216"></a>00216       spistream_debug_msg.uart_id = 3;
-<a name="l00217"></a>00217       <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;spistream_debug_msg,
+<a name="l00217"></a>00217       <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7" title="Used from userland: Send num_bytes bytes from buffer over spistream.">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;spistream_debug_msg,
 <a name="l00218"></a>00218                             len+1+20,
 <a name="l00219"></a>00219                             <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614ead60c7b6801fd6d7ae30ce27194e31aba">SPISTREAM_WAIT_FOR_READ</a>)) { <span class="comment">// +1 for UART id byte</span>
 <a name="l00220"></a>00220         <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#acf0b6ee5100b86f8851ed2af90715734">spistream_wait_for_num_transfers</a>++;
@@ -327,7 +327,7 @@ function toggleVisibility(linkObj) {
 <a name="l00227"></a>00227 }
 <a name="l00228"></a>00228 <span class="preprocessor">#endif</span>
 <a name="l00229"></a>00229 <span class="preprocessor"></span>
-<a name="l00230"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a673c138133952eaa8d725712998618db">00230</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a673c138133952eaa8d725712998618db">uart_transfer_event</a>(<span class="keywordtype">void</span>) {
+<a name="l00230"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a673c138133952eaa8d725712998618db">00230</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a673c138133952eaa8d725712998618db" title="spistream stress test: Send big (500-700 bytes) messages with different message lengths for every cha...">uart_transfer_event</a>(<span class="keywordtype">void</span>) {
 <a name="l00231"></a>00231 
 <a name="l00232"></a>00232   <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> uart1_num_rx_bytes = 0;
 <a name="l00233"></a>00233   <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> uart2_num_rx_bytes = 0;
@@ -405,7 +405,7 @@ function toggleVisibility(linkObj) {
 <a name="l00305"></a>00305       uart3_sent = !uart3_enabled; <span class="comment">// as it seems to have been read already.</span>
 <a name="l00306"></a>00306 
 <a name="l00307"></a>00307       <span class="keywordflow">if</span>(!uart1_sent &amp;&amp; uart1_num_rx_bytes &gt; 0) {
-<a name="l00308"></a>00308         <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">spistream_uart1_msg</a>,
+<a name="l00308"></a>00308         <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7" title="Used from userland: Send num_bytes bytes from buffer over spistream.">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">spistream_uart1_msg</a>,
 <a name="l00309"></a>00309                               uart1_num_rx_bytes+1, <span class="comment">// +1 for UART id</span>
 <a name="l00310"></a>00310                               <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614ead60c7b6801fd6d7ae30ce27194e31aba">SPISTREAM_WAIT_FOR_READ</a>)) {
 <a name="l00311"></a>00311            uart1_sent = 1;
@@ -414,7 +414,7 @@ function toggleVisibility(linkObj) {
 <a name="l00314"></a>00314       }
 <a name="l00315"></a>00315 
 <a name="l00316"></a>00316       <span class="keywordflow">if</span>(!uart2_sent &amp;&amp; uart1_num_rx_bytes &gt; 0) {
-<a name="l00317"></a>00317         <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">spistream_uart2_msg</a>,
+<a name="l00317"></a>00317         <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7" title="Used from userland: Send num_bytes bytes from buffer over spistream.">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">spistream_uart2_msg</a>,
 <a name="l00318"></a>00318                               uart1_num_rx_bytes+1, <span class="comment">// +1 for UART id</span>
 <a name="l00319"></a>00319                               <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614ead60c7b6801fd6d7ae30ce27194e31aba">SPISTREAM_WAIT_FOR_READ</a>)) {
 <a name="l00320"></a>00320            uart2_sent = 1;
@@ -423,7 +423,7 @@ function toggleVisibility(linkObj) {
 <a name="l00323"></a>00323       }
 <a name="l00324"></a>00324 
 <a name="l00325"></a>00325       <span class="keywordflow">if</span>(!uart3_sent &amp;&amp; uart3_num_rx_bytes &gt; 0) {
-<a name="l00326"></a>00326         <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#ac2712441ece2af2fbd8ce8f63d077020">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">spistream_uart3_msg</a>,
+<a name="l00326"></a>00326         <span class="keywordflow">if</span>(<a class="code" href="lisa__spistream_8h.html#af3135abc109f2caecde2d2b94b9f99f7" title="Used from userland: Send num_bytes bytes from buffer over spistream.">spistream_send_msg</a>((<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)&amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">spistream_uart3_msg</a>,
 <a name="l00327"></a>00327                               uart3_num_rx_bytes+1, <span class="comment">// +1 for UART id</span>
 <a name="l00328"></a>00328                               <a class="code" href="lisa__spistream_8h.html#a810a3b5af2fc3dc3a37f4983ad4a614ead60c7b6801fd6d7ae30ce27194e31aba">SPISTREAM_WAIT_FOR_READ</a>)) {
 <a name="l00329"></a>00329           uart3_sent = 1;
@@ -452,7 +452,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="lisa__stm__gps__passthrough__main_8c.html">lisa_stm_gps_passthrough_main.c</a>      </li>
-      <li class="footer">Generated on Thu Jan 12 2012 00:16:49 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Mon Jan 16 2012 19:18:00 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
