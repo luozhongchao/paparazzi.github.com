@@ -74,6 +74,7 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -200,33 +201,36 @@ function toggleVisibility(linkObj) {
 <a name="l00078"></a>00078 <span class="preprocessor"></span>
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080 <span class="comment">/* battery */</span>
-<a name="l00081"></a><a class="code" href="umarim__1_80_8h.html#ad5a6636ee170fccf62a748fc72374d3b">00081</a> <span class="preprocessor">#define ADC_CHANNEL_VSUPPLY AdcBank0(2)</span>
-<a name="l00082"></a>00082 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
-<a name="l00083"></a><a class="code" href="umarim__1_80_8h.html#a1dce105d488bf4fcd1181c04a750bfda">00083</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
-<a name="l00084"></a>00084 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00085"></a><a class="code" href="umarim__1_80_8h.html#a942e2dbfeaed34d083dfc6a8101e2c96">00085</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_2</span>
-<a name="l00086"></a>00086 <span class="preprocessor"></span>
-<a name="l00087"></a><a class="code" href="umarim__1_80_8h.html#a94fa241ceca04635f282e09bdd829f5f">00087</a> <span class="preprocessor">#define DefaultVoltageOfAdc(adc) (0.0247*adc)</span>
-<a name="l00088"></a>00088 <span class="preprocessor"></span>
-<a name="l00089"></a>00089 <span class="comment">/* SPI (SSP) */</span>
-<a name="l00090"></a><a class="code" href="umarim__1_80_8h.html#a62cb06db3908015c7305ca6833f90159">00090</a> <span class="preprocessor">#define SPI_SELECT_SLAVE0_PORT 0</span>
-<a name="l00091"></a><a class="code" href="umarim__1_80_8h.html#a697b8e633c428bd167844542c8c1453f">00091</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI_SELECT_SLAVE0_PIN 20</span>
-<a name="l00092"></a>00092 <span class="preprocessor"></span>
-<a name="l00093"></a><a class="code" href="umarim__1_80_8h.html#a6835875df62c2d69fbf86cdd5cefbe52">00093</a> <span class="preprocessor">#define SPI1_DRDY_PINSEL PINSEL1</span>
-<a name="l00094"></a><a class="code" href="umarim__1_80_8h.html#a1dca9637251da27024bb43042d685080">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI1_DRDY_PINSEL_BIT   0</span>
-<a name="l00095"></a><a class="code" href="umarim__1_80_8h.html#aabb4946529ad070470a4fdb279b02719">00095</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI1_DRDY_PINSEL_VAL   1</span>
-<a name="l00096"></a><a class="code" href="umarim__1_80_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">00096</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI1_DRDY_EINT         0</span>
-<a name="l00097"></a><a class="code" href="umarim__1_80_8h.html#a20be7d2a2ad2dcbc3a2b587973faeb09">00097</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI1_DRDY_VIC_IT       VIC_EINT0</span>
-<a name="l00098"></a>00098 <span class="preprocessor"></span>
-<a name="l00099"></a><a class="code" href="umarim__1_80_8h.html#af8df7cce5dd52da8571b6774d51bda77">00099</a> <span class="preprocessor">#define BOARD_HAS_BARO</span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span>
-<a name="l00101"></a>00101 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_UMARIM_V1_0_H */</span>
+<a name="l00081"></a>00081 <span class="comment">/* allow to define ADC_CHANNEL_VSUPPLY in the airframe file*/</span>
+<a name="l00082"></a>00082 <span class="preprocessor">#ifndef ADC_CHANNEL_VSUPPLY</span>
+<a name="l00083"></a><a class="code" href="umarim__1_80_8h.html#ad5a6636ee170fccf62a748fc72374d3b">00083</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_VSUPPLY AdcBank0(2)</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
+<a name="l00085"></a><a class="code" href="umarim__1_80_8h.html#a1dce105d488bf4fcd1181c04a750bfda">00085</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00087"></a><a class="code" href="umarim__1_80_8h.html#a942e2dbfeaed34d083dfc6a8101e2c96">00087</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_2</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span>
+<a name="l00090"></a><a class="code" href="umarim__1_80_8h.html#a94fa241ceca04635f282e09bdd829f5f">00090</a> <span class="preprocessor">#define DefaultVoltageOfAdc(adc) (0.0247*adc)</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span>
+<a name="l00092"></a>00092 <span class="comment">/* SPI (SSP) */</span>
+<a name="l00093"></a><a class="code" href="umarim__1_80_8h.html#a62cb06db3908015c7305ca6833f90159">00093</a> <span class="preprocessor">#define SPI_SELECT_SLAVE0_PORT 0</span>
+<a name="l00094"></a><a class="code" href="umarim__1_80_8h.html#a697b8e633c428bd167844542c8c1453f">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI_SELECT_SLAVE0_PIN 20</span>
+<a name="l00095"></a>00095 <span class="preprocessor"></span>
+<a name="l00096"></a><a class="code" href="umarim__1_80_8h.html#a6835875df62c2d69fbf86cdd5cefbe52">00096</a> <span class="preprocessor">#define SPI1_DRDY_PINSEL PINSEL1</span>
+<a name="l00097"></a><a class="code" href="umarim__1_80_8h.html#a1dca9637251da27024bb43042d685080">00097</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI1_DRDY_PINSEL_BIT   0</span>
+<a name="l00098"></a><a class="code" href="umarim__1_80_8h.html#aabb4946529ad070470a4fdb279b02719">00098</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI1_DRDY_PINSEL_VAL   1</span>
+<a name="l00099"></a><a class="code" href="umarim__1_80_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">00099</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI1_DRDY_EINT         0</span>
+<a name="l00100"></a><a class="code" href="umarim__1_80_8h.html#a20be7d2a2ad2dcbc3a2b587973faeb09">00100</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI1_DRDY_VIC_IT       VIC_EINT0</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span>
+<a name="l00102"></a><a class="code" href="umarim__1_80_8h.html#af8df7cce5dd52da8571b6774d51bda77">00102</a> <span class="preprocessor">#define BOARD_HAS_BARO</span>
+<a name="l00103"></a>00103 <span class="preprocessor"></span>
+<a name="l00104"></a>00104 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_UMARIM_V1_0_H */</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="umarim__1_80_8h.html">umarim_1.0.h</a>      </li>
-      <li class="footer">Generated on Mon Jan 16 2012 19:17:59 for Paparazzi UAV by&#160;
+      <li class="footer">Generated on Thu Jan 19 2012 16:54:08 for Paparazzi UAV by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

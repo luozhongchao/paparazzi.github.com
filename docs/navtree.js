@@ -1,7 +1,15 @@
 var NAVTREE =
 [
   [ "Paparazzi UAV", "index.html", [
-    [ "Main Page", "index.html", null ],
+    [ "Paparazzi Developer's Guide", "index.html", [
+      [ "Style Guides", "styleguide.html", [
+        [ "C Style Guide", "stylec.html", null ],
+        [ "Doxygen Style Guide", "styledoxygen.html", null ]
+      ] ]
+    ] ],
+    [ "Related Pages", "pages.html", [
+      [ "Paparazzi Technical Primers", "primer.html", null ]
+    ] ],
     [ "Data Structures", "annotated.html", [
       [ "ac_info_", "structac__info__.html", null ],
       [ "AccBuf", "structAccBuf.html", null ],
@@ -868,6 +876,8 @@ var NAVTREE =
       [ "sw/airborne/subsystems/ins/vf_int.h", "vf__int_8h.html", null ],
       [ "sw/airborne/subsystems/navigation/bomb.c", "bomb_8c.html", null ],
       [ "sw/airborne/subsystems/navigation/bomb.h", "bomb_8h.html", null ],
+      [ "sw/airborne/subsystems/navigation/border_line.c", "border__line_8c.html", null ],
+      [ "sw/airborne/subsystems/navigation/border_line.h", "border__line_8h.html", null ],
       [ "sw/airborne/subsystems/navigation/common_flight_plan.c", "common__flight__plan_8c.html", null ],
       [ "sw/airborne/subsystems/navigation/common_flight_plan.h", "common__flight__plan_8h.html", null ],
       [ "sw/airborne/subsystems/navigation/common_nav.c", "common__nav_8c.html", null ],
@@ -876,6 +886,8 @@ var NAVTREE =
       [ "sw/airborne/subsystems/navigation/discsurvey.h", "discsurvey_8h.html", null ],
       [ "sw/airborne/subsystems/navigation/flightzone.c", "flightzone_8c.html", null ],
       [ "sw/airborne/subsystems/navigation/flightzone.h", "flightzone_8h.html", null ],
+      [ "sw/airborne/subsystems/navigation/gls.c", "gls_8c.html", null ],
+      [ "sw/airborne/subsystems/navigation/gls.h", "gls_8h.html", null ],
       [ "sw/airborne/subsystems/navigation/nav_cube.c", "nav__cube_8c.html", null ],
       [ "sw/airborne/subsystems/navigation/nav_cube.h", "nav__cube_8h.html", null ],
       [ "sw/airborne/subsystems/navigation/nav_line.c", "nav__line_8c.html", null ],
