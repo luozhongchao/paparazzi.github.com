@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Paparazzi UAV", "index.html", [
+  [ "Paparazzi UAS", "index.html", [
     [ "Paparazzi Developer's Guide", "index.html", [
       [ "Style Guides", "styleguide.html", [
         [ "C Style Guide", "stylec.html", null ],
