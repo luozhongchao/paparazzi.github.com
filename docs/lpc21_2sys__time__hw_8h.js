@@ -1,0 +1,27 @@
+var lpc21_2sys__time__hw_8h =
+[
+    [ "GET_CUR_TIME_FLOAT", "lpc21_2sys__time__hw_8h.html#a57a3461ff42beeef4177ab451a2dee20", null ],
+    [ "InitSysTimePeriodic", "lpc21_2sys__time__hw_8h.html#aab2e7a4c6c7397cd31b7d8f9310d36b7", null ],
+    [ "MSEC_OF_SYS_TICS", "lpc21_2sys__time__hw_8h.html#af2610e02ff3eb3cff8f66010d1e031c6", null ],
+    [ "PERIODIC_TASK_PERIOD", "lpc21_2sys__time__hw_8h.html#a1f512463a7d0f54a2a4a2ef6cfd2582c", null ],
+    [ "SEC_OF_SYS_TICS", "lpc21_2sys__time__hw_8h.html#a01351c567012ac9bdf891d907be76249", null ],
+    [ "SIGNED_SYS_TICS_OF_SEC", "lpc21_2sys__time__hw_8h.html#a5d81bb1e898591d3d11d8a8c4877c9be", null ],
+    [ "SYS_TICS_OF_SEC", "lpc21_2sys__time__hw_8h.html#acbab715edf0436b97361e77135f4e27a", null ],
+    [ "SysTimeChronoStart", "lpc21_2sys__time__hw_8h.html#a98c74235c262882fe31d3f521fc417b9", null ],
+    [ "SysTimeChronoStartDisableIRQ", "lpc21_2sys__time__hw_8h.html#abe8223c49e869687f3a64aab6bb31f22", null ],
+    [ "SysTimeChronoStop", "lpc21_2sys__time__hw_8h.html#a603a308b76e2682453e4a1014917d289", null ],
+    [ "SysTimeChronoStopEnableIRQAndSendUS", "lpc21_2sys__time__hw_8h.html#aee5f34f2b38a6181e716ee11f67fd5e9", null ],
+    [ "SysTimeTimer", "lpc21_2sys__time__hw_8h.html#a2dfaf7d6ae83a19972aca429fc687e87", null ],
+    [ "SysTimeTimerStart", "lpc21_2sys__time__hw_8h.html#a0583c93a24eed5f81e1f647ca63a652a", null ],
+    [ "SysTimeTimerStop", "lpc21_2sys__time__hw_8h.html#abb950f6634af7da754fa0c6d99d689cb", null ],
+    [ "TIMER0_VIC_SLOT", "lpc21_2sys__time__hw_8h.html#ad5d5ed8092dba600cf37de82e1b60086", null ],
+    [ "USEC_OF_SYS_TICS", "lpc21_2sys__time__hw_8h.html#ac742fca323331ac0ebdd29ef69ede328", null ],
+    [ "sys_time_init", "lpc21_2sys__time__hw_8h.html#afa1427883d31532a107dc306b6b3b6d7", null ],
+    [ "sys_time_periodic", "lpc21_2sys__time__hw_8h.html#ae1c22a6c3bb5d9247346c7264956542c", null ],
+    [ "sys_time_usleep", "lpc21_2sys__time__hw_8h.html#ac7670fcda069c778861e6d2e36f212aa", null ],
+    [ "TIMER0_ISR", "lpc21_2sys__time__hw_8h.html#a344c07a77b0b618130629b1a49286b4a", null ],
+    [ "cpu_time_ticks", "lpc21_2sys__time__hw_8h.html#aa33701eb54ec6077e4e63d3069e224ca", null ],
+    [ "last_periodic_event", "lpc21_2sys__time__hw_8h.html#a55bdf7ed418dd6dd629bc487cf67ec55", null ],
+    [ "sys_time_chrono", "lpc21_2sys__time__hw_8h.html#af912f891d1e6fdcd2a1964104931fd6b", null ],
+    [ "sys_time_chrono_start", "lpc21_2sys__time__hw_8h.html#ae7b79861d597a60140ec394b02665f61", null ]
+];
