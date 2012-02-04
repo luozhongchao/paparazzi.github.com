@@ -394,7 +394,7 @@ var searchData=
   ['pprz_5fmode_5fhome',['PPRZ_MODE_HOME',['../fixedwing_2autopilot_8h.html#a1bac2b2090c1f336ed260c2be4eea49a',1,'autopilot.h']]],
   ['pprz_5fmode_5fmanual',['PPRZ_MODE_MANUAL',['../fixedwing_2autopilot_8h.html#a34715de2d7ba74623671ee30dfed3afa',1,'autopilot.h']]],
   ['pprz_5fmode_5fnb',['PPRZ_MODE_NB',['../fixedwing_2autopilot_8h.html#af8865f8a66d9066a72790a59b5f6be51',1,'autopilot.h']]],
-  ['pprz_5fmode_5fof_5fpulse',['PPRZ_MODE_OF_PULSE',['../fixedwing_2autopilot_8h.html#affb85ee7a4c6d00a55c9e82e2541eb73',1,'autopilot.h']]],
+  ['pprz_5fmode_5fof_5fpulse',['PPRZ_MODE_OF_PULSE',['../fixedwing_2autopilot_8h.html#a26271d532164bc63bc5490ba75e4e0f3',1,'autopilot.h']]],
   ['pprz_5fmode_5fupdate',['pprz_mode_update',['../main__ap_8c.html#a83e52893d778a46aeda1b3c09ffd0656',1,'main_ap.c']]],
   ['pprz_5fparse_5fpayload',['pprz_parse_payload',['../pprz__transport_8h.html#a8b5b1ef0271ffa7e1d50ed36a626f90b',1,'pprz_transport.h']]],
   ['pprz_5fsimple_5fmatrix_2eh',['pprz_simple_matrix.h',['../pprz__simple__matrix_8h.html',1,'']]],

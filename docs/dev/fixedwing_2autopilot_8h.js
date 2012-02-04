@@ -16,7 +16,7 @@ var fixedwing_2autopilot_8h =
     [ "PPRZ_MODE_HOME", "fixedwing_2autopilot_8h.html#a1bac2b2090c1f336ed260c2be4eea49a", null ],
     [ "PPRZ_MODE_MANUAL", "fixedwing_2autopilot_8h.html#a34715de2d7ba74623671ee30dfed3afa", null ],
     [ "PPRZ_MODE_NB", "fixedwing_2autopilot_8h.html#af8865f8a66d9066a72790a59b5f6be51", null ],
-    [ "PPRZ_MODE_OF_PULSE", "fixedwing_2autopilot_8h.html#affb85ee7a4c6d00a55c9e82e2541eb73", null ],
+    [ "PPRZ_MODE_OF_PULSE", "fixedwing_2autopilot_8h.html#a26271d532164bc63bc5490ba75e4e0f3", null ],
     [ "STICK_PUSHED", "fixedwing_2autopilot_8h.html#a7d56ec91e72fa7e7a0ec17604a598791", null ],
     [ "THROTTLE_THRESHOLD_TAKEOFF", "fixedwing_2autopilot_8h.html#a1c2e8ec07daf2aa0b8e54a832ea70139", null ],
     [ "TRESHOLD1", "fixedwing_2autopilot_8h.html#a7de23e775a6686ee961ae126eae99b2a", null ],

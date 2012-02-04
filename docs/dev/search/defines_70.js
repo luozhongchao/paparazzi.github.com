@@ -225,7 +225,7 @@ var searchData=
   ['pprz_5fmode_5fhome',['PPRZ_MODE_HOME',['../fixedwing_2autopilot_8h.html#a1bac2b2090c1f336ed260c2be4eea49a',1,'autopilot.h']]],
   ['pprz_5fmode_5fmanual',['PPRZ_MODE_MANUAL',['../fixedwing_2autopilot_8h.html#a34715de2d7ba74623671ee30dfed3afa',1,'autopilot.h']]],
   ['pprz_5fmode_5fnb',['PPRZ_MODE_NB',['../fixedwing_2autopilot_8h.html#af8865f8a66d9066a72790a59b5f6be51',1,'autopilot.h']]],
-  ['pprz_5fmode_5fof_5fpulse',['PPRZ_MODE_OF_PULSE',['../fixedwing_2autopilot_8h.html#affb85ee7a4c6d00a55c9e82e2541eb73',1,'autopilot.h']]],
+  ['pprz_5fmode_5fof_5fpulse',['PPRZ_MODE_OF_PULSE',['../fixedwing_2autopilot_8h.html#a26271d532164bc63bc5490ba75e4e0f3',1,'autopilot.h']]],
   ['pprz_5fusart_5fset_5fbaudrate',['pprz_usart_set_baudrate',['../pprz__baudrate_8h.html#a6c1463b9aaffd443b6915726a005be43',1,'pprz_baudrate.h']]],
   ['pprzbuffer',['PprzBuffer',['../pprz__transport_8h.html#a13f9fb3b01ab5297740cdb8cd61dbc76',1,'pprz_transport.h']]],
   ['pprzcheckandparse',['PprzCheckAndParse',['../pprz__transport_8h.html#aeb6abcc11e6ac8a8f68bceb66fded8b8',1,'pprz_transport.h']]],
