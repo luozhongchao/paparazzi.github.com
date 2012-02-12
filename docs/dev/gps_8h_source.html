@@ -165,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a><a class="code" href="structGpsState.html#a8c0416718a59e50261890cd870f716ea">00068</a>   <span class="keyword">struct </span><a class="code" href="structNedCoor__i.html" title="vector in North East Down coordinates">NedCoor_i</a> <a class="code" href="structGpsState.html#a8c0416718a59e50261890cd870f716ea" title="speed NED in cm/s">ned_vel</a>;      
 <a name="l00069"></a><a class="code" href="structGpsState.html#a17cba6d73da4b727be6494d436160933">00069</a>   <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="structGpsState.html#a17cba6d73da4b727be6494d436160933" title="norm of 2d ground speed in cm/s">gspeed</a>;                
 <a name="l00070"></a><a class="code" href="structGpsState.html#a6bbd07d59ce79d19e1027b08e76dbcf9">00070</a>   <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="structGpsState.html#a6bbd07d59ce79d19e1027b08e76dbcf9" title="norm of 3d speed in cm/s">speed_3d</a>;              
-<a name="l00071"></a><a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40">00071</a>   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS heading in rad*1e7.">course</a>;                
+<a name="l00071"></a><a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40">00071</a>   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS heading in rad*1e7 (CW/north)">course</a>;                
 <a name="l00072"></a><a class="code" href="structGpsState.html#aa0194e37ba0420998970bfe318d74a35">00072</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structGpsState.html#aa0194e37ba0420998970bfe318d74a35" title="position accuracy">pacc</a>;                 
 <a name="l00073"></a><a class="code" href="structGpsState.html#a2cad112343a238676da447e83d46f4be">00073</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structGpsState.html#a2cad112343a238676da447e83d46f4be" title="speed accuracy">sacc</a>;                 
 <a name="l00074"></a><a class="code" href="structGpsState.html#a796d3d22856c1865abb3256a64e5b6de">00074</a>   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="structGpsState.html#a796d3d22856c1865abb3256a64e5b6de" title="dilution of precision">pdop</a>;                 
@@ -240,7 +240,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00144"></a>00144     clock_delta = clock_ticks - gps_time.t0;
 <a name="l00145"></a>00145   }
 <a name="l00146"></a>00146 
-<a name="l00147"></a>00147   time_delta = <a class="code" href="lpc21_2sys__time__hw_8h.html#af2610e02ff3eb3cff8f66010d1e031c6">MSEC_OF_SYS_TICS</a>(clock_delta);
+<a name="l00147"></a>00147   time_delta = <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#af99860f73edd44bf3a75ecee175aac48">MSEC_OF_CPU_TICKS</a>(clock_delta);
 <a name="l00148"></a>00148 
 <a name="l00149"></a>00149   itow_now = gps_time.t0_tow + time_delta;
 <a name="l00150"></a>00150   <span class="keywordflow">if</span> (itow_now &gt; MSEC_PER_WEEK) itow_now %= MSEC_PER_WEEK;
@@ -271,7 +271,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="gps_8h.html">gps.h</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:32 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:29 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

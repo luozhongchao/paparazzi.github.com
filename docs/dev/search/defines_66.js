@@ -14,7 +14,6 @@ var searchData=
   ['fchk',['FCHK',['../lpc21_2subsystems_2settings__arch_8c.html#a486ad2adc27b733aa4476b6ddcfa2edb',1,'FCHK():&#160;settings_arch.c'],['../stm32_2subsystems_2settings__arch_8c.html#a486ad2adc27b733aa4476b6ddcfa2edb',1,'FCHK():&#160;settings_arch.c']]],
   ['fd_5fstdin',['FD_STDIN',['../sim_2mcu__periph_2uart__arch_8h.html#afb041cc5e9927594fdc0a9962f1e58cd',1,'uart_arch.h']]],
   ['ff_5fcmd_5ffrac',['FF_CMD_FRAC',['../rotorcraft_2guidance_2guidance__v_8c.html#a7b742dbc14825348962b81a827011fdc',1,'guidance_v.c']]],
-  ['fifty_5fms',['FIFTY_MS',['../sys__time_8h.html#a67cd6ccee25ee4a3511fe349d4ec4e7e',1,'sys_time.h']]],
   ['fillbufwith16bit',['FillBufWith16bit',['../generic__com_8c.html#a0a7332f7d2ae2b60fb67c96ec27d63fd',1,'generic_com.c']]],
   ['fillbufwith32bit',['FillBufWith32bit',['../generic__com_8c.html#a539730afad5660e5a0f9785ef8c2107d',1,'FillBufWith32bit():&#160;generic_com.c'],['../modules_2ins_2ins__arduimu__basic_8c.html#a539730afad5660e5a0f9785ef8c2107d',1,'FillBufWith32bit():&#160;ins_arduimu_basic.c']]],
   ['filterir',['FilterIR',['../infrared__i2c_8c.html#a24f4ed3c3ad59ddf986d01cd9ded85bf',1,'infrared_i2c.c']]],

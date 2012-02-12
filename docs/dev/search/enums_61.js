@@ -5,5 +5,6 @@ var searchData=
   ['actuators_5fastec_5fcmds',['actuators_astec_cmds',['../actuators__asctec_8h.html#a3194e0388b61ab95b70fd62252277355',1,'actuators_asctec.h']]],
   ['adc1_5fchannels',['adc1_channels',['../stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9',1,'adc_arch.h']]],
   ['adc2_5fchannels',['adc2_channels',['../stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45',1,'adc_arch.h']]],
+  ['aspirin2status',['Aspirin2Status',['../subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76',1,'imu_aspirin2.h']]],
   ['aspirinstatus',['AspirinStatus',['../imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8',1,'imu_aspirin.h']]]
 ];

@@ -3,7 +3,6 @@ var estimator_8c =
     [ "EstimatorSetSpeedCart", "estimator_8c.html#aa00ee21c568ce4f664aea563affdc9aa", null ],
     [ "NORM_RAD_ANGLE2", "estimator_8c.html#a94047a6ba759e513be0217b75b799377", null ],
     [ "estimator_init", "estimator_8c.html#a29de4acf227f44a38ddb0284767feedf", null ],
-    [ "estimator_propagate_state", "estimator_8c.html#ae063f7070a307972f81a0e9d0eeac4d6", null ],
     [ "estimator_update_state_gps", "estimator_8c.html#a52b9c5a79953c97f640618a5d5ca6668", null ],
     [ "alt_kalman_enabled", "estimator_8c.html#a0fc68d40afe495ea45845407887f4874", null ],
     [ "estimator_airspeed", "estimator_8c.html#a5dc658fc5279239e0f816d18299edc77", null ],

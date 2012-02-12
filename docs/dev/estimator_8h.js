@@ -12,7 +12,6 @@ var estimator_8h =
     [ "GetPosX", "estimator_8h.html#ac500a50330425cb4a3054774289bb205", null ],
     [ "GetPosY", "estimator_8h.html#a10961173ac6973d795af2f62eb67edca", null ],
     [ "estimator_init", "estimator_8h.html#a29de4acf227f44a38ddb0284767feedf", null ],
-    [ "estimator_propagate_state", "estimator_8h.html#ae063f7070a307972f81a0e9d0eeac4d6", null ],
     [ "estimator_update_state_gps", "estimator_8h.html#a52b9c5a79953c97f640618a5d5ca6668", null ],
     [ "alt_kalman_enabled", "estimator_8h.html#a0fc68d40afe495ea45845407887f4874", null ],
     [ "estimator_airspeed", "estimator_8h.html#a5dc658fc5279239e0f816d18299edc77", null ],

@@ -79,7 +79,7 @@ var searchData=
   ['led_5finit',['LED_INIT',['../lpc21_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b',1,'LED_INIT():&#160;led_hw.h'],['../sim_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b',1,'LED_INIT():&#160;led_hw.h'],['../stm32_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b',1,'LED_INIT():&#160;led_hw.h']]],
   ['led_5foff',['LED_OFF',['../lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f',1,'LED_OFF():&#160;led_hw.h'],['../sim_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f',1,'LED_OFF():&#160;led_hw.h'],['../stm32_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f',1,'LED_OFF():&#160;led_hw.h'],['../led_8h.html#a76c86a9c700e32e68f48f85271970b7f',1,'LED_OFF():&#160;led.h']]],
   ['led_5fon',['LED_ON',['../lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a',1,'LED_ON():&#160;led_hw.h'],['../sim_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a',1,'LED_ON():&#160;led_hw.h'],['../stm32_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a',1,'LED_ON():&#160;led_hw.h'],['../led_8h.html#a3ab823c4004d96d154dfb8f69d18c47a',1,'LED_ON():&#160;led.h']]],
-  ['led_5fperiodic',['LED_PERIODIC',['../lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b',1,'LED_PERIODIC():&#160;led_hw.h'],['../stm32_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b',1,'LED_PERIODIC():&#160;led_hw.h'],['../led_8h.html#aec278ae20b30da80a2fcdcee9d51571b',1,'LED_PERIODIC():&#160;led.h']]],
+  ['led_5fperiodic',['LED_PERIODIC',['../lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b',1,'LED_PERIODIC():&#160;led_hw.h'],['../sim_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b',1,'LED_PERIODIC():&#160;led_hw.h'],['../stm32_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b',1,'LED_PERIODIC():&#160;led_hw.h'],['../led_8h.html#aec278ae20b30da80a2fcdcee9d51571b',1,'LED_PERIODIC():&#160;led.h']]],
   ['led_5fpin',['LED_PIN',['../lpc21_2led__hw_8h.html#a1cc2d7446312d64be0ef2b6fcf2b2d86',1,'led_hw.h']]],
   ['led_5fpin_5freg',['LED_PIN_REG',['../lpc21_2led__hw_8h.html#afff74e44f4fa57618a5bd967f6f9f8cd',1,'led_hw.h']]],
   ['led_5fset',['LED_SET',['../lpc21_2led__hw_8h.html#a776db83de889b2d31b70392ea3f34efc',1,'led_hw.h']]],
@@ -101,7 +101,6 @@ var searchData=
   ['lm75_5ft_5fhyst_5freg',['LM75_T_HYST_REG',['../temp__lm75_8h.html#a424d9e763d951a307bebc2a489d48748',1,'temp_lm75.h']]],
   ['lm75_5ft_5fos_5freg',['LM75_T_OS_REG',['../temp__lm75_8h.html#ae1982dc9fa7db770a771cfecc8499621',1,'temp_lm75.h']]],
   ['lm75_5ftemp_5freg',['LM75_TEMP_REG',['../temp__lm75_8h.html#aa2496705858c63179430d88e0adf5aef',1,'temp_lm75.h']]],
-  ['low_5fbattery_5fdecivolt',['LOW_BATTERY_DECIVOLT',['../main__ap_8c.html#acf2a84e8c7761949aee257232ce2f7bb',1,'main_ap.c']]],
   ['low_5fbattery_5fdelay',['LOW_BATTERY_DELAY',['../main__ap_8c.html#adbada4ca14c3072188a193d5805bb1aa',1,'main_ap.c']]],
   ['low_5fnoise_5fthreshold',['LOW_NOISE_THRESHOLD',['../ahrs__aligner_8c.html#ac66a7498c5767a4094f61688897712df',1,'ahrs_aligner.c']]],
   ['low_5fnoise_5ftime',['LOW_NOISE_TIME',['../ahrs__aligner_8c.html#af5aba8cda072a4538c74c12f167ff3ba',1,'ahrs_aligner.c']]]

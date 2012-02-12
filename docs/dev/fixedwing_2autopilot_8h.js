@@ -22,9 +22,7 @@ var fixedwing_2autopilot_8h =
     [ "TRESHOLD1", "fixedwing_2autopilot_8h.html#a7de23e775a6686ee961ae126eae99b2a", null ],
     [ "TRESHOLD2", "fixedwing_2autopilot_8h.html#a85e27b46251180a3411323c00793d146", null ],
     [ "TRESHOLD_MANUAL_PPRZ", "fixedwing_2autopilot_8h.html#acab8840a071015fca297edbc2b05c109", null ],
-    [ "periodic_task", "fixedwing_2autopilot_8h.html#a336f9e14cbd33cd36aa40f96fa8f24dc", null ],
     [ "energy", "fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a", null ],
-    [ "fatal_error_nb", "fixedwing_2autopilot_8h.html#ad61e6f5956df74c58d93ed09dd5eabe6", null ],
     [ "gps_lost", "fixedwing_2autopilot_8h.html#ad5b2dcab0bbd14934aac4f5e0eea8b18", null ],
     [ "kill_throttle", "fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c", null ],
     [ "lateral_mode", "fixedwing_2autopilot_8h.html#ab559c6867326333905f9133432ff9315", null ],
@@ -32,8 +30,6 @@ var fixedwing_2autopilot_8h =
     [ "light_mode", "fixedwing_2autopilot_8h.html#aa9a30362aaef272dafbe9672b65def21", null ],
     [ "power_switch", "fixedwing_2autopilot_8h.html#adda0cb88d172048dd19b50ad66e7881e", null ],
     [ "pprz_mode", "fixedwing_2autopilot_8h.html#aebf57c26248ee8c66d3eacdbd6a155cd", null ],
-    [ "slider_1_val", "fixedwing_2autopilot_8h.html#a44c7519d24a1210b4195b65831c08f23", null ],
-    [ "slider_2_val", "fixedwing_2autopilot_8h.html#a909a5b6579e0b5302fd1847650a3219d", null ],
     [ "sum_err_reset", "fixedwing_2autopilot_8h.html#a954d1c6b690e31e3efda450f30e5eafb", null ],
     [ "vsupply", "fixedwing_2autopilot_8h.html#ad32aad7f4e3f9236375798ec1cad31dd", null ]
 ];

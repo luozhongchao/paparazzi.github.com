@@ -360,7 +360,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00256"></a>00256 
 <a name="l00257"></a><a class="code" href="ahrs__float__lkf_8c.html#a14926c76d2f85ac5e5957409df55ee4b">00257</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="ahrs__float__lkf_8c.html#a14926c76d2f85ac5e5957409df55ee4b">ahrs_lowpass_accel</a>(<span class="keywordtype">void</span>) {
 <a name="l00258"></a>00258   <span class="comment">// get latest measurement</span>
-<a name="l00259"></a>00259   <a class="code" href="pprz__algebra_8h.html#af9eb2d25685d01da0856faf230a6e5d5">ACCELS_FLOAT_OF_BFP</a>(<a class="code" href="ahrs__float__lkf_8c.html#af034be7c3b6f5a032132ca0f50f3a80b">bafl_accel_last</a>, <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aecac1be12d8d9c9c31be2ad9d5b90627" title="accelerometer measurements">accel</a>);
+<a name="l00259"></a>00259   <a class="code" href="pprz__algebra_8h.html#af9eb2d25685d01da0856faf230a6e5d5">ACCELS_FLOAT_OF_BFP</a>(<a class="code" href="ahrs__float__lkf_8c.html#af034be7c3b6f5a032132ca0f50f3a80b">bafl_accel_last</a>, <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aecac1be12d8d9c9c31be2ad9d5b90627" title="accelerometer measurements">accel</a>);
 <a name="l00260"></a>00260   <span class="comment">// low pass it</span>
 <a name="l00261"></a>00261   <a class="code" href="pprz__algebra_8h.html#acd569a47a1928f04aeeddf167633ce35">VECT3_ADD</a>(<a class="code" href="ahrs__float__lkf_8c.html#a20e2e23832bc38bd942419fb04512401">bafl_accel_measure</a>, <a class="code" href="ahrs__float__lkf_8c.html#af034be7c3b6f5a032132ca0f50f3a80b">bafl_accel_last</a>);
 <a name="l00262"></a>00262   <a class="code" href="pprz__algebra_8h.html#a3323b7f041582a4ecda3ab19df845f23">VECT3_SDIV</a>(<a class="code" href="ahrs__float__lkf_8c.html#a20e2e23832bc38bd942419fb04512401">bafl_accel_measure</a>, <a class="code" href="ahrs__float__lkf_8c.html#a20e2e23832bc38bd942419fb04512401">bafl_accel_measure</a>, 2);
@@ -394,7 +394,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00290"></a>00290     <a class="code" href="ahrs__float__lkf_8c.html#a14926c76d2f85ac5e5957409df55ee4b">ahrs_lowpass_accel</a>();
 <a name="l00291"></a>00291 
 <a name="l00292"></a>00292   <span class="comment">/* compute unbiased rates */</span>
-<a name="l00293"></a>00293   <a class="code" href="pprz__algebra_8h.html#acca9100063aac74c71f583354f893f78">RATES_FLOAT_OF_BFP</a>(<a class="code" href="ahrs__float__lkf_8c.html#afbb2025e12917248d7bb6a94c06e7fee">bafl_rates</a>, <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a556257d57db669a3e42ccc6c77fff286" title="gyroscope measurements">gyro</a>);
+<a name="l00293"></a>00293   <a class="code" href="pprz__algebra_8h.html#acca9100063aac74c71f583354f893f78">RATES_FLOAT_OF_BFP</a>(<a class="code" href="ahrs__float__lkf_8c.html#afbb2025e12917248d7bb6a94c06e7fee">bafl_rates</a>, <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a556257d57db669a3e42ccc6c77fff286" title="gyroscope measurements">gyro</a>);
 <a name="l00294"></a>00294   <a class="code" href="pprz__algebra_8h.html#a6bd4244ae070c1f6d690f95e660e20f9">RATES_SUB</a>(<a class="code" href="ahrs__float__lkf_8c.html#afbb2025e12917248d7bb6a94c06e7fee">bafl_rates</a>, <a class="code" href="ahrs__float__lkf_8c.html#a03ddef79696318f0cf7d31d033d834c4">bafl_bias</a>);
 <a name="l00295"></a>00295 
 <a name="l00296"></a>00296 
@@ -751,7 +751,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00647"></a>00647 <span class="preprocessor"></span>  printf(<span class="stringliteral">&quot;Mag update.\n&quot;</span>);
 <a name="l00648"></a>00648 <span class="preprocessor">#endif</span>
 <a name="l00649"></a>00649 <span class="preprocessor"></span>
-<a name="l00650"></a>00650   <a class="code" href="pprz__algebra_8h.html#a0e824674ba257f0d7023879446a14f89">MAGS_FLOAT_OF_BFP</a>(<a class="code" href="ahrs__float__lkf_8c.html#a5b0fc7d2f60a06a52dc66551865d7d19">bafl_mag</a>, <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a6c4356739a6b97db247831e0be58849e" title="magnetometer measurements">mag</a>);
+<a name="l00650"></a>00650   <a class="code" href="pprz__algebra_8h.html#a0e824674ba257f0d7023879446a14f89">MAGS_FLOAT_OF_BFP</a>(<a class="code" href="ahrs__float__lkf_8c.html#a5b0fc7d2f60a06a52dc66551865d7d19">bafl_mag</a>, <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a6c4356739a6b97db247831e0be58849e" title="magnetometer measurements">mag</a>);
 <a name="l00651"></a>00651 
 <a name="l00652"></a>00652   <span class="comment">/* P_prio = P */</span>
 <a name="l00653"></a>00653   <span class="keywordflow">for</span> (i = 0; i &lt; <a class="code" href="ahrs__float__lkf_8h.html#abf604907178e96d7abf2c0190600d133">BAFL_SSIZE</a>; i++) {
@@ -974,7 +974,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ahrs__float__lkf_8c.html">ahrs_float_lkf.c</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:32 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:29 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

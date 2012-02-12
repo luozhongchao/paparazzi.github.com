@@ -27,7 +27,6 @@ var searchData=
   ['_5f_5fvic_5fcntl',['__VIC_CNTL',['../armVIC_8h.html#a738db3cc9142f5ccd7934bf9a7ed5efe',1,'armVIC.h']]],
   ['_5fads1114event',['_Ads1114Event',['../ads1114_8h.html#a15684b2aef9bf39de5a2644f9b872370',1,'ads1114.h']]],
   ['_5fcamlink',['_CamLink',['../cam__track_8h.html#a677cd7cd6c5a2965d57ddf2d203ee6b0',1,'cam_track.h']]],
-  ['_5fcheck_5fperiodic_5ffreq_5f',['_check_periodic_freq_',['../main__ap_8c.html#afa53aa5c81217e73a6a641059e5658ba',1,'main_ap.c']]],
   ['_5fdrdy_5fport',['_DRDY_PORT',['../stm32_2peripherals_2max1168__arch_8c.html#a892ee660743669ce114886b2d2db1468',1,'max1168_arch.c']]],
   ['_5fdrdy_5fport_5fsource',['_DRDY_PORT_SOURCE',['../stm32_2peripherals_2max1168__arch_8c.html#a933d36499f90dbeb8f85c9774d5ec2f4',1,'max1168_arch.c']]],
   ['_5fenablefall',['_EnableFall',['../lpc21_2modules_2core_2trigger__ext__hw_8h.html#a9200f407d77b9f48efb4258cce79003d',1,'trigger_ext_hw.h']]],

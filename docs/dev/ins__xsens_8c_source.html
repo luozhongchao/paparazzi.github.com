@@ -133,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00038"></a>00038 <span class="preprocessor">#include &quot;messages.h&quot;</span>
 <a name="l00039"></a>00039 
@@ -436,7 +436,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00338"></a>00338   <span class="comment">// Now also finish filling the gps struct for telemetry purposes</span>
 <a name="l00339"></a>00339   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a17cba6d73da4b727be6494d436160933" title="norm of 2d ground speed in cm/s">gspeed</a> = fspeed * 100.;
 <a name="l00340"></a>00340   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a6bbd07d59ce79d19e1027b08e76dbcf9" title="norm of 3d speed in cm/s">speed_3d</a> = (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(sqrt(ins_vx*ins_vx + ins_vy*ins_vy + <a class="code" href="ins__module_8h.html#aaae2db83ca84ec0c21435a6c0892912c">ins_vz</a>*<a class="code" href="ins__module_8h.html#aaae2db83ca84ec0c21435a6c0892912c">ins_vz</a>) * 100);
-<a name="l00341"></a>00341   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS heading in rad*1e7.">course</a> = fcourse * 1e7;
+<a name="l00341"></a>00341   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS heading in rad*1e7 (CW/north)">course</a> = fcourse * 1e7;
 <a name="l00342"></a>00342 
 <a name="l00343"></a>00343 }
 <a name="l00344"></a>00344 
@@ -468,11 +468,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00370"></a>00370     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a> = XSENS_GPSStatus_nch(<a class="code" href="ins__xsens_8c.html#a1685356ace76940e06c455f2dcb00f75">xsens_msg_buf</a>);
 <a name="l00371"></a>00371     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#af6d2ba472d4430528868fd65b9d0c59c" title="number of sat in fix">num_sv</a> = 0;
 <a name="l00372"></a>00372 
-<a name="l00373"></a>00373     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a5502679e99fb346270925884a3da5e1f" title="cpu time in sec at last valid fix">last_fix_time</a> = <a class="code" href="sys__time_8c.html#ae5ab3e1832346003e3dfa32017a9e79c">cpu_time_sec</a>;
+<a name="l00373"></a>00373     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a5502679e99fb346270925884a3da5e1f" title="cpu time in sec at last valid fix">last_fix_time</a> = <a class="code" href="sys__time_8h.html#ab714a06d7058fea51e8a8b6851d51d33">cpu_time_sec</a>;
 <a name="l00374"></a>00374 
 <a name="l00375"></a>00375     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i;
 <a name="l00376"></a>00376     <span class="comment">// Do not write outside buffer</span>
-<a name="l00377"></a>00377     <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code" href="main__ap_8c.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a>, <a class="code" href="gps__nmea_8h.html#a63f1b81cf4a1e8e0fe80f065224826fe">GPS_NB_CHANNELS</a>); i++) {
+<a name="l00377"></a>00377     <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code" href="common__flight__plan_8h.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a>, <a class="code" href="gps__nmea_8h.html#a63f1b81cf4a1e8e0fe80f065224826fe">GPS_NB_CHANNELS</a>); i++) {
 <a name="l00378"></a>00378       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> ch = XSENS_GPSStatus_chn(<a class="code" href="ins__xsens_8c.html#a1685356ace76940e06c455f2dcb00f75">xsens_msg_buf</a>,i);
 <a name="l00379"></a>00379       <span class="keywordflow">if</span> (ch &gt; <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a>) <span class="keywordflow">continue</span>;
 <a name="l00380"></a>00380       <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[ch].<a class="code" href="structSVinfo.html#a941f93d35f7c73bedfc5da4d18088ca4" title="Satellite ID.">svid</a> = XSENS_GPSStatus_svid(<a class="code" href="ins__xsens_8c.html#a1685356ace76940e06c455f2dcb00f75">xsens_msg_buf</a>, i);
@@ -500,7 +500,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00402"></a>00402 <span class="preprocessor"></span><span class="preprocessor">#ifdef GPS_LED</span>
 <a name="l00403"></a>00403 <span class="preprocessor"></span>    <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(GPS_LED);
 <a name="l00404"></a>00404 <span class="preprocessor">#endif</span>
-<a name="l00405"></a>00405 <span class="preprocessor"></span>        <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a5502679e99fb346270925884a3da5e1f" title="cpu time in sec at last valid fix">last_fix_time</a> = <a class="code" href="sys__time_8c.html#ae5ab3e1832346003e3dfa32017a9e79c">cpu_time_sec</a>;
+<a name="l00405"></a>00405 <span class="preprocessor"></span>        <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a5502679e99fb346270925884a3da5e1f" title="cpu time in sec at last valid fix">last_fix_time</a> = <a class="code" href="sys__time_8h.html#ab714a06d7058fea51e8a8b6851d51d33">cpu_time_sec</a>;
 <a name="l00406"></a>00406         <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9ac6fac0cf4460ecfb34d575b8442dd8" title="GPS week.">week</a> = 0; <span class="comment">// FIXME</span>
 <a name="l00407"></a>00407         <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="time of week in ms">tow</a> = XSENS_DATA_RAWGPS_itow(<a class="code" href="ins__xsens_8c.html#a1685356ace76940e06c455f2dcb00f75">xsens_msg_buf</a>,offset) * 10;
 <a name="l00408"></a>00408         <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a298552f8926fd925f8c94bbeeca1dc5c" title="position in LLA (lat,lon: rad*1e7; alt: mm over ellipsoid)">lla_pos</a>.<a class="code" href="structLlaCoor__i.html#a083f5d7acd142e12865d9f4a918fee07" title="in radians*1e7">lat</a> = RadOfDeg(XSENS_DATA_RAWGPS_lat(<a class="code" href="ins__xsens_8c.html#a1685356ace76940e06c455f2dcb00f75">xsens_msg_buf</a>,offset));
@@ -608,7 +608,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00510"></a>00510       }
 <a name="l00511"></a>00511       <span class="keywordflow">if</span> (XSENS_MASK_Position(<a class="code" href="ins__xsens_8c.html#ab6203d489d4b6244e59ce3f8238f5c6f">xsens_output_mode</a>)) {
 <a name="l00512"></a>00512 <span class="preprocessor">#if (! USE_GPS_XSENS_RAW_DATA) &amp;&amp; USE_GPS_XSENS</span>
-<a name="l00513"></a>00513 <span class="preprocessor"></span>        <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a5502679e99fb346270925884a3da5e1f" title="cpu time in sec at last valid fix">last_fix_time</a> = <a class="code" href="sys__time_8c.html#ae5ab3e1832346003e3dfa32017a9e79c">cpu_time_sec</a>;
+<a name="l00513"></a>00513 <span class="preprocessor"></span>        <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a5502679e99fb346270925884a3da5e1f" title="cpu time in sec at last valid fix">last_fix_time</a> = <a class="code" href="sys__time_8h.html#ab714a06d7058fea51e8a8b6851d51d33">cpu_time_sec</a>;
 <a name="l00514"></a>00514 
 <a name="l00515"></a>00515         <a class="code" href="ins__xsens_8c.html#a9512ea78e648730dab715ac00881d90d">lla_f</a>.<a class="code" href="structLlaCoor__f.html#ace542562586741aeb022a5a57c30dea5" title="in radians">lat</a> = RadOfDeg(XSENS_DATA_Position_lat(<a class="code" href="ins__xsens_8c.html#a1685356ace76940e06c455f2dcb00f75">xsens_msg_buf</a>,offset));
 <a name="l00516"></a>00516         <a class="code" href="ins__xsens_8c.html#a9512ea78e648730dab715ac00881d90d">lla_f</a>.<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a> = RadOfDeg(XSENS_DATA_Position_lon(<a class="code" href="ins__xsens_8c.html#a1685356ace76940e06c455f2dcb00f75">xsens_msg_buf</a>,offset));
@@ -732,7 +732,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ins__xsens_8c.html">ins_xsens.c</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:31 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:29 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="firmwares_2rotorcraft_2commands_8h.html">firmwares/rotorcraft/commands.h</a>&quot;</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 
 <a name="l00030"></a><a class="code" href="actuators__skiron_8h.html#af6c6cc43745668052551cc7f54439122">00030</a> <span class="keyword">struct </span><a class="code" href="structActuatorsSkiron.html">ActuatorsSkiron</a> <a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>;
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048 <span class="preprocessor">#if defined ACTUATORS_START_DELAY &amp;&amp; ! defined SITL</span>
 <a name="l00049"></a>00049 <span class="preprocessor"></span>  <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = FALSE;
-<a name="l00050"></a>00050   <a class="code" href="lpc21_2sys__time__hw_8h.html#a0583c93a24eed5f81e1f647ca63a652a">SysTimeTimerStart</a>(<a class="code" href="actuators__asctec_8c.html#adc112700ab9255ba4329c57403d81a59">actuators_delay_time</a>);
+<a name="l00050"></a>00050   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#a0583c93a24eed5f81e1f647ca63a652a">SysTimeTimerStart</a>(<a class="code" href="actuators__asctec_8c.html#adc112700ab9255ba4329c57403d81a59">actuators_delay_time</a>);
 <a name="l00051"></a>00051 <span class="preprocessor">#else</span>
 <a name="l00052"></a>00052 <span class="preprocessor"></span>  <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = TRUE;
 <a name="l00053"></a>00053   <a class="code" href="actuators__asctec_8c.html#adc112700ab9255ba4329c57403d81a59">actuators_delay_time</a> = 0;
@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a><a class="code" href="actuators__skiron_8c.html#a9033da4381b216357c098fc9bb13ccf9">00058</a> <span class="keywordtype">void</span> <a class="code" href="actuators__asctec_8c.html#a9033da4381b216357c098fc9bb13ccf9">actuators_set</a>(bool_t motors_on) {
 <a name="l00059"></a>00059 <span class="preprocessor">#if defined ACTUATORS_START_DELAY &amp;&amp; ! defined SITL</span>
 <a name="l00060"></a>00060 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (!<a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a>) {
-<a name="l00061"></a>00061     <span class="keywordflow">if</span> (<a class="code" href="lpc21_2sys__time__hw_8h.html#a2dfaf7d6ae83a19972aca429fc687e87">SysTimeTimer</a>(<a class="code" href="actuators__asctec_8c.html#adc112700ab9255ba4329c57403d81a59">actuators_delay_time</a>) &lt; <a class="code" href="lpc21_2sys__time__hw_8h.html#acbab715edf0436b97361e77135f4e27a">SYS_TICS_OF_SEC</a>(ACTUATORS_START_DELAY)) <span class="keywordflow">return</span>;
+<a name="l00061"></a>00061     <span class="keywordflow">if</span> (<a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#a2dfaf7d6ae83a19972aca429fc687e87">SysTimeTimer</a>(<a class="code" href="actuators__asctec_8c.html#adc112700ab9255ba4329c57403d81a59">actuators_delay_time</a>) &lt; <a class="code" href="sys__time_8h.html#a16b92e3e15d99fcf7029503763a63b61">USEC_OF_SEC</a>(ACTUATORS_START_DELAY)) <span class="keywordflow">return</span>;
 <a name="l00062"></a>00062     <span class="keywordflow">else</span> <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = TRUE;
 <a name="l00063"></a>00063   }
 <a name="l00064"></a>00064 <span class="preprocessor">#endif</span>
@@ -198,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="actuators__skiron_8c.html">actuators_skiron.c</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:31 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:28 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['failsafe_5fcheck',['failsafe_check',['../firmwares_2rotorcraft_2main_8c.html#a6266a73fe8c0512f1de72cea96e5110b',1,'failsafe_check(void):&#160;main.c'],['../main_8h.html#a6266a73fe8c0512f1de72cea96e5110b',1,'failsafe_check(void):&#160;main.c']]],
   ['fbw_5fdownlink_5fperiodic_5ftask',['fbw_downlink_periodic_task',['../fbw__downlink_8h.html#ac7c6ec11d57c1ba4cda1c32bd067add0',1,'fbw_downlink.h']]],
   ['findinterceptoftwolines',['FindInterceptOfTwoLines',['../OSAMNav_8c.html#a7d7df26d6723c61622ad77133554b6f1',1,'FindInterceptOfTwoLines(float *x, float *y, struct Line L1, struct Line L2):&#160;OSAMNav.c'],['../OSAMNav_8h.html#a7d7df26d6723c61622ad77133554b6f1',1,'FindInterceptOfTwoLines(float *x, float *y, struct Line L1, struct Line L2):&#160;OSAMNav.c']]],
   ['flash_5fdetect',['flash_detect',['../lpc21_2subsystems_2settings__arch_8c.html#ad823eefc2cb06fb3581e165cabbbc053',1,'flash_detect(FlashInfo *flash):&#160;settings_arch.c'],['../stm32_2subsystems_2settings__arch_8c.html#a6e9ee5b58a0f71f5267a43dbca4fc5b5',1,'flash_detect(struct FlashInfo *flash):&#160;settings_arch.c']]],

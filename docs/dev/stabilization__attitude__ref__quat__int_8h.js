@@ -13,7 +13,6 @@ var stabilization__attitude__ref__quat__int_8h =
     [ "REF_ANGLE_TWO_PI", "stabilization__attitude__ref__quat__int_8h.html#a7c98c2da7c74ef04118c3145232e8d26", null ],
     [ "REF_RATE_FRAC", "stabilization__attitude__ref__quat__int_8h.html#a6a9ac7c2e058fdcfbd5ec56c9979944e", null ],
     [ "ROLL_COEF", "stabilization__attitude__ref__quat__int_8h.html#a5948a9863126732755023c8ae0d5eef6", null ],
-    [ "ROLL_COEF_H", "stabilization__attitude__ref__quat__int_8h.html#ac70fc1f8d671cb53030e02700bbe4ff3", null ],
     [ "ROLL_COEF_RATE", "stabilization__attitude__ref__quat__int_8h.html#ab2bab8f4f002c472c8d35aefd62302e1", null ],
     [ "ROLL_DEADBAND_EXCEEDED", "stabilization__attitude__ref__quat__int_8h.html#ade5e3cdd965d34f8d9076b0724f54c02", null ],
     [ "STABILIZATION_ATTITUDE_READ_RC", "stabilization__attitude__ref__quat__int_8h.html#a39c59b73703362da2482aab7a34ee655", null ],

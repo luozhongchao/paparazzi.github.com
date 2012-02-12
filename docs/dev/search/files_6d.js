@@ -48,8 +48,8 @@ var searchData=
   ['mcu_5farch_2ec',['mcu_arch.c',['../stm32_2mcu__arch_8c.html',1,'']]],
   ['mcu_5farch_2ec',['mcu_arch.c',['../sim_2mcu__arch_8c.html',1,'']]],
   ['mcu_5farch_2eh',['mcu_arch.h',['../sim_2mcu__arch_8h.html',1,'']]],
-  ['mcu_5farch_2eh',['mcu_arch.h',['../stm32_2mcu__arch_8h.html',1,'']]],
   ['mcu_5farch_2eh',['mcu_arch.h',['../lpc21_2mcu__arch_8h.html',1,'']]],
+  ['mcu_5farch_2eh',['mcu_arch.h',['../stm32_2mcu__arch_8h.html',1,'']]],
   ['micromag_2ec',['micromag.c',['../micromag_8c.html',1,'']]],
   ['micromag_2eh',['micromag.h',['../micromag_8h.html',1,'']]],
   ['micromag_5fhw_2ec',['micromag_hw.c',['../lpc21_2micromag__hw_8c.html',1,'']]],
@@ -58,11 +58,12 @@ var searchData=
   ['micromag_5fhw_2eh',['micromag_hw.h',['../sim_2micromag__hw_8h.html',1,'']]],
   ['mppt_2ec',['MPPT.c',['../MPPT_8c.html',1,'']]],
   ['mppt_2eh',['MPPT.h',['../MPPT_8h.html',1,'']]],
+  ['mpu60x0_2eh',['mpu60X0.h',['../mpu60X0_8h.html',1,'']]],
   ['ms2100_2ec',['ms2100.c',['../ms2100_8c.html',1,'']]],
   ['ms2100_2eh',['ms2100.h',['../ms2100_8h.html',1,'']]],
   ['ms2100_5farch_2ec',['ms2100_arch.c',['../lpc21_2peripherals_2ms2100__arch_8c.html',1,'']]],
   ['ms2100_5farch_2ec',['ms2100_arch.c',['../stm32_2peripherals_2ms2100__arch_8c.html',1,'']]],
-  ['ms2100_5farch_2eh',['ms2100_arch.h',['../lpc21_2peripherals_2ms2100__arch_8h.html',1,'']]],
   ['ms2100_5farch_2eh',['ms2100_arch.h',['../stm32_2peripherals_2ms2100__arch_8h.html',1,'']]],
+  ['ms2100_5farch_2eh',['ms2100_arch.h',['../lpc21_2peripherals_2ms2100__arch_8h.html',1,'']]],
   ['my_5fdebug_5fservo_2eh',['my_debug_servo.h',['../my__debug__servo_8h.html',1,'']]]
 ];

@@ -127,67 +127,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023 
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span>
 <a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="imu_8c.html#a77b76ed533bc56f50d714f8958dd26cc">00030</a> <span class="keyword">struct </span><a class="code" href="structImu.html" title="abstract IMU interface providing fixed point interface">Imu</a> <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>;
+<a name="l00030"></a><a class="code" href="imu_8c.html#a77b76ed533bc56f50d714f8958dd26cc">00030</a> <span class="keyword">struct </span><a class="code" href="structImu.html" title="abstract IMU interface providing fixed point interface">Imu</a> <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>;
 <a name="l00031"></a>00031 
 <a name="l00032"></a><a class="code" href="imu_8c.html#a86a06fe7a9831292bd92867da2d12f80">00032</a> <span class="keywordtype">void</span> <a class="code" href="ins__xsens_8c.html#a86a06fe7a9831292bd92867da2d12f80">imu_init</a>(<span class="keywordtype">void</span>) {
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034   <span class="comment">/* initialises neutrals */</span>
-<a name="l00035"></a>00035   <a class="code" href="pprz__algebra_8h.html#a4edec404f97e53a3bfac68662016a2d3">RATES_ASSIGN</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aa15ae274818b1d781a10f3c3de482900" title="gyroscope bias">gyro_neutral</a>,  <a class="code" href="imu__aspirin_8h.html#a7c36ae4fa7593bdd81a2eac2a763452e">IMU_GYRO_P_NEUTRAL</a>,  <a class="code" href="imu__aspirin_8h.html#af3381e8cf000efbb86c6a4667449faf9">IMU_GYRO_Q_NEUTRAL</a>,  <a class="code" href="imu__aspirin_8h.html#adb9273d5a997fde171fc41b58191f597">IMU_GYRO_R_NEUTRAL</a>);
+<a name="l00035"></a>00035   <a class="code" href="pprz__algebra_8h.html#a4edec404f97e53a3bfac68662016a2d3">RATES_ASSIGN</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aa15ae274818b1d781a10f3c3de482900" title="gyroscope bias">gyro_neutral</a>,  <a class="code" href="subsystems_2imu_2imu__aspirin2_8h.html#a7c36ae4fa7593bdd81a2eac2a763452e">IMU_GYRO_P_NEUTRAL</a>,  <a class="code" href="subsystems_2imu_2imu__aspirin2_8h.html#af3381e8cf000efbb86c6a4667449faf9">IMU_GYRO_Q_NEUTRAL</a>,  <a class="code" href="subsystems_2imu_2imu__aspirin2_8h.html#adb9273d5a997fde171fc41b58191f597">IMU_GYRO_R_NEUTRAL</a>);
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="preprocessor">#if defined IMU_ACCEL_X_NEUTRAL &amp;&amp; defined IMU_ACCEL_Y_NEUTRAL &amp;&amp; defined IMU_ACCEL_Z_NEUTRAL</span>
-<a name="l00038"></a>00038 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra_8h.html#aabe6b68b36e19217c178ddc14515c9af">VECT3_ASSIGN</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#ab126bba936ccd50bad68d42e83b81a28" title="accelerometer bias">accel_neutral</a>, <a class="code" href="imu__aspirin_8h.html#a01dac8935d4166bc144b115219cddbc4">IMU_ACCEL_X_NEUTRAL</a>, <a class="code" href="imu__aspirin_8h.html#a199acc0383b0e1d7e3841bc3297cc0fb">IMU_ACCEL_Y_NEUTRAL</a>, <a class="code" href="imu__aspirin_8h.html#a2b487e2376edc35048f5d78cd4968221">IMU_ACCEL_Z_NEUTRAL</a>);
-<a name="l00039"></a>00039 <span class="preprocessor">#else</span>
-<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#warning Accelerometer neutrals are set to zero.</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra__int_8h.html#a90bb29d3030f1bba0535b9369ee0e462">INT_VECT3_ZERO</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#ab126bba936ccd50bad68d42e83b81a28" title="accelerometer bias">accel_neutral</a>);
-<a name="l00042"></a>00042 <span class="preprocessor">#endif</span>
-<a name="l00043"></a>00043 <span class="preprocessor"></span>
-<a name="l00044"></a>00044 <span class="preprocessor">#if defined IMU_MAG_X_NEUTRAL &amp;&amp; defined IMU_MAG_Y_NEUTRAL &amp;&amp; defined IMU_MAG_Z_NEUTRAL</span>
-<a name="l00045"></a>00045 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra_8h.html#aabe6b68b36e19217c178ddc14515c9af">VECT3_ASSIGN</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aba6da90715844d686389574fbef30b4b" title="magnetometer neutral readings (bias)">mag_neutral</a>,   IMU_MAG_X_NEUTRAL,   IMU_MAG_Y_NEUTRAL,   IMU_MAG_Z_NEUTRAL);
-<a name="l00046"></a>00046 <span class="preprocessor">#else</span>
-<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#warning Magnetomter neutrals are set to zero.</span>
-<a name="l00048"></a>00048 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra__int_8h.html#a90bb29d3030f1bba0535b9369ee0e462">INT_VECT3_ZERO</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aba6da90715844d686389574fbef30b4b" title="magnetometer neutral readings (bias)">mag_neutral</a>);
-<a name="l00049"></a>00049 <span class="preprocessor">#endif</span>
-<a name="l00050"></a>00050 <span class="preprocessor"></span>
-<a name="l00051"></a>00051   <span class="comment">/*</span>
-<a name="l00052"></a>00052 <span class="comment">    Compute quaternion and rotation matrix</span>
-<a name="l00053"></a>00053 <span class="comment">    for conversions between body and imu frame</span>
-<a name="l00054"></a>00054 <span class="comment">  */</span>
-<a name="l00055"></a>00055 <span class="preprocessor">#if defined IMU_BODY_TO_IMU_PHI &amp;&amp; defined IMU_BODY_TO_IMU_THETA &amp; defined IMU_BODY_TO_IMU_PSI</span>
-<a name="l00056"></a>00056 <span class="preprocessor"></span>  <span class="keyword">struct </span><a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> body_to_imu_eulers =
-<a name="l00057"></a>00057     { <a class="code" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(IMU_BODY_TO_IMU_PHI),
-<a name="l00058"></a>00058       <a class="code" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(IMU_BODY_TO_IMU_THETA),
-<a name="l00059"></a>00059       <a class="code" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(IMU_BODY_TO_IMU_PSI) };
-<a name="l00060"></a>00060   <a class="code" href="pprz__algebra__int_8h.html#a3003feb20a532f67e77832669398bc73">INT32_QUAT_OF_EULERS</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a5dd001e15dc85abf5ae465ed3ce554e5" title="rotation from body to imu frame as a unit quaternion">body_to_imu_quat</a>, body_to_imu_eulers);
-<a name="l00061"></a>00061   <a class="code" href="pprz__algebra__int_8h.html#a264c9ba2fc13faf84a2d7a6de05707b1">INT32_QUAT_NORMALIZE</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a5dd001e15dc85abf5ae465ed3ce554e5" title="rotation from body to imu frame as a unit quaternion">body_to_imu_quat</a>);
-<a name="l00062"></a>00062   <a class="code" href="pprz__algebra__int_8h.html#afff0280f8ca7d9accdb4db59511b2e8d">INT32_RMAT_OF_EULERS</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a6e7552a275a56f8eebd5a2fc960c9f4b" title="rotation from body to imu frame as a rotation matrix">body_to_imu_rmat</a>, body_to_imu_eulers);
-<a name="l00063"></a>00063 <span class="preprocessor">#else</span>
-<a name="l00064"></a>00064 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra__int_8h.html#a90a76ea9c292e6d8336e1b2250141528">INT32_QUAT_ZERO</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a5dd001e15dc85abf5ae465ed3ce554e5" title="rotation from body to imu frame as a unit quaternion">body_to_imu_quat</a>);
-<a name="l00065"></a>00065   <a class="code" href="pprz__algebra__int_8h.html#a30087adb0fd2dc064837b89413d91b2d">INT32_RMAT_ZERO</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a6e7552a275a56f8eebd5a2fc960c9f4b" title="rotation from body to imu frame as a rotation matrix">body_to_imu_rmat</a>);
-<a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
-<a name="l00067"></a>00067 <span class="preprocessor"></span>
-<a name="l00068"></a>00068   <a class="code" href="imu__navgo_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a>();
-<a name="l00069"></a>00069 }
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 
-<a name="l00072"></a><a class="code" href="imu_8h.html#a36d5b68cf718e17cd4d972f3ec029f5f">00072</a> <span class="keywordtype">void</span> <a class="code" href="imu_8c.html#a36d5b68cf718e17cd4d972f3ec029f5f">imu_float_init</a>(<span class="keyword">struct</span> <a class="code" href="structImuFloat.html" title="abstract IMU interface providing floating point interface">ImuFloat</a>* imuf) {
+<a name="l00037"></a>00037   <a class="code" href="pprz__algebra_8h.html#aabe6b68b36e19217c178ddc14515c9af">VECT3_ASSIGN</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#ab126bba936ccd50bad68d42e83b81a28" title="accelerometer bias">accel_neutral</a>, <a class="code" href="subsystems_2imu_2imu__aspirin2_8h.html#a01dac8935d4166bc144b115219cddbc4">IMU_ACCEL_X_NEUTRAL</a>, <a class="code" href="subsystems_2imu_2imu__aspirin2_8h.html#a199acc0383b0e1d7e3841bc3297cc0fb">IMU_ACCEL_Y_NEUTRAL</a>, <a class="code" href="subsystems_2imu_2imu__aspirin2_8h.html#a2b487e2376edc35048f5d78cd4968221">IMU_ACCEL_Z_NEUTRAL</a>);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#if defined IMU_MAG_X_NEUTRAL &amp;&amp; defined IMU_MAG_Y_NEUTRAL &amp;&amp; defined IMU_MAG_Z_NEUTRAL</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra_8h.html#aabe6b68b36e19217c178ddc14515c9af">VECT3_ASSIGN</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aba6da90715844d686389574fbef30b4b" title="magnetometer neutral readings (bias)">mag_neutral</a>,   IMU_MAG_X_NEUTRAL,   IMU_MAG_Y_NEUTRAL,   IMU_MAG_Z_NEUTRAL);
+<a name="l00041"></a>00041 <span class="preprocessor">#else</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span><span class="preprocessor">#warning Info: Magnetomter neutrals are set to zero.</span>
+<a name="l00043"></a>00043 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra__int_8h.html#a90bb29d3030f1bba0535b9369ee0e462">INT_VECT3_ZERO</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aba6da90715844d686389574fbef30b4b" title="magnetometer neutral readings (bias)">mag_neutral</a>);
+<a name="l00044"></a>00044 <span class="preprocessor">#endif</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span>
+<a name="l00046"></a>00046   <span class="comment">/*</span>
+<a name="l00047"></a>00047 <span class="comment">    Compute quaternion and rotation matrix</span>
+<a name="l00048"></a>00048 <span class="comment">    for conversions between body and imu frame</span>
+<a name="l00049"></a>00049 <span class="comment">  */</span>
+<a name="l00050"></a>00050   <span class="keyword">struct </span><a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> body_to_imu_eulers =
+<a name="l00051"></a>00051     { <a class="code" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(<a class="code" href="imu_8h.html#a46eb7490c440a6456865b91fd7ece823">IMU_BODY_TO_IMU_PHI</a>),
+<a name="l00052"></a>00052       <a class="code" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(<a class="code" href="imu_8h.html#a145707cbd3cb3e88e6536ae94f901567">IMU_BODY_TO_IMU_THETA</a>),
+<a name="l00053"></a>00053       <a class="code" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(<a class="code" href="imu_8h.html#a82a39ecc102f002a754e0c97e096cf46">IMU_BODY_TO_IMU_PSI</a>) };
+<a name="l00054"></a>00054   <a class="code" href="pprz__algebra__int_8h.html#a3003feb20a532f67e77832669398bc73">INT32_QUAT_OF_EULERS</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a5dd001e15dc85abf5ae465ed3ce554e5" title="rotation from body to imu frame as a unit quaternion">body_to_imu_quat</a>, body_to_imu_eulers);
+<a name="l00055"></a>00055   <a class="code" href="pprz__algebra__int_8h.html#a264c9ba2fc13faf84a2d7a6de05707b1">INT32_QUAT_NORMALIZE</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a5dd001e15dc85abf5ae465ed3ce554e5" title="rotation from body to imu frame as a unit quaternion">body_to_imu_quat</a>);
+<a name="l00056"></a>00056   <a class="code" href="pprz__algebra__int_8h.html#afff0280f8ca7d9accdb4db59511b2e8d">INT32_RMAT_OF_EULERS</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a6e7552a275a56f8eebd5a2fc960c9f4b" title="rotation from body to imu frame as a rotation matrix">body_to_imu_rmat</a>, body_to_imu_eulers);
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058   <a class="code" href="imu__navgo_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a>();
+<a name="l00059"></a>00059 }
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 
+<a name="l00062"></a><a class="code" href="imu_8h.html#a36d5b68cf718e17cd4d972f3ec029f5f">00062</a> <span class="keywordtype">void</span> <a class="code" href="imu_8c.html#a36d5b68cf718e17cd4d972f3ec029f5f">imu_float_init</a>(<span class="keyword">struct</span> <a class="code" href="structImuFloat.html" title="abstract IMU interface providing floating point interface">ImuFloat</a>* imuf) {
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064   <span class="comment">/*</span>
+<a name="l00065"></a>00065 <span class="comment">    Compute quaternion and rotation matrix</span>
+<a name="l00066"></a>00066 <span class="comment">    for conversions between body and imu frame</span>
+<a name="l00067"></a>00067 <span class="comment">  */</span>
+<a name="l00068"></a>00068   <a class="code" href="pprz__algebra_8h.html#ada1c7857d5fc2d8898f8e723f6e43d20">EULERS_ASSIGN</a>(imuf-&gt;<a class="code" href="structImuFloat.html#a3249aead96a7995e642cdd6911b7956f">body_to_imu_eulers</a>,
+<a name="l00069"></a>00069     <a class="code" href="imu_8h.html#a46eb7490c440a6456865b91fd7ece823">IMU_BODY_TO_IMU_PHI</a>, <a class="code" href="imu_8h.html#a145707cbd3cb3e88e6536ae94f901567">IMU_BODY_TO_IMU_THETA</a>, <a class="code" href="imu_8h.html#a82a39ecc102f002a754e0c97e096cf46">IMU_BODY_TO_IMU_PSI</a>);
+<a name="l00070"></a>00070   <a class="code" href="pprz__algebra__float_8h.html#ab37594049bf029dfa949454c3cb0e30a">FLOAT_QUAT_OF_EULERS</a>(imuf-&gt;<a class="code" href="structImuFloat.html#aefb97d688ccc0e607c2ddeee87be135a">body_to_imu_quat</a>, imuf-&gt;<a class="code" href="structImuFloat.html#a3249aead96a7995e642cdd6911b7956f">body_to_imu_eulers</a>);
+<a name="l00071"></a>00071   <a class="code" href="pprz__algebra__float_8h.html#a49b4027b12ceb298434ff14eba21f96d">FLOAT_QUAT_NORMALIZE</a>(imuf-&gt;<a class="code" href="structImuFloat.html#aefb97d688ccc0e607c2ddeee87be135a">body_to_imu_quat</a>);
+<a name="l00072"></a>00072   <a class="code" href="pprz__algebra__float_8h.html#a0107b3f3597abb290d29fb836e33260f">FLOAT_RMAT_OF_EULERS</a>(imuf-&gt;<a class="code" href="structImuFloat.html#a88c18f9466813f6460261f3548e37fbb">body_to_imu_rmat</a>, imuf-&gt;<a class="code" href="structImuFloat.html#a3249aead96a7995e642cdd6911b7956f">body_to_imu_eulers</a>);
 <a name="l00073"></a>00073 
-<a name="l00074"></a>00074   <span class="comment">/*</span>
-<a name="l00075"></a>00075 <span class="comment">    Compute quaternion and rotation matrix</span>
-<a name="l00076"></a>00076 <span class="comment">    for conversions between body and imu frame</span>
-<a name="l00077"></a>00077 <span class="comment">  */</span>
-<a name="l00078"></a>00078 <span class="preprocessor">#if defined IMU_BODY_TO_IMU_PHI &amp;&amp; defined IMU_BODY_TO_IMU_THETA &amp; defined  IMU_BODY_TO_IMU_PSI</span>
-<a name="l00079"></a>00079 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra_8h.html#ada1c7857d5fc2d8898f8e723f6e43d20">EULERS_ASSIGN</a>(imuf-&gt;<a class="code" href="structImuFloat.html#a3249aead96a7995e642cdd6911b7956f">body_to_imu_eulers</a>,
-<a name="l00080"></a>00080     IMU_BODY_TO_IMU_PHI, IMU_BODY_TO_IMU_THETA, IMU_BODY_TO_IMU_PSI);
-<a name="l00081"></a>00081   <a class="code" href="pprz__algebra__float_8h.html#ab37594049bf029dfa949454c3cb0e30a">FLOAT_QUAT_OF_EULERS</a>(imuf-&gt;<a class="code" href="structImuFloat.html#aefb97d688ccc0e607c2ddeee87be135a">body_to_imu_quat</a>, imuf-&gt;<a class="code" href="structImuFloat.html#a3249aead96a7995e642cdd6911b7956f">body_to_imu_eulers</a>);
-<a name="l00082"></a>00082   <a class="code" href="pprz__algebra__float_8h.html#a49b4027b12ceb298434ff14eba21f96d">FLOAT_QUAT_NORMALIZE</a>(imuf-&gt;<a class="code" href="structImuFloat.html#aefb97d688ccc0e607c2ddeee87be135a">body_to_imu_quat</a>);
-<a name="l00083"></a>00083   <a class="code" href="pprz__algebra__float_8h.html#a0107b3f3597abb290d29fb836e33260f">FLOAT_RMAT_OF_EULERS</a>(imuf-&gt;<a class="code" href="structImuFloat.html#a88c18f9466813f6460261f3548e37fbb">body_to_imu_rmat</a>, imuf-&gt;<a class="code" href="structImuFloat.html#a3249aead96a7995e642cdd6911b7956f">body_to_imu_eulers</a>);
-<a name="l00084"></a>00084 <span class="preprocessor">#else</span>
-<a name="l00085"></a>00085 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra_8h.html#ada1c7857d5fc2d8898f8e723f6e43d20">EULERS_ASSIGN</a>(imuf-&gt;<a class="code" href="structImuFloat.html#a3249aead96a7995e642cdd6911b7956f">body_to_imu_eulers</a>, 0., 0., 0.);
-<a name="l00086"></a>00086   <a class="code" href="pprz__algebra__float_8h.html#af0d8da2ae5acffd92d4d7f37d6e30957">FLOAT_QUAT_ZERO</a>(imuf-&gt;<a class="code" href="structImuFloat.html#aefb97d688ccc0e607c2ddeee87be135a">body_to_imu_quat</a>);
-<a name="l00087"></a>00087   <a class="code" href="pprz__algebra__float_8h.html#ac2c84e0d057c4d5197d3c7a4141a3e39">FLOAT_RMAT_ZERO</a>(imuf-&gt;<a class="code" href="structImuFloat.html#a88c18f9466813f6460261f3548e37fbb">body_to_imu_rmat</a>);
-<a name="l00088"></a>00088 <span class="preprocessor">#endif</span>
-<a name="l00089"></a>00089 <span class="preprocessor"></span>
-<a name="l00090"></a>00090 }
+<a name="l00074"></a>00074 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -208,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="imu_8c.html">imu.c</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:32 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:29 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

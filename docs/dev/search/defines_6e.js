@@ -59,6 +59,7 @@ var searchData=
   ['navglide',['NavGlide',['../navigation_8h.html#aa7303abf34661cdf531cce2f4fddfe86',1,'NavGlide():&#160;navigation.h'],['../nav_8c.html#aa7303abf34661cdf531cce2f4fddfe86',1,'NavGlide():&#160;nav.c']]],
   ['navgotowaypoint',['NavGotoWaypoint',['../navigation_8h.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c',1,'NavGotoWaypoint():&#160;navigation.h'],['../nav_8c.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c',1,'NavGotoWaypoint():&#160;nav.c']]],
   ['navheading',['NavHeading',['../navigation_8h.html#ac90e1aa0615ba8f354b17674af4b12c8',1,'NavHeading():&#160;navigation.h'],['../nav_8h.html#ac90e1aa0615ba8f354b17674af4b12c8',1,'NavHeading():&#160;nav.h']]],
+  ['navigation_5ffrequency',['NAVIGATION_FREQUENCY',['../main__ap_8c.html#aba17f9ac72f7e9dd1dcd95457bf5c87f',1,'main_ap.c']]],
   ['navigation_5fsetflightaltitude',['navigation_SetFlightAltitude',['../navigation_8h.html#a25f2a57be9b02363387dc8160f72783c',1,'navigation.h']]],
   ['navigation_5fsetnavheading',['navigation_SetNavHeading',['../navigation_8h.html#abe0e7d0ebe8c39ddad6c45e3394e2bdc',1,'navigation.h']]],
   ['navkillthrottle',['NavKillThrottle',['../navigation_8h.html#ab4d16c33e2792978452a6b33e26df83c',1,'NavKillThrottle():&#160;navigation.h'],['../nav_8h.html#ab4d16c33e2792978452a6b33e26df83c',1,'NavKillThrottle():&#160;nav.h']]],
@@ -105,5 +106,6 @@ var searchData=
   ['norm_5frad_5fangle2',['NORM_RAD_ANGLE2',['../estimator_8c.html#a94047a6ba759e513be0217b75b799377',1,'estimator.c']]],
   ['normalizercdl',['NormalizeRcDl',['../rc__datalink_8h.html#a21b56adc7f34d78cef60b12435a9ed56',1,'rc_datalink.h']]],
   ['normcourse',['NormCourse',['../navigation_8h.html#a397bca15d146964a80f93abd74763384',1,'NormCourse():&#160;navigation.h'],['../nav_8h.html#a397bca15d146964a80f93abd74763384',1,'NormCourse():&#160;nav.h']]],
-  ['normxy',['NORMXY',['../cartography_8c.html#afd8dc60935a044f21a240a5fb63b1022',1,'cartography.c']]]
+  ['normxy',['NORMXY',['../cartography_8c.html#afd8dc60935a044f21a240a5fb63b1022',1,'cartography.c']]],
+  ['nsec_5fof_5fsys_5ftime_5fticks',['NSEC_OF_SYS_TIME_TICKS',['../sys__time_8h.html#ab2e8232862c2c9daed4eccaf35ebfbeb',1,'sys_time.h']]]
 ];

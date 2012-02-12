@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00066"></a>00066 
 <a name="l00067"></a>00067 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="imu_8c.html#a36d5b68cf718e17cd4d972f3ec029f5f">imu_float_init</a>(<span class="keyword">struct</span> <a class="code" href="structImuFloat.html" title="abstract IMU interface providing floating point interface">ImuFloat</a>* imuf);
 <a name="l00068"></a>00068 
-<a name="l00070"></a>00070 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structImu.html" title="abstract IMU interface providing fixed point interface">Imu</a> <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>;
+<a name="l00070"></a>00070 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structImu.html" title="abstract IMU interface providing fixed point interface">Imu</a> <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>;
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072 <span class="comment">/* underlying hardware */</span>
 <a name="l00073"></a>00073 <span class="preprocessor">#ifdef IMU_TYPE_H</span>
@@ -173,43 +173,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00076"></a>00076 <span class="preprocessor"></span>
 <a name="l00077"></a>00077 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins__xsens_8c.html#a86a06fe7a9831292bd92867da2d12f80">imu_init</a>(<span class="keywordtype">void</span>);
 <a name="l00078"></a>00078 
-<a name="l00079"></a>00079 <span class="preprocessor">#ifndef ImuScaleGyro</span>
-<a name="l00080"></a><a class="code" href="imu_8h.html#a9f53be53c139a637ce9c2173bcac9e00">00080</a> <span class="preprocessor"></span><span class="preprocessor">#define ImuScaleGyro(_imu) {          \</span>
-<a name="l00081"></a>00081 <span class="preprocessor">    RATES_COPY(_imu.gyro_prev, _imu.gyro);        \</span>
-<a name="l00082"></a>00082 <span class="preprocessor">    _imu.gyro.p = ((_imu.gyro_unscaled.p - _imu.gyro_neutral.p)*IMU_GYRO_P_SIGN*IMU_GYRO_P_SENS_NUM)/IMU_GYRO_P_SENS_DEN; \</span>
-<a name="l00083"></a>00083 <span class="preprocessor">    _imu.gyro.q = ((_imu.gyro_unscaled.q - _imu.gyro_neutral.q)*IMU_GYRO_Q_SIGN*IMU_GYRO_Q_SENS_NUM)/IMU_GYRO_Q_SENS_DEN; \</span>
-<a name="l00084"></a>00084 <span class="preprocessor">    _imu.gyro.r = ((_imu.gyro_unscaled.r - _imu.gyro_neutral.r)*IMU_GYRO_R_SIGN*IMU_GYRO_R_SENS_NUM)/IMU_GYRO_R_SENS_DEN; \</span>
-<a name="l00085"></a>00085 <span class="preprocessor">  }</span>
-<a name="l00086"></a>00086 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00087"></a>00087 <span class="preprocessor"></span>
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089 <span class="preprocessor">#ifndef ImuScaleAccel</span>
-<a name="l00090"></a><a class="code" href="imu_8h.html#ae002e45eebcd5249e4e58fabfe10c0f7">00090</a> <span class="preprocessor"></span><span class="preprocessor">#define ImuScaleAccel(_imu) {         \</span>
-<a name="l00091"></a>00091 <span class="preprocessor">    VECT3_COPY(_imu.accel_prev, _imu.accel);        \</span>
-<a name="l00092"></a>00092 <span class="preprocessor">    _imu.accel.x = ((_imu.accel_unscaled.x - _imu.accel_neutral.x)*IMU_ACCEL_X_SIGN*IMU_ACCEL_X_SENS_NUM)/IMU_ACCEL_X_SENS_DEN; \</span>
-<a name="l00093"></a>00093 <span class="preprocessor">    _imu.accel.y = ((_imu.accel_unscaled.y - _imu.accel_neutral.y)*IMU_ACCEL_Y_SIGN*IMU_ACCEL_Y_SENS_NUM)/IMU_ACCEL_Y_SENS_DEN; \</span>
-<a name="l00094"></a>00094 <span class="preprocessor">    _imu.accel.z = ((_imu.accel_unscaled.z - _imu.accel_neutral.z)*IMU_ACCEL_Z_SIGN*IMU_ACCEL_Z_SENS_NUM)/IMU_ACCEL_Z_SENS_DEN; \</span>
-<a name="l00095"></a>00095 <span class="preprocessor">  }</span>
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="preprocessor">#if !defined IMU_BODY_TO_IMU_PHI &amp;&amp; !defined IMU_BODY_TO_IMU_THETA &amp;&amp; !defined IMU_BODY_TO_IMU_PSI</span>
+<a name="l00081"></a><a class="code" href="imu_8h.html#a46eb7490c440a6456865b91fd7ece823">00081</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_BODY_TO_IMU_PHI   0</span>
+<a name="l00082"></a><a class="code" href="imu_8h.html#a145707cbd3cb3e88e6536ae94f901567">00082</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_BODY_TO_IMU_THETA 0</span>
+<a name="l00083"></a><a class="code" href="imu_8h.html#a82a39ecc102f002a754e0c97e096cf46">00083</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_BODY_TO_IMU_PSI   0</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span>
+<a name="l00086"></a>00086 <span class="preprocessor">#if !defined IMU_GYRO_P_NEUTRAL &amp;&amp; !defined IMU_GYRO_Q_NEUTRAL &amp;&amp; !defined IMU_GYRO_R_NEUTRAL</span>
+<a name="l00087"></a><a class="code" href="imu_8h.html#a7c36ae4fa7593bdd81a2eac2a763452e">00087</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_P_NEUTRAL 0</span>
+<a name="l00088"></a><a class="code" href="imu_8h.html#af3381e8cf000efbb86c6a4667449faf9">00088</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_Q_NEUTRAL 0</span>
+<a name="l00089"></a><a class="code" href="imu_8h.html#adb9273d5a997fde171fc41b58191f597">00089</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_R_NEUTRAL 0</span>
+<a name="l00090"></a>00090 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span>
+<a name="l00092"></a>00092 <span class="preprocessor">#if !defined IMU_ACCEL_X_NEUTRAL &amp;&amp; !defined IMU_ACCEL_Y_NEUTRAL &amp;&amp; !defined IMU_ACCEL_Z_NEUTRAL</span>
+<a name="l00093"></a><a class="code" href="imu_8h.html#a01dac8935d4166bc144b115219cddbc4">00093</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_X_NEUTRAL 0</span>
+<a name="l00094"></a><a class="code" href="imu_8h.html#a199acc0383b0e1d7e3841bc3297cc0fb">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Y_NEUTRAL 0</span>
+<a name="l00095"></a><a class="code" href="imu_8h.html#a2b487e2376edc35048f5d78cd4968221">00095</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Z_NEUTRAL 0</span>
 <a name="l00096"></a>00096 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00097"></a>00097 <span class="preprocessor"></span>
-<a name="l00098"></a>00098 <span class="preprocessor">#if defined IMU_MAG_45_HACK</span>
-<a name="l00099"></a>00099 <span class="preprocessor"></span><span class="preprocessor">#define ImuScaleMag(_imu) {           \</span>
-<a name="l00100"></a>00100 <span class="preprocessor">    int32_t msx = ((_imu.mag_unscaled.x - _imu.mag_neutral.x) * IMU_MAG_X_SIGN * IMU_MAG_X_SENS_NUM) / IMU_MAG_X_SENS_DEN; \</span>
-<a name="l00101"></a>00101 <span class="preprocessor">    int32_t msy = ((_imu.mag_unscaled.y - _imu.mag_neutral.y) * IMU_MAG_Y_SIGN * IMU_MAG_Y_SENS_NUM) / IMU_MAG_Y_SENS_DEN; \</span>
-<a name="l00102"></a>00102 <span class="preprocessor">    _imu.mag.x = msx - msy;           \</span>
-<a name="l00103"></a>00103 <span class="preprocessor">    _imu.mag.y = msx + msy;           \</span>
-<a name="l00104"></a>00104 <span class="preprocessor">    _imu.mag.z = ((_imu.mag_unscaled.z - _imu.mag_neutral.z) * IMU_MAG_Z_SIGN * IMU_MAG_Z_SENS_NUM) / IMU_MAG_Z_SENS_DEN; \</span>
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 <span class="preprocessor">#ifndef ImuScaleGyro</span>
+<a name="l00100"></a><a class="code" href="imu_8h.html#a9f53be53c139a637ce9c2173bcac9e00">00100</a> <span class="preprocessor"></span><span class="preprocessor">#define ImuScaleGyro(_imu) {          \</span>
+<a name="l00101"></a>00101 <span class="preprocessor">    RATES_COPY(_imu.gyro_prev, _imu.gyro);        \</span>
+<a name="l00102"></a>00102 <span class="preprocessor">    _imu.gyro.p = ((_imu.gyro_unscaled.p - _imu.gyro_neutral.p)*IMU_GYRO_P_SIGN*IMU_GYRO_P_SENS_NUM)/IMU_GYRO_P_SENS_DEN; \</span>
+<a name="l00103"></a>00103 <span class="preprocessor">    _imu.gyro.q = ((_imu.gyro_unscaled.q - _imu.gyro_neutral.q)*IMU_GYRO_Q_SIGN*IMU_GYRO_Q_SENS_NUM)/IMU_GYRO_Q_SENS_DEN; \</span>
+<a name="l00104"></a>00104 <span class="preprocessor">    _imu.gyro.r = ((_imu.gyro_unscaled.r - _imu.gyro_neutral.r)*IMU_GYRO_R_SIGN*IMU_GYRO_R_SENS_NUM)/IMU_GYRO_R_SENS_DEN; \</span>
 <a name="l00105"></a>00105 <span class="preprocessor">  }</span>
-<a name="l00106"></a>00106 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00107"></a><a class="code" href="imu_8h.html#a50349115276c4d6392b1a83c042d0910">00107</a> <span class="preprocessor"></span><span class="preprocessor">#define ImuScaleMag(_imu) {           \</span>
-<a name="l00108"></a>00108 <span class="preprocessor">    _imu.mag.x = ((_imu.mag_unscaled.x - _imu.mag_neutral.x) * IMU_MAG_X_SIGN * IMU_MAG_X_SENS_NUM) / IMU_MAG_X_SENS_DEN; \</span>
-<a name="l00109"></a>00109 <span class="preprocessor">    _imu.mag.y = ((_imu.mag_unscaled.y - _imu.mag_neutral.y) * IMU_MAG_Y_SIGN * IMU_MAG_Y_SENS_NUM) / IMU_MAG_Y_SENS_DEN; \</span>
-<a name="l00110"></a>00110 <span class="preprocessor">    _imu.mag.z = ((_imu.mag_unscaled.z - _imu.mag_neutral.z) * IMU_MAG_Z_SIGN * IMU_MAG_Z_SENS_NUM) / IMU_MAG_Z_SENS_DEN; \</span>
-<a name="l00111"></a>00111 <span class="preprocessor">  }</span>
-<a name="l00112"></a>00112 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00113"></a>00113 <span class="preprocessor"></span>
-<a name="l00114"></a>00114 
-<a name="l00115"></a>00115 <span class="preprocessor">#endif </span><span class="comment">/* IMU_H */</span>
+<a name="l00106"></a>00106 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00107"></a>00107 <span class="preprocessor"></span>
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 <span class="preprocessor">#ifndef ImuScaleAccel</span>
+<a name="l00110"></a><a class="code" href="imu_8h.html#ae002e45eebcd5249e4e58fabfe10c0f7">00110</a> <span class="preprocessor"></span><span class="preprocessor">#define ImuScaleAccel(_imu) {         \</span>
+<a name="l00111"></a>00111 <span class="preprocessor">    VECT3_COPY(_imu.accel_prev, _imu.accel);        \</span>
+<a name="l00112"></a>00112 <span class="preprocessor">    _imu.accel.x = ((_imu.accel_unscaled.x - _imu.accel_neutral.x)*IMU_ACCEL_X_SIGN*IMU_ACCEL_X_SENS_NUM)/IMU_ACCEL_X_SENS_DEN; \</span>
+<a name="l00113"></a>00113 <span class="preprocessor">    _imu.accel.y = ((_imu.accel_unscaled.y - _imu.accel_neutral.y)*IMU_ACCEL_Y_SIGN*IMU_ACCEL_Y_SENS_NUM)/IMU_ACCEL_Y_SENS_DEN; \</span>
+<a name="l00114"></a>00114 <span class="preprocessor">    _imu.accel.z = ((_imu.accel_unscaled.z - _imu.accel_neutral.z)*IMU_ACCEL_Z_SIGN*IMU_ACCEL_Z_SENS_NUM)/IMU_ACCEL_Z_SENS_DEN; \</span>
+<a name="l00115"></a>00115 <span class="preprocessor">  }</span>
+<a name="l00116"></a>00116 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00117"></a>00117 <span class="preprocessor"></span>
+<a name="l00118"></a>00118 <span class="preprocessor">#if defined IMU_MAG_45_HACK</span>
+<a name="l00119"></a>00119 <span class="preprocessor"></span><span class="preprocessor">#define ImuScaleMag(_imu) {           \</span>
+<a name="l00120"></a>00120 <span class="preprocessor">    int32_t msx = ((_imu.mag_unscaled.x - _imu.mag_neutral.x) * IMU_MAG_X_SIGN * IMU_MAG_X_SENS_NUM) / IMU_MAG_X_SENS_DEN; \</span>
+<a name="l00121"></a>00121 <span class="preprocessor">    int32_t msy = ((_imu.mag_unscaled.y - _imu.mag_neutral.y) * IMU_MAG_Y_SIGN * IMU_MAG_Y_SENS_NUM) / IMU_MAG_Y_SENS_DEN; \</span>
+<a name="l00122"></a>00122 <span class="preprocessor">    _imu.mag.x = msx - msy;           \</span>
+<a name="l00123"></a>00123 <span class="preprocessor">    _imu.mag.y = msx + msy;           \</span>
+<a name="l00124"></a>00124 <span class="preprocessor">    _imu.mag.z = ((_imu.mag_unscaled.z - _imu.mag_neutral.z) * IMU_MAG_Z_SIGN * IMU_MAG_Z_SENS_NUM) / IMU_MAG_Z_SENS_DEN; \</span>
+<a name="l00125"></a>00125 <span class="preprocessor">  }</span>
+<a name="l00126"></a>00126 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00127"></a><a class="code" href="imu_8h.html#a50349115276c4d6392b1a83c042d0910">00127</a> <span class="preprocessor"></span><span class="preprocessor">#define ImuScaleMag(_imu) {           \</span>
+<a name="l00128"></a>00128 <span class="preprocessor">    _imu.mag.x = ((_imu.mag_unscaled.x - _imu.mag_neutral.x) * IMU_MAG_X_SIGN * IMU_MAG_X_SENS_NUM) / IMU_MAG_X_SENS_DEN; \</span>
+<a name="l00129"></a>00129 <span class="preprocessor">    _imu.mag.y = ((_imu.mag_unscaled.y - _imu.mag_neutral.y) * IMU_MAG_Y_SIGN * IMU_MAG_Y_SENS_NUM) / IMU_MAG_Y_SENS_DEN; \</span>
+<a name="l00130"></a>00130 <span class="preprocessor">    _imu.mag.z = ((_imu.mag_unscaled.z - _imu.mag_neutral.z) * IMU_MAG_Z_SIGN * IMU_MAG_Z_SENS_NUM) / IMU_MAG_Z_SENS_DEN; \</span>
+<a name="l00131"></a>00131 <span class="preprocessor">  }</span>
+<a name="l00132"></a>00132 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00133"></a>00133 <span class="preprocessor"></span>
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135 <span class="preprocessor">#endif </span><span class="comment">/* IMU_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -230,7 +250,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="imu_8h.html">imu.h</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:32 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:29 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

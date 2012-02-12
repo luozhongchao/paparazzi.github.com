@@ -31,7 +31,6 @@ var searchData=
   ['_5fads1114event',['_Ads1114Event',['../ads1114_8h.html#a15684b2aef9bf39de5a2644f9b872370',1,'ads1114.h']]],
   ['_5fcamlink',['_CamLink',['../cam__track_8h.html#a677cd7cd6c5a2965d57ddf2d203ee6b0',1,'cam_track.h']]],
   ['_5fcan_5frun_5frx_5fcallback',['_can_run_rx_callback',['../can__arch_8c.html#a29e5282665581fc7533fb24eb96bf30c',1,'_can_run_rx_callback(uint32_t id, uint8_t *buf, uint8_t len):&#160;can.c'],['../can_8c.html#a29e5282665581fc7533fb24eb96bf30c',1,'_can_run_rx_callback(uint32_t id, uint8_t *buf, uint8_t len):&#160;can.c']]],
-  ['_5fcheck_5fperiodic_5ffreq_5f',['_check_periodic_freq_',['../main__ap_8c.html#afa53aa5c81217e73a6a641059e5658ba',1,'main_ap.c']]],
   ['_5fclose',['_close',['../plug__sys_8c.html#a599f139cb4e20906d585356af5995f6c',1,'plug_sys.c']]],
   ['_5fdrdy_5fport',['_DRDY_PORT',['../stm32_2peripherals_2max1168__arch_8c.html#a892ee660743669ce114886b2d2db1468',1,'max1168_arch.c']]],
   ['_5fdrdy_5fport_5fsource',['_DRDY_PORT_SOURCE',['../stm32_2peripherals_2max1168__arch_8c.html#a933d36499f90dbeb8f85c9774d5ec2f4',1,'max1168_arch.c']]],

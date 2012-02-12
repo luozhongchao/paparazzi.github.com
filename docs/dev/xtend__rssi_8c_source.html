@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="xtend__rssi_8h.html" title="This measures the rssi pwm signal from a Digi XTend radio modem and sends a message with the info...">modules/datalink/xtend_rssi.h</a>&quot;</span>
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="pwm__input_8h.html" title="arch independent PWM input capture API">mcu_periph/pwm_input.h</a>&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
 <a name="l00037"></a><a class="code" href="xtend__rssi_8c.html#a2978a46b47cbc9d17a0924014ff9658b">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
@@ -156,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060   <span class="keywordflow">if</span> (<a class="code" href="pwm__input_8c.html#a8bba700f504dc9a8af8bfce95e08eb6e">pwm_input_duty_valid</a>[<a class="code" href="xtend__rssi_8c.html#ac1a8e8fba0278c75b157856120bdbe12">XTEND_RSSI_PWM_ARRAY_INDEX</a>])
 <a name="l00061"></a>00061   {
-<a name="l00062"></a>00062       duty_percent = (duty_tics * 100) / <a class="code" href="sys__time_8h.html#aaa0dc1b0f0b8f6bc118c5bf18d2a62a3">SYS_TICS_OF_USEC</a>(<a class="code" href="xtend__rssi_8c.html#a5939b041a4e8ee6044d5ccde8feee330">XTEND_RSSI_PWM_PERIOD_USEC</a>);
+<a name="l00062"></a>00062       duty_percent = (duty_tics * 100) / <a class="code" href="sys__time_8h.html#a167a98a5809c390ff634c56319833917">CPU_TICKS_OF_USEC</a>(<a class="code" href="xtend__rssi_8c.html#a5939b041a4e8ee6044d5ccde8feee330">XTEND_RSSI_PWM_PERIOD_USEC</a>);
 <a name="l00063"></a>00063       rssi_dB_fade_margin = (2 * duty_percent + 10) / 3; <span class="comment">//not sure if this is right, datasheet isn&#39;t very informative</span>
 <a name="l00064"></a>00064       <a class="code" href="pwm__input_8c.html#a8bba700f504dc9a8af8bfce95e08eb6e">pwm_input_duty_valid</a>[<a class="code" href="xtend__rssi_8c.html#ac1a8e8fba0278c75b157856120bdbe12">XTEND_RSSI_PWM_ARRAY_INDEX</a>] = FALSE;
 <a name="l00065"></a>00065   }
@@ -185,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="xtend__rssi_8c.html">xtend_rssi.c</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:31 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:29 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

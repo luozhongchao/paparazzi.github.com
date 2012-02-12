@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="windturbine_8h.html" title="This measures a trigger pulse length (e.g.">meteo/windturbine.h</a>&quot;</span>
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="core_2trigger__ext_8h.html">core/trigger_ext.h</a>&quot;</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
 <a name="l00038"></a><a class="code" href="windturbine_8c.html#a2978a46b47cbc9d17a0924014ff9658b">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a>00050     <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> sync_itow, cycle_time;
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052     sync_itow = gps_tow_from_ticks(<a class="code" href="trig__ext__hw_8c.html#a1bff3aeb61914b47d6d91311bccb1578">trigger_t0</a>);
-<a name="l00053"></a>00053     cycle_time = <a class="code" href="lpc21_2sys__time__hw_8h.html#af2610e02ff3eb3cff8f66010d1e031c6">MSEC_OF_SYS_TICS</a>(<a class="code" href="core_2trigger__ext_8c.html#ac7a4064196d14ce7f94d69bd6fce5a8c">trigger_delta_t0</a>);
+<a name="l00053"></a>00053     cycle_time = <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#af99860f73edd44bf3a75ecee175aac48">MSEC_OF_CPU_TICKS</a>(<a class="code" href="core_2trigger__ext_8c.html#ac7a4064196d14ce7f94d69bd6fce5a8c">trigger_delta_t0</a>);
 <a name="l00054"></a>00054 
 <a name="l00055"></a>00055     DOWNLINK_SEND_WINDTURBINE_STATUS_(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,
 <a name="l00056"></a>00056                 &amp;ac_id,
@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="windturbine_8c.html">windturbine.c</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:31 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:29 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

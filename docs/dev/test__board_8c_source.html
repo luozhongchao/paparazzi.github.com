@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;std.h&quot;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00037"></a>00037 
@@ -193,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00089"></a><a class="code" href="test__board_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00089</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">void</span> ) {
 <a name="l00090"></a>00090   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
 <a name="l00091"></a>00091   <span class="keywordflow">while</span>(1) {
-<a name="l00092"></a>00092     <span class="keywordflow">if</span> (<a class="code" href="sim_2sys__time__hw_8h.html#aae751b25410663d1569168a04e60c8db">sys_time_periodic</a>())
+<a name="l00092"></a>00092     <span class="keywordflow">if</span> (<a class="code" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666">sys_time_check_and_ack_timer</a>(0))
 <a name="l00093"></a>00093       <a class="code" href="test__board_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>();
 <a name="l00094"></a>00094     <a class="code" href="test__board_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>();
 <a name="l00095"></a>00095   }
@@ -203,7 +203,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00099"></a>00099 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00100"></a>00100 
 <a name="l00101"></a>00101   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
-<a name="l00102"></a>00102   <a class="code" href="lpc21_2sys__time__hw_8h.html#afa1427883d31532a107dc306b6b3b6d7">sys_time_init</a>();
+<a name="l00102"></a>00102   <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);
 <a name="l00103"></a>00103   <a class="code" href="led_8h.html#a9d9d9b1f30592189c3aa7358c626218f">led_init</a>();
 <a name="l00104"></a>00104 
 <a name="l00105"></a>00105   <a class="code" href="booz_2baro__board_8c.html#a9b25546908842f1d38fc56e438d46e21">baro_init</a>();
@@ -341,20 +341,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00237"></a><a class="code" href="test__board_8c.html#abc576eb3bad3371177d1402d7a772be7">00237</a> <span class="keyword">static</span> <span class="keyword">enum</span> <a class="code" href="test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131b">UartTestType</a> <a class="code" href="test__board_8c.html#abc576eb3bad3371177d1402d7a772be7">direction</a>;
 <a name="l00238"></a>00238 
 <a name="l00239"></a><a class="code" href="test__board_8c.html#ac2a6ceae782ec7a36a04899b63d41a35">00239</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test__board_8c.html#ac2a6ceae782ec7a36a04899b63d41a35">test_uart_start</a>(<span class="keywordtype">void</span>) {
-<a name="l00240"></a>00240   <a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a> = 0;
-<a name="l00241"></a>00241   <a class="code" href="test__board_8c.html#af2df9ede7d92c8756102c1906fdfc7f6">idx_tx</a> = 0;
-<a name="l00242"></a>00242   <a class="code" href="test__board_8c.html#abc576eb3bad3371177d1402d7a772be7">direction</a> = <a class="code" href="test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131babad3dcd847f569ea7d2243ed2a90115a">OneToThree</a>;
+<a name="l00240"></a>00240   idx_rx = 0;
+<a name="l00241"></a>00241   idx_tx = 0;
+<a name="l00242"></a>00242   direction = <a class="code" href="test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131babad3dcd847f569ea7d2243ed2a90115a">OneToThree</a>;
 <a name="l00243"></a>00243 }
 <a name="l00244"></a>00244 
 <a name="l00245"></a><a class="code" href="test__board_8c.html#a29371c24dc8003540d1988c527938b49">00245</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test__board_8c.html#a29371c24dc8003540d1988c527938b49">test_uart_periodic</a>(<span class="keywordtype">void</span>) {
 <a name="l00246"></a>00246 
-<a name="l00247"></a>00247   <span class="keywordflow">if</span> (<a class="code" href="test__board_8c.html#af2df9ede7d92c8756102c1906fdfc7f6">idx_tx</a>&lt;<span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) {
-<a name="l00248"></a>00248     <span class="keywordflow">switch</span> (<a class="code" href="test__board_8c.html#abc576eb3bad3371177d1402d7a772be7">direction</a>) {
-<a name="l00249"></a>00249     <span class="keywordflow">case</span> <a class="code" href="test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131babad3dcd847f569ea7d2243ed2a90115a">OneToThree</a> : Uart1Transmit(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>[<a class="code" href="test__board_8c.html#af2df9ede7d92c8756102c1906fdfc7f6">idx_tx</a>]); <span class="keywordflow">break</span>;
-<a name="l00250"></a>00250     <span class="keywordflow">case</span> <a class="code" href="test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131bab1b0170a8ab3ed2bc9f86d47d98a9fd0">ThreeToOne</a> : Uart3Transmit(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>[idx_tx]); <span class="keywordflow">break</span>;
+<a name="l00247"></a>00247   <span class="keywordflow">if</span> (idx_tx&lt;<span class="keyword">sizeof</span>(buf_src)) {
+<a name="l00248"></a>00248     <span class="keywordflow">switch</span> (direction) {
+<a name="l00249"></a>00249     <span class="keywordflow">case</span> <a class="code" href="test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131babad3dcd847f569ea7d2243ed2a90115a">OneToThree</a> : Uart1Transmit(buf_src[idx_tx]); <span class="keywordflow">break</span>;
+<a name="l00250"></a>00250     <span class="keywordflow">case</span> <a class="code" href="test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131bab1b0170a8ab3ed2bc9f86d47d98a9fd0">ThreeToOne</a> : Uart3Transmit(buf_src[idx_tx]); <span class="keywordflow">break</span>;
 <a name="l00251"></a>00251     <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;
 <a name="l00252"></a>00252     }
-<a name="l00253"></a>00253     <a class="code" href="test__board_8c.html#af2df9ede7d92c8756102c1906fdfc7f6">idx_tx</a>++;
+<a name="l00253"></a>00253     idx_tx++;
 <a name="l00254"></a>00254   }
 <a name="l00255"></a>00255 
 <a name="l00256"></a>00256 }
@@ -363,17 +363,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00259"></a>00259 
 <a name="l00260"></a>00260   <span class="keywordflow">if</span> (Uart3ChAvailable()) {
 <a name="l00261"></a>00261     <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>[<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>] = Uart3Getch();
-<a name="l00262"></a>00262     <span class="keywordflow">if</span> (<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>&lt;<span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) {
-<a name="l00263"></a>00263       DOWNLINK_SEND_DEBUG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>), <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>);
-<a name="l00264"></a>00264       <a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>++;
-<a name="l00265"></a>00265       <span class="keywordflow">if</span> (<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a> == <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) {
-<a name="l00266"></a>00266     <span class="keywordflow">if</span> ( memcmp(<a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>, <a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) ) {
+<a name="l00262"></a>00262     <span class="keywordflow">if</span> (idx_rx&lt;<span class="keyword">sizeof</span>(buf_src)) {
+<a name="l00263"></a>00263       DOWNLINK_SEND_DEBUG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, <span class="keyword">sizeof</span>(buf_src), <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>);
+<a name="l00264"></a>00264       idx_rx++;
+<a name="l00265"></a>00265       <span class="keywordflow">if</span> (idx_rx == <span class="keyword">sizeof</span>(buf_src)) {
+<a name="l00266"></a>00266     <span class="keywordflow">if</span> ( memcmp(<a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>, buf_src, <span class="keyword">sizeof</span>(buf_src)) ) {
 <a name="l00267"></a>00267       <a class="code" href="test__board_8c.html#a230fab82d7cd295da503d583f4a3079b">all_led_red</a>();  <span class="comment">// test failed</span>
 <a name="l00268"></a>00268     }
 <a name="l00269"></a>00269     <span class="keywordflow">else</span> { <span class="comment">// start test in other direction</span>
-<a name="l00270"></a>00270         <a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a> = 0;
-<a name="l00271"></a>00271         <a class="code" href="test__board_8c.html#af2df9ede7d92c8756102c1906fdfc7f6">idx_tx</a> = 0;
-<a name="l00272"></a>00272         <a class="code" href="test__board_8c.html#abc576eb3bad3371177d1402d7a772be7">direction</a> = <a class="code" href="test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131bab1b0170a8ab3ed2bc9f86d47d98a9fd0">ThreeToOne</a>;
+<a name="l00270"></a>00270         idx_rx = 0;
+<a name="l00271"></a>00271         idx_tx = 0;
+<a name="l00272"></a>00272         direction = <a class="code" href="test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131bab1b0170a8ab3ed2bc9f86d47d98a9fd0">ThreeToOne</a>;
 <a name="l00273"></a>00273     }
 <a name="l00274"></a>00274       }
 <a name="l00275"></a>00275     }
@@ -381,11 +381,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00277"></a>00277 
 <a name="l00278"></a>00278   <span class="keywordflow">if</span> (Uart1ChAvailable()) {
 <a name="l00279"></a>00279     <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>[<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>] = Uart1Getch();
-<a name="l00280"></a>00280     <span class="keywordflow">if</span> (<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>&lt;<span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) {
-<a name="l00281"></a>00281       DOWNLINK_SEND_DEBUG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>), <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>);
-<a name="l00282"></a>00282       <a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a>++;
-<a name="l00283"></a>00283       <span class="keywordflow">if</span> (<a class="code" href="test__board_8c.html#a1c4c54754e59c57e1709d2e2f2f1afc9">idx_rx</a> == <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) {
-<a name="l00284"></a>00284     <span class="keywordflow">if</span> ( memcmp(<a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>, <a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>, <span class="keyword">sizeof</span>(<a class="code" href="test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095">buf_src</a>)) ) {
+<a name="l00280"></a>00280     <span class="keywordflow">if</span> (idx_rx&lt;<span class="keyword">sizeof</span>(buf_src)) {
+<a name="l00281"></a>00281       DOWNLINK_SEND_DEBUG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, <span class="keyword">sizeof</span>(buf_src), <a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>);
+<a name="l00282"></a>00282       idx_rx++;
+<a name="l00283"></a>00283       <span class="keywordflow">if</span> (idx_rx == <span class="keyword">sizeof</span>(buf_src)) {
+<a name="l00284"></a>00284     <span class="keywordflow">if</span> ( memcmp(<a class="code" href="test__board_8c.html#ad7dccf65705006177eccca11bb6b51af">buf_dest</a>, buf_src, <span class="keyword">sizeof</span>(buf_src)) ) {
 <a name="l00285"></a>00285       <a class="code" href="test__board_8c.html#a230fab82d7cd295da503d583f4a3079b">all_led_red</a>();
 <a name="l00286"></a>00286     }
 <a name="l00287"></a>00287     <span class="keywordflow">else</span> {
@@ -472,7 +472,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="test__board_8c.html">test_board.c</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:31 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:29 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

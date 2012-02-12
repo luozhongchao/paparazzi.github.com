@@ -11,7 +11,7 @@ var searchData=
   ['readpcap01_5fsram',['readPCAP01_SRAM',['../humid__pcap01_8c.html#ae69f72127caa7ecfc75ae8ca84c52253',1,'readPCAP01_SRAM(uint16_t s_add):&#160;humid_pcap01.c'],['../humid__pcap01_8h.html#ae69f72127caa7ecfc75ae8ca84c52253',1,'readPCAP01_SRAM(uint16_t s_add):&#160;humid_pcap01.c']]],
   ['register_5fleds_5fcb',['register_leds_cb',['../sim_2led__hw_8c.html#aa85b1c7cdad6a8b6035a17361f395886',1,'led_hw.c']]],
   ['renorm_5ffactor',['renorm_factor',['../pprz__algebra__float_8h.html#a25ae277549c4186c3a29e6414b42f2e3',1,'pprz_algebra_float.h']]],
-  ['reporting_5ftask',['reporting_task',['../main__ap_8c.html#a13a0edda7d41344a0f1b86f4e0492a2e',1,'main_ap.c']]],
+  ['reporting_5ftask',['reporting_task',['../main__ap_8c.html#a35e24bbf955d315ca24de207ead69ce2',1,'reporting_task(void):&#160;main_ap.c'],['../main__ap_8h.html#a35e24bbf955d315ca24de207ead69ce2',1,'reporting_task(void):&#160;main_ap.c']]],
   ['request_5ffor_5fmsg',['request_for_msg',['../gsm_8c.html#a377a0f36a72423ed3927a7e7c93b6b9d',1,'gsm.c']]],
   ['reset',['reset',['../lpc21_2mcu__arch_8c.html#a3aea9deb2a0bfea9ff05a898f4822e31',1,'mcu_arch.c']]],
   ['reset_5fhandler_5fstage1',['reset_handler_stage1',['../stm32__vector__table_8c.html#a4009f3262fa27872ebd59c5b106eddd0',1,'stm32_vector_table.c']]],

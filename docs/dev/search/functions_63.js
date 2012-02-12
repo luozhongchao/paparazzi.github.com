@@ -38,6 +38,7 @@ var searchData=
   ['compute_5fimu_5fquat_5fand_5frmat_5ffrom_5feuler',['compute_imu_quat_and_rmat_from_euler',['../ahrs__int__cmpl_8c.html#a1d178f921e3026ed0e4d23b696ecb98c',1,'compute_imu_quat_and_rmat_from_euler(void):&#160;ahrs_int_cmpl.c'],['../ahrs__int__cmpl__euler_8c.html#a1d178f921e3026ed0e4d23b696ecb98c',1,'compute_imu_quat_and_rmat_from_euler(void):&#160;ahrs_int_cmpl_euler.c']]],
   ['compute_5fimu_5frmat_5fand_5feuler_5ffrom_5fquat',['compute_imu_rmat_and_euler_from_quat',['../ahrs__float__cmpl__rmat_8c.html#aa8830da059f05a76f20f65c32e699eb6',1,'ahrs_float_cmpl_rmat.c']]],
   ['compute_5ftod',['compute_TOD',['../nav_8c.html#ad9cc0030bdcfa2192dda22875ca68934',1,'compute_TOD(uint8_t _af, uint8_t _td, uint8_t _tod, float glide_airspeed, float glide_vspeed):&#160;nav.c'],['../bomb_8h.html#a6d63c302f49aef554eb08d3bd7a1e938',1,'compute_tod(void):&#160;bomb.h']]],
+  ['configure',['configure',['../subsystems_2imu_2imu__aspirin2_8c.html#a232ac6c849587d2425e99c3ed6391adf',1,'imu_aspirin2.c']]],
   ['configure_5faccel',['configure_accel',['../imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2',1,'imu_aspirin.c']]],
   ['configure_5fgyro',['configure_gyro',['../imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8',1,'imu_aspirin.c']]],
   ['copy_5ffrom_5fto_5ffbw',['copy_from_to_fbw',['../main__ap_8c.html#ab8d2d846e05038e13cfb45b8bb8f0921',1,'main_ap.c']]],

@@ -376,8 +376,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00282"></a>00282 <span class="preprocessor">#ifdef SITL</span>
 <a name="l00283"></a>00283 <span class="preprocessor"></span>  printf(<span class="stringliteral">&quot;%f %f %f\n&quot;</span>, <a class="code" href="stabilization__adaptive_8c.html#a42724178b90d872c2fbd93bbcabdedad">h_ctl_roll_Kffa</a>, <a class="code" href="stabilization__adaptive_8c.html#ac16772ff39b493dc04a031f46a8b75df">h_ctl_roll_Kffd</a>, cmd_fb);
 <a name="l00284"></a>00284 <span class="preprocessor">#endif</span>
-<a name="l00285"></a>00285 <span class="preprocessor"></span>  <a class="code" href="stabilization__adaptive_8c.html#a42724178b90d872c2fbd93bbcabdedad">h_ctl_roll_Kffa</a> = <a class="code" href="main__ap_8c.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(<a class="code" href="stabilization__adaptive_8c.html#a42724178b90d872c2fbd93bbcabdedad">h_ctl_roll_Kffa</a>, 0);
-<a name="l00286"></a>00286   <a class="code" href="stabilization__adaptive_8c.html#ac16772ff39b493dc04a031f46a8b75df">h_ctl_roll_Kffd</a> = <a class="code" href="main__ap_8c.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(<a class="code" href="stabilization__adaptive_8c.html#ac16772ff39b493dc04a031f46a8b75df">h_ctl_roll_Kffd</a>, 0);
+<a name="l00285"></a>00285 <span class="preprocessor"></span>  <a class="code" href="stabilization__adaptive_8c.html#a42724178b90d872c2fbd93bbcabdedad">h_ctl_roll_Kffa</a> = <a class="code" href="common__flight__plan_8h.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(<a class="code" href="stabilization__adaptive_8c.html#a42724178b90d872c2fbd93bbcabdedad">h_ctl_roll_Kffa</a>, 0);
+<a name="l00286"></a>00286   <a class="code" href="stabilization__adaptive_8c.html#ac16772ff39b493dc04a031f46a8b75df">h_ctl_roll_Kffd</a> = <a class="code" href="common__flight__plan_8h.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(<a class="code" href="stabilization__adaptive_8c.html#ac16772ff39b493dc04a031f46a8b75df">h_ctl_roll_Kffd</a>, 0);
 <a name="l00287"></a>00287 <span class="preprocessor">#endif</span>
 <a name="l00288"></a>00288 <span class="preprocessor"></span>
 <a name="l00289"></a>00289   <span class="comment">// Compute errors</span>
@@ -435,10 +435,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00341"></a>00341 <span class="preprocessor">#else</span>
 <a name="l00342"></a>00342 <span class="preprocessor"></span>  <span class="keywordtype">float</span> throttle_diff = <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a1ee0cbf7d1ed331f44539840507a7436">v_ctl_throttle_setpoint</a> / (float)<a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> - <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a96b28ed4a6bbadedbf6ebd67c3a88613">v_ctl_auto_throttle_nominal_cruise_throttle</a>;
 <a name="l00343"></a>00343   <span class="keywordflow">if</span> (throttle_diff &gt; 0) {
-<a name="l00344"></a>00344     <span class="keywordtype">float</span> max_diff = <a class="code" href="main__ap_8c.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(V_CTL_AUTO_THROTTLE_MAX_CRUISE_THROTTLE - <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a96b28ed4a6bbadedbf6ebd67c3a88613">v_ctl_auto_throttle_nominal_cruise_throttle</a>, 0.1);
+<a name="l00344"></a>00344     <span class="keywordtype">float</span> max_diff = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(V_CTL_AUTO_THROTTLE_MAX_CRUISE_THROTTLE - <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a96b28ed4a6bbadedbf6ebd67c3a88613">v_ctl_auto_throttle_nominal_cruise_throttle</a>, 0.1);
 <a name="l00345"></a>00345     pitch_trim = throttle_diff / max_diff * <a class="code" href="guidance__v__n_8h.html#a7667ff34ce57a772e6136801fa6d5aa6">v_ctl_pitch_dash_trim</a>;
 <a name="l00346"></a>00346   } <span class="keywordflow">else</span> {
-<a name="l00347"></a>00347     <span class="keywordtype">float</span> max_diff = <a class="code" href="main__ap_8c.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a96b28ed4a6bbadedbf6ebd67c3a88613">v_ctl_auto_throttle_nominal_cruise_throttle</a> - V_CTL_AUTO_THROTTLE_MIN_CRUISE_THROTTLE, 0.1);
+<a name="l00347"></a>00347     <span class="keywordtype">float</span> max_diff = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a96b28ed4a6bbadedbf6ebd67c3a88613">v_ctl_auto_throttle_nominal_cruise_throttle</a> - V_CTL_AUTO_THROTTLE_MIN_CRUISE_THROTTLE, 0.1);
 <a name="l00348"></a>00348     pitch_trim = -throttle_diff / max_diff * <a class="code" href="guidance__v__n_8h.html#a5e23002cc5fd9c1836b3843111bb035e">v_ctl_pitch_loiter_trim</a>;
 <a name="l00349"></a>00349   }
 <a name="l00350"></a>00350 <span class="preprocessor">#endif</span>
@@ -535,7 +535,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stabilization__adaptive_8c.html">stabilization_adaptive.c</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 7 2012 04:01:31 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 12 2012 04:01:28 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -1,10 +1,11 @@
 var searchData=
 [
   ['failsafe_5fmode',['failsafe_mode',['../main__fbw_8h.html#ab350241ceab15e8a7850f54165689389',1,'main_fbw.h']]],
-  ['fatal_5ferror_5fnb',['fatal_error_nb',['../fixedwing_2autopilot_8h.html#ad61e6f5956df74c58d93ed09dd5eabe6',1,'fatal_error_nb():&#160;main_ap.c'],['../main__ap_8c.html#ad61e6f5956df74c58d93ed09dd5eabe6',1,'fatal_error_nb():&#160;main_ap.c']]],
+  ['failsafe_5ftid',['failsafe_tid',['../firmwares_2rotorcraft_2main_8c.html#ab3e516754299b88759000e60e490f5a8',1,'main.c']]],
   ['fbaroms',['fbaroms',['../baro__ms5611__i2c_8c.html#a4cd87df09b5c003ea87e593e7be5d80f',1,'baro_ms5611_i2c.c']]],
   ['fbw_5fmode',['fbw_mode',['../main__fbw_8c.html#ac72590ceb6632f7874a3240836537857',1,'fbw_mode():&#160;main_fbw.c'],['../main__fbw_8h.html#ac72590ceb6632f7874a3240836537857',1,'fbw_mode():&#160;main_fbw.c']]],
   ['fbw_5fnew_5factuators',['fbw_new_actuators',['../main__fbw_8c.html#a52feb6433e219a78c4d8963c5d86b3f4',1,'main_fbw.c']]],
+  ['fbw_5fperiodic_5ftid',['fbw_periodic_tid',['../main__fbw_8c.html#a8b339ec2322e68d92dab4078a68bd8c7',1,'main_fbw.c']]],
   ['fbw_5fstate',['fbw_state',['../inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf',1,'inter_mcu.c']]],
   ['fcr',['fcr',['../structuartRegs__t.html#a11a9ed56095f7bc1d83169b9c66ce63a',1,'uartRegs_t']]],
   ['feed',['feed',['../structscbRegs__t.html#ad094dd6d535108807dcecb4758f74d5e',1,'scbRegs_t::feed()'],['../structwdRegs__t.html#ae8830a4a24b1b9ff9ff7ef084f2d24e4',1,'wdRegs_t::feed()']]],
