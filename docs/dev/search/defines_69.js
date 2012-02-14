@@ -164,7 +164,7 @@ var searchData=
   ['int32_5fquat_5fcomp_5fnorm_5fshortest',['INT32_QUAT_COMP_NORM_SHORTEST',['../pprz__algebra__int_8h.html#a69285481ce81c939ca63cf8fddbc3790',1,'pprz_algebra_int.h']]],
   ['int32_5fquat_5fderivative',['INT32_QUAT_DERIVATIVE',['../pprz__algebra__int_8h.html#a8cee7568ecdbaea209ca321b01d9e82e',1,'pprz_algebra_int.h']]],
   ['int32_5fquat_5ffrac',['INT32_QUAT_FRAC',['../pprz__algebra__int_8h.html#ae28f97f9061b7542b7cf4c10c35e4824',1,'pprz_algebra_int.h']]],
-  ['int32_5fquat_5fintegrate_5ffi',['INT32_QUAT_INTEGRATE_FI',['../ahrs__int__cmpl_8c.html#ad448a76f8cfc378e1914e23c12a47af8',1,'ahrs_int_cmpl.c']]],
+  ['int32_5fquat_5fintegrate_5ffi',['INT32_QUAT_INTEGRATE_FI',['../ahrs__int__cmpl__quat_8c.html#ad448a76f8cfc378e1914e23c12a47af8',1,'ahrs_int_cmpl_quat.c']]],
   ['int32_5fquat_5finv_5fcomp',['INT32_QUAT_INV_COMP',['../pprz__algebra__int_8h.html#a696e34263d9c76528fc6d991724e7844',1,'pprz_algebra_int.h']]],
   ['int32_5fquat_5finvert',['INT32_QUAT_INVERT',['../pprz__algebra__int_8h.html#ae4a4ae567984121a78f5082ff1a7187d',1,'pprz_algebra_int.h']]],
   ['int32_5fquat_5fnorm',['INT32_QUAT_NORM',['../pprz__algebra__int_8h.html#ab9c11e4e1b3725ea9eebcf7364f7dc4e',1,'pprz_algebra_int.h']]],

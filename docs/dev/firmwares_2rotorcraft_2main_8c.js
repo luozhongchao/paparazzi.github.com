@@ -2,6 +2,7 @@ var firmwares_2rotorcraft_2main_8c =
 [
     [ "MODULES_C", "firmwares_2rotorcraft_2main_8c.html#ac3c586d9cc5d614d34061b3844a1e45b", null ],
     [ "failsafe_check", "firmwares_2rotorcraft_2main_8c.html#a6266a73fe8c0512f1de72cea96e5110b", null ],
+    [ "handle_periodic_tasks", "firmwares_2rotorcraft_2main_8c.html#acfa2a521a46d9beb8a3fa77bb0c9e407", null ],
     [ "main", "firmwares_2rotorcraft_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
     [ "main_event", "firmwares_2rotorcraft_2main_8c.html#a319a645047f275499aa30b0bc08c6e10", null ],
     [ "main_init", "firmwares_2rotorcraft_2main_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1", null ],
