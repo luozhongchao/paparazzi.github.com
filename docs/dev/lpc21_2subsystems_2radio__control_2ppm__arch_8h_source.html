@@ -132,21 +132,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="LPC21xx_8h.html">LPC21xx.h</a>&quot;</span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include BOARD_CONFIG</span>
 <a name="l00030"></a>00030 <span class="preprocessor"></span>
-<a name="l00037"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aa0e3c53e88196db8128751f6b65847b1">00037</a> <span class="preprocessor">#define RC_PPM_TICKS_OF_USEC        CPU_TICKS_OF_USEC</span>
-<a name="l00038"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#a6be8a6b6214c935bdb8f567e1f61b727">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define RC_PPM_SIGNED_TICKS_OF_USEC SIGNED_CPU_TICKS_OF_USEC</span>
-<a name="l00039"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#a0787c18cdf118ffe9896dd867a372a4e">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define USEC_OF_RC_PPM_TICKS        USEC_OF_CPU_TICKS</span>
-<a name="l00040"></a>00040 <span class="preprocessor"></span>
-<a name="l00041"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aeaaf57e63686c19ad0a287287d33ce2f">00041</a> <span class="preprocessor">#define PPM_NB_CHANNEL RADIO_CONTROL_NB_CHANNEL</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
+<a name="l00032"></a>00032 
+<a name="l00039"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aa0e3c53e88196db8128751f6b65847b1">00039</a> <span class="preprocessor">#define RC_PPM_TICKS_OF_USEC        CPU_TICKS_OF_USEC</span>
+<a name="l00040"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#a6be8a6b6214c935bdb8f567e1f61b727">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define RC_PPM_SIGNED_TICKS_OF_USEC SIGNED_CPU_TICKS_OF_USEC</span>
+<a name="l00041"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#a0787c18cdf118ffe9896dd867a372a4e">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define USEC_OF_RC_PPM_TICKS        USEC_OF_CPU_TICKS</span>
 <a name="l00042"></a>00042 <span class="preprocessor"></span>
-<a name="l00043"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aab5a9f3d57389dce4263cf122fdd8db5">00043</a> <span class="preprocessor">#define PPM_IT PPM_CRI</span>
+<a name="l00043"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aeaaf57e63686c19ad0a287287d33ce2f">00043</a> <span class="preprocessor">#define PPM_NB_CHANNEL RADIO_CONTROL_NB_CHANNEL</span>
 <a name="l00044"></a>00044 <span class="preprocessor"></span>
-<a name="l00045"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aead4f148a3edde98bbf0bff75fa896a5">00045</a> <span class="preprocessor">#define PPM_ISR() {       \</span>
-<a name="l00046"></a>00046 <span class="preprocessor">  uint32_t now = PPM_CR;  \</span>
-<a name="l00047"></a>00047 <span class="preprocessor">  DecodePpmFrame(now);    \</span>
-<a name="l00048"></a>00048 <span class="preprocessor">}</span>
-<a name="l00049"></a>00049 <span class="preprocessor"></span>
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051 <span class="preprocessor">#endif </span><span class="comment">/* PPM_ARCH_H */</span>
+<a name="l00045"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aab5a9f3d57389dce4263cf122fdd8db5">00045</a> <span class="preprocessor">#define PPM_IT PPM_CRI</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span>
+<a name="l00047"></a><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aead4f148a3edde98bbf0bff75fa896a5">00047</a> <span class="preprocessor">#define PPM_ISR() {       \</span>
+<a name="l00048"></a>00048 <span class="preprocessor">  uint32_t now = PPM_CR;  \</span>
+<a name="l00049"></a>00049 <span class="preprocessor">  DecodePpmFrame(now);    \</span>
+<a name="l00050"></a>00050 <span class="preprocessor">}</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span>
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="preprocessor">#endif </span><span class="comment">/* PPM_ARCH_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -167,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html">ppm_arch.h</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 14 2012 04:01:29 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Feb 15 2012 04:01:31 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

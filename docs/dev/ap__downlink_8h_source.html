@@ -338,32 +338,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00245"></a><a class="code" href="ap__downlink_8h.html#a8095b0b76b2fcdfa072480ef69736ef5">00245</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_SCP_STATUS(_trans, _dev) {}</span>
 <a name="l00246"></a>00246 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00247"></a>00247 <span class="preprocessor"></span>
-<a name="l00248"></a>00248 <span class="preprocessor">#ifdef BOARD_HAS_BARO</span>
-<a name="l00249"></a>00249 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {  \</span>
-<a name="l00250"></a>00250 <span class="preprocessor">    DOWNLINK_SEND_BARO_RAW(_trans, _dev,        \</span>
-<a name="l00251"></a>00251 <span class="preprocessor">                           &amp;baro.absolute,      \</span>
-<a name="l00252"></a>00252 <span class="preprocessor">                           &amp;baro.differential); \</span>
-<a name="l00253"></a>00253 <span class="preprocessor">  }</span>
-<a name="l00254"></a>00254 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00255"></a><a class="code" href="ap__downlink_8h.html#a09132dd1094236e8356f48f2b6346888">00255</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {}</span>
-<a name="l00256"></a>00256 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00257"></a>00257 <span class="preprocessor"></span>
-<a name="l00258"></a>00258 <span class="preprocessor">#ifdef MEASURE_AIRSPEED</span>
-<a name="l00259"></a>00259 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_trans, _dev) DOWNLINK_SEND_AIRSPEED (_trans, _dev, &amp;estimator_airspeed, &amp;estimator_airspeed, &amp;estimator_airspeed, &amp;estimator_airspeed)</span>
-<a name="l00260"></a>00260 <span class="preprocessor"></span><span class="preprocessor">#elif USE_AIRSPEED</span>
-<a name="l00261"></a>00261 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_trans, _dev) DOWNLINK_SEND_AIRSPEED (_trans, _dev, &amp;estimator_airspeed, &amp;v_ctl_auto_airspeed_setpoint, &amp;v_ctl_auto_airspeed_controlled, &amp;v_ctl_auto_groundspeed_setpoint)</span>
-<a name="l00262"></a>00262 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00263"></a><a class="code" href="ap__downlink_8h.html#ab32593d96b3f917e85174020b7526eae">00263</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_trans, _dev) {}</span>
-<a name="l00264"></a>00264 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00265"></a>00265 <span class="preprocessor"></span>
-<a name="l00266"></a><a class="code" href="ap__downlink_8h.html#affc35e080959e1836ce979271f87dcde">00266</a> <span class="preprocessor">#define PERIODIC_SEND_ENERGY(_trans, _dev) Downlink({ const int16_t e = energy; const float vsup = ((float)vsupply) / 10.0f; const float curs = ((float) current)/1000.0f;  const float power = vsup * curs; DOWNLINK_SEND_ENERGY(_trans, _dev, &amp;vsup, &amp;curs, &amp;e, &amp;power); })</span>
+<a name="l00248"></a>00248 <span class="comment">//FIXME: we need a better switch here...</span>
+<a name="l00249"></a>00249 <span class="preprocessor">#if BOARD_HAS_BARO &amp;&amp; USE_BARO_AS_ALTIMETER</span>
+<a name="l00250"></a>00250 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="baro_8h.html">subsystems/sensors/baro.h</a>&quot;</span>
+<a name="l00251"></a>00251 <span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {  \</span>
+<a name="l00252"></a>00252 <span class="preprocessor">    DOWNLINK_SEND_BARO_RAW(_trans, _dev,        \</span>
+<a name="l00253"></a>00253 <span class="preprocessor">                           &amp;baro.absolute,      \</span>
+<a name="l00254"></a>00254 <span class="preprocessor">                           &amp;baro.differential); \</span>
+<a name="l00255"></a>00255 <span class="preprocessor">  }</span>
+<a name="l00256"></a>00256 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00257"></a><a class="code" href="ap__downlink_8h.html#a09132dd1094236e8356f48f2b6346888">00257</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {}</span>
+<a name="l00258"></a>00258 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00259"></a>00259 <span class="preprocessor"></span>
+<a name="l00260"></a>00260 <span class="preprocessor">#ifdef MEASURE_AIRSPEED</span>
+<a name="l00261"></a>00261 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_trans, _dev) DOWNLINK_SEND_AIRSPEED (_trans, _dev, &amp;estimator_airspeed, &amp;estimator_airspeed, &amp;estimator_airspeed, &amp;estimator_airspeed)</span>
+<a name="l00262"></a>00262 <span class="preprocessor"></span><span class="preprocessor">#elif USE_AIRSPEED</span>
+<a name="l00263"></a>00263 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_trans, _dev) DOWNLINK_SEND_AIRSPEED (_trans, _dev, &amp;estimator_airspeed, &amp;v_ctl_auto_airspeed_setpoint, &amp;v_ctl_auto_airspeed_controlled, &amp;v_ctl_auto_groundspeed_setpoint)</span>
+<a name="l00264"></a>00264 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00265"></a><a class="code" href="ap__downlink_8h.html#ab32593d96b3f917e85174020b7526eae">00265</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_trans, _dev) {}</span>
+<a name="l00266"></a>00266 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00267"></a>00267 <span class="preprocessor"></span>
-<a name="l00268"></a>00268 
-<a name="l00269"></a>00269 <span class="preprocessor">#include &quot;<a class="code" href="stabilization__adaptive_8h.html">firmwares/fixedwing/stabilization/stabilization_adaptive.h</a>&quot;</span>
-<a name="l00270"></a><a class="code" href="ap__downlink_8h.html#a2fbdd1c2b5d02e61f2a76d9e2d900ed2">00270</a> <span class="preprocessor">#define PERIODIC_SEND_H_CTL_A(_trans, _dev) DOWNLINK_SEND_H_CTL_A(_trans, _dev, &amp;h_ctl_roll_sum_err, &amp;h_ctl_ref_roll_angle, &amp;h_ctl_pitch_sum_err, &amp;h_ctl_ref_pitch_angle)</span>
-<a name="l00271"></a>00271 <span class="preprocessor"></span>
-<a name="l00272"></a>00272 
-<a name="l00273"></a>00273 <span class="preprocessor">#endif </span><span class="comment">/* AP_DOWNLINK_H */</span>
+<a name="l00268"></a><a class="code" href="ap__downlink_8h.html#affc35e080959e1836ce979271f87dcde">00268</a> <span class="preprocessor">#define PERIODIC_SEND_ENERGY(_trans, _dev) Downlink({ const int16_t e = energy; const float vsup = ((float)vsupply) / 10.0f; const float curs = ((float) current)/1000.0f;  const float power = vsup * curs; DOWNLINK_SEND_ENERGY(_trans, _dev, &amp;vsup, &amp;curs, &amp;e, &amp;power); })</span>
+<a name="l00269"></a>00269 <span class="preprocessor"></span>
+<a name="l00270"></a>00270 
+<a name="l00271"></a>00271 <span class="preprocessor">#include &quot;<a class="code" href="stabilization__adaptive_8h.html">firmwares/fixedwing/stabilization/stabilization_adaptive.h</a>&quot;</span>
+<a name="l00272"></a><a class="code" href="ap__downlink_8h.html#a2fbdd1c2b5d02e61f2a76d9e2d900ed2">00272</a> <span class="preprocessor">#define PERIODIC_SEND_H_CTL_A(_trans, _dev) DOWNLINK_SEND_H_CTL_A(_trans, _dev, &amp;h_ctl_roll_sum_err, &amp;h_ctl_ref_roll_angle, &amp;h_ctl_pitch_sum_err, &amp;h_ctl_ref_pitch_angle)</span>
+<a name="l00273"></a>00273 <span class="preprocessor"></span>
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275 <span class="preprocessor">#endif </span><span class="comment">/* AP_DOWNLINK_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -384,7 +386,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ap__downlink_8h.html">ap_downlink.h</a>      </li>
 
-    <li class="footer">Generated on Tue Feb 14 2012 04:01:29 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Feb 15 2012 04:01:31 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
