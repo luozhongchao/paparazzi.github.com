@@ -1,6 +1,7 @@
 var ahrs_8h =
 [
     [ "AHRS_FLOAT_OF_INT32", "ahrs_8h.html#adc92e9ace6a9cb153ff10d8d13d0229e", null ],
+    [ "AHRS_IMU_INT_OF_FLOAT", "ahrs_8h.html#a9539cd641858adb4e179edaeff518e8a", null ],
     [ "AHRS_INT_OF_FLOAT", "ahrs_8h.html#a2c00af74e05da701fdf3bbaef91792bb", null ],
     [ "AHRS_RUNNING", "ahrs_8h.html#aaf3251b3c47097842d7dda09c76930f4", null ],
     [ "AHRS_UNINIT", "ahrs_8h.html#a7e2c3de6a795ce2c01d6c2083293cf39", null ],

@@ -13,6 +13,5 @@ var ahrs__int__cmpl__quat_8c =
     [ "ahrs_update_mag_full", "ahrs__int__cmpl__quat_8c.html#a6b9d75b52718685315f0a80850cb1b29", null ],
     [ "compute_body_orientation", "ahrs__int__cmpl__quat_8c.html#a0fa6b736702262f6af81670384809fc3", null ],
     [ "compute_imu_euler_and_rmat_from_quat", "ahrs__int__cmpl__quat_8c.html#acb7819786da567fce7dbbc7b9c485208", null ],
-    [ "compute_imu_quat_and_rmat_from_euler", "ahrs__int__cmpl__quat_8c.html#a1d178f921e3026ed0e4d23b696ecb98c", null ],
     [ "ahrs_impl", "ahrs__int__cmpl__quat_8c.html#ade8cdfde2323b5b50df57266f7947ca7", null ]
 ];

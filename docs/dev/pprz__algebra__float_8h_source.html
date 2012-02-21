@@ -580,24 +580,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00496"></a>00496 <span class="preprocessor"></span>
 <a name="l00497"></a><a class="code" href="pprz__algebra__float_8h.html#aab8e00ea087af42ee3e2f90984fd9509">00497</a> <span class="preprocessor">#define FLOAT_QUAT_COPY(_qo, _qi) QUAT_COPY(_qo, _qi)</span>
 <a name="l00498"></a>00498 <span class="preprocessor"></span>
-<a name="l00499"></a><a class="code" href="pprz__algebra__float_8h.html#ac1a892148a1ebb32fafde838319f6346">00499</a> <span class="preprocessor">#define FLOAT_QUAT_NORM(_q) (sqrtf(SQUARE(_q.qi) + SQUARE(_q.qx)+ \</span>
-<a name="l00500"></a>00500 <span class="preprocessor">           SQUARE(_q.qy) + SQUARE(_q.qz)))  \</span>
+<a name="l00499"></a><a class="code" href="pprz__algebra__float_8h.html#ac1a892148a1ebb32fafde838319f6346">00499</a> <span class="preprocessor">#define FLOAT_QUAT_NORM(_q) (sqrtf(SQUARE((_q).qi) + SQUARE((_q).qx)+ \</span>
+<a name="l00500"></a>00500 <span class="preprocessor">                                   SQUARE((_q).qy) + SQUARE((_q).qz)))</span>
 <a name="l00501"></a>00501 <span class="preprocessor"></span>
-<a name="l00502"></a><a class="code" href="pprz__algebra__float_8h.html#a49b4027b12ceb298434ff14eba21f96d">00502</a> <span class="preprocessor"></span><span class="preprocessor">#define FLOAT_QUAT_NORMALIZE(q) {                           \</span>
-<a name="l00503"></a>00503 <span class="preprocessor">    float norm = FLOAT_QUAT_NORM(q);          \</span>
-<a name="l00504"></a>00504 <span class="preprocessor">    if (norm &gt; FLT_MIN) {           \</span>
-<a name="l00505"></a>00505 <span class="preprocessor">      q.qi = q.qi / norm;           \</span>
-<a name="l00506"></a>00506 <span class="preprocessor">      q.qx = q.qx / norm;           \</span>
-<a name="l00507"></a>00507 <span class="preprocessor">      q.qy = q.qy / norm;           \</span>
-<a name="l00508"></a>00508 <span class="preprocessor">      q.qz = q.qz / norm;           \</span>
-<a name="l00509"></a>00509 <span class="preprocessor">    }               \</span>
+<a name="l00502"></a><a class="code" href="pprz__algebra__float_8h.html#a9cd81f9e9b5e04260cb4cc54fec267ce">00502</a> <span class="preprocessor">#define FLOAT_QUAT_NORMALIZE(_q) {       \</span>
+<a name="l00503"></a>00503 <span class="preprocessor">    float norm = FLOAT_QUAT_NORM(_q);    \</span>
+<a name="l00504"></a>00504 <span class="preprocessor">    if (norm &gt; FLT_MIN) {                \</span>
+<a name="l00505"></a>00505 <span class="preprocessor">      (_q).qi = (_q).qi / norm;          \</span>
+<a name="l00506"></a>00506 <span class="preprocessor">      (_q).qx = (_q).qx / norm;          \</span>
+<a name="l00507"></a>00507 <span class="preprocessor">      (_q).qy = (_q).qy / norm;          \</span>
+<a name="l00508"></a>00508 <span class="preprocessor">      (_q).qz = (_q).qz / norm;          \</span>
+<a name="l00509"></a>00509 <span class="preprocessor">    }                                    \</span>
 <a name="l00510"></a>00510 <span class="preprocessor">  }</span>
 <a name="l00511"></a>00511 <span class="preprocessor"></span>
 <a name="l00512"></a><a class="code" href="pprz__algebra__float_8h.html#a18846a42efecdeae5dab64fbd8645eb9">00512</a> <span class="preprocessor">#define FLOAT_QUAT_INVERT(_qo, _qi) QUAT_INVERT(_qo, _qi)</span>
 <a name="l00513"></a>00513 <span class="preprocessor"></span>
-<a name="l00514"></a><a class="code" href="pprz__algebra__float_8h.html#a577ad8069a4f72a9e6a820523cd3eb55">00514</a> <span class="preprocessor">#define FLOAT_QUAT_WRAP_SHORTEST(q) {         \</span>
-<a name="l00515"></a>00515 <span class="preprocessor">    if (q.qi &lt; 0.)              \</span>
-<a name="l00516"></a>00516 <span class="preprocessor">      QUAT_EXPLEMENTARY(q,q);           \</span>
+<a name="l00514"></a><a class="code" href="pprz__algebra__float_8h.html#ade0e2688302198f542167d2f3c77c44d">00514</a> <span class="preprocessor">#define FLOAT_QUAT_WRAP_SHORTEST(_q) {          \</span>
+<a name="l00515"></a>00515 <span class="preprocessor">    if ((_q).qi &lt; 0.)                                   \</span>
+<a name="l00516"></a>00516 <span class="preprocessor">      QUAT_EXPLEMENTARY(_q,_q);           \</span>
 <a name="l00517"></a>00517 <span class="preprocessor">  }</span>
 <a name="l00518"></a>00518 <span class="preprocessor"></span>
 <a name="l00519"></a>00519 <span class="comment">/* _a2c = _a2b comp _b2c , aka  _a2c = _a2b * _b2c */</span>
@@ -897,7 +897,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="pprz__algebra__float_8h.html">pprz_algebra_float.h</a>      </li>
 
-    <li class="footer">Generated on Wed Feb 15 2012 04:01:31 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Feb 21 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
