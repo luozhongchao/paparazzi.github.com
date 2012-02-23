@@ -1,6 +1,7 @@
 var stm32_2mcu__periph_2i2c__arch_8c =
 [
     [ "I2C_BUSY", "stm32_2mcu__periph_2i2c__arch_8c.html#ad7e560082ad99fc26904882405b26377", null ],
+    [ "I2C_MAX_RESET_FAIL_COUNT", "stm32_2mcu__periph_2i2c__arch_8c.html#a59ce884cd6b3c2b49b9c4e4a28c044a8", null ],
     [ "OUT_OF_SYNC_STATE_MACHINE", "stm32_2mcu__periph_2i2c__arch_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1", null ],
     [ "SPURIOUS_INTERRUPT", "stm32_2mcu__periph_2i2c__arch_8c.html#ab81219b1393fe184d5856db1a6eabf73", null ],
     [ "abort_and_reset", "stm32_2mcu__periph_2i2c__arch_8c.html#ab49d2f1568c99f4568303c0cb6b1565c", null ],

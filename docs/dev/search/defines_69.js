@@ -28,6 +28,7 @@ var searchData=
   ['i2c2sendstart',['I2c2SendStart',['../sim_2mcu__periph_2i2c__arch_8h.html#a4891ec290b5e637c215598df53baab68',1,'i2c_arch.h']]],
   ['i2c_5fbuf_5flen',['I2C_BUF_LEN',['../i2c_8h.html#a4757adc18b278c40ced0d79f4e104460',1,'i2c.h']]],
   ['i2c_5fbusy',['I2C_BUSY',['../stm32_2mcu__periph_2i2c__arch_8c.html#ad7e560082ad99fc26904882405b26377',1,'I2C_BUSY():&#160;i2c_arch.c'],['../i2c__arch_8old_8c.html#ad7e560082ad99fc26904882405b26377',1,'I2C_BUSY():&#160;i2c_arch.old.c']]],
+  ['i2c_5fmax_5freset_5ffail_5fcount',['I2C_MAX_RESET_FAIL_COUNT',['../stm32_2mcu__periph_2i2c__arch_8c.html#a59ce884cd6b3c2b49b9c4e4a28c044a8',1,'i2c_arch.c']]],
   ['i2c_5fmr_5fdata_5fack',['I2C_MR_DATA_ACK',['../lpc21_2mcu__periph_2i2c__arch_8h.html#a8717b2b5cad7f9c938ecb14cabf19479',1,'i2c_arch.h']]],
   ['i2c_5fmr_5fdata_5fnack',['I2C_MR_DATA_NACK',['../lpc21_2mcu__periph_2i2c__arch_8h.html#a6528e9693b9b57c6bffd9f031ba5dee5',1,'i2c_arch.h']]],
   ['i2c_5fmr_5fsla_5fack',['I2C_MR_SLA_ACK',['../lpc21_2mcu__periph_2i2c__arch_8h.html#aeaa8c809db47e55febc0ae158397f6f7',1,'i2c_arch.h']]],
