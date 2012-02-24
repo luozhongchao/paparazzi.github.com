@@ -145,36 +145,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00041"></a><a class="code" href="peripherals_2mcp355x_8h.html#a43936b2cebe162bd29e00181b0282a91">00041</a> <span class="keywordtype">void</span> <a class="code" href="mcp355x_8c.html#a43936b2cebe162bd29e00181b0282a91">mcp355x_read</a>(<span class="keywordtype">void</span>) {
 <a name="l00042"></a>00042   <a class="code" href="spi_8c.html#afdcaecb92da99531b878218dab4e2a42">spi_buffer_length</a> = 4;
 <a name="l00043"></a>00043   <a class="code" href="spi_8c.html#a9fb7b879a9038ebaccd09e8b6007722a">spi_buffer_input</a> = <a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>;
-<a name="l00044"></a>00044   SpiSelectSlave0();
+<a name="l00044"></a>00044   <span class="comment">//SpiSelectSlave0();</span>
 <a name="l00045"></a>00045   SpiStart();
 <a name="l00046"></a>00046 }
 <a name="l00047"></a>00047 
-<a name="l00048"></a>00048 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
-<a name="l00049"></a><a class="code" href="mcp355x_8c.html#a2978a46b47cbc9d17a0924014ff9658b">00049</a> <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
-<a name="l00050"></a>00050 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00051"></a>00051 <span class="preprocessor"></span>
-<a name="l00052"></a>00052 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
-<a name="l00053"></a>00053 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00054"></a>00054 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
-<a name="l00055"></a>00055 
-<a name="l00056"></a><a class="code" href="peripherals_2mcp355x_8h.html#a432cd0706e314361d3602ac9528f2a05">00056</a> <span class="keywordtype">void</span> <a class="code" href="mcp355x_8c.html#a432cd0706e314361d3602ac9528f2a05">mcp355x_event</a>(<span class="keywordtype">void</span>) {
-<a name="l00057"></a>00057   <span class="keyword">static</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> filtered = 0;
-<a name="l00058"></a>00058   <span class="keywordflow">if</span> (<a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a>) {
-<a name="l00059"></a>00059     <a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a> = FALSE;
-<a name="l00060"></a>00060     <span class="keywordflow">if</span> ((<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[0]&gt;&gt;4) == 0) {
-<a name="l00061"></a>00061       <span class="comment">//mcp355x_data = (int32_t)(((uint32_t)mcp355x_spi_buf[0]&lt;&lt;16) | ((uint32_t)mcp355x_spi_buf[1]&lt;&lt;8) | (mcp355x_spi_buf[2]));</span>
-<a name="l00062"></a>00062       <a class="code" href="mcp355x_8c.html#a329ea6825fdd8dfeab29d6766309a493">mcp355x_data</a> = (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)(
-<a name="l00063"></a>00063           ((<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[0]&lt;&lt;17) |
-<a name="l00064"></a>00064           ((<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[1]&lt;&lt;9) |
-<a name="l00065"></a>00065           ((<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[2]&lt;&lt;1) |
-<a name="l00066"></a>00066           (<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[3]&gt;&gt;7));
-<a name="l00067"></a>00067       filtered = (5*filtered + <a class="code" href="mcp355x_8c.html#a329ea6825fdd8dfeab29d6766309a493">mcp355x_data</a>) / (6);
-<a name="l00068"></a>00068       DOWNLINK_SEND_DEBUG(DefaultChannel,4,<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>);
-<a name="l00069"></a>00069       DOWNLINK_SEND_BARO_RAW(DefaultChannel,&amp;<a class="code" href="mcp355x_8c.html#a329ea6825fdd8dfeab29d6766309a493">mcp355x_data</a>,&amp;filtered);
-<a name="l00070"></a>00070     }
-<a name="l00071"></a>00071   }
-<a name="l00072"></a>00072 }
-<a name="l00073"></a>00073 
+<a name="l00048"></a><a class="code" href="peripherals_2mcp355x_8h.html#a432cd0706e314361d3602ac9528f2a05">00048</a> <span class="keywordtype">void</span> <a class="code" href="mcp355x_8c.html#a432cd0706e314361d3602ac9528f2a05">mcp355x_event</a>(<span class="keywordtype">void</span>) {
+<a name="l00049"></a>00049   <span class="keywordflow">if</span> (<a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a>) {
+<a name="l00050"></a>00050     <a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a> = FALSE;
+<a name="l00051"></a>00051     <span class="keywordflow">if</span> ((<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[0]&gt;&gt;4) == 0) {
+<a name="l00052"></a>00052       <a class="code" href="mcp355x_8c.html#a329ea6825fdd8dfeab29d6766309a493">mcp355x_data</a> = (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)(
+<a name="l00053"></a>00053           ((<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[0]&lt;&lt;17) |
+<a name="l00054"></a>00054           ((<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[1]&lt;&lt;9) |
+<a name="l00055"></a>00055           ((<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[2]&lt;&lt;1) |
+<a name="l00056"></a>00056           (<a class="code" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[3]&gt;&gt;7));
+<a name="l00057"></a>00057       <a class="code" href="mcp355x_8c.html#afea2582f132d52f27d13ca404fc52167">mcp355x_data_available</a> = TRUE;
+<a name="l00058"></a>00058     }
+<a name="l00059"></a>00059   }
+<a name="l00060"></a>00060 }
+<a name="l00061"></a>00061 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -195,7 +183,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="mcp355x_8c.html">mcp355x.c</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 24 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

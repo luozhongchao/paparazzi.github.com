@@ -38,6 +38,6 @@ var navgo__1_80_8h =
     [ "SPI1_DRDY_VIC_IT", "navgo__1_80_8h.html#a20be7d2a2ad2dcbc3a2b587973faeb09", null ],
     [ "SPI_SELECT_SLAVE0_PIN", "navgo__1_80_8h.html#a697b8e633c428bd167844542c8c1453f", null ],
     [ "SPI_SELECT_SLAVE0_PORT", "navgo__1_80_8h.html#a62cb06db3908015c7305ca6833f90159", null ],
-    [ "USE_AD1", "navgo__1_80_8h.html#a2934d6c02a6319444fb3e892c72cb8f6", null ],
-    [ "USE_AD1_3", "navgo__1_80_8h.html#a6ab16a1dcb0c4d825bee69ab89e3c6d1", null ]
+    [ "USE_AD0", "navgo__1_80_8h.html#a1dce105d488bf4fcd1181c04a750bfda", null ],
+    [ "USE_AD0_2", "navgo__1_80_8h.html#a942e2dbfeaed34d083dfc6a8101e2c96", null ]
 ];

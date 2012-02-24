@@ -1,7 +1,7 @@
 var searchData=
 [
   ['offset',['offset',['../structBaroBoard.html#a3defb38aa63017ed666cd4dda92d9956',1,'BaroBoard']]],
-  ['offset_5fcnt',['offset_cnt',['../navgo_2baro__board_8c.html#a138240dcc504031ccc83a6e2c044d95d',1,'offset_cnt():&#160;baro_board.c'],['../pressure__board__navarro_8c.html#a138240dcc504031ccc83a6e2c044d95d',1,'offset_cnt():&#160;pressure_board_navarro.c']]],
+  ['offset_5fcnt',['offset_cnt',['../pressure__board__navarro_8c.html#a138240dcc504031ccc83a6e2c044d95d',1,'pressure_board_navarro.c']]],
   ['old_5falt',['old_alt',['../formation_8c.html#aee51e7f0857fc3d79e7db4da09805232',1,'formation.c']]],
   ['old_5fcruise',['old_cruise',['../formation_8c.html#aa9878159de06d9b34a393ab3cbff1dee',1,'formation.c']]],
   ['omega',['omega',['../structFloatRefModel.html#a1b8c9c1d343788025150fb25ab3caa65',1,'FloatRefModel::omega()'],['../structInt32RefModel.html#a882833c8100de5c0a5eef84a93d1a39e',1,'Int32RefModel::omega()'],['../ahrs__float__dcm_8c.html#ac8ddf28561a53266eb9fddbc8e584570',1,'Omega():&#160;ahrs_float_dcm.c']]],

@@ -1,6 +1,5 @@
 var mcp355x_8c =
 [
-    [ "DOWNLINK_DEVICE", "mcp355x_8c.html#a2978a46b47cbc9d17a0924014ff9658b", null ],
     [ "mcp355x_event", "mcp355x_8c.html#a432cd0706e314361d3602ac9528f2a05", null ],
     [ "mcp355x_init", "mcp355x_8c.html#a43309b519e20c3a78b08cbae9ce2775a", null ],
     [ "mcp355x_read", "mcp355x_8c.html#a43936b2cebe162bd29e00181b0282a91", null ],

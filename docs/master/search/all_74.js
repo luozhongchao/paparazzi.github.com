@@ -231,7 +231,7 @@ var searchData=
   ['thrust_5fcoef',['thrust_coef',['../supervision_8c.html#a189645968b87e6997b3e7ef51ef71f66',1,'supervision.c']]],
   ['tim',['tim',['../structscbRegs__t.html#af6beaf73adeef7114c3424da0d4ffc37',1,'scbRegs_t']]],
   ['tim2_5firq_5fhandler',['TIM2_IRQ_HANDLER',['../stm32__vector__table_8c.html#a4c0a7e27ef6382aa68a12827d9a078e6',1,'TIM2_IRQ_HANDLER():&#160;stm32_vector_table.c'],['../stm32_2subsystems_2radio__control_2ppm__arch_8c.html#abd868f931685e15985fbcb685c6bba46',1,'tim2_irq_handler(void):&#160;ppm_arch.c']]],
-  ['tim6_5firq_5fhandler',['TIM6_IRQ_HANDLER',['../stm32__vector__table_8c.html#ac58f9ac73d4162895800f180f9460190',1,'TIM6_IRQ_HANDLER():&#160;stm32_vector_table.c'],['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#acff838020527cf2a316639492d934cd0',1,'tim6_irq_handler(void):&#160;spektrum_arch.c']]],
+  ['tim6_5firq_5fhandler',['tim6_irq_handler',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#acff838020527cf2a316639492d934cd0',1,'tim6_irq_handler(void):&#160;spektrum_arch.c'],['../stm32__vector__table_8c.html#ac58f9ac73d4162895800f180f9460190',1,'TIM6_IRQ_HANDLER():&#160;stm32_vector_table.c']]],
   ['tim_5ffreq_5f1000000',['TIM_FREQ_1000000',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a0226810de0b855055d200ed2877d308b',1,'spektrum_arch.c']]],
   ['tim_5foc_5finit',['TIM_OC_INIT',['../actuators__pwm__arch_8c.html#a4dafdc5f380cf840140a6021fb499bfd',1,'actuators_pwm_arch.c']]],
   ['tim_5foc_5fpreloadconfig',['TIM_OC_PRELOADCONFIG',['../actuators__pwm__arch_8c.html#a0326f27a2ba621b08f0eadc8e62f8b90',1,'actuators_pwm_arch.c']]],
