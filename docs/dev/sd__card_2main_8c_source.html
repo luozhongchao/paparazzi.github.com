@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a><a class="code" href="sd__card_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00026</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">void</span> ) {
 <a name="l00027"></a>00027   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
 <a name="l00028"></a>00028   <span class="keywordflow">while</span>(1) {
-<a name="l00029"></a>00029     <span class="keywordflow">if</span> (sys_time_periodic())
+<a name="l00029"></a>00029     <span class="keywordflow">if</span> (<a class="code" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666">sys_time_check_and_ack_timer</a>(0))
 <a name="l00030"></a>00030       <a class="code" href="sd__card_2main_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>();
 <a name="l00031"></a>00031     <a class="code" href="sd__card_2main_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( );
 <a name="l00032"></a>00032   }
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00037"></a>00037   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
-<a name="l00038"></a>00038   <a class="code" href="sys__time_8c.html#a1e6b75f4db9128a3326d8a6283b0af43">sys_time_init</a>();
+<a name="l00038"></a>00038   <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);
 <a name="l00039"></a>00039   <a class="code" href="led_8h.html#a9d9d9b1f30592189c3aa7358c626218f">led_init</a>();
 <a name="l00040"></a>00040   Uart0Init();
 <a name="l00041"></a>00041 
@@ -213,7 +213,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="sd__card_2main_8c.html">main.c</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 04:01:34 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Feb 26 2012 04:01:30 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

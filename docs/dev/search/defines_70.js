@@ -255,7 +255,6 @@ var searchData=
   ['pprztransportsendmessage',['PprzTransportSendMessage',['../pprz__transport_8h.html#a9c8e60aa8dbe26958487774644577d9e',1,'pprz_transport.h']]],
   ['pprztransportsizeof',['PprzTransportSizeOf',['../pprz__transport_8h.html#a62d51cb649e51a34a612009191584a5a',1,'pprz_transport.h']]],
   ['pprztransporttrailer',['PprzTransportTrailer',['../pprz__transport_8h.html#a66b883086e1ba0a9b52cf0b83addf887',1,'pprz_transport.h']]],
-  ['pprzuartinit',['PprzUartInit',['../setup__actuators_8c.html#ac168154c96e136a6892ff598801abcf7',1,'setup_actuators.c']]],
   ['primaryuart',['PrimaryUart',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74',1,'spektrum_arch.c']]],
   ['print_5fdbg',['PRINT_DBG',['../hf__float_8c.html#a0f2cd18289868b5160262b21047dbd51',1,'hf_float.c']]],
   ['prom_5fnb',['PROM_NB',['../baro__ms5611__i2c_8h.html#a22f63e90af0ec7d29bff584215f56a8a',1,'baro_ms5611_i2c.h']]],
