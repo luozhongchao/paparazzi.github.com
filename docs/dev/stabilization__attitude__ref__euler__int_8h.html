@@ -317,9 +317,9 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment">{ \
-    EULERS_ADD(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0">stab_att_sp_euler</a>,_add_sp);  \
-    ANGLE_REF_NORMALIZE(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>); \
-}
+    EULERS_ADD(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0">stab_att_sp_euler</a>,_add_sp);          \
+    ANGLE_REF_NORMALIZE(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>);     \
+  }
 </pre></div>
 <p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00082">82</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
 
@@ -349,25 +349,25 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">{   \
-                                        \
-    _sp.phi =               \
+<b>Value:</b><div class="fragment"><pre class="fragment">{                \
+                                                                        \
+    _sp.phi =                                                           \
       ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)-<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>]  * (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#abd019b51335ddda98c6bf5e5d368b8ea">SP_MAX_PHI</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>) \
-      &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>);         \
-    _sp.theta =               \
+      &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>);                           \
+    _sp.theta =                                                         \
       ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>) <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>] * (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a218ed832e3b97e115ac7ed996671d5ee">SP_MAX_THETA</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>) \
-      &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>);         \
-    if (_inflight) {              \
-      if (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a908110653d45fd82871ee768ffe38317">YAW_DEADBAND_EXCEEDED</a>()) {          \
-    _sp.psi +=              \
-      ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)-<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6">RADIO_YAW</a>] * (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a25142bf155063146ef43b6e239b1f438">SP_MAX_R</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / <a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">RC_UPDATE_FREQ</a>) \
-      &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>);       \
-    ANGLE_REF_NORMALIZE(_sp.psi);         \
-      }                 \
-    }                 \
-    else { <span class="comment">/* if not flying, use current yaw as setpoint */</span>   \
-      _sp.psi = (<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>));    \
-    }                 \
+      &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>);                           \
+    if (_inflight) {                                                    \
+      if (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a908110653d45fd82871ee768ffe38317">YAW_DEADBAND_EXCEEDED</a>()) {                                    \
+        _sp.psi +=                                                      \
+          ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)-<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6">RADIO_YAW</a>] * (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a25142bf155063146ef43b6e239b1f438">SP_MAX_R</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / <a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">RC_UPDATE_FREQ</a>) \
+          &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>);                       \
+        ANGLE_REF_NORMALIZE(_sp.psi);                                   \
+      }                                                                 \
+    }                                                                   \
+    else { <span class="comment">/* if not flying, use current yaw as setpoint */</span>             \
+      _sp.psi = (<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>)); \
+    }                                                                   \
   }
 </pre></div>
 <p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00061">61</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
@@ -390,10 +390,10 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">{   \
+<b>Value:</b><div class="fragment"><pre class="fragment">{                     \
     _sp.psi = <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>); \
-    stab_att_ref_euler.psi = _sp.psi;       \
-    stab_att_ref_rate.r = 0;          \
+    stab_att_ref_euler.psi = _sp.psi;                                   \
+    stab_att_ref_rate.r = 0;                                            \
   }
 </pre></div>
 <p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00087">87</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
@@ -442,7 +442,7 @@ Defines</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html">stabilization_attitude_ref_euler_int.h</a>      </li>
 
-    <li class="footer">Generated on Sun Feb 26 2012 04:01:31 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Mar 2 2012 04:01:42 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

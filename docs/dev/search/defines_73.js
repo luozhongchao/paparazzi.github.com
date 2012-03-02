@@ -328,6 +328,7 @@ var searchData=
   ['stac',['STAC',['../LPC21xx_8h.html#a4b6f07d6e517197009d29bedcb998b66',1,'LPC21xx.h']]],
   ['stage',['Stage',['../common__flight__plan_8h.html#a73a31daf5fd187893268389b0cf07d32',1,'common_flight_plan.h']]],
   ['start_5ftimeout',['START_TIMEOUT',['../servos__4015__MAT__hw_8c.html#a0525bb869371e594a31064887054b8ef',1,'START_TIMEOUT():&#160;servos_4015_MAT_hw.c'],['../servos__4017__hw_8c.html#a0525bb869371e594a31064887054b8ef',1,'START_TIMEOUT():&#160;servos_4017_hw.c'],['../servos__ppm__hw_8c.html#a0525bb869371e594a31064887054b8ef',1,'START_TIMEOUT():&#160;servos_ppm_hw.c']]],
+  ['startup_5fcounter',['STARTUP_COUNTER',['../navgo_2baro__board_8c.html#a82da7473748bb80bc4e22a91f3d66486',1,'baro_board.c']]],
   ['state_5fsize',['STATE_SIZE',['../agl__vfilter_8h.html#a7e3ce397037c8f4f14f7adc0b969b662',1,'STATE_SIZE():&#160;agl_vfilter.h'],['../alt__vfilter_8h.html#a7e3ce397037c8f4f14f7adc0b969b662',1,'STATE_SIZE():&#160;alt_vfilter.h']]],
   ['static_5finline',['STATIC_INLINE',['../main_8h.html#a718749e18d63ca0d6b0d1b918efb41d6',1,'main.h']]],
   ['status_5fcsq',['STATUS_CSQ',['../gsm_8c.html#a7ba4fd285d9ffb740d987f8e46834a3a',1,'gsm.c']]],

@@ -162,36 +162,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058 <span class="preprocessor">  (radio_control.values[RADIO_YAW] &gt;  STABILIZATION_ATTITUDE_DEADBAND_R || \</span>
 <a name="l00059"></a>00059 <span class="preprocessor">   radio_control.values[RADIO_YAW] &lt; -STABILIZATION_ATTITUDE_DEADBAND_R)</span>
 <a name="l00060"></a>00060 <span class="preprocessor"></span>
-<a name="l00061"></a><a class="code" href="stabilization__attitude__ref__euler__int_8h.html#ab9c6e73248525f0992e373ae55ffaf13">00061</a> <span class="preprocessor">#define STABILIZATION_ATTITUDE_READ_RC(_sp, _inflight) {    \</span>
-<a name="l00062"></a>00062 <span class="preprocessor">                                        \</span>
-<a name="l00063"></a>00063 <span class="preprocessor">    _sp.phi =               \</span>
+<a name="l00061"></a><a class="code" href="stabilization__attitude__ref__euler__int_8h.html#ab9c6e73248525f0992e373ae55ffaf13">00061</a> <span class="preprocessor">#define STABILIZATION_ATTITUDE_READ_RC(_sp, _inflight) {                \</span>
+<a name="l00062"></a>00062 <span class="preprocessor">                                                                        \</span>
+<a name="l00063"></a>00063 <span class="preprocessor">    _sp.phi =                                                           \</span>
 <a name="l00064"></a>00064 <span class="preprocessor">      ((int32_t)-radio_control.values[RADIO_ROLL]  * (int32_t)SP_MAX_PHI / MAX_PPRZ) \</span>
-<a name="l00065"></a>00065 <span class="preprocessor">      &lt;&lt; (REF_ANGLE_FRAC - INT32_ANGLE_FRAC);         \</span>
-<a name="l00066"></a>00066 <span class="preprocessor">    _sp.theta =               \</span>
+<a name="l00065"></a>00065 <span class="preprocessor">      &lt;&lt; (REF_ANGLE_FRAC - INT32_ANGLE_FRAC);                           \</span>
+<a name="l00066"></a>00066 <span class="preprocessor">    _sp.theta =                                                         \</span>
 <a name="l00067"></a>00067 <span class="preprocessor">      ((int32_t) radio_control.values[RADIO_PITCH] * (int32_t)SP_MAX_THETA / MAX_PPRZ) \</span>
-<a name="l00068"></a>00068 <span class="preprocessor">      &lt;&lt; (REF_ANGLE_FRAC - INT32_ANGLE_FRAC);         \</span>
-<a name="l00069"></a>00069 <span class="preprocessor">    if (_inflight) {              \</span>
-<a name="l00070"></a>00070 <span class="preprocessor">      if (YAW_DEADBAND_EXCEEDED()) {          \</span>
-<a name="l00071"></a>00071 <span class="preprocessor">    _sp.psi +=              \</span>
-<a name="l00072"></a>00072 <span class="preprocessor">      ((int32_t)-radio_control.values[RADIO_YAW] * (int32_t)SP_MAX_R / MAX_PPRZ / RC_UPDATE_FREQ) \</span>
-<a name="l00073"></a>00073 <span class="preprocessor">      &lt;&lt; (REF_ANGLE_FRAC - INT32_ANGLE_FRAC);       \</span>
-<a name="l00074"></a>00074 <span class="preprocessor">    ANGLE_REF_NORMALIZE(_sp.psi);         \</span>
-<a name="l00075"></a>00075 <span class="preprocessor">      }                 \</span>
-<a name="l00076"></a>00076 <span class="preprocessor">    }                 \</span>
-<a name="l00077"></a>00077 <span class="preprocessor">    else { </span><span class="comment">/* if not flying, use current yaw as setpoint */</span>   \
-<a name="l00078"></a>00078       _sp.psi = (ahrs.ltp_to_body_euler.psi &lt;&lt; (REF_ANGLE_FRAC - INT32_ANGLE_FRAC));    \
-<a name="l00079"></a>00079     }                 \
+<a name="l00068"></a>00068 <span class="preprocessor">      &lt;&lt; (REF_ANGLE_FRAC - INT32_ANGLE_FRAC);                           \</span>
+<a name="l00069"></a>00069 <span class="preprocessor">    if (_inflight) {                                                    \</span>
+<a name="l00070"></a>00070 <span class="preprocessor">      if (YAW_DEADBAND_EXCEEDED()) {                                    \</span>
+<a name="l00071"></a>00071 <span class="preprocessor">        _sp.psi +=                                                      \</span>
+<a name="l00072"></a>00072 <span class="preprocessor">          ((int32_t)-radio_control.values[RADIO_YAW] * (int32_t)SP_MAX_R / MAX_PPRZ / RC_UPDATE_FREQ) \</span>
+<a name="l00073"></a>00073 <span class="preprocessor">          &lt;&lt; (REF_ANGLE_FRAC - INT32_ANGLE_FRAC);                       \</span>
+<a name="l00074"></a>00074 <span class="preprocessor">        ANGLE_REF_NORMALIZE(_sp.psi);                                   \</span>
+<a name="l00075"></a>00075 <span class="preprocessor">      }                                                                 \</span>
+<a name="l00076"></a>00076 <span class="preprocessor">    }                                                                   \</span>
+<a name="l00077"></a>00077 <span class="preprocessor">    else { </span><span class="comment">/* if not flying, use current yaw as setpoint */</span>             \
+<a name="l00078"></a>00078       _sp.psi = (ahrs.ltp_to_body_euler.psi &lt;&lt; (REF_ANGLE_FRAC - INT32_ANGLE_FRAC)); \
+<a name="l00079"></a>00079     }                                                                   \
 <a name="l00080"></a>00080   }
 <a name="l00081"></a>00081 
 <a name="l00082"></a><a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a490b43dffdd79ca119f660da202b37d4">00082</a> <span class="preprocessor">#define STABILIZATION_ATTITUDE_ADD_SP(_add_sp) {  \</span>
-<a name="l00083"></a>00083 <span class="preprocessor">    EULERS_ADD(stab_att_sp_euler,_add_sp);  \</span>
-<a name="l00084"></a>00084 <span class="preprocessor">    ANGLE_REF_NORMALIZE(stab_att_sp_euler.psi); \</span>
-<a name="l00085"></a>00085 <span class="preprocessor">}</span>
+<a name="l00083"></a>00083 <span class="preprocessor">    EULERS_ADD(stab_att_sp_euler,_add_sp);          \</span>
+<a name="l00084"></a>00084 <span class="preprocessor">    ANGLE_REF_NORMALIZE(stab_att_sp_euler.psi);     \</span>
+<a name="l00085"></a>00085 <span class="preprocessor">  }</span>
 <a name="l00086"></a>00086 <span class="preprocessor"></span>
-<a name="l00087"></a><a class="code" href="stabilization__attitude__ref__euler__int_8h.html#aecb4955d0cd071667c2203169aa1323a">00087</a> <span class="preprocessor">#define STABILIZATION_ATTITUDE_RESET_PSI_REF(_sp) {   \</span>
+<a name="l00087"></a><a class="code" href="stabilization__attitude__ref__euler__int_8h.html#aecb4955d0cd071667c2203169aa1323a">00087</a> <span class="preprocessor">#define STABILIZATION_ATTITUDE_RESET_PSI_REF(_sp) {                     \</span>
 <a name="l00088"></a>00088 <span class="preprocessor">    _sp.psi = ahrs.ltp_to_body_euler.psi &lt;&lt; (REF_ANGLE_FRAC - INT32_ANGLE_FRAC); \</span>
-<a name="l00089"></a>00089 <span class="preprocessor">    stab_att_ref_euler.psi = _sp.psi;       \</span>
-<a name="l00090"></a>00090 <span class="preprocessor">    stab_att_ref_rate.r = 0;          \</span>
+<a name="l00089"></a>00089 <span class="preprocessor">    stab_att_ref_euler.psi = _sp.psi;                                   \</span>
+<a name="l00090"></a>00090 <span class="preprocessor">    stab_att_ref_rate.r = 0;                                            \</span>
 <a name="l00091"></a>00091 <span class="preprocessor">  }</span>
 <a name="l00092"></a>00092 <span class="preprocessor"></span>
 <a name="l00093"></a>00093 
@@ -216,7 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html">stabilization_attitude_ref_euler_int.h</a>      </li>
 
-    <li class="footer">Generated on Sun Feb 26 2012 04:01:30 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Mar 2 2012 04:01:41 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
