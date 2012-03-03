@@ -18,7 +18,6 @@ var searchData=
   ['quat_5finvert',['QUAT_INVERT',['../pprz__algebra_8h.html#a4b86e8392c27bc6113a2a6d9425cb9d3',1,'pprz_algebra.h']]],
   ['quat_5fsetpoint_2ec',['quat_setpoint.c',['../quat__setpoint_8c.html',1,'']]],
   ['quat_5fsetpoint_2eh',['quat_setpoint.h',['../quat__setpoint_8h.html',1,'']]],
-  ['quat_5fsetpoint_5fenter_5fabsolute',['quat_setpoint_enter_absolute',['../quat__setpoint_8c.html#a76a14231e3e95cdb4235f0cc4e8e6da0',1,'quat_setpoint_enter_absolute():&#160;quat_setpoint.c'],['../quat__setpoint_8h.html#a840d1375a4d01d4563d1cba541b1fd1e',1,'quat_setpoint_enter_absolute(void):&#160;quat_setpoint.c']]],
   ['quat_5fsetpoint_5fhover_5fpitch',['QUAT_SETPOINT_HOVER_PITCH',['../quat__setpoint_8c.html#a43a9dc667e1ec8a01232ef3d8f877898',1,'quat_setpoint.c']]],
   ['quat_5fsmul',['QUAT_SMUL',['../pprz__algebra_8h.html#ace7b4658b96beb57ed8bbe6b9a6d1c41',1,'pprz_algebra.h']]],
   ['qx',['qx',['../structDoubleQuat.html#a308df6fc15a5092f850ed3294a34ae84',1,'DoubleQuat::qx()'],['../structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb',1,'FloatQuat::qx()'],['../structInt32Quat.html#afefde00ee3026b3734e2c81b79af7855',1,'Int32Quat::qx()'],['../structInt64Quat.html#a9e497f25fd3979ac0985933952f48222',1,'Int64Quat::qx()']]],
