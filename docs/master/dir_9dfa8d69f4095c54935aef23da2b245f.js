@@ -22,6 +22,7 @@ var dir_9dfa8d69f4095c54935aef23da2b245f =
     [ "meteo", "dir_47cc60c21a3fe979b569d447262d849b.html", null ],
     [ "MPPT", "dir_59d03ad814bbc6347fe6fbe1e0891154.html", null ],
     [ "multi", "dir_e3da264bf8c9337c24e2b33458d4949a.html", null ],
+    [ "openlog", "dir_2c4b0b60adcf33dfba0480fac8b2aef7.html", null ],
     [ "poles", "dir_39d24f4a40c77d0a44931a95d3fa2a03.html", null ],
     [ "sensors", "dir_860bbbcb31ff18ff48bf210b62001a90.html", null ],
     [ "servo_switch", "dir_1ec13ec3832b2fd334ddc99d8ac6c577.html", null ],

@@ -566,6 +566,8 @@ var files =
     [ "sw/airborne/modules/multi/potential.h", "potential_8h.html", "potential_8h" ],
     [ "sw/airborne/modules/multi/tcas.c", "tcas_8c.html", "tcas_8c" ],
     [ "sw/airborne/modules/multi/tcas.h", "tcas_8h.html", "tcas_8h" ],
+    [ "sw/airborne/modules/openlog/openlog.c", "openlog_8c.html", "openlog_8c" ],
+    [ "sw/airborne/modules/openlog/openlog.h", "openlog_8h.html", "openlog_8h" ],
     [ "sw/airborne/modules/poles/nav_poles.c", "nav__poles_8c.html", "nav__poles_8c" ],
     [ "sw/airborne/modules/poles/nav_poles.h", "nav__poles_8h.html", "nav__poles_8h" ],
     [ "sw/airborne/modules/sensors/airspeed_adc.c", "airspeed__adc_8c.html", "airspeed__adc_8c" ],
