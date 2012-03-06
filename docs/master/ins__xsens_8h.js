@@ -1,5 +1,6 @@
 var ins__xsens_8h =
 [
+    [ "AhrsEvent", "ins__xsens_8h.html#ad66883819aadff4141930c5bf7b0ecd5", null ],
     [ "xsens_day", "ins__xsens_8h.html#a045f038ab01d366e137c461547d06976", null ],
     [ "xsens_hour", "ins__xsens_8h.html#a7a99427ba8a305915cf11f7cc67dfc94", null ],
     [ "xsens_min", "ins__xsens_8h.html#a135feef321b9899795c738873e94d47f", null ],

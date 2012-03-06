@@ -1,7 +1,7 @@
 var searchData=
 [
   ['f_5fupdate',['F_UPDATE',['../stabilization__attitude__ref__euler__int_8c.html#aee7d09b1675203f5dc871c83754e06e8',1,'F_UPDATE():&#160;stabilization_attitude_ref_euler_int.c'],['../ahrs__int__cmpl__euler_8c.html#aee7d09b1675203f5dc871c83754e06e8',1,'F_UPDATE():&#160;ahrs_int_cmpl_euler.c']]],
-  ['f_5fupdate_5fres',['F_UPDATE_RES',['../stabilization__attitude__ref__euler__int_8c.html#a3f8d6b617f4443c111163584c48c9794',1,'F_UPDATE_RES():&#160;stabilization_attitude_ref_euler_int.c'],['../stabilization__attitude__ref__quat__int_8c.html#a3f8d6b617f4443c111163584c48c9794',1,'F_UPDATE_RES():&#160;stabilization_attitude_ref_quat_int.c'],['../stabilization__rate_8c.html#a3f8d6b617f4443c111163584c48c9794',1,'F_UPDATE_RES():&#160;stabilization_rate.c']]],
+  ['f_5fupdate_5fres',['F_UPDATE_RES',['../stabilization__attitude__ref__euler__int_8c.html#a3f8d6b617f4443c111163584c48c9794',1,'F_UPDATE_RES():&#160;stabilization_attitude_ref_euler_int.c'],['../stabilization__attitude__ref__quat__int_8c.html#a3f8d6b617f4443c111163584c48c9794',1,'F_UPDATE_RES():&#160;stabilization_attitude_ref_quat_int.c'],['../stabilization__none_8c.html#a3f8d6b617f4443c111163584c48c9794',1,'F_UPDATE_RES():&#160;stabilization_none.c'],['../stabilization__rate_8c.html#a3f8d6b617f4443c111163584c48c9794',1,'F_UPDATE_RES():&#160;stabilization_rate.c']]],
   ['face_5freinj_5f1',['FACE_REINJ_1',['../ahrs__int__cmpl__euler_8c.html#a18e410816fb2402b32179f5fac832bd2',1,'ahrs_int_cmpl_euler.c']]],
   ['failsafe_5fhome_5fradius',['FAILSAFE_HOME_RADIUS',['../nav_8c.html#abb778e487ebe98aedea7858361496264',1,'nav.c']]],
   ['failsafe_5fmode',['failsafe_mode',['../main__fbw_8h.html#ab350241ceab15e8a7850f54165689389',1,'main_fbw.h']]],

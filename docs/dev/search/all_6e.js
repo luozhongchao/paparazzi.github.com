@@ -232,7 +232,7 @@ var searchData=
   ['new_5faddr',['new_addr',['../structActuatorsAsctec.html#af9dd9aacfc4a1a489fba4217307298a9',1,'ActuatorsAsctec']]],
   ['new_5fbaro_5fabs',['new_baro_abs',['../lisa__stm__passthrough__main_8c.html#a3ddd5f7eb9cd64642a2b13435521e9e6',1,'lisa_stm_passthrough_main.c']]],
   ['new_5fbaro_5fdiff',['new_baro_diff',['../lisa__stm__passthrough__main_8c.html#a51046892015ed7244ce0f57c42b39d50',1,'lisa_stm_passthrough_main.c']]],
-  ['new_5fins_5fattitude',['new_ins_attitude',['../ins__chimu__spi_8c.html#a664a8d539ee7893c78e101c06152fc18',1,'new_ins_attitude():&#160;ins_chimu_spi.c'],['../ins__chimu__uart_8c.html#a664a8d539ee7893c78e101c06152fc18',1,'new_ins_attitude():&#160;ins_chimu_uart.c'],['../ins__module_8h.html#a664a8d539ee7893c78e101c06152fc18',1,'new_ins_attitude():&#160;ins_chimu_spi.c'],['../ins__xsens_8c.html#a664a8d539ee7893c78e101c06152fc18',1,'new_ins_attitude():&#160;ins_xsens.c']]],
+  ['new_5fins_5fattitude',['new_ins_attitude',['../ins__chimu__spi_8c.html#a664a8d539ee7893c78e101c06152fc18',1,'new_ins_attitude():&#160;ins_chimu_spi.c'],['../ins__chimu__uart_8c.html#a664a8d539ee7893c78e101c06152fc18',1,'new_ins_attitude():&#160;ins_chimu_uart.c'],['../ins__module_8h.html#a664a8d539ee7893c78e101c06152fc18',1,'new_ins_attitude():&#160;ins_chimu_spi.c']]],
   ['new_5fradio_5fmsg',['new_radio_msg',['../lisa__stm__passthrough__main_8c.html#a9e139680306ff66824b0b73d65839838',1,'lisa_stm_passthrough_main.c']]],
   ['new_5fvane',['new_vane',['../lisa__stm__passthrough__main_8c.html#a1160d0367fd0d6f206174602d411264f',1,'lisa_stm_passthrough_main.c']]],
   ['nextblock',['NextBlock',['../common__flight__plan_8h.html#abed83dcae2c09eb0d09f0b279bad1d8b',1,'common_flight_plan.h']]],

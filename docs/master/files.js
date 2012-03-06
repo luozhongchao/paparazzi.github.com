@@ -360,6 +360,8 @@ var files =
     [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_attitude_ref_quat_float.h", "stabilization__attitude__ref__quat__float_8h.html", "stabilization__attitude__ref__quat__float_8h" ],
     [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_attitude_ref_quat_int.c", "stabilization__attitude__ref__quat__int_8c.html", "stabilization__attitude__ref__quat__int_8c" ],
     [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_attitude_ref_quat_int.h", "stabilization__attitude__ref__quat__int_8h.html", "stabilization__attitude__ref__quat__int_8h" ],
+    [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_none.c", "stabilization__none_8c.html", "stabilization__none_8c" ],
+    [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_none.h", "stabilization__none_8h.html", "stabilization__none_8h" ],
     [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_rate.c", "stabilization__rate_8c.html", "stabilization__rate_8c" ],
     [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_rate.h", "stabilization__rate_8h.html", "stabilization__rate_8h" ],
     [ "sw/airborne/firmwares/setup/setup_actuators.c", "setup__actuators_8c.html", "setup__actuators_8c" ],

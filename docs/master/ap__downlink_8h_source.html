@@ -242,34 +242,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00148"></a><a class="code" href="ap__downlink_8h.html#a86fd3680330117285a05c09d7a3dea6b">00148</a> <span class="preprocessor">#define PERIODIC_SEND_SEGMENT(_chan) if (nav_in_segment) { DOWNLINK_SEND_SEGMENT(_chan, &amp;nav_segment_x_1, &amp;nav_segment_y_1, &amp;nav_segment_x_2, &amp;nav_segment_y_2); }</span>
 <a name="l00149"></a>00149 <span class="preprocessor"></span>
 <a name="l00150"></a>00150 <span class="preprocessor">#ifdef IMU_TYPE_H</span>
-<a name="l00151"></a>00151 <span class="preprocessor"></span><span class="preprocessor">#  include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span>
-<a name="l00152"></a>00152 <span class="preprocessor">#  define PERIODIC_SEND_IMU_ACCEL_RAW(_chan) { DOWNLINK_SEND_IMU_ACCEL_RAW(_chan, &amp;imu.accel_unscaled.x, &amp;imu.accel_unscaled.y, &amp;imu.accel_unscaled.z)}</span>
-<a name="l00153"></a>00153 <span class="preprocessor"></span><span class="preprocessor">#  define PERIODIC_SEND_IMU_GYRO_RAW(_chan) { DOWNLINK_SEND_IMU_GYRO_RAW(_chan, &amp;imu.gyro_unscaled.p, &amp;imu.gyro_unscaled.q, &amp;imu.gyro_unscaled.r)}</span>
-<a name="l00154"></a>00154 <span class="preprocessor"></span><span class="preprocessor">#  define PERIODIC_SEND_IMU_MAG_RAW(_chan) { DOWNLINK_SEND_IMU_MAG_RAW(_chan, &amp;imu.mag_unscaled.x, &amp;imu.mag_unscaled.y, &amp;imu.mag_unscaled.z)}</span>
-<a name="l00155"></a>00155 <span class="preprocessor"></span><span class="preprocessor">#  define PERIODIC_SEND_IMU_ACCEL(_chan) { struct FloatVect3 accel_float; ACCELS_FLOAT_OF_BFP(accel_float, imu.accel); DOWNLINK_SEND_IMU_ACCEL(_chan, &amp;accel_float.x, &amp;accel_float.y, &amp;accel_float.z)}</span>
-<a name="l00156"></a>00156 <span class="preprocessor"></span><span class="preprocessor">#  define PERIODIC_SEND_IMU_GYRO(_chan) { struct FloatRates gyro_float; RATES_FLOAT_OF_BFP(gyro_float, imu.gyro); DOWNLINK_SEND_IMU_GYRO(_chan, &amp;gyro_float.p, &amp;gyro_float.q, &amp;gyro_float.r)}</span>
-<a name="l00157"></a>00157 <span class="preprocessor"></span><span class="preprocessor">#  ifdef USE_MAGNETOMETER</span>
-<a name="l00158"></a>00158 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_chan) { struct FloatVect3 mag_float; MAGS_FLOAT_OF_BFP(mag_float, imu.mag); DOWNLINK_SEND_IMU_MAG(_chan, &amp;mag_float.x, &amp;mag_float.y, &amp;mag_float.z)}</span>
+<a name="l00151"></a>00151 <span class="preprocessor"></span><span class="preprocessor">#  ifdef INS_MODULE_H</span>
+<a name="l00152"></a>00152 <span class="preprocessor"></span><span class="preprocessor">#  include &quot;<a class="code" href="ins__module_8h.html">modules/ins/ins_module.h</a>&quot;</span>
+<a name="l00153"></a>00153 <span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_chan) {}</span>
+<a name="l00154"></a>00154 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_chan) {}</span>
+<a name="l00155"></a>00155 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_chan) {}</span>
+<a name="l00156"></a>00156 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_chan) { DOWNLINK_SEND_IMU_GYRO(_chan, &amp;ins_p, &amp;ins_q, &amp;ins_r)}</span>
+<a name="l00157"></a>00157 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_chan) { DOWNLINK_SEND_IMU_ACCEL(_chan, &amp;ins_ax, &amp;ins_ay, &amp;ins_az)}</span>
+<a name="l00158"></a>00158 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_chan) { DOWNLINK_SEND_IMU_MAG(_chan, &amp;ins_mx, &amp;ins_my, &amp;ins_mz)}</span>
 <a name="l00159"></a>00159 <span class="preprocessor"></span><span class="preprocessor">#  else</span>
-<a name="l00160"></a>00160 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_chan) {}</span>
-<a name="l00161"></a>00161 <span class="preprocessor"></span><span class="preprocessor">#  endif</span>
-<a name="l00162"></a>00162 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00163"></a>00163 <span class="preprocessor"></span><span class="preprocessor">#  ifdef INS_MODULE_H</span>
-<a name="l00164"></a>00164 <span class="preprocessor"></span><span class="preprocessor">#  include &quot;<a class="code" href="ins__module_8h.html">modules/ins/ins_module.h</a>&quot;</span>
-<a name="l00165"></a>00165 <span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_chan) {}</span>
-<a name="l00166"></a>00166 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_chan) {}</span>
-<a name="l00167"></a>00167 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_chan) {}</span>
-<a name="l00168"></a>00168 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_chan) { DOWNLINK_SEND_IMU_GYRO(_chan, &amp;ins_p, &amp;ins_q, &amp;ins_r)}</span>
-<a name="l00169"></a>00169 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_chan) { DOWNLINK_SEND_IMU_ACCEL(_chan, &amp;ins_ax, &amp;ins_ay, &amp;ins_az)}</span>
-<a name="l00170"></a>00170 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_chan) { DOWNLINK_SEND_IMU_MAG(_chan, &amp;ins_mx, &amp;ins_my, &amp;ins_mz)}</span>
-<a name="l00171"></a>00171 <span class="preprocessor"></span><span class="preprocessor">#  else</span>
-<a name="l00172"></a><a class="code" href="ap__downlink_8h.html#ad845351aae40c699456a3ccbc5de8287">00172</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_chan) {}</span>
-<a name="l00173"></a><a class="code" href="ap__downlink_8h.html#a1e2e2602008ac309491a9ad96e7423ee">00173</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_chan) {}</span>
-<a name="l00174"></a><a class="code" href="ap__downlink_8h.html#ab222fe3fffd40657e57478fbd8914cee">00174</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_chan) {}</span>
-<a name="l00175"></a><a class="code" href="ap__downlink_8h.html#a41a2e95f67dc31e1d2ad56163d59dc46">00175</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_chan) {}</span>
-<a name="l00176"></a><a class="code" href="ap__downlink_8h.html#a7f82c35d70872c54c6873661818dafd7">00176</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_chan) {}</span>
-<a name="l00177"></a><a class="code" href="ap__downlink_8h.html#a8acd788d72e56757b27e2c6c58f7d8d9">00177</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_chan) {}</span>
-<a name="l00178"></a>00178 <span class="preprocessor"></span><span class="preprocessor">#  endif</span>
+<a name="l00160"></a>00160 <span class="preprocessor"></span><span class="preprocessor">#    include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span>
+<a name="l00161"></a>00161 <span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_chan) { DOWNLINK_SEND_IMU_ACCEL_RAW(_chan, &amp;imu.accel_unscaled.x, &amp;imu.accel_unscaled.y, &amp;imu.accel_unscaled.z)}</span>
+<a name="l00162"></a>00162 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_chan) { DOWNLINK_SEND_IMU_GYRO_RAW(_chan, &amp;imu.gyro_unscaled.p, &amp;imu.gyro_unscaled.q, &amp;imu.gyro_unscaled.r)}</span>
+<a name="l00163"></a>00163 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_chan) { DOWNLINK_SEND_IMU_MAG_RAW(_chan, &amp;imu.mag_unscaled.x, &amp;imu.mag_unscaled.y, &amp;imu.mag_unscaled.z)}</span>
+<a name="l00164"></a>00164 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_chan) { struct FloatVect3 accel_float; ACCELS_FLOAT_OF_BFP(accel_float, imu.accel); DOWNLINK_SEND_IMU_ACCEL(_chan, &amp;accel_float.x, &amp;accel_float.y, &amp;accel_float.z)}</span>
+<a name="l00165"></a>00165 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_chan) { struct FloatRates gyro_float; RATES_FLOAT_OF_BFP(gyro_float, imu.gyro); DOWNLINK_SEND_IMU_GYRO(_chan, &amp;gyro_float.p, &amp;gyro_float.q, &amp;gyro_float.r)}</span>
+<a name="l00166"></a>00166 <span class="preprocessor"></span><span class="preprocessor">#    ifdef USE_MAGNETOMETER</span>
+<a name="l00167"></a>00167 <span class="preprocessor"></span><span class="preprocessor">#      define PERIODIC_SEND_IMU_MAG(_chan) { struct FloatVect3 mag_float; MAGS_FLOAT_OF_BFP(mag_float, imu.mag); DOWNLINK_SEND_IMU_MAG(_chan, &amp;mag_float.x, &amp;mag_float.y, &amp;mag_float.z)}</span>
+<a name="l00168"></a>00168 <span class="preprocessor"></span><span class="preprocessor">#    else</span>
+<a name="l00169"></a>00169 <span class="preprocessor"></span><span class="preprocessor">#      define PERIODIC_SEND_IMU_MAG(_chan) {}</span>
+<a name="l00170"></a>00170 <span class="preprocessor"></span><span class="preprocessor">#    endif</span>
+<a name="l00171"></a>00171 <span class="preprocessor"></span><span class="preprocessor">#  endif</span>
+<a name="l00172"></a>00172 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00173"></a><a class="code" href="ap__downlink_8h.html#ad845351aae40c699456a3ccbc5de8287">00173</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_chan) {}</span>
+<a name="l00174"></a><a class="code" href="ap__downlink_8h.html#a1e2e2602008ac309491a9ad96e7423ee">00174</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_chan) {}</span>
+<a name="l00175"></a><a class="code" href="ap__downlink_8h.html#ab222fe3fffd40657e57478fbd8914cee">00175</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_chan) {}</span>
+<a name="l00176"></a><a class="code" href="ap__downlink_8h.html#a41a2e95f67dc31e1d2ad56163d59dc46">00176</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_chan) {}</span>
+<a name="l00177"></a><a class="code" href="ap__downlink_8h.html#a7f82c35d70872c54c6873661818dafd7">00177</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_chan) {}</span>
+<a name="l00178"></a><a class="code" href="ap__downlink_8h.html#a8acd788d72e56757b27e2c6c58f7d8d9">00178</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_chan) {}</span>
 <a name="l00179"></a>00179 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00180"></a>00180 <span class="preprocessor"></span>
 <a name="l00181"></a>00181 <span class="preprocessor">#ifdef IMU_ANALOG</span>
@@ -370,7 +370,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ap__downlink_8h.html">ap_downlink.h</a>      </li>
 
-    <li class="footer">Generated on Sun Mar 4 2012 04:00:03 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Mar 6 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
