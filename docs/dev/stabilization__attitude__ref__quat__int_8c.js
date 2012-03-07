@@ -30,7 +30,6 @@ var stabilization__attitude__ref__quat__int_8c =
     [ "stabilization_attitude_ref_enter", "stabilization__attitude__ref__quat__int_8c.html#a4653dafe8c5e5680c05207027db750f0", null ],
     [ "stabilization_attitude_ref_init", "stabilization__attitude__ref__quat__int_8c.html#a7682c717beab8da148168162d84cb33e", null ],
     [ "stabilization_attitude_ref_update", "stabilization__attitude__ref__quat__int_8c.html#aa81d4bbb6fc4913f6b9165b818a577c5", null ],
-    [ "update_ref_quat_from_eulers", "stabilization__attitude__ref__quat__int_8c.html#a088971250bd2eb8c538dd4cd0a9e2830", null ],
     [ "stab_att_ref_accel", "stabilization__attitude__ref__quat__int_8c.html#a8c021676f88d01483c0c1aba3a1ace4f", null ],
     [ "stab_att_ref_euler", "stabilization__attitude__ref__quat__int_8c.html#a231402ac57a681e4714bd44789e009e9", null ],
     [ "stab_att_ref_model", "stabilization__attitude__ref__quat__int_8c.html#a70acd514c6ebe617b9149d8fea9f6110", null ],

@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 
 <a name="l00035"></a><a class="code" href="sys__time_8h.html#a60ef6df0154a4b93f4424fd809c466a3">00035</a> <span class="keywordtype">int</span> <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>(<span class="keywordtype">float</span> duration, <a class="code" href="sys__time_8h.html#a7c75e80c3211af63abc57efa18647726">sys_time_cb</a> cb) {
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> start_time = <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a99fad6e2888ee4078cde7bb20556c0a1" title="in SYS_TICKS with SYS_TIME_RESOLUTION">nb_tick</a>;
+<a name="l00037"></a>00037   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> start_time = <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a08a221fc6226e9b3dce3bdd8ef08803c" title="in SYS_TICKS with SYS_TIME_RESOLUTION">nb_tick</a>;
 <a name="l00038"></a>00038   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i&lt; <a class="code" href="sys__time_8h.html#ab5a17fcb1104999c805fb6f555b15b19">SYS_TIME_NB_TIMER</a>; i++) {
 <a name="l00039"></a>00039     <span class="keywordflow">if</span> (!<a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#ac9099131f9a2e477427758d79e220544">timer</a>[i].<a class="code" href="structsys__time__timer.html#aec2dfa371d0ca5faadc5fdc35108fdfe">in_use</a>) {
 <a name="l00040"></a>00040       <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#ac9099131f9a2e477427758d79e220544">timer</a>[i].<a class="code" href="structsys__time__timer.html#aaa0e8ec5a4704566e6877120e3c4e972">cb</a>         = cb;
@@ -167,9 +167,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00069"></a><a class="code" href="sys__time_8h.html#a1e6b75f4db9128a3326d8a6283b0af43">00069</a> <span class="keywordtype">void</span> <a class="code" href="sys__time_8c.html#a1e6b75f4db9128a3326d8a6283b0af43">sys_time_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00070"></a>00070   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8c.html#a9b31c2feb846b96205ae20ea6883e1c4">sys_time_arch_init</a>();
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072   <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a15f8879ab9f62d2680ab68a6c91f7547" title="full seconds since startup">nb_sec</a>     = 0;
-<a name="l00073"></a>00073   <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a90095900a8b2d82fa3bfb3d84a8ee989" title="remainder of second in CPU_TICKS">nb_sec_rem</a> = 0;
-<a name="l00074"></a>00074   <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a99fad6e2888ee4078cde7bb20556c0a1" title="in SYS_TICKS with SYS_TIME_RESOLUTION">nb_tick</a>    = 0;
+<a name="l00072"></a>00072   <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a2e86fdabba99a0ac8f6409e0d1e694a3" title="full seconds since startup">nb_sec</a>     = 0;
+<a name="l00073"></a>00073   <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a8654f589772b3eef22ab59594c97e513" title="remainder of second in CPU_TICKS">nb_sec_rem</a> = 0;
+<a name="l00074"></a>00074   <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a08a221fc6226e9b3dce3bdd8ef08803c" title="in SYS_TICKS with SYS_TIME_RESOLUTION">nb_tick</a>    = 0;
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076   <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="sys__time_8h.html#ab5a17fcb1104999c805fb6f555b15b19">SYS_TIME_NB_TIMER</a>; i++) {
 <a name="l00077"></a>00077     <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#ac9099131f9a2e477427758d79e220544">timer</a>[i].<a class="code" href="structsys__time__timer.html#aec2dfa371d0ca5faadc5fdc35108fdfe">in_use</a>     = FALSE;
@@ -199,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="sys__time_8c.html">sys_time.c</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 6 2012 04:01:34 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Mar 7 2012 04:01:40 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

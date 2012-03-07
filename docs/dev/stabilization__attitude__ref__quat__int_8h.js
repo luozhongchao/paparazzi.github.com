@@ -1,25 +1,17 @@
 var stabilization__attitude__ref__quat__int_8h =
 [
-    [ "ANGLE_REF_NORMALIZE", "stabilization__attitude__ref__quat__int_8h.html#ac57c1d722e1b973e0e9891338bf1d2c0", null ],
     [ "APPLY_DEADBAND", "stabilization__attitude__ref__quat__int_8h.html#ae30007ac762e650a2e03a8c3edf00272", null ],
     [ "DEADBAND_EXCEEDED", "stabilization__attitude__ref__quat__int_8h.html#a75d3fc035fedc18f7c153e35a59a138a", null ],
     [ "PITCH_COEF", "stabilization__attitude__ref__quat__int_8h.html#a95eedd3b24667c8e3cb33326ee60e934", null ],
     [ "PITCH_COEF_RATE", "stabilization__attitude__ref__quat__int_8h.html#acb66320d4ac81d29948082d121fe8799", null ],
     [ "PITCH_DEADBAND_EXCEEDED", "stabilization__attitude__ref__quat__int_8h.html#a502a88bbc096e471006af59f53dc060a", null ],
-    [ "RC_UPDATE_FREQ", "stabilization__attitude__ref__quat__int_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e", null ],
-    [ "REF_ACCEL_FRAC", "stabilization__attitude__ref__quat__int_8h.html#a94a3fc964bb686c26cc9fe01d9c7a50f", null ],
-    [ "REF_ANGLE_FRAC", "stabilization__attitude__ref__quat__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7", null ],
-    [ "REF_ANGLE_PI", "stabilization__attitude__ref__quat__int_8h.html#a2a439d1023dcffd458271d54cace5a95", null ],
-    [ "REF_ANGLE_TWO_PI", "stabilization__attitude__ref__quat__int_8h.html#a7c98c2da7c74ef04118c3145232e8d26", null ],
-    [ "REF_RATE_FRAC", "stabilization__attitude__ref__quat__int_8h.html#a6a9ac7c2e058fdcfbd5ec56c9979944e", null ],
     [ "ROLL_COEF", "stabilization__attitude__ref__quat__int_8h.html#a5948a9863126732755023c8ae0d5eef6", null ],
     [ "ROLL_COEF_RATE", "stabilization__attitude__ref__quat__int_8h.html#ab2bab8f4f002c472c8d35aefd62302e1", null ],
     [ "ROLL_DEADBAND_EXCEEDED", "stabilization__attitude__ref__quat__int_8h.html#ade5e3cdd965d34f8d9076b0724f54c02", null ],
-    [ "STABILIZATION_ATTITUDE_READ_RC", "stabilization__attitude__ref__quat__int_8h.html#a39c59b73703362da2482aab7a34ee655", null ],
     [ "STABILIZATION_ATTITUDE_RESET_PSI_REF", "stabilization__attitude__ref__quat__int_8h.html#aecb4955d0cd071667c2203169aa1323a", null ],
     [ "YAW_COEF", "stabilization__attitude__ref__quat__int_8h.html#a42bb19be137e2155e693447119d0d21a", null ],
     [ "YAW_COEF_RATE", "stabilization__attitude__ref__quat__int_8h.html#a46806cfff7e6023604c48b0233db9592", null ],
-    [ "YAW_DEADBAND_EXCEEDED", "stabilization__attitude__ref__quat__int_8h.html#a908110653d45fd82871ee768ffe38317", null ],
+    [ "stabilization_attitude_read_rc_setpoint", "stabilization__attitude__ref__quat__int_8h.html#a84105ff478573c301189dcc9a02ac154", null ],
     [ "stabilization_attitude_ref_enter", "stabilization__attitude__ref__quat__int_8h.html#abe198511f5918b60eb4956c1d68c9373", null ],
-    [ "stabilization_attitude_ref_schedule", "stabilization__attitude__ref__quat__int_8h.html#ae1354f18f6f9687f682984d2bccbfb98", null ]
+    [ "update_quat_from_eulers", "stabilization__attitude__ref__quat__int_8h.html#a5bc05d616189a4dac9b53d667de980a7", null ]
 ];

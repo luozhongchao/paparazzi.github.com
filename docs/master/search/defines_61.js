@@ -223,6 +223,7 @@ var searchData=
   ['ap_5fmode_5frate_5fdirect',['AP_MODE_RATE_DIRECT',['../rotorcraft_2autopilot_8h.html#a0dfd0e7b54ea82567fe99f9795107709',1,'autopilot.h']]],
   ['ap_5fmode_5frate_5frc_5fclimb',['AP_MODE_RATE_RC_CLIMB',['../rotorcraft_2autopilot_8h.html#a27ed1d05525cea6cb0914fb62225618c',1,'autopilot.h']]],
   ['ap_5fmode_5frate_5fz_5fhold',['AP_MODE_RATE_Z_HOLD',['../rotorcraft_2autopilot_8h.html#ad8fff87351c33b41976f56250803d6a7',1,'autopilot.h']]],
+  ['ap_5fmode_5frc_5fdirect',['AP_MODE_RC_DIRECT',['../rotorcraft_2autopilot_8h.html#a39b3ba365e16b1b91380da51caf0c483',1,'autopilot.h']]],
   ['app_5fangle',['APP_ANGLE',['../gls_8c.html#a54c976fc74097d0392e6b3efaf8730f0',1,'gls.c']]],
   ['app_5fintercept_5faf_5ftod',['APP_INTERCEPT_AF_TOD',['../gls_8c.html#a2165aeac056655dfaf26f2cf8758d8b5',1,'gls.c']]],
   ['app_5ftarget_5fspeed',['APP_TARGET_SPEED',['../gls_8c.html#ad6a9f5ab245044a721ba99060d5cdcfd',1,'gls.c']]],

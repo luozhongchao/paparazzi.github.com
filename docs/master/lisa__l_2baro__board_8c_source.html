@@ -185,59 +185,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082 
 <a name="l00083"></a><a class="code" href="lisa__l_2baro__board_8h.html#a56c954891d295441cbddf32c0acb2bce">00083</a> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a56c954891d295441cbddf32c0acb2bce">baro_board_send_config_abs</a>(<span class="keywordtype">void</span>) {
-<a name="l00084"></a>00084   <a class="code" href="lisa__l_2baro__board_8c.html#a6c5d28296d0273908662b993468d73cb">baro_board_write_to_register</a>(<a class="code" href="lisa__l_2baro__board_8c.html#ace745bd76b71236fdb1b581eab645ad8">BARO_ABS_ADDR</a>, 0x01, 0x86, 0x83);
-<a name="l00085"></a>00085 }
-<a name="l00086"></a>00086 
-<a name="l00087"></a><a class="code" href="lisa__l_2baro__board_8h.html#a4e4ed9edbc6819d4b3f967eee7429fb8">00087</a> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a4e4ed9edbc6819d4b3f967eee7429fb8">baro_board_send_config_diff</a>(<span class="keywordtype">void</span>) {
-<a name="l00088"></a>00088   <a class="code" href="lisa__l_2baro__board_8c.html#a6c5d28296d0273908662b993468d73cb">baro_board_write_to_register</a>(<a class="code" href="lisa__l_2baro__board_8c.html#a75c5128c79feb658731e646b8279f18f">BARO_DIFF_ADDR</a>, 0x01, 0x84, 0x83);
-<a name="l00089"></a>00089 }
-<a name="l00090"></a>00090 
-<a name="l00091"></a><a class="code" href="lisa__m_2baro__board_8h.html#a8fe690c3a3306cb81a9761445c2c7548">00091</a> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a8fe690c3a3306cb81a9761445c2c7548">baro_board_send_reset</a>(<span class="keywordtype">void</span>) {
-<a name="l00092"></a>00092   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
-<a name="l00093"></a>00093   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = 0x00;
-<a name="l00094"></a>00094   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
-<a name="l00095"></a>00095   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = 0x06;
-<a name="l00096"></a>00096   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
-<a name="l00097"></a>00097 }
-<a name="l00098"></a>00098 
-<a name="l00099"></a><a class="code" href="lisa__l_2baro__board_8c.html#a6c5d28296d0273908662b993468d73cb">00099</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a6c5d28296d0273908662b993468d73cb">baro_board_write_to_register</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> baro_addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> reg_addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> val_msb, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> val_lsb) {
-<a name="l00100"></a>00100   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
-<a name="l00101"></a>00101   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = baro_addr;
-<a name="l00102"></a>00102   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 3;
-<a name="l00103"></a>00103   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = reg_addr;
-<a name="l00104"></a>00104   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = val_msb;
-<a name="l00105"></a>00105   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[2] = val_lsb;
-<a name="l00106"></a>00106   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
-<a name="l00107"></a>00107 }
-<a name="l00108"></a>00108 
-<a name="l00109"></a><a class="code" href="lisa__l_2baro__board_8c.html#a0c000c34c542d400cd2a45608f714d12">00109</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a0c000c34c542d400cd2a45608f714d12">baro_board_read_from_register</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> baro_addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> reg_addr) {
-<a name="l00110"></a>00110   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>;
-<a name="l00111"></a>00111   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = baro_addr;
-<a name="l00112"></a>00112   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
-<a name="l00113"></a>00113   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 2;
-<a name="l00114"></a>00114   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = reg_addr;
-<a name="l00115"></a>00115   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
-<a name="l00116"></a>00116   <span class="comment">//  i2c2.buf[0] = reg_addr;</span>
-<a name="l00117"></a>00117   <span class="comment">//  i2c2_transceive(baro_addr, 1, 2, &amp;baro_board.i2c_done);</span>
-<a name="l00118"></a>00118 }
-<a name="l00119"></a>00119 
-<a name="l00120"></a><a class="code" href="lisa__l_2baro__board_8c.html#ae280d0cac96760be078c903045aee6c6">00120</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#ae280d0cac96760be078c903045aee6c6">baro_board_set_current_register</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> baro_addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> reg_addr) {
-<a name="l00121"></a>00121   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
-<a name="l00122"></a>00122   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = baro_addr;
-<a name="l00123"></a>00123   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
-<a name="l00124"></a>00124   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = reg_addr;
-<a name="l00125"></a>00125   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
-<a name="l00126"></a>00126   <span class="comment">//  i2c2.buf[0] = reg_addr;</span>
-<a name="l00127"></a>00127   <span class="comment">//  i2c2_transmit(baro_addr, 1, &amp;baro_board.i2c_done);</span>
-<a name="l00128"></a>00128 }
-<a name="l00129"></a>00129 
-<a name="l00130"></a><a class="code" href="lisa__l_2baro__board_8c.html#a91e7585497fa861959910aa79a06c95a">00130</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a91e7585497fa861959910aa79a06c95a">baro_board_read_from_current_register</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> baro_addr) {
-<a name="l00131"></a>00131   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea0a6a2eb5c566606a3ea9acc6734b4f91">I2CTransRx</a>;
-<a name="l00132"></a>00132   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = baro_addr;
-<a name="l00133"></a>00133   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 2;
-<a name="l00134"></a>00134   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
-<a name="l00135"></a>00135   <span class="comment">//  i2c2_receive(baro_addr, 2, &amp;baro_board.i2c_done);</span>
-<a name="l00136"></a>00136 }
+<a name="l00084"></a>00084 <span class="preprocessor">#ifndef BARO_LOW_GAIN</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;Using High LisaL Baro Gain: Do not use below 1000hPa&quot;</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span>  <a class="code" href="lisa__l_2baro__board_8c.html#a6c5d28296d0273908662b993468d73cb">baro_board_write_to_register</a>(<a class="code" href="lisa__l_2baro__board_8c.html#ace745bd76b71236fdb1b581eab645ad8">BARO_ABS_ADDR</a>, 0x01, 0x86, 0x83);
+<a name="l00087"></a>00087 <span class="preprocessor">#else</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;Using Low LisaL Baro Gain, capable of measuring below 1000hPa or more&quot; </span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span>  <span class="comment">//config register should be 0x84 in low countries, or 0x86 in normal countries</span>
+<a name="l00090"></a>00090   <a class="code" href="lisa__l_2baro__board_8c.html#a6c5d28296d0273908662b993468d73cb">baro_board_write_to_register</a>(<a class="code" href="lisa__l_2baro__board_8c.html#ace745bd76b71236fdb1b581eab645ad8">BARO_ABS_ADDR</a>, 0x01, 0x84, 0x83); 
+<a name="l00091"></a>00091 <span class="preprocessor">#endif</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span>}
+<a name="l00093"></a>00093 
+<a name="l00094"></a><a class="code" href="lisa__l_2baro__board_8h.html#a4e4ed9edbc6819d4b3f967eee7429fb8">00094</a> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a4e4ed9edbc6819d4b3f967eee7429fb8">baro_board_send_config_diff</a>(<span class="keywordtype">void</span>) {
+<a name="l00095"></a>00095   <a class="code" href="lisa__l_2baro__board_8c.html#a6c5d28296d0273908662b993468d73cb">baro_board_write_to_register</a>(<a class="code" href="lisa__l_2baro__board_8c.html#a75c5128c79feb658731e646b8279f18f">BARO_DIFF_ADDR</a>, 0x01, 0x84, 0x83);
+<a name="l00096"></a>00096 }
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="lisa__m_2baro__board_8h.html#a8fe690c3a3306cb81a9761445c2c7548">00098</a> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a8fe690c3a3306cb81a9761445c2c7548">baro_board_send_reset</a>(<span class="keywordtype">void</span>) {
+<a name="l00099"></a>00099   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00100"></a>00100   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = 0x00;
+<a name="l00101"></a>00101   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
+<a name="l00102"></a>00102   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = 0x06;
+<a name="l00103"></a>00103   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
+<a name="l00104"></a>00104 }
+<a name="l00105"></a>00105 
+<a name="l00106"></a><a class="code" href="lisa__l_2baro__board_8c.html#a6c5d28296d0273908662b993468d73cb">00106</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a6c5d28296d0273908662b993468d73cb">baro_board_write_to_register</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> baro_addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> reg_addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> val_msb, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> val_lsb) {
+<a name="l00107"></a>00107   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00108"></a>00108   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = baro_addr;
+<a name="l00109"></a>00109   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 3;
+<a name="l00110"></a>00110   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = reg_addr;
+<a name="l00111"></a>00111   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = val_msb;
+<a name="l00112"></a>00112   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[2] = val_lsb;
+<a name="l00113"></a>00113   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
+<a name="l00114"></a>00114 }
+<a name="l00115"></a>00115 
+<a name="l00116"></a><a class="code" href="lisa__l_2baro__board_8c.html#a0c000c34c542d400cd2a45608f714d12">00116</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a0c000c34c542d400cd2a45608f714d12">baro_board_read_from_register</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> baro_addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> reg_addr) {
+<a name="l00117"></a>00117   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>;
+<a name="l00118"></a>00118   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = baro_addr;
+<a name="l00119"></a>00119   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
+<a name="l00120"></a>00120   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 2;
+<a name="l00121"></a>00121   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = reg_addr;
+<a name="l00122"></a>00122   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
+<a name="l00123"></a>00123   <span class="comment">//  i2c2.buf[0] = reg_addr;</span>
+<a name="l00124"></a>00124   <span class="comment">//  i2c2_transceive(baro_addr, 1, 2, &amp;baro_board.i2c_done);</span>
+<a name="l00125"></a>00125 }
+<a name="l00126"></a>00126 
+<a name="l00127"></a><a class="code" href="lisa__l_2baro__board_8c.html#ae280d0cac96760be078c903045aee6c6">00127</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#ae280d0cac96760be078c903045aee6c6">baro_board_set_current_register</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> baro_addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> reg_addr) {
+<a name="l00128"></a>00128   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00129"></a>00129   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = baro_addr;
+<a name="l00130"></a>00130   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
+<a name="l00131"></a>00131   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = reg_addr;
+<a name="l00132"></a>00132   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
+<a name="l00133"></a>00133   <span class="comment">//  i2c2.buf[0] = reg_addr;</span>
+<a name="l00134"></a>00134   <span class="comment">//  i2c2_transmit(baro_addr, 1, &amp;baro_board.i2c_done);</span>
+<a name="l00135"></a>00135 }
+<a name="l00136"></a>00136 
+<a name="l00137"></a><a class="code" href="lisa__l_2baro__board_8c.html#a91e7585497fa861959910aa79a06c95a">00137</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2baro__board_8c.html#a91e7585497fa861959910aa79a06c95a">baro_board_read_from_current_register</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> baro_addr) {
+<a name="l00138"></a>00138   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea0a6a2eb5c566606a3ea9acc6734b4f91">I2CTransRx</a>;
+<a name="l00139"></a>00139   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = baro_addr;
+<a name="l00140"></a>00140   <a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 2;
+<a name="l00141"></a>00141   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__l_2baro__board_8c.html#ad28e1bf56a33915c0590f3bbb7e32e28">baro_trans</a>);
+<a name="l00142"></a>00142   <span class="comment">//  i2c2_receive(baro_addr, 2, &amp;baro_board.i2c_done);</span>
+<a name="l00143"></a>00143 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -258,7 +265,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lisa__l_2baro__board_8c.html">baro_board.c</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 6 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Mar 7 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

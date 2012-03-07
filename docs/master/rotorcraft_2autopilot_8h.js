@@ -14,6 +14,7 @@ var rotorcraft_2autopilot_8h =
     [ "AP_MODE_RATE_DIRECT", "rotorcraft_2autopilot_8h.html#a0dfd0e7b54ea82567fe99f9795107709", null ],
     [ "AP_MODE_RATE_RC_CLIMB", "rotorcraft_2autopilot_8h.html#a27ed1d05525cea6cb0914fb62225618c", null ],
     [ "AP_MODE_RATE_Z_HOLD", "rotorcraft_2autopilot_8h.html#ad8fff87351c33b41976f56250803d6a7", null ],
+    [ "AP_MODE_RC_DIRECT", "rotorcraft_2autopilot_8h.html#a39b3ba365e16b1b91380da51caf0c483", null ],
     [ "autopilot_KillThrottle", "rotorcraft_2autopilot_8h.html#a75cc8c265477bf0b12453d8cb44743fb", null ],
     [ "autopilot_SetPowerSwitch", "rotorcraft_2autopilot_8h.html#ae42e72207df0c300dfc515a88056a26a", null ],
     [ "MODE_AUTO1", "rotorcraft_2autopilot_8h.html#a34a5f79db5ce56dc453dc23e9cbcb49e", null ],
