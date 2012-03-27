@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00081"></a><a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e">00081</a>   <span class="keyword">struct </span><a class="code" href="structSVinfo.html" title="data structure for Space Vehicle Information of a single satellite">SVinfo</a> <a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[<a class="code" href="gps__nmea_8h.html#a63f1b81cf4a1e8e0fe80f065224826fe">GPS_NB_CHANNELS</a>]; 
 <a name="l00082"></a>00082 
 <a name="l00083"></a><a class="code" href="structGpsState.html#ae57cb88a232985880e19989f99795245">00083</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structGpsState.html#ae57cb88a232985880e19989f99795245" title="cpu time in ticks at last valid fix">last_fix_ticks</a>;       
-<a name="l00084"></a><a class="code" href="structGpsState.html#a5502679e99fb346270925884a3da5e1f">00084</a>   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="structGpsState.html#a5502679e99fb346270925884a3da5e1f" title="cpu time in sec at last valid fix">last_fix_time</a>;        
+<a name="l00084"></a><a class="code" href="structGpsState.html#ac6e982464156a3aa6d1967b7cf468b84">00084</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structGpsState.html#ac6e982464156a3aa6d1967b7cf468b84" title="cpu time in sec at last valid fix">last_fix_time</a>;        
 <a name="l00085"></a><a class="code" href="structGpsState.html#ae9f9449dccc1b1f9404d44246245ef7b">00085</a>   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="structGpsState.html#ae9f9449dccc1b1f9404d44246245ef7b" title="hotstart, warmstart, coldstart">reset</a>;                
 <a name="l00086"></a>00086 };
 <a name="l00087"></a>00087 
@@ -202,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00106"></a>00106 <span class="preprocessor">#ifndef GPS_TIMEOUT</span>
 <a name="l00107"></a>00107 <span class="preprocessor"></span><span class="preprocessor">#define GPS_TIMEOUT 5</span>
 <a name="l00108"></a>00108 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00109"></a><a class="code" href="gps_8h.html#a3081afe8b82d023c748c40dfc49ff2f7">00109</a> <span class="preprocessor"></span><span class="preprocessor">#define GpsIsLost() (cpu_time_sec - gps.last_fix_time &gt; GPS_TIMEOUT)</span>
+<a name="l00109"></a><a class="code" href="gps_8h.html#a3081afe8b82d023c748c40dfc49ff2f7">00109</a> <span class="preprocessor"></span><span class="preprocessor">#define GpsIsLost() (sys_time.nb_sec - gps.last_fix_time &gt; GPS_TIMEOUT)</span>
 <a name="l00110"></a>00110 <span class="preprocessor"></span>
 <a name="l00111"></a>00111 
 <a name="l00112"></a>00112 <span class="comment">//TODO</span>
@@ -271,7 +271,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="gps_8h.html">gps.h</a>      </li>
 
-    <li class="footer">Generated on Wed Mar 7 2012 04:01:40 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Mar 27 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

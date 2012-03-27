@@ -12,7 +12,6 @@ var nav_8c =
     [ "NAV_GLIDE_PITCH_TRIM", "nav_8c.html#ae41368935fe1a9081b0c663d37f227e0", null ],
     [ "NavFollow", "nav_8c.html#a8691e5b760e30c9091d5a981d3663441", null ],
     [ "NavGlide", "nav_8c.html#aa7303abf34661cdf531cce2f4fddfe86", null ],
-    [ "NavGotoWaypoint", "nav_8c.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c", null ],
     [ "PowerVoltage", "nav_8c.html#ac654524aa60945f0eab4bed7521c3011", null ],
     [ "RCLost", "nav_8c.html#ac3892fe123b99e805c0c5d5b1b4cd144", null ],
     [ "RcRoll", "nav_8c.html#a7c6d9ca050122212a8a269e08f8c23f2", null ],

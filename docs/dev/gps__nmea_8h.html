@@ -225,7 +225,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="gps__nmea_8h_source.html#l00034">34</a> of file <a class="el" href="gps__nmea_8h_source.html">gps_nmea.h</a>.</p>
 
-<p>Referenced by <a class="el" href="gps__ubx_8c_source.html#l00091">gps_ubx_read_message()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00360">parse_ins_msg()</a>.</p>
+<p>Referenced by <a class="el" href="gps__ubx_8c_source.html#l00092">gps_ubx_read_message()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00348">parse_ins_msg()</a>.</p>
 
 </div>
 </div>
@@ -289,7 +289,7 @@ Variables</h2></td></tr>
       if (<a class="code" href="gps__nmea_8c.html#a1c5d1eddb60d3aa0ef96bed0e0bdc169" title="file gps_nmea.c brief Parser for the NMEA protocol">gps_nmea</a>.<a class="code" href="structGpsNmea.html#a8f5235b8167adbf866f3f803355ecd30">pos_available</a>) {      \
         if (<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#afeffb02bdd18d27a87e96bb77175168f" title="status of fix">fix</a> == <a class="code" href="gps_8h.html#ac5e980c8325a29dd79a45ed26af404be">GPS_FIX_3D</a>) {               \
           gps.last_fix_ticks = <a class="code" href="sys__time_8h.html#ac85ef6f6a4d839fd1cd15f6358933cc0">cpu_time_ticks</a>;     \
-          gps.last_fix_time = <a class="code" href="sys__time_8h.html#ab714a06d7058fea51e8a8b6851d51d33">cpu_time_sec</a>;        \
+          gps.last_fix_time = <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a2e86fdabba99a0ac8f6409e0d1e694a3" title="full seconds since startup">nb_sec</a>;        \
         }                                          \
         _sol_available_callback();                 \
       }                                            \
@@ -333,7 +333,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="gps__nmea_8h_source.html#l00042">42</a> of file <a class="el" href="gps__nmea_8h_source.html">gps_nmea.h</a>.</p>
 
-<p>Referenced by <a class="el" href="gps__nmea_8c_source.html#l00387">nmea_parse_char()</a>.</p>
+<p>Referenced by <a class="el" href="gps__nmea_8c_source.html#l00385">nmea_parse_char()</a>.</p>
 
 </div>
 </div>
@@ -354,7 +354,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="gps__nmea_8h_source.html#l00039">39</a> of file <a class="el" href="gps__nmea_8h_source.html">gps_nmea.h</a>.</p>
 
-<p>Referenced by <a class="el" href="gps__nmea_8c_source.html#l00352">nmea_parse_msg()</a>, <a class="el" href="gps__nmea_8c_source.html#l00195">parse_nmea_GPGGA()</a>, <a class="el" href="gps__nmea_8c_source.html#l00075">parse_nmea_GPGSA()</a>, and <a class="el" href="gps__nmea_8c_source.html#l00116">parse_nmea_GPRMC()</a>.</p>
+<p>Referenced by <a class="el" href="gps__nmea_8c_source.html#l00350">nmea_parse_msg()</a>, <a class="el" href="gps__nmea_8c_source.html#l00193">parse_nmea_GPGGA()</a>, <a class="el" href="gps__nmea_8c_source.html#l00073">parse_nmea_GPGSA()</a>, and <a class="el" href="gps__nmea_8c_source.html#l00114">parse_nmea_GPRMC()</a>.</p>
 
 </div>
 </div>
@@ -400,9 +400,9 @@ Variables</h2></td></tr>
 <p>The function to be called when a characted friom the device is available.</p>
 <p>It reads one character at a time setting gps_nmea.msg_available to TRUE after a full line. </p>
 
-<p>Definition at line <a class="el" href="gps__nmea_8c_source.html#l00387">387</a> of file <a class="el" href="gps__nmea_8c_source.html">gps_nmea.c</a>.</p>
+<p>Definition at line <a class="el" href="gps__nmea_8c_source.html#l00385">385</a> of file <a class="el" href="gps__nmea_8c_source.html">gps_nmea.c</a>.</p>
 
-<p>References <a class="el" href="discsurvey_8c_source.html#l00013">c</a>, <a class="el" href="gps__nmea_8c_source.html#l00055">gps_nmea</a>, <a class="el" href="gps__nmea_8h_source.html#l00045">GpsNmea::msg_available</a>, <a class="el" href="gps__nmea_8h_source.html#l00048">GpsNmea::msg_buf</a>, <a class="el" href="gps__nmea_8h_source.html#l00049">GpsNmea::msg_len</a>, and <a class="el" href="gps__nmea_8h_source.html#l00042">NMEA_MAXLEN</a>.</p>
+<p>References <a class="el" href="discsurvey_8c_source.html#l00013">c</a>, <a class="el" href="gps__nmea_8c_source.html#l00053">gps_nmea</a>, <a class="el" href="gps__nmea_8h_source.html#l00045">GpsNmea::msg_available</a>, <a class="el" href="gps__nmea_8h_source.html#l00048">GpsNmea::msg_buf</a>, <a class="el" href="gps__nmea_8h_source.html#l00049">GpsNmea::msg_len</a>, and <a class="el" href="gps__nmea_8h_source.html#l00042">NMEA_MAXLEN</a>.</p>
 
 </div>
 </div>
@@ -424,9 +424,9 @@ Variables</h2></td></tr>
 <p>parse_nmea_char() has a complete line. </p>
 <p>Find out what type of message it is and hand it to the parser for that type. </p>
 
-<p>Definition at line <a class="el" href="gps__nmea_8c_source.html#l00352">352</a> of file <a class="el" href="gps__nmea_8c_source.html">gps_nmea.c</a>.</p>
+<p>Definition at line <a class="el" href="gps__nmea_8c_source.html#l00350">350</a> of file <a class="el" href="gps__nmea_8c_source.html">gps_nmea.c</a>.</p>
 
-<p>References <a class="el" href="gps__nmea_8c_source.html#l00055">gps_nmea</a>, <a class="el" href="gps__nmea_8h_source.html#l00048">GpsNmea::msg_buf</a>, <a class="el" href="gps__nmea_8h_source.html#l00049">GpsNmea::msg_len</a>, <a class="el" href="gps__nmea_8h_source.html#l00039">NMEA_PRINT</a>, <a class="el" href="gps__nmea_8c_source.html#l00195">parse_nmea_GPGGA()</a>, <a class="el" href="gps__nmea_8c_source.html#l00075">parse_nmea_GPGSA()</a>, and <a class="el" href="gps__nmea_8c_source.html#l00116">parse_nmea_GPRMC()</a>.</p>
+<p>References <a class="el" href="gps__nmea_8c_source.html#l00053">gps_nmea</a>, <a class="el" href="gps__nmea_8h_source.html#l00048">GpsNmea::msg_buf</a>, <a class="el" href="gps__nmea_8h_source.html#l00049">GpsNmea::msg_len</a>, <a class="el" href="gps__nmea_8h_source.html#l00039">NMEA_PRINT</a>, <a class="el" href="gps__nmea_8c_source.html#l00193">parse_nmea_GPGGA()</a>, <a class="el" href="gps__nmea_8c_source.html#l00073">parse_nmea_GPGSA()</a>, and <a class="el" href="gps__nmea_8c_source.html#l00114">parse_nmea_GPRMC()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -457,9 +457,9 @@ Variables</h2></td></tr>
 <p>This file is a drop-in replacement for gps_ubx.c</p>
 <p>TODO: THIS NMEA-PARSER IS NOT WELL TESTED AND INCOMPLETE!!! Status: Parsing GGA and RMC is complete, GSA and other records are incomplete. </p>
 
-<p>Definition at line <a class="el" href="gps__nmea_8c_source.html#l00055">55</a> of file <a class="el" href="gps__nmea_8c_source.html">gps_nmea.c</a>.</p>
+<p>Definition at line <a class="el" href="gps__nmea_8c_source.html#l00053">53</a> of file <a class="el" href="gps__nmea_8c_source.html">gps_nmea.c</a>.</p>
 
-<p>Referenced by <a class="el" href="gps__nmea_8c_source.html#l00062">gps_impl_init()</a>, <a class="el" href="gps__nmea_8c_source.html#l00387">nmea_parse_char()</a>, <a class="el" href="gps__nmea_8c_source.html#l00352">nmea_parse_msg()</a>, <a class="el" href="gps__nmea_8c_source.html#l00195">parse_nmea_GPGGA()</a>, <a class="el" href="gps__nmea_8c_source.html#l00075">parse_nmea_GPGSA()</a>, and <a class="el" href="gps__nmea_8c_source.html#l00116">parse_nmea_GPRMC()</a>.</p>
+<p>Referenced by <a class="el" href="gps__nmea_8c_source.html#l00060">gps_impl_init()</a>, <a class="el" href="gps__nmea_8c_source.html#l00385">nmea_parse_char()</a>, <a class="el" href="gps__nmea_8c_source.html#l00350">nmea_parse_msg()</a>, <a class="el" href="gps__nmea_8c_source.html#l00193">parse_nmea_GPGGA()</a>, <a class="el" href="gps__nmea_8c_source.html#l00073">parse_nmea_GPGSA()</a>, and <a class="el" href="gps__nmea_8c_source.html#l00114">parse_nmea_GPRMC()</a>.</p>
 
 </div>
 </div>
@@ -483,7 +483,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="gps__nmea_8h.html">gps_nmea.h</a>      </li>
 
-    <li class="footer">Generated on Wed Mar 7 2012 04:01:42 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Mar 27 2012 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

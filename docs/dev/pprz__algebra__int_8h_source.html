@@ -922,162 +922,170 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00837"></a>00837                       \
 <a name="l00838"></a>00838   }
 <a name="l00839"></a>00839 
-<a name="l00840"></a>00840 
-<a name="l00841"></a>00841 
-<a name="l00842"></a>00842 
-<a name="l00843"></a>00843 
-<a name="l00844"></a>00844 
-<a name="l00845"></a>00845 <span class="comment">/*</span>
-<a name="l00846"></a>00846 <span class="comment"> * Rotational speeds</span>
-<a name="l00847"></a>00847 <span class="comment"> */</span>
-<a name="l00848"></a>00848 
-<a name="l00849"></a><a class="code" href="pprz__algebra__int_8h.html#a058767cf91a8a4624fe10a4d56ef4561">00849</a> <span class="preprocessor">#define INT_RATES_ZERO(_e) RATES_ASSIGN(_e, 0, 0, 0)</span>
-<a name="l00850"></a>00850 <span class="preprocessor"></span>
-<a name="l00851"></a><a class="code" href="pprz__algebra__int_8h.html#a88da2d0489b12bf6b3cad7a52df64818">00851</a> <span class="preprocessor">#define INT_RATES_ADD_SCALED_VECT(_ro, _v, _s) {  \</span>
-<a name="l00852"></a>00852 <span class="preprocessor">    _ro.p += _v.x * _s;         \</span>
-<a name="l00853"></a>00853 <span class="preprocessor">    _ro.q += _v.y * _s;         \</span>
-<a name="l00854"></a>00854 <span class="preprocessor">    _ro.r += _v.z * _s;         \</span>
-<a name="l00855"></a>00855 <span class="preprocessor">  }</span>
-<a name="l00856"></a>00856 <span class="preprocessor"></span>
-<a name="l00857"></a><a class="code" href="pprz__algebra__int_8h.html#a9a3bb8af93ce6067055a9f480b3aaca7">00857</a> <span class="preprocessor">#define INT_RATES_SDIV(_ro, _s, _ri) {      \</span>
-<a name="l00858"></a>00858 <span class="preprocessor">    _ro.p = _ri.p / _s;         \</span>
-<a name="l00859"></a>00859 <span class="preprocessor">    _ro.q = _ri.q / _s;         \</span>
-<a name="l00860"></a>00860 <span class="preprocessor">    _ro.r = _ri.r / _s;         \</span>
-<a name="l00861"></a>00861 <span class="preprocessor">  }</span>
-<a name="l00862"></a>00862 <span class="preprocessor"></span>
-<a name="l00863"></a><a class="code" href="pprz__algebra__int_8h.html#a74c648c60043d591701181030daec64e">00863</a> <span class="preprocessor">#define INT_RATES_RSHIFT(_o, _i, _r) {   \</span>
-<a name="l00864"></a>00864 <span class="preprocessor">    (_o).p = ((_i).p &gt;&gt; (_r));     \</span>
-<a name="l00865"></a>00865 <span class="preprocessor">    (_o).q = ((_i).q &gt;&gt; (_r));     \</span>
-<a name="l00866"></a>00866 <span class="preprocessor">    (_o).r = ((_i).r &gt;&gt; (_r));     \</span>
-<a name="l00867"></a>00867 <span class="preprocessor">  }</span>
-<a name="l00868"></a>00868 <span class="preprocessor"></span>
-<a name="l00869"></a><a class="code" href="pprz__algebra__int_8h.html#a4f63d48e6205ea78a5285d60c8fed415">00869</a> <span class="preprocessor">#define INT_RATES_LSHIFT(_o, _i, _r) {   \</span>
-<a name="l00870"></a>00870 <span class="preprocessor">    (_o).p = ((_i).p &lt;&lt; (_r));     \</span>
-<a name="l00871"></a>00871 <span class="preprocessor">    (_o).q = ((_i).q &lt;&lt; (_r));     \</span>
-<a name="l00872"></a>00872 <span class="preprocessor">    (_o).r = ((_i).r &lt;&lt; (_r));     \</span>
-<a name="l00873"></a>00873 <span class="preprocessor">  }</span>
-<a name="l00874"></a>00874 <span class="preprocessor"></span>
-<a name="l00875"></a>00875 
-<a name="l00876"></a>00876 
-<a name="l00877"></a><a class="code" href="pprz__algebra__int_8h.html#aa6c81a434acabe3861fd9f1498d6f4fe">00877</a> <span class="preprocessor">#define INT32_RATES_OF_EULERS_DOT_321(_r, _e, _ed) {      \</span>
-<a name="l00878"></a>00878 <span class="preprocessor">                  \</span>
-<a name="l00879"></a>00879 <span class="preprocessor">    int32_t sphi;             \</span>
-<a name="l00880"></a>00880 <span class="preprocessor">    PPRZ_ITRIG_SIN(sphi, (_e).phi);         \</span>
-<a name="l00881"></a>00881 <span class="preprocessor">    int32_t cphi;             \</span>
-<a name="l00882"></a>00882 <span class="preprocessor">    PPRZ_ITRIG_COS(cphi, (_e).phi);         \</span>
-<a name="l00883"></a>00883 <span class="preprocessor">    int32_t stheta;             \</span>
-<a name="l00884"></a>00884 <span class="preprocessor">    PPRZ_ITRIG_SIN(stheta, (_e).theta);         \</span>
-<a name="l00885"></a>00885 <span class="preprocessor">    int32_t ctheta;             \</span>
-<a name="l00886"></a>00886 <span class="preprocessor">    PPRZ_ITRIG_COS(ctheta, (_e).theta);         \</span>
-<a name="l00887"></a>00887 <span class="preprocessor">                  \</span>
-<a name="l00888"></a>00888 <span class="preprocessor">    int32_t cphi_ctheta = INT_MULT_RSHIFT(cphi,   ctheta, INT32_TRIG_FRAC); \</span>
-<a name="l00889"></a>00889 <span class="preprocessor">    int32_t sphi_ctheta = INT_MULT_RSHIFT(sphi,   ctheta, INT32_TRIG_FRAC); \</span>
-<a name="l00890"></a>00890 <span class="preprocessor">                  \</span>
-<a name="l00891"></a>00891 <span class="preprocessor">    (_r).p = - INT_MULT_RSHIFT(stheta, (_ed).psi, INT32_TRIG_FRAC) + (_ed).phi; \</span>
-<a name="l00892"></a>00892 <span class="preprocessor">    (_r).q = INT_MULT_RSHIFT(sphi_ctheta, (_ed).psi, INT32_TRIG_FRAC) + INT_MULT_RSHIFT(cphi, (_ed).theta, INT32_TRIG_FRAC); \</span>
-<a name="l00893"></a>00893 <span class="preprocessor">    (_r).r = INT_MULT_RSHIFT(cphi_ctheta, (_ed).psi, INT32_TRIG_FRAC) - INT_MULT_RSHIFT(sphi, (_ed).theta, INT32_TRIG_FRAC); \</span>
-<a name="l00894"></a>00894 <span class="preprocessor">                  \</span>
-<a name="l00895"></a>00895 <span class="preprocessor">  }</span>
-<a name="l00896"></a>00896 <span class="preprocessor"></span>
-<a name="l00897"></a><a class="code" href="pprz__algebra__int_8h.html#abd6d3beeb6788f8e15f07d37858dab91">00897</a> <span class="preprocessor">#define INT32_RATES_OF_EULERS_DOT(_r, _e, _ed) INT32_RATES_OF_EULERS_DOT_321(_r, _e, _ed)</span>
-<a name="l00898"></a>00898 <span class="preprocessor"></span>
-<a name="l00899"></a><a class="code" href="pprz__algebra__int_8h.html#a359628ce78b4c873eb6e648fd82a4acd">00899</a> <span class="preprocessor">#define INT32_EULERS_DOT_321_OF_RATES(_ed, _e, _r) {      \</span>
-<a name="l00900"></a>00900 <span class="preprocessor">                      \</span>
-<a name="l00901"></a>00901 <span class="preprocessor">    int32_t sphi;             \</span>
-<a name="l00902"></a>00902 <span class="preprocessor">    PPRZ_ITRIG_SIN(sphi, (_e).phi);         \</span>
-<a name="l00903"></a>00903 <span class="preprocessor">    int32_t cphi;             \</span>
-<a name="l00904"></a>00904 <span class="preprocessor">    PPRZ_ITRIG_COS(cphi, (_e).phi);         \</span>
-<a name="l00905"></a>00905 <span class="preprocessor">    int32_t stheta;             \</span>
-<a name="l00906"></a>00906 <span class="preprocessor">    PPRZ_ITRIG_SIN(stheta, (_e).theta);         \</span>
-<a name="l00907"></a>00907 <span class="preprocessor">    int64_t ctheta;             \</span>
-<a name="l00908"></a>00908 <span class="preprocessor">    PPRZ_ITRIG_COS(ctheta, (_e).theta);         \</span>
-<a name="l00909"></a>00909 <span class="preprocessor">                      \</span>
-<a name="l00910"></a>00910 <span class="preprocessor">    if (ctheta != 0) {              \</span>
-<a name="l00911"></a>00911 <span class="preprocessor">      int64_t cphi_stheta = INT_MULT_RSHIFT(cphi, stheta, INT32_TRIG_FRAC); \</span>
-<a name="l00912"></a>00912 <span class="preprocessor">      int64_t sphi_stheta = INT_MULT_RSHIFT(sphi, stheta, INT32_TRIG_FRAC); \</span>
-<a name="l00913"></a>00913 <span class="preprocessor">                        \</span>
-<a name="l00914"></a>00914 <span class="preprocessor">      (_ed).phi = (_r).p + (int32_t)((sphi_stheta * (int64_t)(_r).q) / ctheta) + (int32_t)((cphi_stheta * (int64_t)(_r).r) / ctheta);  \</span>
-<a name="l00915"></a>00915 <span class="preprocessor">      (_ed).theta = INT_MULT_RSHIFT(cphi, (_r).q, INT32_TRIG_FRAC) - INT_MULT_RSHIFT(sphi, (_r).r, INT32_TRIG_FRAC);  \</span>
-<a name="l00916"></a>00916 <span class="preprocessor">      (_ed).psi = (int32_t)(((int64_t)sphi * (int64_t)(_r).q) / ctheta) + (int32_t)(((int64_t)cphi * (int64_t)(_r).r) / ctheta);  \</span>
-<a name="l00917"></a>00917 <span class="preprocessor">    }                 \</span>
-<a name="l00918"></a>00918 <span class="preprocessor">    </span><span class="comment">/* FIXME: What do you wanna do when you hit the singularity ? */</span>  \
-<a name="l00919"></a>00919     <span class="comment">/* probably not return an uninitialized variable, or ?        */</span>  \
-<a name="l00920"></a>00920     else {                \
-<a name="l00921"></a>00921       INT_EULERS_ZERO(_ed);           \
-<a name="l00922"></a>00922     }                 \
-<a name="l00923"></a>00923   }
-<a name="l00924"></a>00924 
-<a name="l00925"></a><a class="code" href="pprz__algebra__int_8h.html#a20c84fd80263a96be1cb38db0318305d">00925</a> <span class="preprocessor">#define INT32_EULERS_DOT_OF_RATES(_ed, _e, _r) INT32_EULERS_DOT_321_OF_RATES(_ed, _e, _r)</span>
-<a name="l00926"></a>00926 <span class="preprocessor"></span>
-<a name="l00927"></a>00927 <span class="comment">/*</span>
-<a name="l00928"></a>00928 <span class="comment"> *</span>
-<a name="l00929"></a>00929 <span class="comment"> */</span>
-<a name="l00930"></a><a class="code" href="pprz__algebra__int_8h.html#abbd29be7de3005d58f24a3d4b5eb8907">00930</a> <span class="preprocessor">#define INT32_SQRT_MAX_ITER 40</span>
-<a name="l00931"></a><a class="code" href="pprz__algebra__int_8h.html#add5a4a809573bc2b30e1dfa3ceb59545">00931</a> <span class="preprocessor"></span><span class="preprocessor">#define INT32_SQRT(_out,_in) {                              \</span>
-<a name="l00932"></a>00932 <span class="preprocessor">    if ((_in) == 0)                                             \</span>
-<a name="l00933"></a>00933 <span class="preprocessor">      (_out) = 0;                                               \</span>
-<a name="l00934"></a>00934 <span class="preprocessor">    else {                \</span>
-<a name="l00935"></a>00935 <span class="preprocessor">      uint32_t s1, s2;              \</span>
-<a name="l00936"></a>00936 <span class="preprocessor">      uint8_t iter = 0;             \</span>
-<a name="l00937"></a>00937 <span class="preprocessor">      s2 = _in;               \</span>
-<a name="l00938"></a>00938 <span class="preprocessor">      do {                \</span>
-<a name="l00939"></a>00939 <span class="preprocessor">  s1 = s2;              \</span>
-<a name="l00940"></a>00940 <span class="preprocessor">  s2 = (_in) / s1;                    \</span>
-<a name="l00941"></a>00941 <span class="preprocessor">  s2 += s1;             \</span>
-<a name="l00942"></a>00942 <span class="preprocessor">  s2 /= 2;              \</span>
-<a name="l00943"></a>00943 <span class="preprocessor">  iter++;               \</span>
-<a name="l00944"></a>00944 <span class="preprocessor">      }                 \</span>
-<a name="l00945"></a>00945 <span class="preprocessor">      while( ( (s1-s2) &gt; 1) &amp;&amp; (iter &lt; INT32_SQRT_MAX_ITER));   \</span>
-<a name="l00946"></a>00946 <span class="preprocessor">      (_out) = s2;                                                  \</span>
-<a name="l00947"></a>00947 <span class="preprocessor">    }                 \</span>
-<a name="l00948"></a>00948 <span class="preprocessor">  }</span>
-<a name="l00949"></a>00949 <span class="preprocessor"></span>
-<a name="l00950"></a>00950 
-<a name="l00951"></a>00951 <span class="comment">/* http://jet.ro/files/The_neglected_art_of_Fixed_Point_arithmetic_20060913.pdf */</span>
-<a name="l00952"></a>00952 <span class="comment">/* http://www.dspguru.com/comp.dsp/tricks/alg/fxdatan2.htm */</span>
-<a name="l00953"></a>00953 
-<a name="l00954"></a><a class="code" href="pprz__algebra__int_8h.html#aef4b2f7e743782995888ba8eca64e7a4">00954</a> <span class="preprocessor">#define R_FRAC 14</span>
-<a name="l00955"></a>00955 <span class="preprocessor"></span>
-<a name="l00956"></a><a class="code" href="pprz__algebra__int_8h.html#aa6a5aa5ecf2101865a2203bc8ae93dc7">00956</a> <span class="preprocessor">#define INT32_ATAN2(_a, _y, _x) {     \</span>
-<a name="l00957"></a>00957 <span class="preprocessor">    const int32_t c1 = INT32_ANGLE_PI_4;    \</span>
-<a name="l00958"></a>00958 <span class="preprocessor">    const int32_t c2 = 3 * INT32_ANGLE_PI_4;    \</span>
-<a name="l00959"></a>00959 <span class="preprocessor">    const int32_t abs_y = abs(_y) + 1;      \</span>
-<a name="l00960"></a>00960 <span class="preprocessor">    int32_t r;            \</span>
-<a name="l00961"></a>00961 <span class="preprocessor">    if ( (_x) &gt;= 0) {                               \</span>
-<a name="l00962"></a>00962 <span class="preprocessor">      r = (((_x)-abs_y)&lt;&lt;R_FRAC) / ((_x)+abs_y);    \</span>
-<a name="l00963"></a>00963 <span class="preprocessor">      (_a) = c1 - ((c1 * r)&gt;&gt;R_FRAC);               \</span>
-<a name="l00964"></a>00964 <span class="preprocessor">    }             \</span>
-<a name="l00965"></a>00965 <span class="preprocessor">    else {            \</span>
-<a name="l00966"></a>00966 <span class="preprocessor">      r = (((_x)+abs_y)&lt;&lt;R_FRAC) / (abs_y-(_x));    \</span>
-<a name="l00967"></a>00967 <span class="preprocessor">      (_a) = c2 - ((c1 * r)&gt;&gt;R_FRAC);     \</span>
-<a name="l00968"></a>00968 <span class="preprocessor">    }             \</span>
-<a name="l00969"></a>00969 <span class="preprocessor">    if ((_y)&lt;0)           \</span>
-<a name="l00970"></a>00970 <span class="preprocessor">      (_a) = -(_a);                 \</span>
-<a name="l00971"></a>00971 <span class="preprocessor">  }</span>
-<a name="l00972"></a>00972 <span class="preprocessor"></span>
-<a name="l00973"></a>00973 
-<a name="l00974"></a><a class="code" href="pprz__algebra__int_8h.html#a6cec73ca57e9476250b99a5ed1d8fe44">00974</a> <span class="preprocessor">#define INT32_ATAN2_2(_a, _y, _x) {         \</span>
-<a name="l00975"></a>00975 <span class="preprocessor">    const int32_t c1 = INT32_ANGLE_PI_4;        \</span>
-<a name="l00976"></a>00976 <span class="preprocessor">    const int32_t c2 = 3 * INT32_ANGLE_PI_4;        \</span>
-<a name="l00977"></a>00977 <span class="preprocessor">    const int32_t abs_y = abs(_y) + 1;          \</span>
-<a name="l00978"></a>00978 <span class="preprocessor">    int32_t r;                \</span>
-<a name="l00979"></a>00979 <span class="preprocessor">    if ( (_x) &gt;= 0) {             \</span>
-<a name="l00980"></a>00980 <span class="preprocessor">      r = (((_x)-abs_y)&lt;&lt;R_FRAC) / ((_x)+abs_y);        \</span>
-<a name="l00981"></a>00981 <span class="preprocessor">      int32_t r2 = (r * r)&gt;&gt;R_FRAC;         \</span>
-<a name="l00982"></a>00982 <span class="preprocessor">      int32_t tmp1 = ((r2 * (int32_t)ANGLE_BFP_OF_REAL(0.1963))&gt;&gt;INT32_ANGLE_FRAC) - ANGLE_BFP_OF_REAL(0.9817); \</span>
-<a name="l00983"></a>00983 <span class="preprocessor">      (_a) = ((tmp1 * r)&gt;&gt;R_FRAC) + c1;         \</span>
-<a name="l00984"></a>00984 <span class="preprocessor">    }                 \</span>
-<a name="l00985"></a>00985 <span class="preprocessor">    else {                \</span>
-<a name="l00986"></a>00986 <span class="preprocessor">      r = (((_x)+abs_y)&lt;&lt;R_FRAC) / (abs_y-(_x));        \</span>
-<a name="l00987"></a>00987 <span class="preprocessor">      (_a) = c2 - ((c1 * r)&gt;&gt;R_FRAC);         \</span>
-<a name="l00988"></a>00988 <span class="preprocessor">    }                 \</span>
-<a name="l00989"></a>00989 <span class="preprocessor">    if ((_y)&lt;0)               \</span>
-<a name="l00990"></a>00990 <span class="preprocessor">      (_a) = -(_a);               \</span>
-<a name="l00991"></a>00991 <span class="preprocessor">  }</span>
-<a name="l00992"></a>00992 <span class="preprocessor"></span>
-<a name="l00993"></a>00993 
-<a name="l00994"></a>00994 
-<a name="l00995"></a>00995 <span class="preprocessor">#endif </span><span class="comment">/* PPRZ_ALGEBRA_INT_H */</span>
+<a name="l00840"></a><a class="code" href="pprz__algebra__int_8h.html#ab95c15b48f7f46eab39d4482df9f7c62">00840</a> <span class="preprocessor">#define INT32_EULERS_LSHIFT(_o, _i, _r) {  \</span>
+<a name="l00841"></a>00841 <span class="preprocessor">    (_o).phi   = ((_i).phi   &lt;&lt; (_r));     \</span>
+<a name="l00842"></a>00842 <span class="preprocessor">    (_o).theta = ((_i).theta &lt;&lt; (_r));     \</span>
+<a name="l00843"></a>00843 <span class="preprocessor">    (_o).psi   = ((_i).psi   &lt;&lt; (_r));     \</span>
+<a name="l00844"></a>00844 <span class="preprocessor">  }</span>
+<a name="l00845"></a>00845 <span class="preprocessor"></span>
+<a name="l00846"></a><a class="code" href="pprz__algebra__int_8h.html#ac6033508f9922a382f0e32b926afb5e4">00846</a> <span class="preprocessor">#define INT32_EULERS_RSHIFT(_o, _i, _r) {  \</span>
+<a name="l00847"></a>00847 <span class="preprocessor">    (_o).phi   = ((_i).phi   &gt;&gt; (_r));     \</span>
+<a name="l00848"></a>00848 <span class="preprocessor">    (_o).theta = ((_i).theta &gt;&gt; (_r));     \</span>
+<a name="l00849"></a>00849 <span class="preprocessor">    (_o).psi   = ((_i).psi   &gt;&gt; (_r));     \</span>
+<a name="l00850"></a>00850 <span class="preprocessor">  }</span>
+<a name="l00851"></a>00851 <span class="preprocessor"></span>
+<a name="l00852"></a>00852 
+<a name="l00853"></a>00853 <span class="comment">/*</span>
+<a name="l00854"></a>00854 <span class="comment"> * Rotational speeds</span>
+<a name="l00855"></a>00855 <span class="comment"> */</span>
+<a name="l00856"></a>00856 
+<a name="l00857"></a><a class="code" href="pprz__algebra__int_8h.html#a058767cf91a8a4624fe10a4d56ef4561">00857</a> <span class="preprocessor">#define INT_RATES_ZERO(_e) RATES_ASSIGN(_e, 0, 0, 0)</span>
+<a name="l00858"></a>00858 <span class="preprocessor"></span>
+<a name="l00859"></a><a class="code" href="pprz__algebra__int_8h.html#a88da2d0489b12bf6b3cad7a52df64818">00859</a> <span class="preprocessor">#define INT_RATES_ADD_SCALED_VECT(_ro, _v, _s) {  \</span>
+<a name="l00860"></a>00860 <span class="preprocessor">    _ro.p += _v.x * _s;         \</span>
+<a name="l00861"></a>00861 <span class="preprocessor">    _ro.q += _v.y * _s;         \</span>
+<a name="l00862"></a>00862 <span class="preprocessor">    _ro.r += _v.z * _s;         \</span>
+<a name="l00863"></a>00863 <span class="preprocessor">  }</span>
+<a name="l00864"></a>00864 <span class="preprocessor"></span>
+<a name="l00865"></a><a class="code" href="pprz__algebra__int_8h.html#a9a3bb8af93ce6067055a9f480b3aaca7">00865</a> <span class="preprocessor">#define INT_RATES_SDIV(_ro, _s, _ri) {      \</span>
+<a name="l00866"></a>00866 <span class="preprocessor">    _ro.p = _ri.p / _s;         \</span>
+<a name="l00867"></a>00867 <span class="preprocessor">    _ro.q = _ri.q / _s;         \</span>
+<a name="l00868"></a>00868 <span class="preprocessor">    _ro.r = _ri.r / _s;         \</span>
+<a name="l00869"></a>00869 <span class="preprocessor">  }</span>
+<a name="l00870"></a>00870 <span class="preprocessor"></span>
+<a name="l00871"></a><a class="code" href="pprz__algebra__int_8h.html#a74c648c60043d591701181030daec64e">00871</a> <span class="preprocessor">#define INT_RATES_RSHIFT(_o, _i, _r) {   \</span>
+<a name="l00872"></a>00872 <span class="preprocessor">    (_o).p = ((_i).p &gt;&gt; (_r));     \</span>
+<a name="l00873"></a>00873 <span class="preprocessor">    (_o).q = ((_i).q &gt;&gt; (_r));     \</span>
+<a name="l00874"></a>00874 <span class="preprocessor">    (_o).r = ((_i).r &gt;&gt; (_r));     \</span>
+<a name="l00875"></a>00875 <span class="preprocessor">  }</span>
+<a name="l00876"></a>00876 <span class="preprocessor"></span>
+<a name="l00877"></a><a class="code" href="pprz__algebra__int_8h.html#a4f63d48e6205ea78a5285d60c8fed415">00877</a> <span class="preprocessor">#define INT_RATES_LSHIFT(_o, _i, _r) {   \</span>
+<a name="l00878"></a>00878 <span class="preprocessor">    (_o).p = ((_i).p &lt;&lt; (_r));     \</span>
+<a name="l00879"></a>00879 <span class="preprocessor">    (_o).q = ((_i).q &lt;&lt; (_r));     \</span>
+<a name="l00880"></a>00880 <span class="preprocessor">    (_o).r = ((_i).r &lt;&lt; (_r));     \</span>
+<a name="l00881"></a>00881 <span class="preprocessor">  }</span>
+<a name="l00882"></a>00882 <span class="preprocessor"></span>
+<a name="l00883"></a>00883 
+<a name="l00884"></a>00884 
+<a name="l00885"></a><a class="code" href="pprz__algebra__int_8h.html#aa6c81a434acabe3861fd9f1498d6f4fe">00885</a> <span class="preprocessor">#define INT32_RATES_OF_EULERS_DOT_321(_r, _e, _ed) {      \</span>
+<a name="l00886"></a>00886 <span class="preprocessor">                  \</span>
+<a name="l00887"></a>00887 <span class="preprocessor">    int32_t sphi;             \</span>
+<a name="l00888"></a>00888 <span class="preprocessor">    PPRZ_ITRIG_SIN(sphi, (_e).phi);         \</span>
+<a name="l00889"></a>00889 <span class="preprocessor">    int32_t cphi;             \</span>
+<a name="l00890"></a>00890 <span class="preprocessor">    PPRZ_ITRIG_COS(cphi, (_e).phi);         \</span>
+<a name="l00891"></a>00891 <span class="preprocessor">    int32_t stheta;             \</span>
+<a name="l00892"></a>00892 <span class="preprocessor">    PPRZ_ITRIG_SIN(stheta, (_e).theta);         \</span>
+<a name="l00893"></a>00893 <span class="preprocessor">    int32_t ctheta;             \</span>
+<a name="l00894"></a>00894 <span class="preprocessor">    PPRZ_ITRIG_COS(ctheta, (_e).theta);         \</span>
+<a name="l00895"></a>00895 <span class="preprocessor">                  \</span>
+<a name="l00896"></a>00896 <span class="preprocessor">    int32_t cphi_ctheta = INT_MULT_RSHIFT(cphi,   ctheta, INT32_TRIG_FRAC); \</span>
+<a name="l00897"></a>00897 <span class="preprocessor">    int32_t sphi_ctheta = INT_MULT_RSHIFT(sphi,   ctheta, INT32_TRIG_FRAC); \</span>
+<a name="l00898"></a>00898 <span class="preprocessor">                  \</span>
+<a name="l00899"></a>00899 <span class="preprocessor">    (_r).p = - INT_MULT_RSHIFT(stheta, (_ed).psi, INT32_TRIG_FRAC) + (_ed).phi; \</span>
+<a name="l00900"></a>00900 <span class="preprocessor">    (_r).q = INT_MULT_RSHIFT(sphi_ctheta, (_ed).psi, INT32_TRIG_FRAC) + INT_MULT_RSHIFT(cphi, (_ed).theta, INT32_TRIG_FRAC); \</span>
+<a name="l00901"></a>00901 <span class="preprocessor">    (_r).r = INT_MULT_RSHIFT(cphi_ctheta, (_ed).psi, INT32_TRIG_FRAC) - INT_MULT_RSHIFT(sphi, (_ed).theta, INT32_TRIG_FRAC); \</span>
+<a name="l00902"></a>00902 <span class="preprocessor">                  \</span>
+<a name="l00903"></a>00903 <span class="preprocessor">  }</span>
+<a name="l00904"></a>00904 <span class="preprocessor"></span>
+<a name="l00905"></a><a class="code" href="pprz__algebra__int_8h.html#abd6d3beeb6788f8e15f07d37858dab91">00905</a> <span class="preprocessor">#define INT32_RATES_OF_EULERS_DOT(_r, _e, _ed) INT32_RATES_OF_EULERS_DOT_321(_r, _e, _ed)</span>
+<a name="l00906"></a>00906 <span class="preprocessor"></span>
+<a name="l00907"></a><a class="code" href="pprz__algebra__int_8h.html#a359628ce78b4c873eb6e648fd82a4acd">00907</a> <span class="preprocessor">#define INT32_EULERS_DOT_321_OF_RATES(_ed, _e, _r) {      \</span>
+<a name="l00908"></a>00908 <span class="preprocessor">                      \</span>
+<a name="l00909"></a>00909 <span class="preprocessor">    int32_t sphi;             \</span>
+<a name="l00910"></a>00910 <span class="preprocessor">    PPRZ_ITRIG_SIN(sphi, (_e).phi);         \</span>
+<a name="l00911"></a>00911 <span class="preprocessor">    int32_t cphi;             \</span>
+<a name="l00912"></a>00912 <span class="preprocessor">    PPRZ_ITRIG_COS(cphi, (_e).phi);         \</span>
+<a name="l00913"></a>00913 <span class="preprocessor">    int32_t stheta;             \</span>
+<a name="l00914"></a>00914 <span class="preprocessor">    PPRZ_ITRIG_SIN(stheta, (_e).theta);         \</span>
+<a name="l00915"></a>00915 <span class="preprocessor">    int64_t ctheta;             \</span>
+<a name="l00916"></a>00916 <span class="preprocessor">    PPRZ_ITRIG_COS(ctheta, (_e).theta);         \</span>
+<a name="l00917"></a>00917 <span class="preprocessor">                      \</span>
+<a name="l00918"></a>00918 <span class="preprocessor">    if (ctheta != 0) {              \</span>
+<a name="l00919"></a>00919 <span class="preprocessor">      int64_t cphi_stheta = INT_MULT_RSHIFT(cphi, stheta, INT32_TRIG_FRAC); \</span>
+<a name="l00920"></a>00920 <span class="preprocessor">      int64_t sphi_stheta = INT_MULT_RSHIFT(sphi, stheta, INT32_TRIG_FRAC); \</span>
+<a name="l00921"></a>00921 <span class="preprocessor">                        \</span>
+<a name="l00922"></a>00922 <span class="preprocessor">      (_ed).phi = (_r).p + (int32_t)((sphi_stheta * (int64_t)(_r).q) / ctheta) + (int32_t)((cphi_stheta * (int64_t)(_r).r) / ctheta);  \</span>
+<a name="l00923"></a>00923 <span class="preprocessor">      (_ed).theta = INT_MULT_RSHIFT(cphi, (_r).q, INT32_TRIG_FRAC) - INT_MULT_RSHIFT(sphi, (_r).r, INT32_TRIG_FRAC);  \</span>
+<a name="l00924"></a>00924 <span class="preprocessor">      (_ed).psi = (int32_t)(((int64_t)sphi * (int64_t)(_r).q) / ctheta) + (int32_t)(((int64_t)cphi * (int64_t)(_r).r) / ctheta);  \</span>
+<a name="l00925"></a>00925 <span class="preprocessor">    }                 \</span>
+<a name="l00926"></a>00926 <span class="preprocessor">    </span><span class="comment">/* FIXME: What do you wanna do when you hit the singularity ? */</span>  \
+<a name="l00927"></a>00927     <span class="comment">/* probably not return an uninitialized variable, or ?        */</span>  \
+<a name="l00928"></a>00928     else {                \
+<a name="l00929"></a>00929       INT_EULERS_ZERO(_ed);           \
+<a name="l00930"></a>00930     }                 \
+<a name="l00931"></a>00931   }
+<a name="l00932"></a>00932 
+<a name="l00933"></a><a class="code" href="pprz__algebra__int_8h.html#a20c84fd80263a96be1cb38db0318305d">00933</a> <span class="preprocessor">#define INT32_EULERS_DOT_OF_RATES(_ed, _e, _r) INT32_EULERS_DOT_321_OF_RATES(_ed, _e, _r)</span>
+<a name="l00934"></a>00934 <span class="preprocessor"></span>
+<a name="l00935"></a>00935 <span class="comment">/*</span>
+<a name="l00936"></a>00936 <span class="comment"> *</span>
+<a name="l00937"></a>00937 <span class="comment"> */</span>
+<a name="l00938"></a><a class="code" href="pprz__algebra__int_8h.html#abbd29be7de3005d58f24a3d4b5eb8907">00938</a> <span class="preprocessor">#define INT32_SQRT_MAX_ITER 40</span>
+<a name="l00939"></a><a class="code" href="pprz__algebra__int_8h.html#add5a4a809573bc2b30e1dfa3ceb59545">00939</a> <span class="preprocessor"></span><span class="preprocessor">#define INT32_SQRT(_out,_in) {                              \</span>
+<a name="l00940"></a>00940 <span class="preprocessor">    if ((_in) == 0)                                             \</span>
+<a name="l00941"></a>00941 <span class="preprocessor">      (_out) = 0;                                               \</span>
+<a name="l00942"></a>00942 <span class="preprocessor">    else {                \</span>
+<a name="l00943"></a>00943 <span class="preprocessor">      uint32_t s1, s2;              \</span>
+<a name="l00944"></a>00944 <span class="preprocessor">      uint8_t iter = 0;             \</span>
+<a name="l00945"></a>00945 <span class="preprocessor">      s2 = _in;               \</span>
+<a name="l00946"></a>00946 <span class="preprocessor">      do {                \</span>
+<a name="l00947"></a>00947 <span class="preprocessor">  s1 = s2;              \</span>
+<a name="l00948"></a>00948 <span class="preprocessor">  s2 = (_in) / s1;                    \</span>
+<a name="l00949"></a>00949 <span class="preprocessor">  s2 += s1;             \</span>
+<a name="l00950"></a>00950 <span class="preprocessor">  s2 /= 2;              \</span>
+<a name="l00951"></a>00951 <span class="preprocessor">  iter++;               \</span>
+<a name="l00952"></a>00952 <span class="preprocessor">      }                 \</span>
+<a name="l00953"></a>00953 <span class="preprocessor">      while( ( (s1-s2) &gt; 1) &amp;&amp; (iter &lt; INT32_SQRT_MAX_ITER));   \</span>
+<a name="l00954"></a>00954 <span class="preprocessor">      (_out) = s2;                                                  \</span>
+<a name="l00955"></a>00955 <span class="preprocessor">    }                 \</span>
+<a name="l00956"></a>00956 <span class="preprocessor">  }</span>
+<a name="l00957"></a>00957 <span class="preprocessor"></span>
+<a name="l00958"></a>00958 
+<a name="l00959"></a>00959 <span class="comment">/* http://jet.ro/files/The_neglected_art_of_Fixed_Point_arithmetic_20060913.pdf */</span>
+<a name="l00960"></a>00960 <span class="comment">/* http://www.dspguru.com/comp.dsp/tricks/alg/fxdatan2.htm */</span>
+<a name="l00961"></a>00961 
+<a name="l00962"></a><a class="code" href="pprz__algebra__int_8h.html#aef4b2f7e743782995888ba8eca64e7a4">00962</a> <span class="preprocessor">#define R_FRAC 14</span>
+<a name="l00963"></a>00963 <span class="preprocessor"></span>
+<a name="l00964"></a><a class="code" href="pprz__algebra__int_8h.html#aa6a5aa5ecf2101865a2203bc8ae93dc7">00964</a> <span class="preprocessor">#define INT32_ATAN2(_a, _y, _x) {     \</span>
+<a name="l00965"></a>00965 <span class="preprocessor">    const int32_t c1 = INT32_ANGLE_PI_4;    \</span>
+<a name="l00966"></a>00966 <span class="preprocessor">    const int32_t c2 = 3 * INT32_ANGLE_PI_4;    \</span>
+<a name="l00967"></a>00967 <span class="preprocessor">    const int32_t abs_y = abs(_y) + 1;      \</span>
+<a name="l00968"></a>00968 <span class="preprocessor">    int32_t r;            \</span>
+<a name="l00969"></a>00969 <span class="preprocessor">    if ( (_x) &gt;= 0) {                               \</span>
+<a name="l00970"></a>00970 <span class="preprocessor">      r = (((_x)-abs_y)&lt;&lt;R_FRAC) / ((_x)+abs_y);    \</span>
+<a name="l00971"></a>00971 <span class="preprocessor">      (_a) = c1 - ((c1 * r)&gt;&gt;R_FRAC);               \</span>
+<a name="l00972"></a>00972 <span class="preprocessor">    }             \</span>
+<a name="l00973"></a>00973 <span class="preprocessor">    else {            \</span>
+<a name="l00974"></a>00974 <span class="preprocessor">      r = (((_x)+abs_y)&lt;&lt;R_FRAC) / (abs_y-(_x));    \</span>
+<a name="l00975"></a>00975 <span class="preprocessor">      (_a) = c2 - ((c1 * r)&gt;&gt;R_FRAC);     \</span>
+<a name="l00976"></a>00976 <span class="preprocessor">    }             \</span>
+<a name="l00977"></a>00977 <span class="preprocessor">    if ((_y)&lt;0)           \</span>
+<a name="l00978"></a>00978 <span class="preprocessor">      (_a) = -(_a);                 \</span>
+<a name="l00979"></a>00979 <span class="preprocessor">  }</span>
+<a name="l00980"></a>00980 <span class="preprocessor"></span>
+<a name="l00981"></a>00981 
+<a name="l00982"></a><a class="code" href="pprz__algebra__int_8h.html#a6cec73ca57e9476250b99a5ed1d8fe44">00982</a> <span class="preprocessor">#define INT32_ATAN2_2(_a, _y, _x) {         \</span>
+<a name="l00983"></a>00983 <span class="preprocessor">    const int32_t c1 = INT32_ANGLE_PI_4;        \</span>
+<a name="l00984"></a>00984 <span class="preprocessor">    const int32_t c2 = 3 * INT32_ANGLE_PI_4;        \</span>
+<a name="l00985"></a>00985 <span class="preprocessor">    const int32_t abs_y = abs(_y) + 1;          \</span>
+<a name="l00986"></a>00986 <span class="preprocessor">    int32_t r;                \</span>
+<a name="l00987"></a>00987 <span class="preprocessor">    if ( (_x) &gt;= 0) {             \</span>
+<a name="l00988"></a>00988 <span class="preprocessor">      r = (((_x)-abs_y)&lt;&lt;R_FRAC) / ((_x)+abs_y);        \</span>
+<a name="l00989"></a>00989 <span class="preprocessor">      int32_t r2 = (r * r)&gt;&gt;R_FRAC;         \</span>
+<a name="l00990"></a>00990 <span class="preprocessor">      int32_t tmp1 = ((r2 * (int32_t)ANGLE_BFP_OF_REAL(0.1963))&gt;&gt;INT32_ANGLE_FRAC) - ANGLE_BFP_OF_REAL(0.9817); \</span>
+<a name="l00991"></a>00991 <span class="preprocessor">      (_a) = ((tmp1 * r)&gt;&gt;R_FRAC) + c1;         \</span>
+<a name="l00992"></a>00992 <span class="preprocessor">    }                 \</span>
+<a name="l00993"></a>00993 <span class="preprocessor">    else {                \</span>
+<a name="l00994"></a>00994 <span class="preprocessor">      r = (((_x)+abs_y)&lt;&lt;R_FRAC) / (abs_y-(_x));        \</span>
+<a name="l00995"></a>00995 <span class="preprocessor">      (_a) = c2 - ((c1 * r)&gt;&gt;R_FRAC);         \</span>
+<a name="l00996"></a>00996 <span class="preprocessor">    }                 \</span>
+<a name="l00997"></a>00997 <span class="preprocessor">    if ((_y)&lt;0)               \</span>
+<a name="l00998"></a>00998 <span class="preprocessor">      (_a) = -(_a);               \</span>
+<a name="l00999"></a>00999 <span class="preprocessor">  }</span>
+<a name="l01000"></a>01000 <span class="preprocessor"></span>
+<a name="l01001"></a>01001 
+<a name="l01002"></a>01002 
+<a name="l01003"></a>01003 <span class="preprocessor">#endif </span><span class="comment">/* PPRZ_ALGEBRA_INT_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -1098,7 +1106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="pprz__algebra__int_8h.html">pprz_algebra_int.h</a>      </li>
 
-    <li class="footer">Generated on Wed Mar 7 2012 04:01:40 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Mar 27 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

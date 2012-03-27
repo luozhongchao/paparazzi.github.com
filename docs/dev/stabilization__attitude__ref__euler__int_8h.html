@@ -98,12 +98,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
 <div class="title">stabilization_attitude_ref_euler_int.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Rotorcraft attitude reference generation (euler int version)  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="stabilization__attitude__ref__int_8h_source.html">stabilization_attitude_ref_int.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for stabilization_attitude_ref_euler_int.h:</div>
@@ -112,67 +113,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="stabilization__attitude__ref__euler__int_8h__incl.png" border="0" usemap="#sw_2airborne_2firmwares_2rotorcraft_2stabilization_2stabilization__attitude__ref__euler__int_8h" alt=""/></div>
 <map name="sw_2airborne_2firmwares_2rotorcraft_2stabilization_2stabilization__attitude__ref__euler__int_8h" id="sw_2airborne_2firmwares_2rotorcraft_2stabilization_2stabilization__attitude__ref__euler__int_8h">
-<area shape="rect" id="node3" href="stabilization__attitude__ref__int_8h.html" title="stabilization_attitude_ref_int.h" alt="" coords="168,83,381,112"/><area shape="rect" id="node7" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="123,237,301,267"/><area shape="rect" id="node23" href="radio__control_8h.html" title="subsystems/radio_control.h" alt="" coords="424,160,621,189"/><area shape="rect" id="node25" href="ahrs_8h.html" title="Attitude and Heading Reference System interface." alt="" coords="259,160,400,189"/><area shape="rect" id="node11" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="376,315,531,344"/><area shape="rect" id="node17" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="152,315,301,344"/><area shape="rect" id="node29" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="435,237,624,267"/></map>
+<area shape="rect" id="node3" href="stabilization__attitude__ref__int_8h.html" title="Rotorcraft attitude reference generation API." alt="" coords="168,83,381,112"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="120,237,299,267"/><area shape="rect" id="node22" href="ahrs_8h.html" title="Attitude and Heading Reference System interface." alt="" coords="260,160,401,189"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="373,315,528,344"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="149,315,299,344"/><area shape="rect" id="node26" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="432,237,621,267"/></map>
 </div>
 </div>
 <p><a href="stabilization__attitude__ref__euler__int_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr><td colspan="2"><h2><a name="define-members"></a>
-Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a490b43dffdd79ca119f660da202b37d4">STABILIZATION_ATTITUDE_ADD_SP</a>(_add_sp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#aecb4955d0cd071667c2203169aa1323a">STABILIZATION_ATTITUDE_RESET_PSI_REF</a>(_sp)</td></tr>
-</table>
-<hr/><h2>Define Documentation</h2>
-<a class="anchor" id="a490b43dffdd79ca119f660da202b37d4"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::STABILIZATION_ATTITUDE_ADD_SP" ref="a490b43dffdd79ca119f660da202b37d4" args="(_add_sp)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a490b43dffdd79ca119f660da202b37d4">STABILIZATION_ATTITUDE_ADD_SP</a></td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_add_sp</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">{ \
-    EULERS_ADD(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0">stab_att_sp_euler</a>,_add_sp);          \
-    ANGLE_REF_NORMALIZE(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>);     \
-  }
-</pre></div>
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00029">29</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Rotorcraft attitude reference generation (euler int version) </p>
 
-</div>
-</div>
-<a class="anchor" id="aecb4955d0cd071667c2203169aa1323a"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::STABILIZATION_ATTITUDE_RESET_PSI_REF" ref="aecb4955d0cd071667c2203169aa1323a" args="(_sp)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#aecb4955d0cd071667c2203169aa1323a">STABILIZATION_ATTITUDE_RESET_PSI_REF</a></td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_sp</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">{                     \
-    _sp.psi = <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> &lt;&lt; (<a class="code" href="stabilization__attitude__ref__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>); \
-    stab_att_ref_euler.psi = _sp.psi;                                   \
-    stab_att_ref_rate.r = 0;                                            \
-  }
-</pre></div>
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00034">34</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-<p>Referenced by <a class="el" href="stabilization__attitude__euler__int_8c_source.html#l00075">stabilization_attitude_enter()</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>Definition in file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
+</div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -192,7 +141,7 @@ Defines</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html">stabilization_attitude_ref_euler_int.h</a>      </li>
 
-    <li class="footer">Generated on Wed Mar 7 2012 04:01:41 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Mar 27 2012 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

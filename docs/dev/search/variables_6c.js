@@ -9,7 +9,7 @@ var searchData=
   ['last_5fbaro_5falt',['last_baro_alt',['../alt__filter_8c.html#ae05d497e598d27cd712567d1eef7ac77',1,'alt_filter.c']]],
   ['last_5fblock',['last_block',['../common__flight__plan_8c.html#a5d3ddba0962294e6c33573f86c4b1eec',1,'last_block():&#160;common_flight_plan.c'],['../common__flight__plan_8h.html#a5d3ddba0962294e6c33573f86c4b1eec',1,'last_block():&#160;common_flight_plan.c']]],
   ['last_5ffix_5fticks',['last_fix_ticks',['../structGpsState.html#ae57cb88a232985880e19989f99795245',1,'GpsState']]],
-  ['last_5ffix_5ftime',['last_fix_time',['../structGpsState.html#a5502679e99fb346270925884a3da5e1f',1,'GpsState']]],
+  ['last_5ffix_5ftime',['last_fix_time',['../structGpsState.html#ac6e982464156a3aa6d1967b7cf468b84',1,'GpsState']]],
   ['last_5fgps_5falt',['last_gps_alt',['../alt__filter_8c.html#a29bc3860cd47987f526e6d61e83009f9',1,'alt_filter.c']]],
   ['last_5fmsg',['last_msg',['../structVehicleInterface.html#a1bfd15310f8c8127120cad9efcdb05ed',1,'VehicleInterface']]],
   ['last_5fplume',['last_plume',['../anemotaxis_8c.html#a577e562d994b8840057bb682d0cf6b69',1,'anemotaxis.c']]],

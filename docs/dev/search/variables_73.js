@@ -81,7 +81,7 @@ var searchData=
   ['sonar_5fdata_5favailable',['sonar_data_available',['../sonar__maxbotix_8c.html#a0f9b99c29c7b19f98b1f068f90e79e91',1,'sonar_data_available():&#160;sonar_maxbotix.c'],['../sonar__maxbotix_8h.html#a0f9b99c29c7b19f98b1f068f90e79e91',1,'sonar_data_available():&#160;sonar_maxbotix.c']]],
   ['sonar_5fmeas',['sonar_meas',['../sonar__maxbotix_8c.html#a69fadebe7b519d56f5380f55216f5d9a',1,'sonar_meas():&#160;sonar_maxbotix.c'],['../sonar__maxbotix_8h.html#a69fadebe7b519d56f5380f55216f5d9a',1,'sonar_meas():&#160;sonar_maxbotix.c']]],
   ['spare1',['spare1',['../structCHIMU__sensor__data.html#a2edb0a07bba97c473e518f19eefb7949',1,'CHIMU_sensor_data']]],
-  ['speed',['speed',['../structforce__.html#a8ed78b56d29dec183917ffa8f59e0691',1,'force_::speed()'],['../structVi__gps__info.html#a2174470bb84a5171bd9c0373bb1f06cf',1,'Vi_gps_info::speed()'],['../structVi__command.html#a834068d6816d14e04383a79066f8eb39',1,'Vi_command::speed()']]],
+  ['speed',['speed',['../structforce__.html#a8ed78b56d29dec183917ffa8f59e0691',1,'force_::speed()'],['../structVi__gps__info.html#a2174470bb84a5171bd9c0373bb1f06cf',1,'Vi_gps_info::speed()'],['../structVi__command.html#a834068d6816d14e04383a79066f8eb39',1,'Vi_command::speed()'],['../guidance__v__ref_8h.html#a36dda2666e5436e608a494230ca9076b',1,'speed():&#160;guidance_v_ref.h']]],
   ['speed_5f3d',['speed_3d',['../structGpsState.html#a6bbd07d59ce79d19e1027b08e76dbcf9',1,'GpsState']]],
   ['spektrumbuf',['SpektrumBuf',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c',1,'spektrum_arch.c']]],
   ['spektrumsigns',['SpektrumSigns',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ab2352f6b9919fc81cb508682732349a3',1,'spektrum_arch.c']]],

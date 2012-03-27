@@ -1,6 +1,5 @@
 var booz__cam_8c =
 [
-    [ "ABS", "booz__cam_8c.html#a623bc1c64a1d6f687a7c12a6dfcca528", null ],
     [ "BOOZ_CAM_DEFAULT_MODE", "booz__cam_8c.html#a3535eed3a36c5c6db267749e3583c935", null ],
     [ "BOOZ_CAM_SetPwm", "booz__cam_8c.html#ab3dca5bd44418422811afab2eeb5de2b", null ],
     [ "CP_MAX", "booz__cam_8c.html#a47f98a237dc6e8ec3bdc28512516e074", null ],

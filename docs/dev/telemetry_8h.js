@@ -44,6 +44,5 @@ var telemetry_8h =
     [ "PERIODIC_SEND_ROTORCRAFT_STATUS", "telemetry_8h.html#a6864cff2ed3065e68c8debdaca61b6f5", null ],
     [ "PERIODIC_SEND_VERT_LOOP", "telemetry_8h.html#ac84713ad2a2941cbfb41cf125e5d15dd", null ],
     [ "PERIODIC_SEND_VFF", "telemetry_8h.html#a262c1bcb37f2cc3336b2855bc42f010c", null ],
-    [ "PERIODIC_SEND_WP_MOVED", "telemetry_8h.html#adac12f087ddbf783f395992d891d6319", null ],
-    [ "telemetry_mode_Main_DefaultChannel", "telemetry_8h.html#a44f44096b4b36cc89dd56252415e638a", null ]
+    [ "PERIODIC_SEND_WP_MOVED", "telemetry_8h.html#adac12f087ddbf783f395992d891d6319", null ]
 ];

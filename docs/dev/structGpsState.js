@@ -7,7 +7,7 @@ var structGpsState =
     [ "gspeed", "structGpsState.html#a17cba6d73da4b727be6494d436160933", null ],
     [ "hmsl", "structGpsState.html#a10af95f7fdab3171a789866838b0c8c3", null ],
     [ "last_fix_ticks", "structGpsState.html#ae57cb88a232985880e19989f99795245", null ],
-    [ "last_fix_time", "structGpsState.html#a5502679e99fb346270925884a3da5e1f", null ],
+    [ "last_fix_time", "structGpsState.html#ac6e982464156a3aa6d1967b7cf468b84", null ],
     [ "lla_pos", "structGpsState.html#a298552f8926fd925f8c94bbeeca1dc5c", null ],
     [ "nb_channels", "structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6", null ],
     [ "ned_vel", "structGpsState.html#a8c0416718a59e50261890cd870f716ea", null ],

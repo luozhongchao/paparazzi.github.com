@@ -79,7 +79,6 @@ var searchData=
   ['hmc_5fconf_5fdone',['HMC_CONF_DONE',['../hmc58xx_8c.html#ae9e7cc827b91233c35989a8b1d04399d',1,'hmc58xx.c']]],
   ['hmc_5fconf_5fmode',['HMC_CONF_MODE',['../hmc58xx_8c.html#a13820cb31504b5cec19eb6b951fa1211',1,'hmc58xx.c']]],
   ['hmc_5fconf_5funinit',['HMC_CONF_UNINIT',['../hmc58xx_8c.html#afcefaf6d3c25e7596caa31a3e7fa3f2f',1,'hmc58xx.c']]],
-  ['hold_5fdistance',['HOLD_DISTANCE',['../guidance__h_8c.html#ad997521b22750e0c222111debb551c45',1,'guidance_h.c']]],
   ['horizontal_5fmode_5fattitude',['HORIZONTAL_MODE_ATTITUDE',['../navigation_8h.html#a30b84135f7785b38ae71f5e29577aa02',1,'navigation.h']]],
   ['horizontal_5fmode_5fcircle',['HORIZONTAL_MODE_CIRCLE',['../navigation_8h.html#a5bfcd798f85be44cd7766b55ef9c9c08',1,'HORIZONTAL_MODE_CIRCLE():&#160;navigation.h'],['../nav_8h.html#a5bfcd798f85be44cd7766b55ef9c9c08',1,'HORIZONTAL_MODE_CIRCLE():&#160;nav.h']]],
   ['horizontal_5fmode_5froute',['HORIZONTAL_MODE_ROUTE',['../navigation_8h.html#a6084dc0a6bca1d7ca7c39dad6614bce0',1,'HORIZONTAL_MODE_ROUTE():&#160;navigation.h'],['../nav_8h.html#a6084dc0a6bca1d7ca7c39dad6614bce0',1,'HORIZONTAL_MODE_ROUTE():&#160;nav.h']]],

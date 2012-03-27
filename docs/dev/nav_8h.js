@@ -18,6 +18,7 @@ var nav_8h =
     [ "NavCircleQdr", "nav_8h.html#a0809ecd41f0b888de7f9754e75caf82d", null ],
     [ "NavCircleWaypoint", "nav_8h.html#a32b0c914606a5e49eb66833967deb640", null ],
     [ "NavCourseCloseTo", "nav_8h.html#a68ab3f04c3fcd85380c950db512fd97e", null ],
+    [ "NavGotoWaypoint", "nav_8h.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c", null ],
     [ "NavHeading", "nav_8h.html#ac90e1aa0615ba8f354b17674af4b12c8", null ],
     [ "NavKillThrottle", "nav_8h.html#ab4d16c33e2792978452a6b33e26df83c", null ],
     [ "NavQdrCloseTo", "nav_8h.html#a9f9ad9045eda753a7ea58359bd6a0581", null ],

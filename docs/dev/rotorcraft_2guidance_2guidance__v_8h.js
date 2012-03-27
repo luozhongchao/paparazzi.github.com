@@ -7,6 +7,8 @@ var rotorcraft_2guidance_2guidance__v_8h =
     [ "GUIDANCE_V_MODE_RC_CLIMB", "rotorcraft_2guidance_2guidance__v_8h.html#a84951e7b99e79e47b85f08d87606b92b", null ],
     [ "GUIDANCE_V_MODE_RC_DIRECT", "rotorcraft_2guidance_2guidance__v_8h.html#aca5421e816bd0c58ad9b86fc135635b0", null ],
     [ "guidance_v_SetKi", "rotorcraft_2guidance_2guidance__v_8h.html#a3f73c90dd55d92b4a1a727549a728bed", null ],
+    [ "SUPERVISION_MAX_MOTOR", "rotorcraft_2guidance_2guidance__v_8h.html#ad445d507be19a3c03de25319fc21ed6c", null ],
+    [ "SUPERVISION_MIN_MOTOR", "rotorcraft_2guidance_2guidance__v_8h.html#a5ef89032e3bd23631900dc2622012a11", null ],
     [ "guidance_v_init", "rotorcraft_2guidance_2guidance__v_8h.html#ae1e43515cf186f69dfaac9a4543b3cf0", null ],
     [ "guidance_v_mode_changed", "rotorcraft_2guidance_2guidance__v_8h.html#ac24445848e497e9b0da2913cecb0db73", null ],
     [ "guidance_v_notify_in_flight", "rotorcraft_2guidance_2guidance__v_8h.html#a98176dba977ff3fdf0d5b07eab548d41", null ],

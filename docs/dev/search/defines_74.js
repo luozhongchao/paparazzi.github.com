@@ -137,6 +137,7 @@ var searchData=
   ['tmr0',['TMR0',['../LPC21xx_8h.html#ac1044f49d37cbcbae3e519031b026996',1,'LPC21xx.h']]],
   ['tmr1',['TMR1',['../LPC21xx_8h.html#a4dedcb5ae32698839ce5e62aa2c3cd3b',1,'LPC21xx.h']]],
   ['tnf',['TNF',['../LPC21xx_8h.html#a90b58a2cd424d14cb405981ed6ded327',1,'LPC21xx.h']]],
+  ['traj_5fmax_5fbank',['TRAJ_MAX_BANK',['../guidance__h_8c.html#a669618b358d48a98ea0b7c88a3db1854',1,'guidance_h.c']]],
   ['transport',['Transport',['../downlink_8h.html#a930fc37c1a1795d2a773a3667d93853f',1,'downlink.h']]],
   ['transport_5fpayload_5flen',['TRANSPORT_PAYLOAD_LEN',['../transport_8h.html#a90f854efbacd1ba7e52f9922f17f7223',1,'transport.h']]],
   ['transportlink',['TransportLink',['../transport_8h.html#a3a9cdad7b415645264a8266165b16dfb',1,'transport.h']]],

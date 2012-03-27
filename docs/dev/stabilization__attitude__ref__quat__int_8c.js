@@ -26,7 +26,6 @@ var stabilization__attitude__ref__quat__int_8c =
     [ "ZETA_P", "stabilization__attitude__ref__quat__int_8c.html#a09d0136bb7fcef1b5563cfce0110bce2", null ],
     [ "ZETA_Q", "stabilization__attitude__ref__quat__int_8c.html#a608ba2cf6b2f506c7a5a19cfe514f278", null ],
     [ "ZETA_R", "stabilization__attitude__ref__quat__int_8c.html#ac45f26bd8ff0228f320ed655d17777d5", null ],
-    [ "reset_psi_ref_from_body", "stabilization__attitude__ref__quat__int_8c.html#a60f842edfa8dd98a227f18def04a0b55", null ],
     [ "stabilization_attitude_ref_enter", "stabilization__attitude__ref__quat__int_8c.html#a4653dafe8c5e5680c05207027db750f0", null ],
     [ "stabilization_attitude_ref_init", "stabilization__attitude__ref__quat__int_8c.html#a7682c717beab8da148168162d84cb33e", null ],
     [ "stabilization_attitude_ref_update", "stabilization__attitude__ref__quat__int_8c.html#aa81d4bbb6fc4913f6b9165b818a577c5", null ],

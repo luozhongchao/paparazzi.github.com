@@ -30,7 +30,6 @@ var searchData=
   ['tdistance',['TDistance',['../OSAMNav_8c.html#a6dc9b188c65e22672da539a5349f9647',1,'OSAMNav.c']]],
   ['tdwaypoint',['TDWaypoint',['../OSAMNav_8c.html#ab471b913708b97d3f63d3f4b86928bc1',1,'OSAMNav.c']]],
   ['te',['Te',['../structTypeKalman.html#a7f39810eac8af4f293c8936da4737d81',1,'TypeKalman']]],
-  ['telemetry_5fmode_5fmain_5fdefaultchannel',['telemetry_mode_Main_DefaultChannel',['../telemetry_8c.html#a44f44096b4b36cc89dd56252415e638a',1,'telemetry_mode_Main_DefaultChannel():&#160;telemetry.c'],['../telemetry_8h.html#a44f44096b4b36cc89dd56252415e638a',1,'telemetry_mode_Main_DefaultChannel():&#160;telemetry.c']]],
   ['telemetry_5ftid',['telemetry_tid',['../main__ap_8c.html#aaaaf875f33da06aeb2b503fde86862c1',1,'telemetry_tid():&#160;main_ap.c'],['../firmwares_2rotorcraft_2main_8c.html#aaaaf875f33da06aeb2b503fde86862c1',1,'telemetry_tid():&#160;main.c']]],
   ['temp',['temp',['../structPCAP01VALUE.html#ab83746c3613245619309c8096b2466c6',1,'PCAP01VALUE']]],
   ['temp_5fcnt',['temp_cnt',['../temp__tcouple__adc_8c.html#a1a5aa304ef337e9642e86d7f1762c878',1,'temp_tcouple_adc.c']]],

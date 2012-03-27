@@ -163,7 +163,6 @@ var searchData=
   ['hmc_5fconf_5fmode',['HMC_CONF_MODE',['../hmc58xx_8c.html#a13820cb31504b5cec19eb6b951fa1211',1,'hmc58xx.c']]],
   ['hmc_5fconf_5funinit',['HMC_CONF_UNINIT',['../hmc58xx_8c.html#afcefaf6d3c25e7596caa31a3e7fa3f2f',1,'hmc58xx.c']]],
   ['hmsl',['hmsl',['../structLtpDef__d.html#af68dbb98e8b287e8e209bffc91c70380',1,'LtpDef_d::hmsl()'],['../structLtpDef__f.html#ae17fe4c9b5d766b04cb0e73ee5115caf',1,'LtpDef_f::hmsl()'],['../structLtpDef__i.html#a32bcfa1049778e1703fa09aa9b810a5b',1,'LtpDef_i::hmsl()'],['../structGpsState.html#a10af95f7fdab3171a789866838b0c8c3',1,'GpsState::hmsl()']]],
-  ['hold_5fdistance',['HOLD_DISTANCE',['../guidance__h_8c.html#ad997521b22750e0c222111debb551c45',1,'guidance_h.c']]],
   ['horizontal_5fmode',['horizontal_mode',['../navigation_8c.html#ad2a5195a657a7961bfb54e3c2da48a21',1,'horizontal_mode():&#160;navigation.c'],['../navigation_8h.html#ad2a5195a657a7961bfb54e3c2da48a21',1,'horizontal_mode():&#160;navigation.c'],['../nav_8c.html#ad2a5195a657a7961bfb54e3c2da48a21',1,'horizontal_mode():&#160;nav.c'],['../nav_8h.html#ad2a5195a657a7961bfb54e3c2da48a21',1,'horizontal_mode():&#160;navigation.c']]],
   ['horizontal_5fmode_5fattitude',['HORIZONTAL_MODE_ATTITUDE',['../navigation_8h.html#a30b84135f7785b38ae71f5e29577aa02',1,'navigation.h']]],
   ['horizontal_5fmode_5fcircle',['HORIZONTAL_MODE_CIRCLE',['../navigation_8h.html#a5bfcd798f85be44cd7766b55ef9c9c08',1,'HORIZONTAL_MODE_CIRCLE():&#160;navigation.h'],['../nav_8h.html#a5bfcd798f85be44cd7766b55ef9c9c08',1,'HORIZONTAL_MODE_CIRCLE():&#160;nav.h']]],

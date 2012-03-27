@@ -120,20 +120,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a>00016 
 <a name="l00017"></a>00017 <span class="keyword">extern</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lpc21_2peripherals_2ms2100__arch_8c.html#aeefbe2167ffbe7990ad518d3d7366758">ms2100_cur_axe</a>;
 <a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a16795478c62616d3d9f06b2e721dae83">00019</a> <span class="preprocessor">#define Ms2001Select()   SetBit(MS2100_SS_IOCLR,MS2100_SS_PIN)</span>
-<a name="l00020"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a49d3477c2b8661e001bf077ef892a34c">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define Ms2001Unselect() SetBit(MS2100_SS_IOSET,MS2100_SS_PIN)</span>
+<a name="l00019"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a859ce1875fb92e45e5c6c4c8435e8751">00019</a> <span class="preprocessor">#define Ms2100Select()   SetBit(MS2100_SS_IOCLR,MS2100_SS_PIN)</span>
+<a name="l00020"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a06455df2e398b99fda0ad17038e3cd14">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define Ms2100Unselect() SetBit(MS2100_SS_IOSET,MS2100_SS_PIN)</span>
 <a name="l00021"></a>00021 <span class="preprocessor"></span>
-<a name="l00022"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a4bb6d080b6df897b4401f474363fab4e">00022</a> <span class="preprocessor">#define Ms2001Reset() SetBit(MS2100_RESET_IOCLR,MS2100_RESET_PIN)</span>
-<a name="l00023"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a0924426447cb175a8987a35b399f6f1f">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define Ms2001Set()   SetBit(MS2100_RESET_IOSET,MS2100_RESET_PIN)</span>
+<a name="l00022"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#ae09cc3bfbac5bb19b7a8c3efd1ca3c80">00022</a> <span class="preprocessor">#define Ms2100Reset() SetBit(MS2100_RESET_IOCLR,MS2100_RESET_PIN)</span>
+<a name="l00023"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a6a69f6973e6b5865b4d1bdfa51ab5fdf">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define Ms2100Set()   SetBit(MS2100_RESET_IOSET,MS2100_RESET_PIN)</span>
 <a name="l00024"></a>00024 <span class="preprocessor"></span>
-<a name="l00025"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a2f3a974e9d4d3667aab88e9925d4e490">00025</a> <span class="preprocessor">#define Ms2001OnSpiInt() {                                   \</span>
+<a name="l00025"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a94d3eec11d84956b1a9f32aa1f36d72b">00025</a> <span class="preprocessor">#define Ms2100OnSpiInt() {                                   \</span>
 <a name="l00026"></a>00026 <span class="preprocessor">    switch (ms2100_status) {                                \</span>
 <a name="l00027"></a>00027 <span class="preprocessor">    case MS2100_SENDING_REQ:                                \</span>
 <a name="l00028"></a>00028 <span class="preprocessor">      {                                                     \</span>
 <a name="l00029"></a>00029 <span class="preprocessor">        </span><span class="comment">/* read dummy control byte reply */</span>                 \
 <a name="l00030"></a>00030         uint8_t foo __attribute__ ((unused)) = SSPDR;       \
 <a name="l00031"></a>00031         ms2100_status = MS2100_WAITING_EOC;                 \
-<a name="l00032"></a>00032         Ms2001Unselect();                                   \
+<a name="l00032"></a>00032         Ms2100Unselect();                                   \
 <a name="l00033"></a>00033         SSP_ClearRti();                                     \
 <a name="l00034"></a>00034         SSP_DisableRti();                                   \
 <a name="l00035"></a>00035         SSP_Disable();                                      \
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042         new_val += SSPDR;                                   \
 <a name="l00043"></a>00043         if (abs(new_val) &lt; 2000)                            \
 <a name="l00044"></a>00044           ms2100_values[ms2100_cur_axe] = new_val;      \
-<a name="l00045"></a>00045         Ms2001Unselect();                                   \
+<a name="l00045"></a>00045         Ms2100Unselect();                                   \
 <a name="l00046"></a>00046         SSP_ClearRti();                                     \
 <a name="l00047"></a>00047         SSP_DisableRti();                                   \
 <a name="l00048"></a>00048         SSP_Disable();                                      \
@@ -163,22 +163,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00059"></a>00059   }
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061 
-<a name="l00062"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a6622e25e7cce97601de4cd5fe27763e1">00062</a> <span class="preprocessor">#define Ms2001SendReq() {                               \</span>
-<a name="l00063"></a>00063 <span class="preprocessor">    Ms2001Select();                                     \</span>
+<a name="l00062"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#adf0b265671056df62152f5518b780e36">00062</a> <span class="preprocessor">#define Ms2100SendReq() {                               \</span>
+<a name="l00063"></a>00063 <span class="preprocessor">    Ms2100Select();                                     \</span>
 <a name="l00064"></a>00064 <span class="preprocessor">    ms2100_status = MS2100_SENDING_REQ;         \</span>
-<a name="l00065"></a>00065 <span class="preprocessor">    Ms2001Set();                                        \</span>
+<a name="l00065"></a>00065 <span class="preprocessor">    Ms2100Set();                                        \</span>
 <a name="l00066"></a>00066 <span class="preprocessor">    SSP_ClearRti();                                     \</span>
 <a name="l00067"></a>00067 <span class="preprocessor">    SSP_EnableRti();                                    \</span>
-<a name="l00068"></a>00068 <span class="preprocessor">    Ms2001Reset();                                      \</span>
+<a name="l00068"></a>00068 <span class="preprocessor">    Ms2100Reset();                                      \</span>
 <a name="l00069"></a>00069 <span class="preprocessor">    uint8_t control_byte = (ms2100_cur_axe+1) &lt;&lt; 0 |    \</span>
 <a name="l00070"></a>00070 <span class="preprocessor">      MS2100_DIVISOR &lt;&lt; 4;                              \</span>
 <a name="l00071"></a>00071 <span class="preprocessor">    SSP_Send(control_byte);                             \</span>
 <a name="l00072"></a>00072 <span class="preprocessor">    SSP_Enable();                                       \</span>
 <a name="l00073"></a>00073 <span class="preprocessor">  }</span>
 <a name="l00074"></a>00074 <span class="preprocessor"></span>
-<a name="l00075"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a15ba5853137bfc82f416d55b6837ef0a">00075</a> <span class="preprocessor">#define Ms2001ReadRes() {           \</span>
+<a name="l00075"></a><a class="code" href="lpc21_2peripherals_2ms2100__arch_8h.html#a5fe7bdc797f17bdbefc76189a1ddf2f2">00075</a> <span class="preprocessor">#define Ms2100ReadRes() {           \</span>
 <a name="l00076"></a>00076 <span class="preprocessor">    ms2100_status = MS2100_READING_RES;         \</span>
-<a name="l00077"></a>00077 <span class="preprocessor">    Ms2001Select();                             \</span>
+<a name="l00077"></a>00077 <span class="preprocessor">    Ms2100Select();                             \</span>
 <a name="l00078"></a>00078 <span class="preprocessor">    </span><span class="comment">/* trigger 2 bytes read */</span>                  \
 <a name="l00079"></a>00079     SSP_Send(0);                                \
 <a name="l00080"></a>00080     SSP_Send(0);                                \
@@ -210,7 +210,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lpc21_2peripherals_2ms2100__arch_8h.html">ms2100_arch.h</a>      </li>
 
-    <li class="footer">Generated on Wed Mar 7 2012 04:01:40 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Mar 27 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
