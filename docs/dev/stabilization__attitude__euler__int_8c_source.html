@@ -261,30 +261,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00157"></a>00157     <a class="code" href="stabilization__attitude__euler__int_8c.html#a12f569e84b2838005e3c28f4476971e9">OFFSET_AND_ROUND2</a>((<a class="code" href="stabilization__attitude__euler__float_8c.html#a546abfe3403952cea36cb12d9240fa91">stabilization_gains</a>.<a class="code" href="structFloatAttitudeGains.html#af92656755f70798294413b0e009aac53">i</a>.<a class="code" href="structFloatVect3.html#adeaa53529844ee1fa7df48e61c3994f7">z</a>  * <a class="code" href="stabilization__attitude__euler__float_8c.html#ad3a90f9a260aaff45b749c9939422783">stabilization_att_sum_err</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>), 10);
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159 
-<a name="l00160"></a>00160 
-<a name="l00161"></a>00161   <span class="comment">//FIXME: still needed? for what?</span>
-<a name="l00162"></a>00162 <span class="preprocessor">#ifdef USE_HELI</span>
-<a name="l00163"></a>00163 <span class="preprocessor"></span><span class="preprocessor">#define CMD_SHIFT 12</span>
-<a name="l00164"></a>00164 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00165"></a>00165 <span class="preprocessor"></span><span class="preprocessor">#define CMD_SHIFT 16</span>
-<a name="l00166"></a>00166 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00167"></a>00167 <span class="preprocessor"></span>
-<a name="l00168"></a>00168   <span class="comment">/* sum feedforward and feedback */</span>
-<a name="l00169"></a>00169   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_ROLL] =
-<a name="l00170"></a>00170     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>((<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_ROLL]+<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>[COMMAND_ROLL]), <a class="code" href="stabilization__attitude__euler__int_8c.html#a6b714183ddf56c82273df7831ecec42c">CMD_SHIFT</a>);
-<a name="l00171"></a>00171 
-<a name="l00172"></a>00172   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_PITCH] =
-<a name="l00173"></a>00173     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>((<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_PITCH]+<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>[COMMAND_PITCH]), <a class="code" href="stabilization__attitude__euler__int_8c.html#a6b714183ddf56c82273df7831ecec42c">CMD_SHIFT</a>);
-<a name="l00174"></a>00174 
-<a name="l00175"></a>00175   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_YAW] =
-<a name="l00176"></a>00176     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>((<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_YAW]+<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>[COMMAND_YAW]), <a class="code" href="stabilization__attitude__euler__int_8c.html#a6b714183ddf56c82273df7831ecec42c">CMD_SHIFT</a>);
-<a name="l00177"></a>00177 
-<a name="l00178"></a>00178   <span class="comment">/* bound the result */</span>
-<a name="l00179"></a>00179   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_ROLL], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
-<a name="l00180"></a>00180   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_PITCH], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
-<a name="l00181"></a>00181   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_YAW], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
-<a name="l00182"></a>00182 
-<a name="l00183"></a>00183 }
+<a name="l00160"></a>00160   <span class="comment">/* with P gain of 100, att_err of 180deg (3.14 rad)</span>
+<a name="l00161"></a>00161 <span class="comment">   * fb cmd: 100 * 3.14 * 2^12 / 2^CMD_SHIFT = 628</span>
+<a name="l00162"></a>00162 <span class="comment">   * max possible command is 9600</span>
+<a name="l00163"></a>00163 <span class="comment">   */</span>
+<a name="l00164"></a>00164 <span class="preprocessor">#define CMD_SHIFT 11</span>
+<a name="l00165"></a>00165 <span class="preprocessor"></span>
+<a name="l00166"></a>00166   <span class="comment">/* sum feedforward and feedback */</span>
+<a name="l00167"></a>00167   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_ROLL] =
+<a name="l00168"></a>00168     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>((<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_ROLL]+<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>[COMMAND_ROLL]), <a class="code" href="stabilization__attitude__euler__int_8c.html#a6b714183ddf56c82273df7831ecec42c">CMD_SHIFT</a>);
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_PITCH] =
+<a name="l00171"></a>00171     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>((<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_PITCH]+<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>[COMMAND_PITCH]), <a class="code" href="stabilization__attitude__euler__int_8c.html#a6b714183ddf56c82273df7831ecec42c">CMD_SHIFT</a>);
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_YAW] =
+<a name="l00174"></a>00174     <a class="code" href="stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2">OFFSET_AND_ROUND</a>((<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_YAW]+<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>[COMMAND_YAW]), <a class="code" href="stabilization__attitude__euler__int_8c.html#a6b714183ddf56c82273df7831ecec42c">CMD_SHIFT</a>);
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176   <span class="comment">/* bound the result */</span>
+<a name="l00177"></a>00177   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_ROLL], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00178"></a>00178   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_PITCH], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00179"></a>00179   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_YAW], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -305,7 +303,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__euler__int_8c.html">stabilization_attitude_euler_int.c</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 27 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Mar 28 2012 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

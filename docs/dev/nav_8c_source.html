@@ -133,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
 <a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span>
-<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2guidance_2guidance__v_8h.html">firmwares/fixedwing/guidance/guidance_v.h</a>&quot;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2guidance_2guidance__v_8h.html" title="Vertical control for fixed wing vehicles.">firmwares/fixedwing/guidance/guidance_v.h</a>&quot;</span>
 <a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2autopilot_8h.html">firmwares/fixedwing/autopilot.h</a>&quot;</span>
 <a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="inter__mcu_8h.html">inter_mcu.h</a>&quot;</span>
 <a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="traffic__info_8h.html" title="Informations relative to the other aircrafts.">subsystems/navigation/traffic_info.h</a>&quot;</span>
@@ -184,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00090"></a><a class="code" href="nav_8h.html#a100095dcf201264924107b608a3ed5cd">00090</a> <span class="keywordtype">int</span> <a class="code" href="nav_8c.html#a100095dcf201264924107b608a3ed5cd">nav_mode</a>;
 <a name="l00091"></a>00091 
 <a name="l00092"></a><a class="code" href="nav_8c.html#a2580ee456d7dd3d157fd7c43ad2eac2d">00092</a> <span class="keywordtype">void</span> <a class="code" href="navigation_8c.html#a2580ee456d7dd3d157fd7c43ad2eac2d">nav_init_stage</a>( <span class="keywordtype">void</span> ) {
-<a name="l00093"></a>00093   <a class="code" href="nav_8c.html#ab2e97613bcf8e5721e639812c7a3469a">last_x</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>; <a class="code" href="nav_8c.html#a38c13a13ef3e5a3b6480f71bf244e668">last_y</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>;
+<a name="l00093"></a>00093   <a class="code" href="nav_8c.html#ab2e97613bcf8e5721e639812c7a3469a">last_x</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>; <a class="code" href="nav_8c.html#a38c13a13ef3e5a3b6480f71bf244e668">last_y</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
 <a name="l00094"></a>00094   <a class="code" href="common__flight__plan_8c.html#ac9b0a7aa731d9b8755a79251720cf9e0" title="In s.">stage_time</a> = 0;
 <a name="l00095"></a>00095   nav_circle_radians = 0;
 <a name="l00096"></a>00096   nav_in_circle = FALSE;
@@ -201,7 +201,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00107"></a>00107 
 <a name="l00109"></a><a class="code" href="nav_8h.html#ad1b9d2e8da4a32477ca8bedc0bca86fe">00109</a> <span class="keywordtype">void</span> <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y).">nav_circle_XY</a>(<span class="keywordtype">float</span> <a class="code" href="structHfilterFloat.html#a6e01846a801cbd7fe3ae1f69df70ce3b">x</a>, <span class="keywordtype">float</span> <a class="code" href="structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9">y</a>, <span class="keywordtype">float</span> <a class="code" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>) {
 <a name="l00110"></a>00110   <span class="keywordtype">float</span> last_trigo_qdr = <a class="code" href="nav_8c.html#aa10361692f333adcd1ccfd84ff1d0974">nav_circle_trigo_qdr</a>;
-<a name="l00111"></a>00111   nav_circle_trigo_qdr = atan2(<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a> - y, <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a> - x);
+<a name="l00111"></a>00111   nav_circle_trigo_qdr = atan2(<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a> - y, <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a> - x);
 <a name="l00112"></a>00112 
 <a name="l00113"></a>00113   <span class="keywordflow">if</span> (nav_in_circle) {
 <a name="l00114"></a>00114     <span class="keywordtype">float</span> trigo_diff = nav_circle_trigo_qdr - last_trigo_qdr;
@@ -209,7 +209,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00116"></a>00116     nav_circle_radians += trigo_diff;
 <a name="l00117"></a>00117   }
 <a name="l00118"></a>00118 
-<a name="l00119"></a>00119   <span class="keywordtype">float</span> dist2_center = <a class="code" href="nav_8h.html#ac72e29d6c97b6ae1fcf957fa59c69215">DistanceSquare</a>(<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>, <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>, x, y);
+<a name="l00119"></a>00119   <span class="keywordtype">float</span> dist2_center = <a class="code" href="nav_8h.html#ac72e29d6c97b6ae1fcf957fa59c69215">DistanceSquare</a>(<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>, <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>, x, y);
 <a name="l00120"></a>00120   <span class="keywordtype">float</span> dist_carrot = CARROT*NOMINAL_AIRSPEED;
 <a name="l00121"></a>00121   <span class="keywordtype">float</span> sign_radius = radius &gt; 0 ? 1 : -1;
 <a name="l00122"></a>00122 
@@ -221,7 +221,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00129"></a>00129     (dist2_center &gt; <a class="code" href="nav_8h.html#a5b322de63943d278a002687f820ac41c">Square</a>(abs_radius + dist_carrot)
 <a name="l00130"></a>00130       || dist2_center &lt; <a class="code" href="nav_8h.html#a5b322de63943d278a002687f820ac41c">Square</a>(abs_radius - dist_carrot)) ?
 <a name="l00131"></a>00131     0 :
-<a name="l00132"></a>00132     atan(<a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c">estimator_hspeed_mod</a>*<a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c">estimator_hspeed_mod</a> / (<a class="code" href="nav_8h.html#aed9ea78689ecce0b7264c02c7f8a9a54">G</a>*radius));
+<a name="l00132"></a>00132     atan(<a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c" title="module of horizontal ground speed in m/s">estimator_hspeed_mod</a>*<a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c" title="module of horizontal ground speed in m/s">estimator_hspeed_mod</a> / (<a class="code" href="nav_8h.html#aed9ea78689ecce0b7264c02c7f8a9a54">G</a>*radius));
 <a name="l00133"></a>00133 
 <a name="l00134"></a>00134   <span class="keywordtype">float</span> carrot_angle = dist_carrot / abs_radius;
 <a name="l00135"></a>00135   carrot_angle = <a class="code" href="common__flight__plan_8h.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(carrot_angle, M_PI/4);
@@ -294,7 +294,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00203"></a>00203 <span class="keyword">static</span> <span class="keywordtype">void</span> nav_ground_speed_loop( <span class="keywordtype">void</span> ) {
 <a name="l00204"></a>00204   <span class="keywordflow">if</span> (MINIMUM_AIRSPEED &lt; nav_ground_speed_setpoint
 <a name="l00205"></a>00205       &amp;&amp; nav_ground_speed_setpoint &lt; MAXIMUM_AIRSPEED) {
-<a name="l00206"></a>00206     <span class="keywordtype">float</span> err = nav_ground_speed_setpoint - <a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c">estimator_hspeed_mod</a>;
+<a name="l00206"></a>00206     <span class="keywordtype">float</span> err = nav_ground_speed_setpoint - <a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c" title="module of horizontal ground speed in m/s">estimator_hspeed_mod</a>;
 <a name="l00207"></a>00207     <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ac2157f339c7b2f374ece7b5448fe7816">v_ctl_auto_throttle_cruise_throttle</a> += nav_ground_speed_pgain*err;
 <a name="l00208"></a>00208     Bound(<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ac2157f339c7b2f374ece7b5448fe7816">v_ctl_auto_throttle_cruise_throttle</a>, V_CTL_AUTO_THROTTLE_MIN_CRUISE_THROTTLE, V_CTL_AUTO_THROTTLE_MAX_CRUISE_THROTTLE);
 <a name="l00209"></a>00209   } <span class="keywordflow">else</span> {
@@ -364,7 +364,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00273"></a>00273   <span class="keywordtype">float</span> y = ac-&gt;<a class="code" href="structac__info__.html#a9a983598258354bb014b778667d80bc3">north</a> - _distance*sa;
 <a name="l00274"></a>00274   <a class="code" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course.">fly_to_xy</a>(x, y);
 <a name="l00275"></a>00275 <span class="preprocessor">#ifdef NAV_FOLLOW_PGAIN</span>
-<a name="l00276"></a>00276 <span class="preprocessor"></span>  <span class="keywordtype">float</span> s = (<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>-x)*ca+(<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>-y)*sa;
+<a name="l00276"></a>00276 <span class="preprocessor"></span>  <span class="keywordtype">float</span> s = (<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>-x)*ca+(<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>-y)*sa;
 <a name="l00277"></a>00277   nav_ground_speed_setpoint = ac-&gt;<a class="code" href="structac__info__.html#a02cb50af678fbf17e6bc9c592cf76f3d">gspeed</a> + NAV_FOLLOW_PGAIN*s;
 <a name="l00278"></a>00278   nav_ground_speed_loop();
 <a name="l00279"></a>00279 <span class="preprocessor">#endif</span>
@@ -378,11 +378,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00287"></a>00287 
 <a name="l00288"></a>00288 
 <a name="l00295"></a><a class="code" href="nav_8h.html#a771b907350b836982ba4e31fd4bcbf4b">00295</a> bool_t <a class="code" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint.">nav_approaching_xy</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> from_x, <span class="keywordtype">float</span> from_y, <span class="keywordtype">float</span> approaching_time) {
-<a name="l00297"></a>00297   <span class="keywordtype">float</span> pw_x = x - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>;
-<a name="l00299"></a>00299   <span class="keywordtype">float</span> pw_y = y - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>;
+<a name="l00297"></a>00297   <span class="keywordtype">float</span> pw_x = x - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>;
+<a name="l00299"></a>00299   <span class="keywordtype">float</span> pw_y = y - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
 <a name="l00300"></a>00300 
 <a name="l00301"></a>00301   <a class="code" href="common__nav_8c.html#a1ea7c4cd1046a57c3444b89a1dce6250">dist2_to_wp</a> = pw_x*pw_x + pw_y *pw_y;
-<a name="l00302"></a>00302   <span class="keywordtype">float</span> min_dist = approaching_time * <a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c">estimator_hspeed_mod</a>;
+<a name="l00302"></a>00302   <span class="keywordtype">float</span> min_dist = approaching_time * <a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c" title="module of horizontal ground speed in m/s">estimator_hspeed_mod</a>;
 <a name="l00303"></a>00303   <span class="keywordflow">if</span> (<a class="code" href="common__nav_8c.html#a1ea7c4cd1046a57c3444b89a1dce6250">dist2_to_wp</a> &lt; min_dist*min_dist)
 <a name="l00304"></a>00304     <span class="keywordflow">return</span> TRUE;
 <a name="l00305"></a>00305 
@@ -397,16 +397,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00317"></a>00317   desired_x = x;
 <a name="l00318"></a>00318   desired_y = y;
 <a name="l00319"></a>00319   <span class="keywordflow">if</span> (nav_mode == <a class="code" href="nav_8h.html#addc6a163a0d81c27179c10d7e260cdc5">NAV_MODE_COURSE</a>) {
-<a name="l00320"></a>00320     <a class="code" href="stabilization__adaptive_8c.html#aecca0045300130468b5e3b6873a45abb" title="fixed wing horizontal adaptive control">h_ctl_course_setpoint</a> = atan2(x - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>, y - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>);
+<a name="l00320"></a>00320     <a class="code" href="stabilization__adaptive_8c.html#aecca0045300130468b5e3b6873a45abb" title="fixed wing horizontal adaptive control">h_ctl_course_setpoint</a> = atan2(x - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>, y - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>);
 <a name="l00321"></a>00321     <span class="keywordflow">if</span> (<a class="code" href="stabilization__adaptive_8c.html#aecca0045300130468b5e3b6873a45abb" title="fixed wing horizontal adaptive control">h_ctl_course_setpoint</a> &lt; 0.)
 <a name="l00322"></a>00322       <a class="code" href="stabilization__adaptive_8c.html#aecca0045300130468b5e3b6873a45abb" title="fixed wing horizontal adaptive control">h_ctl_course_setpoint</a> += 2 * M_PI;
 <a name="l00323"></a>00323     <a class="code" href="fixedwing_2autopilot_8h.html#ab559c6867326333905f9133432ff9315">lateral_mode</a> = <a class="code" href="fixedwing_2autopilot_8h.html#a63d6feb22864c4c3fcc59893e2671609">LATERAL_MODE_COURSE</a>;
 <a name="l00324"></a>00324   } <span class="keywordflow">else</span> {
-<a name="l00325"></a>00325     <span class="keywordtype">float</span> diff = atan2(x - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>, y - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>) - <a class="code" href="estimator_8c.html#a91a95ce5b0e2fe00b6b8d050322c1f81">estimator_hspeed_dir</a>;
+<a name="l00325"></a>00325     <span class="keywordtype">float</span> diff = atan2(x - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>, y - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>) - <a class="code" href="estimator_8c.html#a91a95ce5b0e2fe00b6b8d050322c1f81" title="direction of horizontal ground speed in rad (CW/North)">estimator_hspeed_dir</a>;
 <a name="l00326"></a>00326     NormRadAngle(diff);
 <a name="l00327"></a>00327     BoundAbs(diff,M_PI/2.);
 <a name="l00328"></a>00328     <span class="keywordtype">float</span> s = sin(diff);
-<a name="l00329"></a>00329     <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a> = atan(2 * <a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c">estimator_hspeed_mod</a>*<a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c">estimator_hspeed_mod</a> * s * <a class="code" href="stabilization__adaptive_8c.html#ab9948dbdbf52b4bbd03255f6ab5bb976">h_ctl_course_pgain</a> / (CARROT * NOMINAL_AIRSPEED * 9.81) );
+<a name="l00329"></a>00329     <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a> = atan(2 * <a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c" title="module of horizontal ground speed in m/s">estimator_hspeed_mod</a>*<a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c" title="module of horizontal ground speed in m/s">estimator_hspeed_mod</a> * s * <a class="code" href="stabilization__adaptive_8c.html#ab9948dbdbf52b4bbd03255f6ab5bb976">h_ctl_course_pgain</a> / (CARROT * NOMINAL_AIRSPEED * 9.81) );
 <a name="l00330"></a>00330     BoundAbs(<a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a>, <a class="code" href="stabilization__adaptive_8c.html#a36b4caa0eb30ecfb44d54f83ad1ada2a">h_ctl_roll_max_setpoint</a>);
 <a name="l00331"></a>00331     <a class="code" href="fixedwing_2autopilot_8h.html#ab559c6867326333905f9133432ff9315">lateral_mode</a> = <a class="code" href="fixedwing_2autopilot_8h.html#a7ea379002f6ec803be3f49e0993dd63a">LATERAL_MODE_ROLL</a>;
 <a name="l00332"></a>00332   }
@@ -416,7 +416,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00339"></a>00339   <span class="keywordtype">float</span> leg_x = wp_x - last_wp_x;
 <a name="l00340"></a>00340   <span class="keywordtype">float</span> leg_y = wp_y - last_wp_y;
 <a name="l00341"></a>00341   <span class="keywordtype">float</span> leg2 = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(leg_x * leg_x + leg_y * leg_y, 1.);
-<a name="l00342"></a>00342   nav_leg_progress = ((<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a> - last_wp_x) * leg_x + (<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a> - last_wp_y) * leg_y) / leg2;
+<a name="l00342"></a>00342   nav_leg_progress = ((<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a> - last_wp_x) * leg_x + (<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a> - last_wp_y) * leg_y) / leg2;
 <a name="l00343"></a>00343   nav_leg_length = sqrt(leg2);
 <a name="l00344"></a>00344 
 <a name="l00346"></a>00346   <span class="keywordtype">float</span> carrot = CARROT * NOMINAL_AIRSPEED;
@@ -444,7 +444,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00368"></a>00368     flight_altitude = <a class="code" href="navigation_8c.html#af0e2e459664ed595f936a2a9d5852286">nav_altitude</a>;
 <a name="l00369"></a>00369     last_nav_altitude = <a class="code" href="navigation_8c.html#af0e2e459664ed595f936a2a9d5852286">nav_altitude</a>;
 <a name="l00370"></a>00370   }
-<a name="l00371"></a>00371   <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a8ca3adfa488b360ca07396ef54c199f3">v_ctl_altitude_setpoint</a> = <a class="code" href="navigation_8c.html#a1612ea0e1474e49b800cb3f497096523">flight_altitude</a>;
+<a name="l00371"></a>00371   <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a8ca3adfa488b360ca07396ef54c199f3" title="in meters above MSL">v_ctl_altitude_setpoint</a> = <a class="code" href="navigation_8c.html#a1612ea0e1474e49b800cb3f497096523">flight_altitude</a>;
 <a name="l00372"></a>00372 }
 <a name="l00373"></a>00373 
 <a name="l00375"></a><a class="code" href="nav_8c.html#a069e6b8f68b2e117cbbe03f29e30a2e3">00375</a> <span class="keywordtype">void</span> <a class="code" href="navigation_8c.html#a069e6b8f68b2e117cbbe03f29e30a2e3">nav_home</a>(<span class="keywordtype">void</span>) {
@@ -728,7 +728,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="nav_8c.html">nav.c</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 27 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Mar 28 2012 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
