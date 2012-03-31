@@ -1,6 +1,5 @@
 var ahrs__int__cmpl__quat_8c =
 [
-    [ "INT32_QUAT_INTEGRATE_FI", "ahrs__int__cmpl__quat_8c.html#ad448a76f8cfc378e1914e23c12a47af8", null ],
     [ "__attribute__", "ahrs__int__cmpl__quat_8c.html#aea7ccb1f68c35c1ace876675a6c406d7", null ],
     [ "ahrs_align", "ahrs__int__cmpl__quat_8c.html#a81e17b09f47068c02c345da1523f589b", null ],
     [ "ahrs_init", "ahrs__int__cmpl__quat_8c.html#aa3721663c9df7c7af5613486a3566afb", null ],
