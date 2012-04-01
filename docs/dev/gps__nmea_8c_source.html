@@ -285,7 +285,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00205"></a>00205   <span class="comment">// get UTC time [hhmmss.sss]</span>
 <a name="l00206"></a>00206   <span class="comment">// ignored GpsInfo.PosLLA.TimeOfFix.f = strtod(&amp;packet[i], &amp;endptr);</span>
 <a name="l00207"></a>00207   <span class="keywordtype">double</span> time = strtod(&amp;<a class="code" href="gps__nmea_8c.html#a1c5d1eddb60d3aa0ef96bed0e0bdc169" title="file gps_nmea.c brief Parser for the NMEA protocol">gps_nmea</a>.<a class="code" href="structGpsNmea.html#aecae9343d4c7cd5ab15441a233a075de" title="buffer for storing one nmea-line">msg_buf</a>[i],&amp;endptr);
-<a name="l00208"></a>00208   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="time of week in ms">tow</a> = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)((time+1)*1000);
+<a name="l00208"></a>00208   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="GPS time of week in ms.">tow</a> = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)((time+1)*1000);
 <a name="l00209"></a>00209 
 <a name="l00210"></a>00210   <span class="comment">//AD TODO: strtod itow</span>
 <a name="l00211"></a>00211   <span class="keywordflow">while</span>(<a class="code" href="gps__nmea_8c.html#a1c5d1eddb60d3aa0ef96bed0e0bdc169" title="file gps_nmea.c brief Parser for the NMEA protocol">gps_nmea</a>.<a class="code" href="structGpsNmea.html#aecae9343d4c7cd5ab15441a233a075de" title="buffer for storing one nmea-line">msg_buf</a>[i++] != <span class="charliteral">&#39;,&#39;</span>) {              <span class="comment">// next field: latitude</span>
@@ -345,7 +345,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00265"></a>00265   }
 <a name="l00266"></a>00266 
 <a name="l00267"></a>00267   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a298552f8926fd925f8c94bbeeca1dc5c" title="position in LLA (lat,lon: rad*1e7; alt: mm over ellipsoid)">lla_pos</a>.<a class="code" href="structLlaCoor__i.html#ad6a02c197a16ad76cf794e6e4935f5c9" title="in radians*1e7">lon</a> = lla_f.<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a> * 1e7; <span class="comment">// convert to fixed-point</span>
-<a name="l00268"></a>00268   <a class="code" href="gps__nmea_8h.html#ae9073dcac41338b742f6168a9c506679">NMEA_PRINT</a>(<span class="stringliteral">&quot;p_GPGGA() - lon=%d gps_lon=%i time=%u\n\r&quot;</span>, (lon*1000), lla_f.<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a>, <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="time of week in ms">tow</a>);
+<a name="l00268"></a>00268   <a class="code" href="gps__nmea_8h.html#ae9073dcac41338b742f6168a9c506679">NMEA_PRINT</a>(<span class="stringliteral">&quot;p_GPGGA() - lon=%d gps_lon=%i time=%u\n\r&quot;</span>, (lon*1000), lla_f.<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a>, <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="GPS time of week in ms.">tow</a>);
 <a name="l00269"></a>00269 
 <a name="l00270"></a>00270   <span class="comment">/* convert to utm */</span>
 <a name="l00271"></a>00271   <span class="keyword">struct </span><a class="code" href="structUtmCoor__f.html" title="position in UTM coordinates Units: meters">UtmCoor_f</a> utm_f;
@@ -494,7 +494,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="gps__nmea_8c.html">gps_nmea.c</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 31 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Apr 1 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

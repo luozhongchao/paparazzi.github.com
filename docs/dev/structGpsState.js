@@ -1,5 +1,6 @@
 var structGpsState =
 [
+    [ "cacc", "structGpsState.html#a2d6027f58f74a82bd49944931a2a2beb", null ],
     [ "course", "structGpsState.html#a3665e85487519aef462c0c44cb8e3b40", null ],
     [ "ecef_pos", "structGpsState.html#a4b4e800eef9609fd474c0c92fd4836ff", null ],
     [ "ecef_vel", "structGpsState.html#a61d8a6f16de4a00066cb7026aff117da", null ],

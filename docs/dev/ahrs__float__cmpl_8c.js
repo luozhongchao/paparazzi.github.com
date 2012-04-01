@@ -4,6 +4,7 @@ var ahrs__float__cmpl_8c =
     [ "ahrs_align", "ahrs__float__cmpl_8c.html#a81e17b09f47068c02c345da1523f589b", null ],
     [ "ahrs_init", "ahrs__float__cmpl_8c.html#aa3721663c9df7c7af5613486a3566afb", null ],
     [ "ahrs_propagate", "ahrs__float__cmpl_8c.html#af8f4df7ae38ca5b239eac30e7d259e46", null ],
+    [ "ahrs_realign_heading", "ahrs__float__cmpl_8c.html#a542422de172f1f25b7987850825cb587", null ],
     [ "ahrs_update_accel", "ahrs__float__cmpl_8c.html#a8bf83860498b05e7e94484cdcbcb1b7a", null ],
     [ "ahrs_update_gps", "ahrs__float__cmpl_8c.html#a0156f6669675c216bbcb413ea1879960", null ],
     [ "ahrs_update_heading", "ahrs__float__cmpl_8c.html#a2e1662dfa78e68c773e6d60e0a46cea2", null ],

@@ -111,7 +111,7 @@ var searchData=
   ['imumagevent',['ImuMagEvent',['../imu__analog_8h.html#a62850cb40d836d423b8e389ab9c9bc26',1,'ImuMagEvent():&#160;imu_analog.h'],['../imu__aspirin_8h.html#a62850cb40d836d423b8e389ab9c9bc26',1,'ImuMagEvent():&#160;imu_aspirin.h'],['../imu__b2_8h.html#a62850cb40d836d423b8e389ab9c9bc26',1,'ImuMagEvent():&#160;imu_b2.h'],['../imu__crista_8h.html#a62850cb40d836d423b8e389ab9c9bc26',1,'ImuMagEvent():&#160;imu_crista.h']]],
   ['imuscaleaccel',['ImuScaleAccel',['../imu__analog_8h.html#ae002e45eebcd5249e4e58fabfe10c0f7',1,'ImuScaleAccel():&#160;imu_analog.h'],['../imu_8h.html#ae002e45eebcd5249e4e58fabfe10c0f7',1,'ImuScaleAccel():&#160;imu.h']]],
   ['imuscalegyro',['ImuScaleGyro',['../imu_8h.html#a9f53be53c139a637ce9c2173bcac9e00',1,'imu.h']]],
-  ['imuscalemag',['ImuScaleMag',['../imu_8h.html#a50349115276c4d6392b1a83c042d0910',1,'imu.h']]],
+  ['imuscalemag',['ImuScaleMag',['../imu__b2_8h.html#a50349115276c4d6392b1a83c042d0910',1,'ImuScaleMag():&#160;imu_b2.h'],['../imu_8h.html#a50349115276c4d6392b1a83c042d0910',1,'ImuScaleMag():&#160;imu.h']]],
   ['imusetssp16bits',['ImuSetSSP16bits',['../lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a80aaa8f1e7d4db7b13c347ca3de7e6e7',1,'imu_b2_arch.c']]],
   ['imusetssp8bits',['ImuSetSSP8bits',['../lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a8dc2a89ca3bc5a054f21e76c54d0ade1',1,'imu_b2_arch.c']]],
   ['infrared_5fi2c_5fsetconfword',['infrared_i2c_SetConfWord',['../subsystems_2sensors_2infrared__i2c_8h.html#a26af96a2c6479f74b514bcfc12612104',1,'infrared_i2c.h']]],
