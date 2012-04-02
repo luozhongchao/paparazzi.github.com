@@ -371,7 +371,6 @@ var searchData=
   ['sto',['STO',['../LPC21xx_8h.html#ac8ab1f93e383f229ff0cdcd3f4053e7c',1,'LPC21xx.h']]],
   ['strobe_5flight_5fmode_5fdefault',['STROBE_LIGHT_MODE_DEFAULT',['../light_8c.html#a7b7eb7f40d7931b786762fd4a1fbcb04',1,'light.c']]],
   ['stx',['STX',['../pprz__transport_8h.html#aacd744a917e61146ec8b7175b4761683',1,'pprz_transport.h']]],
-  ['supervision_5fcmd_5fscale',['SUPERVISION_CMD_SCALE',['../supervision_8c.html#a8436cdb1501380cd29b4bcffe82f44e9',1,'supervision.c']]],
   ['supervision_5fmax_5fmotor',['SUPERVISION_MAX_MOTOR',['../rotorcraft_2guidance_2guidance__v_8h.html#ad445d507be19a3c03de25319fc21ed6c',1,'guidance_v.h']]],
   ['supervision_5fmin_5fmotor',['SUPERVISION_MIN_MOTOR',['../rotorcraft_2guidance_2guidance__v_8h.html#a5ef89032e3bd23631900dc2622012a11',1,'guidance_v.h']]],
   ['supervision_5fmin_5fmotor_5fstartup',['SUPERVISION_MIN_MOTOR_STARTUP',['../supervision_8c.html#a3d9b1769174934b10c59ba2db19b102d',1,'supervision.c']]],

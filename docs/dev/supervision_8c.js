@@ -2,7 +2,6 @@ var supervision_8c =
 [
     [ "INT32_MAX", "supervision_8c.html#a181807730d4a375f848ba139813ce04f", null ],
     [ "INT32_MIN", "supervision_8c.html#a688eb21a22db27c2b2bd5836943cdcbe", null ],
-    [ "SUPERVISION_CMD_SCALE", "supervision_8c.html#a8436cdb1501380cd29b4bcffe82f44e9", null ],
     [ "SUPERVISION_MIN_MOTOR_STARTUP", "supervision_8c.html#a3d9b1769174934b10c59ba2db19b102d", null ],
     [ "SUPERVISION_STOP_MOTOR", "supervision_8c.html#ab23c45e27b26bf52a0453c51d11b05f8", null ],
     [ "__attribute__", "supervision_8c.html#aea7ccb1f68c35c1ace876675a6c406d7", null ],
