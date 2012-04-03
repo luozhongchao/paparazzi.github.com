@@ -1,6 +1,5 @@
 var ahrs__float__cmpl_8c =
 [
-    [ "AHRS_ALIGN_QUAT", "ahrs__float__cmpl_8c.html#aa3aec47cd67806056c215b45fbf5f452", null ],
     [ "ahrs_align", "ahrs__float__cmpl_8c.html#a81e17b09f47068c02c345da1523f589b", null ],
     [ "ahrs_init", "ahrs__float__cmpl_8c.html#aa3721663c9df7c7af5613486a3566afb", null ],
     [ "ahrs_propagate", "ahrs__float__cmpl_8c.html#af8f4df7ae38ca5b239eac30e7d259e46", null ],

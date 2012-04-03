@@ -63,7 +63,7 @@ var searchData=
   ['have_5fvelned',['have_velned',['../structGpsUbx.html#aef27cd7016751d0cdd3dd2c945f57a8b',1,'GpsUbx']]],
   ['hb_5f1_2e1_2eh',['hb_1.1.h',['../hb__1_81_8h.html',1,'']]],
   ['head',['head',['../structfifo__t.html#ae93028e986799fceacecbd153729f855',1,'fifo_t::head()'],['../structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3',1,'adc_buf::head()']]],
-  ['heading_5finitialized',['heading_initialized',['../structAhrsFloatCmplRmat.html#ae2e73afc1f9f9e48e12a5fae107eee85',1,'AhrsFloatCmplRmat']]],
+  ['heading_5faligned',['heading_aligned',['../structAhrsFloatCmplRmat.html#ab8758f1d6850cdfa63ee0bccda1a1f6d',1,'AhrsFloatCmplRmat::heading_aligned()'],['../structAhrsIntCmpl.html#a2f27b41c380c54597eca80e5f61d4cd1',1,'AhrsIntCmpl::heading_aligned()']]],
   ['heading_5fpositive',['heading_positive',['../point_8c.html#ae57daa641ffe2a2ce5ea87d870a2573f',1,'point.c']]],
   ['height',['height',['../structVi__command.html#a333af16ed039a878ab7199851ea64a7b',1,'Vi_command::height()'],['../navigation_8h.html#af637c15f691fc23f50337eb194758ec7',1,'Height():&#160;navigation.h'],['../common__nav_8h.html#af637c15f691fc23f50337eb194758ec7',1,'Height():&#160;common_nav.h']]],
   ['hf_5ffloat_2ec',['hf_float.c',['../hf__float_8c.html',1,'']]],

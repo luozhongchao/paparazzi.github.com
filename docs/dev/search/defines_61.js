@@ -170,7 +170,6 @@ var searchData=
   ['adxl_5fconf_5funinit',['ADXL_CONF_UNINIT',['../adxl345_8i2c_8c.html#a48adbc1d18a225712ed1184e194812bc',1,'adxl345.i2c.c']]],
   ['afmr',['AFMR',['../LPC21xx_8h.html#adef024a8d06f520ceaddca4cc9acad61',1,'LPC21xx.h']]],
   ['ahb_5fclk',['AHB_CLK',['../beth_8h.html#add4f03b6c5c9bcabeba314491a310346',1,'AHB_CLK():&#160;beth.h'],['../lisa__l__1_80_8h.html#add4f03b6c5c9bcabeba314491a310346',1,'AHB_CLK():&#160;lisa_l_1.0.h'],['../lisa__m__1_80_8h.html#add4f03b6c5c9bcabeba314491a310346',1,'AHB_CLK():&#160;lisa_m_1.0.h'],['../olimex__stm32-h103_8h.html#add4f03b6c5c9bcabeba314491a310346',1,'AHB_CLK():&#160;olimex_stm32-h103.h']]],
-  ['ahrs_5falign_5fquat',['AHRS_ALIGN_QUAT',['../ahrs__float__cmpl_8c.html#aa3aec47cd67806056c215b45fbf5f452',1,'ahrs_float_cmpl.c']]],
   ['ahrs_5faligner_5flocked',['AHRS_ALIGNER_LOCKED',['../ahrs__aligner_8h.html#a22166c9888df401075bb429114008d9f',1,'ahrs_aligner.h']]],
   ['ahrs_5faligner_5frunning',['AHRS_ALIGNER_RUNNING',['../ahrs__aligner_8h.html#a5e5ca1d6a6419d2ea314665f72ec220c',1,'ahrs_aligner.h']]],
   ['ahrs_5faligner_5funinit',['AHRS_ALIGNER_UNINIT',['../ahrs__aligner_8h.html#ad0a3d0cd57e4494389e5de6be6c0ec41',1,'ahrs_aligner.h']]],
