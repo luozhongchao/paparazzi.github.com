@@ -163,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00059"></a>00059 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="navigation_8c.html#a4e73a18879f679277a72ef00250e359e">nav_radius</a>;
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="sim__ap_8c.html#af752145e6cd167ae0146e1a957f2e9e3">vertical_mode</a>;
-<a name="l00062"></a>00062 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="navigation_8c.html#a6f265609aee15b9f0c1861cba83f6ef7">nav_throttle</a>;
+<a name="l00062"></a>00062 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="navigation_8c.html#a6f265609aee15b9f0c1861cba83f6ef7" title="direct throttle from 0:MAX_PPRZ, used in VERTICAL_MODE_MANUAL">nav_throttle</a>;  
 <a name="l00063"></a>00063 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="navigation_8c.html#a5fd9ad0ac5c9b2ce0a91182a65628912">nav_climb</a>, <a class="code" href="navigation_8c.html#af0e2e459664ed595f936a2a9d5852286">nav_altitude</a>, <a class="code" href="navigation_8c.html#a67ec89768eb885ae27ba8002e2fa386a">nav_flight_altitude</a>;
 <a name="l00064"></a>00064 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="navigation_8c.html#a1612ea0e1474e49b800cb3f497096523">flight_altitude</a>;
 <a name="l00065"></a><a class="code" href="navigation_8h.html#acd4ac1c69b7ba0c736108439491f5647">00065</a> <span class="preprocessor">#define VERTICAL_MODE_MANUAL      0</span>
@@ -249,8 +249,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00154"></a>00154 <span class="preprocessor">}</span>
 <a name="l00155"></a>00155 <span class="preprocessor"></span>
 <a name="l00157"></a><a class="code" href="navigation_8h.html#a6f740d9f9313ba73fa7dcd9dd53c4440">00157</a> <span class="preprocessor">#define NavVerticalThrottleMode(_throttle) { \</span>
-<a name="l00158"></a>00158 <span class="preprocessor">  vertical_mode = VERTICAL_MODE_MANUAL; \</span>
-<a name="l00159"></a>00159 <span class="preprocessor">  nav_throttle = (200 * ((uint32_t)_throttle) / 9600); \</span>
+<a name="l00158"></a>00158 <span class="preprocessor">  vertical_mode = VERTICAL_MODE_MANUAL;      \</span>
+<a name="l00159"></a>00159 <span class="preprocessor">  nav_throttle = _throttle;                  \</span>
 <a name="l00160"></a>00160 <span class="preprocessor">}</span>
 <a name="l00161"></a>00161 <span class="preprocessor"></span>
 <a name="l00162"></a><a class="code" href="navigation_8h.html#ac90e1aa0615ba8f354b17674af4b12c8">00162</a> <span class="preprocessor">#define NavHeading(_course) {}</span>
@@ -305,7 +305,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="navigation_8h.html">navigation.h</a>      </li>
 
-    <li class="footer">Generated on Tue Apr 3 2012 04:00:04 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Apr 4 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

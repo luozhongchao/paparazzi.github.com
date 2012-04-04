@@ -374,175 +374,176 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00280"></a>00280   <span class="keywordflow">if</span> (AGR_BLEND_START &gt; AGR_BLEND_END &amp;&amp; AGR_BLEND_END &gt; 0) { <span class="comment">/* prevent divide by zero, reversed or negative values */</span>
 <a name="l00281"></a>00281     <span class="keywordflow">if</span> (<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a5bd299dd0de5503b8d89214c741fcfc3">v_ctl_auto_throttle_submode</a> == <a class="code" href="fixedwing_2guidance_2guidance__v_8h.html#a95d5459920e030436a220afb89fd2c00">V_CTL_AUTO_THROTTLE_AGRESSIVE</a> || <a class="code" href="fixedwing_2guidance_2guidance__v_8h.html#afe3710a1edbd048b18de785146ce29a2">V_CTL_AUTO_THROTTLE_BLENDED</a>) {
 <a name="l00282"></a>00282       BoundAbs(cmd, <a class="code" href="stabilization__adaptive_8c.html#a36b4caa0eb30ecfb44d54f83ad1ada2a">h_ctl_roll_max_setpoint</a>); <span class="comment">/* bound cmd before NAV_RATIO and again after */</span>
-<a name="l00283"></a>00283       <span class="keywordflow">if</span> (<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#adddca7473e9b7d77cd07d78d5bc70439" title="in meters, (setpoint - alt) -&gt; positive = too low">v_ctl_altitude_error</a> &lt; 0) {
-<a name="l00284"></a>00284         nav_ratio = AGR_CLIMB_NAV_RATIO + (1 - AGR_CLIMB_NAV_RATIO) * (1 - (fabs(<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#adddca7473e9b7d77cd07d78d5bc70439" title="in meters, (setpoint - alt) -&gt; positive = too low">v_ctl_altitude_error</a>) - AGR_BLEND_END) / (AGR_BLEND_START - AGR_BLEND_END));
-<a name="l00285"></a>00285         Bound (nav_ratio, AGR_CLIMB_NAV_RATIO, 1);
-<a name="l00286"></a>00286       } <span class="keywordflow">else</span> {
-<a name="l00287"></a>00287         nav_ratio = AGR_DESCENT_NAV_RATIO + (1 - AGR_DESCENT_NAV_RATIO) * (1 - (fabs(<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#adddca7473e9b7d77cd07d78d5bc70439" title="in meters, (setpoint - alt) -&gt; positive = too low">v_ctl_altitude_error</a>) - AGR_BLEND_END) / (AGR_BLEND_START - AGR_BLEND_END));
-<a name="l00288"></a>00288         Bound (nav_ratio, AGR_DESCENT_NAV_RATIO, 1);
-<a name="l00289"></a>00289       }
-<a name="l00290"></a>00290       cmd *= nav_ratio;
-<a name="l00291"></a>00291     }
-<a name="l00292"></a>00292   }
-<a name="l00293"></a>00293 <span class="preprocessor">#endif</span>
-<a name="l00294"></a>00294 <span class="preprocessor"></span>
-<a name="l00295"></a>00295   <span class="keywordtype">float</span> roll_setpoint = cmd + <a class="code" href="stabilization__adaptive_8c.html#adc46a5095f728cd7248e2a771f8e4080">h_ctl_course_pre_bank_correction</a> * <a class="code" href="stabilization__adaptive_8c.html#ae006d6f28cab0202b1b93a65b67c2df8">h_ctl_course_pre_bank</a>;
-<a name="l00296"></a>00296 
-<a name="l00297"></a>00297 <span class="preprocessor">#ifdef H_CTL_ROLL_SLEW</span>
-<a name="l00298"></a>00298 <span class="preprocessor"></span>  <span class="keywordtype">float</span> diff_roll = roll_setpoint - <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a>;
-<a name="l00299"></a>00299   BoundAbs(diff_roll, <a class="code" href="stabilization__adaptive_8c.html#ad57dea257e01925d323ffc0b03d8076d">h_ctl_roll_slew</a>);
-<a name="l00300"></a>00300   h_ctl_roll_setpoint += diff_roll;
-<a name="l00301"></a>00301 <span class="preprocessor">#else</span>
-<a name="l00302"></a>00302 <span class="preprocessor"></span>  h_ctl_roll_setpoint = roll_setpoint;
-<a name="l00303"></a>00303 <span class="preprocessor">#endif</span>
-<a name="l00304"></a>00304 <span class="preprocessor"></span>
-<a name="l00305"></a>00305   BoundAbs(h_ctl_roll_setpoint, <a class="code" href="stabilization__adaptive_8c.html#a36b4caa0eb30ecfb44d54f83ad1ada2a">h_ctl_roll_max_setpoint</a>);
-<a name="l00306"></a>00306 }
-<a name="l00307"></a>00307 
-<a name="l00308"></a><a class="code" href="stabilization__attitude_8c.html#a86f0d47644538be1345aab19c7dc3de4">00308</a> <span class="keywordtype">void</span> <a class="code" href="stabilization__adaptive_8c.html#a86f0d47644538be1345aab19c7dc3de4">h_ctl_attitude_loop</a> ( <span class="keywordtype">void</span> ) {
-<a name="l00309"></a>00309   <span class="keywordflow">if</span> (!<a class="code" href="stabilization__adaptive_8c.html#a87b4ff48aa369dd1510ccdd12ab2174d">h_ctl_disabled</a>) {
-<a name="l00310"></a>00310     <a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80" title="Computes h_ctl_aileron_setpoint from h_ctl_roll_setpoint.">h_ctl_roll_loop</a>();
-<a name="l00311"></a>00311     <a class="code" href="stabilization__attitude_8c.html#a10c9851e192217d5a4e7b6dc98e16c2d">h_ctl_pitch_loop</a>();
-<a name="l00312"></a>00312   }
-<a name="l00313"></a>00313 }
-<a name="l00314"></a>00314 
+<a name="l00283"></a>00283       <span class="comment">/* altitude: z-up is positive -&gt; positive error -&gt; too low */</span>
+<a name="l00284"></a>00284       <span class="keywordflow">if</span> (<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#adddca7473e9b7d77cd07d78d5bc70439" title="in meters, (setpoint - alt) -&gt; positive = too low">v_ctl_altitude_error</a> &gt; 0) {
+<a name="l00285"></a>00285         nav_ratio = AGR_CLIMB_NAV_RATIO + (1 - AGR_CLIMB_NAV_RATIO) * (1 - (fabs(<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#adddca7473e9b7d77cd07d78d5bc70439" title="in meters, (setpoint - alt) -&gt; positive = too low">v_ctl_altitude_error</a>) - AGR_BLEND_END) / (AGR_BLEND_START - AGR_BLEND_END));
+<a name="l00286"></a>00286         Bound (nav_ratio, AGR_CLIMB_NAV_RATIO, 1);
+<a name="l00287"></a>00287       } <span class="keywordflow">else</span> {
+<a name="l00288"></a>00288         nav_ratio = AGR_DESCENT_NAV_RATIO + (1 - AGR_DESCENT_NAV_RATIO) * (1 - (fabs(<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#adddca7473e9b7d77cd07d78d5bc70439" title="in meters, (setpoint - alt) -&gt; positive = too low">v_ctl_altitude_error</a>) - AGR_BLEND_END) / (AGR_BLEND_START - AGR_BLEND_END));
+<a name="l00289"></a>00289         Bound (nav_ratio, AGR_DESCENT_NAV_RATIO, 1);
+<a name="l00290"></a>00290       }
+<a name="l00291"></a>00291       cmd *= nav_ratio;
+<a name="l00292"></a>00292     }
+<a name="l00293"></a>00293   }
+<a name="l00294"></a>00294 <span class="preprocessor">#endif</span>
+<a name="l00295"></a>00295 <span class="preprocessor"></span>
+<a name="l00296"></a>00296   <span class="keywordtype">float</span> roll_setpoint = cmd + <a class="code" href="stabilization__adaptive_8c.html#adc46a5095f728cd7248e2a771f8e4080">h_ctl_course_pre_bank_correction</a> * <a class="code" href="stabilization__adaptive_8c.html#ae006d6f28cab0202b1b93a65b67c2df8">h_ctl_course_pre_bank</a>;
+<a name="l00297"></a>00297 
+<a name="l00298"></a>00298 <span class="preprocessor">#ifdef H_CTL_ROLL_SLEW</span>
+<a name="l00299"></a>00299 <span class="preprocessor"></span>  <span class="keywordtype">float</span> diff_roll = roll_setpoint - <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a>;
+<a name="l00300"></a>00300   BoundAbs(diff_roll, <a class="code" href="stabilization__adaptive_8c.html#ad57dea257e01925d323ffc0b03d8076d">h_ctl_roll_slew</a>);
+<a name="l00301"></a>00301   h_ctl_roll_setpoint += diff_roll;
+<a name="l00302"></a>00302 <span class="preprocessor">#else</span>
+<a name="l00303"></a>00303 <span class="preprocessor"></span>  h_ctl_roll_setpoint = roll_setpoint;
+<a name="l00304"></a>00304 <span class="preprocessor">#endif</span>
+<a name="l00305"></a>00305 <span class="preprocessor"></span>
+<a name="l00306"></a>00306   BoundAbs(h_ctl_roll_setpoint, <a class="code" href="stabilization__adaptive_8c.html#a36b4caa0eb30ecfb44d54f83ad1ada2a">h_ctl_roll_max_setpoint</a>);
+<a name="l00307"></a>00307 }
+<a name="l00308"></a>00308 
+<a name="l00309"></a><a class="code" href="stabilization__attitude_8c.html#a86f0d47644538be1345aab19c7dc3de4">00309</a> <span class="keywordtype">void</span> <a class="code" href="stabilization__adaptive_8c.html#a86f0d47644538be1345aab19c7dc3de4">h_ctl_attitude_loop</a> ( <span class="keywordtype">void</span> ) {
+<a name="l00310"></a>00310   <span class="keywordflow">if</span> (!<a class="code" href="stabilization__adaptive_8c.html#a87b4ff48aa369dd1510ccdd12ab2174d">h_ctl_disabled</a>) {
+<a name="l00311"></a>00311     <a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80" title="Computes h_ctl_aileron_setpoint from h_ctl_roll_setpoint.">h_ctl_roll_loop</a>();
+<a name="l00312"></a>00312     <a class="code" href="stabilization__attitude_8c.html#a10c9851e192217d5a4e7b6dc98e16c2d">h_ctl_pitch_loop</a>();
+<a name="l00313"></a>00313   }
+<a name="l00314"></a>00314 }
 <a name="l00315"></a>00315 
-<a name="l00316"></a>00316 <span class="preprocessor">#ifdef H_CTL_ROLL_ATTITUDE_GAIN</span>
-<a name="l00317"></a>00317 <span class="preprocessor"></span><span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80" title="Computes h_ctl_aileron_setpoint from h_ctl_roll_setpoint.">h_ctl_roll_loop</a>( <span class="keywordtype">void</span> ) {
-<a name="l00318"></a>00318   <span class="keywordtype">float</span> err = <a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98" title="roll angle in rad, + = right">estimator_phi</a> - <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a>;
-<a name="l00319"></a>00319 <span class="preprocessor">#ifdef SITL</span>
-<a name="l00320"></a>00320 <span class="preprocessor"></span>  <span class="keyword">static</span> <span class="keywordtype">float</span> last_err = 0;
-<a name="l00321"></a>00321   <a class="code" href="estimator_8c.html#a36dfb0e341bd202f5811da98fd59ded5">estimator_p</a> = (err - last_err)/(1/60.);
-<a name="l00322"></a>00322   last_err = err;
-<a name="l00323"></a>00323 <span class="preprocessor">#endif</span>
-<a name="l00324"></a>00324 <span class="preprocessor"></span>  <span class="keywordtype">float</span> cmd = <a class="code" href="stabilization__adaptive_8c.html#a92f6452c3b367e9ff2bc6180caee2ca3">h_ctl_roll_attitude_gain</a> * err
-<a name="l00325"></a>00325     + <a class="code" href="stabilization__adaptive_8c.html#a770980c94665fbd4d6970bff6cb9dff5">h_ctl_roll_rate_gain</a> * <a class="code" href="estimator_8c.html#a36dfb0e341bd202f5811da98fd59ded5">estimator_p</a>
-<a name="l00326"></a>00326     + <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a1ee0cbf7d1ed331f44539840507a7436">v_ctl_throttle_setpoint</a> * <a class="code" href="stabilization__adaptive_8c.html#aa3fa9d7cd60cb95044911fe763d3ffde">h_ctl_aileron_of_throttle</a>;
-<a name="l00327"></a>00327 
-<a name="l00328"></a>00328   <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a> = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(cmd);
-<a name="l00329"></a>00329 }
-<a name="l00330"></a>00330 
-<a name="l00331"></a>00331 <span class="preprocessor">#else // H_CTL_ROLL_ATTITUDE_GAIN</span>
-<a name="l00332"></a>00332 <span class="preprocessor"></span>
-<a name="l00334"></a><a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80">00334</a> <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80" title="Computes h_ctl_aileron_setpoint from h_ctl_roll_setpoint.">h_ctl_roll_loop</a>( <span class="keywordtype">void</span> ) {
-<a name="l00335"></a>00335   <span class="keywordtype">float</span> err = <a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98" title="roll angle in rad, + = right">estimator_phi</a> - <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a>;
-<a name="l00336"></a>00336   <span class="keywordtype">float</span> cmd = <a class="code" href="stabilization__adaptive_8c.html#a32ff0f8ef82c3d882051a3b504cb2f51">h_ctl_roll_pgain</a> * err
-<a name="l00337"></a>00337     + <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a1ee0cbf7d1ed331f44539840507a7436">v_ctl_throttle_setpoint</a> * <a class="code" href="stabilization__adaptive_8c.html#aa3fa9d7cd60cb95044911fe763d3ffde">h_ctl_aileron_of_throttle</a>;
-<a name="l00338"></a>00338   <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a> = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(cmd);
-<a name="l00339"></a>00339 
-<a name="l00340"></a>00340 <span class="preprocessor">#ifdef H_CTL_RATE_LOOP</span>
-<a name="l00341"></a>00341 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="stabilization__adaptive_8c.html#a411e22787d626834c693dcbf3ca62be2">h_ctl_auto1_rate</a>) {
-<a name="l00343"></a>00343     h_ctl_roll_rate_setpoint = h_ctl_roll_setpoint * 10.;
-<a name="l00344"></a>00344     h_ctl_roll_rate_loop();
-<a name="l00345"></a>00345   } <span class="keywordflow">else</span> {
-<a name="l00346"></a>00346     h_ctl_roll_rate_setpoint = h_ctl_roll_rate_setpoint_pgain * err;
-<a name="l00347"></a>00347     BoundAbs(h_ctl_roll_rate_setpoint, H_CTL_ROLL_RATE_MAX_SETPOINT);
-<a name="l00348"></a>00348 
-<a name="l00349"></a>00349     <span class="keywordtype">float</span> saved_aileron_setpoint = <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a>;
-<a name="l00350"></a>00350     h_ctl_roll_rate_loop();
-<a name="l00351"></a>00351     <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a> = Blend(<a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a>, saved_aileron_setpoint, h_ctl_roll_rate_mode) ;
-<a name="l00352"></a>00352   }
-<a name="l00353"></a>00353 <span class="preprocessor">#endif</span>
-<a name="l00354"></a>00354 <span class="preprocessor"></span>}
-<a name="l00355"></a>00355 
-<a name="l00356"></a>00356 <span class="preprocessor">#ifdef H_CTL_RATE_LOOP</span>
-<a name="l00357"></a>00357 <span class="preprocessor"></span>
-<a name="l00358"></a>00358 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> h_ctl_roll_rate_loop() {
-<a name="l00359"></a>00359   <span class="keywordtype">float</span> err = <a class="code" href="estimator_8c.html#a36dfb0e341bd202f5811da98fd59ded5">estimator_p</a> - h_ctl_roll_rate_setpoint;
-<a name="l00360"></a>00360 
-<a name="l00361"></a>00361   <span class="comment">/* I term calculation */</span>
-<a name="l00362"></a>00362   <span class="keyword">static</span> <span class="keywordtype">float</span> roll_rate_sum_err = 0.;
-<a name="l00363"></a>00363   <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> roll_rate_sum_idx = 0;
-<a name="l00364"></a>00364   <span class="keyword">static</span> <span class="keywordtype">float</span> roll_rate_sum_values[H_CTL_ROLL_RATE_SUM_NB_SAMPLES];
-<a name="l00365"></a>00365 
-<a name="l00366"></a>00366   roll_rate_sum_err -= roll_rate_sum_values[roll_rate_sum_idx];
-<a name="l00367"></a>00367   roll_rate_sum_values[roll_rate_sum_idx] = err;
-<a name="l00368"></a>00368   roll_rate_sum_err += err;
-<a name="l00369"></a>00369   roll_rate_sum_idx++;
-<a name="l00370"></a>00370   <span class="keywordflow">if</span> (roll_rate_sum_idx &gt;= H_CTL_ROLL_RATE_SUM_NB_SAMPLES) roll_rate_sum_idx = 0;
-<a name="l00371"></a>00371 
-<a name="l00372"></a>00372   <span class="comment">/* D term calculations */</span>
-<a name="l00373"></a>00373   <span class="keyword">static</span> <span class="keywordtype">float</span> last_err = 0;
-<a name="l00374"></a>00374   <span class="keywordtype">float</span> d_err = err - last_err;
-<a name="l00375"></a>00375   last_err = err;
-<a name="l00376"></a>00376 
-<a name="l00377"></a>00377   <span class="keywordtype">float</span> throttle_dep_pgain =
-<a name="l00378"></a>00378     Blend(h_ctl_hi_throttle_roll_rate_pgain, h_ctl_lo_throttle_roll_rate_pgain, <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a1ee0cbf7d1ed331f44539840507a7436">v_ctl_throttle_setpoint</a>/((<span class="keywordtype">float</span>)<a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>));
-<a name="l00379"></a>00379   <span class="keywordtype">float</span> cmd = throttle_dep_pgain * ( err + h_ctl_roll_rate_igain * roll_rate_sum_err / H_CTL_ROLL_RATE_SUM_NB_SAMPLES + h_ctl_roll_rate_dgain * d_err);
-<a name="l00380"></a>00380 
-<a name="l00381"></a>00381   <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a> = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(cmd);
-<a name="l00382"></a>00382 }
-<a name="l00383"></a>00383 <span class="preprocessor">#endif </span><span class="comment">/* H_CTL_RATE_LOOP */</span>
-<a name="l00384"></a>00384 
-<a name="l00385"></a>00385 <span class="preprocessor">#endif </span><span class="comment">/* !H_CTL_ROLL_ATTITUDE_GAIN */</span>
-<a name="l00386"></a>00386 
+<a name="l00316"></a>00316 
+<a name="l00317"></a>00317 <span class="preprocessor">#ifdef H_CTL_ROLL_ATTITUDE_GAIN</span>
+<a name="l00318"></a>00318 <span class="preprocessor"></span><span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80" title="Computes h_ctl_aileron_setpoint from h_ctl_roll_setpoint.">h_ctl_roll_loop</a>( <span class="keywordtype">void</span> ) {
+<a name="l00319"></a>00319   <span class="keywordtype">float</span> err = <a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98" title="roll angle in rad, + = right">estimator_phi</a> - <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a>;
+<a name="l00320"></a>00320 <span class="preprocessor">#ifdef SITL</span>
+<a name="l00321"></a>00321 <span class="preprocessor"></span>  <span class="keyword">static</span> <span class="keywordtype">float</span> last_err = 0;
+<a name="l00322"></a>00322   <a class="code" href="estimator_8c.html#a36dfb0e341bd202f5811da98fd59ded5">estimator_p</a> = (err - last_err)/(1/60.);
+<a name="l00323"></a>00323   last_err = err;
+<a name="l00324"></a>00324 <span class="preprocessor">#endif</span>
+<a name="l00325"></a>00325 <span class="preprocessor"></span>  <span class="keywordtype">float</span> cmd = <a class="code" href="stabilization__adaptive_8c.html#a92f6452c3b367e9ff2bc6180caee2ca3">h_ctl_roll_attitude_gain</a> * err
+<a name="l00326"></a>00326     + <a class="code" href="stabilization__adaptive_8c.html#a770980c94665fbd4d6970bff6cb9dff5">h_ctl_roll_rate_gain</a> * <a class="code" href="estimator_8c.html#a36dfb0e341bd202f5811da98fd59ded5">estimator_p</a>
+<a name="l00327"></a>00327     + <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a1ee0cbf7d1ed331f44539840507a7436">v_ctl_throttle_setpoint</a> * <a class="code" href="stabilization__adaptive_8c.html#aa3fa9d7cd60cb95044911fe763d3ffde">h_ctl_aileron_of_throttle</a>;
+<a name="l00328"></a>00328 
+<a name="l00329"></a>00329   <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a> = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(cmd);
+<a name="l00330"></a>00330 }
+<a name="l00331"></a>00331 
+<a name="l00332"></a>00332 <span class="preprocessor">#else // H_CTL_ROLL_ATTITUDE_GAIN</span>
+<a name="l00333"></a>00333 <span class="preprocessor"></span>
+<a name="l00335"></a><a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80">00335</a> <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80" title="Computes h_ctl_aileron_setpoint from h_ctl_roll_setpoint.">h_ctl_roll_loop</a>( <span class="keywordtype">void</span> ) {
+<a name="l00336"></a>00336   <span class="keywordtype">float</span> err = <a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98" title="roll angle in rad, + = right">estimator_phi</a> - <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a>;
+<a name="l00337"></a>00337   <span class="keywordtype">float</span> cmd = <a class="code" href="stabilization__adaptive_8c.html#a32ff0f8ef82c3d882051a3b504cb2f51">h_ctl_roll_pgain</a> * err
+<a name="l00338"></a>00338     + <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a1ee0cbf7d1ed331f44539840507a7436">v_ctl_throttle_setpoint</a> * <a class="code" href="stabilization__adaptive_8c.html#aa3fa9d7cd60cb95044911fe763d3ffde">h_ctl_aileron_of_throttle</a>;
+<a name="l00339"></a>00339   <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a> = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(cmd);
+<a name="l00340"></a>00340 
+<a name="l00341"></a>00341 <span class="preprocessor">#ifdef H_CTL_RATE_LOOP</span>
+<a name="l00342"></a>00342 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="stabilization__adaptive_8c.html#a411e22787d626834c693dcbf3ca62be2">h_ctl_auto1_rate</a>) {
+<a name="l00344"></a>00344     h_ctl_roll_rate_setpoint = h_ctl_roll_setpoint * 10.;
+<a name="l00345"></a>00345     h_ctl_roll_rate_loop();
+<a name="l00346"></a>00346   } <span class="keywordflow">else</span> {
+<a name="l00347"></a>00347     h_ctl_roll_rate_setpoint = h_ctl_roll_rate_setpoint_pgain * err;
+<a name="l00348"></a>00348     BoundAbs(h_ctl_roll_rate_setpoint, H_CTL_ROLL_RATE_MAX_SETPOINT);
+<a name="l00349"></a>00349 
+<a name="l00350"></a>00350     <span class="keywordtype">float</span> saved_aileron_setpoint = <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a>;
+<a name="l00351"></a>00351     h_ctl_roll_rate_loop();
+<a name="l00352"></a>00352     <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a> = Blend(<a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a>, saved_aileron_setpoint, h_ctl_roll_rate_mode) ;
+<a name="l00353"></a>00353   }
+<a name="l00354"></a>00354 <span class="preprocessor">#endif</span>
+<a name="l00355"></a>00355 <span class="preprocessor"></span>}
+<a name="l00356"></a>00356 
+<a name="l00357"></a>00357 <span class="preprocessor">#ifdef H_CTL_RATE_LOOP</span>
+<a name="l00358"></a>00358 <span class="preprocessor"></span>
+<a name="l00359"></a>00359 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> h_ctl_roll_rate_loop() {
+<a name="l00360"></a>00360   <span class="keywordtype">float</span> err = <a class="code" href="estimator_8c.html#a36dfb0e341bd202f5811da98fd59ded5">estimator_p</a> - h_ctl_roll_rate_setpoint;
+<a name="l00361"></a>00361 
+<a name="l00362"></a>00362   <span class="comment">/* I term calculation */</span>
+<a name="l00363"></a>00363   <span class="keyword">static</span> <span class="keywordtype">float</span> roll_rate_sum_err = 0.;
+<a name="l00364"></a>00364   <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> roll_rate_sum_idx = 0;
+<a name="l00365"></a>00365   <span class="keyword">static</span> <span class="keywordtype">float</span> roll_rate_sum_values[H_CTL_ROLL_RATE_SUM_NB_SAMPLES];
+<a name="l00366"></a>00366 
+<a name="l00367"></a>00367   roll_rate_sum_err -= roll_rate_sum_values[roll_rate_sum_idx];
+<a name="l00368"></a>00368   roll_rate_sum_values[roll_rate_sum_idx] = err;
+<a name="l00369"></a>00369   roll_rate_sum_err += err;
+<a name="l00370"></a>00370   roll_rate_sum_idx++;
+<a name="l00371"></a>00371   <span class="keywordflow">if</span> (roll_rate_sum_idx &gt;= H_CTL_ROLL_RATE_SUM_NB_SAMPLES) roll_rate_sum_idx = 0;
+<a name="l00372"></a>00372 
+<a name="l00373"></a>00373   <span class="comment">/* D term calculations */</span>
+<a name="l00374"></a>00374   <span class="keyword">static</span> <span class="keywordtype">float</span> last_err = 0;
+<a name="l00375"></a>00375   <span class="keywordtype">float</span> d_err = err - last_err;
+<a name="l00376"></a>00376   last_err = err;
+<a name="l00377"></a>00377 
+<a name="l00378"></a>00378   <span class="keywordtype">float</span> throttle_dep_pgain =
+<a name="l00379"></a>00379     Blend(h_ctl_hi_throttle_roll_rate_pgain, h_ctl_lo_throttle_roll_rate_pgain, <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a1ee0cbf7d1ed331f44539840507a7436">v_ctl_throttle_setpoint</a>/((<span class="keywordtype">float</span>)<a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>));
+<a name="l00380"></a>00380   <span class="keywordtype">float</span> cmd = throttle_dep_pgain * ( err + h_ctl_roll_rate_igain * roll_rate_sum_err / H_CTL_ROLL_RATE_SUM_NB_SAMPLES + h_ctl_roll_rate_dgain * d_err);
+<a name="l00381"></a>00381 
+<a name="l00382"></a>00382   <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a> = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(cmd);
+<a name="l00383"></a>00383 }
+<a name="l00384"></a>00384 <span class="preprocessor">#endif </span><span class="comment">/* H_CTL_RATE_LOOP */</span>
+<a name="l00385"></a>00385 
+<a name="l00386"></a>00386 <span class="preprocessor">#endif </span><span class="comment">/* !H_CTL_ROLL_ATTITUDE_GAIN */</span>
 <a name="l00387"></a>00387 
 <a name="l00388"></a>00388 
 <a name="l00389"></a>00389 
 <a name="l00390"></a>00390 
 <a name="l00391"></a>00391 
-<a name="l00392"></a>00392 <span class="preprocessor">#ifdef LOITER_TRIM</span>
-<a name="l00393"></a>00393 <span class="preprocessor"></span>
-<a name="l00394"></a>00394 <span class="keywordtype">float</span> v_ctl_auto_throttle_loiter_trim = V_CTL_AUTO_THROTTLE_LOITER_TRIM;
-<a name="l00395"></a>00395 <span class="keywordtype">float</span> v_ctl_auto_throttle_dash_trim = V_CTL_AUTO_THROTTLE_DASH_TRIM;
-<a name="l00396"></a>00396 
-<a name="l00397"></a>00397 <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">float</span> loiter(<span class="keywordtype">void</span>) {
-<a name="l00398"></a>00398   <span class="keyword">static</span> <span class="keywordtype">float</span> last_elevator_trim;
-<a name="l00399"></a>00399   <span class="keywordtype">float</span> elevator_trim;
-<a name="l00400"></a>00400 
-<a name="l00401"></a>00401   <span class="keywordtype">float</span> throttle_dif = <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ac2157f339c7b2f374ece7b5448fe7816">v_ctl_auto_throttle_cruise_throttle</a> - <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a96b28ed4a6bbadedbf6ebd67c3a88613">v_ctl_auto_throttle_nominal_cruise_throttle</a>;
-<a name="l00402"></a>00402   <span class="keywordflow">if</span> (throttle_dif &gt; 0) {
-<a name="l00403"></a>00403     <span class="keywordtype">float</span> max_dif = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(V_CTL_AUTO_THROTTLE_MAX_CRUISE_THROTTLE - v_ctl_auto_throttle_nominal_cruise_throttle, 0.1);
-<a name="l00404"></a>00404     elevator_trim = throttle_dif / max_dif * v_ctl_auto_throttle_dash_trim;
-<a name="l00405"></a>00405   } <span class="keywordflow">else</span> {
-<a name="l00406"></a>00406     <span class="keywordtype">float</span> max_dif = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(v_ctl_auto_throttle_nominal_cruise_throttle - V_CTL_AUTO_THROTTLE_MIN_CRUISE_THROTTLE, 0.1);
-<a name="l00407"></a>00407     elevator_trim = - throttle_dif / max_dif * v_ctl_auto_throttle_loiter_trim;
-<a name="l00408"></a>00408   }
-<a name="l00409"></a>00409 
-<a name="l00410"></a>00410   <span class="keywordtype">float</span> max_change = (v_ctl_auto_throttle_loiter_trim - v_ctl_auto_throttle_dash_trim) / 80.;
-<a name="l00411"></a>00411   Bound(elevator_trim, last_elevator_trim - max_change, last_elevator_trim + max_change);
-<a name="l00412"></a>00412 
-<a name="l00413"></a>00413   last_elevator_trim = elevator_trim;
-<a name="l00414"></a>00414   <span class="keywordflow">return</span> elevator_trim;
-<a name="l00415"></a>00415 }
-<a name="l00416"></a>00416 <span class="preprocessor">#endif</span>
-<a name="l00417"></a>00417 <span class="preprocessor"></span>
-<a name="l00418"></a>00418 
-<a name="l00419"></a><a class="code" href="stabilization__attitude_8c.html#a10c9851e192217d5a4e7b6dc98e16c2d">00419</a> <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude_8c.html#a10c9851e192217d5a4e7b6dc98e16c2d">h_ctl_pitch_loop</a>( <span class="keywordtype">void</span> ) {
-<a name="l00420"></a>00420   <span class="keyword">static</span> <span class="keywordtype">float</span> last_err;
-<a name="l00421"></a>00421   <span class="comment">/* sanity check */</span>
-<a name="l00422"></a>00422   <span class="keywordflow">if</span> (<a class="code" href="stabilization__adaptive_8c.html#a39bfec9de0a58ce45667a691fbd44eee">h_ctl_elevator_of_roll</a> &lt;0.)
-<a name="l00423"></a>00423     <a class="code" href="stabilization__adaptive_8c.html#a39bfec9de0a58ce45667a691fbd44eee">h_ctl_elevator_of_roll</a> = 0.;
-<a name="l00424"></a>00424 
-<a name="l00425"></a>00425   <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a> =  <a class="code" href="stabilization__adaptive_8c.html#a134ad933d69b7de8c8142a698d231864">h_ctl_pitch_setpoint</a> + <a class="code" href="stabilization__adaptive_8c.html#a39bfec9de0a58ce45667a691fbd44eee">h_ctl_elevator_of_roll</a> / <a class="code" href="stabilization__adaptive_8c.html#a660a8c54dd920cc1723ab83d6d5a59e2">h_ctl_pitch_pgain</a> * fabs(<a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98" title="roll angle in rad, + = right">estimator_phi</a>);
-<a name="l00426"></a>00426 
-<a name="l00427"></a>00427   <span class="keywordtype">float</span> err = 0;
-<a name="l00428"></a>00428 
-<a name="l00429"></a>00429 <span class="preprocessor">#ifdef USE_AOA</span>
-<a name="l00430"></a>00430 <span class="preprocessor"></span>  <span class="keywordflow">switch</span> (h_ctl_pitch_mode){
-<a name="l00431"></a>00431     <span class="keywordflow">case</span> H_CTL_PITCH_MODE_THETA:
-<a name="l00432"></a>00432       err = <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554" title="pitch angle in rad, + = up">estimator_theta</a> - <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a>;
-<a name="l00433"></a>00433     <span class="keywordflow">break</span>;
-<a name="l00434"></a>00434     <span class="keywordflow">case</span> H_CTL_PITCH_MODE_AOA:
-<a name="l00435"></a>00435       err = <a class="code" href="estimator_8c.html#a2f96bc98bc532ee96a7d287fd943dc29" title="angle of attack in rad">estimator_AOA</a> - <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a>;
-<a name="l00436"></a>00436     <span class="keywordflow">break</span>;
-<a name="l00437"></a>00437     <span class="keywordflow">default</span>:
-<a name="l00438"></a>00438       err = <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554" title="pitch angle in rad, + = up">estimator_theta</a> - <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a>;
-<a name="l00439"></a>00439     <span class="keywordflow">break</span>;
-<a name="l00440"></a>00440   }
-<a name="l00441"></a>00441 <span class="preprocessor">#else //NO_AOA</span>
-<a name="l00442"></a>00442 <span class="preprocessor"></span>  err = <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554" title="pitch angle in rad, + = up">estimator_theta</a> - <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a>;
-<a name="l00443"></a>00443 <span class="preprocessor">#endif</span>
-<a name="l00444"></a>00444 <span class="preprocessor"></span>
-<a name="l00445"></a>00445 
-<a name="l00446"></a>00446   <span class="keywordtype">float</span> d_err = err - last_err;
-<a name="l00447"></a>00447   last_err = err;
-<a name="l00448"></a>00448   <span class="keywordtype">float</span> cmd = -<a class="code" href="stabilization__adaptive_8c.html#a660a8c54dd920cc1723ab83d6d5a59e2">h_ctl_pitch_pgain</a> * (err + <a class="code" href="stabilization__adaptive_8c.html#a5f967bedde5f5b6e5558a25b399dac39">h_ctl_pitch_dgain</a> * d_err);
-<a name="l00449"></a>00449 <span class="preprocessor">#ifdef LOITER_TRIM</span>
-<a name="l00450"></a>00450 <span class="preprocessor"></span>  cmd += loiter();
-<a name="l00451"></a>00451 <span class="preprocessor">#endif</span>
-<a name="l00452"></a>00452 <span class="preprocessor"></span>  <a class="code" href="stabilization__adaptive_8c.html#a17a99d4b8497a414130bab98ce903361">h_ctl_elevator_setpoint</a> = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(cmd);
-<a name="l00453"></a>00453 }
+<a name="l00392"></a>00392 
+<a name="l00393"></a>00393 <span class="preprocessor">#ifdef LOITER_TRIM</span>
+<a name="l00394"></a>00394 <span class="preprocessor"></span>
+<a name="l00395"></a>00395 <span class="keywordtype">float</span> v_ctl_auto_throttle_loiter_trim = V_CTL_AUTO_THROTTLE_LOITER_TRIM;
+<a name="l00396"></a>00396 <span class="keywordtype">float</span> v_ctl_auto_throttle_dash_trim = V_CTL_AUTO_THROTTLE_DASH_TRIM;
+<a name="l00397"></a>00397 
+<a name="l00398"></a>00398 <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">float</span> loiter(<span class="keywordtype">void</span>) {
+<a name="l00399"></a>00399   <span class="keyword">static</span> <span class="keywordtype">float</span> last_elevator_trim;
+<a name="l00400"></a>00400   <span class="keywordtype">float</span> elevator_trim;
+<a name="l00401"></a>00401 
+<a name="l00402"></a>00402   <span class="keywordtype">float</span> throttle_dif = <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ac2157f339c7b2f374ece7b5448fe7816">v_ctl_auto_throttle_cruise_throttle</a> - <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a96b28ed4a6bbadedbf6ebd67c3a88613">v_ctl_auto_throttle_nominal_cruise_throttle</a>;
+<a name="l00403"></a>00403   <span class="keywordflow">if</span> (throttle_dif &gt; 0) {
+<a name="l00404"></a>00404     <span class="keywordtype">float</span> max_dif = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(V_CTL_AUTO_THROTTLE_MAX_CRUISE_THROTTLE - v_ctl_auto_throttle_nominal_cruise_throttle, 0.1);
+<a name="l00405"></a>00405     elevator_trim = throttle_dif / max_dif * v_ctl_auto_throttle_dash_trim;
+<a name="l00406"></a>00406   } <span class="keywordflow">else</span> {
+<a name="l00407"></a>00407     <span class="keywordtype">float</span> max_dif = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(v_ctl_auto_throttle_nominal_cruise_throttle - V_CTL_AUTO_THROTTLE_MIN_CRUISE_THROTTLE, 0.1);
+<a name="l00408"></a>00408     elevator_trim = - throttle_dif / max_dif * v_ctl_auto_throttle_loiter_trim;
+<a name="l00409"></a>00409   }
+<a name="l00410"></a>00410 
+<a name="l00411"></a>00411   <span class="keywordtype">float</span> max_change = (v_ctl_auto_throttle_loiter_trim - v_ctl_auto_throttle_dash_trim) / 80.;
+<a name="l00412"></a>00412   Bound(elevator_trim, last_elevator_trim - max_change, last_elevator_trim + max_change);
+<a name="l00413"></a>00413 
+<a name="l00414"></a>00414   last_elevator_trim = elevator_trim;
+<a name="l00415"></a>00415   <span class="keywordflow">return</span> elevator_trim;
+<a name="l00416"></a>00416 }
+<a name="l00417"></a>00417 <span class="preprocessor">#endif</span>
+<a name="l00418"></a>00418 <span class="preprocessor"></span>
+<a name="l00419"></a>00419 
+<a name="l00420"></a><a class="code" href="stabilization__attitude_8c.html#a10c9851e192217d5a4e7b6dc98e16c2d">00420</a> <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude_8c.html#a10c9851e192217d5a4e7b6dc98e16c2d">h_ctl_pitch_loop</a>( <span class="keywordtype">void</span> ) {
+<a name="l00421"></a>00421   <span class="keyword">static</span> <span class="keywordtype">float</span> last_err;
+<a name="l00422"></a>00422   <span class="comment">/* sanity check */</span>
+<a name="l00423"></a>00423   <span class="keywordflow">if</span> (<a class="code" href="stabilization__adaptive_8c.html#a39bfec9de0a58ce45667a691fbd44eee">h_ctl_elevator_of_roll</a> &lt;0.)
+<a name="l00424"></a>00424     <a class="code" href="stabilization__adaptive_8c.html#a39bfec9de0a58ce45667a691fbd44eee">h_ctl_elevator_of_roll</a> = 0.;
+<a name="l00425"></a>00425 
+<a name="l00426"></a>00426   <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a> =  <a class="code" href="stabilization__adaptive_8c.html#a134ad933d69b7de8c8142a698d231864">h_ctl_pitch_setpoint</a> + <a class="code" href="stabilization__adaptive_8c.html#a39bfec9de0a58ce45667a691fbd44eee">h_ctl_elevator_of_roll</a> / <a class="code" href="stabilization__adaptive_8c.html#a660a8c54dd920cc1723ab83d6d5a59e2">h_ctl_pitch_pgain</a> * fabs(<a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98" title="roll angle in rad, + = right">estimator_phi</a>);
+<a name="l00427"></a>00427 
+<a name="l00428"></a>00428   <span class="keywordtype">float</span> err = 0;
+<a name="l00429"></a>00429 
+<a name="l00430"></a>00430 <span class="preprocessor">#ifdef USE_AOA</span>
+<a name="l00431"></a>00431 <span class="preprocessor"></span>  <span class="keywordflow">switch</span> (h_ctl_pitch_mode){
+<a name="l00432"></a>00432     <span class="keywordflow">case</span> H_CTL_PITCH_MODE_THETA:
+<a name="l00433"></a>00433       err = <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554" title="pitch angle in rad, + = up">estimator_theta</a> - <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a>;
+<a name="l00434"></a>00434     <span class="keywordflow">break</span>;
+<a name="l00435"></a>00435     <span class="keywordflow">case</span> H_CTL_PITCH_MODE_AOA:
+<a name="l00436"></a>00436       err = <a class="code" href="estimator_8c.html#a2f96bc98bc532ee96a7d287fd943dc29" title="angle of attack in rad">estimator_AOA</a> - <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a>;
+<a name="l00437"></a>00437     <span class="keywordflow">break</span>;
+<a name="l00438"></a>00438     <span class="keywordflow">default</span>:
+<a name="l00439"></a>00439       err = <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554" title="pitch angle in rad, + = up">estimator_theta</a> - <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a>;
+<a name="l00440"></a>00440     <span class="keywordflow">break</span>;
+<a name="l00441"></a>00441   }
+<a name="l00442"></a>00442 <span class="preprocessor">#else //NO_AOA</span>
+<a name="l00443"></a>00443 <span class="preprocessor"></span>  err = <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554" title="pitch angle in rad, + = up">estimator_theta</a> - <a class="code" href="stabilization__adaptive_8c.html#acbe1f39859914b67956b65671e29281c">h_ctl_pitch_loop_setpoint</a>;
+<a name="l00444"></a>00444 <span class="preprocessor">#endif</span>
+<a name="l00445"></a>00445 <span class="preprocessor"></span>
+<a name="l00446"></a>00446 
+<a name="l00447"></a>00447   <span class="keywordtype">float</span> d_err = err - last_err;
+<a name="l00448"></a>00448   last_err = err;
+<a name="l00449"></a>00449   <span class="keywordtype">float</span> cmd = -<a class="code" href="stabilization__adaptive_8c.html#a660a8c54dd920cc1723ab83d6d5a59e2">h_ctl_pitch_pgain</a> * (err + <a class="code" href="stabilization__adaptive_8c.html#a5f967bedde5f5b6e5558a25b399dac39">h_ctl_pitch_dgain</a> * d_err);
+<a name="l00450"></a>00450 <span class="preprocessor">#ifdef LOITER_TRIM</span>
+<a name="l00451"></a>00451 <span class="preprocessor"></span>  cmd += loiter();
+<a name="l00452"></a>00452 <span class="preprocessor">#endif</span>
+<a name="l00453"></a>00453 <span class="preprocessor"></span>  <a class="code" href="stabilization__adaptive_8c.html#a17a99d4b8497a414130bab98ce903361">h_ctl_elevator_setpoint</a> = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(cmd);
+<a name="l00454"></a>00454 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -563,7 +564,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude_8c.html">stabilization_attitude.c</a>      </li>
 
-    <li class="footer">Generated on Tue Apr 3 2012 04:00:04 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Apr 4 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
