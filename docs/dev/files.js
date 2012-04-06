@@ -440,6 +440,8 @@ var files =
     [ "sw/airborne/modules/adcs/mcp355x.h", "modules_2adcs_2mcp355x_8h.html", null ],
     [ "sw/airborne/modules/airborne_ant_track/airborne_ant_track.c", "airborne__ant__track_8c.html", null ],
     [ "sw/airborne/modules/airborne_ant_track/airborne_ant_track.h", "airborne__ant__track_8h.html", null ],
+    [ "sw/airborne/modules/battery_buzzer/battery_buzzer.c", "battery__buzzer_8c.html", "battery__buzzer_8c" ],
+    [ "sw/airborne/modules/battery_buzzer/battery_buzzer.h", "battery__buzzer_8h.html", "battery__buzzer_8h" ],
     [ "sw/airborne/modules/benchmark/flight_benchmark.c", "flight__benchmark_8c.html", "flight__benchmark_8c" ],
     [ "sw/airborne/modules/benchmark/flight_benchmark.h", "flight__benchmark_8h.html", "flight__benchmark_8h" ],
     [ "sw/airborne/modules/benchmark/i2c_abuse_test.c", "i2c__abuse__test_8c.html", "i2c__abuse__test_8c" ],
