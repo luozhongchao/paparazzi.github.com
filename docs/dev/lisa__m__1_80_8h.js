@@ -1,5 +1,8 @@
 var lisa__m__1_80_8h =
 [
+    [ "ADC_1", "lisa__m__1_80_8h.html#a3d767e16f12a6ee542079f3c9677192c", null ],
+    [ "ADC_2", "lisa__m__1_80_8h.html#a01ac9d2f00660408bcc8c809020904f9", null ],
+    [ "ADC_3", "lisa__m__1_80_8h.html#a474279f28350114950d862951d72de66", null ],
     [ "ADC_CHANNEL_VSUPPLY", "lisa__m__1_80_8h.html#ad5a6636ee170fccf62a748fc72374d3b", null ],
     [ "AHB_CLK", "lisa__m__1_80_8h.html#add4f03b6c5c9bcabeba314491a310346", null ],
     [ "BOARD_ADC_CHANNEL_1", "lisa__m__1_80_8h.html#a60592e1d9547350dfd75d670738dcf44", null ],

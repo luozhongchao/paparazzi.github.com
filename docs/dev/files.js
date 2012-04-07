@@ -240,6 +240,7 @@ var files =
     [ "sw/airborne/boards/hb_1.1.h", "hb__1_81_8h.html", "hb__1_81_8h" ],
     [ "sw/airborne/boards/lisa_l_1.0.h", "lisa__l__1_80_8h.html", "lisa__l__1_80_8h" ],
     [ "sw/airborne/boards/lisa_m_1.0.h", "lisa__m__1_80_8h.html", "lisa__m__1_80_8h" ],
+    [ "sw/airborne/boards/lisa_m_2.0.h", "lisa__m__2_80_8h.html", "lisa__m__2_80_8h" ],
     [ "sw/airborne/boards/logom_2.6.h", "logom__2_86_8h.html", "logom__2_86_8h" ],
     [ "sw/airborne/boards/navgo_1.0.h", "navgo__1_80_8h.html", "navgo__1_80_8h" ],
     [ "sw/airborne/boards/olimex_lpc_h2148.h", "olimex__lpc__h2148_8h.html", "olimex__lpc__h2148_8h" ],

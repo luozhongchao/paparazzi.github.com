@@ -146,48 +146,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a><a class="code" href="lisa__m__1_80_8h.html#adb2a88589926c012c6b98bf23cbe651d">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACC_DRDY_GPIO             GPIOB</span>
 <a name="l00043"></a><a class="code" href="lisa__m__1_80_8h.html#ad6f64575a6a755a07c8379c394fd666e">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACC_DRDY_GPIO_PORTSOURCE  GPIO_PortSourceGPIOB</span>
 <a name="l00044"></a>00044 <span class="preprocessor"></span>
-<a name="l00045"></a>00045 <span class="comment">/* allow to define ADC_CHANNEL_VSUPPLY in the airframe file*/</span>
-<a name="l00046"></a>00046 <span class="preprocessor">#ifndef ADC_CHANNEL_VSUPPLY</span>
-<a name="l00047"></a><a class="code" href="lisa__m__1_80_8h.html#ad5a6636ee170fccf62a748fc72374d3b">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_VSUPPLY 2</span>
-<a name="l00048"></a>00048 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00049"></a><a class="code" href="lisa__m__1_80_8h.html#a94fa241ceca04635f282e09bdd829f5f">00049</a> <span class="preprocessor"></span><span class="preprocessor">#define DefaultVoltageOfAdc(adc) (0.00485*adc)</span>
-<a name="l00050"></a>00050 <span class="preprocessor"></span>
-<a name="l00051"></a>00051 <span class="comment">/* Onboard ADCs */</span>
-<a name="l00052"></a>00052 <span class="comment">/*</span>
-<a name="l00053"></a>00053 <span class="comment">   ADC1 PC3/ADC13</span>
-<a name="l00054"></a>00054 <span class="comment">   ADC2 PA0/ADC0</span>
-<a name="l00055"></a>00055 <span class="comment">   ADC3 PC0/ADC10</span>
-<a name="l00056"></a>00056 <span class="comment">   ADC4 PC1/ADC11</span>
-<a name="l00057"></a>00057 <span class="comment">   ADC5 PC5/ADC15</span>
-<a name="l00058"></a>00058 <span class="comment">   ADC6 PA1/ADC1</span>
-<a name="l00059"></a>00059 <span class="comment">   ADC7 PC2/ADC12</span>
-<a name="l00060"></a>00060 <span class="comment">   BATT PC4/ADC14</span>
-<a name="l00061"></a>00061 <span class="comment">*/</span>
-<a name="l00062"></a><a class="code" href="lisa__m__1_80_8h.html#a60592e1d9547350dfd75d670738dcf44">00062</a> <span class="preprocessor">#define BOARD_ADC_CHANNEL_1 ADC_Channel_13</span>
-<a name="l00063"></a><a class="code" href="lisa__m__1_80_8h.html#a65c392281a7e695fa5bbe3d1e5a117c6">00063</a> <span class="preprocessor"></span><span class="preprocessor">#define BOARD_ADC_CHANNEL_2 ADC_Channel_0</span>
-<a name="l00064"></a>00064 <span class="preprocessor"></span><span class="comment">// FIXME - removed for now and used for battery monitoring</span>
-<a name="l00065"></a>00065 <span class="comment">//#define BOARD_ADC_CHANNEL_3 ADC_Channel_10</span>
-<a name="l00066"></a><a class="code" href="lisa__m__1_80_8h.html#ab2c7cc66bae5143da7346cf2fcad84e0">00066</a> <span class="preprocessor">#define BOARD_ADC_CHANNEL_3 ADC_Channel_14</span>
-<a name="l00067"></a><a class="code" href="lisa__m__1_80_8h.html#a22e9ee18df47febcc0511bbe4dd739f4">00067</a> <span class="preprocessor"></span><span class="preprocessor">#define BOARD_ADC_CHANNEL_4 ADC_Channel_11</span>
-<a name="l00068"></a>00068 <span class="preprocessor"></span>
-<a name="l00069"></a><a class="code" href="lisa__m__1_80_8h.html#af8df7cce5dd52da8571b6774d51bda77">00069</a> <span class="preprocessor">#define BOARD_HAS_BARO 1</span>
-<a name="l00070"></a>00070 <span class="preprocessor"></span>
-<a name="l00071"></a><a class="code" href="lisa__m__1_80_8h.html#a30812227726636f5d87aca10ba40141f">00071</a> <span class="preprocessor">#define USE_OPENCM3 1</span>
-<a name="l00072"></a>00072 <span class="preprocessor"></span>
-<a name="l00073"></a>00073 <span class="comment">// not needed with USE_OPENCM3:</span>
-<a name="l00074"></a>00074 <span class="comment">//#define HSE_TYPE_EXT_CLK</span>
-<a name="l00075"></a>00075 <span class="comment">//#define STM32_RCC_MODE RCC_HSE_ON</span>
-<a name="l00076"></a>00076 <span class="comment">//#define STM32_PLL_MULT RCC_PLLMul_6</span>
-<a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="lisa__m__1_80_8h.html#ab60d38297c5fb699b4b020e87d6bf8bb">00078</a> <span class="preprocessor">#define PWM_5AND6_TIMER TIM5</span>
-<a name="l00079"></a><a class="code" href="lisa__m__1_80_8h.html#a7a9593b29b3be76510c45be3b50daf43">00079</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_RCC RCC_APB1Periph_TIM5</span>
-<a name="l00080"></a><a class="code" href="lisa__m__1_80_8h.html#a6da837e5446319b0074a9ccd7d1afcc4">00080</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM5_OC 1</span>
-<a name="l00081"></a><a class="code" href="lisa__m__1_80_8h.html#a80cc9cee9cd572f64ad41bfecf647957">00081</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM6_OC 2</span>
-<a name="l00082"></a><a class="code" href="lisa__m__1_80_8h.html#a55faabb390e89d17eb7d353b9871acf6">00082</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_GPIO GPIOA</span>
-<a name="l00083"></a><a class="code" href="lisa__m__1_80_8h.html#ae8d7a58b25bd70500a6f6770400ba508">00083</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM5_Pin GPIO_Pin_0</span>
-<a name="l00084"></a><a class="code" href="lisa__m__1_80_8h.html#ae9608e517de0de0fbfd59051d131799c">00084</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM6_Pin GPIO_Pin_1</span>
-<a name="l00085"></a>00085 <span class="preprocessor"></span>
-<a name="l00086"></a>00086 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_LISA_M_1_0_H */</span>
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="lisa__m__1_80_8h.html#a94fa241ceca04635f282e09bdd829f5f">00047</a> <span class="preprocessor">#define DefaultVoltageOfAdc(adc) (0.00485*adc)</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span>
+<a name="l00049"></a>00049 <span class="comment">/* Onboard ADCs */</span>
+<a name="l00050"></a>00050 <span class="comment">/*</span>
+<a name="l00051"></a>00051 <span class="comment">   ADC_1 PC3/ADC13</span>
+<a name="l00052"></a>00052 <span class="comment">   ADC_2 PC0/ADC10</span>
+<a name="l00053"></a>00053 <span class="comment">   ADC_3 PC1/ADC11</span>
+<a name="l00054"></a>00054 <span class="comment">   ADC_4 PC5/ADC15</span>
+<a name="l00055"></a>00055 <span class="comment">   ADC_6 PC2/ADC12</span>
+<a name="l00056"></a>00056 <span class="comment">   BATT  PC4/ADC14</span>
+<a name="l00057"></a>00057 <span class="comment">*/</span>
+<a name="l00058"></a><a class="code" href="lisa__m__1_80_8h.html#a60592e1d9547350dfd75d670738dcf44">00058</a> <span class="preprocessor">#define BOARD_ADC_CHANNEL_1 ADC_Channel_13</span>
+<a name="l00059"></a><a class="code" href="lisa__m__1_80_8h.html#a65c392281a7e695fa5bbe3d1e5a117c6">00059</a> <span class="preprocessor"></span><span class="preprocessor">#define BOARD_ADC_CHANNEL_2 ADC_Channel_10</span>
+<a name="l00060"></a><a class="code" href="lisa__m__1_80_8h.html#ab2c7cc66bae5143da7346cf2fcad84e0">00060</a> <span class="preprocessor"></span><span class="preprocessor">#define BOARD_ADC_CHANNEL_3 ADC_Channel_11</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span><span class="comment">// we can only use ADC1,2,3; the last channel is for bat monitoring</span>
+<a name="l00062"></a><a class="code" href="lisa__m__1_80_8h.html#a22e9ee18df47febcc0511bbe4dd739f4">00062</a> <span class="preprocessor">#define BOARD_ADC_CHANNEL_4 ADC_Channel_14</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span>
+<a name="l00064"></a>00064 <span class="comment">/* provide defines that can be used to access the ADC_x in the code or airframe file</span>
+<a name="l00065"></a>00065 <span class="comment"> * these directly map to the index number of the 4 adc channels defined above</span>
+<a name="l00066"></a>00066 <span class="comment"> * 4th (index 3) is used for bat monitoring by default</span>
+<a name="l00067"></a>00067 <span class="comment"> */</span>
+<a name="l00068"></a><a class="code" href="lisa__m__1_80_8h.html#a3d767e16f12a6ee542079f3c9677192c">00068</a> <span class="preprocessor">#define ADC_1 0</span>
+<a name="l00069"></a><a class="code" href="lisa__m__1_80_8h.html#a01ac9d2f00660408bcc8c809020904f9">00069</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_2 1</span>
+<a name="l00070"></a><a class="code" href="lisa__m__1_80_8h.html#a474279f28350114950d862951d72de66">00070</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_3 2</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span>
+<a name="l00072"></a>00072 <span class="comment">/* allow to define ADC_CHANNEL_VSUPPLY in the airframe file*/</span>
+<a name="l00073"></a>00073 <span class="preprocessor">#ifndef ADC_CHANNEL_VSUPPLY</span>
+<a name="l00074"></a><a class="code" href="lisa__m__1_80_8h.html#ad5a6636ee170fccf62a748fc72374d3b">00074</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_VSUPPLY 3</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span>
+<a name="l00077"></a>00077 <span class="comment">/* GPIO mapping for ADC1 pins, overwrites the default in arch/stm32/mcu_periph/adc_arch.c */</span>
+<a name="l00078"></a>00078 <span class="comment">// FIXME, this is not very nice, is also stm lib specific</span>
+<a name="l00079"></a>00079 <span class="preprocessor">#ifdef USE_AD1</span>
+<a name="l00080"></a>00080 <span class="preprocessor"></span><span class="preprocessor">#define ADC1_GPIO_INIT(gpio) {                  \</span>
+<a name="l00081"></a>00081 <span class="preprocessor">    (gpio).GPIO_Pin  = GPIO_Pin_3 | GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_4; \</span>
+<a name="l00082"></a>00082 <span class="preprocessor">    (gpio).GPIO_Mode = GPIO_Mode_AIN;           \</span>
+<a name="l00083"></a>00083 <span class="preprocessor">    GPIO_Init(GPIOC, (&amp;gpio));                  \</span>
+<a name="l00084"></a>00084 <span class="preprocessor">  }</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">#endif // USE_AD1</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span>
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 
+<a name="l00089"></a><a class="code" href="lisa__m__1_80_8h.html#af8df7cce5dd52da8571b6774d51bda77">00089</a> <span class="preprocessor">#define BOARD_HAS_BARO 1</span>
+<a name="l00090"></a>00090 <span class="preprocessor"></span>
+<a name="l00091"></a><a class="code" href="lisa__m__1_80_8h.html#a30812227726636f5d87aca10ba40141f">00091</a> <span class="preprocessor">#define USE_OPENCM3 1</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span>
+<a name="l00093"></a>00093 <span class="comment">// not needed with USE_OPENCM3:</span>
+<a name="l00094"></a>00094 <span class="comment">//#define HSE_TYPE_EXT_CLK</span>
+<a name="l00095"></a>00095 <span class="comment">//#define STM32_RCC_MODE RCC_HSE_ON</span>
+<a name="l00096"></a>00096 <span class="comment">//#define STM32_PLL_MULT RCC_PLLMul_6</span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="lisa__m__1_80_8h.html#ab60d38297c5fb699b4b020e87d6bf8bb">00098</a> <span class="preprocessor">#define PWM_5AND6_TIMER TIM5</span>
+<a name="l00099"></a><a class="code" href="lisa__m__1_80_8h.html#a7a9593b29b3be76510c45be3b50daf43">00099</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_RCC RCC_APB1Periph_TIM5</span>
+<a name="l00100"></a><a class="code" href="lisa__m__1_80_8h.html#a6da837e5446319b0074a9ccd7d1afcc4">00100</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM5_OC 1</span>
+<a name="l00101"></a><a class="code" href="lisa__m__1_80_8h.html#a80cc9cee9cd572f64ad41bfecf647957">00101</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM6_OC 2</span>
+<a name="l00102"></a><a class="code" href="lisa__m__1_80_8h.html#a55faabb390e89d17eb7d353b9871acf6">00102</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_GPIO GPIOA</span>
+<a name="l00103"></a><a class="code" href="lisa__m__1_80_8h.html#ae8d7a58b25bd70500a6f6770400ba508">00103</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM5_Pin GPIO_Pin_0</span>
+<a name="l00104"></a><a class="code" href="lisa__m__1_80_8h.html#ae9608e517de0de0fbfd59051d131799c">00104</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM6_Pin GPIO_Pin_1</span>
+<a name="l00105"></a>00105 <span class="preprocessor"></span>
+<a name="l00106"></a>00106 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_LISA_M_1_0_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -208,7 +228,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lisa__m__1_80_8h.html">lisa_m_1.0.h</a>      </li>
 
-    <li class="footer">Generated on Fri Apr 6 2012 04:00:07 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Apr 7 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

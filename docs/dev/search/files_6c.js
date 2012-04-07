@@ -24,6 +24,7 @@ var searchData=
   ['link_5fmcu_5fhw_2eh',['link_mcu_hw.h',['../stm32_2link__mcu__hw_8h.html',1,'']]],
   ['lisa_5fl_5f1_2e0_2eh',['lisa_l_1.0.h',['../lisa__l__1_80_8h.html',1,'']]],
   ['lisa_5fm_5f1_2e0_2eh',['lisa_m_1.0.h',['../lisa__m__1_80_8h.html',1,'']]],
+  ['lisa_5fm_5f2_2e0_2eh',['lisa_m_2.0.h',['../lisa__m__2_80_8h.html',1,'']]],
   ['lisa_5fovero_5flink_2ec',['lisa_overo_link.c',['../lisa__overo__link_8c.html',1,'']]],
   ['lisa_5fovero_5flink_2eh',['lisa_overo_link.h',['../lisa__overo__link_8h.html',1,'']]],
   ['lisa_5fovero_5flink_5farch_2ec',['lisa_overo_link_arch.c',['../lisa__overo__link__arch_8c.html',1,'']]],
