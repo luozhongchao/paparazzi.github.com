@@ -5,6 +5,7 @@ var guidance__h_8h =
     [ "GUIDANCE_H_MODE_KILL", "guidance__h_8h.html#aca30783fe715ec77589d55fdaa7b76e5", null ],
     [ "GUIDANCE_H_MODE_NAV", "guidance__h_8h.html#a0695fb38a9f3b93b7be3484568e0be1a", null ],
     [ "GUIDANCE_H_MODE_RATE", "guidance__h_8h.html#aea87a99ee38d15a28913fbe378ca264e", null ],
+    [ "GUIDANCE_H_MODE_RC_DIRECT", "guidance__h_8h.html#aa4e386747c6286a7ce74fa13b1dfe6d9", null ],
     [ "guidance_h_SetKi", "guidance__h_8h.html#ad3c24a1e61a41c2ae8ff1a539c396bf7", null ],
     [ "guidance_h_init", "guidance__h_8h.html#a7bc4ea0d5351c2ba6ee160db5a2e9f80", null ],
     [ "guidance_h_mode_changed", "guidance__h_8h.html#a2903786227eb11507928f99870099225", null ],

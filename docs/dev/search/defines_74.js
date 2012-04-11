@@ -95,7 +95,7 @@ var searchData=
   ['test_5fboard_5fsetcurtest',['test_board_SetCurTest',['../test__board_8h.html#aa02ea11939617b356ef9af6f2cd457b1',1,'test_board.h']]],
   ['tfe',['TFE',['../LPC21xx_8h.html#ade231e431cbc669603495a0f981f0677',1,'LPC21xx.h']]],
   ['threshold',['THRESHOLD',['../chemo__detect_8c.html#a4679d8ea8690999a6c6c7c0cb245c879',1,'chemo_detect.c']]],
-  ['throttle_5fstick_5fdown',['THROTTLE_STICK_DOWN',['../autopilot_8c.html#a1658edfb25039379849b94dda1eada9b',1,'autopilot.c']]],
+  ['throttle_5fstick_5fdown',['THROTTLE_STICK_DOWN',['../autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b',1,'autopilot_rc_helpers.h']]],
   ['throttle_5fthreshold_5ftakeoff',['THROTTLE_THRESHOLD_TAKEOFF',['../fixedwing_2autopilot_8h.html#a1c2e8ec07daf2aa0b8e54a832ea70139',1,'autopilot.h']]],
   ['tim2_5firq_5fhandler',['TIM2_IRQ_HANDLER',['../stm32__vector__table_8c.html#a4c0a7e27ef6382aa68a12827d9a078e6',1,'stm32_vector_table.c']]],
   ['tim6_5firq_5fhandler',['TIM6_IRQ_HANDLER',['../stm32__vector__table_8c.html#ac58f9ac73d4162895800f180f9460190',1,'stm32_vector_table.c']]],

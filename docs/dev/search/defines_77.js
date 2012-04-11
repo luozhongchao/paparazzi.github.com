@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['warn_5fbat_5flevel1',['WARN_BAT_LEVEL1',['../bat__checker_8c.html#ab23faf04655faf128e69ba9f1c761903',1,'bat_checker.c']]],
+  ['warn_5fbat_5flevel2',['WARN_BAT_LEVEL2',['../bat__checker_8c.html#a3a323cd3842962ac4a20d534e7861a88',1,'bat_checker.c']]],
   ['warn_5fmessage',['warn_message',['../pprz__simple__matrix_8h.html#a09eb14a8c70b8473c12388ce49e7cb0d',1,'pprz_simple_matrix.h']]],
   ['waypointalt',['WaypointAlt',['../navigation_8h.html#a2de6e5b93a3552facfa675f1bccd8db2',1,'WaypointAlt():&#160;navigation.h'],['../common__nav_8h.html#a2de6e5b93a3552facfa675f1bccd8db2',1,'WaypointAlt():&#160;common_nav.h']]],
   ['waypointx',['WaypointX',['../navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22',1,'WaypointX():&#160;navigation.h'],['../common__nav_8h.html#a2d51bcd8e90e2dea91009f895a452a22',1,'WaypointX():&#160;common_nav.h']]],

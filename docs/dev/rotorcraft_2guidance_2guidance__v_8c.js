@@ -18,6 +18,7 @@ var rotorcraft_2guidance_2guidance__v_8c =
     [ "guidance_v_ki", "rotorcraft_2guidance_2guidance__v_8c.html#abbefa1daffcf539c6617f837ea6ec846", null ],
     [ "guidance_v_kp", "rotorcraft_2guidance_2guidance__v_8c.html#a3836652cb5a9952023e05ed5046aa1e2", null ],
     [ "guidance_v_mode", "rotorcraft_2guidance_2guidance__v_8c.html#a09896d1671aacfd563071566b7562fc1", null ],
+    [ "guidance_v_nominal_throttle", "rotorcraft_2guidance_2guidance__v_8c.html#ae2e46de7965f1254ae9e0711a2573038", null ],
     [ "guidance_v_rc_delta_t", "rotorcraft_2guidance_2guidance__v_8c.html#a53779fb4d8ef92130859d3680c988156", null ],
     [ "guidance_v_rc_zd_sp", "rotorcraft_2guidance_2guidance__v_8c.html#a6277e157223b959624eb89a3ab5c0630", null ],
     [ "guidance_v_z_ref", "rotorcraft_2guidance_2guidance__v_8c.html#a05574a3cc3b7afff99639758b8389dd9", null ],

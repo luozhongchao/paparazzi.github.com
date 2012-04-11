@@ -29,6 +29,8 @@ var guidance__v__n_8c =
     [ "v_ctl_auto_throttle_cruise_throttle", "guidance__v__n_8c.html#ac2157f339c7b2f374ece7b5448fe7816", null ],
     [ "v_ctl_auto_throttle_dgain", "guidance__v__n_8c.html#aee2a07ba1079d536af5ace315d41d966", null ],
     [ "v_ctl_auto_throttle_igain", "guidance__v__n_8c.html#a73956b0692ee75960ba412afb497495d", null ],
+    [ "v_ctl_auto_throttle_max_cruise_throttle", "guidance__v__n_8c.html#a70a371d9e90dc33439fd1553de50567e", null ],
+    [ "v_ctl_auto_throttle_min_cruise_throttle", "guidance__v__n_8c.html#a3b016dc45683d8fd0768330dffbc0180", null ],
     [ "v_ctl_auto_throttle_nominal_cruise_throttle", "guidance__v__n_8c.html#a96b28ed4a6bbadedbf6ebd67c3a88613", null ],
     [ "v_ctl_auto_throttle_pgain", "guidance__v__n_8c.html#a1af92e71e824b4844687575c13ce58b4", null ],
     [ "v_ctl_auto_throttle_pitch_of_vz_dgain", "guidance__v__n_8c.html#a989456268c5558603e52acf4ba940d7f", null ],

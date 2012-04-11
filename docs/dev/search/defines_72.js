@@ -100,6 +100,7 @@ var searchData=
   ['roll_5fcoef',['ROLL_COEF',['../quat__setpoint__int_8c.html#a5948a9863126732755023c8ae0d5eef6',1,'ROLL_COEF():&#160;quat_setpoint_int.c'],['../stabilization__attitude__ref__quat__float_8h.html#a5948a9863126732755023c8ae0d5eef6',1,'ROLL_COEF():&#160;stabilization_attitude_ref_quat_float.h']]],
   ['roll_5fdeadband_5fexceeded',['ROLL_DEADBAND_EXCEEDED',['../stabilization__attitude__ref__quat__float_8h.html#ade5e3cdd965d34f8d9076b0724f54c02',1,'stabilization_attitude_ref_quat_float.h']]],
   ['roll_5frate_5fdeadband_5fexceeded',['ROLL_RATE_DEADBAND_EXCEEDED',['../stabilization__rate_8c.html#aa6b12451b039befdc1fce7c6b5fd10cb',1,'stabilization_rate.c']]],
+  ['roll_5fstick_5fcentered',['ROLL_STICK_CENTERED',['../autopilot__rc__helpers_8h.html#a4283b5e77477e4c499cfba6c902cdea7',1,'autopilot_rc_helpers.h']]],
   ['roric',['RORIC',['../LPC21xx_8h.html#a639c456f84f618f899ca8ff1bf729319',1,'LPC21xx.h']]],
   ['rorim',['RORIM',['../LPC21xx_8h.html#a242bab099b1a5f1945083e40fa0702df',1,'LPC21xx.h']]],
   ['rormis',['RORMIS',['../LPC21xx_8h.html#a656bfbe85887cdecaf90c90d975448cd',1,'LPC21xx.h']]],

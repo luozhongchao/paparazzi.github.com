@@ -13,6 +13,7 @@ var searchData=
   ['ki_5fyaw',['Ki_YAW',['../ahrs__float__dcm_8h.html#aea9dd7972c8f6c2381b1541b964b3893',1,'ahrs_float_dcm.h']]],
   ['kill',['kill',['../plug__sys_8c.html#a15f175029d9839bc5de63d726c0cc610',1,'plug_sys.c']]],
   ['kill_5fmode_5fdistance',['KILL_MODE_DISTANCE',['../main__ap_8c.html#a1f8fa85842c4d2ac6c69cf4d960ee0d6',1,'main_ap.c']]],
+  ['kill_5fswitch_5fis_5fon',['kill_switch_is_on',['../autopilot__rc__helpers_8h.html#a4e9918f217a6eaf344d248a9d34e674d',1,'autopilot_rc_helpers.h']]],
   ['kill_5fthrottle',['kill_throttle',['../fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c',1,'kill_throttle():&#160;main_ap.c'],['../main__ap_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c',1,'kill_throttle():&#160;main_ap.c'],['../autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c',1,'kill_throttle():&#160;autopilot.c'],['../rotorcraft_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c',1,'kill_throttle():&#160;main_ap.c']]],
   ['kp_5frollpitch',['Kp_ROLLPITCH',['../ahrs__float__dcm_8h.html#a3ab9b5d54678d8d03770f19607886ed6',1,'ahrs_float_dcm.h']]],
   ['kp_5fyaw',['Kp_YAW',['../ahrs__float__dcm_8h.html#a3c59c4be08d2d06edcdc0a02369da6b6',1,'ahrs_float_dcm.h']]]

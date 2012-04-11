@@ -86,6 +86,7 @@ var searchData=
   ['barodiff',['BaroDiff',['../umarim_2baro__board_8h.html#aa2ab4487e5c128edca213f27aec03152',1,'baro_board.h']]],
   ['baroetsevent',['BaroEtsEvent',['../baro__ets_8h.html#a8593684bb1be9bea4a2541091926e973',1,'baro_ets.h']]],
   ['baroevent',['BaroEvent',['../booz_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576',1,'BaroEvent():&#160;baro_board.h'],['../lisa__l_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576',1,'BaroEvent():&#160;baro_board.h'],['../lisa__m_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576',1,'BaroEvent():&#160;baro_board.h'],['../navgo_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576',1,'BaroEvent():&#160;baro_board.h'],['../pc_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576',1,'BaroEvent():&#160;baro_board.h'],['../umarim_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576',1,'BaroEvent():&#160;baro_board.h']]],
+  ['bat_5fchecker_5fdelay',['BAT_CHECKER_DELAY',['../bat__checker_8c.html#a122d018ddd148a99f19e44723b6c7c49',1,'bat_checker.c']]],
   ['bfp_5fof_5freal',['BFP_OF_REAL',['../pprz__algebra__int_8h.html#aa6bb9343d0a10947a0824bc67cf4a47d',1,'pprz_algebra_int.h']]],
   ['bind_5fpin',['BIND_PIN',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#aa51b8577574c67cba5343b224cec82df',1,'spektrum_arch.c']]],
   ['bind_5fpin_5fperiph',['BIND_PIN_PERIPH',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ab610b31bacaeaa0d945c1b9adebb9049',1,'spektrum_arch.c']]],

@@ -2,6 +2,7 @@ var dir_9dfa8d69f4095c54935aef23da2b245f =
 [
     [ "adcs", "dir_bc2b6aa3f34d0e539b4e8ac88f9cf08f.html", null ],
     [ "airborne_ant_track", "dir_906580519f078ed96ede38912880c1f4.html", null ],
+    [ "bat_checker", "dir_2c5079eecd8cd7a01e48abff163a14b4.html", null ],
     [ "benchmark", "dir_d1378ece10dd7ab31d5159e4142c13cc.html", null ],
     [ "cam_control", "dir_cad7c99514659a9b7ced596a3be1e29d.html", null ],
     [ "cartography", "dir_9f58af26e52a1c411d52ad6ce1f55239.html", null ],
@@ -22,6 +23,7 @@ var dir_9dfa8d69f4095c54935aef23da2b245f =
     [ "meteo", "dir_47cc60c21a3fe979b569d447262d849b.html", null ],
     [ "MPPT", "dir_59d03ad814bbc6347fe6fbe1e0891154.html", null ],
     [ "multi", "dir_e3da264bf8c9337c24e2b33458d4949a.html", null ],
+    [ "nav", "dir_3a883c130ae5692d47a4cacf7db60a0d.html", null ],
     [ "openlog", "dir_2c4b0b60adcf33dfba0480fac8b2aef7.html", null ],
     [ "poles", "dir_39d24f4a40c77d0a44931a95d3fa2a03.html", null ],
     [ "sensors", "dir_860bbbcb31ff18ff48bf210b62001a90.html", null ],

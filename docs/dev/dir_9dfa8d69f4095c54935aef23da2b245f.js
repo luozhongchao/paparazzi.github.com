@@ -2,7 +2,7 @@ var dir_9dfa8d69f4095c54935aef23da2b245f =
 [
     [ "adcs", "dir_bc2b6aa3f34d0e539b4e8ac88f9cf08f.html", null ],
     [ "airborne_ant_track", "dir_906580519f078ed96ede38912880c1f4.html", null ],
-    [ "battery_buzzer", "dir_1e4953806a9f9d0d9565259ad738fb50.html", null ],
+    [ "bat_checker", "dir_2c5079eecd8cd7a01e48abff163a14b4.html", null ],
     [ "benchmark", "dir_d1378ece10dd7ab31d5159e4142c13cc.html", null ],
     [ "cam_control", "dir_cad7c99514659a9b7ced596a3be1e29d.html", null ],
     [ "cartography", "dir_9f58af26e52a1c411d52ad6ce1f55239.html", null ],

@@ -60,6 +60,7 @@ var searchData=
   ['baro_5fscp_5fperiodic',['baro_scp_periodic',['../baro__scp_8h.html#a7995b8df4beede8b8da2998349693108',1,'baro_scp_periodic(void):&#160;baro_scp_i2c.c'],['../baro__scp__i2c_8c.html#a7995b8df4beede8b8da2998349693108',1,'baro_scp_periodic(void):&#160;baro_scp_i2c.c'],['../baro__scp__i2c_8h.html#a7995b8df4beede8b8da2998349693108',1,'baro_scp_periodic(void):&#160;baro_scp_i2c.c']]],
   ['baro_5fscp_5fread',['baro_scp_read',['../baro__scp_8c.html#ac29fd613dff47fc39271d1544e03452d',1,'baro_scp.c']]],
   ['baro_5fscp_5fstart_5fhigh_5fres_5fmeasurement',['baro_scp_start_high_res_measurement',['../baro__scp_8c.html#a550d0f8163f4c79ce3c4e77ac6f02fa4',1,'baro_scp_start_high_res_measurement(void):&#160;baro_scp.c'],['../baro__scp__i2c_8c.html#a550d0f8163f4c79ce3c4e77ac6f02fa4',1,'baro_scp_start_high_res_measurement(void):&#160;baro_scp_i2c.c']]],
+  ['bat_5fchecker_5fperiodic',['bat_checker_periodic',['../bat__checker_8c.html#a4a2f047828e01ad67b813f0b9242b5ad',1,'bat_checker_periodic(void):&#160;bat_checker.c'],['../bat__checker_8h.html#a4a2f047828e01ad67b813f0b9242b5ad',1,'bat_checker_periodic(void):&#160;bat_checker.c']]],
   ['bittest',['BitTest',['../imu__chimu_8c.html#acda06f9abeac46aac0c37fe9faafcb5f',1,'imu_chimu.c']]],
   ['bmp085_5fbaro_5fread_5fcalibration',['bmp085_baro_read_calibration',['../lisa__m_2baro__board_8c.html#aea3998684bc77e177cfef368972038ac',1,'baro_board.c']]],
   ['bmp085_5fread_5fpressure',['bmp085_read_pressure',['../lisa__m_2baro__board_8c.html#a1f0720cede92c109e23e77e8fee020d7',1,'baro_board.c']]],

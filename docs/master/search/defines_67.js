@@ -147,6 +147,7 @@ var searchData=
   ['guidance_5fh_5fmode_5fkill',['GUIDANCE_H_MODE_KILL',['../guidance__h_8h.html#aca30783fe715ec77589d55fdaa7b76e5',1,'guidance_h.h']]],
   ['guidance_5fh_5fmode_5fnav',['GUIDANCE_H_MODE_NAV',['../guidance__h_8h.html#a0695fb38a9f3b93b7be3484568e0be1a',1,'guidance_h.h']]],
   ['guidance_5fh_5fmode_5frate',['GUIDANCE_H_MODE_RATE',['../guidance__h_8h.html#aea87a99ee38d15a28913fbe378ca264e',1,'guidance_h.h']]],
+  ['guidance_5fh_5fmode_5frc_5fdirect',['GUIDANCE_H_MODE_RC_DIRECT',['../guidance__h_8h.html#aa4e386747c6286a7ce74fa13b1dfe6d9',1,'guidance_h.h']]],
   ['guidance_5fh_5fngain',['GUIDANCE_H_NGAIN',['../guidance__h_8c.html#a847f69d2dd175b7cce00f8c02a47f3c0',1,'guidance_h.c']]],
   ['guidance_5fh_5fref_5fmax_5faccel',['GUIDANCE_H_REF_MAX_ACCEL',['../guidance__h__ref_8h.html#ab6b27f38904ef10770e63e215516fead',1,'guidance_h_ref.h']]],
   ['guidance_5fh_5fref_5fmax_5fspeed',['GUIDANCE_H_REF_MAX_SPEED',['../guidance__h__ref_8h.html#a784bb0249eaaf1d9b4ed330bc6b497cf',1,'guidance_h_ref.h']]],
