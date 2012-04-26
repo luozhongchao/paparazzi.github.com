@@ -141,81 +141,100 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037 
 <a name="l00038"></a><a class="code" href="autopilot__arming__throttle_8h.html#aa500640a4bbb70ede94b57a8ea1c5f4d">00038</a> <span class="keyword">enum</span> <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759">arming_throttle_state</a> <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a>;
 <a name="l00039"></a><a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">00039</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a>;
-<a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="autopilot__arming__throttle_8h.html#aea5ad986cd1e5b80aff7ef5589a18aac">00041</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="autopilot__arming__throttle_8h.html#aea5ad986cd1e5b80aff7ef5589a18aac">autopilot_arming_init</a>(<span class="keywordtype">void</span>) {
-<a name="l00042"></a>00042   <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea0075eeb0f3377fa2dad84d3656ab8c6d">STATE_UNINIT</a>;
-<a name="l00043"></a>00043   <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = 0;
-<a name="l00044"></a>00044 }
-<a name="l00045"></a>00045 
-<a name="l00046"></a><a class="code" href="autopilot__arming__throttle_8h.html#a720eaefed19d55f94f6f866d8aba2702">00046</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="autopilot__arming__throttle_8h.html#a720eaefed19d55f94f6f866d8aba2702">autopilot_arming_set</a>(bool_t motors_on) {
-<a name="l00047"></a>00047   <span class="keywordflow">if</span> (motors_on) {
-<a name="l00048"></a>00048     <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>;
-<a name="l00049"></a>00049   }
-<a name="l00050"></a>00050   <span class="keywordflow">else</span> {
-<a name="l00051"></a>00051     <span class="keywordflow">if</span> (<a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> == <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>)
-<a name="l00052"></a>00052       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>;
-<a name="l00053"></a>00053   }
-<a name="l00054"></a>00054 }
-<a name="l00055"></a>00055 
-<a name="l00064"></a><a class="code" href="autopilot__arming__throttle_8h.html#abbbe9ccad851ff6d7ef88e298059b6ce">00064</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="autopilot__arming__throttle_8h.html#abbbe9ccad851ff6d7ef88e298059b6ce" title="State machine to check if motors should be turned ON or OFF.">autopilot_arming_check_motors_on</a>( <span class="keywordtype">void</span> ) {
-<a name="l00065"></a>00065   <span class="keywordflow">switch</span>(<a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a>) {
-<a name="l00066"></a>00066   <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea0075eeb0f3377fa2dad84d3656ab8c6d">STATE_UNINIT</a>:
-<a name="l00067"></a>00067     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
-<a name="l00068"></a>00068     <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = 0;
-<a name="l00069"></a>00069     <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>())
-<a name="l00070"></a>00070       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>;
-<a name="l00071"></a>00071     <span class="keywordflow">else</span>
-<a name="l00072"></a>00072       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ead79a43d70eda33549c20a9f8490e44c1">STATE_WAITING</a>;
-<a name="l00073"></a>00073     <span class="keywordflow">break</span>;
-<a name="l00074"></a>00074   <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ead79a43d70eda33549c20a9f8490e44c1">STATE_WAITING</a>:
-<a name="l00075"></a>00075     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
-<a name="l00076"></a>00076     <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = 0;
-<a name="l00077"></a>00077     <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>())
-<a name="l00078"></a>00078       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>;
-<a name="l00079"></a>00079     <span class="keywordflow">break</span>;
-<a name="l00080"></a>00080   <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>:
-<a name="l00081"></a>00081     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
-<a name="l00082"></a>00082     <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = 0;
-<a name="l00083"></a>00083     <span class="keywordflow">if</span> (!<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>() &amp;&amp;
-<a name="l00084"></a>00084         <a class="code" href="autopilot__rc__helpers_8h.html#ac346fd81983479ea51d3439a7dfca6c6">rc_attitude_sticks_centered</a>() &amp;&amp;
-<a name="l00085"></a>00085         <a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ab3d62edb632309d9a423661747cdb73b">MODE_MANUAL</a> &amp;&amp;
-<a name="l00086"></a>00086         <a class="code" href="autopilot_8c.html#a99409d6a32e6cce437a1c0354a2515eb">ahrs_is_aligned</a>()) {
-<a name="l00087"></a>00087       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759a4782b6ecc31dc1819db2d9ab92fedeff">STATE_ARMING</a>;
-<a name="l00088"></a>00088     }
-<a name="l00089"></a>00089     <span class="keywordflow">break</span>;
-<a name="l00090"></a>00090   <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759a4782b6ecc31dc1819db2d9ab92fedeff">STATE_ARMING</a>:
-<a name="l00091"></a>00091     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
-<a name="l00092"></a>00092     <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a>++;
-<a name="l00093"></a>00093     <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>() ||
-<a name="l00094"></a>00094         !<a class="code" href="autopilot__rc__helpers_8h.html#ac346fd81983479ea51d3439a7dfca6c6">rc_attitude_sticks_centered</a>() ||
-<a name="l00095"></a>00095         <a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> != <a class="code" href="rotorcraft_2autopilot_8h.html#ab3d62edb632309d9a423661747cdb73b">MODE_MANUAL</a> ||
-<a name="l00096"></a>00096         !<a class="code" href="autopilot_8c.html#a99409d6a32e6cce437a1c0354a2515eb">ahrs_is_aligned</a>()) {
-<a name="l00097"></a>00097       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>;
-<a name="l00098"></a>00098     }
-<a name="l00099"></a>00099     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> &gt;= <a class="code" href="autopilot__arming__throttle_8h.html#a0d8d0fa46fe3a0f4b11067f5bb786340">AUTOPILOT_ARMING_DELAY</a>)
-<a name="l00100"></a>00100       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>;
-<a name="l00101"></a>00101     <span class="keywordflow">break</span>;
-<a name="l00102"></a>00102   <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>:
-<a name="l00103"></a>00103     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = TRUE;
-<a name="l00104"></a>00104     <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a0d8d0fa46fe3a0f4b11067f5bb786340">AUTOPILOT_ARMING_DELAY</a>;
-<a name="l00105"></a>00105     <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>())
-<a name="l00106"></a>00106       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759ac74fe63e8ab7da4eabd976515f323417">STATE_UNARMING</a>;
-<a name="l00107"></a>00107     <span class="keywordflow">break</span>;
-<a name="l00108"></a>00108   <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759ac74fe63e8ab7da4eabd976515f323417">STATE_UNARMING</a>:
-<a name="l00109"></a>00109     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = TRUE;
-<a name="l00110"></a>00110     <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a>--;
-<a name="l00111"></a>00111     <span class="keywordflow">if</span> (!<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>())
-<a name="l00112"></a>00112       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>;
-<a name="l00113"></a>00113     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> == 0)
-<a name="l00114"></a>00114       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>;
-<a name="l00115"></a>00115     <span class="keywordflow">break</span>;
-<a name="l00116"></a>00116   <span class="keywordflow">default</span>:
-<a name="l00117"></a>00117     <span class="keywordflow">break</span>;
-<a name="l00118"></a>00118   }
-<a name="l00119"></a>00119 
-<a name="l00120"></a>00120 }
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122 <span class="preprocessor">#endif </span><span class="comment">/* AUTOPILOT_ARMING_THROTTLE_H */</span>
+<a name="l00040"></a><a class="code" href="autopilot__arming__throttle_8h.html#a004a65f7397a60ad392c6b3833ae4bcc">00040</a> bool_t <a class="code" href="autopilot__arming__switch_8h.html#a004a65f7397a60ad392c6b3833ae4bcc">autopilot_unarmed_in_auto</a>;
+<a name="l00041"></a>00041 
+<a name="l00042"></a><a class="code" href="autopilot__arming__throttle_8h.html#aea5ad986cd1e5b80aff7ef5589a18aac">00042</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="autopilot__arming__throttle_8h.html#aea5ad986cd1e5b80aff7ef5589a18aac">autopilot_arming_init</a>(<span class="keywordtype">void</span>) {
+<a name="l00043"></a>00043   <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea0075eeb0f3377fa2dad84d3656ab8c6d">STATE_UNINIT</a>;
+<a name="l00044"></a>00044   <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = 0;
+<a name="l00045"></a>00045   <a class="code" href="autopilot__arming__switch_8h.html#a004a65f7397a60ad392c6b3833ae4bcc">autopilot_unarmed_in_auto</a> = FALSE;
+<a name="l00046"></a>00046 }
+<a name="l00047"></a>00047 
+<a name="l00048"></a><a class="code" href="autopilot__arming__throttle_8h.html#a720eaefed19d55f94f6f866d8aba2702">00048</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="autopilot__arming__throttle_8h.html#a720eaefed19d55f94f6f866d8aba2702">autopilot_arming_set</a>(bool_t motors_on) {
+<a name="l00049"></a>00049   <span class="keywordflow">if</span> (motors_on) {
+<a name="l00050"></a>00050     <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>;
+<a name="l00051"></a>00051   }
+<a name="l00052"></a>00052   <span class="keywordflow">else</span> {
+<a name="l00053"></a>00053     <span class="keywordflow">if</span> (<a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> == <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>) {
+<a name="l00054"></a>00054       <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ead79a43d70eda33549c20a9f8490e44c1">STATE_WAITING</a>;
+<a name="l00055"></a>00055     }
+<a name="l00056"></a>00056   }
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00067"></a><a class="code" href="autopilot__arming__throttle_8h.html#abbbe9ccad851ff6d7ef88e298059b6ce">00067</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="autopilot__arming__throttle_8h.html#abbbe9ccad851ff6d7ef88e298059b6ce" title="State machine to check if motors should be turned ON or OFF.">autopilot_arming_check_motors_on</a>( <span class="keywordtype">void</span> ) {
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069   <span class="comment">/* only allow switching motor if not in FAILSAFE or KILL mode */</span>
+<a name="l00070"></a>00070   <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> &gt; <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>) {
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072     <span class="keywordflow">switch</span>(<a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a>) {
+<a name="l00073"></a>00073     <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea0075eeb0f3377fa2dad84d3656ab8c6d">STATE_UNINIT</a>:
+<a name="l00074"></a>00074       <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
+<a name="l00075"></a>00075       <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = 0;
+<a name="l00076"></a>00076       <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>()) {
+<a name="l00077"></a>00077         <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>;
+<a name="l00078"></a>00078       }
+<a name="l00079"></a>00079       <span class="keywordflow">else</span> {
+<a name="l00080"></a>00080         <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ead79a43d70eda33549c20a9f8490e44c1">STATE_WAITING</a>;
+<a name="l00081"></a>00081       }
+<a name="l00082"></a>00082       <span class="keywordflow">break</span>;
+<a name="l00083"></a>00083     <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ead79a43d70eda33549c20a9f8490e44c1">STATE_WAITING</a>:
+<a name="l00084"></a>00084       <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
+<a name="l00085"></a>00085       <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = 0;
+<a name="l00086"></a>00086       <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>()) {
+<a name="l00087"></a>00087         <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>;
+<a name="l00088"></a>00088       }
+<a name="l00089"></a>00089       <span class="keywordflow">break</span>;
+<a name="l00090"></a>00090     <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>:
+<a name="l00091"></a>00091       <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
+<a name="l00092"></a>00092       <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = 0;
+<a name="l00093"></a>00093       <span class="keywordflow">if</span> (!<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>() &amp;&amp;
+<a name="l00094"></a>00094           <a class="code" href="autopilot__rc__helpers_8h.html#ac346fd81983479ea51d3439a7dfca6c6">rc_attitude_sticks_centered</a>() &amp;&amp;
+<a name="l00095"></a>00095           (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ab3d62edb632309d9a423661747cdb73b">MODE_MANUAL</a> || <a class="code" href="autopilot__arming__switch_8h.html#a004a65f7397a60ad392c6b3833ae4bcc">autopilot_unarmed_in_auto</a>)) {
+<a name="l00096"></a>00096         <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759a4782b6ecc31dc1819db2d9ab92fedeff">STATE_ARMING</a>;
+<a name="l00097"></a>00097       }
+<a name="l00098"></a>00098       <span class="keywordflow">break</span>;
+<a name="l00099"></a>00099     <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759a4782b6ecc31dc1819db2d9ab92fedeff">STATE_ARMING</a>:
+<a name="l00100"></a>00100       <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
+<a name="l00101"></a>00101       <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a>++;
+<a name="l00102"></a>00102       <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>() ||
+<a name="l00103"></a>00103           !<a class="code" href="autopilot__rc__helpers_8h.html#ac346fd81983479ea51d3439a7dfca6c6">rc_attitude_sticks_centered</a>() ||
+<a name="l00104"></a>00104           (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> != <a class="code" href="rotorcraft_2autopilot_8h.html#ab3d62edb632309d9a423661747cdb73b">MODE_MANUAL</a> &amp;&amp; !<a class="code" href="autopilot__arming__switch_8h.html#a004a65f7397a60ad392c6b3833ae4bcc">autopilot_unarmed_in_auto</a>)) {
+<a name="l00105"></a>00105         <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>;
+<a name="l00106"></a>00106       }
+<a name="l00107"></a>00107       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> &gt;= <a class="code" href="autopilot__arming__throttle_8h.html#a0d8d0fa46fe3a0f4b11067f5bb786340">AUTOPILOT_ARMING_DELAY</a>) {
+<a name="l00108"></a>00108         <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>;
+<a name="l00109"></a>00109       }
+<a name="l00110"></a>00110       <span class="keywordflow">break</span>;
+<a name="l00111"></a>00111     <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>:
+<a name="l00112"></a>00112       <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = TRUE;
+<a name="l00113"></a>00113       <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a0d8d0fa46fe3a0f4b11067f5bb786340">AUTOPILOT_ARMING_DELAY</a>;
+<a name="l00114"></a>00114       <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>()) {
+<a name="l00115"></a>00115         <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759ac74fe63e8ab7da4eabd976515f323417">STATE_UNARMING</a>;
+<a name="l00116"></a>00116       }
+<a name="l00117"></a>00117       <span class="keywordflow">break</span>;
+<a name="l00118"></a>00118     <span class="keywordflow">case</span> <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759ac74fe63e8ab7da4eabd976515f323417">STATE_UNARMING</a>:
+<a name="l00119"></a>00119       <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = TRUE;
+<a name="l00120"></a>00120       <a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a>--;
+<a name="l00121"></a>00121       <span class="keywordflow">if</span> (!<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>()) {
+<a name="l00122"></a>00122         <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427ea5d9b03165b6d8bb49b125baa065bdc39">STATE_MOTORS_ON</a>;
+<a name="l00123"></a>00123       }
+<a name="l00124"></a>00124       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="autopilot__arming__throttle_8h.html#a72b5d1501b850d4593373116279c7024">autopilot_arming_delay_counter</a> == 0) {
+<a name="l00125"></a>00125         <a class="code" href="autopilot__arming__switch_8h.html#a426025835890b253dc035d04d0d98d5a">autopilot_arming_state</a> = <a class="code" href="autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759aad921d96fea7cec905a7ef36a58bf934">STATE_MOTORS_OFF_READY</a>;
+<a name="l00126"></a>00126         <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> != <a class="code" href="rotorcraft_2autopilot_8h.html#ab3d62edb632309d9a423661747cdb73b">MODE_MANUAL</a>) {
+<a name="l00127"></a>00127           <a class="code" href="autopilot__arming__switch_8h.html#a004a65f7397a60ad392c6b3833ae4bcc">autopilot_unarmed_in_auto</a> = TRUE;
+<a name="l00128"></a>00128         }
+<a name="l00129"></a>00129         <span class="keywordflow">else</span> {
+<a name="l00130"></a>00130           <a class="code" href="autopilot__arming__switch_8h.html#a004a65f7397a60ad392c6b3833ae4bcc">autopilot_unarmed_in_auto</a> = FALSE;
+<a name="l00131"></a>00131         }
+<a name="l00132"></a>00132       }
+<a name="l00133"></a>00133       <span class="keywordflow">break</span>;
+<a name="l00134"></a>00134     <span class="keywordflow">default</span>:
+<a name="l00135"></a>00135       <span class="keywordflow">break</span>;
+<a name="l00136"></a>00136     }
+<a name="l00137"></a>00137   }
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139 }
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 <span class="preprocessor">#endif </span><span class="comment">/* AUTOPILOT_ARMING_THROTTLE_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -236,7 +255,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="autopilot__arming__throttle_8h.html">autopilot_arming_throttle.h</a>      </li>
 
-    <li class="footer">Generated on Wed Apr 25 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Apr 26 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

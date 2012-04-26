@@ -186,6 +186,7 @@ var searchData=
   ['autopilot_5fmotors_5fon_5fcounter',['autopilot_motors_on_counter',['../autopilot__arming__yaw_8h.html#afa4555e2285a10ca7a4e4b8a47948bac',1,'autopilot_arming_yaw.h']]],
   ['autopilot_5fpower_5fswitch',['autopilot_power_switch',['../autopilot_8c.html#a2420bfd42441204f7fa1c47721a304e6',1,'autopilot_power_switch():&#160;autopilot.c'],['../rotorcraft_2autopilot_8h.html#a2420bfd42441204f7fa1c47721a304e6',1,'autopilot_power_switch():&#160;autopilot.c']]],
   ['autopilot_5frc',['autopilot_rc',['../autopilot_8c.html#af650349177a10f98d82cd36290bc0108',1,'autopilot_rc():&#160;autopilot.c'],['../rotorcraft_2autopilot_8h.html#af650349177a10f98d82cd36290bc0108',1,'autopilot_rc():&#160;autopilot.c']]],
+  ['autopilot_5funarmed_5fin_5fauto',['autopilot_unarmed_in_auto',['../autopilot__arming__switch_8h.html#a004a65f7397a60ad392c6b3833ae4bcc',1,'autopilot_unarmed_in_auto():&#160;autopilot_arming_switch.h'],['../autopilot__arming__throttle_8h.html#a004a65f7397a60ad392c6b3833ae4bcc',1,'autopilot_unarmed_in_auto():&#160;autopilot_arming_throttle.h']]],
   ['av_5fnb_5fsample',['av_nb_sample',['../structadc__buf.html#aceea4ff785000051676babf3e5f25287',1,'adc_buf']]],
   ['available_5fsensors',['available_sensors',['../structVehicleInterface.html#aadd55a31046784d08346ca94a76ce893',1,'VehicleInterface']]],
   ['azim',['azim',['../structSVinfo.html#a0069a8447d794d029e89b885d6d17d42',1,'SVinfo']]]
