@@ -152,8 +152,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00048"></a>00048 <span class="preprocessor">#endif</span>
 <a name="l00049"></a>00049 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="ins_8h.html" title="Device independent INS code.">subsystems/ins.h</a>&quot;</span>
 <a name="l00050"></a>00050 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span>
-<a name="l00051"></a>00051 <span class="comment">//FIXME: wtf ??!!</span>
-<a name="l00052"></a>00052 <span class="preprocessor">#include &quot;mcu_periph/i2c_arch.h&quot;</span>
+<a name="l00051"></a>00051 <span class="comment">// I2C Error counters</span>
+<a name="l00052"></a>00052 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00053"></a>00053 
 <a name="l00054"></a><a class="code" href="telemetry_8h.html#a03373609a4f23ae59327d141b635eb40">00054</a> <span class="preprocessor">#define PERIODIC_SEND_ALIVE(_trans, _dev) DOWNLINK_SEND_ALIVE(_trans, _dev, 16, MD5SUM)</span>
 <a name="l00055"></a>00055 <span class="preprocessor"></span>
@@ -840,41 +840,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00736"></a>00736 <span class="preprocessor">                                        &amp;ahrs.ltp_to_body_euler.psi);   \</span>
 <a name="l00737"></a>00737 <span class="preprocessor">  }</span>
 <a name="l00738"></a>00738 <span class="preprocessor"></span>
-<a name="l00739"></a><a class="code" href="telemetry_8h.html#ae3e5ff3d8038f5fdcfc2dd7b27999ade">00739</a> <span class="preprocessor">#define PERIODIC_SEND_I2C_ERRORS(_trans, _dev) {                       \</span>
-<a name="l00740"></a>00740 <span class="preprocessor">    DOWNLINK_SEND_I2C_ERRORS(_trans, _dev,                     \</span>
-<a name="l00741"></a>00741 <span class="preprocessor">                   &amp;i2c_errc_ack_fail,  \</span>
-<a name="l00742"></a>00742 <span class="preprocessor">                   &amp;i2c_errc_miss_start_stop,  \</span>
-<a name="l00743"></a>00743 <span class="preprocessor">                   &amp;i2c_errc_arb_lost,  \</span>
-<a name="l00744"></a>00744 <span class="preprocessor">                   &amp;i2c_errc_over_under,  \</span>
-<a name="l00745"></a>00745 <span class="preprocessor">                   &amp;i2c_errc_pec_recep,  \</span>
-<a name="l00746"></a>00746 <span class="preprocessor">                   &amp;i2c_errc_timeout_tlow,  \</span>
-<a name="l00747"></a>00747 <span class="preprocessor">                   &amp;i2c_errc_smbus_alert  \</span>
-<a name="l00748"></a>00748 <span class="preprocessor">                   );                          \</span>
-<a name="l00749"></a>00749 <span class="preprocessor">  }</span>
-<a name="l00750"></a>00750 <span class="preprocessor"></span>
-<a name="l00751"></a>00751 <span class="comment">// FIXME: still used?? or replace by EXTRA_ADC</span>
-<a name="l00752"></a><a class="code" href="telemetry_8h.html#a7abf2ca83a28e38449ba547591e4ae9e">00752</a> <span class="preprocessor">#define PERIODIC_SEND_BOOZ2_SONAR(_trans, _dev) {}</span>
-<a name="l00753"></a>00753 <span class="preprocessor"></span>
-<a name="l00754"></a>00754 <span class="preprocessor">#ifdef BOOZ2_TRACK_CAM</span>
-<a name="l00755"></a>00755 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="cam__track_8h.html" title="blob tracking with cmucam">cam_track.h</a>&quot;</span>
-<a name="l00756"></a>00756 <span class="preprocessor">#define PERIODIC_SEND_CAM_TRACK(_trans, _dev) DOWNLINK_SEND_BOOZ_SIM_SPEED_POS(_trans, _dev, \</span>
-<a name="l00757"></a>00757 <span class="preprocessor">    &amp;target_accel_ned.x, \</span>
-<a name="l00758"></a>00758 <span class="preprocessor">    &amp;target_accel_ned.y, \</span>
-<a name="l00759"></a>00759 <span class="preprocessor">    &amp;target_accel_ned.z, \</span>
-<a name="l00760"></a>00760 <span class="preprocessor">    &amp;target_speed_ned.x, \</span>
-<a name="l00761"></a>00761 <span class="preprocessor">    &amp;target_speed_ned.y, \</span>
-<a name="l00762"></a>00762 <span class="preprocessor">    &amp;target_speed_ned.z, \</span>
-<a name="l00763"></a>00763 <span class="preprocessor">    &amp;target_pos_ned.x, \</span>
-<a name="l00764"></a>00764 <span class="preprocessor">    &amp;target_pos_ned.y, \</span>
-<a name="l00765"></a>00765 <span class="preprocessor">    &amp;target_pos_ned.z)</span>
-<a name="l00766"></a>00766 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00767"></a><a class="code" href="telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763">00767</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_CAM_TRACK(_trans, _dev) {}</span>
-<a name="l00768"></a>00768 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00769"></a>00769 <span class="preprocessor"></span>
-<a name="l00770"></a>00770 <span class="preprocessor">#include &quot;generated/settings.h&quot;</span>
-<a name="l00771"></a><a class="code" href="telemetry_8h.html#aac3b084503a7ef7ccdf84a6651bb82e6">00771</a> <span class="preprocessor">#define PERIODIC_SEND_DL_VALUE(_trans, _dev) PeriodicSendDlValue(_trans, _dev)</span>
+<a name="l00739"></a>00739 <span class="preprocessor">#ifdef USE_I2C1</span>
+<a name="l00740"></a>00740 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_I2C1_ERRORS(_trans, _dev) {                   \</span>
+<a name="l00741"></a>00741 <span class="preprocessor">    DOWNLINK_SEND_I2C_ERRORS(_trans, _dev,                          \</span>
+<a name="l00742"></a>00742 <span class="preprocessor">                             &amp;i2c1.errors-&gt;ack_fail_cnt,            \</span>
+<a name="l00743"></a>00743 <span class="preprocessor">                             &amp;i2c1.errors-&gt;miss_start_stop_cnt,     \</span>
+<a name="l00744"></a>00744 <span class="preprocessor">                             &amp;i2c1.errors-&gt;arb_lost_cnt,            \</span>
+<a name="l00745"></a>00745 <span class="preprocessor">                             &amp;i2c1.errors-&gt;over_under_cnt,          \</span>
+<a name="l00746"></a>00746 <span class="preprocessor">                             &amp;i2c1.errors-&gt;pec_recep_cnt,           \</span>
+<a name="l00747"></a>00747 <span class="preprocessor">                             &amp;i2c1.errors-&gt;timeout_tlow_cnt,        \</span>
+<a name="l00748"></a>00748 <span class="preprocessor">                             &amp;i2c1.errors-&gt;smbus_alert_cnt,         \</span>
+<a name="l00749"></a>00749 <span class="preprocessor">                             &amp;i2c1.errors-&gt;unexpected_event_cnt,    \</span>
+<a name="l00750"></a>00750 <span class="preprocessor">                             &amp;i2c1.errors-&gt;last_unexpected_event);  \</span>
+<a name="l00751"></a>00751 <span class="preprocessor">  }</span>
+<a name="l00752"></a>00752 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00753"></a><a class="code" href="telemetry_8h.html#aa300dadc9eca3ca611992e4ddfb2cf88">00753</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_I2C1_ERRORS(_trans, _dev) {}</span>
+<a name="l00754"></a>00754 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00755"></a>00755 <span class="preprocessor"></span>
+<a name="l00756"></a>00756 <span class="preprocessor">#ifdef USE_I2C2</span>
+<a name="l00757"></a>00757 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_I2C2_ERRORS(_trans, _dev) {                  \</span>
+<a name="l00758"></a>00758 <span class="preprocessor">    DOWNLINK_SEND_I2C_ERRORS(_trans, _dev,                          \</span>
+<a name="l00759"></a>00759 <span class="preprocessor">                             &amp;i2c2.errors-&gt;ack_fail_cnt,            \</span>
+<a name="l00760"></a>00760 <span class="preprocessor">                             &amp;i2c2.errors-&gt;miss_start_stop_cnt,     \</span>
+<a name="l00761"></a>00761 <span class="preprocessor">                             &amp;i2c2.errors-&gt;arb_lost_cnt,            \</span>
+<a name="l00762"></a>00762 <span class="preprocessor">                             &amp;i2c2.errors-&gt;over_under_cnt,          \</span>
+<a name="l00763"></a>00763 <span class="preprocessor">                             &amp;i2c2.errors-&gt;pec_recep_cnt,           \</span>
+<a name="l00764"></a>00764 <span class="preprocessor">                             &amp;i2c2.errors-&gt;timeout_tlow_cnt,        \</span>
+<a name="l00765"></a>00765 <span class="preprocessor">                             &amp;i2c2.errors-&gt;smbus_alert_cnt,         \</span>
+<a name="l00766"></a>00766 <span class="preprocessor">                             &amp;i2c2.errors-&gt;unexpected_event_cnt,    \</span>
+<a name="l00767"></a>00767 <span class="preprocessor">                             &amp;i2c2.errors-&gt;last_unexpected_event);  \</span>
+<a name="l00768"></a>00768 <span class="preprocessor">  }</span>
+<a name="l00769"></a>00769 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00770"></a><a class="code" href="telemetry_8h.html#aecd657a201cb72b760f7e68370401204">00770</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_I2C2_ERRORS(_trans, _dev) {}</span>
+<a name="l00771"></a>00771 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00772"></a>00772 <span class="preprocessor"></span>
-<a name="l00773"></a>00773 <span class="preprocessor">#endif </span><span class="comment">/* TELEMETRY_H */</span>
+<a name="l00773"></a><a class="code" href="telemetry_8h.html#ae3e5ff3d8038f5fdcfc2dd7b27999ade">00773</a> <span class="preprocessor">#define PERIODIC_SEND_I2C_ERRORS(_trans, _dev) {    \</span>
+<a name="l00774"></a>00774 <span class="preprocessor">    PERIODIC_SEND_I2C1_ERRORS(_trans, _dev);        \</span>
+<a name="l00775"></a>00775 <span class="preprocessor">    PERIODIC_SEND_I2C2_ERRORS(_trans, _dev);        \</span>
+<a name="l00776"></a>00776 <span class="preprocessor">  }</span>
+<a name="l00777"></a>00777 <span class="preprocessor"></span>
+<a name="l00778"></a>00778 <span class="comment">// FIXME: still used?? or replace by EXTRA_ADC</span>
+<a name="l00779"></a><a class="code" href="telemetry_8h.html#a7abf2ca83a28e38449ba547591e4ae9e">00779</a> <span class="preprocessor">#define PERIODIC_SEND_BOOZ2_SONAR(_trans, _dev) {}</span>
+<a name="l00780"></a>00780 <span class="preprocessor"></span>
+<a name="l00781"></a>00781 <span class="preprocessor">#ifdef BOOZ2_TRACK_CAM</span>
+<a name="l00782"></a>00782 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="cam__track_8h.html" title="blob tracking with cmucam">cam_track.h</a>&quot;</span>
+<a name="l00783"></a>00783 <span class="preprocessor">#define PERIODIC_SEND_CAM_TRACK(_trans, _dev) DOWNLINK_SEND_BOOZ_SIM_SPEED_POS(_trans, _dev, \</span>
+<a name="l00784"></a>00784 <span class="preprocessor">    &amp;target_accel_ned.x, \</span>
+<a name="l00785"></a>00785 <span class="preprocessor">    &amp;target_accel_ned.y, \</span>
+<a name="l00786"></a>00786 <span class="preprocessor">    &amp;target_accel_ned.z, \</span>
+<a name="l00787"></a>00787 <span class="preprocessor">    &amp;target_speed_ned.x, \</span>
+<a name="l00788"></a>00788 <span class="preprocessor">    &amp;target_speed_ned.y, \</span>
+<a name="l00789"></a>00789 <span class="preprocessor">    &amp;target_speed_ned.z, \</span>
+<a name="l00790"></a>00790 <span class="preprocessor">    &amp;target_pos_ned.x, \</span>
+<a name="l00791"></a>00791 <span class="preprocessor">    &amp;target_pos_ned.y, \</span>
+<a name="l00792"></a>00792 <span class="preprocessor">    &amp;target_pos_ned.z)</span>
+<a name="l00793"></a>00793 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00794"></a><a class="code" href="telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763">00794</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_CAM_TRACK(_trans, _dev) {}</span>
+<a name="l00795"></a>00795 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00796"></a>00796 <span class="preprocessor"></span>
+<a name="l00797"></a>00797 <span class="preprocessor">#include &quot;generated/settings.h&quot;</span>
+<a name="l00798"></a><a class="code" href="telemetry_8h.html#aac3b084503a7ef7ccdf84a6651bb82e6">00798</a> <span class="preprocessor">#define PERIODIC_SEND_DL_VALUE(_trans, _dev) PeriodicSendDlValue(_trans, _dev)</span>
+<a name="l00799"></a>00799 <span class="preprocessor"></span>
+<a name="l00800"></a>00800 <span class="preprocessor">#endif </span><span class="comment">/* TELEMETRY_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -895,7 +922,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="telemetry_8h.html">telemetry.h</a>      </li>
 
-    <li class="footer">Generated on Thu Apr 26 2012 04:00:07 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Apr 27 2012 04:00:05 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

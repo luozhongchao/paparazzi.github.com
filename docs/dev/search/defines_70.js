@@ -125,6 +125,8 @@ var searchData=
   ['periodic_5fsend_5fhff_5fdbg',['PERIODIC_SEND_HFF_DBG',['../telemetry_8h.html#abde9c5c20287a8d6f9fb2076f6109c5b',1,'telemetry.h']]],
   ['periodic_5fsend_5fhff_5fgps',['PERIODIC_SEND_HFF_GPS',['../telemetry_8h.html#ac5c177e34a8461590ee1339be93c14d3',1,'telemetry.h']]],
   ['periodic_5fsend_5fhover_5floop',['PERIODIC_SEND_HOVER_LOOP',['../telemetry_8h.html#add75cbf8759a560e94bf970050df6104',1,'telemetry.h']]],
+  ['periodic_5fsend_5fi2c1_5ferrors',['PERIODIC_SEND_I2C1_ERRORS',['../telemetry_8h.html#aa300dadc9eca3ca611992e4ddfb2cf88',1,'telemetry.h']]],
+  ['periodic_5fsend_5fi2c2_5ferrors',['PERIODIC_SEND_I2C2_ERRORS',['../telemetry_8h.html#aecd657a201cb72b760f7e68370401204',1,'telemetry.h']]],
   ['periodic_5fsend_5fi2c_5ferrors',['PERIODIC_SEND_I2C_ERRORS',['../telemetry_8h.html#ae3e5ff3d8038f5fdcfc2dd7b27999ade',1,'telemetry.h']]],
   ['periodic_5fsend_5fimu',['PERIODIC_SEND_IMU',['../ap__downlink_8h.html#a74f5704591bd1a37defcacae7fd31dbd',1,'ap_downlink.h']]],
   ['periodic_5fsend_5fimu_5faccel',['PERIODIC_SEND_IMU_ACCEL',['../ap__downlink_8h.html#a0ea387db54e24d995029c78ea06af883',1,'ap_downlink.h']]],

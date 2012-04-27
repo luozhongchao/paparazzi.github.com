@@ -23,6 +23,8 @@ var telemetry_8h =
     [ "PERIODIC_SEND_HFF_DBG", "telemetry_8h.html#abde9c5c20287a8d6f9fb2076f6109c5b", null ],
     [ "PERIODIC_SEND_HFF_GPS", "telemetry_8h.html#ac5c177e34a8461590ee1339be93c14d3", null ],
     [ "PERIODIC_SEND_HOVER_LOOP", "telemetry_8h.html#add75cbf8759a560e94bf970050df6104", null ],
+    [ "PERIODIC_SEND_I2C1_ERRORS", "telemetry_8h.html#aa300dadc9eca3ca611992e4ddfb2cf88", null ],
+    [ "PERIODIC_SEND_I2C2_ERRORS", "telemetry_8h.html#aecd657a201cb72b760f7e68370401204", null ],
     [ "PERIODIC_SEND_I2C_ERRORS", "telemetry_8h.html#ae3e5ff3d8038f5fdcfc2dd7b27999ade", null ],
     [ "PERIODIC_SEND_IMU_ACCEL_RAW", "telemetry_8h.html#a25fa8df9fad289f46a1bcc92ba02f56b", null ],
     [ "PERIODIC_SEND_IMU_ACCEL_SCALED", "telemetry_8h.html#abdbde6a1d5cc65d7d9b645891937adb0", null ],

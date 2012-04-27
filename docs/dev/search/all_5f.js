@@ -12,6 +12,8 @@ var searchData=
   ['_5f_5fget_5fcpsr',['__get_cpsr',['../armVIC_8c.html#a07a90dd2662e1a51c45600eccd2661c4',1,'armVIC.c']]],
   ['_5f_5fgpslink',['__GpsLink',['../gps__mtk_8h.html#ab289c425d7a9205c6967a627e7bf250b',1,'__GpsLink():&#160;gps_mtk.h'],['../gps__nmea_8h.html#ab289c425d7a9205c6967a627e7bf250b',1,'__GpsLink():&#160;gps_nmea.h'],['../gps__skytraq_8h.html#ab289c425d7a9205c6967a627e7bf250b',1,'__GpsLink():&#160;gps_skytraq.h'],['../gps__ubx_8h.html#ab289c425d7a9205c6967a627e7bf250b',1,'__GpsLink():&#160;gps_ubx.h']]],
   ['_5f_5fgsmlink',['__GSMLink',['../gsm_8c.html#ab0b99821b885507c44d0cf324a812b63',1,'gsm.c']]],
+  ['_5f_5fi2c_5freg_5fcritical_5fzone_5fstart',['__I2C_REG_CRITICAL_ZONE_START',['../i2c__arch_8rewritten_8c.html#acd2a78f0920821b186bfc72bcc979592',1,'__I2C_REG_CRITICAL_ZONE_START():&#160;i2c_arch.rewritten.c'],['../i2c__attempt4__nodouble__isr_8c.html#acd2a78f0920821b186bfc72bcc979592',1,'__I2C_REG_CRITICAL_ZONE_START():&#160;i2c_attempt4_nodouble_isr.c']]],
+  ['_5f_5fi2c_5freg_5fcritical_5fzone_5fstop',['__I2C_REG_CRITICAL_ZONE_STOP',['../i2c__arch_8rewritten_8c.html#a57b9ce58e89f994cb2209448bfd65de1',1,'__I2C_REG_CRITICAL_ZONE_STOP():&#160;i2c_arch.rewritten.c'],['../i2c__attempt4__nodouble__isr_8c.html#a57b9ce58e89f994cb2209448bfd65de1',1,'__I2C_REG_CRITICAL_ZONE_STOP():&#160;i2c_attempt4_nodouble_isr.c']]],
   ['_5f_5finslink',['__InsLink',['../ins__module_8h.html#a06985cd7205d2d359dc64331d6b041a3',1,'ins_module.h']]],
   ['_5f_5fled_5fclr',['__LED_CLR',['../lpc21_2led__hw_8h.html#a8b68b0ac0cb3a8f28563ee1da321d136',1,'led_hw.h']]],
   ['_5f_5fled_5fdir',['__LED_DIR',['../lpc21_2led__hw_8h.html#ada4912fac88b4b629ce7ee5b331d0fb7',1,'led_hw.h']]],
