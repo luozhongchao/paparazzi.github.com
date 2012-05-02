@@ -1,10 +1,10 @@
 var searchData=
 [
   ['g',['G',['../nav_8h.html#aed9ea78689ecce0b7264c02c7f8a9a54',1,'nav.h']]],
-  ['gain_5fprescaler_5fd',['GAIN_PRESCALER_D',['../stabilization__attitude__quat__int_8c.html#af833bed099e96bd96fe397dfdb5049b3',1,'stabilization_attitude_quat_int.c']]],
-  ['gain_5fprescaler_5fff',['GAIN_PRESCALER_FF',['../stabilization__attitude__quat__int_8c.html#a9482d04d6374c8e58ddcd65e9b89d028',1,'stabilization_attitude_quat_int.c']]],
-  ['gain_5fprescaler_5fi',['GAIN_PRESCALER_I',['../stabilization__attitude__quat__int_8c.html#ac66f764f58e6484be051c4c0214bc60d',1,'stabilization_attitude_quat_int.c']]],
-  ['gain_5fprescaler_5fp',['GAIN_PRESCALER_P',['../stabilization__attitude__quat__int_8c.html#ac2de1e0726914060b8a76cc50e10b666',1,'stabilization_attitude_quat_int.c']]],
+  ['gain_5fprescaler_5fd',['GAIN_PRESCALER_D',['../stabilization__attitude__quat__float_8c.html#af833bed099e96bd96fe397dfdb5049b3',1,'GAIN_PRESCALER_D():&#160;stabilization_attitude_quat_float.c'],['../stabilization__attitude__quat__int_8c.html#af833bed099e96bd96fe397dfdb5049b3',1,'GAIN_PRESCALER_D():&#160;stabilization_attitude_quat_int.c']]],
+  ['gain_5fprescaler_5fff',['GAIN_PRESCALER_FF',['../stabilization__attitude__quat__float_8c.html#a9482d04d6374c8e58ddcd65e9b89d028',1,'GAIN_PRESCALER_FF():&#160;stabilization_attitude_quat_float.c'],['../stabilization__attitude__quat__int_8c.html#a9482d04d6374c8e58ddcd65e9b89d028',1,'GAIN_PRESCALER_FF():&#160;stabilization_attitude_quat_int.c']]],
+  ['gain_5fprescaler_5fi',['GAIN_PRESCALER_I',['../stabilization__attitude__quat__float_8c.html#ac66f764f58e6484be051c4c0214bc60d',1,'GAIN_PRESCALER_I():&#160;stabilization_attitude_quat_float.c'],['../stabilization__attitude__quat__int_8c.html#ac66f764f58e6484be051c4c0214bc60d',1,'GAIN_PRESCALER_I():&#160;stabilization_attitude_quat_int.c']]],
+  ['gain_5fprescaler_5fp',['GAIN_PRESCALER_P',['../stabilization__attitude__quat__float_8c.html#ac2de1e0726914060b8a76cc50e10b666',1,'GAIN_PRESCALER_P():&#160;stabilization_attitude_quat_float.c'],['../stabilization__attitude__quat__int_8c.html#ac2de1e0726914060b8a76cc50e10b666',1,'GAIN_PRESCALER_P():&#160;stabilization_attitude_quat_int.c']]],
   ['geiger_5fcnt_5fdev',['GEIGER_CNT_DEV',['../geiger__counter_8c.html#a0b1fac16331bf94c39da0007dfe6fb45',1,'geiger_counter.c']]],
   ['geiger_5fcnt_5fi2c_5faddr',['GEIGER_CNT_I2C_ADDR',['../geiger__counter_8c.html#ad4c962a60e154907ac96d50a12d9527b',1,'geiger_counter.c']]],
   ['generic_5fcom_5fi2c_5fdev',['GENERIC_COM_I2C_DEV',['../generic__com_8c.html#a0834a23b3f10ab714acb0a90ce47d55d',1,'generic_com.c']]],

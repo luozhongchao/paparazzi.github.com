@@ -1,11 +1,16 @@
 var stabilization__attitude__quat__float_8c =
 [
+    [ "GAIN_PRESCALER_D", "stabilization__attitude__quat__float_8c.html#af833bed099e96bd96fe397dfdb5049b3", null ],
+    [ "GAIN_PRESCALER_FF", "stabilization__attitude__quat__float_8c.html#a9482d04d6374c8e58ddcd65e9b89d028", null ],
+    [ "GAIN_PRESCALER_I", "stabilization__attitude__quat__float_8c.html#ac66f764f58e6484be051c4c0214bc60d", null ],
+    [ "GAIN_PRESCALER_P", "stabilization__attitude__quat__float_8c.html#ac2de1e0726914060b8a76cc50e10b666", null ],
     [ "IERROR_SCALE", "stabilization__attitude__quat__float_8c.html#afefdded499414f183759487dc47de6d5", null ],
     [ "attitude_run_fb", "stabilization__attitude__quat__float_8c.html#abcf3f74ddd37dcf51e0df255d22c4a23", null ],
     [ "attitude_run_ff", "stabilization__attitude__quat__float_8c.html#a112d2235c054e7eadd1659fa0a78e4f4", null ],
     [ "stabilization_attitude_enter", "stabilization__attitude__quat__float_8c.html#a23f862ca823e6fd23fc9c111178be077", null ],
     [ "stabilization_attitude_gain_schedule", "stabilization__attitude__quat__float_8c.html#ad56ee50f489feb63a2af75f0024d892c", null ],
     [ "stabilization_attitude_init", "stabilization__attitude__quat__float_8c.html#a03d27593d891182c04fc5337766733d1", null ],
+    [ "stabilization_attitude_read_rc", "stabilization__attitude__quat__float_8c.html#a147b1b8bfdde52f82d0829ce748bf1e9", null ],
     [ "stabilization_attitude_run", "stabilization__attitude__quat__float_8c.html#aae5fe27afd6cf48e9beeb6aa4c6cfc6e", null ],
     [ "gain_idx", "stabilization__attitude__quat__float_8c.html#a88471162c0f269059f892bf96fbc7260", null ],
     [ "phi_ddgain", "stabilization__attitude__quat__float_8c.html#a6ef156cacd8701fc42504415807c85a0", null ],
