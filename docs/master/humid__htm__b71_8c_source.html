@@ -131,11 +131,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="humid__htm__b71_8h.html">modules/meteo/humid_htm_b71.h</a>&quot;</span>
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00038"></a>00038 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
 <a name="l00042"></a><a class="code" href="humid__htm__b71_8c.html#a2978a46b47cbc9d17a0924014ff9658b">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
@@ -158,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00059"></a>00059 }
 <a name="l00060"></a>00060 
 <a name="l00061"></a><a class="code" href="humid__htm__b71_8h.html#aef985345300849c33368b867ae5691ba">00061</a> <span class="keywordtype">void</span> <a class="code" href="humid__htm__b71_8c.html#aef985345300849c33368b867ae5691ba">humid_htm_start</a>( <span class="keywordtype">void</span> ) {
-<a name="l00062"></a>00062   <span class="keywordflow">if</span> (<a class="code" href="sys__time_8c.html#ae5ab3e1832346003e3dfa32017a9e79c">cpu_time_sec</a> &gt; 1) {
+<a name="l00062"></a>00062   <span class="keywordflow">if</span> (<a class="code" href="sys__time_8h.html#ab714a06d7058fea51e8a8b6851d51d33">cpu_time_sec</a> &gt; 1) {
 <a name="l00063"></a>00063     <span class="comment">/* measurement request: wake up sensor, sample temperature/humidity */</span>
 <a name="l00064"></a>00064     <a class="code" href="i2c_8h.html#ace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="humid__htm__b71_8c.html#a37f0407ea00c0a7c0293631507b4aa46">HTM_I2C_DEV</a>, <a class="code" href="humid__htm__b71_8c.html#a4a2656b1b2fa52fcb90cadc21ff19320">htm_trans</a>, <a class="code" href="humid__htm__b71_8c.html#ae4aeefdce8e2dc898edec7541d412f0e">HTM_SLAVE_ADDR</a>, 0);
 <a name="l00065"></a>00065     <a class="code" href="humid__htm__b71_8c.html#a1a42209c238d5ad940c7d0fb8bed0633">htm_status</a> = <a class="code" href="humid__htm__b71_8h.html#af194b5af9d692bdf6fddc9b8b524b8b3a2fb56a02d0acf65a71249342edc6408f">HTM_MR</a>;
@@ -192,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00093"></a>00093         <span class="comment">/* temperature */</span>
 <a name="l00094"></a>00094         <a class="code" href="humid__htm__b71_8c.html#a3d1ddd302c20acebc75b8ea57e6a857d">temphtm</a> = (<a class="code" href="humid__htm__b71_8c.html#a4a2656b1b2fa52fcb90cadc21ff19320">htm_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[2] &lt;&lt; 6) | (<a class="code" href="humid__htm__b71_8c.html#a4a2656b1b2fa52fcb90cadc21ff19320">htm_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[3] &gt;&gt; 2);
 <a name="l00095"></a>00095         <a class="code" href="humid__htm__b71_8c.html#adfb08fb58d62ab3300c38d22cc1f9c22">ftemphtm</a> = -40.00 + 0.01 * <a class="code" href="humid__htm__b71_8c.html#a3d1ddd302c20acebc75b8ea57e6a857d">temphtm</a>;
-<a name="l00096"></a>00096         DOWNLINK_SEND_HTM_STATUS(DefaultChannel, &amp;<a class="code" href="humid__htm__b71_8c.html#ac59566e59062a875450e1230e7b03826">humidhtm</a>, &amp;<a class="code" href="humid__htm__b71_8c.html#a3d1ddd302c20acebc75b8ea57e6a857d">temphtm</a>, &amp;<a class="code" href="humid__htm__b71_8c.html#a604202badb317da2867665737ce79875">fhumidhtm</a>, &amp;<a class="code" href="humid__htm__b71_8c.html#adfb08fb58d62ab3300c38d22cc1f9c22">ftemphtm</a>);
+<a name="l00096"></a>00096         DOWNLINK_SEND_HTM_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="humid__htm__b71_8c.html#ac59566e59062a875450e1230e7b03826">humidhtm</a>, &amp;<a class="code" href="humid__htm__b71_8c.html#a3d1ddd302c20acebc75b8ea57e6a857d">temphtm</a>, &amp;<a class="code" href="humid__htm__b71_8c.html#a604202badb317da2867665737ce79875">fhumidhtm</a>, &amp;<a class="code" href="humid__htm__b71_8c.html#adfb08fb58d62ab3300c38d22cc1f9c22">ftemphtm</a>);
 <a name="l00097"></a>00097       }
 <a name="l00098"></a>00098       <a class="code" href="humid__htm__b71_8c.html#a4a2656b1b2fa52fcb90cadc21ff19320">htm_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00099"></a>00099       <span class="keywordflow">break</span>;
@@ -224,7 +224,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="humid__htm__b71_8c.html">humid_htm_b71.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

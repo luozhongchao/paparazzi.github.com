@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="adc_8h.html" title="arch independent ADC (Analog to Digital Converter) API">mcu_periph/adc.h</a>&quot;</span>
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="light__solar_8h.html">modules/meteo/light_solar.h</a>&quot;</span>
 <a name="l00037"></a>00037 
 <a name="l00038"></a>00038 <span class="preprocessor">#ifndef ADC_CHANNEL_LIGHT_SOLAR_UP</span>
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00070"></a>00070   <span class="comment">/* 10k/10k voltage divider, 10 bits adc, 3.3V max */</span>
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072   <span class="keywordflow">if</span> (++<a class="code" href="light__solar_8c.html#a831ddfb4155fdd57df9ff70f0df6033b">light_cnt</a> &gt;= <a class="code" href="light__solar_8h.html#a625b0cd4756749febeb68c16df8085f9">LIGHT_NB</a>) {
-<a name="l00073"></a>00073     DOWNLINK_SEND_SOLAR_RADIATION(DefaultChannel,
+<a name="l00073"></a>00073     DOWNLINK_SEND_SOLAR_RADIATION(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,
 <a name="l00074"></a>00074           &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[0], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[0], &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[1], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[1], &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[2], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[2], &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[3], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[3],
 <a name="l00075"></a>00075           &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[4], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[4], &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[5], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[5], &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[6], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[6], &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[7], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[7],
 <a name="l00076"></a>00076           &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[8], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[8], &amp;<a class="code" href="light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d">up</a>[9], &amp;<a class="code" href="light__solar_8c.html#aca7d0671f027071758d544dd2008cd2c">dn</a>[9]);
@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="light__solar_8c.html">light_solar.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

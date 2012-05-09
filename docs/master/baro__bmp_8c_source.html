@@ -128,12 +128,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="baro__bmp_8h.html">baro_bmp.h</a>&quot;</span>
 <a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00038"></a>00038 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
 <a name="l00042"></a><a class="code" href="baro__bmp_8c.html#a2978a46b47cbc9d17a0924014ff9658b">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
@@ -263,7 +263,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00166"></a>00166       <a class="code" href="baro__bmp_8c.html#a6ca3431a3d3264374f69fb976c92055a">baro_bmp_temperature</a> = bmp_t;
 <a name="l00167"></a>00167       <a class="code" href="baro__bmp_8c.html#a679b6da65afcc82d118af2099a6c61e3">baro_bmp_pressure</a> = bmp_p;
 <a name="l00168"></a>00168 <span class="preprocessor">#ifdef SENSOR_SYNC_SEND</span>
-<a name="l00169"></a>00169 <span class="preprocessor"></span>      DOWNLINK_SEND_BMP_STATUS(DefaultChannel, &amp;<a class="code" href="baro__bmp_8c.html#a544f34f9f69ac754cc504df2bef091c6">bmp_up</a>, &amp;<a class="code" href="baro__bmp_8c.html#af4c96d55e57edbc028b7e2b6a4877b5a">bmp_ut</a>, &amp;bmp_p, &amp;bmp_t);
+<a name="l00169"></a>00169 <span class="preprocessor"></span>      DOWNLINK_SEND_BMP_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="baro__bmp_8c.html#a544f34f9f69ac754cc504df2bef091c6">bmp_up</a>, &amp;<a class="code" href="baro__bmp_8c.html#af4c96d55e57edbc028b7e2b6a4877b5a">bmp_ut</a>, &amp;bmp_p, &amp;bmp_t);
 <a name="l00170"></a>00170 <span class="preprocessor">#endif</span>
 <a name="l00171"></a>00171 <span class="preprocessor"></span>    }
 <a name="l00172"></a>00172   }
@@ -288,7 +288,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="baro__bmp_8c.html">baro_bmp.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

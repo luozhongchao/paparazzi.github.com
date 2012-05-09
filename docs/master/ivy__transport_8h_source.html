@@ -108,48 +108,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="ivy__transport_8c.html#af8a78f1895116ff1f79145d705ad86a3">ivy_buf</a>[];
 <a name="l00005"></a>00005 <span class="keyword">extern</span> <span class="keywordtype">char</span>* <a class="code" href="ivy__transport_8c.html#aa4847ba385c35aeb5bc5c3222050e1c0">ivy_p</a>;
 <a name="l00006"></a>00006 
-<a name="l00007"></a><a class="code" href="ivy__transport_8h.html#ae95b91b79c3151306f3ce8354e21dc8a">00007</a> <span class="preprocessor">#define IvyTransportCheckFreeSpace(_) TRUE</span>
+<a name="l00007"></a><a class="code" href="ivy__transport_8h.html#a3ce4045e992f56d4d0e1cb79fb6ad4e8">00007</a> <span class="preprocessor">#define IvyTransportCheckFreeSpace(_dev,_) TRUE</span>
 <a name="l00008"></a>00008 <span class="preprocessor"></span>
-<a name="l00009"></a><a class="code" href="ivy__transport_8h.html#a84186f72ebb0d940bf7804059b94ed24">00009</a> <span class="preprocessor">#define IvyTransportSizeOf(x) (x)</span>
+<a name="l00009"></a><a class="code" href="ivy__transport_8h.html#a5a6cb17f5a4c1f3b439a3ac1beed8927">00009</a> <span class="preprocessor">#define IvyTransportSizeOf(_dev, x) (x)</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
-<a name="l00011"></a><a class="code" href="ivy__transport_8h.html#ac22a01eeb151d587891748e3ffa9f5b1">00011</a> <span class="preprocessor">#define IvyTransportHeader(len) ivy_p=ivy_buf;</span>
+<a name="l00011"></a><a class="code" href="ivy__transport_8h.html#a3e168a0894d626b2fd491e919a38e5a8">00011</a> <span class="preprocessor">#define IvyTransportHeader(_dev,len) ivy_p=ivy_buf;</span>
 <a name="l00012"></a>00012 <span class="preprocessor"></span>
-<a name="l00013"></a><a class="code" href="ivy__transport_8h.html#ab5d6b5bc010370be1e5d6b2089e1ce56">00013</a> <span class="preprocessor">#define IvyTransportTrailer() { *ivy_p = &#39;\0&#39;; IvySendMsg(&quot;%s&quot;,ivy_buf); }</span>
+<a name="l00013"></a><a class="code" href="ivy__transport_8h.html#a9f1e1353ce79ba21102735548dccd99c">00013</a> <span class="preprocessor">#define IvyTransportTrailer(_dev) { *ivy_p = &#39;\0&#39;; IvySendMsg(&quot;%s&quot;,ivy_buf); }</span>
 <a name="l00014"></a>00014 <span class="preprocessor"></span>
-<a name="l00015"></a><a class="code" href="ivy__transport_8h.html#a6b02dcad3aa52fa2df8c99a0e77aa083">00015</a> <span class="preprocessor">#define IvyTransportPutUint8(x) { ivy_p += sprintf(ivy_p, &quot;%u &quot;, x); }</span>
-<a name="l00016"></a><a class="code" href="ivy__transport_8h.html#a37de71bd639980e6c87a135f2433cbae">00016</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutNamedUint8(_name, _x) { ivy_p += sprintf(ivy_p, &quot;%s &quot;, _name); }</span>
+<a name="l00015"></a><a class="code" href="ivy__transport_8h.html#a6e7690fcbdadcd54c06cc7b62b42970d">00015</a> <span class="preprocessor">#define IvyTransportPutUint8(_dev,x) { ivy_p += sprintf(ivy_p, &quot;%u &quot;, x); }</span>
+<a name="l00016"></a><a class="code" href="ivy__transport_8h.html#aabdd427b65b75ec8d0e531de938621a4">00016</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutNamedUint8(_dev,_name, _x) { ivy_p += sprintf(ivy_p, &quot;%s &quot;, _name); }</span>
 <a name="l00017"></a>00017 <span class="preprocessor"></span>
 <a name="l00018"></a><a class="code" href="ivy__transport_8h.html#a0385aa9a9736980a9179c99a2e9d17df">00018</a> <span class="preprocessor">#define Space() ivy_p += sprintf(ivy_p, &quot; &quot;);</span>
 <a name="l00019"></a><a class="code" href="ivy__transport_8h.html#ab76f6d3ff670dccc6aca97241f0c53c2">00019</a> <span class="preprocessor"></span><span class="preprocessor">#define Comma() ivy_p += sprintf(ivy_p, &quot;,&quot;);</span>
 <a name="l00020"></a>00020 <span class="preprocessor"></span>
-<a name="l00021"></a><a class="code" href="ivy__transport_8h.html#a5c72db84b04e3c02f2906c792ec811cb">00021</a> <span class="preprocessor">#define IvyTransportPutUintByAddr(x) ivy_p += sprintf(ivy_p, &quot;%u&quot;, *x);</span>
-<a name="l00022"></a><a class="code" href="ivy__transport_8h.html#afe3e42561fd0322f4b1e877ceceb0971">00022</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint8ByAddr(x) IvyTransportPutUintByAddr(x) Space()</span>
-<a name="l00023"></a><a class="code" href="ivy__transport_8h.html#a071fc58bd55b555f127d67afa344d389">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint16ByAddr(x) IvyTransportPutUintByAddr(x) Space()</span>
-<a name="l00024"></a><a class="code" href="ivy__transport_8h.html#aa477a04d1083735913fdcc7a3e74eb55">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint32ByAddr(x) IvyTransportPutUintByAddr(x) Space()</span>
+<a name="l00021"></a><a class="code" href="ivy__transport_8h.html#ad46c886dee92f1de99e8ea7e09563b12">00021</a> <span class="preprocessor">#define IvyTransportPutUintByAddr(_dev,x) ivy_p += sprintf(ivy_p, &quot;%u&quot;, *x);</span>
+<a name="l00022"></a><a class="code" href="ivy__transport_8h.html#ab70f1edf3ac8433ef22d2f84cb4db318">00022</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint8ByAddr(_dev,x) IvyTransportPutUintByAddr(_dev,x) Space()</span>
+<a name="l00023"></a><a class="code" href="ivy__transport_8h.html#a54aedf9977305150d4389494ea25e93a">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint16ByAddr(_dev,x) IvyTransportPutUintByAddr(_dev,x) Space()</span>
+<a name="l00024"></a><a class="code" href="ivy__transport_8h.html#a475db216d7dbfdbadb7e5d72b60ab0fc">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint32ByAddr(_dev,x) IvyTransportPutUintByAddr(_dev,x) Space()</span>
 <a name="l00025"></a>00025 <span class="preprocessor"></span>
-<a name="l00026"></a><a class="code" href="ivy__transport_8h.html#af4550644c9e79be2b1612ea5c2644594">00026</a> <span class="preprocessor">#define IvyTransportPutIntByAddr(x) ivy_p += sprintf(ivy_p, &quot;%d&quot;, *x);</span>
-<a name="l00027"></a><a class="code" href="ivy__transport_8h.html#ab85b5651f35f8f18f3c9af0c5dcc8ff3">00027</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutInt8ByAddr(x) IvyTransportPutIntByAddr(x) Space()</span>
-<a name="l00028"></a><a class="code" href="ivy__transport_8h.html#abd79141fdf07047841413d64e4baedaf">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutInt16ByAddr(x) IvyTransportPutIntByAddr(x) Space()</span>
-<a name="l00029"></a><a class="code" href="ivy__transport_8h.html#a9bab97f9670131e0a596c5a8c60f9fb2">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutInt32ByAddr(x) IvyTransportPutIntByAddr(x) Space()</span>
+<a name="l00026"></a><a class="code" href="ivy__transport_8h.html#aaedaacecf663ef976a437dc60384648f">00026</a> <span class="preprocessor">#define IvyTransportPutIntByAddr(_dev,x) ivy_p += sprintf(ivy_p, &quot;%d&quot;, *x);</span>
+<a name="l00027"></a><a class="code" href="ivy__transport_8h.html#a64e2176661217f52915c7420d821d4e0">00027</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutInt8ByAddr(_dev,x) IvyTransportPutIntByAddr(_dev,x) Space()</span>
+<a name="l00028"></a><a class="code" href="ivy__transport_8h.html#ad2bffd7e8262739726ead015eb975da5">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutInt16ByAddr(_dev,x) IvyTransportPutIntByAddr(_dev,x) Space()</span>
+<a name="l00029"></a><a class="code" href="ivy__transport_8h.html#aa6320dbccd3b502b104fd3c6f4ede9d0">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutInt32ByAddr(_dev,x) IvyTransportPutIntByAddr(_dev,x) Space()</span>
 <a name="l00030"></a>00030 <span class="preprocessor"></span>
-<a name="l00031"></a><a class="code" href="ivy__transport_8h.html#a131b5f7598348e52dfbc1c660b4272b9">00031</a> <span class="preprocessor">#define IvyTransportPutOneFloatByAddr(x) ivy_p += sprintf(ivy_p, &quot;%f&quot;, *x);</span>
-<a name="l00032"></a><a class="code" href="ivy__transport_8h.html#a9e8e0c4016f97388670a918787408ded">00032</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutFloatByAddr(x) IvyTransportPutOneFloatByAddr(x) Space()</span>
-<a name="l00033"></a><a class="code" href="ivy__transport_8h.html#a671dd31f8ff4a547b5fc2740e616ee5e">00033</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutDoubleByAddr(x) IvyTransportPutOneFloatByAddr(x) Space()</span>
+<a name="l00031"></a><a class="code" href="ivy__transport_8h.html#a1d900fde9ef553eea35309dc501af175">00031</a> <span class="preprocessor">#define IvyTransportPutOneFloatByAddr(_dev,x) ivy_p += sprintf(ivy_p, &quot;%f&quot;, *x);</span>
+<a name="l00032"></a><a class="code" href="ivy__transport_8h.html#ac05420c08a21be2739d889fc4945ceed">00032</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutFloatByAddr(_dev,x) IvyTransportPutOneFloatByAddr(_dev,x) Space()</span>
+<a name="l00033"></a><a class="code" href="ivy__transport_8h.html#a1e4a9f4ff9cc9d2becc81e0c1db0b6ce">00033</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutDoubleByAddr(_dev,x) IvyTransportPutOneFloatByAddr(_dev,x) Space()</span>
 <a name="l00034"></a>00034 <span class="preprocessor"></span>
-<a name="l00035"></a><a class="code" href="ivy__transport_8h.html#a8e99f21b3b47db177359e608b3e6e89d">00035</a> <span class="preprocessor">#define IvyTransportPutArray(_put, _n, _x) { \</span>
+<a name="l00035"></a><a class="code" href="ivy__transport_8h.html#a00e860700cc4a6b5f7015e5206f6b2e0">00035</a> <span class="preprocessor">#define IvyTransportPutArray(_dev,_put, _n, _x) { \</span>
 <a name="l00036"></a>00036 <span class="preprocessor">  int __i; \</span>
 <a name="l00037"></a>00037 <span class="preprocessor">  for(__i = 0; __i &lt; _n; __i++) { \</span>
-<a name="l00038"></a>00038 <span class="preprocessor">    _put(&amp;_x[__i]); \</span>
+<a name="l00038"></a>00038 <span class="preprocessor">    _put(_dev,&amp;_x[__i]); \</span>
 <a name="l00039"></a>00039 <span class="preprocessor">    Comma(); \</span>
 <a name="l00040"></a>00040 <span class="preprocessor">  } \</span>
 <a name="l00041"></a>00041 <span class="preprocessor">}</span>
 <a name="l00042"></a>00042 <span class="preprocessor"></span>
-<a name="l00043"></a><a class="code" href="ivy__transport_8h.html#a39a1267f65b3260a35dd6f29262ee595">00043</a> <span class="preprocessor">#define IvyTransportPutUint8Array(_n, _x) IvyTransportPutArray(IvyTransportPutUintByAddr, _n, _x)</span>
-<a name="l00044"></a><a class="code" href="ivy__transport_8h.html#a24621b1e4b001fd6424766fa69066380">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutInt16Array(_n, _x) IvyTransportPutArray(IvyTransportPutIntByAddr, _n, _x)</span>
-<a name="l00045"></a><a class="code" href="ivy__transport_8h.html#abab380b11b59563606cf80ab64b22c3d">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint16Array(_n, _x) IvyTransportPutArray(IvyTransportPutUintByAddr, _n, _x)</span>
-<a name="l00046"></a><a class="code" href="ivy__transport_8h.html#ad895eacf6fb965c2e07a03f47a482c7e">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint32Array(_n, _x) IvyTransportPutArray(IvyTransportPutUintByAddr, _n, _x)</span>
-<a name="l00047"></a><a class="code" href="ivy__transport_8h.html#a8b69cf952f8ad7430cdb976c5f7b57c1">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutFloatArray(_n, _x) IvyTransportPutArray(IvyTransportPutOneFloatByAddr, _n, _x)</span>
-<a name="l00048"></a><a class="code" href="ivy__transport_8h.html#aa5d382f1978e63ce87fdf06872377cbd">00048</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutDoubleArray(_n, _x) IvyTransportPutFloatArray(_n, _x)</span>
+<a name="l00043"></a><a class="code" href="ivy__transport_8h.html#a8bb1699a297d0b85c23572d4afe08b6a">00043</a> <span class="preprocessor">#define IvyTransportPutUint8Array(_dev,_n, _x) IvyTransportPutArray(_dev,IvyTransportPutUintByAddr, _n, _x)</span>
+<a name="l00044"></a><a class="code" href="ivy__transport_8h.html#a934a1b6bf41bd2efdc93a333c84822a4">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutInt16Array(_dev,_n, _x) IvyTransportPutArray(_dev,IvyTransportPutIntByAddr, _n, _x)</span>
+<a name="l00045"></a><a class="code" href="ivy__transport_8h.html#a1a21a2120ff71c798bc7ee0111c074fd">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint16Array(_dev,_n, _x) IvyTransportPutArray(_dev,IvyTransportPutUintByAddr, _n, _x)</span>
+<a name="l00046"></a><a class="code" href="ivy__transport_8h.html#a916963173b9410ef8e70e2627909713f">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutUint32Array(_dev,_n, _x) IvyTransportPutArray(_dev,IvyTransportPutUintByAddr, _n, _x)</span>
+<a name="l00047"></a><a class="code" href="ivy__transport_8h.html#a0314e772f3ed5418801508c5b910e15d">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutFloatArray(_dev,_n, _x) IvyTransportPutArray(_dev,IvyTransportPutOneFloatByAddr, _n, _x)</span>
+<a name="l00048"></a><a class="code" href="ivy__transport_8h.html#aa44af46cb68b885b319e864a1a809924">00048</a> <span class="preprocessor"></span><span class="preprocessor">#define IvyTransportPutDoubleArray(_dev,_n, _x) IvyTransportPutFloatArray(_dev,_n, _x)</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -170,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ivy__transport_8h.html">ivy_transport.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:10 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:05 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -9,10 +9,9 @@ var searchData=
   ['last_5fbaro_5falt',['last_baro_alt',['../alt__filter_8c.html#ae05d497e598d27cd712567d1eef7ac77',1,'alt_filter.c']]],
   ['last_5fblock',['last_block',['../common__flight__plan_8c.html#a5d3ddba0962294e6c33573f86c4b1eec',1,'last_block():&#160;common_flight_plan.c'],['../common__flight__plan_8h.html#a5d3ddba0962294e6c33573f86c4b1eec',1,'last_block():&#160;common_flight_plan.c']]],
   ['last_5ffix_5fticks',['last_fix_ticks',['../structGpsState.html#ae57cb88a232985880e19989f99795245',1,'GpsState']]],
-  ['last_5ffix_5ftime',['last_fix_time',['../structGpsState.html#a5502679e99fb346270925884a3da5e1f',1,'GpsState']]],
+  ['last_5ffix_5ftime',['last_fix_time',['../structGpsState.html#ac6e982464156a3aa6d1967b7cf468b84',1,'GpsState']]],
   ['last_5fgps_5falt',['last_gps_alt',['../alt__filter_8c.html#a29bc3860cd47987f526e6d61e83009f9',1,'alt_filter.c']]],
   ['last_5fmsg',['last_msg',['../structVehicleInterface.html#a1bfd15310f8c8127120cad9efcdb05ed',1,'VehicleInterface']]],
-  ['last_5fperiodic_5fevent',['last_periodic_event',['../lpc21_2sys__time__hw_8c.html#a55bdf7ed418dd6dd629bc487cf67ec55',1,'last_periodic_event():&#160;sys_time_hw.c'],['../lpc21_2sys__time__hw_8h.html#a55bdf7ed418dd6dd629bc487cf67ec55',1,'last_periodic_event():&#160;sys_time_hw.c']]],
   ['last_5fplume',['last_plume',['../anemotaxis_8c.html#a577e562d994b8840057bb682d0cf6b69',1,'anemotaxis.c']]],
   ['last_5fplume_5fvalue',['last_plume_value',['../chemotaxis_8c.html#adb2f647564f1446ebf661f88999d0b59',1,'chemotaxis.c']]],
   ['last_5fpos_5fned',['last_pos_ned',['../cam__track_8c.html#a7d0915e40bd010daea26724dd9714e6d',1,'cam_track.c']]],
@@ -65,6 +64,8 @@ var searchData=
   ['ltp_5fto_5fimu_5feuler',['ltp_to_imu_euler',['../structAhrs.html#a1e79a274903df738c6760966fbdfff63',1,'Ahrs::ltp_to_imu_euler()'],['../structAhrsFloat.html#a7939781f8234cc44711f3fa3e2d50d7b',1,'AhrsFloat::ltp_to_imu_euler()']]],
   ['ltp_5fto_5fimu_5fquat',['ltp_to_imu_quat',['../structAhrs.html#ad6ae7a4af1c1f0bea7525e4313c5cf51',1,'Ahrs::ltp_to_imu_quat()'],['../structAhrsFloat.html#a401a9d6b2c156aae5c37a238e0200b3e',1,'AhrsFloat::ltp_to_imu_quat()']]],
   ['ltp_5fto_5fimu_5frmat',['ltp_to_imu_rmat',['../structAhrs.html#a92e24219cb10142edb3964285c91c4f4',1,'Ahrs::ltp_to_imu_rmat()'],['../structAhrsFloat.html#a9dd97e8fb1eb706467e34d8c083066d2',1,'AhrsFloat::ltp_to_imu_rmat()']]],
+  ['ltp_5fvel_5fnorm',['ltp_vel_norm',['../structAhrsFloatCmplRmat.html#ad7add2c52ba553de705a5096e3a2c2db',1,'AhrsFloatCmplRmat::ltp_vel_norm()'],['../structAhrsIntCmpl.html#aef05ef5216308fa52417f70f789a5410',1,'AhrsIntCmpl::ltp_vel_norm()']]],
+  ['ltp_5fvel_5fnorm_5fvalid',['ltp_vel_norm_valid',['../structAhrsFloatCmplRmat.html#a7429c017c0715a5fc8ab09f8650787d8',1,'AhrsFloatCmplRmat::ltp_vel_norm_valid()'],['../structAhrsIntCmpl.html#a57470b48028419d9ef592c7db474d9f7',1,'AhrsIntCmpl::ltp_vel_norm_valid()']]],
   ['lut_5ferr_5fad',['lut_err_ad',['../structcan__accept__Regs__t.html#ab6d16f8be412a9600fd2e4c2c635fb7c',1,'can_accept_Regs_t']]],
   ['lut_5ferr_5freg',['lut_err_reg',['../structcan__accept__Regs__t.html#ac8311f647b75a7b740445675a8ea199a',1,'can_accept_Regs_t']]]
 ];

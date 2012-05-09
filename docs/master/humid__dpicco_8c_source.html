@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00015"></a>00015 
 <a name="l00016"></a>00016 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
 <a name="l00017"></a><a class="code" href="humid__dpicco_8c.html#a2978a46b47cbc9d17a0924014ff9658b">00017</a> <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
@@ -149,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a>00051     <a class="code" href="humid__dpicco_8c.html#ab64952001108c919639688798891aeb5">dpicco_humid</a> = (<a class="code" href="humid__dpicco_8c.html#a97d55136395826e61d57497ff78bb203">dpicco_val</a>[0] * <a class="code" href="humid__dpicco_8h.html#abbda0580e3dd6e9a3a3d49b3024bd2e3">DPICCO_HUMID_RANGE</a>) / <a class="code" href="humid__dpicco_8h.html#aa8d4232fcc87144e37387ddb97133f38">DPICCO_HUMID_MAX</a>;
 <a name="l00052"></a>00052     <a class="code" href="humid__dpicco_8c.html#a391a1143f33daa4944c30d58e6be93ff">dpicco_temp</a> = ((<a class="code" href="humid__dpicco_8c.html#a97d55136395826e61d57497ff78bb203">dpicco_val</a>[1] * <a class="code" href="humid__dpicco_8h.html#a7e609a8e4f83def7142215e2804c0ac8">DPICCO_TEMP_RANGE</a>) / <a class="code" href="humid__dpicco_8h.html#a38f1d76df94354691ef53911fddcfa9c">DPICCO_TEMP_MAX</a>) + <a class="code" href="humid__dpicco_8h.html#a9c839ce01cb4826f84fa47b3e728caf5">DPICCO_TEMP_OFFS</a>;
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054     DOWNLINK_SEND_DPICCO_STATUS(DefaultChannel, &amp;<a class="code" href="humid__dpicco_8c.html#a97d55136395826e61d57497ff78bb203">dpicco_val</a>[0], &amp;<a class="code" href="humid__dpicco_8c.html#a97d55136395826e61d57497ff78bb203">dpicco_val</a>[1], &amp;<a class="code" href="humid__dpicco_8c.html#ab64952001108c919639688798891aeb5">dpicco_humid</a>, &amp;<a class="code" href="humid__dpicco_8c.html#a391a1143f33daa4944c30d58e6be93ff">dpicco_temp</a>);
+<a name="l00054"></a>00054     DOWNLINK_SEND_DPICCO_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="humid__dpicco_8c.html#a97d55136395826e61d57497ff78bb203">dpicco_val</a>[0], &amp;<a class="code" href="humid__dpicco_8c.html#a97d55136395826e61d57497ff78bb203">dpicco_val</a>[1], &amp;<a class="code" href="humid__dpicco_8c.html#ab64952001108c919639688798891aeb5">dpicco_humid</a>, &amp;<a class="code" href="humid__dpicco_8c.html#a391a1143f33daa4944c30d58e6be93ff">dpicco_temp</a>);
 <a name="l00055"></a>00055     <a class="code" href="humid__dpicco_8c.html#a90595ebb9b16becacd49a56614c8a51d">dpicco_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00056"></a>00056   }
 <a name="l00057"></a>00057 }
@@ -173,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="humid__dpicco_8c.html">humid_dpicco.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

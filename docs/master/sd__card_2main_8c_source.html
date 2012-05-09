@@ -104,14 +104,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="sd__card_2main_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;std.h&quot;</span>
 <a name="l00002"></a>00002 <span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
-<a name="l00003"></a>00003 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00006"></a>00006 
 <a name="l00007"></a>00007 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs.">datalink.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs.">subsystems/datalink/datalink.h</a>&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;generated/settings.h&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;dl_protocol.h&quot;</span>
 <a name="l00013"></a>00013 
@@ -123,14 +123,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="sd__card_2main_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> );
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> dl_buffer[<a class="code" href="datalink_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>]  <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((aligned));
-<a name="l00023"></a><a class="code" href="sd__card_2main_8c.html#a5da8932586e81510ec4b202a0d0abacd">00023</a> bool_t <a class="code" href="datalink_8h.html#a6d1aa46a515e17fda85b489f96d0a3d9">dl_msg_available</a>;
+<a name="l00022"></a>00022 <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> dl_buffer[<a class="code" href="main__demo5_8c.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>]  <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((aligned));
+<a name="l00023"></a><a class="code" href="sd__card_2main_8c.html#a5da8932586e81510ec4b202a0d0abacd">00023</a> bool_t <a class="code" href="main__demo5_8c.html#a5da8932586e81510ec4b202a0d0abacd">dl_msg_available</a>;
 <a name="l00024"></a><a class="code" href="sd__card_2main_8c.html#a554cac6546bc91d21ff99268001d4010">00024</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="sim__ap_8c.html#a554cac6546bc91d21ff99268001d4010">datalink_time</a>;
 <a name="l00025"></a>00025 
 <a name="l00026"></a><a class="code" href="sd__card_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00026</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">void</span> ) {
 <a name="l00027"></a>00027   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
 <a name="l00028"></a>00028   <span class="keywordflow">while</span>(1) {
-<a name="l00029"></a>00029     <span class="keywordflow">if</span> (<a class="code" href="sim_2sys__time__hw_8h.html#aae751b25410663d1569168a04e60c8db">sys_time_periodic</a>())
+<a name="l00029"></a>00029     <span class="keywordflow">if</span> (<a class="code" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666">sys_time_check_and_ack_timer</a>(0))
 <a name="l00030"></a>00030       <a class="code" href="sd__card_2main_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>();
 <a name="l00031"></a>00031     <a class="code" href="sd__card_2main_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( );
 <a name="l00032"></a>00032   }
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00037"></a>00037   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
-<a name="l00038"></a>00038   <a class="code" href="lpc21_2sys__time__hw_8h.html#afa1427883d31532a107dc306b6b3b6d7">sys_time_init</a>();
+<a name="l00038"></a>00038   <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);
 <a name="l00039"></a>00039   <a class="code" href="led_8h.html#a9d9d9b1f30592189c3aa7358c626218f">led_init</a>();
 <a name="l00040"></a>00040   Uart0Init();
 <a name="l00041"></a>00041 
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a>00051 }
 <a name="l00052"></a>00052 
 <a name="l00053"></a><a class="code" href="sd__card_2main_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">00053</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="sd__card_2main_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> ) {
-<a name="l00054"></a>00054   <a class="code" href="datalink_8h.html#a1e122bd87bd1f699141735e71a32d002" title="Should be called when chars are available in dl_buffer.">DatalinkEvent</a>();
+<a name="l00054"></a>00054   <a class="code" href="datalink_8h.html#a1e122bd87bd1f699141735e71a32d002">DatalinkEvent</a>();
 <a name="l00055"></a>00055 
 <a name="l00056"></a>00056   <span class="comment">// spi event</span>
 <a name="l00057"></a>00057   <span class="keywordflow">if</span> (<a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a>) {
@@ -169,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00065"></a>00065 
 <a name="l00066"></a><a class="code" href="sd__card_2main_8c.html#af9bfeb49b8ea12c64a72e4a4fb5a6002">00066</a> <span class="preprocessor">#define IdOfMsg(x) (x[1])</span>
 <a name="l00067"></a>00067 <span class="preprocessor"></span>
-<a name="l00068"></a><a class="code" href="sd__card_2main_8c.html#a87ff8c0ffff657dbde8566f062779428">00068</a> <span class="keywordtype">void</span> <a class="code" href="datalink_8h.html#ad3bda4915c69f8c470d2bdba039e8ca8">dl_parse_msg</a>(<span class="keywordtype">void</span>) {
+<a name="l00068"></a><a class="code" href="sd__card_2main_8c.html#a87ff8c0ffff657dbde8566f062779428">00068</a> <span class="keywordtype">void</span> <a class="code" href="fixedwing_2datalink_8c.html#a87ff8c0ffff657dbde8566f062779428">dl_parse_msg</a>(<span class="keywordtype">void</span>) {
 <a name="l00069"></a>00069 
 <a name="l00070"></a>00070   <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(1);
 <a name="l00071"></a>00071 
@@ -213,7 +213,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="sd__card_2main_8c.html">main.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

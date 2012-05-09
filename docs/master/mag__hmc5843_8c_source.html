@@ -125,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00023"></a>00023 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00025"></a>00025 <span class="preprocessor">#include &lt;math.h&gt;</span>
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;../../peripherals/hmc5843.h&quot;</span>
@@ -150,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00046"></a>00046   <a class="code" href="mag__hmc5843_8c.html#ab4a98865f9a38e801fad6328688f3879">mag_x</a> = <a class="code" href="hmc5843_8c.html#a0d9d6f319b2ad8e47637ad83bb04dbe2">hmc5843</a>.<a class="code" href="structHmc5843.html#a748d124b8961245f3a38d66182a0c8a9">data</a>.<a class="code" href="structHmc5843.html#af635d5d1646bd758030dba6a4e13b560">value</a>[0];
 <a name="l00047"></a>00047   <a class="code" href="mag__hmc5843_8c.html#a8c9c4ce6f472a571bf1c748f07b77d28">mag_y</a> = <a class="code" href="hmc5843_8c.html#a0d9d6f319b2ad8e47637ad83bb04dbe2">hmc5843</a>.<a class="code" href="structHmc5843.html#a748d124b8961245f3a38d66182a0c8a9">data</a>.<a class="code" href="structHmc5843.html#af635d5d1646bd758030dba6a4e13b560">value</a>[1];
 <a name="l00048"></a>00048   <a class="code" href="mag__hmc5843_8c.html#a41b8debdd1aa236fdfa517d1860e26f8">mag_z</a> = <a class="code" href="hmc5843_8c.html#a0d9d6f319b2ad8e47637ad83bb04dbe2">hmc5843</a>.<a class="code" href="structHmc5843.html#a748d124b8961245f3a38d66182a0c8a9">data</a>.<a class="code" href="structHmc5843.html#af635d5d1646bd758030dba6a4e13b560">value</a>[2];
-<a name="l00049"></a>00049   RunOnceEvery(30,DOWNLINK_SEND_IMU_MAG_RAW(DefaultChannel,&amp;<a class="code" href="mag__hmc5843_8c.html#ab4a98865f9a38e801fad6328688f3879">mag_x</a>,&amp;<a class="code" href="mag__hmc5843_8c.html#a8c9c4ce6f472a571bf1c748f07b77d28">mag_y</a>,&amp;<a class="code" href="mag__hmc5843_8c.html#a41b8debdd1aa236fdfa517d1860e26f8">mag_z</a>));
+<a name="l00049"></a>00049   RunOnceEvery(30,DOWNLINK_SEND_IMU_MAG_RAW(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,&amp;<a class="code" href="mag__hmc5843_8c.html#ab4a98865f9a38e801fad6328688f3879">mag_x</a>,&amp;<a class="code" href="mag__hmc5843_8c.html#a8c9c4ce6f472a571bf1c748f07b77d28">mag_y</a>,&amp;<a class="code" href="mag__hmc5843_8c.html#a41b8debdd1aa236fdfa517d1860e26f8">mag_z</a>));
 <a name="l00050"></a>00050 }
 <a name="l00051"></a>00051 
 <a name="l00052"></a><a class="code" href="mag__hmc5843_8h.html#a880fdee482292937a14f6aee33208f22">00052</a> <span class="keywordtype">void</span> <a class="code" href="mag__hmc5843_8c.html#a880fdee482292937a14f6aee33208f22">hmc5843_module_event</a>( <span class="keywordtype">void</span> )
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="mag__hmc5843_8c.html">mag_hmc5843.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

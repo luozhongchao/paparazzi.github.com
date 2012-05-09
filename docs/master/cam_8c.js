@@ -1,7 +1,8 @@
 var cam_8c =
 [
-    [ "DELTA_ALPHA", "cam_8c.html#a3d2951f9ff802ed7ba8c62d83725cbd2", null ],
-    [ "MIN_PPRZ_CAM", "cam_8c.html#a4e585415967e03931cf64e38f3860977", null ],
+    [ "CAM_MODE0", "cam_8c.html#a6fd9e06059070c24cea95cea236b76b5", null ],
+    [ "CAM_PAN0", "cam_8c.html#a148ea3f41a59ef60d0d77a888d1657e7", null ],
+    [ "CAM_TILT0", "cam_8c.html#a6865b8a8f47b075fa831d157638648c0", null ],
     [ "cam_ac_target", "cam_8c.html#a7e228da24201c997a297f7c49bffa74c", null ],
     [ "cam_angles", "cam_8c.html#a38adb5d1136278301352a4a57e463045", null ],
     [ "cam_init", "cam_8c.html#a1d12354dff08edc23a4890724f1bb8fc", null ],

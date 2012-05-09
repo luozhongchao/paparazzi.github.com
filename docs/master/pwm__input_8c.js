@@ -1,6 +1,7 @@
 var pwm__input_8c =
 [
-    [ "pwm_input_init", "pwm__input_8c.html#a45920a6a88c45cb2cb798b01306707a2", null ],
-    [ "pwm_input_duration", "pwm__input_8c.html#a8c7a8daf10cb4fc0b51548914b47866d", null ],
-    [ "pwm_input_valid", "pwm__input_8c.html#aa166df361f51960a6a2c55893d0b30b8", null ]
+    [ "pwm_input_duty_tics", "pwm__input_8c.html#a10f2a2c56c408dac7f753dc40f2986cf", null ],
+    [ "pwm_input_duty_valid", "pwm__input_8c.html#a8bba700f504dc9a8af8bfce95e08eb6e", null ],
+    [ "pwm_input_period_tics", "pwm__input_8c.html#aa342afd936d8faba75ed025c2adb56bf", null ],
+    [ "pwm_input_period_valid", "pwm__input_8c.html#a1c3301e7803a112db96d86605e0d4832", null ]
 ];

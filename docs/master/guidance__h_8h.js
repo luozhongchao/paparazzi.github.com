@@ -19,7 +19,6 @@ var guidance__h_8h =
     [ "guidance_h_igain", "guidance__h_8h.html#ad1420057a2381ce4ded91b76745b3f18", null ],
     [ "guidance_h_mode", "guidance__h_8h.html#a8a5d124d4767559d3332e9e3cbaa0e98", null ],
     [ "guidance_h_nav_err", "guidance__h_8h.html#aecdc2a055cb680ad15b5891d90d6ca20", null ],
-    [ "guidance_h_ngain", "guidance__h_8h.html#ab5eb85f43dff9ded7eedf51852c8a7c1", null ],
     [ "guidance_h_pgain", "guidance__h_8h.html#a515117efee08e8c0b81fa7381ac25981", null ],
     [ "guidance_h_pos_err", "guidance__h_8h.html#a3e1465db4a9d539e7c6cba31f5458c70", null ],
     [ "guidance_h_pos_err_sum", "guidance__h_8h.html#a38c8f96006ee44bb6e6e7af963f3cee2", null ],

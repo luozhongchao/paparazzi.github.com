@@ -79,12 +79,10 @@ var searchData=
   ['hmc_5fconf_5fdone',['HMC_CONF_DONE',['../hmc58xx_8c.html#ae9e7cc827b91233c35989a8b1d04399d',1,'hmc58xx.c']]],
   ['hmc_5fconf_5fmode',['HMC_CONF_MODE',['../hmc58xx_8c.html#a13820cb31504b5cec19eb6b951fa1211',1,'hmc58xx.c']]],
   ['hmc_5fconf_5funinit',['HMC_CONF_UNINIT',['../hmc58xx_8c.html#afcefaf6d3c25e7596caa31a3e7fa3f2f',1,'hmc58xx.c']]],
-  ['hold_5fdistance',['HOLD_DISTANCE',['../guidance__h_8c.html#ad997521b22750e0c222111debb551c45',1,'guidance_h.c']]],
   ['horizontal_5fmode_5fattitude',['HORIZONTAL_MODE_ATTITUDE',['../navigation_8h.html#a30b84135f7785b38ae71f5e29577aa02',1,'navigation.h']]],
   ['horizontal_5fmode_5fcircle',['HORIZONTAL_MODE_CIRCLE',['../navigation_8h.html#a5bfcd798f85be44cd7766b55ef9c9c08',1,'HORIZONTAL_MODE_CIRCLE():&#160;navigation.h'],['../nav_8h.html#a5bfcd798f85be44cd7766b55ef9c9c08',1,'HORIZONTAL_MODE_CIRCLE():&#160;nav.h']]],
   ['horizontal_5fmode_5froute',['HORIZONTAL_MODE_ROUTE',['../navigation_8h.html#a6084dc0a6bca1d7ca7c39dad6614bce0',1,'HORIZONTAL_MODE_ROUTE():&#160;navigation.h'],['../nav_8h.html#a6084dc0a6bca1d7ca7c39dad6614bce0',1,'HORIZONTAL_MODE_ROUTE():&#160;nav.h']]],
   ['horizontal_5fmode_5fwaypoint',['HORIZONTAL_MODE_WAYPOINT',['../navigation_8h.html#a303d1b36f192af5f774d7a660ea83fff',1,'HORIZONTAL_MODE_WAYPOINT():&#160;navigation.h'],['../nav_8h.html#a303d1b36f192af5f774d7a660ea83fff',1,'HORIZONTAL_MODE_WAYPOINT():&#160;nav.h']]],
-  ['hse_5ftype_5fext_5fclk',['HSE_TYPE_EXT_CLK',['../lisa__l__1_80_8h.html#a2ecf0f4fe5595c7688f135b2d7ed4180',1,'HSE_TYPE_EXT_CLK():&#160;lisa_l_1.0.h'],['../lisa__m__1_80_8h.html#a2ecf0f4fe5595c7688f135b2d7ed4180',1,'HSE_TYPE_EXT_CLK():&#160;lisa_m_1.0.h']]],
   ['htm_5fi2c_5fdev',['HTM_I2C_DEV',['../humid__htm__b71_8c.html#a37f0407ea00c0a7c0293631507b4aa46',1,'humid_htm_b71.c']]],
   ['htm_5fslave_5faddr',['HTM_SLAVE_ADDR',['../humid__htm__b71_8c.html#ae4aeefdce8e2dc898edec7541d412f0e',1,'humid_htm_b71.c']]],
   ['humi',['HUMI',['../humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d',1,'humid_sht.h']]]

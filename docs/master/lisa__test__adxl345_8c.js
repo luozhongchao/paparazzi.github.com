@@ -5,6 +5,7 @@ var lisa__test__adxl345_8c =
     [ "AccUnselect", "lisa__test__adxl345_8c.html#ae4c7f2761e1268cdd7ed6ff6c396919c", null ],
     [ "CONFIGURED", "lisa__test__adxl345_8c.html#a514476189fbaf15c716d5e846955d2b8", null ],
     [ "exti2_irq_handler", "lisa__test__adxl345_8c.html#a25c7fe956a00de07290f7a78d27c7c89", null ],
+    [ "exti2_isr", "lisa__test__adxl345_8c.html#a40747dba0f93159403e51109a87575fd", null ],
     [ "main", "lisa__test__adxl345_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
     [ "main_event_task", "lisa__test__adxl345_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1", null ],
     [ "main_init", "lisa__test__adxl345_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1", null ],

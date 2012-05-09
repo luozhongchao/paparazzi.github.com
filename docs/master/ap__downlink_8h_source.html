@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: sw/airborne/ap_downlink.h Source File</title>
+<title>Paparazzi UAS: sw/airborne/firmwares/fixedwing/ap_downlink.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -133,13 +133,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="ap__downlink_8h.html#a2978a46b47cbc9d17a0924014ff9658b">00042</a> <span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
-<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00046"></a>00046 <span class="preprocessor">#include &quot;generated/periodic.h&quot;</span>
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 <span class="comment">//#include &quot;generated/modules.h&quot;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
+<a name="l00043"></a><a class="code" href="ap__downlink_8h.html#a2978a46b47cbc9d17a0924014ff9658b">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="preprocessor">#include &quot;messages.h&quot;</span>
+<a name="l00048"></a>00048 <span class="preprocessor">#include &quot;generated/periodic_telemetry.h&quot;</span>
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050 <span class="preprocessor">#if defined DOWNLINK</span>
 <a name="l00051"></a>00051 <span class="preprocessor"></span><span class="preprocessor">#define Downlink(x) x</span>
@@ -147,209 +147,257 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00053"></a><a class="code" href="ap__downlink_8h.html#a8c9dc3165fcd9130048939b28bed9d75">00053</a> <span class="preprocessor"></span><span class="preprocessor">#define Downlink(x) {}</span>
 <a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00055"></a>00055 <span class="preprocessor"></span>
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="ap__downlink_8h.html#a2fecc579b3fcf33e13bd878ad434322f">00057</a> <span class="preprocessor">#define PERIODIC_SEND_ALIVE(_chan)  DOWNLINK_SEND_ALIVE(_chan, 16, MD5SUM);</span>
-<a name="l00058"></a>00058 <span class="preprocessor"></span>
-<a name="l00059"></a><a class="code" href="ap__downlink_8h.html#a9c3b07a9406d6a1bb4588b505d03d3b1">00059</a> <span class="preprocessor">#define PERIODIC_SEND_BAT(_chan) {                      \</span>
-<a name="l00060"></a>00060 <span class="preprocessor">    int16_t amps = (int16_t) (current/10);        \</span>
-<a name="l00061"></a>00061 <span class="preprocessor">    Downlink({ int16_t e = energy;                      \</span>
-<a name="l00062"></a>00062 <span class="preprocessor">        DOWNLINK_SEND_BAT(_chan,                        \</span>
-<a name="l00063"></a>00063 <span class="preprocessor">                          &amp;v_ctl_throttle_slewed,       \</span>
-<a name="l00064"></a>00064 <span class="preprocessor">                          &amp;vsupply,                     \</span>
-<a name="l00065"></a>00065 <span class="preprocessor">                          &amp;amps,                        \</span>
-<a name="l00066"></a>00066 <span class="preprocessor">                          &amp;estimator_flight_time,       \</span>
-<a name="l00067"></a>00067 <span class="preprocessor">                          &amp;kill_throttle,       \</span>
-<a name="l00068"></a>00068 <span class="preprocessor">                          &amp;block_time,          \</span>
-<a name="l00069"></a>00069 <span class="preprocessor">                          &amp;stage_time,          \</span>
-<a name="l00070"></a>00070 <span class="preprocessor">                          &amp;e);                          \</span>
-<a name="l00071"></a>00071 <span class="preprocessor">      });                                               \</span>
-<a name="l00072"></a>00072 <span class="preprocessor">  }</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span>
-<a name="l00074"></a>00074 <span class="preprocessor">#ifdef MCU_SPI_LINK</span>
-<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_DEBUG_MCU_LINK(_chan) DOWNLINK_SEND_DEBUG_MCU_LINK(_chan, &amp;link_mcu_nb_err, &amp;link_mcu_fbw_nb_err, &amp;mcu1_ppm_cpt);</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00077"></a><a class="code" href="ap__downlink_8h.html#a764d332881c8362bdb598e6012db5d82">00077</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_DEBUG_MCU_LINK(_chan) {}</span>
-<a name="l00078"></a>00078 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00079"></a>00079 <span class="preprocessor"></span>
-<a name="l00080"></a>00080 
-<a name="l00081"></a><a class="code" href="ap__downlink_8h.html#ab07a9125856229df8b5b49e05b0f6bbc">00081</a> <span class="preprocessor">#define PERIODIC_SEND_DOWNLINK(_chan) { \</span>
-<a name="l00082"></a>00082 <span class="preprocessor">  static uint16_t last; \</span>
-<a name="l00083"></a>00083 <span class="preprocessor">  uint16_t rate = (downlink_nb_bytes - last) / PERIOD_DOWNLINK_Ap_DefaultChannel_0; \</span>
-<a name="l00084"></a>00084 <span class="preprocessor">  last = downlink_nb_bytes; \</span>
-<a name="l00085"></a>00085 <span class="preprocessor">  DOWNLINK_SEND_DOWNLINK(_chan, &amp;downlink_nb_ovrn, &amp;rate, &amp;downlink_nb_msgs); \</span>
-<a name="l00086"></a>00086 <span class="preprocessor">}</span>
-<a name="l00087"></a>00087 <span class="preprocessor"></span>
-<a name="l00088"></a>00088 
-<a name="l00089"></a><a class="code" href="ap__downlink_8h.html#a95c53db1bf3fd430620fc38fdf7a35c5">00089</a> <span class="preprocessor">#define PERIODIC_SEND_ATTITUDE(_chan) Downlink({ \</span>
-<a name="l00090"></a>00090 <span class="preprocessor">      DOWNLINK_SEND_ATTITUDE(_chan, &amp;estimator_phi, &amp;estimator_psi, &amp;estimator_theta); \</span>
-<a name="l00091"></a>00091 <span class="preprocessor">})</span>
-<a name="l00092"></a>00092 <span class="preprocessor"></span>
-<a name="l00093"></a><a class="code" href="ap__downlink_8h.html#a06affd19fe71f1c2248ff998fcf95a65">00093</a> <span class="preprocessor">#define PERIODIC_SEND_PPRZ_MODE(_chan) DOWNLINK_SEND_PPRZ_MODE(_chan, &amp;pprz_mode, &amp;v_ctl_mode, &amp;lateral_mode, &amp;horizontal_mode, &amp;rc_settings_mode, &amp;mcu1_status);</span>
-<a name="l00094"></a><a class="code" href="ap__downlink_8h.html#a6c6160c6005a2e26484138e1789d242f">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_DESIRED(_chan) DOWNLINK_SEND_DESIRED(_chan, &amp;h_ctl_roll_setpoint, &amp;h_ctl_pitch_loop_setpoint, &amp;h_ctl_course_setpoint, &amp;desired_x, &amp;desired_y, &amp;v_ctl_altitude_setpoint, &amp;v_ctl_climb_setpoint);</span>
-<a name="l00095"></a>00095 <span class="preprocessor"></span>
-<a name="l00096"></a>00096 <span class="preprocessor">#ifdef USE_INFRARED</span>
-<a name="l00097"></a>00097 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_chan) { uint16_t contrast = abs(infrared.roll) + abs(infrared.pitch) + abs(infrared.top); uint8_t mde = 3; if (contrast &lt; 50) mde = 7; DOWNLINK_SEND_STATE_FILTER_STATUS(_chan, &amp;mde, &amp;contrast); }</span>
-<a name="l00098"></a>00098 <span class="preprocessor"></span><span class="preprocessor">#elif defined USE_IMU &amp;&amp; defined USE_AHRS</span>
-<a name="l00099"></a>00099 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_chan) { uint8_t mde = 3; if (ahrs.status == AHRS_UNINIT) mde = 2; if (ahrs_timeout_counter &gt; 10) mde = 5; uint16_t val = 0; DOWNLINK_SEND_STATE_FILTER_STATUS(_chan, &amp;mde, &amp;val); }</span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00101"></a><a class="code" href="ap__downlink_8h.html#a59b109e1707d46bb85262735a5d31474">00101</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_chan) {}</span>
-<a name="l00102"></a>00102 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00103"></a>00103 <span class="preprocessor"></span>
-<a name="l00104"></a><a class="code" href="ap__downlink_8h.html#a6f87dc1604acac9b87392ada09335945">00104</a> <span class="preprocessor">#define PERIODIC_SEND_NAVIGATION_REF(_chan)  DOWNLINK_SEND_NAVIGATION_REF(_chan, &amp;nav_utm_east0, &amp;nav_utm_north0, &amp;nav_utm_zone0);</span>
-<a name="l00105"></a>00105 <span class="preprocessor"></span>
-<a name="l00106"></a>00106 
-<a name="l00107"></a><a class="code" href="ap__downlink_8h.html#aae0fb50b67b53cf74da77816eca4b3aa">00107</a> <span class="preprocessor">#define DownlinkSendWp(_chan, i) {       \</span>
-<a name="l00108"></a>00108 <span class="preprocessor">  float x = nav_utm_east0 +  waypoints[i].x; \</span>
-<a name="l00109"></a>00109 <span class="preprocessor">  float y = nav_utm_north0 + waypoints[i].y; \</span>
-<a name="l00110"></a>00110 <span class="preprocessor">  DOWNLINK_SEND_WP_MOVED(_chan, &amp;i, &amp;x, &amp;y, &amp;(waypoints[i].a),&amp;nav_utm_zone0); \</span>
-<a name="l00111"></a>00111 <span class="preprocessor">}</span>
-<a name="l00112"></a>00112 <span class="preprocessor"></span>
-<a name="l00113"></a>00113 
-<a name="l00114"></a><a class="code" href="ap__downlink_8h.html#ae630011ca6ae4c54aea8f15f8c74556b">00114</a> <span class="preprocessor">#define PERIODIC_SEND_WP_MOVED(_chan) { \</span>
-<a name="l00115"></a>00115 <span class="preprocessor">  static uint8_t i; \</span>
-<a name="l00116"></a>00116 <span class="preprocessor">  i++; if (i &gt;= nb_waypoint) i = 0; \</span>
-<a name="l00117"></a>00117 <span class="preprocessor">  DownlinkSendWp(_chan, i);     \</span>
-<a name="l00118"></a>00118 <span class="preprocessor">}</span>
-<a name="l00119"></a>00119 <span class="preprocessor"></span>
-<a name="l00120"></a>00120 <span class="preprocessor">#ifdef RADIO_CONTROL_SETTINGS</span>
-<a name="l00121"></a>00121 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_SETTINGS(_chan) if (!RcSettingsOff()) DOWNLINK_SEND_SETTINGS(_chan, &amp;slider_1_val, &amp;slider_2_val);</span>
-<a name="l00122"></a>00122 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00123"></a><a class="code" href="ap__downlink_8h.html#abafa43cc7045fc270bdb57f9bc1b04cf">00123</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_SETTINGS(_chan) {}</span>
-<a name="l00124"></a>00124 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00125"></a>00125 <span class="preprocessor"></span>
-<a name="l00126"></a>00126 <span class="preprocessor">#if defined USE_INFRARED || USE_INFRARED_TELEMETRY</span>
-<a name="l00127"></a>00127 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="infrared_8h.html">subsystems/sensors/infrared.h</a>&quot;</span>
-<a name="l00128"></a>00128 <span class="preprocessor">#define PERIODIC_SEND_IR_SENSORS(_chan) DOWNLINK_SEND_IR_SENSORS(_chan, &amp;infrared.value.ir1, &amp;infrared.value.ir2, &amp;infrared.pitch, &amp;infrared.roll, &amp;infrared.top);</span>
-<a name="l00129"></a>00129 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00130"></a><a class="code" href="ap__downlink_8h.html#af6e7b79b5ad616feb378e4a4c02cdd24">00130</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_IR_SENSORS(_chan) ;</span>
-<a name="l00131"></a>00131 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00132"></a>00132 <span class="preprocessor"></span>
-<a name="l00133"></a><a class="code" href="ap__downlink_8h.html#a6332f0284d07829c1a28ec7625f1ce8d">00133</a> <span class="preprocessor">#define PERIODIC_SEND_ADC(_chan) {}</span>
-<a name="l00134"></a>00134 <span class="preprocessor"></span>
-<a name="l00135"></a>00135 <span class="preprocessor">#ifdef IDG300</span>
-<a name="l00136"></a>00136 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="gyro_8h.html" title="Basic code for gyro acquisition on ADC channels.">gyro.h</a>&quot;</span>
-<a name="l00137"></a>00137 <span class="preprocessor">#define PERIODIC_SEND_GYRO_RATES(_chan) DOWNLINK_SEND_GYRO_RATES(_chan, &amp;roll_rate_adc, &amp;estimator_p, &amp;estimator_q)</span>
-<a name="l00138"></a>00138 <span class="preprocessor"></span><span class="preprocessor">#elif defined ADXRS150</span>
-<a name="l00139"></a>00139 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GYRO_RATES(_chan) DOWNLINK_SEND_GYRO_RATES(_chan, &amp;roll_rate_adc, &amp;estimator_p, &amp;temp_comp)</span>
-<a name="l00140"></a>00140 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00141"></a><a class="code" href="ap__downlink_8h.html#ab90ba74218e255af321e69a50aafe1cb">00141</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GYRO_RATES(_chan) {}</span>
-<a name="l00142"></a>00142 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00143"></a>00143 <span class="preprocessor"></span>
-<a name="l00144"></a><a class="code" href="ap__downlink_8h.html#a7e6d6f1ea669717f05fab3dd7b34bd73">00144</a> <span class="preprocessor">#define PERIODIC_SEND_CALIBRATION(_chan) DOWNLINK_SEND_CALIBRATION(_chan, &amp;v_ctl_auto_throttle_sum_err, &amp;v_ctl_auto_throttle_submode)</span>
-<a name="l00145"></a>00145 <span class="preprocessor"></span>
-<a name="l00146"></a><a class="code" href="ap__downlink_8h.html#a8f68e96ec54543a642f0436094967fbb">00146</a> <span class="preprocessor">#define PERIODIC_SEND_CIRCLE(_chan) if (nav_in_circle) { DOWNLINK_SEND_CIRCLE(_chan, &amp;nav_circle_x, &amp;nav_circle_y, &amp;nav_circle_radius); }</span>
-<a name="l00147"></a>00147 <span class="preprocessor"></span>
-<a name="l00148"></a><a class="code" href="ap__downlink_8h.html#a86fd3680330117285a05c09d7a3dea6b">00148</a> <span class="preprocessor">#define PERIODIC_SEND_SEGMENT(_chan) if (nav_in_segment) { DOWNLINK_SEND_SEGMENT(_chan, &amp;nav_segment_x_1, &amp;nav_segment_y_1, &amp;nav_segment_x_2, &amp;nav_segment_y_2); }</span>
-<a name="l00149"></a>00149 <span class="preprocessor"></span>
-<a name="l00150"></a>00150 <span class="preprocessor">#ifdef IMU_TYPE_H</span>
-<a name="l00151"></a>00151 <span class="preprocessor"></span><span class="preprocessor">#  ifdef INS_MODULE_H</span>
-<a name="l00152"></a>00152 <span class="preprocessor"></span><span class="preprocessor">#  include &quot;<a class="code" href="ins__module_8h.html">modules/ins/ins_module.h</a>&quot;</span>
-<a name="l00153"></a>00153 <span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_chan) {}</span>
-<a name="l00154"></a>00154 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_chan) {}</span>
-<a name="l00155"></a>00155 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_chan) {}</span>
-<a name="l00156"></a>00156 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_chan) { DOWNLINK_SEND_IMU_GYRO(_chan, &amp;ins_p, &amp;ins_q, &amp;ins_r)}</span>
-<a name="l00157"></a>00157 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_chan) { DOWNLINK_SEND_IMU_ACCEL(_chan, &amp;ins_ax, &amp;ins_ay, &amp;ins_az)}</span>
-<a name="l00158"></a>00158 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_chan) { DOWNLINK_SEND_IMU_MAG(_chan, &amp;ins_mx, &amp;ins_my, &amp;ins_mz)}</span>
-<a name="l00159"></a>00159 <span class="preprocessor"></span><span class="preprocessor">#  else</span>
-<a name="l00160"></a>00160 <span class="preprocessor"></span><span class="preprocessor">#    include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span>
-<a name="l00161"></a>00161 <span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_chan) { DOWNLINK_SEND_IMU_ACCEL_RAW(_chan, &amp;imu.accel_unscaled.x, &amp;imu.accel_unscaled.y, &amp;imu.accel_unscaled.z)}</span>
-<a name="l00162"></a>00162 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_chan) { DOWNLINK_SEND_IMU_GYRO_RAW(_chan, &amp;imu.gyro_unscaled.p, &amp;imu.gyro_unscaled.q, &amp;imu.gyro_unscaled.r)}</span>
-<a name="l00163"></a>00163 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_chan) { DOWNLINK_SEND_IMU_MAG_RAW(_chan, &amp;imu.mag_unscaled.x, &amp;imu.mag_unscaled.y, &amp;imu.mag_unscaled.z)}</span>
-<a name="l00164"></a>00164 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_chan) { struct FloatVect3 accel_float; ACCELS_FLOAT_OF_BFP(accel_float, imu.accel); DOWNLINK_SEND_IMU_ACCEL(_chan, &amp;accel_float.x, &amp;accel_float.y, &amp;accel_float.z)}</span>
-<a name="l00165"></a>00165 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_chan) { struct FloatRates gyro_float; RATES_FLOAT_OF_BFP(gyro_float, imu.gyro); DOWNLINK_SEND_IMU_GYRO(_chan, &amp;gyro_float.p, &amp;gyro_float.q, &amp;gyro_float.r)}</span>
-<a name="l00166"></a>00166 <span class="preprocessor"></span><span class="preprocessor">#    ifdef USE_MAGNETOMETER</span>
-<a name="l00167"></a>00167 <span class="preprocessor"></span><span class="preprocessor">#      define PERIODIC_SEND_IMU_MAG(_chan) { struct FloatVect3 mag_float; MAGS_FLOAT_OF_BFP(mag_float, imu.mag); DOWNLINK_SEND_IMU_MAG(_chan, &amp;mag_float.x, &amp;mag_float.y, &amp;mag_float.z)}</span>
-<a name="l00168"></a>00168 <span class="preprocessor"></span><span class="preprocessor">#    else</span>
-<a name="l00169"></a>00169 <span class="preprocessor"></span><span class="preprocessor">#      define PERIODIC_SEND_IMU_MAG(_chan) {}</span>
-<a name="l00170"></a>00170 <span class="preprocessor"></span><span class="preprocessor">#    endif</span>
-<a name="l00171"></a>00171 <span class="preprocessor"></span><span class="preprocessor">#  endif</span>
-<a name="l00172"></a>00172 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00173"></a><a class="code" href="ap__downlink_8h.html#ad845351aae40c699456a3ccbc5de8287">00173</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_chan) {}</span>
-<a name="l00174"></a><a class="code" href="ap__downlink_8h.html#a1e2e2602008ac309491a9ad96e7423ee">00174</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_chan) {}</span>
-<a name="l00175"></a><a class="code" href="ap__downlink_8h.html#ab222fe3fffd40657e57478fbd8914cee">00175</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_chan) {}</span>
-<a name="l00176"></a><a class="code" href="ap__downlink_8h.html#a41a2e95f67dc31e1d2ad56163d59dc46">00176</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_chan) {}</span>
-<a name="l00177"></a><a class="code" href="ap__downlink_8h.html#a7f82c35d70872c54c6873661818dafd7">00177</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_chan) {}</span>
-<a name="l00178"></a><a class="code" href="ap__downlink_8h.html#a8acd788d72e56757b27e2c6c58f7d8d9">00178</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_chan) {}</span>
-<a name="l00179"></a>00179 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00180"></a>00180 <span class="preprocessor"></span>
-<a name="l00181"></a>00181 <span class="preprocessor">#ifdef IMU_ANALOG</span>
-<a name="l00182"></a>00182 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_IMU(_chan) { int16_t dummy = 42; DOWNLINK_SEND_IMU(_chan, &amp;(from_fbw.euler_dot[0]), &amp;(from_fbw.euler_dot[1]), &amp;(from_fbw.euler_dot[2]), &amp;dummy, &amp;dummy, &amp;dummy); }</span>
-<a name="l00183"></a>00183 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00184"></a><a class="code" href="ap__downlink_8h.html#aa43881ebac68a3732f5d4dd7f675a473">00184</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_IMU(_chan) {}</span>
-<a name="l00185"></a>00185 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00186"></a>00186 <span class="preprocessor"></span>
-<a name="l00187"></a><a class="code" href="ap__downlink_8h.html#a86258346ed76685b4bc7133ca83fb96f">00187</a> <span class="preprocessor">#define PERIODIC_SEND_ESTIMATOR(_chan) DOWNLINK_SEND_ESTIMATOR(_chan, &amp;estimator_z, &amp;estimator_z_dot)</span>
-<a name="l00188"></a>00188 <span class="preprocessor"></span>
-<a name="l00189"></a><a class="code" href="ap__downlink_8h.html#ab2e356985e77c652029d07aac48f26fa">00189</a> <span class="preprocessor">#define SEND_NAVIGATION(_chan) Downlink({ uint8_t _circle_count = NavCircleCount(); DOWNLINK_SEND_NAVIGATION(_chan, &amp;nav_block, &amp;nav_stage, &amp;estimator_x, &amp;estimator_y, &amp;dist2_to_wp, &amp;dist2_to_home, &amp;_circle_count, &amp;nav_oval_count);})</span>
-<a name="l00190"></a>00190 <span class="preprocessor"></span>
-<a name="l00191"></a><a class="code" href="ap__downlink_8h.html#a59fd9e4efed7161767b7119ab78e73ed">00191</a> <span class="preprocessor">#define PERIODIC_SEND_NAVIGATION(_chan) SEND_NAVIGATION(_chan)</span>
-<a name="l00192"></a>00192 <span class="preprocessor"></span>
-<a name="l00193"></a>00193 
-<a name="l00194"></a>00194 <span class="preprocessor">#if defined CAM || defined MOBILE_CAM</span>
-<a name="l00195"></a>00195 <span class="preprocessor"></span><span class="preprocessor">#define SEND_CAM(_chan) Downlink({ int16_t x = cam_target_x; int16_t y = cam_target_y; int16_t phi = DegOfRad(cam_phi_c); int16_t theta = DegOfRad(cam_theta_c); DOWNLINK_SEND_CAM(_chan, &amp;phi, &amp;theta, &amp;x, &amp;y);})</span>
-<a name="l00196"></a>00196 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_CAM_POINT(_chan) DOWNLINK_SEND_CAM_POINT(_chan, &amp;cam_point_distance_from_home, &amp;cam_point_lat, &amp;cam_point_lon)</span>
-<a name="l00197"></a>00197 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00198"></a><a class="code" href="ap__downlink_8h.html#ad5043e6efa1f018b8887bae0a1be37da">00198</a> <span class="preprocessor"></span><span class="preprocessor">#define SEND_CAM(_chan) {}</span>
-<a name="l00199"></a><a class="code" href="ap__downlink_8h.html#a1b886cbcc5be39bf86a7cbf9dfa3e1de">00199</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_CAM_POINT(_chan) {}</span>
-<a name="l00200"></a>00200 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00201"></a>00201 <span class="preprocessor"></span>
-<a name="l00202"></a><a class="code" href="ap__downlink_8h.html#aa8a4c931db8d931fcaa0b302d712397b">00202</a> <span class="preprocessor">#define PERIODIC_SEND_DL_VALUE(_chan) PeriodicSendDlValue(_chan) </span>
-<a name="l00204"></a><a class="code" href="ap__downlink_8h.html#adbe400ced4f73fe4b354622e329e5618">00204</a> <span class="preprocessor">#define PERIODIC_SEND_SURVEY(_chan) { \</span>
-<a name="l00205"></a>00205 <span class="preprocessor">  if (nav_survey_active) \</span>
-<a name="l00206"></a>00206 <span class="preprocessor">    DOWNLINK_SEND_SURVEY(_chan, &amp;nav_survey_east, &amp;nav_survey_north, &amp;nav_survey_west, &amp;nav_survey_south); \</span>
-<a name="l00207"></a>00207 <span class="preprocessor">  }</span>
-<a name="l00208"></a>00208 <span class="preprocessor"></span>
-<a name="l00209"></a><a class="code" href="ap__downlink_8h.html#aa428155b6bc30ab7b8fe9228d6eb4063">00209</a> <span class="preprocessor">#define PERIODIC_SEND_RANGEFINDER(_chan) DOWNLINK_SEND_RANGEFINDER(_chan, &amp;rangemeter, &amp;ctl_grz_z_dot, &amp;ctl_grz_z_dot_sum_err, &amp;ctl_grz_z_dot_setpoint, &amp;ctl_grz_z_sum_err, &amp;ctl_grz_z_setpoint, &amp;flying)</span>
-<a name="l00210"></a>00210 <span class="preprocessor"></span>
-<a name="l00211"></a><a class="code" href="ap__downlink_8h.html#ae2d37b0f6979b1c744d9e1622acddbda">00211</a> <span class="preprocessor">#define PERIODIC_SEND_TUNE_ROLL(_chan) DOWNLINK_SEND_TUNE_ROLL(_chan, &amp;estimator_p,&amp;estimator_phi, &amp;h_ctl_roll_setpoint);</span>
-<a name="l00212"></a>00212 <span class="preprocessor"></span>
-<a name="l00213"></a>00213 <span class="preprocessor">#if defined USE_GPS || defined SITL || defined USE_GPS_XSENS</span>
-<a name="l00214"></a>00214 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GPS_SOL(_chan) DOWNLINK_SEND_GPS_SOL(_chan, &amp;gps.pacc, &amp;gps.sacc, &amp;gps.pdop, &amp;gps.num_sv)</span>
-<a name="l00215"></a>00215 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00216"></a>00216 <span class="preprocessor"></span>
-<a name="l00217"></a><a class="code" href="ap__downlink_8h.html#a8c7c81d6910e80ae809a6f3038d45d9f">00217</a> <span class="preprocessor">#define PERIODIC_SEND_GPS(_chan) {                                      \</span>
-<a name="l00218"></a>00218 <span class="preprocessor">    static uint8_t i;                                                   \</span>
-<a name="l00219"></a>00219 <span class="preprocessor">    int16_t climb = -gps.ned_vel.z;                                     \</span>
-<a name="l00220"></a>00220 <span class="preprocessor">    int16_t course = (DegOfRad(gps.course)/((int32_t)1e6));             \</span>
-<a name="l00221"></a>00221 <span class="preprocessor">    DOWNLINK_SEND_GPS(DefaultChannel, &amp;gps.fix, &amp;gps.utm_pos.east, &amp;gps.utm_pos.north, &amp;course, &amp;gps.hmsl, &amp;gps.gspeed, &amp;climb, &amp;gps.week, &amp;gps.tow, &amp;gps.utm_pos.zone, &amp;i); \</span>
-<a name="l00222"></a>00222 <span class="preprocessor">    if ((gps.fix != GPS_FIX_3D) &amp;&amp; (i &gt;= gps.nb_channels)) i = 0;                                    \</span>
-<a name="l00223"></a>00223 <span class="preprocessor">    if (i &gt;= gps.nb_channels * 2) i = 0;                                    \</span>
-<a name="l00224"></a>00224 <span class="preprocessor">    if (i &lt; gps.nb_channels &amp;&amp; gps.svinfos[i].cno &gt; 0) { \</span>
-<a name="l00225"></a>00225 <span class="preprocessor">      DOWNLINK_SEND_SVINFO(DefaultChannel, &amp;i, &amp;gps.svinfos[i].svid, &amp;gps.svinfos[i].flags, &amp;gps.svinfos[i].qi, &amp;gps.svinfos[i].cno, &amp;gps.svinfos[i].elev, &amp;gps.svinfos[i].azim); \</span>
-<a name="l00226"></a>00226 <span class="preprocessor">    }                                                                   \</span>
-<a name="l00227"></a>00227 <span class="preprocessor">    i++;                                                                \</span>
-<a name="l00228"></a>00228 <span class="preprocessor">}</span>
-<a name="l00229"></a>00229 <span class="preprocessor"></span>
-<a name="l00230"></a>00230 <span class="preprocessor">#ifdef USE_BARO_MS5534A</span>
-<a name="l00231"></a>00231 <span class="preprocessor"></span><span class="comment">//#include &quot;baro_MS5534A.h&quot;</span>
-<a name="l00232"></a>00232 <span class="preprocessor">#define PERIODIC_SEND_BARO_MS5534A(_chan) DOWNLINK_SEND_BARO_MS5534A(_chan, &amp;baro_MS5534A_pressure, &amp;baro_MS5534A_temp, &amp;baro_MS5534A_z)</span>
-<a name="l00233"></a>00233 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00234"></a><a class="code" href="ap__downlink_8h.html#a5a76e3eb93d652749d9805964aebac6c">00234</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_BARO_MS5534A(_chan) {}</span>
-<a name="l00235"></a>00235 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00236"></a>00236 <span class="preprocessor"></span>
-<a name="l00237"></a>00237 <span class="preprocessor">#ifdef USE_BARO_SCP</span>
-<a name="l00238"></a>00238 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="baro__scp_8h.html">baro_scp.h</a>&quot;</span>
-<a name="l00239"></a>00239 <span class="preprocessor">#define PERIODIC_SEND_SCP_STATUS(_chan) DOWNLINK_SEND_SCP_STATUS(_chan, &amp;baro_scp_pressure, &amp;baro_scp_temperature)</span>
-<a name="l00240"></a>00240 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00241"></a><a class="code" href="ap__downlink_8h.html#a7417351187336d5d2e63e3421897e6eb">00241</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_SCP_STATUS(_chan) {}</span>
-<a name="l00242"></a>00242 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00243"></a>00243 <span class="preprocessor"></span>
-<a name="l00244"></a>00244 <span class="preprocessor">#ifdef MEASURE_AIRSPEED</span>
-<a name="l00245"></a>00245 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_chan) DOWNLINK_SEND_AIRSPEED (_chan, &amp;estimator_airspeed, &amp;estimator_airspeed, &amp;estimator_airspeed, &amp;estimator_airspeed)</span>
-<a name="l00246"></a>00246 <span class="preprocessor"></span><span class="preprocessor">#elif defined USE_AIRSPEED</span>
-<a name="l00247"></a>00247 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_chan) DOWNLINK_SEND_AIRSPEED (_chan, &amp;estimator_airspeed, &amp;v_ctl_auto_airspeed_setpoint, &amp;v_ctl_auto_airspeed_controlled, &amp;v_ctl_auto_groundspeed_setpoint)</span>
-<a name="l00248"></a>00248 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00249"></a><a class="code" href="ap__downlink_8h.html#a20843796406303cb5d58e8d5d066b166">00249</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_chan) {}</span>
-<a name="l00250"></a>00250 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00251"></a>00251 <span class="preprocessor"></span>
-<a name="l00252"></a><a class="code" href="ap__downlink_8h.html#a6b5b6b98a1dec10123f9c9c77e8997a1">00252</a> <span class="preprocessor">#define PERIODIC_SEND_ENERGY(_chan) Downlink({ const int16_t e = energy; const float vsup = ((float)vsupply) / 10.0f; const float curs = ((float) current)/1000.0f;  const float power = vsup * curs; DOWNLINK_SEND_ENERGY(_chan, &amp;vsup, &amp;curs, &amp;e, &amp;power); })</span>
-<a name="l00253"></a>00253 <span class="preprocessor"></span>
-<a name="l00254"></a>00254 
-<a name="l00255"></a>00255 <span class="preprocessor">#include &quot;<a class="code" href="stabilization__adaptive_8h.html">firmwares/fixedwing/stabilization/stabilization_adaptive.h</a>&quot;</span>
-<a name="l00256"></a><a class="code" href="ap__downlink_8h.html#a752efd6f3df85fc9d5ca5a9d59676d2f">00256</a> <span class="preprocessor">#define PERIODIC_SEND_H_CTL_A(_chan) DOWNLINK_SEND_H_CTL_A(_chan, &amp;h_ctl_roll_sum_err, &amp;h_ctl_ref_roll_angle, &amp;h_ctl_pitch_sum_err, &amp;h_ctl_ref_pitch_angle)</span>
-<a name="l00257"></a>00257 <span class="preprocessor"></span>
-<a name="l00258"></a>00258 
-<a name="l00259"></a>00259 <span class="preprocessor">#endif </span><span class="comment">/* AP_DOWNLINK_H */</span>
+<a name="l00056"></a><a class="code" href="ap__downlink_8h.html#a03373609a4f23ae59327d141b635eb40">00056</a> <span class="preprocessor">#define PERIODIC_SEND_ALIVE(_trans, _dev)  DOWNLINK_SEND_ALIVE(_trans, _dev, 16, MD5SUM);</span>
+<a name="l00057"></a>00057 <span class="preprocessor"></span>
+<a name="l00058"></a><a class="code" href="ap__downlink_8h.html#a5fac4af399f9185a97100ea06b1624a5">00058</a> <span class="preprocessor">#define PERIODIC_SEND_BAT(_trans, _dev) {                      \</span>
+<a name="l00059"></a>00059 <span class="preprocessor">    int16_t amps = (int16_t) (current/10);        \</span>
+<a name="l00060"></a>00060 <span class="preprocessor">    Downlink({ int16_t e = energy;                      \</span>
+<a name="l00061"></a>00061 <span class="preprocessor">        DOWNLINK_SEND_BAT(_trans, _dev,                        \</span>
+<a name="l00062"></a>00062 <span class="preprocessor">                          &amp;v_ctl_throttle_slewed,       \</span>
+<a name="l00063"></a>00063 <span class="preprocessor">                          &amp;vsupply,                     \</span>
+<a name="l00064"></a>00064 <span class="preprocessor">                          &amp;amps,                        \</span>
+<a name="l00065"></a>00065 <span class="preprocessor">                          &amp;estimator_flight_time,       \</span>
+<a name="l00066"></a>00066 <span class="preprocessor">                          &amp;kill_throttle,       \</span>
+<a name="l00067"></a>00067 <span class="preprocessor">                          &amp;block_time,          \</span>
+<a name="l00068"></a>00068 <span class="preprocessor">                          &amp;stage_time,          \</span>
+<a name="l00069"></a>00069 <span class="preprocessor">                          &amp;e);                          \</span>
+<a name="l00070"></a>00070 <span class="preprocessor">      });                                               \</span>
+<a name="l00071"></a>00071 <span class="preprocessor">  }</span>
+<a name="l00072"></a>00072 <span class="preprocessor"></span>
+<a name="l00073"></a>00073 <span class="preprocessor">#ifdef MCU_SPI_LINK</span>
+<a name="l00074"></a>00074 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_DEBUG_MCU_LINK(_trans, _dev) DOWNLINK_SEND_DEBUG_MCU_LINK(_trans, _dev, &amp;link_mcu_nb_err, &amp;link_mcu_fbw_nb_err, &amp;mcu1_ppm_cpt);</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00076"></a><a class="code" href="ap__downlink_8h.html#a4a8de3bc57af26e9aac86ccf4539700c">00076</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_DEBUG_MCU_LINK(_trans, _dev) {}</span>
+<a name="l00077"></a>00077 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00078"></a>00078 <span class="preprocessor"></span>
+<a name="l00079"></a>00079 
+<a name="l00080"></a><a class="code" href="ap__downlink_8h.html#a3e4316157d44ae33dc83b5393b3d6319">00080</a> <span class="preprocessor">#define PERIODIC_SEND_DOWNLINK(_trans, _dev) { \</span>
+<a name="l00081"></a>00081 <span class="preprocessor">  static uint16_t last; \</span>
+<a name="l00082"></a>00082 <span class="preprocessor">  uint16_t rate = (downlink_nb_bytes - last) / PERIOD_DOWNLINK_Ap_0; \</span>
+<a name="l00083"></a>00083 <span class="preprocessor">  last = downlink_nb_bytes; \</span>
+<a name="l00084"></a>00084 <span class="preprocessor">  DOWNLINK_SEND_DOWNLINK(_trans, _dev, &amp;downlink_nb_ovrn, &amp;rate, &amp;downlink_nb_msgs); \</span>
+<a name="l00085"></a>00085 <span class="preprocessor">}</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span>
+<a name="l00087"></a>00087 
+<a name="l00088"></a><a class="code" href="ap__downlink_8h.html#a94f312442f52a481c2994a84b85bb412">00088</a> <span class="preprocessor">#define PERIODIC_SEND_ATTITUDE(_trans, _dev) Downlink({ \</span>
+<a name="l00089"></a>00089 <span class="preprocessor">      DOWNLINK_SEND_ATTITUDE(_trans, _dev, &amp;estimator_phi, &amp;estimator_psi, &amp;estimator_theta); \</span>
+<a name="l00090"></a>00090 <span class="preprocessor">})</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span>
+<a name="l00092"></a>00092 
+<a name="l00093"></a><a class="code" href="ap__downlink_8h.html#aaa2a61639e9b0a5db6802d02d7bb8b84">00093</a> <span class="preprocessor">#define PERIODIC_SEND_DESIRED(_trans, _dev) DOWNLINK_SEND_DESIRED(_trans, _dev, &amp;h_ctl_roll_setpoint, &amp;h_ctl_pitch_loop_setpoint, &amp;h_ctl_course_setpoint, &amp;desired_x, &amp;desired_y, &amp;v_ctl_altitude_setpoint, &amp;v_ctl_climb_setpoint);</span>
+<a name="l00094"></a>00094 <span class="preprocessor"></span>
+<a name="l00095"></a>00095 <span class="preprocessor">#if USE_INFRARED</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_trans, _dev) { uint16_t contrast = abs(infrared.roll) + abs(infrared.pitch) + abs(infrared.top); uint8_t mde = 3; if (contrast &lt; 50) mde = 7; DOWNLINK_SEND_STATE_FILTER_STATUS(_trans, _dev, &amp;mde, &amp;contrast); }</span>
+<a name="l00097"></a>00097 <span class="preprocessor"></span><span class="preprocessor">#elif USE_IMU &amp;&amp; USE_AHRS</span>
+<a name="l00098"></a>00098 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_trans, _dev) { uint8_t mde = 3; if (ahrs.status == AHRS_UNINIT) mde = 2; if (ahrs_timeout_counter &gt; 10) mde = 5; uint16_t val = 0; DOWNLINK_SEND_STATE_FILTER_STATUS(_trans, _dev, &amp;mde, &amp;val); }</span>
+<a name="l00099"></a>00099 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00100"></a><a class="code" href="ap__downlink_8h.html#a8aa445bf0e405922bec116e9c23dcc5d">00100</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_trans, _dev) {}</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00102"></a>00102 <span class="preprocessor"></span>
+<a name="l00103"></a><a class="code" href="ap__downlink_8h.html#a6b80334168e63d9d2448ed8bf4a4c04b">00103</a> <span class="preprocessor">#define PERIODIC_SEND_NAVIGATION_REF(_trans, _dev)  DOWNLINK_SEND_NAVIGATION_REF(_trans, _dev, &amp;nav_utm_east0, &amp;nav_utm_north0, &amp;nav_utm_zone0);</span>
+<a name="l00104"></a>00104 <span class="preprocessor"></span>
+<a name="l00105"></a>00105 
+<a name="l00106"></a><a class="code" href="ap__downlink_8h.html#ab300af3ef7ab11588e87ed42a7096b81">00106</a> <span class="preprocessor">#define DownlinkSendWp(_trans, _dev, i) {      \</span>
+<a name="l00107"></a>00107 <span class="preprocessor">  float x = nav_utm_east0 +  waypoints[i].x; \</span>
+<a name="l00108"></a>00108 <span class="preprocessor">  float y = nav_utm_north0 + waypoints[i].y; \</span>
+<a name="l00109"></a>00109 <span class="preprocessor">  DOWNLINK_SEND_WP_MOVED(_trans, _dev, &amp;i, &amp;x, &amp;y, &amp;(waypoints[i].a),&amp;nav_utm_zone0); \</span>
+<a name="l00110"></a>00110 <span class="preprocessor">}</span>
+<a name="l00111"></a>00111 <span class="preprocessor"></span>
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="ap__downlink_8h.html#adac12f087ddbf783f395992d891d6319">00113</a> <span class="preprocessor">#define PERIODIC_SEND_WP_MOVED(_trans, _dev) { \</span>
+<a name="l00114"></a>00114 <span class="preprocessor">  static uint8_t i; \</span>
+<a name="l00115"></a>00115 <span class="preprocessor">  i++; if (i &gt;= nb_waypoint) i = 0; \</span>
+<a name="l00116"></a>00116 <span class="preprocessor">  DownlinkSendWp(_trans, _dev, i);      \</span>
+<a name="l00117"></a>00117 <span class="preprocessor">}</span>
+<a name="l00118"></a>00118 <span class="preprocessor"></span>
+<a name="l00119"></a>00119 <span class="preprocessor">#if defined RADIO_CALIB &amp;&amp; defined RADIO_CONTROL_SETTINGS</span>
+<a name="l00120"></a>00120 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="rc__settings_8h.html" title="Variable setting though the radio control.">rc_settings.h</a>&quot;</span>
+<a name="l00121"></a>00121 <span class="preprocessor">#define PERIODIC_SEND_PPRZ_MODE(_trans, _dev) DOWNLINK_SEND_PPRZ_MODE(_trans, _dev, &amp;pprz_mode, &amp;v_ctl_mode, &amp;lateral_mode, &amp;horizontal_mode, &amp;rc_settings_mode, &amp;mcu1_status);</span>
+<a name="l00122"></a>00122 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_SETTINGS(_trans, _dev) if (!RcSettingsOff()) DOWNLINK_SEND_SETTINGS(_trans, _dev, &amp;slider_1_val, &amp;slider_2_val);</span>
+<a name="l00123"></a>00123 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00124"></a><a class="code" href="ap__downlink_8h.html#a0dbac28e67969ea3e2ecaa8c994e6d1c">00124</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_PPRZ_MODE(_trans, _dev) {                         \</span>
+<a name="l00125"></a>00125 <span class="preprocessor">    uint8_t rc_settings_mode_none = 0;                                  \</span>
+<a name="l00126"></a>00126 <span class="preprocessor">    DOWNLINK_SEND_PPRZ_MODE(_trans, _dev, &amp;pprz_mode, &amp;v_ctl_mode, &amp;lateral_mode, &amp;horizontal_mode, &amp;rc_settings_mode_none, &amp;mcu1_status); \</span>
+<a name="l00127"></a>00127 <span class="preprocessor">  }</span>
+<a name="l00128"></a><a class="code" href="ap__downlink_8h.html#a601de957cc158e9b2191c9085eed020b">00128</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_SETTINGS(_trans, _dev) {}</span>
+<a name="l00129"></a>00129 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00130"></a>00130 <span class="preprocessor"></span>
+<a name="l00131"></a>00131 <span class="preprocessor">#if USE_INFRARED || USE_INFRARED_TELEMETRY</span>
+<a name="l00132"></a>00132 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="infrared_8h.html">subsystems/sensors/infrared.h</a>&quot;</span>
+<a name="l00133"></a>00133 <span class="preprocessor">#define PERIODIC_SEND_IR_SENSORS(_trans, _dev) DOWNLINK_SEND_IR_SENSORS(_trans, _dev, &amp;infrared.value.ir1, &amp;infrared.value.ir2, &amp;infrared.pitch, &amp;infrared.roll, &amp;infrared.top);</span>
+<a name="l00134"></a>00134 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00135"></a><a class="code" href="ap__downlink_8h.html#abb9804ba7105bfa74a618a519335799e">00135</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_IR_SENSORS(_trans, _dev) ;</span>
+<a name="l00136"></a>00136 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00137"></a>00137 <span class="preprocessor"></span>
+<a name="l00138"></a><a class="code" href="ap__downlink_8h.html#a361aa734182552513e1a604499c3544a">00138</a> <span class="preprocessor">#define PERIODIC_SEND_ADC(_trans, _dev) {}</span>
+<a name="l00139"></a>00139 <span class="preprocessor"></span>
+<a name="l00140"></a>00140 
+<a name="l00141"></a><a class="code" href="ap__downlink_8h.html#a3660c24f6f834d803646cf4edfd12872">00141</a> <span class="preprocessor">#define PERIODIC_SEND_CALIBRATION(_trans, _dev) DOWNLINK_SEND_CALIBRATION(_trans, _dev, &amp;v_ctl_auto_throttle_sum_err, &amp;v_ctl_auto_throttle_submode)</span>
+<a name="l00142"></a>00142 <span class="preprocessor"></span>
+<a name="l00143"></a><a class="code" href="ap__downlink_8h.html#a9e19d70fda9aefe1fa8dd5f06a7855d6">00143</a> <span class="preprocessor">#define PERIODIC_SEND_CIRCLE(_trans, _dev) if (nav_in_circle) { DOWNLINK_SEND_CIRCLE(_trans, _dev, &amp;nav_circle_x, &amp;nav_circle_y, &amp;nav_circle_radius); }</span>
+<a name="l00144"></a>00144 <span class="preprocessor"></span>
+<a name="l00145"></a><a class="code" href="ap__downlink_8h.html#abd23ef32a7533bc8a3699af47652939b">00145</a> <span class="preprocessor">#define PERIODIC_SEND_SEGMENT(_trans, _dev) if (nav_in_segment) { DOWNLINK_SEND_SEGMENT(_trans, _dev, &amp;nav_segment_x_1, &amp;nav_segment_y_1, &amp;nav_segment_x_2, &amp;nav_segment_y_2); }</span>
+<a name="l00146"></a>00146 <span class="preprocessor"></span>
+<a name="l00147"></a>00147 <span class="preprocessor">#ifdef IMU_TYPE_H</span>
+<a name="l00148"></a>00148 <span class="preprocessor"></span><span class="preprocessor">#  ifdef INS_MODULE_H</span>
+<a name="l00149"></a>00149 <span class="preprocessor"></span><span class="preprocessor">#  include &quot;<a class="code" href="ins__module_8h.html">modules/ins/ins_module.h</a>&quot;</span>
+<a name="l00150"></a>00150 <span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_trans, _dev) {}</span>
+<a name="l00151"></a>00151 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_trans, _dev) {}</span>
+<a name="l00152"></a>00152 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_trans, _dev) {}</span>
+<a name="l00153"></a>00153 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_trans, _dev) { DOWNLINK_SEND_IMU_GYRO(_trans, _dev, &amp;ins_p, &amp;ins_q, &amp;ins_r)}</span>
+<a name="l00154"></a>00154 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_trans, _dev) { DOWNLINK_SEND_IMU_ACCEL(_trans, _dev, &amp;ins_ax, &amp;ins_ay, &amp;ins_az)}</span>
+<a name="l00155"></a>00155 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_trans, _dev) { DOWNLINK_SEND_IMU_MAG(_trans, _dev, &amp;ins_mx, &amp;ins_my, &amp;ins_mz)}</span>
+<a name="l00156"></a>00156 <span class="preprocessor"></span><span class="preprocessor">#  else</span>
+<a name="l00157"></a>00157 <span class="preprocessor"></span><span class="preprocessor">#    include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span>
+<a name="l00158"></a>00158 <span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_trans, _dev) { DOWNLINK_SEND_IMU_ACCEL_RAW(_trans, _dev, &amp;imu.accel_unscaled.x, &amp;imu.accel_unscaled.y, &amp;imu.accel_unscaled.z)}</span>
+<a name="l00159"></a>00159 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_trans, _dev) { DOWNLINK_SEND_IMU_GYRO_RAW(_trans, _dev, &amp;imu.gyro_unscaled.p, &amp;imu.gyro_unscaled.q, &amp;imu.gyro_unscaled.r)}</span>
+<a name="l00160"></a>00160 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_trans, _dev) { DOWNLINK_SEND_IMU_MAG_RAW(_trans, _dev, &amp;imu.mag_unscaled.x, &amp;imu.mag_unscaled.y, &amp;imu.mag_unscaled.z)}</span>
+<a name="l00161"></a>00161 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_trans, _dev) { struct FloatVect3 accel_float; ACCELS_FLOAT_OF_BFP(accel_float, imu.accel); DOWNLINK_SEND_IMU_ACCEL(_trans, _dev, &amp;accel_float.x, &amp;accel_float.y, &amp;accel_float.z)}</span>
+<a name="l00162"></a>00162 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_trans, _dev) { struct FloatRates gyro_float; RATES_FLOAT_OF_BFP(gyro_float, imu.gyro); DOWNLINK_SEND_IMU_GYRO(_trans, _dev, &amp;gyro_float.p, &amp;gyro_float.q, &amp;gyro_float.r)}</span>
+<a name="l00163"></a>00163 <span class="preprocessor"></span><span class="preprocessor">#    ifdef USE_MAGNETOMETER</span>
+<a name="l00164"></a>00164 <span class="preprocessor"></span><span class="preprocessor">#      define PERIODIC_SEND_IMU_MAG(_trans, _dev) { struct FloatVect3 mag_float; MAGS_FLOAT_OF_BFP(mag_float, imu.mag); DOWNLINK_SEND_IMU_MAG(_trans, _dev, &amp;mag_float.x, &amp;mag_float.y, &amp;mag_float.z)}</span>
+<a name="l00165"></a>00165 <span class="preprocessor"></span><span class="preprocessor">#    else</span>
+<a name="l00166"></a>00166 <span class="preprocessor"></span><span class="preprocessor">#      define PERIODIC_SEND_IMU_MAG(_trans, _dev) {}</span>
+<a name="l00167"></a>00167 <span class="preprocessor"></span><span class="preprocessor">#    endif</span>
+<a name="l00168"></a>00168 <span class="preprocessor"></span><span class="preprocessor">#  endif</span>
+<a name="l00169"></a>00169 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00170"></a><a class="code" href="ap__downlink_8h.html#a25fa8df9fad289f46a1bcc92ba02f56b">00170</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_trans, _dev) {}</span>
+<a name="l00171"></a><a class="code" href="ap__downlink_8h.html#ae6cb652b8dc533e9d7dd7a64739336a7">00171</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_trans, _dev) {}</span>
+<a name="l00172"></a><a class="code" href="ap__downlink_8h.html#a93f3f1dac5e8e4be3f21159e01aa426f">00172</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_trans, _dev) {}</span>
+<a name="l00173"></a><a class="code" href="ap__downlink_8h.html#a0ea387db54e24d995029c78ea06af883">00173</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL(_trans, _dev) {}</span>
+<a name="l00174"></a><a class="code" href="ap__downlink_8h.html#aa3c8d6c08cd8fccdbf92dab62282b222">00174</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO(_trans, _dev) {}</span>
+<a name="l00175"></a><a class="code" href="ap__downlink_8h.html#adc88639d668793236e94158afea7b7ad">00175</a> <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG(_trans, _dev) {}</span>
+<a name="l00176"></a>00176 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00177"></a>00177 <span class="preprocessor"></span>
+<a name="l00178"></a>00178 <span class="preprocessor">#ifdef IMU_ANALOG</span>
+<a name="l00179"></a>00179 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_IMU(_trans, _dev) { int16_t dummy = 42; DOWNLINK_SEND_IMU(_trans, _dev, &amp;(from_fbw.euler_dot[0]), &amp;(from_fbw.euler_dot[1]), &amp;(from_fbw.euler_dot[2]), &amp;dummy, &amp;dummy, &amp;dummy); }</span>
+<a name="l00180"></a>00180 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00181"></a><a class="code" href="ap__downlink_8h.html#a74f5704591bd1a37defcacae7fd31dbd">00181</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_IMU(_trans, _dev) {}</span>
+<a name="l00182"></a>00182 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00183"></a>00183 <span class="preprocessor"></span>
+<a name="l00184"></a><a class="code" href="ap__downlink_8h.html#a111613885987874c077b40e342e78b99">00184</a> <span class="preprocessor">#define PERIODIC_SEND_ESTIMATOR(_trans, _dev) DOWNLINK_SEND_ESTIMATOR(_trans, _dev, &amp;estimator_z, &amp;estimator_z_dot)</span>
+<a name="l00185"></a>00185 <span class="preprocessor"></span>
+<a name="l00186"></a><a class="code" href="ap__downlink_8h.html#a5b7ee5828a4a65359ce9393a365f5d2d">00186</a> <span class="preprocessor">#define SEND_NAVIGATION(_trans, _dev) Downlink({ uint8_t _circle_count = NavCircleCount(); DOWNLINK_SEND_NAVIGATION(_trans, _dev, &amp;nav_block, &amp;nav_stage, &amp;estimator_x, &amp;estimator_y, &amp;dist2_to_wp, &amp;dist2_to_home, &amp;_circle_count, &amp;nav_oval_count);})</span>
+<a name="l00187"></a>00187 <span class="preprocessor"></span>
+<a name="l00188"></a><a class="code" href="ap__downlink_8h.html#a85adc95755e19621b09c0e4cfc71ace7">00188</a> <span class="preprocessor">#define PERIODIC_SEND_NAVIGATION(_trans, _dev) SEND_NAVIGATION(_trans, _dev)</span>
+<a name="l00189"></a>00189 <span class="preprocessor"></span>
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191 <span class="preprocessor">#if defined CAM || defined MOBILE_CAM</span>
+<a name="l00192"></a>00192 <span class="preprocessor"></span><span class="preprocessor">#define SEND_CAM(_trans, _dev) Downlink({ int16_t x = cam_target_x; int16_t y = cam_target_y; int16_t phi = DegOfRad(cam_phi_c); int16_t theta = DegOfRad(cam_theta_c); DOWNLINK_SEND_CAM(_trans, _dev, &amp;phi, &amp;theta, &amp;x, &amp;y);})</span>
+<a name="l00193"></a>00193 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_CAM_POINT(_trans, _dev) DOWNLINK_SEND_CAM_POINT(_trans, _dev, &amp;cam_point_distance_from_home, &amp;cam_point_lat, &amp;cam_point_lon)</span>
+<a name="l00194"></a>00194 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00195"></a><a class="code" href="ap__downlink_8h.html#ac382d16fc74adbd36aadbb97dddaf8b9">00195</a> <span class="preprocessor"></span><span class="preprocessor">#define SEND_CAM(_trans, _dev) {}</span>
+<a name="l00196"></a><a class="code" href="ap__downlink_8h.html#a78bc8fda2efb732c9dcf5b621283ba51">00196</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_CAM_POINT(_trans, _dev) {}</span>
+<a name="l00197"></a>00197 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00198"></a>00198 <span class="preprocessor"></span>
+<a name="l00199"></a><a class="code" href="ap__downlink_8h.html#aac3b084503a7ef7ccdf84a6651bb82e6">00199</a> <span class="preprocessor">#define PERIODIC_SEND_DL_VALUE(_trans, _dev) PeriodicSendDlValue(_trans, _dev) </span>
+<a name="l00201"></a><a class="code" href="ap__downlink_8h.html#acde9ea7092731b443551c0537a956333">00201</a> <span class="preprocessor">#define PERIODIC_SEND_SURVEY(_trans, _dev) { \</span>
+<a name="l00202"></a>00202 <span class="preprocessor">  if (nav_survey_active) \</span>
+<a name="l00203"></a>00203 <span class="preprocessor">    DOWNLINK_SEND_SURVEY(_trans, _dev, &amp;nav_survey_east, &amp;nav_survey_north, &amp;nav_survey_west, &amp;nav_survey_south); \</span>
+<a name="l00204"></a>00204 <span class="preprocessor">  }</span>
+<a name="l00205"></a>00205 <span class="preprocessor"></span>
+<a name="l00206"></a><a class="code" href="ap__downlink_8h.html#ac89d29feec0289ee7e4772216b4d4a2c">00206</a> <span class="preprocessor">#define PERIODIC_SEND_RANGEFINDER(_trans, _dev) DOWNLINK_SEND_RANGEFINDER(_trans, _dev, &amp;rangemeter, &amp;ctl_grz_z_dot, &amp;ctl_grz_z_dot_sum_err, &amp;ctl_grz_z_dot_setpoint, &amp;ctl_grz_z_sum_err, &amp;ctl_grz_z_setpoint, &amp;flying)</span>
+<a name="l00207"></a>00207 <span class="preprocessor"></span>
+<a name="l00208"></a><a class="code" href="ap__downlink_8h.html#affc5c0f70f113616776d76c718557382">00208</a> <span class="preprocessor">#define PERIODIC_SEND_TUNE_ROLL(_trans, _dev) DOWNLINK_SEND_TUNE_ROLL(_trans, _dev, &amp;estimator_p,&amp;estimator_phi, &amp;h_ctl_roll_setpoint);</span>
+<a name="l00209"></a>00209 <span class="preprocessor"></span>
+<a name="l00210"></a>00210 <span class="preprocessor">#if USE_GPS || USE_GPS_XSENS || defined SITL</span>
+<a name="l00211"></a>00211 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GPS_SOL(_trans, _dev) DOWNLINK_SEND_GPS_SOL(_trans, _dev, &amp;gps.pacc, &amp;gps.sacc, &amp;gps.pdop, &amp;gps.num_sv)</span>
+<a name="l00212"></a>00212 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00213"></a>00213 <span class="preprocessor"></span>
+<a name="l00214"></a><a class="code" href="ap__downlink_8h.html#a10392905662467a5ace379ddff0a264c">00214</a> <span class="preprocessor">#define PERIODIC_SEND_GPS(_trans, _dev) {                                      \</span>
+<a name="l00215"></a>00215 <span class="preprocessor">    static uint8_t i;                                                   \</span>
+<a name="l00216"></a>00216 <span class="preprocessor">    int16_t climb = -gps.ned_vel.z;                                     \</span>
+<a name="l00217"></a>00217 <span class="preprocessor">    int16_t course = (DegOfRad(gps.course)/((int32_t)1e6));             \</span>
+<a name="l00218"></a>00218 <span class="preprocessor">    DOWNLINK_SEND_GPS(_trans, _dev, &amp;gps.fix, &amp;gps.utm_pos.east, &amp;gps.utm_pos.north, &amp;course, &amp;gps.hmsl, &amp;gps.gspeed, &amp;climb, &amp;gps.week, &amp;gps.tow, &amp;gps.utm_pos.zone, &amp;i); \</span>
+<a name="l00219"></a>00219 <span class="preprocessor">    if ((gps.fix != GPS_FIX_3D) &amp;&amp; (i &gt;= gps.nb_channels)) i = 0;                                    \</span>
+<a name="l00220"></a>00220 <span class="preprocessor">    if (i &gt;= gps.nb_channels * 2) i = 0;                                    \</span>
+<a name="l00221"></a>00221 <span class="preprocessor">    if (i &lt; gps.nb_channels &amp;&amp; gps.svinfos[i].cno &gt; 0) { \</span>
+<a name="l00222"></a>00222 <span class="preprocessor">      DOWNLINK_SEND_SVINFO(_trans, _dev, &amp;i, &amp;gps.svinfos[i].svid, &amp;gps.svinfos[i].flags, &amp;gps.svinfos[i].qi, &amp;gps.svinfos[i].cno, &amp;gps.svinfos[i].elev, &amp;gps.svinfos[i].azim); \</span>
+<a name="l00223"></a>00223 <span class="preprocessor">    }                                                                   \</span>
+<a name="l00224"></a>00224 <span class="preprocessor">    i++;                                                                \</span>
+<a name="l00225"></a>00225 <span class="preprocessor">}</span>
+<a name="l00226"></a>00226 <span class="preprocessor"></span>
+<a name="l00227"></a>00227 <span class="preprocessor">#if USE_GPS</span>
+<a name="l00228"></a>00228 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GPS_INT(_trans, _dev) {   \</span>
+<a name="l00229"></a>00229 <span class="preprocessor">  DOWNLINK_SEND_GPS_INT( _trans, _dev,          \</span>
+<a name="l00230"></a>00230 <span class="preprocessor">                         &amp;gps.ecef_pos.x,       \</span>
+<a name="l00231"></a>00231 <span class="preprocessor">                         &amp;gps.ecef_pos.y,       \</span>
+<a name="l00232"></a>00232 <span class="preprocessor">                         &amp;gps.ecef_pos.z,       \</span>
+<a name="l00233"></a>00233 <span class="preprocessor">                         &amp;gps.lla_pos.lat,      \</span>
+<a name="l00234"></a>00234 <span class="preprocessor">                         &amp;gps.lla_pos.lon,      \</span>
+<a name="l00235"></a>00235 <span class="preprocessor">                         &amp;gps.lla_pos.alt,      \</span>
+<a name="l00236"></a>00236 <span class="preprocessor">                         &amp;gps.hmsl,             \</span>
+<a name="l00237"></a>00237 <span class="preprocessor">                         &amp;gps.ecef_vel.x,       \</span>
+<a name="l00238"></a>00238 <span class="preprocessor">                         &amp;gps.ecef_vel.y,       \</span>
+<a name="l00239"></a>00239 <span class="preprocessor">                         &amp;gps.ecef_vel.z,       \</span>
+<a name="l00240"></a>00240 <span class="preprocessor">                         &amp;gps.pacc,             \</span>
+<a name="l00241"></a>00241 <span class="preprocessor">                         &amp;gps.sacc,             \</span>
+<a name="l00242"></a>00242 <span class="preprocessor">                         &amp;gps.tow,              \</span>
+<a name="l00243"></a>00243 <span class="preprocessor">                         &amp;gps.pdop,             \</span>
+<a name="l00244"></a>00244 <span class="preprocessor">                         &amp;gps.num_sv,           \</span>
+<a name="l00245"></a>00245 <span class="preprocessor">                         &amp;gps.fix);             \</span>
+<a name="l00246"></a>00246 <span class="preprocessor">  }</span>
+<a name="l00247"></a>00247 <span class="preprocessor"></span>
+<a name="l00248"></a>00248 <span class="preprocessor">#define PERIODIC_SEND_GPS_LLA(_trans, _dev) {               \</span>
+<a name="l00249"></a>00249 <span class="preprocessor">    int16_t climb = -gps.ned_vel.z;                         \</span>
+<a name="l00250"></a>00250 <span class="preprocessor">    int16_t course = (DegOfRad(gps.course)/((int32_t)1e6)); \</span>
+<a name="l00251"></a>00251 <span class="preprocessor">    DOWNLINK_SEND_GPS_LLA( _trans, _dev,                    \</span>
+<a name="l00252"></a>00252 <span class="preprocessor">                           &amp;gps.lla_pos.lat,                \</span>
+<a name="l00253"></a>00253 <span class="preprocessor">                           &amp;gps.lla_pos.lon,                \</span>
+<a name="l00254"></a>00254 <span class="preprocessor">                           &amp;gps.lla_pos.alt,                \</span>
+<a name="l00255"></a>00255 <span class="preprocessor">                           &amp;gps.hmsl,                       \</span>
+<a name="l00256"></a>00256 <span class="preprocessor">                           &amp;course,                         \</span>
+<a name="l00257"></a>00257 <span class="preprocessor">                           &amp;gps.gspeed,                     \</span>
+<a name="l00258"></a>00258 <span class="preprocessor">                           &amp;climb,                          \</span>
+<a name="l00259"></a>00259 <span class="preprocessor">                           &amp;gps.week,                       \</span>
+<a name="l00260"></a>00260 <span class="preprocessor">                           &amp;gps.tow,                        \</span>
+<a name="l00261"></a>00261 <span class="preprocessor">                           &amp;gps.fix,                        \</span>
+<a name="l00262"></a>00262 <span class="preprocessor">                           &amp;gps.fix);                       \</span>
+<a name="l00263"></a>00263 <span class="preprocessor">  }</span>
+<a name="l00264"></a>00264 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00265"></a>00265 <span class="preprocessor"></span>
+<a name="l00266"></a>00266 <span class="preprocessor">#if USE_BARO_MS5534A</span>
+<a name="l00267"></a>00267 <span class="preprocessor"></span><span class="comment">//#include &quot;baro_MS5534A.h&quot;</span>
+<a name="l00268"></a>00268 <span class="preprocessor">#define PERIODIC_SEND_BARO_MS5534A(_trans, _dev) DOWNLINK_SEND_BARO_MS5534A(_trans, _dev, &amp;baro_MS5534A_pressure, &amp;baro_MS5534A_temp, &amp;baro_MS5534A_z)</span>
+<a name="l00269"></a>00269 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00270"></a><a class="code" href="ap__downlink_8h.html#a38528faf941d1d01a8819622d23414ef">00270</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_BARO_MS5534A(_trans, _dev) {}</span>
+<a name="l00271"></a>00271 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00272"></a>00272 <span class="preprocessor"></span>
+<a name="l00273"></a>00273 <span class="preprocessor">#if USE_BARO_SCP</span>
+<a name="l00274"></a>00274 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="baro__scp_8h.html">baro_scp.h</a>&quot;</span>
+<a name="l00275"></a>00275 <span class="preprocessor">#define PERIODIC_SEND_SCP_STATUS(_trans, _dev) DOWNLINK_SEND_SCP_STATUS(_trans, _dev, &amp;baro_scp_pressure, &amp;baro_scp_temperature)</span>
+<a name="l00276"></a>00276 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00277"></a><a class="code" href="ap__downlink_8h.html#a8095b0b76b2fcdfa072480ef69736ef5">00277</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_SCP_STATUS(_trans, _dev) {}</span>
+<a name="l00278"></a>00278 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00279"></a>00279 <span class="preprocessor"></span>
+<a name="l00280"></a>00280 <span class="comment">//FIXME: we need a better switch here...</span>
+<a name="l00281"></a>00281 <span class="preprocessor">#if BOARD_HAS_BARO &amp;&amp; USE_BARO_AS_ALTIMETER</span>
+<a name="l00282"></a>00282 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="baro_8h.html">subsystems/sensors/baro.h</a>&quot;</span>
+<a name="l00283"></a>00283 <span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {  \</span>
+<a name="l00284"></a>00284 <span class="preprocessor">    DOWNLINK_SEND_BARO_RAW(_trans, _dev,        \</span>
+<a name="l00285"></a>00285 <span class="preprocessor">                           &amp;baro.absolute,      \</span>
+<a name="l00286"></a>00286 <span class="preprocessor">                           &amp;baro.differential); \</span>
+<a name="l00287"></a>00287 <span class="preprocessor">  }</span>
+<a name="l00288"></a>00288 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00289"></a><a class="code" href="ap__downlink_8h.html#a09132dd1094236e8356f48f2b6346888">00289</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {}</span>
+<a name="l00290"></a>00290 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00291"></a>00291 <span class="preprocessor"></span>
+<a name="l00292"></a>00292 <span class="preprocessor">#ifdef MEASURE_AIRSPEED</span>
+<a name="l00293"></a>00293 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_trans, _dev) DOWNLINK_SEND_AIRSPEED (_trans, _dev, &amp;estimator_airspeed, &amp;estimator_airspeed, &amp;estimator_airspeed, &amp;estimator_airspeed)</span>
+<a name="l00294"></a>00294 <span class="preprocessor"></span><span class="preprocessor">#elif USE_AIRSPEED</span>
+<a name="l00295"></a>00295 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_trans, _dev) DOWNLINK_SEND_AIRSPEED (_trans, _dev, &amp;estimator_airspeed, &amp;v_ctl_auto_airspeed_setpoint, &amp;v_ctl_auto_airspeed_controlled, &amp;v_ctl_auto_groundspeed_setpoint)</span>
+<a name="l00296"></a>00296 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00297"></a><a class="code" href="ap__downlink_8h.html#ab32593d96b3f917e85174020b7526eae">00297</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_AIRSPEED(_trans, _dev) {}</span>
+<a name="l00298"></a>00298 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00299"></a>00299 <span class="preprocessor"></span>
+<a name="l00300"></a><a class="code" href="ap__downlink_8h.html#affc35e080959e1836ce979271f87dcde">00300</a> <span class="preprocessor">#define PERIODIC_SEND_ENERGY(_trans, _dev) Downlink({ const int16_t e = energy; const float vsup = ((float)vsupply) / 10.0f; const float curs = ((float) current)/1000.0f;  const float power = vsup * curs; DOWNLINK_SEND_ENERGY(_trans, _dev, &amp;vsup, &amp;curs, &amp;e, &amp;power); })</span>
+<a name="l00301"></a>00301 <span class="preprocessor"></span>
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303 <span class="preprocessor">#include &quot;<a class="code" href="stabilization__adaptive_8h.html">firmwares/fixedwing/stabilization/stabilization_adaptive.h</a>&quot;</span>
+<a name="l00304"></a><a class="code" href="ap__downlink_8h.html#a2fbdd1c2b5d02e61f2a76d9e2d900ed2">00304</a> <span class="preprocessor">#define PERIODIC_SEND_H_CTL_A(_trans, _dev) DOWNLINK_SEND_H_CTL_A(_trans, _dev, &amp;h_ctl_roll_sum_err, &amp;h_ctl_ref_roll_angle, &amp;h_ctl_pitch_sum_err, &amp;h_ctl_ref_pitch_angle)</span>
+<a name="l00305"></a>00305 <span class="preprocessor"></span>
+<a name="l00306"></a>00306 
+<a name="l00307"></a>00307 <span class="preprocessor">#endif </span><span class="comment">/* AP_DOWNLINK_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -370,7 +418,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ap__downlink_8h.html">ap_downlink.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:10 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

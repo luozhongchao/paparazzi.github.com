@@ -122,17 +122,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda" title="in radians">sim_theta</a>;
 <a name="l00023"></a>00023 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774" title="in radians/s">sim_p</a>;
 <a name="l00024"></a>00024 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af" title="in radians/s">sim_q</a>;
-<a name="l00025"></a>00025 
-<a name="l00026"></a><a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#aaee9ddbcf2cef114764f3b37cda3cf38">00026</a> <span class="keywordtype">void</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#aaee9ddbcf2cef114764f3b37cda3cf38">ArduIMU_init</a>( <span class="keywordtype">void</span> ) {}
-<a name="l00027"></a><a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#a9084095772fef629b46485b78cb1fd7a">00027</a> <span class="keywordtype">void</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#a9084095772fef629b46485b78cb1fd7a">ArduIMU_periodic</a>( <span class="keywordtype">void</span> ) {
-<a name="l00028"></a>00028   <span class="comment">// Feed directly the estimator</span>
-<a name="l00029"></a>00029   <a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98">estimator_phi</a> = <a class="code" href="jsbsim__ahrs_8c.html#ae73eb249a7855e34f52f6b873bb64807" title="in radians">sim_phi</a> - <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#a70b61a4232cbf0e9acbde8d9b62ce1c5">ins_roll_neutral</a>;
-<a name="l00030"></a>00030   <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554">estimator_theta</a> = <a class="code" href="jsbsim__ahrs_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda" title="in radians">sim_theta</a> - <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#ac5803b6353ae28ae52ab9284d222d8d5">ins_pitch_neutral</a>;
-<a name="l00031"></a>00031   <a class="code" href="estimator_8c.html#a36dfb0e341bd202f5811da98fd59ded5">estimator_p</a> = <a class="code" href="jsbsim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774" title="in radians/s">sim_p</a>;
-<a name="l00032"></a>00032   <a class="code" href="estimator_8c.html#afd02d3c751d84c3690cc9dc792087156">estimator_q</a> = <a class="code" href="jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af" title="in radians/s">sim_q</a>;
-<a name="l00033"></a>00033 }
-<a name="l00034"></a><a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#a71ab195043b0eef3d99d90fe9d227f1c">00034</a> <span class="keywordtype">void</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#a71ab195043b0eef3d99d90fe9d227f1c">ArduIMU_periodicGPS</a>( <span class="keywordtype">void</span> ) {}
-<a name="l00035"></a><a class="code" href="ins__arduimu__basic_8h.html#a6f80e69d733254b945f208647409073f">00035</a> <span class="keywordtype">void</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#a6f80e69d733254b945f208647409073f">ArduIMU_event</a>( <span class="keywordtype">void</span> ) {}
+<a name="l00025"></a>00025 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee" title="in radians/s">sim_r</a>;
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#aaee9ddbcf2cef114764f3b37cda3cf38">00027</a> <span class="keywordtype">void</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#aaee9ddbcf2cef114764f3b37cda3cf38">ArduIMU_init</a>( <span class="keywordtype">void</span> ) {}
+<a name="l00028"></a><a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#a9084095772fef629b46485b78cb1fd7a">00028</a> <span class="keywordtype">void</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#a9084095772fef629b46485b78cb1fd7a">ArduIMU_periodic</a>( <span class="keywordtype">void</span> ) {
+<a name="l00029"></a>00029   <span class="comment">// Feed directly the estimator</span>
+<a name="l00030"></a>00030   <a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98" title="roll angle in rad, + = right">estimator_phi</a> = <a class="code" href="jsbsim__ahrs_8c.html#ae73eb249a7855e34f52f6b873bb64807" title="in radians">sim_phi</a> - <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#a70b61a4232cbf0e9acbde8d9b62ce1c5">ins_roll_neutral</a>;
+<a name="l00031"></a>00031   <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554" title="pitch angle in rad, + = up">estimator_theta</a> = <a class="code" href="jsbsim__ahrs_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda" title="in radians">sim_theta</a> - <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#ac5803b6353ae28ae52ab9284d222d8d5">ins_pitch_neutral</a>;
+<a name="l00032"></a>00032   <a class="code" href="estimator_8c.html#a36dfb0e341bd202f5811da98fd59ded5">estimator_p</a> = <a class="code" href="jsbsim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774" title="in radians/s">sim_p</a>;
+<a name="l00033"></a>00033   <a class="code" href="estimator_8c.html#afd02d3c751d84c3690cc9dc792087156">estimator_q</a> = <a class="code" href="jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af" title="in radians/s">sim_q</a>;
+<a name="l00034"></a>00034   <a class="code" href="estimator_8c.html#a1fa471daa42439e0bfb95631c4e5b089">estimator_r</a> = <a class="code" href="jsbsim__ahrs_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee" title="in radians/s">sim_r</a>;
+<a name="l00035"></a>00035 }
+<a name="l00036"></a><a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#a71ab195043b0eef3d99d90fe9d227f1c">00036</a> <span class="keywordtype">void</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#a71ab195043b0eef3d99d90fe9d227f1c">ArduIMU_periodicGPS</a>( <span class="keywordtype">void</span> ) {}
+<a name="l00037"></a><a class="code" href="ins__arduimu__basic_8h.html#a6f80e69d733254b945f208647409073f">00037</a> <span class="keywordtype">void</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#a6f80e69d733254b945f208647409073f">ArduIMU_event</a>( <span class="keywordtype">void</span> ) {}
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -153,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html">ins_arduimu_basic.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

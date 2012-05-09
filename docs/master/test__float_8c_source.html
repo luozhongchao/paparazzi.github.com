@@ -129,49 +129,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="preprocessor">#include BOARD_CONFIG</span>
 <a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
-<a name="l00030"></a>00030 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> );
-<a name="l00031"></a>00031 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>( <span class="keywordtype">void</span> );
-<a name="l00032"></a>00032 
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
+<a name="l00031"></a>00031 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> );
+<a name="l00032"></a>00032 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>( <span class="keywordtype">void</span> );
 <a name="l00033"></a>00033 
-<a name="l00034"></a><a class="code" href="test__float_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00034</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">void</span>) {
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038   <span class="keywordflow">while</span> (1) {
-<a name="l00039"></a>00039     <span class="keywordflow">if</span> (<a class="code" href="sim_2sys__time__hw_8h.html#aae751b25410663d1569168a04e60c8db">sys_time_periodic</a>())
-<a name="l00040"></a>00040       <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>();
-<a name="l00041"></a>00041   }
-<a name="l00042"></a>00042   <span class="keywordflow">return</span> 0;
-<a name="l00043"></a>00043 }
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00046"></a>00046   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
-<a name="l00047"></a>00047   <a class="code" href="lpc21_2sys__time__hw_8h.html#afa1427883d31532a107dc306b6b3b6d7">sys_time_init</a>();
-<a name="l00048"></a>00048 }
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>( <span class="keywordtype">void</span> ) {
-<a name="l00051"></a>00051   <span class="keyword">static</span> <span class="keywordtype">float</span> f = 0.1f;
-<a name="l00052"></a>00052   f += 0.001;
-<a name="l00053"></a>00053   <span class="keywordtype">float</span> f1 = sinf(f);     <span class="comment">// ok</span>
-<a name="l00054"></a>00054   <span class="keyword">static</span> <span class="keywordtype">double</span> d = 0.1;
-<a name="l00055"></a>00055   d += 0.0025;
-<a name="l00056"></a>00056   <span class="keywordtype">double</span> <a class="code" href="baro__MS5534A_8c.html#a0813524f8ef4968d752cbe6e17f71456">d1</a> = sin(d);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058   <span class="keywordtype">float</span> i = sqrt(f);  <span class="comment">// ok</span>
-<a name="l00059"></a>00059   <span class="comment">//float i = powf(f1, f1); // nok</span>
-<a name="l00060"></a>00060   <span class="comment">//float i = atan2(f, f); // ok</span>
-<a name="l00061"></a>00061   RunOnceEvery(10, {DOWNLINK_SEND_TEST_FORMAT(DefaultChannel, &amp;d1, &amp;i);});
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>  blaaa = f+d;
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065   RunOnceEvery(10, {DOWNLINK_SEND_BOOT(DefaultChannel, &amp;blaaa);});
-<a name="l00066"></a>00066   <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();
-<a name="l00067"></a>00067 }
-<a name="l00068"></a>00068 
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="test__float_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00035</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">void</span>) {
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039   <span class="keywordflow">while</span> (1) {
+<a name="l00040"></a>00040     <span class="keywordflow">if</span> (<a class="code" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666">sys_time_check_and_ack_timer</a>(0))
+<a name="l00041"></a>00041       <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>();
+<a name="l00042"></a>00042   }
+<a name="l00043"></a>00043   <span class="keywordflow">return</span> 0;
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
+<a name="l00047"></a>00047   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
+<a name="l00048"></a>00048   <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);
+<a name="l00049"></a>00049 }
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>( <span class="keywordtype">void</span> ) {
+<a name="l00052"></a>00052   <span class="keyword">static</span> <span class="keywordtype">float</span> f = 0.1f;
+<a name="l00053"></a>00053   f += 0.001;
+<a name="l00054"></a>00054   <span class="keywordtype">float</span> f1 = sinf(f);     <span class="comment">// ok</span>
+<a name="l00055"></a>00055   <span class="keyword">static</span> <span class="keywordtype">double</span> d = 0.1;
+<a name="l00056"></a>00056   d += 0.0025;
+<a name="l00057"></a>00057   <span class="keywordtype">double</span> <a class="code" href="baro__MS5534A_8c.html#a0813524f8ef4968d752cbe6e17f71456">d1</a> = sin(d);
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059   <span class="keywordtype">float</span> i = sqrt(f);  <span class="comment">// ok</span>
+<a name="l00060"></a>00060   <span class="comment">//float i = powf(f1, f1); // nok</span>
+<a name="l00061"></a>00061   <span class="comment">//float i = atan2(f, f); // ok</span>
+<a name="l00062"></a>00062   RunOnceEvery(10, {DOWNLINK_SEND_TEST_FORMAT(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;d1, &amp;i);});
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>  blaaa = f+d;
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066   RunOnceEvery(10, {DOWNLINK_SEND_BOOT(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;blaaa);});
+<a name="l00067"></a>00067   <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();
+<a name="l00068"></a>00068 }
 <a name="l00069"></a>00069 
 <a name="l00070"></a>00070 
+<a name="l00071"></a>00071 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -192,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="test__float_8c.html">test_float.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

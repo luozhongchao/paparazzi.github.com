@@ -1,5 +1,6 @@
 var stabilization__attitude__euler__int_8c =
 [
+    [ "CMD_SHIFT", "stabilization__attitude__euler__int_8c.html#a6b714183ddf56c82273df7831ecec42c", null ],
     [ "MAX_SUM_ERR", "stabilization__attitude__euler__int_8c.html#a5b0a3448308cccbf6109d3cb2f00c40a", null ],
     [ "OFFSET_AND_ROUND", "stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2", null ],
     [ "OFFSET_AND_ROUND2", "stabilization__attitude__euler__int_8c.html#a12f569e84b2838005e3c28f4476971e9", null ],

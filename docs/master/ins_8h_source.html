@@ -137,11 +137,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structNedCoor__i.html" title="vector in North East Down coordinates">NedCoor_i</a> <a class="code" href="ins_8c.html#a3e56b004193f1011e86edf5403081278">ins_gps_speed_cm_s_ned</a>;
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 <span class="comment">/* barometer                   */</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#ifdef USE_VFF</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#if USE_VFF</span>
 <a name="l00037"></a>00037 <span class="preprocessor"></span><span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> ins_baro_alt;
 <a name="l00038"></a>00038 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> ins_qfe;
 <a name="l00039"></a>00039 <span class="keyword">extern</span> bool_t  ins_baro_initialised;
-<a name="l00040"></a>00040 <span class="preprocessor">#ifdef USE_SONAR</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#if USE_SONAR</span>
 <a name="l00041"></a>00041 <span class="preprocessor"></span><span class="keyword">extern</span> bool_t  ins_update_on_agl; <span class="comment">/* use sonar to update agl if available */</span>
 <a name="l00042"></a>00042 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> ins_sonar_offset;
 <a name="l00043"></a>00043 <span class="preprocessor">#endif</span>
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a>00051 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structEnuCoor__i.html" title="vector in East North Up coordinates">EnuCoor_i</a> <a class="code" href="ins_8c.html#a9ea315e9e1fdf8503c92cb383357e59c">ins_enu_pos</a>;
 <a name="l00052"></a>00052 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structEnuCoor__i.html" title="vector in East North Up coordinates">EnuCoor_i</a> <a class="code" href="ins_8c.html#ac2c79f54d3e1a3abf0d6f04accbad320">ins_enu_speed</a>;
 <a name="l00053"></a>00053 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structEnuCoor__i.html" title="vector in East North Up coordinates">EnuCoor_i</a> <a class="code" href="ins_8c.html#ac9bfec494fbd6dd4e0f58d1e380073ea">ins_enu_accel</a>;
-<a name="l00054"></a>00054 <span class="preprocessor">#ifdef USE_HFF</span>
+<a name="l00054"></a>00054 <span class="preprocessor">#if USE_HFF</span>
 <a name="l00055"></a>00055 <span class="preprocessor"></span><span class="comment">/* horizontal gps transformed to NED in meters as float */</span>
 <a name="l00056"></a>00056 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structFloatVect2.html">FloatVect2</a> ins_gps_pos_m_ned;
 <a name="l00057"></a>00057 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structFloatVect2.html">FloatVect2</a> ins_gps_speed_m_s_ned;
@@ -166,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00062"></a>00062 
 <a name="l00063"></a>00063 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="fw__ins__vn100_8c.html#abf3028c2ada542781b8a5e1eb20c17ce">ins_init</a>( <span class="keywordtype">void</span> );
 <a name="l00064"></a>00064 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#acb548b510075b086cc7cc5e2d80b3a71">ins_periodic</a>( <span class="keywordtype">void</span> );
-<a name="l00065"></a>00065 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#aa06d5c09c10bc6397041d6fe8f34c438">ins_realign_h</a>(<span class="keyword">struct</span> <a class="code" href="structFloatVect2.html">FloatVect2</a> pos, <span class="keyword">struct</span> <a class="code" href="structFloatVect2.html">FloatVect2</a> speed);
+<a name="l00065"></a>00065 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#aa06d5c09c10bc6397041d6fe8f34c438">ins_realign_h</a>(<span class="keyword">struct</span> <a class="code" href="structFloatVect2.html">FloatVect2</a> pos, <span class="keyword">struct</span> <a class="code" href="structFloatVect2.html">FloatVect2</a> <a class="code" href="guidance__v__ref_8h.html#a36dda2666e5436e608a494230ca9076b">speed</a>);
 <a name="l00066"></a>00066 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#a280ea4c959a462604573f57637749791">ins_realign_v</a>(<span class="keywordtype">float</span> z);
 <a name="l00067"></a>00067 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#a77b5ba9f198b91b698062cc0dc0c953d">ins_propagate</a>( <span class="keywordtype">void</span> );
 <a name="l00068"></a>00068 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#a6e1a3600e1905c414ff96c92775237d3">ins_update_baro</a>( <span class="keywordtype">void</span> );
@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ins_8h.html">ins.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

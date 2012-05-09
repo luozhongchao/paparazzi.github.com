@@ -127,91 +127,102 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023 <span class="comment"> */</span>
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="sys__mon_8h.html" title="System monitoring return cpu load, average exec time, ...">core/sys_mon.h</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 <span class="preprocessor">#ifdef USE_USB_SERIAL</span>
 <a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="usb__serial_8h.html" title="arch independent USB API">mcu_periph/usb_serial.h</a>&quot;</span>
 <a name="l00030"></a>00030 <span class="preprocessor">#endif</span>
 <a name="l00031"></a>00031 <span class="preprocessor"></span>
-<a name="l00032"></a>00032 <span class="comment">/* Global vars */</span>
-<a name="l00033"></a><a class="code" href="sys__mon_8h.html#aea83a6946e95bdf373a1f2a6148c4d64">00033</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="sys__mon_8c.html#aea83a6946e95bdf373a1f2a6148c4d64">cpu_load</a>;
-<a name="l00034"></a><a class="code" href="sys__mon_8h.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">00034</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a>, <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a>, <a class="code" href="sys__mon_8c.html#a151be3d22a67aac08362dd599ea0aab9">periodic_cycle_min</a>, <a class="code" href="sys__mon_8c.html#ad4cfa05866b13c464f60630dc6e59882">periodic_cycle_max</a>;
-<a name="l00035"></a><a class="code" href="sys__mon_8h.html#a7f247217b7399b6a4c6e30d2b83a6651">00035</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="sys__mon_8c.html#a7f247217b7399b6a4c6e30d2b83a6651">event_time</a>, <a class="code" href="sys__mon_8c.html#a017451bfb845af77c9eecd69c4b1bb1f">event_number</a>;
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="comment">/* Local vars */</span>
-<a name="l00038"></a><a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">00038</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>, <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a>;
-<a name="l00039"></a><a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">00039</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">time_periodic</a>, <a class="code" href="sys__mon_8c.html#aa265946d25fdcefb40baab1b0a61caee">time_event</a>;
-<a name="l00040"></a><a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">00040</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">sum_time_periodic</a>, <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d">sum_cycle_periodic</a>, <a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525">sum_time_event</a>, <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9">min_time_event</a>, <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a>;
-<a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="sys__mon_8h.html#acb5edde6b801b04f23b2c89bd0117cde">00042</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#acb5edde6b801b04f23b2c89bd0117cde" title="Init system monitoring.">init_sysmon</a>(<span class="keywordtype">void</span>) {
-<a name="l00043"></a>00043   <a class="code" href="sys__mon_8c.html#aea83a6946e95bdf373a1f2a6148c4d64">cpu_load</a> = 0;
-<a name="l00044"></a>00044   <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a> = 0;
-<a name="l00045"></a>00045   <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a> = 0;
-<a name="l00046"></a>00046   <a class="code" href="sys__mon_8c.html#a151be3d22a67aac08362dd599ea0aab9">periodic_cycle_min</a> = 0xFFFF;
-<a name="l00047"></a>00047   <a class="code" href="sys__mon_8c.html#ad4cfa05866b13c464f60630dc6e59882">periodic_cycle_max</a> = 0;
-<a name="l00048"></a>00048   <a class="code" href="sys__mon_8c.html#a7f247217b7399b6a4c6e30d2b83a6651">event_time</a> = 0;
-<a name="l00049"></a>00049   <a class="code" href="sys__mon_8c.html#a017451bfb845af77c9eecd69c4b1bb1f">event_number</a> = 0;
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051   <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a> = 0;
-<a name="l00052"></a>00052   <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a> = 0;
-<a name="l00053"></a>00053   <a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">sum_time_periodic</a> = 0;
-<a name="l00054"></a>00054   <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d">sum_cycle_periodic</a> = 0;
-<a name="l00055"></a>00055   <a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525">sum_time_event</a> = 0;
-<a name="l00056"></a>00056   <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9">min_time_event</a> = ~0;
-<a name="l00057"></a>00057   <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a> = 0;
-<a name="l00058"></a>00058 }
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
-<a name="l00061"></a>00061 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00062"></a>00062 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
-<a name="l00063"></a><a class="code" href="sys__mon_8c.html#a2978a46b47cbc9d17a0924014ff9658b">00063</a> <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
-<a name="l00064"></a>00064 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00065"></a>00065 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
-<a name="l00066"></a>00066 
-<a name="l00067"></a><a class="code" href="sys__mon_8h.html#ac92d4ce59d619452e70fd3a3a53fb7a0">00067</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#ac92d4ce59d619452e70fd3a3a53fb7a0" title="Report system status.">periodic_report_sysmon</a>(<span class="keywordtype">void</span>) {
-<a name="l00069"></a>00069   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a> &gt; 0) {
-<a name="l00070"></a>00070     <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a> = <a class="code" href="main__ap_8c.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(<a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">sum_time_periodic</a> / <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>, 1);
-<a name="l00071"></a>00071     <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a> = <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d">sum_cycle_periodic</a> / <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>;
-<a name="l00072"></a>00072     <a class="code" href="sys__mon_8c.html#aea83a6946e95bdf373a1f2a6148c4d64">cpu_load</a> = 100 * <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a> / <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a>;
-<a name="l00073"></a>00073     <a class="code" href="sys__mon_8c.html#a017451bfb845af77c9eecd69c4b1bb1f">event_number</a> = <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a> / <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>;
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075     DOWNLINK_SEND_SYS_MON(DefaultChannel,&amp;<a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a>,&amp;<a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a>,&amp;<a class="code" href="sys__mon_8c.html#a151be3d22a67aac08362dd599ea0aab9">periodic_cycle_min</a>,&amp;<a class="code" href="sys__mon_8c.html#ad4cfa05866b13c464f60630dc6e59882">periodic_cycle_max</a>,&amp;<a class="code" href="sys__mon_8c.html#a017451bfb845af77c9eecd69c4b1bb1f">event_number</a>,&amp;<a class="code" href="sys__mon_8c.html#aea83a6946e95bdf373a1f2a6148c4d64">cpu_load</a>);
-<a name="l00076"></a>00076   }
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078   <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a> = 0;
-<a name="l00079"></a>00079   <a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">sum_time_periodic</a> = 0;
-<a name="l00080"></a>00080   <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d">sum_cycle_periodic</a> = 0;
-<a name="l00081"></a>00081   <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a> = 0;
-<a name="l00082"></a>00082   <a class="code" href="sys__mon_8c.html#a151be3d22a67aac08362dd599ea0aab9">periodic_cycle_min</a> = 0xFFFF;
-<a name="l00083"></a>00083   <a class="code" href="sys__mon_8c.html#ad4cfa05866b13c464f60630dc6e59882">periodic_cycle_max</a> = 0;
-<a name="l00084"></a>00084 }
-<a name="l00085"></a>00085 
-<a name="l00086"></a><a class="code" href="sys__mon_8h.html#abaa925469e5ec124a8333c7bce1c5c12">00086</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#abaa925469e5ec124a8333c7bce1c5c12" title="Analyse periodic calls Should be run at the highest frequency.">periodic_sysmon</a>(<span class="keywordtype">void</span>) {
-<a name="l00088"></a>00088   <a class="code" href="lpc21_2sys__time__hw_8h.html#abb950f6634af7da754fa0c6d99d689cb">SysTimeTimerStop</a>(<a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">time_periodic</a>);
-<a name="l00089"></a>00089   <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a> = <a class="code" href="lpc21_2sys__time__hw_8h.html#ac742fca323331ac0ebdd29ef69ede328">USEC_OF_SYS_TICS</a>(<a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">time_periodic</a>);
-<a name="l00090"></a>00090   <span class="comment">/* only periodic cycle : periodic_cycle = periodic_time - sum_time_event; */</span>
-<a name="l00091"></a>00091   <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a> = <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a> - <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a> * <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9">min_time_event</a>;
-<a name="l00092"></a>00092   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a> &lt; <a class="code" href="sys__mon_8c.html#a151be3d22a67aac08362dd599ea0aab9">periodic_cycle_min</a>) <a class="code" href="sys__mon_8c.html#a151be3d22a67aac08362dd599ea0aab9">periodic_cycle_min</a> = <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a>;
-<a name="l00093"></a>00093   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a> &gt; <a class="code" href="sys__mon_8c.html#ad4cfa05866b13c464f60630dc6e59882">periodic_cycle_max</a>) <a class="code" href="sys__mon_8c.html#ad4cfa05866b13c464f60630dc6e59882">periodic_cycle_max</a> = <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a>;
-<a name="l00094"></a>00094   <a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">sum_time_periodic</a> += <a class="code" href="sys__mon_8c.html#ac2c3c6e5accfc7df3a6cdbcb21dfbfb2">periodic_time</a>;
-<a name="l00095"></a>00095   <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d">sum_cycle_periodic</a> += <a class="code" href="sys__mon_8c.html#a07024ab786319c4e5f2c1191ef0736cb">periodic_cycle</a>;
-<a name="l00096"></a>00096   <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>++;
-<a name="l00097"></a>00097   <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a> += <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a>;
-<a name="l00098"></a>00098   <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a> = 0;
-<a name="l00099"></a>00099   <a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525">sum_time_event</a> = 0;
-<a name="l00100"></a>00100   <a class="code" href="lpc21_2sys__time__hw_8h.html#a0583c93a24eed5f81e1f647ca63a652a">SysTimeTimerStart</a>(<a class="code" href="sys__mon_8c.html#a52b60e9f7548badaa0eff70414d270e6">time_periodic</a>);
-<a name="l00101"></a>00101 }
-<a name="l00102"></a>00102 
-<a name="l00103"></a><a class="code" href="sys__mon_8h.html#a5b750b36817e9e5d6717863bc4e61194">00103</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#a5b750b36817e9e5d6717863bc4e61194" title="Analyse event calls.">event_sysmon</a>(<span class="keywordtype">void</span>) {
-<a name="l00105"></a>00105   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a> &gt; 0) {
-<a name="l00106"></a>00106     <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> t = <a class="code" href="lpc21_2sys__time__hw_8h.html#ac742fca323331ac0ebdd29ef69ede328">USEC_OF_SYS_TICS</a>(<a class="code" href="lpc21_2sys__time__hw_8h.html#a2dfaf7d6ae83a19972aca429fc687e87">SysTimeTimer</a>(<a class="code" href="sys__mon_8c.html#aa265946d25fdcefb40baab1b0a61caee">time_event</a>));
-<a name="l00107"></a>00107     <span class="keywordflow">if</span> (t &lt; <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9">min_time_event</a>) <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9">min_time_event</a> = t;
-<a name="l00108"></a>00108     <a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525">sum_time_event</a> += t;
-<a name="l00109"></a>00109   }
-<a name="l00110"></a>00110   <a class="code" href="lpc21_2sys__time__hw_8h.html#a0583c93a24eed5f81e1f647ca63a652a">SysTimeTimerStart</a>(<a class="code" href="sys__mon_8c.html#aa265946d25fdcefb40baab1b0a61caee">time_event</a>);
-<a name="l00111"></a>00111   <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a>++;
-<a name="l00112"></a>00112 }
-<a name="l00113"></a>00113 
+<a name="l00032"></a>00032 <span class="comment">/* Global system monitor data (averaged over 1 sec) */</span>
+<a name="l00033"></a><a class="code" href="sys__mon_8h.html#ac703cfec1b447f18605d58a9c3a0f856">00033</a> <span class="keyword">struct </span><a class="code" href="structSysMon.html">SysMon</a> <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="comment">/* Local vars */</span>
+<a name="l00036"></a><a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">00036</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>;
+<a name="l00037"></a><a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">00037</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a>;
+<a name="l00038"></a><a class="code" href="sys__mon_8c.html#ad85e58d7097a209fb940f0f13375ee5d">00038</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#ad85e58d7097a209fb940f0f13375ee5d">periodic_timer</a>;
+<a name="l00039"></a><a class="code" href="sys__mon_8c.html#a75e3b171aa3316da1718659477ca3baf">00039</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a75e3b171aa3316da1718659477ca3baf">periodic_cycle</a>;
+<a name="l00040"></a><a class="code" href="sys__mon_8c.html#a2adeca6a5c58a55de7459564c04ceee7">00040</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a2adeca6a5c58a55de7459564c04ceee7">event_timer</a>;
+<a name="l00041"></a><a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278">00041</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278" title="in usec">sum_time_periodic</a>;  
+<a name="l00042"></a><a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d">00042</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d" title="in usec">sum_cycle_periodic</a>; 
+<a name="l00043"></a><a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525">00043</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525" title="in usec">sum_time_event</a>;     
+<a name="l00044"></a><a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9">00044</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9" title="in usec">min_time_event</a>;     
+<a name="l00045"></a><a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">00045</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a>;
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="sys__mon_8h.html#acb5edde6b801b04f23b2c89bd0117cde">00047</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#acb5edde6b801b04f23b2c89bd0117cde" title="Init system monitoring.">init_sysmon</a>(<span class="keywordtype">void</span>) {
+<a name="l00048"></a>00048   <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a2ad135a8060d1f64cfab07279db4fb5f">cpu_load</a> = 0;
+<a name="l00049"></a>00049   <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#af02dd574fede341d5341274576ab33a4" title="in usec">periodic_time</a> = 0;
+<a name="l00050"></a>00050   <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a829c30af6ebd5426f468f83ca5af6ad7" title="in usec">periodic_cycle</a> = 0;
+<a name="l00051"></a>00051   <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#ad875a3569208e130c06603066c9145a7" title="in usec">periodic_cycle_min</a> = 0xFFFF;
+<a name="l00052"></a>00052   <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a8872f23a20fef193b4ac0294bd4353fb" title="in usec">periodic_cycle_max</a> = 0;
+<a name="l00053"></a>00053   <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#aff98a43e0b4ac7c500e6a58b07eb227d">event_number</a> = 0;
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055   <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a> = 0;
+<a name="l00056"></a>00056   <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a> = 0;
+<a name="l00057"></a>00057   <a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278" title="in usec">sum_time_periodic</a> = 0;
+<a name="l00058"></a>00058   <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d" title="in usec">sum_cycle_periodic</a> = 0;
+<a name="l00059"></a>00059   <a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525" title="in usec">sum_time_event</a> = 0;
+<a name="l00060"></a>00060   <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9" title="in usec">min_time_event</a> = ~0;
+<a name="l00061"></a>00061   <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a> = 0;
+<a name="l00062"></a>00062   <a class="code" href="sys__mon_8c.html#ad85e58d7097a209fb940f0f13375ee5d">periodic_timer</a> = 0;
+<a name="l00063"></a>00063 }
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
+<a name="l00066"></a>00066 <span class="preprocessor">#include &quot;messages.h&quot;</span>
+<a name="l00067"></a>00067 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
+<a name="l00068"></a><a class="code" href="sys__mon_8c.html#a2978a46b47cbc9d17a0924014ff9658b">00068</a> <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
+<a name="l00071"></a>00071 
+<a name="l00072"></a><a class="code" href="sys__mon_8h.html#ac92d4ce59d619452e70fd3a3a53fb7a0">00072</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#ac92d4ce59d619452e70fd3a3a53fb7a0" title="Report system status.">periodic_report_sysmon</a>(<span class="keywordtype">void</span>) {
+<a name="l00074"></a>00074   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a> &gt; 0) {
+<a name="l00075"></a>00075     <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#af02dd574fede341d5341274576ab33a4" title="in usec">periodic_time</a> = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(<a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278" title="in usec">sum_time_periodic</a> / <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>, 1);
+<a name="l00076"></a>00076     <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a829c30af6ebd5426f468f83ca5af6ad7" title="in usec">periodic_cycle</a> = <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d" title="in usec">sum_cycle_periodic</a> / <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>;
+<a name="l00077"></a>00077     <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a2ad135a8060d1f64cfab07279db4fb5f">cpu_load</a> = 100 * <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a829c30af6ebd5426f468f83ca5af6ad7" title="in usec">periodic_cycle</a> / <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#af02dd574fede341d5341274576ab33a4" title="in usec">periodic_time</a>;
+<a name="l00078"></a>00078     <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#aff98a43e0b4ac7c500e6a58b07eb227d">event_number</a> = <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a> / <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080     DOWNLINK_SEND_SYS_MON(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#af02dd574fede341d5341274576ab33a4" title="in usec">periodic_time</a>, &amp;<a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a829c30af6ebd5426f468f83ca5af6ad7" title="in usec">periodic_cycle</a>, &amp;<a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#ad875a3569208e130c06603066c9145a7" title="in usec">periodic_cycle_min</a>, &amp;<a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a8872f23a20fef193b4ac0294bd4353fb" title="in usec">periodic_cycle_max</a>, &amp;<a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#aff98a43e0b4ac7c500e6a58b07eb227d">event_number</a>, &amp;<a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a2ad135a8060d1f64cfab07279db4fb5f">cpu_load</a>);
+<a name="l00081"></a>00081   }
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083   <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a> = 0;
+<a name="l00084"></a>00084   <a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278" title="in usec">sum_time_periodic</a> = 0;
+<a name="l00085"></a>00085   <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d" title="in usec">sum_cycle_periodic</a> = 0;
+<a name="l00086"></a>00086   <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a> = 0;
+<a name="l00087"></a>00087   <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#ad875a3569208e130c06603066c9145a7" title="in usec">periodic_cycle_min</a> = 0xFFFF;
+<a name="l00088"></a>00088   <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a8872f23a20fef193b4ac0294bd4353fb" title="in usec">periodic_cycle_max</a> = 0;
+<a name="l00089"></a>00089 }
+<a name="l00090"></a>00090 
+<a name="l00091"></a><a class="code" href="sys__mon_8h.html#abaa925469e5ec124a8333c7bce1c5c12">00091</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#abaa925469e5ec124a8333c7bce1c5c12" title="Analyse periodic calls Should be run at the highest frequency.">periodic_sysmon</a>(<span class="keywordtype">void</span>) {
+<a name="l00093"></a>00093   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> periodic_usec = <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#a2dfaf7d6ae83a19972aca429fc687e87">SysTimeTimer</a>(<a class="code" href="sys__mon_8c.html#ad85e58d7097a209fb940f0f13375ee5d">periodic_timer</a>);
+<a name="l00094"></a>00094   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#a0583c93a24eed5f81e1f647ca63a652a">SysTimeTimerStart</a>(<a class="code" href="sys__mon_8c.html#ad85e58d7097a209fb940f0f13375ee5d">periodic_timer</a>);
+<a name="l00095"></a>00095   <a class="code" href="sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278" title="in usec">sum_time_periodic</a> += periodic_usec;
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097   <span class="comment">/* only periodic cycle : periodic_cycle = periodic_usec - sum_time_event; */</span>
+<a name="l00098"></a>00098   <a class="code" href="sys__mon_8c.html#a75e3b171aa3316da1718659477ca3baf">periodic_cycle</a> = periodic_usec - <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a> * <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9" title="in usec">min_time_event</a>;
+<a name="l00099"></a>00099   <a class="code" href="sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d" title="in usec">sum_cycle_periodic</a> += <a class="code" href="sys__mon_8c.html#a75e3b171aa3316da1718659477ca3baf">periodic_cycle</a>;
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101   <span class="comment">/* remember min and max periodic cycle times */</span>
+<a name="l00102"></a>00102   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#a75e3b171aa3316da1718659477ca3baf">periodic_cycle</a> &lt; <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#ad875a3569208e130c06603066c9145a7" title="in usec">periodic_cycle_min</a>)
+<a name="l00103"></a>00103     <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#ad875a3569208e130c06603066c9145a7" title="in usec">periodic_cycle_min</a> = <a class="code" href="sys__mon_8c.html#a75e3b171aa3316da1718659477ca3baf">periodic_cycle</a>;
+<a name="l00104"></a>00104   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#a75e3b171aa3316da1718659477ca3baf">periodic_cycle</a> &gt; <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a8872f23a20fef193b4ac0294bd4353fb" title="in usec">periodic_cycle_max</a>)
+<a name="l00105"></a>00105     <a class="code" href="sys__mon_8c.html#ac703cfec1b447f18605d58a9c3a0f856">sys_mon</a>.<a class="code" href="structSysMon.html#a8872f23a20fef193b4ac0294bd4353fb" title="in usec">periodic_cycle_max</a> = <a class="code" href="sys__mon_8c.html#a75e3b171aa3316da1718659477ca3baf">periodic_cycle</a>;
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107   <a class="code" href="sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9">n_periodic</a>++;
+<a name="l00108"></a>00108   <a class="code" href="sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d">sum_n_event</a> += <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a>;
+<a name="l00109"></a>00109   <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a> = 0;
+<a name="l00110"></a>00110   <a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525" title="in usec">sum_time_event</a> = 0;
+<a name="l00111"></a>00111 }
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="sys__mon_8h.html#a5b750b36817e9e5d6717863bc4e61194">00113</a> <span class="keywordtype">void</span> <a class="code" href="sys__mon_8c.html#a5b750b36817e9e5d6717863bc4e61194" title="Analyse event calls.">event_sysmon</a>(<span class="keywordtype">void</span>) {
+<a name="l00115"></a>00115   <span class="keywordflow">if</span> (<a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a> &gt; 0) {
+<a name="l00116"></a>00116     <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> t = <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#a2dfaf7d6ae83a19972aca429fc687e87">SysTimeTimer</a>(<a class="code" href="sys__mon_8c.html#a2adeca6a5c58a55de7459564c04ceee7">event_timer</a>);
+<a name="l00117"></a>00117     <span class="keywordflow">if</span> (t &lt; <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9" title="in usec">min_time_event</a>)
+<a name="l00118"></a>00118       <a class="code" href="sys__mon_8c.html#aafefcdcd9d13d49795c6403bc19b19f9" title="in usec">min_time_event</a> = t;
+<a name="l00119"></a>00119     <a class="code" href="sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525" title="in usec">sum_time_event</a> += t;
+<a name="l00120"></a>00120   }
+<a name="l00121"></a>00121   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#a0583c93a24eed5f81e1f647ca63a652a">SysTimeTimerStart</a>(<a class="code" href="sys__mon_8c.html#a2adeca6a5c58a55de7459564c04ceee7">event_timer</a>);
+<a name="l00122"></a>00122   <a class="code" href="sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf">n_event</a>++;
+<a name="l00123"></a>00123 }
+<a name="l00124"></a>00124 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -232,7 +243,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="sys__mon_8c.html">sys_mon.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -1,7 +1,7 @@
 var lisa__test__hmc5843_8c =
 [
     [ "INITIALIZED", "lisa__test__hmc5843_8c.html#a05b386d4bad60f6f9236de6d3be866e0", null ],
-    [ "exti9_5_irq_handler", "lisa__test__hmc5843_8c.html#a2b53e4c66c30098f313d5f0945c3baf5", null ],
+    [ "exti9_5_isr", "lisa__test__hmc5843_8c.html#ac033acbc708beb196e46622d95d450c5", null ],
     [ "main", "lisa__test__hmc5843_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
     [ "main_event_task", "lisa__test__hmc5843_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1", null ],
     [ "main_init", "lisa__test__hmc5843_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1", null ],

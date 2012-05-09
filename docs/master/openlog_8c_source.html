@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="openlog_8h.html" title="This module provides a timestamp-message, allowing sw/logalizer/openlog2tlm to convert a recorded dum...">openlog.h</a>&quot;</span>
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
@@ -142,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00045"></a>00045 
 <a name="l00046"></a><a class="code" href="openlog_8h.html#ab34b243a201c81bc8858b79c2c37bb58">00046</a> <span class="keywordtype">void</span> <a class="code" href="openlog_8c.html#ab34b243a201c81bc8858b79c2c37bb58">periodic_2Hz_openlog</a>(<span class="keywordtype">void</span>)   {
 <a name="l00047"></a>00047   <a class="code" href="openlog_8c.html#ab20b0c7772544cf5d318507f34231fbe" title="Timestamp to be incremented during operation.">timestamp</a>=<a class="code" href="openlog_8c.html#ab20b0c7772544cf5d318507f34231fbe" title="Timestamp to be incremented during operation.">timestamp</a>+500;
-<a name="l00048"></a>00048         DOWNLINK_SEND_TIMESTAMP(DefaultChannel, &amp;<a class="code" href="openlog_8c.html#ab20b0c7772544cf5d318507f34231fbe" title="Timestamp to be incremented during operation.">timestamp</a>);
+<a name="l00048"></a>00048   DOWNLINK_SEND_TIMESTAMP(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="openlog_8c.html#ab20b0c7772544cf5d318507f34231fbe" title="Timestamp to be incremented during operation.">timestamp</a>);
 <a name="l00049"></a>00049 }
 </pre></div></div><!-- contents -->
 </div>
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="openlog_8c.html">openlog.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

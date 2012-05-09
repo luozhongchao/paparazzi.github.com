@@ -162,9 +162,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00064"></a>00064 
 <a name="l00065"></a>00065   <a class="code" href="spiral_8c.html#acadb2b29fbce38e3fa43ec3ffb77966e">Spiralradius</a> = sqrt(<a class="code" href="spiral_8c.html#aaf0b19fbdbcfdd8ab019e8e7eec83aa2">EdgeCurrentX</a>*<a class="code" href="spiral_8c.html#aaf0b19fbdbcfdd8ab019e8e7eec83aa2">EdgeCurrentX</a>+<a class="code" href="spiral_8c.html#a1f3e916b9a7740a60807a0263e9f0090">EdgeCurrentY</a>*<a class="code" href="spiral_8c.html#a1f3e916b9a7740a60807a0263e9f0090">EdgeCurrentY</a>);
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067   <a class="code" href="spiral_8c.html#a341fcb5f9c40613028748eb25df2f9ac">TransCurrentX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a> - <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>);
-<a name="l00068"></a>00068   <a class="code" href="spiral_8c.html#a116d829509d0cd638a8e1fe85fe7858a">TransCurrentY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a> - <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>);
-<a name="l00069"></a>00069   <a class="code" href="spiral_8c.html#a2e11aa8ccf57f0ad1b89a805e4683a15">TransCurrentZ</a> = <a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8">estimator_z</a> - <a class="code" href="spiral_8c.html#af82bcee94a4f402fe4aa29dd12c1dae9">ZPoint</a>;
+<a name="l00067"></a>00067   <a class="code" href="spiral_8c.html#a341fcb5f9c40613028748eb25df2f9ac">TransCurrentX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a> - <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>);
+<a name="l00068"></a>00068   <a class="code" href="spiral_8c.html#a116d829509d0cd638a8e1fe85fe7858a">TransCurrentY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a> - <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>);
+<a name="l00069"></a>00069   <a class="code" href="spiral_8c.html#a2e11aa8ccf57f0ad1b89a805e4683a15">TransCurrentZ</a> = <a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a> - <a class="code" href="spiral_8c.html#af82bcee94a4f402fe4aa29dd12c1dae9">ZPoint</a>;
 <a name="l00070"></a>00070   <a class="code" href="spiral_8c.html#a6327730ac29ad3556b8ccb0380b8b368">DistanceFromCenter</a> = sqrt(<a class="code" href="spiral_8c.html#a341fcb5f9c40613028748eb25df2f9ac">TransCurrentX</a>*<a class="code" href="spiral_8c.html#a341fcb5f9c40613028748eb25df2f9ac">TransCurrentX</a>+<a class="code" href="spiral_8c.html#a116d829509d0cd638a8e1fe85fe7858a">TransCurrentY</a>*<a class="code" href="spiral_8c.html#a116d829509d0cd638a8e1fe85fe7858a">TransCurrentY</a>);
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072   <span class="comment">//  SpiralTheta = atan2(TransCurrentY,TransCurrentX);</span>
@@ -174,8 +174,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00076"></a>00076   <span class="comment">// Alphalimit denotes angle, where the radius will be increased</span>
 <a name="l00077"></a>00077   <a class="code" href="spiral_8c.html#a76a53cfbc4e236e79d7fb3510fbab54f">Alphalimit</a> = 2*M_PI / Segments;
 <a name="l00078"></a>00078   <span class="comment">//current position</span>
-<a name="l00079"></a>00079   <a class="code" href="spiral_8c.html#a367901cf9b9ad71882d1a75785df5dc2">FlyFromX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>;
-<a name="l00080"></a>00080   <a class="code" href="spiral_8c.html#ae4fb24d68cd90599e3a6769af915c179">FlyFromY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>;
+<a name="l00079"></a>00079   <a class="code" href="spiral_8c.html#a367901cf9b9ad71882d1a75785df5dc2">FlyFromX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>;
+<a name="l00080"></a>00080   <a class="code" href="spiral_8c.html#ae4fb24d68cd90599e3a6769af915c179">FlyFromY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082   <span class="keywordflow">if</span>(<a class="code" href="spiral_8c.html#a6327730ac29ad3556b8ccb0380b8b368">DistanceFromCenter</a> &gt; <a class="code" href="spiral_8c.html#acadb2b29fbce38e3fa43ec3ffb77966e">Spiralradius</a>)
 <a name="l00083"></a>00083   <a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a> = <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551a97428abf4f6a11dfc00d53c330031e95">Outside</a>;
@@ -184,91 +184,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00086"></a>00086 
 <a name="l00087"></a><a class="code" href="spiral_8h.html#af5423b91973dcb13dc1409e5131d194d">00087</a> bool_t <a class="code" href="spiral_8c.html#af5423b91973dcb13dc1409e5131d194d">SpiralNav</a>(<span class="keywordtype">void</span>)
 <a name="l00088"></a>00088 {
-<a name="l00089"></a>00089   <a class="code" href="spiral_8c.html#a341fcb5f9c40613028748eb25df2f9ac">TransCurrentX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a> - <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>);
-<a name="l00090"></a>00090   <a class="code" href="spiral_8c.html#a116d829509d0cd638a8e1fe85fe7858a">TransCurrentY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a> - <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>);
+<a name="l00089"></a>00089   <a class="code" href="spiral_8c.html#a341fcb5f9c40613028748eb25df2f9ac">TransCurrentX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a> - <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>);
+<a name="l00090"></a>00090   <a class="code" href="spiral_8c.html#a116d829509d0cd638a8e1fe85fe7858a">TransCurrentY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a> - <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>);
 <a name="l00091"></a>00091   <a class="code" href="spiral_8c.html#a6327730ac29ad3556b8ccb0380b8b368">DistanceFromCenter</a> = sqrt(<a class="code" href="spiral_8c.html#a341fcb5f9c40613028748eb25df2f9ac">TransCurrentX</a>*<a class="code" href="spiral_8c.html#a341fcb5f9c40613028748eb25df2f9ac">TransCurrentX</a>+<a class="code" href="spiral_8c.html#a116d829509d0cd638a8e1fe85fe7858a">TransCurrentY</a>*<a class="code" href="spiral_8c.html#a116d829509d0cd638a8e1fe85fe7858a">TransCurrentY</a>);
 <a name="l00092"></a>00092 
-<a name="l00093"></a>00093   bool_t InCircle = TRUE;
-<a name="l00094"></a>00094   <span class="keywordtype">float</span> DistanceStartEstim;
-<a name="l00095"></a>00095   <span class="keywordtype">float</span> CircleAlpha;
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097   <span class="keywordflow">if</span>(<a class="code" href="spiral_8c.html#a6327730ac29ad3556b8ccb0380b8b368">DistanceFromCenter</a> &gt; <a class="code" href="spiral_8c.html#acadb2b29fbce38e3fa43ec3ffb77966e">Spiralradius</a>)
-<a name="l00098"></a>00098   InCircle = FALSE;
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100   <span class="keywordflow">switch</span>(<a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a>)
-<a name="l00101"></a>00101   {
-<a name="l00102"></a>00102   <span class="keywordflow">case</span> <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551a97428abf4f6a11dfc00d53c330031e95">Outside</a>:
-<a name="l00103"></a>00103     <span class="comment">//flys until center of the helix is reached an start helix</span>
-<a name="l00104"></a>00104     <a class="code" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment.">nav_route_xy</a>(<a class="code" href="spiral_8c.html#a367901cf9b9ad71882d1a75785df5dc2">FlyFromX</a>,<a class="code" href="spiral_8c.html#ae4fb24d68cd90599e3a6769af915c179">FlyFromY</a>,<a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>));
-<a name="l00105"></a>00105     <span class="comment">// center reached?</span>
-<a name="l00106"></a>00106     <span class="keywordflow">if</span> (<a class="code" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint.">nav_approaching_xy</a>(<a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="spiral_8c.html#a367901cf9b9ad71882d1a75785df5dc2">FlyFromX</a>, <a class="code" href="spiral_8c.html#ae4fb24d68cd90599e3a6769af915c179">FlyFromY</a>, 0)) {
-<a name="l00107"></a>00107     <span class="comment">// nadir image</span>
-<a name="l00108"></a>00108 <span class="preprocessor">#ifdef DIGITAL_CAM</span>
-<a name="l00109"></a>00109 <span class="preprocessor"></span>    <a class="code" href="atmega__i2c__cam__ctrl_8h.html#a99de571d22e98f2d4d1e118ade1d61f4">dc_send_command</a>(<a class="code" href="dc_8h.html#a5bcad6137b0e9f54ae973b52e8a94d34a8680b60f2e92d2e261a7e44e21b9c9c2">DC_SHOOT</a>);
-<a name="l00110"></a>00110 <span class="preprocessor">#endif</span>
-<a name="l00111"></a>00111 <span class="preprocessor"></span>    <a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a> = <a class="code" href="spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7f1609667ab956472d5f383683e4b996">StartCircle</a>;
-<a name="l00112"></a>00112     }
-<a name="l00113"></a>00113     <span class="keywordflow">break</span>;
-<a name="l00114"></a>00114   <span class="keywordflow">case</span> <a class="code" href="spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7f1609667ab956472d5f383683e4b996">StartCircle</a>:
-<a name="l00115"></a>00115     <span class="comment">// Starts helix</span>
-<a name="l00116"></a>00116     <span class="comment">// storage of current coordinates</span>
-<a name="l00117"></a>00117     <span class="comment">// calculation needed, State switch to Circle</span>
-<a name="l00118"></a>00118     <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y).">nav_circle_XY</a>(<a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>);
-<a name="l00119"></a>00119     <span class="keywordflow">if</span>(<a class="code" href="spiral_8c.html#a6327730ac29ad3556b8ccb0380b8b368">DistanceFromCenter</a> &gt;= <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>){
-<a name="l00120"></a>00120     <a class="code" href="spiral_8c.html#a376e5a6d539fff728ae41385a6ab86bc">LastCircleX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>;
-<a name="l00121"></a>00121     <a class="code" href="spiral_8c.html#af6d463c4b378d16ee32cab987c978ec9">LastCircleY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>;
-<a name="l00122"></a>00122     <a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a> = <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551ad3ce82743a8255ccd69f5b67d257c489">Circle</a>;
-<a name="l00123"></a>00123     <span class="comment">// Start helix</span>
-<a name="l00124"></a>00124 <span class="preprocessor">#ifdef DIGITAL_CAM</span>
-<a name="l00125"></a>00125 <span class="preprocessor"></span>    <a class="code" href="dc_8h.html#a4164a0425a0685b84c75b433ec138fe9">dc_Circle</a>(360/<a class="code" href="spiral_8c.html#aeffb7d7a5a63efc8c73e80cfafee4d39">Segmente</a>);
-<a name="l00126"></a>00126 <span class="preprocessor">#endif</span>
-<a name="l00127"></a>00127 <span class="preprocessor"></span>    }
-<a name="l00128"></a>00128     <span class="keywordflow">break</span>;
-<a name="l00129"></a>00129   <span class="keywordflow">case</span> <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551ad3ce82743a8255ccd69f5b67d257c489">Circle</a>: {
-<a name="l00130"></a>00130     <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y).">nav_circle_XY</a>(<a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>);
-<a name="l00131"></a>00131     <span class="comment">// Trigonometrische Berechnung des bereits geflogenen Winkels alpha</span>
-<a name="l00132"></a>00132     <span class="comment">// equation:</span>
-<a name="l00133"></a>00133     <span class="comment">// alpha = 2 * asin ( |Starting position angular - current positon| / (2* SRad)</span>
-<a name="l00134"></a>00134     <span class="comment">// if alphamax already reached, increase radius.</span>
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136     <span class="comment">//DistanceStartEstim = |Starting position angular - current positon|</span>
-<a name="l00137"></a>00137     DistanceStartEstim = sqrt (((<a class="code" href="spiral_8c.html#a376e5a6d539fff728ae41385a6ab86bc">LastCircleX</a>-<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>)*(<a class="code" href="spiral_8c.html#a376e5a6d539fff728ae41385a6ab86bc">LastCircleX</a>-<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>))
-<a name="l00138"></a>00138                      + ((<a class="code" href="spiral_8c.html#af6d463c4b378d16ee32cab987c978ec9">LastCircleY</a>-<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>)*(<a class="code" href="spiral_8c.html#af6d463c4b378d16ee32cab987c978ec9">LastCircleY</a>-<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>)));
-<a name="l00139"></a>00139     CircleAlpha = (2.0 * asin (DistanceStartEstim / (2 * <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>)));
-<a name="l00140"></a>00140     <span class="keywordflow">if</span> (CircleAlpha &gt;= <a class="code" href="spiral_8c.html#a76a53cfbc4e236e79d7fb3510fbab54f">Alphalimit</a>) {
-<a name="l00141"></a>00141     <a class="code" href="spiral_8c.html#a376e5a6d539fff728ae41385a6ab86bc">LastCircleX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>;
-<a name="l00142"></a>00142     <a class="code" href="spiral_8c.html#af6d463c4b378d16ee32cab987c978ec9">LastCircleY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>;
-<a name="l00143"></a>00143     <a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a> = <a class="code" href="spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7624d52a843fdb1bd260d79db614b2b5">IncSpiral</a>;
-<a name="l00144"></a>00144     }
-<a name="l00145"></a>00145     <span class="keywordflow">break</span>;
-<a name="l00146"></a>00146     }
-<a name="l00147"></a>00147   <span class="keywordflow">case</span> <a class="code" href="spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7624d52a843fdb1bd260d79db614b2b5">IncSpiral</a>:
-<a name="l00148"></a>00148     <span class="comment">// increasing circle radius as long as it is smaller than max helix radius</span>
-<a name="l00149"></a>00149     <span class="keywordflow">if</span>(<a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a> + <a class="code" href="spiral_8c.html#a7ce9c2cc323099d5369ed37ac1429d48">IRad</a> &lt; <a class="code" href="spiral_8c.html#acadb2b29fbce38e3fa43ec3ffb77966e">Spiralradius</a>)
-<a name="l00150"></a>00150     {
-<a name="l00151"></a>00151       <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a> = <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a> + <a class="code" href="spiral_8c.html#a7ce9c2cc323099d5369ed37ac1429d48">IRad</a>;
-<a name="l00152"></a>00152 <span class="preprocessor">#ifdef DIGITAL_CAM</span>
-<a name="l00153"></a>00153 <span class="preprocessor"></span>      <span class="keywordflow">if</span> (<a class="code" href="dc_8c.html#a9e037646096fde04d53a985c23094e98">dc_cam_tracing</a>) {
-<a name="l00154"></a>00154       <span class="comment">// calculating Cam angle for camera alignment</span>
-<a name="l00155"></a>00155       <a class="code" href="spiral_8c.html#a2e11aa8ccf57f0ad1b89a805e4683a15">TransCurrentZ</a> = <a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8">estimator_z</a> - <a class="code" href="spiral_8c.html#af82bcee94a4f402fe4aa29dd12c1dae9">ZPoint</a>;
-<a name="l00156"></a>00156       <a class="code" href="dc_8c.html#acad69fa4419a1838008bc68a209d0925">dc_cam_angle</a> = atan(<a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>/<a class="code" href="spiral_8c.html#a2e11aa8ccf57f0ad1b89a805e4683a15">TransCurrentZ</a>) * 180  / M_PI;
-<a name="l00157"></a>00157           }
-<a name="l00158"></a>00158 <span class="preprocessor">#endif</span>
-<a name="l00159"></a>00159 <span class="preprocessor"></span>    }
-<a name="l00160"></a>00160     <span class="keywordflow">else</span> {
-<a name="l00161"></a>00161     <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a> = <a class="code" href="spiral_8c.html#acadb2b29fbce38e3fa43ec3ffb77966e">Spiralradius</a>;
-<a name="l00162"></a>00162 <span class="preprocessor">#ifdef DIGITAL_CAM</span>
-<a name="l00163"></a>00163 <span class="preprocessor"></span>    <span class="comment">// Stopps DC</span>
-<a name="l00164"></a>00164     <a class="code" href="dc_8c.html#a47c625a53743f8ad41baaf54a6fcf144" title="Sets the dc control in inactive mode, stopping all current actions.">dc_stop</a>();
-<a name="l00165"></a>00165 <span class="preprocessor">#endif</span>
-<a name="l00166"></a>00166 <span class="preprocessor"></span>    }
-<a name="l00167"></a>00167     <a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a> = <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551ad3ce82743a8255ccd69f5b67d257c489">Circle</a>;
-<a name="l00168"></a>00168     <span class="keywordflow">break</span>;
-<a name="l00169"></a>00169        <span class="keywordflow">default</span>:
-<a name="l00170"></a>00170          <span class="keywordflow">break</span>;
-<a name="l00171"></a>00171   }
-<a name="l00172"></a>00172   <span class="keywordflow">return</span> TRUE;
-<a name="l00173"></a>00173 }
+<a name="l00093"></a>00093   <span class="keywordtype">float</span> DistanceStartEstim;
+<a name="l00094"></a>00094   <span class="keywordtype">float</span> CircleAlpha;
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096   <span class="keywordflow">switch</span>(<a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a>)
+<a name="l00097"></a>00097   {
+<a name="l00098"></a>00098   <span class="keywordflow">case</span> <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551a97428abf4f6a11dfc00d53c330031e95">Outside</a>:
+<a name="l00099"></a>00099     <span class="comment">//flys until center of the helix is reached an start helix</span>
+<a name="l00100"></a>00100     <a class="code" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment.">nav_route_xy</a>(<a class="code" href="spiral_8c.html#a367901cf9b9ad71882d1a75785df5dc2">FlyFromX</a>,<a class="code" href="spiral_8c.html#ae4fb24d68cd90599e3a6769af915c179">FlyFromY</a>,<a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>));
+<a name="l00101"></a>00101     <span class="comment">// center reached?</span>
+<a name="l00102"></a>00102     <span class="keywordflow">if</span> (<a class="code" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint.">nav_approaching_xy</a>(<a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="spiral_8c.html#a367901cf9b9ad71882d1a75785df5dc2">FlyFromX</a>, <a class="code" href="spiral_8c.html#ae4fb24d68cd90599e3a6769af915c179">FlyFromY</a>, 0)) {
+<a name="l00103"></a>00103     <span class="comment">// nadir image</span>
+<a name="l00104"></a>00104 <span class="preprocessor">#ifdef DIGITAL_CAM</span>
+<a name="l00105"></a>00105 <span class="preprocessor"></span>    <a class="code" href="atmega__i2c__cam__ctrl_8h.html#a99de571d22e98f2d4d1e118ade1d61f4">dc_send_command</a>(<a class="code" href="dc_8h.html#a5bcad6137b0e9f54ae973b52e8a94d34a8680b60f2e92d2e261a7e44e21b9c9c2">DC_SHOOT</a>);
+<a name="l00106"></a>00106 <span class="preprocessor">#endif</span>
+<a name="l00107"></a>00107 <span class="preprocessor"></span>    <a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a> = <a class="code" href="spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7f1609667ab956472d5f383683e4b996">StartCircle</a>;
+<a name="l00108"></a>00108     }
+<a name="l00109"></a>00109     <span class="keywordflow">break</span>;
+<a name="l00110"></a>00110   <span class="keywordflow">case</span> <a class="code" href="spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7f1609667ab956472d5f383683e4b996">StartCircle</a>:
+<a name="l00111"></a>00111     <span class="comment">// Starts helix</span>
+<a name="l00112"></a>00112     <span class="comment">// storage of current coordinates</span>
+<a name="l00113"></a>00113     <span class="comment">// calculation needed, State switch to Circle</span>
+<a name="l00114"></a>00114     <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y).">nav_circle_XY</a>(<a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>);
+<a name="l00115"></a>00115     <span class="keywordflow">if</span>(<a class="code" href="spiral_8c.html#a6327730ac29ad3556b8ccb0380b8b368">DistanceFromCenter</a> &gt;= <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>){
+<a name="l00116"></a>00116     <a class="code" href="spiral_8c.html#a376e5a6d539fff728ae41385a6ab86bc">LastCircleX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>;
+<a name="l00117"></a>00117     <a class="code" href="spiral_8c.html#af6d463c4b378d16ee32cab987c978ec9">LastCircleY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
+<a name="l00118"></a>00118     <a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a> = <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551ad3ce82743a8255ccd69f5b67d257c489">Circle</a>;
+<a name="l00119"></a>00119     <span class="comment">// Start helix</span>
+<a name="l00120"></a>00120 <span class="preprocessor">#ifdef DIGITAL_CAM</span>
+<a name="l00121"></a>00121 <span class="preprocessor"></span>    <a class="code" href="dc_8h.html#a4164a0425a0685b84c75b433ec138fe9">dc_Circle</a>(360/<a class="code" href="spiral_8c.html#aeffb7d7a5a63efc8c73e80cfafee4d39">Segmente</a>);
+<a name="l00122"></a>00122 <span class="preprocessor">#endif</span>
+<a name="l00123"></a>00123 <span class="preprocessor"></span>    }
+<a name="l00124"></a>00124     <span class="keywordflow">break</span>;
+<a name="l00125"></a>00125   <span class="keywordflow">case</span> <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551ad3ce82743a8255ccd69f5b67d257c489">Circle</a>: {
+<a name="l00126"></a>00126     <a class="code" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y).">nav_circle_XY</a>(<a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="spiral_8c.html#a688461f77762ad7bc85685537182f73c">Center</a>), <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>);
+<a name="l00127"></a>00127     <span class="comment">// Trigonometrische Berechnung des bereits geflogenen Winkels alpha</span>
+<a name="l00128"></a>00128     <span class="comment">// equation:</span>
+<a name="l00129"></a>00129     <span class="comment">// alpha = 2 * asin ( |Starting position angular - current positon| / (2* SRad)</span>
+<a name="l00130"></a>00130     <span class="comment">// if alphamax already reached, increase radius.</span>
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132     <span class="comment">//DistanceStartEstim = |Starting position angular - current positon|</span>
+<a name="l00133"></a>00133     DistanceStartEstim = sqrt (((<a class="code" href="spiral_8c.html#a376e5a6d539fff728ae41385a6ab86bc">LastCircleX</a>-<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>)*(<a class="code" href="spiral_8c.html#a376e5a6d539fff728ae41385a6ab86bc">LastCircleX</a>-<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>))
+<a name="l00134"></a>00134                      + ((<a class="code" href="spiral_8c.html#af6d463c4b378d16ee32cab987c978ec9">LastCircleY</a>-<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>)*(<a class="code" href="spiral_8c.html#af6d463c4b378d16ee32cab987c978ec9">LastCircleY</a>-<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>)));
+<a name="l00135"></a>00135     CircleAlpha = (2.0 * asin (DistanceStartEstim / (2 * <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>)));
+<a name="l00136"></a>00136     <span class="keywordflow">if</span> (CircleAlpha &gt;= <a class="code" href="spiral_8c.html#a76a53cfbc4e236e79d7fb3510fbab54f">Alphalimit</a>) {
+<a name="l00137"></a>00137     <a class="code" href="spiral_8c.html#a376e5a6d539fff728ae41385a6ab86bc">LastCircleX</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>;
+<a name="l00138"></a>00138     <a class="code" href="spiral_8c.html#af6d463c4b378d16ee32cab987c978ec9">LastCircleY</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
+<a name="l00139"></a>00139     <a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a> = <a class="code" href="spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7624d52a843fdb1bd260d79db614b2b5">IncSpiral</a>;
+<a name="l00140"></a>00140     }
+<a name="l00141"></a>00141     <span class="keywordflow">break</span>;
+<a name="l00142"></a>00142     }
+<a name="l00143"></a>00143   <span class="keywordflow">case</span> <a class="code" href="spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7624d52a843fdb1bd260d79db614b2b5">IncSpiral</a>:
+<a name="l00144"></a>00144     <span class="comment">// increasing circle radius as long as it is smaller than max helix radius</span>
+<a name="l00145"></a>00145     <span class="keywordflow">if</span>(<a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a> + <a class="code" href="spiral_8c.html#a7ce9c2cc323099d5369ed37ac1429d48">IRad</a> &lt; <a class="code" href="spiral_8c.html#acadb2b29fbce38e3fa43ec3ffb77966e">Spiralradius</a>)
+<a name="l00146"></a>00146     {
+<a name="l00147"></a>00147       <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a> = <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a> + <a class="code" href="spiral_8c.html#a7ce9c2cc323099d5369ed37ac1429d48">IRad</a>;
+<a name="l00148"></a>00148 <span class="preprocessor">#ifdef DIGITAL_CAM</span>
+<a name="l00149"></a>00149 <span class="preprocessor"></span>      <span class="keywordflow">if</span> (<a class="code" href="dc_8c.html#a9e037646096fde04d53a985c23094e98">dc_cam_tracing</a>) {
+<a name="l00150"></a>00150       <span class="comment">// calculating Cam angle for camera alignment</span>
+<a name="l00151"></a>00151       <a class="code" href="spiral_8c.html#a2e11aa8ccf57f0ad1b89a805e4683a15">TransCurrentZ</a> = <a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a> - <a class="code" href="spiral_8c.html#af82bcee94a4f402fe4aa29dd12c1dae9">ZPoint</a>;
+<a name="l00152"></a>00152       <a class="code" href="dc_8c.html#acad69fa4419a1838008bc68a209d0925">dc_cam_angle</a> = atan(<a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a>/<a class="code" href="spiral_8c.html#a2e11aa8ccf57f0ad1b89a805e4683a15">TransCurrentZ</a>) * 180  / M_PI;
+<a name="l00153"></a>00153           }
+<a name="l00154"></a>00154 <span class="preprocessor">#endif</span>
+<a name="l00155"></a>00155 <span class="preprocessor"></span>    }
+<a name="l00156"></a>00156     <span class="keywordflow">else</span> {
+<a name="l00157"></a>00157     <a class="code" href="spiral_8c.html#a37c8abc22cc70a1ef234f4860befb695">SRad</a> = <a class="code" href="spiral_8c.html#acadb2b29fbce38e3fa43ec3ffb77966e">Spiralradius</a>;
+<a name="l00158"></a>00158 <span class="preprocessor">#ifdef DIGITAL_CAM</span>
+<a name="l00159"></a>00159 <span class="preprocessor"></span>    <span class="comment">// Stopps DC</span>
+<a name="l00160"></a>00160     <a class="code" href="dc_8c.html#a47c625a53743f8ad41baaf54a6fcf144" title="Sets the dc control in inactive mode, stopping all current actions.">dc_stop</a>();
+<a name="l00161"></a>00161 <span class="preprocessor">#endif</span>
+<a name="l00162"></a>00162 <span class="preprocessor"></span>    }
+<a name="l00163"></a>00163     <a class="code" href="spiral_8c.html#a6db6b0f9d810be2629114c06311b79bc">CSpiralStatus</a> = <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551ad3ce82743a8255ccd69f5b67d257c489">Circle</a>;
+<a name="l00164"></a>00164     <span class="keywordflow">break</span>;
+<a name="l00165"></a>00165        <span class="keywordflow">default</span>:
+<a name="l00166"></a>00166          <span class="keywordflow">break</span>;
+<a name="l00167"></a>00167   }
+<a name="l00168"></a>00168   <span class="keywordflow">return</span> TRUE;
+<a name="l00169"></a>00169 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -289,7 +285,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="spiral_8c.html">spiral.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -137,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033 <span class="comment">//Messages</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00037"></a>00037 
 <a name="l00038"></a><a class="code" href="AOA__adc_8h.html#a9b23b7a2ced8621886544adc7c8a8433">00038</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>;
 <a name="l00039"></a>00039 
@@ -179,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00075"></a>00075   <a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a> = <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a> * <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a> + (1 - <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a>) * (<a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>*(2*M_PI)/1024-M_PI+<a class="code" href="AOA__adc_8c.html#a12b74598190dbef179e45e10df2bde2f">AOA_offset</a>);
 <a name="l00076"></a>00076   <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a> = <a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>;
 <a name="l00077"></a>00077 <span class="preprocessor">#endif</span>
-<a name="l00078"></a>00078 <span class="preprocessor"></span>  RunOnceEvery(30, DOWNLINK_SEND_AOA_adc(DefaultChannel, &amp;<a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>, &amp;<a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>));
+<a name="l00078"></a>00078 <span class="preprocessor"></span>  RunOnceEvery(30, DOWNLINK_SEND_AOA_adc(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>, &amp;<a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>));
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080 <span class="preprocessor">#ifdef USE_AOA</span>
 <a name="l00081"></a>00081 <span class="preprocessor"></span>  <a class="code" href="estimator_8h.html#a791ee4c5ee62cb27f27053e865162bab">EstimatorSetAOA</a>(<a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>);
@@ -205,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="AOA__adc_8c.html">AOA_adc.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -127,88 +127,89 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="firmwares_2rotorcraft_2commands_8h.html">firmwares/rotorcraft/commands.h</a>&quot;</span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;actuators.h&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="actuators__asctec_8h.html">actuators/actuators_asctec.h</a>&quot;</span>
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> );
-<a name="l00034"></a>00034 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__actuators__mkk_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>( <span class="keywordtype">void</span> );
-<a name="l00035"></a>00035 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__actuators__mkk_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> );
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="comment">//static uint8_t i2c_done;</span>
-<a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="lisa__test__actuators__mkk_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00039</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">void</span>) {
-<a name="l00040"></a>00040   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042   <span class="keywordflow">while</span>(1) {
-<a name="l00043"></a>00043     <span class="keywordflow">if</span> (<a class="code" href="sim_2sys__time__hw_8h.html#aae751b25410663d1569168a04e60c8db">sys_time_periodic</a>())
-<a name="l00044"></a>00044       <a class="code" href="lisa__test__actuators__mkk_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>();
-<a name="l00045"></a>00045     <a class="code" href="lisa__test__actuators__mkk_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>();
-<a name="l00046"></a>00046   }
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048   <span class="keywordflow">return</span> 0;
-<a name="l00049"></a>00049 }
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00052"></a>00052   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
-<a name="l00053"></a>00053   <a class="code" href="lpc21_2sys__time__hw_8h.html#afa1427883d31532a107dc306b6b3b6d7">sys_time_init</a>();
-<a name="l00054"></a>00054   <a class="code" href="servos__4015__hw_8c.html#a7ba1bde30e3a87694e878b244de10c47">actuators_init</a>();
-<a name="l00055"></a>00055 }
-<a name="l00056"></a>00056 
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="actuators__asctec_8h.html" title="Actuators driver for Asctec motor controllers.">actuators/actuators_asctec.h</a>&quot;</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> );
+<a name="l00035"></a>00035 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__actuators__mkk_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>( <span class="keywordtype">void</span> );
+<a name="l00036"></a>00036 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__actuators__mkk_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> );
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="comment">//static uint8_t i2c_done;</span>
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="lisa__test__actuators__mkk_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00040</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">void</span>) {
+<a name="l00041"></a>00041   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043   <span class="keywordflow">while</span>(1) {
+<a name="l00044"></a>00044     <span class="keywordflow">if</span> (<a class="code" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666">sys_time_check_and_ack_timer</a>(0))
+<a name="l00045"></a>00045       <a class="code" href="lisa__test__actuators__mkk_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>();
+<a name="l00046"></a>00046     <a class="code" href="lisa__test__actuators__mkk_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>();
+<a name="l00047"></a>00047   }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049   <span class="keywordflow">return</span> 0;
+<a name="l00050"></a>00050 }
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
+<a name="l00053"></a>00053   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
+<a name="l00054"></a>00054   <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);
+<a name="l00055"></a>00055   <a class="code" href="servos__4015__hw_8c.html#a7ba1bde30e3a87694e878b244de10c47">actuators_init</a>();
+<a name="l00056"></a>00056 }
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058 
-<a name="l00059"></a><a class="code" href="lisa__test__actuators__mkk_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">00059</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__actuators__mkk_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>( <span class="keywordtype">void</span> ) {
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061   <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i = 0;
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063   RunOnceEvery(100, {
-<a name="l00064"></a>00064       <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(3);
-<a name="l00065"></a>00065       DOWNLINK_SEND_ALIVE(DefaultChannel, 16, MD5SUM);
-<a name="l00066"></a>00066     });
-<a name="l00067"></a>00067 
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="lisa__test__actuators__mkk_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">00060</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__actuators__mkk_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>( <span class="keywordtype">void</span> ) {
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062   <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i = 0;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064   RunOnceEvery(100, {
+<a name="l00065"></a>00065       <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(3);
+<a name="l00066"></a>00066       DOWNLINK_SEND_ALIVE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, 16, MD5SUM);
+<a name="l00067"></a>00067     });
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069 <span class="preprocessor">#if 0</span>
-<a name="l00070"></a>00070 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i==1) {
-<a name="l00071"></a>00071     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#ae683eaea50ad005db64f865f429bc4e7">cur_addr</a> = <a class="code" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaac921ff2cfc571c1d19b0485d7f6926ee">BACK</a>;
-<a name="l00072"></a>00072     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#adfac5164a0f94c0ab6f078bdc30e2516">cmd</a> = <a class="code" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09ab2f0cd22b1963becef8b91d29d567fe8">TEST</a>;
-<a name="l00073"></a>00073   }
-<a name="l00074"></a>00074 <span class="preprocessor">#endif</span>
-<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="preprocessor">#if 0</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i==1) {
-<a name="l00077"></a>00077     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#ae683eaea50ad005db64f865f429bc4e7">cur_addr</a> = <a class="code" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaadb45120aafd37a973140edee24708065">LEFT</a>;
-<a name="l00078"></a>00078     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#af9dd9aacfc4a1a489fba4217307298a9">new_addr</a> = <a class="code" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaac921ff2cfc571c1d19b0485d7f6926ee">BACK</a>;
-<a name="l00079"></a>00079     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#adfac5164a0f94c0ab6f078bdc30e2516">cmd</a> = <a class="code" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09a94edc8e83fd7d0718449d0caeb168ad9">SET_ADDR</a>;
-<a name="l00080"></a>00080   }
-<a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
-<a name="l00082"></a>00082 <span class="preprocessor"></span><span class="preprocessor">#if 0</span>
-<a name="l00083"></a>00083 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i==1) {
-<a name="l00084"></a>00084     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#ae683eaea50ad005db64f865f429bc4e7">cur_addr</a> = <a class="code" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaac921ff2cfc571c1d19b0485d7f6926ee">BACK</a>;
-<a name="l00085"></a>00085     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#adfac5164a0f94c0ab6f078bdc30e2516">cmd</a> = <a class="code" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09a906b7cc20b42994dda4da492767c1de9">REVERSE</a>;
-<a name="l00086"></a>00086   }
-<a name="l00087"></a>00087 <span class="preprocessor">#endif</span>
-<a name="l00088"></a>00088 <span class="preprocessor"></span>  i++;
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090   <span class="keywordflow">if</span> (i&gt;1000) {
-<a name="l00091"></a>00091     <span class="comment">/* set actuators     */</span>
-<a name="l00092"></a>00092     <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_PITCH] = 0;
-<a name="l00093"></a>00093     <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_ROLL] = 0;
-<a name="l00094"></a>00094     <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_YAW] = 20;
-<a name="l00095"></a>00095     <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_THRUST] = 0;
-<a name="l00096"></a>00096     <span class="comment">// actuators_set(TRUE);</span>
-<a name="l00097"></a>00097     <a class="code" href="actuators__asctec_8c.html#a9033da4381b216357c098fc9bb13ccf9">actuators_set</a>(FALSE);
-<a name="l00098"></a>00098   }
-<a name="l00099"></a>00099   <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 }
-<a name="l00102"></a>00102 
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 <span class="preprocessor">#if 0</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i==1) {
+<a name="l00072"></a>00072     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#ae683eaea50ad005db64f865f429bc4e7">cur_addr</a> = <a class="code" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaac921ff2cfc571c1d19b0485d7f6926ee">BACK</a>;
+<a name="l00073"></a>00073     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#adfac5164a0f94c0ab6f078bdc30e2516">cmd</a> = <a class="code" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09ab2f0cd22b1963becef8b91d29d567fe8">TEST</a>;
+<a name="l00074"></a>00074   }
+<a name="l00075"></a>00075 <span class="preprocessor">#endif</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">#if 0</span>
+<a name="l00077"></a>00077 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i==1) {
+<a name="l00078"></a>00078     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#ae683eaea50ad005db64f865f429bc4e7">cur_addr</a> = <a class="code" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaadb45120aafd37a973140edee24708065">LEFT</a>;
+<a name="l00079"></a>00079     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#af9dd9aacfc4a1a489fba4217307298a9">new_addr</a> = <a class="code" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaac921ff2cfc571c1d19b0485d7f6926ee">BACK</a>;
+<a name="l00080"></a>00080     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#adfac5164a0f94c0ab6f078bdc30e2516">cmd</a> = <a class="code" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09a94edc8e83fd7d0718449d0caeb168ad9">SET_ADDR</a>;
+<a name="l00081"></a>00081   }
+<a name="l00082"></a>00082 <span class="preprocessor">#endif</span>
+<a name="l00083"></a>00083 <span class="preprocessor"></span><span class="preprocessor">#if 0</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i==1) {
+<a name="l00085"></a>00085     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#ae683eaea50ad005db64f865f429bc4e7">cur_addr</a> = <a class="code" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaac921ff2cfc571c1d19b0485d7f6926ee">BACK</a>;
+<a name="l00086"></a>00086     <a class="code" href="actuators__asctec_8c.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a>.<a class="code" href="structActuatorsAsctec.html#adfac5164a0f94c0ab6f078bdc30e2516">cmd</a> = <a class="code" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09a906b7cc20b42994dda4da492767c1de9">REVERSE</a>;
+<a name="l00087"></a>00087   }
+<a name="l00088"></a>00088 <span class="preprocessor">#endif</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span>  i++;
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091   <span class="keywordflow">if</span> (i&gt;1000) {
+<a name="l00092"></a>00092     <span class="comment">/* set actuators     */</span>
+<a name="l00093"></a>00093     <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_PITCH] = 0;
+<a name="l00094"></a>00094     <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_ROLL] = 0;
+<a name="l00095"></a>00095     <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_YAW] = 20;
+<a name="l00096"></a>00096     <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_THRUST] = 0;
+<a name="l00097"></a>00097     <span class="comment">// actuators_set(TRUE);</span>
+<a name="l00098"></a>00098     <a class="code" href="actuators__asctec_8c.html#a9033da4381b216357c098fc9bb13ccf9">actuators_set</a>(FALSE);
+<a name="l00099"></a>00099   }
+<a name="l00100"></a>00100   <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 }
 <a name="l00103"></a>00103 
 <a name="l00104"></a>00104 
-<a name="l00105"></a><a class="code" href="lisa__test__actuators__mkk_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">00105</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__actuators__mkk_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> ) {
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107 }
+<a name="l00105"></a>00105 
+<a name="l00106"></a><a class="code" href="lisa__test__actuators__mkk_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">00106</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__actuators__mkk_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> ) {
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -229,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lisa__test__actuators__mkk_8c.html">lisa_test_actuators_mkk.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

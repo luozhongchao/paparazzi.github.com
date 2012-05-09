@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: sw/airborne/downlink.h Source File</title>
+<title>Paparazzi UAS: sw/airborne/subsystems/datalink/downlink.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -139,83 +139,82 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00040"></a>00040 <span class="preprocessor"></span>
 <a name="l00041"></a>00041 <span class="preprocessor">#ifdef SIM_UART</span>
 <a name="l00042"></a>00042 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="sim__uart_8h.html" title="Simulation of uart transmission on an Unix pipe.">sim_uart.h</a>&quot;</span>
-<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol.">pprz_transport.h</a>&quot;</span>
-<a name="l00044"></a>00044 <span class="preprocessor">#include &quot;<a class="code" href="xbee_8h.html">xbee.h</a>&quot;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol.">subsystems/datalink/pprz_transport.h</a>&quot;</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include &quot;<a class="code" href="xbee_8h.html">subsystems/datalink/xbee.h</a>&quot;</span>
 <a name="l00045"></a>00045 <span class="preprocessor">#else </span><span class="comment">/* SIM_UART */</span>
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047 <span class="preprocessor">#include &quot;<a class="code" href="ivy__transport_8h.html">ivy_transport.h</a>&quot;</span>
 <a name="l00048"></a>00048 <span class="preprocessor">#endif</span>
 <a name="l00049"></a>00049 <span class="preprocessor"></span>
 <a name="l00050"></a>00050 <span class="preprocessor">#else </span>
-<a name="l00051"></a>00051 <span class="preprocessor">#include &quot;pprz_transport.h&quot;</span>
-<a name="l00052"></a>00052 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="modem_8h.html">modem.h</a>&quot;</span>
-<a name="l00053"></a>00053 <span class="preprocessor">#include &quot;<a class="code" href="xbee_8h.html">xbee.h</a>&quot;</span>
-<a name="l00054"></a>00054 <span class="preprocessor">#ifdef USE_USB_SERIAL</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="usb__serial_8h.html" title="arch independent USB API">mcu_periph/usb_serial.h</a>&quot;</span>
-<a name="l00056"></a>00056 <span class="preprocessor">#endif</span>
-<a name="l00057"></a>00057 <span class="preprocessor"></span><span class="preprocessor">#endif </span>
-<a name="l00059"></a>00059 <span class="preprocessor">#ifndef DefaultChannel</span>
-<a name="l00060"></a>00060 <span class="preprocessor"></span><span class="preprocessor">#define DefaultChannel DOWNLINK_TRANSPORT</span>
-<a name="l00061"></a>00061 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00062"></a>00062 <span class="preprocessor"></span>
-<a name="l00063"></a>00063 <span class="preprocessor">#ifdef AP</span>
+<a name="l00051"></a>00051 <span class="preprocessor">#include &quot;subsystems/datalink/pprz_transport.h&quot;</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="xbee_8h.html">subsystems/datalink/xbee.h</a>&quot;</span>
+<a name="l00053"></a>00053 <span class="preprocessor">#if USE_AUDIO_TELEMETRY</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="audio__telemetry_8h.html">subsystems/datalink/audio_telemetry.h</a>&quot;</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_USB_SERIAL</span>
+<a name="l00057"></a>00057 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="usb__serial_8h.html" title="arch independent USB API">mcu_periph/usb_serial.h</a>&quot;</span>
+<a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span><span class="preprocessor">#endif </span>
+<a name="l00061"></a>00061 <span class="preprocessor">#ifndef DefaultChannel</span>
+<a name="l00062"></a><a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd">00062</a> <span class="preprocessor"></span><span class="preprocessor">#define DefaultChannel DOWNLINK_TRANSPORT</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00064"></a>00064 <span class="preprocessor"></span>
-<a name="l00065"></a>00065 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> telemetry_mode_Ap_DefaultChannel;
-<a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
-<a name="l00067"></a>00067 <span class="preprocessor"></span>
-<a name="l00068"></a>00068 <span class="preprocessor">#ifdef FBW</span>
-<a name="l00069"></a>00069 <span class="preprocessor"></span>
-<a name="l00070"></a>00070 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> telemetry_mode_Fbw_DefaultChannel;
-<a name="l00071"></a>00071 <span class="preprocessor">#endif</span>
-<a name="l00072"></a>00072 <span class="preprocessor"></span>
-<a name="l00074"></a>00074 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="downlink_8c.html#a9a2f87e6be6b5a90741eec74d18a10ff" title="FBW.">downlink_nb_ovrn</a>;
-<a name="l00075"></a>00075 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="downlink_8c.html#a3dc15efb9fbdc8dc20740e0ab0ee10ba">downlink_nb_bytes</a>;
-<a name="l00076"></a>00076 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="downlink_8c.html#a1982c205bdc9bfcb6b465d7554bd91ea">downlink_nb_msgs</a>;
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078 
-<a name="l00079"></a><a class="code" href="downlink_8h.html#a3b90713f170e5b21f95f55f5f1e44ca2">00079</a> <span class="preprocessor">#define __Transport(dev, _x) dev##_x</span>
-<a name="l00080"></a><a class="code" href="downlink_8h.html#afb0edfe68ed69cefd70c10ffd17007d5">00080</a> <span class="preprocessor"></span><span class="preprocessor">#define _Transport(dev, _x) __Transport(dev, _x)</span>
-<a name="l00081"></a><a class="code" href="downlink_8h.html#a930fc37c1a1795d2a773a3667d93853f">00081</a> <span class="preprocessor"></span><span class="preprocessor">#define Transport(_chan, _fun) _Transport(_chan, _fun)</span>
-<a name="l00082"></a>00082 <span class="preprocessor"></span>
-<a name="l00083"></a>00083 
-<a name="l00086"></a><a class="code" href="downlink_8h.html#a91f840bd1f979775d21c5591cdf144ef">00086</a> <span class="preprocessor">#define DownlinkIDsSize(_chan, _x) (_x+2)</span>
-<a name="l00087"></a><a class="code" href="downlink_8h.html#a18b0bc0525c034debf30a6631cbb2e39">00087</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkSizeOf(_chan, _x) Transport(_chan, SizeOf(DownlinkIDsSize(_chan, _x)))</span>
-<a name="l00088"></a>00088 <span class="preprocessor"></span>
-<a name="l00089"></a><a class="code" href="downlink_8h.html#ac0992db52f80a5d3874d45bfdae5202f">00089</a> <span class="preprocessor">#define DownlinkCheckFreeSpace(_chan, _x) Transport(_chan, CheckFreeSpace((uint8_t)(_x)))</span>
-<a name="l00090"></a>00090 <span class="preprocessor"></span>
-<a name="l00091"></a><a class="code" href="downlink_8h.html#acd7ed20774248ba26217aecd7fedfc91">00091</a> <span class="preprocessor">#define DownlinkPutUint8(_chan, _x) Transport(_chan, PutUint8(_x))</span>
-<a name="l00092"></a>00092 <span class="preprocessor"></span>
-<a name="l00093"></a><a class="code" href="downlink_8h.html#a731ebfe69c3f1830424d7bafa5196ae8">00093</a> <span class="preprocessor">#define DownlinkPutInt8ByAddr(_chan, _x) Transport(_chan, PutInt8ByAddr(_x))</span>
-<a name="l00094"></a><a class="code" href="downlink_8h.html#ac9e58cc9c9847ebfdb460e59f651ffed">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint8ByAddr(_chan, _x) Transport(_chan, PutUint8ByAddr(_x))</span>
-<a name="l00095"></a><a class="code" href="downlink_8h.html#a49e692c55a21a33de3b759b07e0a65ac">00095</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutInt16ByAddr(_chan, _x) Transport(_chan, PutInt16ByAddr(_x))</span>
-<a name="l00096"></a><a class="code" href="downlink_8h.html#adadc13cda89304810e62f272881104a0">00096</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint16ByAddr(_chan, _x) Transport(_chan, PutUint16ByAddr(_x))</span>
-<a name="l00097"></a><a class="code" href="downlink_8h.html#adcf9b75e4caf693a189164d33d88ff1e">00097</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutInt32ByAddr(_chan, _x) Transport(_chan, PutInt32ByAddr(_x))</span>
-<a name="l00098"></a><a class="code" href="downlink_8h.html#a0163540205a1a204d7c3be747a3c1a1d">00098</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint32ByAddr(_chan, _x) Transport(_chan, PutUint32ByAddr(_x))</span>
-<a name="l00099"></a><a class="code" href="downlink_8h.html#a78beb408819fbc1c8d67f525c4b3e5cc">00099</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutFloatByAddr(_chan, _x) Transport(_chan, PutFloatByAddr(_x))</span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span>
-<a name="l00101"></a><a class="code" href="downlink_8h.html#ad7a98bbc92c24c2056e486058048d863">00101</a> <span class="preprocessor">#define DownlinkPutDoubleByAddr(_chan, _x) Transport(_chan, PutDoubleByAddr(_x))</span>
-<a name="l00102"></a>00102 <span class="preprocessor"></span>
-<a name="l00103"></a><a class="code" href="downlink_8h.html#a4c3f1970c3993912bbf16c3ec647e923">00103</a> <span class="preprocessor">#define DownlinkPutFloatArray(_chan, _n, _x) Transport(_chan, PutFloatArray(_n, _x))</span>
-<a name="l00104"></a><a class="code" href="downlink_8h.html#acafaed3cc3c8108817ad30776ba01c7b">00104</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutDoubleArray(_chan, _n, _x) Transport(_chan, PutDoubleArray(_n, _x))</span>
-<a name="l00105"></a><a class="code" href="downlink_8h.html#af596b8dae33122dde252477b1de237c3">00105</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutInt16Array(_chan, _n, _x) Transport(_chan, PutInt16Array(_n, _x))</span>
-<a name="l00106"></a><a class="code" href="downlink_8h.html#ab63313fd32ad651da0eb68a1ce28da59">00106</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint16Array(_chan, _n, _x) Transport(_chan, PutUint16Array(_n, _x))</span>
-<a name="l00107"></a><a class="code" href="downlink_8h.html#a9644a4592e7f56c8bc2ed5daec731b9d">00107</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutInt32Array(_chan, _n, _x) Transport(_chan, PutInt32Array(_n, _x))</span>
-<a name="l00108"></a><a class="code" href="downlink_8h.html#a0518e09cf5edc185bb6951483815f37c">00108</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint32Array(_chan, _n, _x) Transport(_chan, PutUint32Array(_n, _x))</span>
-<a name="l00109"></a><a class="code" href="downlink_8h.html#a6a82620a67820d2b61e670191a4f7215">00109</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint8Array(_chan, _n, _x) Transport(_chan, PutUint8Array(_n, _x))</span>
-<a name="l00110"></a>00110 <span class="preprocessor"></span>
-<a name="l00111"></a><a class="code" href="downlink_8h.html#aa6dd576c5adeeda13450565dc39a4952">00111</a> <span class="preprocessor">#define DownlinkOverrun(_chan) downlink_nb_ovrn++;</span>
-<a name="l00112"></a><a class="code" href="downlink_8h.html#ad62f81082eeafe495c3f77bf7ac17f6c">00112</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkCountBytes(_chan, _n) downlink_nb_bytes += _n;</span>
-<a name="l00113"></a>00113 <span class="preprocessor"></span>
-<a name="l00114"></a><a class="code" href="downlink_8h.html#a93c66dde030b5910ef08e8a453880356">00114</a> <span class="preprocessor">#define DownlinkStartMessage(_chan, _name, msg_id, payload_len) { \</span>
-<a name="l00115"></a>00115 <span class="preprocessor">  downlink_nb_msgs++; \</span>
-<a name="l00116"></a>00116 <span class="preprocessor">  Transport(_chan, Header(DownlinkIDsSize(_chan, payload_len))); \</span>
-<a name="l00117"></a>00117 <span class="preprocessor">  Transport(_chan, PutUint8(AC_ID)); \</span>
-<a name="l00118"></a>00118 <span class="preprocessor">  Transport(_chan, PutNamedUint8(_name, msg_id)); \</span>
-<a name="l00119"></a>00119 <span class="preprocessor">}</span>
-<a name="l00120"></a>00120 <span class="preprocessor"></span>
-<a name="l00121"></a><a class="code" href="downlink_8h.html#afdd985871dfb8f72a86160a53c6212cd">00121</a> <span class="preprocessor">#define DownlinkEndMessage(_chan) Transport(_chan, Trailer())</span>
-<a name="l00122"></a>00122 <span class="preprocessor"></span>
-<a name="l00123"></a>00123 <span class="preprocessor">#endif </span><span class="comment">/* DOWNLINK_H */</span>
+<a name="l00065"></a>00065 <span class="preprocessor">#ifndef DefaultDevice</span>
+<a name="l00066"></a><a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">00066</a> <span class="preprocessor"></span><span class="preprocessor">#define DefaultDevice DOWNLINK_DEVICE</span>
+<a name="l00067"></a>00067 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>
+<a name="l00070"></a>00070 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="downlink_8c.html#a9a2f87e6be6b5a90741eec74d18a10ff" title="Counter of messages not sent because of unavailibity of the output buffer.">downlink_nb_ovrn</a>;
+<a name="l00071"></a>00071 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="downlink_8c.html#a3dc15efb9fbdc8dc20740e0ab0ee10ba">downlink_nb_bytes</a>;
+<a name="l00072"></a>00072 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="downlink_8c.html#a1982c205bdc9bfcb6b465d7554bd91ea">downlink_nb_msgs</a>;
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 <span class="comment">/* Transport macros</span>
+<a name="l00075"></a>00075 <span class="comment"> *</span>
+<a name="l00076"></a>00076 <span class="comment"> * call transport functions from channel</span>
+<a name="l00077"></a>00077 <span class="comment"> */</span>
+<a name="l00078"></a><a class="code" href="downlink_8h.html#a3b90713f170e5b21f95f55f5f1e44ca2">00078</a> <span class="preprocessor">#define __Transport(dev, _x) dev##_x</span>
+<a name="l00079"></a><a class="code" href="downlink_8h.html#afb0edfe68ed69cefd70c10ffd17007d5">00079</a> <span class="preprocessor"></span><span class="preprocessor">#define _Transport(dev, _x) __Transport(dev, _x)</span>
+<a name="l00080"></a><a class="code" href="downlink_8h.html#a930fc37c1a1795d2a773a3667d93853f">00080</a> <span class="preprocessor"></span><span class="preprocessor">#define Transport(_chan, _fun) _Transport(_chan, _fun)</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span>
+<a name="l00082"></a>00082 
+<a name="l00085"></a><a class="code" href="downlink_8h.html#ad0ea7692feb71273132da992297d7f1f">00085</a> <span class="preprocessor">#define DownlinkIDsSize(_trans, _dev, _x) (_x+2)</span>
+<a name="l00086"></a><a class="code" href="downlink_8h.html#aa58fd51e079497a7119c8756b637e79a">00086</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkSizeOf(_trans, _dev, _x) Transport(_trans, SizeOf(_dev, DownlinkIDsSize(_trans, _dev, _x)))</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span>
+<a name="l00088"></a><a class="code" href="downlink_8h.html#ab47418cadaa5ea6d43c56661cbb1de64">00088</a> <span class="preprocessor">#define DownlinkCheckFreeSpace(_trans, _dev, _x) Transport(_trans, CheckFreeSpace(_dev, (uint8_t)(_x)))</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span>
+<a name="l00090"></a><a class="code" href="downlink_8h.html#a910887e2d1a31721f3ba5d113ec771e9">00090</a> <span class="preprocessor">#define DownlinkPutUint8(_trans, _dev, _x) Transport(_trans, PutUint8(_dev, _x))</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span>
+<a name="l00092"></a><a class="code" href="downlink_8h.html#a2e7ed8ae41c1702a394a1f119351ee1d">00092</a> <span class="preprocessor">#define DownlinkPutInt8ByAddr(_trans, _dev, _x) Transport(_trans, PutInt8ByAddr(_dev, _x))</span>
+<a name="l00093"></a><a class="code" href="downlink_8h.html#afbb57c6e05cff5c43f68fa63959113b1">00093</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint8ByAddr(_trans, _dev, _x) Transport(_trans, PutUint8ByAddr(_dev, _x))</span>
+<a name="l00094"></a><a class="code" href="downlink_8h.html#a5ef643c65f11657cda536b46049b8dfe">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutInt16ByAddr(_trans, _dev, _x) Transport(_trans, PutInt16ByAddr(_dev, _x))</span>
+<a name="l00095"></a><a class="code" href="downlink_8h.html#aea4df6af46a81cd1b101a605ed647a5e">00095</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint16ByAddr(_trans, _dev, _x) Transport(_trans, PutUint16ByAddr(_dev, _x))</span>
+<a name="l00096"></a><a class="code" href="downlink_8h.html#a0c9bb91c8a1337a28acd48d5fb7271b2">00096</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutInt32ByAddr(_trans, _dev, _x) Transport(_trans, PutInt32ByAddr(_dev, _x))</span>
+<a name="l00097"></a><a class="code" href="downlink_8h.html#ab11f1df31e25484d0433f557b326f5d8">00097</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint32ByAddr(_trans, _dev, _x) Transport(_trans, PutUint32ByAddr(_dev, _x))</span>
+<a name="l00098"></a><a class="code" href="downlink_8h.html#abdb092dd26af9fa7166e20b733a9c885">00098</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutFloatByAddr(_trans, _dev, _x) Transport(_trans, PutFloatByAddr(_dev, _x))</span>
+<a name="l00099"></a>00099 <span class="preprocessor"></span>
+<a name="l00100"></a><a class="code" href="downlink_8h.html#aadb3d1bcbc054f813819c77361fbfc79">00100</a> <span class="preprocessor">#define DownlinkPutDoubleByAddr(_trans, _dev, _x) Transport(_trans, PutDoubleByAddr(_dev, _x))</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span>
+<a name="l00102"></a><a class="code" href="downlink_8h.html#a4d9a2b3e33f026e45bd6772980407029">00102</a> <span class="preprocessor">#define DownlinkPutFloatArray(_trans, _dev, _n, _x) Transport(_trans, PutFloatArray(_dev, _n, _x))</span>
+<a name="l00103"></a><a class="code" href="downlink_8h.html#acfb31d8b6367692c6a427889b6a7b0c0">00103</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutDoubleArray(_trans, _dev, _n, _x) Transport(_trans, PutDoubleArray(_dev, _n, _x))</span>
+<a name="l00104"></a><a class="code" href="downlink_8h.html#a393d3a0da098767936baa5bc6e8c5db7">00104</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutInt16Array(_trans, _dev, _n, _x) Transport(_trans, PutInt16Array(_dev, _n, _x))</span>
+<a name="l00105"></a><a class="code" href="downlink_8h.html#ac627557e9820c16f06267f0d2525b3b5">00105</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint16Array(_trans, _dev, _n, _x) Transport(_trans, PutUint16Array(_dev, _n, _x))</span>
+<a name="l00106"></a><a class="code" href="downlink_8h.html#a790e28c1755614c3b71bb3bd10708bf9">00106</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutInt32Array(_trans, _dev, _n, _x) Transport(_trans, PutInt32Array(_dev, _n, _x))</span>
+<a name="l00107"></a><a class="code" href="downlink_8h.html#af761daa129431c2bacd1e6274968abfe">00107</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint32Array(_trans, _dev, _n, _x) Transport(_trans, PutUint32Array(_dev, _n, _x))</span>
+<a name="l00108"></a><a class="code" href="downlink_8h.html#aed99de6aab80bc91b181f1ed40d2396b">00108</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkPutUint8Array(_trans, _dev, _n, _x) Transport(_trans, PutUint8Array(_dev, _n, _x))</span>
+<a name="l00109"></a>00109 <span class="preprocessor"></span>
+<a name="l00110"></a><a class="code" href="downlink_8h.html#a4fddde5e05496b49826cc270b2bc9c14">00110</a> <span class="preprocessor">#define DownlinkOverrun(_trans, _dev) downlink_nb_ovrn++;</span>
+<a name="l00111"></a><a class="code" href="downlink_8h.html#ad0df0e789eedb29a0c406438365ab2b6">00111</a> <span class="preprocessor"></span><span class="preprocessor">#define DownlinkCountBytes(_trans, _dev, _n) downlink_nb_bytes += _n;</span>
+<a name="l00112"></a>00112 <span class="preprocessor"></span>
+<a name="l00113"></a><a class="code" href="downlink_8h.html#a8be4af4c164422b9d4cce3e3b99259e1">00113</a> <span class="preprocessor">#define DownlinkStartMessage(_trans, _dev, _name, msg_id, payload_len) { \</span>
+<a name="l00114"></a>00114 <span class="preprocessor">  downlink_nb_msgs++; \</span>
+<a name="l00115"></a>00115 <span class="preprocessor">  Transport(_trans, Header(_dev, DownlinkIDsSize(_trans, _dev, payload_len))); \</span>
+<a name="l00116"></a>00116 <span class="preprocessor">  Transport(_trans, PutUint8(_dev, AC_ID)); \</span>
+<a name="l00117"></a>00117 <span class="preprocessor">  Transport(_trans, PutNamedUint8(_dev, _name, msg_id)); \</span>
+<a name="l00118"></a>00118 <span class="preprocessor">}</span>
+<a name="l00119"></a>00119 <span class="preprocessor"></span>
+<a name="l00120"></a><a class="code" href="downlink_8h.html#a7c942b892ae1ba2a40a7f1f8ede5a1c4">00120</a> <span class="preprocessor">#define DownlinkEndMessage(_trans, _dev) Transport(_trans, Trailer(_dev))</span>
+<a name="l00121"></a>00121 <span class="preprocessor"></span>
+<a name="l00122"></a>00122 <span class="preprocessor">#endif </span><span class="comment">/* DOWNLINK_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -236,7 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="downlink_8h.html">downlink.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

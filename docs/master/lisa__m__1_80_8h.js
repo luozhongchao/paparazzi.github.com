@@ -1,5 +1,8 @@
 var lisa__m__1_80_8h =
 [
+    [ "ADC_1", "lisa__m__1_80_8h.html#a3d767e16f12a6ee542079f3c9677192c", null ],
+    [ "ADC_2", "lisa__m__1_80_8h.html#a01ac9d2f00660408bcc8c809020904f9", null ],
+    [ "ADC_3", "lisa__m__1_80_8h.html#a474279f28350114950d862951d72de66", null ],
     [ "ADC_CHANNEL_VSUPPLY", "lisa__m__1_80_8h.html#ad5a6636ee170fccf62a748fc72374d3b", null ],
     [ "AHB_CLK", "lisa__m__1_80_8h.html#add4f03b6c5c9bcabeba314491a310346", null ],
     [ "BOARD_ADC_CHANNEL_1", "lisa__m__1_80_8h.html#a60592e1d9547350dfd75d670738dcf44", null ],
@@ -9,7 +12,7 @@ var lisa__m__1_80_8h =
     [ "BOARD_HAS_BARO", "lisa__m__1_80_8h.html#af8df7cce5dd52da8571b6774d51bda77", null ],
     [ "BOARD_LISA_M", "lisa__m__1_80_8h.html#a7eeaab0a07ca1795ca1835de3438d88c", null ],
     [ "DefaultVoltageOfAdc", "lisa__m__1_80_8h.html#a94fa241ceca04635f282e09bdd829f5f", null ],
-    [ "HSE_TYPE_EXT_CLK", "lisa__m__1_80_8h.html#a2ecf0f4fe5595c7688f135b2d7ed4180", null ],
+    [ "EXT_CLK", "lisa__m__1_80_8h.html#a91a5eb3f03c2f212cd15277ea67d65a2", null ],
     [ "IMU_ACC_DRDY_GPIO", "lisa__m__1_80_8h.html#adb2a88589926c012c6b98bf23cbe651d", null ],
     [ "IMU_ACC_DRDY_GPIO_PORTSOURCE", "lisa__m__1_80_8h.html#ad6f64575a6a755a07c8379c394fd666e", null ],
     [ "IMU_ACC_DRDY_RCC_GPIO", "lisa__m__1_80_8h.html#a696e8860d7ceeafc6d03901cbee800fa", null ],
@@ -38,14 +41,6 @@ var lisa__m__1_80_8h =
     [ "LED_5_GPIO", "lisa__m__1_80_8h.html#a145ce7967376b20807d2bc459225f19d", null ],
     [ "LED_5_GPIO_CLK", "lisa__m__1_80_8h.html#a8acf68fac1dc0e8fb6706578f21a9409", null ],
     [ "LED_5_GPIO_PIN", "lisa__m__1_80_8h.html#aace877e382bb988e286679d3283814ff", null ],
-    [ "PWM5_OC", "lisa__m__1_80_8h.html#a6da837e5446319b0074a9ccd7d1afcc4", null ],
-    [ "PWM5_Pin", "lisa__m__1_80_8h.html#ae8d7a58b25bd70500a6f6770400ba508", null ],
-    [ "PWM6_OC", "lisa__m__1_80_8h.html#a80cc9cee9cd572f64ad41bfecf647957", null ],
-    [ "PWM6_Pin", "lisa__m__1_80_8h.html#ae9608e517de0de0fbfd59051d131799c", null ],
-    [ "PWM_5AND6_GPIO", "lisa__m__1_80_8h.html#a55faabb390e89d17eb7d353b9871acf6", null ],
-    [ "PWM_5AND6_RCC", "lisa__m__1_80_8h.html#a7a9593b29b3be76510c45be3b50daf43", null ],
-    [ "PWM_5AND6_TIMER", "lisa__m__1_80_8h.html#ab60d38297c5fb699b4b020e87d6bf8bb", null ],
-    [ "STM32_PLL_MULT", "lisa__m__1_80_8h.html#aeaae97a8fc3698b637a40cce51fde0c4", null ],
-    [ "STM32_RCC_MODE", "lisa__m__1_80_8h.html#aa1e41a7232cd707f1cfcd1c7caa1ece9", null ],
+    [ "REMAP_SERVOS_5AND6", "lisa__m__1_80_8h.html#a7053b924ff47f99a36f4f4489424e526", null ],
     [ "USE_OPENCM3", "lisa__m__1_80_8h.html#a30812227726636f5d87aca10ba40141f", null ]
 ];

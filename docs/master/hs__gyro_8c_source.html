@@ -129,11 +129,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;std.h&quot;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span>
 <a name="l00035"></a>00035 
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a><a class="code" href="hs__gyro_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00051</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">void</span> ) {
 <a name="l00052"></a>00052   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
 <a name="l00053"></a>00053   <span class="keywordflow">while</span>(1) {
-<a name="l00054"></a>00054     <span class="keywordflow">if</span> (<a class="code" href="sim_2sys__time__hw_8h.html#aae751b25410663d1569168a04e60c8db">sys_time_periodic</a>())
+<a name="l00054"></a>00054     <span class="keywordflow">if</span> (<a class="code" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666">sys_time_check_and_ack_timer</a>(0))
 <a name="l00055"></a>00055       <a class="code" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>();
 <a name="l00056"></a>00056     <a class="code" href="hs__gyro_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>();
 <a name="l00057"></a>00057   }
@@ -165,8 +165,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00061"></a>00061 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00062"></a>00062 
 <a name="l00063"></a>00063   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
-<a name="l00064"></a>00064   <a class="code" href="lpc21_2sys__time__hw_8h.html#afa1427883d31532a107dc306b6b3b6d7">sys_time_init</a>();
-<a name="l00065"></a>00065   <a class="code" href="imu_8c.html#a86a06fe7a9831292bd92867da2d12f80">imu_init</a>();
+<a name="l00064"></a>00064   <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);
+<a name="l00065"></a>00065   <a class="code" href="ins__xsens_8c.html#a86a06fe7a9831292bd92867da2d12f80">imu_init</a>();
 <a name="l00066"></a>00066 
 <a name="l00067"></a>00067   <a class="code" href="lpc21_2mcu__arch_8h.html#ab24387a9ce83a0dae7bc7aa816cd6ebd">mcu_int_enable</a>();
 <a name="l00068"></a>00068 }
@@ -174,7 +174,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00070"></a><a class="code" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">00070</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>( <span class="keywordtype">void</span> ) {
 <a name="l00071"></a>00071   RunOnceEvery(100, {
 <a name="l00072"></a>00072       <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(3);
-<a name="l00073"></a>00073       DOWNLINK_SEND_ALIVE(DefaultChannel, 16, MD5SUM);
+<a name="l00073"></a>00073       DOWNLINK_SEND_ALIVE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, 16, MD5SUM);
 <a name="l00074"></a>00074     });
 <a name="l00075"></a>00075   <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a>();
 <a name="l00076"></a>00076   RunOnceEvery(10, { <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();});
@@ -194,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00090"></a>00090 <span class="preprocessor"></span>
 <a name="l00091"></a><a class="code" href="hs__gyro_8c.html#a2b11f9d0786ffc34a04b454dbb5463cb">00091</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="hs__gyro_8c.html#a2b11f9d0786ffc34a04b454dbb5463cb">on_gyro_accel_event</a>(<span class="keywordtype">void</span>) {
 <a name="l00092"></a>00092   <a class="code" href="imu_8h.html#a9f53be53c139a637ce9c2173bcac9e00">ImuScaleGyro</a>();
-<a name="l00093"></a>00093   <a class="code" href="imu_8h.html#ae002e45eebcd5249e4e58fabfe10c0f7">ImuScaleAccel</a>();
+<a name="l00093"></a>00093   <a class="code" href="imu__analog_8h.html#ae002e45eebcd5249e4e58fabfe10c0f7">ImuScaleAccel</a>();
 <a name="l00094"></a>00094 
 <a name="l00095"></a>00095   <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(2);
 <a name="l00096"></a>00096 
@@ -203,16 +203,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00099"></a>00099   <span class="keyword">const</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> axis = <a class="code" href="hs__gyro_8c.html#a8f5dd4f7e06957fff5888786691d332d">MEASURED_SENSOR_NB</a>;
 <a name="l00100"></a>00100   cnt++;
 <a name="l00101"></a>00101   <span class="keywordflow">if</span> (cnt &gt; <a class="code" href="hs__gyro_8c.html#ac3232fa82a700a925dd2563705185297">NB_SAMPLES</a>) cnt = 0;
-<a name="l00102"></a>00102   samples[cnt] = <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.MEASURED_SENSOR;
+<a name="l00102"></a>00102   samples[cnt] = <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.MEASURED_SENSOR;
 <a name="l00103"></a>00103   <span class="keywordflow">if</span> (cnt == <a class="code" href="hs__gyro_8c.html#ac3232fa82a700a925dd2563705185297">NB_SAMPLES</a>-1) {
-<a name="l00104"></a>00104     DOWNLINK_SEND_IMU_HS_GYRO(DefaultChannel, &amp;axis, <a class="code" href="hs__gyro_8c.html#ac3232fa82a700a925dd2563705185297">NB_SAMPLES</a>, samples);
+<a name="l00104"></a>00104     DOWNLINK_SEND_IMU_HS_GYRO(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;axis, <a class="code" href="hs__gyro_8c.html#ac3232fa82a700a925dd2563705185297">NB_SAMPLES</a>, samples);
 <a name="l00105"></a>00105   }
 <a name="l00106"></a>00106 
 <a name="l00107"></a>00107   <span class="keywordflow">if</span> (cnt == 10) {
-<a name="l00108"></a>00108     DOWNLINK_SEND_IMU_GYRO_RAW(DefaultChannel,
-<a name="l00109"></a>00109              &amp;<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a34093c15eec29e77b8cc0102f6d216dd" title="in rad/s^2 with INT32_RATE_FRAC">p</a>,
-<a name="l00110"></a>00110              &amp;<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a7c820bcf2018e94b89898d36d81d7f4a" title="in rad/s^2 with INT32_RATE_FRAC">q</a>,
-<a name="l00111"></a>00111              &amp;<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a6875ec572190ce2b63fe2a5658978494" title="in rad/s^2 with INT32_RATE_FRAC">r</a>);
+<a name="l00108"></a>00108     DOWNLINK_SEND_IMU_GYRO_RAW(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,
+<a name="l00109"></a>00109              &amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a34093c15eec29e77b8cc0102f6d216dd" title="in rad/s^2 with INT32_RATE_FRAC">p</a>,
+<a name="l00110"></a>00110              &amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a7c820bcf2018e94b89898d36d81d7f4a" title="in rad/s^2 with INT32_RATE_FRAC">q</a>,
+<a name="l00111"></a>00111              &amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a6875ec572190ce2b63fe2a5658978494" title="in rad/s^2 with INT32_RATE_FRAC">r</a>);
 <a name="l00112"></a>00112   }
 <a name="l00113"></a>00113 
 <a name="l00114"></a>00114 
@@ -242,7 +242,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="hs__gyro_8c.html">hs_gyro.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: sw/airborne/xbee868.h File Reference</title>
+<title>Paparazzi UAS: sw/airborne/subsystems/datalink/xbee868.h File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -112,9 +112,9 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xbee868_8h.html#ad9980bf9c53eccf642a0a1b088a287f1">XBEE_TX_ID</a>&#160;&#160;&#160;0x10</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xbee868_8h.html#ab369b90611c0ddde2ba6461e15fc36a1">XBEE_RX_ID</a>&#160;&#160;&#160;0x90</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xbee868_8h.html#ac6f9681dba4c4cc2356b25971a5888bc">XBEE_RFDATA_OFFSET</a>&#160;&#160;&#160;12</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xbee868_8h.html#a9c22940e4ec5df3d902b3e296a235569">XBeeTransportPutTXHeader</a>()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xbee868_8h.html#a49cdf2759993fff5a72e6bc723d5527b">XBeeTransportSizeOf</a>(_x)&#160;&#160;&#160;<a class="el" href="xbee_8h.html#ab0f9191845f43331d5e9e83070878da3">XBeeAPISizeOf</a>(_x+13)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xbee868_8h.html#ae16f7b9e5501f84f9778b0dafb1bfbbc">XbeeGetRSSI</a>()&#160;&#160;&#160;{}</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xbee868_8h.html#a8ec128ddd2af18d6e68050f3167bd63e">XBeeTransportPutTXHeader</a>(_dev)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xbee868_8h.html#ac23cd27fc834bd49c7db236bbecaec58">XBeeTransportSizeOf</a>(_dev, _x)&#160;&#160;&#160;<a class="el" href="xbee_8h.html#add2603417626d25f3346838ea49e7b5d">XBeeAPISizeOf</a>(_dev, _x+13)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xbee868_8h.html#afa3fd00e6ae13f0d81f3fea11f84ae39">XbeeGetRSSI</a>(_payload)&#160;&#160;&#160;{}</td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ac6f9681dba4c4cc2356b25971a5888bc"></a><!-- doxytag: member="xbee868.h::XBEE_RFDATA_OFFSET" ref="ac6f9681dba4c4cc2356b25971a5888bc" args="" -->
@@ -162,14 +162,15 @@ Defines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae16f7b9e5501f84f9778b0dafb1bfbbc"></a><!-- doxytag: member="xbee868.h::XbeeGetRSSI" ref="ae16f7b9e5501f84f9778b0dafb1bfbbc" args="()" -->
+<a class="anchor" id="afa3fd00e6ae13f0d81f3fea11f84ae39"></a><!-- doxytag: member="xbee868.h::XbeeGetRSSI" ref="afa3fd00e6ae13f0d81f3fea11f84ae39" args="(_payload)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="xbee868_8h.html#ae16f7b9e5501f84f9778b0dafb1bfbbc">XbeeGetRSSI</a></td>
+          <td class="memname">#define <a class="el" href="xbee868_8h.html#afa3fd00e6ae13f0d81f3fea11f84ae39">XbeeGetRSSI</a></td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_payload</td><td>)</td>
           <td>&#160;&#160;&#160;{}</td>
         </tr>
       </table>
@@ -180,50 +181,61 @@ Defines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9c22940e4ec5df3d902b3e296a235569"></a><!-- doxytag: member="xbee868.h::XBeeTransportPutTXHeader" ref="a9c22940e4ec5df3d902b3e296a235569" args="()" -->
+<a class="anchor" id="a8ec128ddd2af18d6e68050f3167bd63e"></a><!-- doxytag: member="xbee868.h::XBeeTransportPutTXHeader" ref="a8ec128ddd2af18d6e68050f3167bd63e" args="(_dev)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="xbee868_8h.html#a9c22940e4ec5df3d902b3e296a235569">XBeeTransportPutTXHeader</a></td>
+          <td class="memname">#define <a class="el" href="xbee868_8h.html#a8ec128ddd2af18d6e68050f3167bd63e">XBeeTransportPutTXHeader</a></td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_dev</td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment">{ \
-  XBeeTransportPutUint8(<a class="code" href="xbee868_8h.html#ad9980bf9c53eccf642a0a1b088a287f1">XBEE_TX_ID</a>); \
-  XBeeTransportPutUint8(<a class="code" href="xbee_8h.html#a3c3297ca8e2c20dc18641e62083e64a1">NO_FRAME_ID</a>); \
-  XBeeTransportPutUint8(0x00); \
-  XBeeTransportPutUint8(0x00); \
-  XBeeTransportPutUint8(0x00); \
-  XBeeTransportPutUint8(0x00); \
-  XBeeTransportPutUint8(0x00); \
-  XBeeTransportPutUint8(0x00); \
-  XBeeTransportPutUint8(<a class="code" href="xbee_8h.html#a3bf53f52f231baaaa5780f3e2720c7c4">GROUND_STATION_ADDR</a> &gt;&gt; 8); \
-  XBeeTransportPutUint8(<a class="code" href="xbee_8h.html#a3bf53f52f231baaaa5780f3e2720c7c4">GROUND_STATION_ADDR</a> &amp; 0xff); \
-  XBeeTransportPutUint8(0xff); \
-  XBeeTransportPutUint8(0xfe); \
-  XBeeTransportPutUint8(0x00); \
-  XBeeTransportPutUint8(<a class="code" href="xbee_8h.html#af0093afc7470e4155e0c7b59e955d7bd">TX_OPTIONS</a>); \
+  XBeeTransportPutUint8(_dev, <a class="code" href="xbee868_8h.html#ad9980bf9c53eccf642a0a1b088a287f1">XBEE_TX_ID</a>); \
+  XBeeTransportPutUint8(_dev, <a class="code" href="xbee_8h.html#a3c3297ca8e2c20dc18641e62083e64a1">NO_FRAME_ID</a>); \
+  XBeeTransportPutUint8(_dev, 0x00); \
+  XBeeTransportPutUint8(_dev, 0x00); \
+  XBeeTransportPutUint8(_dev, 0x00); \
+  XBeeTransportPutUint8(_dev, 0x00); \
+  XBeeTransportPutUint8(_dev, 0x00); \
+  XBeeTransportPutUint8(_dev, 0x00); \
+  XBeeTransportPutUint8(_dev, <a class="code" href="xbee_8h.html#a3bf53f52f231baaaa5780f3e2720c7c4" title="Ground station address.">GROUND_STATION_ADDR</a> &gt;&gt; 8); \
+  XBeeTransportPutUint8(_dev, <a class="code" href="xbee_8h.html#a3bf53f52f231baaaa5780f3e2720c7c4" title="Ground station address.">GROUND_STATION_ADDR</a> &amp; 0xff); \
+  XBeeTransportPutUint8(_dev, 0xff); \
+  XBeeTransportPutUint8(_dev, 0xfe); \
+  XBeeTransportPutUint8(_dev, 0x00); \
+  XBeeTransportPutUint8(_dev, <a class="code" href="xbee_8h.html#af0093afc7470e4155e0c7b59e955d7bd">TX_OPTIONS</a>); \
 }
 </pre></div>
 <p>Definition at line <a class="el" href="xbee868_8h_source.html#l00034">34</a> of file <a class="el" href="xbee868_8h_source.html">xbee868.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a49cdf2759993fff5a72e6bc723d5527b"></a><!-- doxytag: member="xbee868.h::XBeeTransportSizeOf" ref="a49cdf2759993fff5a72e6bc723d5527b" args="(_x)" -->
+<a class="anchor" id="ac23cd27fc834bd49c7db236bbecaec58"></a><!-- doxytag: member="xbee868.h::XBeeTransportSizeOf" ref="ac23cd27fc834bd49c7db236bbecaec58" args="(_dev, _x)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="xbee868_8h.html#a49cdf2759993fff5a72e6bc723d5527b">XBeeTransportSizeOf</a></td>
+          <td class="memname">#define <a class="el" href="xbee868_8h.html#ac23cd27fc834bd49c7db236bbecaec58">XBeeTransportSizeOf</a></td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">_x</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="xbee_8h.html#ab0f9191845f43331d5e9e83070878da3">XBeeAPISizeOf</a>(_x+13)</td>
+          <td class="paramname">_dev, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_x&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="xbee_8h.html#add2603417626d25f3346838ea49e7b5d">XBeeAPISizeOf</a>(_dev, _x+13)</td>
         </tr>
       </table>
 </div>
@@ -253,7 +265,7 @@ Defines</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="xbee868_8h.html">xbee868.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

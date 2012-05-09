@@ -8,6 +8,5 @@ var jsbsim__hw_8c =
     [ "adc_generic_val2", "jsbsim__hw_8c.html#aff1b8ec1532d47eb451b8803b0cca110", null ],
     [ "gps_nb_ovrn", "jsbsim__hw_8c.html#af998d186c77bb7530e38d3fd4e7eee2a", null ],
     [ "link_fbw_fbw_nb_err", "jsbsim__hw_8c.html#a217e6264f30030ff96c6488719497c3e", null ],
-    [ "link_fbw_nb_err", "jsbsim__hw_8c.html#ac3614ddc1d6b6d3c72f8088bcf8aede4", null ],
-    [ "modem_nb_ovrn", "jsbsim__hw_8c.html#adeddf9661c1305b6bd77910563a565aa", null ]
+    [ "link_fbw_nb_err", "jsbsim__hw_8c.html#ac3614ddc1d6b6d3c72f8088bcf8aede4", null ]
 ];

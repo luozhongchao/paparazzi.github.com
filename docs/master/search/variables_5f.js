@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['_5febss',['_ebss',['../stm32__vector__table_8c.html#ad0b187402d73f075ed18ac77050d76f5',1,'stm32_vector_table.c']]],
-  ['_5fedata',['_edata',['../stm32__vector__table_8c.html#adfbf6cf832a3413f0ffe0e8558bc4781',1,'stm32_vector_table.c']]],
-  ['_5festack',['_estack',['../stm32__vector__table_8c.html#a30ec0257adbebe9190521779f1b81ca5',1,'stm32_vector_table.c']]],
-  ['_5fetext',['_etext',['../stm32__vector__table_8c.html#ae489bfa322d3bc9a6f27a31d7aec87c2',1,'stm32_vector_table.c']]],
   ['_5fevent',['_event',['../structTestFuns.html#a015ca7585de545da1fb3d7da335f976b',1,'TestFuns']]],
   ['_5fpad',['_pad',['../structpinRegs__t.html#ae91059a6e55c450f11ac5074ee37cf53',1,'pinRegs_t']]],
   ['_5fpad0',['_pad0',['../structi2cRegs__t.html#ad3a445f889242bd35e1f56df040428e2',1,'i2cRegs_t::_pad0()'],['../structrtcRegs__t.html#a79b1daa826b906781ee1e5d1292361b1',1,'rtcRegs_t::_pad0()'],['../structscbRegs__t.html#a89887c9b83983e68d90994b1406d8533',1,'scbRegs_t::_pad0()'],['../structscbRegs__t.html#af105dd0a1347edb16b8015bbbe1239b3',1,'scbRegs_t::_pad0()'],['../structspiRegs__t.html#a657a804590a76c66c183970e592024f7',1,'spiRegs_t::_pad0()'],['../structuartRegs__t.html#ae7d2545656978f6ebefa1b5304559e8b',1,'uartRegs_t::_pad0()'],['../structvicRegs__t.html#a1cd28651ce01840ab1a256094f2b29c9',1,'vicRegs_t::_pad0()'],['../structwdRegs__t.html#a3ede0fb77358699446aadd83ba3d4f5c',1,'wdRegs_t::_pad0()']]],
@@ -30,8 +26,5 @@ var searchData=
   ['_5fpad8',['_pad8',['../structrtcRegs__t.html#a5ebe477eb1faee94c44d80cefcd141d6',1,'rtcRegs_t']]],
   ['_5fpad9',['_pad9',['../structrtcRegs__t.html#a8cd84f16ace99d3f4f0dcd73b770edc5',1,'rtcRegs_t']]],
   ['_5fperiodic',['_periodic',['../structTestFuns.html#ac8d05df08ed4ec552924a2df41590617',1,'TestFuns']]],
-  ['_5fsbss',['_sbss',['../stm32__vector__table_8c.html#ac7e80cbd08ab676098b869e415a15f21',1,'stm32_vector_table.c']]],
-  ['_5fsdata',['_sdata',['../stm32__vector__table_8c.html#a8cd4fffbe47ee95f0b03b59318a24a3b',1,'stm32_vector_table.c']]],
-  ['_5fsidata',['_sidata',['../stm32__vector__table_8c.html#aff89ad51eadbbc1b904e147965ec1588',1,'stm32_vector_table.c']]],
   ['_5fstart',['_start',['../structTestFuns.html#aba3f2240dae5b2803b2019bd868bd92b',1,'TestFuns']]]
 ];

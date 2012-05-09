@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="adc_8h.html" title="arch independent ADC (Analog to Digital Converter) API">mcu_periph/adc.h</a>&quot;</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="temp__tcouple__adc_8h.html">modules/meteo/temp_tcouple_adc.h</a>&quot;</span>
 <a name="l00038"></a>00038 
 <a name="l00039"></a>00039 <span class="preprocessor">#ifndef ADC_CHANNEL_TEMP_REF</span>
@@ -176,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00080"></a>00080                      * 100. - 13.;
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082   <span class="keywordflow">if</span> (++temp_cnt &gt;= <a class="code" href="temp__tcouple__adc_8h.html#adf725e1ad99a8df544e01eb34cb62ab2">TCOUPLE_NB</a>) {
-<a name="l00083"></a>00083     DOWNLINK_SEND_TEMP_TCOUPLE(DefaultChannel,
+<a name="l00083"></a>00083     DOWNLINK_SEND_TEMP_TCOUPLE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,
 <a name="l00084"></a>00084           &amp;<a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">fval</a>[0], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">fval</a>[1], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">fval</a>[2], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2">fval</a>[3],
 <a name="l00085"></a>00085           &amp;<a class="code" href="temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c">fref</a>[0], &amp;<a class="code" href="temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c">fref</a>[1], &amp;<a class="code" href="temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c">fref</a>[2], &amp;<a class="code" href="temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c">fref</a>[3],
 <a name="l00086"></a>00086           &amp;<a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>[0], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>[1], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>[2], &amp;<a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>[3],
@@ -205,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="temp__tcouple__adc_8c.html">temp_tcouple_adc.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

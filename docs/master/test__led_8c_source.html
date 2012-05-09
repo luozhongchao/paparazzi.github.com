@@ -125,93 +125,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
 <a name="l00022"></a>00022 <span class="comment"> */</span>
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;stm32/flash.h&gt;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;stm32/misc.h&gt;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="preprocessor">#include BOARD_CONFIG</span>
-<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a5e013ec17dbb806bfe939dcbf980670d">Delay</a>(__IO <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> nCount);
-<a name="l00032"></a>00032 <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a46fb9ed9bb9bcfa6c96f6686000653d4">led_on</a>(<span class="keywordtype">int</span> i);
-<a name="l00033"></a>00033 <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a68f6f0e99f1a5967f352672dbe265d68">led_off</a>(<span class="keywordtype">int</span> i);
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="preprocessor">#ifdef BOARD_LISA_L</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#define LED_PROGRAM_SIZE 26</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span>
-<a name="l00038"></a>00038 <span class="keyword">const</span> <span class="keywordtype">int</span> LED_PROG_ON[LED_PROGRAM_SIZE] = {  3,  5,  7,  1,   -1, -1, -1, -1,    2,  4,  6,  0,     3,  5,  7,  1,    -1, -1, -1, -1,     -1, -1, -1, -1,     -1, -1   };
-<a name="l00039"></a>00039 <span class="keyword">const</span> <span class="keywordtype">int</span> LED_PROG_OFF[LED_PROGRAM_SIZE] = {-1, -1, -1, -1,    3,  5,  7,  1,   -1, -1, -1, -1,    -1, -1, -1, -1,     3,  5,  7,  1,      2,  4,  6,  0,     -1, -1   };
-<a name="l00040"></a>00040 <span class="preprocessor">#endif</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include BOARD_CONFIG</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#aea41b1becfb5d562877fe67cd53d43e9">Delay</a>(<span class="keyword">volatile</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> nCount);
+<a name="l00029"></a>00029 <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a46fb9ed9bb9bcfa6c96f6686000653d4">led_on</a>(<span class="keywordtype">int</span> i);
+<a name="l00030"></a>00030 <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a68f6f0e99f1a5967f352672dbe265d68">led_off</a>(<span class="keywordtype">int</span> i);
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="preprocessor">#ifdef BOARD_LISA_L</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="preprocessor">#define LED_PROGRAM_SIZE 26</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>
+<a name="l00035"></a>00035 <span class="keyword">const</span> <span class="keywordtype">int</span> LED_PROG_ON[LED_PROGRAM_SIZE] = {  3,  5,  7,  1,   -1, -1, -1, -1,    2,  4,  6,  0,     3,  5,  7,  1,    -1, -1, -1, -1,     -1, -1, -1, -1,     -1, -1   };
+<a name="l00036"></a>00036 <span class="keyword">const</span> <span class="keywordtype">int</span> LED_PROG_OFF[LED_PROGRAM_SIZE] = {-1, -1, -1, -1,    3,  5,  7,  1,   -1, -1, -1, -1,    -1, -1, -1, -1,     3,  5,  7,  1,      2,  4,  6,  0,     -1, -1   };
+<a name="l00037"></a>00037 <span class="preprocessor">#endif</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span>
+<a name="l00039"></a>00039 <span class="preprocessor">#ifdef BOARD_LISA_M</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define LED_PROGRAM_SIZE 10</span>
 <a name="l00041"></a>00041 <span class="preprocessor"></span>
-<a name="l00042"></a>00042 <span class="preprocessor">#ifdef BOARD_LISA_M</span>
-<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="preprocessor">#define LED_PROGRAM_SIZE 10</span>
-<a name="l00044"></a>00044 <span class="preprocessor"></span>
-<a name="l00045"></a>00045 <span class="keyword">const</span> <span class="keywordtype">int</span> LED_PROG_ON[LED_PROGRAM_SIZE] =  {  1,  2,   -1, -1,   -1,    2,  1,   -1, -1,   -1 };
-<a name="l00046"></a>00046 <span class="keyword">const</span> <span class="keywordtype">int</span> LED_PROG_OFF[LED_PROGRAM_SIZE] = { -1, -1,    1,  2,   -1,   -1, -1,    2,  1,   -1 };
-<a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
-<a name="l00048"></a>00048 <span class="preprocessor"></span>
-<a name="l00049"></a><a class="code" href="test__led_8c.html#a46fb9ed9bb9bcfa6c96f6686000653d4">00049</a> <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a46fb9ed9bb9bcfa6c96f6686000653d4">led_on</a>(<span class="keywordtype">int</span> i) {
-<a name="l00050"></a>00050 <span class="preprocessor">#ifdef BOARD_LISA_L</span>
-<a name="l00051"></a>00051 <span class="preprocessor"></span>  <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(i);
-<a name="l00052"></a>00052 <span class="preprocessor">#endif</span>
-<a name="l00053"></a>00053 <span class="preprocessor"></span>
-<a name="l00054"></a>00054 <span class="preprocessor">#ifdef BOARD_LISA_M</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span>  <span class="keywordflow">switch</span> (i) {
-<a name="l00056"></a>00056     <span class="keywordflow">case</span> 1:
-<a name="l00057"></a>00057       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
+<a name="l00042"></a>00042 <span class="keyword">const</span> <span class="keywordtype">int</span> LED_PROG_ON[LED_PROGRAM_SIZE] =  {  1,  2,   -1, -1,   -1,    2,  1,   -1, -1,   -1 };
+<a name="l00043"></a>00043 <span class="keyword">const</span> <span class="keywordtype">int</span> LED_PROG_OFF[LED_PROGRAM_SIZE] = { -1, -1,    1,  2,   -1,   -1, -1,    2,  1,   -1 };
+<a name="l00044"></a>00044 <span class="preprocessor">#endif</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span>
+<a name="l00046"></a><a class="code" href="test__led_8c.html#a46fb9ed9bb9bcfa6c96f6686000653d4">00046</a> <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a46fb9ed9bb9bcfa6c96f6686000653d4">led_on</a>(<span class="keywordtype">int</span> i) {
+<a name="l00047"></a>00047 <span class="preprocessor">#ifdef BOARD_LISA_L</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span>  <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(i);
+<a name="l00049"></a>00049 <span class="preprocessor">#endif</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span>
+<a name="l00051"></a>00051 <span class="preprocessor">#ifdef BOARD_LISA_M</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span>  <span class="keywordflow">switch</span> (i) {
+<a name="l00053"></a>00053     <span class="keywordflow">case</span> 1:
+<a name="l00054"></a>00054       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
+<a name="l00055"></a>00055       <span class="keywordflow">break</span>;
+<a name="l00056"></a>00056     <span class="keywordflow">case</span> 2:
+<a name="l00057"></a>00057       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
 <a name="l00058"></a>00058       <span class="keywordflow">break</span>;
-<a name="l00059"></a>00059     <span class="keywordflow">case</span> 2:
-<a name="l00060"></a>00060       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
+<a name="l00059"></a>00059     <span class="keywordflow">default</span>:
+<a name="l00060"></a>00060       <span class="comment">/* ignore as we only have 2 led&#39;s for now on lisa/m */</span>
 <a name="l00061"></a>00061       <span class="keywordflow">break</span>;
-<a name="l00062"></a>00062     <span class="keywordflow">default</span>:
-<a name="l00063"></a>00063       <span class="comment">/* ignore as we only have 2 led&#39;s for now on lisa/m */</span>
-<a name="l00064"></a>00064       <span class="keywordflow">break</span>;
-<a name="l00065"></a>00065   }
-<a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
-<a name="l00067"></a>00067 <span class="preprocessor"></span>}
-<a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="test__led_8c.html#a68f6f0e99f1a5967f352672dbe265d68">00069</a> <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a68f6f0e99f1a5967f352672dbe265d68">led_off</a>(<span class="keywordtype">int</span> i) {
-<a name="l00070"></a>00070 <span class="preprocessor">#ifdef BOARD_LISA_L</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span>  <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(i);
-<a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span>
-<a name="l00074"></a>00074 <span class="preprocessor">#ifdef BOARD_LISA_M</span>
-<a name="l00075"></a>00075 <span class="preprocessor"></span>  <span class="keywordflow">switch</span> (i) {
-<a name="l00076"></a>00076     <span class="keywordflow">case</span> 1:
-<a name="l00077"></a>00077       <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(1);
+<a name="l00062"></a>00062   }
+<a name="l00063"></a>00063 <span class="preprocessor">#endif</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span>}
+<a name="l00065"></a>00065 
+<a name="l00066"></a><a class="code" href="test__led_8c.html#a68f6f0e99f1a5967f352672dbe265d68">00066</a> <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a68f6f0e99f1a5967f352672dbe265d68">led_off</a>(<span class="keywordtype">int</span> i) {
+<a name="l00067"></a>00067 <span class="preprocessor">#ifdef BOARD_LISA_L</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>  <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(i);
+<a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span>
+<a name="l00071"></a>00071 <span class="preprocessor">#ifdef BOARD_LISA_M</span>
+<a name="l00072"></a>00072 <span class="preprocessor"></span>  <span class="keywordflow">switch</span> (i) {
+<a name="l00073"></a>00073     <span class="keywordflow">case</span> 1:
+<a name="l00074"></a>00074       <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(1);
+<a name="l00075"></a>00075       <span class="keywordflow">break</span>;
+<a name="l00076"></a>00076     <span class="keywordflow">case</span> 2:
+<a name="l00077"></a>00077       <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
 <a name="l00078"></a>00078       <span class="keywordflow">break</span>;
-<a name="l00079"></a>00079     <span class="keywordflow">case</span> 2:
-<a name="l00080"></a>00080       <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
+<a name="l00079"></a>00079     <span class="keywordflow">default</span>:
+<a name="l00080"></a>00080       <span class="comment">/* ignore as we only have 2 led&#39;s for now on lisa/m */</span>
 <a name="l00081"></a>00081       <span class="keywordflow">break</span>;
-<a name="l00082"></a>00082     <span class="keywordflow">default</span>:
-<a name="l00083"></a>00083       <span class="comment">/* ignore as we only have 2 led&#39;s for now on lisa/m */</span>
-<a name="l00084"></a>00084       <span class="keywordflow">break</span>;
-<a name="l00085"></a>00085   }
-<a name="l00086"></a>00086 <span class="preprocessor">#endif</span>
-<a name="l00087"></a>00087 <span class="preprocessor"></span>}
-<a name="l00088"></a>00088 
-<a name="l00089"></a><a class="code" href="test__led_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00089</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">void</span>) {
-<a name="l00090"></a>00090   <span class="keywordtype">int</span> i = 0;
-<a name="l00091"></a>00091   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
-<a name="l00092"></a>00092   <span class="keywordflow">while</span> (1) {
-<a name="l00093"></a>00093     <span class="keywordflow">for</span> (i=0; i&lt; LED_PROGRAM_SIZE; i++)
-<a name="l00094"></a>00094     {
-<a name="l00095"></a>00095       <span class="keywordflow">if</span> (LED_PROG_ON[i] &gt;= 0)
-<a name="l00096"></a>00096         <a class="code" href="test__led_8c.html#a46fb9ed9bb9bcfa6c96f6686000653d4">led_on</a>(LED_PROG_ON[i]);
-<a name="l00097"></a>00097       <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();
-<a name="l00098"></a>00098       <a class="code" href="test__led_8c.html#a5e013ec17dbb806bfe939dcbf980670d">Delay</a>(2000000);
-<a name="l00099"></a>00099       <span class="keywordflow">if</span> (LED_PROG_OFF[i] &gt;= 0)
-<a name="l00100"></a>00100         <a class="code" href="test__led_8c.html#a68f6f0e99f1a5967f352672dbe265d68">led_off</a>(LED_PROG_OFF[i]);
-<a name="l00101"></a>00101     }
-<a name="l00102"></a>00102   };
-<a name="l00103"></a>00103   <span class="keywordflow">return</span> 0;
-<a name="l00104"></a>00104 }
-<a name="l00105"></a>00105 
-<a name="l00106"></a><a class="code" href="test__led_8c.html#a5e013ec17dbb806bfe939dcbf980670d">00106</a> <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#a5e013ec17dbb806bfe939dcbf980670d">Delay</a>(__IO <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> nCount) {
-<a name="l00107"></a>00107   <span class="keywordflow">for</span>(; nCount != 0; nCount--);
-<a name="l00108"></a>00108 }
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110 
+<a name="l00082"></a>00082   }
+<a name="l00083"></a>00083 <span class="preprocessor">#endif</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span>}
+<a name="l00085"></a>00085 
+<a name="l00086"></a><a class="code" href="test__led_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00086</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">void</span>) {
+<a name="l00087"></a>00087   <span class="keywordtype">int</span> i = 0;
+<a name="l00088"></a>00088   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
+<a name="l00089"></a>00089   <span class="keywordflow">while</span> (1) {
+<a name="l00090"></a>00090     <span class="keywordflow">for</span> (i=0; i&lt; LED_PROGRAM_SIZE; i++)
+<a name="l00091"></a>00091     {
+<a name="l00092"></a>00092       <span class="keywordflow">if</span> (LED_PROG_ON[i] &gt;= 0)
+<a name="l00093"></a>00093         <a class="code" href="test__led_8c.html#a46fb9ed9bb9bcfa6c96f6686000653d4">led_on</a>(LED_PROG_ON[i]);
+<a name="l00094"></a>00094       <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();
+<a name="l00095"></a>00095       <a class="code" href="test__led_8c.html#aea41b1becfb5d562877fe67cd53d43e9">Delay</a>(2000000);
+<a name="l00096"></a>00096       <span class="keywordflow">if</span> (LED_PROG_OFF[i] &gt;= 0)
+<a name="l00097"></a>00097         <a class="code" href="test__led_8c.html#a68f6f0e99f1a5967f352672dbe265d68">led_off</a>(LED_PROG_OFF[i]);
+<a name="l00098"></a>00098     }
+<a name="l00099"></a>00099   };
+<a name="l00100"></a>00100   <span class="keywordflow">return</span> 0;
+<a name="l00101"></a>00101 }
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="comment">/* </span>
+<a name="l00104"></a>00104 <span class="comment"> * XXX: do we really need volatile here?</span>
+<a name="l00105"></a>00105 <span class="comment"> *</span>
+<a name="l00106"></a>00106 <span class="comment"> * Also we should probably use systime instead as it is being linked into this</span>
+<a name="l00107"></a>00107 <span class="comment"> * test anyways...</span>
+<a name="l00108"></a>00108 <span class="comment"> */</span>
+<a name="l00109"></a><a class="code" href="test__led_8c.html#aea41b1becfb5d562877fe67cd53d43e9">00109</a> <span class="keywordtype">void</span> <a class="code" href="test__led_8c.html#aea41b1becfb5d562877fe67cd53d43e9">Delay</a>(<span class="keyword">volatile</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> nCount) {
+<a name="l00110"></a>00110   <span class="keywordflow">for</span>(; nCount != 0; nCount--);
+<a name="l00111"></a>00111 }
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -232,7 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="test__led_8c.html">test_led.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

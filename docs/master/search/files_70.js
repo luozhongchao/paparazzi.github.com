@@ -13,8 +13,8 @@ var searchData=
   ['ppm_2ec',['ppm.c',['../ppm_8c.html',1,'']]],
   ['ppm_2eh',['ppm.h',['../ppm_8h.html',1,'']]],
   ['ppm_5farch_2ec',['ppm_arch.c',['../lpc21_2subsystems_2radio__control_2ppm__arch_8c.html',1,'']]],
-  ['ppm_5farch_2ec',['ppm_arch.c',['../stm32_2subsystems_2radio__control_2ppm__arch_8c.html',1,'']]],
   ['ppm_5farch_2ec',['ppm_arch.c',['../sim_2subsystems_2radio__control_2ppm__arch_8c.html',1,'']]],
+  ['ppm_5farch_2ec',['ppm_arch.c',['../stm32_2subsystems_2radio__control_2ppm__arch_8c.html',1,'']]],
   ['ppm_5farch_2eh',['ppm_arch.h',['../stm32_2subsystems_2radio__control_2ppm__arch_8h.html',1,'']]],
   ['ppm_5farch_2eh',['ppm_arch.h',['../lpc21_2subsystems_2radio__control_2ppm__arch_8h.html',1,'']]],
   ['ppm_5farch_2eh',['ppm_arch.h',['../sim_2subsystems_2radio__control_2ppm__arch_8h.html',1,'']]],
@@ -22,7 +22,6 @@ var searchData=
   ['pprz_5falgebra_5fdouble_2eh',['pprz_algebra_double.h',['../pprz__algebra__double_8h.html',1,'']]],
   ['pprz_5falgebra_5ffloat_2eh',['pprz_algebra_float.h',['../pprz__algebra__float_8h.html',1,'']]],
   ['pprz_5falgebra_5fint_2eh',['pprz_algebra_int.h',['../pprz__algebra__int_8h.html',1,'']]],
-  ['pprz_5fbaudrate_2eh',['pprz_baudrate.h',['../pprz__baudrate_8h.html',1,'']]],
   ['pprz_5fdebug_2ec',['pprz_debug.c',['../pprz__debug_8c.html',1,'']]],
   ['pprz_5fdebug_2eh',['pprz_debug.h',['../pprz__debug_8h.html',1,'']]],
   ['pprz_5fgeodetic_2eh',['pprz_geodetic.h',['../pprz__geodetic_8h.html',1,'']]],
@@ -43,5 +42,9 @@ var searchData=
   ['pressure_5fboard_5fnavarro_2eh',['pressure_board_navarro.h',['../pressure__board__navarro_8h.html',1,'']]],
   ['print_2eh',['print.h',['../print_8h.html',1,'']]],
   ['pwm_5finput_2ec',['pwm_input.c',['../pwm__input_8c.html',1,'']]],
-  ['pwm_5finput_2eh',['pwm_input.h',['../pwm__input_8h.html',1,'']]]
+  ['pwm_5finput_2eh',['pwm_input.h',['../pwm__input_8h.html',1,'']]],
+  ['pwm_5finput_5farch_2ec',['pwm_input_arch.c',['../pwm__input__arch_8c.html',1,'']]],
+  ['pwm_5finput_5farch_2eh',['pwm_input_arch.h',['../pwm__input__arch_8h.html',1,'']]],
+  ['pwm_5fmeas_2ec',['pwm_meas.c',['../pwm__meas_8c.html',1,'']]],
+  ['pwm_5fmeas_2eh',['pwm_meas.h',['../pwm__meas_8h.html',1,'']]]
 ];

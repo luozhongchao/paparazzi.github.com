@@ -1,8 +1,8 @@
 var i2c__arch_8old_8c =
 [
     [ "I2C_BUSY", "i2c__arch_8old_8c.html#ad7e560082ad99fc26904882405b26377", null ],
-    [ "OUT_OF_SYNC_STATE_MACHINE", "i2c__arch_8old_8c.html#a81e271a1ba6d9c375769d4bd70ea180d", null ],
-    [ "SPURIOUS_INTERRUPT", "i2c__arch_8old_8c.html#a2e2db234d7e56b2b6133133807482e24", null ],
+    [ "OUT_OF_SYNC_STATE_MACHINE", "i2c__arch_8old_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1", null ],
+    [ "SPURIOUS_INTERRUPT", "i2c__arch_8old_8c.html#ab81219b1393fe184d5856db1a6eabf73", null ],
     [ "abort_and_reset", "i2c__arch_8old_8c.html#ab49d2f1568c99f4568303c0cb6b1565c", null ],
     [ "end_of_transaction", "i2c__arch_8old_8c.html#aae9278b2c7ed90ab2e497ec1317e348f", null ],
     [ "i2c_apply_config", "i2c__arch_8old_8c.html#ac5ee6c8f53bfc4dc0e3663771e5b53d2", null ],

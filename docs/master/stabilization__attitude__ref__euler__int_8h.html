@@ -98,14 +98,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
 <div class="title">stabilization_attitude_ref_euler_int.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Rotorcraft attitude reference generation (euler int version)  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="stabilization__attitude__ref__int_8h_source.html">stabilization_attitude_ref_int.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="radio__control_8h_source.html">subsystems/radio_control.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for stabilization_attitude_ref_euler_int.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -113,316 +113,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="stabilization__attitude__ref__euler__int_8h__incl.png" border="0" usemap="#sw_2airborne_2firmwares_2rotorcraft_2stabilization_2stabilization__attitude__ref__euler__int_8h" alt=""/></div>
 <map name="sw_2airborne_2firmwares_2rotorcraft_2stabilization_2stabilization__attitude__ref__euler__int_8h" id="sw_2airborne_2firmwares_2rotorcraft_2stabilization_2stabilization__attitude__ref__euler__int_8h">
-<area shape="rect" id="node3" href="stabilization__attitude__ref__int_8h.html" title="stabilization_attitude_ref_int.h" alt="" coords="53,83,267,112"/><area shape="rect" id="node5" href="radio__control_8h.html" title="subsystems/radio_control.h" alt="" coords="291,83,488,112"/></map>
+<area shape="rect" id="node3" href="stabilization__attitude__ref__int_8h.html" title="Rotorcraft attitude reference generation API." alt="" coords="168,83,381,112"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="120,237,299,267"/><area shape="rect" id="node22" href="ahrs_8h.html" title="Attitude and Heading Reference System interface." alt="" coords="260,160,401,189"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="373,315,528,344"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="149,315,299,344"/><area shape="rect" id="node26" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="432,237,621,267"/></map>
 </div>
 </div>
 <p><a href="stabilization__attitude__ref__euler__int_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr><td colspan="2"><h2><a name="define-members"></a>
-Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a94a3fc964bb686c26cc9fe01d9c7a50f">REF_ACCEL_FRAC</a>&#160;&#160;&#160;12</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a6a9ac7c2e058fdcfbd5ec56c9979944e">REF_RATE_FRAC</a>&#160;&#160;&#160;16</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a>&#160;&#160;&#160;20</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a2a439d1023dcffd458271d54cace5a95">REF_ANGLE_PI</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#aa6bb9343d0a10947a0824bc67cf4a47d">BFP_OF_REAL</a>(3.1415926535897932384626433832795029, <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a7c98c2da7c74ef04118c3145232e8d26">REF_ANGLE_TWO_PI</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#aa6bb9343d0a10947a0824bc67cf4a47d">BFP_OF_REAL</a>(2.*3.1415926535897932384626433832795029, <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#ac57c1d722e1b973e0e9891338bf1d2c0">ANGLE_REF_NORMALIZE</a>(_a)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#abd019b51335ddda98c6bf5e5d368b8ea">SP_MAX_PHI</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(STABILIZATION_ATTITUDE_SP_MAX_PHI)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a218ed832e3b97e115ac7ed996671d5ee">SP_MAX_THETA</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(STABILIZATION_ATTITUDE_SP_MAX_THETA)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a25142bf155063146ef43b6e239b1f438">SP_MAX_R</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(STABILIZATION_ATTITUDE_SP_MAX_R)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">RC_UPDATE_FREQ</a>&#160;&#160;&#160;40</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a908110653d45fd82871ee768ffe38317">YAW_DEADBAND_EXCEEDED</a>()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#ab9c6e73248525f0992e373ae55ffaf13">STABILIZATION_ATTITUDE_READ_RC</a>(_sp, _inflight)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a490b43dffdd79ca119f660da202b37d4">STABILIZATION_ATTITUDE_ADD_SP</a>(_add_sp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html#aecb4955d0cd071667c2203169aa1323a">STABILIZATION_ATTITUDE_RESET_PSI_REF</a>(_sp)</td></tr>
-</table>
-<hr/><h2>Define Documentation</h2>
-<a class="anchor" id="ac57c1d722e1b973e0e9891338bf1d2c0"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::ANGLE_REF_NORMALIZE" ref="ac57c1d722e1b973e0e9891338bf1d2c0" args="(_a)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#ac57c1d722e1b973e0e9891338bf1d2c0">ANGLE_REF_NORMALIZE</a></td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_a</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">{         \
-    while (_a &gt;  <a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a2a439d1023dcffd458271d54cace5a95">REF_ANGLE_PI</a>)  _a -= <a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a7c98c2da7c74ef04118c3145232e8d26">REF_ANGLE_TWO_PI</a>;     \
-    while (_a &lt; -<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a2a439d1023dcffd458271d54cace5a95">REF_ANGLE_PI</a>)  _a += REF_ANGLE_TWO_PI;     \
-  }
-</pre></div>
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00037">37</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Rotorcraft attitude reference generation (euler int version) </p>
 
-<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00236">__attribute__()</a>, and <a class="el" href="stabilization__attitude__ref__euler__int_8c_source.html#l00076">stabilization_attitude_ref_update()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0dfaa7b497c5532a21ba0b8313b9311e"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::RC_UPDATE_FREQ" ref="a0dfaa7b497c5532a21ba0b8313b9311e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">RC_UPDATE_FREQ</a>&#160;&#160;&#160;40</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00055">55</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a94a3fc964bb686c26cc9fe01d9c7a50f"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::REF_ACCEL_FRAC" ref="a94a3fc964bb686c26cc9fe01d9c7a50f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#a94a3fc964bb686c26cc9fe01d9c7a50f">REF_ACCEL_FRAC</a>&#160;&#160;&#160;12</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00032">32</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-<p>Referenced by <a class="el" href="stabilization__attitude__ref__euler__int_8c_source.html#l00076">stabilization_attitude_ref_update()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afdc520b26f7e5b77c2c7a59bf568f1f7"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::REF_ANGLE_FRAC" ref="afdc520b26f7e5b77c2c7a59bf568f1f7" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a>&#160;&#160;&#160;20</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00034">34</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00176">guidance_h_run()</a>, <a class="el" href="stabilization__attitude__ref__euler__int_8c_source.html#l00076">stabilization_attitude_ref_update()</a>, and <a class="el" href="stabilization__attitude__euler__int_8c_source.html#l00090">stabilization_attitude_run()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2a439d1023dcffd458271d54cace5a95"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::REF_ANGLE_PI" ref="a2a439d1023dcffd458271d54cace5a95" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#a2a439d1023dcffd458271d54cace5a95">REF_ANGLE_PI</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#aa6bb9343d0a10947a0824bc67cf4a47d">BFP_OF_REAL</a>(3.1415926535897932384626433832795029, <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a>)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00035">35</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7c98c2da7c74ef04118c3145232e8d26"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::REF_ANGLE_TWO_PI" ref="a7c98c2da7c74ef04118c3145232e8d26" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#a7c98c2da7c74ef04118c3145232e8d26">REF_ANGLE_TWO_PI</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#aa6bb9343d0a10947a0824bc67cf4a47d">BFP_OF_REAL</a>(2.*3.1415926535897932384626433832795029, <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a>)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00036">36</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6a9ac7c2e058fdcfbd5ec56c9979944e"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::REF_RATE_FRAC" ref="a6a9ac7c2e058fdcfbd5ec56c9979944e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#a6a9ac7c2e058fdcfbd5ec56c9979944e">REF_RATE_FRAC</a>&#160;&#160;&#160;16</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00033">33</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-<p>Referenced by <a class="el" href="stabilization__attitude__ref__euler__int_8c_source.html#l00076">stabilization_attitude_ref_update()</a>, and <a class="el" href="stabilization__attitude__euler__int_8c_source.html#l00090">stabilization_attitude_run()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abd019b51335ddda98c6bf5e5d368b8ea"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::SP_MAX_PHI" ref="abd019b51335ddda98c6bf5e5d368b8ea" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__euler__int_8h.html#abd019b51335ddda98c6bf5e5d368b8ea">SP_MAX_PHI</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(STABILIZATION_ATTITUDE_SP_MAX_PHI)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00047">47</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a25142bf155063146ef43b6e239b1f438"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::SP_MAX_R" ref="a25142bf155063146ef43b6e239b1f438" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a25142bf155063146ef43b6e239b1f438">SP_MAX_R</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(STABILIZATION_ATTITUDE_SP_MAX_R)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00049">49</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a218ed832e3b97e115ac7ed996671d5ee"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::SP_MAX_THETA" ref="a218ed832e3b97e115ac7ed996671d5ee" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a218ed832e3b97e115ac7ed996671d5ee">SP_MAX_THETA</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(STABILIZATION_ATTITUDE_SP_MAX_THETA)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00048">48</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a490b43dffdd79ca119f660da202b37d4"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::STABILIZATION_ATTITUDE_ADD_SP" ref="a490b43dffdd79ca119f660da202b37d4" args="(_add_sp)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__euler__int_8h.html#a490b43dffdd79ca119f660da202b37d4">STABILIZATION_ATTITUDE_ADD_SP</a></td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_add_sp</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">{ \
-    EULERS_ADD(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0">stab_att_sp_euler</a>,_add_sp);  \
-    ANGLE_REF_NORMALIZE(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>); \
-}
-</pre></div>
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00082">82</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab9c6e73248525f0992e373ae55ffaf13"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::STABILIZATION_ATTITUDE_READ_RC" ref="ab9c6e73248525f0992e373ae55ffaf13" args="(_sp, _inflight)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#a39c59b73703362da2482aab7a34ee655">STABILIZATION_ATTITUDE_READ_RC</a></td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_sp, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_inflight&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">{   \
-                                        \
-    _sp.phi =               \
-      ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)-<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>]  * (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#abd019b51335ddda98c6bf5e5d368b8ea">SP_MAX_PHI</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>) \
-      &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>);         \
-    _sp.theta =               \
-      ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>) <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>] * (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a218ed832e3b97e115ac7ed996671d5ee">SP_MAX_THETA</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>) \
-      &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>);         \
-    if (_inflight) {              \
-      if (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a908110653d45fd82871ee768ffe38317">YAW_DEADBAND_EXCEEDED</a>()) {          \
-    _sp.psi +=              \
-      ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)-<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6">RADIO_YAW</a>] * (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a25142bf155063146ef43b6e239b1f438">SP_MAX_R</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / <a class="code" href="stabilization__attitude__ref__euler__int_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">RC_UPDATE_FREQ</a>) \
-      &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>);       \
-    ANGLE_REF_NORMALIZE(_sp.psi);         \
-      }                 \
-    }                 \
-    else { <span class="comment">/* if not flying, use current yaw as setpoint */</span>   \
-      _sp.psi = (<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>));    \
-    }                 \
-  }
-</pre></div>
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00061">61</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00140">guidance_h_read_rc()</a>, and <a class="el" href="stabilization__attitude__euler__int_8c_source.html#l00070">stabilization_attitude_read_rc()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aecb4955d0cd071667c2203169aa1323a"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::STABILIZATION_ATTITUDE_RESET_PSI_REF" ref="aecb4955d0cd071667c2203169aa1323a" args="(_sp)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#aecb4955d0cd071667c2203169aa1323a">STABILIZATION_ATTITUDE_RESET_PSI_REF</a></td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_sp</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">{   \
-    _sp.psi = <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> &lt;&lt; (<a class="code" href="stabilization__attitude__ref__euler__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7">REF_ANGLE_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>); \
-    stab_att_ref_euler.psi = _sp.psi;       \
-    stab_att_ref_rate.r = 0;          \
-  }
-</pre></div>
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00087">87</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-<p>Referenced by <a class="el" href="stabilization__attitude__euler__int_8c_source.html#l00077">stabilization_attitude_enter()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a908110653d45fd82871ee768ffe38317"></a><!-- doxytag: member="stabilization_attitude_ref_euler_int.h::YAW_DEADBAND_EXCEEDED" ref="a908110653d45fd82871ee768ffe38317" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="stabilization__attitude__ref__quat__int_8h.html#a908110653d45fd82871ee768ffe38317">YAW_DEADBAND_EXCEEDED</a></td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">(<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6">RADIO_YAW</a>] &gt;  STABILIZATION_ATTITUDE_DEADBAND_R || \
-   radio_control.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6">RADIO_YAW</a>] &lt; -STABILIZATION_ATTITUDE_DEADBAND_R)
-</pre></div>
-<p>Definition at line <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html#l00057">57</a> of file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>Definition in file <a class="el" href="stabilization__attitude__ref__euler__int_8h_source.html">stabilization_attitude_ref_euler_int.h</a>.</p>
+</div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -442,7 +141,7 @@ Defines</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__ref__euler__int_8h.html">stabilization_attitude_ref_euler_int.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:12 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

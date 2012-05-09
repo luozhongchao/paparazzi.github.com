@@ -13,5 +13,6 @@ var arch_2sim_2modules_2ins_2ins__arduimu__basic_8c =
     [ "sim_p", "arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#ad0537dfc8e7b1504a61bd86cf944e774", null ],
     [ "sim_phi", "arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#ae73eb249a7855e34f52f6b873bb64807", null ],
     [ "sim_q", "arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#a1d08d1f86a284110ac777ccb661113af", null ],
+    [ "sim_r", "arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee", null ],
     [ "sim_theta", "arch_2sim_2modules_2ins_2ins__arduimu__basic_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda", null ]
 ];

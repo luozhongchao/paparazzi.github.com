@@ -40,7 +40,6 @@ var searchData=
   ['nav_5fglide_5fpitch_5ftrim',['NAV_GLIDE_PITCH_TRIM',['../nav_8c.html#ae41368935fe1a9081b0c663d37f227e0',1,'nav.c']]],
   ['nav_5fincreaseshift',['nav_IncreaseShift',['../navigation_8h.html#ade046c5227910bd6f3ea18f9b4d6c514',1,'nav_IncreaseShift():&#160;navigation.h'],['../nav_8h.html#ade046c5227910bd6f3ea18f9b4d6c514',1,'nav_IncreaseShift():&#160;nav.h']]],
   ['nav_5flight_5fmode_5fdefault',['NAV_LIGHT_MODE_DEFAULT',['../light_8c.html#a59e096a668918d60963e1d903126b08f',1,'light.c']]],
-  ['nav_5fmax_5fbank',['NAV_MAX_BANK',['../guidance__h_8c.html#aaeef0e61c02fa1f1830a7c1e2db3da36',1,'guidance_h.c']]],
   ['nav_5fmode_5fcourse',['NAV_MODE_COURSE',['../nav_8h.html#addc6a163a0d81c27179c10d7e260cdc5',1,'nav.h']]],
   ['nav_5fmode_5froll',['NAV_MODE_ROLL',['../nav_8h.html#a97cbe769969373c820146ab3e92047f2',1,'nav.h']]],
   ['nav_5fpoles_5fsetlanddir',['nav_poles_SetLandDir',['../nav__poles_8h.html#aa328c5a0410016bacdd3eaf9d2249f54',1,'nav_poles.h']]],
@@ -62,6 +61,7 @@ var searchData=
   ['navglide',['NavGlide',['../navigation_8h.html#aa7303abf34661cdf531cce2f4fddfe86',1,'NavGlide():&#160;navigation.h'],['../nav_8c.html#aa7303abf34661cdf531cce2f4fddfe86',1,'NavGlide():&#160;nav.c']]],
   ['navgotowaypoint',['NavGotoWaypoint',['../navigation_8h.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c',1,'NavGotoWaypoint():&#160;navigation.h'],['../nav_8h.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c',1,'NavGotoWaypoint():&#160;nav.h']]],
   ['navheading',['NavHeading',['../navigation_8h.html#ac90e1aa0615ba8f354b17674af4b12c8',1,'NavHeading():&#160;navigation.h'],['../nav_8h.html#ac90e1aa0615ba8f354b17674af4b12c8',1,'NavHeading():&#160;nav.h']]],
+  ['navigation_5ffrequency',['NAVIGATION_FREQUENCY',['../main__ap_8c.html#aba17f9ac72f7e9dd1dcd95457bf5c87f',1,'main_ap.c']]],
   ['navigation_5fsetflightaltitude',['navigation_SetFlightAltitude',['../navigation_8h.html#a25f2a57be9b02363387dc8160f72783c',1,'navigation.h']]],
   ['navigation_5fsetnavheading',['navigation_SetNavHeading',['../navigation_8h.html#abe0e7d0ebe8c39ddad6c45e3394e2bdc',1,'navigation.h']]],
   ['navkillthrottle',['NavKillThrottle',['../navigation_8h.html#ab4d16c33e2792978452a6b33e26df83c',1,'NavKillThrottle():&#160;navigation.h'],['../nav_8h.html#ab4d16c33e2792978452a6b33e26df83c',1,'NavKillThrottle():&#160;nav.h']]],
@@ -88,9 +88,9 @@ var searchData=
   ['nb_5fchannels',['NB_CHANNELS',['../ADS8344_8h.html#a4559069a0477805f310137e5a551b7a0',1,'ADS8344.h']]],
   ['nb_5fdata',['NB_DATA',['../generic__com_8c.html#af6dccfe0d3bbf8f9b4ec05cf162a376a',1,'NB_DATA():&#160;generic_com.c'],['../ins__arduimu_8h.html#af6dccfe0d3bbf8f9b4ec05cf162a376a',1,'NB_DATA():&#160;ins_arduimu.h'],['../modules_2ins_2ins__arduimu__basic_8c.html#af6dccfe0d3bbf8f9b4ec05cf162a376a',1,'NB_DATA():&#160;ins_arduimu_basic.c'],['../MPPT_8h.html#af6dccfe0d3bbf8f9b4ec05cf162a376a',1,'NB_DATA():&#160;MPPT.h']]],
   ['nb_5fi2c_5fdata',['NB_I2C_DATA',['../MPPT_8c.html#a007d3eb9d351cf41c0e3576b0b265c54',1,'MPPT.c']]],
-  ['nb_5fphase',['NB_PHASE',['../modem__hw_8c.html#a4fa2e13349c02fbbf815fccc5048a664',1,'modem_hw.c']]],
+  ['nb_5fphase',['NB_PHASE',['../audio__telemetry__hw_8c.html#a4fa2e13349c02fbbf815fccc5048a664',1,'audio_telemetry_hw.c']]],
   ['nb_5fsamples',['NB_SAMPLES',['../hs__gyro_8c.html#ac3232fa82a700a925dd2563705185297',1,'hs_gyro.c']]],
-  ['nb_5fstate',['NB_STATE',['../modem__hw_8c.html#aa6aaf3938caedfa3eb02006cf0a22869',1,'modem_hw.c']]],
+  ['nb_5fstate',['NB_STATE',['../audio__telemetry__hw_8c.html#aa6aaf3938caedfa3eb02006cf0a22869',1,'audio_telemetry_hw.c']]],
   ['ned_5fbfp_5fof_5freal',['NED_BFP_OF_REAL',['../pprz__geodetic__int_8h.html#a53a937ec13095219519aefbd1eb5d22c',1,'pprz_geodetic_int.h']]],
   ['ned_5ffloat_5fof_5fbfp',['NED_FLOAT_OF_BFP',['../pprz__geodetic__int_8h.html#a61755b91d547a7ac50bd83fc367f20ef',1,'pprz_geodetic_int.h']]],
   ['nextblock',['NextBlock',['../common__flight__plan_8h.html#abed83dcae2c09eb0d09f0b279bad1d8b',1,'common_flight_plan.h']]],
@@ -108,5 +108,6 @@ var searchData=
   ['norm_5frad_5fangle2',['NORM_RAD_ANGLE2',['../estimator_8c.html#a94047a6ba759e513be0217b75b799377',1,'estimator.c']]],
   ['normalizercdl',['NormalizeRcDl',['../rc__datalink_8h.html#a21b56adc7f34d78cef60b12435a9ed56',1,'rc_datalink.h']]],
   ['normcourse',['NormCourse',['../navigation_8h.html#a397bca15d146964a80f93abd74763384',1,'NormCourse():&#160;navigation.h'],['../nav_8h.html#a397bca15d146964a80f93abd74763384',1,'NormCourse():&#160;nav.h']]],
-  ['normxy',['NORMXY',['../cartography_8c.html#afd8dc60935a044f21a240a5fb63b1022',1,'cartography.c']]]
+  ['normxy',['NORMXY',['../cartography_8c.html#afd8dc60935a044f21a240a5fb63b1022',1,'cartography.c']]],
+  ['nsec_5fof_5fsys_5ftime_5fticks',['NSEC_OF_SYS_TIME_TICKS',['../sys__time_8h.html#ab2e8232862c2c9daed4eccaf35ebfbeb',1,'sys_time.h']]]
 ];

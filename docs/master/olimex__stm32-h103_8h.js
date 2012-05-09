@@ -1,6 +1,7 @@
 var olimex__stm32-h103_8h =
 [
     [ "AHB_CLK", "olimex__stm32-h103_8h.html#add4f03b6c5c9bcabeba314491a310346", null ],
+    [ "EXT_CLK", "olimex__stm32-h103_8h.html#a91a5eb3f03c2f212cd15277ea67d65a2", null ],
     [ "LED_1_BANK", "olimex__stm32-h103_8h.html#a27043d2a36fed64b2808c882c24a1465", null ],
     [ "LED_1_GPIO", "olimex__stm32-h103_8h.html#a37154c806d85fb9f9158f86bb55e9ee0", null ],
     [ "LED_1_GPIO_CLK", "olimex__stm32-h103_8h.html#a9837d23c93232321c9acf271941a22d6", null ],

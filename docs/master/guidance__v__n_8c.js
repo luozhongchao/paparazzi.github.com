@@ -7,6 +7,7 @@ var guidance__v__n_8c =
     [ "V_CTL_AUTO_PITCH_DGAIN", "guidance__v__n_8c.html#aa0d2fcabb870be737cbb31d59f357f4f", null ],
     [ "V_CTL_AUTO_PITCH_IGAIN", "guidance__v__n_8c.html#a910f711554fd96e7fa2c1f9c3b0c8b9b", null ],
     [ "V_CTL_AUTO_PITCH_MAX_SUM_ERR", "guidance__v__n_8c.html#a6c8243747ad58308b43230eeac99771a", null ],
+    [ "V_CTL_AUTO_THROTTLE_DGAIN", "guidance__v__n_8c.html#aefa147f1ea1c7c286827305aea5e86f0", null ],
     [ "V_CTL_AUTO_THROTTLE_MAX_SUM_ERR", "guidance__v__n_8c.html#a20444858f761f3d02bf0df99e4dc46df", null ],
     [ "V_CTL_AUTO_THROTTLE_PITCH_OF_VZ_DGAIN", "guidance__v__n_8c.html#a364c40ad99c1b98ac12ae6a1750b505a", null ],
     [ "V_CTL_THROTTLE_SLEW", "guidance__v__n_8c.html#abce76ecdbe377a7dee4611131b720a66", null ],

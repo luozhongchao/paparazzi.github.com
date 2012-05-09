@@ -125,46 +125,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="imu__analog_8h.html">imu_analog.h</a>&quot;</span>
 <a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="adc_8h.html" title="arch independent ADC (Analog to Digital Converter) API">mcu_periph/adc.h</a>&quot;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a><a class="code" href="imu__analog_8h.html#a7013c319e78dcd6f470fb3d85fa3ba6b">00026</a> <span class="keyword">volatile</span> bool_t <a class="code" href="imu__analog_8c.html#a7013c319e78dcd6f470fb3d85fa3ba6b">analog_imu_available</a>;
-<a name="l00027"></a><a class="code" href="imu__analog_8c.html#a89ed74a28874817abaa2548011a70594">00027</a> <span class="keywordtype">int</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a>;
-<a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">00029</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[<a class="code" href="imu__analog_8h.html#aa951d9420e2582f372f30512a5c47940">NB_ANALOG_IMU_ADC</a>];
-<a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="imu__analog_8c.html#ad32faae58e391642ec8048cb11011998">00031</a> <span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a>(<span class="keywordtype">void</span>) {
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033   <a class="code" href="imu__analog_8c.html#a7013c319e78dcd6f470fb3d85fa3ba6b">analog_imu_available</a> = FALSE;
-<a name="l00034"></a>00034   <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a> = 0;
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_GYRO_P, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[0], ADC_CHANNEL_GYRO_NB_SAMPLES);
-<a name="l00037"></a>00037   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_GYRO_Q, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[1], ADC_CHANNEL_GYRO_NB_SAMPLES);
-<a name="l00038"></a>00038   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_GYRO_R, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[2], ADC_CHANNEL_GYRO_NB_SAMPLES);
-<a name="l00039"></a>00039   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_ACCEL_X, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[3], ADC_CHANNEL_ACCEL_NB_SAMPLES);
-<a name="l00040"></a>00040   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_ACCEL_Y, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[4], ADC_CHANNEL_ACCEL_NB_SAMPLES);
-<a name="l00041"></a>00041   <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_ACCEL_Z, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[5], ADC_CHANNEL_ACCEL_NB_SAMPLES);
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 }
-<a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="imu__analog_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">00045</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a>(<span class="keywordtype">void</span>) {
-<a name="l00046"></a>00046   <span class="comment">// Actual Nr of ADC measurements per channel per periodic loop</span>
-<a name="l00047"></a>00047   <span class="keyword">static</span> <span class="keywordtype">int</span> last_head = 0;
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049   <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[0].<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a> - last_head;
-<a name="l00050"></a>00050   <span class="keywordflow">if</span> (<a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a> &lt; 0)
-<a name="l00051"></a>00051     <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a> += ADC_CHANNEL_GYRO_NB_SAMPLES;
-<a name="l00052"></a>00052   last_head = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[0].<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a>;
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054   <span class="comment">// Read All Measurements</span>
-<a name="l00055"></a>00055   <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a34093c15eec29e77b8cc0102f6d216dd" title="in rad/s^2 with INT32_RATE_FRAC">p</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[0].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_GYRO_NB_SAMPLES;
-<a name="l00056"></a>00056   <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a7c820bcf2018e94b89898d36d81d7f4a" title="in rad/s^2 with INT32_RATE_FRAC">q</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[1].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_GYRO_NB_SAMPLES;
-<a name="l00057"></a>00057   <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a6875ec572190ce2b63fe2a5658978494" title="in rad/s^2 with INT32_RATE_FRAC">r</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[2].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_GYRO_NB_SAMPLES;
-<a name="l00058"></a>00058   <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#abf7c6149da2d7b989713f6fc919ccb10" title="unscaled accelerometer measurements">accel_unscaled</a>.<a class="code" href="structInt32Vect3.html#aacbde96e85265b05620b8d4a04790911">x</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[3].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_ACCEL_NB_SAMPLES;
-<a name="l00059"></a>00059   <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#abf7c6149da2d7b989713f6fc919ccb10" title="unscaled accelerometer measurements">accel_unscaled</a>.<a class="code" href="structInt32Vect3.html#ab617257f46107ac52602d44e6b8f274c">y</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[4].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_ACCEL_NB_SAMPLES;
-<a name="l00060"></a>00060   <a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#abf7c6149da2d7b989713f6fc919ccb10" title="unscaled accelerometer measurements">accel_unscaled</a>.<a class="code" href="structInt32Vect3.html#a5c1b16eb951fe60e8fe3f00217268c36">z</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[5].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_ACCEL_NB_SAMPLES;
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062   <a class="code" href="imu__analog_8c.html#a7013c319e78dcd6f470fb3d85fa3ba6b">analog_imu_available</a> = TRUE;
-<a name="l00063"></a>00063 }
+<a name="l00024"></a>00024 
+<a name="l00025"></a><a class="code" href="imu__analog_8h.html#a7013c319e78dcd6f470fb3d85fa3ba6b">00025</a> <span class="keyword">volatile</span> bool_t <a class="code" href="imu__analog_8c.html#a7013c319e78dcd6f470fb3d85fa3ba6b">analog_imu_available</a>;
+<a name="l00026"></a><a class="code" href="imu__analog_8c.html#a89ed74a28874817abaa2548011a70594">00026</a> <span class="keywordtype">int</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a>;
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">00028</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[<a class="code" href="imu__analog_8h.html#aa951d9420e2582f372f30512a5c47940">NB_ANALOG_IMU_ADC</a>];
+<a name="l00029"></a>00029 
+<a name="l00030"></a><a class="code" href="imu__analog_8c.html#ad32faae58e391642ec8048cb11011998">00030</a> <span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a>(<span class="keywordtype">void</span>) {
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032   <a class="code" href="imu__analog_8c.html#a7013c319e78dcd6f470fb3d85fa3ba6b">analog_imu_available</a> = FALSE;
+<a name="l00033"></a>00033   <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a> = 0;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="preprocessor">#ifdef ADC_CHANNEL_GYRO_P</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_GYRO_P, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[0], ADC_CHANNEL_GYRO_NB_SAMPLES);
+<a name="l00037"></a>00037 <span class="preprocessor">#endif</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_GYRO_Q</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_GYRO_Q, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[1], ADC_CHANNEL_GYRO_NB_SAMPLES);
+<a name="l00040"></a>00040 <span class="preprocessor">#endif</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_GYRO_R</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_GYRO_R, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[2], ADC_CHANNEL_GYRO_NB_SAMPLES);
+<a name="l00043"></a>00043 <span class="preprocessor">#endif</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_ACCEL_X</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_ACCEL_X, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[3], ADC_CHANNEL_ACCEL_NB_SAMPLES);
+<a name="l00046"></a>00046 <span class="preprocessor">#endif</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_ACCEL_Y</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_ACCEL_Y, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[4], ADC_CHANNEL_ACCEL_NB_SAMPLES);
+<a name="l00049"></a>00049 <span class="preprocessor">#endif</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_ACCEL_Z</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span>  <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(ADC_CHANNEL_ACCEL_Z, &amp;<a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[5], ADC_CHANNEL_ACCEL_NB_SAMPLES);
+<a name="l00052"></a>00052 <span class="preprocessor">#endif</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span>
+<a name="l00054"></a>00054 }
+<a name="l00055"></a>00055 
+<a name="l00056"></a><a class="code" href="imu__analog_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">00056</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a>(<span class="keywordtype">void</span>) {
+<a name="l00057"></a>00057   <span class="comment">// Actual Nr of ADC measurements per channel per periodic loop</span>
+<a name="l00058"></a>00058   <span class="keyword">static</span> <span class="keywordtype">int</span> last_head = 0;
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060   <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[0].<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a> - last_head;
+<a name="l00061"></a>00061   <span class="keywordflow">if</span> (<a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a> &lt; 0)
+<a name="l00062"></a>00062     <a class="code" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594">imu_overrun</a> += ADC_CHANNEL_GYRO_NB_SAMPLES;
+<a name="l00063"></a>00063   last_head = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[0].<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a>;
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065   <span class="comment">// Read All Measurements</span>
+<a name="l00066"></a>00066 <span class="preprocessor">#ifdef ADC_CHANNEL_GYRO_P</span>
+<a name="l00067"></a>00067 <span class="preprocessor"></span>  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a34093c15eec29e77b8cc0102f6d216dd" title="in rad/s^2 with INT32_RATE_FRAC">p</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[0].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_GYRO_NB_SAMPLES;
+<a name="l00068"></a>00068 <span class="preprocessor">#endif</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_GYRO_Q</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span>  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a7c820bcf2018e94b89898d36d81d7f4a" title="in rad/s^2 with INT32_RATE_FRAC">q</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[1].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_GYRO_NB_SAMPLES;
+<a name="l00071"></a>00071 <span class="preprocessor">#endif</span>
+<a name="l00072"></a>00072 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_GYRO_R</span>
+<a name="l00073"></a>00073 <span class="preprocessor"></span>  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>.<a class="code" href="structInt32Rates.html#a6875ec572190ce2b63fe2a5658978494" title="in rad/s^2 with INT32_RATE_FRAC">r</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[2].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_GYRO_NB_SAMPLES;
+<a name="l00074"></a>00074 <span class="preprocessor">#endif</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_ACCEL_X</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span>  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#abf7c6149da2d7b989713f6fc919ccb10" title="unscaled accelerometer measurements">accel_unscaled</a>.<a class="code" href="structInt32Vect3.html#aacbde96e85265b05620b8d4a04790911">x</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[3].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_ACCEL_NB_SAMPLES;
+<a name="l00077"></a>00077 <span class="preprocessor">#endif</span>
+<a name="l00078"></a>00078 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_ACCEL_Y</span>
+<a name="l00079"></a>00079 <span class="preprocessor"></span>  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#abf7c6149da2d7b989713f6fc919ccb10" title="unscaled accelerometer measurements">accel_unscaled</a>.<a class="code" href="structInt32Vect3.html#ab617257f46107ac52602d44e6b8f274c">y</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[4].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_ACCEL_NB_SAMPLES;
+<a name="l00080"></a>00080 <span class="preprocessor">#endif</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="preprocessor">#ifdef ADC_CHANNEL_ACCEL_Z</span>
+<a name="l00082"></a>00082 <span class="preprocessor"></span>  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#abf7c6149da2d7b989713f6fc919ccb10" title="unscaled accelerometer measurements">accel_unscaled</a>.<a class="code" href="structInt32Vect3.html#a5c1b16eb951fe60e8fe3f00217268c36">z</a> = <a class="code" href="imu__analog_8c.html#aed29acc5c9ee58b0f6b4c9046e18a7c0">analog_imu_adc_buf</a>[5].<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / ADC_CHANNEL_ACCEL_NB_SAMPLES;
+<a name="l00083"></a>00083 <span class="preprocessor">#endif</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span>
+<a name="l00085"></a>00085   <a class="code" href="imu__analog_8c.html#a7013c319e78dcd6f470fb3d85fa3ba6b">analog_imu_available</a> = TRUE;
+<a name="l00086"></a>00086 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -185,7 +208,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="imu__analog_8c.html">imu_analog.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

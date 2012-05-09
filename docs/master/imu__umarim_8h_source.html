@@ -144,31 +144,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Z_SIGN  1</span>
 <a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00042"></a>00042 <span class="preprocessor"></span>
-<a name="l00043"></a>00043 <span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t <a class="code" href="imu__navgo_8c.html#afbbfe5fb78cd2de203ea88848ed1524d">gyr_valid</a>;
-<a name="l00044"></a>00044 <span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t <a class="code" href="imu__navgo_8c.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a>;
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 <span class="comment">/* must be defined in order to be IMU code: declared in imu.h</span>
-<a name="l00047"></a>00047 <span class="comment">extern void imu_impl_init(void);</span>
-<a name="l00048"></a>00048 <span class="comment">extern void imu_periodic(void);</span>
-<a name="l00049"></a>00049 <span class="comment">*/</span>
-<a name="l00050"></a>00050 
-<a name="l00051"></a><a class="code" href="imu__umarim_8h.html#a5b61834fdd9dc32e2f93b974354c7402">00051</a> <span class="preprocessor">#define ImuEvent(_gyro_handler, _accel_handler, _mag_handler) { \</span>
-<a name="l00052"></a>00052 <span class="preprocessor">  imu_umarim_event();                                           \</span>
-<a name="l00053"></a>00053 <span class="preprocessor">  if (gyr_valid) {                                              \</span>
-<a name="l00054"></a>00054 <span class="preprocessor">    gyr_valid = FALSE;                                          \</span>
-<a name="l00055"></a>00055 <span class="preprocessor">    _gyro_handler();                                            \</span>
-<a name="l00056"></a>00056 <span class="preprocessor">  }                                                             \</span>
-<a name="l00057"></a>00057 <span class="preprocessor">  if (acc_valid) {                                              \</span>
-<a name="l00058"></a>00058 <span class="preprocessor">    acc_valid = FALSE;                                          \</span>
-<a name="l00059"></a>00059 <span class="preprocessor">    _accel_handler();                                           \</span>
-<a name="l00060"></a>00060 <span class="preprocessor">  }                                                             \</span>
-<a name="l00061"></a>00061 <span class="preprocessor">}</span>
-<a name="l00062"></a>00062 <span class="preprocessor"></span>
-<a name="l00063"></a>00063 <span class="comment">/* Own Extra Functions */</span>
-<a name="l00064"></a>00064 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="imu__umarim_8c.html#a01860ce0d2bbd0db6c993e609c0745de">imu_umarim_event</a>( <span class="keywordtype">void</span> );
-<a name="l00065"></a>00065 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="imu__umarim_8c.html#a0b13fa285b5a868bdbbf0a337056381f">imu_umarim_downlink_raw</a>( <span class="keywordtype">void</span> );
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067 <span class="preprocessor">#endif // PPZUAVIMU_H</span>
+<a name="l00048"></a>00048 <span class="preprocessor">#if !defined IMU_GYRO_P_SENS &amp; !defined IMU_GYRO_Q_SENS &amp; !defined IMU_GYRO_R_SENS</span>
+<a name="l00049"></a>00049 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_P_SENS 4.973</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_P_SENS_NUM 4973</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_P_SENS_DEN 1000</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_Q_SENS 4.973</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_Q_SENS_NUM 4973</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_Q_SENS_DEN 1000</span>
+<a name="l00055"></a>00055 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_R_SENS 4.973</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_R_SENS_NUM 4973</span>
+<a name="l00057"></a>00057 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_R_SENS_DEN 1000</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span><span class="preprocessor">#if !defined IMU_GYRO_P_NEUTRAL &amp; !defined IMU_GYRO_Q_NEUTRAL &amp; !defined IMU_GYRO_R_NEUTRAL</span>
+<a name="l00060"></a>00060 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_P_NEUTRAL 0</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_Q_NEUTRAL 0</span>
+<a name="l00062"></a>00062 <span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_R_NEUTRAL 0</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span>
+<a name="l00065"></a>00065 
+<a name="l00077"></a>00077 <span class="preprocessor">#if !defined IMU_ACCEL_X_SENS &amp; !defined IMU_ACCEL_Y_SENS &amp; !defined IMU_ACCEL_Z_SENS</span>
+<a name="l00078"></a>00078 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_X_SENS 37.91</span>
+<a name="l00079"></a>00079 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_X_SENS_NUM 3791</span>
+<a name="l00080"></a>00080 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_X_SENS_DEN 100</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Y_SENS 37.91</span>
+<a name="l00082"></a>00082 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Y_SENS_NUM 3791</span>
+<a name="l00083"></a>00083 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Y_SENS_DEN 100</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Z_SENS 39.24</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Z_SENS_NUM 39.24</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Z_SENS_DEN 100</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span><span class="preprocessor">#if !defined IMU_ACCEL_X_NEUTRAL &amp; !defined IMU_ACCEL_Y_NEUTRAL &amp; !defined IMU_ACCEL_Z_NEUTRAL</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_X_NEUTRAL 0</span>
+<a name="l00090"></a>00090 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Y_NEUTRAL 0</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Z_NEUTRAL 0</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00093"></a>00093 <span class="preprocessor"></span>
+<a name="l00094"></a>00094 <span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t <a class="code" href="imu__navgo_8c.html#afbbfe5fb78cd2de203ea88848ed1524d" title="default gyro sensitivy and neutral from the datasheet ITG3200 has 14.375 LSB/(deg/s) sens = 1/14...">gyr_valid</a>;
+<a name="l00095"></a>00095 <span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t <a class="code" href="imu__navgo_8c.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a>;
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 <span class="comment">/* must be defined in order to be IMU code: declared in imu.h</span>
+<a name="l00098"></a>00098 <span class="comment">extern void imu_impl_init(void);</span>
+<a name="l00099"></a>00099 <span class="comment">extern void imu_periodic(void);</span>
+<a name="l00100"></a>00100 <span class="comment">*/</span>
+<a name="l00101"></a>00101 
+<a name="l00102"></a><a class="code" href="imu__umarim_8h.html#a5b61834fdd9dc32e2f93b974354c7402">00102</a> <span class="preprocessor">#define ImuEvent(_gyro_handler, _accel_handler, _mag_handler) { \</span>
+<a name="l00103"></a>00103 <span class="preprocessor">  imu_umarim_event();                                           \</span>
+<a name="l00104"></a>00104 <span class="preprocessor">  if (gyr_valid) {                                              \</span>
+<a name="l00105"></a>00105 <span class="preprocessor">    gyr_valid = FALSE;                                          \</span>
+<a name="l00106"></a>00106 <span class="preprocessor">    _gyro_handler();                                            \</span>
+<a name="l00107"></a>00107 <span class="preprocessor">  }                                                             \</span>
+<a name="l00108"></a>00108 <span class="preprocessor">  if (acc_valid) {                                              \</span>
+<a name="l00109"></a>00109 <span class="preprocessor">    acc_valid = FALSE;                                          \</span>
+<a name="l00110"></a>00110 <span class="preprocessor">    _accel_handler();                                           \</span>
+<a name="l00111"></a>00111 <span class="preprocessor">  }                                                             \</span>
+<a name="l00112"></a>00112 <span class="preprocessor">}</span>
+<a name="l00113"></a>00113 <span class="preprocessor"></span>
+<a name="l00114"></a>00114 <span class="comment">/* Own Extra Functions */</span>
+<a name="l00115"></a>00115 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="imu__umarim_8c.html#a01860ce0d2bbd0db6c993e609c0745de">imu_umarim_event</a>( <span class="keywordtype">void</span> );
+<a name="l00116"></a>00116 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="imu__umarim_8c.html#a0b13fa285b5a868bdbbf0a337056381f">imu_umarim_downlink_raw</a>( <span class="keywordtype">void</span> );
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 <span class="preprocessor">#endif // PPZUAVIMU_H</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -189,7 +224,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="imu__umarim_8h.html">imu_umarim.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

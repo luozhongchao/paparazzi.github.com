@@ -4,7 +4,7 @@ var ins__vn100_8h =
     [ "INS_VN100_SET_ADOF", "ins__vn100_8h.html#afe63d82797d9f689ff8c20c65a7e6ba9", null ],
     [ "INS_VN100_SET_ADOR", "ins__vn100_8h.html#af33452bfa2e6699bfa535f2f5b340e2f", null ],
     [ "INS_VN100_SET_BAUD", "ins__vn100_8h.html#a23229ffeb720c7d5d3f20b8eea1cee77", null ],
-    [ "PERIODIC_SEND_AHRS", "ins__vn100_8h.html#aa3e9140302d4f6352b4cdc19e13ce270", null ],
+    [ "PERIODIC_SEND_AHRS", "ins__vn100_8h.html#a5a85c2d0ea59d26cdde20b689dede4c8", null ],
     [ "ins_event_task", "ins__vn100_8h.html#a3446ccf0f8b4ec536547435d71f9171e", null ],
     [ "ins_init", "ins__vn100_8h.html#abf3028c2ada542781b8a5e1eb20c17ce", null ],
     [ "ins_periodic_task", "ins__vn100_8h.html#a8dc6e488ca20854b1f96fb7a2933bbfe", null ],

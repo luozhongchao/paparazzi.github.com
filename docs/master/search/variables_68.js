@@ -41,6 +41,7 @@ var searchData=
   ['has_5fdata',['has_data',['../structuart__state.html#a062fe5d66f14b2bba7f0dd24e5d4367d',1,'uart_state']]],
   ['have_5fvelned',['have_velned',['../structGpsUbx.html#aef27cd7016751d0cdd3dd2c945f57a8b',1,'GpsUbx']]],
   ['head',['head',['../structfifo__t.html#ae93028e986799fceacecbd153729f855',1,'fifo_t::head()'],['../structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3',1,'adc_buf::head()']]],
+  ['heading_5faligned',['heading_aligned',['../structAhrsFloatCmplRmat.html#ab8758f1d6850cdfa63ee0bccda1a1f6d',1,'AhrsFloatCmplRmat::heading_aligned()'],['../structAhrsIntCmpl.html#a2f27b41c380c54597eca80e5f61d4cd1',1,'AhrsIntCmpl::heading_aligned()']]],
   ['heading_5fpositive',['heading_positive',['../point_8c.html#ae57daa641ffe2a2ce5ea87d870a2573f',1,'point.c']]],
   ['height',['height',['../structVi__command.html#a333af16ed039a878ab7199851ea64a7b',1,'Vi_command']]],
   ['hi_5fres_5feuler',['hi_res_euler',['../structAhrsIntCmplEuler.html#ae9bf815ee507229b24307a97fa1ce5f2',1,'AhrsIntCmplEuler']]],

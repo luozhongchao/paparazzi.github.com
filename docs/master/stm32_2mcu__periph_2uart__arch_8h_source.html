@@ -141,101 +141,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a4bde6a10c31adfe1959fb9724e13029a">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define B57600   57600</span>
 <a name="l00038"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#aef3a1340ea0fba1573691a9e74a43d11">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define B115200 115200</span>
 <a name="l00039"></a>00039 <span class="preprocessor"></span>
-<a name="l00040"></a>00040 <span class="comment">/* junk for gps_configure_uart in gps_ubx.c to compile */</span>
-<a name="l00041"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a0abf707a5045920e43f71c36761c1951">00041</a> <span class="preprocessor">#define UART_8N1 1</span>
-<a name="l00042"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ad3b4cfbf066b1b31f3ffd060131384c5">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define UART_FIFO_8 1</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#if defined USE_UART1 || OVERRIDE_UART1_IRQ_HANDLER</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> usart1_isr(<span class="keywordtype">void</span>);
+<a name="l00042"></a>00042 <span class="preprocessor">#endif</span>
 <a name="l00043"></a>00043 <span class="preprocessor"></span>
-<a name="l00044"></a>00044 <span class="comment">/* sort out the problem of UART5 already defined in stm32.h */</span>
-<a name="l00045"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ad50fb4c49d43b2144ee2f8cbdfb9a640">00045</a> <span class="preprocessor">#define USART5               ((USART_TypeDef *) UART5_BASE)</span>
-<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#undef UART5</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#if defined USE_UART2 || OVERRIDE_UART2_IRQ_HANDLER</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> usart2_isr(<span class="keywordtype">void</span>);
+<a name="l00046"></a>00046 <span class="preprocessor">#endif</span>
 <a name="l00047"></a>00047 <span class="preprocessor"></span>
-<a name="l00048"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a2831f657020af36e8f5d88666e240977">00048</a> <span class="preprocessor">#define UART1_TxPin GPIO_Pin_9</span>
-<a name="l00049"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a11fb6ae9535b5a3024db27f8ef40ed1a">00049</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_TxPin GPIO_Pin_2</span>
-<a name="l00050"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a6ec87902dd11b186ae8e15ecdae890f9">00050</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_TxPin GPIO_Pin_10</span>
-<a name="l00051"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a67aa5d93302d82d314ab5fabd568f52d">00051</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_TxPin GPIO_Pin_12</span>
-<a name="l00052"></a>00052 <span class="preprocessor"></span>
-<a name="l00053"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a33fae59b915d23d63fbc60ba1acf6804">00053</a> <span class="preprocessor">#define UART1_RxPin GPIO_Pin_10</span>
-<a name="l00054"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#aabe3a53d5d1f72c1beea329545bcd375">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_RxPin GPIO_Pin_3</span>
-<a name="l00055"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a2573033a81eefff0f4c166c81acfca3f">00055</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_RxPin GPIO_Pin_11</span>
-<a name="l00056"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a76204b729a28fbff26273f2134fb16d7">00056</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_RxPin GPIO_Pin_2</span>
-<a name="l00057"></a>00057 <span class="preprocessor"></span>
-<a name="l00058"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a5412a1730f26912b4e2c59fe65957ef3">00058</a> <span class="preprocessor">#define UART1_TxPort GPIOA</span>
-<a name="l00059"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ac3c130820a75cf4242446e8edbba6478">00059</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_TxPort GPIOA</span>
-<a name="l00060"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a8289b6f4c173d84a2fa0587e9623c47d">00060</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_TxPort GPIOC</span>
-<a name="l00061"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a6ab544dfad6eeac3b79de63907dc0758">00061</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_TxPort GPIOC</span>
-<a name="l00062"></a>00062 <span class="preprocessor"></span>
-<a name="l00063"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ac3868adaa138b2f355e1a83f729cc977">00063</a> <span class="preprocessor">#define UART1_RxPort GPIOA</span>
-<a name="l00064"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a49d7425442d307f074aaa29d1383f8c2">00064</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_RxPort GPIOA</span>
-<a name="l00065"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a0ba4ce5de2723557f862a0d4a986ab12">00065</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_RxPort GPIOC</span>
-<a name="l00066"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a716345f61d4afa9b52144c985904299e">00066</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_RxPort GPIOD</span>
-<a name="l00067"></a>00067 <span class="preprocessor"></span>
-<a name="l00068"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#aa7b66b324098b3300b0e653a10829580">00068</a> <span class="preprocessor">#define UART1_Periph RCC_APB2Periph_GPIOA</span>
-<a name="l00069"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#af7bdd7c58b3df26391f425a27bea44b3">00069</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_Periph RCC_APB2Periph_GPIOA</span>
-<a name="l00070"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ac3e14558bebdb08d3f246c54fdbb911b">00070</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_Periph RCC_APB2Periph_GPIOC</span>
-<a name="l00071"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a4b759c0be7e5cb2b97c992f8a1ad8fbc">00071</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_PeriphTx RCC_APB2Periph_GPIOC</span>
-<a name="l00072"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a85818bcda1f3e2c16142704e8d2e0b16">00072</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_PeriphRx RCC_APB2Periph_GPIOD</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span>
-<a name="l00074"></a>00074 <span class="comment">/* this is unexpected the macros in spektrum_arch.c</span>
-<a name="l00075"></a>00075 <span class="comment">   didn&#39;t expect that rx and tx would be spilt over</span>
-<a name="l00076"></a>00076 <span class="comment">   two ports. As the spektrum code is only interested</span>
-<a name="l00077"></a>00077 <span class="comment">   in the rx pin we define this to be the Peripheral */</span>
-<a name="l00078"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a43448ba9679c2eb4a0b14d97935ce50e">00078</a> <span class="preprocessor">#define UART5_Periph RCC_APB2Periph_GPIOD</span>
-<a name="l00079"></a>00079 <span class="preprocessor"></span>
-<a name="l00080"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a033ccbce13e6d78e481ff08252e8a37b">00080</a> <span class="preprocessor">#define UART1_UartPeriph RCC_APB2Periph_USART1</span>
-<a name="l00081"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a302ebd11e3c496496272436460e90b15">00081</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_UartPeriph RCC_APB1Periph_USART2</span>
-<a name="l00082"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a4a0d9fc02db2369d022408d7166a3718">00082</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_UartPeriph RCC_APB1Periph_USART3</span>
-<a name="l00083"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a15d68c60178a0b9fc6358829fd17f37a">00083</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_UartPeriph RCC_APB1Periph_UART5</span>
-<a name="l00084"></a>00084 <span class="preprocessor"></span>
-<a name="l00085"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a17985732c031b0608ba152a5d9e4b0f2">00085</a> <span class="preprocessor">#define UART1_remap {}</span>
-<a name="l00086"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a3af5a2bb87d071c938343b4d3b88a009">00086</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_remap {}</span>
-<a name="l00087"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#af5e68fbfe157b5f4ec074ea87152dcae">00087</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_remap {RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE); \</span>
-<a name="l00088"></a>00088 <span class="preprocessor">                     GPIO_PinRemapConfig(GPIO_PartialRemap_USART3, ENABLE);}</span>
-<a name="l00089"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#acb413f4f0ce0d115277c7446b7b171de">00089</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_remap {}</span>
-<a name="l00090"></a>00090 <span class="preprocessor"></span>
-<a name="l00091"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ac03e476a89e06479893c0b81eef354e2">00091</a> <span class="preprocessor">#define UART1_clk(_periph, _val) RCC_APB2PeriphClockCmd(_periph, _val)</span>
-<a name="l00092"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#aa83e7cd5d047ab61ce2bd802359b1018">00092</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_clk(_periph, _val) RCC_APB1PeriphClockCmd(_periph, _val)</span>
-<a name="l00093"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#aaf7008bbb65732d7461ed4c1095a476e">00093</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_clk(_periph, _val) RCC_APB1PeriphClockCmd(_periph, _val);</span>
-<a name="l00094"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#afee7811f6869e1315e5694dba3d30079">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_clk(_periph, _val) RCC_APB1PeriphClockCmd(_periph, _val)</span>
-<a name="l00095"></a>00095 <span class="preprocessor"></span>
-<a name="l00096"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a281edad05ff8cf5ad2e2f4d0234b942d">00096</a> <span class="preprocessor">#define Uart1_init uart1_init()</span>
-<a name="l00097"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a4f86cdcc12268e49eace7af8fdc6e2ec">00097</a> <span class="preprocessor"></span><span class="preprocessor">#define Uart2_init uart2_init()</span>
-<a name="l00098"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a693d0854f375a6653f950b75cf299f81">00098</a> <span class="preprocessor"></span><span class="preprocessor">#define Uart3_init uart3_init()</span>
-<a name="l00099"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ac61053fed0ed582acf44c0f168cd0509">00099</a> <span class="preprocessor"></span><span class="preprocessor">#define Uart5_init uart5_init()</span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span>
-<a name="l00101"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a96029440e99d43da3d7c09b458bc5615">00101</a> <span class="preprocessor">#define UART1_irq_handler usart1_irq_handler</span>
-<a name="l00102"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a786917fc335789b0bd08d1d5d4fc18f6">00102</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_irq_handler usart2_irq_handler</span>
-<a name="l00103"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ae44c83f7073063e28df2eae2da20c10b">00103</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_irq_handler usart3_irq_handler</span>
-<a name="l00104"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a08ea791b3b82248c47974b1c1220ad62">00104</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_irq_handler usart5_irq_handler</span>
-<a name="l00105"></a>00105 <span class="preprocessor"></span>
-<a name="l00106"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a0d85aaf4f9efa61f1795016b57d521ce">00106</a> <span class="preprocessor">#define UART1_IRQn USART1_IRQn</span>
-<a name="l00107"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a29bb89f97d044a2199893bb226a5a796">00107</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_IRQn USART2_IRQn</span>
-<a name="l00108"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a411cf6ac1e3a5a496ac0be6500965e78">00108</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_IRQn USART3_IRQn</span>
-<a name="l00109"></a>00109 <span class="preprocessor"></span>
-<a name="l00110"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a3b0e91db848ae945aee3596881996671">00110</a> <span class="preprocessor">#define UART1_reg USART1</span>
-<a name="l00111"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ab2dd610be5906a636c38cd2ccc4fa899">00111</a> <span class="preprocessor"></span><span class="preprocessor">#define UART2_reg USART2</span>
-<a name="l00112"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#a3ddacb6a9fa5ac5918bcbee8e3fc77f0">00112</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_reg USART3</span>
-<a name="l00113"></a><a class="code" href="stm32_2mcu__periph_2uart__arch_8h.html#ac44c216f4d204d1b0768f7351f863ece">00113</a> <span class="preprocessor"></span><span class="preprocessor">#define UART5_reg USART5</span>
-<a name="l00114"></a>00114 <span class="preprocessor"></span>
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116 <span class="preprocessor">#if defined USE_UART1 || OVERRIDE_UART1_IRQ_HANDLER</span>
-<a name="l00117"></a>00117 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> usart1_irq_handler(<span class="keywordtype">void</span>);
-<a name="l00118"></a>00118 <span class="preprocessor">#endif</span>
-<a name="l00119"></a>00119 <span class="preprocessor"></span>
-<a name="l00120"></a>00120 <span class="preprocessor">#if defined USE_UART2 || OVERRIDE_UART2_IRQ_HANDLER</span>
-<a name="l00121"></a>00121 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> usart2_irq_handler(<span class="keywordtype">void</span>);
-<a name="l00122"></a>00122 <span class="preprocessor">#endif</span>
-<a name="l00123"></a>00123 <span class="preprocessor"></span>
-<a name="l00124"></a>00124 <span class="preprocessor">#if defined USE_UART3 || OVERRIDE_UART3_IRQ_HANDLER</span>
-<a name="l00125"></a>00125 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> usart3_irq_handler(<span class="keywordtype">void</span>);
-<a name="l00126"></a>00126 <span class="preprocessor">#endif</span>
-<a name="l00127"></a>00127 <span class="preprocessor"></span>
-<a name="l00128"></a>00128 <span class="preprocessor">#if defined USE_UART5 || OVERRIDE_UART5_IRQ_HANDLER</span>
-<a name="l00129"></a>00129 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> usart5_irq_handler(<span class="keywordtype">void</span>);
-<a name="l00130"></a>00130 <span class="preprocessor">#endif</span>
-<a name="l00131"></a>00131 <span class="preprocessor"></span>
-<a name="l00132"></a>00132 <span class="comment">//void uart_init( void );</span>
-<a name="l00133"></a>00133 
-<a name="l00134"></a>00134 <span class="preprocessor">#endif </span><span class="comment">/* STM32_UART_ARCH_H */</span>
+<a name="l00048"></a>00048 <span class="preprocessor">#if defined USE_UART3 || OVERRIDE_UART3_IRQ_HANDLER</span>
+<a name="l00049"></a>00049 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> usart3_isr(<span class="keywordtype">void</span>);
+<a name="l00050"></a>00050 <span class="preprocessor">#endif</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span>
+<a name="l00052"></a>00052 <span class="preprocessor">#if defined USE_UART5 || OVERRIDE_UART5_IRQ_HANDLER</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> uart5_isr(<span class="keywordtype">void</span>);
+<a name="l00054"></a>00054 <span class="preprocessor">#endif</span>
+<a name="l00055"></a>00055 <span class="preprocessor"></span>
+<a name="l00056"></a>00056 <span class="preprocessor">#endif </span><span class="comment">/* STM32_UART_ARCH_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -256,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2uart__arch_8h.html">uart_arch.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:10 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:05 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

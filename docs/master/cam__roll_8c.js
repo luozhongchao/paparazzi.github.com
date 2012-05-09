@@ -1,8 +1,6 @@
 var cam__roll_8c =
 [
-    [ "DELTA_ALPHA", "cam__roll_8c.html#a3d2951f9ff802ed7ba8c62d83725cbd2", null ],
-    [ "MAX_CAM_ROLL", "cam__roll_8c.html#af8651c4bb1c11bce69b1b87720531a59", null ],
-    [ "MIN_PPRZ_CAM", "cam__roll_8c.html#a4e585415967e03931cf64e38f3860977", null ],
+    [ "CAM_PHI_MAX", "cam__roll_8c.html#a5a663e9e6f606007f3b693bc808b1014", null ],
     [ "cam_roll_phi", "cam__roll_8c.html#a0d2a1df647356af3a0ecef3970839a58", null ],
     [ "phi_c", "cam__roll_8c.html#abaeaf62e5dc05d5dff6664e5b7f12649", null ],
     [ "target_alt", "cam__roll_8c.html#afbd0810e58d8bc90bbeeb06513d37eee", null ],

@@ -142,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00055"></a>00055 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00056"></a>00056 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00056"></a>00056 <span class="preprocessor">#include &quot;<a class="code" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs.">subsystems/datalink/datalink.h</a>&quot;</span>
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058 
 <a name="l00059"></a><a class="code" href="nav__catapult_8c.html#ad0437bac06c33e860afd2fa3983db6c4">00059</a> <span class="keyword">static</span> bool_t <a class="code" href="nav__catapult_8c.html#ad0437bac06c33e860afd2fa3983db6c4">nav_catapult_armed</a> = FALSE;
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00088"></a>00088     {
 <a name="l00089"></a>00089       <span class="comment">// Five consecutive measurements &gt; 1.5</span>
 <a name="l00090"></a>00090 <span class="preprocessor">#ifndef SITL</span>
-<a name="l00091"></a>00091 <span class="preprocessor"></span>      <span class="keywordflow">if</span> (<a class="code" href="pprz__algebra__int_8h.html#aeb7ad4ba2eac8c6f8e608fa42ab9c144">ACCEL_FLOAT_OF_BFP</a>(<a class="code" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aecac1be12d8d9c9c31be2ad9d5b90627" title="accelerometer measurements">accel</a>.<a class="code" href="structInt32Vect3.html#aacbde96e85265b05620b8d4a04790911">x</a>)  &lt; (1.5f * 9.1))
+<a name="l00091"></a>00091 <span class="preprocessor"></span>      <span class="keywordflow">if</span> (<a class="code" href="pprz__algebra__int_8h.html#aeb7ad4ba2eac8c6f8e608fa42ab9c144">ACCEL_FLOAT_OF_BFP</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aecac1be12d8d9c9c31be2ad9d5b90627" title="accelerometer measurements">accel</a>.<a class="code" href="structInt32Vect3.html#aacbde96e85265b05620b8d4a04790911">x</a>)  &lt; (1.5f * 9.1))
 <a name="l00092"></a>00092 <span class="preprocessor">#else</span>
 <a name="l00093"></a>00093 <span class="preprocessor"></span>      <span class="keywordflow">if</span> (<a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a> != 1)
 <a name="l00094"></a>00094 <span class="preprocessor">#endif</span>
@@ -247,8 +247,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00158"></a>00158     <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(_to) = <a class="code" href="estimator_8h.html#a10961173ac6973d795af2f62eb67edca">GetPosY</a>();
 <a name="l00159"></a>00159     <a class="code" href="navigation_8h.html#a2de6e5b93a3552facfa675f1bccd8db2">WaypointAlt</a>(_to) = <a class="code" href="estimator_8h.html#a0bb5f5ae29ba1d5968fe7857a304253e">GetPosAlt</a>();
 <a name="l00160"></a>00160 
-<a name="l00161"></a>00161     <a class="code" href="nav__catapult_8c.html#a8bf80d1e289a2e3df569465f176d5bd2">nav_catapult_x</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>;
-<a name="l00162"></a>00162     <a class="code" href="nav__catapult_8c.html#afd15a44471d7c80a391d78ccc2730cff">nav_catapult_y</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>;
+<a name="l00161"></a>00161     <a class="code" href="nav__catapult_8c.html#a8bf80d1e289a2e3df569465f176d5bd2">nav_catapult_x</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>;
+<a name="l00162"></a>00162     <a class="code" href="nav__catapult_8c.html#afd15a44471d7c80a391d78ccc2730cff">nav_catapult_y</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
 <a name="l00163"></a>00163 
 <a name="l00164"></a>00164   }
 <a name="l00165"></a>00165   <span class="comment">// No Roll, Climb Pitch, Full Power</span>
@@ -270,15 +270,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00181"></a>00181     <span class="comment">// Store Heading, move Climb</span>
 <a name="l00182"></a>00182     <a class="code" href="nav__catapult_8c.html#a673bbbfaee6f1a668f788e96d1b76224">nav_catapult_launch</a> = 0xffff;
 <a name="l00183"></a>00183 
-<a name="l00184"></a>00184     <span class="keywordtype">float</span> dir_x = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a> - <a class="code" href="nav__catapult_8c.html#a8bf80d1e289a2e3df569465f176d5bd2">nav_catapult_x</a>;
-<a name="l00185"></a>00185     <span class="keywordtype">float</span> dir_y = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a> - <a class="code" href="nav__catapult_8c.html#afd15a44471d7c80a391d78ccc2730cff">nav_catapult_y</a>;
+<a name="l00184"></a>00184     <span class="keywordtype">float</span> dir_x = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a> - <a class="code" href="nav__catapult_8c.html#a8bf80d1e289a2e3df569465f176d5bd2">nav_catapult_x</a>;
+<a name="l00185"></a>00185     <span class="keywordtype">float</span> dir_y = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a> - <a class="code" href="nav__catapult_8c.html#afd15a44471d7c80a391d78ccc2730cff">nav_catapult_y</a>;
 <a name="l00186"></a>00186 
 <a name="l00187"></a>00187     <span class="keywordtype">float</span> dir_L = sqrt(dir_x * dir_x + dir_y * dir_y);
 <a name="l00188"></a>00188 
 <a name="l00189"></a>00189     <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(_climb) = nav_catapult_x + (dir_x / dir_L) * 300;
 <a name="l00190"></a>00190     <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(_climb) = nav_catapult_y + (dir_y / dir_L) * 300;
 <a name="l00191"></a>00191 
-<a name="l00192"></a>00192     <a class="code" href="ap__downlink_8h.html#aae0fb50b67b53cf74da77816eca4b3aa">DownlinkSendWp</a>(DefaultChannel, _climb);
+<a name="l00192"></a>00192     <a class="code" href="ap__downlink_8h.html#ab300af3ef7ab11588e87ed42a7096b81">DownlinkSendWp</a>(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, _climb);
 <a name="l00193"></a>00193   }
 <a name="l00194"></a>00194 
 <a name="l00195"></a>00195 
@@ -316,7 +316,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="nav__catapult_8c.html">nav_catapult.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

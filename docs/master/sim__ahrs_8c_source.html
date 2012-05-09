@@ -112,21 +112,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a><a class="code" href="sim__ahrs_8c.html#a944f26a7ad5a7811d8b671cd5d5b2dce">00014</a> <span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#a944f26a7ad5a7811d8b671cd5d5b2dce" title="in radians">sim_psi</a>;    
 <a name="l00015"></a><a class="code" href="sim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774">00015</a> <span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774" title="in radians/s">sim_p</a>;      
 <a name="l00016"></a><a class="code" href="sim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af">00016</a> <span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af" title="in radians/s">sim_q</a>;      
-<a name="l00017"></a><a class="code" href="sim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b">00017</a> bool_t <a class="code" href="jsbsim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b">ahrs_sim_available</a>;
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="comment">// Updates from Ocaml sim</span>
-<a name="l00020"></a><a class="code" href="sim__ahrs_8c.html#aa407e80a3f50ff4e56be066379938c99">00020</a> value <a class="code" href="jsbsim__ahrs_8c.html#afd3f1e1a06e71efe7c6168c629cc38eb">provide_attitude_and_rates</a>(value phi, value theta, value psi, value p, value q) {
-<a name="l00021"></a>00021   <a class="code" href="jsbsim__ahrs_8c.html#ae73eb249a7855e34f52f6b873bb64807" title="in radians">sim_phi</a> = Double_val(phi);
-<a name="l00022"></a>00022   <a class="code" href="jsbsim__ahrs_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda" title="in radians">sim_theta</a> = Double_val(theta);
-<a name="l00023"></a>00023   <a class="code" href="jsbsim__ahrs_8c.html#a944f26a7ad5a7811d8b671cd5d5b2dce" title="in radians">sim_psi</a> = - Double_val(psi) + M_PI/2.;
-<a name="l00024"></a>00024   <a class="code" href="jsbsim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774" title="in radians/s">sim_p</a> = Double_val(p);
-<a name="l00025"></a>00025   <a class="code" href="jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af" title="in radians/s">sim_q</a> = Double_val(q);
+<a name="l00017"></a><a class="code" href="sim__ahrs_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee">00017</a> <span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee" title="in radians/s">sim_r</a>;      
+<a name="l00018"></a><a class="code" href="sim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b">00018</a> bool_t <a class="code" href="jsbsim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b">ahrs_sim_available</a>;
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="comment">// Updates from Ocaml sim</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="sim__ahrs_8c.html#a59f245ea8d4b148cfd75bb752fbe77b6">00022</a> value <a class="code" href="sim__ahrs_8c.html#a59f245ea8d4b148cfd75bb752fbe77b6">provide_attitude</a>(value phi, value theta, value psi) {
+<a name="l00023"></a>00023   <a class="code" href="jsbsim__ahrs_8c.html#ae73eb249a7855e34f52f6b873bb64807" title="in radians">sim_phi</a> = Double_val(phi);
+<a name="l00024"></a>00024   <a class="code" href="jsbsim__ahrs_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda" title="in radians">sim_theta</a> = Double_val(theta);
+<a name="l00025"></a>00025   <a class="code" href="jsbsim__ahrs_8c.html#a944f26a7ad5a7811d8b671cd5d5b2dce" title="in radians">sim_psi</a> = - Double_val(psi) + M_PI/2.;
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027   <a class="code" href="jsbsim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b">ahrs_sim_available</a> = TRUE;
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029   <span class="keywordflow">return</span> Val_unit;
 <a name="l00030"></a>00030 }
 <a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="sim__ahrs_8c.html#a78c5882be85f432b2bca7b37fef7afa1">00032</a> value <a class="code" href="sim__ahrs_8c.html#a78c5882be85f432b2bca7b37fef7afa1">provide_rates</a>(value p, value q, value r) {
+<a name="l00033"></a>00033   <a class="code" href="jsbsim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774" title="in radians/s">sim_p</a> = Double_val(p);
+<a name="l00034"></a>00034   <a class="code" href="jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af" title="in radians/s">sim_q</a> = Double_val(q);
+<a name="l00035"></a>00035   <a class="code" href="jsbsim__ahrs_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee" title="in radians/s">sim_r</a> = Double_val(r);
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037   <a class="code" href="jsbsim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b">ahrs_sim_available</a> = TRUE;
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039   <span class="keywordflow">return</span> Val_unit;
+<a name="l00040"></a>00040 }
+<a name="l00041"></a>00041 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -147,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="sim__ahrs_8c.html">sim_ahrs.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

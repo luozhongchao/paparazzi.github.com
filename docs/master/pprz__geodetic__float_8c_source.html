@@ -378,32 +378,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00274"></a>00274   <a class="code" href="pprz__geodetic__float_8c.html#a7fc38202ab595eb271ef2d2668600cff">CScal</a>(<a class="code" href="pprz__geodetic__utm_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>, z_);
 <a name="l00275"></a>00275   utm-&gt;<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a> = <a class="code" href="pprz__geodetic__utm_8h.html#a84f493cc544c5ccd1fd9be8653e4f974">DELTA_EAST</a> + z_.<a class="code" href="structcomplex.html#a7444343ae7b282212ee23c1640c77001">im</a>;
 <a name="l00276"></a>00276   utm-&gt;<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a> = <a class="code" href="pprz__geodetic__utm_8h.html#a9712f5643bfd305111af1446550d42e1">DELTA_NORTH</a> + z_.<a class="code" href="structcomplex.html#a77a6e028ddaf37c540fe22dad47f61c1">re</a>;
-<a name="l00277"></a>00277 }
-<a name="l00278"></a>00278 
-<a name="l00279"></a><a class="code" href="pprz__geodetic__float_8h.html#a30c2e47ec9a898079c04e8b08496b455">00279</a> <span class="keywordtype">void</span> <a class="code" href="pprz__geodetic__float_8c.html#a30c2e47ec9a898079c04e8b08496b455">lla_of_utm_f</a>(<span class="keyword">struct</span> <a class="code" href="structLlaCoor__f.html" title="vector in Latitude, Longitude and Altitude">LlaCoor_f</a>* lla, <span class="keyword">struct</span> <a class="code" href="structUtmCoor__f.html" title="position in UTM coordinates Units: meters">UtmCoor_f</a>* utm) {
-<a name="l00280"></a>00280   <span class="keywordtype">float</span> scale = 1 / <a class="code" href="pprz__geodetic__utm_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a> / <a class="code" href="pprz__geodetic__utm_8h.html#a3a2a981fbf6e71561e56716c8ea956a0">serie_coeff_proj_mercator</a>[0];
-<a name="l00281"></a>00281   <span class="keywordtype">float</span> real = (utm-&gt;<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a> - <a class="code" href="pprz__geodetic__utm_8h.html#a9712f5643bfd305111af1446550d42e1">DELTA_NORTH</a>) * scale;
-<a name="l00282"></a>00282   <span class="keywordtype">float</span> img = (utm-&gt;<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a> - <a class="code" href="pprz__geodetic__utm_8h.html#a84f493cc544c5ccd1fd9be8653e4f974">DELTA_EAST</a>) * scale;
-<a name="l00283"></a>00283   <span class="keyword">struct </span><a class="code" href="structcomplex.html">complex</a> z = { real, img };
-<a name="l00284"></a>00284 
-<a name="l00285"></a>00285   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> k;
-<a name="l00286"></a>00286   <span class="keywordflow">for</span>(k = 1; k &lt; 2; k++) {
-<a name="l00287"></a>00287     <span class="keyword">struct </span><a class="code" href="structcomplex.html">complex</a> z_ = { real, img };
-<a name="l00288"></a>00288     <a class="code" href="pprz__geodetic__float_8c.html#a7fc38202ab595eb271ef2d2668600cff">CScal</a>(2*k, z_);
-<a name="l00289"></a>00289     <a class="code" href="pprz__geodetic__float_8c.html#a330f98f36f01fcc4335a22211f92c5c0">CSin</a>(z_);
-<a name="l00290"></a>00290     <a class="code" href="pprz__geodetic__float_8c.html#a7fc38202ab595eb271ef2d2668600cff">CScal</a>(<a class="code" href="pprz__geodetic__utm_8h.html#a653990708c0a66a7609ee1d8da41879b">serie_coeff_proj_mercator_inverse</a>[k], z_);
-<a name="l00291"></a>00291     <a class="code" href="pprz__geodetic__float_8c.html#ac3262d0748dfb944710824969031cfdc">CSub</a>(z_, z);
-<a name="l00292"></a>00292   }
-<a name="l00293"></a>00293 
-<a name="l00294"></a>00294   <span class="keywordtype">float</span> lambda_c = <a class="code" href="pprz__geodetic__utm_8h.html#a9f746e2071fa15c7848f25af2aadb7ff">LambdaOfUtmZone</a>(utm-&gt;<a class="code" href="structUtmCoor__f.html#a86adc8b9ebb389f4716c6c569a0b5d91" title="UTM zone number.">zone</a>);
-<a name="l00295"></a>00295   lla-&gt;<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a> = lambda_c + atan (sinh(z.<a class="code" href="structcomplex.html#a7444343ae7b282212ee23c1640c77001">im</a>) / cos(z.<a class="code" href="structcomplex.html#a77a6e028ddaf37c540fe22dad47f61c1">re</a>));
-<a name="l00296"></a>00296   <span class="keywordtype">float</span> phi_ = asin (sin(z.<a class="code" href="structcomplex.html#a77a6e028ddaf37c540fe22dad47f61c1">re</a>) / cosh(z.<a class="code" href="structcomplex.html#a7444343ae7b282212ee23c1640c77001">im</a>));
-<a name="l00297"></a>00297   <span class="keywordtype">float</span> il = <a class="code" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24">isometric_latitude_fast_f</a>(phi_);
-<a name="l00298"></a>00298   lla-&gt;<a class="code" href="structLlaCoor__f.html#ace542562586741aeb022a5a57c30dea5" title="in radians">lat</a> = <a class="code" href="pprz__geodetic__float_8c.html#a28b6e05c87f50f1e5290e36407095fb6">inverse_isometric_latitude_f</a>(il, <a class="code" href="pprz__geodetic__utm_8h.html#a07484107e6d9fdf38b53edf631d6511d">E</a>, 1e-8);
-<a name="l00299"></a>00299 
-<a name="l00300"></a>00300   <span class="comment">// copy alt above reference ellipsoid</span>
-<a name="l00301"></a>00301   lla-&gt;<a class="code" href="structLlaCoor__f.html#a03499a16d55f4a55a7c1d5fe7c86ff7b" title="in meters above WGS84 reference ellipsoid">alt</a> = utm-&gt;<a class="code" href="structUtmCoor__f.html#a32317742e37027cb6a438fe1486bb85c" title="in meters above WGS84 reference ellipsoid">alt</a>;
-<a name="l00302"></a>00302 }
+<a name="l00277"></a>00277 
+<a name="l00278"></a>00278   <span class="comment">// copy alt above reference ellipsoid</span>
+<a name="l00279"></a>00279   utm-&gt;<a class="code" href="structUtmCoor__f.html#a32317742e37027cb6a438fe1486bb85c" title="in meters above WGS84 reference ellipsoid">alt</a> = lla-&gt;<a class="code" href="structLlaCoor__f.html#a03499a16d55f4a55a7c1d5fe7c86ff7b" title="in meters above WGS84 reference ellipsoid">alt</a>;
+<a name="l00280"></a>00280 }
+<a name="l00281"></a>00281 
+<a name="l00282"></a><a class="code" href="pprz__geodetic__float_8h.html#a30c2e47ec9a898079c04e8b08496b455">00282</a> <span class="keywordtype">void</span> <a class="code" href="pprz__geodetic__float_8c.html#a30c2e47ec9a898079c04e8b08496b455">lla_of_utm_f</a>(<span class="keyword">struct</span> <a class="code" href="structLlaCoor__f.html" title="vector in Latitude, Longitude and Altitude">LlaCoor_f</a>* lla, <span class="keyword">struct</span> <a class="code" href="structUtmCoor__f.html" title="position in UTM coordinates Units: meters">UtmCoor_f</a>* utm) {
+<a name="l00283"></a>00283   <span class="keywordtype">float</span> scale = 1 / <a class="code" href="pprz__geodetic__utm_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a> / <a class="code" href="pprz__geodetic__utm_8h.html#a3a2a981fbf6e71561e56716c8ea956a0">serie_coeff_proj_mercator</a>[0];
+<a name="l00284"></a>00284   <span class="keywordtype">float</span> real = (utm-&gt;<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a> - <a class="code" href="pprz__geodetic__utm_8h.html#a9712f5643bfd305111af1446550d42e1">DELTA_NORTH</a>) * scale;
+<a name="l00285"></a>00285   <span class="keywordtype">float</span> img = (utm-&gt;<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a> - <a class="code" href="pprz__geodetic__utm_8h.html#a84f493cc544c5ccd1fd9be8653e4f974">DELTA_EAST</a>) * scale;
+<a name="l00286"></a>00286   <span class="keyword">struct </span><a class="code" href="structcomplex.html">complex</a> z = { real, img };
+<a name="l00287"></a>00287 
+<a name="l00288"></a>00288   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> k;
+<a name="l00289"></a>00289   <span class="keywordflow">for</span>(k = 1; k &lt; 2; k++) {
+<a name="l00290"></a>00290     <span class="keyword">struct </span><a class="code" href="structcomplex.html">complex</a> z_ = { real, img };
+<a name="l00291"></a>00291     <a class="code" href="pprz__geodetic__float_8c.html#a7fc38202ab595eb271ef2d2668600cff">CScal</a>(2*k, z_);
+<a name="l00292"></a>00292     <a class="code" href="pprz__geodetic__float_8c.html#a330f98f36f01fcc4335a22211f92c5c0">CSin</a>(z_);
+<a name="l00293"></a>00293     <a class="code" href="pprz__geodetic__float_8c.html#a7fc38202ab595eb271ef2d2668600cff">CScal</a>(<a class="code" href="pprz__geodetic__utm_8h.html#a653990708c0a66a7609ee1d8da41879b">serie_coeff_proj_mercator_inverse</a>[k], z_);
+<a name="l00294"></a>00294     <a class="code" href="pprz__geodetic__float_8c.html#ac3262d0748dfb944710824969031cfdc">CSub</a>(z_, z);
+<a name="l00295"></a>00295   }
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297   <span class="keywordtype">float</span> lambda_c = <a class="code" href="pprz__geodetic__utm_8h.html#a9f746e2071fa15c7848f25af2aadb7ff">LambdaOfUtmZone</a>(utm-&gt;<a class="code" href="structUtmCoor__f.html#a86adc8b9ebb389f4716c6c569a0b5d91" title="UTM zone number.">zone</a>);
+<a name="l00298"></a>00298   lla-&gt;<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a> = lambda_c + atan (sinh(z.<a class="code" href="structcomplex.html#a7444343ae7b282212ee23c1640c77001">im</a>) / cos(z.<a class="code" href="structcomplex.html#a77a6e028ddaf37c540fe22dad47f61c1">re</a>));
+<a name="l00299"></a>00299   <span class="keywordtype">float</span> phi_ = asin (sin(z.<a class="code" href="structcomplex.html#a77a6e028ddaf37c540fe22dad47f61c1">re</a>) / cosh(z.<a class="code" href="structcomplex.html#a7444343ae7b282212ee23c1640c77001">im</a>));
+<a name="l00300"></a>00300   <span class="keywordtype">float</span> il = <a class="code" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24">isometric_latitude_fast_f</a>(phi_);
+<a name="l00301"></a>00301   lla-&gt;<a class="code" href="structLlaCoor__f.html#ace542562586741aeb022a5a57c30dea5" title="in radians">lat</a> = <a class="code" href="pprz__geodetic__float_8c.html#a28b6e05c87f50f1e5290e36407095fb6">inverse_isometric_latitude_f</a>(il, <a class="code" href="pprz__geodetic__utm_8h.html#a07484107e6d9fdf38b53edf631d6511d">E</a>, 1e-8);
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303   <span class="comment">// copy alt above reference ellipsoid</span>
+<a name="l00304"></a>00304   lla-&gt;<a class="code" href="structLlaCoor__f.html#a03499a16d55f4a55a7c1d5fe7c86ff7b" title="in meters above WGS84 reference ellipsoid">alt</a> = utm-&gt;<a class="code" href="structUtmCoor__f.html#a32317742e37027cb6a438fe1486bb85c" title="in meters above WGS84 reference ellipsoid">alt</a>;
+<a name="l00305"></a>00305 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -424,7 +427,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="pprz__geodetic__float_8c.html">pprz_geodetic_float.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

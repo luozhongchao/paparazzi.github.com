@@ -5,6 +5,5 @@ var umarim_2baro__board_8h =
     [ "BaroAbs", "umarim_2baro__board_8h.html#a6524e798386597091d0d5ff3b8be2b06", null ],
     [ "BaroDiff", "umarim_2baro__board_8h.html#aa2ab4487e5c128edca213f27aec03152", null ],
     [ "BaroEvent", "umarim_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576", null ],
-    [ "DIFF_FILTER_GAIN", "umarim_2baro__board_8h.html#af87f31d6d1cfe37d0f06eeb5c6a75371", null ],
-    [ "baro_downlink_raw", "umarim_2baro__board_8h.html#a9147aedfcbecdf462161adb395fb4a97", null ]
+    [ "DIFF_FILTER_GAIN", "umarim_2baro__board_8h.html#af87f31d6d1cfe37d0f06eeb5c6a75371", null ]
 ];

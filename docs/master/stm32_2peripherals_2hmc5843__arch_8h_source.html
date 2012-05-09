@@ -128,12 +128,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 <span class="preprocessor">#ifndef HMC5843_ARCH_H</span>
 <a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define HMC5843_ARCH_H</span>
 <a name="l00026"></a>00026 <span class="preprocessor"></span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="stm32_2gpio_8h.html">stm32/gpio.h</a>&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;libopencm3/stm32/f1/gpio.h&gt;</span>
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 <span class="comment">/* returns true if conversion done */</span>
 <a name="l00030"></a><a class="code" href="stm32_2peripherals_2hmc5843__arch_8h.html#acd369327ebe1b867cebf4b3dc17bd37d">00030</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="stm32_2peripherals_2hmc5843__arch_8h.html#acd369327ebe1b867cebf4b3dc17bd37d">mag_eoc</a>(<span class="keywordtype">void</span>)
 <a name="l00031"></a>00031 {
-<a name="l00032"></a>00032   <span class="keywordflow">return</span> GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_5);
+<a name="l00032"></a>00032   <span class="keywordflow">return</span> (gpio_get(GPIOB, GPIO5) != 0);
 <a name="l00033"></a>00033 }
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 <span class="preprocessor">#endif </span><span class="comment">/* HMC5843_ARCH_H */</span>
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2peripherals_2hmc5843__arch_8h.html">hmc5843_arch.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

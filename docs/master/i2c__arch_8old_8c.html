@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: sw/airborne/arch/stm32/mcu_periph/i2c_arch.old.c File Reference</title>
+<title>Paparazzi UAS: sw/airborne/arch/stm32/mcu_periph/obsolete/i2c_arch.old.c File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -115,8 +115,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="i2c__arch_8old_8c__incl.png" border="0" usemap="#sw_2airborne_2arch_2stm32_2mcu__periph_2i2c__arch_8old_8c" alt=""/></div>
-<map name="sw_2airborne_2arch_2stm32_2mcu__periph_2i2c__arch_8old_8c" id="sw_2airborne_2arch_2stm32_2mcu__periph_2i2c__arch_8old_8c">
+<div class="center"><img src="i2c__arch_8old_8c__incl.png" border="0" usemap="#sw_2airborne_2arch_2stm32_2mcu__periph_2obsolete_2i2c__arch_8old_8c" alt=""/></div>
+<map name="sw_2airborne_2arch_2stm32_2mcu__periph_2obsolete_2i2c__arch_8old_8c" id="sw_2airborne_2arch_2stm32_2mcu__periph_2obsolete_2i2c__arch_8old_8c">
 <area shape="rect" id="node3" href="i2c_8h.html" title="mcu_periph/i2c.h" alt="" coords="100,83,231,112"/><area shape="rect" id="node13" href="stm32_2gpio_8h.html" title="stm32/gpio.h" alt="" coords="377,83,484,112"/></map>
 </div>
 </div>
@@ -125,8 +125,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c__arch_8old_8c.html#ad7e560082ad99fc26904882405b26377">I2C_BUSY</a>&#160;&#160;&#160;0x20</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c__arch_8old_8c.html#a2e2db234d7e56b2b6133133807482e24">SPURIOUS_INTERRUPT</a>(_status, _event)&#160;&#160;&#160;{}</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c__arch_8old_8c.html#a81e271a1ba6d9c375769d4bd70ea180d">OUT_OF_SYNC_STATE_MACHINE</a>(_status, _event)&#160;&#160;&#160;{}</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c__arch_8old_8c.html#ab81219b1393fe184d5856db1a6eabf73">SPURIOUS_INTERRUPT</a>(_periph, _status, _event)&#160;&#160;&#160;{ if (_status == <a class="el" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9542ce7c59570cc67e2fc300e04a44c9">I2CAddrWrSent</a>) <a class="el" href="i2c__arch_8very__old_8c.html#ab49d2f1568c99f4568303c0cb6b1565c">abort_and_reset</a>(_periph);}</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c__arch_8old_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1">OUT_OF_SYNC_STATE_MACHINE</a>(_periph, _status, _event)&#160;&#160;&#160;{ <a class="el" href="i2c__arch_8very__old_8c.html#ab49d2f1568c99f4568303c0cb6b1565c">abort_and_reset</a>(_periph);}</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c__arch_8old_8c.html#abd8c86aaaefc9c14ee42387064ecd5bb">start_transaction</a> (struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *p)</td></tr>
@@ -145,7 +145,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="i2c__arch_8old_8c.html#ad7e560082ad99fc26904882405b26377">I2C_BUSY</a>&#160;&#160;&#160;0x20</td>
+          <td class="memname">#define <a class="el" href="i2c__arch_8very__old_8c.html#ad7e560082ad99fc26904882405b26377">I2C_BUSY</a>&#160;&#160;&#160;0x20</td>
         </tr>
       </table>
 </div>
@@ -155,13 +155,19 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a81e271a1ba6d9c375769d4bd70ea180d"></a><!-- doxytag: member="i2c_arch.old.c::OUT_OF_SYNC_STATE_MACHINE" ref="a81e271a1ba6d9c375769d4bd70ea180d" args="(_status, _event)" -->
+<a class="anchor" id="a6a26bdf79ff9e0323b4d67d2d1bfceb1"></a><!-- doxytag: member="i2c_arch.old.c::OUT_OF_SYNC_STATE_MACHINE" ref="a6a26bdf79ff9e0323b4d67d2d1bfceb1" args="(_periph, _status, _event)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="i2c__arch_8old_8c.html#a81e271a1ba6d9c375769d4bd70ea180d">OUT_OF_SYNC_STATE_MACHINE</a></td>
+          <td class="memname">#define <a class="el" href="i2c__attempt1_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1">OUT_OF_SYNC_STATE_MACHINE</a></td>
           <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_periph, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">_status, </td>
         </tr>
@@ -174,7 +180,42 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;{}</td>
+          <td></td><td>&#160;&#160;&#160;{ <a class="el" href="i2c__arch_8very__old_8c.html#ab49d2f1568c99f4568303c0cb6b1565c">abort_and_reset</a>(_periph);}</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00022">22</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab81219b1393fe184d5856db1a6eabf73"></a><!-- doxytag: member="i2c_arch.old.c::SPURIOUS_INTERRUPT" ref="ab81219b1393fe184d5856db1a6eabf73" args="(_periph, _status, _event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="i2c__attempt1_8c.html#ab81219b1393fe184d5856db1a6eabf73">SPURIOUS_INTERRUPT</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_periph, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_status, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_event&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ if (_status == <a class="el" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9542ce7c59570cc67e2fc300e04a44c9">I2CAddrWrSent</a>) <a class="el" href="i2c__arch_8very__old_8c.html#ab49d2f1568c99f4568303c0cb6b1565c">abort_and_reset</a>(_periph);}</td>
         </tr>
       </table>
 </div>
@@ -184,42 +225,13 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2e2db234d7e56b2b6133133807482e24"></a><!-- doxytag: member="i2c_arch.old.c::SPURIOUS_INTERRUPT" ref="a2e2db234d7e56b2b6133133807482e24" args="(_status, _event)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="i2c__arch_8old_8c.html#a2e2db234d7e56b2b6133133807482e24">SPURIOUS_INTERRUPT</a></td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_status, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_event&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;{}</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00020">20</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
-
-</div>
-</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ab49d2f1568c99f4568303c0cb6b1565c"></a><!-- doxytag: member="i2c_arch.old.c::abort_and_reset" ref="ab49d2f1568c99f4568303c0cb6b1565c" args="(struct i2c_periph *p)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="i2c__arch_8old_8c.html#ab49d2f1568c99f4568303c0cb6b1565c">abort_and_reset</a> </td>
+          <td class="memname">static void <a class="el" href="i2c__arch_8very__old_8c.html#ab49d2f1568c99f4568303c0cb6b1565c">abort_and_reset</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
@@ -229,9 +241,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00069">69</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
+<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00070">70</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
 
-<p>References <a class="el" href="i2c__arch_8old_8c_source.html#l00056">end_of_transaction()</a>, <a class="el" href="i2c__arch_8old_8c.html#a630280dc71eab6f3f8fa80ebd9bbbe40">i2c_hard_reset()</a>, <a class="el" href="i2c_8h_source.html#l00018">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00062">i2c_periph::reg_addr</a>, <a class="el" href="i2c_8h_source.html#l00047">i2c_transaction::status</a>, <a class="el" href="i2c_8h_source.html#l00056">i2c_periph::trans</a>, and <a class="el" href="i2c_8h_source.html#l00058">i2c_periph::trans_extract_idx</a>.</p>
+<p>References <a class="el" href="i2c__arch_8old_8c_source.html#l00057">end_of_transaction()</a>, <a class="el" href="i2c__arch_8old_8c.html#a630280dc71eab6f3f8fa80ebd9bbbe40">i2c_hard_reset()</a>, <a class="el" href="i2c_8h_source.html#l00018">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00062">i2c_periph::reg_addr</a>, <a class="el" href="i2c_8h_source.html#l00047">i2c_transaction::status</a>, <a class="el" href="i2c_8h_source.html#l00056">i2c_periph::trans</a>, and <a class="el" href="i2c_8h_source.html#l00058">i2c_periph::trans_extract_idx</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -251,7 +263,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="i2c__arch_8old_8c.html#aae9278b2c7ed90ab2e497ec1317e348f">end_of_transaction</a> </td>
+          <td class="memname">static void <a class="el" href="i2c__arch_8very__old_8c.html#aae9278b2c7ed90ab2e497ec1317e348f">end_of_transaction</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
@@ -261,11 +273,11 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00056">56</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
+<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00057">57</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00051">I2C_TRANSACTION_QUEUE_LEN</a>, <a class="el" href="i2c_8h_source.html#l00023">I2CIdle</a>, <a class="el" href="i2c__arch_8old_8c_source.html#l00724">start_transaction()</a>, <a class="el" href="i2c_8h_source.html#l00060">i2c_periph::status</a>, <a class="el" href="i2c_8h_source.html#l00058">i2c_periph::trans_extract_idx</a>, and <a class="el" href="i2c_8h_source.html#l00057">i2c_periph::trans_insert_idx</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00051">I2C_TRANSACTION_QUEUE_LEN</a>, <a class="el" href="i2c_8h_source.html#l00023">I2CIdle</a>, <a class="el" href="i2c__arch_8old_8c_source.html#l00611">start_transaction()</a>, <a class="el" href="i2c_8h_source.html#l00060">i2c_periph::status</a>, <a class="el" href="i2c_8h_source.html#l00058">i2c_periph::trans_extract_idx</a>, and <a class="el" href="i2c_8h_source.html#l00057">i2c_periph::trans_insert_idx</a>.</p>
 
-<p>Referenced by <a class="el" href="i2c__arch_8old_8c_source.html#l00069">abort_and_reset()</a>.</p>
+<p>Referenced by <a class="el" href="i2c__arch_8old_8c_source.html#l00070">abort_and_reset()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -296,7 +308,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="i2c__arch_8old_8c.html#ac5ee6c8f53bfc4dc0e3663771e5b53d2">i2c_apply_config</a> </td>
+          <td class="memname">static void <a class="el" href="i2c__arch_8very__old_8c.html#ac5ee6c8f53bfc4dc0e3663771e5b53d2">i2c_apply_config</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
@@ -306,7 +318,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00051">51</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
+<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00052">52</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
 
 <p>References <a class="el" href="i2c_8h_source.html#l00063">i2c_periph::init_struct</a>, and <a class="el" href="i2c_8h_source.html#l00062">i2c_periph::reg_addr</a>.</p>
 
@@ -317,7 +329,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="i2c__arch_8old_8c.html#a08967c9db96aa56272046212a73938f3">i2c_delay</a> </td>
+          <td class="memname">static void <a class="el" href="i2c__arch_8very__old_8c.html#a08967c9db96aa56272046212a73938f3">i2c_delay</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -327,7 +339,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00046">46</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
+<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00047">47</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
 
 </div>
 </div>
@@ -336,7 +348,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="i2c__arch_8old_8c.html#a630280dc71eab6f3f8fa80ebd9bbbe40">i2c_hard_reset</a> </td>
+          <td class="memname">static void <a class="el" href="i2c__arch_8very__old_8c.html#a630280dc71eab6f3f8fa80ebd9bbbe40">i2c_hard_reset</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
@@ -346,7 +358,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="i2c__arch_8old_8c_source.html#l00069">abort_and_reset()</a>.</p>
+<p>Referenced by <a class="el" href="i2c__arch_8old_8c_source.html#l00070">abort_and_reset()</a>.</p>
 
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -376,9 +388,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00693">693</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
+<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00580">580</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00023">I2CIdle</a>, <a class="el" href="i2c_8h_source.html#l00062">i2c_periph::reg_addr</a>, and <a class="el" href="i2c_8h_source.html#l00060">i2c_periph::status</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00062">i2c_periph::reg_addr</a>.</p>
 
 </div>
 </div>
@@ -387,7 +399,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="i2c__arch_8old_8c.html#a1cd0e133116ad27682527799d671b229">i2c_reset_init</a> </td>
+          <td class="memname">static void <a class="el" href="i2c__arch_8very__old_8c.html#a1cd0e133116ad27682527799d671b229">i2c_reset_init</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
@@ -424,9 +436,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00698">698</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
+<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00585">585</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00051">I2C_TRANSACTION_QUEUE_LEN</a>, <a class="el" href="i2c_8h_source.html#l00023">I2CIdle</a>, <a class="el" href="sim_2mcu__periph_2i2c__arch_8h_source.html#l00004">I2cSendStart</a>, <a class="el" href="i2c_8h_source.html#l00018">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00015">I2CTransPending</a>, <a class="el" href="lpc21_2interrupt__hw_8h_source.html#l00032">int_disable</a>, <a class="el" href="lpc21_2interrupt__hw_8h_source.html#l00031">int_enable</a>, <a class="el" href="i2c__arch_8old_8c_source.html#l00724">start_transaction()</a>, <a class="el" href="i2c_8h_source.html#l00047">i2c_transaction::status</a>, <a class="el" href="i2c_8h_source.html#l00060">i2c_periph::status</a>, <a class="el" href="i2c_8h_source.html#l00056">i2c_periph::trans</a>, <a class="el" href="i2c_8h_source.html#l00058">i2c_periph::trans_extract_idx</a>, and <a class="el" href="i2c_8h_source.html#l00057">i2c_periph::trans_insert_idx</a>.</p>
+<p>References <a class="el" href="stm32_2mcu__periph_2i2c__arch_8c_source.html#l00167">__disable_irq()</a>, <a class="el" href="stm32_2mcu__periph_2i2c__arch_8c_source.html#l00168">__enable_irq()</a>, <a class="el" href="i2c_8h_source.html#l00051">I2C_TRANSACTION_QUEUE_LEN</a>, <a class="el" href="i2c_8h_source.html#l00023">I2CIdle</a>, <a class="el" href="i2c_8h_source.html#l00015">I2CTransPending</a>, <a class="el" href="i2c__arch_8old_8c_source.html#l00611">start_transaction()</a>, <a class="el" href="i2c_8h_source.html#l00047">i2c_transaction::status</a>, <a class="el" href="i2c_8h_source.html#l00060">i2c_periph::status</a>, <a class="el" href="i2c_8h_source.html#l00056">i2c_periph::trans</a>, <a class="el" href="i2c_8h_source.html#l00058">i2c_periph::trans_extract_idx</a>, and <a class="el" href="i2c_8h_source.html#l00057">i2c_periph::trans_insert_idx</a>.</p>
 
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -435,7 +447,7 @@ Functions</h2></td></tr>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="i2c__arch_8old_8c_a4c9979d0fb22ed964efa6a006ce8dbfa_cgraph.png" border="0" usemap="#i2c__arch_8old_8c_a4c9979d0fb22ed964efa6a006ce8dbfa_cgraph" alt=""/></div>
 <map name="i2c__arch_8old_8c_a4c9979d0fb22ed964efa6a006ce8dbfa_cgraph" id="i2c__arch_8old_8c_a4c9979d0fb22ed964efa6a006ce8dbfa_cgraph">
-<area shape="rect" id="node3" href="i2c__arch_8old_8c.html#abd8c86aaaefc9c14ee42387064ecd5bb" title="start_transaction" alt="" coords="144,5,275,35"/></map>
+<area shape="rect" id="node3" href="stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012" title="__disable_irq" alt="" coords="157,5,261,35"/><area shape="rect" id="node5" href="stm32_2mcu__periph_2i2c__arch_8c.html#a5e587d51e0e0c291bb20ef0f9b5e8e76" title="__enable_irq" alt="" coords="159,59,260,88"/><area shape="rect" id="node7" href="i2c__arch_8old_8c.html#abd8c86aaaefc9c14ee42387064ecd5bb" title="start_transaction" alt="" coords="144,112,275,141"/></map>
 </div>
 </p>
 
@@ -446,7 +458,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="i2c__arch_8old_8c.html#abd8c86aaaefc9c14ee42387064ecd5bb">start_transaction</a> </td>
+          <td class="memname">static void <a class="el" href="i2c__arch_8very__old_8c.html#abd8c86aaaefc9c14ee42387064ecd5bb">start_transaction</a> </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
@@ -456,11 +468,11 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00724">724</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
+<p>Definition at line <a class="el" href="i2c__arch_8old_8c_source.html#l00611">611</a> of file <a class="el" href="i2c__arch_8old_8c_source.html">i2c_arch.old.c</a>.</p>
 
 <p>References <a class="el" href="i2c_8h_source.html#l00024">I2CStartRequested</a>, <a class="el" href="i2c_8h_source.html#l00061">i2c_periph::idx_buf</a>, <a class="el" href="i2c_8h_source.html#l00062">i2c_periph::reg_addr</a>, and <a class="el" href="i2c_8h_source.html#l00060">i2c_periph::status</a>.</p>
 
-<p>Referenced by <a class="el" href="i2c__arch_8old_8c_source.html#l00056">end_of_transaction()</a>, and <a class="el" href="i2c__arch_8old_8c_source.html#l00698">i2c_submit()</a>.</p>
+<p>Referenced by <a class="el" href="i2c__arch_8old_8c_source.html#l00057">end_of_transaction()</a>, and <a class="el" href="i2c__arch_8old_8c_source.html#l00585">i2c_submit()</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -495,7 +507,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="i2c__arch_8old_8c.html">i2c_arch.old.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

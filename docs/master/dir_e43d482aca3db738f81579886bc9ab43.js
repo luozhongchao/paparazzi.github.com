@@ -1,6 +1,7 @@
 var dir_e43d482aca3db738f81579886bc9ab43 =
 [
     [ "ahrs", "dir_d8ba4bba747add7eef0fe3d4f8617cf6.html", null ],
+    [ "datalink", "dir_5e0d7f624e1566f321f72933cd1330c0.html", null ],
     [ "gps", "dir_84b2a6b5c1f9f2e097a543aec0656e60.html", null ],
     [ "imu", "dir_6a401e509c901bc1a05fbf648ed42599.html", null ],
     [ "ins", "dir_c0957728c2403ad7ee227acce4e3bcf5.html", null ],

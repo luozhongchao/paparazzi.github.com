@@ -158,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00054"></a>00054 <span class="comment">/* reverse some channels to suit Paparazzi conventions          */</span>
 <a name="l00055"></a>00055 <span class="comment">/* the maximum number of channels a Spektrum can transmit is 12 */</span>
 <a name="l00056"></a>00056 <span class="preprocessor">#ifndef RADIO_CONTROL_SPEKTRUM_SIGNS</span>
-<a name="l00057"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a61744d020c5c398d66a619dc22b1900c">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define RADIO_CONTROL_SPEKTRUM_SIGNS {1,1,-1,1,1,-1,1,1,1,1,1,1}</span>
+<a name="l00057"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a61744d020c5c398d66a619dc22b1900c">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define RADIO_CONTROL_SPEKTRUM_SIGNS {1,-1,-1,-1,1,-1,1,1,1,1,1,1}</span>
 <a name="l00058"></a>00058 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00059"></a>00059 <span class="preprocessor"></span>
 <a name="l00060"></a>00060 <span class="comment">/* really for a 9 channel transmitter</span>
@@ -169,7 +169,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00065"></a>00065 <span class="preprocessor"></span>
 <a name="l00066"></a>00066 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#aafc7faaab3785de71d5f220c1b4caed7">RadioControlEventImp</a>(<span class="keywordtype">void</span> (*_received_frame_handler)(<span class="keywordtype">void</span>));
 <a name="l00067"></a>00067 
-<a name="l00068"></a>00068 <span class="preprocessor">#endif </span><span class="comment">/* RADIO_CONTROL_SPEKTRUM_ARCH_H */</span>
+<a name="l00068"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a66e772ad0cb7b97b50b18bcb94d76d2d">00068</a> <span class="preprocessor">#define UART1_RCC_GPIO RCC_APB2ENR_IOPAEN</span>
+<a name="l00069"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#adc3a0543d94e87216fc8a9f09f91e48b">00069</a> <span class="preprocessor"></span><span class="preprocessor">#define UART1_RCC_REG &amp;RCC_APB2ENR</span>
+<a name="l00070"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a68e2b077f64411b16ce5c5bd3ec3c7c4">00070</a> <span class="preprocessor"></span><span class="preprocessor">#define UART1_RCC_DEV RCC_APB2ENR_USART1EN</span>
+<a name="l00071"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#aeea07aecf5f03b280a0c24bd15e845ea">00071</a> <span class="preprocessor"></span><span class="preprocessor">#define UART1_BANK GPIO_BANK_USART1_RX</span>
+<a name="l00072"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e05829af76f86769c2cdd90ec939424">00072</a> <span class="preprocessor"></span><span class="preprocessor">#define UART1_PIN GPIO_USART1_RX</span>
+<a name="l00073"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#aa4f6dde1bf4883afaee26ecbe10b026e">00073</a> <span class="preprocessor"></span><span class="preprocessor">#define UART1_IRQ NVIC_USART1_IRQ</span>
+<a name="l00074"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a2d576ed7ff4adbf3b098a46a16069c5a">00074</a> <span class="preprocessor"></span><span class="preprocessor">#define UART1_ISR usart1_isr</span>
+<a name="l00075"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8500674e433093202b888c0613c07501">00075</a> <span class="preprocessor"></span><span class="preprocessor">#define UART1_DEV USART1</span>
+<a name="l00076"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8f46c315890a555264fec699511d04e9">00076</a> <span class="preprocessor"></span><span class="preprocessor">#define UART1_REMAP {}</span>
+<a name="l00077"></a>00077 <span class="preprocessor"></span>
+<a name="l00078"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ac60edc954e68ca40520d50633a3db0e9">00078</a> <span class="preprocessor">#define UART3_RCC_GPIO RCC_APB2ENR_IOPCEN</span>
+<a name="l00079"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a2a56c95a6a15bf4a50024b167c265f54">00079</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_RCC_REG &amp;RCC_APB1ENR</span>
+<a name="l00080"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a6fb503044f107ebd7b3e1c4edb565e76">00080</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_RCC_DEV RCC_APB1ENR_USART3EN</span>
+<a name="l00081"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#aecbcab65b8654b3a63243ff16d38c619">00081</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_BANK GPIO_BANK_USART3_PR_RX</span>
+<a name="l00082"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ac7e0bc6bd86a91b05b74697ff92b43a6">00082</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_PIN GPIO_USART3_PR_RX</span>
+<a name="l00083"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a5d34c6079e15187320a4c1e3d6772ccd">00083</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_IRQ NVIC_USART3_IRQ</span>
+<a name="l00084"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a91fd09f4aa3486366282df1769dd4703">00084</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_ISR usart3_isr</span>
+<a name="l00085"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a512b369e8d1cc7a1140a41593c21a9e9">00085</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_DEV USART3</span>
+<a name="l00086"></a><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a344b48e19c85e80f9d0173befc1b4e31">00086</a> <span class="preprocessor"></span><span class="preprocessor">#define UART3_REMAP {AFIO_MAPR |= AFIO_MAPR_USART3_REMAP_PARTIAL_REMAP;}</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span>
+<a name="l00088"></a>00088 <span class="preprocessor">#endif </span><span class="comment">/* RADIO_CONTROL_SPEKTRUM_ARCH_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -190,7 +210,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html">spektrum_arch.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:10 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:05 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

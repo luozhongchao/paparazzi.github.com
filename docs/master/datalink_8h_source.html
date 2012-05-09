@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: sw/airborne/datalink.h Source File</title>
+<title>Paparazzi UAS: sw/airborne/subsystems/datalink/datalink.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -146,53 +146,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00048"></a><a class="code" href="datalink_8h.html#ad52033a112b1b7cac721f1f2313ac4d9">00048</a> <span class="preprocessor">#define PPRZ 1</span>
 <a name="l00049"></a><a class="code" href="datalink_8h.html#a14aec3db1cd23e300c83cd79bdb2120c">00049</a> <span class="preprocessor"></span><span class="preprocessor">#define XBEE 2</span>
 <a name="l00050"></a>00050 <span class="preprocessor"></span>
-<a name="l00051"></a><a class="code" href="datalink_8h.html#a6d1aa46a515e17fda85b489f96d0a3d9">00051</a> <a class="code" href="datalink_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> bool_t <a class="code" href="datalink_8h.html#a6d1aa46a515e17fda85b489f96d0a3d9">dl_msg_available</a>;
+<a name="l00051"></a><a class="code" href="datalink_8h.html#a6d1aa46a515e17fda85b489f96d0a3d9">00051</a> <a class="code" href="datalink_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> bool_t <a class="code" href="main__demo5_8c.html#a5da8932586e81510ec4b202a0d0abacd">dl_msg_available</a>;
 <a name="l00054"></a><a class="code" href="datalink_8h.html#a197f78c6ad3446b914ca1fe3ad08ff83">00054</a> <a class="code" href="datalink_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="sim__ap_8c.html#a554cac6546bc91d21ff99268001d4010">datalink_time</a>;
 <a name="l00055"></a>00055 
 <a name="l00056"></a><a class="code" href="datalink_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">00056</a> <span class="preprocessor">#define MSG_SIZE 128</span>
 <a name="l00057"></a>00057 <span class="preprocessor"></span><a class="code" href="datalink_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> dl_buffer[<a class="code" href="datalink_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>]  <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((aligned));
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <a class="code" href="datalink_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> <span class="keywordtype">void</span> <a class="code" href="datalink_8h.html#ad3bda4915c69f8c470d2bdba039e8ca8">dl_parse_msg</a>(<span class="keywordtype">void</span>);
-<a name="l00062"></a>00062 <span class="preprocessor">#if DATALINK == PPRZ</span>
-<a name="l00063"></a>00063 <span class="preprocessor"></span>
-<a name="l00064"></a>00064 <span class="preprocessor">#define DatalinkEvent() {     \</span>
-<a name="l00065"></a>00065 <span class="preprocessor">  if (PprzBuffer()) {       \</span>
-<a name="l00066"></a>00066 <span class="preprocessor">    ReadPprzBuffer();       \</span>
-<a name="l00067"></a>00067 <span class="preprocessor">    if (pprz_msg_received) {      \</span>
-<a name="l00068"></a>00068 <span class="preprocessor">      pprz_parse_payload();     \</span>
-<a name="l00069"></a>00069 <span class="preprocessor">      pprz_msg_received = FALSE;    \</span>
-<a name="l00070"></a>00070 <span class="preprocessor">    }           \</span>
-<a name="l00071"></a>00071 <span class="preprocessor">  }           \</span>
-<a name="l00072"></a>00072 <span class="preprocessor">  if (dl_msg_available) {     \</span>
-<a name="l00073"></a>00073 <span class="preprocessor">    dl_parse_msg();       \</span>
-<a name="l00074"></a>00074 <span class="preprocessor">    dl_msg_available = FALSE;     \</span>
-<a name="l00075"></a>00075 <span class="preprocessor">  }           \</span>
-<a name="l00076"></a>00076 <span class="preprocessor">}</span>
-<a name="l00077"></a>00077 <span class="preprocessor"></span>
-<a name="l00078"></a>00078 <span class="preprocessor">#elif DATALINK == XBEE</span>
-<a name="l00079"></a>00079 <span class="preprocessor"></span>
-<a name="l00080"></a>00080 <span class="preprocessor">#define DatalinkEvent() {     \</span>
-<a name="l00081"></a>00081 <span class="preprocessor">  if (XBeeBuffer()) {       \</span>
-<a name="l00082"></a>00082 <span class="preprocessor">    ReadXBeeBuffer();       \</span>
-<a name="l00083"></a>00083 <span class="preprocessor">    if (xbee_msg_received) {      \</span>
-<a name="l00084"></a>00084 <span class="preprocessor">      xbee_parse_payload();     \</span>
-<a name="l00085"></a>00085 <span class="preprocessor">      xbee_msg_received = FALSE;    \</span>
-<a name="l00086"></a>00086 <span class="preprocessor">    }           \</span>
-<a name="l00087"></a>00087 <span class="preprocessor">  }           \</span>
-<a name="l00088"></a>00088 <span class="preprocessor">  if (dl_msg_available) {     \</span>
-<a name="l00089"></a>00089 <span class="preprocessor">    dl_parse_msg();       \</span>
-<a name="l00090"></a>00090 <span class="preprocessor">    dl_msg_available = FALSE;     \</span>
-<a name="l00091"></a>00091 <span class="preprocessor">  }           \</span>
-<a name="l00092"></a>00092 <span class="preprocessor">}</span>
-<a name="l00093"></a>00093 <span class="preprocessor"></span>
-<a name="l00094"></a>00094 <span class="preprocessor">#else</span>
-<a name="l00095"></a>00095 <span class="preprocessor"></span>
-<a name="l00096"></a>00096 <span class="comment">// Unknown DATALINK</span>
-<a name="l00097"></a><a class="code" href="datalink_8h.html#a1e122bd87bd1f699141735e71a32d002">00097</a> <span class="preprocessor">#define DatalinkEvent() {}</span>
-<a name="l00098"></a>00098 <span class="preprocessor"></span>
-<a name="l00099"></a>00099 <span class="preprocessor">#endif </span><span class="comment">/* DATALINK == */</span>
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 <span class="preprocessor">#endif </span><span class="comment">/* DATALINK_H */</span>
+<a name="l00059"></a>00059 <a class="code" href="datalink_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> <span class="keywordtype">void</span> <a class="code" href="fixedwing_2datalink_8c.html#a87ff8c0ffff657dbde8566f062779428">dl_parse_msg</a>(<span class="keywordtype">void</span>);
+<a name="l00063"></a><a class="code" href="datalink_8h.html#a38586f4e19c5d942d67b34fcfcd83a61">00063</a> <span class="preprocessor">#define DlCheckAndParse() {   \</span>
+<a name="l00064"></a>00064 <span class="preprocessor">  if (dl_msg_available) {     \</span>
+<a name="l00065"></a>00065 <span class="preprocessor">    dl_parse_msg();           \</span>
+<a name="l00066"></a>00066 <span class="preprocessor">    dl_msg_available = FALSE; \</span>
+<a name="l00067"></a>00067 <span class="preprocessor">  }                           \</span>
+<a name="l00068"></a>00068 <span class="preprocessor">}</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span>
+<a name="l00070"></a>00070 <span class="preprocessor">#if DATALINK == PPRZ</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span>
+<a name="l00072"></a>00072 <span class="preprocessor">#define DatalinkEvent() {                 \</span>
+<a name="l00073"></a>00073 <span class="preprocessor">  PprzCheckAndParse(PPRZ_UART, pprz_tp);  \</span>
+<a name="l00074"></a>00074 <span class="preprocessor">  DlCheckAndParse();                      \</span>
+<a name="l00075"></a>00075 <span class="preprocessor">}</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span>
+<a name="l00077"></a>00077 <span class="preprocessor">#elif DATALINK == XBEE</span>
+<a name="l00078"></a>00078 <span class="preprocessor"></span>
+<a name="l00079"></a>00079 <span class="preprocessor">#define DatalinkEvent() {                 \</span>
+<a name="l00080"></a>00080 <span class="preprocessor">  XBeeCheckAndParse(XBEE_UART, xbee_tp);  \</span>
+<a name="l00081"></a>00081 <span class="preprocessor">  DlCheckAndParse();                      \</span>
+<a name="l00082"></a>00082 <span class="preprocessor">}</span>
+<a name="l00083"></a>00083 <span class="preprocessor"></span>
+<a name="l00084"></a>00084 <span class="preprocessor">#else</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span>
+<a name="l00086"></a>00086 <span class="comment">// Unknown DATALINK</span>
+<a name="l00087"></a><a class="code" href="datalink_8h.html#a1e122bd87bd1f699141735e71a32d002">00087</a> <span class="preprocessor">#define DatalinkEvent() {}</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>
+<a name="l00089"></a>00089 <span class="preprocessor">#endif </span><span class="comment">/* DATALINK == */</span>
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 <span class="preprocessor">#endif </span><span class="comment">/* DATALINK_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -213,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="datalink_8h.html">datalink.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

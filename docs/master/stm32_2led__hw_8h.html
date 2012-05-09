@@ -104,8 +104,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">led_hw.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="stm32_2gpio_8h_source.html">stm32/gpio.h</a>&gt;</code><br/>
-<code>#include &lt;stm32/rcc.h&gt;</code><br/>
+<div class="textblock"><code>#include &lt;libopencm3/stm32/f1/gpio.h&gt;</code><br/>
+<code>#include &lt;libopencm3/stm32/f1/rcc.h&gt;</code><br/>
 <code>#include &quot;std.h&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for led_hw.h:</div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="stm32_2led__hw_8h__incl.png" border="0" usemap="#sw_2airborne_2arch_2stm32_2led__hw_8h" alt=""/></div>
 <map name="sw_2airborne_2arch_2stm32_2led__hw_8h" id="sw_2airborne_2arch_2stm32_2led__hw_8h">
-<area shape="rect" id="node3" href="stm32_2gpio_8h.html" title="stm32/gpio.h" alt="" coords="5,83,112,112"/></map>
+</map>
 </div>
 </div>
 <p><a href="stm32_2led__hw_8h_source.html">Go to the source code of this file.</a></p>
@@ -130,9 +130,9 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i)&#160;&#160;&#160;<a class="el" href="stm32_2led__hw_8h.html#a250609302c796fc6adc27af47dac4519">_LED_GPIO_PIN</a>(LED_ ## i ## _GPIO_PIN)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#a81e459105e8418270a7bdff11dd6bc2f">LED_AFIO_REMAP</a>(i)&#160;&#160;&#160;<a class="el" href="stm32_2led__hw_8h.html#a6549a6670754042a76e20e429d328134">_LED_AFIO_REMAP</a>(LED_ ## i ## _AFIO_REMAP)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b">LED_INIT</a>(i)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(i)&#160;&#160;&#160;{<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)-&gt;BSRR = <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(i)&#160;&#160;&#160;{ <a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)-&gt;BRR  = <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(i)&#160;&#160;&#160;{	<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)-&gt;ODR ^= <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(i)&#160;&#160;&#160;{ GPIO_BRR(<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)) = <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(i)&#160;&#160;&#160;{ GPIO_BSRR(<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)) = <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(i)&#160;&#160;&#160;{	GPIO_ODR(<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)) ^= <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>()&#160;&#160;&#160;{}</td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
@@ -293,7 +293,7 @@ Defines</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="stm32_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b">LED_INIT</a></td>
+          <td class="memname">#define <a class="el" href="i2c__attempt4__nodouble__isr_8c.html#a9b6469497fa6627a29285492e557d8f8">LED_INIT</a></td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">i</td><td>)</td>
@@ -302,14 +302,14 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">{         \
-    GPIO_InitTypeDef GPIO_InitStructure;    \
-    RCC_APB2PeriphClockCmd(<a class="code" href="stm32_2led__hw_8h.html#a6f8c83150da602f44a4d4d317910af57">LED_GPIO_CLK</a>(i), ENABLE);  \
-    GPIO_InitStructure.GPIO_Pin = <a class="code" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);  \
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;  \
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; \
-    GPIO_Init(<a class="code" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i), &amp;GPIO_InitStructure);  \
-    LED_AFIO_REMAP(i);          \
+<b>Value:</b><div class="fragment"><pre class="fragment">{                               \
+    rcc_peripheral_enable_clock(&amp;RCC_APB2ENR,       \
+                                <a class="code" href="stm32_2led__hw_8h.html#a6f8c83150da602f44a4d4d317910af57">LED_GPIO_CLK</a>(i)); \
+    gpio_set_mode(<a class="code" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i),                      \
+                  GPIO_MODE_OUTPUT_50_MHZ,          \
+                  GPIO_CNF_OUTPUT_PUSHPULL,         \
+                  <a class="code" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i));                 \
+    LED_AFIO_REMAP(i);                              \
   }
 </pre></div>
 <p>Definition at line <a class="el" href="stm32_2led__hw_8h_source.html#l00053">53</a> of file <a class="el" href="stm32_2led__hw_8h_source.html">led_hw.h</a>.</p>
@@ -325,7 +325,7 @@ Defines</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">i</td><td>)</td>
-          <td>&#160;&#160;&#160;{ <a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)-&gt;BRR  = <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td>
+          <td>&#160;&#160;&#160;{ GPIO_BSRR(<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)) = <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td>
         </tr>
       </table>
 </div>
@@ -344,7 +344,7 @@ Defines</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">i</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)-&gt;BSRR = <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td>
+          <td>&#160;&#160;&#160;{ GPIO_BRR(<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)) = <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td>
         </tr>
       </table>
 </div>
@@ -381,7 +381,7 @@ Defines</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">i</td><td>)</td>
-          <td>&#160;&#160;&#160;{	<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)-&gt;ODR ^= <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td>
+          <td>&#160;&#160;&#160;{	GPIO_ODR(<a class="el" href="stm32_2led__hw_8h.html#aa9479a9a1c2367d23cb3df268c826148">LED_GPIO</a>(i)) ^= <a class="el" href="stm32_2led__hw_8h.html#a4d7921db6e6c86209040251b71b25f84">LED_GPIO_PIN</a>(i);}</td>
         </tr>
       </table>
 </div>
@@ -411,7 +411,7 @@ Defines</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="stm32_2led__hw_8h.html">led_hw.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

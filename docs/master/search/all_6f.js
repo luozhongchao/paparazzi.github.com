@@ -3,8 +3,8 @@ var searchData=
   ['oc1',['OC1',['../nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcfa5f636214b976745986c087710a2dde17',1,'nav.h']]],
   ['oc2',['OC2',['../nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcfa06833c96276f88424e14772ee87ac437',1,'nav.h']]],
   ['offset',['offset',['../structBaroBoard.html#a3defb38aa63017ed666cd4dda92d9956',1,'BaroBoard']]],
-  ['offset_5fand_5fround',['OFFSET_AND_ROUND',['../stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2',1,'OFFSET_AND_ROUND():&#160;stabilization_attitude_euler_int.c'],['../stabilization__attitude__quat__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2',1,'OFFSET_AND_ROUND():&#160;stabilization_attitude_quat_int.c'],['../stabilization__none_8c.html#a4ece5643f8a37a6718b4918214b44fd2',1,'OFFSET_AND_ROUND():&#160;stabilization_none.c'],['../stabilization__rate_8c.html#a4ece5643f8a37a6718b4918214b44fd2',1,'OFFSET_AND_ROUND():&#160;stabilization_rate.c']]],
-  ['offset_5fand_5fround2',['OFFSET_AND_ROUND2',['../stabilization__attitude__euler__int_8c.html#a12f569e84b2838005e3c28f4476971e9',1,'OFFSET_AND_ROUND2():&#160;stabilization_attitude_euler_int.c'],['../stabilization__attitude__quat__int_8c.html#a12f569e84b2838005e3c28f4476971e9',1,'OFFSET_AND_ROUND2():&#160;stabilization_attitude_quat_int.c'],['../stabilization__none_8c.html#a12f569e84b2838005e3c28f4476971e9',1,'OFFSET_AND_ROUND2():&#160;stabilization_none.c'],['../stabilization__rate_8c.html#a12f569e84b2838005e3c28f4476971e9',1,'OFFSET_AND_ROUND2():&#160;stabilization_rate.c']]],
+  ['offset_5fand_5fround',['OFFSET_AND_ROUND',['../stabilization__attitude__euler__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2',1,'OFFSET_AND_ROUND():&#160;stabilization_attitude_euler_int.c'],['../stabilization__attitude__quat__int_8c.html#a4ece5643f8a37a6718b4918214b44fd2',1,'OFFSET_AND_ROUND():&#160;stabilization_attitude_quat_int.c'],['../stabilization__rate_8c.html#a4ece5643f8a37a6718b4918214b44fd2',1,'OFFSET_AND_ROUND():&#160;stabilization_rate.c']]],
+  ['offset_5fand_5fround2',['OFFSET_AND_ROUND2',['../stabilization__attitude__euler__int_8c.html#a12f569e84b2838005e3c28f4476971e9',1,'OFFSET_AND_ROUND2():&#160;stabilization_attitude_euler_int.c'],['../stabilization__attitude__quat__int_8c.html#a12f569e84b2838005e3c28f4476971e9',1,'OFFSET_AND_ROUND2():&#160;stabilization_attitude_quat_int.c'],['../stabilization__rate_8c.html#a12f569e84b2838005e3c28f4476971e9',1,'OFFSET_AND_ROUND2():&#160;stabilization_rate.c']]],
   ['offset_5fcnt',['offset_cnt',['../pressure__board__navarro_8c.html#a138240dcc504031ccc83a6e2c044d95d',1,'pressure_board_navarro.c']]],
   ['offset_5fnbsamples_5favrg',['OFFSET_NBSAMPLES_AVRG',['../pressure__board__navarro_8c.html#a8b26512257083215cbfde5b9af63fff3',1,'pressure_board_navarro.c']]],
   ['old_5falt',['old_alt',['../formation_8c.html#aee51e7f0857fc3d79e7db4da09805232',1,'formation.c']]],
@@ -40,7 +40,7 @@ var searchData=
   ['on_5fvane_5fmsg',['on_vane_msg',['../lisa__stm__passthrough__main_8c.html#a45d97f29f494e7136ea7e2daf868ac4b',1,'lisa_stm_passthrough_main.c']]],
   ['one_5fmhz_5fclk',['ONE_MHZ_CLK',['../actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65',1,'actuators_pwm_arch.c']]],
   ['onetothree',['OneToThree',['../test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131babad3dcd847f569ea7d2243ed2a90115a',1,'test_board.c']]],
-  ['open_5fgps_5freset_5fpin',['Open_GPS_RESET_Pin',['../sdlog__1_80_8h.html#a2c81f574378f5a760da5224d7439cc92',1,'Open_GPS_RESET_Pin():&#160;sdlog_1.0.h'],['../tiny__2_81_8h.html#a2c81f574378f5a760da5224d7439cc92',1,'Open_GPS_RESET_Pin():&#160;tiny_2.1.h']]],
+  ['open_5fgps_5freset_5fpin',['Open_GPS_RESET_Pin',['../logom__2_86_8h.html#a2c81f574378f5a760da5224d7439cc92',1,'Open_GPS_RESET_Pin():&#160;logom_2.6.h'],['../sdlog__1_80_8h.html#a2c81f574378f5a760da5224d7439cc92',1,'Open_GPS_RESET_Pin():&#160;sdlog_1.0.h'],['../tiny__2_81_8h.html#a2c81f574378f5a760da5224d7439cc92',1,'Open_GPS_RESET_Pin():&#160;tiny_2.1.h']]],
   ['openlog_2ec',['openlog.c',['../openlog_8c.html',1,'']]],
   ['openlog_2eh',['openlog.h',['../openlog_8h.html',1,'']]],
   ['or',['Or',['../common__flight__plan_8h.html#a930c4658c4c62e1d04058018e9732a26',1,'common_flight_plan.h']]],
@@ -50,7 +50,7 @@ var searchData=
   ['orthogonal',['Orthogonal',['../flightzone_8c.html#a99120a21f35efe1b1bbaaa3c2ea28984',1,'flightzone.c']]],
   ['osamnav_2ec',['OSAMNav.c',['../OSAMNav_8c.html',1,'']]],
   ['osamnav_2eh',['OSAMNav.h',['../OSAMNav_8h.html',1,'']]],
-  ['out_5fof_5fsync_5fstate_5fmachine',['OUT_OF_SYNC_STATE_MACHINE',['../stm32_2mcu__periph_2i2c__arch_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1',1,'OUT_OF_SYNC_STATE_MACHINE():&#160;i2c_arch.c'],['../i2c__arch_8old_8c.html#a81e271a1ba6d9c375769d4bd70ea180d',1,'OUT_OF_SYNC_STATE_MACHINE():&#160;i2c_arch.old.c']]],
+  ['out_5fof_5fsync_5fstate_5fmachine',['OUT_OF_SYNC_STATE_MACHINE',['../i2c__arch_8old_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1',1,'OUT_OF_SYNC_STATE_MACHINE():&#160;i2c_arch.old.c'],['../i2c__arch_8very__old_8c.html#a81e271a1ba6d9c375769d4bd70ea180d',1,'OUT_OF_SYNC_STATE_MACHINE():&#160;i2c_arch.very_old.c'],['../i2c__attempt1_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1',1,'OUT_OF_SYNC_STATE_MACHINE():&#160;i2c_attempt1.c']]],
   ['output_5frate',['OUTPUT_RATE',['../gps__mtk_8c.html#aa51adf0f95cfeb0b28b11151cdc1274c',1,'gps_mtk.c']]],
   ['outputmode',['OUTPUTMODE',['../ahrs__float__dcm_8h.html#aca3c9e529eec0dcbf5ac2e4240391068',1,'ahrs_float_dcm.h']]],
   ['outside',['Outside',['../OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551a97428abf4f6a11dfc00d53c330031e95',1,'Outside():&#160;OSAMNav.c'],['../spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a97428abf4f6a11dfc00d53c330031e95',1,'Outside():&#160;spiral.c']]],
@@ -67,5 +67,6 @@ var searchData=
   ['overolinkperiodic',['OveroLinkPeriodic',['../lisa__overo__link_8h.html#ac7dc0ee5b270da7e8145a955c6c2d9a9',1,'lisa_overo_link.h']]],
   ['override_5fenabled',['override_enabled',['../structSupervision.html#ad8d5b38cf95e634006197a6456ee0b58',1,'Supervision']]],
   ['override_5fvalue',['override_value',['../structSupervision.html#a0af4098fa91090d6a3fc9b4fcd81757f',1,'Supervision']]],
-  ['overrun',['Overrun',['../structDownlinkTransport.html#a9061bdece09e78b62a62cc8a3510d4e6',1,'DownlinkTransport']]]
+  ['overrun',['Overrun',['../structDownlinkTransport.html#a9061bdece09e78b62a62cc8a3510d4e6',1,'DownlinkTransport']]],
+  ['ovrn',['ovrn',['../structtransport.html#a8d98c3deb9e8d4a405eecc6140b22a81',1,'transport']]]
 ];

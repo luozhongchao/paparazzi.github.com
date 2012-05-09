@@ -133,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00033"></a>00033 
 <a name="l00034"></a><a class="code" href="alt__filter_8h.html#a7adb53f96cd68dc4d8dcdd45ff872b7c">00034</a> <a class="code" href="structTypeKalman.html">TypeKalman</a> <a class="code" href="alt__filter_8c.html#a7adb53f96cd68dc4d8dcdd45ff872b7c">alt_filter</a>;
 <a name="l00035"></a>00035 
@@ -179,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00075"></a>00075     <a class="code" href="alt__filter_8c.html#a29bc3860cd47987f526e6d61e83009f9">last_gps_alt</a> = ga;
 <a name="l00076"></a>00076   }
 <a name="l00077"></a>00077 
-<a name="l00078"></a>00078   RunOnceEvery(6,DOWNLINK_SEND_VFF(DefaultChannel, &amp;<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>,
+<a name="l00078"></a>00078   RunOnceEvery(6,DOWNLINK_SEND_VFF(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>,
 <a name="l00079"></a>00079         &amp;(alt_filter.<a class="code" href="structTypeKalman.html#a91e46de58261f8d60e17a7f8c054cd88">X</a>[0]), &amp;(alt_filter.<a class="code" href="structTypeKalman.html#a91e46de58261f8d60e17a7f8c054cd88">X</a>[1]), &amp;(alt_filter.<a class="code" href="structTypeKalman.html#a91e46de58261f8d60e17a7f8c054cd88">X</a>[2]),
 <a name="l00080"></a>00080         &amp;(alt_filter.<a class="code" href="structTypeKalman.html#a2ef29d05e829ab561c0bb8210c466d12">P</a>[0][0]), &amp;(alt_filter.<a class="code" href="structTypeKalman.html#a2ef29d05e829ab561c0bb8210c466d12">P</a>[1][1]), &amp;(alt_filter.<a class="code" href="structTypeKalman.html#a2ef29d05e829ab561c0bb8210c466d12">P</a>[2][2])));
 <a name="l00081"></a>00081 
@@ -383,7 +383,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="alt__filter_8c.html">alt_filter.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

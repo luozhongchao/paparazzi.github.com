@@ -136,19 +136,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#include &quot;baro_MS5534A.h&quot;</span>
 <a name="l00037"></a>00037 <span class="preprocessor">#endif</span>
 <a name="l00038"></a>00038 <span class="preprocessor"></span>
-<a name="l00039"></a>00039 <span class="preprocessor">#ifdef USE_BARO_ETS</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#if USE_BARO_ETS</span>
 <a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="baro__ets_8h.html">modules/sensors/baro_ets.h</a>&quot;</span>
 <a name="l00041"></a>00041 <span class="preprocessor">#endif</span>
 <a name="l00042"></a>00042 <span class="preprocessor"></span>
-<a name="l00043"></a>00043 <span class="comment">/* position in meters */</span>
-<a name="l00044"></a>00044 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>;
-<a name="l00045"></a>00045 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>;
-<a name="l00046"></a>00046 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8">estimator_z</a>;
+<a name="l00043"></a>00043 <span class="comment">/* position in meters, ENU frame, relative to reference */</span>
+<a name="l00044"></a>00044 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>; 
+<a name="l00045"></a>00045 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>; 
+<a name="l00046"></a>00046 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a>; 
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048 <span class="comment">/* attitude in radians */</span>
-<a name="l00049"></a>00049 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98">estimator_phi</a>; <span class="comment">/* + = right */</span>
-<a name="l00050"></a>00050 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a912c9abaf6122a30deb5e602f9b220f6">estimator_psi</a>; <span class="comment">/* CW, 0 = N */</span>
-<a name="l00051"></a>00051 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554">estimator_theta</a>; <span class="comment">/* + = up */</span>
+<a name="l00049"></a>00049 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98" title="roll angle in rad, + = right">estimator_phi</a>;   
+<a name="l00050"></a>00050 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a912c9abaf6122a30deb5e602f9b220f6" title="heading in rad, CW, 0 = N">estimator_psi</a>;   
+<a name="l00051"></a>00051 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554" title="pitch angle in rad, + = up">estimator_theta</a>; 
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053 <span class="comment">/* speed in meters per second */</span>
 <a name="l00054"></a>00054 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a863b6863992cc4e38bf85268acc93535">estimator_z_dot</a>;
@@ -156,82 +156,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00056"></a>00056 <span class="comment">/* rates in radians per second */</span>
 <a name="l00057"></a>00057 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a36dfb0e341bd202f5811da98fd59ded5">estimator_p</a>;
 <a name="l00058"></a>00058 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#afd02d3c751d84c3690cc9dc792087156">estimator_q</a>;
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060 <span class="comment">/* flight time in seconds */</span>
-<a name="l00061"></a>00061 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="estimator_8c.html#a60cc35f544545eee579e0606623008c6">estimator_flight_time</a>;
-<a name="l00062"></a>00062 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a48943f44d300eb6024f176d54b8495d6">estimator_t</a>;
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064 <span class="comment">/* horizontal ground speed in module and dir (m/s, rad (CW/North)) */</span>
-<a name="l00065"></a>00065 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c">estimator_hspeed_mod</a>;
-<a name="l00066"></a>00066 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a91a95ce5b0e2fe00b6b8d050322c1f81">estimator_hspeed_dir</a>;
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068 <span class="comment">/* Wind and airspeed estimation sent by the GCS */</span>
-<a name="l00069"></a>00069 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a762006597eb119747d06f6b894e1b8dc">wind_east</a>, <a class="code" href="estimator_8c.html#a54d31e15c8165ef9082053e448d904e7">wind_north</a>; <span class="comment">/* m/s */</span>
-<a name="l00070"></a>00070 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77">estimator_airspeed</a>; <span class="comment">/* m/s */</span>
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072 <span class="comment">/* Angle of Attack estimation */</span>
-<a name="l00073"></a>00073 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a2f96bc98bc532ee96a7d287fd943dc29">estimator_AOA</a>; <span class="comment">/* radians */</span>
+<a name="l00059"></a>00059 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a1fa471daa42439e0bfb95631c4e5b089">estimator_r</a>;
+<a name="l00060"></a>00060 
+<a name="l00062"></a>00062 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="estimator_8c.html#a60cc35f544545eee579e0606623008c6" title="flight time in seconds.">estimator_flight_time</a>;
+<a name="l00063"></a>00063 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a48943f44d300eb6024f176d54b8495d6">estimator_t</a>;
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 <span class="comment">/* horizontal ground speed in module and dir (m/s, rad (CW/North)) */</span>
+<a name="l00066"></a>00066 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a0ec8865d87cce4262bd45fd303324d5c" title="module of horizontal ground speed in m/s">estimator_hspeed_mod</a>; 
+<a name="l00067"></a>00067 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a91a95ce5b0e2fe00b6b8d050322c1f81" title="direction of horizontal ground speed in rad (CW/North)">estimator_hspeed_dir</a>; 
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="comment">/* Wind and airspeed estimation sent by the GCS */</span>
+<a name="l00070"></a>00070 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a762006597eb119747d06f6b894e1b8dc">wind_east</a>, <a class="code" href="estimator_8c.html#a54d31e15c8165ef9082053e448d904e7">wind_north</a>; <span class="comment">/* m/s */</span>
+<a name="l00071"></a>00071 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77" title="m/s">estimator_airspeed</a>; 
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="estimator_8c.html#a2f96bc98bc532ee96a7d287fd943dc29" title="angle of attack in rad">estimator_AOA</a>; 
 <a name="l00074"></a>00074 
 <a name="l00075"></a>00075 <span class="keywordtype">void</span> <a class="code" href="estimator_8c.html#a29de4acf227f44a38ddb0284767feedf">estimator_init</a>( <span class="keywordtype">void</span> );
-<a name="l00076"></a>00076 <span class="keywordtype">void</span> <a class="code" href="estimator_8c.html#ae063f7070a307972f81a0e9d0eeac4d6">estimator_propagate_state</a>( <span class="keywordtype">void</span> );
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078 <span class="keywordtype">void</span> <a class="code" href="estimator_8c.html#a52b9c5a79953c97f640618a5d5ca6668">estimator_update_state_gps</a>( <span class="keywordtype">void</span> );
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080 <span class="keyword">extern</span> bool_t <a class="code" href="estimator_8c.html#a0fc68d40afe495ea45845407887f4874">alt_kalman_enabled</a>;
-<a name="l00081"></a>00081 <span class="preprocessor">#ifdef ALT_KALMAN</span>
-<a name="l00082"></a>00082 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> alt_kalman_reset( <span class="keywordtype">void</span> );
-<a name="l00083"></a>00083 <span class="keyword">extern</span> <span class="keywordtype">void</span> alt_kalman_init( <span class="keywordtype">void</span> );
-<a name="l00084"></a>00084 <span class="keyword">extern</span> <span class="keywordtype">void</span> alt_kalman( <span class="keywordtype">float</span> );
-<a name="l00085"></a>00085 <span class="preprocessor">#endif</span>
-<a name="l00086"></a>00086 <span class="preprocessor"></span>
-<a name="l00087"></a>00087 
-<a name="l00088"></a><a class="code" href="estimator_8h.html#ac500a50330425cb4a3054774289bb205">00088</a> <span class="preprocessor">#define GetPosX() (estimator_x)</span>
-<a name="l00089"></a><a class="code" href="estimator_8h.html#a10961173ac6973d795af2f62eb67edca">00089</a> <span class="preprocessor"></span><span class="preprocessor">#define GetPosY() (estimator_y)</span>
-<a name="l00090"></a><a class="code" href="estimator_8h.html#a0bb5f5ae29ba1d5968fe7857a304253e">00090</a> <span class="preprocessor"></span><span class="preprocessor">#define GetPosAlt() (estimator_z)</span>
-<a name="l00091"></a>00091 <span class="preprocessor"></span>
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 <span class="preprocessor">#ifdef ALT_KALMAN</span>
-<a name="l00094"></a>00094 <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetPosXY(x, y) { estimator_x = x; estimator_y = y; }</span>
-<a name="l00095"></a>00095 <span class="preprocessor"></span>
-<a name="l00096"></a>00096 <span class="preprocessor">#if defined(USE_BARO_MS5534A) || defined(USE_BARO_ETS)</span>
-<a name="l00097"></a>00097 <span class="preprocessor"></span><span class="comment">/* Kalman filter cannot be disabled in this mode (no z_dot) */</span>
-<a name="l00098"></a>00098 <span class="preprocessor">#define EstimatorSetAlt(z) alt_kalman(z)</span>
-<a name="l00099"></a>00099 <span class="preprocessor"></span><span class="preprocessor">#else </span><span class="comment">/* USE_BARO_MS5534A */</span>
-<a name="l00100"></a>00100 <span class="preprocessor">#define EstimatorSetAlt(z) { \</span>
-<a name="l00101"></a>00101 <span class="preprocessor">  if (!alt_kalman_enabled) { \</span>
-<a name="l00102"></a>00102 <span class="preprocessor">    estimator_z = z; \</span>
-<a name="l00103"></a>00103 <span class="preprocessor">  } else { \</span>
-<a name="l00104"></a>00104 <span class="preprocessor">    alt_kalman(z); \</span>
-<a name="l00105"></a>00105 <span class="preprocessor">  } \</span>
-<a name="l00106"></a>00106 <span class="preprocessor">}</span>
-<a name="l00107"></a>00107 <span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* ! USE_BARO_MS5534A */</span>
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109 <span class="preprocessor">#define EstimatorSetSpeedPol(vhmod, vhdir, vz) { \</span>
-<a name="l00110"></a>00110 <span class="preprocessor">  estimator_hspeed_mod = vhmod; \</span>
-<a name="l00111"></a>00111 <span class="preprocessor">  estimator_hspeed_dir = vhdir; \</span>
-<a name="l00112"></a>00112 <span class="preprocessor">  if (!alt_kalman_enabled) estimator_z_dot = vz; \</span>
-<a name="l00113"></a>00113 <span class="preprocessor">}</span>
-<a name="l00114"></a>00114 <span class="preprocessor"></span><span class="preprocessor">#else </span><span class="comment">/* ALT_KALMAN */</span>
-<a name="l00115"></a><a class="code" href="estimator_8h.html#abf667ab5ca1475402ee652eaabe820d0">00115</a> <span class="preprocessor">#define EstimatorSetPosXY(x, y) { estimator_x = x; estimator_y = y; }</span>
-<a name="l00116"></a><a class="code" href="estimator_8h.html#ab328c266a556c34d5383ff77c8cd77b7">00116</a> <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetAlt(z) { estimator_z = z; }</span>
-<a name="l00117"></a><a class="code" href="estimator_8h.html#ae675dc77fdc47f2c6c014a58e52148b7">00117</a> <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetSpeedPol(vhmod, vhdir, vz) { \</span>
-<a name="l00118"></a>00118 <span class="preprocessor">  estimator_hspeed_mod = vhmod; \</span>
-<a name="l00119"></a>00119 <span class="preprocessor">  estimator_hspeed_dir = vhdir; \</span>
-<a name="l00120"></a>00120 <span class="preprocessor">  estimator_z_dot = vz; \</span>
-<a name="l00121"></a>00121 <span class="preprocessor">}</span>
-<a name="l00122"></a>00122 <span class="preprocessor"></span>
-<a name="l00123"></a>00123 <span class="preprocessor">#endif</span>
-<a name="l00124"></a>00124 <span class="preprocessor"></span>
-<a name="l00125"></a><a class="code" href="estimator_8h.html#ad7afefffadec367706afad86666b7487">00125</a> <span class="preprocessor">#define EstimatorSetAirspeed(airspeed) { estimator_airspeed = airspeed; }</span>
-<a name="l00126"></a><a class="code" href="estimator_8h.html#a791ee4c5ee62cb27f27053e865162bab">00126</a> <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetAOA(AOA) { estimator_AOA = AOA; }</span>
-<a name="l00127"></a>00127 <span class="preprocessor"></span>
-<a name="l00128"></a><a class="code" href="estimator_8h.html#aa10ae565005ab2c00ceb6835e859312c">00128</a> <span class="preprocessor">#define EstimatorSetAtt(phi, psi, theta) { estimator_phi = phi; estimator_psi = psi; estimator_theta = theta; }</span>
-<a name="l00129"></a><a class="code" href="estimator_8h.html#a2f641afd98e7181d5e8a98f4e9bc1463">00129</a> <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetPhiPsi(phi, psi) { estimator_phi = phi; estimator_psi = psi; }</span>
-<a name="l00130"></a>00130 <span class="preprocessor"></span>
-<a name="l00131"></a><a class="code" href="estimator_8h.html#aeafe077eaafb961eeeefcb9109faf4d2">00131</a> <span class="preprocessor">#define EstimatorSetRate(p, q) { estimator_p = p; estimator_q = q; }</span>
-<a name="l00132"></a>00132 <span class="preprocessor"></span>
-<a name="l00133"></a>00133 
-<a name="l00134"></a>00134 <span class="preprocessor">#endif </span><span class="comment">/* ESTIMATOR_H */</span>
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <span class="keywordtype">void</span> <a class="code" href="estimator_8c.html#a52b9c5a79953c97f640618a5d5ca6668">estimator_update_state_gps</a>( <span class="keywordtype">void</span> );
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079 <span class="keyword">extern</span> bool_t <a class="code" href="estimator_8c.html#a0fc68d40afe495ea45845407887f4874">alt_kalman_enabled</a>;
+<a name="l00080"></a>00080 <span class="preprocessor">#ifdef ALT_KALMAN</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">void</span> alt_kalman_reset( <span class="keywordtype">void</span> );
+<a name="l00082"></a>00082 <span class="keyword">extern</span> <span class="keywordtype">void</span> alt_kalman_init( <span class="keywordtype">void</span> );
+<a name="l00083"></a>00083 <span class="keyword">extern</span> <span class="keywordtype">void</span> alt_kalman( <span class="keywordtype">float</span> );
+<a name="l00084"></a>00084 <span class="preprocessor">#endif</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span>
+<a name="l00086"></a>00086 
+<a name="l00087"></a><a class="code" href="estimator_8h.html#ac500a50330425cb4a3054774289bb205">00087</a> <span class="preprocessor">#define GetPosX() (estimator_x)</span>
+<a name="l00088"></a><a class="code" href="estimator_8h.html#a10961173ac6973d795af2f62eb67edca">00088</a> <span class="preprocessor"></span><span class="preprocessor">#define GetPosY() (estimator_y)</span>
+<a name="l00089"></a><a class="code" href="estimator_8h.html#a0bb5f5ae29ba1d5968fe7857a304253e">00089</a> <span class="preprocessor"></span><span class="preprocessor">#define GetPosAlt() (estimator_z)</span>
+<a name="l00090"></a>00090 <span class="preprocessor"></span>
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 <span class="preprocessor">#ifdef ALT_KALMAN</span>
+<a name="l00093"></a>00093 <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetPosXY(x, y) { estimator_x = x; estimator_y = y; }</span>
+<a name="l00094"></a>00094 <span class="preprocessor"></span>
+<a name="l00095"></a>00095 <span class="preprocessor">#if USE_BARO_MS5534A || USE_BARO_ETS</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span><span class="comment">/* Kalman filter cannot be disabled in this mode (no z_dot) */</span>
+<a name="l00097"></a>00097 <span class="preprocessor">#define EstimatorSetAlt(z) alt_kalman(z)</span>
+<a name="l00098"></a>00098 <span class="preprocessor"></span><span class="preprocessor">#else </span><span class="comment">/* USE_BARO_x */</span>
+<a name="l00099"></a>00099 <span class="preprocessor">#define EstimatorSetAlt(z) { \</span>
+<a name="l00100"></a>00100 <span class="preprocessor">  if (!alt_kalman_enabled) { \</span>
+<a name="l00101"></a>00101 <span class="preprocessor">    estimator_z = z; \</span>
+<a name="l00102"></a>00102 <span class="preprocessor">  } else { \</span>
+<a name="l00103"></a>00103 <span class="preprocessor">    alt_kalman(z); \</span>
+<a name="l00104"></a>00104 <span class="preprocessor">  } \</span>
+<a name="l00105"></a>00105 <span class="preprocessor">}</span>
+<a name="l00106"></a>00106 <span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* ! USE_BARO_x */</span>
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 <span class="preprocessor">#define EstimatorSetSpeedPol(vhmod, vhdir, vz) { \</span>
+<a name="l00109"></a>00109 <span class="preprocessor">  estimator_hspeed_mod = vhmod; \</span>
+<a name="l00110"></a>00110 <span class="preprocessor">  estimator_hspeed_dir = vhdir; \</span>
+<a name="l00111"></a>00111 <span class="preprocessor">  if (!alt_kalman_enabled) estimator_z_dot = vz; \</span>
+<a name="l00112"></a>00112 <span class="preprocessor">}</span>
+<a name="l00113"></a>00113 <span class="preprocessor"></span><span class="preprocessor">#else </span><span class="comment">/* ALT_KALMAN */</span>
+<a name="l00114"></a><a class="code" href="estimator_8h.html#abf667ab5ca1475402ee652eaabe820d0">00114</a> <span class="preprocessor">#define EstimatorSetPosXY(x, y) { estimator_x = x; estimator_y = y; }</span>
+<a name="l00115"></a><a class="code" href="estimator_8h.html#ab328c266a556c34d5383ff77c8cd77b7">00115</a> <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetAlt(z) { estimator_z = z; }</span>
+<a name="l00116"></a><a class="code" href="estimator_8h.html#ae675dc77fdc47f2c6c014a58e52148b7">00116</a> <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetSpeedPol(vhmod, vhdir, vz) { \</span>
+<a name="l00117"></a>00117 <span class="preprocessor">  estimator_hspeed_mod = vhmod; \</span>
+<a name="l00118"></a>00118 <span class="preprocessor">  estimator_hspeed_dir = vhdir; \</span>
+<a name="l00119"></a>00119 <span class="preprocessor">  estimator_z_dot = vz; \</span>
+<a name="l00120"></a>00120 <span class="preprocessor">}</span>
+<a name="l00121"></a>00121 <span class="preprocessor"></span>
+<a name="l00122"></a>00122 <span class="preprocessor">#endif</span>
+<a name="l00123"></a>00123 <span class="preprocessor"></span>
+<a name="l00124"></a><a class="code" href="estimator_8h.html#ad7afefffadec367706afad86666b7487">00124</a> <span class="preprocessor">#define EstimatorSetAirspeed(airspeed) { estimator_airspeed = airspeed; }</span>
+<a name="l00125"></a><a class="code" href="estimator_8h.html#a791ee4c5ee62cb27f27053e865162bab">00125</a> <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetAOA(AOA) { estimator_AOA = AOA; }</span>
+<a name="l00126"></a>00126 <span class="preprocessor"></span>
+<a name="l00127"></a><a class="code" href="estimator_8h.html#aa10ae565005ab2c00ceb6835e859312c">00127</a> <span class="preprocessor">#define EstimatorSetAtt(phi, psi, theta) { estimator_phi = phi; estimator_psi = psi; estimator_theta = theta; }</span>
+<a name="l00128"></a><a class="code" href="estimator_8h.html#a2f641afd98e7181d5e8a98f4e9bc1463">00128</a> <span class="preprocessor"></span><span class="preprocessor">#define EstimatorSetPhiPsi(phi, psi) { estimator_phi = phi; estimator_psi = psi; }</span>
+<a name="l00129"></a>00129 <span class="preprocessor"></span>
+<a name="l00130"></a><a class="code" href="estimator_8h.html#a33f5c2c85ee40d90c0eba4ae37e190db">00130</a> <span class="preprocessor">#define EstimatorSetRate(p, q, r) { estimator_p = p; estimator_q = q; estimator_r = r; }</span>
+<a name="l00131"></a>00131 <span class="preprocessor"></span>
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133 <span class="preprocessor">#endif </span><span class="comment">/* ESTIMATOR_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -252,7 +250,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="estimator_8h.html">estimator.h</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

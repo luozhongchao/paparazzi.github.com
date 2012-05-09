@@ -103,13 +103,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="baro__scp_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;std.h&quot;</span>
-<a name="l00002"></a>00002 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00002"></a>00002 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00003"></a>00003 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
 <a name="l00005"></a>00005 
 <a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00007"></a>00007 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00009"></a>00009 
 <a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="spi_8h.html" title="arch independent SPI (Serial Peripheral Interface) API">mcu_periph/spi.h</a>&quot;</span>
 <a name="l00011"></a>00011 
@@ -138,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 static <span class="keywordtype">void</span> <a class="code" href="ADS8344_8c.html#a65d6ea131026affbdf33be235dfdb49d">SPI1_ISR</a>(<span class="keywordtype">void</span>) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036 <span class="keywordtype">void</span> <a class="code" href="baro__scp_8h.html#a7995b8df4beede8b8da2998349693108">baro_scp_periodic</a>(<span class="keywordtype">void</span>) {
-<a name="l00037"></a>00037   <span class="keywordflow">if</span> (<a class="code" href="baro__scp_8c.html#a2fe023fc4063f461db08521dd732f13a">baro_scp_status</a> == <a class="code" href="baro__scp_8c.html#a9aeeac4b6b91056b261f35840481cede">STA_UNINIT</a> &amp;&amp; <a class="code" href="sys__time_8c.html#ae5ab3e1832346003e3dfa32017a9e79c">cpu_time_sec</a> &gt; 1) {
+<a name="l00037"></a>00037   <span class="keywordflow">if</span> (<a class="code" href="baro__scp_8c.html#a2fe023fc4063f461db08521dd732f13a">baro_scp_status</a> == <a class="code" href="baro__scp_8c.html#a9aeeac4b6b91056b261f35840481cede">STA_UNINIT</a> &amp;&amp; <a class="code" href="sys__time_8h.html#ab714a06d7058fea51e8a8b6851d51d33">cpu_time_sec</a> &gt; 1) {
 <a name="l00038"></a>00038     <a class="code" href="baro__scp_8c.html#a550d0f8163f4c79ce3c4e77ac6f02fa4">baro_scp_start_high_res_measurement</a>();
 <a name="l00039"></a>00039     <a class="code" href="baro__scp_8c.html#a2fe023fc4063f461db08521dd732f13a">baro_scp_status</a> = <a class="code" href="baro__scp_8c.html#a915ba38cac65ca5e2f56d271be962766">STA_INITIALISING</a>;
 <a name="l00040"></a>00040   }
@@ -190,15 +190,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087   <span class="comment">/* configure DRDY pin */</span>
 <a name="l00088"></a>00088   <span class="comment">/* connected pin to EXINT */</span>
-<a name="l00089"></a>00089   <a class="code" href="navgo__1_80_8h.html#a6835875df62c2d69fbf86cdd5cefbe52">SPI1_DRDY_PINSEL</a> |= <a class="code" href="navgo__1_80_8h.html#aabb4946529ad070470a4fdb279b02719">SPI1_DRDY_PINSEL_VAL</a> &lt;&lt; <a class="code" href="navgo__1_80_8h.html#a1dca9637251da27024bb43042d685080">SPI1_DRDY_PINSEL_BIT</a>;
-<a name="l00090"></a>00090   SetBit(<a class="code" href="LPC21xx_8h.html#a6b7d1399a94b686e878b95b16b46ff4a">EXTMODE</a>, <a class="code" href="navgo__1_80_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">SPI1_DRDY_EINT</a>); <span class="comment">/* EINT is edge trigered */</span>
-<a name="l00091"></a>00091   SetBit(<a class="code" href="LPC21xx_8h.html#ac9d407f43c17d5499f0d9ccd9acbf256">EXTPOLAR</a>,<a class="code" href="navgo__1_80_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">SPI1_DRDY_EINT</a>); <span class="comment">/* EINT is trigered on rising edge */</span>
-<a name="l00092"></a>00092   SetBit(<a class="code" href="LPC21xx_8h.html#a8cc44522d2f5b706b3af5b839c0ba3ff">EXTINT</a>,<a class="code" href="navgo__1_80_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">SPI1_DRDY_EINT</a>);   <span class="comment">/* clear pending EINT */</span>
+<a name="l00089"></a>00089   <a class="code" href="logom__2_86_8h.html#a6835875df62c2d69fbf86cdd5cefbe52">SPI1_DRDY_PINSEL</a> |= <a class="code" href="logom__2_86_8h.html#aabb4946529ad070470a4fdb279b02719">SPI1_DRDY_PINSEL_VAL</a> &lt;&lt; <a class="code" href="logom__2_86_8h.html#a1dca9637251da27024bb43042d685080">SPI1_DRDY_PINSEL_BIT</a>;
+<a name="l00090"></a>00090   SetBit(<a class="code" href="LPC21xx_8h.html#a6b7d1399a94b686e878b95b16b46ff4a">EXTMODE</a>, <a class="code" href="logom__2_86_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">SPI1_DRDY_EINT</a>); <span class="comment">/* EINT is edge trigered */</span>
+<a name="l00091"></a>00091   SetBit(<a class="code" href="LPC21xx_8h.html#ac9d407f43c17d5499f0d9ccd9acbf256">EXTPOLAR</a>,<a class="code" href="logom__2_86_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">SPI1_DRDY_EINT</a>); <span class="comment">/* EINT is trigered on rising edge */</span>
+<a name="l00092"></a>00092   SetBit(<a class="code" href="LPC21xx_8h.html#a8cc44522d2f5b706b3af5b839c0ba3ff">EXTINT</a>,<a class="code" href="logom__2_86_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">SPI1_DRDY_EINT</a>);   <span class="comment">/* clear pending EINT */</span>
 <a name="l00093"></a>00093 
 <a name="l00094"></a>00094   <span class="comment">/* initialize interrupt vector */</span>
-<a name="l00095"></a>00095   <a class="code" href="LPC21xx_8h.html#a87f793a1b9254ca2dec755c61184a715">VICIntSelect</a> &amp;= ~<a class="code" href="lpcVIC_8h.html#a20f163f17339eb92d567986cfd657ad6">VIC_BIT</a>( <a class="code" href="navgo__1_80_8h.html#a20be7d2a2ad2dcbc3a2b587973faeb09">SPI1_DRDY_VIC_IT</a> );  <span class="comment">/* select EINT as IRQ source */</span>
-<a name="l00096"></a>00096   <a class="code" href="LPC21xx_8h.html#a280555cbadcb52f8ba9cb51a19410fbc">VICIntEnable</a> = <a class="code" href="lpcVIC_8h.html#a20f163f17339eb92d567986cfd657ad6">VIC_BIT</a>( <a class="code" href="navgo__1_80_8h.html#a20be7d2a2ad2dcbc3a2b587973faeb09">SPI1_DRDY_VIC_IT</a> );    <span class="comment">/* enable it */</span>
-<a name="l00097"></a>00097   <a class="code" href="LPC21xx_8h.html#a67335d6c6e9f14623c5a64affaae1f23">VICVectCntl11</a> = <a class="code" href="lpcVIC_8h.html#ab786e5132d4c90f83d87ad6ae16442e3">VIC_ENABLE</a> | <a class="code" href="navgo__1_80_8h.html#a20be7d2a2ad2dcbc3a2b587973faeb09">SPI1_DRDY_VIC_IT</a>;
+<a name="l00095"></a>00095   <a class="code" href="LPC21xx_8h.html#a87f793a1b9254ca2dec755c61184a715">VICIntSelect</a> &amp;= ~<a class="code" href="lpcVIC_8h.html#a20f163f17339eb92d567986cfd657ad6">VIC_BIT</a>( <a class="code" href="logom__2_86_8h.html#a20be7d2a2ad2dcbc3a2b587973faeb09">SPI1_DRDY_VIC_IT</a> );  <span class="comment">/* select EINT as IRQ source */</span>
+<a name="l00096"></a>00096   <a class="code" href="LPC21xx_8h.html#a280555cbadcb52f8ba9cb51a19410fbc">VICIntEnable</a> = <a class="code" href="lpcVIC_8h.html#a20f163f17339eb92d567986cfd657ad6">VIC_BIT</a>( <a class="code" href="logom__2_86_8h.html#a20be7d2a2ad2dcbc3a2b587973faeb09">SPI1_DRDY_VIC_IT</a> );    <span class="comment">/* enable it */</span>
+<a name="l00097"></a>00097   <a class="code" href="LPC21xx_8h.html#a67335d6c6e9f14623c5a64affaae1f23">VICVectCntl11</a> = <a class="code" href="lpcVIC_8h.html#ab786e5132d4c90f83d87ad6ae16442e3">VIC_ENABLE</a> | <a class="code" href="logom__2_86_8h.html#a20be7d2a2ad2dcbc3a2b587973faeb09">SPI1_DRDY_VIC_IT</a>;
 <a name="l00098"></a>00098   <a class="code" href="LPC21xx_8h.html#a248f13b37d0ff6933c5df70a7f4d97a5">VICVectAddr11</a> = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="lpc21_2micromag__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b">EXTINT_ISR</a>;         <span class="comment">// address of the ISR</span>
 <a name="l00099"></a>00099 
 <a name="l00100"></a>00100   <a class="code" href="baro__scp_8c.html#a2fe023fc4063f461db08521dd732f13a">baro_scp_status</a> = <a class="code" href="baro__scp_8c.html#a9aeeac4b6b91056b261f35840481cede">STA_UNINIT</a>;
@@ -247,7 +247,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00143"></a>00143   <a class="code" href="armVIC_8h.html#a4291eb8e6c7a50f7cfb8b3dcc28154ea">ISR_ENTRY</a>();
 <a name="l00144"></a>00144   <a class="code" href="baro__scp_8c.html#ac29fd613dff47fc39271d1544e03452d">baro_scp_read</a>();
 <a name="l00145"></a>00145 
-<a name="l00146"></a>00146   SetBit(<a class="code" href="LPC21xx_8h.html#a8cc44522d2f5b706b3af5b839c0ba3ff">EXTINT</a>,<a class="code" href="navgo__1_80_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">SPI1_DRDY_EINT</a>); <span class="comment">/* clear EINT2 */</span>
+<a name="l00146"></a>00146   SetBit(<a class="code" href="LPC21xx_8h.html#a8cc44522d2f5b706b3af5b839c0ba3ff">EXTINT</a>,<a class="code" href="logom__2_86_8h.html#a7bce773a3bc8326ed4a1058e47e55a2b">SPI1_DRDY_EINT</a>); <span class="comment">/* clear EINT2 */</span>
 <a name="l00147"></a>00147   <a class="code" href="LPC21xx_8h.html#aa11babfb092f15d15765591e9d4c8df2">VICVectAddr</a> = 0x00000000; <span class="comment">/* clear this interrupt from the VIC */</span>
 <a name="l00148"></a>00148   <a class="code" href="armVIC_8h.html#aecf650b1ba18540f94f7dc6affe73696">ISR_EXIT</a>();
 <a name="l00149"></a>00149 }
@@ -283,7 +283,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00179"></a><a class="code" href="baro__scp__i2c_8h.html#a6cbae7e48b4b096bafb8717f44bef3f1">00179</a> <span class="keywordtype">void</span> <a class="code" href="baro__scp_8c.html#a6cbae7e48b4b096bafb8717f44bef3f1">baro_scp_event</a>( <span class="keywordtype">void</span> ) {
 <a name="l00180"></a>00180   <span class="keywordflow">if</span> (<a class="code" href="baro__scp_8c.html#a10ba98ea76fa38059612895e866cbc46">baro_scp_available</a> == TRUE) {
 <a name="l00181"></a>00181 <span class="preprocessor">#ifdef SENSOR_SYNC_SEND</span>
-<a name="l00182"></a>00182 <span class="preprocessor"></span>    DOWNLINK_SEND_SCP_STATUS(DefaultChannel, &amp;<a class="code" href="baro__scp_8c.html#a2686105e872eba82758010dbb3c91c99">baro_scp_pressure</a>, &amp;<a class="code" href="baro__scp_8c.html#afc76d1091765349f7cc77bef8db5b95b">baro_scp_temperature</a>);
+<a name="l00182"></a>00182 <span class="preprocessor"></span>    DOWNLINK_SEND_SCP_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="baro__scp_8c.html#a2686105e872eba82758010dbb3c91c99">baro_scp_pressure</a>, &amp;<a class="code" href="baro__scp_8c.html#afc76d1091765349f7cc77bef8db5b95b">baro_scp_temperature</a>);
 <a name="l00183"></a>00183 <span class="preprocessor">#endif</span>
 <a name="l00184"></a>00184 <span class="preprocessor"></span>    <a class="code" href="baro__scp_8c.html#a10ba98ea76fa38059612895e866cbc46">baro_scp_available</a> = FALSE;
 <a name="l00185"></a>00185   }
@@ -308,7 +308,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="baro__scp_8c.html">baro_scp.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

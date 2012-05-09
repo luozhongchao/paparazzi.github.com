@@ -105,13 +105,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="baro__scp__i2c_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
 <a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="baro__scp__i2c_8h.html">baro_scp_i2c.h</a>&quot;</span>
 <a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00013"></a>00013 
 <a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00015"></a>00015 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018 <span class="preprocessor">#ifndef SENSOR_SYNC_SEND</span>
 <a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#warning set SENSOR_SYNC_SEND to use baro_scp_i2c</span>
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00048"></a>00048 
 <a name="l00049"></a><a class="code" href="baro__scp__i2c_8h.html#a7995b8df4beede8b8da2998349693108">00049</a> <span class="keywordtype">void</span> <a class="code" href="baro__scp_8h.html#a7995b8df4beede8b8da2998349693108">baro_scp_periodic</a>( <span class="keywordtype">void</span> ) {
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051   <span class="keywordflow">if</span> (<a class="code" href="baro__scp_8c.html#a2fe023fc4063f461db08521dd732f13a">baro_scp_status</a> == <a class="code" href="baro__scp__i2c_8h.html#a2bb5f7bc03c21d79747183784c200908">BARO_SCP_UNINIT</a> &amp;&amp; <a class="code" href="sys__time_8c.html#ae5ab3e1832346003e3dfa32017a9e79c">cpu_time_sec</a> &gt; 1) {
+<a name="l00051"></a>00051   <span class="keywordflow">if</span> (<a class="code" href="baro__scp_8c.html#a2fe023fc4063f461db08521dd732f13a">baro_scp_status</a> == <a class="code" href="baro__scp__i2c_8h.html#a2bb5f7bc03c21d79747183784c200908">BARO_SCP_UNINIT</a> &amp;&amp; <a class="code" href="sys__time_8h.html#ab714a06d7058fea51e8a8b6851d51d33">cpu_time_sec</a> &gt; 1) {
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053     <a class="code" href="baro__scp__i2c_8c.html#a550d0f8163f4c79ce3c4e77ac6f02fa4">baro_scp_start_high_res_measurement</a>();
 <a name="l00054"></a>00054     <a class="code" href="baro__scp_8c.html#a2fe023fc4063f461db08521dd732f13a">baro_scp_status</a> = <a class="code" href="baro__scp__i2c_8h.html#a4a5962e918a5fc89f6f1092e261095d6">BARO_SCP_IDLE</a>;
@@ -198,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00100"></a>00100       <a class="code" href="baro__scp_8c.html#a2686105e872eba82758010dbb3c91c99">baro_scp_pressure</a> *= 25;
 <a name="l00101"></a>00101 
 <a name="l00102"></a>00102 <span class="preprocessor">#ifdef SENSOR_SYNC_SEND</span>
-<a name="l00103"></a>00103 <span class="preprocessor"></span>      DOWNLINK_SEND_SCP_STATUS(DefaultChannel, &amp;<a class="code" href="baro__scp_8c.html#a2686105e872eba82758010dbb3c91c99">baro_scp_pressure</a>, &amp;<a class="code" href="baro__scp_8c.html#afc76d1091765349f7cc77bef8db5b95b">baro_scp_temperature</a>);
+<a name="l00103"></a>00103 <span class="preprocessor"></span>      DOWNLINK_SEND_SCP_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="baro__scp_8c.html#a2686105e872eba82758010dbb3c91c99">baro_scp_pressure</a>, &amp;<a class="code" href="baro__scp_8c.html#afc76d1091765349f7cc77bef8db5b95b">baro_scp_temperature</a>);
 <a name="l00104"></a>00104 <span class="preprocessor">#endif</span>
 <a name="l00105"></a>00105 <span class="preprocessor"></span>
 <a name="l00106"></a>00106       <a class="code" href="baro__scp_8c.html#a2fe023fc4063f461db08521dd732f13a">baro_scp_status</a> = <a class="code" href="baro__scp__i2c_8h.html#a4a5962e918a5fc89f6f1092e261095d6">BARO_SCP_IDLE</a>;
@@ -227,7 +227,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="baro__scp__i2c_8c.html">baro_scp_i2c.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

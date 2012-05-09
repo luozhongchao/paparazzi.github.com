@@ -7,8 +7,8 @@ var searchData=
   ['gls_2ec',['gls.c',['../gls_8c.html',1,'']]],
   ['gls_2eh',['gls.h',['../gls_8h.html',1,'']]],
   ['gpio_2ec',['gpio.c',['../gpio_8c.html',1,'']]],
-  ['gpio_2eh',['gpio.h',['../stm32_2gpio_8h.html',1,'']]],
   ['gpio_2eh',['gpio.h',['../lpc21_2gpio_8h.html',1,'']]],
+  ['gpio_2eh',['gpio.h',['../stm32_2gpio_8h.html',1,'']]],
   ['gpio_2eh',['gpio.h',['../sim_2gpio_8h.html',1,'']]],
   ['gpio_5farch_2eh',['gpio_arch.h',['../lpc21_2mcu__periph_2gpio__arch_8h.html',1,'']]],
   ['gpio_5farch_2eh',['gpio_arch.h',['../stm32_2mcu__periph_2gpio__arch_8h.html',1,'']]],
@@ -37,14 +37,12 @@ var searchData=
   ['guidance_5fh_2ec',['guidance_h.c',['../guidance__h_8c.html',1,'']]],
   ['guidance_5fh_2eh',['guidance_h.h',['../guidance__h_8h.html',1,'']]],
   ['guidance_5fh_5fref_2eh',['guidance_h_ref.h',['../guidance__h__ref_8h.html',1,'']]],
-  ['guidance_5fv_2ec',['guidance_v.c',['../fixedwing_2guidance_2guidance__v_8c.html',1,'']]],
   ['guidance_5fv_2ec',['guidance_v.c',['../rotorcraft_2guidance_2guidance__v_8c.html',1,'']]],
+  ['guidance_5fv_2ec',['guidance_v.c',['../fixedwing_2guidance_2guidance__v_8c.html',1,'']]],
   ['guidance_5fv_2eh',['guidance_v.h',['../rotorcraft_2guidance_2guidance__v_8h.html',1,'']]],
   ['guidance_5fv_2eh',['guidance_v.h',['../fixedwing_2guidance_2guidance__v_8h.html',1,'']]],
   ['guidance_5fv_5fadpt_2eh',['guidance_v_adpt.h',['../guidance__v__adpt_8h.html',1,'']]],
   ['guidance_5fv_5fn_2ec',['guidance_v_n.c',['../guidance__v__n_8c.html',1,'']]],
   ['guidance_5fv_5fn_2eh',['guidance_v_n.h',['../guidance__v__n_8h.html',1,'']]],
-  ['guidance_5fv_5fref_2eh',['guidance_v_ref.h',['../guidance__v__ref_8h.html',1,'']]],
-  ['gyro_2ec',['gyro.c',['../gyro_8c.html',1,'']]],
-  ['gyro_2eh',['gyro.h',['../gyro_8h.html',1,'']]]
+  ['guidance_5fv_5fref_2eh',['guidance_v_ref.h',['../guidance__v__ref_8h.html',1,'']]]
 ];

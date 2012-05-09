@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="LPC21xx_8h.html">LPC21xx.h</a>&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="humid__sht_8h.html">humid_sht.h</a>&quot;</span>
 <a name="l00015"></a>00015 
 <a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
@@ -417,7 +417,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00320"></a>00320       <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
 <a name="l00321"></a>00321       <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d">HUMI</a>);
 <a name="l00322"></a>00322       <a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> = <a class="code" href="humid__sht_8h.html#a4fc00fb9919f9d430d6fa80bc1079a50">SHT_MEASURING_HUMID</a>;
-<a name="l00323"></a>00323       DOWNLINK_SEND_SHT_STATUS(DefaultChannel, &amp;<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;<a class="code" href="humid__sht_8c.html#a7b6fc59372ea31117d7b57053986f3bc">fhumidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ab5111f7c86720c03eca02d5362d3373f">ftempsht</a>);
+<a name="l00323"></a>00323       DOWNLINK_SEND_SHT_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;<a class="code" href="humid__sht_8c.html#a7b6fc59372ea31117d7b57053986f3bc">fhumidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ab5111f7c86720c03eca02d5362d3373f">ftempsht</a>);
 <a name="l00324"></a>00324       <a class="code" href="humid__sht_8c.html#a721bfa074f0f40ff23abdf39982303cd">humid_sht_available</a> = FALSE;
 <a name="l00325"></a>00325     }
 <a name="l00326"></a>00326   }
@@ -442,7 +442,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="humid__sht_8c.html">humid_sht.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

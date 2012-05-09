@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00037"></a>00037 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00039"></a>00039 
 <a name="l00040"></a><a class="code" href="wind__gfi_8c.html#a91e6b0f488db47bb148d2f297676b9ab">00040</a> <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> <a class="code" href="wind__gfi_8c.html#a91e6b0f488db47bb148d2f297676b9ab">pcf_trans</a>;
 <a name="l00041"></a>00041 
@@ -202,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00105"></a>00105       <span class="comment">/* 2048 digits per 360 degrees */</span>
 <a name="l00106"></a>00106       fpcf_direction = fmod((<a class="code" href="wind__gfi_8c.html#a263c51a71e6f514c746cf0c39776ff0d">pcf_direction</a> * (360./2048.)) + <a class="code" href="wind__gfi_8c.html#a1c27d6803cac68644bf4d9b90f9efdcf">ZERO_OFFSET_DEGREES</a>, 360.);
 <a name="l00107"></a>00107 
-<a name="l00108"></a>00108       DOWNLINK_SEND_TMP_STATUS(DefaultChannel, &amp;<a class="code" href="wind__gfi_8c.html#a263c51a71e6f514c746cf0c39776ff0d">pcf_direction</a>, &amp;fpcf_direction);
+<a name="l00108"></a>00108       DOWNLINK_SEND_TMP_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="wind__gfi_8c.html#a263c51a71e6f514c746cf0c39776ff0d">pcf_direction</a>, &amp;fpcf_direction);
 <a name="l00109"></a>00109     }
 <a name="l00110"></a>00110     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="wind__gfi_8c.html#a6139943b2d6ec87b7c1a756decbd1daf">pcf_status</a> == <a class="code" href="wind__gfi_8h.html#a28af1f1f55de3fbdf348c7f76dee2ccca738254db5cfe4ab5ef5afbf0fe551902">PCF_IDLE</a>) {
 <a name="l00111"></a>00111       <a class="code" href="wind__gfi_8c.html#a91e6b0f488db47bb148d2f297676b9ab">pcf_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
@@ -229,7 +229,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="wind__gfi_8c.html">wind_gfi.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

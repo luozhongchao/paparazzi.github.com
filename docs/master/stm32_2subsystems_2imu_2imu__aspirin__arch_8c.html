@@ -106,12 +106,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="imu_8h_source.html">subsystems/imu.h</a>&quot;</code><br/>
-<code>#include &lt;<a class="el" href="stm32_2gpio_8h_source.html">stm32/gpio.h</a>&gt;</code><br/>
-<code>#include &lt;stm32/misc.h&gt;</code><br/>
-<code>#include &lt;stm32/rcc.h&gt;</code><br/>
-<code>#include &lt;stm32/exti.h&gt;</code><br/>
-<code>#include &lt;stm32/spi.h&gt;</code><br/>
-<code>#include &lt;stm32/dma.h&gt;</code><br/>
+<code>#include &lt;libopencm3/stm32/f1/gpio.h&gt;</code><br/>
+<code>#include &lt;libopencm3/stm32/f1/rcc.h&gt;</code><br/>
+<code>#include &lt;libopencm3/stm32/exti.h&gt;</code><br/>
+<code>#include &lt;libopencm3/stm32/spi.h&gt;</code><br/>
+<code>#include &lt;libopencm3/stm32/f1/dma.h&gt;</code><br/>
+<code>#include &lt;libopencm3/stm32/nvic.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="i2c_8h_source.html">mcu_periph/i2c.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for imu_aspirin_arch.c:</div>
@@ -120,20 +120,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="stm32_2subsystems_2imu_2imu__aspirin__arch_8c__incl.png" border="0" usemap="#sw_2airborne_2arch_2stm32_2subsystems_2imu_2imu__aspirin__arch_8c" alt=""/></div>
 <map name="sw_2airborne_2arch_2stm32_2subsystems_2imu_2imu__aspirin__arch_8c" id="sw_2airborne_2arch_2stm32_2subsystems_2imu_2imu__aspirin__arch_8c">
-<area shape="rect" id="node3" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="339,83,477,112"/><area shape="rect" id="node29" href="stm32_2gpio_8h.html" title="stm32/gpio.h" alt="" coords="557,83,664,112"/><area shape="rect" id="node41" href="i2c_8h.html" title="mcu_periph/i2c.h" alt="" coords="320,237,451,267"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="123,160,301,189"/><area shape="rect" id="node21" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="564,160,753,189"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="475,237,629,267"/><area shape="rect" id="node15" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="5,237,155,267"/></map>
+<area shape="rect" id="node3" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="333,83,472,112"/><area shape="rect" id="node42" href="i2c_8h.html" title="mcu_periph/i2c.h" alt="" coords="640,237,771,267"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="409,160,588,189"/><area shape="rect" id="node22" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="15,160,204,189"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="147,237,301,267"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="325,237,475,267"/></map>
 </div>
 </div>
 <p><a href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#ae9af9aa3f6bd3caf069d2dd5caf35547">Adxl345Unselect</a>()&#160;&#160;&#160;GPIOB-&gt;BSRR = GPIO_Pin_12</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a58ef5a02c8ba20ae76af96f1ade1211d">Adxl345Select</a>()&#160;&#160;&#160;GPIOB-&gt;BRR = GPIO_Pin_12</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#ae9af9aa3f6bd3caf069d2dd5caf35547">Adxl345Unselect</a>()&#160;&#160;&#160;GPIOB_BSRR = GPIO12</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a58ef5a02c8ba20ae76af96f1ade1211d">Adxl345Select</a>()&#160;&#160;&#160;GPIOB_BRR = GPIO12</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#af28c7f63910b85ce6f653968e38a6a10">exti15_10_irq_handler</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a2b53e4c66c30098f313d5f0945c3baf5">exti9_5_irq_handler</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a25c7fe956a00de07290f7a78d27c7c89">exti2_irq_handler</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a8aaa57c7903131c1c86605393bb4654e">exti15_10_isr</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#ac033acbc708beb196e46622d95d450c5">exti9_5_isr</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a40747dba0f93159403e51109a87575fd">exti2_isr</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#ac13fd4f156b4a88afac6d174103a88a8">dma1_channel4_isr</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a4a669b9d2efca9fcda5db4b642a990e4">dma1_c4_irq_handler</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a61fed49b72c37c140656df83a6d3590a">imu_aspirin_arch_int_enable</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a69f47336a47c791d6054ee4a6b498469">imu_aspirin_arch_int_disable</a> (void)</td></tr>
@@ -151,15 +152,15 @@ Functions</h2></td></tr>
           <td class="memname">#define <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a58ef5a02c8ba20ae76af96f1ade1211d">Adxl345Select</a></td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;GPIOB-&gt;BRR = GPIO_Pin_12</td>
+          <td>&#160;&#160;&#160;GPIOB_BRR = GPIO12</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00020">20</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00022">22</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
 
-<p>Referenced by <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00188">adxl345_start_reading_data()</a>, and <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00172">adxl345_write_to_reg()</a>.</p>
+<p>Referenced by <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00148">adxl345_start_reading_data()</a>, and <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00132">adxl345_write_to_reg()</a>.</p>
 
 </div>
 </div>
@@ -171,15 +172,15 @@ Functions</h2></td></tr>
           <td class="memname">#define <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#ae9af9aa3f6bd3caf069d2dd5caf35547">Adxl345Unselect</a></td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;GPIOB-&gt;BSRR = GPIO_Pin_12</td>
+          <td>&#160;&#160;&#160;GPIOB_BSRR = GPIO12</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00019">19</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00021">21</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
 
-<p>Referenced by <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00172">adxl345_write_to_reg()</a>, and <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00080">imu_aspirin_arch_init()</a>.</p>
+<p>Referenced by <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00132">adxl345_write_to_reg()</a>, and <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00054">imu_aspirin_arch_init()</a>.</p>
 
 </div>
 </div>
@@ -199,7 +200,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00184">184</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00144">144</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
 
 <p>References <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00035">__attribute__()</a>.</p>
 
@@ -231,22 +232,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00188">188</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00148">148</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
 
-<p>References <a class="el" href="imu__aspirin_8h_source.html#l00081">ImuAspirin::accel_rx_buf</a>, <a class="el" href="imu__aspirin_8h_source.html#l00080">ImuAspirin::accel_tx_buf</a>, <a class="el" href="adxl345_8h_source.html#l00013">ADXL345_REG_DATA_X0</a>, <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00020">Adxl345Select</a>, and <a class="el" href="imu__aspirin_8c_source.html#l00006">imu_aspirin</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00093">configure_accel()</a>.</p>
-
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_a80c467720e9ce786f3aa08857a4216b2_icgraph.png" border="0" usemap="#stm32_2subsystems_2imu_2imu__aspirin__arch_8c_a80c467720e9ce786f3aa08857a4216b2_icgraph" alt=""/></div>
-<map name="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_a80c467720e9ce786f3aa08857a4216b2_icgraph" id="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_a80c467720e9ce786f3aa08857a4216b2_icgraph">
-<area shape="rect" id="node3" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2" title="configure_accel" alt="" coords="255,5,375,35"/><area shape="rect" id="node5" href="imu__aspirin_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="425,5,527,35"/></map>
-</div>
-</p>
+<p>References <a class="el" href="imu__aspirin_8h_source.html#l00123">ImuAspirin::accel_rx_buf</a>, <a class="el" href="imu__aspirin_8h_source.html#l00122">ImuAspirin::accel_tx_buf</a>, <a class="el" href="adxl345_8h_source.html#l00013">ADXL345_REG_DATA_X0</a>, <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00022">Adxl345Select</a>, and <a class="el" href="imu__aspirin_8c_source.html#l00006">imu_aspirin</a>.</p>
 
 </div>
 </div>
@@ -275,9 +263,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00172">172</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00132">132</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
 
-<p>References <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00020">Adxl345Select</a>, <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00019">Adxl345Unselect</a>, and <a class="el" href="humid__sht_8h_source.html#l00040">RESET</a>.</p>
+<p>References <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00022">Adxl345Select</a>, <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00021">Adxl345Unselect</a>, and <a class="el" href="temp__tcouple__adc_8c_source.html#l00054">val</a>.</p>
 
 </div>
 </div>
@@ -286,7 +274,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="lisa__test__adxl345__dma_8c.html#a4a669b9d2efca9fcda5db4b642a990e4">dma1_c4_irq_handler</a> </td>
+          <td class="memname">void <a class="el" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4a669b9d2efca9fcda5db4b642a990e4">dma1_c4_irq_handler</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -296,14 +284,31 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00075">75</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+
+<p>References <a class="el" href="imu__aspirin_8h_source.html#l00121">ImuAspirin::accel_available</a>, and <a class="el" href="imu__aspirin_8c_source.html#l00006">imu_aspirin</a>.</p>
+
+<p>Referenced by <a class="el" href="stm32_2subsystems_2imu_2imu__crista__arch_8c_source.html#l00100">ADS8344_read_channel()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_a4a669b9d2efca9fcda5db4b642a990e4_icgraph.png" border="0" usemap="#stm32_2subsystems_2imu_2imu__aspirin__arch_8c_a4a669b9d2efca9fcda5db4b642a990e4_icgraph" alt=""/></div>
+<map name="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_a4a669b9d2efca9fcda5db4b642a990e4_icgraph" id="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_a4a669b9d2efca9fcda5db4b642a990e4_icgraph">
+<area shape="rect" id="node3" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a72dcb7ac06dbc793baf3b3b6575f5d2d" title="ADS8344_read_channel" alt="" coords="215,5,388,35"/><area shape="rect" id="node5" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a998b4ce1e557d7dd9256f33a85c1ec37" title="ADS8344_start" alt="" coords="439,5,556,35"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="af28c7f63910b85ce6f653968e38a6a10"></a><!-- doxytag: member="imu_aspirin_arch.c::exti15_10_irq_handler" ref="af28c7f63910b85ce6f653968e38a6a10" args="(void)" -->
+<a class="anchor" id="ac13fd4f156b4a88afac6d174103a88a8"></a><!-- doxytag: member="imu_aspirin_arch.c::dma1_channel4_isr" ref="ac13fd4f156b4a88afac6d174103a88a8" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="lisa__test__itg3200_8c.html#af28c7f63910b85ce6f653968e38a6a10">exti15_10_irq_handler</a> </td>
+          <td class="memname">void <a class="el" href="lisa__test__adxl345__dma_8c.html#ac13fd4f156b4a88afac6d174103a88a8">dma1_channel4_isr</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -315,12 +320,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a25c7fe956a00de07290f7a78d27c7c89"></a><!-- doxytag: member="imu_aspirin_arch.c::exti2_irq_handler" ref="a25c7fe956a00de07290f7a78d27c7c89" args="(void)" -->
+<a class="anchor" id="a8aaa57c7903131c1c86605393bb4654e"></a><!-- doxytag: member="imu_aspirin_arch.c::exti15_10_isr" ref="a8aaa57c7903131c1c86605393bb4654e" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="lisa__test__aspirin_8c.html#a25c7fe956a00de07290f7a78d27c7c89">exti2_irq_handler</a> </td>
+          <td class="memname">void <a class="el" href="lisa__test__itg3200_8c.html#a8aaa57c7903131c1c86605393bb4654e">exti15_10_isr</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -330,14 +335,18 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00199">199</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+
+<p>References <a class="el" href="imu__aspirin_8h_source.html#l00113">AspirinStatusReadingGyro</a>, <a class="el" href="imu__aspirin_8c_source.html#l00006">imu_aspirin</a>, and <a class="el" href="imu__aspirin_8h_source.html#l00118">ImuAspirin::status</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a2b53e4c66c30098f313d5f0945c3baf5"></a><!-- doxytag: member="imu_aspirin_arch.c::exti9_5_irq_handler" ref="a2b53e4c66c30098f313d5f0945c3baf5" args="(void)" -->
+<a class="anchor" id="a40747dba0f93159403e51109a87575fd"></a><!-- doxytag: member="imu_aspirin_arch.c::exti2_isr" ref="a40747dba0f93159403e51109a87575fd" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="hmc5843_8c.html#a2b53e4c66c30098f313d5f0945c3baf5">exti9_5_irq_handler</a> </td>
+          <td class="memname">void <a class="el" href="lisa__test__adxl345__dma_8c.html#a40747dba0f93159403e51109a87575fd">exti2_isr</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -347,7 +356,26 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2peripherals_2hmc5843__arch_8c_source.html#l00066">66</a> of file <a class="el" href="stm32_2peripherals_2hmc5843__arch_8c_source.html">hmc5843_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2peripherals_2max1168__arch_8c_source.html#l00081">81</a> of file <a class="el" href="stm32_2peripherals_2max1168__arch_8c_source.html">max1168_arch.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac033acbc708beb196e46622d95d450c5"></a><!-- doxytag: member="imu_aspirin_arch.c::exti9_5_isr" ref="ac033acbc708beb196e46622d95d450c5" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="lisa__test__hmc5843_8c.html#ac033acbc708beb196e46622d95d450c5">exti9_5_isr</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="stm32_2peripherals_2hmc5843__arch_8c_source.html#l00055">55</a> of file <a class="el" href="stm32_2peripherals_2hmc5843__arch_8c_source.html">hmc5843_arch.c</a>.</p>
 
 </div>
 </div>
@@ -366,9 +394,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00080">80</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00054">54</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
 
-<p>References <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00019">Adxl345Unselect</a>.</p>
+<p>References <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00021">Adxl345Unselect</a>.</p>
 
 </div>
 </div>
@@ -387,7 +415,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00052">52</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00042">42</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
 
 </div>
 </div>
@@ -406,7 +434,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00024">24</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00026">26</a> of file <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
 
 </div>
 </div>
@@ -430,7 +458,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html">imu_aspirin_arch.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

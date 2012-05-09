@@ -131,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00037"></a>00037 
 <a name="l00038"></a><a class="code" href="temp__temod_8h.html#aaaf211bc5462b03ca020351920b40586">00038</a> <span class="keywordtype">float</span> <a class="code" href="temp__temod_8c.html#aaaf211bc5462b03ca020351920b40586">ftmd_temperature</a>;
 <a name="l00039"></a><a class="code" href="temp__temod_8c.html#af1da51a8e0ebecf34a62177f2e10e0e4">00039</a> <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> <a class="code" href="temp__temod_8c.html#af1da51a8e0ebecf34a62177f2e10e0e4">tmd_trans</a>;
@@ -170,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073       <a class="code" href="temp__temod_8c.html#aaaf211bc5462b03ca020351920b40586">ftmd_temperature</a> = (tmd_temperature / <a class="code" href="temp__temod_8c.html#ad42cc3c798b6aa0588a247d81fffb2e5">TEMOD_TYPE</a>) - 32.;
 <a name="l00074"></a>00074 
-<a name="l00075"></a>00075       DOWNLINK_SEND_TMP_STATUS(DefaultChannel, &amp;tmd_temperature, &amp;<a class="code" href="temp__temod_8c.html#aaaf211bc5462b03ca020351920b40586">ftmd_temperature</a>);
+<a name="l00075"></a>00075       DOWNLINK_SEND_TMP_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;tmd_temperature, &amp;<a class="code" href="temp__temod_8c.html#aaaf211bc5462b03ca020351920b40586">ftmd_temperature</a>);
 <a name="l00076"></a>00076       <a class="code" href="temp__temod_8c.html#af1da51a8e0ebecf34a62177f2e10e0e4">tmd_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00077"></a>00077   }
 <a name="l00078"></a>00078 }
@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="temp__temod_8c.html">temp_temod.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

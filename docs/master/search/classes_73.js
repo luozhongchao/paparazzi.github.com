@@ -10,5 +10,8 @@ var searchData=
   ['spistream_5fmessage_5frange_5ft',['spistream_message_range_t',['../structspistream__message__range__t.html',1,'']]],
   ['spistream_5fstate_5ft',['spistream_state_t',['../structspistream__state__t.html',1,'']]],
   ['supervision',['Supervision',['../structSupervision.html',1,'']]],
-  ['svinfo',['SVinfo',['../structSVinfo.html',1,'']]]
+  ['svinfo',['SVinfo',['../structSVinfo.html',1,'']]],
+  ['sys_5ftime',['sys_time',['../structsys__time.html',1,'']]],
+  ['sys_5ftime_5ftimer',['sys_time_timer',['../structsys__time__timer.html',1,'']]],
+  ['sysmon',['SysMon',['../structSysMon.html',1,'']]]
 ];

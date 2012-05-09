@@ -8,6 +8,7 @@ var dir_9dfa8d69f4095c54935aef23da2b245f =
     [ "cartography", "dir_9f58af26e52a1c411d52ad6ce1f55239.html", null ],
     [ "com", "dir_7d65274999bf33c5e273a9ce5df50830.html", null ],
     [ "core", "dir_ba153d6e8586ae67e8b8e052411f521d.html", null ],
+    [ "datalink", "dir_e46c8ffbf2deecb29ed9ce7799f8de66.html", null ],
     [ "demo_module", "dir_d62ccc8291a2c71896f794434c156bef.html", null ],
     [ "deploy_sonar_buoy", "dir_af20b8732e9130792d3e236a1e590695.html", null ],
     [ "digital_cam", "dir_2fd8561059e119bd45b0a0ad64d7c791.html", null ],

@@ -125,83 +125,86 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
 <a name="l00022"></a>00022 <span class="comment"> */</span>
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;stm32/rcc.h&gt;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="stm32_2gpio_8h.html">stm32/gpio.h</a>&gt;</span>
+<a name="l00024"></a>00024 <span class="comment">//#include &lt;libopencm3/stm32/f1/rcc.h&gt;</span>
+<a name="l00025"></a>00025 <span class="comment">//#include &lt;libopencm3/stm32/f1/gpio.h&gt;</span>
 <a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;stm32/flash.h&gt;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;stm32/misc.h&gt;</span>
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="preprocessor">#include BOARD_CONFIG</span>
-<a name="l00031"></a>00031 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
-<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
-<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html">sys_time.h</a>&quot;</span>
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> );
-<a name="l00036"></a>00036 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>( <span class="keywordtype">void</span> );
-<a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="test__uart__lisam_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00038</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">void</span>) {
+<a name="l00027"></a>00027 <span class="comment">//#include &lt;libopencm3/stm32/f1/flash.h&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="comment">//#include &lt;libopencm3/cm3/common.h&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="preprocessor">#include BOARD_CONFIG</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> );
+<a name="l00038"></a>00038 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>( <span class="keywordtype">void</span> );
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
+<a name="l00040"></a><a class="code" href="test__uart__lisam_8c.html#a840291bc02cba5474a4cb46a9b9566fe">00040</a> <span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">void</span>) {
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042   <span class="keywordflow">while</span> (1) {
-<a name="l00043"></a>00043     <span class="keywordflow">if</span> (<a class="code" href="sim_2sys__time__hw_8h.html#aae751b25410663d1569168a04e60c8db">sys_time_periodic</a>())
-<a name="l00044"></a>00044       <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>();
-<a name="l00045"></a>00045   }
-<a name="l00046"></a>00046   <span class="keywordflow">return</span> 0;
-<a name="l00047"></a>00047 }
+<a name="l00042"></a>00042   <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044   <span class="keywordflow">while</span> (1) {
+<a name="l00045"></a>00045     <span class="keywordflow">if</span> (<a class="code" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666">sys_time_check_and_ack_timer</a>(0))
+<a name="l00046"></a>00046       <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>();
+<a name="l00047"></a>00047   }
 <a name="l00048"></a>00048 
-<a name="l00049"></a>00049 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00050"></a>00050   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
-<a name="l00051"></a>00051   <a class="code" href="lpc21_2sys__time__hw_8h.html#afa1427883d31532a107dc306b6b3b6d7">sys_time_init</a>();
-<a name="l00052"></a>00052 }
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>( <span class="keywordtype">void</span> ) {
-<a name="l00055"></a>00055   <span class="keywordtype">char</span> ch;
+<a name="l00049"></a>00049   <span class="keywordflow">return</span> 0;
+<a name="l00050"></a>00050 }
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
+<a name="l00053"></a>00053   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
+<a name="l00054"></a>00054   <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);
+<a name="l00055"></a>00055 }
 <a name="l00056"></a>00056 
-<a name="l00057"></a>00057   Uart1Transmit(<span class="charliteral">&#39;a&#39;</span>);
-<a name="l00058"></a>00058   Uart2Transmit(<span class="charliteral">&#39;b&#39;</span>);
-<a name="l00059"></a>00059   Uart3Transmit(<span class="charliteral">&#39;c&#39;</span>);
-<a name="l00060"></a>00060   Uart5Transmit(<span class="charliteral">&#39;d&#39;</span>);
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062   <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(1);
-<a name="l00063"></a>00063   <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
+<a name="l00057"></a>00057 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="firmwares_2rotorcraft_2main_8c.html#a433218491d8e51ae032540c2c00d263f">main_periodic</a>( <span class="keywordtype">void</span> ) {
+<a name="l00058"></a>00058   <span class="keywordtype">char</span> ch;
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060   Uart1Transmit(<span class="charliteral">&#39;a&#39;</span>);
+<a name="l00061"></a>00061   Uart2Transmit(<span class="charliteral">&#39;b&#39;</span>);
+<a name="l00062"></a>00062   Uart3Transmit(<span class="charliteral">&#39;c&#39;</span>);
+<a name="l00063"></a>00063   Uart5Transmit(<span class="charliteral">&#39;d&#39;</span>);
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065   <span class="keywordflow">if</span> (Uart1ChAvailable()) {
-<a name="l00066"></a>00066     ch = Uart1Getch();
-<a name="l00067"></a>00067     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;a&#39;</span>) {
-<a name="l00068"></a>00068       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
-<a name="l00069"></a>00069     } <span class="keywordflow">else</span> {
-<a name="l00070"></a>00070       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
-<a name="l00071"></a>00071     }
-<a name="l00072"></a>00072   }
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074   <span class="keywordflow">if</span> (Uart2ChAvailable()) {
-<a name="l00075"></a>00075     ch = Uart2Getch();
-<a name="l00076"></a>00076     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;b&#39;</span>) {
-<a name="l00077"></a>00077       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
-<a name="l00078"></a>00078     } <span class="keywordflow">else</span> {
-<a name="l00079"></a>00079       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
-<a name="l00080"></a>00080     }
-<a name="l00081"></a>00081   }
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083   <span class="keywordflow">if</span> (Uart3ChAvailable()) {
-<a name="l00084"></a>00084     ch = Uart3Getch();
-<a name="l00085"></a>00085     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;c&#39;</span>) {
-<a name="l00086"></a>00086       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
-<a name="l00087"></a>00087     } <span class="keywordflow">else</span> {
-<a name="l00088"></a>00088       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
-<a name="l00089"></a>00089     }
-<a name="l00090"></a>00090   }
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092   <span class="keywordflow">if</span> (Uart5ChAvailable()) {
-<a name="l00093"></a>00093     ch = Uart5Getch();
-<a name="l00094"></a>00094     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;d&#39;</span>) {
-<a name="l00095"></a>00095       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
-<a name="l00096"></a>00096     } <span class="keywordflow">else</span> {
-<a name="l00097"></a>00097       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
-<a name="l00098"></a>00098     }
-<a name="l00099"></a>00099   }
-<a name="l00100"></a>00100 }
+<a name="l00065"></a>00065   <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(1);
+<a name="l00066"></a>00066   <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068   <span class="keywordflow">if</span> (Uart1ChAvailable()) {
+<a name="l00069"></a>00069     ch = Uart1Getch();
+<a name="l00070"></a>00070     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;a&#39;</span>) {
+<a name="l00071"></a>00071       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
+<a name="l00072"></a>00072     } <span class="keywordflow">else</span> {
+<a name="l00073"></a>00073       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
+<a name="l00074"></a>00074     }
+<a name="l00075"></a>00075   }
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077   <span class="keywordflow">if</span> (Uart2ChAvailable()) {
+<a name="l00078"></a>00078     ch = Uart2Getch();
+<a name="l00079"></a>00079     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;b&#39;</span>) {
+<a name="l00080"></a>00080       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
+<a name="l00081"></a>00081     } <span class="keywordflow">else</span> {
+<a name="l00082"></a>00082       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
+<a name="l00083"></a>00083     }
+<a name="l00084"></a>00084   }
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086   <span class="keywordflow">if</span> (Uart3ChAvailable()) {
+<a name="l00087"></a>00087     ch = Uart3Getch();
+<a name="l00088"></a>00088     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;c&#39;</span>) {
+<a name="l00089"></a>00089       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
+<a name="l00090"></a>00090     } <span class="keywordflow">else</span> {
+<a name="l00091"></a>00091       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
+<a name="l00092"></a>00092     }
+<a name="l00093"></a>00093   }
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095   <span class="keywordflow">if</span> (Uart5ChAvailable()) {
+<a name="l00096"></a>00096     ch = Uart5Getch();
+<a name="l00097"></a>00097     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;d&#39;</span>) {
+<a name="l00098"></a>00098       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
+<a name="l00099"></a>00099     } <span class="keywordflow">else</span> {
+<a name="l00100"></a>00100       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
+<a name="l00101"></a>00101     }
+<a name="l00102"></a>00102   }
+<a name="l00103"></a>00103 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -222,7 +225,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="test__uart__lisam_8c.html">test_uart_lisam.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

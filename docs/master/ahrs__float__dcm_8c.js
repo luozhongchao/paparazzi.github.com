@@ -6,6 +6,7 @@ var ahrs__float__dcm_8c =
     [ "ahrs_propagate", "ahrs__float__dcm_8c.html#af8f4df7ae38ca5b239eac30e7d259e46", null ],
     [ "ahrs_update_accel", "ahrs__float__dcm_8c.html#a8bf83860498b05e7e94484cdcbcb1b7a", null ],
     [ "ahrs_update_fw_estimator", "ahrs__float__dcm_8c.html#acfb588823e7daf8f26abac33fb48baba", null ],
+    [ "ahrs_update_gps", "ahrs__float__dcm_8c.html#a0156f6669675c216bbcb413ea1879960", null ],
     [ "ahrs_update_mag", "ahrs__float__dcm_8c.html#a781832a9119845d31bda0fc8a8bb8bf3", null ],
     [ "compute_body_orientation_and_rates", "ahrs__float__dcm_8c.html#a2e90a05e5a4ca369d0308bb72e68171d", null ],
     [ "Drift_correction", "ahrs__float__dcm_8c.html#a0983667a3515b42c82ce0b23d0007439", null ],

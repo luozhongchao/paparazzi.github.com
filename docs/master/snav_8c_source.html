@@ -129,15 +129,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025   <a class="code" href="snav_8c.html#a09c4031a2263a02d4ba3b5b0580db9e3">wp_a</a> = <a class="code" href="structpoint.html#a7bb43530a17e55615fa418ff9f914991">a</a>;
 <a name="l00026"></a>00026   radius = fabs(radius);
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028   <span class="keywordtype">float</span> da_x = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="snav_8c.html#a09c4031a2263a02d4ba3b5b0580db9e3">wp_a</a>) - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>;
-<a name="l00029"></a>00029   <span class="keywordtype">float</span> da_y = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="snav_8c.html#a09c4031a2263a02d4ba3b5b0580db9e3">wp_a</a>) - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>;
+<a name="l00028"></a>00028   <span class="keywordtype">float</span> da_x = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="snav_8c.html#a09c4031a2263a02d4ba3b5b0580db9e3">wp_a</a>) - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>;
+<a name="l00029"></a>00029   <span class="keywordtype">float</span> da_y = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="snav_8c.html#a09c4031a2263a02d4ba3b5b0580db9e3">wp_a</a>) - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031   <span class="comment">/* D_CD orthogonal to current course, CD on the side of A */</span>
-<a name="l00032"></a>00032   <span class="keywordtype">float</span> u_x = cos(M_PI_2 - <a class="code" href="estimator_8c.html#a91a95ce5b0e2fe00b6b8d050322c1f81">estimator_hspeed_dir</a>);
-<a name="l00033"></a>00033   <span class="keywordtype">float</span> u_y = sin(M_PI_2 - <a class="code" href="estimator_8c.html#a91a95ce5b0e2fe00b6b8d050322c1f81">estimator_hspeed_dir</a>);
+<a name="l00032"></a>00032   <span class="keywordtype">float</span> u_x = cos(M_PI_2 - <a class="code" href="estimator_8c.html#a91a95ce5b0e2fe00b6b8d050322c1f81" title="direction of horizontal ground speed in rad (CW/North)">estimator_hspeed_dir</a>);
+<a name="l00033"></a>00033   <span class="keywordtype">float</span> u_y = sin(M_PI_2 - <a class="code" href="estimator_8c.html#a91a95ce5b0e2fe00b6b8d050322c1f81" title="direction of horizontal ground speed in rad (CW/North)">estimator_hspeed_dir</a>);
 <a name="l00034"></a>00034   <a class="code" href="snav_8c.html#aad9cde020f86248f197056a4abedbff2">d_radius</a> = - <a class="code" href="snav_8c.html#a04f9ab35e2baf93187f05a576ee3ecde">Sign</a>(u_x*da_y - u_y*da_x) * <a class="code" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>;
-<a name="l00035"></a>00035   wp_cd.x = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a> + <a class="code" href="snav_8c.html#aad9cde020f86248f197056a4abedbff2">d_radius</a> * u_y;
-<a name="l00036"></a>00036   wp_cd.y = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a> - <a class="code" href="snav_8c.html#aad9cde020f86248f197056a4abedbff2">d_radius</a> * u_x;
+<a name="l00035"></a>00035   wp_cd.x = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a> + <a class="code" href="snav_8c.html#aad9cde020f86248f197056a4abedbff2">d_radius</a> * u_y;
+<a name="l00036"></a>00036   wp_cd.y = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a> - <a class="code" href="snav_8c.html#aad9cde020f86248f197056a4abedbff2">d_radius</a> * u_x;
 <a name="l00037"></a>00037   wp_cd.a = <a class="code" href="navigation_8h.html#a2de6e5b93a3552facfa675f1bccd8db2">WaypointAlt</a>(<a class="code" href="snav_8c.html#a09c4031a2263a02d4ba3b5b0580db9e3">wp_a</a>);
 <a name="l00038"></a>00038 
 <a name="l00039"></a>00039   <span class="comment">/* A_CA orthogonal to desired course, CA on the side of D */</span>
@@ -252,12 +252,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00148"></a><a class="code" href="snav_8h.html#a3e498af4debb840cd3fec68d86b94b17">00148</a> bool_t <a class="code" href="snav_8c.html#a61a4949a8b740baed52bc307f317c8d6">snav_on_time</a>(<span class="keywordtype">float</span> nominal_radius) {
 <a name="l00149"></a>00149   nominal_radius = fabs(nominal_radius);
 <a name="l00150"></a>00150 
-<a name="l00151"></a>00151   <span class="keywordtype">float</span> current_qdr = M_PI_2 - atan2(<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095">estimator_y</a>-wp_ca.y, <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82">estimator_x</a>-wp_ca.x);
+<a name="l00151"></a>00151   <span class="keywordtype">float</span> current_qdr = M_PI_2 - atan2(<a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>-wp_ca.y, <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>-wp_ca.x);
 <a name="l00152"></a>00152   <span class="keywordtype">float</span> remaining_angle = <a class="code" href="snav_8c.html#a9d26b9a8d6e9b268e247f2d601b450c8">Norm2Pi</a>(<a class="code" href="snav_8c.html#a04f9ab35e2baf93187f05a576ee3ecde">Sign</a>(<a class="code" href="snav_8c.html#aae9d274b09176b2c2311ca27790c2ccf">a_radius</a>)*(<a class="code" href="snav_8c.html#ae786a20d0336486a81e9f23100179645">qdr_a</a> - current_qdr));
-<a name="l00153"></a>00153   <span class="keywordtype">float</span> remaining_time = <a class="code" href="snav_8c.html#afe0d9b3d8c14bb52150b4944d239a87e">snav_desired_tow</a> - <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="time of week in ms">tow</a> / 1000.;
+<a name="l00153"></a>00153   <span class="keywordtype">float</span> remaining_time = <a class="code" href="snav_8c.html#afe0d9b3d8c14bb52150b4944d239a87e">snav_desired_tow</a> - <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="GPS time of week in ms.">tow</a> / 1000.;
 <a name="l00154"></a>00154 
 <a name="l00155"></a>00155   <span class="comment">/* Use the nominal airspeed if the estimated one is not realistic */</span>
-<a name="l00156"></a>00156   <span class="keywordtype">float</span> airspeed = <a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77">estimator_airspeed</a>;
+<a name="l00156"></a>00156   <span class="keywordtype">float</span> airspeed = <a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77" title="m/s">estimator_airspeed</a>;
 <a name="l00157"></a>00157   <span class="keywordflow">if</span> (airspeed &lt; NOMINAL_AIRSPEED / 2. ||
 <a name="l00158"></a>00158       airspeed &gt; 2.* NOMINAL_AIRSPEED)
 <a name="l00159"></a>00159     airspeed = NOMINAL_AIRSPEED;
@@ -319,7 +319,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="snav_8c.html">snav.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -131,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;messages.h&quot;</span>
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037 <span class="comment">/* neutrals */</span>
@@ -286,10 +286,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00186"></a>00186 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00187"></a>00187 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00188"></a>00188 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00189"></a>00189 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">downlink.h</a>&quot;</span>
+<a name="l00189"></a>00189 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00190"></a>00190 
 <a name="l00191"></a><a class="code" href="ins__vn100_8h.html#a6764cc19c533754cd78ee6ec1ed91af5">00191</a> <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins__vn100_8c.html#a6764cc19c533754cd78ee6ec1ed91af5">ins_report_task</a>( <span class="keywordtype">void</span> ) {
-<a name="l00192"></a>00192   DOWNLINK_SEND_AHRS_LKF(DefaultChannel,
+<a name="l00192"></a>00192   DOWNLINK_SEND_AHRS_LKF(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,
 <a name="l00193"></a>00193       &amp;<a class="code" href="ins__vn100_8c.html#ada2085282f4210fef60a751d236daffb">ins_eulers</a>.<a class="code" href="structFloatEulers.html#a4b2c73d59e89d78354658b20058720e0" title="in radians">phi</a>, &amp;<a class="code" href="ins__vn100_8c.html#ada2085282f4210fef60a751d236daffb">ins_eulers</a>.<a class="code" href="structFloatEulers.html#a98f8790d7dbb4d3ef03e99cdf27f844e" title="in radians">theta</a>, &amp;<a class="code" href="ins__vn100_8c.html#ada2085282f4210fef60a751d236daffb">ins_eulers</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>,
 <a name="l00194"></a>00194       &amp;<a class="code" href="ins__vn100_8c.html#ae631fd3eebb7484ddc5ba6f62902df6e">ins_quat</a>.<a class="code" href="structFloatQuat.html#a4e645cefcbdb25a8cfb0fc0c76d63044">qi</a>, &amp;<a class="code" href="ins__vn100_8c.html#ae631fd3eebb7484ddc5ba6f62902df6e">ins_quat</a>.<a class="code" href="structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb">qx</a>, &amp;<a class="code" href="ins__vn100_8c.html#ae631fd3eebb7484ddc5ba6f62902df6e">ins_quat</a>.<a class="code" href="structFloatQuat.html#a5ceb12dd2afeb86ce8b2065dde0cd61e">qy</a>, &amp;<a class="code" href="ins__vn100_8c.html#ae631fd3eebb7484ddc5ba6f62902df6e">ins_quat</a>.<a class="code" href="structFloatQuat.html#ada1c73599b4a1dca9752f4106c20d292">qz</a>,
 <a name="l00195"></a>00195       &amp;<a class="code" href="ins__vn100_8c.html#ae5065170f902dee54ba5fb3e9c218532">ins_rates</a>.<a class="code" href="structFloatRates.html#a4bc81b8dfc82c389671683596d4ad15e" title="in rad/s^2">p</a>, &amp;<a class="code" href="ins__vn100_8c.html#ae5065170f902dee54ba5fb3e9c218532">ins_rates</a>.<a class="code" href="structFloatRates.html#a128ab43f390d2a0ff80fe4bef003061a" title="in rad/s^2">q</a>, &amp;<a class="code" href="ins__vn100_8c.html#ae5065170f902dee54ba5fb3e9c218532">ins_rates</a>.<a class="code" href="structFloatRates.html#a75e3090314c4ad6edf12f7c08d9c5c0a" title="in rad/s^2">r</a>,
@@ -316,7 +316,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ins__vn100_8c.html">ins_vn100.c</a>      </li>
 
-    <li class="footer">Generated on Sun Apr 22 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
