@@ -165,22 +165,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00061"></a>00061 <span class="preprocessor">#endif</span>
 <a name="l00062"></a>00062 <span class="preprocessor"></span><span class="preprocessor">#else</span>
 <a name="l00063"></a>00063 <span class="preprocessor"></span><span class="preprocessor">#if defined MILLIAMP_AT_FULL_THROTTLE &amp;&amp; defined COMMAND_THROTTLE</span>
-<a name="l00064"></a>00064 <span class="preprocessor"></span>      <span class="comment">/*</span>
-<a name="l00065"></a>00065 <span class="comment">       * Superellipse: abs(x/a)^n + abs(y/b)^n = 1</span>
-<a name="l00066"></a>00066 <span class="comment">       * with a = 1</span>
-<a name="l00067"></a>00067 <span class="comment">       * b = mA at full throttle</span>
-<a name="l00068"></a>00068 <span class="comment">       * n = 1.2     This defines nonlinearity (1 = linear)</span>
-<a name="l00069"></a>00069 <span class="comment">       * x = throttle</span>
-<a name="l00070"></a>00070 <span class="comment">       * y = current</span>
-<a name="l00071"></a>00071 <span class="comment">       *</span>
-<a name="l00072"></a>00072 <span class="comment">       * define CURRENT_ESTIMATION_NONLINEARITY in your airframe file to change the default nonlinearity factor of 1.2</span>
-<a name="l00073"></a>00073 <span class="comment">       */</span>
-<a name="l00074"></a>00074       <span class="keywordtype">float</span> b = (float)MILLIAMP_AT_FULL_THROTTLE;
-<a name="l00075"></a>00075       <span class="keywordtype">float</span> x = ((float)<a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_THROTTLE]) / ((float)<a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
-<a name="l00076"></a>00076       <span class="comment">/* electrical.current y = ( b^n - (b* x/a)^n )^1/n</span>
-<a name="l00077"></a>00077 <span class="comment">       * a=1, n = electrical_priv.nonlin_factor</span>
-<a name="l00078"></a>00078 <span class="comment">       */</span>
-<a name="l00079"></a>00079       <a class="code" href="electrical_8c.html#a935f74638cd658e7dac75915bcb63bde">electrical</a>.<a class="code" href="structElectrical.html#aad2e82bde4cf4c3851ead15ad1dca550">current</a> = b - pow((pow(b,<a class="code" href="electrical_8c.html#a32b8344d9c5cd588c0fe8d779cd8f9be">electrical_priv</a>.nonlin_factor)-pow((b*x),<a class="code" href="electrical_8c.html#a32b8344d9c5cd588c0fe8d779cd8f9be">electrical_priv</a>.nonlin_factor)), (1./<a class="code" href="electrical_8c.html#a32b8344d9c5cd588c0fe8d779cd8f9be">electrical_priv</a>.nonlin_factor));
+<a name="l00064"></a>00064 <span class="preprocessor"></span>  <span class="comment">/*</span>
+<a name="l00065"></a>00065 <span class="comment">   * Superellipse: abs(x/a)^n + abs(y/b)^n = 1</span>
+<a name="l00066"></a>00066 <span class="comment">   * with a = 1</span>
+<a name="l00067"></a>00067 <span class="comment">   * b = mA at full throttle</span>
+<a name="l00068"></a>00068 <span class="comment">   * n = 1.2     This defines nonlinearity (1 = linear)</span>
+<a name="l00069"></a>00069 <span class="comment">   * x = throttle</span>
+<a name="l00070"></a>00070 <span class="comment">   * y = current</span>
+<a name="l00071"></a>00071 <span class="comment">   *</span>
+<a name="l00072"></a>00072 <span class="comment">   * define CURRENT_ESTIMATION_NONLINEARITY in your airframe file to change the default nonlinearity factor of 1.2</span>
+<a name="l00073"></a>00073 <span class="comment">   */</span>
+<a name="l00074"></a>00074   <span class="keywordtype">float</span> b = (float)MILLIAMP_AT_FULL_THROTTLE;
+<a name="l00075"></a>00075   <span class="keywordtype">float</span> x = ((float)<a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMAND_THROTTLE]) / ((float)<a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00076"></a>00076   <span class="comment">/* electrical.current y = ( b^n - (b* x/a)^n )^1/n</span>
+<a name="l00077"></a>00077 <span class="comment">   * a=1, n = electrical_priv.nonlin_factor</span>
+<a name="l00078"></a>00078 <span class="comment">   */</span>
+<a name="l00079"></a>00079   <a class="code" href="electrical_8c.html#a935f74638cd658e7dac75915bcb63bde">electrical</a>.<a class="code" href="structElectrical.html#aad2e82bde4cf4c3851ead15ad1dca550">current</a> = b - pow((pow(b,<a class="code" href="electrical_8c.html#a32b8344d9c5cd588c0fe8d779cd8f9be">electrical_priv</a>.nonlin_factor)-pow((b*x),<a class="code" href="electrical_8c.html#a32b8344d9c5cd588c0fe8d779cd8f9be">electrical_priv</a>.nonlin_factor)), (1./<a class="code" href="electrical_8c.html#a32b8344d9c5cd588c0fe8d779cd8f9be">electrical_priv</a>.nonlin_factor));
 <a name="l00080"></a>00080 <span class="preprocessor">#endif</span>
 <a name="l00081"></a>00081 <span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* ADC_CHANNEL_CURRENT */</span>
 <a name="l00082"></a>00082 
@@ -205,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="electrical_8c.html">electrical.c</a>      </li>
 
-    <li class="footer">Generated on Wed May 9 2012 04:00:06 for Paparazzi UAS by
+    <li class="footer">Generated on Thu May 10 2012 04:00:05 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
