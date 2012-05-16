@@ -182,193 +182,194 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00078"></a>00078   <a class="code" href="autopilot_8c.html#af650349177a10f98d82cd36290bc0108">autopilot_rc</a> = TRUE;
 <a name="l00079"></a>00079   <a class="code" href="autopilot_8c.html#a2420bfd42441204f7fa1c47721a304e6">autopilot_power_switch</a> = FALSE;
 <a name="l00080"></a>00080 <span class="preprocessor">#ifdef POWER_SWITCH_LED</span>
-<a name="l00081"></a>00081 <span class="preprocessor"></span>  <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(<a class="code" href="booz__1_80_8h.html#a3a5cfe68fa39b534d190c7bfaa6d8e33">POWER_SWITCH_LED</a>); <span class="comment">// POWER OFF</span>
-<a name="l00082"></a>00082 <span class="preprocessor">#endif</span>
-<a name="l00083"></a>00083 <span class="preprocessor"></span>  <a class="code" href="autopilot__arming__switch_8h.html#aea5ad986cd1e5b80aff7ef5589a18aac">autopilot_arming_init</a>();
-<a name="l00084"></a>00084 }
-<a name="l00085"></a>00085 
+<a name="l00081"></a>00081 <span class="preprocessor"></span>  <a class="code" href="lpc21_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b">LED_INIT</a>(<a class="code" href="booz__1_80_8h.html#a3a5cfe68fa39b534d190c7bfaa6d8e33">POWER_SWITCH_LED</a>);
+<a name="l00082"></a>00082   <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(<a class="code" href="booz__1_80_8h.html#a3a5cfe68fa39b534d190c7bfaa6d8e33">POWER_SWITCH_LED</a>); <span class="comment">// POWER OFF</span>
+<a name="l00083"></a>00083 <span class="preprocessor">#endif</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span>  <a class="code" href="autopilot__arming__switch_8h.html#aea5ad986cd1e5b80aff7ef5589a18aac">autopilot_arming_init</a>();
+<a name="l00085"></a>00085 }
 <a name="l00086"></a>00086 
-<a name="l00087"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a1914661233fbbed6c2ee653b99757652">00087</a> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a1914661233fbbed6c2ee653b99757652">autopilot_periodic</a>(<span class="keywordtype">void</span>) {
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089   RunOnceEvery(<a class="code" href="navigation_8h.html#a3ee200b97512f415140021966b421fb3">NAV_PRESCALER</a>, <a class="code" href="navigation_8c.html#ab2ce29f97dd1a6d297a60526a82054e5">nav_periodic_task</a>());
-<a name="l00090"></a>00090 <span class="preprocessor">#ifdef FAILSAFE_GROUND_DETECT</span>
-<a name="l00091"></a>00091 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a> &amp;&amp; <a class="code" href="autopilot_8c.html#a8b3a73c1c960edd2951f8ad6ba5232d2">autopilot_detect_ground</a>) {
-<a name="l00092"></a>00092     <a class="code" href="autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(<a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>);
-<a name="l00093"></a>00093     <a class="code" href="autopilot_8c.html#a8b3a73c1c960edd2951f8ad6ba5232d2">autopilot_detect_ground</a> = FALSE;
-<a name="l00094"></a>00094   }
-<a name="l00095"></a>00095 <span class="preprocessor">#endif</span>
-<a name="l00096"></a>00096 <span class="preprocessor"></span>
-<a name="l00097"></a>00097   <span class="comment">/* set failsafe commands, if in FAILSAFE or KILL mode */</span>
-<a name="l00098"></a>00098 <span class="preprocessor">#ifndef FAILSAFE_GROUND_DETECT</span>
-<a name="l00099"></a>00099 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a> ||
-<a name="l00100"></a>00100       <a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>) {
-<a name="l00101"></a>00101 <span class="preprocessor">#else</span>
-<a name="l00102"></a>00102 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>) {
-<a name="l00103"></a>00103 <span class="preprocessor">#endif</span>
-<a name="l00104"></a>00104 <span class="preprocessor"></span>    <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106" title="Storage of intermediate command values: these values come from the RC (MANUAL mode), from the autopilot (AUTO mode) or from control loops.">SetCommands</a>(<a class="code" href="commands_8c.html#a88b3a12659adc4151ddd6cbef8bd4187">commands_failsafe</a>,
-<a name="l00105"></a>00105     <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>, <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);
-<a name="l00106"></a>00106   }
-<a name="l00107"></a>00107   <span class="keywordflow">else</span> {
-<a name="l00108"></a>00108     <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#aa3265bfb8a8925942f818424f97f9725">guidance_v_run</a>( <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> );
-<a name="l00109"></a>00109     <a class="code" href="guidance__h_8c.html#ac4cf6da90a4278b4d0b2e4f227b33f2c">guidance_h_run</a>( <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> );
-<a name="l00110"></a>00110     <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106" title="Storage of intermediate command values: these values come from the RC (MANUAL mode), from the autopilot (AUTO mode) or from control loops.">SetCommands</a>(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>,
-<a name="l00111"></a>00111         <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>, <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);
-<a name="l00112"></a>00112   }
-<a name="l00113"></a>00113 
-<a name="l00114"></a>00114 }
-<a name="l00115"></a>00115 
+<a name="l00087"></a>00087 
+<a name="l00088"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a1914661233fbbed6c2ee653b99757652">00088</a> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a1914661233fbbed6c2ee653b99757652">autopilot_periodic</a>(<span class="keywordtype">void</span>) {
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090   RunOnceEvery(<a class="code" href="navigation_8h.html#a3ee200b97512f415140021966b421fb3">NAV_PRESCALER</a>, <a class="code" href="navigation_8c.html#ab2ce29f97dd1a6d297a60526a82054e5">nav_periodic_task</a>());
+<a name="l00091"></a>00091 <span class="preprocessor">#ifdef FAILSAFE_GROUND_DETECT</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a> &amp;&amp; <a class="code" href="autopilot_8c.html#a8b3a73c1c960edd2951f8ad6ba5232d2">autopilot_detect_ground</a>) {
+<a name="l00093"></a>00093     <a class="code" href="autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(<a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>);
+<a name="l00094"></a>00094     <a class="code" href="autopilot_8c.html#a8b3a73c1c960edd2951f8ad6ba5232d2">autopilot_detect_ground</a> = FALSE;
+<a name="l00095"></a>00095   }
+<a name="l00096"></a>00096 <span class="preprocessor">#endif</span>
+<a name="l00097"></a>00097 <span class="preprocessor"></span>
+<a name="l00098"></a>00098   <span class="comment">/* set failsafe commands, if in FAILSAFE or KILL mode */</span>
+<a name="l00099"></a>00099 <span class="preprocessor">#ifndef FAILSAFE_GROUND_DETECT</span>
+<a name="l00100"></a>00100 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a> ||
+<a name="l00101"></a>00101       <a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>) {
+<a name="l00102"></a>00102 <span class="preprocessor">#else</span>
+<a name="l00103"></a>00103 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>) {
+<a name="l00104"></a>00104 <span class="preprocessor">#endif</span>
+<a name="l00105"></a>00105 <span class="preprocessor"></span>    <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106" title="Storage of intermediate command values: these values come from the RC (MANUAL mode), from the autopilot (AUTO mode) or from control loops.">SetCommands</a>(<a class="code" href="commands_8c.html#a88b3a12659adc4151ddd6cbef8bd4187">commands_failsafe</a>,
+<a name="l00106"></a>00106     <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>, <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);
+<a name="l00107"></a>00107   }
+<a name="l00108"></a>00108   <span class="keywordflow">else</span> {
+<a name="l00109"></a>00109     <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#aa3265bfb8a8925942f818424f97f9725">guidance_v_run</a>( <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> );
+<a name="l00110"></a>00110     <a class="code" href="guidance__h_8c.html#ac4cf6da90a4278b4d0b2e4f227b33f2c">guidance_h_run</a>( <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> );
+<a name="l00111"></a>00111     <a class="code" href="commands_8h.html#a75054f73ea928d6ec314b745bf672106" title="Storage of intermediate command values: these values come from the RC (MANUAL mode), from the autopilot (AUTO mode) or from control loops.">SetCommands</a>(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>,
+<a name="l00112"></a>00112         <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>, <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);
+<a name="l00113"></a>00113   }
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115 }
 <a name="l00116"></a>00116 
-<a name="l00117"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">00117</a> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_autopilot_mode) {
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119   <span class="comment">/* force kill mode as long as AHRS is not aligned */</span>
-<a name="l00120"></a>00120   <span class="keywordflow">if</span> (!<a class="code" href="autopilot_8c.html#a99409d6a32e6cce437a1c0354a2515eb">ahrs_is_aligned</a>())
-<a name="l00121"></a>00121     new_autopilot_mode = <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>;
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123   <span class="keywordflow">if</span> (new_autopilot_mode != <a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a>) {
-<a name="l00124"></a>00124     <span class="comment">/* horizontal mode */</span>
-<a name="l00125"></a>00125     <span class="keywordflow">switch</span> (new_autopilot_mode) {
-<a name="l00126"></a>00126     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>:
-<a name="l00127"></a>00127 <span class="preprocessor">#ifndef KILL_AS_FAILSAFE</span>
-<a name="l00128"></a>00128 <span class="preprocessor"></span>      <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#a4b2c73d59e89d78354658b20058720e0" title="in radians">phi</a> = 0;
-<a name="l00129"></a>00129       <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#a98f8790d7dbb4d3ef03e99cdf27f844e" title="in radians">theta</a> = 0;
-<a name="l00130"></a>00130       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#a68ef1d14541e83675e37b38a6f57cd29">GUIDANCE_H_MODE_ATTITUDE</a>);
-<a name="l00131"></a>00131       <span class="keywordflow">break</span>;
-<a name="l00132"></a>00132 <span class="preprocessor">#endif</span>
-<a name="l00133"></a>00133 <span class="preprocessor"></span>    <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>:
-<a name="l00134"></a>00134       <a class="code" href="autopilot_8c.html#a4a3dedaf4d4da879348f946a9f3f4611">autopilot_set_motors_on</a>(FALSE);
-<a name="l00135"></a>00135       <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> = FALSE;
-<a name="l00136"></a>00136       <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> = 0;
-<a name="l00137"></a>00137       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#aca30783fe715ec77589d55fdaa7b76e5">GUIDANCE_H_MODE_KILL</a>);
-<a name="l00138"></a>00138       <span class="keywordflow">break</span>;
-<a name="l00139"></a>00139     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a39b3ba365e16b1b91380da51caf0c483">AP_MODE_RC_DIRECT</a>:
-<a name="l00140"></a>00140       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#aa4e386747c6286a7ce74fa13b1dfe6d9">GUIDANCE_H_MODE_RC_DIRECT</a>);
-<a name="l00141"></a>00141       <span class="keywordflow">break</span>;
-<a name="l00142"></a>00142     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a0dfd0e7b54ea82567fe99f9795107709">AP_MODE_RATE_DIRECT</a>:
-<a name="l00143"></a>00143     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ad8fff87351c33b41976f56250803d6a7">AP_MODE_RATE_Z_HOLD</a>:
-<a name="l00144"></a>00144       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#aea87a99ee38d15a28913fbe378ca264e">GUIDANCE_H_MODE_RATE</a>);
-<a name="l00145"></a>00145       <span class="keywordflow">break</span>;
-<a name="l00146"></a>00146     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a51250d87ce9f6ec96177cb331c1c1263">AP_MODE_ATTITUDE_DIRECT</a>:
-<a name="l00147"></a>00147     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a59923bec233d2f00a5b23538ab4062fa">AP_MODE_ATTITUDE_CLIMB</a>:
-<a name="l00148"></a>00148     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a8f1633b822937ff9ec8b030bbda4bc5c">AP_MODE_ATTITUDE_Z_HOLD</a>:
-<a name="l00149"></a>00149       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#a68ef1d14541e83675e37b38a6f57cd29">GUIDANCE_H_MODE_ATTITUDE</a>);
-<a name="l00150"></a>00150       <span class="keywordflow">break</span>;
-<a name="l00151"></a>00151     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a0bd4fa6ac04cd59a3aeac1d2de763bc9">AP_MODE_HOVER_DIRECT</a>:
-<a name="l00152"></a>00152     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a291a5a57a4550cbc7936e2067eab0a17">AP_MODE_HOVER_CLIMB</a>:
-<a name="l00153"></a>00153     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a38403e89695f18f3cce2422d25481d83">AP_MODE_HOVER_Z_HOLD</a>:
-<a name="l00154"></a>00154       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#a2f2f695a8fcb314dc64bf0b82811937d">GUIDANCE_H_MODE_HOVER</a>);
-<a name="l00155"></a>00155       <span class="keywordflow">break</span>;
-<a name="l00156"></a>00156     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a5c8305ebe45c377584ec5dd8d65a9ae6">AP_MODE_NAV</a>:
-<a name="l00157"></a>00157       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#a0695fb38a9f3b93b7be3484568e0be1a">GUIDANCE_H_MODE_NAV</a>);
-<a name="l00158"></a>00158       <span class="keywordflow">break</span>;
-<a name="l00159"></a>00159     <span class="keywordflow">default</span>:
-<a name="l00160"></a>00160       <span class="keywordflow">break</span>;
-<a name="l00161"></a>00161     }
-<a name="l00162"></a>00162     <span class="comment">/* vertical mode */</span>
-<a name="l00163"></a>00163     <span class="keywordflow">switch</span> (new_autopilot_mode) {
-<a name="l00164"></a>00164     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>:
-<a name="l00165"></a>00165 <span class="preprocessor">#ifndef KILL_AS_FAILSAFE</span>
-<a name="l00166"></a>00166 <span class="preprocessor"></span>      <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a615ed31ff0e531f529ed3ac21e544269" title="vertical speed setpoint in meter/s (input).">guidance_v_zd_sp</a> = <a class="code" href="pprz__algebra__int_8h.html#af665ad3da6b5c3589c19d7bdc66e8fc4">SPEED_BFP_OF_REAL</a>(0.5);
-<a name="l00167"></a>00167       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a77dd92d59de41da4a0e7987a218266c9">GUIDANCE_V_MODE_CLIMB</a>);
-<a name="l00168"></a>00168       <span class="keywordflow">break</span>;
-<a name="l00169"></a>00169 <span class="preprocessor">#endif</span>
-<a name="l00170"></a>00170 <span class="preprocessor"></span>    <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>:
-<a name="l00171"></a>00171       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a992efb12755c87117b1a6a3197ab3728">GUIDANCE_V_MODE_KILL</a>);
-<a name="l00172"></a>00172       <span class="keywordflow">break</span>;
-<a name="l00173"></a>00173     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a39b3ba365e16b1b91380da51caf0c483">AP_MODE_RC_DIRECT</a>:
-<a name="l00174"></a>00174     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a0dfd0e7b54ea82567fe99f9795107709">AP_MODE_RATE_DIRECT</a>:
-<a name="l00175"></a>00175     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a51250d87ce9f6ec96177cb331c1c1263">AP_MODE_ATTITUDE_DIRECT</a>:
-<a name="l00176"></a>00176     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a0bd4fa6ac04cd59a3aeac1d2de763bc9">AP_MODE_HOVER_DIRECT</a>:
-<a name="l00177"></a>00177       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#aca5421e816bd0c58ad9b86fc135635b0">GUIDANCE_V_MODE_RC_DIRECT</a>);
-<a name="l00178"></a>00178       <span class="keywordflow">break</span>;
-<a name="l00179"></a>00179     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a27ed1d05525cea6cb0914fb62225618c">AP_MODE_RATE_RC_CLIMB</a>:
-<a name="l00180"></a>00180     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ac976014a5a04dc8be7670673840e7680">AP_MODE_ATTITUDE_RC_CLIMB</a>:
-<a name="l00181"></a>00181       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a84951e7b99e79e47b85f08d87606b92b">GUIDANCE_V_MODE_RC_CLIMB</a>);
-<a name="l00182"></a>00182       <span class="keywordflow">break</span>;
-<a name="l00183"></a>00183     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a59923bec233d2f00a5b23538ab4062fa">AP_MODE_ATTITUDE_CLIMB</a>:
-<a name="l00184"></a>00184     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a291a5a57a4550cbc7936e2067eab0a17">AP_MODE_HOVER_CLIMB</a>:
-<a name="l00185"></a>00185       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a77dd92d59de41da4a0e7987a218266c9">GUIDANCE_V_MODE_CLIMB</a>);
-<a name="l00186"></a>00186       <span class="keywordflow">break</span>;
-<a name="l00187"></a>00187     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ad8fff87351c33b41976f56250803d6a7">AP_MODE_RATE_Z_HOLD</a>:
-<a name="l00188"></a>00188     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a8f1633b822937ff9ec8b030bbda4bc5c">AP_MODE_ATTITUDE_Z_HOLD</a>:
-<a name="l00189"></a>00189     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a38403e89695f18f3cce2422d25481d83">AP_MODE_HOVER_Z_HOLD</a>:
-<a name="l00190"></a>00190       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#ad9ee5da48b80fa2cd7db8d79af0e185a">GUIDANCE_V_MODE_HOVER</a>);
-<a name="l00191"></a>00191       <span class="keywordflow">break</span>;
-<a name="l00192"></a>00192     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a5c8305ebe45c377584ec5dd8d65a9ae6">AP_MODE_NAV</a>:
-<a name="l00193"></a>00193       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#acf327c70e058c173f8a006360068759f">GUIDANCE_V_MODE_NAV</a>);
-<a name="l00194"></a>00194       <span class="keywordflow">break</span>;
-<a name="l00195"></a>00195     <span class="keywordflow">default</span>:
-<a name="l00196"></a>00196       <span class="keywordflow">break</span>;
-<a name="l00197"></a>00197     }
-<a name="l00198"></a>00198     <a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> = new_autopilot_mode;
-<a name="l00199"></a>00199   }
-<a name="l00200"></a>00200 
-<a name="l00201"></a>00201 }
-<a name="l00202"></a>00202 
+<a name="l00117"></a>00117 
+<a name="l00118"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">00118</a> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_autopilot_mode) {
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120   <span class="comment">/* force kill mode as long as AHRS is not aligned */</span>
+<a name="l00121"></a>00121   <span class="keywordflow">if</span> (!<a class="code" href="autopilot_8c.html#a99409d6a32e6cce437a1c0354a2515eb">ahrs_is_aligned</a>())
+<a name="l00122"></a>00122     new_autopilot_mode = <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>;
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124   <span class="keywordflow">if</span> (new_autopilot_mode != <a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a>) {
+<a name="l00125"></a>00125     <span class="comment">/* horizontal mode */</span>
+<a name="l00126"></a>00126     <span class="keywordflow">switch</span> (new_autopilot_mode) {
+<a name="l00127"></a>00127     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>:
+<a name="l00128"></a>00128 <span class="preprocessor">#ifndef KILL_AS_FAILSAFE</span>
+<a name="l00129"></a>00129 <span class="preprocessor"></span>      <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#a4b2c73d59e89d78354658b20058720e0" title="in radians">phi</a> = 0;
+<a name="l00130"></a>00130       <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#a98f8790d7dbb4d3ef03e99cdf27f844e" title="in radians">theta</a> = 0;
+<a name="l00131"></a>00131       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#a68ef1d14541e83675e37b38a6f57cd29">GUIDANCE_H_MODE_ATTITUDE</a>);
+<a name="l00132"></a>00132       <span class="keywordflow">break</span>;
+<a name="l00133"></a>00133 <span class="preprocessor">#endif</span>
+<a name="l00134"></a>00134 <span class="preprocessor"></span>    <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>:
+<a name="l00135"></a>00135       <a class="code" href="autopilot_8c.html#a4a3dedaf4d4da879348f946a9f3f4611">autopilot_set_motors_on</a>(FALSE);
+<a name="l00136"></a>00136       <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> = FALSE;
+<a name="l00137"></a>00137       <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> = 0;
+<a name="l00138"></a>00138       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#aca30783fe715ec77589d55fdaa7b76e5">GUIDANCE_H_MODE_KILL</a>);
+<a name="l00139"></a>00139       <span class="keywordflow">break</span>;
+<a name="l00140"></a>00140     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a39b3ba365e16b1b91380da51caf0c483">AP_MODE_RC_DIRECT</a>:
+<a name="l00141"></a>00141       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#aa4e386747c6286a7ce74fa13b1dfe6d9">GUIDANCE_H_MODE_RC_DIRECT</a>);
+<a name="l00142"></a>00142       <span class="keywordflow">break</span>;
+<a name="l00143"></a>00143     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a0dfd0e7b54ea82567fe99f9795107709">AP_MODE_RATE_DIRECT</a>:
+<a name="l00144"></a>00144     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ad8fff87351c33b41976f56250803d6a7">AP_MODE_RATE_Z_HOLD</a>:
+<a name="l00145"></a>00145       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#aea87a99ee38d15a28913fbe378ca264e">GUIDANCE_H_MODE_RATE</a>);
+<a name="l00146"></a>00146       <span class="keywordflow">break</span>;
+<a name="l00147"></a>00147     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a51250d87ce9f6ec96177cb331c1c1263">AP_MODE_ATTITUDE_DIRECT</a>:
+<a name="l00148"></a>00148     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a59923bec233d2f00a5b23538ab4062fa">AP_MODE_ATTITUDE_CLIMB</a>:
+<a name="l00149"></a>00149     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a8f1633b822937ff9ec8b030bbda4bc5c">AP_MODE_ATTITUDE_Z_HOLD</a>:
+<a name="l00150"></a>00150       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#a68ef1d14541e83675e37b38a6f57cd29">GUIDANCE_H_MODE_ATTITUDE</a>);
+<a name="l00151"></a>00151       <span class="keywordflow">break</span>;
+<a name="l00152"></a>00152     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a0bd4fa6ac04cd59a3aeac1d2de763bc9">AP_MODE_HOVER_DIRECT</a>:
+<a name="l00153"></a>00153     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a291a5a57a4550cbc7936e2067eab0a17">AP_MODE_HOVER_CLIMB</a>:
+<a name="l00154"></a>00154     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a38403e89695f18f3cce2422d25481d83">AP_MODE_HOVER_Z_HOLD</a>:
+<a name="l00155"></a>00155       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#a2f2f695a8fcb314dc64bf0b82811937d">GUIDANCE_H_MODE_HOVER</a>);
+<a name="l00156"></a>00156       <span class="keywordflow">break</span>;
+<a name="l00157"></a>00157     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a5c8305ebe45c377584ec5dd8d65a9ae6">AP_MODE_NAV</a>:
+<a name="l00158"></a>00158       <a class="code" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a>(<a class="code" href="guidance__h_8h.html#a0695fb38a9f3b93b7be3484568e0be1a">GUIDANCE_H_MODE_NAV</a>);
+<a name="l00159"></a>00159       <span class="keywordflow">break</span>;
+<a name="l00160"></a>00160     <span class="keywordflow">default</span>:
+<a name="l00161"></a>00161       <span class="keywordflow">break</span>;
+<a name="l00162"></a>00162     }
+<a name="l00163"></a>00163     <span class="comment">/* vertical mode */</span>
+<a name="l00164"></a>00164     <span class="keywordflow">switch</span> (new_autopilot_mode) {
+<a name="l00165"></a>00165     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>:
+<a name="l00166"></a>00166 <span class="preprocessor">#ifndef KILL_AS_FAILSAFE</span>
+<a name="l00167"></a>00167 <span class="preprocessor"></span>      <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a615ed31ff0e531f529ed3ac21e544269" title="vertical speed setpoint in meter/s (input).">guidance_v_zd_sp</a> = <a class="code" href="pprz__algebra__int_8h.html#af665ad3da6b5c3589c19d7bdc66e8fc4">SPEED_BFP_OF_REAL</a>(0.5);
+<a name="l00168"></a>00168       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a77dd92d59de41da4a0e7987a218266c9">GUIDANCE_V_MODE_CLIMB</a>);
+<a name="l00169"></a>00169       <span class="keywordflow">break</span>;
+<a name="l00170"></a>00170 <span class="preprocessor">#endif</span>
+<a name="l00171"></a>00171 <span class="preprocessor"></span>    <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>:
+<a name="l00172"></a>00172       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a992efb12755c87117b1a6a3197ab3728">GUIDANCE_V_MODE_KILL</a>);
+<a name="l00173"></a>00173       <span class="keywordflow">break</span>;
+<a name="l00174"></a>00174     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a39b3ba365e16b1b91380da51caf0c483">AP_MODE_RC_DIRECT</a>:
+<a name="l00175"></a>00175     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a0dfd0e7b54ea82567fe99f9795107709">AP_MODE_RATE_DIRECT</a>:
+<a name="l00176"></a>00176     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a51250d87ce9f6ec96177cb331c1c1263">AP_MODE_ATTITUDE_DIRECT</a>:
+<a name="l00177"></a>00177     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a0bd4fa6ac04cd59a3aeac1d2de763bc9">AP_MODE_HOVER_DIRECT</a>:
+<a name="l00178"></a>00178       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#aca5421e816bd0c58ad9b86fc135635b0">GUIDANCE_V_MODE_RC_DIRECT</a>);
+<a name="l00179"></a>00179       <span class="keywordflow">break</span>;
+<a name="l00180"></a>00180     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a27ed1d05525cea6cb0914fb62225618c">AP_MODE_RATE_RC_CLIMB</a>:
+<a name="l00181"></a>00181     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ac976014a5a04dc8be7670673840e7680">AP_MODE_ATTITUDE_RC_CLIMB</a>:
+<a name="l00182"></a>00182       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a84951e7b99e79e47b85f08d87606b92b">GUIDANCE_V_MODE_RC_CLIMB</a>);
+<a name="l00183"></a>00183       <span class="keywordflow">break</span>;
+<a name="l00184"></a>00184     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a59923bec233d2f00a5b23538ab4062fa">AP_MODE_ATTITUDE_CLIMB</a>:
+<a name="l00185"></a>00185     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a291a5a57a4550cbc7936e2067eab0a17">AP_MODE_HOVER_CLIMB</a>:
+<a name="l00186"></a>00186       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a77dd92d59de41da4a0e7987a218266c9">GUIDANCE_V_MODE_CLIMB</a>);
+<a name="l00187"></a>00187       <span class="keywordflow">break</span>;
+<a name="l00188"></a>00188     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#ad8fff87351c33b41976f56250803d6a7">AP_MODE_RATE_Z_HOLD</a>:
+<a name="l00189"></a>00189     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a8f1633b822937ff9ec8b030bbda4bc5c">AP_MODE_ATTITUDE_Z_HOLD</a>:
+<a name="l00190"></a>00190     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a38403e89695f18f3cce2422d25481d83">AP_MODE_HOVER_Z_HOLD</a>:
+<a name="l00191"></a>00191       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#ad9ee5da48b80fa2cd7db8d79af0e185a">GUIDANCE_V_MODE_HOVER</a>);
+<a name="l00192"></a>00192       <span class="keywordflow">break</span>;
+<a name="l00193"></a>00193     <span class="keywordflow">case</span> <a class="code" href="rotorcraft_2autopilot_8h.html#a5c8305ebe45c377584ec5dd8d65a9ae6">AP_MODE_NAV</a>:
+<a name="l00194"></a>00194       <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#acf327c70e058c173f8a006360068759f">GUIDANCE_V_MODE_NAV</a>);
+<a name="l00195"></a>00195       <span class="keywordflow">break</span>;
+<a name="l00196"></a>00196     <span class="keywordflow">default</span>:
+<a name="l00197"></a>00197       <span class="keywordflow">break</span>;
+<a name="l00198"></a>00198     }
+<a name="l00199"></a>00199     <a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> = new_autopilot_mode;
+<a name="l00200"></a>00200   }
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202 }
 <a name="l00203"></a>00203 
-<a name="l00204"></a><a class="code" href="autopilot_8c.html#a6df3c2f896a0876e023206069155a0dc">00204</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a6df3c2f896a0876e023206069155a0dc">autopilot_check_in_flight</a>( bool_t motors_on ) {
-<a name="l00205"></a>00205   <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>) {
-<a name="l00206"></a>00206     <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> &gt; 0) {
-<a name="l00207"></a>00207       <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>()) {
-<a name="l00208"></a>00208         <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a>--;
-<a name="l00209"></a>00209         <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> == 0) {
-<a name="l00210"></a>00210           <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> = FALSE;
-<a name="l00211"></a>00211         }
-<a name="l00212"></a>00212       }
-<a name="l00213"></a>00213       <span class="keywordflow">else</span> {  <span class="comment">/* !THROTTLE_STICK_DOWN */</span>
-<a name="l00214"></a>00214         <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> = <a class="code" href="autopilot_8c.html#a4a1fdd432ddb0277a0918cbd2095b4be">AUTOPILOT_IN_FLIGHT_TIME</a>;
-<a name="l00215"></a>00215       }
-<a name="l00216"></a>00216     }
-<a name="l00217"></a>00217   }
-<a name="l00218"></a>00218   <span class="keywordflow">else</span> { <span class="comment">/* not in flight */</span>
-<a name="l00219"></a>00219     <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> &lt; <a class="code" href="autopilot_8c.html#a4a1fdd432ddb0277a0918cbd2095b4be">AUTOPILOT_IN_FLIGHT_TIME</a> &amp;&amp;
-<a name="l00220"></a>00220         motors_on) {
-<a name="l00221"></a>00221       <span class="keywordflow">if</span> (!<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>()) {
-<a name="l00222"></a>00222         <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a>++;
-<a name="l00223"></a>00223         <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> == <a class="code" href="autopilot_8c.html#a4a1fdd432ddb0277a0918cbd2095b4be">AUTOPILOT_IN_FLIGHT_TIME</a>)
-<a name="l00224"></a>00224           <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> = TRUE;
-<a name="l00225"></a>00225       }
-<a name="l00226"></a>00226       <span class="keywordflow">else</span> { <span class="comment">/*  THROTTLE_STICK_DOWN */</span>
-<a name="l00227"></a>00227         <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> = 0;
-<a name="l00228"></a>00228       }
-<a name="l00229"></a>00229     }
-<a name="l00230"></a>00230   }
-<a name="l00231"></a>00231 }
-<a name="l00232"></a>00232 
+<a name="l00204"></a>00204 
+<a name="l00205"></a><a class="code" href="autopilot_8c.html#a6df3c2f896a0876e023206069155a0dc">00205</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a6df3c2f896a0876e023206069155a0dc">autopilot_check_in_flight</a>( bool_t motors_on ) {
+<a name="l00206"></a>00206   <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>) {
+<a name="l00207"></a>00207     <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> &gt; 0) {
+<a name="l00208"></a>00208       <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>()) {
+<a name="l00209"></a>00209         <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a>--;
+<a name="l00210"></a>00210         <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> == 0) {
+<a name="l00211"></a>00211           <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> = FALSE;
+<a name="l00212"></a>00212         }
+<a name="l00213"></a>00213       }
+<a name="l00214"></a>00214       <span class="keywordflow">else</span> {  <span class="comment">/* !THROTTLE_STICK_DOWN */</span>
+<a name="l00215"></a>00215         <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> = <a class="code" href="autopilot_8c.html#a4a1fdd432ddb0277a0918cbd2095b4be">AUTOPILOT_IN_FLIGHT_TIME</a>;
+<a name="l00216"></a>00216       }
+<a name="l00217"></a>00217     }
+<a name="l00218"></a>00218   }
+<a name="l00219"></a>00219   <span class="keywordflow">else</span> { <span class="comment">/* not in flight */</span>
+<a name="l00220"></a>00220     <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> &lt; <a class="code" href="autopilot_8c.html#a4a1fdd432ddb0277a0918cbd2095b4be">AUTOPILOT_IN_FLIGHT_TIME</a> &amp;&amp;
+<a name="l00221"></a>00221         motors_on) {
+<a name="l00222"></a>00222       <span class="keywordflow">if</span> (!<a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">THROTTLE_STICK_DOWN</a>()) {
+<a name="l00223"></a>00223         <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a>++;
+<a name="l00224"></a>00224         <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> == <a class="code" href="autopilot_8c.html#a4a1fdd432ddb0277a0918cbd2095b4be">AUTOPILOT_IN_FLIGHT_TIME</a>)
+<a name="l00225"></a>00225           <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a> = TRUE;
+<a name="l00226"></a>00226       }
+<a name="l00227"></a>00227       <span class="keywordflow">else</span> { <span class="comment">/*  THROTTLE_STICK_DOWN */</span>
+<a name="l00228"></a>00228         <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a> = 0;
+<a name="l00229"></a>00229       }
+<a name="l00230"></a>00230     }
+<a name="l00231"></a>00231   }
+<a name="l00232"></a>00232 }
 <a name="l00233"></a>00233 
-<a name="l00234"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a4a3dedaf4d4da879348f946a9f3f4611">00234</a> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a4a3dedaf4d4da879348f946a9f3f4611">autopilot_set_motors_on</a>(bool_t motors_on) {
-<a name="l00235"></a>00235   <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a99409d6a32e6cce437a1c0354a2515eb">ahrs_is_aligned</a>() &amp;&amp; motors_on)
-<a name="l00236"></a>00236     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = TRUE;
-<a name="l00237"></a>00237   <span class="keywordflow">else</span>
-<a name="l00238"></a>00238     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
-<a name="l00239"></a>00239   <a class="code" href="fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a> = ! <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>;
-<a name="l00240"></a>00240   <a class="code" href="autopilot__arming__switch_8h.html#a720eaefed19d55f94f6f866d8aba2702">autopilot_arming_set</a>(<a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);
-<a name="l00241"></a>00241 }
-<a name="l00242"></a>00242 
+<a name="l00234"></a>00234 
+<a name="l00235"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a4a3dedaf4d4da879348f946a9f3f4611">00235</a> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a4a3dedaf4d4da879348f946a9f3f4611">autopilot_set_motors_on</a>(bool_t motors_on) {
+<a name="l00236"></a>00236   <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a99409d6a32e6cce437a1c0354a2515eb">ahrs_is_aligned</a>() &amp;&amp; motors_on)
+<a name="l00237"></a>00237     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = TRUE;
+<a name="l00238"></a>00238   <span class="keywordflow">else</span>
+<a name="l00239"></a>00239     <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a> = FALSE;
+<a name="l00240"></a>00240   <a class="code" href="fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a> = ! <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>;
+<a name="l00241"></a>00241   <a class="code" href="autopilot__arming__switch_8h.html#a720eaefed19d55f94f6f866d8aba2702">autopilot_arming_set</a>(<a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);
+<a name="l00242"></a>00242 }
 <a name="l00243"></a>00243 
-<a name="l00244"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a7339f5741706cb9c2e2186b1174cc770">00244</a> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a7339f5741706cb9c2e2186b1174cc770">autopilot_on_rc_frame</a>(<span class="keywordtype">void</span>) {
-<a name="l00245"></a>00245 
-<a name="l00246"></a>00246   <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a4e9918f217a6eaf344d248a9d34e674d">kill_switch_is_on</a>())
-<a name="l00247"></a>00247     <a class="code" href="autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(<a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>);
-<a name="l00248"></a>00248   <span class="keywordflow">else</span> {
-<a name="l00249"></a>00249     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_autopilot_mode = 0;
-<a name="l00250"></a>00250     <a class="code" href="rotorcraft_2autopilot_8h.html#ab0395a426c32b31601769fdd4cefac34">AP_MODE_OF_PPRZ</a>(<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a2fab1464ab1748edb2a45a08cf7c422a">RADIO_MODE</a>], new_autopilot_mode);
-<a name="l00251"></a>00251     <a class="code" href="autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(new_autopilot_mode);
-<a name="l00252"></a>00252   }
-<a name="l00253"></a>00253 
-<a name="l00254"></a>00254   <span class="comment">/* if not in FAILSAFE mode check motor and in_flight status, read RC */</span>
-<a name="l00255"></a>00255   <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> &gt; <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>) {
-<a name="l00256"></a>00256 
-<a name="l00257"></a>00257     <span class="comment">/* an arming sequence is used to start/stop motors */</span>
-<a name="l00258"></a>00258     <a class="code" href="autopilot__arming__switch_8h.html#abbbe9ccad851ff6d7ef88e298059b6ce" title="State machine to check if motors should be turned ON or OFF using the kill switch.">autopilot_arming_check_motors_on</a>();
-<a name="l00259"></a>00259     <a class="code" href="fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a> = ! <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>;
-<a name="l00260"></a>00260 
-<a name="l00261"></a>00261     <a class="code" href="autopilot_8c.html#a6df3c2f896a0876e023206069155a0dc">autopilot_check_in_flight</a>(<a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);
-<a name="l00262"></a>00262 
-<a name="l00263"></a>00263     <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a067f5a51ae66cddf397b8b312ae4c383">guidance_v_read_rc</a>();
-<a name="l00264"></a>00264     <a class="code" href="guidance__h_8c.html#a7db3290fc5f62abc15a1bb1638b4922f">guidance_h_read_rc</a>(<a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>);
-<a name="l00265"></a>00265   }
-<a name="l00266"></a>00266 
-<a name="l00267"></a>00267 }
+<a name="l00244"></a>00244 
+<a name="l00245"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a7339f5741706cb9c2e2186b1174cc770">00245</a> <span class="keywordtype">void</span> <a class="code" href="autopilot_8c.html#a7339f5741706cb9c2e2186b1174cc770">autopilot_on_rc_frame</a>(<span class="keywordtype">void</span>) {
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247   <span class="keywordflow">if</span> (<a class="code" href="autopilot__rc__helpers_8h.html#a4e9918f217a6eaf344d248a9d34e674d">kill_switch_is_on</a>())
+<a name="l00248"></a>00248     <a class="code" href="autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(<a class="code" href="rotorcraft_2autopilot_8h.html#ab6ce21c89b3540050089f5249f64933d">AP_MODE_KILL</a>);
+<a name="l00249"></a>00249   <span class="keywordflow">else</span> {
+<a name="l00250"></a>00250     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_autopilot_mode = 0;
+<a name="l00251"></a>00251     <a class="code" href="rotorcraft_2autopilot_8h.html#ab0395a426c32b31601769fdd4cefac34">AP_MODE_OF_PPRZ</a>(<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a2fab1464ab1748edb2a45a08cf7c422a">RADIO_MODE</a>], new_autopilot_mode);
+<a name="l00252"></a>00252     <a class="code" href="autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(new_autopilot_mode);
+<a name="l00253"></a>00253   }
+<a name="l00254"></a>00254 
+<a name="l00255"></a>00255   <span class="comment">/* if not in FAILSAFE mode check motor and in_flight status, read RC */</span>
+<a name="l00256"></a>00256   <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> &gt; <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>) {
+<a name="l00257"></a>00257 
+<a name="l00258"></a>00258     <span class="comment">/* an arming sequence is used to start/stop motors */</span>
+<a name="l00259"></a>00259     <a class="code" href="autopilot__arming__switch_8h.html#abbbe9ccad851ff6d7ef88e298059b6ce" title="State machine to check if motors should be turned ON or OFF using the kill switch.">autopilot_arming_check_motors_on</a>();
+<a name="l00260"></a>00260     <a class="code" href="fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a> = ! <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>;
+<a name="l00261"></a>00261 
+<a name="l00262"></a>00262     <a class="code" href="autopilot_8c.html#a6df3c2f896a0876e023206069155a0dc">autopilot_check_in_flight</a>(<a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);
+<a name="l00263"></a>00263 
+<a name="l00264"></a>00264     <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a067f5a51ae66cddf397b8b312ae4c383">guidance_v_read_rc</a>();
+<a name="l00265"></a>00265     <a class="code" href="guidance__h_8c.html#a7db3290fc5f62abc15a1bb1638b4922f">guidance_h_read_rc</a>(<a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>);
+<a name="l00266"></a>00266   }
+<a name="l00267"></a>00267 
+<a name="l00268"></a>00268 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -389,7 +390,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="autopilot_8c.html">autopilot.c</a>      </li>
 
-    <li class="footer">Generated on Fri May 11 2012 04:00:07 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 16 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

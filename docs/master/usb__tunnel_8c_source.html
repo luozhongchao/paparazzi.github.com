@@ -142,56 +142,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
 <a name="l00048"></a>00048   <a class="code" href="sys__time_8c.html#a1e6b75f4db9128a3326d8a6283b0af43">sys_time_init</a>();
-<a name="l00049"></a>00049   <a class="code" href="led_8h.html#a9d9d9b1f30592189c3aa7358c626218f">led_init</a>();
-<a name="l00050"></a>00050   <a class="code" href="usb__serial_8h.html#abaca416be34281b2bfb22ac501e673d9">VCOM_allow_linecoding</a>(1);
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052 <span class="preprocessor">#ifdef USE_USB_SERIAL</span>
-<a name="l00053"></a>00053 <span class="preprocessor"></span>  <a class="code" href="usb__serial_8h.html#a96a54f28bfc8bc28963cd2fac74609cd">VCOM_init</a>();
-<a name="l00054"></a>00054 <span class="preprocessor">#endif</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span>
-<a name="l00056"></a>00056   <a class="code" href="lpc21_2mcu__arch_8h.html#ab24387a9ce83a0dae7bc7aa816cd6ebd">mcu_int_enable</a>();
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050   <span class="comment">// FIXME, no hardcoded led numbers</span>
+<a name="l00051"></a>00051   <a class="code" href="lpc21_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b">LED_INIT</a>(1);
+<a name="l00052"></a>00052   <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
+<a name="l00053"></a>00053   <a class="code" href="lpc21_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b">LED_INIT</a>(2);
+<a name="l00054"></a>00054   <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
+<a name="l00055"></a>00055   <a class="code" href="lpc21_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b">LED_INIT</a>(3);
+<a name="l00056"></a>00056   <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(3);
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058   <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(3);
+<a name="l00058"></a>00058   <a class="code" href="usb__serial_8h.html#abaca416be34281b2bfb22ac501e673d9">VCOM_allow_linecoding</a>(1);
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060 <span class="preprocessor">#ifdef USE_UART0</span>
-<a name="l00061"></a>00061 <span class="preprocessor"></span>  <span class="keywordflow">while</span>(1) {
-<a name="l00062"></a>00062     <span class="keywordflow">if</span> (<a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a> &gt; (rx_time+((<a class="code" href="booz__1_80_8h.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / T0_PCLK_DIV) / <a class="code" href="usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733">BLINK_MIN</a>))) <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(1);
-<a name="l00063"></a>00063     <span class="keywordflow">if</span> (<a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a> &gt; (tx_time+((<a class="code" href="booz__1_80_8h.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / T0_PCLK_DIV) / <a class="code" href="usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733">BLINK_MIN</a>))) <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
-<a name="l00064"></a>00064     <span class="keywordflow">if</span> (Uart0ChAvailable() &amp;&amp; <a class="code" href="usb__serial_8h.html#a497f2c3bbcb2e24f2040db6881de17da">VCOM_check_free_space</a>(1)) {
-<a name="l00065"></a>00065       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
-<a name="l00066"></a>00066       rx_time = <a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a>;
-<a name="l00067"></a>00067       inc = Uart0Getch();
-<a name="l00068"></a>00068       <a class="code" href="usb__serial_8h.html#a19a213d00cf249a4d4d60dbf1a9907d3">VCOM_putchar</a>(inc);
-<a name="l00069"></a>00069     }
-<a name="l00070"></a>00070     <span class="keywordflow">if</span> (<a class="code" href="usb__serial_8h.html#a4cfafe558a6e594ce0638634e7cec7db">VCOM_check_available</a>() &amp;&amp; Uart0CheckFreeSpace(1)) {
-<a name="l00071"></a>00071       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
-<a name="l00072"></a>00072       tx_time = <a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a>;
-<a name="l00073"></a>00073       inc = <a class="code" href="usb__serial_8h.html#a184633f63ad351d8e70857d9e5ba4a3e">VCOM_getchar</a>();
-<a name="l00074"></a>00074       Uart0Transmit(inc);
-<a name="l00075"></a>00075     }
-<a name="l00076"></a>00076   }
-<a name="l00077"></a>00077 <span class="preprocessor">#else</span>
-<a name="l00078"></a>00078 <span class="preprocessor"></span>  <span class="keywordflow">while</span>(1) {
-<a name="l00079"></a>00079     <span class="keywordflow">if</span> (<a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a> &gt; (rx_time+((<a class="code" href="booz__1_80_8h.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / T0_PCLK_DIV) / <a class="code" href="usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733">BLINK_MIN</a>))) <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(1);
-<a name="l00080"></a>00080     <span class="keywordflow">if</span> (<a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a> &gt; (tx_time+((<a class="code" href="booz__1_80_8h.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / T0_PCLK_DIV) / <a class="code" href="usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733">BLINK_MIN</a>))) <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
-<a name="l00081"></a>00081     <span class="keywordflow">if</span> (Uart1ChAvailable() &amp;&amp; <a class="code" href="usb__serial_8h.html#a497f2c3bbcb2e24f2040db6881de17da">VCOM_check_free_space</a>(1)) {
-<a name="l00082"></a>00082       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
-<a name="l00083"></a>00083       rx_time = <a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a>;
-<a name="l00084"></a>00084       inc = Uart1Getch();
-<a name="l00085"></a>00085       <a class="code" href="usb__serial_8h.html#a19a213d00cf249a4d4d60dbf1a9907d3">VCOM_putchar</a>(inc);
-<a name="l00086"></a>00086     }
-<a name="l00087"></a>00087     <span class="keywordflow">if</span> (<a class="code" href="usb__serial_8h.html#a4cfafe558a6e594ce0638634e7cec7db">VCOM_check_available</a>() &amp;&amp; Uart1CheckFreeSpace(1)) {
-<a name="l00088"></a>00088       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
-<a name="l00089"></a>00089       tx_time = <a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a>;
-<a name="l00090"></a>00090       inc = <a class="code" href="usb__serial_8h.html#a184633f63ad351d8e70857d9e5ba4a3e">VCOM_getchar</a>();
-<a name="l00091"></a>00091       Uart1Transmit(inc);
-<a name="l00092"></a>00092     }
-<a name="l00093"></a>00093   }
-<a name="l00094"></a>00094 <span class="preprocessor">#endif</span>
-<a name="l00095"></a>00095 <span class="preprocessor"></span>
-<a name="l00096"></a>00096   <span class="keywordflow">return</span> 0;
-<a name="l00097"></a>00097 }
-<a name="l00098"></a>00098 
+<a name="l00060"></a>00060 <span class="preprocessor">#ifdef USE_USB_SERIAL</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span>  <a class="code" href="usb__serial_8h.html#a96a54f28bfc8bc28963cd2fac74609cd">VCOM_init</a>();
+<a name="l00062"></a>00062 <span class="preprocessor">#endif</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span>
+<a name="l00064"></a>00064   <a class="code" href="lpc21_2mcu__arch_8h.html#ab24387a9ce83a0dae7bc7aa816cd6ebd">mcu_int_enable</a>();
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066   <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(3);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 <span class="preprocessor">#ifdef USE_UART0</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span>  <span class="keywordflow">while</span>(1) {
+<a name="l00070"></a>00070     <span class="keywordflow">if</span> (<a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a> &gt; (rx_time+((<a class="code" href="booz__1_80_8h.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / T0_PCLK_DIV) / <a class="code" href="usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733">BLINK_MIN</a>))) <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(1);
+<a name="l00071"></a>00071     <span class="keywordflow">if</span> (<a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a> &gt; (tx_time+((<a class="code" href="booz__1_80_8h.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / T0_PCLK_DIV) / <a class="code" href="usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733">BLINK_MIN</a>))) <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
+<a name="l00072"></a>00072     <span class="keywordflow">if</span> (Uart0ChAvailable() &amp;&amp; <a class="code" href="usb__serial_8h.html#a497f2c3bbcb2e24f2040db6881de17da">VCOM_check_free_space</a>(1)) {
+<a name="l00073"></a>00073       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
+<a name="l00074"></a>00074       rx_time = <a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a>;
+<a name="l00075"></a>00075       inc = Uart0Getch();
+<a name="l00076"></a>00076       <a class="code" href="usb__serial_8h.html#a19a213d00cf249a4d4d60dbf1a9907d3">VCOM_putchar</a>(inc);
+<a name="l00077"></a>00077     }
+<a name="l00078"></a>00078     <span class="keywordflow">if</span> (<a class="code" href="usb__serial_8h.html#a4cfafe558a6e594ce0638634e7cec7db">VCOM_check_available</a>() &amp;&amp; Uart0CheckFreeSpace(1)) {
+<a name="l00079"></a>00079       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
+<a name="l00080"></a>00080       tx_time = <a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a>;
+<a name="l00081"></a>00081       inc = <a class="code" href="usb__serial_8h.html#a184633f63ad351d8e70857d9e5ba4a3e">VCOM_getchar</a>();
+<a name="l00082"></a>00082       Uart0Transmit(inc);
+<a name="l00083"></a>00083     }
+<a name="l00084"></a>00084   }
+<a name="l00085"></a>00085 <span class="preprocessor">#else</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span>  <span class="keywordflow">while</span>(1) {
+<a name="l00087"></a>00087     <span class="keywordflow">if</span> (<a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a> &gt; (rx_time+((<a class="code" href="booz__1_80_8h.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / T0_PCLK_DIV) / <a class="code" href="usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733">BLINK_MIN</a>))) <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(1);
+<a name="l00088"></a>00088     <span class="keywordflow">if</span> (<a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a> &gt; (tx_time+((<a class="code" href="booz__1_80_8h.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / T0_PCLK_DIV) / <a class="code" href="usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733">BLINK_MIN</a>))) <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
+<a name="l00089"></a>00089     <span class="keywordflow">if</span> (Uart1ChAvailable() &amp;&amp; <a class="code" href="usb__serial_8h.html#a497f2c3bbcb2e24f2040db6881de17da">VCOM_check_free_space</a>(1)) {
+<a name="l00090"></a>00090       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(1);
+<a name="l00091"></a>00091       rx_time = <a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a>;
+<a name="l00092"></a>00092       inc = Uart1Getch();
+<a name="l00093"></a>00093       <a class="code" href="usb__serial_8h.html#a19a213d00cf249a4d4d60dbf1a9907d3">VCOM_putchar</a>(inc);
+<a name="l00094"></a>00094     }
+<a name="l00095"></a>00095     <span class="keywordflow">if</span> (<a class="code" href="usb__serial_8h.html#a4cfafe558a6e594ce0638634e7cec7db">VCOM_check_available</a>() &amp;&amp; Uart1CheckFreeSpace(1)) {
+<a name="l00096"></a>00096       <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(2);
+<a name="l00097"></a>00097       tx_time = <a class="code" href="LPC21xx_8h.html#acc99e4d315de652060365cb4a634d071">T0TC</a>;
+<a name="l00098"></a>00098       inc = <a class="code" href="usb__serial_8h.html#a184633f63ad351d8e70857d9e5ba4a3e">VCOM_getchar</a>();
+<a name="l00099"></a>00099       Uart1Transmit(inc);
+<a name="l00100"></a>00100     }
+<a name="l00101"></a>00101   }
+<a name="l00102"></a>00102 <span class="preprocessor">#endif</span>
+<a name="l00103"></a>00103 <span class="preprocessor"></span>
+<a name="l00104"></a>00104   <span class="keywordflow">return</span> 0;
+<a name="l00105"></a>00105 }
+<a name="l00106"></a>00106 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -212,7 +220,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="usb__tunnel_8c.html">usb_tunnel.c</a>      </li>
 
-    <li class="footer">Generated on Fri May 11 2012 04:00:07 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 16 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
