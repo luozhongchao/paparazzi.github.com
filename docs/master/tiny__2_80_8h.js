@@ -41,5 +41,9 @@ var tiny__2_80_8h =
     [ "SPI_SELECT_SLAVE0_PORT", "tiny__2_80_8h.html#a62cb06db3908015c7305ca6833f90159", null ],
     [ "USE_AD1", "tiny__2_80_8h.html#a2934d6c02a6319444fb3e892c72cb8f6", null ],
     [ "USE_AD1_5", "tiny__2_80_8h.html#a7d4b4afb86933a2a96479ed256293f01", null ],
+    [ "USE_LED_1", "tiny__2_80_8h.html#ae7a2417096c8215257d073da4d6d4c5f", null ],
+    [ "USE_LED_2", "tiny__2_80_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf", null ],
+    [ "USE_LED_3", "tiny__2_80_8h.html#a4da08b59c725550efa312cf16ecdd77c", null ],
+    [ "USE_LED_4", "tiny__2_80_8h.html#ae74a702840b15e71530a2716b1ef497c", null ],
     [ "VoltageOfAdc", "tiny__2_80_8h.html#a3a244669d0d9c86f4339f5d6fe83fdb9", null ]
 ];

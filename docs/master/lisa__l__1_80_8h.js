@@ -13,7 +13,7 @@ var lisa__l__1_80_8h =
     [ "IMU_ACC_DRDY_GPIO", "lisa__l__1_80_8h.html#adb2a88589926c012c6b98bf23cbe651d", null ],
     [ "IMU_ACC_DRDY_GPIO_PORTSOURCE", "lisa__l__1_80_8h.html#ad6f64575a6a755a07c8379c394fd666e", null ],
     [ "IMU_ACC_DRDY_RCC_GPIO", "lisa__l__1_80_8h.html#a696e8860d7ceeafc6d03901cbee800fa", null ],
-    [ "LED_1_BANK", "lisa__l__1_80_8h.html#a27043d2a36fed64b2808c882c24a1465", null ],
     [ "LED_STP08", "lisa__l__1_80_8h.html#a6a02b498a8d63c777dd56b6ae45ca259", null ],
-    [ "POWER_SWITCH_LED", "lisa__l__1_80_8h.html#a3a5cfe68fa39b534d190c7bfaa6d8e33", null ]
+    [ "POWER_SWITCH_LED", "lisa__l__1_80_8h.html#a3a5cfe68fa39b534d190c7bfaa6d8e33", null ],
+    [ "USE_LED_1", "lisa__l__1_80_8h.html#ae7a2417096c8215257d073da4d6d4c5f", null ]
 ];

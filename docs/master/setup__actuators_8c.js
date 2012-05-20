@@ -1,6 +1,7 @@
 var setup__actuators_8c =
 [
     [ "DATALINK_C", "setup__actuators_8c.html#ace2f20f3712314ddd9e83035468ab745", null ],
+    [ "DOWNLINK_DEVICE", "setup__actuators_8c.html#a2978a46b47cbc9d17a0924014ff9658b", null ],
     [ "IdOfMsg", "setup__actuators_8c.html#af9bfeb49b8ea12c64a72e4a4fb5a6002", null ],
     [ "dl_parse_msg", "setup__actuators_8c.html#a87ff8c0ffff657dbde8566f062779428", null ],
     [ "event_task_fbw", "setup__actuators_8c.html#ae1f060d6fcf56653e3db62e402c8701a", null ],

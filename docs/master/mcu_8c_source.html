@@ -164,52 +164,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061 <span class="preprocessor">#ifdef PERIPHERALS_AUTO_INIT</span>
 <a name="l00062"></a>00062 <span class="preprocessor"></span>  <a class="code" href="sys__time_8c.html#a1e6b75f4db9128a3326d8a6283b0af43">sys_time_init</a>();
-<a name="l00063"></a>00063   <span class="comment">/* for now this means using spektrum */</span>
-<a name="l00064"></a>00064 <span class="preprocessor">#if defined RADIO_CONTROL &amp; defined RADIO_CONTROL_SPEKTRUM_PRIMARY_PORT &amp; defined RADIO_CONTROL_BIND_IMPL_FUNC</span>
-<a name="l00065"></a>00065 <span class="preprocessor"></span>  RADIO_CONTROL_BIND_IMPL_FUNC();
-<a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
-<a name="l00067"></a>00067 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART0</span>
-<a name="l00068"></a>00068 <span class="preprocessor"></span>  uart0_init();
+<a name="l00063"></a>00063 <span class="preprocessor">#ifdef USE_LED</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span>  <a class="code" href="led_8h.html#a9d9d9b1f30592189c3aa7358c626218f">led_init</a>();
+<a name="l00065"></a>00065 <span class="preprocessor">#endif</span>
+<a name="l00066"></a>00066 <span class="preprocessor"></span>  <span class="comment">/* for now this means using spektrum */</span>
+<a name="l00067"></a>00067 <span class="preprocessor">#if defined RADIO_CONTROL &amp; defined RADIO_CONTROL_SPEKTRUM_PRIMARY_PORT &amp; defined RADIO_CONTROL_BIND_IMPL_FUNC</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>  RADIO_CONTROL_BIND_IMPL_FUNC();
 <a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
-<a name="l00070"></a>00070 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART1</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span>  uart1_init();
+<a name="l00070"></a>00070 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART0</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span>  uart0_init();
 <a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART2</span>
-<a name="l00074"></a>00074 <span class="preprocessor"></span>  uart2_init();
+<a name="l00073"></a>00073 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART1</span>
+<a name="l00074"></a>00074 <span class="preprocessor"></span>  uart1_init();
 <a name="l00075"></a>00075 <span class="preprocessor">#endif</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART3</span>
-<a name="l00077"></a>00077 <span class="preprocessor"></span>  uart3_init();
+<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART2</span>
+<a name="l00077"></a>00077 <span class="preprocessor"></span>  uart2_init();
 <a name="l00078"></a>00078 <span class="preprocessor">#endif</span>
-<a name="l00079"></a>00079 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART4</span>
-<a name="l00080"></a>00080 <span class="preprocessor"></span>  uart4_init();
+<a name="l00079"></a>00079 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART3</span>
+<a name="l00080"></a>00080 <span class="preprocessor"></span>  uart3_init();
 <a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
-<a name="l00082"></a>00082 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART5</span>
-<a name="l00083"></a>00083 <span class="preprocessor"></span>  uart5_init();
+<a name="l00082"></a>00082 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART4</span>
+<a name="l00083"></a>00083 <span class="preprocessor"></span>  uart4_init();
 <a name="l00084"></a>00084 <span class="preprocessor">#endif</span>
-<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_I2C0</span>
-<a name="l00086"></a>00086 <span class="preprocessor"></span>  i2c0_init();
+<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_UART5</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span>  uart5_init();
 <a name="l00087"></a>00087 <span class="preprocessor">#endif</span>
-<a name="l00088"></a>00088 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_I2C1</span>
-<a name="l00089"></a>00089 <span class="preprocessor"></span>  i2c1_init();
+<a name="l00088"></a>00088 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_I2C0</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span>  i2c0_init();
 <a name="l00090"></a>00090 <span class="preprocessor">#endif</span>
-<a name="l00091"></a>00091 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_I2C2</span>
-<a name="l00092"></a>00092 <span class="preprocessor"></span>  i2c2_init();
+<a name="l00091"></a>00091 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_I2C1</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span>  i2c1_init();
 <a name="l00093"></a>00093 <span class="preprocessor">#endif</span>
-<a name="l00094"></a>00094 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC</span>
-<a name="l00095"></a>00095 <span class="preprocessor"></span>  <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0" title="Starts conversions.">adc_init</a>();
+<a name="l00094"></a>00094 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_I2C2</span>
+<a name="l00095"></a>00095 <span class="preprocessor"></span>  i2c2_init();
 <a name="l00096"></a>00096 <span class="preprocessor">#endif</span>
-<a name="l00097"></a>00097 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_USB_SERIAL</span>
-<a name="l00098"></a>00098 <span class="preprocessor"></span>  <a class="code" href="usb__serial_8h.html#a96a54f28bfc8bc28963cd2fac74609cd">VCOM_init</a>();
+<a name="l00097"></a>00097 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC</span>
+<a name="l00098"></a>00098 <span class="preprocessor"></span>  <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0" title="Starts conversions.">adc_init</a>();
 <a name="l00099"></a>00099 <span class="preprocessor">#endif</span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_SPI</span>
-<a name="l00101"></a>00101 <span class="preprocessor"></span>  <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#ae909944aa85ae98323073c628be541aa">spi_init</a>();
+<a name="l00100"></a>00100 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_USB_SERIAL</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span>  <a class="code" href="usb__serial_8h.html#a96a54f28bfc8bc28963cd2fac74609cd">VCOM_init</a>();
 <a name="l00102"></a>00102 <span class="preprocessor">#endif</span>
-<a name="l00103"></a>00103 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_DAC</span>
-<a name="l00104"></a>00104 <span class="preprocessor"></span>  <a class="code" href="dac__arch_8c.html#a6e622fafee8436bf9cf9f6b120352e3c">dac_init</a>();
+<a name="l00103"></a>00103 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_SPI</span>
+<a name="l00104"></a>00104 <span class="preprocessor"></span>  <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#ae909944aa85ae98323073c628be541aa">spi_init</a>();
 <a name="l00105"></a>00105 <span class="preprocessor">#endif</span>
-<a name="l00106"></a>00106 <span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* PERIPHERALS_AUTO_INIT */</span>
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108 }
+<a name="l00106"></a>00106 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_DAC</span>
+<a name="l00107"></a>00107 <span class="preprocessor"></span>  <a class="code" href="dac__arch_8c.html#a6e622fafee8436bf9cf9f6b120352e3c">dac_init</a>();
+<a name="l00108"></a>00108 <span class="preprocessor">#endif</span>
+<a name="l00109"></a>00109 <span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* PERIPHERALS_AUTO_INIT */</span>
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -230,7 +233,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="mcu_8c.html">mcu.c</a>      </li>
 
-    <li class="footer">Generated on Thu May 17 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Sun May 20 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

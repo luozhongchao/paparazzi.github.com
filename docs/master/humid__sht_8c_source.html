@@ -334,99 +334,94 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00237"></a>00237 
 <a name="l00238"></a><a class="code" href="humid__sht_8h.html#a5228e7530912bfa410d5e701ebb7a18b">00238</a> <span class="keywordtype">void</span> <a class="code" href="humid__sht_8c.html#a5228e7530912bfa410d5e701ebb7a18b">humid_sht_init</a>( <span class="keywordtype">void</span> )
 <a name="l00239"></a>00239 {
-<a name="l00240"></a>00240   <span class="comment">// FIXME, should not use hardcoded led number</span>
-<a name="l00241"></a>00241   <a class="code" href="lpc21_2led__hw_8h.html#a49b662104f8fa2b8fa86ea80e94c3d6b">LED_INIT</a>(2);
-<a name="l00242"></a>00242   <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(2);
-<a name="l00243"></a>00243 
-<a name="l00244"></a>00244   <span class="comment">// FIXME, should not contain arch dependent code here</span>
-<a name="l00245"></a>00245 
-<a name="l00246"></a>00246   <span class="comment">/* Configure DAT/SCL pin as GPIO */</span>
-<a name="l00247"></a>00247 <span class="preprocessor">#if (DAT_PIN&lt;16)</span>
-<a name="l00248"></a>00248 <span class="preprocessor"></span>    <a class="code" href="LPC21xx_8h.html#aff215b5e0d11d5a47354ecfad12a8902">PINSEL0</a> &amp;= ~(_BV(DAT_PIN*2)|_BV(DAT_PIN*2+1));
-<a name="l00249"></a>00249 <span class="preprocessor">#else</span>
-<a name="l00250"></a>00250 <span class="preprocessor"></span>    <a class="code" href="LPC21xx_8h.html#a030997bacf62a695152879b6be44c84c">PINSEL1</a> &amp;= ~(_BV((DAT_PIN-16)*2)|_BV((DAT_PIN-16)*2+1));
-<a name="l00251"></a>00251 <span class="preprocessor">#endif</span>
-<a name="l00252"></a>00252 <span class="preprocessor"></span>
-<a name="l00253"></a>00253 <span class="preprocessor">#if (SCK_PIN&lt;16)</span>
-<a name="l00254"></a>00254 <span class="preprocessor"></span>    <a class="code" href="LPC21xx_8h.html#aff215b5e0d11d5a47354ecfad12a8902">PINSEL0</a> &amp;= ~(_BV(SCK_PIN*2)|_BV(SCK_PIN*2+1));
-<a name="l00255"></a>00255 <span class="preprocessor">#else</span>
-<a name="l00256"></a>00256 <span class="preprocessor"></span>    <a class="code" href="LPC21xx_8h.html#a030997bacf62a695152879b6be44c84c">PINSEL1</a> &amp;= ~(_BV((SCK_PIN-16)*2)|_BV((SCK_PIN-16)*2+1));
-<a name="l00257"></a>00257 <span class="preprocessor">#endif</span>
-<a name="l00258"></a>00258 <span class="preprocessor"></span>
-<a name="l00259"></a>00259   <a class="code" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a> &amp;= ~(_BV(DAT_PIN));
-<a name="l00260"></a>00260   <a class="code" href="LPC21xx_8h.html#a2aad809a96f91f42efabb2b75c23773a">IO0CLR</a> = _BV(DAT_PIN);
-<a name="l00261"></a>00261   <a class="code" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a> = _BV(SCK_PIN);
-<a name="l00262"></a>00262   <a class="code" href="LPC21xx_8h.html#a2aad809a96f91f42efabb2b75c23773a">IO0CLR</a> = _BV(SCK_PIN);
-<a name="l00263"></a>00263 
-<a name="l00264"></a>00264   <a class="code" href="humid__sht_8c.html#a721bfa074f0f40ff23abdf39982303cd">humid_sht_available</a> = FALSE;
-<a name="l00265"></a>00265   <a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> = <a class="code" href="humid__sht_8h.html#a50b19c0f93aefeedbfe334f81064159a">SHT_IDLE</a>;
-<a name="l00266"></a>00266 }
+<a name="l00240"></a>00240   <span class="comment">/* Configure DAT/SCL pin as GPIO */</span>
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242 <span class="preprocessor">#if (DAT_PIN&lt;16)</span>
+<a name="l00243"></a>00243 <span class="preprocessor"></span>    <a class="code" href="LPC21xx_8h.html#aff215b5e0d11d5a47354ecfad12a8902">PINSEL0</a> &amp;= ~(_BV(DAT_PIN*2)|_BV(DAT_PIN*2+1));
+<a name="l00244"></a>00244 <span class="preprocessor">#else</span>
+<a name="l00245"></a>00245 <span class="preprocessor"></span>    <a class="code" href="LPC21xx_8h.html#a030997bacf62a695152879b6be44c84c">PINSEL1</a> &amp;= ~(_BV((DAT_PIN-16)*2)|_BV((DAT_PIN-16)*2+1));
+<a name="l00246"></a>00246 <span class="preprocessor">#endif</span>
+<a name="l00247"></a>00247 <span class="preprocessor"></span>
+<a name="l00248"></a>00248 <span class="preprocessor">#if (SCK_PIN&lt;16)</span>
+<a name="l00249"></a>00249 <span class="preprocessor"></span>    <a class="code" href="LPC21xx_8h.html#aff215b5e0d11d5a47354ecfad12a8902">PINSEL0</a> &amp;= ~(_BV(SCK_PIN*2)|_BV(SCK_PIN*2+1));
+<a name="l00250"></a>00250 <span class="preprocessor">#else</span>
+<a name="l00251"></a>00251 <span class="preprocessor"></span>    <a class="code" href="LPC21xx_8h.html#a030997bacf62a695152879b6be44c84c">PINSEL1</a> &amp;= ~(_BV((SCK_PIN-16)*2)|_BV((SCK_PIN-16)*2+1));
+<a name="l00252"></a>00252 <span class="preprocessor">#endif</span>
+<a name="l00253"></a>00253 <span class="preprocessor"></span>
+<a name="l00254"></a>00254   <a class="code" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a> &amp;= ~(_BV(DAT_PIN));
+<a name="l00255"></a>00255   <a class="code" href="LPC21xx_8h.html#a2aad809a96f91f42efabb2b75c23773a">IO0CLR</a> = _BV(DAT_PIN);
+<a name="l00256"></a>00256   <a class="code" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a> = _BV(SCK_PIN);
+<a name="l00257"></a>00257   <a class="code" href="LPC21xx_8h.html#a2aad809a96f91f42efabb2b75c23773a">IO0CLR</a> = _BV(SCK_PIN);
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259   <a class="code" href="humid__sht_8c.html#a721bfa074f0f40ff23abdf39982303cd">humid_sht_available</a> = FALSE;
+<a name="l00260"></a>00260   <a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> = <a class="code" href="humid__sht_8h.html#a50b19c0f93aefeedbfe334f81064159a">SHT_IDLE</a>;
+<a name="l00261"></a>00261 }
+<a name="l00262"></a>00262 
+<a name="l00263"></a>00263 <span class="preprocessor">#if 0</span>
+<a name="l00264"></a>00264 <span class="preprocessor"></span><span class="keywordtype">void</span> humid_sht_periodic_orig(<span class="keywordtype">void</span>)
+<a name="l00265"></a>00265 {
+<a name="l00266"></a>00266   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> error=0, checksum;
 <a name="l00267"></a>00267 
-<a name="l00268"></a>00268 <span class="preprocessor">#if 0</span>
-<a name="l00269"></a>00269 <span class="preprocessor"></span><span class="keywordtype">void</span> humid_sht_periodic_orig(<span class="keywordtype">void</span>)
-<a name="l00270"></a>00270 {
-<a name="l00271"></a>00271   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> error=0, checksum;
+<a name="l00268"></a>00268   <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
+<a name="l00269"></a>00269 
+<a name="l00270"></a>00270   error += <a class="code" href="humid__sht_8c.html#a0f5c282289678921be787215d98cb3aa">s_measure</a>(&amp;<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, &amp;checksum, <a class="code" href="humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d">HUMI</a>);  <span class="comment">//measure humidity</span>
+<a name="l00271"></a>00271   error += <a class="code" href="humid__sht_8c.html#a0f5c282289678921be787215d98cb3aa">s_measure</a>(&amp;<a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>,  &amp;checksum, <a class="code" href="humid__sht_8h.html#a10bed19ceedeb2c12c5aad6de1d3b1a1">TEMP</a>);  <span class="comment">//measure temperature</span>
 <a name="l00272"></a>00272 
-<a name="l00273"></a>00273   <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
-<a name="l00274"></a>00274 
-<a name="l00275"></a>00275   error += <a class="code" href="humid__sht_8c.html#a0f5c282289678921be787215d98cb3aa">s_measure</a>(&amp;<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, &amp;checksum, <a class="code" href="humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d">HUMI</a>);  <span class="comment">//measure humidity</span>
-<a name="l00276"></a>00276   error += <a class="code" href="humid__sht_8c.html#a0f5c282289678921be787215d98cb3aa">s_measure</a>(&amp;<a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>,  &amp;checksum, <a class="code" href="humid__sht_8h.html#a10bed19ceedeb2c12c5aad6de1d3b1a1">TEMP</a>);  <span class="comment">//measure temperature</span>
-<a name="l00277"></a>00277 
-<a name="l00278"></a>00278   <span class="keywordflow">if</span> (error != 0)
-<a name="l00279"></a>00279   {
-<a name="l00280"></a>00280     <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();            <span class="comment">//in case of an error: connection reset</span>
+<a name="l00273"></a>00273   <span class="keywordflow">if</span> (error != 0)
+<a name="l00274"></a>00274   {
+<a name="l00275"></a>00275     <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();            <span class="comment">//in case of an error: connection reset</span>
+<a name="l00276"></a>00276   }
+<a name="l00277"></a>00277   <span class="keywordflow">else</span>
+<a name="l00278"></a>00278   {
+<a name="l00279"></a>00279     <a class="code" href="humid__sht_8c.html#a73fae161c1291d629d3ddd86f3c8d4ba">calc_sht</a>(<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, <a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;<a class="code" href="humid__sht_8c.html#a7b6fc59372ea31117d7b57053986f3bc">fhumidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ab5111f7c86720c03eca02d5362d3373f">ftempsht</a>);         <span class="comment">//calculate humidity, temperature</span>
+<a name="l00280"></a>00280     <a class="code" href="humid__sht_8c.html#a721bfa074f0f40ff23abdf39982303cd">humid_sht_available</a> = TRUE;
 <a name="l00281"></a>00281   }
-<a name="l00282"></a>00282   <span class="keywordflow">else</span>
-<a name="l00283"></a>00283   {
-<a name="l00284"></a>00284     <a class="code" href="humid__sht_8c.html#a73fae161c1291d629d3ddd86f3c8d4ba">calc_sht</a>(<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, <a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;<a class="code" href="humid__sht_8c.html#a7b6fc59372ea31117d7b57053986f3bc">fhumidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ab5111f7c86720c03eca02d5362d3373f">ftempsht</a>);         <span class="comment">//calculate humidity, temperature</span>
-<a name="l00285"></a>00285     <a class="code" href="humid__sht_8c.html#a721bfa074f0f40ff23abdf39982303cd">humid_sht_available</a> = TRUE;
-<a name="l00286"></a>00286   }
-<a name="l00287"></a>00287 }
-<a name="l00288"></a>00288 <span class="preprocessor">#endif</span>
-<a name="l00289"></a>00289 <span class="preprocessor"></span>
-<a name="l00290"></a><a class="code" href="humid__sht_8h.html#ad715aaca3766d169ac2ea69bd0ead2d7">00290</a> <span class="keywordtype">void</span> <a class="code" href="humid__sht_8c.html#ad715aaca3766d169ac2ea69bd0ead2d7">humid_sht_periodic</a>(<span class="keywordtype">void</span>) {
-<a name="l00291"></a>00291   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> error=0, checksum;
-<a name="l00292"></a>00292 
-<a name="l00293"></a>00293   <span class="keywordflow">if</span> (<a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> == <a class="code" href="humid__sht_8h.html#a50b19c0f93aefeedbfe334f81064159a">SHT_IDLE</a>) {
-<a name="l00294"></a>00294     <span class="comment">/* init humidity read */</span>
-<a name="l00295"></a>00295     <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
-<a name="l00296"></a>00296     <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d">HUMI</a>);
-<a name="l00297"></a>00297     <a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> = <a class="code" href="humid__sht_8h.html#a4fc00fb9919f9d430d6fa80bc1079a50">SHT_MEASURING_HUMID</a>;
-<a name="l00298"></a>00298   }
-<a name="l00299"></a>00299   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> == <a class="code" href="humid__sht_8h.html#a4fc00fb9919f9d430d6fa80bc1079a50">SHT_MEASURING_HUMID</a>) {
-<a name="l00300"></a>00300     <span class="comment">/* get data */</span>
-<a name="l00301"></a>00301     error += <a class="code" href="humid__sht_8c.html#a50111ba8e53bc3ba3d09838d0f970070">s_read_measure</a>(&amp;<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, &amp;checksum);
-<a name="l00302"></a>00302 
-<a name="l00303"></a>00303     <span class="keywordflow">if</span> (error != 0) {
-<a name="l00304"></a>00304       <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
-<a name="l00305"></a>00305       <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d">HUMI</a>);    <span class="comment">//restart</span>
-<a name="l00306"></a>00306       <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(2);
-<a name="l00307"></a>00307     }
-<a name="l00308"></a>00308     <span class="keywordflow">else</span> {
-<a name="l00309"></a>00309       error += <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a10bed19ceedeb2c12c5aad6de1d3b1a1">TEMP</a>);
-<a name="l00310"></a>00310       <a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> = <a class="code" href="humid__sht_8h.html#aa4b4872337914e83262da73f3de0a755">SHT_MEASURING_TEMP</a>;
-<a name="l00311"></a>00311     }
-<a name="l00312"></a>00312   }
-<a name="l00313"></a>00313   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> == <a class="code" href="humid__sht_8h.html#aa4b4872337914e83262da73f3de0a755">SHT_MEASURING_TEMP</a>) {
-<a name="l00314"></a>00314     <span class="comment">/* get data */</span>
-<a name="l00315"></a>00315     error += <a class="code" href="humid__sht_8c.html#a50111ba8e53bc3ba3d09838d0f970070">s_read_measure</a>(&amp;<a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;checksum);
-<a name="l00316"></a>00316 
-<a name="l00317"></a>00317     <span class="keywordflow">if</span> (error != 0) {
-<a name="l00318"></a>00318       <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
-<a name="l00319"></a>00319       <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a10bed19ceedeb2c12c5aad6de1d3b1a1">TEMP</a>);    <span class="comment">//restart</span>
-<a name="l00320"></a>00320       <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(2);
-<a name="l00321"></a>00321     }
-<a name="l00322"></a>00322     <span class="keywordflow">else</span> {
-<a name="l00323"></a>00323       <a class="code" href="humid__sht_8c.html#a73fae161c1291d629d3ddd86f3c8d4ba">calc_sht</a>(<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, <a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;<a class="code" href="humid__sht_8c.html#a7b6fc59372ea31117d7b57053986f3bc">fhumidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ab5111f7c86720c03eca02d5362d3373f">ftempsht</a>);
-<a name="l00324"></a>00324       <a class="code" href="humid__sht_8c.html#a721bfa074f0f40ff23abdf39982303cd">humid_sht_available</a> = TRUE;
-<a name="l00325"></a>00325       <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
-<a name="l00326"></a>00326       <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d">HUMI</a>);
-<a name="l00327"></a>00327       <a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> = <a class="code" href="humid__sht_8h.html#a4fc00fb9919f9d430d6fa80bc1079a50">SHT_MEASURING_HUMID</a>;
-<a name="l00328"></a>00328       DOWNLINK_SEND_SHT_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;<a class="code" href="humid__sht_8c.html#a7b6fc59372ea31117d7b57053986f3bc">fhumidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ab5111f7c86720c03eca02d5362d3373f">ftempsht</a>);
-<a name="l00329"></a>00329       <a class="code" href="humid__sht_8c.html#a721bfa074f0f40ff23abdf39982303cd">humid_sht_available</a> = FALSE;
-<a name="l00330"></a>00330     }
-<a name="l00331"></a>00331   }
-<a name="l00332"></a>00332 }
+<a name="l00282"></a>00282 }
+<a name="l00283"></a>00283 <span class="preprocessor">#endif</span>
+<a name="l00284"></a>00284 <span class="preprocessor"></span>
+<a name="l00285"></a><a class="code" href="humid__sht_8h.html#ad715aaca3766d169ac2ea69bd0ead2d7">00285</a> <span class="keywordtype">void</span> <a class="code" href="humid__sht_8c.html#ad715aaca3766d169ac2ea69bd0ead2d7">humid_sht_periodic</a>(<span class="keywordtype">void</span>) {
+<a name="l00286"></a>00286   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> error=0, checksum;
+<a name="l00287"></a>00287 
+<a name="l00288"></a>00288   <span class="keywordflow">if</span> (<a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> == <a class="code" href="humid__sht_8h.html#a50b19c0f93aefeedbfe334f81064159a">SHT_IDLE</a>) {
+<a name="l00289"></a>00289     <span class="comment">/* init humidity read */</span>
+<a name="l00290"></a>00290     <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
+<a name="l00291"></a>00291     <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d">HUMI</a>);
+<a name="l00292"></a>00292     <a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> = <a class="code" href="humid__sht_8h.html#a4fc00fb9919f9d430d6fa80bc1079a50">SHT_MEASURING_HUMID</a>;
+<a name="l00293"></a>00293   }
+<a name="l00294"></a>00294   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> == <a class="code" href="humid__sht_8h.html#a4fc00fb9919f9d430d6fa80bc1079a50">SHT_MEASURING_HUMID</a>) {
+<a name="l00295"></a>00295     <span class="comment">/* get data */</span>
+<a name="l00296"></a>00296     error += <a class="code" href="humid__sht_8c.html#a50111ba8e53bc3ba3d09838d0f970070">s_read_measure</a>(&amp;<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, &amp;checksum);
+<a name="l00297"></a>00297 
+<a name="l00298"></a>00298     <span class="keywordflow">if</span> (error != 0) {
+<a name="l00299"></a>00299       <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
+<a name="l00300"></a>00300       <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d">HUMI</a>);    <span class="comment">//restart</span>
+<a name="l00301"></a>00301       <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(2);
+<a name="l00302"></a>00302     }
+<a name="l00303"></a>00303     <span class="keywordflow">else</span> {
+<a name="l00304"></a>00304       error += <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a10bed19ceedeb2c12c5aad6de1d3b1a1">TEMP</a>);
+<a name="l00305"></a>00305       <a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> = <a class="code" href="humid__sht_8h.html#aa4b4872337914e83262da73f3de0a755">SHT_MEASURING_TEMP</a>;
+<a name="l00306"></a>00306     }
+<a name="l00307"></a>00307   }
+<a name="l00308"></a>00308   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> == <a class="code" href="humid__sht_8h.html#aa4b4872337914e83262da73f3de0a755">SHT_MEASURING_TEMP</a>) {
+<a name="l00309"></a>00309     <span class="comment">/* get data */</span>
+<a name="l00310"></a>00310     error += <a class="code" href="humid__sht_8c.html#a50111ba8e53bc3ba3d09838d0f970070">s_read_measure</a>(&amp;<a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;checksum);
+<a name="l00311"></a>00311 
+<a name="l00312"></a>00312     <span class="keywordflow">if</span> (error != 0) {
+<a name="l00313"></a>00313       <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
+<a name="l00314"></a>00314       <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a10bed19ceedeb2c12c5aad6de1d3b1a1">TEMP</a>);    <span class="comment">//restart</span>
+<a name="l00315"></a>00315       <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(2);
+<a name="l00316"></a>00316     }
+<a name="l00317"></a>00317     <span class="keywordflow">else</span> {
+<a name="l00318"></a>00318       <a class="code" href="humid__sht_8c.html#a73fae161c1291d629d3ddd86f3c8d4ba">calc_sht</a>(<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, <a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;<a class="code" href="humid__sht_8c.html#a7b6fc59372ea31117d7b57053986f3bc">fhumidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ab5111f7c86720c03eca02d5362d3373f">ftempsht</a>);
+<a name="l00319"></a>00319       <a class="code" href="humid__sht_8c.html#a721bfa074f0f40ff23abdf39982303cd">humid_sht_available</a> = TRUE;
+<a name="l00320"></a>00320       <a class="code" href="humid__sht_8c.html#a2911676bb77e03a71fbbd714d03d10c8">s_connectionreset</a>();
+<a name="l00321"></a>00321       <a class="code" href="humid__sht_8c.html#a3686df6b67e42437c8a8e221f2e9630f">s_start_measure</a>(<a class="code" href="humid__sht_8h.html#a51ac1a55c11f4fd1b202ca488b9d5e3d">HUMI</a>);
+<a name="l00322"></a>00322       <a class="code" href="humid__sht_8c.html#a04351042aaba6e2b67dc2aaab9ded946">humid_sht_status</a> = <a class="code" href="humid__sht_8h.html#a4fc00fb9919f9d430d6fa80bc1079a50">SHT_MEASURING_HUMID</a>;
+<a name="l00323"></a>00323       DOWNLINK_SEND_SHT_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6">humidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ac8dc4f0bd5ee751a90240ac2ed414e6b">tempsht</a>, &amp;<a class="code" href="humid__sht_8c.html#a7b6fc59372ea31117d7b57053986f3bc">fhumidsht</a>, &amp;<a class="code" href="humid__sht_8c.html#ab5111f7c86720c03eca02d5362d3373f">ftempsht</a>);
+<a name="l00324"></a>00324       <a class="code" href="humid__sht_8c.html#a721bfa074f0f40ff23abdf39982303cd">humid_sht_available</a> = FALSE;
+<a name="l00325"></a>00325     }
+<a name="l00326"></a>00326   }
+<a name="l00327"></a>00327 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -447,7 +442,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="humid__sht_8c.html">humid_sht.c</a>      </li>
 
-    <li class="footer">Generated on Thu May 17 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Sun May 20 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
