@@ -1134,7 +1134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01047"></a>01047 <span class="keyword">struct </span><a class="code" href="structi2c__errors.html">i2c_errors</a> i2c1_errors;
 <a name="l01048"></a>01048 <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> i2c1_watchdog_counter;
 <a name="l01049"></a>01049 
-<a name="l01050"></a>01050 <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#af1bb992c93a47c27b4685578b7125856">i2c1_hw_init</a>(<span class="keywordtype">void</span>) {
+<a name="l01050"></a>01050 <span class="keywordtype">void</span> i2c1_hw_init(<span class="keywordtype">void</span>) {
 <a name="l01051"></a>01051 
 <a name="l01052"></a>01052   i2c1.reg_addr = <a class="code" href="LPC21xx_8h.html#ab45d257574da6fe1f091cc45b7eda6cc">I2C1</a>;
 <a name="l01053"></a>01053   i2c1.init_struct = &amp;I2C1_InitStruct;
@@ -1197,7 +1197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01110"></a>01110 <span class="preprocessor">#endif</span>
 <a name="l01111"></a>01111 <span class="preprocessor"></span>}
 <a name="l01112"></a>01112 
-<a name="l01113"></a>01113 <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#a0f636f736ba06ec015cd59e569790b0f">i2c1_ev_irq_handler</a>(<span class="keywordtype">void</span>) {
+<a name="l01113"></a>01113 <span class="keywordtype">void</span> i2c1_ev_irq_handler(<span class="keywordtype">void</span>) {
 <a name="l01114"></a>01114   I2C_TypeDef *regs = (I2C_TypeDef *) i2c1.reg_addr;
 <a name="l01115"></a>01115   regs-&gt;CR2 &amp;= ~ <a class="code" href="i2c__arch_8rewritten_8c.html#aa92dd71d2b979060aed69c7334c8da5b">I2C_CR2_BIT_ITERREN</a>;
 <a name="l01116"></a>01116   <a class="code" href="i2c__arch_8rewritten_8c.html#a9cdca4a1beda37ad7a9a7087252b6bbf">i2c_irq</a>(&amp;i2c1);
@@ -1205,7 +1205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01118"></a>01118   regs-&gt;CR2 |= <a class="code" href="i2c__arch_8rewritten_8c.html#aa92dd71d2b979060aed69c7334c8da5b">I2C_CR2_BIT_ITERREN</a>;
 <a name="l01119"></a>01119 }
 <a name="l01120"></a>01120 
-<a name="l01121"></a>01121 <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#aa1721178eae07f3b3690aad9fd4b69fb">i2c1_er_irq_handler</a>(<span class="keywordtype">void</span>) {
+<a name="l01121"></a>01121 <span class="keywordtype">void</span> i2c1_er_irq_handler(<span class="keywordtype">void</span>) {
 <a name="l01122"></a>01122   I2C_TypeDef *regs = (I2C_TypeDef *) i2c1.reg_addr;
 <a name="l01123"></a>01123   regs-&gt;CR2 &amp;= ~ <a class="code" href="i2c__arch_8rewritten_8c.html#a9cd575d54d3773ccd77378c875a03c31">I2C_CR2_BIT_ITEVTEN</a>;
 <a name="l01124"></a>01124   <a class="code" href="i2c__arch_8rewritten_8c.html#a9cdca4a1beda37ad7a9a7087252b6bbf">i2c_irq</a>(&amp;i2c1);
@@ -1220,7 +1220,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01133"></a>01133 <span class="keyword">struct </span><a class="code" href="structi2c__errors.html">i2c_errors</a> i2c2_errors;
 <a name="l01134"></a>01134 <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> i2c2_watchdog_counter;
 <a name="l01135"></a>01135 
-<a name="l01136"></a>01136 <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#af954ea89ce56d224ab5db375d033c9e5">i2c2_hw_init</a>(<span class="keywordtype">void</span>) {
+<a name="l01136"></a>01136 <span class="keywordtype">void</span> i2c2_hw_init(<span class="keywordtype">void</span>) {
 <a name="l01137"></a>01137 
 <a name="l01138"></a>01138   i2c2.reg_addr = I2C2;
 <a name="l01139"></a>01139   i2c2.init_struct = &amp;I2C2_InitStruct;
@@ -1277,7 +1277,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01190"></a>01190   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a886c0abe64ca0d366a35abba80cf2eff">i2c_setbitrate</a>(&amp;i2c2, I2C2_InitStruct.I2C_ClockSpeed);
 <a name="l01191"></a>01191 }
 <a name="l01192"></a>01192 
-<a name="l01193"></a>01193 <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#a0ec6e4a61a314795a154277b65bb4d8e">i2c2_ev_irq_handler</a>(<span class="keywordtype">void</span>) {
+<a name="l01193"></a>01193 <span class="keywordtype">void</span> i2c2_ev_irq_handler(<span class="keywordtype">void</span>) {
 <a name="l01194"></a>01194   I2C_TypeDef *regs = (I2C_TypeDef *) i2c2.reg_addr;
 <a name="l01195"></a>01195   regs-&gt;CR2 &amp;= ~ <a class="code" href="i2c__arch_8rewritten_8c.html#aa92dd71d2b979060aed69c7334c8da5b">I2C_CR2_BIT_ITERREN</a>;
 <a name="l01196"></a>01196   <a class="code" href="i2c__arch_8rewritten_8c.html#a9cdca4a1beda37ad7a9a7087252b6bbf">i2c_irq</a>(&amp;i2c2);
@@ -1285,7 +1285,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01198"></a>01198   regs-&gt;CR2 |= <a class="code" href="i2c__arch_8rewritten_8c.html#aa92dd71d2b979060aed69c7334c8da5b">I2C_CR2_BIT_ITERREN</a>;
 <a name="l01199"></a>01199 }
 <a name="l01200"></a>01200 
-<a name="l01201"></a>01201 <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#ac4478f39c0e04c9e769087c8ec7fa640">i2c2_er_irq_handler</a>(<span class="keywordtype">void</span>) {
+<a name="l01201"></a>01201 <span class="keywordtype">void</span> i2c2_er_irq_handler(<span class="keywordtype">void</span>) {
 <a name="l01202"></a>01202   I2C_TypeDef *regs = (I2C_TypeDef *) i2c2.reg_addr;
 <a name="l01203"></a>01203   regs-&gt;CR2 &amp;= ~ <a class="code" href="i2c__arch_8rewritten_8c.html#a9cd575d54d3773ccd77378c875a03c31">I2C_CR2_BIT_ITEVTEN</a>;
 <a name="l01204"></a>01204   <a class="code" href="i2c__arch_8rewritten_8c.html#a9cdca4a1beda37ad7a9a7087252b6bbf">i2c_irq</a>(&amp;i2c2);
@@ -1555,7 +1555,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="i2c__arch_8rewritten_8c.html">i2c_arch.rewritten.c</a>      </li>
 
-    <li class="footer">Generated on Sun May 20 2012 04:01:41 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 23 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

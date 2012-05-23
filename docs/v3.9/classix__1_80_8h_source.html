@@ -120,83 +120,98 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a>00016 
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018 <span class="preprocessor">#ifdef FBW</span>
-<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define LED_1_BANK 1</span>
-<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#define LED_1_PIN 24</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span>
-<a name="l00022"></a>00022 <span class="preprocessor">#define LED_2_BANK 1</span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define LED_2_PIN 31</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_LED_1</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_1 1</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define LED_1_BANK 1</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define LED_1_PIN 24</span>
 <a name="l00024"></a>00024 <span class="preprocessor"></span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="comment">/* PPM : rc rx on P0.16 : FBW_RC1 connector</span>
-<a name="l00027"></a>00027 <span class="comment">#define PPM_PINSEL PINSEL1</span>
-<a name="l00028"></a>00028 <span class="comment">#define PPM_PINSEL_VAL 0x03</span>
-<a name="l00029"></a>00029 <span class="comment">#define PPM_PINSEL_BIT 0</span>
-<a name="l00030"></a>00030 <span class="comment">*/</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#ifndef USE_LED_2</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_2 1</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#define LED_2_BANK 1</span>
+<a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#define LED_2_PIN 31</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="comment">/* PPM : rc rx on P0.6 : FBW_RC0 connector */</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#define PPM_PINSEL PINSEL0</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#define PPM_PINSEL_VAL 0x02</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#define PPM_PINSEL_BIT 12</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CRI TIR_CR2I</span>
-<a name="l00038"></a>00038 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRF TCCR_CR2_F</span>
-<a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRR TCCR_CR2_R</span>
-<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRI TCCR_CR2_I</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CR T0CR2</span>
-<a name="l00042"></a>00042 <span class="preprocessor"></span>
-<a name="l00043"></a>00043 <span class="comment">/* SERVOS : 4017 on FBW_RC0 connector */</span>
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="comment">/* MAT0.1 on P0.5 */</span>
-<a name="l00046"></a>00046 <span class="preprocessor">#define SERVO_CLOCK_PIN 5</span>
-<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#define SERVO_CLOCK_PINSEL PINSEL0</span>
-<a name="l00048"></a>00048 <span class="preprocessor"></span><span class="preprocessor">#define SERVO_CLOCK_PINSEL_VAL 0x02</span>
-<a name="l00049"></a>00049 <span class="preprocessor"></span><span class="preprocessor">#define SERVO_CLOCK_PINSEL_BIT 10</span>
-<a name="l00050"></a>00050 <span class="preprocessor"></span>
-<a name="l00051"></a>00051 <span class="comment">/* reset on P1.25 */</span>
-<a name="l00052"></a>00052 <span class="preprocessor">#define SERVO_RESET_PIN 25</span>
-<a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#define SERVO_RESET_PINSEL PINSEL2</span>
-<a name="l00054"></a>00054 <span class="preprocessor"></span>
-<a name="l00055"></a>00055 <span class="comment">/* ADCs */</span>
-<a name="l00056"></a>00056 <span class="comment">/* AD0.6 ( on pin P0.4 ) is supply monitoring */</span>
-<a name="l00057"></a>00057 <span class="preprocessor">#define USE_AD0_6</span>
-<a name="l00058"></a>00058 <span class="preprocessor"></span>
-<a name="l00059"></a>00059 <span class="preprocessor">#endif </span><span class="comment">/* FBW */</span>
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 <span class="preprocessor">#ifdef AP</span>
+<a name="l00032"></a>00032 <span class="comment">/* PPM : rc rx on P0.16 : FBW_RC1 connector</span>
+<a name="l00033"></a>00033 <span class="comment">#define PPM_PINSEL PINSEL1</span>
+<a name="l00034"></a>00034 <span class="comment">#define PPM_PINSEL_VAL 0x03</span>
+<a name="l00035"></a>00035 <span class="comment">#define PPM_PINSEL_BIT 0</span>
+<a name="l00036"></a>00036 <span class="comment">*/</span>
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="comment">/* PPM : rc rx on P0.6 : FBW_RC0 connector */</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#define PPM_PINSEL PINSEL0</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#define PPM_PINSEL_VAL 0x02</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span><span class="preprocessor">#define PPM_PINSEL_BIT 12</span>
+<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CRI TIR_CR2I</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRF TCCR_CR2_F</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRR TCCR_CR2_R</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRI TCCR_CR2_I</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#define PPM_CR T0CR2</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span>
+<a name="l00049"></a>00049 <span class="comment">/* SERVOS : 4017 on FBW_RC0 connector */</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="comment">/* MAT0.1 on P0.5 */</span>
+<a name="l00052"></a>00052 <span class="preprocessor">#define SERVO_CLOCK_PIN 5</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#define SERVO_CLOCK_PINSEL PINSEL0</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">#define SERVO_CLOCK_PINSEL_VAL 0x02</span>
+<a name="l00055"></a>00055 <span class="preprocessor"></span><span class="preprocessor">#define SERVO_CLOCK_PINSEL_BIT 10</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span>
+<a name="l00057"></a>00057 <span class="comment">/* reset on P1.25 */</span>
+<a name="l00058"></a>00058 <span class="preprocessor">#define SERVO_RESET_PIN 25</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span><span class="preprocessor">#define SERVO_RESET_PINSEL PINSEL2</span>
+<a name="l00060"></a>00060 <span class="preprocessor"></span>
+<a name="l00061"></a>00061 <span class="comment">/* ADCs */</span>
+<a name="l00062"></a>00062 <span class="comment">/* AD0.6 ( on pin P0.4 ) is supply monitoring */</span>
+<a name="l00063"></a>00063 <span class="preprocessor">#define USE_AD0_6</span>
 <a name="l00064"></a>00064 <span class="preprocessor"></span>
-<a name="l00065"></a>00065 <span class="preprocessor">#define SPI_SELECT_SLAVE0_PORT 0</span>
-<a name="l00066"></a>00066 <span class="preprocessor"></span><span class="preprocessor">#define SPI_SELECT_SLAVE0_PIN 20</span>
-<a name="l00067"></a>00067 <span class="preprocessor"></span>
-<a name="l00068"></a>00068 <span class="preprocessor">#ifndef SITL</span>
-<a name="l00069"></a>00069 <span class="preprocessor"></span><span class="comment">/* sitl handles this board as a mono-processor one: unfortunately these</span>
-<a name="l00070"></a>00070 <span class="comment">   definitions are already in FBW */</span>
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072 <span class="preprocessor">#define LED_1_BANK 1</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span><span class="preprocessor">#define LED_1_PIN 18</span>
-<a name="l00074"></a>00074 <span class="preprocessor"></span>
-<a name="l00075"></a>00075 <span class="preprocessor">#define LED_2_BANK 1</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">#define LED_2_PIN 19</span>
-<a name="l00077"></a>00077 <span class="preprocessor"></span>
-<a name="l00078"></a>00078 <span class="preprocessor">#define LED_3_BANK 1</span>
-<a name="l00079"></a>00079 <span class="preprocessor"></span><span class="preprocessor">#define LED_3_PIN 20</span>
-<a name="l00080"></a>00080 <span class="preprocessor"></span>
-<a name="l00081"></a>00081 <span class="preprocessor">#endif </span><span class="comment">/* !SITL */</span>
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 <span class="preprocessor">#endif </span><span class="comment">/* AP */</span>
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085 <span class="comment">/* ADC */</span>
-<a name="l00086"></a>00086 <span class="comment">/* Definitions for test_adcs.c, to test ADCs on AP ANALOG1 */</span>
-<a name="l00087"></a><a class="code" href="classix__1_80_8h.html#a5cbcaa568e20fcd4cc9325927d370860">00087</a> <span class="preprocessor">#define ADC_0 AdcBank1(5)</span>
-<a name="l00088"></a><a class="code" href="classix__1_80_8h.html#a3d767e16f12a6ee542079f3c9677192c">00088</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_1 AdcBank1(6)</span>
-<a name="l00089"></a><a class="code" href="classix__1_80_8h.html#a01ac9d2f00660408bcc8c809020904f9">00089</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_2 AdcBank1(7)</span>
-<a name="l00090"></a><a class="code" href="classix__1_80_8h.html#a474279f28350114950d862951d72de66">00090</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_3 AdcBank1(4)</span>
-<a name="l00091"></a><a class="code" href="classix__1_80_8h.html#a1d0bc863ec3717e7ed493491c0f82b24">00091</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_4 AdcBank1(3)</span>
-<a name="l00092"></a><a class="code" href="classix__1_80_8h.html#a482794539449d37c65de123d0d629acb">00092</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_5 AdcBank1(2)</span>
-<a name="l00093"></a>00093 <span class="preprocessor"></span>
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_CLASSIX_H */</span>
+<a name="l00065"></a>00065 <span class="preprocessor">#endif </span><span class="comment">/* FBW */</span>
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="preprocessor">#ifdef AP</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span>
+<a name="l00071"></a>00071 <span class="preprocessor">#define SPI_SELECT_SLAVE0_PORT 0</span>
+<a name="l00072"></a>00072 <span class="preprocessor"></span><span class="preprocessor">#define SPI_SELECT_SLAVE0_PIN 20</span>
+<a name="l00073"></a>00073 <span class="preprocessor"></span>
+<a name="l00074"></a>00074 <span class="preprocessor">#ifndef SITL</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="comment">/* sitl handles this board as a mono-processor one: unfortunately these</span>
+<a name="l00076"></a>00076 <span class="comment">   definitions are already in FBW */</span>
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 <span class="preprocessor">#ifndef USE_LED_1</span>
+<a name="l00079"></a>00079 <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_1 1</span>
+<a name="l00080"></a>00080 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="preprocessor">#define LED_1_BANK 1</span>
+<a name="l00082"></a>00082 <span class="preprocessor"></span><span class="preprocessor">#define LED_1_PIN 18</span>
+<a name="l00083"></a>00083 <span class="preprocessor"></span>
+<a name="l00084"></a>00084 <span class="preprocessor">#ifndef USE_LED_2</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_2 1</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">#define LED_2_BANK 1</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span><span class="preprocessor">#define LED_2_PIN 19</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span>
+<a name="l00090"></a>00090 <span class="preprocessor">#ifndef USE_LED_3</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_3 1</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00093"></a>00093 <span class="preprocessor"></span><span class="preprocessor">#define LED_3_BANK 1</span>
+<a name="l00094"></a>00094 <span class="preprocessor"></span><span class="preprocessor">#define LED_3_PIN 20</span>
+<a name="l00095"></a>00095 <span class="preprocessor"></span>
+<a name="l00096"></a>00096 <span class="preprocessor">#endif </span><span class="comment">/* !SITL */</span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 <span class="preprocessor">#endif </span><span class="comment">/* AP */</span>
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100 <span class="comment">/* ADC */</span>
+<a name="l00101"></a>00101 <span class="comment">/* Definitions for test_adcs.c, to test ADCs on AP ANALOG1 */</span>
+<a name="l00102"></a><a class="code" href="classix__1_80_8h.html#a5cbcaa568e20fcd4cc9325927d370860">00102</a> <span class="preprocessor">#define ADC_0 AdcBank1(5)</span>
+<a name="l00103"></a><a class="code" href="classix__1_80_8h.html#a3d767e16f12a6ee542079f3c9677192c">00103</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_1 AdcBank1(6)</span>
+<a name="l00104"></a><a class="code" href="classix__1_80_8h.html#a01ac9d2f00660408bcc8c809020904f9">00104</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_2 AdcBank1(7)</span>
+<a name="l00105"></a><a class="code" href="classix__1_80_8h.html#a474279f28350114950d862951d72de66">00105</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_3 AdcBank1(4)</span>
+<a name="l00106"></a><a class="code" href="classix__1_80_8h.html#a1d0bc863ec3717e7ed493491c0f82b24">00106</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_4 AdcBank1(3)</span>
+<a name="l00107"></a><a class="code" href="classix__1_80_8h.html#a482794539449d37c65de123d0d629acb">00107</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_5 AdcBank1(2)</span>
+<a name="l00108"></a>00108 <span class="preprocessor"></span>
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_CLASSIX_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -217,7 +232,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="classix__1_80_8h.html">classix_1.0.h</a>      </li>
 
-    <li class="footer">Generated on Sun May 20 2012 04:01:41 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 23 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

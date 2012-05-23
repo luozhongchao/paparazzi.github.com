@@ -111,32 +111,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="comment">//#define HSE_TYPE RCC_HSE_ON</span>
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 <span class="comment">/* Onboard LEDs */</span>
-<a name="l00010"></a><a class="code" href="beth_8h.html#a27043d2a36fed64b2808c882c24a1465">00010</a> <span class="preprocessor">#define LED_1_BANK</span>
-<a name="l00011"></a><a class="code" href="beth_8h.html#a37154c806d85fb9f9158f86bb55e9ee0">00011</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_1_GPIO GPIOC</span>
-<a name="l00012"></a><a class="code" href="beth_8h.html#a9837d23c93232321c9acf271941a22d6">00012</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_1_GPIO_CLK RCC_APB2Periph_GPIOC</span>
-<a name="l00013"></a><a class="code" href="beth_8h.html#af31fda99a2cc43d62229ac1c47bbe56d">00013</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_1_GPIO_PIN GPIO_Pin_12</span>
-<a name="l00014"></a>00014 <span class="preprocessor"></span>
-<a name="l00015"></a><a class="code" href="beth_8h.html#a7631476c940b199dfc9d1f6dbc5a931d">00015</a> <span class="preprocessor">#define LED_4_BANK</span>
-<a name="l00016"></a><a class="code" href="beth_8h.html#ab366dbaac15f5af2ac23bef4836c23c9">00016</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_4_GPIO GPIOA</span>
-<a name="l00017"></a><a class="code" href="beth_8h.html#aa8f2cb80a6b289c9ca114be0cbae45cc">00017</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_4_GPIO_CLK RCC_APB2Periph_GPIOA</span>
-<a name="l00018"></a><a class="code" href="beth_8h.html#a082f6a92009c531f29c919d1a9c4342b">00018</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_4_GPIO_PIN GPIO_Pin_6</span>
-<a name="l00019"></a>00019 <span class="preprocessor"></span>
-<a name="l00020"></a><a class="code" href="beth_8h.html#a2ebb1421b960c1d377594a166c094428">00020</a> <span class="preprocessor">#define LED_5_BANK</span>
-<a name="l00021"></a><a class="code" href="beth_8h.html#a145ce7967376b20807d2bc459225f19d">00021</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_5_GPIO GPIOA</span>
-<a name="l00022"></a><a class="code" href="beth_8h.html#a8acf68fac1dc0e8fb6706578f21a9409">00022</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_5_GPIO_CLK RCC_APB2Periph_GPIOA</span>
-<a name="l00023"></a><a class="code" href="beth_8h.html#aace877e382bb988e286679d3283814ff">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_5_GPIO_PIN GPIO_Pin_7</span>
-<a name="l00024"></a>00024 <span class="preprocessor"></span>
-<a name="l00025"></a><a class="code" href="beth_8h.html#ab190d158fc7ae12b6cb43450a31ccacf">00025</a> <span class="preprocessor">#define LED_6_BANK</span>
-<a name="l00026"></a><a class="code" href="beth_8h.html#aaefc82c01863a3e59aa03acaa3aaca7c">00026</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_6_GPIO GPIOB</span>
-<a name="l00027"></a><a class="code" href="beth_8h.html#ad73b1124cac115d9b37262ac888b74dd">00027</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_6_GPIO_CLK RCC_APB2Periph_GPIOB</span>
-<a name="l00028"></a><a class="code" href="beth_8h.html#adc37a510e8ff73ecd49328bfc8cd41c1">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_6_GPIO_PIN GPIO_Pin_0</span>
-<a name="l00029"></a>00029 <span class="preprocessor"></span>
-<a name="l00030"></a><a class="code" href="beth_8h.html#a689ab502bcef74093f8599daffec7e4e">00030</a> <span class="preprocessor">#define LED_7_BANK</span>
-<a name="l00031"></a><a class="code" href="beth_8h.html#affd1eec19194fa5f68e10a79d48c35d5">00031</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_7_GPIO GPIOB</span>
-<a name="l00032"></a><a class="code" href="beth_8h.html#a3209ad1dc3c12fcb6f496edd13e90453">00032</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_7_GPIO_CLK RCC_APB2Periph_GPIOB</span>
-<a name="l00033"></a><a class="code" href="beth_8h.html#a5daa3f2d218cecbea875535fc41a6779">00033</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_7_GPIO_PIN GPIO_Pin_1</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span>
-<a name="l00035"></a>00035 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_BETH_H */</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#ifndef USE_LED_1</span>
+<a name="l00011"></a><a class="code" href="beth_8h.html#ae7a2417096c8215257d073da4d6d4c5f">00011</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_1 1</span>
+<a name="l00012"></a>00012 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00013"></a><a class="code" href="beth_8h.html#a37154c806d85fb9f9158f86bb55e9ee0">00013</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_1_GPIO GPIOC</span>
+<a name="l00014"></a><a class="code" href="beth_8h.html#a9837d23c93232321c9acf271941a22d6">00014</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_1_GPIO_CLK RCC_APB2Periph_GPIOC</span>
+<a name="l00015"></a><a class="code" href="beth_8h.html#af31fda99a2cc43d62229ac1c47bbe56d">00015</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_1_GPIO_PIN GPIO_Pin_12</span>
+<a name="l00016"></a>00016 <span class="preprocessor"></span>
+<a name="l00017"></a>00017 <span class="preprocessor">#ifndef USE_LED_4</span>
+<a name="l00018"></a><a class="code" href="beth_8h.html#ae74a702840b15e71530a2716b1ef497c">00018</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_4 1</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00020"></a><a class="code" href="beth_8h.html#ab366dbaac15f5af2ac23bef4836c23c9">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_4_GPIO GPIOA</span>
+<a name="l00021"></a><a class="code" href="beth_8h.html#aa8f2cb80a6b289c9ca114be0cbae45cc">00021</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_4_GPIO_CLK RCC_APB2Periph_GPIOA</span>
+<a name="l00022"></a><a class="code" href="beth_8h.html#a082f6a92009c531f29c919d1a9c4342b">00022</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_4_GPIO_PIN GPIO_Pin_6</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#ifndef USE_LED_5</span>
+<a name="l00025"></a><a class="code" href="beth_8h.html#aa8b07cb021b87d0c5868a3cb2851510e">00025</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_5 1</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00027"></a><a class="code" href="beth_8h.html#a145ce7967376b20807d2bc459225f19d">00027</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_5_GPIO GPIOA</span>
+<a name="l00028"></a><a class="code" href="beth_8h.html#a8acf68fac1dc0e8fb6706578f21a9409">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_5_GPIO_CLK RCC_APB2Periph_GPIOA</span>
+<a name="l00029"></a><a class="code" href="beth_8h.html#aace877e382bb988e286679d3283814ff">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_5_GPIO_PIN GPIO_Pin_7</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>
+<a name="l00031"></a>00031 <span class="preprocessor">#ifndef USE_LED_6</span>
+<a name="l00032"></a><a class="code" href="beth_8h.html#a01d0c0f27c401bfd2e594261669a4b50">00032</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_6 1</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00034"></a><a class="code" href="beth_8h.html#aaefc82c01863a3e59aa03acaa3aaca7c">00034</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_6_GPIO GPIOB</span>
+<a name="l00035"></a><a class="code" href="beth_8h.html#ad73b1124cac115d9b37262ac888b74dd">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_6_GPIO_CLK RCC_APB2Periph_GPIOB</span>
+<a name="l00036"></a><a class="code" href="beth_8h.html#adc37a510e8ff73ecd49328bfc8cd41c1">00036</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_6_GPIO_PIN GPIO_Pin_0</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span>
+<a name="l00038"></a>00038 <span class="preprocessor">#ifndef USE_LED_7</span>
+<a name="l00039"></a><a class="code" href="beth_8h.html#a945f3794deb54dff239a60a2c91750a5">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_7 1</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00041"></a><a class="code" href="beth_8h.html#affd1eec19194fa5f68e10a79d48c35d5">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_7_GPIO GPIOB</span>
+<a name="l00042"></a><a class="code" href="beth_8h.html#a3209ad1dc3c12fcb6f496edd13e90453">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_7_GPIO_CLK RCC_APB2Periph_GPIOB</span>
+<a name="l00043"></a><a class="code" href="beth_8h.html#a5daa3f2d218cecbea875535fc41a6779">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_7_GPIO_PIN GPIO_Pin_1</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span>
+<a name="l00045"></a>00045 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_BETH_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -157,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="beth_8h.html">beth.h</a>      </li>
 
-    <li class="footer">Generated on Sun May 20 2012 04:01:41 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 23 2012 04:00:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

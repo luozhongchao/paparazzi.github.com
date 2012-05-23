@@ -59,5 +59,11 @@ var booz__1_80_8h =
     [ "USE_AD0", "booz__1_80_8h.html#a1dce105d488bf4fcd1181c04a750bfda", null ],
     [ "USE_AD0_2", "booz__1_80_8h.html#a942e2dbfeaed34d083dfc6a8101e2c96", null ],
     [ "USE_AD1", "booz__1_80_8h.html#a2934d6c02a6319444fb3e892c72cb8f6", null ],
-    [ "USE_AD1_2", "booz__1_80_8h.html#a695ab2b4d2370667dc3e2563f8ebf77a", null ]
+    [ "USE_AD1_2", "booz__1_80_8h.html#a695ab2b4d2370667dc3e2563f8ebf77a", null ],
+    [ "USE_LED_1", "booz__1_80_8h.html#ae7a2417096c8215257d073da4d6d4c5f", null ],
+    [ "USE_LED_2", "booz__1_80_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf", null ],
+    [ "USE_LED_3", "booz__1_80_8h.html#a4da08b59c725550efa312cf16ecdd77c", null ],
+    [ "USE_LED_4", "booz__1_80_8h.html#ae74a702840b15e71530a2716b1ef497c", null ],
+    [ "USE_LED_5", "booz__1_80_8h.html#aa8b07cb021b87d0c5868a3cb2851510e", null ],
+    [ "USE_LED_6", "booz__1_80_8h.html#a01d0c0f27c401bfd2e594261669a4b50", null ]
 ];

@@ -40,5 +40,9 @@ var hb__1_81_8h =
     [ "SERVO_CLOCK_PINSEL_VAL", "hb__1_81_8h.html#a4b04c8175ead918a9ee42816b06a04e8", null ],
     [ "SERVO_RESET_PIN", "hb__1_81_8h.html#ab679c594bd3ee3e3d8c488143e9476ed", null ],
     [ "USE_AD1", "hb__1_81_8h.html#a2934d6c02a6319444fb3e892c72cb8f6", null ],
-    [ "USE_AD1_6", "hb__1_81_8h.html#a23307af3b1535aec88dcd4b1c69d56e0", null ]
+    [ "USE_AD1_6", "hb__1_81_8h.html#a23307af3b1535aec88dcd4b1c69d56e0", null ],
+    [ "USE_LED_1", "hb__1_81_8h.html#ae7a2417096c8215257d073da4d6d4c5f", null ],
+    [ "USE_LED_2", "hb__1_81_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf", null ],
+    [ "USE_LED_3", "hb__1_81_8h.html#a4da08b59c725550efa312cf16ecdd77c", null ],
+    [ "USE_LED_4", "hb__1_81_8h.html#ae74a702840b15e71530a2716b1ef497c", null ]
 ];

@@ -39,5 +39,9 @@ var navgo__1_80_8h =
     [ "SPI_SELECT_SLAVE0_PIN", "navgo__1_80_8h.html#a697b8e633c428bd167844542c8c1453f", null ],
     [ "SPI_SELECT_SLAVE0_PORT", "navgo__1_80_8h.html#a62cb06db3908015c7305ca6833f90159", null ],
     [ "USE_AD0", "navgo__1_80_8h.html#a1dce105d488bf4fcd1181c04a750bfda", null ],
-    [ "USE_AD0_2", "navgo__1_80_8h.html#a942e2dbfeaed34d083dfc6a8101e2c96", null ]
+    [ "USE_AD0_2", "navgo__1_80_8h.html#a942e2dbfeaed34d083dfc6a8101e2c96", null ],
+    [ "USE_LED_1", "navgo__1_80_8h.html#ae7a2417096c8215257d073da4d6d4c5f", null ],
+    [ "USE_LED_2", "navgo__1_80_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf", null ],
+    [ "USE_LED_3", "navgo__1_80_8h.html#a4da08b59c725550efa312cf16ecdd77c", null ],
+    [ "USE_LED_4", "navgo__1_80_8h.html#ae74a702840b15e71530a2716b1ef497c", null ]
 ];

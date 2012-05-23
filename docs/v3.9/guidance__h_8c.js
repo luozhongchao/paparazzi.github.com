@@ -30,7 +30,6 @@ var guidance__h_8c =
     [ "guidance_h_pos_err_sum", "guidance__h_8c.html#a38c8f96006ee44bb6e6e7af963f3cee2", null ],
     [ "guidance_h_pos_ref", "guidance__h_8c.html#a3811b775f659bc08d3beb46accbf3533", null ],
     [ "guidance_h_pos_sp", "guidance__h_8c.html#ab5bfbde0d90688c7b32bdd7244be7a0b", null ],
-    [ "guidance_h_psi_sp", "guidance__h_8c.html#a8a1e652a7d78185c090e74edb2e1b0e0", null ],
     [ "guidance_h_rc_sp", "guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52", null ],
     [ "guidance_h_speed_err", "guidance__h_8c.html#a206725a549c15b4fefc505299fa3e08b", null ],
     [ "guidance_h_speed_ref", "guidance__h_8c.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1", null ],

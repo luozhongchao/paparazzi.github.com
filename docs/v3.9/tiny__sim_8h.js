@@ -41,5 +41,7 @@ var tiny__sim_8h =
     [ "SERV1_DATA_PIN", "tiny__sim_8h.html#af5d1a54ef7cb17a85238d6129c2099b7", null ],
     [ "SERV1_RESET_PIN", "tiny__sim_8h.html#a9293ae9be1db9c6b6835e1777ef72392", null ],
     [ "USE_AD1", "tiny__sim_8h.html#a2934d6c02a6319444fb3e892c72cb8f6", null ],
-    [ "USE_AD1_7", "tiny__sim_8h.html#a14cea5a444c883a0ca1e4936d333474c", null ]
+    [ "USE_AD1_7", "tiny__sim_8h.html#a14cea5a444c883a0ca1e4936d333474c", null ],
+    [ "USE_LED_1", "tiny__sim_8h.html#ae7a2417096c8215257d073da4d6d4c5f", null ],
+    [ "USE_LED_2", "tiny__sim_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf", null ]
 ];

@@ -9,5 +9,7 @@ var olimex__lpc__h2148_8h =
     [ "PBSD_BITS", "olimex__lpc__h2148_8h.html#a330ec54037ff81af92f143fdb786216e", null ],
     [ "PBSD_VAL", "olimex__lpc__h2148_8h.html#ab6906a1f3d77eb3e6cd99414d714fe90", null ],
     [ "PCLK", "olimex__lpc__h2148_8h.html#a4e4204874a63b2a01811ee2819285f58", null ],
-    [ "PLL_MUL", "olimex__lpc__h2148_8h.html#a43abb7ff318cb315c8b5134ee8d96fd2", null ]
+    [ "PLL_MUL", "olimex__lpc__h2148_8h.html#a43abb7ff318cb315c8b5134ee8d96fd2", null ],
+    [ "USE_LED_1", "olimex__lpc__h2148_8h.html#ae7a2417096c8215257d073da4d6d4c5f", null ],
+    [ "USE_LED_2", "olimex__lpc__h2148_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf", null ]
 ];

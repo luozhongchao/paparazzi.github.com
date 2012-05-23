@@ -121,125 +121,131 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00017"></a>00017 <span class="comment">/* Peripheral bus clock freq. */</span>
 <a name="l00018"></a><a class="code" href="tiny__sim_8h.html#a4e4204874a63b2a01811ee2819285f58">00018</a> <span class="preprocessor">#define PCLK (CCLK / PBSD_VAL)</span>
 <a name="l00019"></a>00019 <span class="preprocessor"></span>
-<a name="l00020"></a><a class="code" href="tiny__sim_8h.html#a27043d2a36fed64b2808c882c24a1465">00020</a> <span class="preprocessor">#define LED_1_BANK 1</span>
-<a name="l00021"></a><a class="code" href="tiny__sim_8h.html#a620741f492787e04779bab21e6658113">00021</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_1_PIN 28</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a><a class="code" href="tiny__sim_8h.html#a112e30585052c010d6182c4d3dceeb4a">00023</a> <span class="preprocessor">#define LED_2_BANK 1</span>
-<a name="l00024"></a><a class="code" href="tiny__sim_8h.html#a78579f743b58c20ec8d10120d8381148">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_2_PIN 19</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#ifndef USE_LED_1</span>
+<a name="l00021"></a><a class="code" href="tiny__sim_8h.html#ae7a2417096c8215257d073da4d6d4c5f">00021</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_1 1</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00023"></a><a class="code" href="tiny__sim_8h.html#a27043d2a36fed64b2808c882c24a1465">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_1_BANK 1</span>
+<a name="l00024"></a><a class="code" href="tiny__sim_8h.html#a620741f492787e04779bab21e6658113">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_1_PIN 28</span>
 <a name="l00025"></a>00025 <span class="preprocessor"></span>
-<a name="l00026"></a>00026 <span class="comment">/* p0.21 aka PWM5 */</span>
-<a name="l00027"></a><a class="code" href="tiny__sim_8h.html#abd61619a45dec8e3a80f47bc3fd45733">00027</a> <span class="preprocessor">#define SERV0_CLOCK_PIN 21</span>
-<a name="l00028"></a><a class="code" href="tiny__sim_8h.html#a07160647a17ada6be12019a3316c199c">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV0_CLOCK_PINSEL PINSEL1</span>
-<a name="l00029"></a><a class="code" href="tiny__sim_8h.html#a216efd114e1b1098daee981e8194c70e">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV0_CLOCK_PINSEL_VAL 0x01</span>
-<a name="l00030"></a><a class="code" href="tiny__sim_8h.html#a594c198e0534badd387ad722591df4f6">00030</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV0_CLOCK_PINSEL_BIT 10</span>
-<a name="l00031"></a>00031 <span class="preprocessor"></span><span class="comment">/* p1.20          */</span>
-<a name="l00032"></a><a class="code" href="tiny__sim_8h.html#a4936372e85b573e63c6b0f81fa45c31c">00032</a> <span class="preprocessor">#define SERV0_DATA_PIN  20</span>
-<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="comment">/* p1.21          */</span>
-<a name="l00034"></a><a class="code" href="tiny__sim_8h.html#ab705748aaa5b3ab9a5cfca6a42fb4543">00034</a> <span class="preprocessor">#define SERV0_RESET_PIN 21</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span>
-<a name="l00036"></a>00036 <span class="comment">/* P0.7 aka PWM2  */</span>
-<a name="l00037"></a><a class="code" href="tiny__sim_8h.html#a9c9c7db1b11d582739dff2915d7dc3dd">00037</a> <span class="preprocessor">#define SERV1_CLOCK_PIN  7</span>
-<a name="l00038"></a><a class="code" href="tiny__sim_8h.html#a44d2796defd4e9c33460dbf08f71daf6">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV1_CLOCK_PINSEL PINSEL0</span>
-<a name="l00039"></a><a class="code" href="tiny__sim_8h.html#a05e3e07ec17f6bd9693cdacea5d36373">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV1_CLOCK_PINSEL_VAL 0x02</span>
-<a name="l00040"></a><a class="code" href="tiny__sim_8h.html#a5bf0cbfae26751205c28e55b22cc5aef">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV1_CLOCK_PINSEL_BIT 14</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="comment">/* p1.30          */</span>
-<a name="l00042"></a><a class="code" href="tiny__sim_8h.html#af5d1a54ef7cb17a85238d6129c2099b7">00042</a> <span class="preprocessor">#define SERV1_DATA_PIN  30</span>
-<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="comment">/* p1.29          */</span>
-<a name="l00044"></a><a class="code" href="tiny__sim_8h.html#a9293ae9be1db9c6b6835e1777ef72392">00044</a> <span class="preprocessor">#define SERV1_RESET_PIN 29</span>
-<a name="l00045"></a>00045 <span class="preprocessor"></span>
-<a name="l00046"></a>00046 <span class="comment">/* PPM : rc rx on P0.6*/</span>
-<a name="l00047"></a><a class="code" href="tiny__sim_8h.html#a844bb4c4a9e76e202997a1d18fb267c4">00047</a> <span class="preprocessor">#define PPM_PINSEL PINSEL0</span>
-<a name="l00048"></a><a class="code" href="tiny__sim_8h.html#aeadbfa32342d0cb241c1b0be7adf0c04">00048</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_PINSEL_VAL 0x02</span>
-<a name="l00049"></a><a class="code" href="tiny__sim_8h.html#a176de44a1fdb86a1facdb160871cef5d">00049</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_PINSEL_BIT 12</span>
-<a name="l00050"></a><a class="code" href="tiny__sim_8h.html#a81e5e7496f2d92266f742c9cafbf8e16">00050</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CRI TIR_CR2I</span>
-<a name="l00051"></a><a class="code" href="tiny__sim_8h.html#ad25058c1245a5a986632aae0f3f91ebc">00051</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRF TCCR_CR2_F</span>
-<a name="l00052"></a><a class="code" href="tiny__sim_8h.html#a9554c21ac4db9f0b888079de6c70521a">00052</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRR TCCR_CR2_R</span>
-<a name="l00053"></a><a class="code" href="tiny__sim_8h.html#a527cf6cfbed24e043ed4ee710baed3f1">00053</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRI TCCR_CR2_I</span>
-<a name="l00054"></a><a class="code" href="tiny__sim_8h.html#a9b6dd90e1f8fb64d936679da4a87e7df">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CR T0CR2</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span>
-<a name="l00056"></a>00056 <span class="comment">/* ADC */</span>
-<a name="l00057"></a>00057 
-<a name="l00058"></a><a class="code" href="tiny__sim_8h.html#a5cbcaa568e20fcd4cc9325927d370860">00058</a> <span class="preprocessor">#define ADC_0 AdcBank0(3)</span>
-<a name="l00059"></a>00059 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_0</span>
-<a name="l00060"></a>00060 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
-<a name="l00061"></a>00061 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
-<a name="l00062"></a>00062 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00063"></a>00063 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_3</span>
-<a name="l00064"></a>00064 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00065"></a>00065 <span class="preprocessor"></span>
-<a name="l00066"></a><a class="code" href="tiny__sim_8h.html#a3d767e16f12a6ee542079f3c9677192c">00066</a> <span class="preprocessor">#define ADC_1 AdcBank0(2)</span>
-<a name="l00067"></a>00067 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_1</span>
-<a name="l00068"></a>00068 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
-<a name="l00069"></a>00069 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#ifndef USE_LED_2</span>
+<a name="l00027"></a><a class="code" href="tiny__sim_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf">00027</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_LED_2 1</span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00029"></a><a class="code" href="tiny__sim_8h.html#a112e30585052c010d6182c4d3dceeb4a">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_2_BANK 1</span>
+<a name="l00030"></a><a class="code" href="tiny__sim_8h.html#a78579f743b58c20ec8d10120d8381148">00030</a> <span class="preprocessor"></span><span class="preprocessor">#define LED_2_PIN 19</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span>
+<a name="l00032"></a>00032 <span class="comment">/* p0.21 aka PWM5 */</span>
+<a name="l00033"></a><a class="code" href="tiny__sim_8h.html#abd61619a45dec8e3a80f47bc3fd45733">00033</a> <span class="preprocessor">#define SERV0_CLOCK_PIN 21</span>
+<a name="l00034"></a><a class="code" href="tiny__sim_8h.html#a07160647a17ada6be12019a3316c199c">00034</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV0_CLOCK_PINSEL PINSEL1</span>
+<a name="l00035"></a><a class="code" href="tiny__sim_8h.html#a216efd114e1b1098daee981e8194c70e">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV0_CLOCK_PINSEL_VAL 0x01</span>
+<a name="l00036"></a><a class="code" href="tiny__sim_8h.html#a594c198e0534badd387ad722591df4f6">00036</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV0_CLOCK_PINSEL_BIT 10</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="comment">/* p1.20          */</span>
+<a name="l00038"></a><a class="code" href="tiny__sim_8h.html#a4936372e85b573e63c6b0f81fa45c31c">00038</a> <span class="preprocessor">#define SERV0_DATA_PIN  20</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span><span class="comment">/* p1.21          */</span>
+<a name="l00040"></a><a class="code" href="tiny__sim_8h.html#ab705748aaa5b3ab9a5cfca6a42fb4543">00040</a> <span class="preprocessor">#define SERV0_RESET_PIN 21</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a>00042 <span class="comment">/* P0.7 aka PWM2  */</span>
+<a name="l00043"></a><a class="code" href="tiny__sim_8h.html#a9c9c7db1b11d582739dff2915d7dc3dd">00043</a> <span class="preprocessor">#define SERV1_CLOCK_PIN  7</span>
+<a name="l00044"></a><a class="code" href="tiny__sim_8h.html#a44d2796defd4e9c33460dbf08f71daf6">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV1_CLOCK_PINSEL PINSEL0</span>
+<a name="l00045"></a><a class="code" href="tiny__sim_8h.html#a05e3e07ec17f6bd9693cdacea5d36373">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV1_CLOCK_PINSEL_VAL 0x02</span>
+<a name="l00046"></a><a class="code" href="tiny__sim_8h.html#a5bf0cbfae26751205c28e55b22cc5aef">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define SERV1_CLOCK_PINSEL_BIT 14</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="comment">/* p1.30          */</span>
+<a name="l00048"></a><a class="code" href="tiny__sim_8h.html#af5d1a54ef7cb17a85238d6129c2099b7">00048</a> <span class="preprocessor">#define SERV1_DATA_PIN  30</span>
+<a name="l00049"></a>00049 <span class="preprocessor"></span><span class="comment">/* p1.29          */</span>
+<a name="l00050"></a><a class="code" href="tiny__sim_8h.html#a9293ae9be1db9c6b6835e1777ef72392">00050</a> <span class="preprocessor">#define SERV1_RESET_PIN 29</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span>
+<a name="l00052"></a>00052 <span class="comment">/* PPM : rc rx on P0.6*/</span>
+<a name="l00053"></a><a class="code" href="tiny__sim_8h.html#a844bb4c4a9e76e202997a1d18fb267c4">00053</a> <span class="preprocessor">#define PPM_PINSEL PINSEL0</span>
+<a name="l00054"></a><a class="code" href="tiny__sim_8h.html#aeadbfa32342d0cb241c1b0be7adf0c04">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_PINSEL_VAL 0x02</span>
+<a name="l00055"></a><a class="code" href="tiny__sim_8h.html#a176de44a1fdb86a1facdb160871cef5d">00055</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_PINSEL_BIT 12</span>
+<a name="l00056"></a><a class="code" href="tiny__sim_8h.html#a81e5e7496f2d92266f742c9cafbf8e16">00056</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CRI TIR_CR2I</span>
+<a name="l00057"></a><a class="code" href="tiny__sim_8h.html#ad25058c1245a5a986632aae0f3f91ebc">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRF TCCR_CR2_F</span>
+<a name="l00058"></a><a class="code" href="tiny__sim_8h.html#a9554c21ac4db9f0b888079de6c70521a">00058</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRR TCCR_CR2_R</span>
+<a name="l00059"></a><a class="code" href="tiny__sim_8h.html#a527cf6cfbed24e043ed4ee710baed3f1">00059</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CCR_CRI TCCR_CR2_I</span>
+<a name="l00060"></a><a class="code" href="tiny__sim_8h.html#a9b6dd90e1f8fb64d936679da4a87e7df">00060</a> <span class="preprocessor"></span><span class="preprocessor">#define PPM_CR T0CR2</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span>
+<a name="l00062"></a>00062 <span class="comment">/* ADC */</span>
+<a name="l00063"></a>00063 
+<a name="l00064"></a><a class="code" href="tiny__sim_8h.html#a5cbcaa568e20fcd4cc9325927d370860">00064</a> <span class="preprocessor">#define ADC_0 AdcBank0(3)</span>
+<a name="l00065"></a>00065 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_0</span>
+<a name="l00066"></a>00066 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
+<a name="l00067"></a>00067 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_3</span>
 <a name="l00070"></a>00070 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_2</span>
-<a name="l00072"></a>00072 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span>
-<a name="l00074"></a>00074 
-<a name="l00075"></a><a class="code" href="tiny__sim_8h.html#a01ac9d2f00660408bcc8c809020904f9">00075</a> <span class="preprocessor">#define ADC_2 AdcBank0(1)</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_2</span>
-<a name="l00077"></a>00077 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
-<a name="l00078"></a>00078 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
-<a name="l00079"></a>00079 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00080"></a>00080 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_1</span>
-<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00082"></a>00082 <span class="preprocessor"></span>
-<a name="l00083"></a><a class="code" href="tiny__sim_8h.html#a474279f28350114950d862951d72de66">00083</a> <span class="preprocessor">#define ADC_3 AdcBank0(6)</span>
-<a name="l00084"></a>00084 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_3</span>
-<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
-<a name="l00086"></a>00086 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span>
+<a name="l00072"></a><a class="code" href="tiny__sim_8h.html#a3d767e16f12a6ee542079f3c9677192c">00072</a> <span class="preprocessor">#define ADC_1 AdcBank0(2)</span>
+<a name="l00073"></a>00073 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_1</span>
+<a name="l00074"></a>00074 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00077"></a>00077 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_2</span>
+<a name="l00078"></a>00078 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00079"></a>00079 <span class="preprocessor"></span>
+<a name="l00080"></a>00080 
+<a name="l00081"></a><a class="code" href="tiny__sim_8h.html#a01ac9d2f00660408bcc8c809020904f9">00081</a> <span class="preprocessor">#define ADC_2 AdcBank0(1)</span>
+<a name="l00082"></a>00082 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_2</span>
+<a name="l00083"></a>00083 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_1</span>
 <a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00088"></a>00088 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_6</span>
-<a name="l00089"></a>00089 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00090"></a>00090 <span class="preprocessor"></span>
-<a name="l00091"></a>00091 
-<a name="l00092"></a><a class="code" href="tiny__sim_8h.html#a1d0bc863ec3717e7ed493491c0f82b24">00092</a> <span class="preprocessor">#define ADC_4 AdcBank1(3)</span>
-<a name="l00093"></a>00093 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_4</span>
-<a name="l00094"></a>00094 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
-<a name="l00095"></a>00095 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
-<a name="l00096"></a>00096 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00097"></a>00097 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_3</span>
-<a name="l00098"></a>00098 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00099"></a>00099 <span class="preprocessor"></span>
-<a name="l00100"></a><a class="code" href="tiny__sim_8h.html#a482794539449d37c65de123d0d629acb">00100</a> <span class="preprocessor">#define ADC_5 AdcBank1(4)</span>
-<a name="l00101"></a>00101 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_5</span>
-<a name="l00102"></a>00102 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
-<a name="l00103"></a>00103 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>
+<a name="l00089"></a><a class="code" href="tiny__sim_8h.html#a474279f28350114950d862951d72de66">00089</a> <span class="preprocessor">#define ADC_3 AdcBank0(6)</span>
+<a name="l00090"></a>00090 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_3</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD0</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0</span>
+<a name="l00093"></a>00093 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00094"></a>00094 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD0_6</span>
+<a name="l00095"></a>00095 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="tiny__sim_8h.html#a1d0bc863ec3717e7ed493491c0f82b24">00098</a> <span class="preprocessor">#define ADC_4 AdcBank1(3)</span>
+<a name="l00099"></a>00099 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_4</span>
+<a name="l00100"></a>00100 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
+<a name="l00102"></a>00102 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00103"></a>00103 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_3</span>
 <a name="l00104"></a>00104 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00105"></a>00105 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_4</span>
-<a name="l00106"></a>00106 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00107"></a>00107 <span class="preprocessor"></span>
-<a name="l00108"></a><a class="code" href="tiny__sim_8h.html#a11092789cb59e14976636d00760ed45f">00108</a> <span class="preprocessor">#define ADC_6 AdcBank1(5)</span>
-<a name="l00109"></a>00109 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_6</span>
-<a name="l00110"></a>00110 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
-<a name="l00111"></a>00111 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
+<a name="l00105"></a>00105 <span class="preprocessor"></span>
+<a name="l00106"></a><a class="code" href="tiny__sim_8h.html#a482794539449d37c65de123d0d629acb">00106</a> <span class="preprocessor">#define ADC_5 AdcBank1(4)</span>
+<a name="l00107"></a>00107 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_5</span>
+<a name="l00108"></a>00108 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
+<a name="l00109"></a>00109 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
+<a name="l00110"></a>00110 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00111"></a>00111 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_4</span>
 <a name="l00112"></a>00112 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00113"></a>00113 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_5</span>
-<a name="l00114"></a>00114 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00115"></a>00115 <span class="preprocessor"></span>
-<a name="l00116"></a><a class="code" href="tiny__sim_8h.html#aa8ade7e32d46ae622ee886a90b1ea9c8">00116</a> <span class="preprocessor">#define ADC_7 AdcBank1(2)</span>
-<a name="l00117"></a>00117 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_7</span>
-<a name="l00118"></a>00118 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
-<a name="l00119"></a>00119 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
+<a name="l00113"></a>00113 <span class="preprocessor"></span>
+<a name="l00114"></a><a class="code" href="tiny__sim_8h.html#a11092789cb59e14976636d00760ed45f">00114</a> <span class="preprocessor">#define ADC_6 AdcBank1(5)</span>
+<a name="l00115"></a>00115 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_6</span>
+<a name="l00116"></a>00116 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
+<a name="l00117"></a>00117 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
+<a name="l00118"></a>00118 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00119"></a>00119 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_5</span>
 <a name="l00120"></a>00120 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00121"></a>00121 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_2</span>
-<a name="l00122"></a>00122 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00123"></a>00123 <span class="preprocessor"></span>
-<a name="l00124"></a>00124 <span class="comment">/* #define ADC_3 AdcBank1(7) Used for VSUPPLY */</span>
-<a name="l00125"></a>00125 <span class="comment">/* allow to define ADC_CHANNEL_VSUPPLY in the airframe file*/</span>
-<a name="l00126"></a>00126 <span class="preprocessor">#ifndef ADC_CHANNEL_VSUPPLY</span>
-<a name="l00127"></a><a class="code" href="tiny__sim_8h.html#ad5a6636ee170fccf62a748fc72374d3b">00127</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_VSUPPLY AdcBank1(7)</span>
-<a name="l00128"></a>00128 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
-<a name="l00129"></a><a class="code" href="tiny__sim_8h.html#a2934d6c02a6319444fb3e892c72cb8f6">00129</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
-<a name="l00130"></a>00130 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00131"></a><a class="code" href="tiny__sim_8h.html#a14cea5a444c883a0ca1e4936d333474c">00131</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_7</span>
-<a name="l00132"></a>00132 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00133"></a>00133 <span class="preprocessor"></span>
-<a name="l00134"></a>00134 
-<a name="l00135"></a><a class="code" href="tiny__sim_8h.html#a94fa241ceca04635f282e09bdd829f5f">00135</a> <span class="preprocessor">#define DefaultVoltageOfAdc(adc) (0.01787109375*adc)</span>
-<a name="l00136"></a>00136 <span class="preprocessor"></span>
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_TINY_H */</span>
+<a name="l00121"></a>00121 <span class="preprocessor"></span>
+<a name="l00122"></a><a class="code" href="tiny__sim_8h.html#aa8ade7e32d46ae622ee886a90b1ea9c8">00122</a> <span class="preprocessor">#define ADC_7 AdcBank1(2)</span>
+<a name="l00123"></a>00123 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_ADC_7</span>
+<a name="l00124"></a>00124 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
+<a name="l00125"></a>00125 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
+<a name="l00126"></a>00126 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00127"></a>00127 <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_2</span>
+<a name="l00128"></a>00128 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00129"></a>00129 <span class="preprocessor"></span>
+<a name="l00130"></a>00130 <span class="comment">/* #define ADC_3 AdcBank1(7) Used for VSUPPLY */</span>
+<a name="l00131"></a>00131 <span class="comment">/* allow to define ADC_CHANNEL_VSUPPLY in the airframe file*/</span>
+<a name="l00132"></a>00132 <span class="preprocessor">#ifndef ADC_CHANNEL_VSUPPLY</span>
+<a name="l00133"></a><a class="code" href="tiny__sim_8h.html#ad5a6636ee170fccf62a748fc72374d3b">00133</a> <span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_VSUPPLY AdcBank1(7)</span>
+<a name="l00134"></a>00134 <span class="preprocessor"></span><span class="preprocessor">#ifndef USE_AD1</span>
+<a name="l00135"></a><a class="code" href="tiny__sim_8h.html#a2934d6c02a6319444fb3e892c72cb8f6">00135</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1</span>
+<a name="l00136"></a>00136 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00137"></a><a class="code" href="tiny__sim_8h.html#a14cea5a444c883a0ca1e4936d333474c">00137</a> <span class="preprocessor"></span><span class="preprocessor">#define USE_AD1_7</span>
+<a name="l00138"></a>00138 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00139"></a>00139 <span class="preprocessor"></span>
+<a name="l00140"></a>00140 
+<a name="l00141"></a><a class="code" href="tiny__sim_8h.html#a94fa241ceca04635f282e09bdd829f5f">00141</a> <span class="preprocessor">#define DefaultVoltageOfAdc(adc) (0.01787109375*adc)</span>
+<a name="l00142"></a>00142 <span class="preprocessor"></span>
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144 <span class="preprocessor">#endif </span><span class="comment">/* CONFIG_TINY_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -260,7 +266,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="tiny__sim_8h.html">tiny_sim.h</a>      </li>
 
-    <li class="footer">Generated on Sun May 20 2012 04:01:41 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 23 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

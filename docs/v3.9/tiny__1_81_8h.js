@@ -45,5 +45,8 @@ var tiny__1_81_8h =
     [ "SPI_SELECT_SLAVE0_PIN", "tiny__1_81_8h.html#a697b8e633c428bd167844542c8c1453f", null ],
     [ "SPI_SELECT_SLAVE0_PORT", "tiny__1_81_8h.html#a62cb06db3908015c7305ca6833f90159", null ],
     [ "USE_AD1", "tiny__1_81_8h.html#a2934d6c02a6319444fb3e892c72cb8f6", null ],
-    [ "USE_AD1_6", "tiny__1_81_8h.html#a23307af3b1535aec88dcd4b1c69d56e0", null ]
+    [ "USE_AD1_6", "tiny__1_81_8h.html#a23307af3b1535aec88dcd4b1c69d56e0", null ],
+    [ "USE_LED_1", "tiny__1_81_8h.html#ae7a2417096c8215257d073da4d6d4c5f", null ],
+    [ "USE_LED_2", "tiny__1_81_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf", null ],
+    [ "USE_LED_3", "tiny__1_81_8h.html#a4da08b59c725550efa312cf16ecdd77c", null ]
 ];
