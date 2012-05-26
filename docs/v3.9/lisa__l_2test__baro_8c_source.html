@@ -182,34 +182,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00078"></a>00078   RunOnceEvery(256, {DOWNLINK_SEND_ALIVE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, 16, MD5SUM);});
 <a name="l00079"></a>00079   RunOnceEvery(256,
 <a name="l00080"></a>00080     {
-<a name="l00081"></a>00081       DOWNLINK_SEND_I2C_ERRORS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,
-<a name="l00082"></a>00082              &amp;i2c2.errors-&gt;ack_fail_cnt,
-<a name="l00083"></a>00083              &amp;i2c2.errors-&gt;miss_start_stop_cnt,
-<a name="l00084"></a>00084              &amp;i2c2.errors-&gt;arb_lost_cnt,
-<a name="l00085"></a>00085              &amp;i2c2.errors-&gt;over_under_cnt,
-<a name="l00086"></a>00086              &amp;i2c2.errors-&gt;pec_recep_cnt,
-<a name="l00087"></a>00087              &amp;i2c2.errors-&gt;timeout_tlow_cnt,
-<a name="l00088"></a>00088              &amp;i2c2.errors-&gt;smbus_alert_cnt,
-<a name="l00089"></a>00089              &amp;i2c2.errors-&gt;unexpected_event_cnt,
-<a name="l00090"></a>00090              &amp;i2c2.errors-&gt;last_unexpected_event);
-<a name="l00091"></a>00091     });
-<a name="l00092"></a>00092 }
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 
-<a name="l00096"></a><a class="code" href="lisa__l_2test__baro_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">00096</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2test__baro_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> ) {
-<a name="l00097"></a>00097   <a class="code" href="booz_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576">BaroEvent</a>(<a class="code" href="lisa__l_2test__baro_8c.html#ae8591e5ea1a9ed9c74487f5201091297">main_on_baro_abs</a>, <a class="code" href="lisa__l_2test__baro_8c.html#a50d9037bdee0a809b1cb72a2f927e4a2">main_on_baro_diff</a>);
-<a name="l00098"></a>00098 }
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 
-<a name="l00102"></a><a class="code" href="lisa__l_2test__baro_8c.html#a50d9037bdee0a809b1cb72a2f927e4a2">00102</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2test__baro_8c.html#a50d9037bdee0a809b1cb72a2f927e4a2">main_on_baro_diff</a>(<span class="keywordtype">void</span>) {
+<a name="l00081"></a>00081       <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i2c2_ack_fail_cnt          = i2c2.errors-&gt;ack_fail_cnt;
+<a name="l00082"></a>00082       <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i2c2_miss_start_stop_cnt   = i2c2.errors-&gt;miss_start_stop_cnt;
+<a name="l00083"></a>00083       <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i2c2_arb_lost_cnt          = i2c2.errors-&gt;arb_lost_cnt;
+<a name="l00084"></a>00084       <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i2c2_over_under_cnt        = i2c2.errors-&gt;over_under_cnt;
+<a name="l00085"></a>00085       <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i2c2_pec_recep_cnt         = i2c2.errors-&gt;pec_recep_cnt;
+<a name="l00086"></a>00086       <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i2c2_timeout_tlow_cnt      = i2c2.errors-&gt;timeout_tlow_cnt;
+<a name="l00087"></a>00087       <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i2c2_smbus_alert_cnt       = i2c2.errors-&gt;smbus_alert_cnt;
+<a name="l00088"></a>00088       <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> i2c2_unexpected_event_cnt  = i2c2.errors-&gt;unexpected_event_cnt;
+<a name="l00089"></a>00089       <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> i2c2_last_unexpected_event = i2c2.errors-&gt;last_unexpected_event;
+<a name="l00090"></a>00090       DOWNLINK_SEND_I2C_ERRORS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,
+<a name="l00091"></a>00091                                &amp;i2c2_ack_fail_cnt,
+<a name="l00092"></a>00092                                &amp;i2c2_miss_start_stop_cnt,
+<a name="l00093"></a>00093                                &amp;i2c2_arb_lost_cnt,
+<a name="l00094"></a>00094                                &amp;i2c2_over_under_cnt,
+<a name="l00095"></a>00095                                &amp;i2c2_pec_recep_cnt,
+<a name="l00096"></a>00096                                &amp;i2c2_timeout_tlow_cnt,
+<a name="l00097"></a>00097                                &amp;i2c2_smbus_alert_cnt,
+<a name="l00098"></a>00098                                &amp;i2c2_unexpected_event_cnt,
+<a name="l00099"></a>00099                                &amp;i2c2_last_unexpected_event);
+<a name="l00100"></a>00100     });
+<a name="l00101"></a>00101 }
+<a name="l00102"></a>00102 
 <a name="l00103"></a>00103 
-<a name="l00104"></a>00104 }
-<a name="l00105"></a>00105 
-<a name="l00106"></a><a class="code" href="lisa__l_2test__baro_8c.html#ae8591e5ea1a9ed9c74487f5201091297">00106</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2test__baro_8c.html#ae8591e5ea1a9ed9c74487f5201091297">main_on_baro_abs</a>(<span class="keywordtype">void</span>) {
-<a name="l00107"></a>00107   RunOnceEvery(5,{DOWNLINK_SEND_BARO_RAW(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a088741c2889bc0752ef8927b0f8b849f">absolute</a>, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#aaf34ad45e9abb7cb82a27d4b79dc4c5e">differential</a>);});
-<a name="l00108"></a>00108 }
+<a name="l00104"></a>00104 
+<a name="l00105"></a><a class="code" href="lisa__l_2test__baro_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">00105</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2test__baro_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> ) {
+<a name="l00106"></a>00106   <a class="code" href="booz_2baro__board_8h.html#afafd6acc57b0c5239843e07588e47576">BaroEvent</a>(<a class="code" href="lisa__l_2test__baro_8c.html#ae8591e5ea1a9ed9c74487f5201091297">main_on_baro_abs</a>, <a class="code" href="lisa__l_2test__baro_8c.html#a50d9037bdee0a809b1cb72a2f927e4a2">main_on_baro_diff</a>);
+<a name="l00107"></a>00107 }
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110 
+<a name="l00111"></a><a class="code" href="lisa__l_2test__baro_8c.html#a50d9037bdee0a809b1cb72a2f927e4a2">00111</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2test__baro_8c.html#a50d9037bdee0a809b1cb72a2f927e4a2">main_on_baro_diff</a>(<span class="keywordtype">void</span>) {
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 }
+<a name="l00114"></a>00114 
+<a name="l00115"></a><a class="code" href="lisa__l_2test__baro_8c.html#ae8591e5ea1a9ed9c74487f5201091297">00115</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__l_2test__baro_8c.html#ae8591e5ea1a9ed9c74487f5201091297">main_on_baro_abs</a>(<span class="keywordtype">void</span>) {
+<a name="l00116"></a>00116   RunOnceEvery(5,{DOWNLINK_SEND_BARO_RAW(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a088741c2889bc0752ef8927b0f8b849f">absolute</a>, &amp;<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#aaf34ad45e9abb7cb82a27d4b79dc4c5e">differential</a>);});
+<a name="l00117"></a>00117 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -230,7 +239,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lisa__l_2test__baro_8c.html">test_baro.c</a>      </li>
 
-    <li class="footer">Generated on Wed May 23 2012 04:00:06 for Paparazzi UAS by
+    <li class="footer">Generated on Sat May 26 2012 04:01:45 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
