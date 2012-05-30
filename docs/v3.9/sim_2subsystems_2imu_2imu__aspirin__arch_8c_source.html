@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
 <a name="l00027"></a>00027 
 <a name="l00028"></a><a class="code" href="sim_2subsystems_2imu_2imu__aspirin__arch_8c.html#a592698b1cfe18b6c6a33e450221ea2cf">00028</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a592698b1cfe18b6c6a33e450221ea2cf">imu_aspirin_arch_init</a>(<span class="keywordtype">void</span>) {
-<a name="l00029"></a>00029 
+<a name="l00029"></a>00029   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> = <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a1b79e5ac74270b36feeacbdc6a2dcc7a">AspirinStatusIdle</a>;
 <a name="l00030"></a>00030 }
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032 
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036 <span class="keywordtype">void</span> <a class="code" href="sim_2subsystems_2imu_2imu__aspirin__arch_8h.html#a3eda401c67dfeee490285016ec944e48">imu_feed_gyro_accel</a>(<span class="keywordtype">void</span>) {
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038 <span class="preprocessor">#if 1</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#if 0</span>
 <a name="l00039"></a>00039 <span class="preprocessor"></span>  <span class="comment">// the high byte is in buf[0], low byte in buf[1], etc.</span>
 <a name="l00040"></a>00040   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = ((<a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>)sensors.gyro.value.x) &gt;&gt; 8;
 <a name="l00041"></a>00041   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = ((<a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>)sensors.gyro.value.x) &amp; 0xff;
@@ -200,7 +200,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="sim_2subsystems_2imu_2imu__aspirin__arch_8c.html">imu_aspirin_arch.c</a>      </li>
 
-    <li class="footer">Generated on Sun May 27 2012 04:01:41 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 30 2012 04:01:41 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

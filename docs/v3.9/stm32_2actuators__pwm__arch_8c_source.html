@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('actuators__pwm__arch_8c.html','');
+  initNavTree('stm32_2actuators__pwm__arch_8c.html','');
 </script>
 <div id="doc-content">
 <div class="header">
@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">actuators_pwm_arch.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="actuators__pwm__arch_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a href="stm32_2actuators__pwm__arch_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
 <a name="l00002"></a>00002 <span class="comment"> * Copyright (C) 2010 The Paparazzi Team</span>
 <a name="l00003"></a>00003 <span class="comment"> *</span>
 <a name="l00004"></a>00004 <span class="comment"> * This file is part of Paparazzi.</span>
@@ -131,36 +131,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 <span class="preprocessor">#include &lt;stm32/misc.h&gt;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &lt;stm32/tim.h&gt;</span>
 <a name="l00033"></a>00033 
-<a name="l00034"></a><a class="code" href="actuators__pwm__arch_8c.html#a4e4204874a63b2a01811ee2819285f58">00034</a> <span class="preprocessor">#define PCLK 72000000</span>
-<a name="l00035"></a><a class="code" href="actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define ONE_MHZ_CLK 1000000</span>
+<a name="l00034"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a4e4204874a63b2a01811ee2819285f58">00034</a> <span class="preprocessor">#define PCLK 72000000</span>
+<a name="l00035"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define ONE_MHZ_CLK 1000000</span>
 <a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#ifndef SERVO_HZ</span>
-<a name="l00037"></a><a class="code" href="actuators__pwm__arch_8c.html#a53d6198818143ce640add7be0555424f">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_HZ 40</span>
+<a name="l00037"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a53d6198818143ce640add7be0555424f">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_HZ 40</span>
 <a name="l00038"></a>00038 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00039"></a>00039 <span class="preprocessor"></span>
 <a name="l00040"></a>00040 <span class="preprocessor">#ifndef PWM_5AND6_TIMER</span>
-<a name="l00041"></a><a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_TIMER TIM4</span>
-<a name="l00042"></a><a class="code" href="actuators__pwm__arch_8c.html#a7a9593b29b3be76510c45be3b50daf43">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_RCC RCC_APB1Periph_TIM4</span>
-<a name="l00043"></a><a class="code" href="actuators__pwm__arch_8c.html#a55faabb390e89d17eb7d353b9871acf6">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_GPIO GPIOB</span>
-<a name="l00044"></a><a class="code" href="actuators__pwm__arch_8c.html#a6da837e5446319b0074a9ccd7d1afcc4">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM5_OC 3</span>
-<a name="l00045"></a><a class="code" href="actuators__pwm__arch_8c.html#a80cc9cee9cd572f64ad41bfecf647957">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM6_OC 4</span>
-<a name="l00046"></a><a class="code" href="actuators__pwm__arch_8c.html#ae8d7a58b25bd70500a6f6770400ba508">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM5_Pin GPIO_Pin_8</span>
-<a name="l00047"></a><a class="code" href="actuators__pwm__arch_8c.html#ae9608e517de0de0fbfd59051d131799c">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM6_Pin GPIO_Pin_9</span>
+<a name="l00041"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_TIMER TIM4</span>
+<a name="l00042"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a7a9593b29b3be76510c45be3b50daf43">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_RCC RCC_APB1Periph_TIM4</span>
+<a name="l00043"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a55faabb390e89d17eb7d353b9871acf6">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_5AND6_GPIO GPIOB</span>
+<a name="l00044"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a6da837e5446319b0074a9ccd7d1afcc4">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM5_OC 3</span>
+<a name="l00045"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a80cc9cee9cd572f64ad41bfecf647957">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM6_OC 4</span>
+<a name="l00046"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#ae8d7a58b25bd70500a6f6770400ba508">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM5_Pin GPIO_Pin_8</span>
+<a name="l00047"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#ae9608e517de0de0fbfd59051d131799c">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM6_Pin GPIO_Pin_9</span>
 <a name="l00048"></a>00048 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00049"></a>00049 <span class="preprocessor"></span>
-<a name="l00050"></a><a class="code" href="actuators__pwm__arch_8c.html#ab0b20841c1a4c61580d6704ccf82cbf3">00050</a> <span class="preprocessor">#define _TIM_OC_INIT(n) TIM_OC##n##Init</span>
-<a name="l00051"></a><a class="code" href="actuators__pwm__arch_8c.html#a4dafdc5f380cf840140a6021fb499bfd">00051</a> <span class="preprocessor"></span><span class="preprocessor">#define TIM_OC_INIT(n) _TIM_OC_INIT(n)</span>
+<a name="l00050"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab0b20841c1a4c61580d6704ccf82cbf3">00050</a> <span class="preprocessor">#define _TIM_OC_INIT(n) TIM_OC##n##Init</span>
+<a name="l00051"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a4dafdc5f380cf840140a6021fb499bfd">00051</a> <span class="preprocessor"></span><span class="preprocessor">#define TIM_OC_INIT(n) _TIM_OC_INIT(n)</span>
 <a name="l00052"></a>00052 <span class="preprocessor"></span>
-<a name="l00053"></a><a class="code" href="actuators__pwm__arch_8c.html#a0147fbfa76bc8bd32259533fce6f5720">00053</a> <span class="preprocessor">#define _TIM_OC_PRELOADCONFIG(n) TIM_OC##n##PreloadConfig</span>
-<a name="l00054"></a><a class="code" href="actuators__pwm__arch_8c.html#a0326f27a2ba621b08f0eadc8e62f8b90">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define TIM_OC_PRELOADCONFIG(n) _TIM_OC_PRELOADCONFIG(n)</span>
+<a name="l00053"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a0147fbfa76bc8bd32259533fce6f5720">00053</a> <span class="preprocessor">#define _TIM_OC_PRELOADCONFIG(n) TIM_OC##n##PreloadConfig</span>
+<a name="l00054"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a0326f27a2ba621b08f0eadc8e62f8b90">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define TIM_OC_PRELOADCONFIG(n) _TIM_OC_PRELOADCONFIG(n)</span>
 <a name="l00055"></a>00055 <span class="preprocessor"></span>
-<a name="l00056"></a><a class="code" href="actuators__pwm__arch_8c.html#adffc025cc88b53445d077225c3744461">00056</a> <span class="preprocessor">#define _TIM_SETCOMPARE(n) TIM_SetCompare##n</span>
-<a name="l00057"></a><a class="code" href="actuators__pwm__arch_8c.html#ad3be7ef31ca8855cb1144b93bc2d4250">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define TIM_SETCOMPARE(n) _TIM_SETCOMPARE(n)</span>
+<a name="l00056"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#adffc025cc88b53445d077225c3744461">00056</a> <span class="preprocessor">#define _TIM_SETCOMPARE(n) TIM_SetCompare##n</span>
+<a name="l00057"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#ad3be7ef31ca8855cb1144b93bc2d4250">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define TIM_SETCOMPARE(n) _TIM_SETCOMPARE(n)</span>
 <a name="l00058"></a>00058 <span class="preprocessor"></span>
-<a name="l00059"></a><a class="code" href="actuators__pwm__arch_8h.html#a8f67fe525140a6f4b07b3416bc70f606">00059</a> <span class="keywordtype">void</span> <a class="code" href="actuators__pwm__arch_8c.html#a8f67fe525140a6f4b07b3416bc70f606">actuators_pwm_arch_init</a>(<span class="keywordtype">void</span>) {
+<a name="l00059"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a8f67fe525140a6f4b07b3416bc70f606">00059</a> <span class="keywordtype">void</span> <a class="code" href="sim_2actuators__pwm__arch_8c.html#a8f67fe525140a6f4b07b3416bc70f606">actuators_pwm_arch_init</a>(<span class="keywordtype">void</span>) {
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061   <span class="comment">/* TIM3 and TIM4 clock enable */</span>
 <a name="l00062"></a>00062   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
-<a name="l00063"></a>00063   RCC_APB1PeriphClockCmd(<a class="code" href="actuators__pwm__arch_8c.html#a7a9593b29b3be76510c45be3b50daf43">PWM_5AND6_RCC</a>, ENABLE);
+<a name="l00063"></a>00063   RCC_APB1PeriphClockCmd(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a7a9593b29b3be76510c45be3b50daf43">PWM_5AND6_RCC</a>, ENABLE);
 <a name="l00064"></a>00064 <span class="preprocessor">#if USE_SERVOS_7AND8</span>
 <a name="l00065"></a>00065 <span class="preprocessor"></span>  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
 <a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
@@ -180,8 +180,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00080"></a>00080 
 <a name="l00081"></a>00081   <span class="comment">/* PWM 5/6 GPIO */</span>
 <a name="l00082"></a>00082   <span class="comment">/* PB8=servo5 PB9=servo6 */</span>
-<a name="l00083"></a>00083   GPIO_InitStructure.GPIO_Pin   = <a class="code" href="actuators__pwm__arch_8c.html#ae8d7a58b25bd70500a6f6770400ba508">PWM5_Pin</a> | <a class="code" href="actuators__pwm__arch_8c.html#ae9608e517de0de0fbfd59051d131799c">PWM6_Pin</a>;
-<a name="l00084"></a>00084   GPIO_Init(<a class="code" href="actuators__pwm__arch_8c.html#a55faabb390e89d17eb7d353b9871acf6">PWM_5AND6_GPIO</a>, &amp;GPIO_InitStructure);
+<a name="l00083"></a>00083   GPIO_InitStructure.GPIO_Pin   = <a class="code" href="stm32_2actuators__pwm__arch_8c.html#ae8d7a58b25bd70500a6f6770400ba508">PWM5_Pin</a> | <a class="code" href="stm32_2actuators__pwm__arch_8c.html#ae9608e517de0de0fbfd59051d131799c">PWM6_Pin</a>;
+<a name="l00084"></a>00084   GPIO_Init(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a55faabb390e89d17eb7d353b9871acf6">PWM_5AND6_GPIO</a>, &amp;GPIO_InitStructure);
 <a name="l00085"></a>00085 
 <a name="l00086"></a>00086 <span class="preprocessor">#if USE_SERVOS_7AND8</span>
 <a name="l00087"></a>00087 <span class="preprocessor"></span>  GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_6 | GPIO_Pin_7;
@@ -190,17 +190,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00090"></a>00090 <span class="preprocessor"></span>
 <a name="l00091"></a>00091   <span class="comment">/* Time base configuration */</span>
 <a name="l00092"></a>00092   TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
-<a name="l00093"></a>00093   TIM_TimeBaseStructure.TIM_Prescaler = (<a class="code" href="actuators__pwm__arch_8c.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / <a class="code" href="actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65">ONE_MHZ_CLK</a>) - 1; <span class="comment">// 1uS</span>
-<a name="l00094"></a>00094   TIM_TimeBaseStructure.TIM_Period = (<a class="code" href="actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65">ONE_MHZ_CLK</a> / <a class="code" href="actuators__pwm__arch_8c.html#a53d6198818143ce640add7be0555424f">SERVO_HZ</a>) - 1;
+<a name="l00093"></a>00093   TIM_TimeBaseStructure.TIM_Prescaler = (<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a4e4204874a63b2a01811ee2819285f58">PCLK</a> / <a class="code" href="stm32_2actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65">ONE_MHZ_CLK</a>) - 1; <span class="comment">// 1uS</span>
+<a name="l00094"></a>00094   TIM_TimeBaseStructure.TIM_Period = (<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65">ONE_MHZ_CLK</a> / <a class="code" href="stm32_2actuators__pwm__arch_8c.html#a53d6198818143ce640add7be0555424f">SERVO_HZ</a>) - 1;
 <a name="l00095"></a>00095   TIM_TimeBaseStructure.TIM_ClockDivision = 0;
 <a name="l00096"></a>00096   TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 <a name="l00097"></a>00097 
 <a name="l00098"></a>00098   TIM_TimeBaseInit(TIM3, &amp;TIM_TimeBaseStructure);
 <a name="l00099"></a>00099 
 <a name="l00100"></a>00100 <span class="preprocessor">#ifdef SERVO_HZ_SECONDARY</span>
-<a name="l00101"></a>00101 <span class="preprocessor"></span>  TIM_TimeBaseStructure.TIM_Period = (<a class="code" href="actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65">ONE_MHZ_CLK</a> / SERVO_HZ_SECONDARY) - 1;
+<a name="l00101"></a>00101 <span class="preprocessor"></span>  TIM_TimeBaseStructure.TIM_Period = (<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65">ONE_MHZ_CLK</a> / SERVO_HZ_SECONDARY) - 1;
 <a name="l00102"></a>00102 <span class="preprocessor">#endif</span>
-<a name="l00103"></a>00103 <span class="preprocessor"></span>  TIM_TimeBaseInit(<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, &amp;TIM_TimeBaseStructure);
+<a name="l00103"></a>00103 <span class="preprocessor"></span>  TIM_TimeBaseInit(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, &amp;TIM_TimeBaseStructure);
 <a name="l00104"></a>00104 <span class="preprocessor">#if USE_SERVOS_7AND8</span>
 <a name="l00105"></a>00105 <span class="preprocessor"></span>  TIM_TimeBaseInit(TIM4, &amp;TIM_TimeBaseStructure);
 <a name="l00106"></a>00106 <span class="preprocessor">#endif</span>
@@ -229,12 +229,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00129"></a>00129   TIM_OC4PreloadConfig(TIM3, TIM_OCPreload_Enable);
 <a name="l00130"></a>00130 
 <a name="l00131"></a>00131   <span class="comment">/* PWM5 Mode configuration: TIM4 Channel3 */</span>
-<a name="l00132"></a>00132   <a class="code" href="actuators__pwm__arch_8c.html#a4dafdc5f380cf840140a6021fb499bfd">TIM_OC_INIT</a>(<a class="code" href="actuators__pwm__arch_8c.html#a6da837e5446319b0074a9ccd7d1afcc4">PWM5_OC</a>) (<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, &amp;TIM_OCInitStructure);
-<a name="l00133"></a>00133   <a class="code" href="actuators__pwm__arch_8c.html#a0326f27a2ba621b08f0eadc8e62f8b90">TIM_OC_PRELOADCONFIG</a>(<a class="code" href="actuators__pwm__arch_8c.html#a6da837e5446319b0074a9ccd7d1afcc4">PWM5_OC</a>)(<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, TIM_OCPreload_Enable);
+<a name="l00132"></a>00132   <a class="code" href="stm32_2actuators__pwm__arch_8c.html#a4dafdc5f380cf840140a6021fb499bfd">TIM_OC_INIT</a>(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a6da837e5446319b0074a9ccd7d1afcc4">PWM5_OC</a>) (<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, &amp;TIM_OCInitStructure);
+<a name="l00133"></a>00133   <a class="code" href="stm32_2actuators__pwm__arch_8c.html#a0326f27a2ba621b08f0eadc8e62f8b90">TIM_OC_PRELOADCONFIG</a>(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a6da837e5446319b0074a9ccd7d1afcc4">PWM5_OC</a>)(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, TIM_OCPreload_Enable);
 <a name="l00134"></a>00134 
 <a name="l00135"></a>00135   <span class="comment">/* PWM6 Mode configuration: TIM4 Channel4 */</span>
-<a name="l00136"></a>00136   <a class="code" href="actuators__pwm__arch_8c.html#a4dafdc5f380cf840140a6021fb499bfd">TIM_OC_INIT</a>(<a class="code" href="actuators__pwm__arch_8c.html#a80cc9cee9cd572f64ad41bfecf647957">PWM6_OC</a>)(<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, &amp;TIM_OCInitStructure);
-<a name="l00137"></a>00137   <a class="code" href="actuators__pwm__arch_8c.html#a0326f27a2ba621b08f0eadc8e62f8b90">TIM_OC_PRELOADCONFIG</a>(<a class="code" href="actuators__pwm__arch_8c.html#a80cc9cee9cd572f64ad41bfecf647957">PWM6_OC</a>)(<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, TIM_OCPreload_Enable);
+<a name="l00136"></a>00136   <a class="code" href="stm32_2actuators__pwm__arch_8c.html#a4dafdc5f380cf840140a6021fb499bfd">TIM_OC_INIT</a>(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a80cc9cee9cd572f64ad41bfecf647957">PWM6_OC</a>)(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, &amp;TIM_OCInitStructure);
+<a name="l00137"></a>00137   <a class="code" href="stm32_2actuators__pwm__arch_8c.html#a0326f27a2ba621b08f0eadc8e62f8b90">TIM_OC_PRELOADCONFIG</a>(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a80cc9cee9cd572f64ad41bfecf647957">PWM6_OC</a>)(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, TIM_OCPreload_Enable);
 <a name="l00138"></a>00138 
 <a name="l00139"></a>00139 <span class="preprocessor">#if USE_SERVOS_7AND8</span>
 <a name="l00140"></a>00140 <span class="preprocessor"></span>  <span class="comment">/* PWM7 Mode configuration: TIM4 Channel3 */</span>
@@ -257,21 +257,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00157"></a>00157   TIM_Cmd(TIM3, ENABLE);
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159   <span class="comment">/* PWM5/6 enable */</span>
-<a name="l00160"></a>00160   TIM_ARRPreloadConfig(<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, ENABLE);
-<a name="l00161"></a>00161   TIM_CtrlPWMOutputs(<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, ENABLE);
-<a name="l00162"></a>00162   TIM_Cmd(<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, ENABLE);
+<a name="l00160"></a>00160   TIM_ARRPreloadConfig(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, ENABLE);
+<a name="l00161"></a>00161   TIM_CtrlPWMOutputs(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, ENABLE);
+<a name="l00162"></a>00162   TIM_Cmd(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, ENABLE);
 <a name="l00163"></a>00163 
 <a name="l00164"></a>00164 }
 <a name="l00165"></a>00165 
 <a name="l00166"></a>00166 <span class="comment">/* set pulse widths from actuator values, assumed to be in us */</span>
-<a name="l00167"></a><a class="code" href="actuators__pwm__arch_8h.html#a8fdcc2a7e8712e51ffcbce4fd77dcfab">00167</a> <span class="keywordtype">void</span> <a class="code" href="actuators__pwm__arch_8c.html#a8fdcc2a7e8712e51ffcbce4fd77dcfab">actuators_pwm_commit</a>(<span class="keywordtype">void</span>) {
+<a name="l00167"></a><a class="code" href="stm32_2actuators__pwm__arch_8c.html#a8fdcc2a7e8712e51ffcbce4fd77dcfab">00167</a> <span class="keywordtype">void</span> <a class="code" href="sim_2actuators__pwm__arch_8c.html#a8fdcc2a7e8712e51ffcbce4fd77dcfab">actuators_pwm_commit</a>(<span class="keywordtype">void</span>) {
 <a name="l00168"></a>00168   TIM_SetCompare1(TIM3, <a class="code" href="stm32_2servos__direct__hw_8c.html#a11c780a31ca1af3dc366bba41f431989">actuators_pwm_values</a>[0]);
 <a name="l00169"></a>00169   TIM_SetCompare2(TIM3, <a class="code" href="stm32_2servos__direct__hw_8c.html#a11c780a31ca1af3dc366bba41f431989">actuators_pwm_values</a>[1]);
 <a name="l00170"></a>00170   TIM_SetCompare3(TIM3, <a class="code" href="stm32_2servos__direct__hw_8c.html#a11c780a31ca1af3dc366bba41f431989">actuators_pwm_values</a>[2]);
 <a name="l00171"></a>00171   TIM_SetCompare4(TIM3, <a class="code" href="stm32_2servos__direct__hw_8c.html#a11c780a31ca1af3dc366bba41f431989">actuators_pwm_values</a>[3]);
 <a name="l00172"></a>00172 
-<a name="l00173"></a>00173   <a class="code" href="actuators__pwm__arch_8c.html#ad3be7ef31ca8855cb1144b93bc2d4250">TIM_SETCOMPARE</a>(<a class="code" href="actuators__pwm__arch_8c.html#a6da837e5446319b0074a9ccd7d1afcc4">PWM5_OC</a>)(<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, <a class="code" href="stm32_2servos__direct__hw_8c.html#a11c780a31ca1af3dc366bba41f431989">actuators_pwm_values</a>[4]);
-<a name="l00174"></a>00174   <a class="code" href="actuators__pwm__arch_8c.html#ad3be7ef31ca8855cb1144b93bc2d4250">TIM_SETCOMPARE</a>(<a class="code" href="actuators__pwm__arch_8c.html#a80cc9cee9cd572f64ad41bfecf647957">PWM6_OC</a>)(<a class="code" href="actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, <a class="code" href="stm32_2servos__direct__hw_8c.html#a11c780a31ca1af3dc366bba41f431989">actuators_pwm_values</a>[5]);
+<a name="l00173"></a>00173   <a class="code" href="stm32_2actuators__pwm__arch_8c.html#ad3be7ef31ca8855cb1144b93bc2d4250">TIM_SETCOMPARE</a>(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a6da837e5446319b0074a9ccd7d1afcc4">PWM5_OC</a>)(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, <a class="code" href="stm32_2servos__direct__hw_8c.html#a11c780a31ca1af3dc366bba41f431989">actuators_pwm_values</a>[4]);
+<a name="l00174"></a>00174   <a class="code" href="stm32_2actuators__pwm__arch_8c.html#ad3be7ef31ca8855cb1144b93bc2d4250">TIM_SETCOMPARE</a>(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#a80cc9cee9cd572f64ad41bfecf647957">PWM6_OC</a>)(<a class="code" href="stm32_2actuators__pwm__arch_8c.html#ab60d38297c5fb699b4b020e87d6bf8bb">PWM_5AND6_TIMER</a>, <a class="code" href="stm32_2servos__direct__hw_8c.html#a11c780a31ca1af3dc366bba41f431989">actuators_pwm_values</a>[5]);
 <a name="l00175"></a>00175 
 <a name="l00176"></a>00176 <span class="preprocessor">#if USE_SERVOS_7AND8</span>
 <a name="l00177"></a>00177 <span class="preprocessor"></span>  TIM_SetCompare1(TIM4, <a class="code" href="stm32_2servos__direct__hw_8c.html#a11c780a31ca1af3dc366bba41f431989">actuators_pwm_values</a>[6]);
@@ -296,9 +296,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="actuators__pwm__arch_8c.html">actuators_pwm_arch.c</a>      </li>
+      <li class="navelem"><a class="el" href="stm32_2actuators__pwm__arch_8c.html">actuators_pwm_arch.c</a>      </li>
 
-    <li class="footer">Generated on Sun May 27 2012 04:01:42 for Paparazzi UAS by
+    <li class="footer">Generated on Wed May 30 2012 04:01:41 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
