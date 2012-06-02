@@ -180,6 +180,7 @@ var searchData=
   ['ahrs_5fimu_5fint_5fof_5ffloat',['AHRS_IMU_INT_OF_FLOAT',['../ahrs_8h.html#a9539cd641858adb4e179edaeff518e8a',1,'ahrs.h']]],
   ['ahrs_5fint_5fof_5ffloat',['AHRS_INT_OF_FLOAT',['../ahrs_8h.html#a2c00af74e05da701fdf3bbaef91792bb',1,'ahrs.h']]],
   ['ahrs_5fltp_5fto_5fbody',['AHRS_LTP_TO_BODY',['../ahrs__float__lkf_8c.html#a9941d90a341da6f0f5a5e7b240ebbca6',1,'ahrs_float_lkf.c']]],
+  ['ahrs_5fpropagate_5ffrequency',['AHRS_PROPAGATE_FREQUENCY',['../ahrs__float__cmpl_8c.html#a8b1ace7fb278ed8284cb2e3579f14798',1,'AHRS_PROPAGATE_FREQUENCY():&#160;ahrs_float_cmpl.c'],['../ahrs__int__cmpl__quat_8c.html#a8b1ace7fb278ed8284cb2e3579f14798',1,'AHRS_PROPAGATE_FREQUENCY():&#160;ahrs_int_cmpl_quat.c']]],
   ['ahrs_5frunning',['AHRS_RUNNING',['../ahrs_8h.html#aaf3251b3c47097842d7dda09c76930f4',1,'ahrs.h']]],
   ['ahrs_5fto_5fbfp',['AHRS_TO_BFP',['../ahrs__float__lkf_8c.html#ac8b4e83685c2fc6dbce6cd728cbcafd6',1,'ahrs_float_lkf.c']]],
   ['ahrs_5funinit',['AHRS_UNINIT',['../ahrs_8h.html#a7e2c3de6a795ce2c01d6c2083293cf39',1,'ahrs.h']]],

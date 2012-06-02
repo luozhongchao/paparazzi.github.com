@@ -135,38 +135,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037 };
 <a name="l00038"></a>00038 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structAhrsFloatDCM.html">AhrsFloatDCM</a> <a class="code" href="ahrs__float__cmpl_8c.html#a8f3660fe995a8a40cfad130b69f0e934">ahrs_impl</a>;
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#a70b61a4232cbf0e9acbde8d9b62ce1c5">ins_roll_neutral</a>;
-<a name="l00041"></a>00041 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#ac5803b6353ae28ae52ab9284d222d8d5">ins_pitch_neutral</a>;
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 <span class="keywordtype">void</span> <a class="code" href="ahrs__float__dcm_8c.html#acfb588823e7daf8f26abac33fb48baba">ahrs_update_fw_estimator</a>(<span class="keywordtype">void</span>);
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 <span class="preprocessor">#ifdef AHRS_UPDATE_FW_ESTIMATOR</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#a70b61a4232cbf0e9acbde8d9b62ce1c5">ins_roll_neutral</a>;
+<a name="l00043"></a>00043 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="arch_2sim_2modules_2ins_2ins__arduimu_8c.html#ac5803b6353ae28ae52ab9284d222d8d5">ins_pitch_neutral</a>;
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="comment">// DCM Parameters</span>
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 <span class="comment">//#define Kp_ROLLPITCH 0.2</span>
-<a name="l00048"></a><a class="code" href="ahrs__float__dcm_8h.html#a3ab9b5d54678d8d03770f19607886ed6">00048</a> <span class="preprocessor">#define Kp_ROLLPITCH 0.015</span>
-<a name="l00049"></a><a class="code" href="ahrs__float__dcm_8h.html#a7acbbef42a2b56f585c4dafc151e3806">00049</a> <span class="preprocessor"></span><span class="preprocessor">#define Ki_ROLLPITCH 0.000010</span>
-<a name="l00050"></a><a class="code" href="ahrs__float__dcm_8h.html#a3c59c4be08d2d06edcdc0a02369da6b6">00050</a> <span class="preprocessor"></span><span class="preprocessor">#define Kp_YAW 0.9          //High yaw drift correction gain - use with caution!</span>
-<a name="l00051"></a><a class="code" href="ahrs__float__dcm_8h.html#aea9dd7972c8f6c2381b1541b964b3893">00051</a> <span class="preprocessor"></span><span class="preprocessor">#define Ki_YAW 0.00005</span>
-<a name="l00052"></a>00052 <span class="preprocessor"></span>
-<a name="l00053"></a><a class="code" href="ahrs__float__dcm_8h.html#a6801baa546c6112d19eb095111d24720">00053</a> <span class="preprocessor">#define GRAVITY 9.81</span>
-<a name="l00054"></a>00054 <span class="preprocessor"></span>
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 <span class="preprocessor">#ifndef OUTPUTMODE</span>
-<a name="l00057"></a><a class="code" href="ahrs__float__dcm_8h.html#aca3c9e529eec0dcbf5ac2e4240391068">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define OUTPUTMODE 1</span>
-<a name="l00058"></a>00058 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00059"></a>00059 <span class="preprocessor"></span><span class="comment">// Mode 0 = DCM integration without Ki gyro bias</span>
-<a name="l00060"></a>00060 <span class="comment">// Mode 1 = DCM integration with Kp and Ki</span>
-<a name="l00061"></a>00061 <span class="comment">// Mode 2 = direct accelerometer -&gt; euler</span>
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 
-<a name="l00064"></a><a class="code" href="ahrs__float__dcm_8h.html#a36080880bb75413765c103f942b7db3a">00064</a> <span class="preprocessor">#define PERFORMANCE_REPORTING 1</span>
-<a name="l00065"></a>00065 <span class="preprocessor"></span><span class="preprocessor">#if PERFORMANCE_REPORTING == 1</span>
-<a name="l00066"></a>00066 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ahrs__float__dcm_8h.html#a1814455019292840abf28c91a27f2080">renorm_sqrt_count</a>;
-<a name="l00067"></a>00067 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ahrs__float__dcm_8h.html#ab0d3aa1869bc70eb2b0190c3912690e7">renorm_blowup_count</a>;
-<a name="l00068"></a>00068 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="ahrs__float__dcm_8h.html#a0ccfe632303e7d147366d3d714b1537e">imu_health</a>;
-<a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
-<a name="l00070"></a>00070 <span class="preprocessor"></span>
-<a name="l00071"></a>00071 <span class="preprocessor">#endif // AHRS_FLOAT_DCM_H</span>
+<a name="l00045"></a>00045 <span class="keywordtype">void</span> <a class="code" href="ahrs__infrared_8c.html#acfb588823e7daf8f26abac33fb48baba">ahrs_update_fw_estimator</a>(<span class="keywordtype">void</span>);
+<a name="l00046"></a>00046 <span class="preprocessor">#endif</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span>
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="comment">// DCM Parameters</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="comment">//#define Kp_ROLLPITCH 0.2</span>
+<a name="l00052"></a><a class="code" href="ahrs__float__dcm_8h.html#a3ab9b5d54678d8d03770f19607886ed6">00052</a> <span class="preprocessor">#define Kp_ROLLPITCH 0.015</span>
+<a name="l00053"></a><a class="code" href="ahrs__float__dcm_8h.html#a7acbbef42a2b56f585c4dafc151e3806">00053</a> <span class="preprocessor"></span><span class="preprocessor">#define Ki_ROLLPITCH 0.000010</span>
+<a name="l00054"></a><a class="code" href="ahrs__float__dcm_8h.html#a3c59c4be08d2d06edcdc0a02369da6b6">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define Kp_YAW 0.9          //High yaw drift correction gain - use with caution!</span>
+<a name="l00055"></a><a class="code" href="ahrs__float__dcm_8h.html#aea9dd7972c8f6c2381b1541b964b3893">00055</a> <span class="preprocessor"></span><span class="preprocessor">#define Ki_YAW 0.00005</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span>
+<a name="l00057"></a><a class="code" href="ahrs__float__dcm_8h.html#a6801baa546c6112d19eb095111d24720">00057</a> <span class="preprocessor">#define GRAVITY 9.81</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span>
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="preprocessor">#ifndef OUTPUTMODE</span>
+<a name="l00061"></a><a class="code" href="ahrs__float__dcm_8h.html#aca3c9e529eec0dcbf5ac2e4240391068">00061</a> <span class="preprocessor"></span><span class="preprocessor">#define OUTPUTMODE 1</span>
+<a name="l00062"></a>00062 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span><span class="comment">// Mode 0 = DCM integration without Ki gyro bias</span>
+<a name="l00064"></a>00064 <span class="comment">// Mode 1 = DCM integration with Kp and Ki</span>
+<a name="l00065"></a>00065 <span class="comment">// Mode 2 = direct accelerometer -&gt; euler</span>
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 
+<a name="l00068"></a><a class="code" href="ahrs__float__dcm_8h.html#a36080880bb75413765c103f942b7db3a">00068</a> <span class="preprocessor">#define PERFORMANCE_REPORTING 1</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span><span class="preprocessor">#if PERFORMANCE_REPORTING == 1</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ahrs__float__dcm_8h.html#a1814455019292840abf28c91a27f2080">renorm_sqrt_count</a>;
+<a name="l00071"></a>00071 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ahrs__float__dcm_8h.html#ab0d3aa1869bc70eb2b0190c3912690e7">renorm_blowup_count</a>;
+<a name="l00072"></a>00072 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="ahrs__float__dcm_8h.html#a0ccfe632303e7d147366d3d714b1537e">imu_health</a>;
+<a name="l00073"></a>00073 <span class="preprocessor">#endif</span>
+<a name="l00074"></a>00074 <span class="preprocessor"></span>
+<a name="l00075"></a>00075 <span class="preprocessor">#endif // AHRS_FLOAT_DCM_H</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -187,7 +191,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ahrs__float__dcm_8h.html">ahrs_float_dcm.h</a>      </li>
 
-    <li class="footer">Generated on Wed May 30 2012 04:01:42 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Jun 2 2012 04:00:05 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

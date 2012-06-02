@@ -324,6 +324,7 @@ var searchData=
   ['common_5fnav_2eh',['common_nav.h',['../common__nav_8h.html',1,'']]],
   ['common_5fnav_5fperiodic_5ftask_5f4hz',['common_nav_periodic_task_4Hz',['../common__nav_8c.html#a41fefa6b96afeb9a5d9f8bc41b7b8c2e',1,'common_nav_periodic_task_4Hz():&#160;common_nav.c'],['../common__nav_8h.html#aeee253823276823c6ea935330d106280',1,'common_nav_periodic_task_4Hz(void):&#160;common_nav.c']]],
   ['complex',['complex',['../structcomplex.html',1,'']]],
+  ['compute_5fahrs_5frepresentations',['compute_ahrs_representations',['../ahrs__float__dcm_8c.html#a682bd53351651a47152def7839ecdbd2',1,'ahrs_float_dcm.c']]],
   ['compute_5falignment',['compute_alignment',['../bomb_8h.html#a82702082821f9c3cd860e753a13218f0',1,'bomb.h']]],
   ['compute_5fbaseleg',['compute_baseleg',['../bomb_8h.html#a7d54549473f891219c538ee2604828c5',1,'bomb.h']]],
   ['compute_5fbody_5feuler_5fand_5frmat_5ffrom_5fquat',['compute_body_euler_and_rmat_from_quat',['../ahrs__int__cmpl__quat_8c.html#ab36c05cc5557cdc7ec071603572faf9f',1,'ahrs_int_cmpl_quat.c']]],
