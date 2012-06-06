@@ -59,6 +59,7 @@ var searchData=
   ['mppt_5fautomata',['MPPT_automata',['../MPPT_8h.html#a1d929b5b2dbe3a11fe93974ef3e98a38',1,'MPPT.h']]],
   ['mppt_5finit',['MPPT_init',['../MPPT_8c.html#a5c47991acb02c76621b1f1c898954071',1,'MPPT_init(void):&#160;MPPT.c'],['../MPPT_8h.html#a5c47991acb02c76621b1f1c898954071',1,'MPPT_init(void):&#160;MPPT.c'],['../sim__MPPT_8c.html#a5c47991acb02c76621b1f1c898954071',1,'MPPT_init(void):&#160;sim_MPPT.c']]],
   ['mppt_5fperiodic',['MPPT_periodic',['../MPPT_8c.html#a83382406fe8c87d91b746b22318ec7c9',1,'MPPT_periodic(void):&#160;MPPT.c'],['../MPPT_8h.html#a83382406fe8c87d91b746b22318ec7c9',1,'MPPT_periodic(void):&#160;MPPT.c'],['../sim__MPPT_8c.html#a83382406fe8c87d91b746b22318ec7c9',1,'MPPT_periodic(void):&#160;sim_MPPT.c']]],
+  ['mpu_5fconfigure',['mpu_configure',['../subsystems_2imu_2imu__aspirin2_8c.html#a990fb9e5514231fb172d12da32a01928',1,'imu_aspirin2.c']]],
   ['mpu_5fset',['mpu_set',['../subsystems_2imu_2imu__aspirin2_8c.html#aa6d55b682ef18f3e23bec41e5cf2fa2a',1,'imu_aspirin2.c']]],
   ['mpu_5fwait_5fslave4_5fready',['mpu_wait_slave4_ready',['../subsystems_2imu_2imu__aspirin2_8c.html#a55fb8991a639b203f2c7f1adcd9460c7',1,'imu_aspirin2.c']]],
   ['ms2100_5farch_5finit',['ms2100_arch_init',['../stm32_2peripherals_2ms2100__arch_8c.html#a6c42c614481a60c538d48f9ceef25132',1,'ms2100_arch_init(void):&#160;ms2100_arch.c'],['../ms2100_8h.html#a6c42c614481a60c538d48f9ceef25132',1,'ms2100_arch_init(void):&#160;ms2100_arch.c']]],

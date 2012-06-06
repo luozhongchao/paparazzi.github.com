@@ -243,7 +243,6 @@ var searchData=
   ['mpu_5foffset_5facc',['MPU_OFFSET_ACC',['../modules_2sensors_2imu__aspirin2_8c.html#a4c587c06e98269dc2e52b7cd8139b636',1,'MPU_OFFSET_ACC():&#160;imu_aspirin2.c'],['../subsystems_2imu_2imu__aspirin2_8h.html#a4c587c06e98269dc2e52b7cd8139b636',1,'MPU_OFFSET_ACC():&#160;imu_aspirin2.h']]],
   ['mpu_5foffset_5fgyro',['MPU_OFFSET_GYRO',['../modules_2sensors_2imu__aspirin2_8c.html#ae4ae2cd9131c03b2087647cf04c63a53',1,'MPU_OFFSET_GYRO():&#160;imu_aspirin2.c'],['../subsystems_2imu_2imu__aspirin2_8h.html#ae4ae2cd9131c03b2087647cf04c63a53',1,'MPU_OFFSET_GYRO():&#160;imu_aspirin2.h']]],
   ['mpu_5foffset_5fmag',['MPU_OFFSET_MAG',['../subsystems_2imu_2imu__aspirin2_8h.html#af47a5cc2ee00eca883221adc9620fd5d',1,'imu_aspirin2.h']]],
-  ['mpu_5foffset_5fstatus',['MPU_OFFSET_STATUS',['../subsystems_2imu_2imu__aspirin2_8h.html#ad39374d8ce5353f9af985915d6e9c0fa',1,'imu_aspirin2.h']]],
   ['ms',['MS',['../LPC21xx_8h.html#ab9e061e05d689a5769936b213022102f',1,'LPC21xx.h']]],
   ['ms2100_5fbusy',['MS2100_BUSY',['../ms2100_8h.html#a610d9ecaac1be4e9b3592126efd7429e',1,'ms2100.h']]],
   ['ms2100_5fdata_5favailable',['MS2100_DATA_AVAILABLE',['../ms2100_8h.html#aedc6023b20edbe36b84afaf9a2dde345',1,'ms2100.h']]],

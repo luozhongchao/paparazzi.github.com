@@ -75,6 +75,7 @@ var annotated =
     [ "ImuAspirin", "structImuAspirin.html", "structImuAspirin" ],
     [ "ImuAspirin2", "structImuAspirin2.html", "structImuAspirin2" ],
     [ "ImuFloat", "structImuFloat.html", "structImuFloat" ],
+    [ "ImuNps", "structImuNps.html", "structImuNps" ],
     [ "Infrared", "structInfrared.html", "structInfrared" ],
     [ "Infrared_raw", "structInfrared__raw.html", "structInfrared__raw" ],
     [ "Int16Eulers", "structInt16Eulers.html", "structInt16Eulers" ],
