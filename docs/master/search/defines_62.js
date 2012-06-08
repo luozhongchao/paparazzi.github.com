@@ -24,6 +24,7 @@ var searchData=
   ['b57600',['B57600',['../lpc21_2mcu__periph_2uart__arch_8h.html#a4bde6a10c31adfe1959fb9724e13029a',1,'B57600():&#160;uart_arch.h'],['../stm32_2mcu__periph_2uart__arch_8h.html#a4bde6a10c31adfe1959fb9724e13029a',1,'B57600():&#160;uart_arch.h']]],
   ['b9600',['B9600',['../lpc21_2mcu__periph_2uart__arch_8h.html#ad0539916b8412eb7ddfb9ae02aff0853',1,'B9600():&#160;uart_arch.h'],['../stm32_2mcu__periph_2uart__arch_8h.html#ad0539916b8412eb7ddfb9ae02aff0853',1,'B9600():&#160;uart_arch.h']]],
   ['b_5fperiph',['B_PERIPH',['../tunnel__hw_8c.html#a8924059395dd5a0a281ef4644f3fa75f',1,'tunnel_hw.c']]],
+  ['b_5fport',['B_PORT',['../tunnel__hw_8c.html#a04e1bd382a6de1a30d813bb79f30fb02',1,'tunnel_hw.c']]],
   ['b_5frx_5fpin',['B_RX_PIN',['../tunnel__hw_8c.html#ac1f86edb95bffd5eb238fb8b277a4666',1,'tunnel_hw.c']]],
   ['b_5frx_5fport',['B_RX_PORT',['../tunnel__hw_8c.html#a802c2bad362cd1775c32326fd9213a43',1,'tunnel_hw.c']]],
   ['b_5ftx_5fpin',['B_TX_PIN',['../tunnel__hw_8c.html#a6f627851b2b92357f80af1678332fda3',1,'tunnel_hw.c']]],
