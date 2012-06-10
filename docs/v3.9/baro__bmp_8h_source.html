@@ -138,15 +138,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a><a class="code" href="baro__bmp_8h.html#a18ef51196b053a5562a23b1fe7a2e39e">00034</a> <span class="preprocessor"></span><span class="preprocessor">#define BARO_BMP_START_PRESS  4</span>
 <a name="l00035"></a><a class="code" href="baro__bmp_8h.html#a2154f039657db465af55d3d483f125ad">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define BARO_BMP_READ_PRESS   5</span>
 <a name="l00036"></a>00036 <span class="preprocessor"></span>
-<a name="l00037"></a>00037 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>  <a class="code" href="baro__bmp_8c.html#a2f73635d76cb836e94150a1bd94d145e">baro_bmp_status</a>;
-<a name="l00038"></a>00038 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="baro__bmp_8c.html#a679b6da65afcc82d118af2099a6c61e3">baro_bmp_pressure</a>;
-<a name="l00039"></a>00039 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="baro__bmp_8c.html#a6ca3431a3d3264374f69fb976c92055a">baro_bmp_temperature</a>;
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="keywordtype">void</span> <a class="code" href="baro__bmp_8c.html#ac61db1c8d70ce52b2e2192350c1a4cba">baro_bmp_init</a>(<span class="keywordtype">void</span>);
-<a name="l00042"></a>00042 <span class="keywordtype">void</span> <a class="code" href="baro__bmp_8c.html#a2c8ab237cbb8ec936485236b89562181">baro_bmp_periodic</a>(<span class="keywordtype">void</span>);
-<a name="l00043"></a>00043 <span class="keywordtype">void</span> <a class="code" href="baro__bmp_8c.html#aa5e236975231b4db2818cdc4c997fea0">baro_bmp_event</a>(<span class="keywordtype">void</span>);
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="preprocessor">#endif</span>
+<a name="l00037"></a><a class="code" href="baro__bmp_8h.html#a2eecec94958f9a1575f7d7bbc29b62e5">00037</a> <span class="preprocessor">#define BARO_BMP_DT 0.05</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span><span class="keyword">extern</span> bool_t <a class="code" href="baro__bmp_8c.html#a0e9983a0ccda14f96a31ab76d7ebb700">baro_bmp_enabled</a>;
+<a name="l00039"></a>00039 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="baro__bmp_8c.html#a715ab4e2838f0af7be8d7d55b82a1ac9">baro_bmp_r</a>;
+<a name="l00040"></a>00040 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="baro__bmp_8c.html#acb0831c824befa3750689297f62d4024">baro_bmp_sigma2</a>;
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>  <a class="code" href="baro__bmp_8c.html#a2f73635d76cb836e94150a1bd94d145e">baro_bmp_status</a>;
+<a name="l00043"></a>00043 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="baro__bmp_8c.html#a679b6da65afcc82d118af2099a6c61e3">baro_bmp_pressure</a>;
+<a name="l00044"></a>00044 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="baro__bmp_8c.html#a6ca3431a3d3264374f69fb976c92055a">baro_bmp_temperature</a>;
+<a name="l00045"></a>00045 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>  <a class="code" href="baro__bmp_8c.html#acdbac238d50c61bcfae520aa7460fba8">baro_bmp_altitude</a>;
+<a name="l00046"></a>00046 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="baro__bmp_8c.html#a0a6bb64743547d53226b9f74281346f5">baro_bmp</a>;
+<a name="l00047"></a>00047 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="baro__bmp_8c.html#a6db8cde79a09a5702a55cbac22ec35fc">baro_bmp_offset</a>;
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="keywordtype">void</span> <a class="code" href="baro__bmp_8c.html#ac61db1c8d70ce52b2e2192350c1a4cba">baro_bmp_init</a>(<span class="keywordtype">void</span>);
+<a name="l00050"></a>00050 <span class="keywordtype">void</span> <a class="code" href="baro__bmp_8c.html#a2c8ab237cbb8ec936485236b89562181">baro_bmp_periodic</a>(<span class="keywordtype">void</span>);
+<a name="l00051"></a>00051 <span class="keywordtype">void</span> <a class="code" href="baro__bmp_8c.html#aa5e236975231b4db2818cdc4c997fea0">baro_bmp_event</a>(<span class="keywordtype">void</span>);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -167,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="baro__bmp_8h.html">baro_bmp.h</a>      </li>
 
-    <li class="footer">Generated on Fri Jun 8 2012 04:01:50 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Jun 10 2012 04:01:47 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
