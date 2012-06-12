@@ -21,8 +21,6 @@ var ins__xsens_8c =
     [ "XsensUpdateChecksum", "ins__xsens_8c.html#af174d6cd94fda273df23563c16e21b57", null ],
     [ "ahrs_init", "ins__xsens_8c.html#aa3721663c9df7c7af5613486a3566afb", null ],
     [ "handle_ins_msg", "ins__xsens_8c.html#ac5da428408b44b6b22e510c36f7f2bc7", null ],
-    [ "imu_init", "ins__xsens_8c.html#a86a06fe7a9831292bd92867da2d12f80", null ],
-    [ "imu_periodic", "ins__xsens_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b", null ],
     [ "ins_init", "ins__xsens_8c.html#abf3028c2ada542781b8a5e1eb20c17ce", null ],
     [ "ins_periodic_task", "ins__xsens_8c.html#a8dc6e488ca20854b1f96fb7a2933bbfe", null ],
     [ "parse_ins_buffer", "ins__xsens_8c.html#a7cb52371283c2313f6dfe53139c56bb4", null ],
