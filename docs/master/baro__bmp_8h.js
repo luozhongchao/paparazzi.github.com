@@ -1,5 +1,6 @@
 var baro__bmp_8h =
 [
+    [ "BARO_BMP_DT", "baro__bmp_8h.html#a2eecec94958f9a1575f7d7bbc29b62e5", null ],
     [ "BARO_BMP_IDLE", "baro__bmp_8h.html#a5c3ec96d11151b1d136ef635f0424433", null ],
     [ "BARO_BMP_READ_PRESS", "baro__bmp_8h.html#a2154f039657db465af55d3d483f125ad", null ],
     [ "BARO_BMP_READ_TEMP", "baro__bmp_8h.html#afe822240bdc101136d8c01b94149a5ca", null ],
@@ -29,7 +30,13 @@ var baro__bmp_8h =
     [ "baro_bmp_event", "baro__bmp_8h.html#aa5e236975231b4db2818cdc4c997fea0", null ],
     [ "baro_bmp_init", "baro__bmp_8h.html#ac61db1c8d70ce52b2e2192350c1a4cba", null ],
     [ "baro_bmp_periodic", "baro__bmp_8h.html#a2c8ab237cbb8ec936485236b89562181", null ],
+    [ "baro_bmp", "baro__bmp_8h.html#a0a6bb64743547d53226b9f74281346f5", null ],
+    [ "baro_bmp_altitude", "baro__bmp_8h.html#acdbac238d50c61bcfae520aa7460fba8", null ],
+    [ "baro_bmp_enabled", "baro__bmp_8h.html#a0e9983a0ccda14f96a31ab76d7ebb700", null ],
+    [ "baro_bmp_offset", "baro__bmp_8h.html#a6db8cde79a09a5702a55cbac22ec35fc", null ],
     [ "baro_bmp_pressure", "baro__bmp_8h.html#a679b6da65afcc82d118af2099a6c61e3", null ],
+    [ "baro_bmp_r", "baro__bmp_8h.html#a715ab4e2838f0af7be8d7d55b82a1ac9", null ],
+    [ "baro_bmp_sigma2", "baro__bmp_8h.html#acb0831c824befa3750689297f62d4024", null ],
     [ "baro_bmp_status", "baro__bmp_8h.html#a2f73635d76cb836e94150a1bd94d145e", null ],
     [ "baro_bmp_temperature", "baro__bmp_8h.html#a6ca3431a3d3264374f69fb976c92055a", null ]
 ];

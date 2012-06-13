@@ -16,6 +16,8 @@ var searchData=
   ['nav_5fc',['NAV_C',['../navigation_8c.html#a291c0fda2fd988bf5f602f56157ab2b7',1,'NAV_C():&#160;navigation.c'],['../nav_8c.html#a291c0fda2fd988bf5f602f56157ab2b7',1,'NAV_C():&#160;nav.c']]],
   ['nav_5fcatapult_5facceleration_5fthreshold',['NAV_CATAPULT_ACCELERATION_THRESHOLD',['../nav__catapult_8c.html#a7d8f0758b0966827a70c1cb6c3c41db3',1,'nav_catapult.c']]],
   ['nav_5fcatapult_5fheading_5fdelay',['NAV_CATAPULT_HEADING_DELAY',['../nav__catapult_8c.html#a324a2d68af6b57aaeb318b5c7086ac4f',1,'nav_catapult.c']]],
+  ['nav_5fcatapult_5finitial_5fpitch',['NAV_CATAPULT_INITIAL_PITCH',['../nav__catapult_8c.html#a698a2e847494cc1bde2f621a2d5bc958',1,'nav_catapult.c']]],
+  ['nav_5fcatapult_5finitial_5fthrottle',['NAV_CATAPULT_INITIAL_THROTTLE',['../nav__catapult_8c.html#a605f716f37ba4dd117402212690eabd1',1,'nav_catapult.c']]],
   ['nav_5fcatapult_5fmotor_5fdelay',['NAV_CATAPULT_MOTOR_DELAY',['../nav__catapult_8c.html#a5ff5d0d94501c89d3c6c886b3cb6ad46',1,'nav_catapult.c']]],
   ['nav_5fcube_5fsetalpha',['nav_cube_SetAlpha',['../nav__cube_8h.html#ab17c3af9f3ec2a27fc6b29d7578781d0',1,'nav_cube.h']]],
   ['nav_5fcube_5fsetgridx',['nav_cube_SetGridX',['../nav__cube_8h.html#ab10ec420d5a1e25d24568fa3cbb4b52c',1,'nav_cube.h']]],
