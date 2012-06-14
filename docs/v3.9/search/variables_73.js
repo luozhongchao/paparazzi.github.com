@@ -156,7 +156,6 @@ var searchData=
   ['strobe_5flight_5fmode',['strobe_light_mode',['../light_8c.html#a3f7ea03b21bbece9eb5773417c54e321',1,'strobe_light_mode():&#160;light.c'],['../light_8h.html#a3f7ea03b21bbece9eb5773417c54e321',1,'strobe_light_mode():&#160;light.c']]],
   ['sum',['sum',['../structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b',1,'adc_buf']]],
   ['sum_5fcycle_5fperiodic',['sum_cycle_periodic',['../sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d',1,'sys_mon.c']]],
-  ['sum_5ferr_5freset',['sum_err_reset',['../fixedwing_2autopilot_8h.html#a954d1c6b690e31e3efda450f30e5eafb',1,'autopilot.h']]],
   ['sum_5fn_5fevent',['sum_n_event',['../sys__mon_8c.html#a3a33c2cca04092e8d2719994a46af91d',1,'sys_mon.c']]],
   ['sum_5ftime_5fevent',['sum_time_event',['../sys__mon_8c.html#a4b57dc0e39b732d7d7ea6290d7c9c525',1,'sys_mon.c']]],
   ['sum_5ftime_5fperiodic',['sum_time_periodic',['../sys__mon_8c.html#a4e46b5ea63e3192271574ca326b7d278',1,'sys_mon.c']]],

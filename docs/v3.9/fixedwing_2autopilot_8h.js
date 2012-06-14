@@ -27,9 +27,7 @@ var fixedwing_2autopilot_8h =
     [ "kill_throttle", "fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c", null ],
     [ "lateral_mode", "fixedwing_2autopilot_8h.html#ab559c6867326333905f9133432ff9315", null ],
     [ "launch", "fixedwing_2autopilot_8h.html#af32f81f02a3187c12c08e11caf354abd", null ],
-    [ "light_mode", "fixedwing_2autopilot_8h.html#aa9a30362aaef272dafbe9672b65def21", null ],
     [ "power_switch", "fixedwing_2autopilot_8h.html#adda0cb88d172048dd19b50ad66e7881e", null ],
     [ "pprz_mode", "fixedwing_2autopilot_8h.html#aebf57c26248ee8c66d3eacdbd6a155cd", null ],
-    [ "sum_err_reset", "fixedwing_2autopilot_8h.html#a954d1c6b690e31e3efda450f30e5eafb", null ],
     [ "vsupply", "fixedwing_2autopilot_8h.html#ad32aad7f4e3f9236375798ec1cad31dd", null ]
 ];

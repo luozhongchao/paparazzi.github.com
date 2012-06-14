@@ -2,7 +2,7 @@ var fixedwing_2autopilot_8h =
 [
     [ "autopilot_ResetFlightTimeAndLaunch", "fixedwing_2autopilot_8h.html#a260ba1d03869070e8be5b23878957e5d", null ],
     [ "autopilot_SetPowerSwitch", "fixedwing_2autopilot_8h.html#ad08218d3e8fc1fd4c0b7f127e69a86d6", null ],
-    [ "CONTROL_RATE", "fixedwing_2autopilot_8h.html#ae5d737db8bc97ecf08d2ea3121782d26", null ],
+    [ "CONTROL_FREQUENCY", "fixedwing_2autopilot_8h.html#a992e6194ee1d6c879faa66e51b72840a", null ],
     [ "FLOAT_OF_PPRZ", "fixedwing_2autopilot_8h.html#aa08d012f2139a6ef9e5b92e5efcf555b", null ],
     [ "LATERAL_MODE_COURSE", "fixedwing_2autopilot_8h.html#a63d6feb22864c4c3fcc59893e2671609", null ],
     [ "LATERAL_MODE_MANUAL", "fixedwing_2autopilot_8h.html#a02c48fb8a64a9976f9e9fb9436ec2ad9", null ],
@@ -10,6 +10,8 @@ var fixedwing_2autopilot_8h =
     [ "LATERAL_MODE_ROLL", "fixedwing_2autopilot_8h.html#a7ea379002f6ec803be3f49e0993dd63a", null ],
     [ "LATERAL_MODE_ROLL_RATE", "fixedwing_2autopilot_8h.html#a17ef68647a4f71cd1d0b379388cf440f", null ],
     [ "ModeUpdate", "fixedwing_2autopilot_8h.html#a1bf7cecdbe3f008fdb8dd8404c4e510f", null ],
+    [ "MODULES_FREQUENCY", "fixedwing_2autopilot_8h.html#af90f93831d0ad977ef9c81c0caa633a3", null ],
+    [ "NAVIGATION_FREQUENCY", "fixedwing_2autopilot_8h.html#aba17f9ac72f7e9dd1dcd95457bf5c87f", null ],
     [ "PPRZ_MODE_AUTO1", "fixedwing_2autopilot_8h.html#aad97f5d43922c63769f4a4ea97b9df8d", null ],
     [ "PPRZ_MODE_AUTO2", "fixedwing_2autopilot_8h.html#a7248dd1183b2fe1d11cdc66a01fe5744", null ],
     [ "PPRZ_MODE_GPS_OUT_OF_ORDER", "fixedwing_2autopilot_8h.html#a6a5f6eff763b42977af32ca2c59fe0e5", null ],
@@ -27,9 +29,7 @@ var fixedwing_2autopilot_8h =
     [ "kill_throttle", "fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c", null ],
     [ "lateral_mode", "fixedwing_2autopilot_8h.html#ab559c6867326333905f9133432ff9315", null ],
     [ "launch", "fixedwing_2autopilot_8h.html#af32f81f02a3187c12c08e11caf354abd", null ],
-    [ "light_mode", "fixedwing_2autopilot_8h.html#aa9a30362aaef272dafbe9672b65def21", null ],
     [ "power_switch", "fixedwing_2autopilot_8h.html#adda0cb88d172048dd19b50ad66e7881e", null ],
     [ "pprz_mode", "fixedwing_2autopilot_8h.html#aebf57c26248ee8c66d3eacdbd6a155cd", null ],
-    [ "sum_err_reset", "fixedwing_2autopilot_8h.html#a954d1c6b690e31e3efda450f30e5eafb", null ],
     [ "vsupply", "fixedwing_2autopilot_8h.html#ad32aad7f4e3f9236375798ec1cad31dd", null ]
 ];

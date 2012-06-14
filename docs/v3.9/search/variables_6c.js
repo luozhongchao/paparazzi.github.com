@@ -35,7 +35,6 @@ var searchData=
   ['len_5fw',['len_w',['../structi2c__transaction.html#afe675669c727a98bd998283d940b2636',1,'i2c_transaction']]],
   ['ler',['ler',['../structpwmTmrRegs__t.html#ae780cffbca7d4c26752b03828caf25e6',1,'pwmTmrRegs_t']]],
   ['light_5fcnt',['light_cnt',['../light__solar_8c.html#a831ddfb4155fdd57df9ff70f0df6033b',1,'light_cnt():&#160;light_solar.c'],['../light__solar_8h.html#a831ddfb4155fdd57df9ff70f0df6033b',1,'light_cnt():&#160;light_solar.c']]],
-  ['light_5fmode',['light_mode',['../fixedwing_2autopilot_8h.html#aa9a30362aaef272dafbe9672b65def21',1,'autopilot.h']]],
   ['line_5fstatus',['line_status',['../nav__line_8c.html#a1e4b07456818b9e3350d99d1931205fd',1,'line_status():&#160;nav_line.c'],['../OSAMNav_8c.html#a1e4b07456818b9e3350d99d1931205fd',1,'line_status():&#160;OSAMNav.c']]],
   ['linecoding',['LineCoding',['../usb__ser__hw_8c.html#abb605b7ad246791a20832a6cfd2beef1',1,'usb_ser_hw.c']]],
   ['link_5ffbw_5ffbw_5fnb_5ferr',['link_fbw_fbw_nb_err',['../jsbsim__hw_8c.html#a217e6264f30030ff96c6488719497c3e',1,'link_fbw_fbw_nb_err():&#160;jsbsim_hw.c'],['../sim__ap_8c.html#a217e6264f30030ff96c6488719497c3e',1,'link_fbw_fbw_nb_err():&#160;sim_ap.c']]],

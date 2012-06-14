@@ -155,66 +155,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00056"></a>00056 <span class="keyword">extern</span> bool_t <a class="code" href="fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a>;
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058 
-<a name="l00059"></a><a class="code" href="fixedwing_2autopilot_8h.html#a02c48fb8a64a9976f9e9fb9436ec2ad9">00059</a> <span class="preprocessor">#define LATERAL_MODE_MANUAL    0</span>
-<a name="l00060"></a><a class="code" href="fixedwing_2autopilot_8h.html#a17ef68647a4f71cd1d0b379388cf440f">00060</a> <span class="preprocessor"></span><span class="preprocessor">#define LATERAL_MODE_ROLL_RATE 1</span>
-<a name="l00061"></a><a class="code" href="fixedwing_2autopilot_8h.html#a7ea379002f6ec803be3f49e0993dd63a">00061</a> <span class="preprocessor"></span><span class="preprocessor">#define LATERAL_MODE_ROLL      2</span>
-<a name="l00062"></a><a class="code" href="fixedwing_2autopilot_8h.html#a63d6feb22864c4c3fcc59893e2671609">00062</a> <span class="preprocessor"></span><span class="preprocessor">#define LATERAL_MODE_COURSE    3</span>
-<a name="l00063"></a><a class="code" href="fixedwing_2autopilot_8h.html#a464bd918cf7f5953d3bd2800b2156eff">00063</a> <span class="preprocessor"></span><span class="preprocessor">#define LATERAL_MODE_NB        4</span>
-<a name="l00064"></a>00064 <span class="preprocessor"></span>
-<a name="l00065"></a><a class="code" href="fixedwing_2autopilot_8h.html#a7d56ec91e72fa7e7a0ec17604a598791">00065</a> <span class="preprocessor">#define STICK_PUSHED(pprz) (pprz &lt; TRESHOLD1 || pprz &gt; TRESHOLD2)</span>
-<a name="l00066"></a>00066 <span class="preprocessor"></span>
-<a name="l00067"></a>00067 
-<a name="l00068"></a><a class="code" href="fixedwing_2autopilot_8h.html#aa08d012f2139a6ef9e5b92e5efcf555b">00068</a> <span class="preprocessor">#define FLOAT_OF_PPRZ(pprz, center, travel) ((float)pprz / (float)MAX_PPRZ * travel + center)</span>
-<a name="l00069"></a>00069 <span class="preprocessor"></span>
-<a name="l00070"></a><a class="code" href="fixedwing_2autopilot_8h.html#a1c2e8ec07daf2aa0b8e54a832ea70139">00070</a> <span class="preprocessor">#define THROTTLE_THRESHOLD_TAKEOFF (pprz_t)(MAX_PPRZ * 0.9)</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span>
-<a name="l00072"></a>00072 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="fixedwing_2autopilot_8h.html#ab559c6867326333905f9133432ff9315">lateral_mode</a>;
+<a name="l00059"></a>00059 <span class="comment">// FIXME, move to control</span>
+<a name="l00060"></a><a class="code" href="fixedwing_2autopilot_8h.html#a02c48fb8a64a9976f9e9fb9436ec2ad9">00060</a> <span class="preprocessor">#define LATERAL_MODE_MANUAL    0</span>
+<a name="l00061"></a><a class="code" href="fixedwing_2autopilot_8h.html#a17ef68647a4f71cd1d0b379388cf440f">00061</a> <span class="preprocessor"></span><span class="preprocessor">#define LATERAL_MODE_ROLL_RATE 1</span>
+<a name="l00062"></a><a class="code" href="fixedwing_2autopilot_8h.html#a7ea379002f6ec803be3f49e0993dd63a">00062</a> <span class="preprocessor"></span><span class="preprocessor">#define LATERAL_MODE_ROLL      2</span>
+<a name="l00063"></a><a class="code" href="fixedwing_2autopilot_8h.html#a63d6feb22864c4c3fcc59893e2671609">00063</a> <span class="preprocessor"></span><span class="preprocessor">#define LATERAL_MODE_COURSE    3</span>
+<a name="l00064"></a><a class="code" href="fixedwing_2autopilot_8h.html#a464bd918cf7f5953d3bd2800b2156eff">00064</a> <span class="preprocessor"></span><span class="preprocessor">#define LATERAL_MODE_NB        4</span>
+<a name="l00065"></a>00065 <span class="preprocessor"></span><span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="fixedwing_2autopilot_8h.html#ab559c6867326333905f9133432ff9315">lateral_mode</a>;
+<a name="l00066"></a>00066 
+<a name="l00067"></a><a class="code" href="fixedwing_2autopilot_8h.html#a7d56ec91e72fa7e7a0ec17604a598791">00067</a> <span class="preprocessor">#define STICK_PUSHED(pprz) (pprz &lt; TRESHOLD1 || pprz &gt; TRESHOLD2)</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>
+<a name="l00069"></a><a class="code" href="fixedwing_2autopilot_8h.html#aa08d012f2139a6ef9e5b92e5efcf555b">00069</a> <span class="preprocessor">#define FLOAT_OF_PPRZ(pprz, center, travel) ((float)pprz / (float)MAX_PPRZ * travel + center)</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span>
+<a name="l00071"></a><a class="code" href="fixedwing_2autopilot_8h.html#a1c2e8ec07daf2aa0b8e54a832ea70139">00071</a> <span class="preprocessor">#define THROTTLE_THRESHOLD_TAKEOFF (pprz_t)(MAX_PPRZ * 0.9)</span>
+<a name="l00072"></a>00072 <span class="preprocessor"></span>
 <a name="l00073"></a>00073 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="fixedwing_2autopilot_8h.html#ad32aad7f4e3f9236375798ec1cad31dd" title="Supply voltage in deciVolt.">vsupply</a>;
 <a name="l00074"></a>00074 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a" title="Fuel consumption (mAh) TODO: move to electrical subsystem.">energy</a>;
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076 <span class="keyword">extern</span> bool_t <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a>;
 <a name="l00077"></a>00077 
-<a name="l00078"></a>00078 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="fixedwing_2autopilot_8h.html#aa9a30362aaef272dafbe9672b65def21">light_mode</a>;
-<a name="l00079"></a>00079 <span class="keyword">extern</span> bool_t <a class="code" href="fixedwing_2autopilot_8h.html#ad5b2dcab0bbd14934aac4f5e0eea8b18">gps_lost</a>;
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="keyword">extern</span> bool_t <a class="code" href="fixedwing_2autopilot_8h.html#a954d1c6b690e31e3efda450f30e5eafb">sum_err_reset</a>;
-<a name="l00082"></a>00082 
-<a name="l00085"></a><a class="code" href="fixedwing_2autopilot_8h.html#a1bf7cecdbe3f008fdb8dd8404c4e510f">00085</a> <span class="preprocessor">#define ModeUpdate(_mode, _value) ({ \</span>
-<a name="l00086"></a>00086 <span class="preprocessor">  uint8_t new_mode = _value; \</span>
-<a name="l00087"></a>00087 <span class="preprocessor">  (_mode != new_mode ? _mode = new_mode, TRUE : FALSE); \</span>
-<a name="l00088"></a>00088 <span class="preprocessor">})</span>
-<a name="l00089"></a>00089 <span class="preprocessor"></span>
-<a name="l00090"></a>00090 
-<a name="l00091"></a>00091 <span class="preprocessor">#ifdef RADIO_CONTROL</span>
-<a name="l00092"></a>00092 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="radio__control_8h.html">subsystems/radio_control.h</a>&quot;</span>
-<a name="l00093"></a>00093 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> autopilot_process_radio_control ( <span class="keywordtype">void</span> ) {
-<a name="l00094"></a>00094   <a class="code" href="fixedwing_2autopilot_8h.html#aebf57c26248ee8c66d3eacdbd6a155cd">pprz_mode</a> = <a class="code" href="fixedwing_2autopilot_8h.html#a26271d532164bc63bc5490ba75e4e0f3">PPRZ_MODE_OF_PULSE</a>(<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a2fab1464ab1748edb2a45a08cf7c422a">RADIO_MODE</a>]);
-<a name="l00095"></a>00095 }
-<a name="l00096"></a>00096 <span class="preprocessor">#endif</span>
+<a name="l00078"></a>00078 <span class="keyword">extern</span> bool_t <a class="code" href="fixedwing_2autopilot_8h.html#ad5b2dcab0bbd14934aac4f5e0eea8b18">gps_lost</a>;
+<a name="l00079"></a>00079 
+<a name="l00082"></a><a class="code" href="fixedwing_2autopilot_8h.html#a1bf7cecdbe3f008fdb8dd8404c4e510f">00082</a> <span class="preprocessor">#define ModeUpdate(_mode, _value) ({ \</span>
+<a name="l00083"></a>00083 <span class="preprocessor">  uint8_t new_mode = _value; \</span>
+<a name="l00084"></a>00084 <span class="preprocessor">  (_mode != new_mode ? _mode = new_mode, TRUE : FALSE); \</span>
+<a name="l00085"></a>00085 <span class="preprocessor">})</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span>
+<a name="l00087"></a>00087 <span class="keyword">extern</span> bool_t <a class="code" href="fixedwing_2autopilot_8h.html#adda0cb88d172048dd19b50ad66e7881e">power_switch</a>;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 <span class="preprocessor">#ifdef POWER_SWITCH_LED</span>
+<a name="l00090"></a>00090 <span class="preprocessor"></span><span class="preprocessor">#define autopilot_SetPowerSwitch(_x) { \</span>
+<a name="l00091"></a>00091 <span class="preprocessor">  power_switch = _x; \</span>
+<a name="l00092"></a>00092 <span class="preprocessor">  if (_x) LED_ON(POWER_SWITCH_LED) else LED_OFF(POWER_SWITCH_LED); \</span>
+<a name="l00093"></a>00093 <span class="preprocessor">}</span>
+<a name="l00094"></a>00094 <span class="preprocessor"></span><span class="preprocessor">#else // POWER_SWITCH_LED</span>
+<a name="l00095"></a><a class="code" href="fixedwing_2autopilot_8h.html#ad08218d3e8fc1fd4c0b7f127e69a86d6">00095</a> <span class="preprocessor"></span><span class="preprocessor">#define autopilot_SetPowerSwitch(_x) { power_switch = _x; }</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span><span class="preprocessor">#endif // POWER_SWITCH_LED</span>
 <a name="l00097"></a>00097 <span class="preprocessor"></span>
-<a name="l00098"></a>00098 <span class="keyword">extern</span> bool_t <a class="code" href="fixedwing_2autopilot_8h.html#adda0cb88d172048dd19b50ad66e7881e">power_switch</a>;
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100 <span class="preprocessor">#ifdef POWER_SWITCH_LED</span>
-<a name="l00101"></a>00101 <span class="preprocessor"></span><span class="preprocessor">#define autopilot_SetPowerSwitch(_x) { \</span>
-<a name="l00102"></a>00102 <span class="preprocessor">  power_switch = _x; \</span>
-<a name="l00103"></a>00103 <span class="preprocessor">  if (_x) LED_ON(POWER_SWITCH_LED) else LED_OFF(POWER_SWITCH_LED); \</span>
-<a name="l00104"></a>00104 <span class="preprocessor">}</span>
-<a name="l00105"></a>00105 <span class="preprocessor"></span><span class="preprocessor">#else // POWER_SWITCH_LED</span>
-<a name="l00106"></a><a class="code" href="fixedwing_2autopilot_8h.html#ad08218d3e8fc1fd4c0b7f127e69a86d6">00106</a> <span class="preprocessor"></span><span class="preprocessor">#define autopilot_SetPowerSwitch(_x) { power_switch = _x; }</span>
-<a name="l00107"></a>00107 <span class="preprocessor"></span><span class="preprocessor">#endif // POWER_SWITCH_LED</span>
-<a name="l00108"></a>00108 <span class="preprocessor"></span>
-<a name="l00109"></a><a class="code" href="fixedwing_2autopilot_8h.html#a260ba1d03869070e8be5b23878957e5d">00109</a> <span class="preprocessor">#define autopilot_ResetFlightTimeAndLaunch(_) { \</span>
-<a name="l00110"></a>00110 <span class="preprocessor">  estimator_flight_time = 0; launch = FALSE; \</span>
-<a name="l00111"></a>00111 <span class="preprocessor">}</span>
-<a name="l00112"></a>00112 <span class="preprocessor"></span>
-<a name="l00113"></a>00113 
-<a name="l00114"></a>00114 <span class="comment">/* For backward compatibility with old airframe files */</span>
-<a name="l00115"></a>00115 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
-<a name="l00116"></a>00116 <span class="preprocessor">#ifndef CONTROL_RATE</span>
-<a name="l00117"></a><a class="code" href="fixedwing_2autopilot_8h.html#ae5d737db8bc97ecf08d2ea3121782d26">00117</a> <span class="preprocessor"></span><span class="preprocessor">#define CONTROL_RATE 20</span>
-<a name="l00118"></a>00118 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00119"></a>00119 <span class="preprocessor"></span>
-<a name="l00120"></a>00120 <span class="preprocessor">#endif </span><span class="comment">/* AUTOPILOT_H */</span>
+<a name="l00098"></a><a class="code" href="fixedwing_2autopilot_8h.html#a260ba1d03869070e8be5b23878957e5d">00098</a> <span class="preprocessor">#define autopilot_ResetFlightTimeAndLaunch(_) { \</span>
+<a name="l00099"></a>00099 <span class="preprocessor">  estimator_flight_time = 0; launch = FALSE; \</span>
+<a name="l00100"></a>00100 <span class="preprocessor">}</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span>
+<a name="l00102"></a>00102 <span class="comment">/* CONTROL_RATE will be removed in the next release</span>
+<a name="l00103"></a>00103 <span class="comment"> * please use CONTROL_FREQUENCY instead</span>
+<a name="l00104"></a>00104 <span class="comment"> */</span>
+<a name="l00105"></a>00105 <span class="preprocessor">#ifndef CONTROL_FREQUENCY</span>
+<a name="l00106"></a>00106 <span class="preprocessor"></span><span class="preprocessor">#ifdef  CONTROL_RATE</span>
+<a name="l00107"></a>00107 <span class="preprocessor"></span><span class="preprocessor">#define CONTROL_FREQUENCY CONTROL_RATE</span>
+<a name="l00108"></a>00108 <span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;CONTROL_RATE is deprecated. Please use CONTROL_FREQUENCY instead. Defaults to 60Hz if not defined.&quot;</span>
+<a name="l00109"></a>00109 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00110"></a><a class="code" href="fixedwing_2autopilot_8h.html#a992e6194ee1d6c879faa66e51b72840a">00110</a> <span class="preprocessor"></span><span class="preprocessor">#define CONTROL_FREQUENCY 60</span>
+<a name="l00111"></a>00111 <span class="preprocessor"></span><span class="preprocessor">#endif  // CONTROL_RATE</span>
+<a name="l00112"></a>00112 <span class="preprocessor"></span><span class="preprocessor">#endif  // CONTROL_FREQUENCY</span>
+<a name="l00113"></a>00113 <span class="preprocessor"></span>
+<a name="l00114"></a>00114 <span class="preprocessor">#ifndef NAVIGATION_FREQUENCY</span>
+<a name="l00115"></a><a class="code" href="fixedwing_2autopilot_8h.html#aba17f9ac72f7e9dd1dcd95457bf5c87f">00115</a> <span class="preprocessor"></span><span class="preprocessor">#define NAVIGATION_FREQUENCY 4</span>
+<a name="l00116"></a>00116 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00117"></a>00117 <span class="preprocessor"></span>
+<a name="l00118"></a>00118 <span class="preprocessor">#ifndef MODULES_FREQUENCY</span>
+<a name="l00119"></a><a class="code" href="fixedwing_2autopilot_8h.html#af90f93831d0ad977ef9c81c0caa633a3">00119</a> <span class="preprocessor"></span><span class="preprocessor">#define MODULES_FREQUENCY 60</span>
+<a name="l00120"></a>00120 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00121"></a>00121 <span class="preprocessor"></span>
+<a name="l00122"></a>00122 <span class="preprocessor">#endif </span><span class="comment">/* AUTOPILOT_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -235,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="fixedwing_2autopilot_8h.html">autopilot.h</a>      </li>
 
-    <li class="footer">Generated on Wed Jun 13 2012 04:00:07 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jun 14 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
