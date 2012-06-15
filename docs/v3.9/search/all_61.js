@@ -693,9 +693,9 @@ var searchData=
   ['autopilot_5fset_5fmode',['autopilot_set_mode',['../autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64',1,'autopilot_set_mode(uint8_t new_autopilot_mode):&#160;autopilot.c'],['../rotorcraft_2autopilot_8h.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64',1,'autopilot_set_mode(uint8_t new_autopilot_mode):&#160;autopilot.c']]],
   ['autopilot_5fset_5fmotors_5fon',['autopilot_set_motors_on',['../autopilot_8c.html#a4a3dedaf4d4da879348f946a9f3f4611',1,'autopilot_set_motors_on(bool_t motors_on):&#160;autopilot.c'],['../rotorcraft_2autopilot_8h.html#a4a3dedaf4d4da879348f946a9f3f4611',1,'autopilot_set_motors_on(bool_t motors_on):&#160;autopilot.c']]],
   ['autopilot_5fsetpowerswitch',['autopilot_SetPowerSwitch',['../fixedwing_2autopilot_8h.html#ad08218d3e8fc1fd4c0b7f127e69a86d6',1,'autopilot_SetPowerSwitch():&#160;autopilot.h'],['../rotorcraft_2autopilot_8h.html#ae42e72207df0c300dfc515a88056a26a',1,'autopilot_SetPowerSwitch():&#160;autopilot.h']]],
-  ['autopilot_5fthrottle_5ftreshold',['AUTOPILOT_THROTTLE_TRESHOLD',['../autopilot__rc__helpers_8h.html#a2332c07c99fdfe0d4212c3ef62e6ef42',1,'autopilot_rc_helpers.h']]],
+  ['autopilot_5fthrottle_5fthreshold',['AUTOPILOT_THROTTLE_THRESHOLD',['../autopilot__rc__helpers_8h.html#a745dcdb712b34556e5bea0b416760894',1,'autopilot_rc_helpers.h']]],
   ['autopilot_5funarmed_5fin_5fauto',['autopilot_unarmed_in_auto',['../autopilot__arming__switch_8h.html#a004a65f7397a60ad392c6b3833ae4bcc',1,'autopilot_unarmed_in_auto():&#160;autopilot_arming_switch.h'],['../autopilot__arming__throttle_8h.html#a004a65f7397a60ad392c6b3833ae4bcc',1,'autopilot_unarmed_in_auto():&#160;autopilot_arming_throttle.h']]],
-  ['autopilot_5fyaw_5ftreshold',['AUTOPILOT_YAW_TRESHOLD',['../autopilot__rc__helpers_8h.html#a52116039295d126835d5aba893486dd4',1,'autopilot_rc_helpers.h']]],
+  ['autopilot_5fyaw_5fthreshold',['AUTOPILOT_YAW_THRESHOLD',['../autopilot__rc__helpers_8h.html#a5844738d9e11a99f5799b6eaa0d57480',1,'autopilot_rc_helpers.h']]],
   ['av_5fnb_5fsample',['av_nb_sample',['../structadc__buf.html#aceea4ff785000051676babf3e5f25287',1,'adc_buf']]],
   ['available_5fsensors',['available_sensors',['../structVehicleInterface.html#aadd55a31046784d08346ca94a76ce893',1,'VehicleInterface']]],
   ['azim',['azim',['../structSVinfo.html#a0069a8447d794d029e89b885d6d17d42',1,'SVinfo']]]

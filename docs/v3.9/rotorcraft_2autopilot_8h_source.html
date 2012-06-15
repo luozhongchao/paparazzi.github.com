@@ -182,13 +182,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00078"></a>00078 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00079"></a>00079 <span class="preprocessor"></span>
 <a name="l00080"></a>00080 
-<a name="l00081"></a><a class="code" href="rotorcraft_2autopilot_8h.html#afdad776fafce6c144282cd12979a8985">00081</a> <span class="preprocessor">#define TRESHOLD_1_PPRZ (MIN_PPRZ / 2)</span>
-<a name="l00082"></a><a class="code" href="rotorcraft_2autopilot_8h.html#ac403b23520a3482674baab1a6ea498cd">00082</a> <span class="preprocessor"></span><span class="preprocessor">#define TRESHOLD_2_PPRZ (MAX_PPRZ / 2)</span>
+<a name="l00081"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a29020e550d0d136a0212ba92940fd672">00081</a> <span class="preprocessor">#define THRESHOLD_1_PPRZ (MIN_PPRZ / 2)</span>
+<a name="l00082"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a042859caaa6cc4c56b7918a0715b674d">00082</a> <span class="preprocessor"></span><span class="preprocessor">#define THRESHOLD_2_PPRZ (MAX_PPRZ / 2)</span>
 <a name="l00083"></a>00083 <span class="preprocessor"></span>
 <a name="l00084"></a><a class="code" href="rotorcraft_2autopilot_8h.html#ab0395a426c32b31601769fdd4cefac34">00084</a> <span class="preprocessor">#define AP_MODE_OF_PPRZ(_rc, _mode) {               \</span>
-<a name="l00085"></a>00085 <span class="preprocessor">    if      (_rc &gt; TRESHOLD_2_PPRZ)                 \</span>
+<a name="l00085"></a>00085 <span class="preprocessor">    if      (_rc &gt; THRESHOLD_2_PPRZ)                 \</span>
 <a name="l00086"></a>00086 <span class="preprocessor">      _mode = autopilot_mode_auto2;                 \</span>
-<a name="l00087"></a>00087 <span class="preprocessor">    else if (_rc &gt; TRESHOLD_1_PPRZ)         \</span>
+<a name="l00087"></a>00087 <span class="preprocessor">    else if (_rc &gt; THRESHOLD_1_PPRZ)          \</span>
 <a name="l00088"></a>00088 <span class="preprocessor">      _mode = MODE_AUTO1;                           \</span>
 <a name="l00089"></a>00089 <span class="preprocessor">    else                                            \</span>
 <a name="l00090"></a>00090 <span class="preprocessor">      _mode = MODE_MANUAL;                          \</span>
@@ -210,13 +210,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00106"></a>00106 <span class="preprocessor">  }</span>
 <a name="l00107"></a>00107 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00108"></a>00108 <span class="preprocessor"></span>
-<a name="l00109"></a>00109 <span class="preprocessor">#ifndef TRESHOLD_GROUND_DETECT</span>
-<a name="l00110"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a764039c8a94793d41a5752988e6a8116">00110</a> <span class="preprocessor"></span><span class="preprocessor">#define TRESHOLD_GROUND_DETECT ACCEL_BFP_OF_REAL(15.)</span>
+<a name="l00109"></a>00109 <span class="preprocessor">#ifndef THRESHOLD_GROUND_DETECT</span>
+<a name="l00110"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a691189e2b0e9182bc6a3fe84b6e0a267">00110</a> <span class="preprocessor"></span><span class="preprocessor">#define THRESHOLD_GROUND_DETECT ACCEL_BFP_OF_REAL(15.)</span>
 <a name="l00111"></a>00111 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00112"></a><a class="code" href="rotorcraft_2autopilot_8h.html#abba296c1e683df96046e568306fcbb69">00112</a> <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2autopilot_8h.html#abba296c1e683df96046e568306fcbb69">DetectGroundEvent</a>(<span class="keywordtype">void</span>) {
 <a name="l00113"></a>00113   <span class="keywordflow">if</span> (<a class="code" href="autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> == <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a> || <a class="code" href="autopilot_8c.html#a253b2721020bd7b569406cd2b3fa5947">autopilot_detect_ground_once</a>) {
-<a name="l00114"></a>00114     <span class="keywordflow">if</span> (<a class="code" href="ins_8c.html#a40b750394f04de20db66008c0b6a9f98">ins_ltp_accel</a>.<a class="code" href="structNedCoor__i.html#a52586e90ccb7aa5f0960bcb480bfcaa3">z</a> &lt; -<a class="code" href="rotorcraft_2autopilot_8h.html#a764039c8a94793d41a5752988e6a8116">TRESHOLD_GROUND_DETECT</a> ||
-<a name="l00115"></a>00115         <a class="code" href="ins_8c.html#a40b750394f04de20db66008c0b6a9f98">ins_ltp_accel</a>.<a class="code" href="structNedCoor__i.html#a52586e90ccb7aa5f0960bcb480bfcaa3">z</a> &gt; <a class="code" href="rotorcraft_2autopilot_8h.html#a764039c8a94793d41a5752988e6a8116">TRESHOLD_GROUND_DETECT</a>) {
+<a name="l00114"></a>00114     <span class="keywordflow">if</span> (<a class="code" href="ins_8c.html#a40b750394f04de20db66008c0b6a9f98">ins_ltp_accel</a>.<a class="code" href="structNedCoor__i.html#a52586e90ccb7aa5f0960bcb480bfcaa3">z</a> &lt; -<a class="code" href="rotorcraft_2autopilot_8h.html#a691189e2b0e9182bc6a3fe84b6e0a267">THRESHOLD_GROUND_DETECT</a> ||
+<a name="l00115"></a>00115         <a class="code" href="ins_8c.html#a40b750394f04de20db66008c0b6a9f98">ins_ltp_accel</a>.<a class="code" href="structNedCoor__i.html#a52586e90ccb7aa5f0960bcb480bfcaa3">z</a> &gt; <a class="code" href="rotorcraft_2autopilot_8h.html#a691189e2b0e9182bc6a3fe84b6e0a267">THRESHOLD_GROUND_DETECT</a>) {
 <a name="l00116"></a>00116       <a class="code" href="autopilot_8c.html#a8b3a73c1c960edd2951f8ad6ba5232d2">autopilot_detect_ground</a> = TRUE;
 <a name="l00117"></a>00117       <a class="code" href="autopilot_8c.html#a253b2721020bd7b569406cd2b3fa5947">autopilot_detect_ground_once</a> = FALSE;
 <a name="l00118"></a>00118     }
@@ -244,7 +244,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="rotorcraft_2autopilot_8h.html">autopilot.h</a>      </li>
 
-    <li class="footer">Generated on Thu Jun 14 2012 04:01:45 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Jun 15 2012 04:01:44 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
