@@ -272,6 +272,6 @@ var searchData=
   ['autopilot_5fmotor_5fon_5ftime',['AUTOPILOT_MOTOR_ON_TIME',['../autopilot__arming__yaw_8h.html#ae23792cc1081225b0f4f8f6657609374',1,'autopilot_arming_yaw.h']]],
   ['autopilot_5fresetflighttimeandlaunch',['autopilot_ResetFlightTimeAndLaunch',['../fixedwing_2autopilot_8h.html#a260ba1d03869070e8be5b23878957e5d',1,'autopilot.h']]],
   ['autopilot_5fsetpowerswitch',['autopilot_SetPowerSwitch',['../fixedwing_2autopilot_8h.html#ad08218d3e8fc1fd4c0b7f127e69a86d6',1,'autopilot_SetPowerSwitch():&#160;autopilot.h'],['../rotorcraft_2autopilot_8h.html#ae42e72207df0c300dfc515a88056a26a',1,'autopilot_SetPowerSwitch():&#160;autopilot.h']]],
-  ['autopilot_5fthrottle_5ftreshold',['AUTOPILOT_THROTTLE_TRESHOLD',['../autopilot__rc__helpers_8h.html#a2332c07c99fdfe0d4212c3ef62e6ef42',1,'autopilot_rc_helpers.h']]],
-  ['autopilot_5fyaw_5ftreshold',['AUTOPILOT_YAW_TRESHOLD',['../autopilot__rc__helpers_8h.html#a52116039295d126835d5aba893486dd4',1,'autopilot_rc_helpers.h']]]
+  ['autopilot_5fthrottle_5fthreshold',['AUTOPILOT_THROTTLE_THRESHOLD',['../autopilot__rc__helpers_8h.html#a745dcdb712b34556e5bea0b416760894',1,'autopilot_rc_helpers.h']]],
+  ['autopilot_5fyaw_5fthreshold',['AUTOPILOT_YAW_THRESHOLD',['../autopilot__rc__helpers_8h.html#a5844738d9e11a99f5799b6eaa0d57480',1,'autopilot_rc_helpers.h']]]
 ];
