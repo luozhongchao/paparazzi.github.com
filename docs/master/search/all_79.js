@@ -9,6 +9,6 @@ var searchData=
   ['yaw_5fstick_5fpushed',['YAW_STICK_PUSHED',['../autopilot__rc__helpers_8h.html#acd1ef4f5d7952bb8e3088e8800fa1ce5',1,'autopilot_rc_helpers.h']]],
   ['ydot',['ydot',['../structHfilterFloat.html#abafc93fcfe06dfbd68500acee18831d1',1,'HfilterFloat']]],
   ['ydotdot',['ydotdot',['../structHfilterFloat.html#a97fa8fb03ec9fdf82c73b169c0b1782f',1,'HfilterFloat']]],
-  ['year',['year',['../structrtcRegs__t.html#aa6ca0e0dc8f8de6e82360d4f17698c59',1,'rtcRegs_t']]],
+  ['year',['year',['../structrtcRegs__t.html#aa6ca0e0dc8f8de6e82360d4f17698c59',1,'rtcRegs_t::year()'],['../structXsensTime.html#a71b9696fddded5a970de10eeba78deda',1,'XsensTime::year()']]],
   ['yp',['yP',['../structHfilterFloat.html#a8dfd091ee2cc7c9476c170ea691426ef',1,'HfilterFloat']]]
 ];

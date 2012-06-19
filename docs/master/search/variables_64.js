@@ -11,6 +11,7 @@ var searchData=
   ['data_5fto_5fsend',['data_to_send',['../gsm_8c.html#ad365be6fc74663c3ef6599a709a26b1f',1,'gsm.c']]],
   ['data_5fvalid',['data_valid',['../pressure__board__navarro_8c.html#aa297b7ccfa5d3432b4ae8a1f07ee3871',1,'data_valid():&#160;pressure_board_navarro.c'],['../pressure__board__navarro_8h.html#aa297b7ccfa5d3432b4ae8a1f07ee3871',1,'data_valid():&#160;pressure_board_navarro.c']]],
   ['datalink_5ftime',['datalink_time',['../sim__ap_8c.html#a554cac6546bc91d21ff99268001d4010',1,'datalink_time():&#160;sim_ap.c'],['../sd__card_2main_8c.html#a554cac6546bc91d21ff99268001d4010',1,'datalink_time():&#160;main.c'],['../datalink_8h.html#a197f78c6ad3446b914ca1fe3ad08ff83',1,'datalink_time():&#160;datalink.h']]],
+  ['day',['day',['../structXsensTime.html#a690dead879396ed80968b062ea6b8688',1,'XsensTime']]],
   ['days_5fmonth',['DAYS_MONTH',['../gps__mtk_8c.html#aa100e5aef7d9fd9c20c17dd8c451e339',1,'gps_mtk.c']]],
   ['dc_5fautoshoot',['dc_autoshoot',['../dc_8c.html#a3bef97c9e9a2bf5c5dcf7cc52876af60',1,'dc_autoshoot():&#160;dc.c'],['../dc_8h.html#a3bef97c9e9a2bf5c5dcf7cc52876af60',1,'dc_autoshoot():&#160;dc.c']]],
   ['dc_5fautoshoot_5fmeter_5fgrid',['dc_autoshoot_meter_grid',['../dc_8c.html#a81528ed9ace9b9d5e49bc9aba4cf0399',1,'dc_autoshoot_meter_grid():&#160;dc.c'],['../dc_8h.html#a81528ed9ace9b9d5e49bc9aba4cf0399',1,'dc_autoshoot_meter_grid():&#160;dc.c']]],

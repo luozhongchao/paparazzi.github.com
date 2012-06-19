@@ -245,7 +245,6 @@ var searchData=
   ['usec_5fof_5fsec',['USEC_OF_SEC',['../sys__time_8h.html#a16b92e3e15d99fcf7029503763a63b61',1,'sys_time.h']]],
   ['usec_5fof_5fsys_5ftime_5fticks',['USEC_OF_SYS_TIME_TICKS',['../sys__time_8h.html#a7cdc6416e689f231d136618a2c2f8278',1,'sys_time.h']]],
   ['ut1',['ut1',['../baro__MS5534A_8c.html#a34f8f6f89a1ea8380fa692619ee8277c',1,'baro_MS5534A.c']]],
-  ['utm_5ff',['utm_f',['../ins__xsens_8c.html#a3d0d9cde80e43864058d09bf67864fce',1,'ins_xsens.c']]],
   ['utm_5fhem_5fnorth',['UTM_HEM_NORTH',['../gps__ubx_8c.html#a81b821d6b2b90cd4dd34b36833f667a7',1,'gps_ubx.c']]],
   ['utm_5fhem_5fsouth',['UTM_HEM_SOUTH',['../gps__ubx_8c.html#a32e3449d116d85cc44da6f9fbd9ff871',1,'gps_ubx.c']]],
   ['utm_5fof_5flla_5ff',['utm_of_lla_f',['../pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd',1,'utm_of_lla_f(struct UtmCoor_f *utm, struct LlaCoor_f *lla):&#160;pprz_geodetic_float.c'],['../pprz__geodetic__float_8h.html#af99d4775df518f30b741b49c26eceedd',1,'utm_of_lla_f(struct UtmCoor_f *utm, struct LlaCoor_f *lla):&#160;pprz_geodetic_float.c']]],

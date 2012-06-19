@@ -3,6 +3,7 @@ var searchData=
   ['n',['n',['../structAccBuf.html#a687326ed76add3d29ee2fd00f3c6d5fc',1,'AccBuf']]],
   ['n_5fevent',['n_event',['../sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf',1,'sys_mon.c']]],
   ['n_5fperiodic',['n_periodic',['../sys__mon_8c.html#aabb9cf351cb9e9bfc32d6a7b12119ad9',1,'sys_mon.c']]],
+  ['nanosec',['nanosec',['../structXsensTime.html#ab0ef7bd317cfe0588f716907d4e844d3',1,'XsensTime']]],
   ['nav_5faltitude',['nav_altitude',['../navigation_8c.html#af0e2e459664ed595f936a2a9d5852286',1,'nav_altitude():&#160;navigation.c'],['../navigation_8h.html#af0e2e459664ed595f936a2a9d5852286',1,'nav_altitude():&#160;navigation.c'],['../nav_8c.html#a67342fe7d0a993249d4b4cd0e20821ce',1,'nav_altitude():&#160;nav.c'],['../nav_8h.html#a67342fe7d0a993249d4b4cd0e20821ce',1,'nav_altitude():&#160;navigation.c']]],
   ['nav_5fblock',['nav_block',['../common__flight__plan_8c.html#a9bac2a1702848ebb785b932741bfa4be',1,'nav_block():&#160;common_flight_plan.c'],['../common__flight__plan_8h.html#a9bac2a1702848ebb785b932741bfa4be',1,'nav_block():&#160;common_flight_plan.c']]],
   ['nav_5fcatapult_5facceleration_5fthreshold',['nav_catapult_acceleration_threshold',['../nav__catapult_8c.html#a6803958747912a7e558830cfa0a83016',1,'nav_catapult_acceleration_threshold():&#160;nav_catapult.c'],['../nav__catapult_8h.html#a6803958747912a7e558830cfa0a83016',1,'nav_catapult_acceleration_threshold():&#160;nav_catapult.c']]],

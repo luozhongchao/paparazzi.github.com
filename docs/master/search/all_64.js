@@ -28,6 +28,7 @@ var searchData=
   ['datalink_5fc',['DATALINK_C',['../fixedwing_2datalink_8c.html#ace2f20f3712314ddd9e83035468ab745',1,'DATALINK_C():&#160;datalink.c'],['../rotorcraft_2datalink_8c.html#ace2f20f3712314ddd9e83035468ab745',1,'DATALINK_C():&#160;datalink.c'],['../setup__actuators_8c.html#ace2f20f3712314ddd9e83035468ab745',1,'DATALINK_C():&#160;setup_actuators.c'],['../test__board_8c.html#ace2f20f3712314ddd9e83035468ab745',1,'DATALINK_C():&#160;test_board.c'],['../test__datalink_8c.html#ace2f20f3712314ddd9e83035468ab745',1,'DATALINK_C():&#160;test_datalink.c']]],
   ['datalink_5ftime',['datalink_time',['../sim__ap_8c.html#a554cac6546bc91d21ff99268001d4010',1,'datalink_time():&#160;sim_ap.c'],['../sd__card_2main_8c.html#a554cac6546bc91d21ff99268001d4010',1,'datalink_time():&#160;main.c'],['../datalink_8h.html#a197f78c6ad3446b914ca1fe3ad08ff83',1,'datalink_time():&#160;datalink.h']]],
   ['datalinkevent',['DatalinkEvent',['../datalink_8h.html#a1e122bd87bd1f699141735e71a32d002',1,'datalink.h']]],
+  ['day',['day',['../structXsensTime.html#a690dead879396ed80968b062ea6b8688',1,'XsensTime']]],
   ['days_5fmonth',['DAYS_MONTH',['../gps__mtk_8c.html#aa100e5aef7d9fd9c20c17dd8c451e339',1,'gps_mtk.c']]],
   ['dc_2ec',['dc.c',['../dc_8c.html',1,'']]],
   ['dc_2eh',['dc.h',['../dc_8h.html',1,'']]],

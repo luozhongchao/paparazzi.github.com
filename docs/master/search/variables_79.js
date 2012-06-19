@@ -4,6 +4,6 @@ var searchData=
   ['yaw_5fcoef',['yaw_coef',['../supervision_8c.html#a8a3cbedfb0444feb9612aec350a13c79',1,'supervision.c']]],
   ['ydot',['ydot',['../structHfilterFloat.html#abafc93fcfe06dfbd68500acee18831d1',1,'HfilterFloat']]],
   ['ydotdot',['ydotdot',['../structHfilterFloat.html#a97fa8fb03ec9fdf82c73b169c0b1782f',1,'HfilterFloat']]],
-  ['year',['year',['../structrtcRegs__t.html#aa6ca0e0dc8f8de6e82360d4f17698c59',1,'rtcRegs_t']]],
+  ['year',['year',['../structrtcRegs__t.html#aa6ca0e0dc8f8de6e82360d4f17698c59',1,'rtcRegs_t::year()'],['../structXsensTime.html#a71b9696fddded5a970de10eeba78deda',1,'XsensTime::year()']]],
   ['yp',['yP',['../structHfilterFloat.html#a8dfd091ee2cc7c9476c170ea691426ef',1,'HfilterFloat']]]
 ];

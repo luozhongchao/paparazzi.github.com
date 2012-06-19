@@ -13,7 +13,7 @@ var searchData=
   ['scr',['scr',['../structuartRegs__t.html#a9c02d5624f7c934b27177ec14700e901',1,'uartRegs_t']]],
   ['sd_5fcard_5favailable',['sd_card_available',['../sd__card_8c.html#aea4c867c7075b0205e8b824cae5bf206',1,'sd_card_available():&#160;sd_card.c'],['../sd__card_8h.html#aea4c867c7075b0205e8b824cae5bf206',1,'sd_card_available():&#160;sd_card.c']]],
   ['sda_5fpin',['sda_pin',['../structi2c__periph.html#a80acb31fe9dd4114470fb7df86b72901',1,'i2c_periph']]],
-  ['sec',['sec',['../structrtcRegs__t.html#a39b1e7b4839eaf7f6326e8f29fc35478',1,'rtcRegs_t']]],
+  ['sec',['sec',['../structrtcRegs__t.html#a39b1e7b4839eaf7f6326e8f29fc35478',1,'rtcRegs_t::sec()'],['../structXsensTime.html#a3de7dc7e346cfb28ff99b61124476fbf',1,'XsensTime::sec()']]],
   ['secondframe',['SecondFrame',['../structSpektrumStateStruct.html#a683a66bf67d632cc013d4f352f920af8',1,'SpektrumStateStruct']]],
   ['seg_5fcenter1',['seg_center1',['../poly__survey__adv_8c.html#a11a4ff8a67e805f57d01894b49b3d856',1,'poly_survey_adv.c']]],
   ['seg_5fcenter2',['seg_center2',['../poly__survey__adv_8c.html#a5c1e980ce823ea12f6a1d2f9fcc1380d',1,'poly_survey_adv.c']]],

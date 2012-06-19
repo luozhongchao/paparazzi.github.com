@@ -109,10 +109,10 @@ var annotated =
     [ "NedCoor_i", "structNedCoor__i.html", "structNedCoor__i" ],
     [ "PCAP01VALUE", "structPCAP01VALUE.html", "structPCAP01VALUE" ],
     [ "pinRegs_t", "structpinRegs__t.html", "structpinRegs__t" ],
-    [ "POINT", "structPOINT.html", "structPOINT" ],
     [ "point", "structpoint.html", "structpoint" ],
-    [ "Point2D", "structPoint2D.html", "structPoint2D" ],
+    [ "POINT", "structPOINT.html", "structPOINT" ],
     [ "point2d", "structpoint2d.html", "structpoint2d" ],
+    [ "Point2D", "structPoint2D.html", "structPoint2D" ],
     [ "pprz_transport", "structpprz__transport.html", "structpprz__transport" ],
     [ "pwmTmrRegs_t", "structpwmTmrRegs__t.html", "structpwmTmrRegs__t" ],
     [ "rc_joby_parser_state", "structrc__joby__parser__state.html", "structrc__joby__parser__state" ],
@@ -155,5 +155,6 @@ var annotated =
     [ "VN100_Req_Packet", "structVN100__Req__Packet.html", "structVN100__Req__Packet" ],
     [ "VN100_Res_Packet", "structVN100__Res__Packet.html", "structVN100__Res__Packet" ],
     [ "wdRegs_t", "structwdRegs__t.html", "structwdRegs__t" ],
-    [ "xbee_transport", "structxbee__transport.html", "structxbee__transport" ]
+    [ "xbee_transport", "structxbee__transport.html", "structxbee__transport" ],
+    [ "XsensTime", "structXsensTime.html", "structXsensTime" ]
 ];

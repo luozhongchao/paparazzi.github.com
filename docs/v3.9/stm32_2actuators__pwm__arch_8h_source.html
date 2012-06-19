@@ -127,19 +127,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#define ACTUATORS_PWM_ARCH_H</span>
 <a name="l00028"></a>00028 <span class="preprocessor"></span>
 <a name="l00029"></a>00029 <span class="preprocessor">#if USE_SERVOS_7AND8</span>
-<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#define ACTUATORS_PWM_NB 8</span>
-<a name="l00031"></a>00031 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00032"></a><a class="code" href="stm32_2actuators__pwm__arch_8h.html#a68d4247d6cfc6a0dc584ca7a7f41115b">00032</a> <span class="preprocessor"></span><span class="preprocessor">#define ACTUATORS_PWM_NB 6</span>
-<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span>
-<a name="l00035"></a>00035 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sim_2actuators__pwm__arch_8c.html#a8f67fe525140a6f4b07b3416bc70f606">actuators_pwm_arch_init</a>(<span class="keywordtype">void</span>);
-<a name="l00036"></a>00036 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sim_2actuators__pwm__arch_8c.html#a8fdcc2a7e8712e51ffcbce4fd77dcfab">actuators_pwm_commit</a>(<span class="keywordtype">void</span>);
-<a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="stm32_2actuators__pwm__arch_8h.html#aea5b65bec9d7320cbfb13866ad0df373">00038</a> <span class="preprocessor">#define ChopServo(_x,_a,_b) Chop(_x, _a, _b)</span>
-<a name="l00039"></a><a class="code" href="stm32_2actuators__pwm__arch_8h.html#acb8b1cc3ca9f017e58e3bc4a22e349f6">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define Actuator(_x)  actuators_pwm_values[_x]</span>
-<a name="l00040"></a><a class="code" href="stm32_2actuators__pwm__arch_8h.html#a472606a13476f0804e5e3abfab77ea35">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVOS_TICS_OF_USEC(_v) (_v)</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span>
-<a name="l00042"></a>00042 <span class="preprocessor">#endif </span><span class="comment">/* ACTUATORS_PWM_ARCH_H */</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#if defined(BOARD_LISA_M) &amp;&amp; USE_I2C1</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span><span class="preprocessor">#error &quot;You cannot use Servos 7and8 and I2C1 at the same time&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="preprocessor">#define ACTUATORS_PWM_NB 8</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00036"></a><a class="code" href="stm32_2actuators__pwm__arch_8h.html#a68d4247d6cfc6a0dc584ca7a7f41115b">00036</a> <span class="preprocessor"></span><span class="preprocessor">#define ACTUATORS_PWM_NB 6</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span>
+<a name="l00039"></a>00039 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sim_2actuators__pwm__arch_8c.html#a8f67fe525140a6f4b07b3416bc70f606">actuators_pwm_arch_init</a>(<span class="keywordtype">void</span>);
+<a name="l00040"></a>00040 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sim_2actuators__pwm__arch_8c.html#a8fdcc2a7e8712e51ffcbce4fd77dcfab">actuators_pwm_commit</a>(<span class="keywordtype">void</span>);
+<a name="l00041"></a>00041 
+<a name="l00042"></a><a class="code" href="stm32_2actuators__pwm__arch_8h.html#aea5b65bec9d7320cbfb13866ad0df373">00042</a> <span class="preprocessor">#define ChopServo(_x,_a,_b) Chop(_x, _a, _b)</span>
+<a name="l00043"></a><a class="code" href="stm32_2actuators__pwm__arch_8h.html#acb8b1cc3ca9f017e58e3bc4a22e349f6">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define Actuator(_x)  actuators_pwm_values[_x]</span>
+<a name="l00044"></a><a class="code" href="stm32_2actuators__pwm__arch_8h.html#a472606a13476f0804e5e3abfab77ea35">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVOS_TICS_OF_USEC(_v) (_v)</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span>
+<a name="l00046"></a>00046 <span class="preprocessor">#endif </span><span class="comment">/* ACTUATORS_PWM_ARCH_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -160,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2actuators__pwm__arch_8h.html">actuators_pwm_arch.h</a>      </li>
 
-    <li class="footer">Generated on Sat Jun 16 2012 04:01:44 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Jun 19 2012 04:01:44 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
