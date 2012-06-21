@@ -187,7 +187,7 @@ var searchData=
   ['rmat_5fvect3_5ftransp_5fmul',['RMAT_VECT3_TRANSP_MUL',['../pprz__algebra_8h.html#ae7dc355f24f14a07a1b7c162b572370d',1,'pprz_algebra.h']]],
   ['rne',['RNE',['../LPC21xx_8h.html#a17c4fbbef09cdf2b491c0bb5ae7d01b9',1,'LPC21xx.h']]],
   ['roll',['roll',['../structInfrared.html#a14240b7cc3650b62e82d45af3082ed78',1,'Infrared::roll()'],['../actuators__asctec_8h.html#a3194e0388b61ab95b70fd62252277355a2eeb9fef8a6a516fa6437a44a6efbd52',1,'ROLL():&#160;actuators_asctec.h']]],
-  ['roll_5fcoef',['roll_coef',['../supervision_8c.html#afb8dd02b332334c9d126cd8e01f202ed',1,'roll_coef():&#160;supervision.c'],['../quat__setpoint__int_8c.html#a5948a9863126732755023c8ae0d5eef6',1,'ROLL_COEF():&#160;quat_setpoint_int.c']]],
+  ['roll_5fcoef',['ROLL_COEF',['../quat__setpoint__int_8c.html#a5948a9863126732755023c8ae0d5eef6',1,'ROLL_COEF():&#160;quat_setpoint_int.c'],['../supervision_8c.html#afb8dd02b332334c9d126cd8e01f202ed',1,'roll_coef():&#160;supervision.c']]],
   ['roll_5fdeadband_5fexceeded',['ROLL_DEADBAND_EXCEEDED',['../stabilization__attitude__rc__setpoint_8h.html#ade5e3cdd965d34f8d9076b0724f54c02',1,'stabilization_attitude_rc_setpoint.h']]],
   ['roll_5fneutral',['roll_neutral',['../structInfrared.html#ae4ab1aa42b9d1fdb35e2ed68f6eb966a',1,'Infrared']]],
   ['roll_5frate_5fdeadband_5fexceeded',['ROLL_RATE_DEADBAND_EXCEEDED',['../stabilization__rate_8c.html#aa6b12451b039befdc1fce7c6b5fd10cb',1,'stabilization_rate.c']]],

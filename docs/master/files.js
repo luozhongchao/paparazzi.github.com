@@ -653,6 +653,7 @@ var files =
     [ "sw/airborne/peripherals/mpu60X0.h", "mpu60X0_8h.html", "mpu60X0_8h" ],
     [ "sw/airborne/peripherals/ms2100.c", "ms2100_8c.html", "ms2100_8c" ],
     [ "sw/airborne/peripherals/ms2100.h", "ms2100_8h.html", "ms2100_8h" ],
+    [ "sw/airborne/peripherals/ms5611.h", "ms5611_8h.html", "ms5611_8h" ],
     [ "sw/airborne/peripherals/sc18i600.c", "sc18i600_8c.html", "sc18i600_8c" ],
     [ "sw/airborne/peripherals/sc18i600.h", "sc18i600_8h.html", "sc18i600_8h" ],
     [ "sw/airborne/sd_card/main.c", "sd__card_2main_8c.html", "sd__card_2main_8c" ],
