@@ -678,7 +678,7 @@ var searchData=
   ['autopilot_5fin_5fflight_5fcounter',['autopilot_in_flight_counter',['../autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed',1,'autopilot.c']]],
   ['autopilot_5fin_5fflight_5ftime',['AUTOPILOT_IN_FLIGHT_TIME',['../autopilot_8c.html#a4a1fdd432ddb0277a0918cbd2095b4be',1,'autopilot.c']]],
   ['autopilot_5finit',['autopilot_init',['../autopilot_8c.html#a9d3557653abfc3d4c428724b249f6d5e',1,'autopilot_init(void):&#160;autopilot.c'],['../rotorcraft_2autopilot_8h.html#a9d3557653abfc3d4c428724b249f6d5e',1,'autopilot_init(void):&#160;autopilot.c']]],
-  ['autopilot_5fkillthrottle',['autopilot_KillThrottle',['../rotorcraft_2autopilot_8h.html#a75cc8c265477bf0b12453d8cb44743fb',1,'autopilot.h']]],
+  ['autopilot_5fkillthrottle',['autopilot_KillThrottle',['../rotorcraft_2autopilot_8h.html#a4ba04bc2a79fab32f93de39510acb031',1,'autopilot.h']]],
   ['autopilot_5fmode',['autopilot_mode',['../autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5',1,'autopilot_mode():&#160;autopilot.c'],['../rotorcraft_2autopilot_8h.html#a0db277a81196cdbbeb50b18244516ca5',1,'autopilot_mode():&#160;autopilot.c']]],
   ['autopilot_5fmode_5fauto2',['autopilot_mode_auto2',['../autopilot_8c.html#a3e41cabeeeed6f149349c977139aac36',1,'autopilot_mode_auto2():&#160;autopilot.c'],['../rotorcraft_2autopilot_8h.html#a3e41cabeeeed6f149349c977139aac36',1,'autopilot_mode_auto2():&#160;autopilot.c']]],
   ['autopilot_5fmotor_5fon_5ftime',['AUTOPILOT_MOTOR_ON_TIME',['../autopilot__arming__yaw_8h.html#ae23792cc1081225b0f4f8f6657609374',1,'autopilot_arming_yaw.h']]],

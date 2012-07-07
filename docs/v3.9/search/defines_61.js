@@ -268,7 +268,7 @@ var searchData=
   ['audiotelemetrytransmit',['AudioTelemetryTransmit',['../audio__telemetry_8h.html#a8f65ef4caa6b66030683ef450987b135',1,'audio_telemetry.h']]],
   ['autopilot_5farming_5fdelay',['AUTOPILOT_ARMING_DELAY',['../autopilot__arming__throttle_8h.html#a0d8d0fa46fe3a0f4b11067f5bb786340',1,'autopilot_arming_throttle.h']]],
   ['autopilot_5fin_5fflight_5ftime',['AUTOPILOT_IN_FLIGHT_TIME',['../autopilot_8c.html#a4a1fdd432ddb0277a0918cbd2095b4be',1,'autopilot.c']]],
-  ['autopilot_5fkillthrottle',['autopilot_KillThrottle',['../rotorcraft_2autopilot_8h.html#a75cc8c265477bf0b12453d8cb44743fb',1,'autopilot.h']]],
+  ['autopilot_5fkillthrottle',['autopilot_KillThrottle',['../rotorcraft_2autopilot_8h.html#a4ba04bc2a79fab32f93de39510acb031',1,'autopilot.h']]],
   ['autopilot_5fmotor_5fon_5ftime',['AUTOPILOT_MOTOR_ON_TIME',['../autopilot__arming__yaw_8h.html#ae23792cc1081225b0f4f8f6657609374',1,'autopilot_arming_yaw.h']]],
   ['autopilot_5fresetflighttimeandlaunch',['autopilot_ResetFlightTimeAndLaunch',['../fixedwing_2autopilot_8h.html#a260ba1d03869070e8be5b23878957e5d',1,'autopilot.h']]],
   ['autopilot_5fsetpowerswitch',['autopilot_SetPowerSwitch',['../fixedwing_2autopilot_8h.html#ad08218d3e8fc1fd4c0b7f127e69a86d6',1,'autopilot_SetPowerSwitch():&#160;autopilot.h'],['../rotorcraft_2autopilot_8h.html#ae42e72207df0c300dfc515a88056a26a',1,'autopilot_SetPowerSwitch():&#160;autopilot.h']]],
