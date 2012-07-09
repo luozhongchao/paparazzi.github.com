@@ -153,7 +153,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rotorcraft_2autopilot_8h.html#a29020e550d0d136a0212ba92940fd672">THRESHOLD_1_PPRZ</a>&#160;&#160;&#160;(<a class="el" href="paparazzi_8h.html#aa403b9f7966b26d3ec9a52303deda944">MIN_PPRZ</a> / 2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rotorcraft_2autopilot_8h.html#a042859caaa6cc4c56b7918a0715b674d">THRESHOLD_2_PPRZ</a>&#160;&#160;&#160;(<a class="el" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / 2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rotorcraft_2autopilot_8h.html#ab0395a426c32b31601769fdd4cefac34">AP_MODE_OF_PPRZ</a>(_rc, _mode)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rotorcraft_2autopilot_8h.html#a75cc8c265477bf0b12453d8cb44743fb">autopilot_KillThrottle</a>(_v)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rotorcraft_2autopilot_8h.html#a4ba04bc2a79fab32f93de39510acb031">autopilot_KillThrottle</a>(_kill)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rotorcraft_2autopilot_8h.html#ae42e72207df0c300dfc515a88056a26a">autopilot_SetPowerSwitch</a>(_v)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rotorcraft_2autopilot_8h.html#a691189e2b0e9182bc6a3fe84b6e0a267">THRESHOLD_GROUND_DETECT</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#a5251aee74e02d2935ee9835ae7bc7b2e">ACCEL_BFP_OF_REAL</a>(15.)</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -259,7 +259,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00032">32</a> of file <a class="el" href="rotorcraft_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="autopilot_8c_source.html#l00244">autopilot_on_rc_frame()</a>, <a class="el" href="autopilot_8c_source.html#l00087">autopilot_periodic()</a>, <a class="el" href="autopilot_8c_source.html#l00117">autopilot_set_mode()</a>, <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00112">DetectGroundEvent()</a>, and <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00179">failsafe_check()</a>.</p>
+<p>Referenced by <a class="el" href="autopilot_8c_source.html#l00244">autopilot_on_rc_frame()</a>, <a class="el" href="autopilot_8c_source.html#l00087">autopilot_periodic()</a>, <a class="el" href="autopilot_8c_source.html#l00117">autopilot_set_mode()</a>, <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00115">DetectGroundEvent()</a>, and <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00179">failsafe_check()</a>.</p>
 
 </div>
 </div>
@@ -455,22 +455,25 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a75cc8c265477bf0b12453d8cb44743fb"></a><!-- doxytag: member="autopilot.h::autopilot_KillThrottle" ref="a75cc8c265477bf0b12453d8cb44743fb" args="(_v)" -->
+<a class="anchor" id="a4ba04bc2a79fab32f93de39510acb031"></a><!-- doxytag: member="autopilot.h::autopilot_KillThrottle" ref="a4ba04bc2a79fab32f93de39510acb031" args="(_kill)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="rotorcraft_2autopilot_8h.html#a75cc8c265477bf0b12453d8cb44743fb">autopilot_KillThrottle</a></td>
+          <td class="memname">#define <a class="el" href="rotorcraft_2autopilot_8h.html#a4ba04bc2a79fab32f93de39510acb031">autopilot_KillThrottle</a></td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">_v</td><td>)</td>
+          <td class="paramname">_kill</td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment">{ \
-    autopilot_set_motors_on(_v);     \
+    if (_kill)                          \
+      autopilot_set_motors_on(FALSE);   <a class="code" href="autopilot_8c.html#a4a3dedaf4d4da879348f946a9f3f4611">\</a>
+<a class="code" href="autopilot_8c.html#a4a3dedaf4d4da879348f946a9f3f4611">    else                                \</a>
+<a class="code" href="autopilot_8c.html#a4a3dedaf4d4da879348f946a9f3f4611">      autopilot_set_motors_on</a>(TRUE);    \
   }
 </pre></div>
 <p>Definition at line <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00093">93</a> of file <a class="el" href="rotorcraft_2autopilot_8h_source.html">autopilot.h</a>.</p>
@@ -495,7 +498,7 @@ Variables</h2></td></tr>
     autopilot_power_switch = _v;    \
   }
 </pre></div>
-<p>Definition at line <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00104">104</a> of file <a class="el" href="rotorcraft_2autopilot_8h_source.html">autopilot.h</a>.</p>
+<p>Definition at line <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00107">107</a> of file <a class="el" href="rotorcraft_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
 </div>
 </div>
@@ -589,9 +592,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00110">110</a> of file <a class="el" href="rotorcraft_2autopilot_8h_source.html">autopilot.h</a>.</p>
+<p>Definition at line <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00113">113</a> of file <a class="el" href="rotorcraft_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00112">DetectGroundEvent()</a>.</p>
+<p>Referenced by <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00115">DetectGroundEvent()</a>.</p>
 
 </div>
 </div>
@@ -836,9 +839,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00112">112</a> of file <a class="el" href="rotorcraft_2autopilot_8h_source.html">autopilot.h</a>.</p>
+<p>Definition at line <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00115">115</a> of file <a class="el" href="rotorcraft_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>References <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00032">AP_MODE_FAILSAFE</a>, <a class="el" href="autopilot_8c_source.html#l00044">autopilot_detect_ground</a>, <a class="el" href="autopilot_8c_source.html#l00045">autopilot_detect_ground_once</a>, <a class="el" href="autopilot_8c_source.html#l00031">autopilot_mode</a>, <a class="el" href="ins_8c_source.html#l00079">ins_ltp_accel</a>, <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00110">THRESHOLD_GROUND_DETECT</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00068">NedCoor_i::z</a>.</p>
+<p>References <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00032">AP_MODE_FAILSAFE</a>, <a class="el" href="autopilot_8c_source.html#l00044">autopilot_detect_ground</a>, <a class="el" href="autopilot_8c_source.html#l00045">autopilot_detect_ground_once</a>, <a class="el" href="autopilot_8c_source.html#l00031">autopilot_mode</a>, <a class="el" href="ins_8c_source.html#l00079">ins_ltp_accel</a>, <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00113">THRESHOLD_GROUND_DETECT</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00068">NedCoor_i::z</a>.</p>
 
 <p>Referenced by <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00197">main_event()</a>.</p>
 
@@ -869,7 +872,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="autopilot_8c_source.html#l00044">44</a> of file <a class="el" href="autopilot_8c_source.html">autopilot.c</a>.</p>
 
-<p>Referenced by <a class="el" href="autopilot_8c_source.html#l00068">autopilot_init()</a>, <a class="el" href="autopilot_8c_source.html#l00087">autopilot_periodic()</a>, <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00112">DetectGroundEvent()</a>, and <a class="el" href="navigation_8c_source.html#l00316">nav_detect_ground()</a>.</p>
+<p>Referenced by <a class="el" href="autopilot_8c_source.html#l00068">autopilot_init()</a>, <a class="el" href="autopilot_8c_source.html#l00087">autopilot_periodic()</a>, <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00115">DetectGroundEvent()</a>, and <a class="el" href="navigation_8c_source.html#l00316">nav_detect_ground()</a>.</p>
 
 </div>
 </div>
@@ -886,7 +889,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="autopilot_8c_source.html#l00045">45</a> of file <a class="el" href="autopilot_8c_source.html">autopilot.c</a>.</p>
 
-<p>Referenced by <a class="el" href="autopilot_8c_source.html#l00068">autopilot_init()</a>, and <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00112">DetectGroundEvent()</a>.</p>
+<p>Referenced by <a class="el" href="autopilot_8c_source.html#l00068">autopilot_init()</a>, and <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00115">DetectGroundEvent()</a>.</p>
 
 </div>
 </div>
@@ -937,7 +940,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="autopilot_8c_source.html#l00031">31</a> of file <a class="el" href="autopilot_8c_source.html">autopilot.c</a>.</p>
 
-<p>Referenced by <a class="el" href="autopilot__arming__switch_8h_source.html#l00071">autopilot_arming_check_motors_on()</a>, <a class="el" href="autopilot__arming__switch_8h_source.html#l00046">autopilot_arming_set()</a>, <a class="el" href="autopilot_8c_source.html#l00068">autopilot_init()</a>, <a class="el" href="autopilot_8c_source.html#l00244">autopilot_on_rc_frame()</a>, <a class="el" href="autopilot_8c_source.html#l00087">autopilot_periodic()</a>, <a class="el" href="autopilot_8c_source.html#l00117">autopilot_set_mode()</a>, <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00112">DetectGroundEvent()</a>, and <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00179">failsafe_check()</a>.</p>
+<p>Referenced by <a class="el" href="autopilot__arming__switch_8h_source.html#l00071">autopilot_arming_check_motors_on()</a>, <a class="el" href="autopilot__arming__switch_8h_source.html#l00046">autopilot_arming_set()</a>, <a class="el" href="autopilot_8c_source.html#l00068">autopilot_init()</a>, <a class="el" href="autopilot_8c_source.html#l00244">autopilot_on_rc_frame()</a>, <a class="el" href="autopilot_8c_source.html#l00087">autopilot_periodic()</a>, <a class="el" href="autopilot_8c_source.html#l00117">autopilot_set_mode()</a>, <a class="el" href="rotorcraft_2autopilot_8h_source.html#l00115">DetectGroundEvent()</a>, and <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00179">failsafe_check()</a>.</p>
 
 </div>
 </div>
@@ -1044,7 +1047,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="rotorcraft_2autopilot_8h.html">autopilot.h</a>      </li>
 
-    <li class="footer">Generated on Sun Jul 1 2012 04:00:07 for Paparazzi UAS by
+    <li class="footer">Generated on Mon Jul 9 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
