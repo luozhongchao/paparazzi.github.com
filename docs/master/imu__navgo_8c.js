@@ -7,5 +7,6 @@ var imu__navgo_8c =
     [ "imu_periodic", "imu__navgo_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b", null ],
     [ "acc_valid", "imu__navgo_8c.html#a8ed404ef3ddf50958703e92a017973ef", null ],
     [ "gyr_valid", "imu__navgo_8c.html#afbbfe5fb78cd2de203ea88848ed1524d", null ],
-    [ "mag_valid", "imu__navgo_8c.html#a8271a0a8d22406f5117416a7fe284a7b", null ]
+    [ "mag_valid", "imu__navgo_8c.html#a8271a0a8d22406f5117416a7fe284a7b", null ],
+    [ "median_mag", "imu__navgo_8c.html#a4310ef79baa15a4ae26783700277d6c9", null ]
 ];

@@ -36,6 +36,7 @@ var searchData=
   ['debug_5fs6_5ftoggle',['DEBUG_S6_TOGGLE',['../my__debug__servo_8h.html#a4a4a6c1315461973a3b9d75d802646f2',1,'my_debug_servo.h']]],
   ['debug_5fservo1_5finit',['DEBUG_SERVO1_INIT',['../my__debug__servo_8h.html#a6c509951ee2deda34eb41b5524798d41',1,'my_debug_servo.h']]],
   ['debug_5fservo2_5finit',['DEBUG_SERVO2_INIT',['../my__debug__servo_8h.html#a46708ae8b17b722c2c57f0c4de10d75a',1,'my_debug_servo.h']]],
+  ['debug_5fvff_5fextended',['DEBUG_VFF_EXTENDED',['../vf__extended__float_8c.html#ab64c7f71460096eb6bed6963d617ea49',1,'vf_extended_float.c']]],
   ['decodeppmframe',['DecodePpmFrame',['../ppm_8h.html#a0f1f1482c9579db37609ba87be6c6e84',1,'ppm.h']]],
   ['default_5fav_5fnb_5fsample',['DEFAULT_AV_NB_SAMPLE',['../adc_8h.html#a926cfe25c54a1c6ac36923aeac21223a',1,'adc.h']]],
   ['default_5fcircle_5fradius',['DEFAULT_CIRCLE_RADIUS',['../navigation_8c.html#a8116828e6b4e93e72cd8b6d727aaf265',1,'navigation.c']]],

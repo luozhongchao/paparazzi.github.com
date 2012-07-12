@@ -117,6 +117,7 @@ var searchData=
   ['measure_5ftemp',['MEASURE_TEMP',['../humid__sht_8h.html#ab0efff74458294a5338db42ad3b7f09d',1,'humid_sht.h']]],
   ['measured_5fsensor',['MEASURED_SENSOR',['../hs__gyro_8c.html#a10784aeb6293d176a9cb31836158219e',1,'hs_gyro.c']]],
   ['measured_5fsensor_5fnb',['MEASURED_SENSOR_NB',['../hs__gyro_8c.html#a8f5dd4f7e06957fff5888786691d332d',1,'hs_gyro.c']]],
+  ['median_5fdatasize',['MEDIAN_DATASIZE',['../median__filter_8h.html#a4f52b0a25ccf4d3d7a6451717c3e9bba',1,'median_filter.h']]],
   ['memmap',['MEMMAP',['../LPC21xx_8h.html#a1faec0e736c4b1230adfb1722e82706f',1,'LPC21xx.h']]],
   ['memmap_5fbblk',['MEMMAP_BBLK',['../lpcSCB_8h.html#af0c6b85eff1e7d698f796ad4c68e8c34',1,'lpcSCB.h']]],
   ['memmap_5fflash',['MEMMAP_FLASH',['../lpcSCB_8h.html#ac47f61eb6c4ea5c9ba5924d79dcf939e',1,'lpcSCB.h']]],

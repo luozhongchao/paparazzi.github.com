@@ -1,5 +1,6 @@
 var navgo__1_80_8h =
 [
+    [ "ADC_0", "navgo__1_80_8h.html#a5cbcaa568e20fcd4cc9325927d370860", null ],
     [ "ADC_CHANNEL_VSUPPLY", "navgo__1_80_8h.html#ad5a6636ee170fccf62a748fc72374d3b", null ],
     [ "BOARD_HAS_BARO", "navgo__1_80_8h.html#af8df7cce5dd52da8571b6774d51bda77", null ],
     [ "CCLK", "navgo__1_80_8h.html#addec7d88e04ddfe6ac90caf602636c51", null ],

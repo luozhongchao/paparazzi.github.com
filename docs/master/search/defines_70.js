@@ -166,6 +166,7 @@ var searchData=
   ['periodic_5fsend_5ftune_5froll',['PERIODIC_SEND_TUNE_ROLL',['../ap__downlink_8h.html#affc5c0f70f113616776d76c718557382',1,'ap_downlink.h']]],
   ['periodic_5fsend_5fvert_5floop',['PERIODIC_SEND_VERT_LOOP',['../telemetry_8h.html#ac84713ad2a2941cbfb41cf125e5d15dd',1,'telemetry.h']]],
   ['periodic_5fsend_5fvff',['PERIODIC_SEND_VFF',['../telemetry_8h.html#a262c1bcb37f2cc3336b2855bc42f010c',1,'telemetry.h']]],
+  ['periodic_5fsend_5fvff_5fextended',['PERIODIC_SEND_VFF_EXTENDED',['../telemetry_8h.html#aff274b6f471cc0105871c9646f59c46b',1,'telemetry.h']]],
   ['periodic_5fsend_5fwp_5fmoved',['PERIODIC_SEND_WP_MOVED',['../ap__downlink_8h.html#adac12f087ddbf783f395992d891d6319',1,'PERIODIC_SEND_WP_MOVED():&#160;ap_downlink.h'],['../telemetry_8h.html#adac12f087ddbf783f395992d891d6319',1,'PERIODIC_SEND_WP_MOVED():&#160;telemetry.h']]],
   ['photogrammetry_5fcalculator_5fupdateoverlap',['photogrammetry_calculator_UpdateOverLap',['../photogrammetry__calculator_8h.html#a53f4f25e2d7cbdb7f1edc507e09bf94f',1,'photogrammetry_calculator.h']]],
   ['photogrammetry_5fcalculator_5fupdateresolution',['photogrammetry_calculator_UpdateResolution',['../photogrammetry__calculator_8h.html#a633c8c107ca82d2c0248009056cfdbff',1,'photogrammetry_calculator.h']]],

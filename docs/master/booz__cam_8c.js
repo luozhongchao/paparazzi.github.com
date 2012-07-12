@@ -9,5 +9,8 @@ var booz__cam_8c =
     [ "D_TILT", "booz__cam_8c.html#a115515397cd2a6aa5c8f9a23330b54e0", null ],
     [ "booz_cam_init", "booz__cam_8c.html#a2c1f1fc4669a2d13e58dc1ad40dd7d41", null ],
     [ "booz_cam_periodic", "booz__cam_8c.html#a5e0bca14f896fc0132f69e08df3b37ce", null ],
-    [ "booz_cam_mode", "booz__cam_8c.html#a41ccac7271dd3d3770c54b11d86a3582", null ]
+    [ "booz_cam_mode", "booz__cam_8c.html#a41ccac7271dd3d3770c54b11d86a3582", null ],
+    [ "booz_cam_pan", "booz__cam_8c.html#a4bc11dd64759752a16c795489b665989", null ],
+    [ "booz_cam_tilt", "booz__cam_8c.html#a570b8685454cd7fd36fca13e904d5183", null ],
+    [ "booz_cam_tilt_pwm", "booz__cam_8c.html#ae6aabc2974b216bfdfe0a4fbb8b3c002", null ]
 ];

@@ -4,6 +4,7 @@ var guidance__v__adpt_8h =
     [ "GUIDANCE_V_ADAPT_MAX_CMD", "guidance__v__adpt_8h.html#ad86e4967e4f8918981e037e48aed1ad1", null ],
     [ "GUIDANCE_V_ADAPT_MIN_CMD", "guidance__v__adpt_8h.html#ab0b57a6956b778c5d67dc08034f8efef", null ],
     [ "GUIDANCE_V_ADAPT_NOISE_FACTOR", "guidance__v__adpt_8h.html#a3720e5c2d1efce3423181db33b9f1ef5", null ],
+    [ "GUIDANCE_V_ADAPT_X0", "guidance__v__adpt_8h.html#a412fb8a43254a0c560ae329b0e671866", null ],
     [ "GV_ADAPT_MAX_ACCEL", "guidance__v__adpt_8h.html#a5a1569933f610db839a5a2d5918f36f7", null ],
     [ "GV_ADAPT_MAX_CMD", "guidance__v__adpt_8h.html#a5d1b2c66b8337bf20cfcec9138e5204e", null ],
     [ "GV_ADAPT_MAX_OUT", "guidance__v__adpt_8h.html#a5a6526862134743aaf4781476e3a1654", null ],

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   
+   &#160;<span id="projectnumber">v3.9.1_testing-257-ga5a4ac6</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -151,34 +151,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00047"></a>00047 <span class="preprocessor"></span>
 <a name="l00048"></a>00048 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="booz__cam_8c.html#a41ccac7271dd3d3770c54b11d86a3582">booz_cam_mode</a>;
 <a name="l00049"></a>00049 
-<a name="l00050"></a>00050 <span class="preprocessor">#ifdef BOOZ_CAM_TILT_NEUTRAL</span>
-<a name="l00051"></a>00051 <span class="preprocessor"></span><span class="keyword">extern</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> booz_cam_tilt_pwm;
-<a name="l00052"></a>00052 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> booz_cam_tilt;
-<a name="l00053"></a>00053 <span class="preprocessor">#endif</span>
-<a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">#ifdef BOOZ_CAM_PAN_NEUTRAL</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span><span class="keyword">extern</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> booz_cam_pan;
-<a name="l00056"></a>00056 <span class="preprocessor">#endif</span>
-<a name="l00057"></a>00057 <span class="preprocessor"></span>
-<a name="l00058"></a>00058 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="booz__cam_8c.html#a2c1f1fc4669a2d13e58dc1ad40dd7d41">booz_cam_init</a>(<span class="keywordtype">void</span>);
-<a name="l00059"></a>00059 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="booz__cam_8c.html#a5e0bca14f896fc0132f69e08df3b37ce">booz_cam_periodic</a>(<span class="keywordtype">void</span>);
-<a name="l00060"></a>00060 
-<a name="l00061"></a><a class="code" href="booz__cam_8h.html#a31a50474ceafc48379393f2a1e9c0a83">00061</a> <span class="preprocessor">#define booz_cam_SetCamMode(_v) { \</span>
-<a name="l00062"></a>00062 <span class="preprocessor">  booz_cam_mode = _v; \</span>
-<a name="l00063"></a>00063 <span class="preprocessor">  if (booz_cam_mode == BOOZ_CAM_MODE_NONE) { BOOZ_CAM_OFF; } \</span>
-<a name="l00064"></a>00064 <span class="preprocessor">  else { BOOZ_CAM_ON; } \</span>
-<a name="l00065"></a>00065 <span class="preprocessor">}</span>
-<a name="l00066"></a>00066 <span class="preprocessor"></span>
-<a name="l00067"></a><a class="code" href="booz__cam_8h.html#acdaa1e24048eb10910c8eb6e4c6e384a">00067</a> <span class="preprocessor">#define BOOZ_CAM_STICK_TILT_INC (ANGLE_BFP_OF_REAL(RadOfDeg(10.))/127.)</span>
-<a name="l00068"></a><a class="code" href="booz__cam_8h.html#a248d98fdff92aeb5d96660ee5f54e89f">00068</a> <span class="preprocessor"></span><span class="preprocessor">#define BOOZ_CAM_STICK_PAN_INC (ANGLE_BFP_OF_REAL(RadOfDeg(20.))/127.)</span>
-<a name="l00069"></a>00069 <span class="preprocessor"></span>
-<a name="l00070"></a><a class="code" href="booz__cam_8h.html#ae8b66e53e2320352553803ce9bb43357">00070</a> <span class="preprocessor">#define BOOZ_CAM_STICK_PARSE(_dl_buffer) { \</span>
-<a name="l00071"></a>00071 <span class="preprocessor">  booz_cam_tilt += (int16_t)(BOOZ_CAM_STICK_TILT_INC*(float)DL_BOOZ_CAM_STICK_tilt(_dl_buffer)); \</span>
-<a name="l00072"></a>00072 <span class="preprocessor">  booz_cam_pan += (int16_t)(BOOZ_CAM_STICK_PAN_INC*(float)DL_BOOZ_CAM_STICK_pan(dl_buffer)); \</span>
-<a name="l00073"></a>00073 <span class="preprocessor">  INT32_COURSE_NORMALIZE(booz_cam_pan); \</span>
-<a name="l00074"></a>00074 <span class="preprocessor">}</span>
-<a name="l00075"></a>00075 <span class="preprocessor"></span>
-<a name="l00076"></a>00076 <span class="preprocessor">#endif </span><span class="comment">/* BOOZ2_CAM_H */</span>
-<a name="l00077"></a>00077 
+<a name="l00050"></a>00050 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="booz__cam_8c.html#a570b8685454cd7fd36fca13e904d5183">booz_cam_tilt</a>;
+<a name="l00051"></a>00051 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="booz__cam_8c.html#a4bc11dd64759752a16c795489b665989">booz_cam_pan</a>;
+<a name="l00052"></a>00052 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="booz__cam_8c.html#ae6aabc2974b216bfdfe0a4fbb8b3c002">booz_cam_tilt_pwm</a>;
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="booz__cam_8c.html#a2c1f1fc4669a2d13e58dc1ad40dd7d41">booz_cam_init</a>(<span class="keywordtype">void</span>);
+<a name="l00055"></a>00055 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="booz__cam_8c.html#a5e0bca14f896fc0132f69e08df3b37ce">booz_cam_periodic</a>(<span class="keywordtype">void</span>);
+<a name="l00056"></a>00056 
+<a name="l00057"></a><a class="code" href="booz__cam_8h.html#a31a50474ceafc48379393f2a1e9c0a83">00057</a> <span class="preprocessor">#define booz_cam_SetCamMode(_v) { \</span>
+<a name="l00058"></a>00058 <span class="preprocessor">  booz_cam_mode = _v; \</span>
+<a name="l00059"></a>00059 <span class="preprocessor">  if (booz_cam_mode == BOOZ_CAM_MODE_NONE) { BOOZ_CAM_OFF; } \</span>
+<a name="l00060"></a>00060 <span class="preprocessor">  else { BOOZ_CAM_ON; } \</span>
+<a name="l00061"></a>00061 <span class="preprocessor">}</span>
+<a name="l00062"></a>00062 <span class="preprocessor"></span>
+<a name="l00063"></a><a class="code" href="booz__cam_8h.html#acdaa1e24048eb10910c8eb6e4c6e384a">00063</a> <span class="preprocessor">#define BOOZ_CAM_STICK_TILT_INC (ANGLE_BFP_OF_REAL(RadOfDeg(10.))/127.)</span>
+<a name="l00064"></a><a class="code" href="booz__cam_8h.html#a248d98fdff92aeb5d96660ee5f54e89f">00064</a> <span class="preprocessor"></span><span class="preprocessor">#define BOOZ_CAM_STICK_PAN_INC (ANGLE_BFP_OF_REAL(RadOfDeg(20.))/127.)</span>
+<a name="l00065"></a>00065 <span class="preprocessor"></span>
+<a name="l00066"></a><a class="code" href="booz__cam_8h.html#ae8b66e53e2320352553803ce9bb43357">00066</a> <span class="preprocessor">#define BOOZ_CAM_STICK_PARSE(_dl_buffer) { \</span>
+<a name="l00067"></a>00067 <span class="preprocessor">  booz_cam_tilt += (int16_t)(BOOZ_CAM_STICK_TILT_INC*(float)DL_BOOZ_CAM_STICK_tilt(_dl_buffer)); \</span>
+<a name="l00068"></a>00068 <span class="preprocessor">  booz_cam_pan += (int16_t)(BOOZ_CAM_STICK_PAN_INC*(float)DL_BOOZ_CAM_STICK_pan(dl_buffer)); \</span>
+<a name="l00069"></a>00069 <span class="preprocessor">  INT32_COURSE_NORMALIZE(booz_cam_pan); \</span>
+<a name="l00070"></a>00070 <span class="preprocessor">}</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span>
+<a name="l00072"></a>00072 <span class="preprocessor">#endif </span><span class="comment">/* BOOZ2_CAM_H */</span>
+<a name="l00073"></a>00073 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -199,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="booz__cam_8h.html">booz_cam.h</a>      </li>
 
-    <li class="footer">Generated on Wed Jul 11 2012 04:00:12 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jul 12 2012 15:09:12 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

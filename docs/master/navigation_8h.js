@@ -72,6 +72,8 @@ var navigation_8h =
     [ "nav_course", "navigation_8h.html#a3135a4e7af8f107cbb0863bc846b0e15", null ],
     [ "nav_flight_altitude", "navigation_8h.html#a67ec89768eb885ae27ba8002e2fa386a", null ],
     [ "nav_heading", "navigation_8h.html#acf3b5510f0b07816b1b93a0412f67d8f", null ],
+    [ "nav_leg_length", "navigation_8h.html#a39dee0aec50f1bed176c4587cdf83dda", null ],
+    [ "nav_leg_progress", "navigation_8h.html#a42b0e2bd8bd15dbe64c4591a1f2e1f05", null ],
     [ "nav_pitch", "navigation_8h.html#acfa0f83e076f79c30ed7042e429b7ae0", null ],
     [ "nav_radius", "navigation_8h.html#a4e73a18879f679277a72ef00250e359e", null ],
     [ "nav_roll", "navigation_8h.html#a57fe6af445faaa41f82137a4cc772fa1", null ],

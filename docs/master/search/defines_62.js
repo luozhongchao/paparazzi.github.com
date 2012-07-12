@@ -83,7 +83,7 @@ var searchData=
   ['baro_5fets_5freg',['BARO_ETS_REG',['../baro__ets_8c.html#abdb5d1aa809e93d3699044950d568972',1,'baro_ets.c']]],
   ['baro_5fets_5fscale',['BARO_ETS_SCALE',['../baro__ets_8c.html#a2af590c828781671589d89ae2fb831d1',1,'baro_ets.c']]],
   ['baro_5fets_5fsigma2',['BARO_ETS_SIGMA2',['../baro__ets_8c.html#a934deb6f56f0255af7c28fd5d02d1940',1,'baro_ets.c']]],
-  ['baro_5ffilter_5fgain',['BARO_FILTER_GAIN',['../navgo_2baro__board_8h.html#a1d40af2d6de32180acf529e628bc237b',1,'BARO_FILTER_GAIN():&#160;baro_board.h'],['../umarim_2baro__board_8h.html#a1d40af2d6de32180acf529e628bc237b',1,'BARO_FILTER_GAIN():&#160;baro_board.h']]],
+  ['baro_5ffilter_5fgain',['BARO_FILTER_GAIN',['../umarim_2baro__board_8h.html#a1d40af2d6de32180acf529e628bc237b',1,'baro_board.h']]],
   ['baro_5fscp_5fidle',['BARO_SCP_IDLE',['../baro__scp__i2c_8h.html#a4a5962e918a5fc89f6f1092e261095d6',1,'baro_scp_i2c.h']]],
   ['baro_5fscp_5frd_5fpress_5f0',['BARO_SCP_RD_PRESS_0',['../baro__scp__i2c_8h.html#a92b45c3898d6cc60a581ab86517e51b8',1,'baro_scp_i2c.h']]],
   ['baro_5fscp_5frd_5fpress_5f1',['BARO_SCP_RD_PRESS_1',['../baro__scp__i2c_8h.html#a4b0893442f7483e473f3c86c1abe6876',1,'baro_scp_i2c.h']]],

@@ -1,7 +1,10 @@
 var searchData=
 [
   ['r',['R',['../agl__vfilter_8c.html#a5c71a5e59a53413cd6c270266d63b031',1,'R():&#160;agl_vfilter.c'],['../alt__vfilter_8c.html#a5c71a5e59a53413cd6c270266d63b031',1,'R():&#160;alt_vfilter.c'],['../vf__float_8c.html#a5c71a5e59a53413cd6c270266d63b031',1,'R():&#160;vf_float.c']]],
+  ['r_5falt',['R_ALT',['../vf__extended__float_8c.html#a42afc75d03c75255f5d5b8d5f7bdcec9',1,'vf_extended_float.c']]],
+  ['r_5fbaro',['R_BARO',['../vf__extended__float_8c.html#a662a7e9b1ca3cb69b0bc04067a9779d6',1,'vf_extended_float.c']]],
   ['r_5ffrac',['R_FRAC',['../pprz__algebra__int_8h.html#aef4b2f7e743782995888ba8eca64e7a4',1,'pprz_algebra_int.h']]],
+  ['r_5foffset',['R_OFFSET',['../vf__extended__float_8c.html#a3960e784c7c8e6c83ba671b3702fb67f',1,'vf_extended_float.c']]],
   ['rad_5fof_5fem7rad',['RAD_OF_EM7RAD',['../pprz__geodetic__int_8h.html#aa3e70fd5135f905380bab76644ce6a28',1,'pprz_geodetic_int.h']]],
   ['radio_5faux1',['RADIO_AUX1',['../stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a724c6e3a0c2aae44ec9b47b6062d1d18',1,'spektrum_arch.h']]],
   ['radio_5faux2',['RADIO_AUX2',['../stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a9fd86154b023cbc8a9981059db36497b',1,'RADIO_AUX2():&#160;spektrum_arch.h'],['../joby__9ch_8h.html#a9fd86154b023cbc8a9981059db36497b',1,'RADIO_AUX2():&#160;joby_9ch.h']]],

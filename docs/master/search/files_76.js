@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['vf_5fextended_5ffloat_2ec',['vf_extended_float.c',['../vf__extended__float_8c.html',1,'']]],
+  ['vf_5fextended_5ffloat_2eh',['vf_extended_float.h',['../vf__extended__float_8h.html',1,'']]],
   ['vf_5ffloat_2ec',['vf_float.c',['../vf__float_8c.html',1,'']]],
   ['vf_5ffloat_2eh',['vf_float.h',['../vf__float_8h.html',1,'']]],
   ['vf_5fint_2ec',['vf_int.c',['../vf__int_8c.html',1,'']]],

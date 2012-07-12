@@ -8,8 +8,8 @@ var gps_8h =
     [ "GPS_FIX_NONE", "gps_8h.html#a84f437a5cef3517e2c56fdd4c8c09ff5", null ],
     [ "gps_Reset", "gps_8h.html#abf1292ea8345480e9eb1408a7dbc08de", null ],
     [ "GpsFixValid", "gps_8h.html#aae01b53fbd555bc8954b7ba297cb2cae", null ],
-    [ "GpsIsLost", "gps_8h.html#a3081afe8b82d023c748c40dfc49ff2f7", null ],
     [ "gps_impl_init", "gps_8h.html#ac51e6a5f7940a0acc9dc44b1b8085331", null ],
     [ "gps_init", "gps_8h.html#ab37f7040b9efd19fdd3f92b1df77e771", null ],
+    [ "GpsIsLost", "gps_8h.html#a3c9ec0734c3ac235abd40c500746de5a", null ],
     [ "gps", "gps_8h.html#a5cf954024f8e0433b21db7439c5bee9d", null ]
 ];
