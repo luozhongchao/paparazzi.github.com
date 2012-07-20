@@ -180,7 +180,6 @@ var searchData=
   ['guidance_5fv_5fsetautothrottleigain',['guidance_v_SetAutoThrottleIgain',['../fixedwing_2guidance_2guidance__v_8h.html#a19a937eeeb0bc25db36047be49dc3bb9',1,'guidance_v.h']]],
   ['guidance_5fv_5fsetcruisethrottle',['guidance_v_SetCruiseThrottle',['../fixedwing_2guidance_2guidance__v_8h.html#a923130788d24be11d6fbc59192920b72',1,'guidance_v.h']]],
   ['guidance_5fv_5fsetki',['guidance_v_SetKi',['../rotorcraft_2guidance_2guidance__v_8h.html#a3f73c90dd55d92b4a1a727549a728bed',1,'guidance_v.h']]],
-  ['guidance_5fv_5fsetnominalhoverthrottle',['guidance_v_SetNominalHoverThrottle',['../rotorcraft_2guidance_2guidance__v_8h.html#a422470951b1a8c09cc088780a2e67282',1,'guidance_v.h']]],
   ['guidance_5fv_5fuse_5fref',['GUIDANCE_V_USE_REF',['../rotorcraft_2guidance_2guidance__v_8c.html#a16359294662b66c27957d73c45cb8ff6',1,'guidance_v.c']]],
   ['guidancehsetref',['GuidanceHSetRef',['../guidance__h_8c.html#a06b246be8c5a95daf9856057dd2584f9',1,'guidance_h.c']]],
   ['guidancevsetref',['GuidanceVSetRef',['../rotorcraft_2guidance_2guidance__v_8c.html#a5afd25189bac50d07da4062d162c30cd',1,'guidance_v.c']]],

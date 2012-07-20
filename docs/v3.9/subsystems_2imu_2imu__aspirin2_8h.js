@@ -34,8 +34,9 @@ var subsystems_2imu_2imu__aspirin2_8h =
     [ "MPU_OFFSET_ACC", "subsystems_2imu_2imu__aspirin2_8h.html#a4c587c06e98269dc2e52b7cd8139b636", null ],
     [ "MPU_OFFSET_GYRO", "subsystems_2imu_2imu__aspirin2_8h.html#ae4ae2cd9131c03b2087647cf04c63a53", null ],
     [ "MPU_OFFSET_MAG", "subsystems_2imu_2imu__aspirin2_8h.html#af47a5cc2ee00eca883221adc9620fd5d", null ],
+    [ "MPU_OFFSET_STATUS", "subsystems_2imu_2imu__aspirin2_8h.html#ad39374d8ce5353f9af985915d6e9c0fa", null ],
     [ "Aspirin2Status", "subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76", null ],
     [ "imu_aspirin2_event", "subsystems_2imu_2imu__aspirin2_8h.html#a5adc804b3232f6d525a782eccad043bd", null ],
-    [ "imu_from_buff", "subsystems_2imu_2imu__aspirin2_8h.html#aa035ff5488992d7b52d33cc28fdad1db", null ],
+    [ "imu_from_buff", "subsystems_2imu_2imu__aspirin2_8h.html#a9b1b0c7baefad54a736dc2db60dc8f70", null ],
     [ "imu_aspirin2", "subsystems_2imu_2imu__aspirin2_8h.html#add633a5c57327e0ab4958252e6b7ca97", null ]
 ];

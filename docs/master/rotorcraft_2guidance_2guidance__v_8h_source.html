@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-0-g353bd38</span>
+   &#160;<span id="projectnumber">v4.1_unstable-43-gb189804</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -165,30 +165,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00090"></a>00090 
 <a name="l00095"></a>00095 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#adcd5822f3f3fa6292763acd5790e011f" title="thrust command.">guidance_v_delta_t</a>;
 <a name="l00096"></a>00096 
-<a name="l00100"></a>00100 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ae2e46de7965f1254ae9e0711a2573038" title="nominal throttle for hover.">guidance_v_nominal_throttle</a>;
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a3836652cb5a9952023e05ed5046aa1e2" title="vertical control P-gain">guidance_v_kp</a>; 
-<a name="l00103"></a>00103 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a3f119a679ee83c0ac0dd631b6d3c5470" title="vertical control D-gain">guidance_v_kd</a>; 
-<a name="l00104"></a>00104 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#abbefa1daffcf539c6617f837ea6ec846" title="vertical control I-gain">guidance_v_ki</a>; 
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#ae1e43515cf186f69dfaac9a4543b3cf0">guidance_v_init</a>(<span class="keywordtype">void</span>);
-<a name="l00107"></a>00107 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a067f5a51ae66cddf397b8b312ae4c383">guidance_v_read_rc</a>(<span class="keywordtype">void</span>);
-<a name="l00108"></a>00108 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_mode);
-<a name="l00109"></a>00109 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a98176dba977ff3fdf0d5b07eab548d41">guidance_v_notify_in_flight</a>(bool_t in_flight);
-<a name="l00110"></a>00110 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#aa3265bfb8a8925942f818424f97f9725">guidance_v_run</a>(bool_t in_flight);
-<a name="l00111"></a>00111 
-<a name="l00112"></a><a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a3f73c90dd55d92b4a1a727549a728bed">00112</a> <span class="preprocessor">#define guidance_v_SetKi(_val) {      \</span>
-<a name="l00113"></a>00113 <span class="preprocessor">    guidance_v_ki = _val;       \</span>
-<a name="l00114"></a>00114 <span class="preprocessor">    guidance_v_z_sum_err = 0;     \</span>
-<a name="l00115"></a>00115 <span class="preprocessor">  }</span>
-<a name="l00116"></a>00116 <span class="preprocessor"></span>
-<a name="l00117"></a><a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a422470951b1a8c09cc088780a2e67282">00117</a> <span class="preprocessor">#define guidance_v_SetNominalHoverThrottle(_throttle) { \</span>
-<a name="l00118"></a>00118 <span class="preprocessor">    guidance_v_nominal_throttle = _throttle;            \</span>
-<a name="l00119"></a>00119 <span class="preprocessor">    Bound(guidance_v_nominal_throttle, 0.1*MAX_PPRZ, 0.9*MAX_PPRZ);  \</span>
-<a name="l00120"></a>00120 <span class="preprocessor">  }</span>
-<a name="l00121"></a>00121 <span class="preprocessor"></span>
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123 <span class="preprocessor">#endif </span><span class="comment">/* GUIDANCE_V */</span>
+<a name="l00101"></a>00101 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a730aebac96eaf548439f844e69456190" title="nominal throttle for hover.">guidance_v_nominal_throttle</a>;
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a3836652cb5a9952023e05ed5046aa1e2" title="vertical control P-gain">guidance_v_kp</a>; 
+<a name="l00104"></a>00104 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a3f119a679ee83c0ac0dd631b6d3c5470" title="vertical control D-gain">guidance_v_kd</a>; 
+<a name="l00105"></a>00105 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#abbefa1daffcf539c6617f837ea6ec846" title="vertical control I-gain">guidance_v_ki</a>; 
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#ae1e43515cf186f69dfaac9a4543b3cf0">guidance_v_init</a>(<span class="keywordtype">void</span>);
+<a name="l00108"></a>00108 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a067f5a51ae66cddf397b8b312ae4c383">guidance_v_read_rc</a>(<span class="keywordtype">void</span>);
+<a name="l00109"></a>00109 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#ac24445848e497e9b0da2913cecb0db73">guidance_v_mode_changed</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_mode);
+<a name="l00110"></a>00110 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a98176dba977ff3fdf0d5b07eab548d41">guidance_v_notify_in_flight</a>(bool_t in_flight);
+<a name="l00111"></a>00111 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#aa3265bfb8a8925942f818424f97f9725">guidance_v_run</a>(bool_t in_flight);
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a3f73c90dd55d92b4a1a727549a728bed">00113</a> <span class="preprocessor">#define guidance_v_SetKi(_val) {      \</span>
+<a name="l00114"></a>00114 <span class="preprocessor">    guidance_v_ki = _val;       \</span>
+<a name="l00115"></a>00115 <span class="preprocessor">    guidance_v_z_sum_err = 0;     \</span>
+<a name="l00116"></a>00116 <span class="preprocessor">  }</span>
+<a name="l00117"></a>00117 <span class="preprocessor"></span>
+<a name="l00118"></a>00118 <span class="preprocessor">#endif </span><span class="comment">/* GUIDANCE_V */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -209,7 +203,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="rotorcraft_2guidance_2guidance__v_8h.html">guidance_v.h</a>      </li>
 
-    <li class="footer">Generated on Thu Jul 12 2012 15:34:59 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Jul 20 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
