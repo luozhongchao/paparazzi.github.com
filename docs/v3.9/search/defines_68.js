@@ -23,7 +23,6 @@ var searchData=
   ['hff_5faccel_5fnoise',['HFF_ACCEL_NOISE',['../hf__float_8c.html#adfd8e6a9e652df9dde3ea9c95e4f2a10',1,'hf_float.c']]],
   ['hff_5ffreq',['HFF_FREQ',['../hf__float_8h.html#afd277e77eaa74cd61e8edb134714988a',1,'hf_float.h']]],
   ['hff_5flost_5flimit',['HFF_LOST_LIMIT',['../hf__float_8h.html#a362697da8d3366d48b59aeadb060f7c9',1,'hf_float.h']]],
-  ['hff_5fprescaler',['HFF_PRESCALER',['../hf__float_8h.html#ab1b276362989038f69d686cc641f3017',1,'hf_float.h']]],
   ['hff_5fr_5fpos',['HFF_R_POS',['../hf__float_8c.html#acbec0ef7b48091f19b3b02b5f0d4c83d',1,'hf_float.c']]],
   ['hff_5fr_5fpos_5fmin',['HFF_R_POS_MIN',['../hf__float_8c.html#a17d374e932baf307bb4cd7901a893e17',1,'hf_float.c']]],
   ['hff_5fr_5fspeed',['HFF_R_SPEED',['../hf__float_8c.html#aff15f81b7ee1ecae3856ed397d609e00',1,'hf_float.c']]],

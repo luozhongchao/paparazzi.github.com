@@ -1,9 +1,9 @@
 var hf__float_8h =
 [
+    [ "AHRS_PROPAGATE_FREQUENCY", "hf__float_8h.html#a8b1ace7fb278ed8284cb2e3579f14798", null ],
     [ "DT_HFILTER", "hf__float_8h.html#a2ce79e63483fe0760f8a7c793ec4a05f", null ],
     [ "HFF_FREQ", "hf__float_8h.html#afd277e77eaa74cd61e8edb134714988a", null ],
     [ "HFF_LOST_LIMIT", "hf__float_8h.html#a362697da8d3366d48b59aeadb060f7c9", null ],
-    [ "HFF_PRESCALER", "hf__float_8h.html#ab1b276362989038f69d686cc641f3017", null ],
     [ "HFF_STATE_SIZE", "hf__float_8h.html#ae6d831fd4c91b5a85db1dda908b510bb", null ],
     [ "HFF_UPDATE_SPEED", "hf__float_8h.html#a89169c20be6310a107d9fd02365a09b7", null ],
     [ "b2_hff_init", "hf__float_8h.html#a77441191105f3d3f31cfd26d712dec07", null ],

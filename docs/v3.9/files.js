@@ -251,6 +251,7 @@ var files =
     [ "sw/airborne/boards/tiny_sim.h", "tiny__sim_8h.html", "tiny__sim_8h" ],
     [ "sw/airborne/boards/twog_1.0.h", "twog__1_80_8h.html", "twog__1_80_8h" ],
     [ "sw/airborne/boards/umarim_1.0.h", "umarim__1_80_8h.html", "umarim__1_80_8h" ],
+    [ "sw/airborne/boards/umarim_lite_2.0.h", "umarim__lite__2_80_8h.html", "umarim__lite__2_80_8h" ],
     [ "sw/airborne/boards/booz/baro_board.c", "booz_2baro__board_8c.html", "booz_2baro__board_8c" ],
     [ "sw/airborne/boards/booz/baro_board.h", "booz_2baro__board_8h.html", "booz_2baro__board_8h" ],
     [ "sw/airborne/boards/booz/test_baro.c", "booz_2test__baro_8c.html", "booz_2test__baro_8c" ],
