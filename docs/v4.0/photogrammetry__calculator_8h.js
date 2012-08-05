@@ -15,6 +15,6 @@ var photogrammetry__calculator_8h =
     [ "photogrammetry_resolution", "photogrammetry__calculator_8h.html#a69953c65c48eabde87a9592256c65750", null ],
     [ "photogrammetry_sidelap", "photogrammetry__calculator_8h.html#ac2994a385abc1ac526b1d8e015e9bb96", null ],
     [ "photogrammetry_sidestep", "photogrammetry__calculator_8h.html#a1dbe925a7f90228d2b3ca852585492d0", null ],
-    [ "photogrammetry_sweep_angle", "photogrammetry__calculator_8h.html#a1e9408da18f83b2fb57f96e1d132b10d", null ],
+    [ "photogrammetry_sweep_angle", "photogrammetry__calculator_8h.html#a35cc5dcc88bdfb0be7fd97367dc7e037", null ],
     [ "photogrammetry_triggerstep", "photogrammetry__calculator_8h.html#abe157c044730cb245a92dc027923d61b", null ]
 ];

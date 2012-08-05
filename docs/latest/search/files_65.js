@@ -2,6 +2,8 @@ var searchData=
 [
   ['electrical_2ec',['electrical.c',['../electrical_8c.html',1,'']]],
   ['electrical_2eh',['electrical.h',['../electrical_8h.html',1,'']]],
+  ['energy_5fctrl_2ec',['energy_ctrl.c',['../energy__ctrl_8c.html',1,'']]],
+  ['energy_5fctrl_2eh',['energy_ctrl.h',['../energy__ctrl_8h.html',1,'']]],
   ['enose_2ec',['enose.c',['../enose_8c.html',1,'']]],
   ['enose_2eh',['enose.h',['../enose_8h.html',1,'']]],
   ['estimator_2ec',['estimator.c',['../estimator_8c.html',1,'']]],

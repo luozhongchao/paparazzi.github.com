@@ -59,6 +59,8 @@ var searchData=
   ['end_5ftime',['end_time',['../structsys__time__timer.html#abbf23b4993e74efe48aef5d7c8bfe0dd',1,'sys_time_timer']]],
   ['endmessage',['EndMessage',['../structDownlinkTransport.html#acaff3d5b3da73ba8ea27f78040b346bf',1,'DownlinkTransport']]],
   ['energy',['energy',['../fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a',1,'energy():&#160;main_ap.c'],['../main__ap_8c.html#a2d107b3b2dcebab8a10c9d39894f6b2a',1,'energy():&#160;main_ap.c']]],
+  ['energy_5fctrl_2ec',['energy_ctrl.c',['../energy__ctrl_8c.html',1,'']]],
+  ['energy_5fctrl_2eh',['energy_ctrl.h',['../energy__ctrl_8h.html',1,'']]],
   ['enose_2ec',['enose.c',['../enose_8c.html',1,'']]],
   ['enose_2eh',['enose.h',['../enose_8h.html',1,'']]],
   ['enose_5fconf_5frequested',['enose_conf_requested',['../enose_8c.html#a99e55f6c9834135636443ab574151f50',1,'enose.c']]],

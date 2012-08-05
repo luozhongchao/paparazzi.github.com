@@ -7,6 +7,7 @@ var atmega__i2c__cam__ctrl_8c =
     [ "atmega_i2c_cam_ctrl_init", "atmega__i2c__cam__ctrl_8c.html#a9aa5dbe7af9ddeb4f68c6bd2f0c7cf1e", null ],
     [ "atmega_i2c_cam_ctrl_periodic", "atmega__i2c__cam__ctrl_8c.html#aeb25c30f109ccd0c3046715e4f3df6b5", null ],
     [ "atmega_i2c_cam_ctrl_send", "atmega__i2c__cam__ctrl_8c.html#ad7c06f4d1c398ba41252eb2e7ecd1a85", null ],
+    [ "dc_send_command", "atmega__i2c__cam__ctrl_8c.html#a833f16388be36136f5d7d173200d5e95", null ],
     [ "atmega_i2c_cam_ctrl_just_sent_command", "atmega__i2c__cam__ctrl_8c.html#a0e6be21afeddec942e18532618a95b6f", null ],
     [ "atmega_i2c_cam_ctrl_trans", "atmega__i2c__cam__ctrl_8c.html#ac18b747eea3fe6799a13cc8c84343749", null ]
 ];

@@ -10,7 +10,7 @@ var dc_8h =
     [ "dc_info", "dc_8h.html#ab4b5d12f3c9829a0f0e538496ad5c547", null ],
     [ "dc_init", "dc_8h.html#a024994912e1ec2619c456fe23f7009a6", null ],
     [ "dc_periodic_4Hz", "dc_8h.html#ab10db2b1ff3850eb40bb19881fabe48d", null ],
-    [ "dc_send_command", "dc_8h.html#a99de571d22e98f2d4d1e118ade1d61f4", null ],
+    [ "dc_send_command", "dc_8h.html#a833f16388be36136f5d7d173200d5e95", null ],
     [ "dc_stop", "dc_8h.html#a47c625a53743f8ad41baaf54a6fcf144", null ],
     [ "dc_survey", "dc_8h.html#a2b50d2725b576697bde98a8bdb358093", null ],
     [ "dim_mod", "dc_8h.html#a86a10378746828e01845db892616829e", null ],

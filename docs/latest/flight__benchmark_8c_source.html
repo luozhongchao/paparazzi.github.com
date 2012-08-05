@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-55-g7d9c54b</span>
+   &#160;<span id="projectnumber">v4.1_unstable-68-gffd52c7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061   <span class="keywordflow">if</span> (<a class="code" href="flight__benchmark_8c.html#a8c709967a01a8d99fadd6c0ab518866e">benchm_go</a>){
 <a name="l00062"></a>00062 <span class="preprocessor">  #if USE_AIRSPEED &amp;&amp; defined(BENCHMARK_AIRSPEED)</span>
-<a name="l00063"></a>00063 <span class="preprocessor"></span>    Err_airspeed = fabs(<a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77" title="m/s">estimator_airspeed</a> - v_ctl_auto_airspeed_setpoint);
+<a name="l00063"></a>00063 <span class="preprocessor"></span>    Err_airspeed = fabs(<a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77" title="m/s">estimator_airspeed</a> - <a class="code" href="energy__ctrl_8c.html#ad4e989e42aa23948f14c82731b0e12af" title="in meters per second">v_ctl_auto_airspeed_setpoint</a>);
 <a name="l00064"></a>00064     <span class="keywordflow">if</span> (Err_airspeed&gt;<a class="code" href="flight__benchmark_8c.html#a8d6b7ceef28725b3dea8c46b2433dc16">ToleranceAispeed</a>){
 <a name="l00065"></a>00065       Err_airspeed = Err_airspeed-<a class="code" href="flight__benchmark_8c.html#a8d6b7ceef28725b3dea8c46b2433dc16">ToleranceAispeed</a>;
 <a name="l00066"></a>00066       <a class="code" href="flight__benchmark_8c.html#a7cba1520680a1e1397eec3f8605b3cee">SquareSumErr_airspeed</a> += (Err_airspeed * Err_airspeed);
@@ -172,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068 <span class="preprocessor">  #endif</span>
 <a name="l00069"></a>00069 <span class="preprocessor"></span>
 <a name="l00070"></a>00070 <span class="preprocessor">  #ifdef BENCHMARK_ALTITUDE</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span>    Err_altitude = fabs(<a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a> - <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a8ca3adfa488b360ca07396ef54c199f3" title="in meters above MSL">v_ctl_altitude_setpoint</a>);
+<a name="l00071"></a>00071 <span class="preprocessor"></span>    Err_altitude = fabs(<a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a> - <a class="code" href="energy__ctrl_8c.html#a8ca3adfa488b360ca07396ef54c199f3" title="in meters above MSL">v_ctl_altitude_setpoint</a>);
 <a name="l00072"></a>00072     <span class="keywordflow">if</span> (Err_altitude&gt;<a class="code" href="flight__benchmark_8c.html#a9c89ccb67edcffa690db968ae55d0e38">ToleranceAltitude</a>){
 <a name="l00073"></a>00073       Err_altitude = Err_altitude-<a class="code" href="flight__benchmark_8c.html#a9c89ccb67edcffa690db968ae55d0e38">ToleranceAltitude</a>;
 <a name="l00074"></a>00074       <a class="code" href="flight__benchmark_8c.html#ade3a33aa6a5dde5d1520c3a72f2bddad">SquareSumErr_altitude</a> += (Err_altitude * Err_altitude);
@@ -260,7 +260,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="flight__benchmark_8c.html">flight_benchmark.c</a>      </li>
 
-    <li class="footer">Generated on Tue Jul 31 2012 20:07:13 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Aug 5 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

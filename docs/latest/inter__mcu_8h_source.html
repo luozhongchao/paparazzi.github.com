@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-55-g7d9c54b</span>
+   &#160;<span id="projectnumber">v4.1_unstable-68-gffd52c7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -159,90 +159,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00064"></a>00064 
 <a name="l00065"></a>00065 <span class="keyword">struct </span><a class="code" href="inter__mcu_8c.html#ac13671906f2663b39fde033f4cb4a410">ap_state</a> {
 <a name="l00066"></a>00066   <a class="code" href="paparazzi_8h.html#a3fd988f23519b41e9aea4d38bfb45e1c">pprz_t</a> <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>[COMMANDS_NB];
-<a name="l00067"></a>00067 };
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069 <span class="comment">// Status bits from FBW to AUTOPILOT</span>
-<a name="l00070"></a>00070 <span class="preprocessor">#define STATUS_RADIO_OK 0</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span><span class="preprocessor">#define STATUS_RADIO_REALLY_LOST 1</span>
-<a name="l00072"></a>00072 <span class="preprocessor"></span><span class="preprocessor">#define STATUS_MODE_AUTO 2</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span><span class="preprocessor">#define STATUS_MODE_FAILSAFE 3</span>
-<a name="l00074"></a>00074 <span class="preprocessor"></span><span class="preprocessor">#define AVERAGED_CHANNELS_SENT 4</span>
-<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="preprocessor">#define MASK_FBW_CHANGED 0xf</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span>
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>* <a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>;
-<a name="l00079"></a>00079 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="inter__mcu_8c.html#ac13671906f2663b39fde033f4cb4a410">ap_state</a>*  <a class="code" href="inter__mcu_8c.html#ac13671906f2663b39fde033f4cb4a410">ap_state</a>;
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t <a class="code" href="inter__mcu_8c.html#ac6c868c590b3ed8e97df60b50ac07f3d">inter_mcu_received_fbw</a>;
-<a name="l00082"></a>00082 <span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t <a class="code" href="inter__mcu_8c.html#a39c7839a61b81e1afcd1788348e1bf38">inter_mcu_received_ap</a>;
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085 <span class="preprocessor">#ifdef FBW</span>
-<a name="l00086"></a>00086 <span class="preprocessor"></span>
-<a name="l00087"></a>00087 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> time_since_last_ap;
-<a name="l00088"></a>00088 <span class="keyword">extern</span> bool_t ap_ok;
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090 <span class="preprocessor">#define AP_STALLED_TIME        30  // 500ms with a 60Hz timer</span>
-<a name="l00091"></a>00091 <span class="preprocessor"></span>
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> inter_mcu_init(<span class="keywordtype">void</span>) {
-<a name="l00094"></a>00094   fbw_state-&gt;status = 0;
-<a name="l00095"></a>00095   fbw_state-&gt;nb_err = 0;
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097   ap_ok = FALSE;
-<a name="l00098"></a>00098 }
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 <span class="comment">/* Prepare data to be sent to mcu0 */</span>
-<a name="l00102"></a>00102 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> inter_mcu_fill_fbw_state (<span class="keywordtype">void</span>) {
-<a name="l00103"></a>00103   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="anemotaxis_8c.html#a015eb90e0de9f16e87bd149d4b9ce959">status</a> = 0;
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105 <span class="preprocessor">#ifdef RADIO_CONTROL</span>
-<a name="l00106"></a>00106 <span class="preprocessor"></span>  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i;
-<a name="l00107"></a>00107   <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a1beed9c63b07301d72b3516543545652">RADIO_CONTROL_NB_CHANNEL</a>; i++)
-<a name="l00108"></a>00108     fbw_state-&gt;channels[i] = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[i];
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110   fbw_state-&gt;ppm_cpt = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.frame_rate;
+<a name="l00067"></a>00067   <a class="code" href="paparazzi_8h.html#a3fd988f23519b41e9aea4d38bfb45e1c">pprz_t</a> <a class="code" href="commands_8c.html#a9aa55e047af522d7df3a329d39a08ac4">command_roll_trim</a>;
+<a name="l00068"></a>00068   <a class="code" href="paparazzi_8h.html#a3fd988f23519b41e9aea4d38bfb45e1c">pprz_t</a> <a class="code" href="commands_8c.html#a2bd7d4068b07bb952c488cff7cf7c933">command_pitch_trim</a>;
+<a name="l00069"></a>00069 };
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 <span class="comment">// Status bits from FBW to AUTOPILOT</span>
+<a name="l00072"></a>00072 <span class="preprocessor">#define STATUS_RADIO_OK 0</span>
+<a name="l00073"></a>00073 <span class="preprocessor"></span><span class="preprocessor">#define STATUS_RADIO_REALLY_LOST 1</span>
+<a name="l00074"></a>00074 <span class="preprocessor"></span><span class="preprocessor">#define STATUS_MODE_AUTO 2</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="preprocessor">#define STATUS_MODE_FAILSAFE 3</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">#define AVERAGED_CHANNELS_SENT 4</span>
+<a name="l00077"></a>00077 <span class="preprocessor"></span><span class="preprocessor">#define MASK_FBW_CHANGED 0xf</span>
+<a name="l00078"></a>00078 <span class="preprocessor"></span>
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>* <a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>;
+<a name="l00081"></a>00081 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="inter__mcu_8c.html#ac13671906f2663b39fde033f4cb4a410">ap_state</a>*  <a class="code" href="inter__mcu_8c.html#ac13671906f2663b39fde033f4cb4a410">ap_state</a>;
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 <span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t <a class="code" href="inter__mcu_8c.html#ac6c868c590b3ed8e97df60b50ac07f3d">inter_mcu_received_fbw</a>;
+<a name="l00084"></a>00084 <span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t <a class="code" href="inter__mcu_8c.html#a39c7839a61b81e1afcd1788348e1bf38">inter_mcu_received_ap</a>;
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="preprocessor">#ifdef FBW</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>
+<a name="l00089"></a>00089 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> time_since_last_ap;
+<a name="l00090"></a>00090 <span class="keyword">extern</span> bool_t ap_ok;
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 <span class="preprocessor">#define AP_STALLED_TIME        30  // 500ms with a 60Hz timer</span>
+<a name="l00093"></a>00093 <span class="preprocessor"></span>
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> inter_mcu_init(<span class="keywordtype">void</span>) {
+<a name="l00096"></a>00096   fbw_state-&gt;status = 0;
+<a name="l00097"></a>00097   fbw_state-&gt;nb_err = 0;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099   ap_ok = FALSE;
+<a name="l00100"></a>00100 }
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="comment">/* Prepare data to be sent to mcu0 */</span>
+<a name="l00104"></a>00104 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> inter_mcu_fill_fbw_state (<span class="keywordtype">void</span>) {
+<a name="l00105"></a>00105   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="anemotaxis_8c.html#a015eb90e0de9f16e87bd149d4b9ce959">status</a> = 0;
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 <span class="preprocessor">#ifdef RADIO_CONTROL</span>
+<a name="l00108"></a>00108 <span class="preprocessor"></span>  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i;
+<a name="l00109"></a>00109   <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a1beed9c63b07301d72b3516543545652">RADIO_CONTROL_NB_CHANNEL</a>; i++)
+<a name="l00110"></a>00110     fbw_state-&gt;channels[i] = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.values[i];
 <a name="l00111"></a>00111 
-<a name="l00112"></a>00112   status = (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.status == RC_OK ? _BV(STATUS_RADIO_OK) : 0);
-<a name="l00113"></a>00113   status |= (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.status == RC_REALLY_LOST ? _BV(STATUS_RADIO_REALLY_LOST) : 0);
-<a name="l00114"></a>00114   status |= (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.status == RC_OK ? _BV(AVERAGED_CHANNELS_SENT) : 0); <span class="comment">// Any valid frame contains averaged channels</span>
-<a name="l00115"></a>00115 <span class="preprocessor">#endif // RADIO_CONTROL</span>
-<a name="l00116"></a>00116 <span class="preprocessor"></span>
-<a name="l00117"></a>00117   status |= (<a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> == <a class="code" href="main__fbw_8h.html#ae592cfc625e6b21adc57b1eddc15f9f1">FBW_MODE_AUTO</a> ? _BV(STATUS_MODE_AUTO) : 0);
-<a name="l00118"></a>00118   status |= (<a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> == <a class="code" href="main__fbw_8h.html#a07ef21a5a59d12a1bcc13711fd5db2c1">FBW_MODE_FAILSAFE</a> ? _BV(STATUS_MODE_FAILSAFE) : 0);
-<a name="l00119"></a>00119   fbw_state-&gt;status  = <a class="code" href="anemotaxis_8c.html#a015eb90e0de9f16e87bd149d4b9ce959">status</a>;
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121   fbw_state-&gt;vsupply = <a class="code" href="electrical_8c.html#a935f74638cd658e7dac75915bcb63bde">electrical</a>.<a class="code" href="structElectrical.html#ac0f9582d6de09fedde9a35cae83da45e">vsupply</a>;
-<a name="l00122"></a>00122   fbw_state-&gt;current = <a class="code" href="electrical_8c.html#a935f74638cd658e7dac75915bcb63bde">electrical</a>.<a class="code" href="structElectrical.html#aad2e82bde4cf4c3851ead15ad1dca550">current</a>;
-<a name="l00123"></a>00123 <span class="preprocessor">#if defined SINGLE_MCU</span>
-<a name="l00124"></a>00124 <span class="preprocessor"></span>
-<a name="l00125"></a>00125   <a class="code" href="inter__mcu_8c.html#ac6c868c590b3ed8e97df60b50ac07f3d">inter_mcu_received_fbw</a> = TRUE;
-<a name="l00126"></a>00126 <span class="preprocessor">#endif</span>
-<a name="l00127"></a>00127 <span class="preprocessor"></span>}
-<a name="l00128"></a>00128 
-<a name="l00130"></a>00130 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> inter_mcu_event_task( <span class="keywordtype">void</span>) {
-<a name="l00131"></a>00131   time_since_last_ap = 0;
-<a name="l00132"></a>00132   ap_ok = TRUE;
-<a name="l00133"></a>00133 }
-<a name="l00134"></a>00134 
-<a name="l00136"></a>00136 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> inter_mcu_periodic_task(<span class="keywordtype">void</span>) {
-<a name="l00137"></a>00137   <span class="keywordflow">if</span> (time_since_last_ap &gt;= AP_STALLED_TIME) {
-<a name="l00138"></a>00138     ap_ok = FALSE;
-<a name="l00139"></a>00139 <span class="preprocessor">#ifdef SINGLE_MCU</span>
-<a name="l00140"></a>00140 <span class="preprocessor"></span>    <span class="comment">// Keep filling the buffer even if no AP commands are received</span>
-<a name="l00141"></a>00141     inter_mcu_fill_fbw_state();
-<a name="l00142"></a>00142 <span class="preprocessor">#endif</span>
-<a name="l00143"></a>00143 <span class="preprocessor"></span>
-<a name="l00144"></a>00144   } <span class="keywordflow">else</span>
-<a name="l00145"></a>00145     time_since_last_ap++;
-<a name="l00146"></a>00146 }
-<a name="l00147"></a>00147 
-<a name="l00148"></a>00148 <span class="preprocessor">#endif </span><span class="comment">/* FBW */</span>
+<a name="l00112"></a>00112   fbw_state-&gt;ppm_cpt = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.frame_rate;
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114   status = (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.status == RC_OK ? _BV(STATUS_RADIO_OK) : 0);
+<a name="l00115"></a>00115   status |= (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.status == RC_REALLY_LOST ? _BV(STATUS_RADIO_REALLY_LOST) : 0);
+<a name="l00116"></a>00116   status |= (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.status == RC_OK ? _BV(AVERAGED_CHANNELS_SENT) : 0); <span class="comment">// Any valid frame contains averaged channels</span>
+<a name="l00117"></a>00117 <span class="preprocessor">#endif // RADIO_CONTROL</span>
+<a name="l00118"></a>00118 <span class="preprocessor"></span>
+<a name="l00119"></a>00119   status |= (<a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> == <a class="code" href="main__fbw_8h.html#ae592cfc625e6b21adc57b1eddc15f9f1">FBW_MODE_AUTO</a> ? _BV(STATUS_MODE_AUTO) : 0);
+<a name="l00120"></a>00120   status |= (<a class="code" href="main__fbw_8c.html#ac72590ceb6632f7874a3240836537857">fbw_mode</a> == <a class="code" href="main__fbw_8h.html#a07ef21a5a59d12a1bcc13711fd5db2c1">FBW_MODE_FAILSAFE</a> ? _BV(STATUS_MODE_FAILSAFE) : 0);
+<a name="l00121"></a>00121   fbw_state-&gt;status  = <a class="code" href="anemotaxis_8c.html#a015eb90e0de9f16e87bd149d4b9ce959">status</a>;
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123   fbw_state-&gt;vsupply = <a class="code" href="electrical_8c.html#a935f74638cd658e7dac75915bcb63bde">electrical</a>.<a class="code" href="structElectrical.html#ac0f9582d6de09fedde9a35cae83da45e">vsupply</a>;
+<a name="l00124"></a>00124   fbw_state-&gt;current = <a class="code" href="electrical_8c.html#a935f74638cd658e7dac75915bcb63bde">electrical</a>.<a class="code" href="structElectrical.html#aad2e82bde4cf4c3851ead15ad1dca550">current</a>;
+<a name="l00125"></a>00125 <span class="preprocessor">#if defined SINGLE_MCU</span>
+<a name="l00126"></a>00126 <span class="preprocessor"></span>
+<a name="l00127"></a>00127   <a class="code" href="inter__mcu_8c.html#ac6c868c590b3ed8e97df60b50ac07f3d">inter_mcu_received_fbw</a> = TRUE;
+<a name="l00128"></a>00128 <span class="preprocessor">#endif</span>
+<a name="l00129"></a>00129 <span class="preprocessor"></span>}
+<a name="l00130"></a>00130 
+<a name="l00132"></a>00132 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> inter_mcu_event_task( <span class="keywordtype">void</span>) {
+<a name="l00133"></a>00133   time_since_last_ap = 0;
+<a name="l00134"></a>00134   ap_ok = TRUE;
+<a name="l00135"></a>00135 }
+<a name="l00136"></a>00136 
+<a name="l00138"></a>00138 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> inter_mcu_periodic_task(<span class="keywordtype">void</span>) {
+<a name="l00139"></a>00139   <span class="keywordflow">if</span> (time_since_last_ap &gt;= AP_STALLED_TIME) {
+<a name="l00140"></a>00140     ap_ok = FALSE;
+<a name="l00141"></a>00141 <span class="preprocessor">#ifdef SINGLE_MCU</span>
+<a name="l00142"></a>00142 <span class="preprocessor"></span>    <span class="comment">// Keep filling the buffer even if no AP commands are received</span>
+<a name="l00143"></a>00143     inter_mcu_fill_fbw_state();
+<a name="l00144"></a>00144 <span class="preprocessor">#endif</span>
+<a name="l00145"></a>00145 <span class="preprocessor"></span>
+<a name="l00146"></a>00146   } <span class="keywordflow">else</span>
+<a name="l00147"></a>00147     time_since_last_ap++;
+<a name="l00148"></a>00148 }
 <a name="l00149"></a>00149 
-<a name="l00150"></a>00150 <span class="preprocessor">#endif </span><span class="comment">/* INTER_MCU */</span>
+<a name="l00150"></a>00150 <span class="preprocessor">#endif </span><span class="comment">/* FBW */</span>
 <a name="l00151"></a>00151 
-<a name="l00152"></a>00152 <span class="preprocessor">#endif </span><span class="comment">/* INTER_MCU_H */</span>
+<a name="l00152"></a>00152 <span class="preprocessor">#endif </span><span class="comment">/* INTER_MCU */</span>
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154 <span class="preprocessor">#endif </span><span class="comment">/* INTER_MCU_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -263,7 +265,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="inter__mcu_8h.html">inter_mcu.h</a>      </li>
 
-    <li class="footer">Generated on Tue Jul 31 2012 20:07:13 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Aug 5 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

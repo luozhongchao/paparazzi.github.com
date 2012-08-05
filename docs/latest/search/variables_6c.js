@@ -54,6 +54,7 @@ var searchData=
   ['lp_5faccel',['lp_accel',['../structAhrsAligner.html#abfbd315f6a7fc5b98831eb3741d07e55',1,'AhrsAligner']]],
   ['lp_5fgyro',['lp_gyro',['../structAhrsAligner.html#abe1c42a62eceda126bf111397c3e7571',1,'AhrsAligner']]],
   ['lp_5fmag',['lp_mag',['../structAhrsAligner.html#aaf9f84dd40ecc27b22541b3e22096c98',1,'AhrsAligner']]],
+  ['lp_5fvdot',['lp_vdot',['../energy__ctrl_8c.html#aae48bdb85c0ca48d03f94624444fe775',1,'energy_ctrl.c']]],
   ['lsr',['lsr',['../structuartRegs__t.html#a33abc44096cfac874382f0f21bfff182',1,'uartRegs_t']]],
   ['ltp_5fof_5fecef',['ltp_of_ecef',['../structLtpDef__d.html#a5bc74e13434be179b097d3c7baf456e0',1,'LtpDef_d::ltp_of_ecef()'],['../structLtpDef__f.html#a908ef9c9a408a734f41b7dedc4cce995',1,'LtpDef_f::ltp_of_ecef()'],['../structLtpDef__i.html#ab31ec1d7b6313f91cb7d4c4e973a4219',1,'LtpDef_i::ltp_of_ecef()']]],
   ['ltp_5fto_5fbody_5feuler',['ltp_to_body_euler',['../structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09',1,'Ahrs::ltp_to_body_euler()'],['../structAhrsFloat.html#a4420eb459b8df1ac45412e46e058ad9f',1,'AhrsFloat::ltp_to_body_euler()']]],
