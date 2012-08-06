@@ -218,8 +218,6 @@ var searchData=
   ['ftmd_5ftemperature',['ftmd_temperature',['../temp__temod_8c.html#aaaf211bc5462b03ca020351920b40586',1,'ftmd_temperature():&#160;temp_temod.c'],['../temp__temod_8h.html#aaaf211bc5462b03ca020351920b40586',1,'ftmd_temperature():&#160;temp_temod.c']]],
   ['ftmp_5ftemperature',['ftmp_temperature',['../temp__tmp102_8c.html#a8912f650188fc5048acd54fb13fdb70a',1,'ftmp_temperature():&#160;temp_tmp102.c'],['../temp__tmp102_8h.html#a8912f650188fc5048acd54fb13fdb70a',1,'ftmp_temperature():&#160;temp_tmp102.c']]],
   ['fval',['fval',['../temp__tcouple__adc_8c.html#a03463534edf054f5e6bbdcdfd33685b2',1,'temp_tcouple_adc.c']]],
-  ['fw_5fh_5fctl_5fa_5fsetpitchigain',['fw_h_ctl_a_SetPitchIGain',['../stabilization__adaptive_8h.html#ae42a69c7f6f58bc1a3e3a4c5c33ab4e9',1,'stabilization_adaptive.h']]],
-  ['fw_5fh_5fctl_5fa_5fsetrolligain',['fw_h_ctl_a_SetRollIGain',['../stabilization__adaptive_8h.html#affe0f8d70d2c37336f4c4ff6004ec02e',1,'stabilization_adaptive.h']]],
   ['fw_5fins_5fvn100_2ec',['fw_ins_vn100.c',['../fw__ins__vn100_8c.html',1,'']]],
   ['fx',['fx',['../structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb',1,'VECTOR']]],
   ['fx1',['fx1',['../structMATRIX.html#a248961470ca16203383c44096a3d9ea4',1,'MATRIX']]],

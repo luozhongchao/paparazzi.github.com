@@ -312,6 +312,8 @@ var searchData=
   ['sta_5fmax1168_5freading_5fres',['STA_MAX1168_READING_RES',['../max1168_8h.html#aadb585fea254e20d525e293da8d506a1',1,'max1168.h']]],
   ['sta_5fmax1168_5fsending_5freq',['STA_MAX1168_SENDING_REQ',['../max1168_8h.html#a144c8a3c204775cf41002ee26086d6b0',1,'max1168.h']]],
   ['sta_5funinit',['STA_UNINIT',['../baro__scp_8c.html#a9aeeac4b6b91056b261f35840481cede',1,'STA_UNINIT():&#160;baro_scp.c'],['../baro__scp_8h.html#a9aeeac4b6b91056b261f35840481cede',1,'STA_UNINIT():&#160;baro_scp.h']]],
+  ['stabilization_5fadaptive_5fsetpitchigain',['stabilization_adaptive_SetPitchIGain',['../stabilization__adaptive_8h.html#a3eec296f149d50a88ace12cae5f3bc95',1,'stabilization_adaptive.h']]],
+  ['stabilization_5fadaptive_5fsetrolligain',['stabilization_adaptive_SetRollIGain',['../stabilization__adaptive_8h.html#aea35ca63313fd37caea6d6854ff83113',1,'stabilization_adaptive.h']]],
   ['stabilization_5fattitude_5ffloat_5fadd_5fsp',['STABILIZATION_ATTITUDE_FLOAT_ADD_SP',['../stabilization__attitude__ref__euler__float_8h.html#a7e28282ebe7026c87667454aedf02cf2',1,'stabilization_attitude_ref_euler_float.h']]],
   ['stabilization_5fattitude_5ffloat_5fgain_5fidx_5fdefault',['STABILIZATION_ATTITUDE_FLOAT_GAIN_IDX_DEFAULT',['../stabilization__attitude__float_8h.html#ad2e0741246ea1f5e24f70ec5a686d7e3',1,'stabilization_attitude_float.h']]],
   ['stabilization_5fattitude_5ffloat_5fgain_5fnb',['STABILIZATION_ATTITUDE_FLOAT_GAIN_NB',['../stabilization__attitude__float_8h.html#a2b505ebed6773daa97c80398a9076350',1,'stabilization_attitude_float.h']]],

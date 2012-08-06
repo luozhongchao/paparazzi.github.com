@@ -1,9 +1,9 @@
 var stabilization__adaptive_8h =
 [
-    [ "fw_h_ctl_a_SetPitchIGain", "stabilization__adaptive_8h.html#ae42a69c7f6f58bc1a3e3a4c5c33ab4e9", null ],
-    [ "fw_h_ctl_a_SetRollIGain", "stabilization__adaptive_8h.html#affe0f8d70d2c37336f4c4ff6004ec02e", null ],
     [ "H_CTL_PITCH_SUM_ERR_MAX", "stabilization__adaptive_8h.html#ab8baa3d33ff0c43f1b14e2b4c1d62c1e", null ],
     [ "H_CTL_ROLL_SUM_ERR_MAX", "stabilization__adaptive_8h.html#a53c0a1521cccf2ec157e21fe2d011eec", null ],
+    [ "stabilization_adaptive_SetPitchIGain", "stabilization__adaptive_8h.html#a3eec296f149d50a88ace12cae5f3bc95", null ],
+    [ "stabilization_adaptive_SetRollIGain", "stabilization__adaptive_8h.html#aea35ca63313fd37caea6d6854ff83113", null ],
     [ "h_ctl_pitch_igain", "stabilization__adaptive_8h.html#adca87cd9c217e6a154e37785dd9c73e0", null ],
     [ "h_ctl_pitch_Kffa", "stabilization__adaptive_8h.html#af41b727a1b999a2a3f2a62fef1e32ca2", null ],
     [ "h_ctl_pitch_Kffd", "stabilization__adaptive_8h.html#a32a80a87573b0fdb2faed1546b40ff64", null ],
