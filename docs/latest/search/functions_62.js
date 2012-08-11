@@ -64,7 +64,7 @@ var searchData=
   ['bmp085_5fbaro_5fread_5fcalibration',['bmp085_baro_read_calibration',['../lisa__m_2baro__board_8c.html#aea3998684bc77e177cfef368972038ac',1,'baro_board.c']]],
   ['bmp085_5fread_5fpressure',['bmp085_read_pressure',['../lisa__m_2baro__board_8c.html#a1f0720cede92c109e23e77e8fee020d7',1,'baro_board.c']]],
   ['bmp085_5fread_5freg16',['bmp085_read_reg16',['../lisa__m_2baro__board_8c.html#a842202952b7e368f8677d31551462e9e',1,'baro_board.c']]],
-  ['bmp085_5fread_5freg16_5fblocking',['bmp085_read_reg16_blocking',['../lisa__m_2baro__board_8c.html#a85a0d740b0451704e8188021e2a323f1',1,'baro_board.c']]],
+  ['bmp085_5fread_5freg16_5fblocking',['bmp085_read_reg16_blocking',['../lisa__m_2baro__board_8c.html#ac703f6e3fa2427406f6e191356739797',1,'baro_board.c']]],
   ['bmp085_5fread_5freg24',['bmp085_read_reg24',['../lisa__m_2baro__board_8c.html#ac21d4674186c83e704fb20b7b89a5cb7',1,'baro_board.c']]],
   ['bmp085_5fread_5ftemp',['bmp085_read_temp',['../lisa__m_2baro__board_8c.html#a5ab16faaeeace13e401798e50936bf1a',1,'baro_board.c']]],
   ['bmp085_5frequest_5fpressure',['bmp085_request_pressure',['../lisa__m_2baro__board_8c.html#af8efe6941ef17ed3b300371f3c76d3ea',1,'baro_board.c']]],
