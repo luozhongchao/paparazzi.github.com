@@ -8,6 +8,7 @@ var modules_2ins_2ins__arduimu__basic_8c =
     [ "HIGH_ACCEL_LOW_SPEED", "modules_2ins_2ins__arduimu__basic_8c.html#a73a6a37d601d3935f0c2807bb56e57af", null ],
     [ "HIGH_ACCEL_LOW_SPEED_RESUME", "modules_2ins_2ins__arduimu__basic_8c.html#afe7eeee2e1b44f3d4533e7ab52d75a90", null ],
     [ "NB_DATA", "modules_2ins_2ins__arduimu__basic_8c.html#af6dccfe0d3bbf8f9b4ec05cf162a376a", null ],
+    [ "ahrs_update_gps", "modules_2ins_2ins__arduimu__basic_8c.html#a0156f6669675c216bbcb413ea1879960", null ],
     [ "ArduIMU_event", "modules_2ins_2ins__arduimu__basic_8c.html#a6f80e69d733254b945f208647409073f", null ],
     [ "ArduIMU_init", "modules_2ins_2ins__arduimu__basic_8c.html#aaee9ddbcf2cef114764f3b37cda3cf38", null ],
     [ "ArduIMU_periodic", "modules_2ins_2ins__arduimu__basic_8c.html#a9084095772fef629b46485b78cb1fd7a", null ],
