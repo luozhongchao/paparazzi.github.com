@@ -663,6 +663,8 @@ var files =
     [ "sw/airborne/sd_card/main.c", "sd__card_2main_8c.html", "sd__card_2main_8c" ],
     [ "sw/airborne/sd_card/sd_card.c", "sd__card_8c.html", "sd__card_8c" ],
     [ "sw/airborne/sd_card/sd_card.h", "sd__card_8h.html", "sd__card_8h" ],
+    [ "sw/airborne/subsystems/abi.h", "abi_8h.html", null ],
+    [ "sw/airborne/subsystems/abi_common.h", "abi__common_8h.html", "abi__common_8h" ],
     [ "sw/airborne/subsystems/ahrs.c", "ahrs_8c.html", "ahrs_8c" ],
     [ "sw/airborne/subsystems/ahrs.h", "ahrs_8h.html", "ahrs_8h" ],
     [ "sw/airborne/subsystems/electrical.c", "electrical_8c.html", "electrical_8c" ],

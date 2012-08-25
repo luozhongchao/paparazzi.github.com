@@ -41,6 +41,7 @@ var guidance__v__n_8c =
     [ "v_ctl_climb_mode", "guidance__v__n_8c.html#a56244df6f6f2b1e99747e854a6357d92", null ],
     [ "v_ctl_climb_setpoint", "guidance__v__n_8c.html#af6673f0686b827efdacc838902dc0ab3", null ],
     [ "v_ctl_mode", "guidance__v__n_8c.html#afa5597f66c8d01e0afcfa047afe6964b", null ],
+    [ "v_ctl_pitch_setpoint", "guidance__v__n_8c.html#a7c417874ed0ec332df4832ed1e1d957d", null ],
     [ "v_ctl_speed_mode", "guidance__v__n_8c.html#aa4ebe07275990427a055a732e6f37740", null ],
     [ "v_ctl_throttle_setpoint", "guidance__v__n_8c.html#a1ee0cbf7d1ed331f44539840507a7436", null ],
     [ "v_ctl_throttle_slewed", "guidance__v__n_8c.html#a91af08f8c8981542a5e44b874c7c39ad", null ]

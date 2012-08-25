@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-81-g7d4509e</span>
+   &#160;<span id="projectnumber">v4.1_unstable-95-gbf89a36</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -186,37 +186,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00088"></a>00088 
 <a name="l00089"></a>00089 <span class="keyword">extern</span> <a class="code" href="paparazzi_8h.html#a3fd988f23519b41e9aea4d38bfb45e1c">pprz_t</a> <a class="code" href="energy__ctrl_8c.html#a1ee0cbf7d1ed331f44539840507a7436">v_ctl_throttle_setpoint</a>;
 <a name="l00090"></a>00090 <span class="keyword">extern</span> <a class="code" href="paparazzi_8h.html#a3fd988f23519b41e9aea4d38bfb45e1c">pprz_t</a> <a class="code" href="energy__ctrl_8c.html#a91af08f8c8981542a5e44b874c7c39ad">v_ctl_throttle_slewed</a>;
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#ac48c5fff2d5aca1dd1fc58622709d7eb">v_ctl_init</a>( <span class="keywordtype">void</span> );
-<a name="l00093"></a>00093 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#ab78a678ff1021823256d747800db3140" title="outer loop">v_ctl_altitude_loop</a>( <span class="keywordtype">void</span> );
-<a name="l00094"></a>00094 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#a38f0bbceda8812281fc650c2c1aac6c8">v_ctl_climb_loop</a> ( <span class="keywordtype">void</span> );
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096 <span class="preprocessor">#if USE_AIRSPEED</span>
-<a name="l00097"></a>00097 <span class="preprocessor"></span><span class="comment">/* &quot;airspeed&quot; inner loop parameters */</span>
-<a name="l00098"></a>00098 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="energy__ctrl_8c.html#ad4e989e42aa23948f14c82731b0e12af" title="in meters per second">v_ctl_auto_airspeed_setpoint</a>;
-<a name="l00099"></a>00099 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="energy__ctrl_8c.html#a41fdcf4ec5465153f878ae82130eddf7">v_ctl_auto_airspeed_controlled</a>;
-<a name="l00100"></a>00100 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_airspeed_pgain;
-<a name="l00101"></a>00101 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_airspeed_igain;
-<a name="l00102"></a>00102 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_airspeed_sum_err;
-<a name="l00103"></a>00103 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="energy__ctrl_8c.html#af20f673ea44900420471aa1349b3ad6b">v_ctl_auto_groundspeed_setpoint</a>;
-<a name="l00104"></a>00104 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_groundspeed_pgain;
-<a name="l00105"></a>00105 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_groundspeed_igain;
-<a name="l00106"></a>00106 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_groundspeed_sum_err;
-<a name="l00107"></a>00107 <span class="preprocessor">#endif</span>
-<a name="l00108"></a>00108 <span class="preprocessor"></span>
-<a name="l00110"></a>00110 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#a7fefa3c115f6c0f7453db6c2edd2dbbb" title="Computes slewed throttle from throttle setpoint called at 20Hz.">v_ctl_throttle_slew</a>( <span class="keywordtype">void</span> );
-<a name="l00111"></a>00111 
-<a name="l00112"></a><a class="code" href="fixedwing_2guidance_2guidance__v_8h.html#a923130788d24be11d6fbc59192920b72">00112</a> <span class="preprocessor">#define guidance_v_SetCruiseThrottle(_v) { \</span>
-<a name="l00113"></a>00113 <span class="preprocessor">  v_ctl_auto_throttle_cruise_throttle = (_v ? _v : v_ctl_auto_throttle_nominal_cruise_throttle); \</span>
-<a name="l00114"></a>00114 <span class="preprocessor">  Bound(v_ctl_auto_throttle_cruise_throttle, v_ctl_auto_throttle_min_cruise_throttle, v_ctl_auto_throttle_max_cruise_throttle); \</span>
-<a name="l00115"></a>00115 <span class="preprocessor">}</span>
-<a name="l00116"></a>00116 <span class="preprocessor"></span>
-<a name="l00117"></a><a class="code" href="fixedwing_2guidance_2guidance__v_8h.html#a19a937eeeb0bc25db36047be49dc3bb9">00117</a> <span class="preprocessor">#define guidance_v_SetAutoThrottleIgain(_v) { \</span>
-<a name="l00118"></a>00118 <span class="preprocessor">    v_ctl_auto_throttle_igain = _v;   \</span>
-<a name="l00119"></a>00119 <span class="preprocessor">    v_ctl_auto_throttle_sum_err = 0;    \</span>
-<a name="l00120"></a>00120 <span class="preprocessor">  }</span>
-<a name="l00121"></a>00121 <span class="preprocessor"></span>
-<a name="l00122"></a>00122 <span class="preprocessor">#endif </span><span class="comment">/* FW_V_CTL_H */</span>
+<a name="l00091"></a>00091 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="energy__ctrl_8c.html#a7c417874ed0ec332df4832ed1e1d957d">v_ctl_pitch_setpoint</a>;
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#ac48c5fff2d5aca1dd1fc58622709d7eb">v_ctl_init</a>( <span class="keywordtype">void</span> );
+<a name="l00094"></a>00094 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#ab78a678ff1021823256d747800db3140" title="outer loop">v_ctl_altitude_loop</a>( <span class="keywordtype">void</span> );
+<a name="l00095"></a>00095 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#a38f0bbceda8812281fc650c2c1aac6c8">v_ctl_climb_loop</a> ( <span class="keywordtype">void</span> );
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 <span class="preprocessor">#if USE_AIRSPEED</span>
+<a name="l00098"></a>00098 <span class="preprocessor"></span><span class="comment">/* &quot;airspeed&quot; inner loop parameters */</span>
+<a name="l00099"></a>00099 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="energy__ctrl_8c.html#ad4e989e42aa23948f14c82731b0e12af" title="in meters per second">v_ctl_auto_airspeed_setpoint</a>;
+<a name="l00100"></a>00100 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="energy__ctrl_8c.html#a41fdcf4ec5465153f878ae82130eddf7">v_ctl_auto_airspeed_controlled</a>;
+<a name="l00101"></a>00101 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_airspeed_pgain;
+<a name="l00102"></a>00102 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_airspeed_igain;
+<a name="l00103"></a>00103 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_airspeed_sum_err;
+<a name="l00104"></a>00104 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="energy__ctrl_8c.html#af20f673ea44900420471aa1349b3ad6b">v_ctl_auto_groundspeed_setpoint</a>;
+<a name="l00105"></a>00105 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_groundspeed_pgain;
+<a name="l00106"></a>00106 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_groundspeed_igain;
+<a name="l00107"></a>00107 <span class="keyword">extern</span> <span class="keywordtype">float</span> v_ctl_auto_groundspeed_sum_err;
+<a name="l00108"></a>00108 <span class="preprocessor">#endif</span>
+<a name="l00109"></a>00109 <span class="preprocessor"></span>
+<a name="l00111"></a>00111 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#a7fefa3c115f6c0f7453db6c2edd2dbbb" title="Computes slewed throttle from throttle setpoint called at 20Hz.">v_ctl_throttle_slew</a>( <span class="keywordtype">void</span> );
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="fixedwing_2guidance_2guidance__v_8h.html#a923130788d24be11d6fbc59192920b72">00113</a> <span class="preprocessor">#define guidance_v_SetCruiseThrottle(_v) { \</span>
+<a name="l00114"></a>00114 <span class="preprocessor">  v_ctl_auto_throttle_cruise_throttle = (_v ? _v : v_ctl_auto_throttle_nominal_cruise_throttle); \</span>
+<a name="l00115"></a>00115 <span class="preprocessor">  Bound(v_ctl_auto_throttle_cruise_throttle, v_ctl_auto_throttle_min_cruise_throttle, v_ctl_auto_throttle_max_cruise_throttle); \</span>
+<a name="l00116"></a>00116 <span class="preprocessor">}</span>
+<a name="l00117"></a>00117 <span class="preprocessor"></span>
+<a name="l00118"></a><a class="code" href="fixedwing_2guidance_2guidance__v_8h.html#a19a937eeeb0bc25db36047be49dc3bb9">00118</a> <span class="preprocessor">#define guidance_v_SetAutoThrottleIgain(_v) { \</span>
+<a name="l00119"></a>00119 <span class="preprocessor">    v_ctl_auto_throttle_igain = _v;   \</span>
+<a name="l00120"></a>00120 <span class="preprocessor">    v_ctl_auto_throttle_sum_err = 0;    \</span>
+<a name="l00121"></a>00121 <span class="preprocessor">  }</span>
+<a name="l00122"></a>00122 <span class="preprocessor"></span>
+<a name="l00123"></a>00123 <span class="preprocessor">#endif </span><span class="comment">/* FW_V_CTL_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -237,7 +238,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="fixedwing_2guidance_2guidance__v_8h.html">guidance_v.h</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 24 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Aug 25 2012 04:00:12 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

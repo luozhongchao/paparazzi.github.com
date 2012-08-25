@@ -1,5 +1,6 @@
 var annotated =
 [
+    [ "abi_struct", "structabi__struct.html", "structabi__struct" ],
     [ "ac_info_", "structac__info__.html", "structac__info__" ],
     [ "AccBuf", "structAccBuf.html", "structAccBuf" ],
     [ "ActuatorsAsctec", "structActuatorsAsctec.html", "structActuatorsAsctec" ],
@@ -111,10 +112,10 @@ var annotated =
     [ "NedCoor_i", "structNedCoor__i.html", "structNedCoor__i" ],
     [ "PCAP01VALUE", "structPCAP01VALUE.html", "structPCAP01VALUE" ],
     [ "pinRegs_t", "structpinRegs__t.html", "structpinRegs__t" ],
-    [ "point", "structpoint.html", "structpoint" ],
     [ "POINT", "structPOINT.html", "structPOINT" ],
-    [ "Point2D", "structPoint2D.html", "structPoint2D" ],
+    [ "point", "structpoint.html", "structpoint" ],
     [ "point2d", "structpoint2d.html", "structpoint2d" ],
+    [ "Point2D", "structPoint2D.html", "structPoint2D" ],
     [ "pprz_transport", "structpprz__transport.html", "structpprz__transport" ],
     [ "pwmTmrRegs_t", "structpwmTmrRegs__t.html", "structpwmTmrRegs__t" ],
     [ "rc_joby_parser_state", "structrc__joby__parser__state.html", "structrc__joby__parser__state" ],
