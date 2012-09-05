@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-173-gd70a675</span>
+   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -272,7 +272,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00184"></a>00184 <span class="preprocessor"></span>
 <a name="l00185"></a>00185   <a class="code" href="fw__ins__vn100_8c.html#abf3028c2ada542781b8a5e1eb20c17ce" title="INS initialization.">ins_init</a>();
 <a name="l00186"></a>00186 
-<a name="l00187"></a>00187   <a class="code" href="group__StateGroup.html#gae841c56c9a83bf54bcdd8d7f166f2e2a">stateInit</a>();
+<a name="l00187"></a>00187   <a class="code" href="group__state__interface.html#gae841c56c9a83bf54bcdd8d7f166f2e2a">stateInit</a>();
 <a name="l00188"></a>00188 
 <a name="l00189"></a>00189   <span class="comment">/************* Links initialization ***************/</span>
 <a name="l00190"></a>00190 <span class="preprocessor">#if defined MCU_SPI_LINK</span>
@@ -651,7 +651,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00598"></a>00598   <a class="code" href="fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a> |= <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a> &amp;&amp; (<a class="code" href="common__nav_8c.html#aaa0755e7078e30953f14178d3dcd90ee">dist2_to_home</a> &gt; <a class="code" href="nav_8h.html#a5b322de63943d278a002687f820ac41c">Square</a>(<a class="code" href="main__ap_8c.html#a1f8fa85842c4d2ac6c69cf4d960ee0d6" title="Maximum distance from HOME waypoint before going into kill mode.">KILL_MODE_DISTANCE</a>));
 <a name="l00599"></a>00599 
 <a name="l00600"></a>00600   <span class="keywordflow">if</span> (!<a class="code" href="fixedwing_2autopilot_8h.html#a643a1732fc06296050835ab61968d726" title="flight time in seconds.">autopilot_flight_time</a> &amp;&amp;
-<a name="l00601"></a>00601       *<a class="code" href="group__SpeedGroup.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float).">stateGetHorizontalSpeedNorm_f</a>() &gt; <a class="code" href="main__ap_8c.html#af7a652e72bf6906c11f8c5c1442359e1" title="Define minimal speed for takeoff in m/s.">MIN_SPEED_FOR_TAKEOFF</a>) {
+<a name="l00601"></a>00601       *<a class="code" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float).">stateGetHorizontalSpeedNorm_f</a>() &gt; <a class="code" href="main__ap_8c.html#af7a652e72bf6906c11f8c5c1442359e1" title="Define minimal speed for takeoff in m/s.">MIN_SPEED_FOR_TAKEOFF</a>) {
 <a name="l00602"></a>00602     <a class="code" href="fixedwing_2autopilot_8h.html#a643a1732fc06296050835ab61968d726" title="flight time in seconds.">autopilot_flight_time</a> = 1;
 <a name="l00603"></a>00603     <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a> = TRUE; <span class="comment">/* Not set in non auto launch */</span>
 <a name="l00604"></a>00604     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> time_sec = <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a2e86fdabba99a0ac8f6409e0d1e694a3" title="full seconds since startup">nb_sec</a>;
@@ -720,7 +720,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00667"></a>00667 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> on_gps_solution( <span class="keywordtype">void</span> ) {
 <a name="l00668"></a>00668   <a class="code" href="ins__float_8c.html#aacc25a507c5c24309fc37b1f806f5d2b" title="Update INS state with GPS measurements.">ins_update_gps</a>();
 <a name="l00669"></a>00669 <span class="preprocessor">#if USE_AHRS</span>
-<a name="l00670"></a>00670 <span class="preprocessor"></span>  <a class="code" href="ins__chimu__spi_8c.html#a0156f6669675c216bbcb413ea1879960" title="Update AHRS state with GPS measurements.">ahrs_update_gps</a>();
+<a name="l00670"></a>00670 <span class="preprocessor"></span>  <a class="code" href="modules_2ins_2ins__arduimu__basic_8c.html#a0156f6669675c216bbcb413ea1879960" title="Update AHRS state with GPS measurements.">ahrs_update_gps</a>();
 <a name="l00671"></a>00671 <span class="preprocessor">#endif</span>
 <a name="l00672"></a>00672 <span class="preprocessor"></span><span class="preprocessor">#ifdef GPS_TRIGGERED_FUNCTION</span>
 <a name="l00673"></a>00673 <span class="preprocessor"></span>  GPS_TRIGGERED_FUNCTION();
@@ -848,7 +848,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="main__ap_8c.html">main_ap.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:29:37 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 15:46:39 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

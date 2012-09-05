@@ -1,4 +1,4 @@
 var modules =
 [
-    [ "State interface", "group__StateGroup.html", "group__StateGroup" ]
+    [ "State interface", "group__state__interface.html", "group__state__interface" ]
 ];

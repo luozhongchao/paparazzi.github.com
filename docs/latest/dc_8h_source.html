@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-173-gd70a675</span>
+   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -309,7 +309,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00252"></a>00252     <span class="keywordflow">break</span>;
 <a name="l00253"></a>00253 
 <a name="l00254"></a>00254   <span class="keywordflow">case</span> <a class="code" href="dc_8h.html#ad2b9a0aaeabb230dc5e972d96593cc09ab6fba5a845ca7b483d532318b188bac6">DC_AUTOSHOOT_CIRCLE</a>: {
-<a name="l00255"></a>00255     <span class="keywordtype">float</span> course = DegOfRad(<a class="code" href="group__AttGroup.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float).">stateGetNedToBodyEulers_f</a>()-&gt;psi) - <a class="code" href="dc_8c.html#a0ab1c3f2b1943902132ad1d7f137182a">dc_circle_start_angle</a>;
+<a name="l00255"></a>00255     <span class="keywordtype">float</span> course = DegOfRad(<a class="code" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float).">stateGetNedToBodyEulers_f</a>()-&gt;psi) - <a class="code" href="dc_8c.html#a0ab1c3f2b1943902132ad1d7f137182a">dc_circle_start_angle</a>;
 <a name="l00256"></a>00256     <span class="keywordflow">if</span> (course &lt; 0.)
 <a name="l00257"></a>00257       course += 360.;
 <a name="l00258"></a>00258     <span class="keywordtype">float</span> current_block = floorf(course/<a class="code" href="dc_8c.html#ac01beca04b249ce815d51cef84fd887a">dc_circle_interval</a>);
@@ -329,8 +329,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00272"></a>00272     <span class="keywordflow">break</span>;
 <a name="l00273"></a>00273 
 <a name="l00274"></a>00274   <span class="keywordflow">case</span> <a class="code" href="dc_8h.html#ad2b9a0aaeabb230dc5e972d96593cc09a5dc19ed4c2807071779c1608e384f15b">DC_AUTOSHOOT_SURVEY</a> : {
-<a name="l00275"></a>00275     <span class="keywordtype">float</span> dist_x = <a class="code" href="dc_8c.html#a8f906f7bd2443e49061e9b5fe087d21f">dc_gps_x</a> - <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;
-<a name="l00276"></a>00276     <span class="keywordtype">float</span> dist_y = <a class="code" href="dc_8c.html#ab6820030fcf96862589b1502c046a4f0">dc_gps_y</a> - <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;
+<a name="l00275"></a>00275     <span class="keywordtype">float</span> dist_x = <a class="code" href="dc_8c.html#a8f906f7bd2443e49061e9b5fe087d21f">dc_gps_x</a> - <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;
+<a name="l00276"></a>00276     <span class="keywordtype">float</span> dist_y = <a class="code" href="dc_8c.html#ab6820030fcf96862589b1502c046a4f0">dc_gps_y</a> - <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;
 <a name="l00277"></a>00277 
 <a name="l00278"></a>00278     <span class="keywordflow">if</span> (<a class="code" href="dc_8c.html#ad1ba6719aa52188ab3d0102b3214608d">dc_probing</a>) {
 <a name="l00279"></a>00279       <span class="keywordflow">if</span> (dist_x*dist_x + dist_y*dist_y &lt; <a class="code" href="dc_8c.html#ab20c018632099a87e8f84de035ae165e">dc_gps_dist</a>*<a class="code" href="dc_8c.html#ab20c018632099a87e8f84de035ae165e">dc_gps_dist</a>) {
@@ -375,7 +375,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="dc_8h.html">dc.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:29:40 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 15:46:42 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

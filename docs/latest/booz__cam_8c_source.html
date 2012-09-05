@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-173-gd70a675</span>
+   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -207,7 +207,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00102"></a>00102 <span class="preprocessor"></span>      <a class="code" href="booz__cam_8c.html#ae6aabc2974b216bfdfe0a4fbb8b3c002">booz_cam_tilt_pwm</a> = BOOZ_CAM_TILT_NEUTRAL;
 <a name="l00103"></a>00103 <span class="preprocessor">#endif</span>
 <a name="l00104"></a>00104 <span class="preprocessor"></span><span class="preprocessor">#ifdef BOOZ_CAM_USE_PAN</span>
-<a name="l00105"></a>00105 <span class="preprocessor"></span>      <a class="code" href="booz__cam_8c.html#a4bc11dd64759752a16c795489b665989">booz_cam_pan</a> = <a class="code" href="group__AttGroup.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
+<a name="l00105"></a>00105 <span class="preprocessor"></span>      <a class="code" href="booz__cam_8c.html#a4bc11dd64759752a16c795489b665989">booz_cam_pan</a> = <a class="code" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
 <a name="l00106"></a>00106 <span class="preprocessor">#endif</span>
 <a name="l00107"></a>00107 <span class="preprocessor"></span>      <span class="keywordflow">break</span>;
 <a name="l00108"></a>00108     <span class="keywordflow">case</span> <a class="code" href="booz__cam_8h.html#a409a9e7ef06346ab94e290c399321313">BOOZ_CAM_MODE_MANUAL</a>:
@@ -230,14 +230,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00125"></a>00125 <span class="preprocessor">#ifdef WP_CAM</span>
 <a name="l00126"></a>00126 <span class="preprocessor"></span>      {
 <a name="l00127"></a>00127         <span class="keyword">struct </span><a class="code" href="structInt32Vect2.html">Int32Vect2</a> diff;
-<a name="l00128"></a>00128         <a class="code" href="pprz__algebra_8h.html#a3f3302835b5631d50ea560180ebf7e59">VECT2_DIFF</a>(diff, <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[WP_CAM], *<a class="code" href="group__PosGroup.html#gaf326b26862d91ded4ee4e856a511df47" title="Get position in local ENU coordinates (int).">stateGetPositionEnu_i</a>());
+<a name="l00128"></a>00128         <a class="code" href="pprz__algebra_8h.html#a3f3302835b5631d50ea560180ebf7e59">VECT2_DIFF</a>(diff, <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[WP_CAM], *<a class="code" href="group__state__position.html#gaf326b26862d91ded4ee4e856a511df47" title="Get position in local ENU coordinates (int).">stateGetPositionEnu_i</a>());
 <a name="l00129"></a>00129         <a class="code" href="pprz__algebra__int_8h.html#acc0bae5385f964798192f2fe0584e0bd">INT32_VECT2_RSHIFT</a>(diff,diff,<a class="code" href="pprz__algebra__int_8h.html#a1ec0802a57d49a24545916346953dbcb">INT32_POS_FRAC</a>);
 <a name="l00130"></a>00130         <a class="code" href="pprz__algebra__int_8h.html#aa6a5aa5ecf2101865a2203bc8ae93dc7">INT32_ATAN2</a>(<a class="code" href="booz__cam_8c.html#a4bc11dd64759752a16c795489b665989">booz_cam_pan</a>,diff.<a class="code" href="structInt32Vect2.html#a91ffcd57e82c034206721483e7b7c7f8">x</a>,diff.<a class="code" href="structInt32Vect2.html#a0945fb6906f0eaba2bfdb5c2fefdb051">y</a>);
 <a name="l00131"></a>00131         <a class="code" href="navigation_8c.html#acf3b5510f0b07816b1b93a0412f67d8f">nav_heading</a> = <a class="code" href="booz__cam_8c.html#a4bc11dd64759752a16c795489b665989">booz_cam_pan</a>;
 <a name="l00132"></a>00132 <span class="preprocessor">#ifdef BOOZ_CAM_USE_TILT_ANGLES</span>
 <a name="l00133"></a>00133 <span class="preprocessor"></span>        <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> dist, height;
 <a name="l00134"></a>00134         <a class="code" href="pprz__algebra__int_8h.html#a4c4c9d9b70773e2367e0dc0ab75abb2d">INT32_VECT2_NORM</a>(dist, diff);
-<a name="l00135"></a>00135         height = (<a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[WP_CAM].<a class="code" href="structEnuCoor__i.html#a542f28199ba7024fbec8287daa07d3a5">z</a> - <a class="code" href="group__PosGroup.html#gaf326b26862d91ded4ee4e856a511df47" title="Get position in local ENU coordinates (int).">stateGetPositionEnu_i</a>()-&gt;<a class="code" href="structEnuCoor__i.html#a542f28199ba7024fbec8287daa07d3a5">z</a>) &gt;&gt; <a class="code" href="pprz__algebra__int_8h.html#a1ec0802a57d49a24545916346953dbcb">INT32_POS_FRAC</a>;
+<a name="l00135"></a>00135         height = (<a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[WP_CAM].<a class="code" href="structEnuCoor__i.html#a542f28199ba7024fbec8287daa07d3a5">z</a> - <a class="code" href="group__state__position.html#gaf326b26862d91ded4ee4e856a511df47" title="Get position in local ENU coordinates (int).">stateGetPositionEnu_i</a>()-&gt;<a class="code" href="structEnuCoor__i.html#a542f28199ba7024fbec8287daa07d3a5">z</a>) &gt;&gt; <a class="code" href="pprz__algebra__int_8h.html#a1ec0802a57d49a24545916346953dbcb">INT32_POS_FRAC</a>;
 <a name="l00136"></a>00136         <a class="code" href="pprz__algebra__int_8h.html#aa6a5aa5ecf2101865a2203bc8ae93dc7">INT32_ATAN2</a>(<a class="code" href="booz__cam_8c.html#a570b8685454cd7fd36fca13e904d5183">booz_cam_tilt</a>, height, dist);
 <a name="l00137"></a>00137         Bound(<a class="code" href="booz__cam_8c.html#a570b8685454cd7fd36fca13e904d5183">booz_cam_tilt</a>, CAM_TA_MIN, CAM_TA_MAX);
 <a name="l00138"></a>00138         <a class="code" href="booz__cam_8c.html#ae6aabc2974b216bfdfe0a4fbb8b3c002">booz_cam_tilt_pwm</a> = BOOZ_CAM_TILT_MIN + D_TILT * (<a class="code" href="booz__cam_8c.html#a570b8685454cd7fd36fca13e904d5183">booz_cam_tilt</a> - CAM_TA_MIN) / (CAM_TA_MAX - CAM_TA_MIN);
@@ -272,7 +272,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="booz__cam_8c.html">booz_cam.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:29:40 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 15:46:41 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

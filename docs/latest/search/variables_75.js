@@ -9,8 +9,8 @@ var searchData=
   ['use_5fairspeed_5fratio',['use_airspeed_ratio',['../stabilization__adaptive_8c.html#aa3cf0ada6c21e17a8269616f13439532',1,'use_airspeed_ratio():&#160;stabilization_adaptive.c'],['../stabilization__adaptive_8h.html#aa3cf0ada6c21e17a8269616f13439532',1,'use_airspeed_ratio():&#160;stabilization_adaptive.c']]],
   ['use_5fgravity_5fheuristic',['use_gravity_heuristic',['../structAhrsIntCmpl.html#acf3812d8e1e73767000eef27b06a0da1',1,'AhrsIntCmpl']]],
   ['ut1',['ut1',['../baro__MS5534A_8c.html#a34f8f6f89a1ea8380fa692619ee8277c',1,'baro_MS5534A.c']]],
-  ['utm_5finitialized_5ff',['utm_initialized_f',['../group__PosGroup.html#ga4db0fc298367ebc0369b388554940b3a',1,'State']]],
-  ['utm_5forigin_5ff',['utm_origin_f',['../group__PosGroup.html#gab8f6680d3d8c840e42f2994cadfec6f7',1,'State']]],
+  ['utm_5finitialized_5ff',['utm_initialized_f',['../group__state__position.html#ga4db0fc298367ebc0369b388554940b3a',1,'State']]],
+  ['utm_5forigin_5ff',['utm_origin_f',['../group__state__position.html#gab8f6680d3d8c840e42f2994cadfec6f7',1,'State']]],
   ['utm_5fpos',['utm_pos',['../structGpsState.html#a2cf3685a890a6200b334b2c399102ffa',1,'GpsState']]],
-  ['utm_5fpos_5ff',['utm_pos_f',['../group__PosGroup.html#ga339c3808ea93eb60bbe064d25098a825',1,'State']]]
+  ['utm_5fpos_5ff',['utm_pos_f',['../group__state__position.html#ga339c3808ea93eb60bbe064d25098a825',1,'State']]]
 ];

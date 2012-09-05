@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-173-gd70a675</span>
+   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -133,14 +133,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029   <span class="keywordflow">if</span> (<a class="code" href="chemo__detect_8c.html#af11a61031a8dd147ab3f8dd08bde0db1">chemo_sensor</a> &gt; <a class="code" href="chemotaxis_8c.html#adb2f647564f1446ebf661f88999d0b59">last_plume_value</a>) {
 <a name="l00030"></a>00030     <span class="comment">/* Move the circle in this direction */</span>
-<a name="l00031"></a>00031     <span class="keywordtype">float</span> <a class="code" href="structFloatVect2.html#a965d6b4f04fcc6d2aa179c4016d7ee44">x</a> = <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a> - <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a>;
-<a name="l00032"></a>00032     <span class="keywordtype">float</span> <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a> = <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a> - <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a>;
+<a name="l00031"></a>00031     <span class="keywordtype">float</span> <a class="code" href="structFloatVect2.html#a965d6b4f04fcc6d2aa179c4016d7ee44">x</a> = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a> - <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a>;
+<a name="l00032"></a>00032     <span class="keywordtype">float</span> <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a> = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a> - <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a>;
 <a name="l00033"></a>00033     <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[<a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a> = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a> + <a class="code" href="chemotaxis_8c.html#af5abd28c44c29b7397c84f1fec4b1d84">ALPHA</a> * <a class="code" href="structFloatVect2.html#a965d6b4f04fcc6d2aa179c4016d7ee44">x</a>;
 <a name="l00034"></a>00034     <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[<a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a> = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a> + <a class="code" href="chemotaxis_8c.html#af5abd28c44c29b7397c84f1fec4b1d84">ALPHA</a> * <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a>;
 <a name="l00035"></a>00035     <span class="comment">//    DownlinkSendWp(c);</span>
 <a name="l00036"></a>00036     <span class="comment">/* Turn in the right direction */</span>
-<a name="l00037"></a>00037     <span class="keywordtype">float</span> dir_x = cos(M_PI_2 - (*<a class="code" href="group__SpeedGroup.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float).">stateGetHorizontalSpeedDir_f</a>()));
-<a name="l00038"></a>00038     <span class="keywordtype">float</span> dir_y = sin(M_PI_2 - (*<a class="code" href="group__SpeedGroup.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float).">stateGetHorizontalSpeedDir_f</a>()));
+<a name="l00037"></a>00037     <span class="keywordtype">float</span> dir_x = cos(M_PI_2 - (*<a class="code" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float).">stateGetHorizontalSpeedDir_f</a>()));
+<a name="l00038"></a>00038     <span class="keywordtype">float</span> dir_y = sin(M_PI_2 - (*<a class="code" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float).">stateGetHorizontalSpeedDir_f</a>()));
 <a name="l00039"></a>00039     <span class="keywordtype">float</span> pvect = dir_x*y - dir_y*<a class="code" href="structFloatVect2.html#a965d6b4f04fcc6d2aa179c4016d7ee44">x</a>;
 <a name="l00040"></a>00040     <a class="code" href="chemotaxis_8c.html#a98b4563c5f811938ca031a7553ae81e3">sign</a> = (pvect &gt; 0 ? -1 : 1);
 <a name="l00041"></a>00041     <span class="comment">/* Reduce the radius */</span>
@@ -148,8 +148,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045     <span class="comment">/* Store this plume */</span>
-<a name="l00046"></a>00046     <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a> = <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;
-<a name="l00047"></a>00047     <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a> = <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;
+<a name="l00046"></a>00046     <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a> = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;
+<a name="l00047"></a>00047     <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[plume].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a> = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;
 <a name="l00048"></a>00048     <span class="comment">// DownlinkSendWp(plume);</span>
 <a name="l00049"></a>00049     <a class="code" href="chemotaxis_8c.html#adb2f647564f1446ebf661f88999d0b59">last_plume_value</a> = <a class="code" href="chemo__detect_8c.html#af11a61031a8dd147ab3f8dd08bde0db1">chemo_sensor</a>;
 <a name="l00050"></a>00050   }
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="chemotaxis_8c.html">chemotaxis.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:29:40 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 15:46:42 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

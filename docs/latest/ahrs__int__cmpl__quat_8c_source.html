@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-173-gd70a675</span>
+   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -285,7 +285,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00180"></a>00180     <span class="comment">// FIXME: check overflows !</span>
 <a name="l00181"></a>00181     <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> vel_tangential_body = {(<a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#aa634b9c59a692e01a3b2b5d3d98c26ac">ltp_vel_norm</a>&gt;&gt;<a class="code" href="pprz__algebra__int_8h.html#a871a3a4fc9d79e94f0f648483542f7fa">INT32_ACCEL_FRAC</a>), 0.0, 0.0};
 <a name="l00182"></a>00182     <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> acc_c_body;
-<a name="l00183"></a>00183     <a class="code" href="pprz__algebra_8h.html#a33b54941166ca05f8a51266181a59702">VECT3_RATES_CROSS_VECT3</a>(acc_c_body, (*<a class="code" href="group__RateGroup.html#ga3fc058302e6f40bf0b8797ca9a7ed60f" title="Get vehicle body angular rate (int).">stateGetBodyRates_i</a>()), vel_tangential_body);
+<a name="l00183"></a>00183     <a class="code" href="pprz__algebra_8h.html#a33b54941166ca05f8a51266181a59702">VECT3_RATES_CROSS_VECT3</a>(acc_c_body, (*<a class="code" href="group__state__rate.html#ga3fc058302e6f40bf0b8797ca9a7ed60f" title="Get vehicle body angular rate (int).">stateGetBodyRates_i</a>()), vel_tangential_body);
 <a name="l00184"></a>00184     <a class="code" href="pprz__algebra__int_8h.html#a870a81f5c28832e7bc8d559c2812a69b">INT32_VECT3_RSHIFT</a>(acc_c_body, acc_c_body, <a class="code" href="pprz__algebra__int_8h.html#a78c97bb51a4486cff673bf9995b8fdb0">INT32_SPEED_FRAC</a>+<a class="code" href="pprz__algebra__int_8h.html#acd293568d358a48f21774753cf9f095b">INT32_RATE_FRAC</a>-<a class="code" href="pprz__algebra__int_8h.html#a871a3a4fc9d79e94f0f648483542f7fa">INT32_ACCEL_FRAC</a>-<a class="code" href="pprz__algebra__int_8h.html#a871a3a4fc9d79e94f0f648483542f7fa">INT32_ACCEL_FRAC</a>);
 <a name="l00185"></a>00185 
 <a name="l00186"></a>00186     <span class="comment">/* convert centrifucal acceleration from body to imu frame */</span>
@@ -430,7 +430,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00325"></a>00325 
 <a name="l00326"></a>00326 }
 <a name="l00327"></a>00327 
-<a name="l00328"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#a0156f6669675c216bbcb413ea1879960">00328</a> <span class="keywordtype">void</span> <a class="code" href="ins__chimu__spi_8c.html#a0156f6669675c216bbcb413ea1879960" title="Update AHRS state with GPS measurements.">ahrs_update_gps</a>(<span class="keywordtype">void</span>) {
+<a name="l00328"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#a0156f6669675c216bbcb413ea1879960">00328</a> <span class="keywordtype">void</span> <a class="code" href="modules_2ins_2ins__arduimu__basic_8c.html#a0156f6669675c216bbcb413ea1879960" title="Update AHRS state with GPS measurements.">ahrs_update_gps</a>(<span class="keywordtype">void</span>) {
 <a name="l00329"></a>00329 <span class="preprocessor">#if AHRS_GRAVITY_UPDATE_COORDINATED_TURN &amp;&amp; USE_GPS</span>
 <a name="l00330"></a>00330 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#afeffb02bdd18d27a87e96bb77175168f" title="status of fix">fix</a> == <a class="code" href="gps_8h.html#ac5e980c8325a29dd79a45ed26af404be">GPS_FIX_3D</a>) {
 <a name="l00331"></a>00331     <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#aa634b9c59a692e01a3b2b5d3d98c26ac">ltp_vel_norm</a> = <a class="code" href="pprz__algebra__int_8h.html#af665ad3da6b5c3589c19d7bdc66e8fc4">SPEED_BFP_OF_REAL</a>(<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a6bbd07d59ce79d19e1027b08e76dbcf9" title="norm of 3d speed in cm/s">speed_3d</a> / 100.);
@@ -469,7 +469,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00364"></a>00364 
 <a name="l00365"></a>00365   <span class="comment">// row 0 of ltp_to_body_rmat = body x-axis in ltp frame</span>
 <a name="l00366"></a>00366   <span class="comment">// we only consider x and y</span>
-<a name="l00367"></a>00367   <span class="keyword">struct </span><a class="code" href="structInt32RMat.html" title="rotation matrix">Int32RMat</a>* ltp_to_body_rmat = <a class="code" href="group__AttGroup.html#ga7c541b9b2e6231ac9a11a9e21562a5b3" title="Get vehicle body attitude rotation matrix (int).">stateGetNedToBodyRMat_i</a>();
+<a name="l00367"></a>00367   <span class="keyword">struct </span><a class="code" href="structInt32RMat.html" title="rotation matrix">Int32RMat</a>* ltp_to_body_rmat = <a class="code" href="group__state__attitude.html#ga7c541b9b2e6231ac9a11a9e21562a5b3" title="Get vehicle body attitude rotation matrix (int).">stateGetNedToBodyRMat_i</a>();
 <a name="l00368"></a>00368   <span class="keyword">struct </span><a class="code" href="structInt32Vect2.html">Int32Vect2</a> expected_ltp =
 <a name="l00369"></a>00369     { <a class="code" href="pprz__algebra_8h.html#ab04968261f7fa9056d945c9bfa4166b8">RMAT_ELMT</a>((*ltp_to_body_rmat), 0, 0),
 <a name="l00370"></a>00370       <a class="code" href="pprz__algebra_8h.html#ab04968261f7fa9056d945c9bfa4166b8">RMAT_ELMT</a>((*ltp_to_body_rmat), 0, 1) };
@@ -521,7 +521,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00416"></a>00416 
 <a name="l00417"></a><a class="code" href="ahrs__int__cmpl__quat_8h.html#a80ff6d629f3402bab9a84097f23e3593">00417</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__float__cmpl_8c.html#a542422de172f1f25b7987850825cb587" title="Hard reset yaw to a heading.">ahrs_realign_heading</a>(<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="ahrs__infrared_8c.html#ac5682e48513a771560df50e3b213e61a">heading</a>) {
 <a name="l00418"></a>00418 
-<a name="l00419"></a>00419   <span class="keyword">struct </span><a class="code" href="structInt32Quat.html" title="Rotation quaternion.">Int32Quat</a> ltp_to_body_quat = *<a class="code" href="group__AttGroup.html#ga28e5de0a4822cabcfe8350e2343111ce" title="Get vehicle body attitude quaternion (int).">stateGetNedToBodyQuat_i</a>();
+<a name="l00419"></a>00419   <span class="keyword">struct </span><a class="code" href="structInt32Quat.html" title="Rotation quaternion.">Int32Quat</a> ltp_to_body_quat = *<a class="code" href="group__state__attitude.html#ga28e5de0a4822cabcfe8350e2343111ce" title="Get vehicle body attitude quaternion (int).">stateGetNedToBodyQuat_i</a>();
 <a name="l00420"></a>00420 
 <a name="l00421"></a>00421   <span class="comment">/* quaternion representing only the heading rotation from ltp to body */</span>
 <a name="l00422"></a>00422   <span class="keyword">struct </span><a class="code" href="structInt32Quat.html" title="Rotation quaternion.">Int32Quat</a> q_h_new;
@@ -550,7 +550,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00445"></a>00445   <a class="code" href="pprz__algebra__int_8h.html#a4981683677de808113f86e580de06372">INT32_QUAT_COMP</a>(<a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#aa55b72aff2e4f10587e7bbd90da4b418">ltp_to_imu_quat</a>, ltp_to_body_quat, <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a5dd001e15dc85abf5ae465ed3ce554e5" title="rotation from body to imu frame as a unit quaternion">body_to_imu_quat</a>);
 <a name="l00446"></a>00446 
 <a name="l00447"></a>00447   <span class="comment">/* Set state */</span>
-<a name="l00448"></a>00448   <a class="code" href="group__AttGroup.html#ga48a6162b6f885b06c906931f33a9caa0" title="Set vehicle body attitude from quaternion (int).">stateSetNedToBodyQuat_i</a>(&amp;ltp_to_body_quat);
+<a name="l00448"></a>00448   <a class="code" href="group__state__attitude.html#ga48a6162b6f885b06c906931f33a9caa0" title="Set vehicle body attitude from quaternion (int).">stateSetNedToBodyQuat_i</a>(&amp;ltp_to_body_quat);
 <a name="l00449"></a>00449 
 <a name="l00450"></a>00450   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c">heading_aligned</a> = TRUE;
 <a name="l00451"></a>00451 }
@@ -571,16 +571,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00466"></a>00466   <a class="code" href="pprz__algebra__int_8h.html#a3003feb20a532f67e77832669398bc73">INT32_QUAT_OF_EULERS</a>(neutrals_to_body_quat, neutrals_to_body_eulers);
 <a name="l00467"></a>00467   <a class="code" href="pprz__algebra__int_8h.html#a264c9ba2fc13faf84a2d7a6de05707b1">INT32_QUAT_NORMALIZE</a>(neutrals_to_body_quat);
 <a name="l00468"></a>00468   <a class="code" href="pprz__algebra__int_8h.html#ae84cd86fe9ebc343117224eab8153d92">INT32_QUAT_COMP_INV</a>(ltp_to_neutrals_quat, ltp_to_body_quat, neutrals_to_body_quat);
-<a name="l00469"></a>00469   <a class="code" href="group__AttGroup.html#ga48a6162b6f885b06c906931f33a9caa0" title="Set vehicle body attitude from quaternion (int).">stateSetNedToBodyQuat_i</a>(&amp;ltp_to_neutrals_quat);
+<a name="l00469"></a>00469   <a class="code" href="group__state__attitude.html#ga48a6162b6f885b06c906931f33a9caa0" title="Set vehicle body attitude from quaternion (int).">stateSetNedToBodyQuat_i</a>(&amp;ltp_to_neutrals_quat);
 <a name="l00470"></a>00470 <span class="preprocessor">#else</span>
-<a name="l00471"></a>00471 <span class="preprocessor"></span>  <a class="code" href="group__AttGroup.html#ga48a6162b6f885b06c906931f33a9caa0" title="Set vehicle body attitude from quaternion (int).">stateSetNedToBodyQuat_i</a>(&amp;ltp_to_body_quat);
+<a name="l00471"></a>00471 <span class="preprocessor"></span>  <a class="code" href="group__state__attitude.html#ga48a6162b6f885b06c906931f33a9caa0" title="Set vehicle body attitude from quaternion (int).">stateSetNedToBodyQuat_i</a>(&amp;ltp_to_body_quat);
 <a name="l00472"></a>00472 <span class="preprocessor">#endif</span>
 <a name="l00473"></a>00473 <span class="preprocessor"></span>
 <a name="l00474"></a>00474   <span class="comment">/* compute body rates */</span>
 <a name="l00475"></a>00475   <span class="keyword">struct </span><a class="code" href="structInt32Rates.html" title="angular rates">Int32Rates</a> body_rate;
 <a name="l00476"></a>00476   <a class="code" href="pprz__algebra__int_8h.html#a9874c55f345f40da4fa68a6fdeeca1ff">INT32_RMAT_TRANSP_RATEMULT</a>(body_rate, <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a6e7552a275a56f8eebd5a2fc960c9f4b" title="rotation from body to imu frame as a rotation matrix">body_to_imu_rmat</a>, <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a9709ec503b43e0be315a45aaaa98e349">imu_rate</a>);
 <a name="l00477"></a>00477   <span class="comment">/* Set state */</span>
-<a name="l00478"></a>00478   <a class="code" href="group__RateGroup.html#gaf71de3d472804c112ddea1bbd3571014" title="Set vehicle body angular rate (int).">stateSetBodyRates_i</a>(&amp;body_rate);
+<a name="l00478"></a>00478   <a class="code" href="group__state__rate.html#gaf71de3d472804c112ddea1bbd3571014" title="Set vehicle body angular rate (int).">stateSetBodyRates_i</a>(&amp;body_rate);
 <a name="l00479"></a>00479 }
 <a name="l00480"></a>00480 
 <a name="l00481"></a>00481 
@@ -604,7 +604,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ahrs__int__cmpl__quat_8c.html">ahrs_int_cmpl_quat.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:29:43 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 15:46:45 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

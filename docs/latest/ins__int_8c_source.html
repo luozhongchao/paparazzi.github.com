@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-173-gd70a675</span>
+   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00091"></a>00091 
 <a name="l00092"></a>00092   <a class="code" href="pprz__geodetic__int_8c.html#a5afd098a83e572b854e157486ccb569f">ltp_def_from_ecef_i</a>(&amp;<a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>, &amp;ecef_nav0);
 <a name="l00093"></a>00093   <a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>.<a class="code" href="structLtpDef__i.html#a32bcfa1049778e1703fa09aa9b810a5b" title="Height above mean sea level in mm.">hmsl</a> = NAV_ALT0;
-<a name="l00094"></a>00094   <a class="code" href="group__StateGroup.html#gacc086fcd500269371c8c6eabbf3d557e" title="Set the local (flat earth) coordinate frame origin (int).">stateSetLocalOrigin_i</a>(&amp;<a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>);
+<a name="l00094"></a>00094   <a class="code" href="group__state__interface.html#gacc086fcd500269371c8c6eabbf3d557e" title="Set the local (flat earth) coordinate frame origin (int).">stateSetLocalOrigin_i</a>(&amp;<a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>);
 <a name="l00095"></a>00095 <span class="preprocessor">#else</span>
 <a name="l00096"></a>00096 <span class="preprocessor"></span>  <a class="code" href="ins__int_8c.html#a3a5cc4cabf834864b4b6b76b20891b31">ins_ltp_initialised</a>  = FALSE;
 <a name="l00097"></a>00097 <span class="preprocessor">#endif</span>
@@ -240,7 +240,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00136"></a>00136   <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> accel_meas_body;
 <a name="l00137"></a>00137   <a class="code" href="pprz__algebra__int_8h.html#aa42fafb988683966c81298ec9339b373">INT32_RMAT_TRANSP_VMULT</a>(accel_meas_body, <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a6e7552a275a56f8eebd5a2fc960c9f4b" title="rotation from body to imu frame as a rotation matrix">body_to_imu_rmat</a>, <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#aecac1be12d8d9c9c31be2ad9d5b90627" title="accelerometer measurements">accel</a>);
 <a name="l00138"></a>00138   <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> accel_meas_ltp;
-<a name="l00139"></a>00139   <a class="code" href="pprz__algebra__int_8h.html#aa42fafb988683966c81298ec9339b373">INT32_RMAT_TRANSP_VMULT</a>(accel_meas_ltp, (*<a class="code" href="group__AttGroup.html#ga7c541b9b2e6231ac9a11a9e21562a5b3" title="Get vehicle body attitude rotation matrix (int).">stateGetNedToBodyRMat_i</a>()), accel_meas_body);
+<a name="l00139"></a>00139   <a class="code" href="pprz__algebra__int_8h.html#aa42fafb988683966c81298ec9339b373">INT32_RMAT_TRANSP_VMULT</a>(accel_meas_ltp, (*<a class="code" href="group__state__attitude.html#ga7c541b9b2e6231ac9a11a9e21562a5b3" title="Get vehicle body attitude rotation matrix (int).">stateGetNedToBodyRMat_i</a>()), accel_meas_body);
 <a name="l00140"></a>00140 
 <a name="l00141"></a>00141 <span class="preprocessor">#if USE_VFF</span>
 <a name="l00142"></a>00142 <span class="preprocessor"></span>  <span class="keywordtype">float</span> z_accel_meas_float = <a class="code" href="pprz__algebra__int_8h.html#aeb7ad4ba2eac8c6f8e608fa42ab9c144">ACCEL_FLOAT_OF_BFP</a>(accel_meas_ltp.<a class="code" href="structInt32Vect3.html#a5c1b16eb951fe60e8fe3f00217268c36">z</a>);
@@ -306,7 +306,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00202"></a>00202       <a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>.<a class="code" href="structLtpDef__i.html#a6fa81363139469c813164c4804f9103d" title="Reference point in lla.">lla</a>.<a class="code" href="structLlaCoor__i.html#a36aa60e58a828880951718db39c227f9" title="in millimeters above WGS84 reference ellipsoid">alt</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a298552f8926fd925f8c94bbeeca1dc5c" title="position in LLA (lat,lon: rad*1e7; alt: mm over ellipsoid)">lla_pos</a>.<a class="code" href="structLlaCoor__i.html#a36aa60e58a828880951718db39c227f9" title="in millimeters above WGS84 reference ellipsoid">alt</a>;
 <a name="l00203"></a>00203       <a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>.<a class="code" href="structLtpDef__i.html#a32bcfa1049778e1703fa09aa9b810a5b" title="Height above mean sea level in mm.">hmsl</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a10af95f7fdab3171a789866838b0c8c3" title="height above mean sea level in mm">hmsl</a>;
 <a name="l00204"></a>00204       <a class="code" href="ins__int_8c.html#a3a5cc4cabf834864b4b6b76b20891b31">ins_ltp_initialised</a> = TRUE;
-<a name="l00205"></a>00205       <a class="code" href="group__StateGroup.html#gacc086fcd500269371c8c6eabbf3d557e" title="Set the local (flat earth) coordinate frame origin (int).">stateSetLocalOrigin_i</a>(&amp;<a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>);
+<a name="l00205"></a>00205       <a class="code" href="group__state__interface.html#gacc086fcd500269371c8c6eabbf3d557e" title="Set the local (flat earth) coordinate frame origin (int).">stateSetLocalOrigin_i</a>(&amp;<a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>);
 <a name="l00206"></a>00206     }
 <a name="l00207"></a>00207     <a class="code" href="pprz__geodetic__int_8c.html#a9307e97057d51e781def8a03dea804f6">ned_of_ecef_point_i</a>(&amp;<a class="code" href="ins__int_8c.html#a4be5168f8d8e0395216fa0fcc94f1d78">ins_gps_pos_cm_ned</a>, &amp;<a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>, &amp;<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a4b4e800eef9609fd474c0c92fd4836ff" title="position in ECEF in cm">ecef_pos</a>);
 <a name="l00208"></a>00208     <a class="code" href="pprz__geodetic__int_8c.html#ab4eda479f4c01e96082d8a352f16cfea">ned_of_ecef_vect_i</a>(&amp;<a class="code" href="ins__int_8c.html#a3e56b004193f1011e86edf5403081278">ins_gps_speed_cm_s_ned</a>, &amp;<a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>, &amp;<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a61d8a6f16de4a00066cb7026aff117da" title="speed ECEF in cm/s">ecef_vel</a>);
@@ -387,7 +387,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ins__int_8c.html">ins_int.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:29:44 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 15:46:46 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

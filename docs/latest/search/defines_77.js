@@ -13,6 +13,6 @@ var searchData=
   ['wdtv',['WDTV',['../LPC21xx_8h.html#ab558486d90264fa951c0cb12f09e328a',1,'LPC21xx.h']]],
   ['wgs84_5fellipsoid_5fto_5fgeoid',['WGS84_ELLIPSOID_TO_GEOID',['../pprz__geodetic__wgs84_8h.html#acfd9257991fa9fb4cbf93c1ccda48e98',1,'pprz_geodetic_wgs84.h']]],
   ['wgs84_5fh',['WGS84_H',['../pprz__geodetic__wgs84_8h.html#a308d77871a261ab445d3d5b1501e35eb',1,'pprz_geodetic_wgs84.h']]],
-  ['windspeed_5ff',['WINDSPEED_F',['../group__WindAirGroup.html#ga3eb2de8fbbcb8bb2d6660a06aa254790',1,'state.h']]],
-  ['windspeed_5fi',['WINDSPEED_I',['../group__WindAirGroup.html#ga09ac60b282bbb163ee76778d6b9c6323',1,'state.h']]]
+  ['windspeed_5ff',['WINDSPEED_F',['../group__state__wind__airspeed.html#ga3eb2de8fbbcb8bb2d6660a06aa254790',1,'state.h']]],
+  ['windspeed_5fi',['WINDSPEED_I',['../group__state__wind__airspeed.html#ga09ac60b282bbb163ee76778d6b9c6323',1,'state.h']]]
 ];
