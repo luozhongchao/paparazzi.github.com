@@ -13,6 +13,7 @@ var stabilization__attitude__quat__float_8c =
     [ "stabilization_attitude_read_rc", "stabilization__attitude__quat__float_8c.html#a147b1b8bfdde52f82d0829ce748bf1e9", null ],
     [ "stabilization_attitude_run", "stabilization__attitude__quat__float_8c.html#aae5fe27afd6cf48e9beeb6aa4c6cfc6e", null ],
     [ "gain_idx", "stabilization__attitude__quat__float_8c.html#a88471162c0f269059f892bf96fbc7260", null ],
+    [ "last_body_rate", "stabilization__attitude__quat__float_8c.html#a1cf88c9b9b4dd55c4bed1ad70f95d024", null ],
     [ "phi_ddgain", "stabilization__attitude__quat__float_8c.html#a6ef156cacd8701fc42504415807c85a0", null ],
     [ "phi_ddgain_surface", "stabilization__attitude__quat__float_8c.html#a26388226b6e1daab4d087665655ee090", null ],
     [ "phi_dgain", "stabilization__attitude__quat__float_8c.html#abfebdca3b3d7b428a4fea87b2049091b", null ],

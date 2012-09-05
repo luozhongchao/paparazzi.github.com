@@ -6,7 +6,6 @@ var ahrs__sim_8c =
     [ "ahrs_update_accel", "ahrs__sim_8c.html#a8bf83860498b05e7e94484cdcbcb1b7a", null ],
     [ "ahrs_update_gps", "ahrs__sim_8c.html#a0156f6669675c216bbcb413ea1879960", null ],
     [ "ahrs_update_mag", "ahrs__sim_8c.html#a781832a9119845d31bda0fc8a8bb8bf3", null ],
-    [ "compute_body_orientation_and_rates", "ahrs__sim_8c.html#af0f47f201cff1497fa363e01af29155f", null ],
     [ "update_ahrs_from_sim", "ahrs__sim_8c.html#a631ce4de5e99850af24482335a960acf", null ],
     [ "ahrs_sim_available", "ahrs__sim_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b", null ],
     [ "sim_p", "ahrs__sim_8c.html#ad0537dfc8e7b1504a61bd86cf944e774", null ],

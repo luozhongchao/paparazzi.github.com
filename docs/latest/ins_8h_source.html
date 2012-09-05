@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -103,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="ins_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> * Copyright (C) 2008-2010 The Paparazzi Team</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (C) 2008-2012 The Paparazzi Team</span>
 <a name="l00003"></a>00003 <span class="comment"> *</span>
 <a name="l00004"></a>00004 <span class="comment"> * This file is part of paparazzi.</span>
 <a name="l00005"></a>00005 <span class="comment"> *</span>
@@ -129,52 +130,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 <span class="preprocessor">#include &quot;std.h&quot;</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations.">math/pprz_geodetic_int.h</a>&quot;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra.">math/pprz_algebra_float.h</a>&quot;</span>
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="comment">/* gps transformed to LTP-NED  */</span>
-<a name="l00030"></a>00030 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structLtpDef__i.html" title="definition of the local (flat earth) coordinate system">LtpDef_i</a>  <a class="code" href="ins_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403">ins_ltp_def</a>;
-<a name="l00031"></a>00031 <span class="keyword">extern</span>          bool_t  <a class="code" href="ins_8c.html#a3a5cc4cabf834864b4b6b76b20891b31">ins_ltp_initialised</a>;
-<a name="l00032"></a>00032 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structNedCoor__i.html" title="vector in North East Down coordinates">NedCoor_i</a> <a class="code" href="ins_8c.html#a4be5168f8d8e0395216fa0fcc94f1d78">ins_gps_pos_cm_ned</a>;
-<a name="l00033"></a>00033 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structNedCoor__i.html" title="vector in North East Down coordinates">NedCoor_i</a> <a class="code" href="ins_8c.html#a3e56b004193f1011e86edf5403081278">ins_gps_speed_cm_s_ned</a>;
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="comment">/* barometer                   */</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#if USE_VFF || USE_VFF_EXTENDED</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> ins_baro_alt;
-<a name="l00038"></a>00038 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> ins_qfe;
-<a name="l00039"></a>00039 <span class="keyword">extern</span> bool_t  ins_baro_initialised;
-<a name="l00040"></a>00040 <span class="preprocessor">#if USE_SONAR</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="keyword">extern</span> bool_t  ins_update_on_agl; <span class="comment">/* use sonar to update agl if available */</span>
-<a name="l00042"></a>00042 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> ins_sonar_offset;
-<a name="l00043"></a>00043 <span class="preprocessor">#endif</span>
-<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00045"></a>00045 <span class="preprocessor"></span>
-<a name="l00046"></a>00046 <span class="comment">/* output LTP NED               */</span>
-<a name="l00047"></a>00047 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structNedCoor__i.html" title="vector in North East Down coordinates">NedCoor_i</a> <a class="code" href="ins_8c.html#a1e387adbd75abcace16da3c7937f3fcd">ins_ltp_pos</a>;
-<a name="l00048"></a>00048 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structNedCoor__i.html" title="vector in North East Down coordinates">NedCoor_i</a> <a class="code" href="ins_8c.html#abfca570ad537cb55bbe0eb572b6e1685">ins_ltp_speed</a>;
-<a name="l00049"></a>00049 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structNedCoor__i.html" title="vector in North East Down coordinates">NedCoor_i</a> <a class="code" href="ins_8c.html#a40b750394f04de20db66008c0b6a9f98">ins_ltp_accel</a>;
-<a name="l00050"></a>00050 <span class="comment">/* output LTP ENU               */</span>
-<a name="l00051"></a>00051 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structEnuCoor__i.html" title="vector in East North Up coordinates">EnuCoor_i</a> <a class="code" href="ins_8c.html#a9ea315e9e1fdf8503c92cb383357e59c">ins_enu_pos</a>;
-<a name="l00052"></a>00052 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structEnuCoor__i.html" title="vector in East North Up coordinates">EnuCoor_i</a> <a class="code" href="ins_8c.html#ac2c79f54d3e1a3abf0d6f04accbad320">ins_enu_speed</a>;
-<a name="l00053"></a>00053 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structEnuCoor__i.html" title="vector in East North Up coordinates">EnuCoor_i</a> <a class="code" href="ins_8c.html#ac9bfec494fbd6dd4e0f58d1e380073ea">ins_enu_accel</a>;
-<a name="l00054"></a>00054 <span class="preprocessor">#if USE_HFF</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span><span class="comment">/* horizontal gps transformed to NED in meters as float */</span>
-<a name="l00056"></a>00056 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structFloatVect2.html">FloatVect2</a> ins_gps_pos_m_ned;
-<a name="l00057"></a>00057 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structFloatVect2.html">FloatVect2</a> ins_gps_speed_m_s_ned;
-<a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
-<a name="l00059"></a>00059 <span class="preprocessor"></span>
-<a name="l00060"></a>00060 <span class="keyword">extern</span> bool_t <a class="code" href="ins_8c.html#adbd8ef97dc98ace19f2863662fd45b78">ins_hf_realign</a>;
-<a name="l00061"></a>00061 <span class="keyword">extern</span> bool_t <a class="code" href="ins_8c.html#a378f67328756b60bdeb5e4113ddd4e2f">ins_vf_realign</a>;
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="fw__ins__vn100_8c.html#abf3028c2ada542781b8a5e1eb20c17ce">ins_init</a>( <span class="keywordtype">void</span> );
-<a name="l00064"></a>00064 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#acb548b510075b086cc7cc5e2d80b3a71">ins_periodic</a>( <span class="keywordtype">void</span> );
-<a name="l00065"></a>00065 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#aa06d5c09c10bc6397041d6fe8f34c438">ins_realign_h</a>(<span class="keyword">struct</span> <a class="code" href="structFloatVect2.html">FloatVect2</a> pos, <span class="keyword">struct</span> <a class="code" href="structFloatVect2.html">FloatVect2</a> <a class="code" href="guidance__v__ref_8h.html#a36dda2666e5436e608a494230ca9076b">speed</a>);
-<a name="l00066"></a>00066 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#a280ea4c959a462604573f57637749791">ins_realign_v</a>(<span class="keywordtype">float</span> z);
-<a name="l00067"></a>00067 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#a77b5ba9f198b91b698062cc0dc0c953d">ins_propagate</a>( <span class="keywordtype">void</span> );
-<a name="l00068"></a>00068 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#a6e1a3600e1905c414ff96c92775237d3">ins_update_baro</a>( <span class="keywordtype">void</span> );
-<a name="l00069"></a>00069 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#aacc25a507c5c24309fc37b1f806f5d2b">ins_update_gps</a>( <span class="keywordtype">void</span> );
-<a name="l00070"></a>00070 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins_8c.html#acc04164712bf9640e891c67dc6eeb424">ins_update_sonar</a>( <span class="keywordtype">void</span> );
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 <span class="preprocessor">#endif </span><span class="comment">/* INS_H */</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a><a class="code" href="ins_8h.html#ab7a761fb8ab000e4a95cec8ce5efb813">00030</a> <span class="preprocessor">#define INS_UNINIT  0</span>
+<a name="l00031"></a><a class="code" href="ins_8h.html#a87f8301a9740df44f94d3565ed0be3e5">00031</a> <span class="preprocessor"></span><span class="preprocessor">#define INS_RUNNING 1</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span>
+<a name="l00033"></a>00033 <span class="comment">/* underlying includes (needed for parameters) */</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#ifdef INS_TYPE_H</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#include INS_TYPE_H</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span>
+<a name="l00039"></a><a class="code" href="structIns.html">00039</a> <span class="keyword">struct </span><a class="code" href="structIns.html" title="Inertial Navigation System state.">Ins</a> {
+<a name="l00040"></a><a class="code" href="structIns.html#ae0dbe8083a7281227e3023cb145ab9a4">00040</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structIns.html#ae0dbe8083a7281227e3023cb145ab9a4" title="status of the INS">status</a>; 
+<a name="l00041"></a>00041 };
+<a name="l00042"></a>00042 
+<a name="l00044"></a>00044 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structIns.html" title="Inertial Navigation System state.">Ins</a> <a class="code" href="ins_8c.html#a93b83435a11f973aa9aceab13c2f2b3f" title="global INS state">ins</a>;
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="comment">// TODO add to struct</span>
+<a name="l00047"></a>00047 <span class="keyword">extern</span> bool_t <a class="code" href="ins__float_8c.html#adbd8ef97dc98ace19f2863662fd45b78">ins_hf_realign</a>;
+<a name="l00048"></a>00048 <span class="keyword">extern</span> bool_t <a class="code" href="ins__float_8c.html#a378f67328756b60bdeb5e4113ddd4e2f">ins_vf_realign</a>;
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 
+<a name="l00054"></a>00054 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="fw__ins__vn100_8c.html#abf3028c2ada542781b8a5e1eb20c17ce" title="INS initialization.">ins_init</a>( <span class="keywordtype">void</span> );
+<a name="l00055"></a>00055 
+<a name="l00059"></a>00059 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins__float_8c.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call.">ins_periodic</a>( <span class="keywordtype">void</span> );
+<a name="l00060"></a>00060 
+<a name="l00066"></a>00066 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins__float_8c.html#aa06d5c09c10bc6397041d6fe8f34c438">ins_realign_h</a>(<span class="keyword">struct</span> <a class="code" href="structFloatVect2.html">FloatVect2</a> pos, <span class="keyword">struct</span> <a class="code" href="structFloatVect2.html">FloatVect2</a> <a class="code" href="guidance__v__ref_8h.html#a36dda2666e5436e608a494230ca9076b">speed</a>);
+<a name="l00067"></a>00067 
+<a name="l00072"></a>00072 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins__float_8c.html#a5248c5dc9a54fd2bf5b66624e4904a3a">ins_realign_v</a>(<span class="keywordtype">float</span> z);
+<a name="l00073"></a>00073 
+<a name="l00078"></a>00078 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins__float_8c.html#a77b5ba9f198b91b698062cc0dc0c953d" title="Propagation.">ins_propagate</a>( <span class="keywordtype">void</span> );
+<a name="l00079"></a>00079 
+<a name="l00084"></a>00084 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins__float_8c.html#a6e1a3600e1905c414ff96c92775237d3" title="Update INS state with barometer measurements.">ins_update_baro</a>( <span class="keywordtype">void</span> );
+<a name="l00085"></a>00085 
+<a name="l00090"></a>00090 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins__float_8c.html#aacc25a507c5c24309fc37b1f806f5d2b" title="Update INS state with GPS measurements.">ins_update_gps</a>( <span class="keywordtype">void</span> );
+<a name="l00091"></a>00091 
+<a name="l00096"></a>00096 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ins__float_8c.html#acc04164712bf9640e891c67dc6eeb424" title="Update INS state with sonar measurements.">ins_update_sonar</a>( <span class="keywordtype">void</span> );
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 <span class="preprocessor">#endif </span><span class="comment">/* INS_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -195,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ins_8h.html">ins.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:39 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:46 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

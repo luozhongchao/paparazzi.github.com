@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -199,8 +200,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00095"></a>00095       lla.<a class="code" href="structLlaCoor__i.html#a083f5d7acd142e12865d9f4a918fee07" title="in radians*1e7">lat</a> = <a class="code" href="pprz__algebra__int_8h.html#a1d20e839a6dc485ee9ce841a402e8d45">INT32_RAD_OF_DEG</a>(DL_MOVE_WP_lat(dl_buffer));
 <a name="l00096"></a>00096       lla.<a class="code" href="structLlaCoor__i.html#ad6a02c197a16ad76cf794e6e4935f5c9" title="in radians*1e7">lon</a> = <a class="code" href="pprz__algebra__int_8h.html#a1d20e839a6dc485ee9ce841a402e8d45">INT32_RAD_OF_DEG</a>(DL_MOVE_WP_lon(dl_buffer));
 <a name="l00097"></a>00097       <span class="comment">/* WP_alt is in cm, lla.alt in mm */</span>
-<a name="l00098"></a>00098       lla.<a class="code" href="structLlaCoor__i.html#a36aa60e58a828880951718db39c227f9" title="in millimeters above WGS84 reference ellipsoid">alt</a> = DL_MOVE_WP_alt(dl_buffer)*10 - <a class="code" href="ins_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403">ins_ltp_def</a>.<a class="code" href="structLtpDef__i.html#a32bcfa1049778e1703fa09aa9b810a5b" title="Height above mean sea level in mm.">hmsl</a> + <a class="code" href="ins_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403">ins_ltp_def</a>.<a class="code" href="structLtpDef__i.html#a6fa81363139469c813164c4804f9103d" title="Reference point in lla.">lla</a>.<a class="code" href="structLlaCoor__i.html#a36aa60e58a828880951718db39c227f9" title="in millimeters above WGS84 reference ellipsoid">alt</a>;
-<a name="l00099"></a>00099       <a class="code" href="pprz__geodetic__int_8c.html#ab462d1e8278e0dd9cbc9ff463cde8f5e">enu_of_lla_point_i</a>(&amp;enu,&amp;<a class="code" href="ins_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403">ins_ltp_def</a>,&amp;lla);
+<a name="l00098"></a>00098       lla.<a class="code" href="structLlaCoor__i.html#a36aa60e58a828880951718db39c227f9" title="in millimeters above WGS84 reference ellipsoid">alt</a> = DL_MOVE_WP_alt(dl_buffer)*10 - <a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>.<a class="code" href="structLtpDef__i.html#a32bcfa1049778e1703fa09aa9b810a5b" title="Height above mean sea level in mm.">hmsl</a> + <a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>.<a class="code" href="structLtpDef__i.html#a6fa81363139469c813164c4804f9103d" title="Reference point in lla.">lla</a>.<a class="code" href="structLlaCoor__i.html#a36aa60e58a828880951718db39c227f9" title="in millimeters above WGS84 reference ellipsoid">alt</a>;
+<a name="l00099"></a>00099       <a class="code" href="pprz__geodetic__int_8c.html#ab462d1e8278e0dd9cbc9ff463cde8f5e">enu_of_lla_point_i</a>(&amp;enu,&amp;<a class="code" href="ins__int_8c.html#a4bd2bd2f9af2e924e6a74d0bf0d39403" title="Ins implementation state (fixed point)">ins_ltp_def</a>,&amp;lla);
 <a name="l00100"></a>00100       enu.<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a> = <a class="code" href="pprz__algebra__int_8h.html#adf322ab1574f7999563eaaedce920522">POS_BFP_OF_REAL</a>(enu.<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a>)/100;
 <a name="l00101"></a>00101       enu.<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a> = <a class="code" href="pprz__algebra__int_8h.html#adf322ab1574f7999563eaaedce920522">POS_BFP_OF_REAL</a>(enu.<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a>)/100;
 <a name="l00102"></a>00102       enu.<a class="code" href="structEnuCoor__i.html#a542f28199ba7024fbec8287daa07d3a5">z</a> = <a class="code" href="pprz__algebra__int_8h.html#adf322ab1574f7999563eaaedce920522">POS_BFP_OF_REAL</a>(enu.<a class="code" href="structEnuCoor__i.html#a542f28199ba7024fbec8287daa07d3a5">z</a>)/100;
@@ -235,7 +236,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="rotorcraft_2datalink_8c.html">datalink.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:32 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:39 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

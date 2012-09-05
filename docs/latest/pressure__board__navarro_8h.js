@@ -1,5 +1,6 @@
 var pressure__board__navarro_8h =
 [
+    [ "BaroPbnUpdate", "pressure__board__navarro_8h.html#a7770765885af0c5564dbb45245a17133", null ],
     [ "PbnEvent", "pressure__board__navarro_8h.html#ab866fed1cbee4562698e91dfa824eec6", null ],
     [ "PERIODIC_SEND_PBN", "pressure__board__navarro_8h.html#a178946c8a3ef12c92d99791774312533", null ],
     [ "pbn_init", "pressure__board__navarro_8h.html#a6f2976579b7761af83296829f78faba0", null ],

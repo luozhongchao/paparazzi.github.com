@@ -115,7 +115,7 @@ var searchData=
   ['conset',['conset',['../structi2cRegs__t.html#a16b10d1ca824a8c0aa8fccf9957dc133',1,'i2cRegs_t']]],
   ['controlled_5fthrottle',['controlled_throttle',['../guidance__v__n_8c.html#a83c32a6107288a146666bc1aa79ab8ed',1,'guidance_v_n.c']]],
   ['corner',['Corner',['../flightzone_8c.html#adf655c75bff5121aed88330226162f35',1,'flightzone.c']]],
-  ['correct_5fgravity',['correct_gravity',['../structAhrsFloatCmplRmat.html#a5559e6141f1208d7ab7a1cf3b835660d',1,'AhrsFloatCmplRmat::correct_gravity()'],['../structAhrsIntCmpl.html#a571723d5f24ead0c2de6c06829fd132d',1,'AhrsIntCmpl::correct_gravity()']]],
+  ['correct_5fgravity',['correct_gravity',['../structAhrsFloatCmpl.html#ad2bd57434c0f59a62150e7658f506555',1,'AhrsFloatCmpl::correct_gravity()'],['../structAhrsIntCmpl.html#a571723d5f24ead0c2de6c06829fd132d',1,'AhrsIntCmpl::correct_gravity()']]],
   ['correction_5fdown',['correction_down',['../structInfrared.html#a11de7c8f7ff75dd3f48e92dfe04ef74c',1,'Infrared']]],
   ['correction_5fleft',['correction_left',['../structInfrared.html#aa606d2adbe5a10a2cef220c6bbd76fea',1,'Infrared']]],
   ['correction_5fright',['correction_right',['../structInfrared.html#a69a4ac724daa9300f4c86ddd8ca8d9a8',1,'Infrared']]],

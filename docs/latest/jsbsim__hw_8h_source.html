@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -132,39 +133,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;std.h&quot;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="inter__mcu_8h.html">inter_mcu.h</a>&quot;</span>
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2autopilot_8h.html">firmwares/fixedwing/autopilot.h</a>&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="traffic__info_8h.html" title="Informations relative to the other aircrafts.">subsystems/navigation/traffic_info.h</a>&quot;</span>
-<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;generated/flight_plan.h&quot;</span>
-<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
-<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;generated/settings.h&quot;</span>
-<a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span>
-<a name="l00041"></a>00041 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span>
-<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2guidance_2guidance__v_8h.html" title="Vertical control for fixed wing vehicles.">firmwares/fixedwing/guidance/guidance_v.h</a>&quot;</span>
-<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="infrared_8h.html">subsystems/sensors/infrared.h</a>&quot;</span>
-<a name="l00044"></a>00044 <span class="preprocessor">#include &quot;commands.h&quot;</span>
-<a name="l00045"></a>00045 <span class="preprocessor">#include &quot;<a class="code" href="main__ap_8h.html" title="AP ( AutoPilot ) process API.">firmwares/fixedwing/main_ap.h</a>&quot;</span>
-<a name="l00046"></a>00046 <span class="preprocessor">#include &quot;<a class="code" href="ap__downlink_8h.html" title="Set of macros defining the periodic telemetry messages of AP process.">ap_downlink.h</a>&quot;</span>
-<a name="l00047"></a>00047 <span class="preprocessor">#include &quot;<a class="code" href="sim__uart_8h.html" title="Simulation of uart transmission on an Unix pipe.">sim_uart.h</a>&quot;</span>
-<a name="l00048"></a>00048 <span class="preprocessor">#include &quot;<a class="code" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs.">subsystems/datalink/datalink.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="traffic__info_8h.html" title="Informations relative to the other aircrafts.">subsystems/navigation/traffic_info.h</a>&quot;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;generated/flight_plan.h&quot;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;generated/settings.h&quot;</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2guidance_2guidance__v_8h.html" title="Vertical control for fixed wing vehicles.">firmwares/fixedwing/guidance/guidance_v.h</a>&quot;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;<a class="code" href="infrared_8h.html">subsystems/sensors/infrared.h</a>&quot;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;commands.h&quot;</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include &quot;<a class="code" href="main__ap_8h.html" title="AP ( AutoPilot ) process API.">firmwares/fixedwing/main_ap.h</a>&quot;</span>
+<a name="l00045"></a>00045 <span class="preprocessor">#include &quot;<a class="code" href="ap__downlink_8h.html" title="Set of macros defining the periodic telemetry messages of AP process.">ap_downlink.h</a>&quot;</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &quot;<a class="code" href="sim__uart_8h.html" title="Simulation of uart transmission on an Unix pipe.">sim_uart.h</a>&quot;</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#include &quot;<a class="code" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs.">subsystems/datalink/datalink.h</a>&quot;</span>
+<a name="l00048"></a>00048 
 <a name="l00049"></a>00049 
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051 <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#a1e5ac4a144342a18c18f45efe6196698" title="From airborne/autopilot/.">sim_use_gps_pos</a>(<span class="keywordtype">double</span> lat, <span class="keywordtype">double</span> lon, <span class="keywordtype">double</span> <a class="code" href="structUtmCoor__f.html#a32317742e37027cb6a438fe1486bb85c" title="in meters above WGS84 reference ellipsoid">alt</a>, <span class="keywordtype">double</span> course, <span class="keywordtype">double</span> gspeed, <span class="keywordtype">double</span> climb, <span class="keywordtype">double</span> time);
-<a name="l00052"></a>00052 <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#adadf586b1ed35a6d820c57a1107a9a2b" title="Space vehicle info simulation.">sim_update_sv</a>(<span class="keywordtype">void</span>);
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#aa1f5ffad204fff6b6a1f538fdc742bec">set_ir</a>(<span class="keywordtype">double</span> roll, <span class="keywordtype">double</span> pitch);
-<a name="l00055"></a>00055 <span class="keywordtype">void</span> <a class="code" href="jsbsim__ahrs_8c.html#a31e4e2c10a51f313d79445d44f54aaff">provide_attitude_and_rates</a>(<span class="keywordtype">float</span> phi, <span class="keywordtype">float</span> theta, <span class="keywordtype">float</span> psi, <span class="keywordtype">float</span> p, <span class="keywordtype">float</span> q, <span class="keywordtype">float</span> r);
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8c.html#a91a7bc548c7f6b644675418c5d75599c">update_bat</a>(<span class="keywordtype">double</span> bat);
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a6ce28b583b28b4363ea1ec42e20a57b9">parse_dl_ping</a>(<span class="keywordtype">char</span>* argv[]);
-<a name="l00060"></a>00060 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a82f8f9ad9ee6fb05a43e6769487a8703">parse_dl_acinfo</a>(<span class="keywordtype">char</span>* argv[]);
-<a name="l00061"></a>00061 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#ad1dbe7de174188c743232848e526bd1d">parse_dl_setting</a>(<span class="keywordtype">char</span>* argv[]);
-<a name="l00062"></a>00062 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a56a22f92389e44e48c9be479a8456e36">parse_dl_get_setting</a>(<span class="keywordtype">char</span>* argv[]);
-<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a7d2da36f3444f34942882e6f6ee0b20e">parse_dl_block</a>(<span class="keywordtype">char</span>* argv[]);
-<a name="l00064"></a>00064 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#adc788176bb64837b5635d2197e621127">parse_dl_move_wp</a>(<span class="keywordtype">char</span>* argv[]);
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
+<a name="l00050"></a>00050 <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#a1e5ac4a144342a18c18f45efe6196698" title="From airborne/autopilot/.">sim_use_gps_pos</a>(<span class="keywordtype">double</span> lat, <span class="keywordtype">double</span> lon, <span class="keywordtype">double</span> <a class="code" href="structUtmCoor__f.html#a32317742e37027cb6a438fe1486bb85c" title="in meters above WGS84 reference ellipsoid">alt</a>, <span class="keywordtype">double</span> course, <span class="keywordtype">double</span> gspeed, <span class="keywordtype">double</span> climb, <span class="keywordtype">double</span> time);
+<a name="l00051"></a>00051 <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#adadf586b1ed35a6d820c57a1107a9a2b" title="Space vehicle info simulation.">sim_update_sv</a>(<span class="keywordtype">void</span>);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#aa1f5ffad204fff6b6a1f538fdc742bec">set_ir</a>(<span class="keywordtype">double</span> roll, <span class="keywordtype">double</span> pitch);
+<a name="l00054"></a>00054 <span class="keywordtype">void</span> <a class="code" href="jsbsim__ahrs_8c.html#a31e4e2c10a51f313d79445d44f54aaff">provide_attitude_and_rates</a>(<span class="keywordtype">float</span> phi, <span class="keywordtype">float</span> theta, <span class="keywordtype">float</span> psi, <span class="keywordtype">float</span> p, <span class="keywordtype">float</span> q, <span class="keywordtype">float</span> r);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8c.html#a91a7bc548c7f6b644675418c5d75599c">update_bat</a>(<span class="keywordtype">double</span> bat);
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a6ce28b583b28b4363ea1ec42e20a57b9">parse_dl_ping</a>(<span class="keywordtype">char</span>* argv[]);
+<a name="l00059"></a>00059 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a82f8f9ad9ee6fb05a43e6769487a8703">parse_dl_acinfo</a>(<span class="keywordtype">char</span>* argv[]);
+<a name="l00060"></a>00060 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#ad1dbe7de174188c743232848e526bd1d">parse_dl_setting</a>(<span class="keywordtype">char</span>* argv[]);
+<a name="l00061"></a>00061 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a56a22f92389e44e48c9be479a8456e36">parse_dl_get_setting</a>(<span class="keywordtype">char</span>* argv[]);
+<a name="l00062"></a>00062 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a7d2da36f3444f34942882e6f6ee0b20e">parse_dl_block</a>(<span class="keywordtype">char</span>* argv[]);
+<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#adc788176bb64837b5635d2197e621127">parse_dl_move_wp</a>(<span class="keywordtype">char</span>* argv[]);
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -185,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="jsbsim__hw_8h.html">jsbsim_hw.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:31 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:37 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

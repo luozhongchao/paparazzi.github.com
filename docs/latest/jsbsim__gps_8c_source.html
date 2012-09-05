@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -112,64 +113,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 <span class="preprocessor">#include &quot;generated/flight_plan.h&quot;</span>
 <a name="l00010"></a>00010 <span class="preprocessor">#include &quot;autopilot.h&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations.">math/pprz_geodetic_float.h</a>&quot;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations.">math/pprz_geodetic_int.h</a>&quot;</span>
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="comment">// currently needed to get nav_utm_zone0</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="common__nav_8h.html">subsystems/navigation/common_nav.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations.">math/pprz_geodetic_float.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations.">math/pprz_geodetic_int.h</a>&quot;</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="comment">// currently needed to get nav_utm_zone0</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="common__nav_8h.html">subsystems/navigation/common_nav.h</a>&quot;</span>
+<a name="l00017"></a>00017 
 <a name="l00018"></a>00018 
-<a name="l00019"></a>00019 
-<a name="l00020"></a><a class="code" href="jsbsim__hw_8h.html#a1e5ac4a144342a18c18f45efe6196698">00020</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#a1e5ac4a144342a18c18f45efe6196698" title="From airborne/autopilot/.">sim_use_gps_pos</a>(<span class="keywordtype">double</span> lat, <span class="keywordtype">double</span> lon, <span class="keywordtype">double</span> alt, <span class="keywordtype">double</span> course, <span class="keywordtype">double</span> gspeed, <span class="keywordtype">double</span> climb, <span class="keywordtype">double</span> time) {
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#afeffb02bdd18d27a87e96bb77175168f" title="status of fix">fix</a> = 3; <span class="comment">// Mode 3D</span>
-<a name="l00023"></a>00023   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS heading in rad*1e7 (CW/north)">course</a> = course * 1e7;
-<a name="l00024"></a>00024   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a10af95f7fdab3171a789866838b0c8c3" title="height above mean sea level in mm">hmsl</a> = alt * 1000.;
-<a name="l00025"></a>00025   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a17cba6d73da4b727be6494d436160933" title="norm of 2d ground speed in cm/s">gspeed</a> = gspeed * 100.;
-<a name="l00026"></a>00026   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a8c0416718a59e50261890cd870f716ea" title="speed NED in cm/s">ned_vel</a>.<a class="code" href="structNedCoor__i.html#a52586e90ccb7aa5f0960bcb480bfcaa3">z</a> = -climb * 100.;
-<a name="l00027"></a>00027   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9ac6fac0cf4460ecfb34d575b8442dd8" title="GPS week.">week</a> = 0; <span class="comment">// FIXME</span>
-<a name="l00028"></a>00028   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="GPS time of week in ms.">tow</a> = time * 1000.;
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030   <span class="comment">//TODO set alt above ellipsoid and hmsl</span>
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032   <span class="keyword">struct </span><a class="code" href="structLlaCoor__f.html" title="vector in Latitude, Longitude and Altitude">LlaCoor_f</a> lla_f;
-<a name="l00033"></a>00033   <span class="keyword">struct </span><a class="code" href="structUtmCoor__f.html" title="position in UTM coordinates Units: meters">UtmCoor_f</a> utm_f;
-<a name="l00034"></a>00034   lla_f.<a class="code" href="structLlaCoor__f.html#ace542562586741aeb022a5a57c30dea5" title="in radians">lat</a> = lat;
-<a name="l00035"></a>00035   lla_f.<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a> = lon;
-<a name="l00036"></a>00036   utm_f.<a class="code" href="structUtmCoor__f.html#a86adc8b9ebb389f4716c6c569a0b5d91" title="UTM zone number.">zone</a> = <a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>;
-<a name="l00037"></a>00037   <a class="code" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd">utm_of_lla_f</a>(&amp;utm_f, &amp;lla_f);
-<a name="l00038"></a>00038   <a class="code" href="pprz__geodetic__int_8h.html#a4c14cc47f37a035741cd921791b2a436">LLA_BFP_OF_REAL</a>(<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a298552f8926fd925f8c94bbeeca1dc5c" title="position in LLA (lat,lon: rad*1e7; alt: mm over ellipsoid)">lla_pos</a>, lla_f);
-<a name="l00039"></a>00039   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2cf3685a890a6200b334b2c399102ffa" title="position in UTM (north,east: cm; alt: mm over ellipsoid)">utm_pos</a>.<a class="code" href="structUtmCoor__i.html#a93a85f5eec8041c8b6e8bcef4b977de5" title="in centimeters">east</a> = utm_f.<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a>*100;
-<a name="l00040"></a>00040   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2cf3685a890a6200b334b2c399102ffa" title="position in UTM (north,east: cm; alt: mm over ellipsoid)">utm_pos</a>.<a class="code" href="structUtmCoor__i.html#af50ae798f5164c2e68d0ed0129d5d6dc" title="in centimeters">north</a> = utm_f.<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a>*100;
-<a name="l00041"></a>00041   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2cf3685a890a6200b334b2c399102ffa" title="position in UTM (north,east: cm; alt: mm over ellipsoid)">utm_pos</a>.<a class="code" href="structUtmCoor__i.html#a6d4bf413c00434d016a1e35ae4d1cc86" title="UTM zone number.">zone</a> = <a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>;
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043   <a class="code" href="gps__sim_8c.html#a62a4a0f2fc32a105289eb2cf890a1e5d">gps_available</a> = TRUE;
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 }
-<a name="l00046"></a>00046 
-<a name="l00048"></a><a class="code" href="jsbsim__hw_8h.html#adadf586b1ed35a6d820c57a1107a9a2b">00048</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#adadf586b1ed35a6d820c57a1107a9a2b" title="Space vehicle info simulation.">sim_update_sv</a>(<span class="keywordtype">void</span>) {
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a>=7;
-<a name="l00051"></a>00051   <span class="keywordtype">int</span> i;
-<a name="l00052"></a>00052   <span class="keyword">static</span> <span class="keywordtype">int</span> time;
-<a name="l00053"></a>00053   time++;
-<a name="l00054"></a>00054   <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a>; i++) {
-<a name="l00055"></a>00055     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a941f93d35f7c73bedfc5da4d18088ca4" title="Satellite ID.">svid</a> = 7 + i;
-<a name="l00056"></a>00056     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a296d46cd0ebd7609174b75c1ed5e7905" title="elevation in deg">elev</a> = (cos(((100*i)+time)/100.) + 1) * 45;
-<a name="l00057"></a>00057     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a0069a8447d794d029e89b885d6d17d42" title="azimuth in deg">azim</a> = (time/<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a> + 50 * i) % 360;
-<a name="l00058"></a>00058     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a45a257f1d4283019da07e927683e70a1" title="Carrier to Noise Ratio (Signal Strength) in dbHz.">cno</a> = 40 + sin((time+i*10)/100.) * 10.;
-<a name="l00059"></a>00059     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#ae6f83b7c4582aa1b72911052783e7338" title="bitfield with GPS receiver specific flags">flags</a> = ((time/10) % (i+1) == 0 ? 0x00 : 0x01);
-<a name="l00060"></a>00060     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a0f082bb982115960077c5c4f8cab9653" title="quality bitfield (GPS receiver specific)">qi</a> = (int)((time / 1000.) + i) % 8;
-<a name="l00061"></a>00061   }
-<a name="l00062"></a>00062   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a796d3d22856c1865abb3256a64e5b6de" title="position dilution of precision scaled by 100">pdop</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2cad112343a238676da447e83d46f4be" title="speed accuracy in cm/s">sacc</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#aa0194e37ba0420998970bfe318d74a35" title="position accuracy in cm">pacc</a> = 500+200*sin(time/100.);
-<a name="l00063"></a>00063   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#af6d2ba472d4430528868fd65b9d0c59c" title="number of sat in fix">num_sv</a> = 7;
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 }
-<a name="l00066"></a>00066 
-<a name="l00067"></a><a class="code" href="jsbsim__gps_8c.html#a04293549cf7b924d599d62f8c3f12d74">00067</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#a04293549cf7b924d599d62f8c3f12d74">ubxsend_cfg_rst</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> a <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)), <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> b <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused))) {
-<a name="l00068"></a>00068   <span class="keywordflow">return</span>;
-<a name="l00069"></a>00069 }
-<a name="l00070"></a>00070 
+<a name="l00019"></a><a class="code" href="jsbsim__hw_8h.html#a1e5ac4a144342a18c18f45efe6196698">00019</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#a1e5ac4a144342a18c18f45efe6196698" title="From airborne/autopilot/.">sim_use_gps_pos</a>(<span class="keywordtype">double</span> lat, <span class="keywordtype">double</span> lon, <span class="keywordtype">double</span> alt, <span class="keywordtype">double</span> course, <span class="keywordtype">double</span> gspeed, <span class="keywordtype">double</span> climb, <span class="keywordtype">double</span> time) {
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#afeffb02bdd18d27a87e96bb77175168f" title="status of fix">fix</a> = 3; <span class="comment">// Mode 3D</span>
+<a name="l00022"></a>00022   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS heading in rad*1e7 (CW/north)">course</a> = course * 1e7;
+<a name="l00023"></a>00023   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a10af95f7fdab3171a789866838b0c8c3" title="height above mean sea level in mm">hmsl</a> = alt * 1000.;
+<a name="l00024"></a>00024   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a17cba6d73da4b727be6494d436160933" title="norm of 2d ground speed in cm/s">gspeed</a> = gspeed * 100.;
+<a name="l00025"></a>00025   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a8c0416718a59e50261890cd870f716ea" title="speed NED in cm/s">ned_vel</a>.<a class="code" href="structNedCoor__i.html#a52586e90ccb7aa5f0960bcb480bfcaa3">z</a> = -climb * 100.;
+<a name="l00026"></a>00026   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9ac6fac0cf4460ecfb34d575b8442dd8" title="GPS week.">week</a> = 0; <span class="comment">// FIXME</span>
+<a name="l00027"></a>00027   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="GPS time of week in ms.">tow</a> = time * 1000.;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029   <span class="comment">//TODO set alt above ellipsoid and hmsl</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031   <span class="keyword">struct </span><a class="code" href="structLlaCoor__f.html" title="vector in Latitude, Longitude and Altitude">LlaCoor_f</a> lla_f;
+<a name="l00032"></a>00032   <span class="keyword">struct </span><a class="code" href="structUtmCoor__f.html" title="position in UTM coordinates Units: meters">UtmCoor_f</a> utm_f;
+<a name="l00033"></a>00033   lla_f.<a class="code" href="structLlaCoor__f.html#ace542562586741aeb022a5a57c30dea5" title="in radians">lat</a> = lat;
+<a name="l00034"></a>00034   lla_f.<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a> = lon;
+<a name="l00035"></a>00035   utm_f.<a class="code" href="structUtmCoor__f.html#a86adc8b9ebb389f4716c6c569a0b5d91" title="UTM zone number.">zone</a> = <a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>;
+<a name="l00036"></a>00036   <a class="code" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd">utm_of_lla_f</a>(&amp;utm_f, &amp;lla_f);
+<a name="l00037"></a>00037   <a class="code" href="pprz__geodetic__int_8h.html#a4c14cc47f37a035741cd921791b2a436">LLA_BFP_OF_REAL</a>(<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a298552f8926fd925f8c94bbeeca1dc5c" title="position in LLA (lat,lon: rad*1e7; alt: mm over ellipsoid)">lla_pos</a>, lla_f);
+<a name="l00038"></a>00038   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2cf3685a890a6200b334b2c399102ffa" title="position in UTM (north,east: cm; alt: mm over ellipsoid)">utm_pos</a>.<a class="code" href="structUtmCoor__i.html#a93a85f5eec8041c8b6e8bcef4b977de5" title="in centimeters">east</a> = utm_f.<a class="code" href="structUtmCoor__f.html#ac734d9cc1b4426967f32055e68bc475b" title="in meters">east</a>*100;
+<a name="l00039"></a>00039   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2cf3685a890a6200b334b2c399102ffa" title="position in UTM (north,east: cm; alt: mm over ellipsoid)">utm_pos</a>.<a class="code" href="structUtmCoor__i.html#af50ae798f5164c2e68d0ed0129d5d6dc" title="in centimeters">north</a> = utm_f.<a class="code" href="structUtmCoor__f.html#adb6dc0e434c6c6de1806b6b14de2f2ae" title="in meters">north</a>*100;
+<a name="l00040"></a>00040   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2cf3685a890a6200b334b2c399102ffa" title="position in UTM (north,east: cm; alt: mm over ellipsoid)">utm_pos</a>.<a class="code" href="structUtmCoor__i.html#a6d4bf413c00434d016a1e35ae4d1cc86" title="UTM zone number.">zone</a> = <a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>;
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042   <a class="code" href="gps__sim_8c.html#a62a4a0f2fc32a105289eb2cf890a1e5d">gps_available</a> = TRUE;
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 
+<a name="l00047"></a><a class="code" href="jsbsim__hw_8h.html#adadf586b1ed35a6d820c57a1107a9a2b">00047</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#adadf586b1ed35a6d820c57a1107a9a2b" title="Space vehicle info simulation.">sim_update_sv</a>(<span class="keywordtype">void</span>) {
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a>=7;
+<a name="l00050"></a>00050   <span class="keywordtype">int</span> i;
+<a name="l00051"></a>00051   <span class="keyword">static</span> <span class="keywordtype">int</span> time;
+<a name="l00052"></a>00052   time++;
+<a name="l00053"></a>00053   <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a>; i++) {
+<a name="l00054"></a>00054     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a941f93d35f7c73bedfc5da4d18088ca4" title="Satellite ID.">svid</a> = 7 + i;
+<a name="l00055"></a>00055     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a296d46cd0ebd7609174b75c1ed5e7905" title="elevation in deg">elev</a> = (cos(((100*i)+time)/100.) + 1) * 45;
+<a name="l00056"></a>00056     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a0069a8447d794d029e89b885d6d17d42" title="azimuth in deg">azim</a> = (time/<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a9d430d7c900b362327e4fd9551a6aae6" title="Number of scanned satellites.">nb_channels</a> + 50 * i) % 360;
+<a name="l00057"></a>00057     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a45a257f1d4283019da07e927683e70a1" title="Carrier to Noise Ratio (Signal Strength) in dbHz.">cno</a> = 40 + sin((time+i*10)/100.) * 10.;
+<a name="l00058"></a>00058     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#ae6f83b7c4582aa1b72911052783e7338" title="bitfield with GPS receiver specific flags">flags</a> = ((time/10) % (i+1) == 0 ? 0x00 : 0x01);
+<a name="l00059"></a>00059     <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#adfb660c78ce0e28566c6f3dc6ad6202e" title="holds information from the Space Vehicles (Satellites)">svinfos</a>[i].<a class="code" href="structSVinfo.html#a0f082bb982115960077c5c4f8cab9653" title="quality bitfield (GPS receiver specific)">qi</a> = (int)((time / 1000.) + i) % 8;
+<a name="l00060"></a>00060   }
+<a name="l00061"></a>00061   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a796d3d22856c1865abb3256a64e5b6de" title="position dilution of precision scaled by 100">pdop</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2cad112343a238676da447e83d46f4be" title="speed accuracy in cm/s">sacc</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#aa0194e37ba0420998970bfe318d74a35" title="position accuracy in cm">pacc</a> = 500+200*sin(time/100.);
+<a name="l00062"></a>00062   <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#af6d2ba472d4430528868fd65b9d0c59c" title="number of sat in fix">num_sv</a> = 7;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 }
+<a name="l00065"></a>00065 
+<a name="l00066"></a><a class="code" href="jsbsim__gps_8c.html#a04293549cf7b924d599d62f8c3f12d74">00066</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__gps_8c.html#a04293549cf7b924d599d62f8c3f12d74">ubxsend_cfg_rst</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> a <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)), <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> b <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused))) {
+<a name="l00067"></a>00067   <span class="keywordflow">return</span>;
+<a name="l00068"></a>00068 }
+<a name="l00069"></a>00069 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -190,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="jsbsim__gps_8c.html">jsbsim_gps.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:31 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:37 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -11,6 +11,7 @@ var searchData=
   ['imunps',['ImuNps',['../structImuNps.html',1,'']]],
   ['infrared',['Infrared',['../structInfrared.html',1,'']]],
   ['infrared_5fraw',['Infrared_raw',['../structInfrared__raw.html',1,'']]],
+  ['ins',['Ins',['../structIns.html',1,'']]],
   ['int16eulers',['Int16Eulers',['../structInt16Eulers.html',1,'']]],
   ['int16rates',['Int16Rates',['../structInt16Rates.html',1,'']]],
   ['int16vect3',['Int16Vect3',['../structInt16Vect3.html',1,'']]],

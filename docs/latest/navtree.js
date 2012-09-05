@@ -3,6 +3,7 @@ var NAVTREE =
   [ "Paparazzi UAS", "index.html", [
     [ "Paparazzi Developer's Guide", "index.html", "index" ],
     [ "Related Pages", "pages.html", "pages" ],
+    [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", null, [
       [ "Data Structures", "annotated.html", "annotated" ],
       [ "Data Structure Index", "classes.html", null ],

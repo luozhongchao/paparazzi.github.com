@@ -11,6 +11,7 @@ var searchData=
   ['uart_5farch_2eh',['uart_arch.h',['../stm32_2mcu__periph_2uart__arch_8h.html',1,'']]],
   ['uart_5ftunnel_2ec',['uart_tunnel.c',['../uart__tunnel_8c.html',1,'']]],
   ['umarim_5f1_2e0_2eh',['umarim_1.0.h',['../umarim__1_80_8h.html',1,'']]],
+  ['umarim_5flite_5f2_2e0_2eh',['umarim_lite_2.0.h',['../umarim__lite__2_80_8h.html',1,'']]],
   ['usb_5fmsc_5fhw_2ec',['usb_msc_hw.c',['../usb__msc__hw_8c.html',1,'']]],
   ['usb_5fmsc_5fhw_2eh',['usb_msc_hw.h',['../usb__msc__hw_8h.html',1,'']]],
   ['usb_5fser_5fhw_2ec',['usb_ser_hw.c',['../usb__ser__hw_8c.html',1,'']]],

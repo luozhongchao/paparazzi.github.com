@@ -12,9 +12,6 @@ var ahrs__int__cmpl__quat_8c =
     [ "ahrs_update_mag", "ahrs__int__cmpl__quat_8c.html#a781832a9119845d31bda0fc8a8bb8bf3", null ],
     [ "ahrs_update_mag_2d", "ahrs__int__cmpl__quat_8c.html#a1e925fc383042c091d4b69d2e617dc84", null ],
     [ "ahrs_update_mag_full", "ahrs__int__cmpl__quat_8c.html#a6b9d75b52718685315f0a80850cb1b29", null ],
-    [ "compute_body_euler_and_rmat_from_quat", "ahrs__int__cmpl__quat_8c.html#ab36c05cc5557cdc7ec071603572faf9f", null ],
-    [ "compute_body_orientation", "ahrs__int__cmpl__quat_8c.html#a0fa6b736702262f6af81670384809fc3", null ],
-    [ "compute_imu_euler_and_rmat_from_quat", "ahrs__int__cmpl__quat_8c.html#acb7819786da567fce7dbbc7b9c485208", null ],
-    [ "compute_imu_orientation", "ahrs__int__cmpl__quat_8c.html#afae824a499baa328f31d88f7906fda36", null ],
+    [ "set_body_state_from_quat", "ahrs__int__cmpl__quat_8c.html#abea8ede7c8ebc5179487d3464ab513bb", null ],
     [ "ahrs_impl", "ahrs__int__cmpl__quat_8c.html#ade8cdfde2323b5b50df57266f7947ca7", null ]
 ];

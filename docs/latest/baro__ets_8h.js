@@ -2,6 +2,7 @@ var baro__ets_8h =
 [
     [ "BARO_ETS_DT", "baro__ets_8h.html#a1cd246b7f290cedbc05e6ad1abdad2e0", null ],
     [ "BaroEtsEvent", "baro__ets_8h.html#a8593684bb1be9bea4a2541091926e973", null ],
+    [ "BaroEtsUpdate", "baro__ets_8h.html#a21e22a2d87fc119400e6698a6de3a32b", null ],
     [ "baro_ets_init", "baro__ets_8h.html#a6c106599c657e4412fa12e7e4c7e1b39", null ],
     [ "baro_ets_read_event", "baro__ets_8h.html#a96839d4b74df9e3c49695989b344bac1", null ],
     [ "baro_ets_read_periodic", "baro__ets_8h.html#a068f56980bf36411a20c15b9d4b4811f", null ],

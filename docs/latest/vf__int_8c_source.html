@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -226,16 +227,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00122"></a>00122 
 <a name="l00123"></a><a class="code" href="vf__int_8h.html#a789b34996ccf6648958ab33debe9df82">00123</a> <span class="keywordtype">void</span> <a class="code" href="vf__int_8c.html#a789b34996ccf6648958ab33debe9df82">vfi_update</a>( <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> z_meas ) {
 <a name="l00124"></a>00124 
-<a name="l00125"></a>00125   <span class="keyword">const</span> <a class="code" href="types_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="code" href="structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9">y</a> = (z_meas&lt;&lt;(<a class="code" href="vf__int_8h.html#a26d0153cc04ab10fccbd6bbed04fadb2">VFI_Z_FRAC</a>-VFI_MEAS_Z_FRAC)) - <a class="code" href="vf__int_8c.html#a13e820bcd9c54cfac4b575c5a7b84bfe">vfi_z</a>;
+<a name="l00125"></a>00125   <span class="keyword">const</span> <a class="code" href="types_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a> <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a> = (z_meas&lt;&lt;(<a class="code" href="vf__int_8h.html#a26d0153cc04ab10fccbd6bbed04fadb2">VFI_Z_FRAC</a>-VFI_MEAS_Z_FRAC)) - <a class="code" href="vf__int_8c.html#a13e820bcd9c54cfac4b575c5a7b84bfe">vfi_z</a>;
 <a name="l00126"></a>00126   <span class="keyword">const</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> S = <a class="code" href="vf__int_8c.html#aa9c167620be68333eb4e298456d60782">vfi_P</a>[0][0] + <a class="code" href="vf__int_8c.html#a09e6021ab82a537b3f2d024921e34dac">VFI_R</a>;
 <a name="l00127"></a>00127 
 <a name="l00128"></a>00128   <span class="keyword">const</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> K1 = <a class="code" href="vf__int_8c.html#aa9c167620be68333eb4e298456d60782">vfi_P</a>[0][0] / S;
 <a name="l00129"></a>00129   <span class="keyword">const</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> K2 = <a class="code" href="vf__int_8c.html#aa9c167620be68333eb4e298456d60782">vfi_P</a>[1][0] / S;
 <a name="l00130"></a>00130   <span class="keyword">const</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> K3 = <a class="code" href="vf__int_8c.html#aa9c167620be68333eb4e298456d60782">vfi_P</a>[2][0] / S;
 <a name="l00131"></a>00131 
-<a name="l00132"></a>00132   <a class="code" href="vf__int_8c.html#a13e820bcd9c54cfac4b575c5a7b84bfe">vfi_z</a>     = <a class="code" href="vf__int_8c.html#a13e820bcd9c54cfac4b575c5a7b84bfe">vfi_z</a>     + ((K1 * <a class="code" href="structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9">y</a>)&gt;&gt;<a class="code" href="vf__int_8h.html#a4e11f707967b0a313a69a8c64b439f2a">VFI_P_FRAC</a>);
-<a name="l00133"></a>00133   <a class="code" href="vf__int_8c.html#adba78b1aa6fb9327f181312992e2cade">vfi_zd</a>    = <a class="code" href="vf__int_8c.html#adba78b1aa6fb9327f181312992e2cade">vfi_zd</a>    + ((K2 * <a class="code" href="structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9">y</a>)&gt;&gt;<a class="code" href="vf__int_8h.html#a4e11f707967b0a313a69a8c64b439f2a">VFI_P_FRAC</a>);
-<a name="l00134"></a>00134   <a class="code" href="vf__int_8c.html#add76fea27e42c5632bc520ef71db9000">vfi_abias</a> = <a class="code" href="vf__int_8c.html#add76fea27e42c5632bc520ef71db9000">vfi_abias</a> + ((K3 * <a class="code" href="structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9">y</a>)&gt;&gt;<a class="code" href="vf__int_8h.html#a4e11f707967b0a313a69a8c64b439f2a">VFI_P_FRAC</a>);
+<a name="l00132"></a>00132   <a class="code" href="vf__int_8c.html#a13e820bcd9c54cfac4b575c5a7b84bfe">vfi_z</a>     = <a class="code" href="vf__int_8c.html#a13e820bcd9c54cfac4b575c5a7b84bfe">vfi_z</a>     + ((K1 * <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a>)&gt;&gt;<a class="code" href="vf__int_8h.html#a4e11f707967b0a313a69a8c64b439f2a">VFI_P_FRAC</a>);
+<a name="l00133"></a>00133   <a class="code" href="vf__int_8c.html#adba78b1aa6fb9327f181312992e2cade">vfi_zd</a>    = <a class="code" href="vf__int_8c.html#adba78b1aa6fb9327f181312992e2cade">vfi_zd</a>    + ((K2 * <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a>)&gt;&gt;<a class="code" href="vf__int_8h.html#a4e11f707967b0a313a69a8c64b439f2a">VFI_P_FRAC</a>);
+<a name="l00134"></a>00134   <a class="code" href="vf__int_8c.html#add76fea27e42c5632bc520ef71db9000">vfi_abias</a> = <a class="code" href="vf__int_8c.html#add76fea27e42c5632bc520ef71db9000">vfi_abias</a> + ((K3 * <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a>)&gt;&gt;<a class="code" href="vf__int_8h.html#a4e11f707967b0a313a69a8c64b439f2a">VFI_P_FRAC</a>);
 <a name="l00135"></a>00135 
 <a name="l00136"></a>00136 <span class="preprocessor">#if 0</span>
 <a name="l00137"></a>00137 <span class="preprocessor"></span>
@@ -280,7 +281,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="vf__int_8c.html">vf_int.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:39 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:47 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

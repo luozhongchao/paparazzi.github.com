@@ -9,7 +9,7 @@ var cartography_8c =
     [ "USE_ONBOARD_CAMERA", "cartography_8c.html#a080ac69f1b64d76f6d739ca2799c61d2", null ],
     [ "init_carto", "cartography_8c.html#a8a3ba9e357ce33b86c23aa001f430698", null ],
     [ "nav_survey_computefourth_corner", "cartography_8c.html#a2174c11ed9b1791e77d8f836925d3fb7", null ],
-    [ "nav_survey_ComputeProjectionOnLine", "cartography_8c.html#a8879206e994241f366180d8374ac4510", null ],
+    [ "nav_survey_ComputeProjectionOnLine", "cartography_8c.html#a063dac7fd8c1e9ea74615aba7b2b62bb", null ],
     [ "nav_survey_Inc_railnumberSinceBoot", "cartography_8c.html#a243677c7fe09d4135f5f39799b09cf63", null ],
     [ "nav_survey_losange_carto", "cartography_8c.html#a7b94efa215c22c1373bed3e596c4daac", null ],
     [ "nav_survey_losange_carto_init", "cartography_8c.html#a4b665f7af3982470588f99b13fe9d623", null ],

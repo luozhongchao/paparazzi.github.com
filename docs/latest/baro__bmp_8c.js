@@ -25,6 +25,7 @@ var baro__bmp_8c =
     [ "baro_bmp_status", "baro__bmp_8c.html#a2f73635d76cb836e94150a1bd94d145e", null ],
     [ "baro_bmp_temp", "baro__bmp_8c.html#a5983956be5d5fa046f4ebda5f2af1927", null ],
     [ "baro_bmp_temperature", "baro__bmp_8c.html#a6ca3431a3d3264374f69fb976c92055a", null ],
+    [ "baro_bmp_valid", "baro__bmp_8c.html#a3af5dc1a8b4079c6817febf52e970c99", null ],
     [ "bmp_ac1", "baro__bmp_8c.html#aa704e4c55611ac50067506ab71c1f546", null ],
     [ "bmp_ac2", "baro__bmp_8c.html#af6cbca3521f2b7e876af10dcb4010b6e", null ],
     [ "bmp_ac3", "baro__bmp_8c.html#aac7e0ce5aa31a9774cdd3432064a652b", null ],

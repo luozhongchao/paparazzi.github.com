@@ -18,6 +18,7 @@ var main__ap_8c =
     [ "sensors_task", "main__ap_8c.html#aaae462f08bad040640b5d7d9dac4e5d3", null ],
     [ "telecommand_task", "main__ap_8c.html#add4d9babf9be4522b8a4a97e1f1e7b84", null ],
     [ "attitude_tid", "main__ap_8c.html#a0ec3f3fdd96a65f68ac0561fed921520", null ],
+    [ "autopilot_flight_time", "main__ap_8c.html#a643a1732fc06296050835ab61968d726", null ],
     [ "current", "main__ap_8c.html#ae6a404c4d3d4da15402e4a8629e7e272", null ],
     [ "energy", "main__ap_8c.html#a2d107b3b2dcebab8a10c9d39894f6b2a", null ],
     [ "gps_lost", "main__ap_8c.html#ad5b2dcab0bbd14934aac4f5e0eea8b18", null ],

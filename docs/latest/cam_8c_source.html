@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -130,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="common__nav_8h.html">subsystems/navigation/common_nav.h</a>&quot;</span> <span class="comment">//needed for WaypointX, WaypointY and ground_alt</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;autopilot.h&quot;</span>
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;generated/flight_plan.h&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="traffic__info_8h.html" title="Informations relative to the other aircrafts.">subsystems/navigation/traffic_info.h</a>&quot;</span>
 <a name="l00036"></a>00036 <span class="preprocessor">#ifdef POINT_CAM</span>
 <a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="point_8h.html">point.h</a>&quot;</span>
@@ -331,45 +332,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00234"></a>00234          <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a>, <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a>, <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a>,
 <a name="l00235"></a>00235          &amp;<a class="code" href="cam_8c.html#a4594bf9761835894a1baa11831c37d50">cam_pan_c</a>, &amp;<a class="code" href="cam_8c.html#ad02900f1c2639aa4f8b6fd05614c26c6">cam_tilt_c</a>);
 <a name="l00236"></a>00236 <span class="preprocessor">#else</span>
-<a name="l00237"></a>00237 <span class="preprocessor"></span>  <a class="code" href="point_8c.html#a3317a3a368f54d6c89acfbbaa49b4ed2">vPoint</a>(<a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>, <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>, <a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a>,
-<a name="l00238"></a>00238          <a class="code" href="estimator_8c.html#a0ba100648c824ca131b35e109defca98" title="roll angle in rad, + = right">estimator_phi</a>, <a class="code" href="estimator_8c.html#a8db9635ec8a3c9b8ae7aea7217069554" title="pitch angle in rad, + = up">estimator_theta</a>, <a class="code" href="estimator_8c.html#a91a95ce5b0e2fe00b6b8d050322c1f81" title="direction of horizontal ground speed in rad (CW/North)">estimator_hspeed_dir</a>,
-<a name="l00239"></a>00239          <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a>, <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a>, <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a>,
-<a name="l00240"></a>00240          &amp;<a class="code" href="cam_8c.html#a4594bf9761835894a1baa11831c37d50">cam_pan_c</a>, &amp;<a class="code" href="cam_8c.html#ad02900f1c2639aa4f8b6fd05614c26c6">cam_tilt_c</a>);
-<a name="l00241"></a>00241 <span class="preprocessor">#endif</span>
-<a name="l00242"></a>00242 <span class="preprocessor"></span>  <a class="code" href="cam_8c.html#a38adb5d1136278301352a4a57e463045" title="Computes the servo values from cam_pan_c and cam_tilt_c.">cam_angles</a>();
-<a name="l00243"></a>00243 }
-<a name="l00244"></a>00244 
-<a name="l00246"></a><a class="code" href="cam_8c.html#aa5c7c762b35b57ec479e6244f006c5d1">00246</a> <span class="keywordtype">void</span> <a class="code" href="cam_8c.html#aa5c7c762b35b57ec479e6244f006c5d1" title="Point straight down.">cam_nadir</a>( <span class="keywordtype">void</span> ) {
-<a name="l00247"></a>00247 <span class="preprocessor">#ifdef TEST_CAM</span>
-<a name="l00248"></a>00248 <span class="preprocessor"></span>  <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a> = test_cam_estimator_x;
-<a name="l00249"></a>00249   <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a> = test_cam_estimator_y;
-<a name="l00250"></a>00250 <span class="preprocessor">#else</span>
-<a name="l00251"></a>00251 <span class="preprocessor"></span>  <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a> = <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>;
-<a name="l00252"></a>00252   <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a> = <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
-<a name="l00253"></a>00253 <span class="preprocessor">#endif</span>
-<a name="l00254"></a>00254 <span class="preprocessor"></span>  <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a> = -10;
-<a name="l00255"></a>00255   <a class="code" href="cam_8c.html#aab3da8ed719ee01699f50450b3df3b13" title="Computes the right angles from target_x, target_y, target_alt.">cam_target</a>();
-<a name="l00256"></a>00256 }
-<a name="l00257"></a>00257 
-<a name="l00258"></a>00258 
-<a name="l00259"></a><a class="code" href="cam_8c.html#a91c2133236e62688f7acfe1ab9fe2f11">00259</a> <span class="keywordtype">void</span> <a class="code" href="cam_8c.html#a91c2133236e62688f7acfe1ab9fe2f11">cam_waypoint_target</a>( <span class="keywordtype">void</span> ) {
-<a name="l00260"></a>00260   <span class="keywordflow">if</span> (<a class="code" href="cam_8c.html#a8b3761e34c06cf1ad1f244c863b5aa90" title="For CAM_MODE_XY_TARGET mode.">cam_target_wp</a> &lt; <a class="code" href="navigation_8c.html#abee3b60dcf3a8c1cad3036c63f8c3689">nb_waypoint</a>) {
-<a name="l00261"></a>00261     <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a> = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="cam_8c.html#a8b3761e34c06cf1ad1f244c863b5aa90" title="For CAM_MODE_XY_TARGET mode.">cam_target_wp</a>);
-<a name="l00262"></a>00262     <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a> = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="cam_8c.html#a8b3761e34c06cf1ad1f244c863b5aa90" title="For CAM_MODE_XY_TARGET mode.">cam_target_wp</a>);
-<a name="l00263"></a>00263   }
-<a name="l00264"></a>00264   <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a> = <a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2" title="size == nb_waypoint, waypoint 0 is a dummy waypoint">ground_alt</a>;
-<a name="l00265"></a>00265   <a class="code" href="cam_8c.html#aab3da8ed719ee01699f50450b3df3b13" title="Computes the right angles from target_x, target_y, target_alt.">cam_target</a>();
-<a name="l00266"></a>00266 }
-<a name="l00267"></a>00267 
-<a name="l00268"></a><a class="code" href="cam_8c.html#a7e228da24201c997a297f7c49bffa74c">00268</a> <span class="keywordtype">void</span> <a class="code" href="cam_8c.html#a7e228da24201c997a297f7c49bffa74c">cam_ac_target</a>( <span class="keywordtype">void</span> ) {
-<a name="l00269"></a>00269 <span class="preprocessor">#ifdef TRAFFIC_INFO</span>
-<a name="l00270"></a>00270 <span class="preprocessor"></span>  <span class="keyword">struct </span><a class="code" href="structac__info__.html">ac_info_</a> * ac = <a class="code" href="traffic__info_8c.html#a7e85d322af164f27094da0f8aca67b21">get_ac_info</a>(<a class="code" href="cam_8c.html#a9a2c37c0754be9af1945a04e76e1f7c0" title="For CAM_MODE_WP_TARGET mode.">cam_target_ac</a>);
-<a name="l00271"></a>00271   <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a> = ac-&gt;<a class="code" href="structac__info__.html#a51c2e4bc1f3063b2ba749673ac78a8fd">east</a>;
-<a name="l00272"></a>00272   <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a> = ac-&gt;<a class="code" href="structac__info__.html#a9a983598258354bb014b778667d80bc3">north</a>;
-<a name="l00273"></a>00273   <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a> = ac-&gt;<a class="code" href="structac__info__.html#ad014a5a777970469f2679784a6da4eff">alt</a>;
-<a name="l00274"></a>00274   <a class="code" href="cam_8c.html#aab3da8ed719ee01699f50450b3df3b13" title="Computes the right angles from target_x, target_y, target_alt.">cam_target</a>();
-<a name="l00275"></a>00275 <span class="preprocessor">#endif // TRAFFIC_INFO</span>
-<a name="l00276"></a>00276 <span class="preprocessor"></span>}
+<a name="l00237"></a>00237 <span class="preprocessor"></span>  <span class="keyword">struct </span><a class="code" href="structEnuCoor__f.html" title="vector in East North Up coordinates Units: meters">EnuCoor_f</a>* pos = <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>();
+<a name="l00238"></a>00238   <span class="keyword">struct </span><a class="code" href="structFloatEulers.html" title="euler angles">FloatEulers</a>* att = <a class="code" href="group__AttGroup.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float).">stateGetNedToBodyEulers_f</a>();
+<a name="l00239"></a>00239   <a class="code" href="point_8c.html#a3317a3a368f54d6c89acfbbaa49b4ed2">vPoint</a>(pos-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>, pos-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>, pos-&gt;<a class="code" href="structEnuCoor__f.html#af45d8ff67563a7c7bf0c7883aa0f3e3a" title="in meters">z</a>,
+<a name="l00240"></a>00240          att-&gt;<a class="code" href="structFloatEulers.html#a4b2c73d59e89d78354658b20058720e0" title="in radians">phi</a>, att-&gt;<a class="code" href="structFloatEulers.html#a98f8790d7dbb4d3ef03e99cdf27f844e" title="in radians">theta</a>, *<a class="code" href="group__SpeedGroup.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float).">stateGetHorizontalSpeedDir_f</a>(),
+<a name="l00241"></a>00241          <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a>, <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a>, <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a>,
+<a name="l00242"></a>00242          &amp;<a class="code" href="cam_8c.html#a4594bf9761835894a1baa11831c37d50">cam_pan_c</a>, &amp;<a class="code" href="cam_8c.html#ad02900f1c2639aa4f8b6fd05614c26c6">cam_tilt_c</a>);
+<a name="l00243"></a>00243 <span class="preprocessor">#endif</span>
+<a name="l00244"></a>00244 <span class="preprocessor"></span>  <a class="code" href="cam_8c.html#a38adb5d1136278301352a4a57e463045" title="Computes the servo values from cam_pan_c and cam_tilt_c.">cam_angles</a>();
+<a name="l00245"></a>00245 }
+<a name="l00246"></a>00246 
+<a name="l00248"></a><a class="code" href="cam_8c.html#aa5c7c762b35b57ec479e6244f006c5d1">00248</a> <span class="keywordtype">void</span> <a class="code" href="cam_8c.html#aa5c7c762b35b57ec479e6244f006c5d1" title="Point straight down.">cam_nadir</a>( <span class="keywordtype">void</span> ) {
+<a name="l00249"></a>00249   <span class="keyword">struct </span><a class="code" href="structEnuCoor__f.html" title="vector in East North Up coordinates Units: meters">EnuCoor_f</a>* pos = <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>();
+<a name="l00250"></a>00250 <span class="preprocessor">#ifdef TEST_CAM</span>
+<a name="l00251"></a>00251 <span class="preprocessor"></span>  <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a> = test_cam_estimator_x;
+<a name="l00252"></a>00252   <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a> = test_cam_estimator_y;
+<a name="l00253"></a>00253 <span class="preprocessor">#else</span>
+<a name="l00254"></a>00254 <span class="preprocessor"></span>  <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a> = pos-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;
+<a name="l00255"></a>00255   <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a> = pos-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;
+<a name="l00256"></a>00256 <span class="preprocessor">#endif</span>
+<a name="l00257"></a>00257 <span class="preprocessor"></span>  <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a> = -10;
+<a name="l00258"></a>00258   <a class="code" href="cam_8c.html#aab3da8ed719ee01699f50450b3df3b13" title="Computes the right angles from target_x, target_y, target_alt.">cam_target</a>();
+<a name="l00259"></a>00259 }
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261 
+<a name="l00262"></a><a class="code" href="cam_8c.html#a91c2133236e62688f7acfe1ab9fe2f11">00262</a> <span class="keywordtype">void</span> <a class="code" href="cam_8c.html#a91c2133236e62688f7acfe1ab9fe2f11">cam_waypoint_target</a>( <span class="keywordtype">void</span> ) {
+<a name="l00263"></a>00263   <span class="keywordflow">if</span> (<a class="code" href="cam_8c.html#a8b3761e34c06cf1ad1f244c863b5aa90" title="For CAM_MODE_XY_TARGET mode.">cam_target_wp</a> &lt; <a class="code" href="navigation_8c.html#abee3b60dcf3a8c1cad3036c63f8c3689">nb_waypoint</a>) {
+<a name="l00264"></a>00264     <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a> = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(<a class="code" href="cam_8c.html#a8b3761e34c06cf1ad1f244c863b5aa90" title="For CAM_MODE_XY_TARGET mode.">cam_target_wp</a>);
+<a name="l00265"></a>00265     <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a> = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(<a class="code" href="cam_8c.html#a8b3761e34c06cf1ad1f244c863b5aa90" title="For CAM_MODE_XY_TARGET mode.">cam_target_wp</a>);
+<a name="l00266"></a>00266   }
+<a name="l00267"></a>00267   <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a> = <a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2" title="size == nb_waypoint, waypoint 0 is a dummy waypoint">ground_alt</a>;
+<a name="l00268"></a>00268   <a class="code" href="cam_8c.html#aab3da8ed719ee01699f50450b3df3b13" title="Computes the right angles from target_x, target_y, target_alt.">cam_target</a>();
+<a name="l00269"></a>00269 }
+<a name="l00270"></a>00270 
+<a name="l00271"></a><a class="code" href="cam_8c.html#a7e228da24201c997a297f7c49bffa74c">00271</a> <span class="keywordtype">void</span> <a class="code" href="cam_8c.html#a7e228da24201c997a297f7c49bffa74c">cam_ac_target</a>( <span class="keywordtype">void</span> ) {
+<a name="l00272"></a>00272 <span class="preprocessor">#ifdef TRAFFIC_INFO</span>
+<a name="l00273"></a>00273 <span class="preprocessor"></span>  <span class="keyword">struct </span><a class="code" href="structac__info__.html">ac_info_</a> * ac = <a class="code" href="traffic__info_8c.html#a7e85d322af164f27094da0f8aca67b21">get_ac_info</a>(<a class="code" href="cam_8c.html#a9a2c37c0754be9af1945a04e76e1f7c0" title="For CAM_MODE_WP_TARGET mode.">cam_target_ac</a>);
+<a name="l00274"></a>00274   <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a> = ac-&gt;<a class="code" href="structac__info__.html#a51c2e4bc1f3063b2ba749673ac78a8fd">east</a>;
+<a name="l00275"></a>00275   <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a> = ac-&gt;<a class="code" href="structac__info__.html#a9a983598258354bb014b778667d80bc3">north</a>;
+<a name="l00276"></a>00276   <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a> = ac-&gt;<a class="code" href="structac__info__.html#ad014a5a777970469f2679784a6da4eff">alt</a>;
+<a name="l00277"></a>00277   <a class="code" href="cam_8c.html#aab3da8ed719ee01699f50450b3df3b13" title="Computes the right angles from target_x, target_y, target_alt.">cam_target</a>();
+<a name="l00278"></a>00278 <span class="preprocessor">#endif // TRAFFIC_INFO</span>
+<a name="l00279"></a>00279 <span class="preprocessor"></span>}
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -390,7 +394,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="cam_8c.html">cam.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:35 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:42 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

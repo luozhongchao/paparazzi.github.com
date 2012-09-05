@@ -7,6 +7,7 @@ var baro__bmp_8h =
     [ "BARO_BMP_START_PRESS", "baro__bmp_8h.html#a18ef51196b053a5562a23b1fe7a2e39e", null ],
     [ "BARO_BMP_START_TEMP", "baro__bmp_8h.html#a452b318f559d71624d646d3a5a625b3f", null ],
     [ "BARO_BMP_UNINIT", "baro__bmp_8h.html#a34b0c099faac48dc128599e98d2c8409", null ],
+    [ "BaroBmpUpdate", "baro__bmp_8h.html#a9f4bdb5f9ea33d58771144e438b1b5aa", null ],
     [ "BMP085_CTRL_REG", "baro__bmp_8h.html#aba8a2ba67440fd080a0d0b32c2e8839b", null ],
     [ "BMP085_DAT_LSB", "baro__bmp_8h.html#a0598b0ef3498b10aeb05840ed8bead3d", null ],
     [ "BMP085_DAT_MSB", "baro__bmp_8h.html#a9b74d051a91536ec5e830c8e0e65d031", null ],
@@ -38,5 +39,6 @@ var baro__bmp_8h =
     [ "baro_bmp_r", "baro__bmp_8h.html#a715ab4e2838f0af7be8d7d55b82a1ac9", null ],
     [ "baro_bmp_sigma2", "baro__bmp_8h.html#acb0831c824befa3750689297f62d4024", null ],
     [ "baro_bmp_status", "baro__bmp_8h.html#a2f73635d76cb836e94150a1bd94d145e", null ],
-    [ "baro_bmp_temperature", "baro__bmp_8h.html#a6ca3431a3d3264374f69fb976c92055a", null ]
+    [ "baro_bmp_temperature", "baro__bmp_8h.html#a6ca3431a3d3264374f69fb976c92055a", null ],
+    [ "baro_bmp_valid", "baro__bmp_8h.html#a3af5dc1a8b4079c6817febf52e970c99", null ]
 ];

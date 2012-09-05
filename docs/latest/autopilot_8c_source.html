@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -138,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 
 <a name="l00035"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a8f3fc6ad7d342f95e555efa1a4a27685">00035</a> bool_t   <a class="code" href="autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>;
 <a name="l00036"></a><a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">00036</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="autopilot_8c.html#acd2bf4c7a52ed1bfed86b3fa0d4165ed">autopilot_in_flight_counter</a>;
-<a name="l00037"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a643a1732fc06296050835ab61968d726">00037</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="autopilot_8c.html#a643a1732fc06296050835ab61968d726">autopilot_flight_time</a>;
+<a name="l00037"></a><a class="code" href="autopilot_8c.html#a643a1732fc06296050835ab61968d726">00037</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="fixedwing_2autopilot_8h.html#a643a1732fc06296050835ab61968d726" title="flight time in seconds.">autopilot_flight_time</a>;
 <a name="l00038"></a>00038 
 <a name="l00039"></a><a class="code" href="rotorcraft_2autopilot_8h.html#a7e21dda68d44d395845b5f36e254cd4b">00039</a> bool_t   <a class="code" href="autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>;
 <a name="l00040"></a><a class="code" href="autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c">00040</a> bool_t   <a class="code" href="fixedwing_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a>;
@@ -154,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a>00050 <span class="preprocessor">#ifndef AUTOPILOT_DISABLE_AHRS_KILL</span>
 <a name="l00051"></a>00051 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span>
 <a name="l00052"></a><a class="code" href="autopilot_8c.html#a99409d6a32e6cce437a1c0354a2515eb">00052</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="autopilot_8c.html#a99409d6a32e6cce437a1c0354a2515eb">ahrs_is_aligned</a>(<span class="keywordtype">void</span>) {
-<a name="l00053"></a>00053   <span class="keywordflow">return</span> (<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#acb8bbf7c582667502e2941722e052d0e" title="status of the AHRS, AHRS_UNINIT or AHRS_RUNNING">status</a> == <a class="code" href="ahrs_8h.html#aaf3251b3c47097842d7dda09c76930f4">AHRS_RUNNING</a>);
+<a name="l00053"></a>00053   <span class="keywordflow">return</span> (<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state">ahrs</a>.<a class="code" href="structAhrs.html#acb8bbf7c582667502e2941722e052d0e" title="status of the AHRS, AHRS_UNINIT or AHRS_RUNNING">status</a> == <a class="code" href="ahrs_8h.html#aaf3251b3c47097842d7dda09c76930f4">AHRS_RUNNING</a>);
 <a name="l00054"></a>00054 }
 <a name="l00055"></a>00055 <span class="preprocessor">#else</span>
 <a name="l00056"></a>00056 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="autopilot_8c.html#a99409d6a32e6cce437a1c0354a2515eb">ahrs_is_aligned</a>(<span class="keywordtype">void</span>) {
@@ -179,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00075"></a>00075   <a class="code" href="autopilot_8c.html#a3e41cabeeeed6f149349c977139aac36">autopilot_mode_auto2</a> = <a class="code" href="rotorcraft_2autopilot_8h.html#a08f66aa60f30903c4240dac601ab555a">MODE_AUTO2</a>;
 <a name="l00076"></a>00076   <a class="code" href="autopilot_8c.html#a8b3a73c1c960edd2951f8ad6ba5232d2">autopilot_detect_ground</a> = FALSE;
 <a name="l00077"></a>00077   <a class="code" href="autopilot_8c.html#a253b2721020bd7b569406cd2b3fa5947">autopilot_detect_ground_once</a> = FALSE;
-<a name="l00078"></a>00078   <a class="code" href="autopilot_8c.html#a643a1732fc06296050835ab61968d726">autopilot_flight_time</a> = 0;
+<a name="l00078"></a>00078   <a class="code" href="fixedwing_2autopilot_8h.html#a643a1732fc06296050835ab61968d726" title="flight time in seconds.">autopilot_flight_time</a> = 0;
 <a name="l00079"></a>00079   <a class="code" href="autopilot_8c.html#af650349177a10f98d82cd36290bc0108">autopilot_rc</a> = TRUE;
 <a name="l00080"></a>00080   <a class="code" href="autopilot_8c.html#a2420bfd42441204f7fa1c47721a304e6">autopilot_power_switch</a> = FALSE;
 <a name="l00081"></a>00081 <span class="preprocessor">#ifdef POWER_SWITCH_LED</span>
@@ -392,7 +393,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="autopilot_8c.html">autopilot.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:33 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:39 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -130,50 +131,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define COMMON_NAV_H</span>
 <a name="l00027"></a>00027 <span class="preprocessor"></span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;std.h&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="common__flight__plan_8h.html">subsystems/navigation/common_flight_plan.h</a>&quot;</span>
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="common__nav_8c.html#a1e29c2884fac341d819ffcc6699bd214">max_dist_from_home</a>;
-<a name="l00032"></a>00032 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="common__nav_8c.html#aaa0755e7078e30953f14178d3dcd90ee">dist2_to_home</a>;
-<a name="l00033"></a>00033 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="common__nav_8c.html#a1ea7c4cd1046a57c3444b89a1dce6250">dist2_to_wp</a>;
-<a name="l00034"></a>00034 <span class="keyword">extern</span> bool_t <a class="code" href="common__nav_8c.html#ac566112f2489f0c9efcd3bf8b32f1b9d">too_far_from_home</a>;
-<a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="structpoint.html">00036</a> <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> {
-<a name="l00037"></a><a class="code" href="structpoint.html#a8293fd2de3ce739deb6d53691fd21fcf">00037</a>   <span class="keywordtype">float</span> <a class="code" href="structpoint.html#a8293fd2de3ce739deb6d53691fd21fcf">x</a>;
-<a name="l00038"></a><a class="code" href="structpoint.html#a616ad85a2096d1566f5971666bbc3b3f">00038</a>   <span class="keywordtype">float</span> <a class="code" href="structpoint.html#a616ad85a2096d1566f5971666bbc3b3f">y</a>;
-<a name="l00039"></a><a class="code" href="structpoint.html#a7bb43530a17e55615fa418ff9f914991">00039</a>   <span class="keywordtype">float</span> <a class="code" href="structpoint.html#a7bb43530a17e55615fa418ff9f914991">a</a>;
-<a name="l00040"></a>00040 };
-<a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="common__nav_8h.html#a2d51bcd8e90e2dea91009f895a452a22">00042</a> <span class="preprocessor">#define WaypointX(_wp) (waypoints[_wp].x)</span>
-<a name="l00043"></a><a class="code" href="common__nav_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define WaypointY(_wp) (waypoints[_wp].y)</span>
-<a name="l00044"></a><a class="code" href="common__nav_8h.html#a2de6e5b93a3552facfa675f1bccd8db2">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define WaypointAlt(_wp) (waypoints[_wp].a)</span>
-<a name="l00045"></a><a class="code" href="common__nav_8h.html#af637c15f691fc23f50337eb194758ec7">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define Height(_h) (_h + ground_alt)</span>
-<a name="l00046"></a>00046 <span class="preprocessor"></span>
-<a name="l00047"></a>00047 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="navigation_8c.html#a37e43e31c6ed9a19c04d30f29770c214">nav_move_waypoint</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp_id, <span class="keywordtype">float</span> utm_east, <span class="keywordtype">float</span> utm_north, <span class="keywordtype">float</span> alt);
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049 <span class="keyword">extern</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="navigation_8c.html#abee3b60dcf3a8c1cad3036c63f8c3689">nb_waypoint</a>;
-<a name="l00050"></a>00050 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[];
-<a name="l00053"></a>00053 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2" title="size == nb_waypoint, waypoint 0 is a dummy waypoint">ground_alt</a>; <span class="comment">/* m */</span>
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="common__nav_8c.html#a3de43e2f62e53fe06e76fe5c22c017b5">nav_utm_east0</a>;  <span class="comment">/* m */</span>
-<a name="l00056"></a>00056 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="common__nav_8c.html#ace28d2afa409c13ff38275eac017698c">nav_utm_north0</a>; <span class="comment">/* m */</span>
-<a name="l00057"></a>00057 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>;
-<a name="l00058"></a>00058 
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="common__flight__plan_8h.html">subsystems/navigation/common_flight_plan.h</a>&quot;</span>
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="common__nav_8c.html#a1e29c2884fac341d819ffcc6699bd214">max_dist_from_home</a>;
+<a name="l00033"></a>00033 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="common__nav_8c.html#aaa0755e7078e30953f14178d3dcd90ee">dist2_to_home</a>;
+<a name="l00034"></a>00034 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="common__nav_8c.html#a1ea7c4cd1046a57c3444b89a1dce6250">dist2_to_wp</a>;
+<a name="l00035"></a>00035 <span class="keyword">extern</span> bool_t <a class="code" href="common__nav_8c.html#ac566112f2489f0c9efcd3bf8b32f1b9d">too_far_from_home</a>;
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="structpoint.html">00037</a> <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> {
+<a name="l00038"></a><a class="code" href="structpoint.html#a8293fd2de3ce739deb6d53691fd21fcf">00038</a>   <span class="keywordtype">float</span> <a class="code" href="structpoint.html#a8293fd2de3ce739deb6d53691fd21fcf">x</a>;
+<a name="l00039"></a><a class="code" href="structpoint.html#a616ad85a2096d1566f5971666bbc3b3f">00039</a>   <span class="keywordtype">float</span> <a class="code" href="structpoint.html#a616ad85a2096d1566f5971666bbc3b3f">y</a>;
+<a name="l00040"></a><a class="code" href="structpoint.html#a7bb43530a17e55615fa418ff9f914991">00040</a>   <span class="keywordtype">float</span> <a class="code" href="structpoint.html#a7bb43530a17e55615fa418ff9f914991">a</a>;
+<a name="l00041"></a>00041 };
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="common__nav_8h.html#a2d51bcd8e90e2dea91009f895a452a22">00043</a> <span class="preprocessor">#define WaypointX(_wp) (waypoints[_wp].x)</span>
+<a name="l00044"></a><a class="code" href="common__nav_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define WaypointY(_wp) (waypoints[_wp].y)</span>
+<a name="l00045"></a><a class="code" href="common__nav_8h.html#a2de6e5b93a3552facfa675f1bccd8db2">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define WaypointAlt(_wp) (waypoints[_wp].a)</span>
+<a name="l00046"></a><a class="code" href="common__nav_8h.html#af637c15f691fc23f50337eb194758ec7">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define Height(_h) (_h + ground_alt)</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span>
+<a name="l00048"></a>00048 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="navigation_8c.html#a37e43e31c6ed9a19c04d30f29770c214">nav_move_waypoint</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp_id, <span class="keywordtype">float</span> utm_east, <span class="keywordtype">float</span> utm_north, <span class="keywordtype">float</span> alt);
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 <span class="keyword">extern</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="navigation_8c.html#abee3b60dcf3a8c1cad3036c63f8c3689">nb_waypoint</a>;
+<a name="l00051"></a>00051 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[];
+<a name="l00054"></a>00054 <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2" title="size == nb_waypoint, waypoint 0 is a dummy waypoint">ground_alt</a>; <span class="comment">/* m */</span>
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="common__nav_8c.html#a3de43e2f62e53fe06e76fe5c22c017b5">nav_utm_east0</a>;  <span class="comment">/* m */</span>
+<a name="l00057"></a>00057 <span class="keyword">extern</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="common__nav_8c.html#ace28d2afa409c13ff38275eac017698c">nav_utm_north0</a>; <span class="comment">/* m */</span>
+<a name="l00058"></a>00058 <span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>;
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060 <span class="keywordtype">void</span> <a class="code" href="navigation_8h.html#a4603515f41786b54ea9383a65a9f249e" title="Computes square distance to the HOME waypoint potentially sets too_far_from_home.">compute_dist2_to_home</a>(<span class="keywordtype">void</span>);
-<a name="l00061"></a>00061 unit_t <a class="code" href="navigation_8c.html#a9be99612e24c6ba96a13c2c1d657ee99" title="Reset the geographic reference to the current GPS fix.">nav_reset_reference</a>( <span class="keywordtype">void</span> ) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
-<a name="l00062"></a>00062 unit_t <a class="code" href="common__nav_8c.html#a34dae3b6ee415907433b0d92cfa46eac" title="Shift altitude of the waypoint according to a new ground altitude.">nav_update_waypoints_alt</a>( <span class="keywordtype">void</span> ) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
-<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="common__nav_8c.html#a41fefa6b96afeb9a5d9f8bc41b7b8c2e">common_nav_periodic_task_4Hz</a>(<span class="keywordtype">void</span>);
-<a name="l00064"></a>00064 
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 <span class="keywordtype">void</span> <a class="code" href="navigation_8h.html#a4603515f41786b54ea9383a65a9f249e" title="Computes square distance to the HOME waypoint potentially sets too_far_from_home.">compute_dist2_to_home</a>(<span class="keywordtype">void</span>);
+<a name="l00062"></a>00062 unit_t <a class="code" href="navigation_8c.html#a9be99612e24c6ba96a13c2c1d657ee99" title="Reset the geographic reference to the current GPS fix.">nav_reset_reference</a>( <span class="keywordtype">void</span> ) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
+<a name="l00063"></a>00063 unit_t <a class="code" href="common__nav_8c.html#a34dae3b6ee415907433b0d92cfa46eac" title="Shift altitude of the waypoint according to a new ground altitude.">nav_update_waypoints_alt</a>( <span class="keywordtype">void</span> ) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
+<a name="l00064"></a>00064 <span class="keywordtype">void</span> <a class="code" href="common__nav_8c.html#a41fefa6b96afeb9a5d9f8bc41b7b8c2e">common_nav_periodic_task_4Hz</a>(<span class="keywordtype">void</span>);
 <a name="l00065"></a>00065 
-<a name="l00066"></a><a class="code" href="common__nav_8h.html#ac51da095b4a1038ac7be8d3be9b9573e">00066</a> <span class="preprocessor">#define NavSetGroundReferenceHere() ({ nav_reset_reference(); nav_update_waypoints_alt(); FALSE; })</span>
-<a name="l00067"></a>00067 <span class="preprocessor"></span>
-<a name="l00068"></a><a class="code" href="common__nav_8h.html#af6eb4097676a1a2eaea357f56751e669">00068</a> <span class="preprocessor">#define NavSetWaypointHere(_wp) ({ \</span>
-<a name="l00069"></a>00069 <span class="preprocessor">  waypoints[_wp].x = estimator_x; \</span>
-<a name="l00070"></a>00070 <span class="preprocessor">  waypoints[_wp].y = estimator_y; \</span>
-<a name="l00071"></a>00071 <span class="preprocessor">  FALSE; \</span>
-<a name="l00072"></a>00072 <span class="preprocessor">})</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span>
-<a name="l00074"></a>00074 <span class="preprocessor">#endif </span><span class="comment">/* COMMON_NAV_H */</span>
+<a name="l00066"></a>00066 
+<a name="l00067"></a><a class="code" href="common__nav_8h.html#ac51da095b4a1038ac7be8d3be9b9573e">00067</a> <span class="preprocessor">#define NavSetGroundReferenceHere() ({ nav_reset_reference(); nav_update_waypoints_alt(); FALSE; })</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>
+<a name="l00069"></a><a class="code" href="common__nav_8h.html#af6eb4097676a1a2eaea357f56751e669">00069</a> <span class="preprocessor">#define NavSetWaypointHere(_wp) ({ \</span>
+<a name="l00070"></a>00070 <span class="preprocessor">  waypoints[_wp].x = stateGetPositionEnu_f()-&gt;x; \</span>
+<a name="l00071"></a>00071 <span class="preprocessor">  waypoints[_wp].y = stateGetPositionEnu_f()-&gt;y; \</span>
+<a name="l00072"></a>00072 <span class="preprocessor">  FALSE; \</span>
+<a name="l00073"></a>00073 <span class="preprocessor">})</span>
+<a name="l00074"></a>00074 <span class="preprocessor"></span>
+<a name="l00075"></a>00075 <span class="preprocessor">#endif </span><span class="comment">/* COMMON_NAV_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -194,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="common__nav_8h.html">common_nav.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:40 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:47 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -19,6 +19,7 @@ var searchData=
   ['mag',['mag',['../structCHIMU__sensor__data.html#a701c95b3a4b737c5861e86b6300b7cde',1,'CHIMU_sensor_data::mag()'],['../structVi__imu__info.html#a6e59e458bc626853e5895e628d259a7e',1,'Vi_imu_info::mag()'],['../structImu.html#a6c4356739a6b97db247831e0be58849e',1,'Imu::mag()'],['../structImuFloat.html#a178c1a0180273c5b8c93f036b82b5f0f',1,'ImuFloat::mag()']]],
   ['mag_5favailable',['mag_available',['../structImuAspirin.html#a6999a418c1b4aa1c64a88393570a6880',1,'ImuAspirin::mag_available()'],['../structImuNps.html#ae9310ba211a69592dade8f317e221784',1,'ImuNps::mag_available()']]],
   ['mag_5fneutral',['mag_neutral',['../structImu.html#aba6da90715844d686389574fbef30b4b',1,'Imu']]],
+  ['mag_5foffset',['mag_offset',['../structAhrsIntCmplEuler.html#a28e43135829dd2a47c007e2f6aa113e5',1,'AhrsIntCmplEuler']]],
   ['mag_5fready_5ffor_5fread',['mag_ready_for_read',['../lisa__test__hmc5843_8c.html#a405567d9f86712cafa57ae04c39480fa',1,'lisa_test_hmc5843.c']]],
   ['mag_5fstate',['mag_state',['../lisa__test__hmc5843_8c.html#a58323bc3323e77e8aeceed01e753ed2d',1,'lisa_test_hmc5843.c']]],
   ['mag_5fsum',['mag_sum',['../ahrs__aligner_8c.html#a2eb9f638b1725fb8ec7be2103e25f4b0',1,'ahrs_aligner.c']]],

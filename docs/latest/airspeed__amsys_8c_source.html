@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -127,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023 <span class="comment"> */</span>
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="airspeed__amsys_8h.html">sensors/airspeed_amsys.h</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include &quot;messages.h&quot;</span>
@@ -210,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00106"></a>00106 <span class="preprocessor"></span>
 <a name="l00107"></a>00107 <span class="preprocessor">#else // SITL</span>
 <a name="l00108"></a>00108 <span class="preprocessor"></span>    <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="sim__ir_8c.html#ace3c7ebb7c161817631e5a3d72d7ff5d">sim_air_speed</a>;
-<a name="l00109"></a>00109     <a class="code" href="estimator_8h.html#ad7afefffadec367706afad86666b7487">EstimatorSetAirspeed</a>(sim_air_speed);
+<a name="l00109"></a>00109     <a class="code" href="group__WindAirGroup.html#ga0e7741bb45a8d7c0c82a3fe268fcd1f2" title="Set airspeed (float).">stateSetAirspeed_f</a>(&amp;sim_air_speed);
 <a name="l00110"></a>00110 <span class="preprocessor">#endif //SITL</span>
 <a name="l00111"></a>00111 <span class="preprocessor"></span>}
 <a name="l00112"></a>00112 
@@ -250,7 +251,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00146"></a>00146     <a class="code" href="airspeed__amsys_8c.html#a223e6f251f6d932fec44f7641e0c93db">airspeed_old</a> = <a class="code" href="airspeed__amsys_8c.html#a79c8b995649dffc12ce3f264553bc8f9">airspeed_amsys</a>;
 <a name="l00147"></a>00147 
 <a name="l00148"></a>00148 <span class="preprocessor">#if USE_AIRSPEED</span>
-<a name="l00149"></a>00149 <span class="preprocessor"></span>    <a class="code" href="estimator_8h.html#ad7afefffadec367706afad86666b7487">EstimatorSetAirspeed</a>(<a class="code" href="airspeed__amsys_8c.html#a79c8b995649dffc12ce3f264553bc8f9">airspeed_amsys</a>);
+<a name="l00149"></a>00149 <span class="preprocessor"></span>    <a class="code" href="group__WindAirGroup.html#ga0e7741bb45a8d7c0c82a3fe268fcd1f2" title="Set airspeed (float).">stateSetAirspeed_f</a>(&amp;<a class="code" href="airspeed__amsys_8c.html#a79c8b995649dffc12ce3f264553bc8f9">airspeed_amsys</a>);
 <a name="l00150"></a>00150 <span class="preprocessor">#endif</span>
 <a name="l00151"></a>00151 <span class="preprocessor"></span><span class="preprocessor">#ifdef SENSOR_SYNC_SEND</span>
 <a name="l00152"></a>00152 <span class="preprocessor"></span>    DOWNLINK_SEND_AMSYS_AIRSPEED(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="airspeed__amsys_8c.html#aa3279eb0d77800f5e2ce43a443b052f5">airspeed_amsys_raw</a>, &amp;<a class="code" href="airspeed__amsys_8c.html#a143190dc576671c37129e589111e65d9">pressure_amsys</a>, &amp;<a class="code" href="airspeed__amsys_8c.html#a4e2725d20590bc6666e60711d0e1b833">airspeed_tmp</a>, &amp;<a class="code" href="airspeed__amsys_8c.html#a79c8b995649dffc12ce3f264553bc8f9">airspeed_amsys</a>, &amp;<a class="code" href="airspeed__amsys_8c.html#a5ddf9c29e6f33832f1893cdd311dfdd6">airspeed_temperature</a>);
@@ -283,7 +284,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="airspeed__amsys_8c.html">airspeed_amsys.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:37 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:44 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

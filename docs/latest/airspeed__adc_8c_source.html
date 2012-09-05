@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -128,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="adc_8h.html" title="arch independent ADC (Analog to Digital Converter) API">mcu_periph/adc.h</a>&quot;</span>
 <a name="l00025"></a>00025 <span class="preprocessor">#include BOARD_CONFIG</span>
 <a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
 <a name="l00028"></a>00028 
 <a name="l00029"></a><a class="code" href="airspeed__adc_8h.html#a01f9eaf296403f424d5446ae025cf1de">00029</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="airspeed__adc_8c.html#a01f9eaf296403f424d5446ae025cf1de">adc_airspeed_val</a>;
 <a name="l00030"></a>00030 
@@ -163,10 +164,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00059"></a>00059 <span class="preprocessor">#else</span>
 <a name="l00060"></a>00060 <span class="preprocessor"></span>  <span class="keywordtype">float</span> airspeed = AIRSPEED_SCALE * (<a class="code" href="airspeed__adc_8c.html#a01f9eaf296403f424d5446ae025cf1de">adc_airspeed_val</a> - AIRSPEED_BIAS);
 <a name="l00061"></a>00061 <span class="preprocessor">#endif</span>
-<a name="l00062"></a>00062 <span class="preprocessor"></span>  <a class="code" href="estimator_8h.html#ad7afefffadec367706afad86666b7487">EstimatorSetAirspeed</a>(airspeed);
+<a name="l00062"></a>00062 <span class="preprocessor"></span>  <a class="code" href="group__WindAirGroup.html#ga0e7741bb45a8d7c0c82a3fe268fcd1f2" title="Set airspeed (float).">stateSetAirspeed_f</a>(&amp;airspeed);
 <a name="l00063"></a>00063 <span class="preprocessor">#else // SITL</span>
 <a name="l00064"></a>00064 <span class="preprocessor"></span>  <span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="sim__ir_8c.html#ace3c7ebb7c161817631e5a3d72d7ff5d">sim_air_speed</a>;
-<a name="l00065"></a>00065   <a class="code" href="estimator_8h.html#ad7afefffadec367706afad86666b7487">EstimatorSetAirspeed</a>(sim_air_speed);
+<a name="l00065"></a>00065   <a class="code" href="group__WindAirGroup.html#ga0e7741bb45a8d7c0c82a3fe268fcd1f2" title="Set airspeed (float).">stateSetAirspeed_f</a>(&amp;sim_air_speed);
 <a name="l00066"></a>00066   <a class="code" href="airspeed__adc_8c.html#a01f9eaf296403f424d5446ae025cf1de">adc_airspeed_val</a> = 0;
 <a name="l00067"></a>00067 <span class="preprocessor">#endif //SITL</span>
 <a name="l00068"></a>00068 <span class="preprocessor"></span>}
@@ -190,7 +191,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="airspeed__adc_8c.html">airspeed_adc.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:37 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:44 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

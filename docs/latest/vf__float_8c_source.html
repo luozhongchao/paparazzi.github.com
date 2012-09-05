@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -229,15 +230,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00125"></a><a class="code" href="vf__float_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">00125</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> update_z_conf(<span class="keywordtype">float</span> z_meas, <span class="keywordtype">float</span> conf) {
 <a name="l00126"></a>00126   <a class="code" href="vf__extended__float_8c.html#a70bf4fe0af826d88a29e934e4768b9fc">vff_z_meas</a> = z_meas;
 <a name="l00127"></a>00127 
-<a name="l00128"></a>00128   <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9">y</a> = z_meas - <a class="code" href="vf__extended__float_8c.html#a1222ca88d397976e39d7074c3467974a">vff_z</a>;
+<a name="l00128"></a>00128   <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a> = z_meas - <a class="code" href="vf__extended__float_8c.html#a1222ca88d397976e39d7074c3467974a">vff_z</a>;
 <a name="l00129"></a>00129   <span class="keyword">const</span> <span class="keywordtype">float</span> S = <a class="code" href="vf__extended__float_8c.html#a0770019985f92fda99f2bdc98f47c267">vff_P</a>[0][0] + conf;
 <a name="l00130"></a>00130   <span class="keyword">const</span> <span class="keywordtype">float</span> K1 = <a class="code" href="vf__extended__float_8c.html#a0770019985f92fda99f2bdc98f47c267">vff_P</a>[0][0] * 1/S;
 <a name="l00131"></a>00131   <span class="keyword">const</span> <span class="keywordtype">float</span> K2 = <a class="code" href="vf__extended__float_8c.html#a0770019985f92fda99f2bdc98f47c267">vff_P</a>[1][0] * 1/S;
 <a name="l00132"></a>00132   <span class="keyword">const</span> <span class="keywordtype">float</span> K3 = <a class="code" href="vf__extended__float_8c.html#a0770019985f92fda99f2bdc98f47c267">vff_P</a>[2][0] * 1/S;
 <a name="l00133"></a>00133 
-<a name="l00134"></a>00134   vff_z    = vff_z    + K1 * <a class="code" href="structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9">y</a>;
-<a name="l00135"></a>00135   <a class="code" href="vf__extended__float_8c.html#abf478862714adc9584d537b9363011a4">vff_zdot</a> = <a class="code" href="vf__extended__float_8c.html#abf478862714adc9584d537b9363011a4">vff_zdot</a> + K2 * <a class="code" href="structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9">y</a>;
-<a name="l00136"></a>00136   <a class="code" href="vf__extended__float_8c.html#a24c283535083af381e89d00c91761df9">vff_bias</a> = <a class="code" href="vf__extended__float_8c.html#a24c283535083af381e89d00c91761df9">vff_bias</a> + K3 * <a class="code" href="structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9">y</a>;
+<a name="l00134"></a>00134   vff_z    = vff_z    + K1 * <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a>;
+<a name="l00135"></a>00135   <a class="code" href="vf__extended__float_8c.html#abf478862714adc9584d537b9363011a4">vff_zdot</a> = <a class="code" href="vf__extended__float_8c.html#abf478862714adc9584d537b9363011a4">vff_zdot</a> + K2 * <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a>;
+<a name="l00136"></a>00136   <a class="code" href="vf__extended__float_8c.html#a24c283535083af381e89d00c91761df9">vff_bias</a> = <a class="code" href="vf__extended__float_8c.html#a24c283535083af381e89d00c91761df9">vff_bias</a> + K3 * <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a>;
 <a name="l00137"></a>00137 
 <a name="l00138"></a>00138   <span class="keyword">const</span> <span class="keywordtype">float</span> P11 = (1. - K1) * <a class="code" href="vf__extended__float_8c.html#a0770019985f92fda99f2bdc98f47c267">vff_P</a>[0][0];
 <a name="l00139"></a>00139   <span class="keyword">const</span> <span class="keywordtype">float</span> P12 = (1. - K1) * <a class="code" href="vf__extended__float_8c.html#a0770019985f92fda99f2bdc98f47c267">vff_P</a>[0][1];
@@ -344,7 +345,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="vf__float_8c.html">vf_float.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:39 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:47 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -111,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2guidance_2guidance__v_8h.html" title="Vertical control for fixed wing vehicles.">firmwares/fixedwing/guidance/guidance_v.h</a>&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;messages.h&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
@@ -164,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061   <span class="keywordflow">if</span> (<a class="code" href="flight__benchmark_8c.html#a8c709967a01a8d99fadd6c0ab518866e">benchm_go</a>){
 <a name="l00062"></a>00062 <span class="preprocessor">  #if USE_AIRSPEED &amp;&amp; defined(BENCHMARK_AIRSPEED)</span>
-<a name="l00063"></a>00063 <span class="preprocessor"></span>    Err_airspeed = fabs(<a class="code" href="estimator_8c.html#a5dc658fc5279239e0f816d18299edc77" title="m/s">estimator_airspeed</a> - <a class="code" href="energy__ctrl_8c.html#ad4e989e42aa23948f14c82731b0e12af" title="in meters per second">v_ctl_auto_airspeed_setpoint</a>);
+<a name="l00063"></a>00063 <span class="preprocessor"></span>    Err_airspeed = fabs(*<a class="code" href="group__WindAirGroup.html#ga0ab69b83eeebb79cbdb2c8e81bfb659b" title="Get airspeed (float).">stateGetAirspeed_f</a>() - <a class="code" href="energy__ctrl_8c.html#ad4e989e42aa23948f14c82731b0e12af" title="in meters per second">v_ctl_auto_airspeed_setpoint</a>);
 <a name="l00064"></a>00064     <span class="keywordflow">if</span> (Err_airspeed&gt;<a class="code" href="flight__benchmark_8c.html#a8d6b7ceef28725b3dea8c46b2433dc16">ToleranceAispeed</a>){
 <a name="l00065"></a>00065       Err_airspeed = Err_airspeed-<a class="code" href="flight__benchmark_8c.html#a8d6b7ceef28725b3dea8c46b2433dc16">ToleranceAispeed</a>;
 <a name="l00066"></a>00066       <a class="code" href="flight__benchmark_8c.html#a7cba1520680a1e1397eec3f8605b3cee">SquareSumErr_airspeed</a> += (Err_airspeed * Err_airspeed);
@@ -172,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068 <span class="preprocessor">  #endif</span>
 <a name="l00069"></a>00069 <span class="preprocessor"></span>
 <a name="l00070"></a>00070 <span class="preprocessor">  #ifdef BENCHMARK_ALTITUDE</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span>    Err_altitude = fabs(<a class="code" href="estimator_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a> - <a class="code" href="energy__ctrl_8c.html#a8ca3adfa488b360ca07396ef54c199f3" title="in meters above MSL">v_ctl_altitude_setpoint</a>);
+<a name="l00071"></a>00071 <span class="preprocessor"></span>    Err_altitude = fabs(<a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;z - <a class="code" href="energy__ctrl_8c.html#a8ca3adfa488b360ca07396ef54c199f3" title="in meters above MSL">v_ctl_altitude_setpoint</a>);
 <a name="l00072"></a>00072     <span class="keywordflow">if</span> (Err_altitude&gt;<a class="code" href="flight__benchmark_8c.html#a9c89ccb67edcffa690db968ae55d0e38">ToleranceAltitude</a>){
 <a name="l00073"></a>00073       Err_altitude = Err_altitude-<a class="code" href="flight__benchmark_8c.html#a9c89ccb67edcffa690db968ae55d0e38">ToleranceAltitude</a>;
 <a name="l00074"></a>00074       <a class="code" href="flight__benchmark_8c.html#ade3a33aa6a5dde5d1520c3a72f2bddad">SquareSumErr_altitude</a> += (Err_altitude * Err_altitude);
@@ -183,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00079"></a>00079 <span class="preprocessor"></span>
 <a name="l00080"></a>00080   <span class="comment">//---------------This part is a waste of memory and calculation power -  but it works - feel free to optimize it ;-) -----------------</span>
 <a name="l00081"></a>00081 
-<a name="l00082"></a>00082   <span class="comment">//  err_temp = waypoints[target].x - estimator_x;</span>
+<a name="l00082"></a>00082   <span class="comment">//  err_temp = waypoints[target].x - stateGetPositionEnu_f()-&gt;x;</span>
 <a name="l00083"></a>00083     <span class="keywordtype">float</span> deltaPlaneX = 0;
 <a name="l00084"></a>00084     <span class="keywordtype">float</span> deltaPlaneY = 0;
 <a name="l00085"></a>00085     <span class="keywordtype">float</span> Err_position_segment = 0;
@@ -193,16 +194,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00089"></a>00089       <span class="keywordtype">float</span> deltaX = <a class="code" href="nav_8c.html#a123af850aca7872d4ae1f0fd561fc302">nav_segment_x_2</a> - <a class="code" href="nav_8c.html#a8b5c072e3f61f9025578e3e6283ffcb1">nav_segment_x_1</a>;
 <a name="l00090"></a>00090       <span class="keywordtype">float</span> deltaY = <a class="code" href="nav_8c.html#a2992c5b1e4da4284068a225e451877a4">nav_segment_y_2</a> - <a class="code" href="nav_8c.html#aa04e457095198f649868d28f72969029">nav_segment_y_1</a>;
 <a name="l00091"></a>00091       <span class="keywordtype">float</span> anglePath = atan2(deltaX,deltaY);
-<a name="l00092"></a>00092       deltaPlaneX = <a class="code" href="nav_8c.html#a123af850aca7872d4ae1f0fd561fc302">nav_segment_x_2</a> - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>;
-<a name="l00093"></a>00093       deltaPlaneY = <a class="code" href="nav_8c.html#a2992c5b1e4da4284068a225e451877a4">nav_segment_y_2</a> - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
+<a name="l00092"></a>00092       deltaPlaneX = <a class="code" href="nav_8c.html#a123af850aca7872d4ae1f0fd561fc302">nav_segment_x_2</a> - <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;
+<a name="l00093"></a>00093       deltaPlaneY = <a class="code" href="nav_8c.html#a2992c5b1e4da4284068a225e451877a4">nav_segment_y_2</a> - <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;
 <a name="l00094"></a>00094       <span class="keywordtype">float</span> anglePlane = atan2(deltaPlaneX,deltaPlaneY);
 <a name="l00095"></a>00095       <span class="keywordtype">float</span> angleDiff = fabs(anglePlane - anglePath);
 <a name="l00096"></a>00096       Err_position_segment = fabs(sin(angleDiff)*sqrt(deltaPlaneX*deltaPlaneX+deltaPlaneY*deltaPlaneY));
 <a name="l00097"></a>00097 <span class="comment">//    }</span>
 <a name="l00098"></a>00098 
 <a name="l00099"></a>00099 <span class="comment">//    if (nav_in_circle){</span>
-<a name="l00100"></a>00100       deltaPlaneX = <a class="code" href="nav_8c.html#ac1af27920d41a6dbc343fc1d7f55e08c">nav_circle_x</a> - <a class="code" href="estimator_8c.html#a3fbd28653bc443d9216da1a3a4fbef82" title="east position in meters">estimator_x</a>;
-<a name="l00101"></a>00101       deltaPlaneY = <a class="code" href="nav_8c.html#a7b01191b794559f9d485b67c2be62c39">nav_circle_y</a> - <a class="code" href="estimator_8c.html#a54e17d1190d3c4fe5faa39f389112095" title="north position in meters">estimator_y</a>;
+<a name="l00100"></a>00100       deltaPlaneX = <a class="code" href="nav_8c.html#ac1af27920d41a6dbc343fc1d7f55e08c">nav_circle_x</a> - <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;
+<a name="l00101"></a>00101       deltaPlaneY = <a class="code" href="nav_8c.html#a7b01191b794559f9d485b67c2be62c39">nav_circle_y</a> - <a class="code" href="group__PosGroup.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;
 <a name="l00102"></a>00102       Err_position_circle = fabs(sqrt(deltaPlaneX*deltaPlaneX+deltaPlaneY*deltaPlaneY)-<a class="code" href="navigation_8c.html#aa912cd5993a128e66d6e5391e5dc812f">nav_circle_radius</a>);
 <a name="l00103"></a>00103 <span class="comment">//    }</span>
 <a name="l00104"></a>00104     <span class="keywordflow">if</span> (Err_position_circle &lt; Err_position_segment){
@@ -260,7 +261,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="flight__benchmark_8c.html">flight_benchmark.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:35 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:42 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

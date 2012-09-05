@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -158,9 +159,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00054"></a>00054 
 <a name="l00055"></a><a class="code" href="pressure__board__navarro_8h.html#ab866fed1cbee4562698e91dfa824eec6">00055</a> <span class="preprocessor">#define PbnEvent() { if (pbn_trans.status == I2CTransSuccess) pbn_read_event(); }</span>
 <a name="l00056"></a>00056 <span class="preprocessor"></span>
-<a name="l00057"></a><a class="code" href="pressure__board__navarro_8h.html#a178946c8a3ef12c92d99791774312533">00057</a> <span class="preprocessor">#define PERIODIC_SEND_PBN(_chan) DOWNLINK_SEND_PBN(DefaultChannel, DefaultDevice,&amp;airspeed_adc,&amp;altitude_adc,&amp;pbn_airspeed,&amp;pbn_altitude,&amp;airspeed_offset,&amp;altitude_offset);</span>
+<a name="l00057"></a><a class="code" href="pressure__board__navarro_8h.html#a7770765885af0c5564dbb45245a17133">00057</a> <span class="preprocessor">#define BaroPbnUpdate(_b) { if (data_valid) { _b = altitude_adc; data_valid = FALSE; } }</span>
 <a name="l00058"></a>00058 <span class="preprocessor"></span>
-<a name="l00059"></a>00059 <span class="preprocessor">#endif // PRESSURE_BOARD_NAVARRO_H</span>
+<a name="l00059"></a><a class="code" href="pressure__board__navarro_8h.html#a178946c8a3ef12c92d99791774312533">00059</a> <span class="preprocessor">#define PERIODIC_SEND_PBN(_chan) DOWNLINK_SEND_PBN(DefaultChannel, DefaultDevice,&amp;airspeed_adc,&amp;altitude_adc,&amp;pbn_airspeed,&amp;pbn_altitude,&amp;airspeed_offset,&amp;altitude_offset);</span>
+<a name="l00060"></a>00060 <span class="preprocessor"></span>
+<a name="l00061"></a>00061 <span class="preprocessor">#endif // PRESSURE_BOARD_NAVARRO_H</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -181,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="pressure__board__navarro_8h.html">pressure_board_navarro.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:38 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:44 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

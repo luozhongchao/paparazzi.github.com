@@ -18,6 +18,8 @@ var pprz__geodetic__int_8h =
     [ "NED_BFP_OF_REAL", "pprz__geodetic__int_8h.html#a53a937ec13095219519aefbd1eb5d22c", null ],
     [ "NED_FLOAT_OF_BFP", "pprz__geodetic__int_8h.html#a61755b91d547a7ac50bd83fc367f20ef", null ],
     [ "RAD_OF_EM7RAD", "pprz__geodetic__int_8h.html#aa3e70fd5135f905380bab76644ce6a28", null ],
+    [ "VECT3_ENU_OF_NED", "pprz__geodetic__int_8h.html#aad3bc5d0d188cef75df495af6eadfb5b", null ],
+    [ "VECT3_NED_OF_ENU", "pprz__geodetic__int_8h.html#aaf18a0e7d4f29a9e55c0428d1adb0a2d", null ],
     [ "ecef_of_enu_point_i", "pprz__geodetic__int_8h.html#ad8c22560014d3cb00cccd50f9b79478d", null ],
     [ "ecef_of_enu_vect_i", "pprz__geodetic__int_8h.html#aabe6e63048c95afdffdd4a581dc5f2b8", null ],
     [ "ecef_of_lla_i", "pprz__geodetic__int_8h.html#a386f7bf340618bf1454ca2a3b5086100", null ],

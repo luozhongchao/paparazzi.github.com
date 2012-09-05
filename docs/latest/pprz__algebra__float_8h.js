@@ -57,6 +57,7 @@ var pprz__algebra__float_8h =
     [ "FLOAT_VECT2_ASSIGN", "pprz__algebra__float_8h.html#a469b1761a7b4d20e30a9f34d1ff0968f", null ],
     [ "FLOAT_VECT2_COPY", "pprz__algebra__float_8h.html#a5e6f8a854ad67e7770f45b8032d13ca7", null ],
     [ "FLOAT_VECT2_DIFF", "pprz__algebra__float_8h.html#a3bb4b57ed80281639f9664668734949a", null ],
+    [ "FLOAT_VECT2_NORM", "pprz__algebra__float_8h.html#a77c5752d894462efc3881297062e4664", null ],
     [ "FLOAT_VECT2_SMUL", "pprz__algebra__float_8h.html#ad962ea7104c2e82a5ca79279ce305593", null ],
     [ "FLOAT_VECT2_SUB", "pprz__algebra__float_8h.html#a95b2e91922a54c9b62ead4dd79e26003", null ],
     [ "FLOAT_VECT2_SUM", "pprz__algebra__float_8h.html#a8fd22edc4139b27dba72a8e7ef529f9d", null ],

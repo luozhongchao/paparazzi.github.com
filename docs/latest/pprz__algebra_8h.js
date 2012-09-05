@@ -51,6 +51,8 @@ var pprz__algebra_8h =
     [ "RMAT_TRACE", "pprz__algebra_8h.html#a1d44e309b5480fd7d8bf18efe0ed2d03", null ],
     [ "RMAT_VECT3_MUL", "pprz__algebra_8h.html#a978057ca926406c880508021a4148731", null ],
     [ "RMAT_VECT3_TRANSP_MUL", "pprz__algebra_8h.html#ae7dc355f24f14a07a1b7c162b572370d", null ],
+    [ "SPEEDS_BFP_OF_REAL", "pprz__algebra_8h.html#ab2e4a9721f74470ea3cbd5078067dc2b", null ],
+    [ "SPEEDS_FLOAT_OF_BFP", "pprz__algebra_8h.html#adf154f506ff4a4349048244cc4f47190", null ],
     [ "SQUARE", "pprz__algebra_8h.html#a26f8bb75deabaaf4adafe0a093144971", null ],
     [ "VECT2_ADD", "pprz__algebra_8h.html#a032fb9e1e6734e83934ab3dc49306abf", null ],
     [ "VECT2_ASSIGN", "pprz__algebra_8h.html#ae66e6252850359fedeb491ae52ae2b92", null ],

@@ -1,5 +1,6 @@
 var baro__scp_8h =
 [
+    [ "BaroScpUpdate", "baro__scp_8h.html#a6f8229597c37622beedee71a3095b4f1", null ],
     [ "STA_IDLE", "baro__scp_8h.html#a8d13dab4d456903df339a357cb4754c9", null ],
     [ "STA_INITIALISING", "baro__scp_8h.html#a915ba38cac65ca5e2f56d271be962766", null ],
     [ "STA_UNINIT", "baro__scp_8h.html#a9aeeac4b6b91056b261f35840481cede", null ],

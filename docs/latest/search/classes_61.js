@@ -11,8 +11,7 @@ var searchData=
   ['ads1114_5fperiph',['ads1114_periph',['../structads1114__periph.html',1,'']]],
   ['ahrs',['Ahrs',['../structAhrs.html',1,'']]],
   ['ahrsaligner',['AhrsAligner',['../structAhrsAligner.html',1,'']]],
-  ['ahrsfloat',['AhrsFloat',['../structAhrsFloat.html',1,'']]],
-  ['ahrsfloatcmplrmat',['AhrsFloatCmplRmat',['../structAhrsFloatCmplRmat.html',1,'']]],
+  ['ahrsfloatcmpl',['AhrsFloatCmpl',['../structAhrsFloatCmpl.html',1,'']]],
   ['ahrsfloatdcm',['AhrsFloatDCM',['../structAhrsFloatDCM.html',1,'']]],
   ['ahrsintcmpl',['AhrsIntCmpl',['../structAhrsIntCmpl.html',1,'']]],
   ['ahrsintcmpleuler',['AhrsIntCmplEuler',['../structAhrsIntCmplEuler.html',1,'']]]

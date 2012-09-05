@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -114,15 +115,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structAhrsFloatDCM__coll__graph.png" border="0" usemap="#AhrsFloatDCM_coll__map" alt="Collaboration graph"/></div>
 <map name="AhrsFloatDCM_coll__map" id="AhrsFloatDCM_coll__map">
-<area shape="rect" id="node2" href="structFloatRates.html" title="angular rates" alt="" coords="5,5,93,35"/><area shape="rect" id="node4" href="structFloatRMat.html" title="rotation matrix" alt="" coords="139,5,224,35"/><area shape="rect" id="node6" href="structFloatQuat.html" title="Roation quaternion." alt="" coords="296,5,379,35"/></map>
+<area shape="rect" id="node2" href="structFloatEulers.html" title="euler angles" alt="" coords="5,5,96,35"/><area shape="rect" id="node4" href="structFloatRates.html" title="angular rates" alt="" coords="148,5,236,35"/><area shape="rect" id="node6" href="structFloatRMat.html" title="rotation matrix" alt="" coords="277,5,363,35"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structFloatRates.html">FloatRates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrsFloatDCM.html#aae8cc61944a9c33bfbc8067f39060ad8">gyro_bias</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structFloatRates.html">FloatRates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrsFloatDCM.html#a9256dacf55a9bdec9a1ba4859c613748">rate_correction</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structFloatQuat.html">FloatQuat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrsFloatDCM.html#acd4daed3d9632190ec64de5c709ee084">body_to_imu_quat</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structFloatEulers.html">FloatEulers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrsFloatDCM.html#a0cf913a01c65293bddadb5a26d4480e7">ltp_to_imu_euler</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structFloatRMat.html">FloatRMat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrsFloatDCM.html#afa688a884bc7215ae721f2c30303b3cf">body_to_imu_rmat</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structFloatRates.html">FloatRates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrsFloatDCM.html#a98743fe74b825e3e97af666a0910172f">imu_rate</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrsFloatDCM.html#a28bef6d72c3eeb78beaa36afb5202716">gps_speed</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrsFloatDCM.html#a6d23bce9b87f444bc7f041f7f725f06e">gps_acceleration</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAhrsFloatDCM.html#ae08a572174030d02c09ad3f30cf63e1d">gps_course</a></td></tr>
@@ -133,21 +135,6 @@ Data Fields</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00027">27</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
 </div><hr/><h2>Field Documentation</h2>
-<a class="anchor" id="acd4daed3d9632190ec64de5c709ee084"></a><!-- doxytag: member="AhrsFloatDCM::body_to_imu_quat" ref="acd4daed3d9632190ec64de5c709ee084" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structFloatQuat.html">FloatQuat</a> <a class="el" href="structAhrsFloatDCM.html#acd4daed3d9632190ec64de5c709ee084">AhrsFloatDCM::body_to_imu_quat</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00035">35</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="afa688a884bc7215ae721f2c30303b3cf"></a><!-- doxytag: member="AhrsFloatDCM::body_to_imu_rmat" ref="afa688a884bc7215ae721f2c30303b3cf" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -159,7 +146,7 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00036">36</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00032">32</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
 
 </div>
 </div>
@@ -174,7 +161,7 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00039">39</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00036">36</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
 
 </div>
 </div>
@@ -189,7 +176,7 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00042">42</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00039">39</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
 
 </div>
 </div>
@@ -204,7 +191,7 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00040">40</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00037">37</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
 
 </div>
 </div>
@@ -219,7 +206,7 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00041">41</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00038">38</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
 
 </div>
 </div>
@@ -234,7 +221,7 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00038">38</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00035">35</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
 
 </div>
 </div>
@@ -250,6 +237,36 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00028">28</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a98743fe74b825e3e97af666a0910172f"></a><!-- doxytag: member="AhrsFloatDCM::imu_rate" ref="a98743fe74b825e3e97af666a0910172f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structFloatRates.html">FloatRates</a> <a class="el" href="structAhrsFloatDCM.html#a98743fe74b825e3e97af666a0910172f">AhrsFloatDCM::imu_rate</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00033">33</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0cf913a01c65293bddadb5a26d4480e7"></a><!-- doxytag: member="AhrsFloatDCM::ltp_to_imu_euler" ref="a0cf913a01c65293bddadb5a26d4480e7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structFloatEulers.html">FloatEulers</a> <a class="el" href="structAhrsFloatDCM.html#a0cf913a01c65293bddadb5a26d4480e7">AhrsFloatDCM::ltp_to_imu_euler</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ahrs__float__dcm_8h_source.html#l00031">31</a> of file <a class="el" href="ahrs__float__dcm_8h_source.html">ahrs_float_dcm.h</a>.</p>
 
 </div>
 </div>
@@ -291,7 +308,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="structAhrsFloatDCM.html">AhrsFloatDCM</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:01:00 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:26:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

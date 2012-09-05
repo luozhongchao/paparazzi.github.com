@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -134,27 +135,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a>00030 <span class="preprocessor">#include &quot;autopilot.h&quot;</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="infrared_8h.html">subsystems/sensors/infrared.h</a>&quot;</span>
-<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="inter__mcu_8h.html">inter_mcu.h</a>&quot;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span>
-<a name="l00036"></a>00036 
-<a name="l00037"></a><a class="code" href="rc__settings_8c.html#a3349e614a926a99c63c8b9f2935a29f3">00037</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="rc__settings_8c.html#a3349e614a926a99c63c8b9f2935a29f3">rc_settings_mode</a> = 0;
-<a name="l00038"></a><a class="code" href="rc__settings_8c.html#a909a5b6579e0b5302fd1847650a3219d">00038</a> <span class="keywordtype">float</span> <a class="code" href="rc__settings_8c.html#a44c7519d24a1210b4195b65831c08f23">slider_1_val</a>, <a class="code" href="rc__settings_8c.html#a909a5b6579e0b5302fd1847650a3219d">slider_2_val</a>;
-<a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="rc__settings_8c.html#a340368a8f442ad27fc08588985c16d0f">00040</a> <span class="preprocessor">#define ParamValInt16(param_init_val, param_travel, cur_pulse, init_pulse) \</span>
-<a name="l00041"></a>00041 <span class="preprocessor">(param_init_val + (int16_t)(((float)(cur_pulse - init_pulse)) * param_travel / (float)MAX_PPRZ))</span>
-<a name="l00042"></a>00042 <span class="preprocessor"></span>
-<a name="l00043"></a><a class="code" href="rc__settings_8c.html#a6eda1c9a9562629c0fb04cd4c7a8ab87">00043</a> <span class="preprocessor">#define ParamValFloat(param_init_val, param_travel, cur_pulse, init_pulse) \</span>
-<a name="l00044"></a>00044 <span class="preprocessor">(param_init_val + ((float)(cur_pulse - init_pulse)) * param_travel / (float)MAX_PPRZ)</span>
-<a name="l00045"></a>00045 <span class="preprocessor"></span>
-<a name="l00046"></a><a class="code" href="rc__settings_8c.html#a1208e80268eeb8b24ab1a67f2ecedb54">00046</a> <span class="preprocessor">#define RcChannel(x) (fbw_state-&gt;channels[x])</span>
-<a name="l00047"></a>00047 <span class="preprocessor"></span>
-<a name="l00049"></a>00049 <span class="preprocessor">#include &quot;generated/settings.h&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="inter__mcu_8h.html">inter_mcu.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="rc__settings_8c.html#a3349e614a926a99c63c8b9f2935a29f3">00036</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="rc__settings_8c.html#a3349e614a926a99c63c8b9f2935a29f3">rc_settings_mode</a> = 0;
+<a name="l00037"></a><a class="code" href="rc__settings_8c.html#a909a5b6579e0b5302fd1847650a3219d">00037</a> <span class="keywordtype">float</span> <a class="code" href="rc__settings_8c.html#a44c7519d24a1210b4195b65831c08f23">slider_1_val</a>, <a class="code" href="rc__settings_8c.html#a909a5b6579e0b5302fd1847650a3219d">slider_2_val</a>;
+<a name="l00038"></a>00038 
+<a name="l00039"></a><a class="code" href="rc__settings_8c.html#a340368a8f442ad27fc08588985c16d0f">00039</a> <span class="preprocessor">#define ParamValInt16(param_init_val, param_travel, cur_pulse, init_pulse) \</span>
+<a name="l00040"></a>00040 <span class="preprocessor">(param_init_val + (int16_t)(((float)(cur_pulse - init_pulse)) * param_travel / (float)MAX_PPRZ))</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a><a class="code" href="rc__settings_8c.html#a6eda1c9a9562629c0fb04cd4c7a8ab87">00042</a> <span class="preprocessor">#define ParamValFloat(param_init_val, param_travel, cur_pulse, init_pulse) \</span>
+<a name="l00043"></a>00043 <span class="preprocessor">(param_init_val + ((float)(cur_pulse - init_pulse)) * param_travel / (float)MAX_PPRZ)</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span>
+<a name="l00045"></a><a class="code" href="rc__settings_8c.html#a1208e80268eeb8b24ab1a67f2ecedb54">00045</a> <span class="preprocessor">#define RcChannel(x) (fbw_state-&gt;channels[x])</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span>
+<a name="l00048"></a>00048 <span class="preprocessor">#include &quot;generated/settings.h&quot;</span>
+<a name="l00049"></a>00049 
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="rc__settings_8c.html#ad1720f3c08225e43c878c50798cb9dba">00052</a> <span class="keywordtype">void</span> <a class="code" href="rc__settings_8c.html#ad1720f3c08225e43c878c50798cb9dba" title="Includes generated code from tuning_rc.xml.">rc_settings</a>(bool_t mode_changed <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused))) {
-<a name="l00053"></a>00053   RCSettings(mode_changed);
-<a name="l00054"></a>00054 }
+<a name="l00051"></a><a class="code" href="rc__settings_8c.html#ad1720f3c08225e43c878c50798cb9dba">00051</a> <span class="keywordtype">void</span> <a class="code" href="rc__settings_8c.html#ad1720f3c08225e43c878c50798cb9dba" title="Includes generated code from tuning_rc.xml.">rc_settings</a>(bool_t mode_changed <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused))) {
+<a name="l00052"></a>00052   RCSettings(mode_changed);
+<a name="l00053"></a>00053 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -175,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="rc__settings_8c.html">rc_settings.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:38 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:45 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

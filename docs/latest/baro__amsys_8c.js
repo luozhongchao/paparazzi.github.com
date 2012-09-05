@@ -14,6 +14,7 @@ var baro__amsys_8c =
     [ "baro_amsys_read_event", "baro__amsys_8c.html#a195eb95b7cb2408b42ebfa4ea0a4f2ba", null ],
     [ "baro_amsys_read_periodic", "baro__amsys_8c.html#a5903f1c962f61487d09dff8ffd52473c", null ],
     [ "baro_amsys_abs_altitude", "baro__amsys_8c.html#a4edb74c5341948135306b7e08a4b7666", null ],
+    [ "baro_amsys_adc", "baro__amsys_8c.html#af6682252f422f77b702a0e4e315e82c9", null ],
     [ "baro_amsys_altitude", "baro__amsys_8c.html#a8263a36d664ed3718b7fd17ed8293ddc", null ],
     [ "baro_amsys_cnt", "baro__amsys_8c.html#a07585aae8d32bfecf7f20e969c0cb86e", null ],
     [ "baro_amsys_i2c_trans", "baro__amsys_8c.html#af6eb8af499cf166571cbcc48dec1d0f4", null ],

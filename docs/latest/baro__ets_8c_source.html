@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -141,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037 
 <a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="baro__ets_8h.html">sensors/baro_ets.h</a>&quot;</span>
 <a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
-<a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="estimator_8h.html" title="State estimation, fusioning sensors.">estimator.h</a>&quot;</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
 <a name="l00041"></a>00041 <span class="preprocessor">#include &lt;math.h&gt;</span>
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span>
@@ -201,72 +202,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00097"></a>00097 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a4ddf405039552176e251f37d10213d4f">baro_ets_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>)
 <a name="l00098"></a>00098     <a class="code" href="i2c_8h.html#a00a95780fb7894110f4a5ae895931ba6">I2CReceive</a>(<a class="code" href="baro__ets_8c.html#a4b686f70954e48661946a1895ef51a35">BARO_ETS_I2C_DEV</a>, <a class="code" href="baro__ets_8c.html#a4ddf405039552176e251f37d10213d4f">baro_ets_i2c_trans</a>, <a class="code" href="baro__ets_8c.html#a27eb2e12a48754b86bf33f911890f8cc">BARO_ETS_ADDR</a>, 2);
 <a name="l00099"></a>00099 <span class="preprocessor">#else // SITL</span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span>  <a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a> = 0;
-<a name="l00101"></a>00101   <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a10af95f7fdab3171a789866838b0c8c3" title="height above mean sea level in mm">hmsl</a> / 1000.0;
+<a name="l00100"></a>00100 <span class="preprocessor"></span>  <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a10af95f7fdab3171a789866838b0c8c3" title="height above mean sea level in mm">hmsl</a> / 1000.0;
+<a name="l00101"></a>00101   <a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a> = <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> / <a class="code" href="baro__ets_8c.html#a2af590c828781671589d89ae2fb831d1">BARO_ETS_SCALE</a>;
 <a name="l00102"></a>00102   <a class="code" href="baro__ets_8c.html#a4348fe7934d32b21fcfa4691ccf87a79">baro_ets_valid</a> = TRUE;
-<a name="l00103"></a>00103   <a class="code" href="estimator_8h.html#ab328c266a556c34d5383ff77c8cd77b7">EstimatorSetAlt</a>(<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>);
-<a name="l00104"></a>00104 <span class="preprocessor">#endif</span>
-<a name="l00105"></a>00105 <span class="preprocessor"></span>}
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107 <span class="preprocessor">#ifdef BARO_ETS_TELEMETRY</span>
-<a name="l00108"></a>00108 <span class="preprocessor"></span>
-<a name="l00109"></a>00109 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
-<a name="l00110"></a>00110 <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
-<a name="l00111"></a>00111 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00112"></a>00112 <span class="preprocessor"></span>
-<a name="l00113"></a>00113 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
-<a name="l00114"></a>00114 <span class="preprocessor">#include &quot;messages.h&quot;</span>
-<a name="l00115"></a>00115 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
-<a name="l00116"></a>00116 
-<a name="l00117"></a>00117 <span class="preprocessor">#endif</span>
-<a name="l00118"></a>00118 <span class="preprocessor"></span>
-<a name="l00119"></a><a class="code" href="baro__ets_8h.html#a96839d4b74df9e3c49695989b344bac1">00119</a> <span class="keywordtype">void</span> <a class="code" href="baro__ets_8c.html#a96839d4b74df9e3c49695989b344bac1">baro_ets_read_event</a>( <span class="keywordtype">void</span> ) {
-<a name="l00120"></a>00120   <span class="comment">// Get raw altimeter from buffer</span>
-<a name="l00121"></a>00121   <a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a> = ((<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(<a class="code" href="baro__ets_8c.html#a4ddf405039552176e251f37d10213d4f">baro_ets_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1]) &lt;&lt; 8) | (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(<a class="code" href="baro__ets_8c.html#a4ddf405039552176e251f37d10213d4f">baro_ets_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0]);
-<a name="l00122"></a>00122   <span class="comment">// Check if this is valid altimeter</span>
-<a name="l00123"></a>00123   <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a> == 0)
-<a name="l00124"></a>00124     <a class="code" href="baro__ets_8c.html#a4348fe7934d32b21fcfa4691ccf87a79">baro_ets_valid</a> = FALSE;
-<a name="l00125"></a>00125   <span class="keywordflow">else</span>
-<a name="l00126"></a>00126     <a class="code" href="baro__ets_8c.html#a4348fe7934d32b21fcfa4691ccf87a79">baro_ets_valid</a> = TRUE;
-<a name="l00127"></a>00127 
-<a name="l00128"></a>00128   <span class="comment">// Continue only if a new altimeter value was received</span>
-<a name="l00129"></a>00129   <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a4348fe7934d32b21fcfa4691ccf87a79">baro_ets_valid</a>) {
-<a name="l00130"></a>00130     <span class="comment">// Calculate offset average if not done already</span>
-<a name="l00131"></a>00131     <span class="keywordflow">if</span> (!<a class="code" href="baro__ets_8c.html#a3903a8c3581b06e30bbd211016f64761">baro_ets_offset_init</a>) {
-<a name="l00132"></a>00132       --<a class="code" href="baro__ets_8c.html#a9b73f1b123bdb65f66fc7f1cf4f3cd0d">baro_ets_cnt</a>;
-<a name="l00133"></a>00133       <span class="comment">// Check if averaging completed</span>
-<a name="l00134"></a>00134       <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a9b73f1b123bdb65f66fc7f1cf4f3cd0d">baro_ets_cnt</a> == 0) {
-<a name="l00135"></a>00135         <span class="comment">// Calculate average</span>
-<a name="l00136"></a>00136         <a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> = (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(<a class="code" href="baro__ets_8c.html#aa60c4ed3c973466fa3541555b8115a12">baro_ets_offset_tmp</a> / <a class="code" href="baro__ets_8c.html#ae4ed88325210cfa65e5aa32ae20d1d8b">BARO_ETS_OFFSET_NBSAMPLES_AVRG</a>);
-<a name="l00137"></a>00137         <span class="comment">// Limit offset</span>
-<a name="l00138"></a>00138         <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> &lt; <a class="code" href="baro__ets_8c.html#a7b919b5dc4ec9a8399f678ad9dafd2b1">BARO_ETS_OFFSET_MIN</a>)
-<a name="l00139"></a>00139           <a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> = <a class="code" href="baro__ets_8c.html#a7b919b5dc4ec9a8399f678ad9dafd2b1">BARO_ETS_OFFSET_MIN</a>;
-<a name="l00140"></a>00140         <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> &gt; <a class="code" href="baro__ets_8c.html#acebb59122f85cee4f4eb9b53d711b8bb">BARO_ETS_OFFSET_MAX</a>)
-<a name="l00141"></a>00141           <a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> = <a class="code" href="baro__ets_8c.html#acebb59122f85cee4f4eb9b53d711b8bb">BARO_ETS_OFFSET_MAX</a>;
-<a name="l00142"></a>00142         <a class="code" href="baro__ets_8c.html#a3903a8c3581b06e30bbd211016f64761">baro_ets_offset_init</a> = TRUE;
-<a name="l00143"></a>00143       }
-<a name="l00144"></a>00144       <span class="comment">// Check if averaging needs to continue</span>
-<a name="l00145"></a>00145       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a9b73f1b123bdb65f66fc7f1cf4f3cd0d">baro_ets_cnt</a> &lt;= <a class="code" href="baro__ets_8c.html#ae4ed88325210cfa65e5aa32ae20d1d8b">BARO_ETS_OFFSET_NBSAMPLES_AVRG</a>)
-<a name="l00146"></a>00146         <a class="code" href="baro__ets_8c.html#aa60c4ed3c973466fa3541555b8115a12">baro_ets_offset_tmp</a> += <a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>;
-<a name="l00147"></a>00147     }
-<a name="l00148"></a>00148     <span class="comment">// Convert raw to m/s</span>
-<a name="l00149"></a>00149     <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a3903a8c3581b06e30bbd211016f64761">baro_ets_offset_init</a>) {
-<a name="l00150"></a>00150       <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = <a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2" title="size == nb_waypoint, waypoint 0 is a dummy waypoint">ground_alt</a> + <a class="code" href="baro__ets_8c.html#a2af590c828781671589d89ae2fb831d1">BARO_ETS_SCALE</a> * (float)(<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a>-<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>);
-<a name="l00151"></a>00151       <span class="comment">// New value available</span>
-<a name="l00152"></a>00152       <a class="code" href="estimator_8h.html#ab328c266a556c34d5383ff77c8cd77b7">EstimatorSetAlt</a>(<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>);
-<a name="l00153"></a>00153 <span class="preprocessor">#ifdef BARO_ETS_TELEMETRY</span>
-<a name="l00154"></a>00154 <span class="preprocessor"></span>      DOWNLINK_SEND_BARO_ETS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>, &amp;<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a>, &amp;<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>);
-<a name="l00155"></a>00155 <span class="preprocessor">#endif</span>
-<a name="l00156"></a>00156 <span class="preprocessor"></span>    } <span class="keywordflow">else</span> {
-<a name="l00157"></a>00157       <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = 0.0;
-<a name="l00158"></a>00158     }
-<a name="l00159"></a>00159   } <span class="keywordflow">else</span> {
-<a name="l00160"></a>00160     <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = 0.0;
-<a name="l00161"></a>00161   }
-<a name="l00162"></a>00162 
-<a name="l00163"></a>00163   <span class="comment">// Transaction has been read</span>
-<a name="l00164"></a>00164   <a class="code" href="baro__ets_8c.html#a4ddf405039552176e251f37d10213d4f">baro_ets_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
-<a name="l00165"></a>00165 }
+<a name="l00103"></a>00103 <span class="preprocessor">#endif</span>
+<a name="l00104"></a>00104 <span class="preprocessor"></span>}
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106 <span class="preprocessor">#ifdef BARO_ETS_TELEMETRY</span>
+<a name="l00107"></a>00107 <span class="preprocessor"></span>
+<a name="l00108"></a>00108 <span class="preprocessor">#ifndef DOWNLINK_DEVICE</span>
+<a name="l00109"></a>00109 <span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span>
+<a name="l00110"></a>00110 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00111"></a>00111 <span class="preprocessor"></span>
+<a name="l00112"></a>00112 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
+<a name="l00113"></a>00113 <span class="preprocessor">#include &quot;messages.h&quot;</span>
+<a name="l00114"></a>00114 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116 <span class="preprocessor">#endif</span>
+<a name="l00117"></a>00117 <span class="preprocessor"></span>
+<a name="l00118"></a><a class="code" href="baro__ets_8h.html#a96839d4b74df9e3c49695989b344bac1">00118</a> <span class="keywordtype">void</span> <a class="code" href="baro__ets_8c.html#a96839d4b74df9e3c49695989b344bac1">baro_ets_read_event</a>( <span class="keywordtype">void</span> ) {
+<a name="l00119"></a>00119   <span class="comment">// Get raw altimeter from buffer</span>
+<a name="l00120"></a>00120   <a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a> = ((<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(<a class="code" href="baro__ets_8c.html#a4ddf405039552176e251f37d10213d4f">baro_ets_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1]) &lt;&lt; 8) | (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(<a class="code" href="baro__ets_8c.html#a4ddf405039552176e251f37d10213d4f">baro_ets_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0]);
+<a name="l00121"></a>00121   <span class="comment">// Check if this is valid altimeter</span>
+<a name="l00122"></a>00122   <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a> == 0)
+<a name="l00123"></a>00123     <a class="code" href="baro__ets_8c.html#a4348fe7934d32b21fcfa4691ccf87a79">baro_ets_valid</a> = FALSE;
+<a name="l00124"></a>00124   <span class="keywordflow">else</span>
+<a name="l00125"></a>00125     <a class="code" href="baro__ets_8c.html#a4348fe7934d32b21fcfa4691ccf87a79">baro_ets_valid</a> = TRUE;
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127   <span class="comment">// Continue only if a new altimeter value was received</span>
+<a name="l00128"></a>00128   <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a4348fe7934d32b21fcfa4691ccf87a79">baro_ets_valid</a>) {
+<a name="l00129"></a>00129     <span class="comment">// Calculate offset average if not done already</span>
+<a name="l00130"></a>00130     <span class="keywordflow">if</span> (!<a class="code" href="baro__ets_8c.html#a3903a8c3581b06e30bbd211016f64761">baro_ets_offset_init</a>) {
+<a name="l00131"></a>00131       --<a class="code" href="baro__ets_8c.html#a9b73f1b123bdb65f66fc7f1cf4f3cd0d">baro_ets_cnt</a>;
+<a name="l00132"></a>00132       <span class="comment">// Check if averaging completed</span>
+<a name="l00133"></a>00133       <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a9b73f1b123bdb65f66fc7f1cf4f3cd0d">baro_ets_cnt</a> == 0) {
+<a name="l00134"></a>00134         <span class="comment">// Calculate average</span>
+<a name="l00135"></a>00135         <a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> = (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(<a class="code" href="baro__ets_8c.html#aa60c4ed3c973466fa3541555b8115a12">baro_ets_offset_tmp</a> / <a class="code" href="baro__ets_8c.html#ae4ed88325210cfa65e5aa32ae20d1d8b">BARO_ETS_OFFSET_NBSAMPLES_AVRG</a>);
+<a name="l00136"></a>00136         <span class="comment">// Limit offset</span>
+<a name="l00137"></a>00137         <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> &lt; <a class="code" href="baro__ets_8c.html#a7b919b5dc4ec9a8399f678ad9dafd2b1">BARO_ETS_OFFSET_MIN</a>)
+<a name="l00138"></a>00138           <a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> = <a class="code" href="baro__ets_8c.html#a7b919b5dc4ec9a8399f678ad9dafd2b1">BARO_ETS_OFFSET_MIN</a>;
+<a name="l00139"></a>00139         <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> &gt; <a class="code" href="baro__ets_8c.html#acebb59122f85cee4f4eb9b53d711b8bb">BARO_ETS_OFFSET_MAX</a>)
+<a name="l00140"></a>00140           <a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a> = <a class="code" href="baro__ets_8c.html#acebb59122f85cee4f4eb9b53d711b8bb">BARO_ETS_OFFSET_MAX</a>;
+<a name="l00141"></a>00141         <a class="code" href="baro__ets_8c.html#a3903a8c3581b06e30bbd211016f64761">baro_ets_offset_init</a> = TRUE;
+<a name="l00142"></a>00142       }
+<a name="l00143"></a>00143       <span class="comment">// Check if averaging needs to continue</span>
+<a name="l00144"></a>00144       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a9b73f1b123bdb65f66fc7f1cf4f3cd0d">baro_ets_cnt</a> &lt;= <a class="code" href="baro__ets_8c.html#ae4ed88325210cfa65e5aa32ae20d1d8b">BARO_ETS_OFFSET_NBSAMPLES_AVRG</a>)
+<a name="l00145"></a>00145         <a class="code" href="baro__ets_8c.html#aa60c4ed3c973466fa3541555b8115a12">baro_ets_offset_tmp</a> += <a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>;
+<a name="l00146"></a>00146     }
+<a name="l00147"></a>00147     <span class="comment">// Convert raw to m/s</span>
+<a name="l00148"></a>00148     <span class="keywordflow">if</span> (<a class="code" href="baro__ets_8c.html#a3903a8c3581b06e30bbd211016f64761">baro_ets_offset_init</a>) {
+<a name="l00149"></a>00149       <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = <a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2" title="size == nb_waypoint, waypoint 0 is a dummy waypoint">ground_alt</a> + <a class="code" href="baro__ets_8c.html#a2af590c828781671589d89ae2fb831d1">BARO_ETS_SCALE</a> * (float)(<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a>-<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>);
+<a name="l00150"></a>00150       <span class="comment">// New value available</span>
+<a name="l00151"></a>00151 <span class="preprocessor">#ifdef BARO_ETS_TELEMETRY</span>
+<a name="l00152"></a>00152 <span class="preprocessor"></span>      DOWNLINK_SEND_BARO_ETS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="baro__ets_8c.html#a8dcbf03c82eb75cdda21eacb04a0cc18">baro_ets_adc</a>, &amp;<a class="code" href="baro__ets_8c.html#ab555328369f0264c4182eff10220a57c">baro_ets_offset</a>, &amp;<a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a>);
+<a name="l00153"></a>00153 <span class="preprocessor">#endif</span>
+<a name="l00154"></a>00154 <span class="preprocessor"></span>    } <span class="keywordflow">else</span> {
+<a name="l00155"></a>00155       <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = 0.0;
+<a name="l00156"></a>00156     }
+<a name="l00157"></a>00157   } <span class="keywordflow">else</span> {
+<a name="l00158"></a>00158     <a class="code" href="baro__ets_8c.html#ac4f69540a5b1417a3717dafb1a983b06">baro_ets_altitude</a> = 0.0;
+<a name="l00159"></a>00159   }
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161   <span class="comment">// Transaction has been read</span>
+<a name="l00162"></a>00162   <a class="code" href="baro__ets_8c.html#a4ddf405039552176e251f37d10213d4f">baro_ets_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
+<a name="l00163"></a>00163 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -287,7 +286,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="baro__ets_8c.html">baro_ets.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:37 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:44 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

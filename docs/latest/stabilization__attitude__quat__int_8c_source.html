@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -133,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra.">math/pprz_algebra_float.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra.">math/pprz_algebra_int.h</a>&quot;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
 <a name="l00037"></a>00037 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
 <a name="l00038"></a>00038 
 <a name="l00039"></a><a class="code" href="stabilization__attitude__quat__int_8c.html#a626e955f6f77d5690a9590dfc5ec4d19">00039</a> <span class="keyword">struct </span><a class="code" href="structInt32AttitudeGains.html">Int32AttitudeGains</a> <a class="code" href="stabilization__attitude__euler__float_8c.html#a546abfe3403952cea36cb12d9240fa91">stabilization_gains</a> = {
@@ -180,7 +181,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00080"></a>00080 
 <a name="l00081"></a>00081 <span class="preprocessor">#if !USE_SETPOINTS_WITH_TRANSITIONS</span>
 <a name="l00082"></a>00082 <span class="preprocessor"></span>  <span class="comment">/* reset psi setpoint to current psi angle */</span>
-<a name="l00083"></a>00083   <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> = <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
+<a name="l00083"></a>00083   <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> = <a class="code" href="group__AttGroup.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
 <a name="l00084"></a>00084 <span class="preprocessor">#endif</span>
 <a name="l00085"></a>00085 <span class="preprocessor"></span>
 <a name="l00086"></a>00086   <a class="code" href="stabilization__attitude__ref__quat__float_8c.html#a4653dafe8c5e5680c05207027db750f0">stabilization_attitude_ref_enter</a>();
@@ -235,93 +236,95 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00135"></a>00135 
 <a name="l00136"></a>00136   <span class="comment">/* attitude error                          */</span>
 <a name="l00137"></a>00137   <span class="keyword">struct </span><a class="code" href="structInt32Quat.html" title="Rotation quaternion.">Int32Quat</a> att_err;
-<a name="l00138"></a>00138   <a class="code" href="pprz__algebra__int_8h.html#a696e34263d9c76528fc6d991724e7844">INT32_QUAT_INV_COMP</a>(att_err, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a8d98df44dddf252ddfdfb1c8fef7de60" title="Rotation from LocalTangentPlane to body frame as unit quaternion.">ltp_to_body_quat</a>, <a class="code" href="stabilization__attitude__ref__float_8h.html#a2707cad913cea4d24a03372f14002341">stab_att_ref_quat</a>);
-<a name="l00139"></a>00139   <span class="comment">/* wrap it in the shortest direction       */</span>
-<a name="l00140"></a>00140   <a class="code" href="pprz__algebra__int_8h.html#a4813c4e32db266393ef644e0d5228b9c">INT32_QUAT_WRAP_SHORTEST</a>(att_err);
-<a name="l00141"></a>00141   <a class="code" href="pprz__algebra__int_8h.html#a264c9ba2fc13faf84a2d7a6de05707b1">INT32_QUAT_NORMALIZE</a>(att_err);
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143   <span class="comment">/*  rate error                */</span>
-<a name="l00144"></a>00144   <span class="keyword">struct </span><a class="code" href="structInt32Rates.html" title="angular rates">Int32Rates</a> rate_err;
-<a name="l00145"></a>00145   <a class="code" href="pprz__algebra_8h.html#ac6c3c11439ce587fe4542f2d70fb585a">RATES_DIFF</a>(rate_err, <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#aa3575b0d9e11804fbd1f963d1b255699" title="with REF_RATE_FRAC">stab_att_ref_rate</a>, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#aec33279a39ff13923bc8af8b1cf42ffb" title="Rotational velocity in body frame.">body_rate</a>);
-<a name="l00146"></a>00146 
-<a name="l00147"></a>00147   <span class="comment">/* integrated error */</span>
-<a name="l00148"></a>00148   <span class="keywordflow">if</span> (enable_integrator) {
-<a name="l00149"></a>00149     <span class="keyword">struct </span><a class="code" href="structInt32Quat.html" title="Rotation quaternion.">Int32Quat</a> new_sum_err, scaled_att_err;
-<a name="l00150"></a>00150     <span class="comment">/* update accumulator */</span>
-<a name="l00151"></a>00151     scaled_att_err.<a class="code" href="structInt32Quat.html#a7509e8c87300579e27be3ac50758ee8d">qi</a> = att_err.<a class="code" href="structInt32Quat.html#a7509e8c87300579e27be3ac50758ee8d">qi</a>;
-<a name="l00152"></a>00152     scaled_att_err.<a class="code" href="structInt32Quat.html#afefde00ee3026b3734e2c81b79af7855">qx</a> = att_err.<a class="code" href="structInt32Quat.html#afefde00ee3026b3734e2c81b79af7855">qx</a> / <a class="code" href="stabilization__attitude__quat__int_8c.html#afefdded499414f183759487dc47de6d5">IERROR_SCALE</a>;
-<a name="l00153"></a>00153     scaled_att_err.<a class="code" href="structInt32Quat.html#a2361ea5d4d3a544faa2c483a3763afed">qy</a> = att_err.<a class="code" href="structInt32Quat.html#a2361ea5d4d3a544faa2c483a3763afed">qy</a> / <a class="code" href="stabilization__attitude__quat__int_8c.html#afefdded499414f183759487dc47de6d5">IERROR_SCALE</a>;
-<a name="l00154"></a>00154     scaled_att_err.<a class="code" href="structInt32Quat.html#a3ce446dd0060ca59dcab0d04c684c11b">qz</a> = att_err.<a class="code" href="structInt32Quat.html#a3ce446dd0060ca59dcab0d04c684c11b">qz</a> / <a class="code" href="stabilization__attitude__quat__int_8c.html#afefdded499414f183759487dc47de6d5">IERROR_SCALE</a>;
-<a name="l00155"></a>00155     <a class="code" href="pprz__algebra__int_8h.html#a4981683677de808113f86e580de06372">INT32_QUAT_COMP</a>(new_sum_err, <a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>, scaled_att_err);
-<a name="l00156"></a>00156     <a class="code" href="pprz__algebra__int_8h.html#a264c9ba2fc13faf84a2d7a6de05707b1">INT32_QUAT_NORMALIZE</a>(new_sum_err);
-<a name="l00157"></a>00157     <a class="code" href="pprz__algebra_8h.html#aac90b1ef45f1b296e418ee1b5cded854">QUAT_COPY</a>(<a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>, new_sum_err);
-<a name="l00158"></a>00158     <a class="code" href="pprz__algebra__int_8h.html#a4b8efdff2895294481a7f3460b805065">INT32_EULERS_OF_QUAT</a>(<a class="code" href="stabilization__attitude__euler__float_8c.html#ad3a90f9a260aaff45b749c9939422783">stabilization_att_sum_err</a>, <a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>);
-<a name="l00159"></a>00159   } <span class="keywordflow">else</span> {
-<a name="l00160"></a>00160     <span class="comment">/* reset accumulator */</span>
-<a name="l00161"></a>00161     <a class="code" href="pprz__algebra__int_8h.html#a90a76ea9c292e6d8336e1b2250141528">INT32_QUAT_ZERO</a>( <a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a> );
-<a name="l00162"></a>00162     <a class="code" href="pprz__algebra__int_8h.html#ae50c9d57fd75689c678e80a05be9ec1b">INT_EULERS_ZERO</a>( <a class="code" href="stabilization__attitude__euler__float_8c.html#ad3a90f9a260aaff45b749c9939422783">stabilization_att_sum_err</a> );
-<a name="l00163"></a>00163   }
-<a name="l00164"></a>00164 
-<a name="l00165"></a>00165   <span class="comment">/* compute the feed forward command */</span>
-<a name="l00166"></a>00166   <a class="code" href="stabilization__attitude__quat__int_8c.html#a875fc7c74f5183e8724d1c742cd52f66">attitude_run_ff</a>(<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>, &amp;stabilization_gains, &amp;<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a40375b94775800b50d2f5f4121a394d7" title="with REF_ACCEL_FRAC">stab_att_ref_accel</a>);
-<a name="l00167"></a>00167 
-<a name="l00168"></a>00168   <span class="comment">/* compute the feed back command */</span>
-<a name="l00169"></a>00169   <a class="code" href="stabilization__attitude__quat__int_8c.html#a5f08e1e27279036002bf2b3c2a2bed07">attitude_run_fb</a>(<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>, &amp;stabilization_gains, &amp;att_err, &amp;rate_err, &amp;<a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>);
-<a name="l00170"></a>00170 
-<a name="l00171"></a>00171   <span class="comment">/* sum feedforward and feedback */</span>
-<a name="l00172"></a>00172   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_ROLL] = <a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_ROLL] + <a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>[COMMAND_ROLL];
-<a name="l00173"></a>00173   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_PITCH] = <a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_PITCH] + stabilization_att_ff_cmd[COMMAND_PITCH];
-<a name="l00174"></a>00174   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_YAW] = <a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_YAW] + stabilization_att_ff_cmd[COMMAND_YAW];
-<a name="l00175"></a>00175 
-<a name="l00176"></a>00176   <span class="comment">/* bound the result */</span>
-<a name="l00177"></a>00177   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_ROLL], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
-<a name="l00178"></a>00178   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_PITCH], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
-<a name="l00179"></a>00179   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_YAW], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
-<a name="l00180"></a>00180 }
-<a name="l00181"></a>00181 
-<a name="l00182"></a><a class="code" href="stabilization__attitude__quat__int_8c.html#a147b1b8bfdde52f82d0829ce748bf1e9">00182</a> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2stabilization_2stabilization__attitude_8h.html#a147b1b8bfdde52f82d0829ce748bf1e9">stabilization_attitude_read_rc</a>(bool_t in_flight) {
+<a name="l00138"></a>00138   <span class="keyword">struct </span><a class="code" href="structInt32Quat.html" title="Rotation quaternion.">Int32Quat</a>* att_quat = <a class="code" href="group__AttGroup.html#ga28e5de0a4822cabcfe8350e2343111ce" title="Get vehicle body attitude quaternion (int).">stateGetNedToBodyQuat_i</a>();
+<a name="l00139"></a>00139   <a class="code" href="pprz__algebra__int_8h.html#a696e34263d9c76528fc6d991724e7844">INT32_QUAT_INV_COMP</a>(att_err, *att_quat, <a class="code" href="stabilization__attitude__ref__float_8h.html#a2707cad913cea4d24a03372f14002341">stab_att_ref_quat</a>);
+<a name="l00140"></a>00140   <span class="comment">/* wrap it in the shortest direction       */</span>
+<a name="l00141"></a>00141   <a class="code" href="pprz__algebra__int_8h.html#a4813c4e32db266393ef644e0d5228b9c">INT32_QUAT_WRAP_SHORTEST</a>(att_err);
+<a name="l00142"></a>00142   <a class="code" href="pprz__algebra__int_8h.html#a264c9ba2fc13faf84a2d7a6de05707b1">INT32_QUAT_NORMALIZE</a>(att_err);
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144   <span class="comment">/*  rate error                */</span>
+<a name="l00145"></a>00145   <span class="keyword">struct </span><a class="code" href="structInt32Rates.html" title="angular rates">Int32Rates</a> rate_err;
+<a name="l00146"></a>00146   <span class="keyword">struct </span><a class="code" href="structInt32Rates.html" title="angular rates">Int32Rates</a>* body_rate = <a class="code" href="group__RateGroup.html#ga3fc058302e6f40bf0b8797ca9a7ed60f" title="Get vehicle body angular rate (int).">stateGetBodyRates_i</a>();
+<a name="l00147"></a>00147   <a class="code" href="pprz__algebra_8h.html#ac6c3c11439ce587fe4542f2d70fb585a">RATES_DIFF</a>(rate_err, <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#aa3575b0d9e11804fbd1f963d1b255699" title="with REF_RATE_FRAC">stab_att_ref_rate</a>, *body_rate);
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149   <span class="comment">/* integrated error */</span>
+<a name="l00150"></a>00150   <span class="keywordflow">if</span> (enable_integrator) {
+<a name="l00151"></a>00151     <span class="keyword">struct </span><a class="code" href="structInt32Quat.html" title="Rotation quaternion.">Int32Quat</a> new_sum_err, scaled_att_err;
+<a name="l00152"></a>00152     <span class="comment">/* update accumulator */</span>
+<a name="l00153"></a>00153     scaled_att_err.<a class="code" href="structInt32Quat.html#a7509e8c87300579e27be3ac50758ee8d">qi</a> = att_err.<a class="code" href="structInt32Quat.html#a7509e8c87300579e27be3ac50758ee8d">qi</a>;
+<a name="l00154"></a>00154     scaled_att_err.<a class="code" href="structInt32Quat.html#afefde00ee3026b3734e2c81b79af7855">qx</a> = att_err.<a class="code" href="structInt32Quat.html#afefde00ee3026b3734e2c81b79af7855">qx</a> / <a class="code" href="stabilization__attitude__quat__int_8c.html#afefdded499414f183759487dc47de6d5">IERROR_SCALE</a>;
+<a name="l00155"></a>00155     scaled_att_err.<a class="code" href="structInt32Quat.html#a2361ea5d4d3a544faa2c483a3763afed">qy</a> = att_err.<a class="code" href="structInt32Quat.html#a2361ea5d4d3a544faa2c483a3763afed">qy</a> / <a class="code" href="stabilization__attitude__quat__int_8c.html#afefdded499414f183759487dc47de6d5">IERROR_SCALE</a>;
+<a name="l00156"></a>00156     scaled_att_err.<a class="code" href="structInt32Quat.html#a3ce446dd0060ca59dcab0d04c684c11b">qz</a> = att_err.<a class="code" href="structInt32Quat.html#a3ce446dd0060ca59dcab0d04c684c11b">qz</a> / <a class="code" href="stabilization__attitude__quat__int_8c.html#afefdded499414f183759487dc47de6d5">IERROR_SCALE</a>;
+<a name="l00157"></a>00157     <a class="code" href="pprz__algebra__int_8h.html#a4981683677de808113f86e580de06372">INT32_QUAT_COMP</a>(new_sum_err, <a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>, scaled_att_err);
+<a name="l00158"></a>00158     <a class="code" href="pprz__algebra__int_8h.html#a264c9ba2fc13faf84a2d7a6de05707b1">INT32_QUAT_NORMALIZE</a>(new_sum_err);
+<a name="l00159"></a>00159     <a class="code" href="pprz__algebra_8h.html#aac90b1ef45f1b296e418ee1b5cded854">QUAT_COPY</a>(<a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>, new_sum_err);
+<a name="l00160"></a>00160     <a class="code" href="pprz__algebra__int_8h.html#a4b8efdff2895294481a7f3460b805065">INT32_EULERS_OF_QUAT</a>(<a class="code" href="stabilization__attitude__euler__float_8c.html#ad3a90f9a260aaff45b749c9939422783">stabilization_att_sum_err</a>, <a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>);
+<a name="l00161"></a>00161   } <span class="keywordflow">else</span> {
+<a name="l00162"></a>00162     <span class="comment">/* reset accumulator */</span>
+<a name="l00163"></a>00163     <a class="code" href="pprz__algebra__int_8h.html#a90a76ea9c292e6d8336e1b2250141528">INT32_QUAT_ZERO</a>( <a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a> );
+<a name="l00164"></a>00164     <a class="code" href="pprz__algebra__int_8h.html#ae50c9d57fd75689c678e80a05be9ec1b">INT_EULERS_ZERO</a>( <a class="code" href="stabilization__attitude__euler__float_8c.html#ad3a90f9a260aaff45b749c9939422783">stabilization_att_sum_err</a> );
+<a name="l00165"></a>00165   }
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167   <span class="comment">/* compute the feed forward command */</span>
+<a name="l00168"></a>00168   <a class="code" href="stabilization__attitude__quat__int_8c.html#a875fc7c74f5183e8724d1c742cd52f66">attitude_run_ff</a>(<a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>, &amp;stabilization_gains, &amp;<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a40375b94775800b50d2f5f4121a394d7" title="with REF_ACCEL_FRAC">stab_att_ref_accel</a>);
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170   <span class="comment">/* compute the feed back command */</span>
+<a name="l00171"></a>00171   <a class="code" href="stabilization__attitude__quat__int_8c.html#a5f08e1e27279036002bf2b3c2a2bed07">attitude_run_fb</a>(<a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>, &amp;stabilization_gains, &amp;att_err, &amp;rate_err, &amp;<a class="code" href="stabilization__attitude__quat__float_8c.html#a87a434e9e144116b70f4b5f5edd58052">stabilization_att_sum_err_quat</a>);
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173   <span class="comment">/* sum feedforward and feedback */</span>
+<a name="l00174"></a>00174   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_ROLL] = <a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_ROLL] + <a class="code" href="stabilization__attitude__euler__float_8c.html#a5b95468db62686e296194a497bacc25b">stabilization_att_ff_cmd</a>[COMMAND_ROLL];
+<a name="l00175"></a>00175   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_PITCH] = <a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_PITCH] + stabilization_att_ff_cmd[COMMAND_PITCH];
+<a name="l00176"></a>00176   <a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_YAW] = <a class="code" href="stabilization__attitude__euler__float_8c.html#acbe3ffdf9c35e128e46f03091342e2cb">stabilization_att_fb_cmd</a>[COMMAND_YAW] + stabilization_att_ff_cmd[COMMAND_YAW];
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178   <span class="comment">/* bound the result */</span>
+<a name="l00179"></a>00179   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_ROLL], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00180"></a>00180   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_PITCH], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00181"></a>00181   BoundAbs(<a class="code" href="stabilization_8c.html#a7db6cb929d989e142cf136ac4af10add" title="Stabilization commands.">stabilization_cmd</a>[COMMAND_YAW], <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00182"></a>00182 }
 <a name="l00183"></a>00183 
-<a name="l00184"></a>00184 <span class="preprocessor">#if USE_SETPOINTS_WITH_TRANSITIONS</span>
-<a name="l00185"></a>00185 <span class="preprocessor"></span>  <a class="code" href="quat__setpoint__int_8c.html#a7cdc312788e1b411ec44fda945acdddd">stabilization_attitude_read_rc_absolute</a>(in_flight);
-<a name="l00186"></a>00186 <span class="preprocessor">#else</span>
-<a name="l00187"></a>00187 <span class="preprocessor"></span>
-<a name="l00188"></a>00188   <span class="comment">//FIXME: remove me, do in quaternion directly</span>
-<a name="l00189"></a>00189   <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185">stabilization_attitude_read_rc_setpoint_eulers</a>(&amp;<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>, in_flight);
-<a name="l00190"></a>00190 
-<a name="l00191"></a>00191   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_rp_cmd;
-<a name="l00192"></a>00192   <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a190bf96c3d055180f034b080fb11385b">stabilization_attitude_read_rc_roll_pitch_quat</a>(&amp;q_rp_cmd);
-<a name="l00193"></a>00193 
-<a name="l00194"></a>00194   <span class="comment">/* get current heading */</span>
-<a name="l00195"></a>00195   <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structFloatVect3.html">FloatVect3</a> zaxis = {0., 0., 1.};
-<a name="l00196"></a>00196   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_yaw;
-<a name="l00197"></a>00197   <a class="code" href="pprz__algebra__float_8h.html#a37771817d997b294fb506a9e0892c915">FLOAT_QUAT_OF_AXIS_ANGLE</a>(q_yaw, zaxis, <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>));
-<a name="l00198"></a>00198 
-<a name="l00199"></a>00199   <span class="comment">/* apply roll and pitch commands with respect to current heading */</span>
-<a name="l00200"></a>00200   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_sp;
-<a name="l00201"></a>00201   <a class="code" href="pprz__algebra__float_8h.html#a0a76eb680a60ea46d382cee034fbfeb8">FLOAT_QUAT_COMP</a>(q_sp, q_yaw, q_rp_cmd);
-<a name="l00202"></a>00202   <a class="code" href="pprz__algebra__float_8h.html#a9cd81f9e9b5e04260cb4cc54fec267ce">FLOAT_QUAT_NORMALIZE</a>(q_sp);
-<a name="l00203"></a>00203 
-<a name="l00204"></a>00204   <span class="keywordflow">if</span> (in_flight)
-<a name="l00205"></a>00205   {
-<a name="l00206"></a>00206     <span class="comment">/* get current heading setpoint */</span>
-<a name="l00207"></a>00207     <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_yaw_sp;
-<a name="l00208"></a>00208     <a class="code" href="pprz__algebra__float_8h.html#a37771817d997b294fb506a9e0892c915">FLOAT_QUAT_OF_AXIS_ANGLE</a>(q_yaw_sp, zaxis, <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>));
-<a name="l00209"></a>00209 
-<a name="l00210"></a>00210     <span class="comment">/* rotation between current yaw and yaw setpoint */</span>
-<a name="l00211"></a>00211     <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_yaw_diff;
-<a name="l00212"></a>00212     <a class="code" href="pprz__algebra__float_8h.html#a2002d50ff30d8c76d3525ceb83f59fc6">FLOAT_QUAT_COMP_INV</a>(q_yaw_diff, q_yaw_sp, q_yaw);
-<a name="l00213"></a>00213 
-<a name="l00214"></a>00214     <span class="comment">/* temporary copy with roll/pitch command and current heading */</span>
-<a name="l00215"></a>00215     <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_rp_sp;
-<a name="l00216"></a>00216     <a class="code" href="pprz__algebra_8h.html#aac90b1ef45f1b296e418ee1b5cded854">QUAT_COPY</a>(q_rp_sp, q_sp);
-<a name="l00217"></a>00217 
-<a name="l00218"></a>00218     <span class="comment">/* compute final setpoint with yaw */</span>
-<a name="l00219"></a>00219     <a class="code" href="pprz__algebra__float_8h.html#a94b4840be39239a9e900434466dc8c73">FLOAT_QUAT_COMP_NORM_SHORTEST</a>(q_sp, q_rp_sp, q_yaw_diff);
-<a name="l00220"></a>00220   }
-<a name="l00221"></a>00221 
-<a name="l00222"></a>00222   <a class="code" href="pprz__algebra_8h.html#a9298838a190422950794f95df4762d7e">QUAT_BFP_OF_REAL</a>(<a class="code" href="stabilization__attitude__ref__float_8h.html#a8a7faa82a4a14113987c600d7e38d836">stab_att_sp_quat</a>, q_sp);
-<a name="l00223"></a>00223 <span class="preprocessor">#endif</span>
-<a name="l00224"></a>00224 <span class="preprocessor"></span>}
+<a name="l00184"></a><a class="code" href="stabilization__attitude__quat__int_8c.html#a147b1b8bfdde52f82d0829ce748bf1e9">00184</a> <span class="keywordtype">void</span> <a class="code" href="rotorcraft_2stabilization_2stabilization__attitude_8h.html#a147b1b8bfdde52f82d0829ce748bf1e9">stabilization_attitude_read_rc</a>(bool_t in_flight) {
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186 <span class="preprocessor">#if USE_SETPOINTS_WITH_TRANSITIONS</span>
+<a name="l00187"></a>00187 <span class="preprocessor"></span>  <a class="code" href="quat__setpoint__int_8c.html#a7cdc312788e1b411ec44fda945acdddd">stabilization_attitude_read_rc_absolute</a>(in_flight);
+<a name="l00188"></a>00188 <span class="preprocessor">#else</span>
+<a name="l00189"></a>00189 <span class="preprocessor"></span>
+<a name="l00190"></a>00190   <span class="comment">//FIXME: remove me, do in quaternion directly</span>
+<a name="l00191"></a>00191   <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185">stabilization_attitude_read_rc_setpoint_eulers</a>(&amp;<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>, in_flight);
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_rp_cmd;
+<a name="l00194"></a>00194   <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a190bf96c3d055180f034b080fb11385b">stabilization_attitude_read_rc_roll_pitch_quat</a>(&amp;q_rp_cmd);
+<a name="l00195"></a>00195 
+<a name="l00196"></a>00196   <span class="comment">/* get current heading */</span>
+<a name="l00197"></a>00197   <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structFloatVect3.html">FloatVect3</a> zaxis = {0., 0., 1.};
+<a name="l00198"></a>00198   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_yaw;
+<a name="l00199"></a>00199   <a class="code" href="pprz__algebra__float_8h.html#a37771817d997b294fb506a9e0892c915">FLOAT_QUAT_OF_AXIS_ANGLE</a>(q_yaw, zaxis, <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="group__AttGroup.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;psi));
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201   <span class="comment">/* apply roll and pitch commands with respect to current heading */</span>
+<a name="l00202"></a>00202   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_sp;
+<a name="l00203"></a>00203   <a class="code" href="pprz__algebra__float_8h.html#a0a76eb680a60ea46d382cee034fbfeb8">FLOAT_QUAT_COMP</a>(q_sp, q_yaw, q_rp_cmd);
+<a name="l00204"></a>00204   <a class="code" href="pprz__algebra__float_8h.html#a9cd81f9e9b5e04260cb4cc54fec267ce">FLOAT_QUAT_NORMALIZE</a>(q_sp);
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206   <span class="keywordflow">if</span> (in_flight)
+<a name="l00207"></a>00207   {
+<a name="l00208"></a>00208     <span class="comment">/* get current heading setpoint */</span>
+<a name="l00209"></a>00209     <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_yaw_sp;
+<a name="l00210"></a>00210     <a class="code" href="pprz__algebra__float_8h.html#a37771817d997b294fb506a9e0892c915">FLOAT_QUAT_OF_AXIS_ANGLE</a>(q_yaw_sp, zaxis, <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>));
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212     <span class="comment">/* rotation between current yaw and yaw setpoint */</span>
+<a name="l00213"></a>00213     <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_yaw_diff;
+<a name="l00214"></a>00214     <a class="code" href="pprz__algebra__float_8h.html#a2002d50ff30d8c76d3525ceb83f59fc6">FLOAT_QUAT_COMP_INV</a>(q_yaw_diff, q_yaw_sp, q_yaw);
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216     <span class="comment">/* temporary copy with roll/pitch command and current heading */</span>
+<a name="l00217"></a>00217     <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_rp_sp;
+<a name="l00218"></a>00218     <a class="code" href="pprz__algebra_8h.html#aac90b1ef45f1b296e418ee1b5cded854">QUAT_COPY</a>(q_rp_sp, q_sp);
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220     <span class="comment">/* compute final setpoint with yaw */</span>
+<a name="l00221"></a>00221     <a class="code" href="pprz__algebra__float_8h.html#a94b4840be39239a9e900434466dc8c73">FLOAT_QUAT_COMP_NORM_SHORTEST</a>(q_sp, q_rp_sp, q_yaw_diff);
+<a name="l00222"></a>00222   }
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224   <a class="code" href="pprz__algebra_8h.html#a9298838a190422950794f95df4762d7e">QUAT_BFP_OF_REAL</a>(<a class="code" href="stabilization__attitude__ref__float_8h.html#a8a7faa82a4a14113987c600d7e38d836">stab_att_sp_quat</a>, q_sp);
+<a name="l00225"></a>00225 <span class="preprocessor">#endif</span>
+<a name="l00226"></a>00226 <span class="preprocessor"></span>}
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -342,7 +345,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__quat__int_8c.html">stabilization_attitude_quat_int.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:33 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:40 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

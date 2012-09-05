@@ -13,7 +13,5 @@ var ahrs__float__cmpl_8c =
     [ "ahrs_update_mag_2d_dumb", "ahrs__float__cmpl_8c.html#afb21a6f59c9ea40f9a75797fd09f5430", null ],
     [ "ahrs_update_mag_full", "ahrs__float__cmpl_8c.html#a6b9d75b52718685315f0a80850cb1b29", null ],
     [ "compute_body_orientation_and_rates", "ahrs__float__cmpl_8c.html#a2e90a05e5a4ca369d0308bb72e68171d", null ],
-    [ "compute_imu_quat_and_euler_from_rmat", "ahrs__float__cmpl_8c.html#af980a7db67938d7667d1b02634692775", null ],
-    [ "compute_imu_rmat_and_euler_from_quat", "ahrs__float__cmpl_8c.html#aa8830da059f05a76f20f65c32e699eb6", null ],
-    [ "ahrs_impl", "ahrs__float__cmpl_8c.html#a8f3660fe995a8a40cfad130b69f0e934", null ]
+    [ "ahrs_impl", "ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734", null ]
 ];

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-103-g60e6313</span>
+   &#160;<span id="projectnumber">v4.1_unstable-170-g246f08c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -56,6 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -129,9 +130,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="stabilization_8h.html" title="General stabilization interface for rotorcrafts.">firmwares/rotorcraft/stabilization.h</a>&quot;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="stabilization__attitude__rc__setpoint_8h.html" title="Read an attitude setpoint from the RC.">firmwares/rotorcraft/stabilization/stabilization_attitude_rc_setpoint.h</a>&quot;</span>
-<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="ins_8h.html" title="Device independent INS code.">subsystems/ins.h</a>&quot;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="navigation_8h.html">firmwares/rotorcraft/navigation.h</a>&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="navigation_8h.html">firmwares/rotorcraft/navigation.h</a>&quot;</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
 <a name="l00038"></a>00038 
@@ -308,7 +309,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00209"></a>00209         <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#a4b2c73d59e89d78354658b20058720e0" title="in radians">phi</a> = <a class="code" href="navigation_8c.html#a57fe6af445faaa41f82137a4cc772fa1">nav_roll</a>;
 <a name="l00210"></a>00210         <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#a98f8790d7dbb4d3ef03e99cdf27f844e" title="in radians">theta</a> = <a class="code" href="navigation_8c.html#acfa0f83e076f79c30ed7042e429b7ae0" title="with INT32_ANGLE_FRAC">nav_pitch</a>;
 <a name="l00211"></a>00211         <span class="comment">/* FIXME: heading can&#39;t be set via attitude block yet, use current heading for now */</span>
-<a name="l00212"></a>00212         <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> = <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
+<a name="l00212"></a>00212         <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> = <a class="code" href="group__AttGroup.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
 <a name="l00213"></a>00213 <span class="preprocessor">#ifdef STABILISATION_ATTITUDE_TYPE_QUAT</span>
 <a name="l00214"></a>00214 <span class="preprocessor"></span>        <a class="code" href="pprz__algebra__int_8h.html#a3003feb20a532f67e77832669398bc73">INT32_QUAT_OF_EULERS</a>(<a class="code" href="stabilization__attitude__ref__float_8h.html#a8a7faa82a4a14113987c600d7e38d836">stab_att_sp_quat</a>, <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>);
 <a name="l00215"></a>00215         <a class="code" href="pprz__algebra__int_8h.html#a4813c4e32db266393ef644e0d5228b9c">INT32_QUAT_WRAP_SHORTEST</a>(<a class="code" href="stabilization__attitude__ref__float_8h.html#a8a7faa82a4a14113987c600d7e38d836">stab_att_sp_quat</a>);
@@ -364,12 +365,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00266"></a><a class="code" href="guidance__h_8c.html#a40a1b0fc372c07e0fc9e9a680578fe9b">00266</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="guidance__h_8c.html#a40a1b0fc372c07e0fc9e9a680578fe9b">guidance_h_traj_run</a>(bool_t in_flight) {
 <a name="l00267"></a>00267 
 <a name="l00268"></a>00268   <span class="comment">/* compute position error    */</span>
-<a name="l00269"></a>00269   <a class="code" href="pprz__algebra_8h.html#a3f3302835b5631d50ea560180ebf7e59">VECT2_DIFF</a>(<a class="code" href="guidance__h_8c.html#a3e1465db4a9d539e7c6cba31f5458c70">guidance_h_pos_err</a>, <a class="code" href="guidance__h_8c.html#a3811b775f659bc08d3beb46accbf3533">guidance_h_pos_ref</a>, <a class="code" href="ins_8c.html#a1e387adbd75abcace16da3c7937f3fcd">ins_ltp_pos</a>);
+<a name="l00269"></a>00269   <a class="code" href="pprz__algebra_8h.html#a3f3302835b5631d50ea560180ebf7e59">VECT2_DIFF</a>(<a class="code" href="guidance__h_8c.html#a3e1465db4a9d539e7c6cba31f5458c70">guidance_h_pos_err</a>, <a class="code" href="guidance__h_8c.html#a3811b775f659bc08d3beb46accbf3533">guidance_h_pos_ref</a>, *<a class="code" href="group__PosGroup.html#gaf9a3b3ed4f6a011ae65d49d78bf4aa25" title="Get position in local NED coordinates (int).">stateGetPositionNed_i</a>());
 <a name="l00270"></a>00270   <span class="comment">/* saturate it               */</span>
 <a name="l00271"></a>00271   <a class="code" href="pprz__algebra_8h.html#a4536d612ef35d22d6c82dcc0354dddaf">VECT2_STRIM</a>(<a class="code" href="guidance__h_8c.html#a3e1465db4a9d539e7c6cba31f5458c70">guidance_h_pos_err</a>, -<a class="code" href="guidance__h_8c.html#a6bfc5d39a496e8a2ddbf5448dd610916">MAX_POS_ERR</a>, <a class="code" href="guidance__h_8c.html#a6bfc5d39a496e8a2ddbf5448dd610916">MAX_POS_ERR</a>);
 <a name="l00272"></a>00272 
 <a name="l00273"></a>00273   <span class="comment">/* compute speed error    */</span>
-<a name="l00274"></a>00274   <a class="code" href="pprz__algebra_8h.html#a3f3302835b5631d50ea560180ebf7e59">VECT2_DIFF</a>(<a class="code" href="guidance__h_8c.html#a206725a549c15b4fefc505299fa3e08b">guidance_h_speed_err</a>, <a class="code" href="guidance__h_8c.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1">guidance_h_speed_ref</a>, <a class="code" href="ins_8c.html#abfca570ad537cb55bbe0eb572b6e1685">ins_ltp_speed</a>);
+<a name="l00274"></a>00274   <a class="code" href="pprz__algebra_8h.html#a3f3302835b5631d50ea560180ebf7e59">VECT2_DIFF</a>(<a class="code" href="guidance__h_8c.html#a206725a549c15b4fefc505299fa3e08b">guidance_h_speed_err</a>, <a class="code" href="guidance__h_8c.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1">guidance_h_speed_ref</a>, *<a class="code" href="group__SpeedGroup.html#gaed641b0c36e2ad2407a97be88ec2506c" title="Get ground speed in local NED coordinates (int).">stateGetSpeedNed_i</a>());
 <a name="l00275"></a>00275   <span class="comment">/* saturate it               */</span>
 <a name="l00276"></a>00276   <a class="code" href="pprz__algebra_8h.html#a4536d612ef35d22d6c82dcc0354dddaf">VECT2_STRIM</a>(<a class="code" href="guidance__h_8c.html#a206725a549c15b4fefc505299fa3e08b">guidance_h_speed_err</a>, -<a class="code" href="guidance__h_8c.html#a35d427821ffd914d9272e28e33d9e298">MAX_SPEED_ERR</a>, <a class="code" href="guidance__h_8c.html#a35d427821ffd914d9272e28e33d9e298">MAX_SPEED_ERR</a>);
 <a name="l00277"></a>00277 
@@ -398,57 +399,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00300"></a>00300 
 <a name="l00301"></a>00301   <span class="comment">/* Rotate to body frame */</span>
 <a name="l00302"></a>00302   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> s_psi, c_psi;
-<a name="l00303"></a>00303   <a class="code" href="pprz__trig__int_8h.html#a93cae514c09c8fb1398762d9abc17770">PPRZ_ITRIG_SIN</a>(s_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
-<a name="l00304"></a>00304   <a class="code" href="pprz__trig__int_8h.html#af2d7fb89c62c6d24200ee50618a6a139">PPRZ_ITRIG_COS</a>(c_psi, <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
-<a name="l00305"></a>00305 
-<a name="l00306"></a>00306   <span class="comment">// Restore angle ref resolution after rotation</span>
-<a name="l00307"></a>00307   <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>.<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a> =
-<a name="l00308"></a>00308       ( - s_psi * <a class="code" href="guidance__h_8c.html#ad788fb23a66bd2f875857f19a921caab">guidance_h_command_earth</a>.<a class="code" href="structInt32Vect2.html#a91ffcd57e82c034206721483e7b7c7f8">x</a> + c_psi * <a class="code" href="guidance__h_8c.html#ad788fb23a66bd2f875857f19a921caab">guidance_h_command_earth</a>.<a class="code" href="structInt32Vect2.html#a0945fb6906f0eaba2bfdb5c2fefdb051">y</a>) &gt;&gt; <a class="code" href="pprz__algebra__int_8h.html#a61de483d5ea2371d51adb58d57ff5a44">INT32_TRIG_FRAC</a>;
-<a name="l00309"></a>00309   <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>.<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a> =
-<a name="l00310"></a>00310     - ( c_psi * <a class="code" href="guidance__h_8c.html#ad788fb23a66bd2f875857f19a921caab">guidance_h_command_earth</a>.<a class="code" href="structInt32Vect2.html#a91ffcd57e82c034206721483e7b7c7f8">x</a> + s_psi * <a class="code" href="guidance__h_8c.html#ad788fb23a66bd2f875857f19a921caab">guidance_h_command_earth</a>.<a class="code" href="structInt32Vect2.html#a0945fb6906f0eaba2bfdb5c2fefdb051">y</a>) &gt;&gt; <a class="code" href="pprz__algebra__int_8h.html#a61de483d5ea2371d51adb58d57ff5a44">INT32_TRIG_FRAC</a>;
-<a name="l00311"></a>00311 
+<a name="l00303"></a>00303   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> = <a class="code" href="group__AttGroup.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
+<a name="l00304"></a>00304   <a class="code" href="pprz__trig__int_8h.html#a93cae514c09c8fb1398762d9abc17770">PPRZ_ITRIG_SIN</a>(s_psi, psi);
+<a name="l00305"></a>00305   <a class="code" href="pprz__trig__int_8h.html#af2d7fb89c62c6d24200ee50618a6a139">PPRZ_ITRIG_COS</a>(c_psi, psi);
+<a name="l00306"></a>00306 
+<a name="l00307"></a>00307   <span class="comment">// Restore angle ref resolution after rotation</span>
+<a name="l00308"></a>00308   <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>.<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a> =
+<a name="l00309"></a>00309       ( - s_psi * <a class="code" href="guidance__h_8c.html#ad788fb23a66bd2f875857f19a921caab">guidance_h_command_earth</a>.<a class="code" href="structInt32Vect2.html#a91ffcd57e82c034206721483e7b7c7f8">x</a> + c_psi * <a class="code" href="guidance__h_8c.html#ad788fb23a66bd2f875857f19a921caab">guidance_h_command_earth</a>.<a class="code" href="structInt32Vect2.html#a0945fb6906f0eaba2bfdb5c2fefdb051">y</a>) &gt;&gt; <a class="code" href="pprz__algebra__int_8h.html#a61de483d5ea2371d51adb58d57ff5a44">INT32_TRIG_FRAC</a>;
+<a name="l00310"></a>00310   <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>.<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a> =
+<a name="l00311"></a>00311     - ( c_psi * <a class="code" href="guidance__h_8c.html#ad788fb23a66bd2f875857f19a921caab">guidance_h_command_earth</a>.<a class="code" href="structInt32Vect2.html#a91ffcd57e82c034206721483e7b7c7f8">x</a> + s_psi * <a class="code" href="guidance__h_8c.html#ad788fb23a66bd2f875857f19a921caab">guidance_h_command_earth</a>.<a class="code" href="structInt32Vect2.html#a0945fb6906f0eaba2bfdb5c2fefdb051">y</a>) &gt;&gt; <a class="code" href="pprz__algebra__int_8h.html#a61de483d5ea2371d51adb58d57ff5a44">INT32_TRIG_FRAC</a>;
 <a name="l00312"></a>00312 
-<a name="l00313"></a>00313   <span class="comment">/* Add RC roll and pitch setpoints for emergency corrections */</span>
-<a name="l00314"></a>00314   <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>.<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a> += <a class="code" href="guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52" title="with INT32_ANGLE_FRAC">guidance_h_rc_sp</a>.<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a>;
-<a name="l00315"></a>00315   <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>.<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a> += <a class="code" href="guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52" title="with INT32_ANGLE_FRAC">guidance_h_rc_sp</a>.<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a>;
-<a name="l00316"></a>00316 
-<a name="l00317"></a>00317   <span class="comment">/* Set attitude setpoint in eulers and as quaternion */</span>
-<a name="l00318"></a>00318   <a class="code" href="pprz__algebra_8h.html#a9cc8d10bf25cef4ef2ba79cc6664d9ee">EULERS_COPY</a>(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>, <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>);
-<a name="l00319"></a>00319 
-<a name="l00320"></a>00320 <span class="preprocessor">#ifdef STABILISATION_ATTITUDE_TYPE_QUAT</span>
-<a name="l00321"></a>00321 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra__int_8h.html#a3003feb20a532f67e77832669398bc73">INT32_QUAT_OF_EULERS</a>(<a class="code" href="stabilization__attitude__ref__float_8h.html#a8a7faa82a4a14113987c600d7e38d836">stab_att_sp_quat</a>, <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>);
-<a name="l00322"></a>00322   <a class="code" href="pprz__algebra__int_8h.html#a4813c4e32db266393ef644e0d5228b9c">INT32_QUAT_WRAP_SHORTEST</a>(<a class="code" href="stabilization__attitude__ref__float_8h.html#a8a7faa82a4a14113987c600d7e38d836">stab_att_sp_quat</a>);
-<a name="l00323"></a>00323 <span class="preprocessor">#endif </span><span class="comment">/* STABILISATION_ATTITUDE_TYPE_QUAT */</span>
-<a name="l00324"></a>00324 
-<a name="l00325"></a>00325 }
-<a name="l00326"></a>00326 
-<a name="l00327"></a><a class="code" href="guidance__h_8c.html#a2a7de8dee0c85bd58633a392d8e2df91">00327</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="guidance__h_8c.html#a2a7de8dee0c85bd58633a392d8e2df91">guidance_h_hover_enter</a>(<span class="keywordtype">void</span>) {
-<a name="l00328"></a>00328 
-<a name="l00329"></a>00329   <a class="code" href="pprz__algebra_8h.html#a457460fd7177105e86c9ef2c5260c5c8">VECT2_COPY</a>(<a class="code" href="guidance__h_8c.html#ab5bfbde0d90688c7b32bdd7244be7a0b" title="horizontal position setpoint in NED.">guidance_h_pos_sp</a>, <a class="code" href="ins_8c.html#a1e387adbd75abcace16da3c7937f3fcd">ins_ltp_pos</a>);
-<a name="l00330"></a>00330 
-<a name="l00331"></a>00331   <a class="code" href="guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52" title="with INT32_ANGLE_FRAC">guidance_h_rc_sp</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> = <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
-<a name="l00332"></a>00332   <a class="code" href="stabilization__attitude__ref__int_8h.html#a60f842edfa8dd98a227f18def04a0b55">reset_psi_ref_from_body</a>();
-<a name="l00333"></a>00333 
-<a name="l00334"></a>00334   <a class="code" href="pprz__algebra__int_8h.html#ab575093abc245f05ff77ce557a7760d6">INT_VECT2_ZERO</a>(<a class="code" href="guidance__h_8c.html#a38c8f96006ee44bb6e6e7af963f3cee2">guidance_h_pos_err_sum</a>);
-<a name="l00335"></a>00335 
-<a name="l00336"></a>00336 }
-<a name="l00337"></a>00337 
-<a name="l00338"></a><a class="code" href="guidance__h_8c.html#acfce6969bcd9f8b676f79baf04ef4c00">00338</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="guidance__h_8c.html#acfce6969bcd9f8b676f79baf04ef4c00">guidance_h_nav_enter</a>(<span class="keywordtype">void</span>) {
-<a name="l00339"></a>00339 
-<a name="l00340"></a>00340   <a class="code" href="pprz__geodetic__int_8h.html#a3273712605d60483f84bec670d1f51d5">INT32_VECT2_NED_OF_ENU</a>(<a class="code" href="guidance__h_8c.html#ab5bfbde0d90688c7b32bdd7244be7a0b" title="horizontal position setpoint in NED.">guidance_h_pos_sp</a>, <a class="code" href="navigation_8c.html#a38461a74b0c87b0940a728140e2be361">navigation_carrot</a>);
-<a name="l00341"></a>00341   <span class="keyword">struct </span><a class="code" href="structInt32Vect2.html">Int32Vect2</a> pos,speed,zero;
-<a name="l00342"></a>00342   <a class="code" href="pprz__algebra__int_8h.html#ab575093abc245f05ff77ce557a7760d6">INT_VECT2_ZERO</a>(zero);
-<a name="l00343"></a>00343   <a class="code" href="pprz__algebra_8h.html#a457460fd7177105e86c9ef2c5260c5c8">VECT2_COPY</a>(pos, <a class="code" href="ins_8c.html#a1e387adbd75abcace16da3c7937f3fcd">ins_ltp_pos</a>);
-<a name="l00344"></a>00344   <a class="code" href="pprz__algebra_8h.html#a457460fd7177105e86c9ef2c5260c5c8">VECT2_COPY</a>(speed, <a class="code" href="ins_8c.html#abfca570ad537cb55bbe0eb572b6e1685">ins_ltp_speed</a>);
-<a name="l00345"></a>00345   <a class="code" href="guidance__h_8c.html#a06b246be8c5a95daf9856057dd2584f9">GuidanceHSetRef</a>(pos, speed, zero);
-<a name="l00346"></a>00346 
-<a name="l00347"></a>00347   <span class="comment">/* reset psi reference, set psi setpoint to current psi */</span>
-<a name="l00348"></a>00348   <a class="code" href="stabilization__attitude__ref__int_8h.html#a60f842edfa8dd98a227f18def04a0b55">reset_psi_ref_from_body</a>();
-<a name="l00349"></a>00349   <a class="code" href="navigation_8c.html#acf3b5510f0b07816b1b93a0412f67d8f">nav_heading</a> = <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state (fixed point version)">ahrs</a>.<a class="code" href="structAhrs.html#a20100bc5d0158e50db58f6d1eb57ae09" title="Rotation from LocalTangentPlane to body frame as Euler angles.">ltp_to_body_euler</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
-<a name="l00350"></a>00350 
-<a name="l00351"></a>00351   <a class="code" href="pprz__algebra__int_8h.html#ab575093abc245f05ff77ce557a7760d6">INT_VECT2_ZERO</a>(<a class="code" href="guidance__h_8c.html#a38c8f96006ee44bb6e6e7af963f3cee2">guidance_h_pos_err_sum</a>);
-<a name="l00352"></a>00352 
-<a name="l00353"></a>00353 }
+<a name="l00313"></a>00313 
+<a name="l00314"></a>00314   <span class="comment">/* Add RC roll and pitch setpoints for emergency corrections */</span>
+<a name="l00315"></a>00315   <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>.<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a> += <a class="code" href="guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52" title="with INT32_ANGLE_FRAC">guidance_h_rc_sp</a>.<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a>;
+<a name="l00316"></a>00316   <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>.<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a> += <a class="code" href="guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52" title="with INT32_ANGLE_FRAC">guidance_h_rc_sp</a>.<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a>;
+<a name="l00317"></a>00317 
+<a name="l00318"></a>00318   <span class="comment">/* Set attitude setpoint in eulers and as quaternion */</span>
+<a name="l00319"></a>00319   <a class="code" href="pprz__algebra_8h.html#a9cc8d10bf25cef4ef2ba79cc6664d9ee">EULERS_COPY</a>(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>, <a class="code" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144" title="with INT32_ANGLE_FRAC">guidance_h_command_body</a>);
+<a name="l00320"></a>00320 
+<a name="l00321"></a>00321 <span class="preprocessor">#ifdef STABILISATION_ATTITUDE_TYPE_QUAT</span>
+<a name="l00322"></a>00322 <span class="preprocessor"></span>  <a class="code" href="pprz__algebra__int_8h.html#a3003feb20a532f67e77832669398bc73">INT32_QUAT_OF_EULERS</a>(<a class="code" href="stabilization__attitude__ref__float_8h.html#a8a7faa82a4a14113987c600d7e38d836">stab_att_sp_quat</a>, <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>);
+<a name="l00323"></a>00323   <a class="code" href="pprz__algebra__int_8h.html#a4813c4e32db266393ef644e0d5228b9c">INT32_QUAT_WRAP_SHORTEST</a>(<a class="code" href="stabilization__attitude__ref__float_8h.html#a8a7faa82a4a14113987c600d7e38d836">stab_att_sp_quat</a>);
+<a name="l00324"></a>00324 <span class="preprocessor">#endif </span><span class="comment">/* STABILISATION_ATTITUDE_TYPE_QUAT */</span>
+<a name="l00325"></a>00325 
+<a name="l00326"></a>00326 }
+<a name="l00327"></a>00327 
+<a name="l00328"></a><a class="code" href="guidance__h_8c.html#a2a7de8dee0c85bd58633a392d8e2df91">00328</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="guidance__h_8c.html#a2a7de8dee0c85bd58633a392d8e2df91">guidance_h_hover_enter</a>(<span class="keywordtype">void</span>) {
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330   <a class="code" href="pprz__algebra_8h.html#a457460fd7177105e86c9ef2c5260c5c8">VECT2_COPY</a>(<a class="code" href="guidance__h_8c.html#ab5bfbde0d90688c7b32bdd7244be7a0b" title="horizontal position setpoint in NED.">guidance_h_pos_sp</a>, *<a class="code" href="group__PosGroup.html#gaf9a3b3ed4f6a011ae65d49d78bf4aa25" title="Get position in local NED coordinates (int).">stateGetPositionNed_i</a>());
+<a name="l00331"></a>00331 
+<a name="l00332"></a>00332   <a class="code" href="guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52" title="with INT32_ANGLE_FRAC">guidance_h_rc_sp</a>.<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> = <a class="code" href="group__AttGroup.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
+<a name="l00333"></a>00333   <a class="code" href="stabilization__attitude__ref__int_8h.html#a60f842edfa8dd98a227f18def04a0b55">reset_psi_ref_from_body</a>();
+<a name="l00334"></a>00334 
+<a name="l00335"></a>00335   <a class="code" href="pprz__algebra__int_8h.html#ab575093abc245f05ff77ce557a7760d6">INT_VECT2_ZERO</a>(<a class="code" href="guidance__h_8c.html#a38c8f96006ee44bb6e6e7af963f3cee2">guidance_h_pos_err_sum</a>);
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337 }
+<a name="l00338"></a>00338 
+<a name="l00339"></a><a class="code" href="guidance__h_8c.html#acfce6969bcd9f8b676f79baf04ef4c00">00339</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="guidance__h_8c.html#acfce6969bcd9f8b676f79baf04ef4c00">guidance_h_nav_enter</a>(<span class="keywordtype">void</span>) {
+<a name="l00340"></a>00340 
+<a name="l00341"></a>00341   <a class="code" href="pprz__geodetic__int_8h.html#a3273712605d60483f84bec670d1f51d5">INT32_VECT2_NED_OF_ENU</a>(<a class="code" href="guidance__h_8c.html#ab5bfbde0d90688c7b32bdd7244be7a0b" title="horizontal position setpoint in NED.">guidance_h_pos_sp</a>, <a class="code" href="navigation_8c.html#a38461a74b0c87b0940a728140e2be361">navigation_carrot</a>);
+<a name="l00342"></a>00342   <span class="keyword">struct </span><a class="code" href="structInt32Vect2.html">Int32Vect2</a> pos,speed,zero;
+<a name="l00343"></a>00343   <a class="code" href="pprz__algebra__int_8h.html#ab575093abc245f05ff77ce557a7760d6">INT_VECT2_ZERO</a>(zero);
+<a name="l00344"></a>00344   <a class="code" href="pprz__algebra_8h.html#a457460fd7177105e86c9ef2c5260c5c8">VECT2_COPY</a>(pos, *<a class="code" href="group__PosGroup.html#gaf9a3b3ed4f6a011ae65d49d78bf4aa25" title="Get position in local NED coordinates (int).">stateGetPositionNed_i</a>());
+<a name="l00345"></a>00345   <a class="code" href="pprz__algebra_8h.html#a457460fd7177105e86c9ef2c5260c5c8">VECT2_COPY</a>(speed, *<a class="code" href="group__SpeedGroup.html#gaed641b0c36e2ad2407a97be88ec2506c" title="Get ground speed in local NED coordinates (int).">stateGetSpeedNed_i</a>());
+<a name="l00346"></a>00346   <a class="code" href="guidance__h_8c.html#a06b246be8c5a95daf9856057dd2584f9">GuidanceHSetRef</a>(pos, speed, zero);
+<a name="l00347"></a>00347 
+<a name="l00348"></a>00348   <span class="comment">/* reset psi reference, set psi setpoint to current psi */</span>
+<a name="l00349"></a>00349   <a class="code" href="stabilization__attitude__ref__int_8h.html#a60f842edfa8dd98a227f18def04a0b55">reset_psi_ref_from_body</a>();
+<a name="l00350"></a>00350   <a class="code" href="navigation_8c.html#acf3b5510f0b07816b1b93a0412f67d8f">nav_heading</a> = <a class="code" href="group__AttGroup.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352   <a class="code" href="pprz__algebra__int_8h.html#ab575093abc245f05ff77ce557a7760d6">INT_VECT2_ZERO</a>(<a class="code" href="guidance__h_8c.html#a38c8f96006ee44bb6e6e7af963f3cee2">guidance_h_pos_err_sum</a>);
+<a name="l00353"></a>00353 
+<a name="l00354"></a>00354 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -469,7 +471,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="guidance__h_8c.html">guidance_h.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 04:00:33 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 13:25:39 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
