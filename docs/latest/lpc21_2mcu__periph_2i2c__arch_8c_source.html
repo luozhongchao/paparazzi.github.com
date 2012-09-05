@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -135,16 +135,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a>00030 <span class="preprocessor"></span>
 <a name="l00032"></a>00032 <span class="comment">// I2C Automaton //</span>
 <a name="l00034"></a>00034 <span class="comment"></span>
-<a name="l00035"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">00035</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#a9420f11c7b16114ac9b1c67dc3510131">I2cSendStart</a>(struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p) {
+<a name="l00035"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#af119ba58dde22a418cce1352734266b4">00035</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#af119ba58dde22a418cce1352734266b4">I2cSendStart</a>(struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p) {
 <a name="l00036"></a>00036   p-&gt;status = <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785becac38326f97d97d96d564d1064ff3313c1">I2CStartRequested</a>;
 <a name="l00037"></a>00037   ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)(p-&gt;reg_addr))-&gt;conset = _BV(<a class="code" href="LPC21xx_8h.html#a83e3fea5be2b0854b6351e79d4315b2a">STA</a>);
 <a name="l00038"></a>00038 }
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> I2cSendAck(<span class="keywordtype">void</span>* reg) {
+<a name="l00040"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a99165833cfce5b128c3d56e4c6d54da7">00040</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a99165833cfce5b128c3d56e4c6d54da7">I2cSendAck</a>(<span class="keywordtype">void</span>* reg) {
 <a name="l00041"></a>00041   ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)reg)-&gt;conset = _BV(<a class="code" href="LPC21xx_8h.html#abdd3d71e494e2115f67ee5e8879f9017">AA</a>);
 <a name="l00042"></a>00042 }
 <a name="l00043"></a>00043 
-<a name="l00044"></a>00044 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> I2cEndOfTransaction(struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p) {
+<a name="l00044"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a01409add519ec96f88feb3cd5f00740b">00044</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a01409add519ec96f88feb3cd5f00740b">I2cEndOfTransaction</a>(struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p) {
 <a name="l00045"></a>00045   <span class="comment">// handle fifo here</span>
 <a name="l00046"></a>00046   p-&gt;trans_extract_idx++;
 <a name="l00047"></a>00047   <span class="keywordflow">if</span> (p-&gt;trans_extract_idx &gt;= <a class="code" href="i2c_8h.html#a1e8f7694d49989f4823aa34cffae6319">I2C_TRANSACTION_QUEUE_LEN</a>)
@@ -154,43 +154,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a>00051     p-&gt;status = <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>;
 <a name="l00052"></a>00052   }
 <a name="l00053"></a>00053   <span class="keywordflow">else</span> {
-<a name="l00054"></a>00054     <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#a9420f11c7b16114ac9b1c67dc3510131">I2cSendStart</a>(p);
+<a name="l00054"></a>00054     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#af119ba58dde22a418cce1352734266b4">I2cSendStart</a>(p);
 <a name="l00055"></a>00055   }
 <a name="l00056"></a>00056 }
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> I2cSendStop(struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p, struct <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
+<a name="l00058"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a9d8406f02daf5d8461ce53d7d97c3cfa">00058</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a9d8406f02daf5d8461ce53d7d97c3cfa">I2cSendStop</a>(struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p, struct <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
 <a name="l00059"></a>00059   ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)(p-&gt;reg_addr))-&gt;conset = _BV(<a class="code" href="LPC21xx_8h.html#ac8ab1f93e383f229ff0cdcd3f4053e7c">STO</a>);
 <a name="l00060"></a>00060   <span class="comment">// transaction finished with success</span>
 <a name="l00061"></a>00061   t-&gt;status = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>;
-<a name="l00062"></a>00062   I2cEndOfTransaction(p);
+<a name="l00062"></a>00062   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a01409add519ec96f88feb3cd5f00740b">I2cEndOfTransaction</a>(p);
 <a name="l00063"></a>00063 }
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> I2cFail(struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p, struct <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
+<a name="l00065"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a900cc057905958b330a39d51c86203a0">00065</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a900cc057905958b330a39d51c86203a0">I2cFail</a>(struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p, struct <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
 <a name="l00066"></a>00066   ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)(p-&gt;reg_addr))-&gt;conset = _BV(<a class="code" href="LPC21xx_8h.html#ac8ab1f93e383f229ff0cdcd3f4053e7c">STO</a>);
 <a name="l00067"></a>00067   <span class="comment">// transaction failed</span>
 <a name="l00068"></a>00068   t-&gt;status = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>;
 <a name="l00069"></a>00069   <span class="comment">// FIXME I2C should be reseted here ?</span>
-<a name="l00070"></a>00070   I2cEndOfTransaction(p);
+<a name="l00070"></a>00070   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a01409add519ec96f88feb3cd5f00740b">I2cEndOfTransaction</a>(p);
 <a name="l00071"></a>00071 }
 <a name="l00072"></a>00072 
-<a name="l00073"></a>00073 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> I2cSendByte(<span class="keywordtype">void</span>* reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> b) {
+<a name="l00073"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#ae043ee1aa1fc223bbd70ad4904cc4c62">00073</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#ae043ee1aa1fc223bbd70ad4904cc4c62">I2cSendByte</a>(<span class="keywordtype">void</span>* reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> b) {
 <a name="l00074"></a>00074   ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)reg)-&gt;dat = b;
 <a name="l00075"></a>00075 }
 <a name="l00076"></a>00076 
-<a name="l00077"></a>00077 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> I2cReceive(<span class="keywordtype">void</span>* reg, bool_t ack) {
+<a name="l00077"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#acdbd394ef74a63a820f27896dac939a0">00077</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#acdbd394ef74a63a820f27896dac939a0">I2cReceive</a>(<span class="keywordtype">void</span>* reg, bool_t ack) {
 <a name="l00078"></a>00078   <span class="keywordflow">if</span> (ack) ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)reg)-&gt;conset = _BV(<a class="code" href="LPC21xx_8h.html#abdd3d71e494e2115f67ee5e8879f9017">AA</a>);
 <a name="l00079"></a>00079   <span class="keywordflow">else</span> ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)reg)-&gt;conclr = _BV(<a class="code" href="LPC21xx_8h.html#a026f3d8138408900caf991597fd0dfc8">AAC</a>);
 <a name="l00080"></a>00080 }
 <a name="l00081"></a>00081 
-<a name="l00082"></a>00082 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> I2cClearStart(<span class="keywordtype">void</span>* reg) {
+<a name="l00082"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#afeedcbbb1955ba3dc334152678f8ca8d">00082</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#afeedcbbb1955ba3dc334152678f8ca8d">I2cClearStart</a>(<span class="keywordtype">void</span>* reg) {
 <a name="l00083"></a>00083   ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)reg)-&gt;conclr = _BV(<a class="code" href="LPC21xx_8h.html#a4b6f07d6e517197009d29bedcb998b66">STAC</a>);
 <a name="l00084"></a>00084 }
 <a name="l00085"></a>00085 
-<a name="l00086"></a>00086 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> I2cClearIT(<span class="keywordtype">void</span>* reg) {
+<a name="l00086"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a981976ae466e6a26c1e91774e12c2bd9">00086</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a981976ae466e6a26c1e91774e12c2bd9">I2cClearIT</a>(<span class="keywordtype">void</span>* reg) {
 <a name="l00087"></a>00087   ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)reg)-&gt;conclr = _BV(<a class="code" href="LPC21xx_8h.html#a82ff3c7f85bb94301b5fe3e211c36220">SIC</a>);
 <a name="l00088"></a>00088 }
 <a name="l00089"></a>00089 
-<a name="l00090"></a>00090 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> I2cAutomaton(<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a>, struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p) {
+<a name="l00090"></a><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a512c156108b054d32fb4e221d2e057f7">00090</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a512c156108b054d32fb4e221d2e057f7">I2cAutomaton</a>(<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a>, struct <a class="code" href="structi2c__periph.html">i2c_periph</a>* p) {
 <a name="l00091"></a>00091   <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a>* trans = p-&gt;trans[p-&gt;trans_extract_idx];
 <a name="l00092"></a>00092   <span class="keywordflow">switch</span> (state) {
 <a name="l00093"></a>00093     <span class="keywordflow">case</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8h.html#a4b22ba2f26e18d7a0b9b8d91c9ff1cb8">I2C_START</a>:
@@ -205,54 +205,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00102"></a>00102           ClearBit(trans-&gt;<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a>,0);
 <a name="l00103"></a>00103           <span class="keywordflow">break</span>;
 <a name="l00104"></a>00104       }
-<a name="l00105"></a>00105       I2cSendByte(p-&gt;reg_addr,trans-&gt;<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a>);
-<a name="l00106"></a>00106       I2cClearStart(p-&gt;reg_addr);
+<a name="l00105"></a>00105       <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#ae043ee1aa1fc223bbd70ad4904cc4c62">I2cSendByte</a>(p-&gt;reg_addr,trans-&gt;<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a>);
+<a name="l00106"></a>00106       <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#afeedcbbb1955ba3dc334152678f8ca8d">I2cClearStart</a>(p-&gt;reg_addr);
 <a name="l00107"></a>00107       p-&gt;idx_buf = 0;
 <a name="l00108"></a>00108       <span class="keywordflow">break</span>;
 <a name="l00109"></a>00109     <span class="keywordflow">case</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8h.html#a8717b2b5cad7f9c938ecb14cabf19479">I2C_MR_DATA_ACK</a>:
 <a name="l00110"></a>00110       <span class="keywordflow">if</span> (p-&gt;idx_buf &lt; trans-&gt;<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a>) {
 <a name="l00111"></a>00111         trans-&gt;<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[p-&gt;idx_buf] = ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)(p-&gt;reg_addr))-&gt;dat;
 <a name="l00112"></a>00112         p-&gt;idx_buf++;
-<a name="l00113"></a>00113         I2cReceive(p-&gt;reg_addr,p-&gt;idx_buf &lt; trans-&gt;<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> - 1);
+<a name="l00113"></a>00113         <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#acdbd394ef74a63a820f27896dac939a0">I2cReceive</a>(p-&gt;reg_addr,p-&gt;idx_buf &lt; trans-&gt;<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> - 1);
 <a name="l00114"></a>00114       }
 <a name="l00115"></a>00115       <span class="keywordflow">else</span> {
 <a name="l00116"></a>00116         <span class="comment">/* error , we should have got NACK */</span>
-<a name="l00117"></a>00117         I2cFail(p,trans);
+<a name="l00117"></a>00117         <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a900cc057905958b330a39d51c86203a0">I2cFail</a>(p,trans);
 <a name="l00118"></a>00118       }
 <a name="l00119"></a>00119       <span class="keywordflow">break</span>;
 <a name="l00120"></a>00120     <span class="keywordflow">case</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8h.html#a6528e9693b9b57c6bffd9f031ba5dee5">I2C_MR_DATA_NACK</a>:
 <a name="l00121"></a>00121       <span class="keywordflow">if</span> (p-&gt;idx_buf &lt; trans-&gt;<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a>) {
 <a name="l00122"></a>00122         trans-&gt;<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[p-&gt;idx_buf] = ((<a class="code" href="structi2cRegs__t.html">i2cRegs_t</a> *)(p-&gt;reg_addr))-&gt;dat;
 <a name="l00123"></a>00123       }
-<a name="l00124"></a>00124       I2cSendStop(p,trans);
+<a name="l00124"></a>00124       <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a9d8406f02daf5d8461ce53d7d97c3cfa">I2cSendStop</a>(p,trans);
 <a name="l00125"></a>00125       <span class="keywordflow">break</span>;
 <a name="l00126"></a>00126     <span class="keywordflow">case</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8h.html#aeaa8c809db47e55febc0ae158397f6f7">I2C_MR_SLA_ACK</a>: <span class="comment">/* At least one char */</span>
 <a name="l00127"></a>00127       <span class="comment">/* Wait and reply with ACK or NACK */</span>
-<a name="l00128"></a>00128       I2cReceive(p-&gt;reg_addr,p-&gt;idx_buf &lt; trans-&gt;<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> - 1);
+<a name="l00128"></a>00128       <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#acdbd394ef74a63a820f27896dac939a0">I2cReceive</a>(p-&gt;reg_addr,p-&gt;idx_buf &lt; trans-&gt;<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> - 1);
 <a name="l00129"></a>00129       <span class="keywordflow">break</span>;
 <a name="l00130"></a>00130     <span class="keywordflow">case</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8h.html#ab67749027f7e5e2c7efca17d4850e52d">I2C_MR_SLA_NACK</a>:
 <a name="l00131"></a>00131     <span class="keywordflow">case</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8h.html#a194fc5bf4767d52a7c9e42dc63ad6451">I2C_MT_SLA_NACK</a>:
 <a name="l00132"></a>00132       <span class="comment">/* Slave is not responding, transaction is failed */</span>
-<a name="l00133"></a>00133       I2cFail(p,trans);
+<a name="l00133"></a>00133       <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a900cc057905958b330a39d51c86203a0">I2cFail</a>(p,trans);
 <a name="l00134"></a>00134       <span class="keywordflow">break</span>;
 <a name="l00135"></a>00135     <span class="keywordflow">case</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8h.html#a238e3537d5d99a0c7ff5e9cd2cc0752d">I2C_MT_SLA_ACK</a>:
 <a name="l00136"></a>00136     <span class="keywordflow">case</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8h.html#af0f46ef0019fe81538fe1758445bfc2e">I2C_MT_DATA_ACK</a>:
 <a name="l00137"></a>00137       <span class="keywordflow">if</span> (p-&gt;idx_buf &lt; trans-&gt;<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a>) {
-<a name="l00138"></a>00138         I2cSendByte(p-&gt;reg_addr,trans-&gt;<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[p-&gt;idx_buf]);
+<a name="l00138"></a>00138         <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#ae043ee1aa1fc223bbd70ad4904cc4c62">I2cSendByte</a>(p-&gt;reg_addr,trans-&gt;<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[p-&gt;idx_buf]);
 <a name="l00139"></a>00139         p-&gt;idx_buf++;
 <a name="l00140"></a>00140       } <span class="keywordflow">else</span> {
 <a name="l00141"></a>00141         <span class="keywordflow">if</span> (trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> == <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>) {
 <a name="l00142"></a>00142           trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea0a6a2eb5c566606a3ea9acc6734b4f91">I2CTransRx</a>; <span class="comment">/* FIXME should not change type */</span>
 <a name="l00143"></a>00143           p-&gt;idx_buf = 0;
 <a name="l00144"></a>00144           trans-&gt;<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> |= 1;
-<a name="l00145"></a>00145           <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#a9420f11c7b16114ac9b1c67dc3510131">I2cSendStart</a>(p);
+<a name="l00145"></a>00145           <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#af119ba58dde22a418cce1352734266b4">I2cSendStart</a>(p);
 <a name="l00146"></a>00146         } <span class="keywordflow">else</span> {
-<a name="l00147"></a>00147           I2cSendStop(p,trans);
+<a name="l00147"></a>00147           <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a9d8406f02daf5d8461ce53d7d97c3cfa">I2cSendStop</a>(p,trans);
 <a name="l00148"></a>00148         }
 <a name="l00149"></a>00149       }
 <a name="l00150"></a>00150       <span class="keywordflow">break</span>;
 <a name="l00151"></a>00151     <span class="keywordflow">default</span>:
-<a name="l00152"></a>00152       I2cFail(p,trans);
+<a name="l00152"></a>00152       <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a900cc057905958b330a39d51c86203a0">I2cFail</a>(p,trans);
 <a name="l00153"></a>00153       <span class="comment">/* FIXME log error */</span>
 <a name="l00154"></a>00154       <span class="keywordflow">break</span>;
 <a name="l00155"></a>00155   }
@@ -298,14 +298,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00195"></a>00195 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00196"></a>00196 <span class="preprocessor"></span>
 <a name="l00197"></a>00197 
-<a name="l00198"></a>00198 <span class="keywordtype">void</span> i2c0_ISR(<span class="keywordtype">void</span>) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
+<a name="l00198"></a>00198 <span class="keywordtype">void</span> i2c0_ISR(<span class="keywordtype">void</span>) __attribute__((naked));
 <a name="l00199"></a>00199 
 <a name="l00200"></a>00200 <span class="keywordtype">void</span> i2c0_ISR(<span class="keywordtype">void</span>) {
 <a name="l00201"></a>00201   <a class="code" href="armVIC_8h.html#a4291eb8e6c7a50f7cfb8b3dcc28154ea">ISR_ENTRY</a>();
 <a name="l00202"></a>00202 
-<a name="l00203"></a>00203   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> state = <a class="code" href="LPC21xx_8h.html#a140ed7fe1bfdde5354339ddecd37adae">I2C0STAT</a>;
-<a name="l00204"></a>00204   I2cAutomaton(state,&amp;i2c0);
-<a name="l00205"></a>00205   I2cClearIT(i2c0.reg_addr);
+<a name="l00203"></a>00203   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a> = <a class="code" href="LPC21xx_8h.html#a140ed7fe1bfdde5354339ddecd37adae">I2C0STAT</a>;
+<a name="l00204"></a>00204   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a512c156108b054d32fb4e221d2e057f7">I2cAutomaton</a>(state,&amp;i2c0);
+<a name="l00205"></a>00205   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a981976ae466e6a26c1e91774e12c2bd9">I2cClearIT</a>(i2c0.reg_addr);
 <a name="l00206"></a>00206 
 <a name="l00207"></a>00207   <a class="code" href="LPC21xx_8h.html#aa11babfb092f15d15765591e9d4c8df2">VICVectAddr</a> = 0x00000000;             <span class="comment">// clear this interrupt from the VIC</span>
 <a name="l00208"></a>00208   <a class="code" href="armVIC_8h.html#aecf650b1ba18540f94f7dc6affe73696">ISR_EXIT</a>();                           <span class="comment">// recover registers and return</span>
@@ -378,14 +378,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00275"></a>00275 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00276"></a>00276 <span class="preprocessor"></span>
 <a name="l00277"></a>00277 
-<a name="l00278"></a>00278 <span class="keywordtype">void</span> i2c1_ISR(<span class="keywordtype">void</span>) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
+<a name="l00278"></a>00278 <span class="keywordtype">void</span> i2c1_ISR(<span class="keywordtype">void</span>) __attribute__((naked));
 <a name="l00279"></a>00279 
 <a name="l00280"></a>00280 <span class="keywordtype">void</span> i2c1_ISR(<span class="keywordtype">void</span>) {
 <a name="l00281"></a>00281   <a class="code" href="armVIC_8h.html#a4291eb8e6c7a50f7cfb8b3dcc28154ea">ISR_ENTRY</a>();
 <a name="l00282"></a>00282 
-<a name="l00283"></a>00283   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> state = <a class="code" href="LPC21xx_8h.html#adbba5de491b6cf3df5876cfd40c9feb1">I2C1STAT</a>;
-<a name="l00284"></a>00284   I2cAutomaton(state,&amp;i2c1);
-<a name="l00285"></a>00285   I2cClearIT(i2c1.reg_addr);
+<a name="l00283"></a>00283   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a> = <a class="code" href="LPC21xx_8h.html#adbba5de491b6cf3df5876cfd40c9feb1">I2C1STAT</a>;
+<a name="l00284"></a>00284   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a512c156108b054d32fb4e221d2e057f7">I2cAutomaton</a>(state,&amp;i2c1);
+<a name="l00285"></a>00285   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a981976ae466e6a26c1e91774e12c2bd9">I2cClearIT</a>(i2c1.reg_addr);
 <a name="l00286"></a>00286 
 <a name="l00287"></a>00287   <a class="code" href="LPC21xx_8h.html#aa11babfb092f15d15765591e9d4c8df2">VICVectAddr</a> = 0x00000000;             <span class="comment">// clear this interrupt from the VIC</span>
 <a name="l00288"></a>00288   <a class="code" href="armVIC_8h.html#aecf650b1ba18540f94f7dc6affe73696">ISR_EXIT</a>();                           <span class="comment">// recover registers and return</span>
@@ -436,7 +436,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00333"></a>00333   p-&gt;<a class="code" href="structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c">trans_insert_idx</a> = idx;
 <a name="l00334"></a>00334   <span class="comment">/* if peripheral is idle, start the transaction */</span>
 <a name="l00335"></a>00335   <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
-<a name="l00336"></a>00336     <a class="code" href="sim_2mcu__periph_2i2c__arch_8h.html#a9420f11c7b16114ac9b1c67dc3510131">I2cSendStart</a>(p);
+<a name="l00336"></a>00336     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#af119ba58dde22a418cce1352734266b4">I2cSendStart</a>(p);
 <a name="l00337"></a>00337   <span class="comment">/* else it will be started by the interrupt handler */</span>
 <a name="l00338"></a>00338   <span class="comment">/* when the previous transactions completes         */</span>
 <a name="l00339"></a>00339   <a class="code" href="lpc21_2interrupt__hw_8h.html#aab7d86223a816aa9780a1fdcebc25da0">int_enable</a>();
@@ -494,7 +494,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c.html">i2c_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:36 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:00 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

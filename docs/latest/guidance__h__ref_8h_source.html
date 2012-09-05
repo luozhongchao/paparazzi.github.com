@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -181,7 +181,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00081"></a><a class="code" href="guidance__h__ref_8h.html#ab2d39558541f6f1b8853a67da7665772">00081</a> <span class="preprocessor"></span><span class="preprocessor">#define B2_GH_REF_INV_THAU  BFP_OF_REAL((1./B2_GH_REF_THAU_F), B2_GH_REF_INV_THAU_FRAC)</span>
 <a name="l00082"></a>00082 <span class="preprocessor"></span>
 <a name="l00083"></a>00083 <span class="preprocessor">#ifdef GUIDANCE_H_C</span>
-<a name="l00084"></a>00084 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> b2_gh_set_ref(<span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> pos, <span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> <a class="code" href="guidance__v__ref_8h.html#a36dda2666e5436e608a494230ca9076b">speed</a>, <span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> accel);
+<a name="l00084"></a>00084 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> b2_gh_set_ref(<span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> pos, <span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> speed, <span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> accel);
 <a name="l00085"></a>00085 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> b2_gh_update_ref_from_pos_sp(<span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> pos_sp);
 <a name="l00086"></a>00086 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> b2_gh_update_ref_from_speed_sp(<span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> speed_sp);
 <a name="l00087"></a>00087 
@@ -189,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00089"></a>00089 <span class="keyword">struct </span><a class="code" href="structInt32Vect2.html">Int32Vect2</a> <a class="code" href="guidance__h__ref_8h.html#a022160d39dcebb9eeafc89f4df5768a8">b2_gh_speed_ref</a>;
 <a name="l00090"></a>00090 <span class="keyword">struct </span><a class="code" href="structInt32Vect2.html">Int32Vect2</a> <a class="code" href="guidance__h__ref_8h.html#a1e875d1717b1a306b6b4b27c32e88501">b2_gh_accel_ref</a>;
 <a name="l00091"></a>00091 
-<a name="l00092"></a>00092 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> b2_gh_set_ref(<span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> pos, <span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> <a class="code" href="guidance__v__ref_8h.html#a36dda2666e5436e608a494230ca9076b">speed</a>, <span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> accel) {
+<a name="l00092"></a>00092 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> b2_gh_set_ref(<span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> pos, <span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> speed, <span class="keyword">struct</span> <a class="code" href="structInt32Vect2.html">Int32Vect2</a> accel) {
 <a name="l00093"></a>00093   <span class="keyword">struct </span><a class="code" href="structInt64Vect2.html">Int64Vect2</a> new_pos;
 <a name="l00094"></a>00094   new_pos.<a class="code" href="structInt64Vect2.html#a7e958b5c345dc9dd295ef95ca53c36d0">x</a> = ((<a class="code" href="types_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>)pos.<a class="code" href="structInt32Vect2.html#a91ffcd57e82c034206721483e7b7c7f8">x</a>)&lt;&lt;(<a class="code" href="guidance__h__ref_8h.html#ad80ba0c3795b873abc9091ba524e3df1">B2_GH_POS_REF_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#a1ec0802a57d49a24545916346953dbcb">INT32_POS_FRAC</a>);
 <a name="l00095"></a>00095   new_pos.y = ((<a class="code" href="types_8h.html#adec1df1b8b51cb32b77e5b86fff46471">int64_t</a>)pos.<a class="code" href="structInt32Vect2.html#a0945fb6906f0eaba2bfdb5c2fefdb051">y</a>)&lt;&lt;(<a class="code" href="guidance__h__ref_8h.html#ad80ba0c3795b873abc9091ba524e3df1">B2_GH_POS_REF_FRAC</a> - <a class="code" href="pprz__algebra__int_8h.html#a1ec0802a57d49a24545916346953dbcb">INT32_POS_FRAC</a>);
@@ -312,7 +312,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="guidance__h__ref_8h.html">guidance_h_ref.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:40 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:04 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

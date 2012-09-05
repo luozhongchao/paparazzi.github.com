@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -137,7 +137,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common__flight__plan_8h.html#ac90fac1cee5a86d0b7c434516f85dd98">GotoBlock</a>(b)&#160;&#160;&#160;{ <a class="el" href="common__flight__plan_8h.html#a9bac2a1702848ebb785b932741bfa4be">nav_block</a>=b; <a class="el" href="common__flight__plan_8h.html#aa3cbfa3c23e459645a8e67b1bb4a1bef">nav_init_block</a>(); }</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common__flight__plan_8h.html#a73a31daf5fd187893268389b0cf07d32">Stage</a>(s)&#160;&#160;&#160;case s: <a class="el" href="common__flight__plan_8h.html#a0a51b60cbd4b84900c8898cfb1f25d49">nav_stage</a>=s;</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common__flight__plan_8h.html#ab6fa2c1db175998ff9eb1eb65b9411c1">NextStageAndBreak</a>()&#160;&#160;&#160;{ <a class="el" href="common__flight__plan_8h.html#a0a51b60cbd4b84900c8898cfb1f25d49">nav_stage</a>++; <a class="el" href="common__flight__plan_8h.html#a9f3e30fbd9ad4c0bdc20d1dee3e43eb0">InitStage</a>(); break; }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common__flight__plan_8h.html#aa64072da784959799353d18ae618cbc5">NextStageAndBreakFrom</a>(wp)&#160;&#160;&#160;{ last_wp = wp; <a class="el" href="common__flight__plan_8h.html#ab6fa2c1db175998ff9eb1eb65b9411c1">NextStageAndBreak</a>(); }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common__flight__plan_8h.html#aa64072da784959799353d18ae618cbc5">NextStageAndBreakFrom</a>(wp)&#160;&#160;&#160;{ <a class="el" href="nav_8c.html#a280519e0d643e2e7ec41137b887d0b31">last_wp</a> = wp; <a class="el" href="common__flight__plan_8h.html#ab6fa2c1db175998ff9eb1eb65b9411c1">NextStageAndBreak</a>(); }</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common__flight__plan_8h.html#a5b96743d43411bd82912a80f4d491de2">Label</a>(x)&#160;&#160;&#160;label_ ## x:</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common__flight__plan_8h.html#a010478bef118b0b6d9271708bb7797f7">Goto</a>(x)&#160;&#160;&#160;{ goto label_ ## x; }</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common__flight__plan_8h.html#a067ebcdcacb7ae66d3a69ef859c5e930">Return</a>()&#160;&#160;&#160;({ <a class="el" href="common__flight__plan_8h.html#a9bac2a1702848ebb785b932741bfa4be">nav_block</a>=<a class="el" href="common__flight__plan_8h.html#a5d3ddba0962294e6c33573f86c4b1eec">last_block</a>; <a class="el" href="common__flight__plan_8h.html#a0a51b60cbd4b84900c8898cfb1f25d49">nav_stage</a>=<a class="el" href="common__flight__plan_8h.html#a731227193d590af31f6ab76fcd4f6543">last_stage</a>; <a class="el" href="common__flight__plan_8h.html#ae3eebf6396d9b2539b27b9477c46724d">block_time</a>=0; FALSE;})</td></tr>
@@ -478,7 +478,7 @@ Variables</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">wp</td><td>)</td>
-          <td>&#160;&#160;&#160;{ last_wp = wp; <a class="el" href="common__flight__plan_8h.html#ab6fa2c1db175998ff9eb1eb65b9411c1">NextStageAndBreak</a>(); }</td>
+          <td>&#160;&#160;&#160;{ <a class="el" href="nav_8c.html#a280519e0d643e2e7ec41137b887d0b31">last_wp</a> = wp; <a class="el" href="common__flight__plan_8h.html#ab6fa2c1db175998ff9eb1eb65b9411c1">NextStageAndBreak</a>(); }</td>
         </tr>
       </table>
 </div>
@@ -782,7 +782,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="common__flight__plan_8h.html">common_flight_plan.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:47:07 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:30 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

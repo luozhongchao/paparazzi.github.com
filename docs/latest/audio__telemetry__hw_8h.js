@@ -4,5 +4,5 @@ var audio__telemetry__hw_8h =
     [ "SAMPLE_PERIOD", "audio__telemetry__hw_8h.html#ac32e7bee9d8c1ee37bfae3e48852535d", null ],
     [ "SAMPLES_PER_PERIOD", "audio__telemetry__hw_8h.html#a6f25d6cf5ae040d1badb58ddad628985", null ],
     [ "audio_telemetry_init", "audio__telemetry__hw_8h.html#a7f872e47862e10fceebb19680cd61868", null ],
-    [ "TIMER1_ISR", "audio__telemetry__hw_8h.html#ab3e79352c1fb23772b8d3bea68ab5c47", null ]
+    [ "TIMER1_ISR", "audio__telemetry__hw_8h.html#a99e8727d75d63da3ea5dd369394f1299", null ]
 ];

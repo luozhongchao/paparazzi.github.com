@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -248,7 +248,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00143"></a>00143 <span class="comment">  // update covariance</span>
 <a name="l00144"></a>00144 <span class="comment">  Pp = Pm - K*H*Pm;</span>
 <a name="l00145"></a>00145 <span class="comment">*/</span>
-<a name="l00146"></a><a class="code" href="vf__extended__float_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">00146</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> update_baro_conf(<span class="keywordtype">float</span> z_meas, <span class="keywordtype">float</span> conf) {
+<a name="l00146"></a><a class="code" href="vf__extended__float_8c.html#a7cc8f440a2dfd6769810468a88ccec67">00146</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="vf__extended__float_8c.html#a7cc8f440a2dfd6769810468a88ccec67">update_baro_conf</a>(<span class="keywordtype">float</span> z_meas, <span class="keywordtype">float</span> conf) {
 <a name="l00147"></a>00147   <a class="code" href="vf__extended__float_8c.html#a78d01fa5691c897301843af95d1c73f4">vff_z_meas_baro</a> = z_meas;
 <a name="l00148"></a>00148 
 <a name="l00149"></a>00149   <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a> = z_meas - <a class="code" href="vf__extended__float_8c.html#a1222ca88d397976e39d7074c3467974a">vff_z</a> + <a class="code" href="vf__extended__float_8c.html#a2d44477636d691d3c1e51e0e092a878b">vff_offset</a>;
@@ -288,11 +288,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00183"></a>00183 }
 <a name="l00184"></a>00184 
 <a name="l00185"></a><a class="code" href="vf__extended__float_8h.html#a94b26d899a6d7ca4e26cb7df3f45ef49">00185</a> <span class="keywordtype">void</span> <a class="code" href="vf__extended__float_8c.html#a94b26d899a6d7ca4e26cb7df3f45ef49">vff_update_baro</a>(<span class="keywordtype">float</span> z_meas) {
-<a name="l00186"></a>00186   update_baro_conf(z_meas, <a class="code" href="vf__extended__float_8c.html#a662a7e9b1ca3cb69b0bc04067a9779d6">R_BARO</a>);
+<a name="l00186"></a>00186   <a class="code" href="vf__extended__float_8c.html#a7cc8f440a2dfd6769810468a88ccec67">update_baro_conf</a>(z_meas, <a class="code" href="vf__extended__float_8c.html#a662a7e9b1ca3cb69b0bc04067a9779d6">R_BARO</a>);
 <a name="l00187"></a>00187 }
 <a name="l00188"></a>00188 
 <a name="l00189"></a><a class="code" href="vf__extended__float_8h.html#aa7f8c70d85481ee00728646ab5d82e2a">00189</a> <span class="keywordtype">void</span> <a class="code" href="vf__extended__float_8c.html#aa7f8c70d85481ee00728646ab5d82e2a">vff_update_baro_conf</a>(<span class="keywordtype">float</span> z_meas, <span class="keywordtype">float</span> conf) {
-<a name="l00190"></a>00190   update_baro_conf(z_meas, conf);
+<a name="l00190"></a>00190   <a class="code" href="vf__extended__float_8c.html#a7cc8f440a2dfd6769810468a88ccec67">update_baro_conf</a>(z_meas, conf);
 <a name="l00191"></a>00191 }
 <a name="l00192"></a>00192 
 <a name="l00193"></a>00193 <span class="comment">/*</span>
@@ -309,7 +309,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00204"></a>00204 <span class="comment">  // update covariance</span>
 <a name="l00205"></a>00205 <span class="comment">  Pp = Pm - K*H*Pm;</span>
 <a name="l00206"></a>00206 <span class="comment">*/</span>
-<a name="l00207"></a>00207 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> update_alt_conf(<span class="keywordtype">float</span> z_meas, <span class="keywordtype">float</span> conf) {
+<a name="l00207"></a><a class="code" href="vf__extended__float_8c.html#a8cf6550aed7ee0fab93545ce283d183c">00207</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="vf__extended__float_8c.html#a8cf6550aed7ee0fab93545ce283d183c">update_alt_conf</a>(<span class="keywordtype">float</span> z_meas, <span class="keywordtype">float</span> conf) {
 <a name="l00208"></a>00208   <a class="code" href="vf__extended__float_8c.html#a70bf4fe0af826d88a29e934e4768b9fc">vff_z_meas</a> = z_meas;
 <a name="l00209"></a>00209 
 <a name="l00210"></a>00210   <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a> = z_meas - <a class="code" href="vf__extended__float_8c.html#a1222ca88d397976e39d7074c3467974a">vff_z</a>;
@@ -348,11 +348,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00243"></a>00243 }
 <a name="l00244"></a>00244 
 <a name="l00245"></a><a class="code" href="vf__extended__float_8h.html#aa7be1a38f359b14ce8f7bd719086541a">00245</a> <span class="keywordtype">void</span> <a class="code" href="vf__extended__float_8c.html#aa7be1a38f359b14ce8f7bd719086541a">vff_update_alt</a>(<span class="keywordtype">float</span> z_meas) {
-<a name="l00246"></a>00246   update_alt_conf(z_meas, <a class="code" href="vf__extended__float_8c.html#a42afc75d03c75255f5d5b8d5f7bdcec9">R_ALT</a>);
+<a name="l00246"></a>00246   <a class="code" href="vf__extended__float_8c.html#a8cf6550aed7ee0fab93545ce283d183c">update_alt_conf</a>(z_meas, <a class="code" href="vf__extended__float_8c.html#a42afc75d03c75255f5d5b8d5f7bdcec9">R_ALT</a>);
 <a name="l00247"></a>00247 }
 <a name="l00248"></a>00248 
 <a name="l00249"></a><a class="code" href="vf__extended__float_8h.html#a71a8b7ccf3526fe63cd48ac4117864fa">00249</a> <span class="keywordtype">void</span> <a class="code" href="vf__extended__float_8c.html#a71a8b7ccf3526fe63cd48ac4117864fa">vff_update_alt_conf</a>(<span class="keywordtype">float</span> z_meas, <span class="keywordtype">float</span> conf) {
-<a name="l00250"></a>00250   update_alt_conf(z_meas, conf);
+<a name="l00250"></a>00250   <a class="code" href="vf__extended__float_8c.html#a8cf6550aed7ee0fab93545ce283d183c">update_alt_conf</a>(z_meas, conf);
 <a name="l00251"></a>00251 }
 <a name="l00252"></a>00252 
 <a name="l00253"></a>00253 <span class="comment">/*</span>
@@ -369,7 +369,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00264"></a>00264 <span class="comment">  // update covariance</span>
 <a name="l00265"></a>00265 <span class="comment">  Pp = Pm - K*H*Pm;</span>
 <a name="l00266"></a>00266 <span class="comment">*/</span>
-<a name="l00267"></a>00267 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((always_inline)) static inline <span class="keywordtype">void</span> update_offset_conf(<span class="keywordtype">float</span> offset, <span class="keywordtype">float</span> conf) {
+<a name="l00267"></a><a class="code" href="vf__extended__float_8c.html#a3b99dfff6cd512233a5bf7b9bdd49208">00267</a> __attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="vf__extended__float_8c.html#a3b99dfff6cd512233a5bf7b9bdd49208">update_offset_conf</a>(<span class="keywordtype">float</span> offset, <span class="keywordtype">float</span> conf) {
 <a name="l00268"></a>00268 
 <a name="l00269"></a>00269   <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a> = offset - <a class="code" href="vf__extended__float_8c.html#a2d44477636d691d3c1e51e0e092a878b">vff_offset</a>;
 <a name="l00270"></a>00270   <span class="keyword">const</span> <span class="keywordtype">float</span> S = <a class="code" href="vf__extended__float_8c.html#a0770019985f92fda99f2bdc98f47c267">vff_P</a>[3][3] + conf;
@@ -407,7 +407,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00302"></a>00302 }
 <a name="l00303"></a>00303 
 <a name="l00304"></a><a class="code" href="vf__extended__float_8h.html#a3726fbb9f54c7ec7a8579c7af3f15a4c">00304</a> <span class="keywordtype">void</span> <a class="code" href="vf__extended__float_8c.html#a3726fbb9f54c7ec7a8579c7af3f15a4c">vff_update_offset</a>(<span class="keywordtype">float</span> offset) {
-<a name="l00305"></a>00305   update_offset_conf(offset, <a class="code" href="vf__extended__float_8c.html#a3960e784c7c8e6c83ba671b3702fb67f">R_OFFSET</a>);
+<a name="l00305"></a>00305   <a class="code" href="vf__extended__float_8c.html#a3b99dfff6cd512233a5bf7b9bdd49208">update_offset_conf</a>(offset, <a class="code" href="vf__extended__float_8c.html#a3960e784c7c8e6c83ba671b3702fb67f">R_OFFSET</a>);
 <a name="l00306"></a>00306 }
 <a name="l00307"></a>00307 
 <a name="l00308"></a>00308 
@@ -437,7 +437,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="vf__extended__float_8c.html">vf_extended_float.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:46 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -4,7 +4,7 @@ var searchData=
   ['a_5fradius',['a_radius',['../snav_8c.html#aae9d274b09176b2c2311ca27790c2ccf',1,'snav.c']]],
   ['abbulkbuf',['abBulkBuf',['../usb__ser__hw_8c.html#a91cdcbffe28c1c35bc6d6a3fc449e28c',1,'usb_ser_hw.c']]],
   ['abclassreqdata',['abClassReqData',['../usb__msc__hw_8c.html#a3dfb41defd83016d0c2e2fe79e305723',1,'abClassReqData():&#160;usb_msc_hw.c'],['../usb__ser__hw_8c.html#a003995cf9c075afe1393c64e0bbb5c75',1,'abClassReqData():&#160;usb_ser_hw.c']]],
-  ['abdescriptors',['abDescriptors',['../usb__msc__hw_8c.html#adb3374ec0c6213eb4dec52a2d49ed61c',1,'usb_msc_hw.c']]],
+  ['abdescriptors',['abDescriptors',['../usb__msc__hw_8c.html#adb3374ec0c6213eb4dec52a2d49ed61c',1,'abDescriptors():&#160;usb_msc_hw.c'],['../usb__ser__hw_8c.html#a474d583d4d34d47ab5948fcb0f065b16',1,'abDescriptors():&#160;usb_ser_hw.c']]],
   ['aboveline',['AboveLine',['../OSAMNav_8c.html#a70ef5fcbf9b26eb264d043e85574d6cb',1,'OSAMNav.c']]],
   ['absolute',['absolute',['../structBaro.html#a088741c2889bc0752ef8927b0f8b849f',1,'Baro']]],
   ['ac1',['ac1',['../structbmp085__baro__calibration.html#acfcb0a187f161171faad243e18e40a63',1,'bmp085_baro_calibration']]],

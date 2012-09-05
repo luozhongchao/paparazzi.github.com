@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -137,11 +137,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a>00039 <span class="preprocessor"></span>
 <a name="l00040"></a><a class="code" href="max11040__hw_8c.html#a164f15a88635b4b330466a8a46442263">00040</a> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="max11040__hw_8c.html#a164f15a88635b4b330466a8a46442263">num_irqs</a> = 0;
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="max11040__hw_8c.html#aa105625a4ec7ecf95c0802c3edfade05">00042</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="max11040__hw_8c.html#aa105625a4ec7ecf95c0802c3edfade05">SSP_ISR</a>(<span class="keywordtype">void</span>) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
-<a name="l00043"></a>00043 static <span class="keywordtype">void</span> <a class="code" href="lpc21_2micromag__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b">EXTINT_ISR</a>(<span class="keywordtype">void</span>) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
+<a name="l00042"></a>00042 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="max11040__hw_8c.html#aa105625a4ec7ecf95c0802c3edfade05">SSP_ISR</a>(<span class="keywordtype">void</span>) __attribute__((naked));
+<a name="l00043"></a>00043 static <span class="keywordtype">void</span> <a class="code" href="max11040__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b">EXTINT_ISR</a>(<span class="keywordtype">void</span>) __attribute__((naked));
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045 
-<a name="l00046"></a>00046 static <span class="keywordtype">void</span> <a class="code" href="max11040__hw_8c.html#aa105625a4ec7ecf95c0802c3edfade05">SSP_ISR</a>(<span class="keywordtype">void</span>) {
+<a name="l00046"></a><a class="code" href="max11040__hw_8c.html#aa105625a4ec7ecf95c0802c3edfade05">00046</a> static <span class="keywordtype">void</span> <a class="code" href="max11040__hw_8c.html#aa105625a4ec7ecf95c0802c3edfade05">SSP_ISR</a>(<span class="keywordtype">void</span>) {
 <a name="l00047"></a>00047   <span class="keywordtype">int</span> i;
 <a name="l00048"></a>00048   <a class="code" href="armVIC_8h.html#a4291eb8e6c7a50f7cfb8b3dcc28154ea">ISR_ENTRY</a>();
 <a name="l00049"></a>00049 
@@ -150,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00052"></a>00052     <span class="keywordflow">case</span> <a class="code" href="max11040_8h.html#a8911b4ea3d4c2c176e9ba0b82ded0fd3">MAX11040_RESET</a>:
 <a name="l00053"></a>00053     {
 <a name="l00054"></a>00054       <span class="comment">/* read dummy control byte reply */</span>
-<a name="l00055"></a>00055       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
+<a name="l00055"></a>00055       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> __attribute__ ((unused));
 <a name="l00056"></a>00056       <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
 <a name="l00057"></a>00057       <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
 <a name="l00058"></a>00058       <span class="comment">/* write configuration register */</span>
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00069"></a>00069     <span class="keywordflow">case</span> <a class="code" href="max11040_8h.html#af220df61043675f749a9e364bb39a7c2">MAX11040_CONF</a>:
 <a name="l00070"></a>00070     {
 <a name="l00071"></a>00071       <span class="comment">/* read dummy control byte reply */</span>
-<a name="l00072"></a>00072       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
+<a name="l00072"></a>00072       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> __attribute__ ((unused));
 <a name="l00073"></a>00073       <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
 <a name="l00074"></a>00074       <span class="keywordflow">for</span> (i=0; i&lt;<a class="code" href="max11040_8h.html#ac40515ce0fbcb5cde412c1ef59747565">MAXM_NB_ADCS</a>; i++) {
 <a name="l00075"></a>00075         <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
@@ -188,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00090"></a>00090     <span class="keywordflow">case</span> <a class="code" href="max11040_8h.html#aac19afddd43b087306a592ad528eb514">MAX11040_INSTANT</a>:
 <a name="l00091"></a>00091     {
 <a name="l00092"></a>00092       <span class="comment">/* read dummy control byte reply */</span>
-<a name="l00093"></a>00093       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
+<a name="l00093"></a>00093       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> __attribute__ ((unused));
 <a name="l00094"></a>00094       <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
 <a name="l00095"></a>00095       <span class="keywordflow">for</span> (i=0; i&lt;<a class="code" href="max11040_8h.html#ac40515ce0fbcb5cde412c1ef59747565">MAXM_NB_ADCS</a>; i++) {
 <a name="l00096"></a>00096         <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
@@ -207,7 +207,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00109"></a>00109 
 <a name="l00110"></a>00110     <span class="keywordflow">case</span> <a class="code" href="max11040_8h.html#a5a777d930902478058e378764821773e">MAX11040_RATE</a>:
 <a name="l00111"></a>00111     {
-<a name="l00112"></a>00112       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
+<a name="l00112"></a>00112       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> __attribute__ ((unused));
 <a name="l00113"></a>00113       <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
 <a name="l00114"></a>00114       <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
 <a name="l00115"></a>00115       <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
@@ -234,7 +234,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00136"></a>00136 
 <a name="l00137"></a>00137     <span class="keywordflow">case</span> <a class="code" href="max11040_8h.html#ac5962d2388583ba5b929b1ad7a35fdaf">MAX11040_DATA</a>:
 <a name="l00138"></a>00138     {
-<a name="l00139"></a>00139       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
+<a name="l00139"></a>00139       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> __attribute__ ((unused));
 <a name="l00140"></a>00140       <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
 <a name="l00141"></a>00141       <span class="keywordflow">for</span> (i=0; i&lt;<a class="code" href="max11040_8h.html#ac40515ce0fbcb5cde412c1ef59747565">MAXM_NB_ADCS</a>; i++) {
 <a name="l00142"></a>00142         <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
@@ -275,7 +275,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00177"></a>00177 
 <a name="l00178"></a>00178     <span class="keywordflow">case</span> <a class="code" href="max11040_8h.html#a0288e7c5f6701799e508cb4cbf12e848">MAX11040_DATA2</a>:
 <a name="l00179"></a>00179     {
-<a name="l00180"></a>00180       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
+<a name="l00180"></a>00180       <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> __attribute__ ((unused));
 <a name="l00181"></a>00181 
 <a name="l00182"></a>00182       <a class="code" href="max11040__hw_8h.html#afb337ea47755ca323ec0c7b030bd343f">SSP_ClearRti</a>();
 <a name="l00183"></a>00183       <a class="code" href="max11040__hw_8h.html#a676a1e4e2f6535e0f799be28b691c7cc">SSP_ClearRxi</a>();
@@ -329,7 +329,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00231"></a>00231   <a class="code" href="armVIC_8h.html#aecf650b1ba18540f94f7dc6affe73696">ISR_EXIT</a>();
 <a name="l00232"></a>00232 }
 <a name="l00233"></a>00233 
-<a name="l00234"></a><a class="code" href="max11040__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b">00234</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2micromag__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b">EXTINT_ISR</a>(<span class="keywordtype">void</span>) {
+<a name="l00234"></a><a class="code" href="max11040__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b">00234</a> <span class="keywordtype">void</span> <a class="code" href="max11040__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b">EXTINT_ISR</a>(<span class="keywordtype">void</span>) {
 <a name="l00235"></a>00235   <a class="code" href="armVIC_8h.html#a4291eb8e6c7a50f7cfb8b3dcc28154ea">ISR_ENTRY</a>();
 <a name="l00236"></a>00236 
 <a name="l00237"></a>00237   <span class="keywordflow">if</span> (<a class="code" href="max11040__hw_8c.html#a164f15a88635b4b330466a8a46442263">num_irqs</a>++ == 5)
@@ -398,7 +398,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00300"></a>00300   <a class="code" href="LPC21xx_8h.html#a87f793a1b9254ca2dec755c61184a715">VICIntSelect</a> &amp;= ~<a class="code" href="lpcVIC_8h.html#a20f163f17339eb92d567986cfd657ad6">VIC_BIT</a>( MAXM_DRDY_VIC_IT );                       <span class="comment">/* select EINT as IRQ source */</span>
 <a name="l00301"></a>00301   <a class="code" href="LPC21xx_8h.html#a280555cbadcb52f8ba9cb51a19410fbc">VICIntEnable</a> = <a class="code" href="lpcVIC_8h.html#a20f163f17339eb92d567986cfd657ad6">VIC_BIT</a>( MAXM_DRDY_VIC_IT );                         <span class="comment">/* enable it                 */</span>
 <a name="l00302"></a>00302   <a class="code" href="armVIC_8h.html#a8f7ae9e1a1b3cd7cdc1fa0d371f2086a">_VIC_CNTL</a>(MAX11040_DRDY_VIC_SLOT) = <a class="code" href="lpcVIC_8h.html#ab786e5132d4c90f83d87ad6ae16442e3">VIC_ENABLE</a> | MAXM_DRDY_VIC_IT;
-<a name="l00303"></a>00303   <a class="code" href="armVIC_8h.html#a9981283e4fb9cc3322368f2aa07e3256">_VIC_ADDR</a>(MAX11040_DRDY_VIC_SLOT) = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="lpc21_2micromag__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b">EXTINT_ISR</a>;           <span class="comment">/* address of the ISR        */</span>
+<a name="l00303"></a>00303   <a class="code" href="armVIC_8h.html#a9981283e4fb9cc3322368f2aa07e3256">_VIC_ADDR</a>(MAX11040_DRDY_VIC_SLOT) = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="max11040__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b">EXTINT_ISR</a>;           <span class="comment">/* address of the ISR        */</span>
 <a name="l00304"></a>00304 
 <a name="l00305"></a>00305 
 <a name="l00306"></a>00306   <span class="comment">/* write configuration register */</span>
@@ -431,7 +431,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="max11040__hw_8c.html">max11040_hw.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:36 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:01 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

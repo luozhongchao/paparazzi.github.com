@@ -14,5 +14,6 @@ var lcd__dogm__hw_8c =
     [ "SSP_SSE", "lcd__dogm__hw_8c.html#a1fd263e8ea485cec0213da67c1ac128e", null ],
     [ "SSPCPSR_VAL", "lcd__dogm__hw_8c.html#af0a07b3e285c4f239f705eccc3936459", null ],
     [ "lcd_dogm_init_hw", "lcd__dogm__hw_8c.html#a763c731963e6543e5a42a499549e00dd", null ],
+    [ "lcd_spi_tx", "lcd__dogm__hw_8c.html#a366ee955fa7d05ec9dcc324178a212d7", null ],
     [ "SPI1_ISR", "lcd__dogm__hw_8c.html#a65d6ea131026affbdf33be235dfdb49d", null ]
 ];

@@ -16,7 +16,6 @@ var nav_8c =
     [ "RCLost", "nav_8c.html#ac3892fe123b99e805c0c5d5b1b4cd144", null ],
     [ "RcRoll", "nav_8c.html#a7c6d9ca050122212a8a269e08f8c23f2", null ],
     [ "eight_status", "nav_8c.html#aab42b8493c217be79eb8f2523b6aed32", null ],
-    [ "__attribute__", "nav_8c.html#a406b9e5128030dd2d381582653d6fb80", null ],
     [ "compute_TOD", "nav_8c.html#ad9cc0030bdcfa2192dda22875ca68934", null ],
     [ "fly_to_xy", "nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0", null ],
     [ "nav_approaching_xy", "nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b", null ],
@@ -45,6 +44,7 @@ var nav_8c =
     [ "flight_altitude", "nav_8c.html#a1612ea0e1474e49b800cb3f497096523", null ],
     [ "fp_pitch", "nav_8c.html#a737a463b508f62286a0e62c5ed5648b4", null ],
     [ "horizontal_mode", "nav_8c.html#ad2a5195a657a7961bfb54e3c2da48a21", null ],
+    [ "last_wp", "nav_8c.html#a280519e0d643e2e7ec41137b887d0b31", null ],
     [ "last_x", "nav_8c.html#ab2e97613bcf8e5721e639812c7a3469a", null ],
     [ "last_y", "nav_8c.html#a38c13a13ef3e5a3b6480f71bf244e668", null ],
     [ "nav_altitude", "nav_8c.html#a67342fe7d0a993249d4b4cd0e20821ce", null ],
@@ -79,5 +79,6 @@ var nav_8c =
     [ "nav_survey_west", "nav_8c.html#aeb19008e34a80086cfcb00ae5ae32fdd", null ],
     [ "nav_throttle_setpoint", "nav_8c.html#a5eb16c9d058ba78537ddf42c2ace1075", null ],
     [ "oval_status", "nav_8c.html#a80cf41be180b9c15f127bcbee731fb9b", null ],
-    [ "rc_pitch", "nav_8c.html#ad1a9450df5c62410ea50a3e36aa963f1", null ]
+    [ "rc_pitch", "nav_8c.html#ad1a9450df5c62410ea50a3e36aa963f1", null ],
+    [ "unit", "nav_8c.html#a04b783250b1673126fa3f4729cb2078e", null ]
 ];

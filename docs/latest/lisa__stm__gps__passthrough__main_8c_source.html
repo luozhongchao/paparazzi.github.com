@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -152,16 +152,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00047"></a>00047 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> uart_debug_transfer_init(<span class="keywordtype">void</span>);
 <a name="l00048"></a>00048 <span class="preprocessor">#endif</span>
 <a name="l00049"></a>00049 <span class="preprocessor"></span>
-<a name="l00050"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ab898071398b359603a35c202e9c65f3b">00050</a> <span class="keyword">struct </span><a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((packed)) spistream_uart_msg {
-<a name="l00051"></a>00051   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> uart_id;
-<a name="l00052"></a>00052   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> uart_data[<a class="code" href="lisa__spistream_8h.html#adb0b7633b87e00c3b8be14f0d4829c6f">SPISTREAM_MAX_MESSAGE_LENGTH</a>];
+<a name="l00050"></a><a class="code" href="structspistream__uart__msg.html">00050</a> <span class="keyword">struct </span>__attribute__ ((packed)) <a class="code" href="structspistream__uart__msg.html">spistream_uart_msg</a> {
+<a name="l00051"></a><a class="code" href="structspistream__uart__msg.html#a16c4cb4e1cc28510ad47ccd4babf7cbd">00051</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspistream__uart__msg.html#a16c4cb4e1cc28510ad47ccd4babf7cbd">uart_id</a>;
+<a name="l00052"></a><a class="code" href="structspistream__uart__msg.html#ad05673ad90f9d216d496c059dd92b420">00052</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> uart_data[<a class="code" href="lisa__spistream_8h.html#adb0b7633b87e00c3b8be14f0d4829c6f">SPISTREAM_MAX_MESSAGE_LENGTH</a>];
 <a name="l00053"></a>00053 };
 <a name="l00054"></a>00054 
 <a name="l00055"></a>00055 <span class="comment">// TODO</span>
 <a name="l00056"></a>00056 <span class="comment">// Use 3 static instances of this struct in uart_transfer_event</span>
 <a name="l00057"></a>00057 <span class="comment">// instead of a myriad of repetitive static vars:</span>
 <a name="l00058"></a><a class="code" href="structuart__state.html">00058</a> <span class="keyword">struct </span><a class="code" href="structuart__state.html">uart_state</a> {
-<a name="l00059"></a><a class="code" href="structuart__state.html#a9a7bd765ad13fdab0b8428642919dec5">00059</a>   <span class="keyword">struct </span>spistream_uart_msg * <a class="code" href="structuart__state.html#a9a7bd765ad13fdab0b8428642919dec5">msg</a>;
+<a name="l00059"></a><a class="code" href="structuart__state.html#a9a7bd765ad13fdab0b8428642919dec5">00059</a>   <span class="keyword">struct </span><a class="code" href="structspistream__uart__msg.html">spistream_uart_msg</a> * <a class="code" href="structuart__state.html#a9a7bd765ad13fdab0b8428642919dec5">msg</a>;
 <a name="l00060"></a><a class="code" href="structuart__state.html#ad45d7219d55de38ab9cd8a4c7edd6e8a">00060</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structuart__state.html#ad45d7219d55de38ab9cd8a4c7edd6e8a">timeout</a>;
 <a name="l00061"></a><a class="code" href="structuart__state.html#a38acbfde383d1377ad4128cb3400f57a">00061</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structuart__state.html#a38acbfde383d1377ad4128cb3400f57a">num_rx_bytes</a>;
 <a name="l00062"></a><a class="code" href="structuart__state.html#acdb5ecb23fccd16ff0692a96f043a2a8">00062</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structuart__state.html#acdb5ecb23fccd16ff0692a96f043a2a8">enabled</a>;
@@ -169,11 +169,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00064"></a><a class="code" href="structuart__state.html#a1c5b03a025d99a86bbbbd9db1a3c227c">00064</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structuart__state.html#a1c5b03a025d99a86bbbbd9db1a3c227c">sent</a>;
 <a name="l00065"></a>00065 };
 <a name="l00066"></a>00066 
-<a name="l00067"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">00067</a> <span class="keyword">static</span> <span class="keyword">struct </span>spistream_uart_msg <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">spistream_uart1_msg</a>;
-<a name="l00068"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">00068</a> <span class="keyword">static</span> <span class="keyword">struct </span>spistream_uart_msg <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">spistream_uart2_msg</a>;
-<a name="l00069"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">00069</a> <span class="keyword">static</span> <span class="keyword">struct </span>spistream_uart_msg <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">spistream_uart3_msg</a>;
+<a name="l00067"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">00067</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structspistream__uart__msg.html">spistream_uart_msg</a> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">spistream_uart1_msg</a>;
+<a name="l00068"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">00068</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structspistream__uart__msg.html">spistream_uart_msg</a> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">spistream_uart2_msg</a>;
+<a name="l00069"></a><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">00069</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structspistream__uart__msg.html">spistream_uart_msg</a> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">spistream_uart3_msg</a>;
 <a name="l00070"></a>00070 <span class="preprocessor">#ifdef SPISTREAM_DEBUG</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span>spistream_uart_msg spistream_debug_msg;
+<a name="l00071"></a>00071 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structspistream__uart__msg.html">spistream_uart_msg</a> spistream_debug_msg;
 <a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
 <a name="l00073"></a>00073 <span class="preprocessor"></span>
 <a name="l00074"></a>00074 <span class="comment">// The number of current, unfinished spistream transfers.</span>
@@ -205,9 +205,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00100"></a>00100   uart2_init();
 <a name="l00101"></a>00101   uart3_init();
 <a name="l00102"></a>00102 
-<a name="l00103"></a>00103   <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">spistream_uart1_msg</a>.uart_id = 1;
-<a name="l00104"></a>00104   <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">spistream_uart2_msg</a>.uart_id = 2;
-<a name="l00105"></a>00105   <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">spistream_uart3_msg</a>.uart_id = 3;
+<a name="l00103"></a>00103   <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">spistream_uart1_msg</a>.<a class="code" href="structspistream__uart__msg.html#a16c4cb4e1cc28510ad47ccd4babf7cbd">uart_id</a> = 1;
+<a name="l00104"></a>00104   <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">spistream_uart2_msg</a>.<a class="code" href="structspistream__uart__msg.html#a16c4cb4e1cc28510ad47ccd4babf7cbd">uart_id</a> = 2;
+<a name="l00105"></a>00105   <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">spistream_uart3_msg</a>.<a class="code" href="structspistream__uart__msg.html#a16c4cb4e1cc28510ad47ccd4babf7cbd">uart_id</a> = 3;
 <a name="l00106"></a>00106 
 <a name="l00107"></a>00107 <span class="preprocessor">#ifdef SPISTREAM_DEBUG</span>
 <a name="l00108"></a>00108 <span class="preprocessor"></span>  uart_debug_transfer_init();
@@ -340,21 +340,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00257"></a>00257   <span class="comment">// Fill stage: Read data from UARTs into buffers, or increment</span>
 <a name="l00258"></a>00258   <span class="comment">// their timeouts if no data is available:</span>
 <a name="l00259"></a>00259   <span class="keywordflow">if</span>(!uart1_sent &amp;&amp; uart1_has_data) {
-<a name="l00260"></a>00260     <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">spistream_uart1_msg</a>.uart_data[uart1_num_rx_bytes] = Uart1Getch();
+<a name="l00260"></a>00260     <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#ac6a2f36af17d6fceebc3f2978f6a6cc6">spistream_uart1_msg</a>.<a class="code" href="structspistream__uart__msg.html#ad05673ad90f9d216d496c059dd92b420">uart_data</a>[uart1_num_rx_bytes] = Uart1Getch();
 <a name="l00261"></a>00261     timeout_uart1 = 0;
 <a name="l00262"></a>00262     <span class="keywordflow">if</span>(uart1_num_rx_bytes &lt; <a class="code" href="lisa__spistream_8h.html#adb0b7633b87e00c3b8be14f0d4829c6f">SPISTREAM_MAX_MESSAGE_LENGTH</a>)
 <a name="l00263"></a>00263       { uart1_num_rx_bytes++; }
 <a name="l00264"></a>00264   } <span class="keywordflow">else</span> { <span class="keywordflow">if</span>(timeout_uart1 &lt; timeout_trig) { timeout_uart1++; } }
 <a name="l00265"></a>00265 
 <a name="l00266"></a>00266   <span class="keywordflow">if</span>(!uart2_sent &amp;&amp; uart2_has_data) {
-<a name="l00267"></a>00267     <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">spistream_uart2_msg</a>.uart_data[uart2_num_rx_bytes] = Uart2Getch();
+<a name="l00267"></a>00267     <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a97d706ed674d599570dfc8f96458ed16">spistream_uart2_msg</a>.<a class="code" href="structspistream__uart__msg.html#ad05673ad90f9d216d496c059dd92b420">uart_data</a>[uart2_num_rx_bytes] = Uart2Getch();
 <a name="l00268"></a>00268     timeout_uart2 = 0;
 <a name="l00269"></a>00269     <span class="keywordflow">if</span>(uart2_num_rx_bytes &lt; <a class="code" href="lisa__spistream_8h.html#adb0b7633b87e00c3b8be14f0d4829c6f">SPISTREAM_MAX_MESSAGE_LENGTH</a>)
 <a name="l00270"></a>00270       { uart2_num_rx_bytes++; }
 <a name="l00271"></a>00271   } <span class="keywordflow">else</span> { <span class="keywordflow">if</span>(timeout_uart2 &lt; timeout_trig) { timeout_uart2++; } }
 <a name="l00272"></a>00272 
 <a name="l00273"></a>00273   <span class="keywordflow">if</span>(!uart3_sent &amp;&amp; uart3_has_data) {
-<a name="l00274"></a>00274     <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">spistream_uart3_msg</a>.uart_data[uart3_num_rx_bytes] = Uart3Getch();
+<a name="l00274"></a>00274     <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a413284b0e69416ef66f5cdd1c98b18da">spistream_uart3_msg</a>.<a class="code" href="structspistream__uart__msg.html#ad05673ad90f9d216d496c059dd92b420">uart_data</a>[uart3_num_rx_bytes] = Uart3Getch();
 <a name="l00275"></a>00275     timeout_uart3 = 0;
 <a name="l00276"></a>00276     <span class="keywordflow">if</span>(uart3_num_rx_bytes &lt; <a class="code" href="lisa__spistream_8h.html#adb0b7633b87e00c3b8be14f0d4829c6f">SPISTREAM_MAX_MESSAGE_LENGTH</a>)
 <a name="l00277"></a>00277       { uart3_num_rx_bytes++; }
@@ -451,7 +451,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lisa__stm__gps__passthrough__main_8c.html">lisa_stm_gps_passthrough_main.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:40 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:04 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -436,7 +436,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00340"></a>00340   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="i2c__attempt3__subtra_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>(<a class="code" href="i2c__attempt3__subtra_8c.html#a6023b9cf5053ba63e6acdbf3bbb2ee70">I2C_SR1_BIT_ADDR</a>, SR1) )
 <a name="l00341"></a>00341   {
 <a name="l00342"></a>00342     <span class="comment">// Now read SR2 to clear the ADDR</span>
-<a name="l00343"></a>00343     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2  <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = regs-&gt;SR2;
+<a name="l00343"></a>00343     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2  __attribute__ ((unused)) = regs-&gt;SR2;
 <a name="l00344"></a>00344 
 <a name="l00345"></a>00345     <span class="comment">// Maybe check we are transmitting (did not loose arbitration for instance)</span>
 <a name="l00346"></a>00346     <span class="comment">// if (! BIT_X_IS_SET_IN_REG(I2C_SR2_BIT_TRA, SR2)) { }</span>
@@ -509,7 +509,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00413"></a>00413     <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012">__disable_irq</a>();
 <a name="l00414"></a>00414 
 <a name="l00415"></a>00415     <span class="comment">// Only after setting ACK, read SR2 to clear the ADDR (next byte will start arriving)</span>
-<a name="l00416"></a>00416     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = regs-&gt;SR2;
+<a name="l00416"></a>00416     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 __attribute__ ((unused)) = regs-&gt;SR2;
 <a name="l00417"></a>00417 
 <a name="l00418"></a>00418     <span class="comment">// Schedule a Stop</span>
 <a name="l00419"></a>00419     <a class="code" href="i2c__attempt3__subtra_8c.html#a3178b2b9fc00e5194796dd7f05a11d8e">PPRZ_I2C_SEND_STOP</a>(regs);
@@ -551,7 +551,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00455"></a>00455   {
 <a name="l00456"></a>00456     <span class="comment">// BEFORE clearing ACK, read SR2 to clear the ADDR (next byte will start arriving)</span>
 <a name="l00457"></a>00457     <span class="comment">// clearing ACK after the byte transfer has already started will NACK the next (2nd)</span>
-<a name="l00458"></a>00458     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = regs-&gt;SR2;
+<a name="l00458"></a>00458     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 __attribute__ ((unused)) = regs-&gt;SR2;
 <a name="l00459"></a>00459 
 <a name="l00460"></a>00460     <span class="comment">// --- make absolutely sure this command is not delayed too much after the previous:</span>
 <a name="l00461"></a>00461     <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012">__disable_irq</a>();
@@ -612,7 +612,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00516"></a>00516 
 <a name="l00517"></a>00517     <span class="comment">// ACK is still on to get more DATA</span>
 <a name="l00518"></a>00518     <span class="comment">// Read SR2 to clear the ADDR (next byte will start arriving)</span>
-<a name="l00519"></a>00519     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = regs-&gt;SR2;
+<a name="l00519"></a>00519     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 __attribute__ ((unused)) = regs-&gt;SR2;
 <a name="l00520"></a>00520   }
 <a name="l00521"></a>00521   <span class="comment">// one or more bytes are available AND we were interested in Buffer interrupts</span>
 <a name="l00522"></a>00522   <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (<a class="code" href="i2c__attempt3__subtra_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>(<a class="code" href="i2c__attempt3__subtra_8c.html#a96f32e71a5ebdd22d0c3a3fe776557db">I2C_SR1_BIT_RXNE</a>, SR1) ) &amp;&amp; (<a class="code" href="i2c__attempt3__subtra_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>(<a class="code" href="i2c__attempt3__subtra_8c.html#ab3764d32d3e5544aeed1deb027197505">I2C_CR2_BIT_ITBUFEN</a>, regs-&gt;CR2))  )
@@ -715,13 +715,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00619"></a>00619   <span class="keywordflow">if</span> (<a class="code" href="i2c__attempt3__subtra_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>(<a class="code" href="i2c__attempt3__subtra_8c.html#a6023b9cf5053ba63e6acdbf3bbb2ee70">I2C_SR1_BIT_ADDR</a>, SR1) )
 <a name="l00620"></a>00620   {
 <a name="l00621"></a>00621     <span class="comment">// ADDR: Cleared by software when reading SR1 and then SR2</span>
-<a name="l00622"></a>00622     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = regs-&gt;SR2;
+<a name="l00622"></a>00622     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 __attribute__ ((unused)) = regs-&gt;SR2;
 <a name="l00623"></a>00623   }
 <a name="l00624"></a>00624   <span class="comment">// Byte Transfer Finished</span>
 <a name="l00625"></a>00625   <span class="keywordflow">if</span> (<a class="code" href="i2c__attempt3__subtra_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>(<a class="code" href="i2c__attempt3__subtra_8c.html#a7c07b96456b3a30522e236a9acaac684">I2C_SR1_BIT_BTF</a>, SR1) )
 <a name="l00626"></a>00626   {
 <a name="l00627"></a>00627     <span class="comment">// SB: cleared by software when reading SR1 and reading/writing to DR</span>
-<a name="l00628"></a>00628     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> dummy <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = regs-&gt;DR;
+<a name="l00628"></a>00628     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> dummy __attribute__ ((unused)) = regs-&gt;DR;
 <a name="l00629"></a>00629     regs-&gt;DR = 0x00;
 <a name="l00630"></a>00630   }
 <a name="l00631"></a>00631 }
@@ -1392,7 +1392,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="i2c__attempt3__subtra_8c.html">i2c_attempt3_subtra.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:38 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:02 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

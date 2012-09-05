@@ -71,7 +71,7 @@ var searchData=
   ['cfg',['cfg',['../structscbRegs__t.html#a0e45c1e297fb530d79e599bff035f514',1,'scbRegs_t']]],
   ['cflowerstatus',['CFlowerStatus',['../OSAMNav_8c.html#a2775e7004e7029fd9494780202041322',1,'OSAMNav.c']]],
   ['cflstatus',['CFLStatus',['../OSAMNav_8c.html#a2738d03f950f70b5eb685df5f3b4f193',1,'OSAMNav.c']]],
-  ['channel',['channel',['../stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3',1,'imu_crista_arch.c']]],
+  ['channel',['channel',['../ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd',1,'channel():&#160;ADS8344.c'],['../lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a715f5cb061d11eb75981741eda4dafcd',1,'channel():&#160;imu_crista_arch.c'],['../stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3',1,'channel():&#160;imu_crista_arch.c']]],
   ['channelcnt',['ChannelCnt',['../structSpektrumStateStruct.html#a01b6d84d55b3141f935b2ab3af595488',1,'SpektrumStateStruct']]],
   ['charge',['charge',['../charge__sens_8c.html#ad18aeb45aca01f11abe1928c6b0d8e9d',1,'charge_sens.c']]],
   ['charge_5fcnt',['charge_cnt',['../charge__sens_8c.html#ac8790fb88d5fb6b453ee3859d2eef1f5',1,'charge_sens.c']]],

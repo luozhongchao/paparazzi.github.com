@@ -17,10 +17,12 @@ var ADS8344_8c =
     [ "SSP_SCR", "ADS8344_8c.html#a1b5cffadb3d478245059c81d80ba625b", null ],
     [ "SSP_SOD", "ADS8344_8c.html#a8484136e7496673fca205e0ef7730109", null ],
     [ "SSP_SSE", "ADS8344_8c.html#a1fd263e8ea485cec0213da67c1ac128e", null ],
+    [ "ADS8344_init", "ADS8344_8c.html#aa25a279dd8571513ab369b489a858484", null ],
     [ "ADS8344_start", "ADS8344_8c.html#a998b4ce1e557d7dd9256f33a85c1ec37", null ],
     [ "read_values", "ADS8344_8c.html#a7ff7b13f1a2040251b13dd82461dfdac", null ],
     [ "send_request", "ADS8344_8c.html#a3f17d7c8cdacbbfc2ee4cb8609fdb83a", null ],
     [ "SPI1_ISR", "ADS8344_8c.html#a65d6ea131026affbdf33be235dfdb49d", null ],
     [ "ADS8344_available", "ADS8344_8c.html#a29bd3fd20091d2d9592d551dfca9ec94", null ],
-    [ "ADS8344_values", "ADS8344_8c.html#a7c6b29728c370927c9a96191b45b1d34", null ]
+    [ "ADS8344_values", "ADS8344_8c.html#a7c6b29728c370927c9a96191b45b1d34", null ],
+    [ "channel", "ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd", null ]
 ];

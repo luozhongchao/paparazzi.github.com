@@ -18,6 +18,7 @@ var spi__slave__hs__arch_8c =
     [ "SSP_Write", "spi__slave__hs__arch_8c.html#a206429e08a51991589e6569038df3002", null ],
     [ "SSPCR0_VAL", "spi__slave__hs__arch_8c.html#a43d8625d29e0613b41fdbaa1e2f55c08", null ],
     [ "SSPCR1_VAL", "spi__slave__hs__arch_8c.html#a2bc5caa2d6084d3a291f4451997d2c58", null ],
+    [ "spi_init", "spi__slave__hs__arch_8c.html#ae909944aa85ae98323073c628be541aa", null ],
     [ "SSP_ISR", "spi__slave__hs__arch_8c.html#aa105625a4ec7ecf95c0802c3edfade05", null ],
     [ "spi_slave_hs_rx_buffer", "spi__slave__hs__arch_8c.html#a037a5e7e1028d558b8a450c25ebed7ea", null ],
     [ "spi_slave_hs_rx_extract_idx", "spi__slave__hs__arch_8c.html#ac1724ed4a834423f441125b47df39e78", null ],

@@ -18,7 +18,9 @@ var lpc21_2subsystems_2imu_2imu__crista__arch_8c =
     [ "SSP_SOD", "lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a8484136e7496673fca205e0ef7730109", null ],
     [ "SSP_SSE", "lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a1fd263e8ea485cec0213da67c1ac128e", null ],
     [ "ADS8344_start", "lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a998b4ce1e557d7dd9256f33a85c1ec37", null ],
+    [ "imu_crista_arch_init", "lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#ab553dbda318119d1367742a4e59e38ed", null ],
     [ "read_values", "lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a7ff7b13f1a2040251b13dd82461dfdac", null ],
     [ "send_request", "lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a3f17d7c8cdacbbfc2ee4cb8609fdb83a", null ],
-    [ "SPI1_ISR", "lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a65d6ea131026affbdf33be235dfdb49d", null ]
+    [ "SPI1_ISR", "lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a65d6ea131026affbdf33be235dfdb49d", null ],
+    [ "channel", "lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a715f5cb061d11eb75981741eda4dafcd", null ]
 ];

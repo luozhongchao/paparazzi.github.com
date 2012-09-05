@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00046"></a><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a232db58a94564ed9dfd068333e683b41">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define PINSEL1_SSEL (2 &lt;&lt; 8)</span>
 <a name="l00047"></a>00047 <span class="preprocessor"></span>
 <a name="l00048"></a>00048 <span class="preprocessor">#ifdef SPI_SLAVE</span>
-<a name="l00049"></a>00049 <span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="ADS8344_8c.html#a65d6ea131026affbdf33be235dfdb49d">SPI1_ISR</a>(<span class="keywordtype">void</span>) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
+<a name="l00049"></a>00049 <span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="ADS8344_8c.html#a65d6ea131026affbdf33be235dfdb49d">SPI1_ISR</a>(<span class="keywordtype">void</span>) __attribute__((naked));
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051 <span class="comment">/* set SSP input clock, PCLK / CPSDVSR = 468.75kHz */</span>
 <a name="l00052"></a>00052 
@@ -181,7 +181,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00080"></a>00080 <span class="preprocessor">#define SSP_MS   0x01 &lt;&lt; 2  </span><span class="comment">/* master slave mode    : slave    */</span>
 <a name="l00081"></a>00081 <span class="preprocessor">#define SSP_SOD  0x00 &lt;&lt; 3  </span><span class="comment">/* slave output disable : disabled */</span>
 <a name="l00082"></a>00082 
-<a name="l00083"></a>00083 <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#ae909944aa85ae98323073c628be541aa">spi_init</a>( <span class="keywordtype">void</span> ) {
+<a name="l00083"></a>00083 <span class="keywordtype">void</span> <a class="code" href="spi__slave__hs__arch_8c.html#ae909944aa85ae98323073c628be541aa">spi_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00084"></a>00084   <span class="comment">/* setup pins for SSP (SCK, MISO, MOSI, SS) */</span>
 <a name="l00085"></a>00085   <a class="code" href="LPC21xx_8h.html#a030997bacf62a695152879b6be44c84c">PINSEL1</a> |= <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3d65fe8634fad2755d523e202674a1b0">PINSEL1_SCK</a> | <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a9ded33dee825d86d167cd72f2225c020">PINSEL1_MISO</a> | <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a83fe52dea5a9e78230b1b751d64d81d2">PINSEL1_MOSI</a> | <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a232db58a94564ed9dfd068333e683b41">PINSEL1_SSEL</a>;
 <a name="l00086"></a>00086 
@@ -236,7 +236,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00135"></a>00135 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>  <span class="comment">/* FIXME remove that */</span>
 <a name="l00136"></a>00136 
 <a name="l00137"></a>00137 <span class="comment">/* interrupt handler */</span>
-<a name="l00138"></a>00138 <span class="keywordtype">void</span> <a class="code" href="ADS8344_8c.html#a65d6ea131026affbdf33be235dfdb49d">SPI1_ISR</a>(<span class="keywordtype">void</span>) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
+<a name="l00138"></a>00138 <span class="keywordtype">void</span> <a class="code" href="ADS8344_8c.html#a65d6ea131026affbdf33be235dfdb49d">SPI1_ISR</a>(<span class="keywordtype">void</span>) __attribute__((naked));
 <a name="l00139"></a>00139 
 <a name="l00140"></a>00140 <span class="comment">/* SSPCR0 settings */</span>
 <a name="l00141"></a>00141 <span class="preprocessor">#define SSP_DSS  0x07 &lt;&lt; 0  </span><span class="comment">/* data size         : 8 bits        */</span>
@@ -255,7 +255,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00154"></a>00154 <span class="preprocessor"></span><span class="preprocessor">#define SSPCPSR_VAL 0x20</span>
 <a name="l00155"></a>00155 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00156"></a>00156 <span class="preprocessor"></span>
-<a name="l00157"></a>00157 <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#ae909944aa85ae98323073c628be541aa">spi_init</a>( <span class="keywordtype">void</span> ) {
+<a name="l00157"></a>00157 <span class="keywordtype">void</span> <a class="code" href="spi__slave__hs__arch_8c.html#ae909944aa85ae98323073c628be541aa">spi_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00158"></a>00158   <span class="comment">/* setup pins for SSP (SCK, MISO, MOSI) */</span>
 <a name="l00159"></a>00159   <a class="code" href="LPC21xx_8h.html#a030997bacf62a695152879b6be44c84c">PINSEL1</a> |= <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3d65fe8634fad2755d523e202674a1b0">PINSEL1_SCK</a> | <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a9ded33dee825d86d167cd72f2225c020">PINSEL1_MISO</a> | <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a83fe52dea5a9e78230b1b751d64d81d2">PINSEL1_MOSI</a>;
 <a name="l00160"></a>00160 
@@ -329,7 +329,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html">spi_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:36 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:00 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

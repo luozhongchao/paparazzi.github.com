@@ -6,6 +6,6 @@ var servos__4015__hw_8h =
     [ "ChopServo", "servos__4015__hw_8h.html#a4b3ddbb108e57195911bc60ea22ff123", null ],
     [ "PWM_TICS_OF_USEC", "servos__4015__hw_8h.html#a70db79614b8d64133d2810db9d9f59ef", null ],
     [ "SERVOS_TICS_OF_USEC", "servos__4015__hw_8h.html#a3f3dc2facc39f9d40f3fae4b4c9f3d93", null ],
-    [ "PWM_ISR", "servos__4015__hw_8h.html#a55b66e1d52c0366041d93d46fd05b6d6", null ],
+    [ "PWM_ISR", "servos__4015__hw_8h.html#acc0989397cc1f16c3baa379ad4395382", null ],
     [ "servos_values", "servos__4015__hw_8h.html#a0aa50148c78707ea0b28584413671fcb", null ]
 ];

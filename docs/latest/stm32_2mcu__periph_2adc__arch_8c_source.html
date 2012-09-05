@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -293,7 +293,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00202"></a>00202 <span class="comment">  TODO: Extend interface to allow adressing a</span>
 <a name="l00203"></a>00203 <span class="comment">  specific ADC (at least ADC1 and ADC2)?</span>
 <a name="l00204"></a>00204 <span class="comment">*/</span>
-<a name="l00205"></a><a class="code" href="adc_8h.html#a289883844d6749adab1cee5aabe41824">00205</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__ir_8c.html#ac5a7fbef0f6132062825f4c8dca0e464" title="Required by infrared.c:ir_init()">adc_buf_channel</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> adc_channel,
+<a name="l00205"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824">00205</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> adc_channel,
 <a name="l00206"></a>00206              <span class="keyword">struct</span> <a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * s,
 <a name="l00207"></a>00207              <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>)
 <a name="l00208"></a>00208 {
@@ -515,7 +515,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00424"></a>00424 <span class="comment">       buffers registered at the time the ADC trigger</span>
 <a name="l00425"></a>00425 <span class="comment">       interrupt is enabled.</span>
 <a name="l00426"></a>00426 <span class="comment">    */</span>
-<a name="l00427"></a>00427     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a>;
+<a name="l00427"></a>00427     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>;
 <a name="l00428"></a>00428 <span class="preprocessor">#ifdef USE_AD1</span>
 <a name="l00429"></a>00429 <span class="preprocessor"></span>    <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>; channel++)
 <a name="l00430"></a>00430         adc1_buffers[channel] = NULL;
@@ -611,7 +611,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00520"></a>00520 
 <a name="l00524"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a24a193e153476793ea3f9089893cf6f4">00524</a> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a24a193e153476793ea3f9089893cf6f4" title="This is the driver for the analog to digital converters on STM32.">adc1_2_isr</a>(<span class="keywordtype">void</span>)
 <a name="l00525"></a>00525 {
-<a name="l00526"></a>00526     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a> = 0;
+<a name="l00526"></a>00526     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a> = 0;
 <a name="l00527"></a>00527     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> value  = 0;
 <a name="l00528"></a>00528     <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * buf;
 <a name="l00529"></a>00529 
@@ -619,9 +619,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00531"></a>00531 <span class="preprocessor"></span>    <span class="comment">// Clear Injected End Of Conversion</span>
 <a name="l00532"></a>00532     ADC_SR(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>) &amp;= ~ADC_SR_JEOC;
 <a name="l00533"></a>00533     <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>; channel++) {
-<a name="l00534"></a>00534         buf = adc1_buffers[<a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a>];
+<a name="l00534"></a>00534         buf = adc1_buffers[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
 <a name="l00535"></a>00535         <span class="keywordflow">if</span>(buf) {
-<a name="l00536"></a>00536             value = *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[<a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a>];
+<a name="l00536"></a>00536             value = *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
 <a name="l00537"></a>00537             <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(buf, value);
 <a name="l00538"></a>00538         }
 <a name="l00539"></a>00539     }
@@ -631,9 +631,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00543"></a>00543 <span class="preprocessor"></span>    <span class="comment">// Clear Injected End Of Conversion</span>
 <a name="l00544"></a>00544     ADC_SR(ADC2) &amp;= ~ADC_SR_JEOC;
 <a name="l00545"></a>00545     <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4">NB_ADC2_CHANNELS</a>; channel++) {
-<a name="l00546"></a>00546         buf = adc2_buffers[<a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a>];
+<a name="l00546"></a>00546         buf = adc2_buffers[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
 <a name="l00547"></a>00547         <span class="keywordflow">if</span>(buf) {
-<a name="l00548"></a>00548             value = *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[<a class="code" href="stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a4b613adf1dc9edfbc9951cf9b86ec2e3">channel</a>];
+<a name="l00548"></a>00548             value = *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
 <a name="l00549"></a>00549             <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(buf, value);
 <a name="l00550"></a>00550         }
 <a name="l00551"></a>00551     }
@@ -660,7 +660,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html">adc_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:36 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:00 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -1,7 +1,7 @@
 var sim__ap_8c =
 [
     [ "MODULES_C", "sim__ap_8c.html#ac3c586d9cc5d614d34061b3844a1e45b", null ],
-    [ "adc_buf_channel", "sim__ap_8c.html#a8a28e6ace8b7d50fbfb2bb826e569459", null ],
+    [ "adc_buf_channel", "sim__ap_8c.html#a89f4f8d26f26d00385ef45a5bc445fb9", null ],
     [ "ftimeofday", "sim__ap_8c.html#a9037ef79ac8d270ab46865ea3c7e66d6", null ],
     [ "get_commands", "sim__ap_8c.html#ac4193ac502da248636d99cfcc43626cf", null ],
     [ "set_datalink_message", "sim__ap_8c.html#ad664061534694a2babfff03cfc5977f7", null ],

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -130,26 +130,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 <span class="preprocessor"></span>
 <a name="l00026"></a>00026 
 <a name="l00027"></a><a class="code" href="setup__actuators_8c.html#a87ff8c0ffff657dbde8566f062779428">00027</a> <span class="keywordtype">void</span> <a class="code" href="fixedwing_2datalink_8c.html#a87ff8c0ffff657dbde8566f062779428">dl_parse_msg</a>( <span class="keywordtype">void</span> ) {
-<a name="l00028"></a>00028   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_id = <a class="code" href="setup__actuators_8c.html#af9bfeb49b8ea12c64a72e4a4fb5a6002">IdOfMsg</a>(dl_buffer);
+<a name="l00028"></a>00028   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_id = <a class="code" href="setup__actuators_8c.html#af9bfeb49b8ea12c64a72e4a4fb5a6002">IdOfMsg</a>(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);
 <a name="l00029"></a>00029   <span class="keywordflow">if</span> (msg_id == DL_SET_ACTUATOR) {
-<a name="l00030"></a>00030     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> servo_no = DL_SET_ACTUATOR_no(dl_buffer);
-<a name="l00031"></a>00031     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> servo_value = DL_SET_ACTUATOR_value(dl_buffer);
+<a name="l00030"></a>00030     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> servo_no = DL_SET_ACTUATOR_no(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);
+<a name="l00031"></a>00031     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> servo_value = DL_SET_ACTUATOR_value(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);
 <a name="l00032"></a>00032     <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(2);
 <a name="l00033"></a>00033     <span class="keywordflow">if</span> (servo_no &lt; SERVOS_NB)
 <a name="l00034"></a>00034       <a class="code" href="fixedwing_2actuators_8h.html#aa87ec69677d61e35a15e7c2efa975e99">SetServo</a>(servo_no, servo_value);
 <a name="l00035"></a>00035   }
 <a name="l00036"></a>00036 <span class="preprocessor">#ifdef DlSetting</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg_id == DL_SETTING &amp;&amp; DL_SETTING_ac_id(dl_buffer) == AC_ID) {
-<a name="l00038"></a>00038     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i = DL_SETTING_index(dl_buffer);
-<a name="l00039"></a>00039     <span class="keywordtype">float</span> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a> = DL_SETTING_value(dl_buffer);
+<a name="l00037"></a>00037 <span class="preprocessor"></span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg_id == DL_SETTING &amp;&amp; DL_SETTING_ac_id(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>) == AC_ID) {
+<a name="l00038"></a>00038     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i = DL_SETTING_index(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);
+<a name="l00039"></a>00039     <span class="keywordtype">float</span> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a> = DL_SETTING_value(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);
 <a name="l00040"></a>00040     DlSetting(i, val);
 <a name="l00041"></a>00041     <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(2);
 <a name="l00042"></a>00042     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0 ; j&lt;8 ; j++) {
 <a name="l00043"></a>00043       <a class="code" href="fixedwing_2actuators_8h.html#aa87ec69677d61e35a15e7c2efa975e99">SetServo</a>(j,<a class="code" href="actuators_8c.html#a4e4162c7fd72dc5a63aa8045afdd916e">actuators</a>[j]);
 <a name="l00044"></a>00044     }
 <a name="l00045"></a>00045     DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;i, &amp;val);
-<a name="l00046"></a>00046   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg_id == DL_GET_SETTING &amp;&amp; DL_GET_SETTING_ac_id(dl_buffer) == AC_ID) {
-<a name="l00047"></a>00047     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i = DL_GET_SETTING_index(dl_buffer);
+<a name="l00046"></a>00046   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg_id == DL_GET_SETTING &amp;&amp; DL_GET_SETTING_ac_id(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>) == AC_ID) {
+<a name="l00047"></a>00047     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i = DL_GET_SETTING_index(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);
 <a name="l00048"></a>00048     <span class="keywordtype">float</span> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a> = settings_get_value(i);
 <a name="l00049"></a>00049     DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;i, &amp;val);
 <a name="l00050"></a>00050   }
@@ -214,7 +214,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="setup__actuators_8c.html">setup_actuators.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:40 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:04 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

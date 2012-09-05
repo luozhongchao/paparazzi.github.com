@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -113,11 +113,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 
 <a name="l00009"></a><a class="code" href="jsbsim__transport_8c.html#a2743dcc4e9c41b9e1d64aab1b991b6fc">00009</a> <span class="preprocessor">#define MOfCm(_x) (((float)(_x))/100.)</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
-<a name="l00011"></a><a class="code" href="jsbsim__transport_8c.html#a4f18edf93208907ef66831f11a713302">00011</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a6ce28b583b28b4363ea1ec42e20a57b9">parse_dl_ping</a>(<span class="keywordtype">char</span>* argv[] <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused))) {
+<a name="l00011"></a><a class="code" href="jsbsim__transport_8c.html#a6ce28b583b28b4363ea1ec42e20a57b9">00011</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a6ce28b583b28b4363ea1ec42e20a57b9">parse_dl_ping</a>(<span class="keywordtype">char</span>* argv[] __attribute__ ((unused))) {
 <a name="l00012"></a>00012   DOWNLINK_SEND_PONG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>);
 <a name="l00013"></a>00013 }
 <a name="l00014"></a>00014 
-<a name="l00015"></a><a class="code" href="jsbsim__transport_8c.html#a2344cdf3c0fc153a5d11c8bd43568988">00015</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a82f8f9ad9ee6fb05a43e6769487a8703">parse_dl_acinfo</a>(<span class="keywordtype">char</span>* argv[] <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused))) {
+<a name="l00015"></a><a class="code" href="jsbsim__transport_8c.html#a82f8f9ad9ee6fb05a43e6769487a8703">00015</a> <span class="keywordtype">void</span> <a class="code" href="jsbsim__hw_8h.html#a82f8f9ad9ee6fb05a43e6769487a8703">parse_dl_acinfo</a>(<span class="keywordtype">char</span>* argv[] __attribute__ ((unused))) {
 <a name="l00016"></a>00016 <span class="preprocessor">#ifdef TRAFFIC_INFO</span>
 <a name="l00017"></a>00017 <span class="preprocessor"></span>  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <span class="keywordtype">id</span> = atoi(argv[8]);
 <a name="l00018"></a>00018   <span class="keywordtype">float</span> ux = <a class="code" href="jsbsim__transport_8c.html#a2743dcc4e9c41b9e1d64aab1b991b6fc">MOfCm</a>(atoi(argv[2]));
@@ -155,8 +155,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051   <span class="comment">/* Computes from (lat, long) in the referenced UTM zone */</span>
 <a name="l00052"></a>00052   <span class="keyword">struct </span><a class="code" href="structLlaCoor__f.html" title="vector in Latitude, Longitude and Altitude">LlaCoor_f</a> lla;
-<a name="l00053"></a>00053   lla.<a class="code" href="structLlaCoor__f.html#ace542562586741aeb022a5a57c30dea5" title="in radians">lat</a> = RadOfDeg((<span class="keywordtype">float</span>)(DL_MOVE_WP_lat(dl_buffer) / 1e7));
-<a name="l00054"></a>00054   lla.<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a> = RadOfDeg((<span class="keywordtype">float</span>)(DL_MOVE_WP_lon(dl_buffer) / 1e7));
+<a name="l00053"></a>00053   lla.<a class="code" href="structLlaCoor__f.html#ace542562586741aeb022a5a57c30dea5" title="in radians">lat</a> = RadOfDeg((<span class="keywordtype">float</span>)(DL_MOVE_WP_lat(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>) / 1e7));
+<a name="l00054"></a>00054   lla.<a class="code" href="structLlaCoor__f.html#a92e1d4633b74c620a7e8bf49e851330e" title="in radians">lon</a> = RadOfDeg((<span class="keywordtype">float</span>)(DL_MOVE_WP_lon(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>) / 1e7));
 <a name="l00055"></a>00055   <span class="keyword">struct </span><a class="code" href="structUtmCoor__f.html" title="position in UTM coordinates Units: meters">UtmCoor_f</a> utm;
 <a name="l00056"></a>00056   utm.<a class="code" href="structUtmCoor__f.html#a86adc8b9ebb389f4716c6c569a0b5d91" title="UTM zone number.">zone</a> = <a class="code" href="common__nav_8c.html#a66bdefcf7a79ffd01863bc4057e2bf5a">nav_utm_zone0</a>;
 <a name="l00057"></a>00057   <a class="code" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd">utm_of_lla_f</a>(&amp;utm, &amp;lla);
@@ -189,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="jsbsim__transport_8c.html">jsbsim_transport.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:37 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:01 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

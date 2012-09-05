@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,9 +128,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="max1168_8h.html">peripherals/max1168.h</a>&quot;</span>
 <a name="l00025"></a>00025 
-<a name="l00026"></a><a class="code" href="lpc21_2peripherals_2max1168__arch_8c.html#ab3a8b665f5a12cd2487f4e3aa86046b7">00026</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2peripherals_2max1168__arch_8c.html#ab3a8b665f5a12cd2487f4e3aa86046b7">EXTINT0_ISR</a>(<span class="keywordtype">void</span>) <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a>((naked));
+<a name="l00026"></a>00026 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2peripherals_2max1168__arch_8c.html#ab3a8b665f5a12cd2487f4e3aa86046b7">EXTINT0_ISR</a>(<span class="keywordtype">void</span>) __attribute__((naked));
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keywordtype">void</span> <a class="code" href="sim_2peripherals_2max1168__arch_8c.html#a712f39d80c2b46e08a4d0230bf74bef2">max1168_arch_init</a>( <span class="keywordtype">void</span> ) {
+<a name="l00028"></a><a class="code" href="max1168_8h.html#a712f39d80c2b46e08a4d0230bf74bef2">00028</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2peripherals_2max1168__arch_8c.html#a712f39d80c2b46e08a4d0230bf74bef2">max1168_arch_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030   <span class="comment">/* unselected max1168 */</span>
 <a name="l00031"></a>00031   <a class="code" href="lpc21_2peripherals_2max1168__arch_8h.html#aabd82136f1a3749f5808da5add7c7887">Max1168Unselect</a>();
@@ -170,12 +170,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00065"></a>00065 
 <a name="l00066"></a>00066 }
 <a name="l00067"></a>00067 
-<a name="l00068"></a>00068 <span class="keywordtype">void</span> <a class="code" href="lpc21_2peripherals_2max1168__arch_8c.html#ab3a8b665f5a12cd2487f4e3aa86046b7">EXTINT0_ISR</a>(<span class="keywordtype">void</span>) {
+<a name="l00068"></a><a class="code" href="lpc21_2peripherals_2max1168__arch_8c.html#ab3a8b665f5a12cd2487f4e3aa86046b7">00068</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2peripherals_2max1168__arch_8c.html#ab3a8b665f5a12cd2487f4e3aa86046b7">EXTINT0_ISR</a>(<span class="keywordtype">void</span>) {
 <a name="l00069"></a>00069   <a class="code" href="armVIC_8h.html#a4291eb8e6c7a50f7cfb8b3dcc28154ea">ISR_ENTRY</a>();
 <a name="l00070"></a>00070   <a class="code" href="usb__ser__hw_8c.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>((<a class="code" href="max1168_8c.html#a2380db06cc4ae1a7b0e167a246862ea0">max1168_status</a> == <a class="code" href="max1168_8h.html#a144c8a3c204775cf41002ee26086d6b0">STA_MAX1168_SENDING_REQ</a>), \
 <a name="l00071"></a>00071      DEBUG_MAX_1168, <a class="code" href="lpc21_2peripherals_2max1168__arch_8h.html#aef7ae080a660f8b551c94038cde46128">MAX1168_ERR_SPURIOUS_EOC</a>);
 <a name="l00072"></a>00072   <span class="comment">/* read dummy control byte reply */</span>
-<a name="l00073"></a>00073   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused));
+<a name="l00073"></a>00073   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> __attribute__ ((unused));
 <a name="l00074"></a>00074   <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = <a class="code" href="LPC21xx_8h.html#a918b22d1e41ed7c1cf61a0dacd368c6c">SSPDR</a>;
 <a name="l00075"></a>00075   <span class="comment">/* trigger 8 frames read */</span>
 <a name="l00076"></a>00076   <a class="code" href="ssp__hw_8h.html#ad0223fcd891044f2c66a0df2d803b818">SSP_Send</a>(0);
@@ -215,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lpc21_2peripherals_2max1168__arch_8c.html">max1168_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:36 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:01 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

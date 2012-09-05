@@ -1,6 +1,5 @@
 var structGpsUbx =
 [
-    [ "__attribute__", "structGpsUbx.html#af3b8ede148b8c7e627ba306bdd0b68f9", null ],
     [ "ck_a", "structGpsUbx.html#af60e30d905e5ec46775a57eeb2025df9", null ],
     [ "ck_b", "structGpsUbx.html#a1be0000a5b6ffa38d85f75f7dd78433e", null ],
     [ "error_cnt", "structGpsUbx.html#ac25b1e02b2516fc07cdf47a8acab7d89", null ],
@@ -8,6 +7,7 @@ var structGpsUbx =
     [ "have_velned", "structGpsUbx.html#aef27cd7016751d0cdd3dd2c945f57a8b", null ],
     [ "len", "structGpsUbx.html#a06e462850fe08f5c24755cc9ca51c374", null ],
     [ "msg_available", "structGpsUbx.html#a7be8da098d5686651fd8a0e42a0a45b9", null ],
+    [ "msg_buf", "structGpsUbx.html#abcf68cd0264e306ef6fa16123286bb8f", null ],
     [ "msg_class", "structGpsUbx.html#a8fa3fb28ad54bc1abc8c4b843450659c", null ],
     [ "msg_id", "structGpsUbx.html#ad15e6c63399f49d452488bdccc36c43a", null ],
     [ "msg_idx", "structGpsUbx.html#aeb13797cdc4c59bcbe6208d2aa8b53f9", null ],

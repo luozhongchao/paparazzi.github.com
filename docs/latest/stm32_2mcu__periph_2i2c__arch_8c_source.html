@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-175-gfb303b9</span>
+   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -481,7 +481,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00385"></a>00385   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>(I2C_SR1_ADDR, SR1) )
 <a name="l00386"></a>00386   {
 <a name="l00387"></a>00387     <span class="comment">// Now read SR2 to clear the ADDR status Bit</span>
-<a name="l00388"></a>00388     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2  <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = I2C_SR2(i2c);
+<a name="l00388"></a>00388     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2  __attribute__ ((unused)) = I2C_SR2(i2c);
 <a name="l00389"></a>00389 
 <a name="l00390"></a>00390     <span class="comment">// Maybe check we are transmitting (did not loose arbitration for instance)</span>
 <a name="l00391"></a>00391     <span class="comment">// if (! BIT_X_IS_SET_IN_REG(I2C_SR2_TRA, SR2)) { }</span>
@@ -568,7 +568,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00472"></a>00472     <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#acd2a78f0920821b186bfc72bcc979592">__I2C_REG_CRITICAL_ZONE_START</a>;
 <a name="l00473"></a>00473 
 <a name="l00474"></a>00474     <span class="comment">// Only after setting ACK, read SR2 to clear the ADDR (next byte will start arriving)</span>
-<a name="l00475"></a>00475     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = I2C_SR2(i2c);
+<a name="l00475"></a>00475     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 __attribute__ ((unused)) = I2C_SR2(i2c);
 <a name="l00476"></a>00476 
 <a name="l00477"></a>00477     <span class="comment">// Schedule a Stop</span>
 <a name="l00478"></a>00478     <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a712c46d514c7e1f735463ee4a402bd5a">PPRZ_I2C_SEND_STOP</a>(i2c);
@@ -633,7 +633,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00537"></a>00537     <span class="comment">//       if transfer of DR was finished already then we will get too many bytes</span>
 <a name="l00538"></a>00538     <span class="comment">// BEFORE clearing ACK, read SR2 to clear the ADDR (next byte will start arriving)</span>
 <a name="l00539"></a>00539     <span class="comment">// clearing ACK after the byte transfer has already started will NACK the next (2nd)</span>
-<a name="l00540"></a>00540     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = I2C_SR2(i2c);
+<a name="l00540"></a>00540     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 __attribute__ ((unused)) = I2C_SR2(i2c);
 <a name="l00541"></a>00541 
 <a name="l00542"></a>00542     <span class="comment">// NOT First Clear the ACK bit but only AFTER clearing ADDR</span>
 <a name="l00543"></a>00543     I2C_CR1(i2c) &amp;= ~ I2C_CR1_ACK;
@@ -708,7 +708,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00612"></a>00612 
 <a name="l00613"></a>00613     <span class="comment">// ACK is still on to get more DATA</span>
 <a name="l00614"></a>00614     <span class="comment">// Read SR2 to clear the ADDR (next byte will start arriving)</span>
-<a name="l00615"></a>00615     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = I2C_SR2(i2c);
+<a name="l00615"></a>00615     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 __attribute__ ((unused)) = I2C_SR2(i2c);
 <a name="l00616"></a>00616 
 <a name="l00617"></a>00617     <span class="comment">// Document the current Status</span>
 <a name="l00618"></a>00618     periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> = <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785becac904115143956dd682fcfecccab3596e">I2CReadingByte</a>;
@@ -883,13 +883,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00788"></a>00788   <span class="keywordflow">if</span> (<a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>(I2C_SR1_ADDR, SR1) )
 <a name="l00789"></a>00789   {
 <a name="l00790"></a>00790     <span class="comment">// ADDR: Cleared by software when reading SR1 and then SR2</span>
-<a name="l00791"></a>00791     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = I2C_SR2(i2c);
+<a name="l00791"></a>00791     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> SR2 __attribute__ ((unused)) = I2C_SR2(i2c);
 <a name="l00792"></a>00792   }
 <a name="l00793"></a>00793   <span class="comment">// Byte Transfer Finished</span>
 <a name="l00794"></a>00794   <span class="keywordflow">if</span> (<a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>(I2C_SR1_BTF, SR1) )
 <a name="l00795"></a>00795   {
 <a name="l00796"></a>00796     <span class="comment">// SB: cleared by software when reading SR1 and reading/writing to DR</span>
-<a name="l00797"></a>00797     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> dummy <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#aea7ccb1f68c35c1ace876675a6c406d7">__attribute__</a> ((unused)) = I2C_DR(i2c);
+<a name="l00797"></a>00797     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> dummy __attribute__ ((unused)) = I2C_DR(i2c);
 <a name="l00798"></a>00798     I2C_DR(i2c) = 0x00;
 <a name="l00799"></a>00799   }
 <a name="l00800"></a>00800 
@@ -1599,7 +1599,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2i2c__arch_8c.html">i2c_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 15:46:36 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 16:28:00 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -22,12 +22,10 @@ var guidance__v__ref_8h =
     [ "GV_ZDD_REF_FRAC", "guidance__v__ref_8h.html#a56ce61e48bdd6a1384b5d330e79d38d6", null ],
     [ "GV_ZETA_OMEGA", "guidance__v__ref_8h.html#a04a4ea4ccba6d527a9323ddf4273ffb2", null ],
     [ "GV_ZETA_OMEGA_FRAC", "guidance__v__ref_8h.html#ade30d0d306bc65506c54c5f9d41a8952", null ],
-    [ "__attribute__", "guidance__v__ref_8h.html#aa7a61d71a0b3ff4343a940326c259840", null ],
     [ "gv_set_ref", "guidance__v__ref_8h.html#a3a0f74494b5860403484eca3b6e63de1", null ],
     [ "gv_update_ref_from_z_sp", "guidance__v__ref_8h.html#aa913f06f6ed21d9c65b587c9791ecd08", null ],
     [ "gv_update_ref_from_zd_sp", "guidance__v__ref_8h.html#ac3e33519086aecdad63f5113569fa36f", null ],
     [ "gv_z_ref", "guidance__v__ref_8h.html#a61ea35c28ade47f77f09a012aa0f4fe4", null ],
     [ "gv_zd_ref", "guidance__v__ref_8h.html#af5b4bf2932d63454e537de13ae5f58f3", null ],
-    [ "gv_zdd_ref", "guidance__v__ref_8h.html#a191284ac9220e67a39aff1ddf6c818eb", null ],
-    [ "speed", "guidance__v__ref_8h.html#a36dda2666e5436e608a494230ca9076b", null ]
+    [ "gv_zdd_ref", "guidance__v__ref_8h.html#a191284ac9220e67a39aff1ddf6c818eb", null ]
 ];

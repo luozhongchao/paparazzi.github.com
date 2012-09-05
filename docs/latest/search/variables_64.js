@@ -53,6 +53,7 @@ var searchData=
   ['distplus',['distplus',['../cartography_8c.html#af0f09c350ef3a1a440ea28cb3689c0a4',1,'cartography.c']]],
   ['distrail',['distrail',['../cartography_8c.html#a33c448c868700ca3cb8a7e7acff318f2',1,'cartography.c']]],
   ['distrailinteractif',['distrailinteractif',['../cartography_8c.html#ad41720fc7db0f6da6ddab02fc85609f9',1,'distrailinteractif():&#160;cartography.c'],['../cartography_8h.html#ad41720fc7db0f6da6ddab02fc85609f9',1,'distrailinteractif():&#160;cartography.c']]],
+  ['dl_5fbuffer',['dl_buffer',['../main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9',1,'dl_buffer():&#160;main_demo5.c'],['../sd__card_2main_8c.html#a41ca1f0c42c768e235066d83071b1ed9',1,'dl_buffer():&#160;main.c'],['../datalink_8h.html#a29f10b8efb77aba1854cd7b57497b5d5',1,'dl_buffer():&#160;datalink.h']]],
   ['dl_5fmsg_5favailable',['dl_msg_available',['../main__demo5_8c.html#a5da8932586e81510ec4b202a0d0abacd',1,'dl_msg_available():&#160;main_demo5.c'],['../sd__card_2main_8c.html#a5da8932586e81510ec4b202a0d0abacd',1,'dl_msg_available():&#160;main.c'],['../datalink_8h.html#a6d1aa46a515e17fda85b489f96d0a3d9',1,'dl_msg_available():&#160;datalink.h']]],
   ['dll',['dll',['../structuartRegs__t.html#a3219bfe198c4a6753b436fc4f7189ac4',1,'uartRegs_t']]],
   ['dlm',['dlm',['../structuartRegs__t.html#a850c4568d527a11d8c800b56a181e9ee',1,'uartRegs_t']]],

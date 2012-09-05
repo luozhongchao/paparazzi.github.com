@@ -1,7 +1,6 @@
 var ahrs__int__cmpl__quat_8c =
 [
     [ "AHRS_PROPAGATE_FREQUENCY", "ahrs__int__cmpl__quat_8c.html#a8b1ace7fb278ed8284cb2e3579f14798", null ],
-    [ "__attribute__", "ahrs__int__cmpl__quat_8c.html#aea7ccb1f68c35c1ace876675a6c406d7", null ],
     [ "ahrs_align", "ahrs__int__cmpl__quat_8c.html#a81e17b09f47068c02c345da1523f589b", null ],
     [ "ahrs_init", "ahrs__int__cmpl__quat_8c.html#aa3721663c9df7c7af5613486a3566afb", null ],
     [ "ahrs_propagate", "ahrs__int__cmpl__quat_8c.html#af8f4df7ae38ca5b239eac30e7d259e46", null ],

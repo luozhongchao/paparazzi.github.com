@@ -18,6 +18,7 @@ var lpc21_2subsystems_2imu_2imu__b2__arch_8c =
     [ "SSPCR0_VAL16", "lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a8838ac3523d2b3b1c551df3b001a4a76", null ],
     [ "SSPCR0_VAL8", "lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a64143ae651c58485782a7b1445efcb39", null ],
     [ "SSPCR1_VAL", "lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a2bc5caa2d6084d3a291f4451997d2c58", null ],
+    [ "imu_b2_arch_init", "lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#ae45e9b3a240b1c85c2c8c52b98b5af95", null ],
     [ "imu_periodic", "lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b", null ],
     [ "SSP_ISR", "lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#aa105625a4ec7ecf95c0802c3edfade05", null ],
     [ "imu_overrun", "lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#a89ed74a28874817abaa2548011a70594", null ],

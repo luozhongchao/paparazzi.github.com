@@ -9,5 +9,5 @@ var sim_2mcu__periph_2sys__time__arch_8h =
     [ "SysTimeTimerStop", "sim_2mcu__periph_2sys__time__arch_8h.html#abb950f6634af7da754fa0c6d99d689cb", null ],
     [ "USEC_OF_CPU_TICKS", "sim_2mcu__periph_2sys__time__arch_8h.html#a754eb4c595164d55f7728e09b0e84f7e", null ],
     [ "sys_tick_handler", "sim_2mcu__periph_2sys__time__arch_8h.html#afdd94f850b193691f1bfc60c724b542a", null ],
-    [ "sys_time_usleep", "sim_2mcu__periph_2sys__time__arch_8h.html#a0f56e8badab99cd855f09ec4fff69766", null ]
+    [ "sys_time_usleep", "sim_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa", null ]
 ];

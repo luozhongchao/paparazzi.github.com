@@ -13,5 +13,5 @@ var lpc21_2mcu__periph_2sys__time__arch_8h =
     [ "TIMER0_VIC_SLOT", "lpc21_2mcu__periph_2sys__time__arch_8h.html#ad5d5ed8092dba600cf37de82e1b60086", null ],
     [ "USEC_OF_CPU_TICKS", "lpc21_2mcu__periph_2sys__time__arch_8h.html#a754eb4c595164d55f7728e09b0e84f7e", null ],
     [ "sys_time_usleep", "lpc21_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa", null ],
-    [ "TIMER0_ISR", "lpc21_2mcu__periph_2sys__time__arch_8h.html#a344c07a77b0b618130629b1a49286b4a", null ]
+    [ "TIMER0_ISR", "lpc21_2mcu__periph_2sys__time__arch_8h.html#ae189f8759d6fc0d0ea13267459b1f2ad", null ]
 ];
