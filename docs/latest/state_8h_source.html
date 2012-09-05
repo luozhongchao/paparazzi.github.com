@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-180-gf03b149</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -938,14 +938,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01272"></a><a class="code" href="group__state__wind__airspeed.html#gaefc2403532c93ff7821d26fa1ce3732b">01272</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__state__wind__airspeed.html#gaefc2403532c93ff7821d26fa1ce3732b" title="Set angle of attack (float).">stateSetAngleOfAttack_f</a>(<span class="keywordtype">float</span>* aoa) {
 <a name="l01273"></a>01273   <a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a>.<a class="code" href="group__state__wind__airspeed.html#gae0942f9776a840e9c063ea6fc88b9078" title="Angle of attack Unit: rad.">angle_of_attack_f</a> = *aoa;
 <a name="l01274"></a>01274   <span class="comment">/* clear bits for all AOA representations and only set the new one */</span>
-<a name="l01275"></a>01275   <span class="comment">// TODO no integer yet</span>
 <a name="l01276"></a>01276   SetBit(<a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a>.<a class="code" href="group__state__wind__airspeed.html#ga4fc58d1ad5b89c1cacf4dd22d2f5864d" title="Holds the status bits for all wind- and airspeed representations.">wind_air_status</a>, <a class="code" href="group__state__wind__airspeed.html#gae173223c04cbb515678ee755f0465f71">AOA_F</a>);
 <a name="l01277"></a>01277 }
 <a name="l01278"></a>01278 
 <a name="l01280"></a><a class="code" href="group__state__wind__airspeed.html#gaf684c9a6b178c13fd1b9b596a1f56295">01280</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__state__wind__airspeed.html#gaf684c9a6b178c13fd1b9b596a1f56295" title="Set angle of attack (float).">stateSetSideslip_f</a>(<span class="keywordtype">float</span>* sideslip) {
 <a name="l01281"></a>01281   <a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a>.<a class="code" href="group__state__wind__airspeed.html#gac66f1a9684122eaae083c3dae67a8ed2" title="Sideslip angle Unit: rad.">sideslip_f</a> = *sideslip;
 <a name="l01282"></a>01282   <span class="comment">/* clear bits for all sideslip representations and only set the new one */</span>
-<a name="l01283"></a>01283   <span class="comment">// TODO no integer yet</span>
 <a name="l01284"></a>01284   SetBit(<a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a>.<a class="code" href="group__state__wind__airspeed.html#ga4fc58d1ad5b89c1cacf4dd22d2f5864d" title="Holds the status bits for all wind- and airspeed representations.">wind_air_status</a>, <a class="code" href="group__state__wind__airspeed.html#ga7627a871c9cd0994b5f864b9281824a0">SIDESLIP_F</a>);
 <a name="l01285"></a>01285 }
 <a name="l01286"></a>01286 
@@ -976,14 +974,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01315"></a>01315 }
 <a name="l01316"></a>01316 
 <a name="l01318"></a><a class="code" href="group__state__wind__airspeed.html#gaa5fd784b0de97bd0d783a518ecc5b94c">01318</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">float</span>* <a class="code" href="group__state__wind__airspeed.html#gaa5fd784b0de97bd0d783a518ecc5b94c" title="Get angle of attack (float).">stateGetAngleOfAttack_f</a>(<span class="keywordtype">void</span>) {
-<a name="l01319"></a>01319 <span class="comment">//  TODO only float for now</span>
 <a name="l01320"></a>01320 <span class="comment">//  if (!bit_is_set(state.wind_air_status, AOA_F))</span>
 <a name="l01321"></a>01321 <span class="comment">//    stateCalcAOA_f();</span>
 <a name="l01322"></a>01322   <span class="keywordflow">return</span> &amp;<a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a>.<a class="code" href="group__state__wind__airspeed.html#gae0942f9776a840e9c063ea6fc88b9078" title="Angle of attack Unit: rad.">angle_of_attack_f</a>;
 <a name="l01323"></a>01323 }
 <a name="l01324"></a>01324 
 <a name="l01326"></a><a class="code" href="group__state__wind__airspeed.html#gaed7795a81d3cfe280910a8850c12854b">01326</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">float</span>* <a class="code" href="group__state__wind__airspeed.html#gaed7795a81d3cfe280910a8850c12854b" title="Get sideslip (float).">stateGetSideslip_f</a>(<span class="keywordtype">void</span>) {
-<a name="l01327"></a>01327 <span class="comment">//  TODO only float for now</span>
 <a name="l01328"></a>01328 <span class="comment">//  if (!bit_is_set(state.wind_air_status, SIDESLIP_F))</span>
 <a name="l01329"></a>01329 <span class="comment">//    stateCalcSideslip_f();</span>
 <a name="l01330"></a>01330   <span class="keywordflow">return</span> &amp;<a class="code" href="group__state__interface.html#gad04519a48b59cfe96f361afe9eb151ba">state</a>.<a class="code" href="group__state__wind__airspeed.html#gac66f1a9684122eaae083c3dae67a8ed2" title="Sideslip angle Unit: rad.">sideslip_f</a>;
@@ -1010,7 +1006,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="state_8h.html">state.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 16:28:09 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 17:13:05 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-176-gfa5ecf7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-180-gf03b149</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -1438,147 +1438,145 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01351"></a>01351 }
 <a name="l01352"></a>01352 
 <a name="l01353"></a>01353 
-<a name="l01354"></a>01354 <span class="comment">// TODO: TODO: TODO:</span>
-<a name="l01355"></a>01355 <span class="comment">// Watchdog timer</span>
-<a name="l01356"></a><a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a05763355d0e087ba41feab61dd773fe6">01356</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a05763355d0e087ba41feab61dd773fe6">i2c_event</a>(<span class="keywordtype">void</span>)
-<a name="l01357"></a>01357 {
-<a name="l01358"></a>01358 <span class="preprocessor">#ifdef USE_I2C1</span>
-<a name="l01359"></a>01359 <span class="preprocessor"></span>  i2c1_watchdog_counter++;
-<a name="l01360"></a>01360 <span class="preprocessor">#endif</span>
-<a name="l01361"></a>01361 <span class="preprocessor"></span>
-<a name="l01362"></a>01362 <span class="preprocessor">#ifdef USE_I2C2</span>
-<a name="l01363"></a>01363 <span class="preprocessor"></span>  i2c2_watchdog_counter++;
-<a name="l01364"></a>01364 
-<a name="l01365"></a>01365   <span class="keywordflow">if</span> (i2c2_watchdog_counter &gt; 10000)
-<a name="l01366"></a>01366   {
-<a name="l01367"></a>01367     i2c2.errors-&gt;timeout_tlow_cnt++;
-<a name="l01368"></a>01368     i2c2_watchdog_counter = 0;
-<a name="l01369"></a>01369   }
+<a name="l01355"></a><a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a05763355d0e087ba41feab61dd773fe6">01355</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a05763355d0e087ba41feab61dd773fe6">i2c_event</a>(<span class="keywordtype">void</span>)
+<a name="l01356"></a>01356 {
+<a name="l01357"></a>01357 <span class="preprocessor">#ifdef USE_I2C1</span>
+<a name="l01358"></a>01358 <span class="preprocessor"></span>  i2c1_watchdog_counter++;
+<a name="l01359"></a>01359 <span class="preprocessor">#endif</span>
+<a name="l01360"></a>01360 <span class="preprocessor"></span>
+<a name="l01361"></a>01361 <span class="preprocessor">#ifdef USE_I2C2</span>
+<a name="l01362"></a>01362 <span class="preprocessor"></span>  i2c2_watchdog_counter++;
+<a name="l01363"></a>01363 
+<a name="l01364"></a>01364   <span class="keywordflow">if</span> (i2c2_watchdog_counter &gt; 10000)
+<a name="l01365"></a>01365   {
+<a name="l01366"></a>01366     i2c2.errors-&gt;timeout_tlow_cnt++;
+<a name="l01367"></a>01367     i2c2_watchdog_counter = 0;
+<a name="l01368"></a>01368   }
+<a name="l01369"></a>01369 
 <a name="l01370"></a>01370 
-<a name="l01371"></a>01371 
-<a name="l01372"></a>01372 <span class="preprocessor">#ifdef I2C_DEBUG_LED</span>
-<a name="l01373"></a>01373 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i2c2_watchdog_counter == 0)
-<a name="l01374"></a>01374   {
-<a name="l01375"></a>01375         <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012">__disable_irq</a>();
-<a name="l01376"></a>01376 
-<a name="l01377"></a>01377         <a class="code" href="i2c__attempt1_8c.html#a03e14437c13052df5c9128a9d2be2a5d">LED2_ON</a>();
-<a name="l01378"></a>01378         <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
-<a name="l01379"></a>01379     <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
-<a name="l01380"></a>01380         <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
-<a name="l01381"></a>01381     <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
-<a name="l01382"></a>01382         <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
-<a name="l01383"></a>01383     <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
-<a name="l01384"></a>01384         <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
-<a name="l01385"></a>01385     <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
-<a name="l01386"></a>01386         <span class="keywordflow">if</span> (i2c2.status == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
-<a name="l01387"></a>01387         {
-<a name="l01388"></a>01388           <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
-<a name="l01389"></a>01389       <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
-<a name="l01390"></a>01390         }
-<a name="l01391"></a>01391         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i2c2.status == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785becac38326f97d97d96d564d1064ff3313c1">I2CStartRequested</a>)
-<a name="l01392"></a>01392         {
-<a name="l01393"></a>01393           <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
-<a name="l01394"></a>01394       <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
-<a name="l01395"></a>01395           <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
-<a name="l01396"></a>01396       <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
-<a name="l01397"></a>01397 
-<a name="l01398"></a>01398         }
-<a name="l01399"></a>01399     <a class="code" href="i2c__attempt1_8c.html#ab72bc6c4cacf74b59b180a845d011e98">LED2_OFF</a>();
-<a name="l01400"></a>01400 
-<a name="l01401"></a>01401         <span class="comment">//regs = (I2C_TypeDef *) i2c2.reg_addr;</span>
-<a name="l01402"></a>01402         <span class="comment">//LED_SHOW_ACTIVE_BITS(regs);</span>
-<a name="l01403"></a>01403 
-<a name="l01404"></a>01404         <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a5e587d51e0e0c291bb20ef0f9b5e8e76">__enable_irq</a>();
-<a name="l01405"></a>01405   }
-<a name="l01406"></a>01406 <span class="preprocessor">#endif</span>
-<a name="l01407"></a>01407 <span class="preprocessor"></span>
-<a name="l01408"></a>01408 
-<a name="l01409"></a>01409   <span class="comment">//if (i2c2.status == I2CIdle)</span>
-<a name="l01410"></a>01410   {
-<a name="l01411"></a>01411     <span class="comment">//if (i2c_idle(&amp;i2c2))</span>
-<a name="l01412"></a>01412     {
-<a name="l01413"></a>01413       <span class="comment">//__disable_irq();</span>
-<a name="l01414"></a>01414       <span class="comment">// More work to do</span>
-<a name="l01415"></a>01415       <span class="comment">//if (i2c2.trans_extract_idx != i2c2.trans_insert_idx)</span>
-<a name="l01416"></a>01416       {
-<a name="l01417"></a>01417         <span class="comment">// Restart transaction doing the Rx part now</span>
-<a name="l01418"></a>01418         <span class="comment">//PPRZ_I2C_SEND_START(&amp;i2c2);</span>
-<a name="l01419"></a>01419       }
-<a name="l01420"></a>01420       <span class="comment">//__enable_irq();</span>
-<a name="l01421"></a>01421     }
-<a name="l01422"></a>01422   }
-<a name="l01423"></a>01423 <span class="preprocessor">#endif</span>
-<a name="l01424"></a>01424 <span class="preprocessor"></span>}
-<a name="l01425"></a>01425 
-<a name="l01427"></a>01427 <span class="comment">// Implement Interface Functions</span>
-<a name="l01428"></a>01428 
-<a name="l01429"></a><a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a59213a43635fa8bf16e5a5ceb20ebb2e">01429</a> bool_t <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a>* periph, <span class="keyword">struct</span> <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
-<a name="l01430"></a>01430 
-<a name="l01431"></a>01431   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> temp;
-<a name="l01432"></a>01432   temp = periph-&gt;<a class="code" href="structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c">trans_insert_idx</a> + 1;
-<a name="l01433"></a>01433   <span class="keywordflow">if</span> (temp &gt;= <a class="code" href="i2c_8h.html#a1e8f7694d49989f4823aa34cffae6319">I2C_TRANSACTION_QUEUE_LEN</a>) temp = 0;
-<a name="l01434"></a>01434   <span class="keywordflow">if</span> (temp == periph-&gt;<a class="code" href="structi2c__periph.html#a4e572be9f28f1037d7c749a223329aaf">trans_extract_idx</a>)
-<a name="l01435"></a>01435     <span class="keywordflow">return</span> FALSE;                          <span class="comment">// queue full</span>
-<a name="l01436"></a>01436 
-<a name="l01437"></a>01437   t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>;
-<a name="l01438"></a>01438 
-<a name="l01439"></a>01439   <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012">__disable_irq</a>();
-<a name="l01440"></a>01440   <span class="comment">/* put transacation in queue */</span>
-<a name="l01441"></a>01441   periph-&gt;<a class="code" href="structi2c__periph.html#ad3bd507a4aa9e144366dc2c8a6291240">trans</a>[periph-&gt;<a class="code" href="structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c">trans_insert_idx</a>] = t;
-<a name="l01442"></a>01442   periph-&gt;<a class="code" href="structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c">trans_insert_idx</a> = temp;
-<a name="l01443"></a>01443 
-<a name="l01444"></a>01444   <span class="comment">/* if peripheral is idle, start the transaction */</span>
-<a name="l01445"></a>01445   <span class="comment">// if (PPRZ_I2C_IS_IDLE(p))</span>
-<a name="l01446"></a>01446   <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
-<a name="l01447"></a>01447   {
-<a name="l01448"></a>01448     <span class="comment">//if (i2c_idle(periph))</span>
-<a name="l01449"></a>01449     {
-<a name="l01450"></a>01450 <span class="preprocessor">#ifdef I2C_DEBUG_LED</span>
-<a name="l01451"></a>01451 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_I2C1</span>
-<a name="l01452"></a>01452 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (periph == &amp;i2c1)
-<a name="l01453"></a>01453     {
-<a name="l01454"></a>01454 
-<a name="l01455"></a>01455         }
-<a name="l01456"></a>01456         <span class="keywordflow">else</span>
-<a name="l01457"></a>01457 <span class="preprocessor">#endif</span>
-<a name="l01458"></a>01458 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l01459"></a>01459 <span class="preprocessor"></span>        {
-<a name="l01460"></a>01460 <span class="preprocessor">#ifdef I2C_DEBUG_LED</span>
-<a name="l01461"></a>01461 <span class="preprocessor"></span>    <a class="code" href="i2c__attempt1_8c.html#a03e14437c13052df5c9128a9d2be2a5d">LED2_ON</a>();
-<a name="l01462"></a>01462     <a class="code" href="i2c__attempt1_8c.html#ab72bc6c4cacf74b59b180a845d011e98">LED2_OFF</a>();
-<a name="l01463"></a>01463 <span class="preprocessor">#endif</span>
-<a name="l01464"></a>01464 <span class="preprocessor"></span>          <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a24b4322c949865119cad583ec9e390af">PPRZ_I2C_SEND_START</a>(periph);
-<a name="l01465"></a>01465         }
-<a name="l01466"></a>01466     }
-<a name="l01467"></a>01467   }
-<a name="l01468"></a>01468   <span class="comment">/* else it will be started by the interrupt handler when the previous transactions completes */</span>
-<a name="l01469"></a>01469   <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a5e587d51e0e0c291bb20ef0f9b5e8e76">__enable_irq</a>();
-<a name="l01470"></a>01470 
-<a name="l01471"></a>01471   <span class="keywordflow">return</span> TRUE;
-<a name="l01472"></a>01472 }
-<a name="l01473"></a>01473 
-<a name="l01474"></a><a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a78c67d54f9c18514a2eb38edfc0fc66d">01474</a> bool_t <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a>* periph)
-<a name="l01475"></a>01475 {
-<a name="l01476"></a>01476   <span class="comment">// This is actually a difficult function:</span>
-<a name="l01477"></a>01477   <span class="comment">// -simply reading the status flags can clear bits and corrupt the transaction</span>
-<a name="l01478"></a>01478 
-<a name="l01479"></a>01479   u32 i2c = (u32) periph-&gt;<a class="code" href="structi2c__periph.html#ab87b1de4062efa2a073a28748b9cec38">reg_addr</a>;
-<a name="l01480"></a>01480 
-<a name="l01481"></a>01481 #ifdef <a class="code" href="i2c__attempt3__subtra_8c.html#a05a8c97e126338224bb7144aefe868d9">I2C_DEBUG_LED</a>
-<a name="l01482"></a>01482 #ifdef USE_I2C1
-<a name="l01483"></a>01483     if (periph == &amp;i2c1)
-<a name="l01484"></a>01484     {
-<a name="l01485"></a>01485       <span class="keywordflow">return</span> TRUE;
-<a name="l01486"></a>01486         }
-<a name="l01487"></a>01487 <span class="preprocessor">#endif</span>
-<a name="l01488"></a>01488 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l01489"></a>01489 <span class="preprocessor"></span>
-<a name="l01490"></a>01490   <span class="comment">// First we check if the software thinks it is ready</span>
-<a name="l01491"></a>01491   <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
-<a name="l01492"></a>01492     <span class="keywordflow">return</span> ! (<a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>( I2C_SR2_BUSY, I2C_SR2(i2c) ) );
-<a name="l01493"></a>01493   <span class="keywordflow">else</span>
-<a name="l01494"></a>01494     <span class="keywordflow">return</span> FALSE;
-<a name="l01495"></a>01495 }
+<a name="l01371"></a>01371 <span class="preprocessor">#ifdef I2C_DEBUG_LED</span>
+<a name="l01372"></a>01372 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i2c2_watchdog_counter == 0)
+<a name="l01373"></a>01373   {
+<a name="l01374"></a>01374         <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012">__disable_irq</a>();
+<a name="l01375"></a>01375 
+<a name="l01376"></a>01376         <a class="code" href="i2c__attempt1_8c.html#a03e14437c13052df5c9128a9d2be2a5d">LED2_ON</a>();
+<a name="l01377"></a>01377         <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
+<a name="l01378"></a>01378     <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
+<a name="l01379"></a>01379         <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
+<a name="l01380"></a>01380     <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
+<a name="l01381"></a>01381         <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
+<a name="l01382"></a>01382     <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
+<a name="l01383"></a>01383         <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
+<a name="l01384"></a>01384     <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
+<a name="l01385"></a>01385         <span class="keywordflow">if</span> (i2c2.status == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
+<a name="l01386"></a>01386         {
+<a name="l01387"></a>01387           <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
+<a name="l01388"></a>01388       <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
+<a name="l01389"></a>01389         }
+<a name="l01390"></a>01390         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i2c2.status == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785becac38326f97d97d96d564d1064ff3313c1">I2CStartRequested</a>)
+<a name="l01391"></a>01391         {
+<a name="l01392"></a>01392           <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
+<a name="l01393"></a>01393       <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
+<a name="l01394"></a>01394           <a class="code" href="i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
+<a name="l01395"></a>01395       <a class="code" href="i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
+<a name="l01396"></a>01396 
+<a name="l01397"></a>01397         }
+<a name="l01398"></a>01398     <a class="code" href="i2c__attempt1_8c.html#ab72bc6c4cacf74b59b180a845d011e98">LED2_OFF</a>();
+<a name="l01399"></a>01399 
+<a name="l01400"></a>01400         <span class="comment">//regs = (I2C_TypeDef *) i2c2.reg_addr;</span>
+<a name="l01401"></a>01401         <span class="comment">//LED_SHOW_ACTIVE_BITS(regs);</span>
+<a name="l01402"></a>01402 
+<a name="l01403"></a>01403         <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a5e587d51e0e0c291bb20ef0f9b5e8e76">__enable_irq</a>();
+<a name="l01404"></a>01404   }
+<a name="l01405"></a>01405 <span class="preprocessor">#endif</span>
+<a name="l01406"></a>01406 <span class="preprocessor"></span>
+<a name="l01407"></a>01407 
+<a name="l01408"></a>01408   <span class="comment">//if (i2c2.status == I2CIdle)</span>
+<a name="l01409"></a>01409   {
+<a name="l01410"></a>01410     <span class="comment">//if (i2c_idle(&amp;i2c2))</span>
+<a name="l01411"></a>01411     {
+<a name="l01412"></a>01412       <span class="comment">//__disable_irq();</span>
+<a name="l01413"></a>01413       <span class="comment">// More work to do</span>
+<a name="l01414"></a>01414       <span class="comment">//if (i2c2.trans_extract_idx != i2c2.trans_insert_idx)</span>
+<a name="l01415"></a>01415       {
+<a name="l01416"></a>01416         <span class="comment">// Restart transaction doing the Rx part now</span>
+<a name="l01417"></a>01417         <span class="comment">//PPRZ_I2C_SEND_START(&amp;i2c2);</span>
+<a name="l01418"></a>01418       }
+<a name="l01419"></a>01419       <span class="comment">//__enable_irq();</span>
+<a name="l01420"></a>01420     }
+<a name="l01421"></a>01421   }
+<a name="l01422"></a>01422 <span class="preprocessor">#endif</span>
+<a name="l01423"></a>01423 <span class="preprocessor"></span>}
+<a name="l01424"></a>01424 
+<a name="l01426"></a>01426 <span class="comment">// Implement Interface Functions</span>
+<a name="l01427"></a>01427 
+<a name="l01428"></a><a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a59213a43635fa8bf16e5a5ceb20ebb2e">01428</a> bool_t <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a>* periph, <span class="keyword">struct</span> <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
+<a name="l01429"></a>01429 
+<a name="l01430"></a>01430   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> temp;
+<a name="l01431"></a>01431   temp = periph-&gt;<a class="code" href="structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c">trans_insert_idx</a> + 1;
+<a name="l01432"></a>01432   <span class="keywordflow">if</span> (temp &gt;= <a class="code" href="i2c_8h.html#a1e8f7694d49989f4823aa34cffae6319">I2C_TRANSACTION_QUEUE_LEN</a>) temp = 0;
+<a name="l01433"></a>01433   <span class="keywordflow">if</span> (temp == periph-&gt;<a class="code" href="structi2c__periph.html#a4e572be9f28f1037d7c749a223329aaf">trans_extract_idx</a>)
+<a name="l01434"></a>01434     <span class="keywordflow">return</span> FALSE;                          <span class="comment">// queue full</span>
+<a name="l01435"></a>01435 
+<a name="l01436"></a>01436   t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>;
+<a name="l01437"></a>01437 
+<a name="l01438"></a>01438   <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012">__disable_irq</a>();
+<a name="l01439"></a>01439   <span class="comment">/* put transacation in queue */</span>
+<a name="l01440"></a>01440   periph-&gt;<a class="code" href="structi2c__periph.html#ad3bd507a4aa9e144366dc2c8a6291240">trans</a>[periph-&gt;<a class="code" href="structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c">trans_insert_idx</a>] = t;
+<a name="l01441"></a>01441   periph-&gt;<a class="code" href="structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c">trans_insert_idx</a> = temp;
+<a name="l01442"></a>01442 
+<a name="l01443"></a>01443   <span class="comment">/* if peripheral is idle, start the transaction */</span>
+<a name="l01444"></a>01444   <span class="comment">// if (PPRZ_I2C_IS_IDLE(p))</span>
+<a name="l01445"></a>01445   <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
+<a name="l01446"></a>01446   {
+<a name="l01447"></a>01447     <span class="comment">//if (i2c_idle(periph))</span>
+<a name="l01448"></a>01448     {
+<a name="l01449"></a>01449 <span class="preprocessor">#ifdef I2C_DEBUG_LED</span>
+<a name="l01450"></a>01450 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_I2C1</span>
+<a name="l01451"></a>01451 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (periph == &amp;i2c1)
+<a name="l01452"></a>01452     {
+<a name="l01453"></a>01453 
+<a name="l01454"></a>01454         }
+<a name="l01455"></a>01455         <span class="keywordflow">else</span>
+<a name="l01456"></a>01456 <span class="preprocessor">#endif</span>
+<a name="l01457"></a>01457 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l01458"></a>01458 <span class="preprocessor"></span>        {
+<a name="l01459"></a>01459 <span class="preprocessor">#ifdef I2C_DEBUG_LED</span>
+<a name="l01460"></a>01460 <span class="preprocessor"></span>    <a class="code" href="i2c__attempt1_8c.html#a03e14437c13052df5c9128a9d2be2a5d">LED2_ON</a>();
+<a name="l01461"></a>01461     <a class="code" href="i2c__attempt1_8c.html#ab72bc6c4cacf74b59b180a845d011e98">LED2_OFF</a>();
+<a name="l01462"></a>01462 <span class="preprocessor">#endif</span>
+<a name="l01463"></a>01463 <span class="preprocessor"></span>          <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a24b4322c949865119cad583ec9e390af">PPRZ_I2C_SEND_START</a>(periph);
+<a name="l01464"></a>01464         }
+<a name="l01465"></a>01465     }
+<a name="l01466"></a>01466   }
+<a name="l01467"></a>01467   <span class="comment">/* else it will be started by the interrupt handler when the previous transactions completes */</span>
+<a name="l01468"></a>01468   <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a5e587d51e0e0c291bb20ef0f9b5e8e76">__enable_irq</a>();
+<a name="l01469"></a>01469 
+<a name="l01470"></a>01470   <span class="keywordflow">return</span> TRUE;
+<a name="l01471"></a>01471 }
+<a name="l01472"></a>01472 
+<a name="l01473"></a><a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a78c67d54f9c18514a2eb38edfc0fc66d">01473</a> bool_t <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a>* periph)
+<a name="l01474"></a>01474 {
+<a name="l01475"></a>01475   <span class="comment">// This is actually a difficult function:</span>
+<a name="l01476"></a>01476   <span class="comment">// -simply reading the status flags can clear bits and corrupt the transaction</span>
+<a name="l01477"></a>01477 
+<a name="l01478"></a>01478   u32 i2c = (u32) periph-&gt;<a class="code" href="structi2c__periph.html#ab87b1de4062efa2a073a28748b9cec38">reg_addr</a>;
+<a name="l01479"></a>01479 
+<a name="l01480"></a>01480 #ifdef <a class="code" href="i2c__attempt3__subtra_8c.html#a05a8c97e126338224bb7144aefe868d9">I2C_DEBUG_LED</a>
+<a name="l01481"></a>01481 #ifdef USE_I2C1
+<a name="l01482"></a>01482     if (periph == &amp;i2c1)
+<a name="l01483"></a>01483     {
+<a name="l01484"></a>01484       <span class="keywordflow">return</span> TRUE;
+<a name="l01485"></a>01485         }
+<a name="l01486"></a>01486 <span class="preprocessor">#endif</span>
+<a name="l01487"></a>01487 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l01488"></a>01488 <span class="preprocessor"></span>
+<a name="l01489"></a>01489   <span class="comment">// First we check if the software thinks it is ready</span>
+<a name="l01490"></a>01490   <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
+<a name="l01491"></a>01491     <span class="keywordflow">return</span> ! (<a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>( I2C_SR2_BUSY, I2C_SR2(i2c) ) );
+<a name="l01492"></a>01492   <span class="keywordflow">else</span>
+<a name="l01493"></a>01493     <span class="keywordflow">return</span> FALSE;
+<a name="l01494"></a>01494 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -1599,7 +1597,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2i2c__arch_8c.html">i2c_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 5 2012 16:28:00 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 5 2012 17:12:56 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
