@@ -156,7 +156,7 @@ var searchData=
   ['regid',['RegID',['../structVN100__Req__Packet.html#afc67a1c0741d1cf924678307e5f34972',1,'VN100_Req_Packet::RegID()'],['../structVN100__Res__Packet.html#a11355ffb4b3a9f416f298f8bb14db232',1,'VN100_Res_Packet::RegID()']]],
   ['register_5fleds_5fcb',['register_leds_cb',['../sim_2led__hw_8c.html#aa85b1c7cdad6a8b6035a17361f395886',1,'led_hw.c']]],
   ['reinj_5f1',['reinj_1',['../structAhrsIntCmplEuler.html#a089d9e650c68777b99f0030ad7381457',1,'AhrsIntCmplEuler']]],
-  ['remap_5fservos_5f5and6',['REMAP_SERVOS_5AND6',['../lisa__m__1_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'lisa_m_1.0.h']]],
+  ['remap_5fservos_5f5and6',['REMAP_SERVOS_5AND6',['../lisa__m__1_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'REMAP_SERVOS_5AND6():&#160;lisa_m_1.0.h'],['../lisa__m__2_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'REMAP_SERVOS_5AND6():&#160;lisa_m_2.0.h']]],
   ['renorm_5fblowup_5fcount',['renorm_blowup_count',['../ahrs__float__dcm_8h.html#ab0d3aa1869bc70eb2b0190c3912690e7',1,'ahrs_float_dcm.h']]],
   ['renorm_5ffactor',['renorm_factor',['../pprz__algebra__float_8h.html#a25ae277549c4186c3a29e6414b42f2e3',1,'pprz_algebra_float.h']]],
   ['renorm_5fsqrt_5fcount',['renorm_sqrt_count',['../ahrs__float__dcm_8h.html#a1814455019292840abf28c91a27f2080',1,'ahrs_float_dcm.h']]],

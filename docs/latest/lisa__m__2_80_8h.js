@@ -59,6 +59,7 @@ var lisa__m__2_80_8h =
     [ "PWM_5AND6_GPIO", "lisa__m__2_80_8h.html#a55faabb390e89d17eb7d353b9871acf6", null ],
     [ "PWM_5AND6_RCC", "lisa__m__2_80_8h.html#a7a9593b29b3be76510c45be3b50daf43", null ],
     [ "PWM_5AND6_TIMER", "lisa__m__2_80_8h.html#ab60d38297c5fb699b4b020e87d6bf8bb", null ],
+    [ "REMAP_SERVOS_5AND6", "lisa__m__2_80_8h.html#a7053b924ff47f99a36f4f4489424e526", null ],
     [ "USE_LED_1", "lisa__m__2_80_8h.html#ae7a2417096c8215257d073da4d6d4c5f", null ],
     [ "USE_LED_2", "lisa__m__2_80_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf", null ],
     [ "USE_LED_3", "lisa__m__2_80_8h.html#a4da08b59c725550efa312cf16ecdd77c", null ],

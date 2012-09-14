@@ -89,7 +89,7 @@ var searchData=
   ['reg16',['REG16',['../LPC21xx_8h.html#a7f2f605c029c5c96fb06ecca2933dc67',1,'LPC21xx.h']]],
   ['reg32',['REG32',['../LPC21xx_8h.html#a4f017ef6e922d8496886a2533ed0b908',1,'LPC21xx.h']]],
   ['reg_5f8',['REG_8',['../LPC21xx_8h.html#a2bd1cb3528279053b871c5e5410f5148',1,'LPC21xx.h']]],
-  ['remap_5fservos_5f5and6',['REMAP_SERVOS_5AND6',['../lisa__m__1_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'lisa_m_1.0.h']]],
+  ['remap_5fservos_5f5and6',['REMAP_SERVOS_5AND6',['../lisa__m__1_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'REMAP_SERVOS_5AND6():&#160;lisa_m_1.0.h'],['../lisa__m__2_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'REMAP_SERVOS_5AND6():&#160;lisa_m_2.0.h']]],
   ['reserved',['RESERVED',['../gps__ubx__ucenter_8c.html#a56701f18aaad537f7fc0e9be309503c3',1,'gps_ubx_ucenter.c']]],
   ['reset',['RESET',['../humid__sht_8h.html#ab702106cf3b3e96750b6845ded4e0299',1,'humid_sht.h']]],
   ['return',['Return',['../common__flight__plan_8h.html#a067ebcdcacb7ae66d3a69ef859c5e930',1,'common_flight_plan.h']]],
