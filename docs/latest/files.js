@@ -598,6 +598,7 @@ var files =
     [ "sw/airborne/modules/sensors/baro_amsys.h", "baro__amsys_8h.html", "baro__amsys_8h" ],
     [ "sw/airborne/modules/sensors/baro_bmp.c", "baro__bmp_8c.html", "baro__bmp_8c" ],
     [ "sw/airborne/modules/sensors/baro_bmp.h", "baro__bmp_8h.html", "baro__bmp_8h" ],
+    [ "sw/airborne/modules/sensors/baro_board_module.c", "baro__board__module_8c.html", "baro__board__module_8c" ],
     [ "sw/airborne/modules/sensors/baro_board_module.h", "baro__board__module_8h.html", "baro__board__module_8h" ],
     [ "sw/airborne/modules/sensors/baro_ets.c", "baro__ets_8c.html", "baro__ets_8c" ],
     [ "sw/airborne/modules/sensors/baro_ets.h", "baro__ets_8h.html", "baro__ets_8h" ],
