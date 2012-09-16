@@ -602,6 +602,8 @@ var files =
     [ "sw/airborne/modules/sensors/baro_board_module.h", "baro__board__module_8h.html", "baro__board__module_8h" ],
     [ "sw/airborne/modules/sensors/baro_ets.c", "baro__ets_8c.html", "baro__ets_8c" ],
     [ "sw/airborne/modules/sensors/baro_ets.h", "baro__ets_8h.html", "baro__ets_8h" ],
+    [ "sw/airborne/modules/sensors/baro_hca.c", "baro__hca_8c.html", "baro__hca_8c" ],
+    [ "sw/airborne/modules/sensors/baro_hca.h", "baro__hca_8h.html", "baro__hca_8h" ],
     [ "sw/airborne/modules/sensors/baro_MS5534A.c", "baro__MS5534A_8c.html", "baro__MS5534A_8c" ],
     [ "sw/airborne/modules/sensors/baro_MS5534A.h", "modules_2sensors_2baro__MS5534A_8h.html", null ],
     [ "sw/airborne/modules/sensors/baro_ms5611_i2c.c", "baro__ms5611__i2c_8c.html", "baro__ms5611__i2c_8c" ],
