@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-216-g91aaaed</span>
+   &#160;<span id="projectnumber">v4.1_unstable-218-g69dfe8e</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -135,19 +135,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a>00030 <span class="preprocessor">#include &lt;libopencm3/stm32/f1/gpio.h&gt;</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#include &lt;libopencm3/stm32/f1/rcc.h&gt;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &lt;libopencm3/stm32/f1/flash.h&gt;</span>
-<a name="l00033"></a>00033 
-<a name="l00034"></a><a class="code" href="stm32_2mcu__arch_8c.html#a87671303c7d4a9264b1ffbb07e87f454">00034</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__arch_8c.html#a87671303c7d4a9264b1ffbb07e87f454">mcu_arch_init</a>(<span class="keywordtype">void</span>) {
-<a name="l00035"></a>00035 <span class="preprocessor">#if EXT_CLK == 8000000</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;Using 8MHz external clock to PLL it to 72MHz.&quot;</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span>  rcc_clock_setup_in_hse_8mhz_out_72mhz();
-<a name="l00038"></a>00038 <span class="preprocessor">#elif EXT_CLK == 12000000</span>
-<a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;Using 12MHz external clock to PLL it to 72MHz.&quot;</span>
-<a name="l00040"></a>00040 <span class="preprocessor"></span>  rcc_clock_setup_in_hse_12mhz_out_72mhz();
-<a name="l00041"></a>00041 <span class="preprocessor">#else</span>
-<a name="l00042"></a>00042 <span class="preprocessor"></span><span class="preprocessor">#error EXT_CLK is either set to an unsupported frequency or not defined at all. Please check!</span>
-<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00044"></a>00044 <span class="preprocessor"></span>}
-<a name="l00045"></a>00045 
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;libopencm3/stm32/f1/scb.h&gt;</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="stm32_2mcu__arch_8c.html#a87671303c7d4a9264b1ffbb07e87f454">00035</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__arch_8c.html#a87671303c7d4a9264b1ffbb07e87f454">mcu_arch_init</a>(<span class="keywordtype">void</span>) {
+<a name="l00036"></a>00036 <span class="preprocessor">#if LUFTBOOT</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;We are running luftboot, the interrupt vector is being relocated.&quot;</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span>  SCB_VTOR = 0x00002000;
+<a name="l00039"></a>00039 <span class="preprocessor">#endif</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#if EXT_CLK == 8000000</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;Using 8MHz external clock to PLL it to 72MHz.&quot;</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span>  rcc_clock_setup_in_hse_8mhz_out_72mhz();
+<a name="l00043"></a>00043 <span class="preprocessor">#elif EXT_CLK == 12000000</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;Using 12MHz external clock to PLL it to 72MHz.&quot;</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span>  rcc_clock_setup_in_hse_12mhz_out_72mhz();
+<a name="l00046"></a>00046 <span class="preprocessor">#else</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#error EXT_CLK is either set to an unsupported frequency or not defined at all. Please check!</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00049"></a>00049 <span class="preprocessor"></span>}
+<a name="l00050"></a>00050 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -168,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__arch_8c.html">mcu_arch.c</a>      </li>
 
-    <li class="footer">Generated on Sun Sep 16 2012 04:00:29 for Paparazzi UAS by
+    <li class="footer">Generated on Mon Sep 17 2012 04:00:28 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
