@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -185,12 +185,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00080"></a>00080 }
 <a name="l00081"></a>00081 
 <a name="l00084"></a><a class="code" href="subsystems_2sensors_2infrared__i2c_8h.html#a5e18041e01cef18e73f61f789f8e97dd">00084</a> <span class="keywordtype">void</span> <a class="code" href="infrared__i2c_8c.html#a5e18041e01cef18e73f61f789f8e97dd" title="Initialisation.">infrared_i2c_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00085"></a>00085   <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = FALSE;
-<a name="l00086"></a>00086   <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = FALSE;
+<a name="l00085"></a>00085   <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00086"></a>00086   <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00087"></a>00087   <a class="code" href="infrared__i2c_8c.html#a8343a9a0a71d8a9738c0848548c2f2d7">ir_i2c_hor_status</a> = <a class="code" href="infrared__i2c_8c.html#a9adf5c455c6462e4fa56965cd3f492ba">IR_I2C_IDLE</a>;
 <a name="l00088"></a>00088   <a class="code" href="infrared__i2c_8c.html#a5e315296fa2757af44acd85f5e2d96ef">ir_i2c_conf_word</a> = IR_I2C_DEFAULT_CONF;
-<a name="l00089"></a>00089   <a class="code" href="infrared__i2c_8c.html#ad6a28754456593b0e38d39f6f56f13c5">ir_i2c_conf_hor_done</a> = FALSE;
-<a name="l00090"></a>00090   <a class="code" href="infrared__i2c_8c.html#a758f2761012838a4393d7d0bf3f512f6">ir_i2c_conf_ver_done</a> = FALSE;
+<a name="l00089"></a>00089   <a class="code" href="infrared__i2c_8c.html#ad6a28754456593b0e38d39f6f56f13c5">ir_i2c_conf_hor_done</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00090"></a>00090   <a class="code" href="infrared__i2c_8c.html#a758f2761012838a4393d7d0bf3f512f6">ir_i2c_conf_ver_done</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00091"></a>00091   irh_trans.status = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00092"></a>00092   <a class="code" href="infrared__i2c_8c.html#a5020c256b621d606b42254062af9fbe6">irv_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00093"></a>00093 
@@ -208,7 +208,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00105"></a>00105     } <span class="keywordflow">else</span> {
 <a name="l00106"></a>00106       <span class="comment">// Read next values</span>
 <a name="l00107"></a>00107       <a class="code" href="i2c_8h.html#a00a95780fb7894110f4a5ae895931ba6">I2CReceive</a>(i2c0, irh_trans, <a class="code" href="infrared__i2c_8c.html#aae300d6dcf955f8e48aa3fd5cc4bc794">IR_HOR_I2C_ADDR</a>, 3);
-<a name="l00108"></a>00108       <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = FALSE;
+<a name="l00108"></a>00108       <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00109"></a>00109       <a class="code" href="infrared__i2c_8c.html#a8343a9a0a71d8a9738c0848548c2f2d7">ir_i2c_hor_status</a> = <a class="code" href="infrared__i2c_8c.html#ad96573fe02e312b16afe40a9fab92956">IR_I2C_READ_IR1</a>;
 <a name="l00110"></a>00110     }
 <a name="l00111"></a>00111   }
@@ -220,7 +220,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00117"></a>00117     } <span class="keywordflow">else</span> {
 <a name="l00118"></a>00118       <span class="comment">// Read next values</span>
 <a name="l00119"></a>00119       <a class="code" href="i2c_8h.html#a00a95780fb7894110f4a5ae895931ba6">I2CReceive</a>(i2c0, <a class="code" href="infrared__i2c_8c.html#a5020c256b621d606b42254062af9fbe6">irv_trans</a>, <a class="code" href="infrared__i2c_8c.html#a2c4023c6a6d16c24b18f2bf72d28abb1">IR_VER_I2C_ADDR</a>, 2);
-<a name="l00120"></a>00120       <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = FALSE;
+<a name="l00120"></a>00120       <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00121"></a>00121     }
 <a name="l00122"></a>00122   }
 <a name="l00123"></a>00123 <span class="preprocessor">#endif </span><span class="comment">/* SITL || HITL */</span>
@@ -263,11 +263,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00160"></a>00160       ir2 = ir2 - (<a class="code" href="infrared__i2c_8c.html#ac227a38aa3a1cfc206d5960ce9f847b1">IR_I2C_IR2_NEUTRAL</a> &lt;&lt; <a class="code" href="infrared__i2c_8c.html#a5e315296fa2757af44acd85f5e2d96ef">ir_i2c_conf_word</a>);
 <a name="l00161"></a>00161       <a class="code" href="infrared__i2c_8c.html#a4d9258dc9de2540903c551cb567e2159">ir_i2c</a>.<a class="code" href="structInfrared__raw.html#abbe31144a4d6e13ce4baac4a38c7eaeb">ir2</a> = <a class="code" href="infrared__i2c_8c.html#a24f4ed3c3ad59ddf986d01cd9ded85bf">FilterIR</a>(<a class="code" href="infrared__i2c_8c.html#a4d9258dc9de2540903c551cb567e2159">ir_i2c</a>.<a class="code" href="structInfrared__raw.html#abbe31144a4d6e13ce4baac4a38c7eaeb">ir2</a>, ir2);
 <a name="l00162"></a>00162       <span class="comment">// Update estimator</span>
-<a name="l00163"></a>00163       <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = TRUE;
+<a name="l00163"></a>00163       <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00164"></a>00164 <span class="preprocessor">#ifndef IR_I2C_READ_ONLY</span>
 <a name="l00165"></a>00165 <span class="preprocessor"></span>      <span class="keywordflow">if</span> (<a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a>) {
-<a name="l00166"></a>00166         <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = FALSE;
-<a name="l00167"></a>00167         <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = FALSE;
+<a name="l00166"></a>00166         <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00167"></a>00167         <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00168"></a>00168         <a class="code" href="infrared_8h.html#af9bd4e84670abfc4e4b0aa19639484e9">UpdateIRValue</a>(<a class="code" href="infrared__i2c_8c.html#a4d9258dc9de2540903c551cb567e2159">ir_i2c</a>);
 <a name="l00169"></a>00169       }
 <a name="l00170"></a>00170 <span class="preprocessor">#endif</span>
@@ -282,7 +282,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00179"></a>00179       <span class="keywordflow">break</span>;
 <a name="l00180"></a>00180     <span class="keywordflow">case</span> <a class="code" href="infrared__i2c_8c.html#a3699c5e78f8f88ad6ee0692a3d05e9d5">IR_I2C_CONFIGURE_HOR</a> :
 <a name="l00181"></a>00181       <span class="comment">// End conf cycle</span>
-<a name="l00182"></a>00182       <a class="code" href="infrared__i2c_8c.html#ad6a28754456593b0e38d39f6f56f13c5">ir_i2c_conf_hor_done</a> = TRUE;
+<a name="l00182"></a>00182       <a class="code" href="infrared__i2c_8c.html#ad6a28754456593b0e38d39f6f56f13c5">ir_i2c_conf_hor_done</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00183"></a>00183       <a class="code" href="infrared__i2c_8c.html#a8343a9a0a71d8a9738c0848548c2f2d7">ir_i2c_hor_status</a> = <a class="code" href="infrared__i2c_8c.html#a9adf5c455c6462e4fa56965cd3f492ba">IR_I2C_IDLE</a>;
 <a name="l00184"></a>00184       <span class="keywordflow">break</span>;
 <a name="l00185"></a>00185   }
@@ -297,17 +297,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00194"></a>00194     <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> ir3 = (<a class="code" href="infrared__i2c_8c.html#a5020c256b621d606b42254062af9fbe6">irv_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0]&lt;&lt;8) | <a class="code" href="infrared__i2c_8c.html#a5020c256b621d606b42254062af9fbe6">irv_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1];
 <a name="l00195"></a>00195     ir3 = ir3 - (<a class="code" href="infrared__i2c_8c.html#aa97aa9cff252831f4ceb76081115abd8">IR_I2C_TOP_NEUTRAL</a> &lt;&lt; <a class="code" href="infrared__i2c_8c.html#a5e315296fa2757af44acd85f5e2d96ef">ir_i2c_conf_word</a>);
 <a name="l00196"></a>00196     <a class="code" href="infrared__i2c_8c.html#a4d9258dc9de2540903c551cb567e2159">ir_i2c</a>.<a class="code" href="structInfrared__raw.html#a1d0858999d979a9d0349ed7f18020c8d">ir3</a> = <a class="code" href="infrared__i2c_8c.html#a24f4ed3c3ad59ddf986d01cd9ded85bf">FilterIR</a>(<a class="code" href="infrared__i2c_8c.html#a4d9258dc9de2540903c551cb567e2159">ir_i2c</a>.<a class="code" href="structInfrared__raw.html#a1d0858999d979a9d0349ed7f18020c8d">ir3</a>, ir3);
-<a name="l00197"></a>00197     <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = TRUE;
+<a name="l00197"></a>00197     <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00198"></a>00198 <span class="preprocessor">#ifndef IR_I2C_READ_ONLY</span>
 <a name="l00199"></a>00199 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (<a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a>) {
-<a name="l00200"></a>00200       <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = FALSE;
-<a name="l00201"></a>00201       <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = FALSE;
+<a name="l00200"></a>00200       <a class="code" href="infrared__i2c_8c.html#ab1594a5f078cf8e09b8fb89fc4104c42">ir_i2c_data_hor_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00201"></a>00201       <a class="code" href="infrared__i2c_8c.html#a0f8a5f04d45e175173ba0fc62539f5cd">ir_i2c_data_ver_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00202"></a>00202       <a class="code" href="infrared_8h.html#af9bd4e84670abfc4e4b0aa19639484e9">UpdateIRValue</a>(<a class="code" href="infrared__i2c_8c.html#a4d9258dc9de2540903c551cb567e2159">ir_i2c</a>);
 <a name="l00203"></a>00203     }
 <a name="l00204"></a>00204 <span class="preprocessor">#endif</span>
 <a name="l00205"></a>00205 <span class="preprocessor"></span>  }
 <a name="l00206"></a>00206   <span class="keywordflow">if</span> (<a class="code" href="infrared__i2c_8c.html#a5020c256b621d606b42254062af9fbe6">irv_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> == <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>) {
-<a name="l00207"></a>00207     <a class="code" href="infrared__i2c_8c.html#a758f2761012838a4393d7d0bf3f512f6">ir_i2c_conf_ver_done</a> = TRUE;
+<a name="l00207"></a>00207     <a class="code" href="infrared__i2c_8c.html#a758f2761012838a4393d7d0bf3f512f6">ir_i2c_conf_ver_done</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00208"></a>00208   }
 <a name="l00209"></a>00209 <span class="preprocessor">#endif </span><span class="comment">/* !SITL &amp;&amp; !HITL */</span>
 <a name="l00210"></a>00210 }
@@ -332,7 +332,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="infrared__i2c_8c.html">infrared_i2c.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:46 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:58 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

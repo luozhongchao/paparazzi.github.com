@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -173,17 +173,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00072"></a>00072       <a class="code" href="ins__vn100_8c.html#a8318f2bc6236b941d491abbf7a4dda4f">ins_init_status</a>++;
 <a name="l00073"></a>00073       <span class="keywordflow">break</span>;
 <a name="l00074"></a>00074     <span class="keywordflow">case</span> <a class="code" href="ins__vn100_8h.html#a9d4bc643bab7246d44f8bb16f888e203">INS_VN100_READY</a> :
-<a name="l00075"></a>00075       <span class="keywordflow">return</span> TRUE;
+<a name="l00075"></a>00075       <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00076"></a>00076   }
 <a name="l00077"></a>00077   <a class="code" href="ins__vn100_8c.html#a1d0a3455364a38bf83c1f87c9a808cb5">last_send_packet</a>.<a class="code" href="structVN100__Req__Packet.html#a711dd5f0ef400684ad1cd641ae379d23">CmdID</a> = <a class="code" href="VN100_8h.html#a7adf9bbf872f88c269546c8f300d1ffc">VN100_CmdID_WriteRegister</a>;
 <a name="l00078"></a>00078   <a class="code" href="spi_8c.html#a9fb7b879a9038ebaccd09e8b6007722a">spi_buffer_input</a> = (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)&amp;<a class="code" href="ins__vn100_8c.html#a273cc8a61a7331cfb89c91d78d7f0761">last_received_packet</a>;
 <a name="l00079"></a>00079   <a class="code" href="spi_8c.html#a6dde4c225c122862c3ab62461259a8dd">spi_buffer_output</a> = (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)&amp;<a class="code" href="ins__vn100_8c.html#a1d0a3455364a38bf83c1f87c9a808cb5">last_send_packet</a>;
 <a name="l00080"></a>00080   SpiSelectSlave0();
 <a name="l00081"></a>00081   SpiStart();
-<a name="l00082"></a>00082   <span class="keywordflow">return</span> FALSE;
+<a name="l00082"></a>00082   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00083"></a>00083 }
 <a name="l00084"></a>00084 
-<a name="l00085"></a><a class="code" href="ins__vn100_8h.html#a8dc6e488ca20854b1f96fb7a2933bbfe">00085</a> <span class="keywordtype">void</span> <a class="code" href="fw__ins__vn100_8c.html#a8dc6e488ca20854b1f96fb7a2933bbfe">ins_periodic_task</a>( <span class="keywordtype">void</span> ) {
+<a name="l00085"></a><a class="code" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71">00085</a> <span class="keywordtype">void</span> <a class="code" href="fw__ins__vn100_8c.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call.">ins_periodic</a>( <span class="keywordtype">void</span> ) {
 <a name="l00086"></a>00086   <span class="keywordflow">if</span> (!SpiCheckAvailable()) {
 <a name="l00087"></a>00087     SpiOverRun();
 <a name="l00088"></a>00088     <span class="keywordflow">return</span>;
@@ -209,8 +209,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00108"></a>00108 
 <a name="l00109"></a><a class="code" href="ins__vn100_8h.html#a3446ccf0f8b4ec536547435d71f9171e">00109</a> <span class="keywordtype">void</span> <a class="code" href="fw__ins__vn100_8c.html#a3446ccf0f8b4ec536547435d71f9171e">ins_event_task</a>( <span class="keywordtype">void</span> ) {
 <a name="l00110"></a>00110   <span class="keywordflow">if</span> (<a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a>) {
-<a name="l00111"></a>00111     <a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a> = FALSE;
-<a name="l00112"></a>00112     <a class="code" href="ins__chimu__spi_8c.html#a8cb976f9e02352af6815c51a4b18faec">parse_ins_msg</a>();
+<a name="l00111"></a>00111     <a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00112"></a>00112     <a class="code" href="ahrs__chimu__spi_8c.html#a8cb976f9e02352af6815c51a4b18faec">parse_ins_msg</a>();
 <a name="l00113"></a>00113 <span class="preprocessor">#ifndef INS_VN100_READ_ONLY</span>
 <a name="l00114"></a>00114 <span class="preprocessor"></span>    <span class="comment">// Update estimator</span>
 <a name="l00115"></a>00115     <span class="comment">// FIXME Use a proper rotation matrix here</span>
@@ -247,7 +247,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="fw__ins__vn100_8c.html">fw_ins_vn100.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:42 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:53 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

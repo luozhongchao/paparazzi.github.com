@@ -9,6 +9,7 @@ var searchData=
   ['imuaspirin2',['ImuAspirin2',['../structImuAspirin2.html',1,'']]],
   ['imufloat',['ImuFloat',['../structImuFloat.html',1,'']]],
   ['imunps',['ImuNps',['../structImuNps.html',1,'']]],
+  ['imuxsens',['ImuXsens',['../structImuXsens.html',1,'']]],
   ['infrared',['Infrared',['../structInfrared.html',1,'']]],
   ['infrared_5fraw',['Infrared_raw',['../structInfrared__raw.html',1,'']]],
   ['ins',['Ins',['../structIns.html',1,'']]],

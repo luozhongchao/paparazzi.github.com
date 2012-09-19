@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -158,7 +158,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baro__bmp_8h.html#a18ef51196b053a5562a23b1fe7a2e39e">BARO_BMP_START_PRESS</a>&#160;&#160;&#160;4</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baro__bmp_8h.html#a2154f039657db465af55d3d483f125ad">BARO_BMP_READ_PRESS</a>&#160;&#160;&#160;5</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baro__bmp_8h.html#a2eecec94958f9a1575f7d7bbc29b62e5">BARO_BMP_DT</a>&#160;&#160;&#160;0.05</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baro__bmp_8h.html#a9f4bdb5f9ea33d58771144e438b1b5aa">BaroBmpUpdate</a>(_b)&#160;&#160;&#160;{ if (<a class="el" href="baro__bmp_8h.html#a3af5dc1a8b4079c6817febf52e970c99">baro_bmp_valid</a>) { _b = <a class="el" href="baro__bmp_8h.html#a679b6da65afcc82d118af2099a6c61e3">baro_bmp_pressure</a>; <a class="el" href="baro__bmp_8h.html#a3af5dc1a8b4079c6817febf52e970c99">baro_bmp_valid</a> = FALSE; } }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baro__bmp_8h.html#a9f4bdb5f9ea33d58771144e438b1b5aa">BaroBmpUpdate</a>(_b)&#160;&#160;&#160;{ if (<a class="el" href="baro__bmp_8h.html#a3af5dc1a8b4079c6817febf52e970c99">baro_bmp_valid</a>) { _b = <a class="el" href="baro__bmp_8h.html#a679b6da65afcc82d118af2099a6c61e3">baro_bmp_pressure</a>; <a class="el" href="baro__bmp_8h.html#a3af5dc1a8b4079c6817febf52e970c99">baro_bmp_valid</a> = <a class="el" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>; } }</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baro__bmp_8h.html#ac61db1c8d70ce52b2e2192350c1a4cba">baro_bmp_init</a> (void)</td></tr>
@@ -190,6 +190,8 @@ Variables</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="baro__bmp_8h_source.html#l00037">37</a> of file <a class="el" href="baro__bmp_8h_source.html">baro_bmp.h</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__alt__float_8c_source.html#l00159">alt_kalman()</a>.</p>
 
 </div>
 </div>
@@ -304,7 +306,7 @@ Variables</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">_b</td><td>)</td>
-          <td>&#160;&#160;&#160;{ if (<a class="el" href="baro__bmp_8h.html#a3af5dc1a8b4079c6817febf52e970c99">baro_bmp_valid</a>) { _b = <a class="el" href="baro__bmp_8h.html#a679b6da65afcc82d118af2099a6c61e3">baro_bmp_pressure</a>; <a class="el" href="baro__bmp_8h.html#a3af5dc1a8b4079c6817febf52e970c99">baro_bmp_valid</a> = FALSE; } }</td>
+          <td>&#160;&#160;&#160;{ if (<a class="el" href="baro__bmp_8h.html#a3af5dc1a8b4079c6817febf52e970c99">baro_bmp_valid</a>) { _b = <a class="el" href="baro__bmp_8h.html#a679b6da65afcc82d118af2099a6c61e3">baro_bmp_pressure</a>; <a class="el" href="baro__bmp_8h.html#a3af5dc1a8b4079c6817febf52e970c99">baro_bmp_valid</a> = <a class="el" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>; } }</td>
         </tr>
       </table>
 </div>
@@ -642,7 +644,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="baro__bmp_8c_source.html#l00135">135</a> of file <a class="el" href="baro__bmp_8c_source.html">baro_bmp.c</a>.</p>
 
-<p>References <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp</a>, <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp_altitude</a>, <a class="el" href="baro__bmp_8c_source.html#l00091">baro_bmp_cnt</a>, <a class="el" href="baro__bmp_8h_source.html#l00031">BARO_BMP_IDLE</a>, <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp_offset</a>, <a class="el" href="baro__bmp_8c_source.html#l00089">baro_bmp_offset_init</a>, <a class="el" href="baro__bmp_8c_source.html#l00061">BARO_BMP_OFFSET_MAX</a>, <a class="el" href="baro__bmp_8c_source.html#l00062">BARO_BMP_OFFSET_MIN</a>, <a class="el" href="baro__bmp_8c_source.html#l00064">BARO_BMP_OFFSET_NBSAMPLES_AVRG</a>, <a class="el" href="baro__bmp_8c_source.html#l00090">baro_bmp_offset_tmp</a>, <a class="el" href="baro__bmp_8c_source.html#l00077">baro_bmp_pressure</a>, <a class="el" href="baro__bmp_8h_source.html#l00035">BARO_BMP_READ_PRESS</a>, <a class="el" href="baro__bmp_8h_source.html#l00033">BARO_BMP_READ_TEMP</a>, <a class="el" href="baro__bmp_8h_source.html#l00034">BARO_BMP_START_PRESS</a>, <a class="el" href="baro__bmp_8h_source.html#l00032">BARO_BMP_START_TEMP</a>, <a class="el" href="baro__bmp_8c_source.html#l00075">baro_bmp_status</a>, <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp_temp</a>, <a class="el" href="baro__bmp_8c_source.html#l00078">baro_bmp_temperature</a>, <a class="el" href="baro__bmp_8h_source.html#l00030">BARO_BMP_UNINIT</a>, <a class="el" href="baro__bmp_8c_source.html#l00076">baro_bmp_valid</a>, <a class="el" href="baro__bmp_8h_source.html#l00018">BMP085_CTRL_REG</a>, <a class="el" href="baro__bmp_8c_source.html#l00059">BMP085_SLAVE_ADDR</a>, <a class="el" href="baro__bmp_8h_source.html#l00024">BMP085_START_P3</a>, <a class="el" href="baro__bmp_8h_source.html#l00020">BMP085_START_TEMP</a>, <a class="el" href="baro__bmp_8c_source.html#l00082">bmp_ac1</a>, <a class="el" href="baro__bmp_8c_source.html#l00082">bmp_ac2</a>, <a class="el" href="baro__bmp_8c_source.html#l00082">bmp_ac3</a>, <a class="el" href="baro__bmp_8c_source.html#l00083">bmp_ac4</a>, <a class="el" href="baro__bmp_8c_source.html#l00083">bmp_ac5</a>, <a class="el" href="baro__bmp_8c_source.html#l00083">bmp_ac6</a>, <a class="el" href="baro__bmp_8c_source.html#l00084">bmp_b1</a>, <a class="el" href="baro__bmp_8c_source.html#l00084">bmp_b2</a>, <a class="el" href="baro__bmp_8c_source.html#l00056">BMP_I2C_DEV</a>, <a class="el" href="baro__bmp_8c_source.html#l00085">bmp_mb</a>, <a class="el" href="baro__bmp_8c_source.html#l00085">bmp_mc</a>, <a class="el" href="baro__bmp_8c_source.html#l00085">bmp_md</a>, <a class="el" href="baro__bmp_8c_source.html#l00068">bmp_trans</a>, <a class="el" href="baro__bmp_8c_source.html#l00086">bmp_up</a>, <a class="el" href="baro__bmp_8c_source.html#l00086">bmp_ut</a>, <a class="el" href="i2c_8h_source.html#l00046">i2c_transaction::buf</a>, <a class="el" href="downlink_8h_source.html#l00062">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00066">DefaultDevice</a>, <a class="el" href="navigation_8c_source.html#l00050">ground_alt</a>, <a class="el" href="i2c_8h_source.html#l00148">I2CTransmit</a>, <a class="el" href="i2c_8h_source.html#l00017">I2CTransSuccess</a>, <a class="el" href="i2c_8h_source.html#l00047">i2c_transaction::status</a>, and <a class="el" href="baro__bmp_8c_source.html#l00080">tmp_float</a>.</p>
+<p>References <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp</a>, <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp_altitude</a>, <a class="el" href="baro__bmp_8c_source.html#l00091">baro_bmp_cnt</a>, <a class="el" href="baro__bmp_8h_source.html#l00031">BARO_BMP_IDLE</a>, <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp_offset</a>, <a class="el" href="baro__bmp_8c_source.html#l00089">baro_bmp_offset_init</a>, <a class="el" href="baro__bmp_8c_source.html#l00061">BARO_BMP_OFFSET_MAX</a>, <a class="el" href="baro__bmp_8c_source.html#l00062">BARO_BMP_OFFSET_MIN</a>, <a class="el" href="baro__bmp_8c_source.html#l00064">BARO_BMP_OFFSET_NBSAMPLES_AVRG</a>, <a class="el" href="baro__bmp_8c_source.html#l00090">baro_bmp_offset_tmp</a>, <a class="el" href="baro__bmp_8c_source.html#l00077">baro_bmp_pressure</a>, <a class="el" href="baro__bmp_8h_source.html#l00035">BARO_BMP_READ_PRESS</a>, <a class="el" href="baro__bmp_8h_source.html#l00033">BARO_BMP_READ_TEMP</a>, <a class="el" href="baro__bmp_8h_source.html#l00034">BARO_BMP_START_PRESS</a>, <a class="el" href="baro__bmp_8h_source.html#l00032">BARO_BMP_START_TEMP</a>, <a class="el" href="baro__bmp_8c_source.html#l00075">baro_bmp_status</a>, <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp_temp</a>, <a class="el" href="baro__bmp_8c_source.html#l00078">baro_bmp_temperature</a>, <a class="el" href="baro__bmp_8h_source.html#l00030">BARO_BMP_UNINIT</a>, <a class="el" href="baro__bmp_8c_source.html#l00076">baro_bmp_valid</a>, <a class="el" href="baro__bmp_8h_source.html#l00018">BMP085_CTRL_REG</a>, <a class="el" href="baro__bmp_8c_source.html#l00059">BMP085_SLAVE_ADDR</a>, <a class="el" href="baro__bmp_8h_source.html#l00024">BMP085_START_P3</a>, <a class="el" href="baro__bmp_8h_source.html#l00020">BMP085_START_TEMP</a>, <a class="el" href="baro__bmp_8c_source.html#l00082">bmp_ac1</a>, <a class="el" href="baro__bmp_8c_source.html#l00082">bmp_ac2</a>, <a class="el" href="baro__bmp_8c_source.html#l00082">bmp_ac3</a>, <a class="el" href="baro__bmp_8c_source.html#l00083">bmp_ac4</a>, <a class="el" href="baro__bmp_8c_source.html#l00083">bmp_ac5</a>, <a class="el" href="baro__bmp_8c_source.html#l00083">bmp_ac6</a>, <a class="el" href="baro__bmp_8c_source.html#l00084">bmp_b1</a>, <a class="el" href="baro__bmp_8c_source.html#l00084">bmp_b2</a>, <a class="el" href="baro__bmp_8c_source.html#l00056">BMP_I2C_DEV</a>, <a class="el" href="baro__bmp_8c_source.html#l00085">bmp_mb</a>, <a class="el" href="baro__bmp_8c_source.html#l00085">bmp_mc</a>, <a class="el" href="baro__bmp_8c_source.html#l00085">bmp_md</a>, <a class="el" href="baro__bmp_8c_source.html#l00068">bmp_trans</a>, <a class="el" href="baro__bmp_8c_source.html#l00086">bmp_up</a>, <a class="el" href="baro__bmp_8c_source.html#l00086">bmp_ut</a>, <a class="el" href="i2c_8h_source.html#l00046">i2c_transaction::buf</a>, <a class="el" href="downlink_8h_source.html#l00062">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00066">DefaultDevice</a>, <a class="el" href="navigation_8c_source.html#l00050">ground_alt</a>, <a class="el" href="i2c_8h_source.html#l00148">I2CTransmit</a>, <a class="el" href="i2c_8h_source.html#l00017">I2CTransSuccess</a>, <a class="el" href="i2c_8h_source.html#l00047">i2c_transaction::status</a>, <a class="el" href="baro__bmp_8c_source.html#l00080">tmp_float</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
 </div>
 </div>
@@ -663,7 +665,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="baro__bmp_8c_source.html#l00093">93</a> of file <a class="el" href="baro__bmp_8c_source.html">baro_bmp.c</a>.</p>
 
-<p>References <a class="el" href="baro__bmp_8c_source.html#l00091">baro_bmp_cnt</a>, <a class="el" href="baro__bmp_8c_source.html#l00070">baro_bmp_enabled</a>, <a class="el" href="baro__bmp_8c_source.html#l00089">baro_bmp_offset_init</a>, <a class="el" href="baro__bmp_8c_source.html#l00064">BARO_BMP_OFFSET_NBSAMPLES_AVRG</a>, <a class="el" href="baro__bmp_8c_source.html#l00063">BARO_BMP_OFFSET_NBSAMPLES_INIT</a>, <a class="el" href="baro__bmp_8c_source.html#l00065">BARO_BMP_R</a>, <a class="el" href="baro__bmp_8c_source.html#l00071">baro_bmp_r</a>, <a class="el" href="baro__bmp_8c_source.html#l00066">BARO_BMP_SIGMA2</a>, <a class="el" href="baro__bmp_8c_source.html#l00072">baro_bmp_sigma2</a>, <a class="el" href="baro__bmp_8c_source.html#l00075">baro_bmp_status</a>, <a class="el" href="baro__bmp_8h_source.html#l00030">BARO_BMP_UNINIT</a>, <a class="el" href="baro__bmp_8c_source.html#l00076">baro_bmp_valid</a>, <a class="el" href="baro__bmp_8h_source.html#l00006">BMP085_EEPROM_AC1</a>, <a class="el" href="baro__bmp_8c_source.html#l00059">BMP085_SLAVE_ADDR</a>, <a class="el" href="baro__bmp_8c_source.html#l00056">BMP_I2C_DEV</a>, <a class="el" href="baro__bmp_8c_source.html#l00068">bmp_trans</a>, <a class="el" href="i2c_8h_source.html#l00046">i2c_transaction::buf</a>, and <a class="el" href="i2c_8h_source.html#l00156">I2CTransceive</a>.</p>
+<p>References <a class="el" href="baro__bmp_8c_source.html#l00091">baro_bmp_cnt</a>, <a class="el" href="baro__bmp_8c_source.html#l00070">baro_bmp_enabled</a>, <a class="el" href="baro__bmp_8c_source.html#l00089">baro_bmp_offset_init</a>, <a class="el" href="baro__bmp_8c_source.html#l00064">BARO_BMP_OFFSET_NBSAMPLES_AVRG</a>, <a class="el" href="baro__bmp_8c_source.html#l00063">BARO_BMP_OFFSET_NBSAMPLES_INIT</a>, <a class="el" href="baro__bmp_8c_source.html#l00065">BARO_BMP_R</a>, <a class="el" href="baro__bmp_8c_source.html#l00071">baro_bmp_r</a>, <a class="el" href="baro__bmp_8c_source.html#l00066">BARO_BMP_SIGMA2</a>, <a class="el" href="baro__bmp_8c_source.html#l00072">baro_bmp_sigma2</a>, <a class="el" href="baro__bmp_8c_source.html#l00075">baro_bmp_status</a>, <a class="el" href="baro__bmp_8h_source.html#l00030">BARO_BMP_UNINIT</a>, <a class="el" href="baro__bmp_8c_source.html#l00076">baro_bmp_valid</a>, <a class="el" href="baro__bmp_8h_source.html#l00006">BMP085_EEPROM_AC1</a>, <a class="el" href="baro__bmp_8c_source.html#l00059">BMP085_SLAVE_ADDR</a>, <a class="el" href="baro__bmp_8c_source.html#l00056">BMP_I2C_DEV</a>, <a class="el" href="baro__bmp_8c_source.html#l00068">bmp_trans</a>, <a class="el" href="i2c_8h_source.html#l00046">i2c_transaction::buf</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="i2c_8h_source.html#l00156">I2CTransceive</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
 </div>
 </div>
@@ -684,7 +686,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="baro__bmp_8c_source.html#l00106">106</a> of file <a class="el" href="baro__bmp_8c_source.html">baro_bmp.c</a>.</p>
 
-<p>References <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp_altitude</a>, <a class="el" href="baro__bmp_8h_source.html#l00031">BARO_BMP_IDLE</a>, <a class="el" href="baro__bmp_8c_source.html#l00077">baro_bmp_pressure</a>, <a class="el" href="baro__bmp_8h_source.html#l00035">BARO_BMP_READ_PRESS</a>, <a class="el" href="baro__bmp_8h_source.html#l00033">BARO_BMP_READ_TEMP</a>, <a class="el" href="baro__bmp_8h_source.html#l00034">BARO_BMP_START_PRESS</a>, <a class="el" href="baro__bmp_8h_source.html#l00032">BARO_BMP_START_TEMP</a>, <a class="el" href="baro__bmp_8c_source.html#l00075">baro_bmp_status</a>, <a class="el" href="baro__bmp_8c_source.html#l00076">baro_bmp_valid</a>, <a class="el" href="baro__bmp_8h_source.html#l00018">BMP085_CTRL_REG</a>, <a class="el" href="baro__bmp_8h_source.html#l00026">BMP085_DAT_MSB</a>, <a class="el" href="baro__bmp_8c_source.html#l00059">BMP085_SLAVE_ADDR</a>, <a class="el" href="baro__bmp_8h_source.html#l00020">BMP085_START_TEMP</a>, <a class="el" href="baro__bmp_8c_source.html#l00056">BMP_I2C_DEV</a>, <a class="el" href="baro__bmp_8c_source.html#l00068">bmp_trans</a>, <a class="el" href="i2c_8h_source.html#l00046">i2c_transaction::buf</a>, <a class="el" href="gps_8c_source.html#l00031">gps</a>, <a class="el" href="gps_8h_source.html#l00066">GpsState::hmsl</a>, <a class="el" href="i2c_8h_source.html#l00156">I2CTransceive</a>, and <a class="el" href="i2c_8h_source.html#l00148">I2CTransmit</a>.</p>
+<p>References <a class="el" href="baro__bmp_8c_source.html#l00079">baro_bmp_altitude</a>, <a class="el" href="baro__bmp_8h_source.html#l00031">BARO_BMP_IDLE</a>, <a class="el" href="baro__bmp_8c_source.html#l00077">baro_bmp_pressure</a>, <a class="el" href="baro__bmp_8h_source.html#l00035">BARO_BMP_READ_PRESS</a>, <a class="el" href="baro__bmp_8h_source.html#l00033">BARO_BMP_READ_TEMP</a>, <a class="el" href="baro__bmp_8h_source.html#l00034">BARO_BMP_START_PRESS</a>, <a class="el" href="baro__bmp_8h_source.html#l00032">BARO_BMP_START_TEMP</a>, <a class="el" href="baro__bmp_8c_source.html#l00075">baro_bmp_status</a>, <a class="el" href="baro__bmp_8c_source.html#l00076">baro_bmp_valid</a>, <a class="el" href="baro__bmp_8h_source.html#l00018">BMP085_CTRL_REG</a>, <a class="el" href="baro__bmp_8h_source.html#l00026">BMP085_DAT_MSB</a>, <a class="el" href="baro__bmp_8c_source.html#l00059">BMP085_SLAVE_ADDR</a>, <a class="el" href="baro__bmp_8h_source.html#l00020">BMP085_START_TEMP</a>, <a class="el" href="baro__bmp_8c_source.html#l00056">BMP_I2C_DEV</a>, <a class="el" href="baro__bmp_8c_source.html#l00068">bmp_trans</a>, <a class="el" href="i2c_8h_source.html#l00046">i2c_transaction::buf</a>, <a class="el" href="gps_8c_source.html#l00031">gps</a>, <a class="el" href="gps_8h_source.html#l00066">GpsState::hmsl</a>, <a class="el" href="i2c_8h_source.html#l00156">I2CTransceive</a>, <a class="el" href="i2c_8h_source.html#l00148">I2CTransmit</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
 </div>
 </div>
@@ -736,7 +738,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="baro__bmp_8c_source.html#l00070">70</a> of file <a class="el" href="baro__bmp_8c_source.html">baro_bmp.c</a>.</p>
 
-<p>Referenced by <a class="el" href="baro__bmp_8c_source.html#l00093">baro_bmp_init()</a>.</p>
+<p>Referenced by <a class="el" href="ins__alt__float_8c_source.html#l00159">alt_kalman()</a>, and <a class="el" href="baro__bmp_8c_source.html#l00093">baro_bmp_init()</a>.</p>
 
 </div>
 </div>
@@ -787,7 +789,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="baro__bmp_8c_source.html#l00071">71</a> of file <a class="el" href="baro__bmp_8c_source.html">baro_bmp.c</a>.</p>
 
-<p>Referenced by <a class="el" href="baro__bmp_8c_source.html#l00093">baro_bmp_init()</a>.</p>
+<p>Referenced by <a class="el" href="ins__alt__float_8c_source.html#l00159">alt_kalman()</a>, and <a class="el" href="baro__bmp_8c_source.html#l00093">baro_bmp_init()</a>.</p>
 
 </div>
 </div>
@@ -804,7 +806,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="baro__bmp_8c_source.html#l00072">72</a> of file <a class="el" href="baro__bmp_8c_source.html">baro_bmp.c</a>.</p>
 
-<p>Referenced by <a class="el" href="baro__bmp_8c_source.html#l00093">baro_bmp_init()</a>.</p>
+<p>Referenced by <a class="el" href="ins__alt__float_8c_source.html#l00159">alt_kalman()</a>, and <a class="el" href="baro__bmp_8c_source.html#l00093">baro_bmp_init()</a>.</p>
 
 </div>
 </div>
@@ -879,7 +881,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="baro__bmp_8h.html">baro_bmp.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:01:01 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:41:13 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

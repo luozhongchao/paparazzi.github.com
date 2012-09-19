@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -258,7 +258,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00153"></a>00153                           <a class="code" href="structCHIMU__PARSER__DATA.html">CHIMU_PARSER_DATA</a>   *pstData)   <span class="comment">/* resulting data           */</span>
 <a name="l00154"></a>00154 {
 <a name="l00155"></a>00155 
-<a name="l00156"></a>00156   <span class="keywordtype">char</span>           bUpdate = FALSE;
+<a name="l00156"></a>00156   <span class="keywordtype">char</span>           bUpdate = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00157"></a>00157 
 <a name="l00158"></a>00158   <span class="keywordflow">switch</span> (pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a92e079e82b11acf6ed572433f7b8ee2e">m_State</a>) {
 <a name="l00159"></a>00159   <span class="keywordflow">case</span> <a class="code" href="imu__chimu_8c.html#a9e9224d318501e9d591d98484f6d2078">CHIMU_STATE_MACHINE_START</a>:  <span class="comment">// Waiting for start character 0xAE</span>
@@ -269,7 +269,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00164"></a>00164     } <span class="keywordflow">else</span> {
 <a name="l00165"></a>00165       ;;
 <a name="l00166"></a>00166     }
-<a name="l00167"></a>00167     bUpdate = FALSE;
+<a name="l00167"></a>00167     bUpdate = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00168"></a>00168     <span class="keywordflow">break</span>;
 <a name="l00169"></a>00169   <span class="keywordflow">case</span> <a class="code" href="imu__chimu_8c.html#a5b6662f78e03e8ff3f6bae8c8442b98c">CHIMU_STATE_MACHINE_HEADER2</a>:  <span class="comment">// Waiting for second header character 0xAE</span>
 <a name="l00170"></a>00170     <span class="keywordflow">if</span>(btData == 0xAE) {
@@ -318,14 +318,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00213"></a>00213       pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a16117144980855bff670f5b42958bd1b">m_Checksum</a> = (<span class="keywordtype">unsigned</span> char) ((<a class="code" href="imu__chimu_8c.html#a2c788af1398c314b3985546d7177df54">UpdateCRC</a>(0xFFFFFFFF , pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a378979aaa8b40d23822d346d3d2ba956">m_FullMessage</a> , (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>) (pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a43d43d17193b761d1d28f038a647f0b1">m_MsgLen</a>)+5)) &amp; 0xFF);
 <a name="l00214"></a>00214       pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a92e079e82b11acf6ed572433f7b8ee2e">m_State</a> = <a class="code" href="imu__chimu_8c.html#a9c3a30f300901a3bd0aa68191ae75009">CHIMU_STATE_MACHINE_XSUM</a>;
 <a name="l00215"></a>00215     } <span class="keywordflow">else</span> {
-<a name="l00216"></a>00216       <span class="keywordflow">return</span> FALSE;
+<a name="l00216"></a>00216       <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00217"></a>00217     }
 <a name="l00218"></a>00218     <span class="keywordflow">break</span>;
 <a name="l00219"></a>00219   <span class="keywordflow">case</span> <a class="code" href="imu__chimu_8c.html#a9c3a30f300901a3bd0aa68191ae75009">CHIMU_STATE_MACHINE_XSUM</a>:  <span class="comment">// Verify</span>
 <a name="l00220"></a>00220     pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a7edc1ad97b86deb4fca098c1379c666f">m_ReceivedChecksum</a> = btData;
 <a name="l00221"></a>00221     pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a378979aaa8b40d23822d346d3d2ba956">m_FullMessage</a>[pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#ad231d33b8e3ac8f3f33deb853d49a9e8">m_Index</a>++]=btData;
 <a name="l00222"></a>00222     <span class="keywordflow">if</span> (pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a16117144980855bff670f5b42958bd1b">m_Checksum</a>!=pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a7edc1ad97b86deb4fca098c1379c666f">m_ReceivedChecksum</a>) {
-<a name="l00223"></a>00223       bUpdate = FALSE;
+<a name="l00223"></a>00223       bUpdate = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00224"></a>00224       <span class="comment">//BuiltInTest(BIT_COM_UART_RECEIPTFAIL, BIT_FAIL);</span>
 <a name="l00225"></a>00225     } <span class="keywordflow">else</span> {
 <a name="l00226"></a>00226       <span class="comment">//Xsum passed, go parse it.</span>
@@ -388,7 +388,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00285"></a><a class="code" href="imu__chimu_8c.html#acda06f9abeac46aac0c37fe9faafcb5f">00285</a> <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="imu__chimu_8c.html#acda06f9abeac46aac0c37fe9faafcb5f">BitTest</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> input, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> n)
 <a name="l00286"></a>00286 {
 <a name="l00287"></a>00287   <span class="comment">//Test a bit in n and return TRUE or FALSE</span>
-<a name="l00288"></a>00288   <span class="keywordflow">if</span> ( input &amp; (1 &lt;&lt; n)) <span class="keywordflow">return</span> TRUE; <span class="keywordflow">else</span> <span class="keywordflow">return</span> FALSE;
+<a name="l00288"></a>00288   <span class="keywordflow">if</span> ( input &amp; (1 &lt;&lt; n)) <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>; <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00289"></a>00289 }
 <a name="l00290"></a><a class="code" href="imu__chimu_8h.html#a18b09515aee60d52a79df0c4b05d934d">00290</a> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="imu__chimu_8c.html#a18b09515aee60d52a79df0c4b05d934d">CHIMU_ProcessMessage</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *pMsgID, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *pPayloadData, <a class="code" href="structCHIMU__PARSER__DATA.html">CHIMU_PARSER_DATA</a> *pstData)
 <a name="l00291"></a>00291 {
@@ -411,7 +411,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00308"></a>00308     pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#af97745483775ecdd33ba5611397840ad">gCHIMU_SW_SerialNumber</a> = (pPayloadData[CHIMU_index]&lt;&lt;8) &amp; (0x0000FF00); CHIMU_index++;
 <a name="l00309"></a>00309     pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#af97745483775ecdd33ba5611397840ad">gCHIMU_SW_SerialNumber</a> += pPayloadData[CHIMU_index]; CHIMU_index++;
 <a name="l00310"></a>00310 
-<a name="l00311"></a>00311     <span class="keywordflow">return</span> TRUE;
+<a name="l00311"></a>00311     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00312"></a>00312     <span class="keywordflow">break</span>;
 <a name="l00313"></a>00313   <span class="keywordflow">case</span> <a class="code" href="imu__chimu_8h.html#a2ee87eb796fea5389cb6b48c3b43307b">CHIMU_Msg_1_IMU_Raw</a>:
 <a name="l00314"></a>00314     <span class="keywordflow">break</span>;
@@ -433,7 +433,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00330"></a>00330     pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a701c95b3a4b737c5861e86b6300b7cde">mag</a>[2] = <a class="code" href="imu__chimu_8h.html#a5bff2dac690c44d95339377f2074cf31">FloatSwap</a>(pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a701c95b3a4b737c5861e86b6300b7cde">mag</a>[2]);
 <a name="l00331"></a>00331     memmove (&amp;pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a2edb0a07bba97c473e518f19eefb7949">spare1</a>, &amp;pPayloadData[CHIMU_index], <span class="keyword">sizeof</span>(pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a2edb0a07bba97c473e518f19eefb7949">spare1</a>));CHIMU_index += (<span class="keyword">sizeof</span>(pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a2edb0a07bba97c473e518f19eefb7949">spare1</a>));
 <a name="l00332"></a>00332     pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a2edb0a07bba97c473e518f19eefb7949">spare1</a> = <a class="code" href="imu__chimu_8h.html#a5bff2dac690c44d95339377f2074cf31">FloatSwap</a>(pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a64304b3efe76f0981112416b26c3bff3">m_sensor</a>.<a class="code" href="structCHIMU__sensor__data.html#a2edb0a07bba97c473e518f19eefb7949">spare1</a>);
-<a name="l00333"></a>00333     <span class="keywordflow">return</span> TRUE;
+<a name="l00333"></a>00333     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00334"></a>00334     <span class="keywordflow">break</span>;
 <a name="l00335"></a>00335   <span class="keywordflow">case</span> <a class="code" href="imu__chimu_8h.html#a8a4be5b63d1eccd8d0bb95535413dd21">CHIMU_Msg_3_IMU_Attitude</a>:
 <a name="l00336"></a>00336     <span class="comment">//Attitude message data from CHIMU</span>
@@ -485,7 +485,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00382"></a>00382 <span class="comment">                        bC7_AllowHW_Override = BitTest (gConfigInfo, 7);</span>
 <a name="l00383"></a>00383 <span class="comment">    */</span>
 <a name="l00384"></a>00384     <span class="comment">//CHIMU currently (v 1.3) does not compute Eulers if quaternion estimator is selected</span>
-<a name="l00385"></a>00385     <span class="keywordflow">if</span>(<a class="code" href="imu__chimu_8c.html#acda06f9abeac46aac0c37fe9faafcb5f">BitTest</a> (pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#ac254179d39d936403552bbb88625fc03">gConfigInfo</a>, 5) == TRUE)
+<a name="l00385"></a>00385     <span class="keywordflow">if</span>(<a class="code" href="imu__chimu_8c.html#acda06f9abeac46aac0c37fe9faafcb5f">BitTest</a> (pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#ac254179d39d936403552bbb88625fc03">gConfigInfo</a>, 5) == <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)
 <a name="l00386"></a>00386       {
 <a name="l00387"></a>00387         pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a13f981baccf5efff5a84165af3e853da">m_attitude</a> = <a class="code" href="imu__chimu_8c.html#aa0df1ea95e60894cb1747257da38f17f">GetEulersFromQuat</a>((pstData-&gt;<a class="code" href="structCHIMU__PARSER__DATA.html#a13f981baccf5efff5a84165af3e853da">m_attitude</a>));
 <a name="l00388"></a>00388       }
@@ -506,7 +506,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00403"></a>00403       <span class="comment">//TODO:  Log BIT that indicates IMU message incoming failed (maybe SPI error?)</span>
 <a name="l00404"></a>00404     }
 <a name="l00405"></a>00405 
-<a name="l00406"></a>00406     <span class="keywordflow">return</span> TRUE;
+<a name="l00406"></a>00406     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00407"></a>00407     <span class="keywordflow">break</span>;
 <a name="l00408"></a>00408   <span class="keywordflow">case</span> <a class="code" href="imu__chimu_8h.html#a90fd2842e956c118d22f1ac16c85b583">CHIMU_Msg_4_BiasSF</a>:
 <a name="l00409"></a>00409   <span class="keywordflow">case</span> <a class="code" href="imu__chimu_8h.html#a2356308584aa9e6e03662ac9b61ae97c">CHIMU_Msg_5_BIT</a>:
@@ -522,10 +522,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00419"></a>00419   <span class="keywordflow">case</span> <a class="code" href="imu__chimu_8h.html#aa1053e95922ef44249abdc352ec7971b">CHIMU_Msg_15_SFCheck</a>:
 <a name="l00420"></a>00420     <span class="keywordflow">break</span>;
 <a name="l00421"></a>00421   <span class="keywordflow">default</span>:
-<a name="l00422"></a>00422     <span class="keywordflow">return</span> FALSE;
+<a name="l00422"></a>00422     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00423"></a>00423     <span class="keywordflow">break</span>;
 <a name="l00424"></a>00424   }
-<a name="l00425"></a>00425   <span class="keywordflow">return</span> FALSE;
+<a name="l00425"></a>00425   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00426"></a>00426 }
 </pre></div></div><!-- contents -->
 </div>
@@ -547,7 +547,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="imu__chimu_8c.html">imu_chimu.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:42 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:53 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

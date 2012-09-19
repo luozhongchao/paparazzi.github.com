@@ -49,6 +49,8 @@ var searchData=
   ['form_5fspeed_5fn',['form_speed_n',['../formation_8c.html#a586066ae1845c5ca9d3bd7fa09ce335f',1,'formation.c']]],
   ['formation',['formation',['../formation_8c.html#a86703694a52eca211bffb90b5163c75a',1,'formation():&#160;formation.c'],['../formation_8h.html#a86703694a52eca211bffb90b5163c75a',1,'formation():&#160;formation.c']]],
   ['fp_5fpitch',['fp_pitch',['../nav_8c.html#a737a463b508f62286a0e62c5ed5648b4',1,'fp_pitch():&#160;nav.c'],['../nav_8h.html#a737a463b508f62286a0e62c5ed5648b4',1,'fp_pitch():&#160;nav.c']]],
+  ['frame_5fcpt',['frame_cpt',['../structRadioControl.html#ab19a0ca633267915e1e0ca584d31ef88',1,'RadioControl']]],
+  ['frame_5frate',['frame_rate',['../structRadioControl.html#aa6eb017ab6023648e26cedd9de0c6c8c',1,'RadioControl']]],
   ['framecnt',['FrameCnt',['../structSpektrumStateStruct.html#a0f1bca7c6c4c57019ffea65b382a25de',1,'SpektrumStateStruct']]],
   ['fref',['fref',['../temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c',1,'temp_tcouple_adc.c']]],
   ['from_5fap',['from_ap',['../structlink__mcu__msg.html#a25fa2f904ea4f65116b263dca709a1d8',1,'link_mcu_msg']]],

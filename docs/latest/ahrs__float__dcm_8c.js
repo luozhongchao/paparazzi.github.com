@@ -20,6 +20,8 @@ var ahrs__float__dcm_8c =
     [ "G_Dt", "ahrs__float__dcm_8c.html#a8afcaa0b0df0db5ad885df050d994a7f", null ],
     [ "ins_pitch_neutral", "ahrs__float__dcm_8c.html#ac5803b6353ae28ae52ab9284d222d8d5", null ],
     [ "ins_roll_neutral", "ahrs__float__dcm_8c.html#a70b61a4232cbf0e9acbde8d9b62ce1c5", null ],
+    [ "MAG_Heading_X", "ahrs__float__dcm_8c.html#a651c2290f949993aa2f6b3d6a5d4e937", null ],
+    [ "MAG_Heading_Y", "ahrs__float__dcm_8c.html#a471da6767a04416f57528bb58940f43f", null ],
     [ "Omega", "ahrs__float__dcm_8c.html#ac8ddf28561a53266eb9fddbc8e584570", null ],
     [ "Omega_I", "ahrs__float__dcm_8c.html#a2984dc102d0f60e5682814c3a9738c2c", null ],
     [ "Omega_P", "ahrs__float__dcm_8c.html#adb86d0beb8f30f0a135862055394de26", null ],

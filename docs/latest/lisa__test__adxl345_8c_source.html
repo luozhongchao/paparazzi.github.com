@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00072"></a>00072 <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__adxl345_8c.html#a9b189d56eb86ceed6da94442aeb278b6">read_fom_reg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> addr);
 <a name="l00073"></a><a class="code" href="lisa__test__adxl345_8c.html#a514476189fbaf15c716d5e846955d2b8">00073</a> <span class="preprocessor">#define CONFIGURED 6</span>
 <a name="l00074"></a><a class="code" href="lisa__test__adxl345_8c.html#aae8dbf74d528a8bee347327657c2f748">00074</a> <span class="preprocessor"></span><span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__adxl345_8c.html#aae8dbf74d528a8bee347327657c2f748">acc_status</a>=0;
-<a name="l00075"></a><a class="code" href="lisa__test__adxl345_8c.html#add1e278a89ce77044f5c82f58a72a001">00075</a> <span class="keyword">static</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__adxl345_8c.html#add1e278a89ce77044f5c82f58a72a001">acc_ready_for_read</a> = FALSE;
+<a name="l00075"></a><a class="code" href="lisa__test__adxl345_8c.html#add1e278a89ce77044f5c82f58a72a001">00075</a> <span class="keyword">static</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__adxl345_8c.html#add1e278a89ce77044f5c82f58a72a001">acc_ready_for_read</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00076"></a><a class="code" href="lisa__test__adxl345_8c.html#af47cf112b37cdbfec13f9d57476b3728">00076</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__adxl345_8c.html#af47cf112b37cdbfec13f9d57476b3728">values</a>[6];
 <a name="l00077"></a>00077 
 <a name="l00078"></a><a class="code" href="lisa__test__adxl345_8c.html#ae4c7f2761e1268cdd7ed6ff6c396919c">00078</a> <span class="preprocessor">#define AccUnselect() GPIOB-&gt;BSRR = GPIO_Pin_12</span>
@@ -311,7 +311,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00206"></a>00206 
 <a name="l00207"></a>00207   <span class="keywordflow">if</span> (acc_status &gt;= <a class="code" href="lisa__test__adxl345_8c.html#a514476189fbaf15c716d5e846955d2b8">CONFIGURED</a> &amp;&amp; acc_ready_for_read) {
 <a name="l00208"></a>00208     <a class="code" href="lisa__test__adxl345_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8">read_data</a>();
-<a name="l00209"></a>00209     acc_ready_for_read = FALSE;
+<a name="l00209"></a>00209     acc_ready_for_read = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00210"></a>00210     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> iax = *((<a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>*)&amp;values[0]);
 <a name="l00211"></a>00211     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> iay = *((<a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>*)&amp;values[2]);
 <a name="l00212"></a>00212     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> iaz = *((<a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>*)&amp;values[4]);
@@ -394,7 +394,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00289"></a>00289 
 <a name="l00290"></a>00290   <span class="comment">//DEBUG_S4_TOGGLE();</span>
 <a name="l00291"></a>00291 
-<a name="l00292"></a>00292   acc_ready_for_read = TRUE;
+<a name="l00292"></a>00292   acc_ready_for_read = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00293"></a>00293 
 <a name="l00294"></a>00294 
 <a name="l00295"></a>00295 }
@@ -419,7 +419,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lisa__test__adxl345_8c.html">lisa_test_adxl345.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:40 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:51 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

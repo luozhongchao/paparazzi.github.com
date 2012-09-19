@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -1516,7 +1516,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01431"></a>01431   temp = periph-&gt;<a class="code" href="structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c">trans_insert_idx</a> + 1;
 <a name="l01432"></a>01432   <span class="keywordflow">if</span> (temp &gt;= <a class="code" href="i2c_8h.html#a1e8f7694d49989f4823aa34cffae6319">I2C_TRANSACTION_QUEUE_LEN</a>) temp = 0;
 <a name="l01433"></a>01433   <span class="keywordflow">if</span> (temp == periph-&gt;<a class="code" href="structi2c__periph.html#a4e572be9f28f1037d7c749a223329aaf">trans_extract_idx</a>)
-<a name="l01434"></a>01434     <span class="keywordflow">return</span> FALSE;                          <span class="comment">// queue full</span>
+<a name="l01434"></a>01434     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                          <span class="comment">// queue full</span>
 <a name="l01435"></a>01435 
 <a name="l01436"></a>01436   t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>;
 <a name="l01437"></a>01437 
@@ -1552,7 +1552,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01467"></a>01467   <span class="comment">/* else it will be started by the interrupt handler when the previous transactions completes */</span>
 <a name="l01468"></a>01468   <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a5e587d51e0e0c291bb20ef0f9b5e8e76">__enable_irq</a>();
 <a name="l01469"></a>01469 
-<a name="l01470"></a>01470   <span class="keywordflow">return</span> TRUE;
+<a name="l01470"></a>01470   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l01471"></a>01471 }
 <a name="l01472"></a>01472 
 <a name="l01473"></a><a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a78c67d54f9c18514a2eb38edfc0fc66d">01473</a> bool_t <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a>* periph)
@@ -1566,7 +1566,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01481"></a>01481 #ifdef USE_I2C1
 <a name="l01482"></a>01482     if (periph == &amp;i2c1)
 <a name="l01483"></a>01483     {
-<a name="l01484"></a>01484       <span class="keywordflow">return</span> TRUE;
+<a name="l01484"></a>01484       <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l01485"></a>01485         }
 <a name="l01486"></a>01486 <span class="preprocessor">#endif</span>
 <a name="l01487"></a>01487 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
@@ -1575,7 +1575,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01490"></a>01490   <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
 <a name="l01491"></a>01491     <span class="keywordflow">return</span> ! (<a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>( I2C_SR2_BUSY, I2C_SR2(i2c) ) );
 <a name="l01492"></a>01492   <span class="keywordflow">else</span>
-<a name="l01493"></a>01493     <span class="keywordflow">return</span> FALSE;
+<a name="l01493"></a>01493     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l01494"></a>01494 }
 </pre></div></div><!-- contents -->
 </div>
@@ -1597,7 +1597,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2i2c__arch_8c.html">i2c_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:35 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:46 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

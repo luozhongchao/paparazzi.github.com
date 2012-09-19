@@ -12,8 +12,6 @@ var ins__module_8h =
     [ "InsUartSetBaudrate", "ins__module_8h.html#a62fdd3a0d689ac9b41d34e8411ed2426", null ],
     [ "ReadInsBuffer", "ins__module_8h.html#a24cc16346054100a43d0b5aab4bbd857", null ],
     [ "handle_ins_msg", "ins__module_8h.html#ac5da428408b44b6b22e510c36f7f2bc7", null ],
-    [ "ins_init", "ins__module_8h.html#abf3028c2ada542781b8a5e1eb20c17ce", null ],
-    [ "ins_periodic_task", "ins__module_8h.html#a8dc6e488ca20854b1f96fb7a2933bbfe", null ],
     [ "parse_ins_buffer", "ins__module_8h.html#acb1dc1d537ebd5ad8b28282c1365b884", null ],
     [ "parse_ins_msg", "ins__module_8h.html#a8cb976f9e02352af6815c51a4b18faec", null ],
     [ "ins_ax", "ins__module_8h.html#a8b9d20805bf2e2f6650b54e078430b54", null ],

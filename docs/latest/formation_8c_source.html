@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -182,17 +182,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00080"></a>00080   <a class="code" href="formation_8c.html#a5e08859d5f7c09e8d087590c1cc5d591">form_mode</a> = <a class="code" href="formation_8c.html#a0a7c68ae131645cdbecdf1741a2b2e04">FORM_MODE</a>;
 <a name="l00081"></a>00081   <a class="code" href="formation_8c.html#aa9878159de06d9b34a393ab3cbff1dee">old_cruise</a> = V_CTL_AUTO_THROTTLE_NOMINAL_CRUISE_THROTTLE;
 <a name="l00082"></a>00082   <a class="code" href="formation_8c.html#aee51e7f0857fc3d79e7db4da09805232">old_alt</a> = GROUND_ALT + SECURITY_HEIGHT;
-<a name="l00083"></a>00083   <span class="keywordflow">return</span> FALSE;
+<a name="l00083"></a>00083   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00084"></a>00084 }
 <a name="l00085"></a>00085 
 <a name="l00086"></a><a class="code" href="formation_8h.html#a7dcb2c0be65dfe8010efddc09570755b">00086</a> <span class="keywordtype">int</span> <a class="code" href="formation_8c.html#a7dcb2c0be65dfe8010efddc09570755b">add_slot</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _id, <span class="keywordtype">float</span> slot_e, <span class="keywordtype">float</span> slot_n, <span class="keywordtype">float</span> slot_a) {
-<a name="l00087"></a>00087   <span class="keywordflow">if</span> (_id != AC_ID &amp;&amp; <a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[_id] == 0) <span class="keywordflow">return</span> FALSE; <span class="comment">// no info for this AC</span>
+<a name="l00087"></a>00087   <span class="keywordflow">if</span> (_id != AC_ID &amp;&amp; <a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[_id] == 0) <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>; <span class="comment">// no info for this AC</span>
 <a name="l00088"></a>00088   DOWNLINK_SEND_FORMATION_SLOT_TM(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,&amp;_id, &amp;<a class="code" href="formation_8c.html#a5e08859d5f7c09e8d087590c1cc5d591">form_mode</a>, &amp;slot_e, &amp;slot_n, &amp;slot_a);
 <a name="l00089"></a>00089   <a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[_id]].<a class="code" href="structslot__.html#a0bd264ee0d099ab2c11ac8a3dd2e1436">status</a> = <a class="code" href="lisa__overo__link_8h.html#ad9636c84365cd0534987d1dc1d6bb602afd6a0e4343048b10646dd2976cc5ad18">IDLE</a>;
 <a name="l00090"></a>00090   <a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[_id]].<a class="code" href="structslot__.html#a654c80b1b407b655ae863b5e771158d8">east</a> = slot_e;
 <a name="l00091"></a>00091   <a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[_id]].<a class="code" href="structslot__.html#a900562e37aa0b7cee40829bd840292fb">north</a> = slot_n;
 <a name="l00092"></a>00092   <a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[_id]].<a class="code" href="structslot__.html#a55ec137714f3d0c741faee75d6869f0a">alt</a> = slot_a;
-<a name="l00093"></a>00093   <span class="keywordflow">return</span> FALSE;
+<a name="l00093"></a>00093   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00094"></a>00094 }
 <a name="l00095"></a>00095 
 <a name="l00096"></a><a class="code" href="formation_8h.html#a7f570279c6840dc962733dbac2b46413">00096</a> <span class="keywordtype">int</span> <a class="code" href="formation_8c.html#a7f570279c6840dc962733dbac2b46413">start_formation</a>(<span class="keywordtype">void</span>) {
@@ -206,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00104"></a>00104   <span class="comment">// store current cruise and alt</span>
 <a name="l00105"></a>00105   <a class="code" href="formation_8c.html#aa9878159de06d9b34a393ab3cbff1dee">old_cruise</a> = <a class="code" href="energy__ctrl_8c.html#ac2157f339c7b2f374ece7b5448fe7816">v_ctl_auto_throttle_cruise_throttle</a>;
 <a name="l00106"></a>00106   <a class="code" href="formation_8c.html#aee51e7f0857fc3d79e7db4da09805232">old_alt</a> = <a class="code" href="navigation_8c.html#af0e2e459664ed595f936a2a9d5852286">nav_altitude</a>;
-<a name="l00107"></a>00107   <span class="keywordflow">return</span> FALSE;
+<a name="l00107"></a>00107   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00108"></a>00108 }
 <a name="l00109"></a>00109 
 <a name="l00110"></a><a class="code" href="formation_8h.html#ae8cee39c5a50b92149438d938cc0dd0c">00110</a> <span class="keywordtype">int</span> <a class="code" href="formation_8c.html#ae8cee39c5a50b92149438d938cc0dd0c">stop_formation</a>(<span class="keywordtype">void</span>) {
@@ -222,7 +222,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00120"></a>00120   <a class="code" href="formation_8c.html#aa9878159de06d9b34a393ab3cbff1dee">old_cruise</a> = V_CTL_AUTO_THROTTLE_NOMINAL_CRUISE_THROTTLE;
 <a name="l00121"></a>00121   <a class="code" href="navigation_8c.html#af0e2e459664ed595f936a2a9d5852286">nav_altitude</a> = <a class="code" href="formation_8c.html#aee51e7f0857fc3d79e7db4da09805232">old_alt</a>;
 <a name="l00122"></a>00122   <a class="code" href="formation_8c.html#aee51e7f0857fc3d79e7db4da09805232">old_alt</a> = GROUND_ALT + SECURITY_HEIGHT;
-<a name="l00123"></a>00123   <span class="keywordflow">return</span> FALSE;
+<a name="l00123"></a>00123   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00124"></a>00124 }
 <a name="l00125"></a>00125 
 <a name="l00126"></a>00126 
@@ -257,12 +257,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00155"></a>00155         &amp;<a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[AC_ID]].<a class="code" href="structslot__.html#a900562e37aa0b7cee40829bd840292fb">north</a>,
 <a name="l00156"></a>00156         &amp;<a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[AC_ID]].<a class="code" href="structslot__.html#a55ec137714f3d0c741faee75d6869f0a">alt</a>);
 <a name="l00157"></a>00157   }
-<a name="l00158"></a>00158   <span class="keywordflow">if</span> (<a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[AC_ID]].status != <a class="code" href="formation_8h.html#a4c0e214062079ff665c54dbc682bb832a33cf1d8ef1d06ee698a7fabf40eb3a7f">ACTIVE</a>) <span class="keywordflow">return</span> FALSE; <span class="comment">// AC not ready</span>
+<a name="l00158"></a>00158   <span class="keywordflow">if</span> (<a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[AC_ID]].status != <a class="code" href="formation_8h.html#a4c0e214062079ff665c54dbc682bb832a33cf1d8ef1d06ee698a7fabf40eb3a7f">ACTIVE</a>) <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>; <span class="comment">// AC not ready</span>
 <a name="l00159"></a>00159 
 <a name="l00160"></a>00160   <span class="comment">// get leader info</span>
 <a name="l00161"></a>00161   <span class="keyword">struct </span><a class="code" href="structac__info__.html">ac_info_</a> * leader = <a class="code" href="traffic__info_8c.html#a7e85d322af164f27094da0f8aca67b21">get_ac_info</a>(<a class="code" href="formation_8c.html#a6642110f5acd6b9fca3276cd472677d8">leader_id</a>);
 <a name="l00162"></a>00162   <span class="keywordflow">if</span> (<a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[<a class="code" href="formation_8c.html#a6642110f5acd6b9fca3276cd472677d8">leader_id</a>]].status == <a class="code" href="formation_8h.html#a4c0e214062079ff665c54dbc682bb832aec1d962808cbb9cf1b89a5cdd6197923">UNSET</a> ||
-<a name="l00163"></a>00163       <a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[<a class="code" href="formation_8c.html#a6642110f5acd6b9fca3276cd472677d8">leader_id</a>]].status == <a class="code" href="lisa__overo__link_8h.html#ad9636c84365cd0534987d1dc1d6bb602afd6a0e4343048b10646dd2976cc5ad18">IDLE</a>) <span class="keywordflow">return</span> FALSE; <span class="comment">// leader not ready or not in formation</span>
+<a name="l00163"></a>00163       <a class="code" href="formation_8c.html#a86703694a52eca211bffb90b5163c75a">formation</a>[<a class="code" href="traffic__info_8c.html#a7f7ded0e4c503f657f03c2a1b581f36b">the_acs_id</a>[<a class="code" href="formation_8c.html#a6642110f5acd6b9fca3276cd472677d8">leader_id</a>]].status == <a class="code" href="lisa__overo__link_8h.html#ad9636c84365cd0534987d1dc1d6bb602afd6a0e4343048b10646dd2976cc5ad18">IDLE</a>) <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>; <span class="comment">// leader not ready or not in formation</span>
 <a name="l00164"></a>00164 
 <a name="l00165"></a>00165   <span class="comment">// compute slots in the right reference frame</span>
 <a name="l00166"></a>00166   <span class="keyword">struct </span><a class="code" href="structslot__.html">slot_</a> form[NB_ACS];
@@ -346,7 +346,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00244"></a>00244     Bound(cruise, V_CTL_AUTO_THROTTLE_MIN_CRUISE_THROTTLE, V_CTL_AUTO_THROTTLE_MAX_CRUISE_THROTTLE);
 <a name="l00245"></a>00245     <a class="code" href="energy__ctrl_8c.html#ac2157f339c7b2f374ece7b5448fe7816">v_ctl_auto_throttle_cruise_throttle</a> = cruise;
 <a name="l00246"></a>00246   }
-<a name="l00247"></a>00247   <span class="keywordflow">return</span> TRUE;
+<a name="l00247"></a>00247   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00248"></a>00248 }
 <a name="l00249"></a>00249 
 <a name="l00250"></a><a class="code" href="formation_8h.html#ae22bbb9b0cbc9aa4e541ab47d5a42989">00250</a> <span class="keywordtype">void</span> <a class="code" href="formation_8c.html#ae22bbb9b0cbc9aa4e541ab47d5a42989">formation_pre_call</a>(<span class="keywordtype">void</span>) {
@@ -376,7 +376,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="formation_8c.html">formation.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:43 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:54 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

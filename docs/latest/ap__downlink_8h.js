@@ -20,6 +20,8 @@ var ap__downlink_8h =
     [ "PERIODIC_SEND_ENERGY", "ap__downlink_8h.html#affc35e080959e1836ce979271f87dcde", null ],
     [ "PERIODIC_SEND_ESTIMATOR", "ap__downlink_8h.html#a111613885987874c077b40e342e78b99", null ],
     [ "PERIODIC_SEND_GPS", "ap__downlink_8h.html#a10392905662467a5ace379ddff0a264c", null ],
+    [ "PERIODIC_SEND_GPS_INT", "ap__downlink_8h.html#ada9a2df78234b875c7949122551e5f67", null ],
+    [ "PERIODIC_SEND_GPS_LLA", "ap__downlink_8h.html#ae5b08338d6b49b79108e2582bb2bb777", null ],
     [ "PERIODIC_SEND_GPS_SOL", "ap__downlink_8h.html#aa87a843f3dc85cee89f912f603247081", null ],
     [ "PERIODIC_SEND_H_CTL_A", "ap__downlink_8h.html#a2fbdd1c2b5d02e61f2a76d9e2d900ed2", null ],
     [ "PERIODIC_SEND_IMU", "ap__downlink_8h.html#a74f5704591bd1a37defcacae7fd31dbd", null ],

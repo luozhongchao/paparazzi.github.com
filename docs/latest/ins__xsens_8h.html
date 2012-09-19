@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -101,6 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Defines</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">ins_xsens.h File Reference</div>  </div>
@@ -108,6 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &quot;std.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="ins__module_8h_source.html">ins_module.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="imu_8h_source.html">subsystems/imu.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for ins_xsens.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -115,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="ins__xsens_8h__incl.png" border="0" usemap="#sw_2airborne_2modules_2ins_2ins__xsens_8h" alt=""/></div>
 <map name="sw_2airborne_2modules_2ins_2ins__xsens_8h" id="sw_2airborne_2modules_2ins_2ins__xsens_8h">
-<area shape="rect" id="node5" href="ins__module_8h.html" title="ins_module.h" alt="" coords="124,83,231,112"/><area shape="rect" id="node8" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="175,160,313,189"/></map>
+<area shape="rect" id="node5" href="ins__module_8h.html" title="Device independent INS code." alt="" coords="143,83,249,112"/><area shape="rect" id="node55" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="877,315,1016,344"/><area shape="rect" id="node8" href="ins_8h.html" title="subsystems/ins.h" alt="" coords="339,160,472,189"/><area shape="rect" id="node50" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="127,160,265,189"/><area shape="rect" id="node11" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations." alt="" coords="245,315,429,344"/><area shape="rect" id="node32" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="776,392,965,421"/><area shape="rect" id="node38" href="state_8h.html" title="API to get/set the generic vehicle states." alt="" coords="519,237,585,267"/><area shape="rect" id="node13" href="pprz__geodetic_8h.html" title="pprz_geodetic.h" alt="" coords="296,392,419,421"/><area shape="rect" id="node16" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="528,392,667,421"/><area shape="rect" id="node19" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="776,469,931,499"/><area shape="rect" id="node26" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="461,469,611,499"/><area shape="rect" id="node43" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations." alt="" coords="453,315,651,344"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -124,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="ins__xsens_8h__dep__incl.png" border="0" usemap="#sw_2airborne_2modules_2ins_2ins__xsens_8hdep" alt=""/></div>
 <map name="sw_2airborne_2modules_2ins_2ins__xsens_8hdep" id="sw_2airborne_2modules_2ins_2ins__xsens_8hdep">
-<area shape="rect" id="node3" href="ins__xsens_8c.html" title="sw/airborne/modules/ins/ins_xsens.c" alt="" coords="5,83,259,112"/></map>
+<area shape="rect" id="node3" href="ins__xsens_8c.html" title="Parser for the Xsens protocol." alt="" coords="5,83,259,112"/></map>
 </div>
 </div>
 <p><a href="ins__xsens_8h_source.html">Go to the source code of this file.</a></p>
@@ -133,13 +135,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Data Structures</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXsensTime.html">XsensTime</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Library for the XSENS AHRS.  <a href="structXsensTime.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImuXsens.html">ImuXsens</a></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8h.html#a5b61834fdd9dc32e2f93b974354c7402">ImuEvent</a>(_gyro_handler, _accel_handler, _mag_handler)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structXsensTime.html">XsensTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8h.html#a42ca5c3bdbce220f8861d3675b74609d">xsens_time</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8h.html#a05acf815522ac351803010e46bdd0630">xsens_msg_status</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8h.html#a6b6eb281542b6309396be4ebf947d593">xsens_time_stamp</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structImuXsens.html">ImuXsens</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8h.html#a324f6180f03e88fef60ce50a04a7c165">imu_xsens</a></td></tr>
 </table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="a5b61834fdd9dc32e2f93b974354c7402"></a><!-- doxytag: member="ins_xsens.h::ImuEvent" ref="a5b61834fdd9dc32e2f93b974354c7402" args="(_gyro_handler, _accel_handler, _mag_handler)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="imu__nps_8h.html#a5b61834fdd9dc32e2f93b974354c7402">ImuEvent</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_gyro_handler, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_accel_handler, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_mag_handler&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Value:</b><div class="fragment"><pre class="fragment">{ \
+    if (<a class="code" href="ins__xsens_8c.html#a324f6180f03e88fef60ce50a04a7c165">imu_xsens</a>.<a class="code" href="structImuXsens.html#aa9f2309190313541f0ce433026fe2051">accel_available</a>) {                            \
+      imu_xsens.accel_available = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                        \
+      _accel_handler();                                         \
+    }                                                           \
+    if (<a class="code" href="ins__xsens_8c.html#a324f6180f03e88fef60ce50a04a7c165">imu_xsens</a>.<a class="code" href="structImuXsens.html#a94db1d3d9439421cb8406277ae38d472">gyro_available</a>) {                             \
+      imu_xsens.gyro_available = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                         \
+      _gyro_handler();                                          \
+    }                                                           \
+    if (<a class="code" href="ins__xsens_8c.html#a324f6180f03e88fef60ce50a04a7c165">imu_xsens</a>.<a class="code" href="structImuXsens.html#a8d47dc750ad752c043a5758531af8269">mag_available</a>) {                              \
+      imu_xsens.mag_available = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                          \
+      _mag_handler();                                           \
+    }                                                           \
+  }
+</pre></div>
+<p>Definition at line <a class="el" href="ins__xsens_8h_source.html#l00065">65</a> of file <a class="el" href="ins__xsens_8h_source.html">ins_xsens.h</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="a324f6180f03e88fef60ce50a04a7c165"></a><!-- doxytag: member="ins_xsens.h::imu_xsens" ref="a324f6180f03e88fef60ce50a04a7c165" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structImuXsens.html">ImuXsens</a> <a class="el" href="ins__xsens_8h.html#a324f6180f03e88fef60ce50a04a7c165">imu_xsens</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00229">229</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, <a class="el" href="ins__xsens_8c_source.html#l00231">imu_impl_init()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a05acf815522ac351803010e46bdd0630"></a><!-- doxytag: member="ins_xsens.h::xsens_msg_status" ref="a05acf815522ac351803010e46bdd0630" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +227,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00182">182</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
 
-<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00209">ins_init()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00389">parse_ins_msg()</a>.</p>
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>.</p>
 
 </div>
 </div>
@@ -170,7 +244,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00198">198</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
 
-<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00389">parse_ins_msg()</a>.</p>
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
 
 </div>
 </div>
@@ -187,7 +261,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00183">183</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
 
-<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00209">ins_init()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00389">parse_ins_msg()</a>.</p>
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>.</p>
 
 </div>
 </div>
@@ -211,7 +285,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="ins__xsens_8h.html">ins_xsens.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:01:00 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:41:11 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

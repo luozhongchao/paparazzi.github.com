@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -183,9 +183,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00095"></a>00095   <a class="code" href="airspeed__ets_8c.html#a513caa9626faf5f98e1c53e64299f668">airspeed_ets</a> = 0.0;
 <a name="l00096"></a>00096   <a class="code" href="airspeed__ets_8c.html#a96556ede33b13194c07f518706c11c40">airspeed_ets_offset</a> = 0;
 <a name="l00097"></a>00097   <a class="code" href="airspeed__ets_8c.html#a4627f5f318293336104edd9d7630f4c6">airspeed_ets_offset_tmp</a> = 0;
-<a name="l00098"></a>00098   <a class="code" href="airspeed__ets_8c.html#a83b3c147bbda79db18ea8a8f62947892">airspeed_ets_i2c_done</a> = TRUE;
-<a name="l00099"></a>00099   <a class="code" href="airspeed__ets_8c.html#a8cf27b4c563e401e804df9e30166f719">airspeed_ets_valid</a> = TRUE;
-<a name="l00100"></a>00100   <a class="code" href="airspeed__ets_8c.html#a6c8202c917e3515c097b60b90af75811">airspeed_ets_offset_init</a> = FALSE;
+<a name="l00098"></a>00098   <a class="code" href="airspeed__ets_8c.html#a83b3c147bbda79db18ea8a8f62947892">airspeed_ets_i2c_done</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
+<a name="l00099"></a>00099   <a class="code" href="airspeed__ets_8c.html#a8cf27b4c563e401e804df9e30166f719">airspeed_ets_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
+<a name="l00100"></a>00100   <a class="code" href="airspeed__ets_8c.html#a6c8202c917e3515c097b60b90af75811">airspeed_ets_offset_init</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00101"></a>00101   <a class="code" href="airspeed__ets_8c.html#a50f19cd938880ed56d8806d768cd6bf2">airspeed_ets_cnt</a> = <a class="code" href="airspeed__ets_8c.html#a548d37e481b0dd9491cadcb9f57269a7">AIRSPEED_ETS_OFFSET_NBSAMPLES_INIT</a> + <a class="code" href="airspeed__ets_8c.html#a559e7d3ce3c9c7db344d31dfd0dba83b">AIRSPEED_ETS_OFFSET_NBSAMPLES_AVRG</a>;
 <a name="l00102"></a>00102 
 <a name="l00103"></a>00103   <a class="code" href="airspeed__ets_8c.html#ad71d44c9444fad51e74d531792ebea42">airspeed_ets_buffer_idx</a> = 0;
@@ -213,9 +213,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00125"></a>00125   <a class="code" href="airspeed__ets_8c.html#a5b8d889aa0c63db46fe4465ba6c8fffb">airspeed_ets_raw</a> = ((<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(<a class="code" href="airspeed__ets_8c.html#ac7df2f3536354ecc842855a3e76c97fa">airspeed_ets_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1]) &lt;&lt; 8) | (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(<a class="code" href="airspeed__ets_8c.html#ac7df2f3536354ecc842855a3e76c97fa">airspeed_ets_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0]);
 <a name="l00126"></a>00126   <span class="comment">// Check if this is valid airspeed</span>
 <a name="l00127"></a>00127   <span class="keywordflow">if</span> (<a class="code" href="airspeed__ets_8c.html#a5b8d889aa0c63db46fe4465ba6c8fffb">airspeed_ets_raw</a> == 0)
-<a name="l00128"></a>00128     <a class="code" href="airspeed__ets_8c.html#a8cf27b4c563e401e804df9e30166f719">airspeed_ets_valid</a> = FALSE;
+<a name="l00128"></a>00128     <a class="code" href="airspeed__ets_8c.html#a8cf27b4c563e401e804df9e30166f719">airspeed_ets_valid</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00129"></a>00129   <span class="keywordflow">else</span>
-<a name="l00130"></a>00130     <a class="code" href="airspeed__ets_8c.html#a8cf27b4c563e401e804df9e30166f719">airspeed_ets_valid</a> = TRUE;
+<a name="l00130"></a>00130     <a class="code" href="airspeed__ets_8c.html#a8cf27b4c563e401e804df9e30166f719">airspeed_ets_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00131"></a>00131 
 <a name="l00132"></a>00132   <span class="comment">// Continue only if a new airspeed value was received</span>
 <a name="l00133"></a>00133   <span class="keywordflow">if</span> (<a class="code" href="airspeed__ets_8c.html#a8cf27b4c563e401e804df9e30166f719">airspeed_ets_valid</a>) {
@@ -231,7 +231,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00143"></a>00143           <a class="code" href="airspeed__ets_8c.html#a96556ede33b13194c07f518706c11c40">airspeed_ets_offset</a> = <a class="code" href="airspeed__ets_8c.html#a1801ef2ef864d5d5f5698cc2ce56e675">AIRSPEED_ETS_OFFSET_MIN</a>;
 <a name="l00144"></a>00144         <span class="keywordflow">if</span> (<a class="code" href="airspeed__ets_8c.html#a96556ede33b13194c07f518706c11c40">airspeed_ets_offset</a> &gt; <a class="code" href="airspeed__ets_8c.html#a71d654de74fa1c603ec14ce4d7929cdc">AIRSPEED_ETS_OFFSET_MAX</a>)
 <a name="l00145"></a>00145           <a class="code" href="airspeed__ets_8c.html#a96556ede33b13194c07f518706c11c40">airspeed_ets_offset</a> = <a class="code" href="airspeed__ets_8c.html#a71d654de74fa1c603ec14ce4d7929cdc">AIRSPEED_ETS_OFFSET_MAX</a>;
-<a name="l00146"></a>00146         <a class="code" href="airspeed__ets_8c.html#a6c8202c917e3515c097b60b90af75811">airspeed_ets_offset_init</a> = TRUE;
+<a name="l00146"></a>00146         <a class="code" href="airspeed__ets_8c.html#a6c8202c917e3515c097b60b90af75811">airspeed_ets_offset_init</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00147"></a>00147       }
 <a name="l00148"></a>00148       <span class="comment">// Check if averaging needs to continue</span>
 <a name="l00149"></a>00149       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="airspeed__ets_8c.html#a50f19cd938880ed56d8806d768cd6bf2">airspeed_ets_cnt</a> &lt;= <a class="code" href="airspeed__ets_8c.html#a559e7d3ce3c9c7db344d31dfd0dba83b">AIRSPEED_ETS_OFFSET_NBSAMPLES_AVRG</a>)
@@ -291,7 +291,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="airspeed__ets_8c.html">airspeed_ets.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:43 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:54 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

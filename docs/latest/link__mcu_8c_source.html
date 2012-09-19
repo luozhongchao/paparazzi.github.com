@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -164,13 +164,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00059"></a>00059 <span class="keywordtype">void</span> <a class="code" href="link__mcu_8h.html#ac8ca91741aea5e6803a8db35d4c8188e">link_mcu_event_task</a>( <span class="keywordtype">void</span> ) {
 <a name="l00060"></a>00060   <span class="keywordflow">if</span> (<a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a>) {
 <a name="l00061"></a>00061     <span class="comment">/* Got a message on SPI. */</span>
-<a name="l00062"></a>00062     <a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a> = FALSE;
+<a name="l00062"></a>00062     <a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064     <span class="comment">/* A message has been received */</span>
 <a name="l00065"></a>00065     <a class="code" href="link__mcu_8c.html#abeef14f8339161330ff3b318837a904e">ComputeChecksum</a>(<a class="code" href="link__mcu_8c.html#a4d130fa66a5074c64197b7cd4bf535de">link_mcu_from_ap_msg</a>);
-<a name="l00066"></a>00066     <a class="code" href="link__mcu_8c.html#a5fbd44c122e7afa4afdb9368a7a6b2a4">link_mcu_received</a> = TRUE;
+<a name="l00066"></a>00066     <a class="code" href="link__mcu_8c.html#a5fbd44c122e7afa4afdb9368a7a6b2a4">link_mcu_received</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00067"></a>00067     <span class="keywordflow">if</span> (<a class="code" href="link__mcu_8c.html#a4d130fa66a5074c64197b7cd4bf535de">link_mcu_from_ap_msg</a>.<a class="code" href="structlink__mcu__msg.html#ac29e07d4b2e09f7f173037a1cb0c8002">checksum</a> == <a class="code" href="link__mcu_8c.html#aa60093a9a5d5d17864cfda66c47733e3">crc</a>)
-<a name="l00068"></a>00068       <a class="code" href="inter__mcu_8c.html#a39c7839a61b81e1afcd1788348e1bf38">inter_mcu_received_ap</a> = TRUE;
+<a name="l00068"></a>00068       <a class="code" href="inter__mcu_8c.html#a39c7839a61b81e1afcd1788348e1bf38">inter_mcu_received_ap</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00069"></a>00069     <span class="keywordflow">else</span>
 <a name="l00070"></a>00070       <a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;nb_err++;
 <a name="l00071"></a>00071   }
@@ -209,11 +209,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00104"></a>00104 <span class="keywordtype">void</span> <a class="code" href="link__mcu_8h.html#ac8ca91741aea5e6803a8db35d4c8188e">link_mcu_event_task</a>( <span class="keywordtype">void</span> ) {
 <a name="l00105"></a>00105   <span class="keywordflow">if</span> (<a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a>) {
 <a name="l00106"></a>00106     <span class="comment">/* Got a message on SPI. */</span>
-<a name="l00107"></a>00107     <a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a> = FALSE;
+<a name="l00107"></a>00107     <a class="code" href="sim__baro_8c.html#abf25149033197272d914f1cfffe8a49e">spi_message_received</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00108"></a>00108     <span class="comment">/* A message has been received */</span>
 <a name="l00109"></a>00109     <a class="code" href="link__mcu_8c.html#abeef14f8339161330ff3b318837a904e">ComputeChecksum</a>(<a class="code" href="link__mcu_8c.html#a86deade5843ab146c47083104cf8f3cd">link_mcu_from_fbw_msg</a>);
 <a name="l00110"></a>00110     <span class="keywordflow">if</span> (<a class="code" href="link__mcu_8c.html#a86deade5843ab146c47083104cf8f3cd">link_mcu_from_fbw_msg</a>.<a class="code" href="structlink__mcu__msg.html#ac29e07d4b2e09f7f173037a1cb0c8002">checksum</a> == <a class="code" href="link__mcu_8c.html#aa60093a9a5d5d17864cfda66c47733e3">crc</a>)
-<a name="l00111"></a>00111       <a class="code" href="inter__mcu_8c.html#ac6c868c590b3ed8e97df60b50ac07f3d">inter_mcu_received_fbw</a> = TRUE;
+<a name="l00111"></a>00111       <a class="code" href="inter__mcu_8c.html#ac6c868c590b3ed8e97df60b50ac07f3d">inter_mcu_received_fbw</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00112"></a>00112     <span class="keywordflow">else</span>
 <a name="l00113"></a>00113       link_mcu_nb_err++;
 <a name="l00114"></a>00114   }
@@ -240,7 +240,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="link__mcu_8c.html">link_mcu.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:39 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:51 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

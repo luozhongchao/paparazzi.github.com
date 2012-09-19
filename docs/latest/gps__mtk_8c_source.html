@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -198,12 +198,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00105"></a>00105 <span class="preprocessor"></span>
 <a name="l00106"></a><a class="code" href="gps_8h.html#ac51e6a5f7940a0acc9dc44b1b8085331">00106</a> <span class="keywordtype">void</span> <a class="code" href="gps__mtk_8c.html#ac51e6a5f7940a0acc9dc44b1b8085331">gps_impl_init</a>(<span class="keywordtype">void</span>) {
 <a name="l00107"></a>00107    <a class="code" href="gps__mtk_8c.html#ab1002487799962f629e8c87860cc1964">gps_mtk</a>.<a class="code" href="structGpsMtk.html#a591fa9a11dfd088689c7a68ace83f13a">status</a> = <a class="code" href="gps__mtk_8c.html#a7668dedbc74a47bde384b2b911379073">UNINIT</a>;
-<a name="l00108"></a>00108    <a class="code" href="gps__mtk_8c.html#ab1002487799962f629e8c87860cc1964">gps_mtk</a>.<a class="code" href="structGpsMtk.html#a452bdbf72b89a87ee833c5ce9b575012">msg_available</a> = FALSE;
+<a name="l00108"></a>00108    <a class="code" href="gps__mtk_8c.html#ab1002487799962f629e8c87860cc1964">gps_mtk</a>.<a class="code" href="structGpsMtk.html#a452bdbf72b89a87ee833c5ce9b575012">msg_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00109"></a>00109    <a class="code" href="gps__mtk_8c.html#ab1002487799962f629e8c87860cc1964">gps_mtk</a>.<a class="code" href="structGpsMtk.html#a4dfb0920b82ea4a0a39716d80e7f27f4">error_cnt</a> = 0;
 <a name="l00110"></a>00110    <a class="code" href="gps__mtk_8c.html#ab1002487799962f629e8c87860cc1964">gps_mtk</a>.<a class="code" href="structGpsMtk.html#a27b19c29ab2245b2ef17cf6e1f6ef2da">error_last</a> = <a class="code" href="gps__mtk_8c.html#af02adb5240de61de7fccb7a0959fc87b">GPS_MTK_ERR_NONE</a>;
 <a name="l00111"></a>00111 <span class="preprocessor">#ifdef GPS_CONFIGURE</span>
 <a name="l00112"></a>00112 <span class="preprocessor"></span>   gps_status_config = 0;
-<a name="l00113"></a>00113    gps_configuring = TRUE;
+<a name="l00113"></a>00113    gps_configuring = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00114"></a>00114 <span class="preprocessor">#endif</span>
 <a name="l00115"></a>00115 <span class="preprocessor"></span>}
 <a name="l00116"></a>00116 
@@ -461,7 +461,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00368"></a>00368       <a class="code" href="gps__mtk_8c.html#ab1002487799962f629e8c87860cc1964">gps_mtk</a>.<a class="code" href="structGpsMtk.html#a27b19c29ab2245b2ef17cf6e1f6ef2da">error_last</a> = <a class="code" href="gps__mtk_8c.html#a928a580ca7307e866ba14cc8e6402a1c">GPS_MTK_ERR_CHECKSUM</a>;
 <a name="l00369"></a>00369       <span class="keywordflow">goto</span> error;
 <a name="l00370"></a>00370     }
-<a name="l00371"></a>00371     <a class="code" href="gps__mtk_8c.html#ab1002487799962f629e8c87860cc1964">gps_mtk</a>.<a class="code" href="structGpsMtk.html#a452bdbf72b89a87ee833c5ce9b575012">msg_available</a> = TRUE;
+<a name="l00371"></a>00371     <a class="code" href="gps__mtk_8c.html#ab1002487799962f629e8c87860cc1964">gps_mtk</a>.<a class="code" href="structGpsMtk.html#a452bdbf72b89a87ee833c5ce9b575012">msg_available</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00372"></a>00372     <span class="keywordflow">goto</span> restart;
 <a name="l00373"></a>00373     <span class="keywordflow">break</span>;
 <a name="l00374"></a>00374   <span class="keywordflow">default</span>:
@@ -503,11 +503,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00410"></a>00410     <span class="keywordflow">break</span>;
 <a name="l00411"></a>00411   <span class="keywordflow">case</span> 1:
 <a name="l00412"></a>00412     MtkSend_CFG(<a class="code" href="gps__mtk_8c.html#ad9d439583eb3d81f089a443bfff1f702">MTK_DIY_OUTPUT_RATE</a>);
-<a name="l00413"></a>00413     <span class="keywordflow">return</span> FALSE;
+<a name="l00413"></a>00413     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00414"></a>00414   <span class="keywordflow">default</span>:
 <a name="l00415"></a>00415     <span class="keywordflow">break</span>;
 <a name="l00416"></a>00416   }
-<a name="l00417"></a>00417   <span class="keywordflow">return</span> TRUE; <span class="comment">/* Continue, except for the last case */</span>
+<a name="l00417"></a>00417   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>; <span class="comment">/* Continue, except for the last case */</span>
 <a name="l00418"></a>00418 }
 <a name="l00419"></a>00419 <span class="preprocessor">#endif // ! USER_GPS_CONFIGURE</span>
 <a name="l00420"></a>00420 <span class="preprocessor"></span>
@@ -539,7 +539,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="gps__mtk_8c.html">gps_mtk.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:45 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:56 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

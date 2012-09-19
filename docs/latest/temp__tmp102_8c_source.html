@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00066"></a>00066 <span class="preprocessor"></span>
 <a name="l00067"></a>00067 
 <a name="l00068"></a><a class="code" href="temp__tmp102_8h.html#ac75f01dc11a58b9e4d93939bcc68f112">00068</a> <span class="keywordtype">void</span> <a class="code" href="temp__tmp102_8c.html#ac75f01dc11a58b9e4d93939bcc68f112">tmp102_init</a>(<span class="keywordtype">void</span>) {
-<a name="l00069"></a>00069   <a class="code" href="temp__tmp102_8c.html#a1efa4fa7a0f62790388965040d9c0698">tmp_meas_started</a> = FALSE;
+<a name="l00069"></a>00069   <a class="code" href="temp__tmp102_8c.html#a1efa4fa7a0f62790388965040d9c0698">tmp_meas_started</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00070"></a>00070   <span class="comment">/* configure 8Hz and enhanced mode */</span>
 <a name="l00071"></a>00071   <a class="code" href="temp__tmp102_8c.html#a16fba5180ad190c4749a4ed74f38712f">tmp_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="temp__tmp102_8h.html#a316b135f98442f1ffd6e3fcb0f795a15">TMP102_CONF_REG</a>;
 <a name="l00072"></a>00072   <a class="code" href="temp__tmp102_8c.html#a16fba5180ad190c4749a4ed74f38712f">tmp_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = <a class="code" href="temp__tmp102_8c.html#ae6195ae52c4ccde135cb1b23db85884a">TMP102_CONF1</a>;
@@ -175,12 +175,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00077"></a><a class="code" href="temp__tmp102_8h.html#a83d55895316072d767050f31f7374c0b">00077</a> <span class="keywordtype">void</span> <a class="code" href="temp__tmp102_8c.html#a83d55895316072d767050f31f7374c0b">tmp102_periodic</a>( <span class="keywordtype">void</span> ) {
 <a name="l00078"></a>00078     <a class="code" href="temp__tmp102_8c.html#a16fba5180ad190c4749a4ed74f38712f">tmp_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="temp__tmp102_8h.html#a09d5a341468c3bd4c09a2edeb26245fc">TMP102_TEMP_REG</a>;
 <a name="l00079"></a>00079     <a class="code" href="i2c_8h.html#ab01a8cb5cf13045d58e495056b3d2652">I2CTransceive</a>(<a class="code" href="temp__tmp102_8c.html#aff4bc5e2d26186b29d950b4a87e63737">TMP_I2C_DEV</a>, <a class="code" href="temp__tmp102_8c.html#a16fba5180ad190c4749a4ed74f38712f">tmp_trans</a>, <a class="code" href="temp__tmp102_8c.html#a5092a6804ba3b3746307a370defbd886">TMP102_SLAVE_ADDR</a>, 1, 2);
-<a name="l00080"></a>00080     <a class="code" href="temp__tmp102_8c.html#a1efa4fa7a0f62790388965040d9c0698">tmp_meas_started</a> = TRUE;
+<a name="l00080"></a>00080     <a class="code" href="temp__tmp102_8c.html#a1efa4fa7a0f62790388965040d9c0698">tmp_meas_started</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00081"></a>00081 }
 <a name="l00082"></a>00082 
 <a name="l00083"></a><a class="code" href="temp__tmp102_8h.html#a2866e6e6ac2a212124efcc6fac2d0e74">00083</a> <span class="keywordtype">void</span> <a class="code" href="temp__tmp102_8c.html#a2866e6e6ac2a212124efcc6fac2d0e74">tmp102_event</a>( <span class="keywordtype">void</span> ) {
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085   <span class="keywordflow">if</span> ((<a class="code" href="temp__tmp102_8c.html#a16fba5180ad190c4749a4ed74f38712f">tmp_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>) &amp;&amp; (<a class="code" href="temp__tmp102_8c.html#a1efa4fa7a0f62790388965040d9c0698">tmp_meas_started</a> == TRUE)) {
+<a name="l00085"></a>00085   <span class="keywordflow">if</span> ((<a class="code" href="temp__tmp102_8c.html#a16fba5180ad190c4749a4ed74f38712f">tmp_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>) &amp;&amp; (<a class="code" href="temp__tmp102_8c.html#a1efa4fa7a0f62790388965040d9c0698">tmp_meas_started</a> == <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)) {
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087       <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> tmp_temperature;
 <a name="l00088"></a>00088 
@@ -217,7 +217,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="temp__tmp102_8c.html">temp_tmp102.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:43 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:53 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

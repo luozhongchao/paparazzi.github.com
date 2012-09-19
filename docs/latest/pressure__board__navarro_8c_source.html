@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -184,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00079"></a>00079   <a class="code" href="pressure__board__navarro_8c.html#a4965ee21378062e4ebb0732176ec9629">airspeed_offset</a> = 0;
 <a name="l00080"></a>00080   <a class="code" href="pressure__board__navarro_8c.html#a483fad451c8000d3c7f6de5024ec6670">airspeed_adc</a> = 0;
 <a name="l00081"></a>00081   <a class="code" href="pressure__board__navarro_8c.html#ad0e7286d87ad89c11b95729201846f05">altitude_adc</a> = 0;
-<a name="l00082"></a>00082   <a class="code" href="pressure__board__navarro_8c.html#aa297b7ccfa5d3432b4ae8a1f07ee3871">data_valid</a> = TRUE;
+<a name="l00082"></a>00082   <a class="code" href="pressure__board__navarro_8c.html#aa297b7ccfa5d3432b4ae8a1f07ee3871">data_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00083"></a>00083   <a class="code" href="pressure__board__navarro_8c.html#a138240dcc504031ccc83a6e2c044d95d">offset_cnt</a> = <a class="code" href="pressure__board__navarro_8c.html#a8b26512257083215cbfde5b9af63fff3">OFFSET_NBSAMPLES_AVRG</a>;
 <a name="l00084"></a>00084   <a class="code" href="pressure__board__navarro_8c.html#a61cd37b7705b94968eef0f7a3c7d89df">pbn_airspeed</a> = 0.;
 <a name="l00085"></a>00085   <a class="code" href="pressure__board__navarro_8c.html#a00fcece869a3e8063b98f77d0f153380">pbn_altitude</a> = 0.;
@@ -215,10 +215,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00110"></a>00110 
 <a name="l00111"></a>00111   <span class="comment">// Consider 0 as a wrong value</span>
 <a name="l00112"></a>00112   <span class="keywordflow">if</span> (<a class="code" href="pressure__board__navarro_8c.html#a483fad451c8000d3c7f6de5024ec6670">airspeed_adc</a> == 0 || <a class="code" href="pressure__board__navarro_8c.html#ad0e7286d87ad89c11b95729201846f05">altitude_adc</a> == 0) {
-<a name="l00113"></a>00113     <a class="code" href="pressure__board__navarro_8c.html#aa297b7ccfa5d3432b4ae8a1f07ee3871">data_valid</a> = FALSE;
+<a name="l00113"></a>00113     <a class="code" href="pressure__board__navarro_8c.html#aa297b7ccfa5d3432b4ae8a1f07ee3871">data_valid</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00114"></a>00114   }
 <a name="l00115"></a>00115   <span class="keywordflow">else</span> {
-<a name="l00116"></a>00116     <a class="code" href="pressure__board__navarro_8c.html#aa297b7ccfa5d3432b4ae8a1f07ee3871">data_valid</a> = TRUE;
+<a name="l00116"></a>00116     <a class="code" href="pressure__board__navarro_8c.html#aa297b7ccfa5d3432b4ae8a1f07ee3871">data_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00117"></a>00117 
 <a name="l00118"></a>00118     <span class="keywordflow">if</span> (<a class="code" href="pressure__board__navarro_8c.html#a138240dcc504031ccc83a6e2c044d95d">offset_cnt</a> &gt; 0) {
 <a name="l00119"></a>00119       <span class="comment">// IIR filter to compute an initial offset</span>
@@ -247,12 +247,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00142"></a>00142 <span class="preprocessor">#if USE_AIRSPEED</span>
 <a name="l00143"></a>00143 <span class="preprocessor"></span>      <a class="code" href="group__state__wind__airspeed.html#ga0e7741bb45a8d7c0c82a3fe268fcd1f2" title="Set airspeed (float).">stateSetAirspeed_f</a>(&amp;<a class="code" href="pressure__board__navarro_8c.html#a61cd37b7705b94968eef0f7a3c7d89df">pbn_airspeed</a>);
 <a name="l00144"></a>00144 <span class="preprocessor">#endif</span>
-<a name="l00145"></a>00145 <span class="preprocessor"></span>      <span class="comment">//alt_kalman(pbn_altitude);</span>
+<a name="l00145"></a>00145 <span class="preprocessor"></span>    }
 <a name="l00146"></a>00146 
-<a name="l00147"></a>00147     }
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149   }
-<a name="l00150"></a>00150 }
+<a name="l00147"></a>00147   }
+<a name="l00148"></a>00148 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -273,7 +271,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="pressure__board__navarro_8c.html">pressure_board_navarro.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:43 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:54 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

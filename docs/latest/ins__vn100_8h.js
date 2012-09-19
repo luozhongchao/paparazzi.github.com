@@ -7,7 +7,6 @@ var ins__vn100_8h =
     [ "PERIODIC_SEND_AHRS", "ins__vn100_8h.html#a5a85c2d0ea59d26cdde20b689dede4c8", null ],
     [ "ins_event_task", "ins__vn100_8h.html#a3446ccf0f8b4ec536547435d71f9171e", null ],
     [ "ins_init", "ins__vn100_8h.html#abf3028c2ada542781b8a5e1eb20c17ce", null ],
-    [ "ins_periodic_task", "ins__vn100_8h.html#a8dc6e488ca20854b1f96fb7a2933bbfe", null ],
     [ "ins_report_task", "ins__vn100_8h.html#a6764cc19c533754cd78ee6ec1ed91af5", null ],
     [ "parse_ins_msg", "ins__vn100_8h.html#a8cb976f9e02352af6815c51a4b18faec", null ],
     [ "ins_accel", "ins__vn100_8h.html#ad8b814168fe2648fc2624cddbf45c2e2", null ],

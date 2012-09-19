@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -252,14 +252,14 @@ Variables</h2></td></tr>
   if (<a class="code" href="ppm_8c.html#a40135dd9f74fd7e3e77d603b0dd4e3e7">ppm_frame_available</a>) {                          \
     radio_control.frame_cpt++;                        \
     radio_control.time_since_last_frame = 0;          \
-    if (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.radio_ok_cpt &gt; 0) {             \
+    if (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a8a646c0d264de984fd5aeb22525bbf16">radio_ok_cpt</a> &gt; 0) {             \
       radio_control.radio_ok_cpt--;                   \
     } <span class="keywordflow">else</span> {                                          \
-      radio_control.status = RC_OK;                   \
+      radio_control.status = <a class="code" href="radio__control_8h.html#ac96a9e3f6c17299d532eb572ef0ea415">RC_OK</a>;                   \
       NormalizePpmIIR(<a class="code" href="ppm_8c.html#af4e648091d7606499cac0f13ce44c8b6">ppm_pulses</a>,<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>);      \
       _received_frame_handler();                      \
     }                                                 \
-    ppm_frame_available = FALSE;                      \
+    ppm_frame_available = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                      \
   }                                                   \
 }
 </pre></div>
@@ -289,7 +289,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00031">31</a> of file <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html">ppm_arch.c</a>.</p>
 
-<p>References <a class="el" href="booz__1_80_8h_source.html#l00067">PPM_CCR_CRF</a>, <a class="el" href="booz__1_80_8h_source.html#l00069">PPM_CCR_CRI</a>, <a class="el" href="booz__1_80_8h_source.html#l00068">PPM_CCR_CRR</a>, <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00027">ppm_cur_pulse</a>, <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00029">ppm_data_valid</a>, <a class="el" href="ppm_8c_source.html#l00028">ppm_frame_available</a>, <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00028">ppm_last_pulse_time</a>, <a class="el" href="booz__1_80_8h_source.html#l00063">PPM_PINSEL</a>, <a class="el" href="booz__1_80_8h_source.html#l00065">PPM_PINSEL_BIT</a>, <a class="el" href="booz__1_80_8h_source.html#l00064">PPM_PINSEL_VAL</a>, <a class="el" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h_source.html#l00036">RADIO_CONTROL_NB_CHANNEL</a>, <a class="el" href="LPC21xx_8h_source.html#l00060">T0CCR</a>, and <a class="el" href="stm32_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00043">timer_rollover_cnt</a>.</p>
+<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="booz__1_80_8h_source.html#l00067">PPM_CCR_CRF</a>, <a class="el" href="booz__1_80_8h_source.html#l00069">PPM_CCR_CRI</a>, <a class="el" href="booz__1_80_8h_source.html#l00068">PPM_CCR_CRR</a>, <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00027">ppm_cur_pulse</a>, <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00029">ppm_data_valid</a>, <a class="el" href="ppm_8c_source.html#l00028">ppm_frame_available</a>, <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00028">ppm_last_pulse_time</a>, <a class="el" href="booz__1_80_8h_source.html#l00063">PPM_PINSEL</a>, <a class="el" href="booz__1_80_8h_source.html#l00065">PPM_PINSEL_BIT</a>, <a class="el" href="booz__1_80_8h_source.html#l00064">PPM_PINSEL_VAL</a>, <a class="el" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h_source.html#l00036">RADIO_CONTROL_NB_CHANNEL</a>, <a class="el" href="LPC21xx_8h_source.html#l00060">T0CCR</a>, and <a class="el" href="stm32_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00043">timer_rollover_cnt</a>.</p>
 
 <p>Referenced by <a class="el" href="ppm_8c_source.html#l00030">radio_control_impl_init()</a>.</p>
 
@@ -356,7 +356,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ppm_8c_source.html#l00028">28</a> of file <a class="el" href="ppm_8c_source.html">ppm.c</a>.</p>
 
-<p>Referenced by <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00031">ppm_arch_init()</a>, and <a class="el" href="ppm_8c_source.html#l00030">radio_control_impl_init()</a>.</p>
+<p>Referenced by <a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00031">ppm_arch_init()</a>, <a class="el" href="ppm_8c_source.html#l00030">radio_control_impl_init()</a>, and <a class="el" href="sim_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00084">send_ppm()</a>.</p>
 
 </div>
 </div>
@@ -390,6 +390,8 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ppm_8c_source.html#l00027">27</a> of file <a class="el" href="ppm_8c_source.html">ppm.c</a>.</p>
 
+<p>Referenced by <a class="el" href="sim_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00079">update_rc_channel()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -412,7 +414,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="ppm_8h.html">ppm.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:01:07 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:41:19 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

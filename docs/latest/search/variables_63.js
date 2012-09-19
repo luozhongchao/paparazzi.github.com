@@ -79,7 +79,7 @@ var searchData=
   ['checkfreespace',['CheckFreeSpace',['../structDownlinkTransport.html#a113a1c5bdaae212d64f216b1d4537c89',1,'DownlinkTransport']]],
   ['checksum',['checksum',['../structlink__mcu__msg.html#ac29e07d4b2e09f7f173037a1cb0c8002',1,'link_mcu_msg::checksum()'],['../structGpsSkytraq.html#a95bd474dc1a381b94c842a6c0b3073c4',1,'GpsSkytraq::checksum()']]],
   ['chemo_5fsensor',['chemo_sensor',['../chemo__detect_8c.html#af11a61031a8dd147ab3f8dd08bde0db1',1,'chemo_sensor():&#160;chemo_detect.c'],['../chemo__detect_8h.html#af11a61031a8dd147ab3f8dd08bde0db1',1,'chemo_sensor():&#160;chemo_detect.c']]],
-  ['chimu_5fdata',['CHIMU_DATA',['../ins__chimu__spi_8c.html#ad082bbcaad24f3e263c43c6f2328c00b',1,'CHIMU_DATA():&#160;ins_chimu_spi.c'],['../ins__chimu__uart_8c.html#ad082bbcaad24f3e263c43c6f2328c00b',1,'CHIMU_DATA():&#160;ins_chimu_uart.c']]],
+  ['chimu_5fdata',['CHIMU_DATA',['../ahrs__chimu__spi_8c.html#ad082bbcaad24f3e263c43c6f2328c00b',1,'CHIMU_DATA():&#160;ahrs_chimu_spi.c'],['../ahrs__chimu__uart_8c.html#ad082bbcaad24f3e263c43c6f2328c00b',1,'CHIMU_DATA():&#160;ahrs_chimu_uart.c']]],
   ['ciir',['ciir',['../structrtcRegs__t.html#aef2d978c88bc5fac4ea5ee27ef54406b',1,'rtcRegs_t']]],
   ['circle_5fbank',['circle_bank',['../nav_8c.html#a421ee656b2e10a372b13bddc4bf546b3',1,'nav.c']]],
   ['circleradiusmin',['circleradiusmin',['../cartography_8c.html#adf3216e43778c7b6f01086007dc39dbe',1,'cartography.c']]],

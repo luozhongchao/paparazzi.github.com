@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -134,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="armVIC_8h.html">armVIC.h</a>&quot;</span>
 <a name="l00031"></a>00031 
-<a name="l00032"></a><a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a199e1fae90e1e67b9f8eb64a8dad6f40">00032</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a199e1fae90e1e67b9f8eb64a8dad6f40">uart_disable_interrupts</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p) {
+<a name="l00032"></a><a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a199e1fae90e1e67b9f8eb64a8dad6f40">00032</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a199e1fae90e1e67b9f8eb64a8dad6f40">uart_disable_interrupts</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>) {
 <a name="l00033"></a>00033   <span class="comment">// disable interrups</span>
 <a name="l00034"></a>00034   ((<a class="code" href="structuartRegs__t.html">uartRegs_t</a> *)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>))-&gt;ier = 0x00;  <span class="comment">// disable all interrupts</span>
 <a name="l00035"></a>00035   ((<a class="code" href="structuartRegs__t.html">uartRegs_t</a> *)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>))-&gt;iir;         <span class="comment">// clear interrupt ID</span>
@@ -142,12 +142,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037   ((<a class="code" href="structuartRegs__t.html">uartRegs_t</a> *)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>))-&gt;lsr;         <span class="comment">// clear line status register</span>
 <a name="l00038"></a>00038 }
 <a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#ac5fd8cc59f0c367eb6ead6403ed92225">00040</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#ac5fd8cc59f0c367eb6ead6403ed92225">uart_enable_interrupts</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p) {
+<a name="l00040"></a><a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#ac5fd8cc59f0c367eb6ead6403ed92225">00040</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#ac5fd8cc59f0c367eb6ead6403ed92225">uart_enable_interrupts</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>) {
 <a name="l00041"></a>00041   <span class="comment">// enable receiver interrupts</span>
 <a name="l00042"></a>00042   ((<a class="code" href="structuartRegs__t.html">uartRegs_t</a> *)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>))-&gt;ier = <a class="code" href="lpcUART_8h.html#aa41d3a8ad6d21b1cec761b74694f6a2c">UIER_ERBFI</a>;
 <a name="l00043"></a>00043 }
 <a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a8af8009489a4355fe25541d5dc6f3c5b">00045</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a8af8009489a4355fe25541d5dc6f3c5b">uart_set_baudrate</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p, <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> baud) {
+<a name="l00045"></a><a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a8af8009489a4355fe25541d5dc6f3c5b">00045</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a8af8009489a4355fe25541d5dc6f3c5b">uart_set_baudrate</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> baud) {
 <a name="l00046"></a>00046   <span class="comment">// set the baudrate</span>
 <a name="l00047"></a>00047   ((<a class="code" href="structuartRegs__t.html">uartRegs_t</a> *)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>))-&gt;lcr = <a class="code" href="lpcUART_8h.html#a75a5f63558ad3fbbdd4e29d500ee5f2d">ULCR_DLAB_ENABLE</a>;     <span class="comment">// select divisor latches</span>
 <a name="l00048"></a>00048   ((<a class="code" href="structuartRegs__t.html">uartRegs_t</a> *)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>))-&gt;dll = (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>)baud;        <span class="comment">// set for baud low byte</span>
@@ -161,13 +161,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00056"></a>00056   ((<a class="code" href="structuartRegs__t.html">uartRegs_t</a> *)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>))-&gt;fcr = <a class="code" href="lpc21_2mcu__periph_2uart__arch_8h.html#ad3b4cfbf066b1b31f3ffd060131384c5">UART_FIFO_8</a>;
 <a name="l00057"></a>00057 }
 <a name="l00058"></a>00058 
-<a name="l00059"></a><a class="code" href="uart_8h.html#a3eff2a82ddc632e5626c04ad4e717e3b">00059</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a3eff2a82ddc632e5626c04ad4e717e3b">uart_periph_set_baudrate</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p, <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> baud) {
+<a name="l00059"></a><a class="code" href="uart_8h.html#a3eff2a82ddc632e5626c04ad4e717e3b">00059</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a3eff2a82ddc632e5626c04ad4e717e3b">uart_periph_set_baudrate</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> baud) {
 <a name="l00060"></a>00060   <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a199e1fae90e1e67b9f8eb64a8dad6f40">uart_disable_interrupts</a>(p);
 <a name="l00061"></a>00061   <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a8af8009489a4355fe25541d5dc6f3c5b">uart_set_baudrate</a>(p, baud);
 <a name="l00062"></a>00062   <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#ac5fd8cc59f0c367eb6ead6403ed92225">uart_enable_interrupts</a>(p);
 <a name="l00063"></a>00063 }
 <a name="l00064"></a>00064 
-<a name="l00065"></a><a class="code" href="uart_8h.html#a916fbda270604fca87f8bc235ddcbaaa">00065</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a916fbda270604fca87f8bc235ddcbaaa">uart_transmit</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> data ) {
+<a name="l00065"></a><a class="code" href="uart_8h.html#a916fbda270604fca87f8bc235ddcbaaa">00065</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a916fbda270604fca87f8bc235ddcbaaa">uart_transmit</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> data ) {
 <a name="l00066"></a>00066   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> temp;
 <a name="l00067"></a>00067   <span class="keywordtype">unsigned</span> cpsr;
 <a name="l00068"></a>00068 
@@ -196,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00091"></a>00091   <a class="code" href="armVIC_8c.html#ae65947fbc714eff716bc3dd03d909ec8">restoreIRQ</a>(cpsr);                                 <span class="comment">// restore global interrupts</span>
 <a name="l00092"></a>00092 }
 <a name="l00093"></a>00093 
-<a name="l00094"></a><a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#acdcaa1de22fab46482eb7cc711743d3e">00094</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#acdcaa1de22fab46482eb7cc711743d3e">uart_ISR</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p)
+<a name="l00094"></a><a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#acdcaa1de22fab46482eb7cc711743d3e">00094</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#acdcaa1de22fab46482eb7cc711743d3e">uart_ISR</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)
 <a name="l00095"></a>00095 {
 <a name="l00096"></a>00096   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> iid;
 <a name="l00097"></a>00097 
@@ -368,7 +368,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lpc21_2mcu__periph_2uart__arch_8c.html">uart_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:35 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:47 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

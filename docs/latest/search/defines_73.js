@@ -61,6 +61,7 @@ var searchData=
   ['selectcapreg',['SelectCapReg',['../lpc21_2modules_2core_2trigger__ext__hw_8h.html#ad9334386ea943c2441d51e59a0add6c4',1,'trigger_ext_hw.h']]],
   ['send_5fcam',['SEND_CAM',['../ap__downlink_8h.html#ac382d16fc74adbd36aadbb97dddaf8b9',1,'ap_downlink.h']]],
   ['send_5fnavigation',['SEND_NAVIGATION',['../ap__downlink_8h.html#a5b7ee5828a4a65359ce9393a365f5d2d',1,'ap_downlink.h']]],
+  ['send_5frotorcraft_5fradio_5fcontrol',['SEND_ROTORCRAFT_RADIO_CONTROL',['../telemetry_8h.html#a0ade489845d8e86eaee2d0751c81d0b8',1,'telemetry.h']]],
   ['senderidofmsg',['SenderIdOfMsg',['../fixedwing_2datalink_8c.html#a64676521497bca7981efa997be80e678',1,'datalink.c']]],
   ['serv0_5fclock_5fpin',['SERV0_CLOCK_PIN',['../tiny__sim_8h.html#abd61619a45dec8e3a80f47bc3fd45733',1,'tiny_sim.h']]],
   ['serv0_5fclock_5fpinsel',['SERV0_CLOCK_PINSEL',['../tiny__sim_8h.html#a07160647a17ada6be12019a3316c199c',1,'tiny_sim.h']]],

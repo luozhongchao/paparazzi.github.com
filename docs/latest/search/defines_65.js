@@ -30,7 +30,7 @@ var searchData=
   ['eof',['EOF',['../usb__ser__hw_8c.html#a59adc4c82490d23754cd39c2fb99b0da',1,'usb_ser_hw.c']]],
   ['esc_5fhover',['ESC_HOVER',['../actuators__heli_8c.html#a3c7042eca2e7d84e6be9d6eded57b36a',1,'actuators_heli.c']]],
   ['esc_5fstopped',['ESC_STOPPED',['../actuators__heli_8c.html#a7337983acbb7b716d40a79082ac932d0',1,'actuators_heli.c']]],
-  ['estimatorsetalt',['EstimatorSetAlt',['../ins__float_8h.html#ab328c266a556c34d5383ff77c8cd77b7',1,'ins_float.h']]],
+  ['estimatorsetalt',['EstimatorSetAlt',['../ins__alt__float_8h.html#ab328c266a556c34d5383ff77c8cd77b7',1,'ins_alt_float.h']]],
   ['eulers_5fadd',['EULERS_ADD',['../pprz__algebra_8h.html#aace0fc4ea4d4f17ac7d09545b2871080',1,'pprz_algebra.h']]],
   ['eulers_5fassign',['EULERS_ASSIGN',['../pprz__algebra_8h.html#ada1c7857d5fc2d8898f8e723f6e43d20',1,'pprz_algebra.h']]],
   ['eulers_5fbfp_5fof_5freal',['EULERS_BFP_OF_REAL',['../pprz__algebra_8h.html#a82f7bbdec2feb9a8303d89fc6c0907e9',1,'pprz_algebra.h']]],

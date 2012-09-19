@@ -44,6 +44,8 @@ var searchData=
   ['ahrs_2eh',['ahrs.h',['../ahrs_8h.html',1,'']]],
   ['ahrs_5faligner_2ec',['ahrs_aligner.c',['../ahrs__aligner_8c.html',1,'']]],
   ['ahrs_5faligner_2eh',['ahrs_aligner.h',['../ahrs__aligner_8h.html',1,'']]],
+  ['ahrs_5fchimu_5fspi_2ec',['ahrs_chimu_spi.c',['../ahrs__chimu__spi_8c.html',1,'']]],
+  ['ahrs_5fchimu_5fuart_2ec',['ahrs_chimu_uart.c',['../ahrs__chimu__uart_8c.html',1,'']]],
   ['ahrs_5ffloat_5fcmpl_2ec',['ahrs_float_cmpl.c',['../ahrs__float__cmpl_8c.html',1,'']]],
   ['ahrs_5ffloat_5fcmpl_2eh',['ahrs_float_cmpl.h',['../ahrs__float__cmpl_8h.html',1,'']]],
   ['ahrs_5ffloat_5fdcm_2ec',['ahrs_float_dcm.c',['../ahrs__float__dcm_8c.html',1,'']]],

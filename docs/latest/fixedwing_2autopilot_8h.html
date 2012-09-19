@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -188,7 +188,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment">{ \
-  autopilot_flight_time = 0; <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a> = FALSE; \
+  autopilot_flight_time = 0; <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>; \
 }
 </pre></div>
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00099">99</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
@@ -227,7 +227,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00111">111</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00155">init_ap()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00156">init_ap()</a>.</p>
 
 </div>
 </div>
@@ -264,7 +264,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00070">70</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>.</p>
 
 </div>
 </div>
@@ -281,7 +281,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00065">65</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="nav_8c_source.html#l00335">fly_to_xy()</a>, and <a class="el" href="main__ap_8c_source.html#l00426">navigation_task()</a>.</p>
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00335">fly_to_xy()</a>, and <a class="el" href="main__ap_8c_source.html#l00427">navigation_task()</a>.</p>
 
 </div>
 </div>
@@ -373,12 +373,14 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment">({ \
   uint8_t new_mode = _value; \
-  (_mode != new_mode ? _mode = new_mode, TRUE : FALSE); \
+  (_mode != new_mode ? _mode = new_mode, <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a> : <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>); \
 })
 </pre></div>
 <p>Assignment, returning _old_value != _value Using GCC expression statements. </p>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00083">83</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
+
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00271">pprz_mode_update()</a>.</p>
 
 </div>
 </div>
@@ -395,7 +397,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00120">120</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00155">init_ap()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00156">init_ap()</a>.</p>
 
 </div>
 </div>
@@ -412,7 +414,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00116">116</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00155">init_ap()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00156">init_ap()</a>.</p>
 
 </div>
 </div>
@@ -429,7 +431,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00044">44</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="cam_8c_source.html#l00107">cam_periodic()</a>, and <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>.</p>
+<p>Referenced by <a class="el" href="cam_8c_source.html#l00107">cam_periodic()</a>, <a class="el" href="main__ap_8c_source.html#l00271">pprz_mode_update()</a>, and <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>.</p>
 
 </div>
 </div>
@@ -446,7 +448,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00045">45</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00496">attitude_loop()</a>, <a class="el" href="cam_8c_source.html#l00107">cam_periodic()</a>, <a class="el" href="main__ap_8c_source.html#l00426">navigation_task()</a>, <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>, and <a class="el" href="point_8c_source.html#l00163">vPoint()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00495">attitude_loop()</a>, <a class="el" href="cam_8c_source.html#l00107">cam_periodic()</a>, <a class="el" href="main__ap_8c_source.html#l00427">navigation_task()</a>, <a class="el" href="main__ap_8c_source.html#l00271">pprz_mode_update()</a>, <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>, and <a class="el" href="point_8c_source.html#l00163">vPoint()</a>.</p>
 
 </div>
 </div>
@@ -463,7 +465,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00047">47</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00426">navigation_task()</a>, and <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00427">navigation_task()</a>, <a class="el" href="main__ap_8c_source.html#l00271">pprz_mode_update()</a>, and <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>.</p>
 
 </div>
 </div>
@@ -480,7 +482,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00046">46</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00426">navigation_task()</a>, and <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00427">navigation_task()</a>, <a class="el" href="main__ap_8c_source.html#l00271">pprz_mode_update()</a>, and <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>.</p>
 
 </div>
 </div>
@@ -497,7 +499,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00043">43</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="stabilization__adaptive_8c_source.html#l00350">h_ctl_pitch_loop()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00251">h_ctl_roll_loop()</a>, <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>, <a class="el" href="guidance__v__n_8c_source.html#l00204">v_ctl_set_pitch()</a>, and <a class="el" href="guidance__v__n_8c_source.html#l00229">v_ctl_set_throttle()</a>.</p>
+<p>Referenced by <a class="el" href="stabilization__adaptive_8c_source.html#l00350">h_ctl_pitch_loop()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00251">h_ctl_roll_loop()</a>, <a class="el" href="main__ap_8c_source.html#l00271">pprz_mode_update()</a>, <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>, <a class="el" href="guidance__v__n_8c_source.html#l00204">v_ctl_set_pitch()</a>, and <a class="el" href="guidance__v__n_8c_source.html#l00229">v_ctl_set_throttle()</a>.</p>
 
 </div>
 </div>
@@ -534,6 +536,8 @@ Variables</h2></td></tr>
         (pprz &gt; <a class="code" href="fixedwing_2autopilot_8h.html#ac20e76441d7ca028ceda37a41ce688e1">THRESHOLD1</a> ? <a class="code" href="fixedwing_2autopilot_8h.html#aad97f5d43922c63769f4a4ea97b9df8d">PPRZ_MODE_AUTO1</a> : <a class="code" href="fixedwing_2autopilot_8h.html#a34715de2d7ba74623671ee30dfed3afa">PPRZ_MODE_MANUAL</a>))
 </pre></div>
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00050">50</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
+
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00271">pprz_mode_update()</a>.</p>
 
 </div>
 </div>
@@ -584,6 +588,8 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00040">40</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00271">pprz_mode_update()</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac68ed9030b448307d20a265af6f102cf"></a><!-- doxytag: member="autopilot.h::THRESHOLD_MANUAL_PPRZ" ref="ac68ed9030b448307d20a265af6f102cf" args="" -->
@@ -614,7 +620,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="fixedwing_2autopilot_8h_source.html#l00072">72</a> of file <a class="el" href="fixedwing_2autopilot_8h_source.html">autopilot.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>.</p>
 
 </div>
 </div>
@@ -632,9 +638,9 @@ Variables</h2></td></tr>
 
 <p>flight time in seconds. </p>
 
-<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00126">126</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
+<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00127">127</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00496">attitude_loop()</a>, <a class="el" href="autopilot_8c_source.html#l00069">autopilot_init()</a>, <a class="el" href="generic__com_8c_source.html#l00069">generic_com_periodic()</a>, <a class="el" href="gsm_8c_source.html#l00404">gsm_send_report_continue()</a>, <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00156">main_periodic()</a>, <a class="el" href="main__ap_8c_source.html#l00585">monitor_task()</a>, and <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00495">attitude_loop()</a>, <a class="el" href="autopilot_8c_source.html#l00069">autopilot_init()</a>, <a class="el" href="generic__com_8c_source.html#l00069">generic_com_periodic()</a>, <a class="el" href="gsm_8c_source.html#l00404">gsm_send_report_continue()</a>, <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00156">main_periodic()</a>, <a class="el" href="main__ap_8c_source.html#l00584">monitor_task()</a>, and <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>.</p>
 
 </div>
 </div>
@@ -651,9 +657,9 @@ Variables</h2></td></tr>
 
 <p>Fuel consumption (mAh) TODO: move to electrical subsystem. </p>
 
-<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00142">142</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
+<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00143">143</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
 
-<p>Referenced by <a class="el" href="generic__com_8c_source.html#l00069">generic_com_periodic()</a>, and <a class="el" href="main__ap_8c_source.html#l00426">navigation_task()</a>.</p>
+<p>Referenced by <a class="el" href="generic__com_8c_source.html#l00069">generic_com_periodic()</a>, and <a class="el" href="main__ap_8c_source.html#l00427">navigation_task()</a>.</p>
 
 </div>
 </div>
@@ -668,9 +674,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00144">144</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
+<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00145">145</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00426">navigation_task()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00427">navigation_task()</a>.</p>
 
 </div>
 </div>
@@ -685,9 +691,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00121">121</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
+<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00122">122</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00496">attitude_loop()</a>, <a class="el" href="autopilot_8c_source.html#l00069">autopilot_init()</a>, <a class="el" href="autopilot_8c_source.html#l00245">autopilot_on_rc_frame()</a>, <a class="el" href="autopilot_8c_source.html#l00235">autopilot_set_motors_on()</a>, <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>, <a class="el" href="main__ap_8c_source.html#l00585">monitor_task()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00495">attitude_loop()</a>, <a class="el" href="autopilot_8c_source.html#l00069">autopilot_init()</a>, <a class="el" href="autopilot_8c_source.html#l00245">autopilot_on_rc_frame()</a>, <a class="el" href="autopilot_8c_source.html#l00235">autopilot_set_motors_on()</a>, <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>, <a class="el" href="main__ap_8c_source.html#l00584">monitor_task()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -702,9 +708,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00113">113</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
+<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00114">114</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
 
-<p>Referenced by <a class="el" href="nav_8c_source.html#l00335">fly_to_xy()</a>, <a class="el" href="nav_8c_source.html#l00454">nav_without_gps()</a>, and <a class="el" href="main__ap_8c_source.html#l00426">navigation_task()</a>.</p>
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00335">fly_to_xy()</a>, <a class="el" href="nav_8c_source.html#l00454">nav_without_gps()</a>, and <a class="el" href="main__ap_8c_source.html#l00427">navigation_task()</a>.</p>
 
 </div>
 </div>
@@ -721,7 +727,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="sim__ap_8c_source.html#l00040">40</a> of file <a class="el" href="sim__ap_8c_source.html">sim_ap.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00496">attitude_loop()</a>, <a class="el" href="stabilization__attitude_8c_source.html#l00178">h_ctl_course_loop()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00350">h_ctl_pitch_loop()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00251">h_ctl_roll_loop()</a>, <a class="el" href="main__ap_8c_source.html#l00585">monitor_task()</a>, <a class="el" href="nav__catapult_8c_source.html#l00100">nav_catapult_highrate_module()</a>, <a class="el" href="main__ap_8c_source.html#l00426">navigation_task()</a>, <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>, <a class="el" href="energy__ctrl_8c_source.html#l00229">v_ctl_climb_loop()</a>, <a class="el" href="guidance__v__n_8c_source.html#l00204">v_ctl_set_pitch()</a>, and <a class="el" href="guidance__v__n_8c_source.html#l00229">v_ctl_set_throttle()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00495">attitude_loop()</a>, <a class="el" href="stabilization__attitude_8c_source.html#l00178">h_ctl_course_loop()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00350">h_ctl_pitch_loop()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00251">h_ctl_roll_loop()</a>, <a class="el" href="main__ap_8c_source.html#l00584">monitor_task()</a>, <a class="el" href="nav__catapult_8c_source.html#l00100">nav_catapult_highrate_module()</a>, <a class="el" href="main__ap_8c_source.html#l00427">navigation_task()</a>, <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>, <a class="el" href="energy__ctrl_8c_source.html#l00229">v_ctl_climb_loop()</a>, <a class="el" href="guidance__v__n_8c_source.html#l00204">v_ctl_set_pitch()</a>, and <a class="el" href="guidance__v__n_8c_source.html#l00229">v_ctl_set_throttle()</a>.</p>
 
 </div>
 </div>
@@ -736,9 +742,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00107">107</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
+<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00108">108</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00155">init_ap()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00156">init_ap()</a>.</p>
 
 </div>
 </div>
@@ -753,9 +759,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00112">112</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
+<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00113">113</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00496">attitude_loop()</a>, <a class="el" href="cam_8c_source.html#l00107">cam_periodic()</a>, <a class="el" href="generic__com_8c_source.html#l00069">generic_com_periodic()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00350">h_ctl_pitch_loop()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00251">h_ctl_roll_loop()</a>, <a class="el" href="main__ap_8c_source.html#l00426">navigation_task()</a>, <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>, <a class="el" href="guidance__v__n_8c_source.html#l00204">v_ctl_set_pitch()</a>, <a class="el" href="guidance__v__n_8c_source.html#l00229">v_ctl_set_throttle()</a>, and <a class="el" href="point_8c_source.html#l00163">vPoint()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00495">attitude_loop()</a>, <a class="el" href="cam_8c_source.html#l00107">cam_periodic()</a>, <a class="el" href="generic__com_8c_source.html#l00069">generic_com_periodic()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00350">h_ctl_pitch_loop()</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00251">h_ctl_roll_loop()</a>, <a class="el" href="main__ap_8c_source.html#l00427">navigation_task()</a>, <a class="el" href="main__ap_8c_source.html#l00271">pprz_mode_update()</a>, <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>, <a class="el" href="guidance__v__n_8c_source.html#l00204">v_ctl_set_pitch()</a>, <a class="el" href="guidance__v__n_8c_source.html#l00229">v_ctl_set_throttle()</a>, and <a class="el" href="point_8c_source.html#l00163">vPoint()</a>.</p>
 
 </div>
 </div>
@@ -773,9 +779,9 @@ Variables</h2></td></tr>
 <p>Supply voltage in deciVolt. </p>
 <p>This the ap copy of the measurement from fbw </p>
 
-<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00132">132</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
+<p>Definition at line <a class="el" href="main__ap_8c_source.html#l00133">133</a> of file <a class="el" href="main__ap_8c_source.html">main_ap.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00496">attitude_loop()</a>, <a class="el" href="gsm_8c_source.html#l00404">gsm_send_report_continue()</a>, <a class="el" href="main__ap_8c_source.html#l00585">monitor_task()</a>, and <a class="el" href="main__ap_8c_source.html#l00334">telecommand_task()</a>.</p>
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00495">attitude_loop()</a>, <a class="el" href="gsm_8c_source.html#l00404">gsm_send_report_continue()</a>, <a class="el" href="main__ap_8c_source.html#l00584">monitor_task()</a>, and <a class="el" href="main__ap_8c_source.html#l00335">telecommand_task()</a>.</p>
 
 </div>
 </div>
@@ -799,7 +805,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="fixedwing_2autopilot_8h.html">autopilot.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:52 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:41:03 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

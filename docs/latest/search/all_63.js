@@ -225,7 +225,7 @@ var searchData=
   ['chimu_5fbroadcast',['CHIMU_BROADCAST',['../imu__chimu_8h.html#aa622d4ac568cbc8ddad01a16b7eb1004',1,'imu_chimu.h']]],
   ['chimu_5fchecksum',['CHIMU_Checksum',['../imu__chimu_8c.html#a70dfa9eb8b0dff840f01869418c7de61',1,'CHIMU_Checksum(unsigned char *data, unsigned char buflen):&#160;imu_chimu.c'],['../imu__chimu_8h.html#a70dfa9eb8b0dff840f01869418c7de61',1,'CHIMU_Checksum(unsigned char *data, unsigned char buflen):&#160;imu_chimu.c']]],
   ['chimu_5fcom_5fid_5fhigh',['CHIMU_COM_ID_HIGH',['../imu__chimu_8c.html#a6337151ecfc1aacc4b33b621b8bdf80b',1,'imu_chimu.c']]],
-  ['chimu_5fdata',['CHIMU_DATA',['../ins__chimu__spi_8c.html#ad082bbcaad24f3e263c43c6f2328c00b',1,'CHIMU_DATA():&#160;ins_chimu_spi.c'],['../ins__chimu__uart_8c.html#ad082bbcaad24f3e263c43c6f2328c00b',1,'CHIMU_DATA():&#160;ins_chimu_uart.c']]],
+  ['chimu_5fdata',['CHIMU_DATA',['../ahrs__chimu__spi_8c.html#ad082bbcaad24f3e263c43c6f2328c00b',1,'CHIMU_DATA():&#160;ahrs_chimu_spi.c'],['../ahrs__chimu__uart_8c.html#ad082bbcaad24f3e263c43c6f2328c00b',1,'CHIMU_DATA():&#160;ahrs_chimu_uart.c']]],
   ['chimu_5feuler',['CHIMU_Euler',['../structCHIMU__Euler.html',1,'']]],
   ['chimu_5finit',['CHIMU_Init',['../imu__chimu_8c.html#a8f9d1eeb69a4253543b66c06e258086e',1,'CHIMU_Init(CHIMU_PARSER_DATA *pstData):&#160;imu_chimu.c'],['../imu__chimu_8h.html#a8f9d1eeb69a4253543b66c06e258086e',1,'CHIMU_Init(CHIMU_PARSER_DATA *pstData):&#160;imu_chimu.c']]],
   ['chimu_5fmsg_5f0_5fping',['CHIMU_Msg_0_Ping',['../imu__chimu_8h.html#a540bbc5a40973634a607d66075662134',1,'imu_chimu.h']]],

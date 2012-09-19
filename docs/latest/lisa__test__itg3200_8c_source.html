@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -159,8 +159,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00054"></a><a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">00054</a> <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>;
 <a name="l00055"></a><a class="code" href="lisa__test__itg3200_8c.html#a05b386d4bad60f6f9236de6d3be866e0">00055</a> <span class="preprocessor">#define INITIALIZED 6</span>
 <a name="l00056"></a><a class="code" href="lisa__test__itg3200_8c.html#abefa58e269e2b435d5bb95045deea991">00056</a> <span class="preprocessor"></span><span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__itg3200_8c.html#abefa58e269e2b435d5bb95045deea991">gyro_state</a> = 0;
-<a name="l00057"></a><a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">00057</a> <span class="keyword">static</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> = FALSE;
-<a name="l00058"></a><a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">00058</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">reading_gyro</a> = FALSE;
+<a name="l00057"></a><a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">00057</a> <span class="keyword">static</span> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00058"></a><a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">00058</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">reading_gyro</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060 <span class="keywordtype">void</span> <a class="code" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a8aaa57c7903131c1c86605393bb4654e">exti15_10_isr</a>(<span class="keywordtype">void</span>);
 <a name="l00061"></a>00061 
@@ -291,14 +291,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00186"></a>00186     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
 <a name="l00187"></a>00187     <span class="comment">//   i2c2.buf[0] = ITG3200_REG_GYRO_XOUT_H;</span>
 <a name="l00188"></a>00188     <span class="comment">//    i2c2_transceive(ITG3200_ADDR,1, 6, &amp;i2c_done);</span>
-<a name="l00189"></a>00189     <a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> = FALSE;
-<a name="l00190"></a>00190     <a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">reading_gyro</a> = TRUE;
+<a name="l00189"></a>00189     <a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00190"></a>00190     <a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">reading_gyro</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00191"></a>00191   }
 <a name="l00192"></a>00192 
 <a name="l00193"></a>00193   <span class="keywordflow">if</span> (<a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">reading_gyro</a> &amp;&amp;
 <a name="l00194"></a>00194       (<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a> || <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>)) {
 <a name="l00195"></a>00195     <span class="comment">//    DEBUG_S5_ON();</span>
-<a name="l00196"></a>00196     <a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">reading_gyro</a> = FALSE;
+<a name="l00196"></a>00196     <a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">reading_gyro</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00197"></a>00197     <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> tgp, tgq, tgr;
 <a name="l00198"></a>00198 
 <a name="l00199"></a>00199     <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> ttemp = <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0]&lt;&lt;8 | <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1];
@@ -391,7 +391,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00286"></a>00286 
 <a name="l00287"></a>00287   <span class="comment">//  DEBUG_S4_TOGGLE();</span>
 <a name="l00288"></a>00288 
-<a name="l00289"></a>00289   <span class="keywordflow">if</span> (<a class="code" href="lisa__test__itg3200_8c.html#abefa58e269e2b435d5bb95045deea991">gyro_state</a> == <a class="code" href="lisa__test__itg3200_8c.html#a05b386d4bad60f6f9236de6d3be866e0">INITIALIZED</a>) <a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> = TRUE;
+<a name="l00289"></a>00289   <span class="keywordflow">if</span> (<a class="code" href="lisa__test__itg3200_8c.html#abefa58e269e2b435d5bb95045deea991">gyro_state</a> == <a class="code" href="lisa__test__itg3200_8c.html#a05b386d4bad60f6f9236de6d3be866e0">INITIALIZED</a>) <a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00290"></a>00290 
 <a name="l00291"></a>00291   <span class="comment">//  DEBUG_S4_OFF();</span>
 <a name="l00292"></a>00292 
@@ -416,7 +416,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lisa__test__itg3200_8c.html">lisa_test_itg3200.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:40 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:51 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -197,9 +197,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00102"></a>00102 <span class="preprocessor">#if USE_INFRARED</span>
 <a name="l00103"></a>00103 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_trans, _dev) { uint16_t contrast = abs(infrared.roll) + abs(infrared.pitch) + abs(infrared.top); uint8_t mde = 3; if (contrast &lt; 50) mde = 7; DOWNLINK_SEND_STATE_FILTER_STATUS(_trans, _dev, &amp;mde, &amp;contrast); }</span>
 <a name="l00104"></a>00104 <span class="preprocessor"></span><span class="preprocessor">#elif USE_IMU &amp;&amp; USE_AHRS</span>
-<a name="l00105"></a>00105 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_trans, _dev) { uint8_t mde = 3; if (ahrs.status == AHRS_UNINIT) mde = 2; if (ahrs_timeout_counter &gt; 10) mde = 5; uint16_t val = 0; DOWNLINK_SEND_STATE_FILTER_STATUS(_trans, _dev, &amp;mde, &amp;val); }</span>
+<a name="l00105"></a><a class="code" href="ap__downlink_8h.html#a8aa445bf0e405922bec116e9c23dcc5d">00105</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_trans, _dev) { uint8_t mde = 3; if (ahrs.status == AHRS_UNINIT) mde = 2; if (ahrs_timeout_counter &gt; 10) mde = 5; uint16_t val = 0; DOWNLINK_SEND_STATE_FILTER_STATUS(_trans, _dev, &amp;mde, &amp;val); }</span>
 <a name="l00106"></a>00106 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00107"></a><a class="code" href="ap__downlink_8h.html#a8aa445bf0e405922bec116e9c23dcc5d">00107</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_trans, _dev) {}</span>
+<a name="l00107"></a>00107 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_STATE_FILTER_STATUS(_trans, _dev) {}</span>
 <a name="l00108"></a>00108 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00109"></a>00109 <span class="preprocessor"></span>
 <a name="l00110"></a><a class="code" href="ap__downlink_8h.html#a6b80334168e63d9d2448ed8bf4a4c04b">00110</a> <span class="preprocessor">#define PERIODIC_SEND_NAVIGATION_REF(_trans, _dev)  DOWNLINK_SEND_NAVIGATION_REF(_trans, _dev, &amp;nav_utm_east0, &amp;nav_utm_north0, &amp;nav_utm_zone0);</span>
@@ -248,7 +248,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00153"></a>00153 <span class="preprocessor"></span>
 <a name="l00154"></a>00154 <span class="preprocessor">#ifdef IMU_TYPE_H</span>
 <a name="l00155"></a>00155 <span class="preprocessor"></span><span class="preprocessor">#  ifdef INS_MODULE_H</span>
-<a name="l00156"></a>00156 <span class="preprocessor"></span><span class="preprocessor">#  include &quot;<a class="code" href="ins__module_8h.html">modules/ins/ins_module.h</a>&quot;</span>
+<a name="l00156"></a>00156 <span class="preprocessor"></span><span class="preprocessor">#  include &quot;<a class="code" href="ins__module_8h.html" title="Device independent INS code.">modules/ins/ins_module.h</a>&quot;</span>
 <a name="l00157"></a>00157 <span class="preprocessor">#    define PERIODIC_SEND_IMU_ACCEL_RAW(_trans, _dev) {}</span>
 <a name="l00158"></a>00158 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_GYRO_RAW(_trans, _dev) {}</span>
 <a name="l00159"></a>00159 <span class="preprocessor"></span><span class="preprocessor">#    define PERIODIC_SEND_IMU_MAG_RAW(_trans, _dev) {}</span>
@@ -313,9 +313,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00219"></a><a class="code" href="ap__downlink_8h.html#affc5c0f70f113616776d76c718557382">00219</a> <span class="preprocessor">#define PERIODIC_SEND_TUNE_ROLL(_trans, _dev) DOWNLINK_SEND_TUNE_ROLL(_trans, _dev, &amp;(stateGetBodyRates_f()-&gt;p), &amp;(stateGetNedToBodyEulers_f()-&gt;phi), &amp;h_ctl_roll_setpoint);</span>
 <a name="l00220"></a>00220 <span class="preprocessor"></span>
 <a name="l00221"></a>00221 <span class="preprocessor">#if USE_GPS || defined SITL</span>
-<a name="l00222"></a>00222 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GPS_SOL(_trans, _dev) DOWNLINK_SEND_GPS_SOL(_trans, _dev, &amp;gps.pacc, &amp;gps.sacc, &amp;gps.pdop, &amp;gps.num_sv)</span>
+<a name="l00222"></a><a class="code" href="ap__downlink_8h.html#aa87a843f3dc85cee89f912f603247081">00222</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GPS_SOL(_trans, _dev) DOWNLINK_SEND_GPS_SOL(_trans, _dev, &amp;gps.pacc, &amp;gps.sacc, &amp;gps.pdop, &amp;gps.num_sv)</span>
 <a name="l00223"></a>00223 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00224"></a><a class="code" href="ap__downlink_8h.html#aa87a843f3dc85cee89f912f603247081">00224</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GPS_SOL(_trans, _dev) {}</span>
+<a name="l00224"></a>00224 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GPS_SOL(_trans, _dev) {}</span>
 <a name="l00225"></a>00225 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00226"></a>00226 <span class="preprocessor"></span>
 <a name="l00227"></a><a class="code" href="ap__downlink_8h.html#a10392905662467a5ace379ddff0a264c">00227</a> <span class="preprocessor">#define PERIODIC_SEND_GPS(_trans, _dev) {                                      \</span>
@@ -332,7 +332,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00238"></a>00238 <span class="preprocessor">}</span>
 <a name="l00239"></a>00239 <span class="preprocessor"></span>
 <a name="l00240"></a>00240 <span class="preprocessor">#if USE_GPS</span>
-<a name="l00241"></a>00241 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GPS_INT(_trans, _dev) {   \</span>
+<a name="l00241"></a><a class="code" href="ap__downlink_8h.html#ada9a2df78234b875c7949122551e5f67">00241</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_GPS_INT(_trans, _dev) {   \</span>
 <a name="l00242"></a>00242 <span class="preprocessor">  DOWNLINK_SEND_GPS_INT( _trans, _dev,          \</span>
 <a name="l00243"></a>00243 <span class="preprocessor">                         &amp;gps.ecef_pos.x,       \</span>
 <a name="l00244"></a>00244 <span class="preprocessor">                         &amp;gps.ecef_pos.y,       \</span>
@@ -352,7 +352,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00258"></a>00258 <span class="preprocessor">                         &amp;gps.fix);             \</span>
 <a name="l00259"></a>00259 <span class="preprocessor">  }</span>
 <a name="l00260"></a>00260 <span class="preprocessor"></span>
-<a name="l00261"></a>00261 <span class="preprocessor">#define PERIODIC_SEND_GPS_LLA(_trans, _dev) {               \</span>
+<a name="l00261"></a><a class="code" href="ap__downlink_8h.html#ae5b08338d6b49b79108e2582bb2bb777">00261</a> <span class="preprocessor">#define PERIODIC_SEND_GPS_LLA(_trans, _dev) {               \</span>
 <a name="l00262"></a>00262 <span class="preprocessor">    uint8_t err = 0;                                        \</span>
 <a name="l00263"></a>00263 <span class="preprocessor">    int16_t climb = -gps.ned_vel.z;                         \</span>
 <a name="l00264"></a>00264 <span class="preprocessor">    int16_t course = (DegOfRad(gps.course)/((int32_t)1e6)); \</span>
@@ -386,13 +386,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00292"></a>00292 <span class="preprocessor"></span>
 <a name="l00293"></a>00293 <span class="preprocessor">#if USE_BAROMETER</span>
 <a name="l00294"></a>00294 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="baro_8h.html" title="Common barometric sensor implementation.">subsystems/sensors/baro.h</a>&quot;</span>
-<a name="l00295"></a>00295 <span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {  \</span>
+<a name="l00295"></a><a class="code" href="ap__downlink_8h.html#a09132dd1094236e8356f48f2b6346888">00295</a> <span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {  \</span>
 <a name="l00296"></a>00296 <span class="preprocessor">    DOWNLINK_SEND_BARO_RAW(_trans, _dev,        \</span>
 <a name="l00297"></a>00297 <span class="preprocessor">                           &amp;baro.absolute,      \</span>
 <a name="l00298"></a>00298 <span class="preprocessor">                           &amp;baro.differential); \</span>
 <a name="l00299"></a>00299 <span class="preprocessor">  }</span>
 <a name="l00300"></a>00300 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00301"></a><a class="code" href="ap__downlink_8h.html#a09132dd1094236e8356f48f2b6346888">00301</a> <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {}</span>
+<a name="l00301"></a>00301 <span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_BARO_RAW(_trans, _dev) {}</span>
 <a name="l00302"></a>00302 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00303"></a>00303 <span class="preprocessor"></span>
 <a name="l00304"></a>00304 <span class="preprocessor">#ifdef MEASURE_AIRSPEED</span>
@@ -434,7 +434,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ap__downlink_8h.html">ap_downlink.h</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:38 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:49 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

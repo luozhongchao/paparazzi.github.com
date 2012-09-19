@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -361,13 +361,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00256"></a>00256   next = (fifo-&gt;<a class="code" href="structfifo__t.html#ae93028e986799fceacecbd153729f855">head</a> + 1) % <a class="code" href="usb__ser__hw_8c.html#a8c7c58c5dba905e6348263134f6b4fbd">VCOM_FIFO_SIZE</a>;
 <a name="l00257"></a>00257   <span class="keywordflow">if</span> (next == fifo-&gt;<a class="code" href="structfifo__t.html#abe914ae9dd92644d8a53a4b99d89b487">tail</a>) {
 <a name="l00258"></a>00258     <span class="comment">// full</span>
-<a name="l00259"></a>00259     <span class="keywordflow">return</span> FALSE;
+<a name="l00259"></a>00259     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00260"></a>00260   }
 <a name="l00261"></a>00261 
 <a name="l00262"></a>00262   fifo-&gt;<a class="code" href="structfifo__t.html#a6179dabda649717df17b5a38dbf0d744">buf</a>[fifo-&gt;<a class="code" href="structfifo__t.html#ae93028e986799fceacecbd153729f855">head</a>] = <a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>;
 <a name="l00263"></a>00263   fifo-&gt;<a class="code" href="structfifo__t.html#ae93028e986799fceacecbd153729f855">head</a> = next;
 <a name="l00264"></a>00264 
-<a name="l00265"></a>00265   <span class="keywordflow">return</span> TRUE;
+<a name="l00265"></a>00265   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00266"></a>00266 }
 <a name="l00267"></a>00267 
 <a name="l00268"></a>00268 BOOL <a class="code" href="usb__ser__hw_8c.html#ae9e700bbf9ad6ed809b2879eeda18417">fifo_get</a>(<a class="code" href="structfifo__t.html">fifo_t</a> *fifo, U8 *pc)
@@ -376,7 +376,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00271"></a>00271 
 <a name="l00272"></a>00272   <span class="comment">// check if FIFO has data</span>
 <a name="l00273"></a>00273   <span class="keywordflow">if</span> (fifo-&gt;<a class="code" href="structfifo__t.html#ae93028e986799fceacecbd153729f855">head</a> == fifo-&gt;<a class="code" href="structfifo__t.html#abe914ae9dd92644d8a53a4b99d89b487">tail</a>) {
-<a name="l00274"></a>00274     <span class="keywordflow">return</span> FALSE;
+<a name="l00274"></a>00274     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00275"></a>00275   }
 <a name="l00276"></a>00276 
 <a name="l00277"></a>00277   next = (fifo-&gt;<a class="code" href="structfifo__t.html#abe914ae9dd92644d8a53a4b99d89b487">tail</a> + 1) % <a class="code" href="usb__ser__hw_8c.html#a8c7c58c5dba905e6348263134f6b4fbd">VCOM_FIFO_SIZE</a>;
@@ -384,7 +384,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00279"></a>00279   *pc = fifo-&gt;<a class="code" href="structfifo__t.html#a6179dabda649717df17b5a38dbf0d744">buf</a>[fifo-&gt;<a class="code" href="structfifo__t.html#abe914ae9dd92644d8a53a4b99d89b487">tail</a>];
 <a name="l00280"></a>00280   fifo-&gt;<a class="code" href="structfifo__t.html#abe914ae9dd92644d8a53a4b99d89b487">tail</a> = next;
 <a name="l00281"></a>00281 
-<a name="l00282"></a>00282   <span class="keywordflow">return</span> TRUE;
+<a name="l00282"></a>00282   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00283"></a>00283 }
 <a name="l00284"></a>00284 
 <a name="l00285"></a>00285 <span class="keywordtype">int</span> <a class="code" href="usb__ser__hw_8c.html#a14ec031da793cb08aa5e3e3b5d551431">fifo_avail</a>(<a class="code" href="structfifo__t.html">fifo_t</a> *fifo)
@@ -498,7 +498,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00404"></a>00404 
 <a name="l00410"></a>00410 bool_t <a class="code" href="usb__serial_8h.html#a497f2c3bbcb2e24f2040db6881de17da">VCOM_check_free_space</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> len)
 <a name="l00411"></a>00411 {
-<a name="l00412"></a>00412   <span class="keywordflow">return</span> (<a class="code" href="usb__ser__hw_8c.html#adfd6ebb4b8039e06d214b227db30e3b2">fifo_free</a>(&amp;txfifo) &gt;= len ? TRUE : FALSE);
+<a name="l00412"></a>00412   <span class="keywordflow">return</span> (<a class="code" href="usb__ser__hw_8c.html#adfd6ebb4b8039e06d214b227db30e3b2">fifo_free</a>(&amp;txfifo) &gt;= len ? <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a> : <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);
 <a name="l00413"></a>00413 }
 <a name="l00414"></a>00414 
 <a name="l00415"></a>00415 
@@ -524,7 +524,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00446"></a>00446     <span class="comment">// put into FIFO</span>
 <a name="l00447"></a>00447     <span class="keywordflow">if</span> (!<a class="code" href="usb__ser__hw_8c.html#a60cebaa767a05f06a7b66c751c12318a">fifo_put</a>(&amp;rxfifo, <a class="code" href="usb__ser__hw_8c.html#a91cdcbffe28c1c35bc6d6a3fc449e28c">abBulkBuf</a>[i])) {
 <a name="l00448"></a>00448       <span class="comment">// overflow... :(</span>
-<a name="l00449"></a>00449       <a class="code" href="usb__ser__hw_8c.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(FALSE);
+<a name="l00449"></a>00449       <a class="code" href="usb__ser__hw_8c.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);
 <a name="l00450"></a>00450       <span class="keywordflow">break</span>;
 <a name="l00451"></a>00451     }
 <a name="l00452"></a>00452   }
@@ -584,9 +584,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00519"></a>00519     <span class="keywordflow">break</span>;
 <a name="l00520"></a>00520 
 <a name="l00521"></a>00521   <span class="keywordflow">default</span>:
-<a name="l00522"></a>00522     <span class="keywordflow">return</span> FALSE;
+<a name="l00522"></a>00522     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00523"></a>00523   }
-<a name="l00524"></a>00524   <span class="keywordflow">return</span> TRUE;
+<a name="l00524"></a>00524   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00525"></a>00525 }
 <a name="l00526"></a>00526 
 <a name="l00527"></a>00527 
@@ -643,7 +643,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00583"></a>00583   <a class="code" href="LPC21xx_8h.html#abdb80dc27da98460a7ecd37f86bae79b">VICVectAddr10</a> = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="usb__ser__hw_8c.html#ae891f923dd9e5e6d7630c5ffc64ce0ec">USBIntHandler</a>;
 <a name="l00584"></a>00584 
 <a name="l00585"></a>00585   <span class="comment">// connect to bus</span>
-<a name="l00586"></a>00586   USBHwConnect(TRUE);
+<a name="l00586"></a>00586   USBHwConnect(<a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);
 <a name="l00587"></a>00587 }
 <a name="l00588"></a>00588 
 <a name="l00589"></a>00589 
@@ -668,7 +668,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="usb__ser__hw_8c.html">usb_ser_hw.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:37 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:47 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

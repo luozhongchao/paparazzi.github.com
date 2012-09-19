@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -157,8 +157,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00060"></a>00060 
 <a name="l00062"></a><a class="code" href="nav_8c.html#aacf1866dff03a2d6eba27ddefae85636">00062</a> <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="navigation_8c.html#a39dee0aec50f1bed176c4587cdf83dda">nav_leg_length</a>;
 <a name="l00063"></a>00063 
-<a name="l00064"></a><a class="code" href="nav_8h.html#a3d597a1b316fdba0db5701a03ad56c7b">00064</a> bool_t <a class="code" href="nav_8c.html#a3d597a1b316fdba0db5701a03ad56c7b">nav_in_circle</a> = FALSE;
-<a name="l00065"></a><a class="code" href="nav_8h.html#a70c77743e83862b67b86056fcc80a8ec">00065</a> bool_t <a class="code" href="nav_8c.html#a70c77743e83862b67b86056fcc80a8ec">nav_in_segment</a> = FALSE;
+<a name="l00064"></a><a class="code" href="nav_8h.html#a3d597a1b316fdba0db5701a03ad56c7b">00064</a> bool_t <a class="code" href="nav_8c.html#a3d597a1b316fdba0db5701a03ad56c7b">nav_in_circle</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00065"></a><a class="code" href="nav_8h.html#a70c77743e83862b67b86056fcc80a8ec">00065</a> bool_t <a class="code" href="nav_8c.html#a70c77743e83862b67b86056fcc80a8ec">nav_in_segment</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00066"></a><a class="code" href="nav_8h.html#a7b01191b794559f9d485b67c2be62c39">00066</a> <span class="keywordtype">float</span> <a class="code" href="nav_8c.html#ac1af27920d41a6dbc343fc1d7f55e08c">nav_circle_x</a>, <a class="code" href="nav_8c.html#a7b01191b794559f9d485b67c2be62c39">nav_circle_y</a>, <a class="code" href="navigation_8c.html#aa912cd5993a128e66d6e5391e5dc812f">nav_circle_radius</a>;
 <a name="l00067"></a><a class="code" href="nav_8h.html#a2992c5b1e4da4284068a225e451877a4">00067</a> <span class="keywordtype">float</span> <a class="code" href="nav_8c.html#a8b5c072e3f61f9025578e3e6283ffcb1">nav_segment_x_1</a>, <a class="code" href="nav_8c.html#aa04e457095198f649868d28f72969029">nav_segment_y_1</a>, <a class="code" href="nav_8c.html#a123af850aca7872d4ae1f0fd561fc302">nav_segment_x_2</a>, <a class="code" href="nav_8c.html#a2992c5b1e4da4284068a225e451877a4">nav_segment_y_2</a>;
 <a name="l00068"></a><a class="code" href="nav_8c.html#ad2a5195a657a7961bfb54e3c2da48a21">00068</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="navigation_8c.html#ad2a5195a657a7961bfb54e3c2da48a21">horizontal_mode</a>;
@@ -187,8 +187,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00092"></a>00092   <a class="code" href="nav_8c.html#a38c13a13ef3e5a3b6480f71bf244e668">last_y</a> = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;
 <a name="l00093"></a>00093   <a class="code" href="common__flight__plan_8c.html#ac9b0a7aa731d9b8755a79251720cf9e0" title="In s.">stage_time</a> = 0;
 <a name="l00094"></a>00094   nav_circle_radians = 0;
-<a name="l00095"></a>00095   nav_in_circle = FALSE;
-<a name="l00096"></a>00096   nav_in_segment = FALSE;
+<a name="l00095"></a>00095   nav_in_circle = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00096"></a>00096   nav_in_segment = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00097"></a>00097   nav_shift = 0;
 <a name="l00098"></a>00098   <a class="code" href="navigation_8c.html#acfa0f83e076f79c30ed7042e429b7ae0" title="with INT32_ANGLE_FRAC">nav_pitch</a> = 0.;
 <a name="l00099"></a>00099 }
@@ -234,7 +234,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00141"></a>00141     radius_carrot += (abs_radius / cos(carrot_angle) - abs_radius);
 <a name="l00142"></a>00142   <a class="code" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course.">fly_to_xy</a>(x+cos(alpha_carrot)*radius_carrot,
 <a name="l00143"></a>00143       y+sin(alpha_carrot)*radius_carrot);
-<a name="l00144"></a>00144   nav_in_circle = TRUE;
+<a name="l00144"></a>00144   nav_in_circle = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00145"></a>00145   nav_circle_x = <a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;
 <a name="l00146"></a>00146   nav_circle_y = <a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;
 <a name="l00147"></a>00147   nav_circle_radius = <a class="code" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>;
@@ -324,7 +324,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00232"></a>00232   <span class="keywordflow">if</span> (nav_radius &lt; 0)
 <a name="l00233"></a>00233     baseleg_out_qdr += M_PI;
 <a name="l00234"></a>00234 
-<a name="l00235"></a>00235   <span class="keywordflow">return</span> FALSE;
+<a name="l00235"></a>00235   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00236"></a>00236 }
 <a name="l00237"></a>00237 
 <a name="l00238"></a><a class="code" href="nav_8c.html#a7a738c44a399a9103371dc53dfabc9dc">00238</a> <span class="keyword">static</span> <span class="keyword">inline</span> bool_t <a class="code" href="nav_8c.html#a7a738c44a399a9103371dc53dfabc9dc">nav_compute_final_from_glide</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp_af, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp_td, <span class="keywordtype">float</span> glide ) {
@@ -342,7 +342,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00250"></a>00250   <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp_af].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a> = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp_td].<a class="code" href="structEnuCoor__i.html#a2c2e76b483141c5e864e7367ae2d0b69">y</a> + y_1 * h_0 * glide;
 <a name="l00251"></a>00251   <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp_af].a = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp_af].a;
 <a name="l00252"></a>00252 
-<a name="l00253"></a>00253   <span class="keywordflow">return</span> FALSE;
+<a name="l00253"></a>00253   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00254"></a>00254 }
 <a name="l00255"></a>00255 
 <a name="l00256"></a>00256 
@@ -358,7 +358,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00266"></a>00266   <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(_tod) = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(_td) + td_af_x / td_af * td_tod;
 <a name="l00267"></a>00267   <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(_tod) = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(_td) + td_af_y / td_af * td_tod;
 <a name="l00268"></a>00268   <a class="code" href="navigation_8h.html#a2de6e5b93a3552facfa675f1bccd8db2">WaypointAlt</a>(_tod) = <a class="code" href="navigation_8h.html#a2de6e5b93a3552facfa675f1bccd8db2">WaypointAlt</a>(_af);
-<a name="l00269"></a>00269   <span class="keywordflow">return</span> FALSE;
+<a name="l00269"></a>00269   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00270"></a>00270 }
 <a name="l00271"></a>00271 
 <a name="l00272"></a>00272 
@@ -404,7 +404,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00320"></a>00320   <a class="code" href="common__nav_8c.html#a1ea7c4cd1046a57c3444b89a1dce6250">dist2_to_wp</a> = pw_x*pw_x + pw_y *pw_y;
 <a name="l00321"></a>00321   <span class="keywordtype">float</span> min_dist = approaching_time * (*<a class="code" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float).">stateGetHorizontalSpeedNorm_f</a>());
 <a name="l00322"></a>00322   <span class="keywordflow">if</span> (<a class="code" href="common__nav_8c.html#a1ea7c4cd1046a57c3444b89a1dce6250">dist2_to_wp</a> &lt; min_dist*min_dist)
-<a name="l00323"></a>00323     <span class="keywordflow">return</span> TRUE;
+<a name="l00323"></a>00323     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00324"></a>00324 
 <a name="l00325"></a>00325   <span class="keywordtype">float</span> scal_prod = (x - from_x) * pw_x + (y - from_y) * pw_y;
 <a name="l00326"></a>00326 
@@ -444,7 +444,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00367"></a>00367   <span class="keywordtype">float</span> carrot = CARROT * NOMINAL_AIRSPEED;
 <a name="l00368"></a>00368 
 <a name="l00369"></a>00369   nav_leg_progress += <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(carrot / nav_leg_length, 0.);
-<a name="l00370"></a>00370   nav_in_segment = TRUE;
+<a name="l00370"></a>00370   nav_in_segment = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00371"></a>00371   nav_segment_x_1 = last_wp_x;
 <a name="l00372"></a>00372   nav_segment_y_1 = last_wp_y;
 <a name="l00373"></a>00373   nav_segment_x_2 = wp_x;
@@ -480,7 +480,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00405"></a>00405 }
 <a name="l00406"></a>00406 
 <a name="l00411"></a><a class="code" href="nav_8c.html#ad40d34bcd8520f64bb073fae4a08878e">00411</a> <span class="keywordtype">void</span> <a class="code" href="navigation_8c.html#ab2ce29f97dd1a6d297a60526a82054e5">nav_periodic_task</a>(<span class="keywordtype">void</span>) {
-<a name="l00412"></a>00412   nav_survey_active = FALSE;
+<a name="l00412"></a>00412   nav_survey_active = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00413"></a>00413 
 <a name="l00414"></a>00414   <a class="code" href="navigation_8h.html#a4603515f41786b54ea9383a65a9f249e" title="Computes square distance to the HOME waypoint potentially sets too_far_from_home.">compute_dist2_to_home</a>();
 <a name="l00415"></a>00415   <a class="code" href="common__nav_8c.html#a1ea7c4cd1046a57c3444b89a1dce6250">dist2_to_wp</a> = 0.;
@@ -750,7 +750,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="nav_8c.html">nav.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:46 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:57 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

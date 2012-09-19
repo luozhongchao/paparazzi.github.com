@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -173,11 +173,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068 <span class="preprocessor"></span>
 <a name="l00069"></a>00069 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="ahrs__int__cmpl__quat_8c.html#abea8ede7c8ebc5179487d3464ab513bb">set_body_state_from_quat</a>(<span class="keywordtype">void</span>);
 <a name="l00070"></a>00070 
-<a name="l00071"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#aa3721663c9df7c7af5613486a3566afb">00071</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__float__cmpl_8c.html#aa3721663c9df7c7af5613486a3566afb" title="AHRS initialization.">ahrs_init</a>(<span class="keywordtype">void</span>) {
+<a name="l00071"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#aa3721663c9df7c7af5613486a3566afb">00071</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__chimu__spi_8c.html#aa3721663c9df7c7af5613486a3566afb" title="AHRS initialization.">ahrs_init</a>(<span class="keywordtype">void</span>) {
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073   <a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state">ahrs</a>.<a class="code" href="structAhrs.html#acb8bbf7c582667502e2941722e052d0e" title="status of the AHRS, AHRS_UNINIT or AHRS_RUNNING">status</a> = <a class="code" href="ahrs_8h.html#a7e2c3de6a795ce2c01d6c2083293cf39">AHRS_UNINIT</a>;
-<a name="l00074"></a>00074   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ab7a89db70843c70b83fd358e881b5e7c">ltp_vel_norm_valid</a> = FALSE;
-<a name="l00075"></a>00075   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c">heading_aligned</a> = FALSE;
+<a name="l00074"></a>00074   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ab7a89db70843c70b83fd358e881b5e7c">ltp_vel_norm_valid</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00075"></a>00075   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c">heading_aligned</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00076"></a>00076 
 <a name="l00077"></a>00077   <span class="comment">/* set ltp_to_imu so that body is zero */</span>
 <a name="l00078"></a>00078   <a class="code" href="pprz__algebra_8h.html#aac90b1ef45f1b296e418ee1b5cded854">QUAT_COPY</a>(<a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#aa55b72aff2e4f10587e7bbd90da4b418">ltp_to_imu_quat</a>, <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a5dd001e15dc85abf5ae465ed3ce554e5" title="rotation from body to imu frame as a unit quaternion">body_to_imu_quat</a>);
@@ -188,29 +188,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00083"></a>00083   <a class="code" href="pprz__algebra__int_8h.html#a058767cf91a8a4624fe10a4d56ef4561">INT_RATES_ZERO</a>(<a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.high_rez_bias);
 <a name="l00084"></a>00084 
 <a name="l00085"></a>00085 <span class="preprocessor">#if AHRS_GRAVITY_UPDATE_COORDINATED_TURN</span>
-<a name="l00086"></a>00086 <span class="preprocessor"></span>  <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ad2bd57434c0f59a62150e7658f506555">correct_gravity</a> = TRUE;
+<a name="l00086"></a>00086 <span class="preprocessor"></span>  <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ad2bd57434c0f59a62150e7658f506555">correct_gravity</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00087"></a>00087 <span class="preprocessor">#else</span>
-<a name="l00088"></a>00088 <span class="preprocessor"></span>  <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ad2bd57434c0f59a62150e7658f506555">correct_gravity</a> = FALSE;
+<a name="l00088"></a>00088 <span class="preprocessor"></span>  <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ad2bd57434c0f59a62150e7658f506555">correct_gravity</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00089"></a>00089 <span class="preprocessor">#endif</span>
 <a name="l00090"></a>00090 <span class="preprocessor"></span>
 <a name="l00091"></a>00091 <span class="preprocessor">#if AHRS_GRAVITY_UPDATE_NORM_HEURISTIC</span>
-<a name="l00092"></a>00092 <span class="preprocessor"></span>  <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.use_gravity_heuristic = TRUE;
+<a name="l00092"></a>00092 <span class="preprocessor"></span>  <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.use_gravity_heuristic = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00093"></a>00093 <span class="preprocessor">#else</span>
-<a name="l00094"></a>00094 <span class="preprocessor"></span>  <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.use_gravity_heuristic = FALSE;
+<a name="l00094"></a>00094 <span class="preprocessor"></span>  <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.use_gravity_heuristic = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00095"></a>00095 <span class="preprocessor">#endif</span>
 <a name="l00096"></a>00096 <span class="preprocessor"></span>
 <a name="l00097"></a>00097 }
 <a name="l00098"></a>00098 
-<a name="l00099"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#a81e17b09f47068c02c345da1523f589b">00099</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__float__cmpl_8c.html#a81e17b09f47068c02c345da1523f589b" title="Aligns the AHRS.">ahrs_align</a>(<span class="keywordtype">void</span>) {
+<a name="l00099"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#a81e17b09f47068c02c345da1523f589b">00099</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__chimu__spi_8c.html#a81e17b09f47068c02c345da1523f589b" title="Aligns the AHRS.">ahrs_align</a>(<span class="keywordtype">void</span>) {
 <a name="l00100"></a>00100 
 <a name="l00101"></a>00101 <span class="preprocessor">#if USE_MAGNETOMETER</span>
 <a name="l00102"></a>00102 <span class="preprocessor"></span>  <span class="comment">/* Compute an initial orientation from accel and mag directly as quaternion */</span>
 <a name="l00103"></a>00103   <a class="code" href="ahrs__int__utils_8h.html#a8ea9794c15ad84b2a289385d4a431f60">ahrs_int_get_quat_from_accel_mag</a>(&amp;<a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#aa55b72aff2e4f10587e7bbd90da4b418">ltp_to_imu_quat</a>, &amp;<a class="code" href="ahrs__aligner_8c.html#a66a55f68c9554dcf5ae9dd4dbd4479e3">ahrs_aligner</a>.<a class="code" href="structAhrsAligner.html#abfbd315f6a7fc5b98831eb3741d07e55">lp_accel</a>, &amp;<a class="code" href="ahrs__aligner_8c.html#a66a55f68c9554dcf5ae9dd4dbd4479e3">ahrs_aligner</a>.<a class="code" href="structAhrsAligner.html#aaf9f84dd40ecc27b22541b3e22096c98">lp_mag</a>);
-<a name="l00104"></a>00104   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c">heading_aligned</a> = TRUE;
+<a name="l00104"></a>00104   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c">heading_aligned</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00105"></a>00105 <span class="preprocessor">#else</span>
 <a name="l00106"></a>00106 <span class="preprocessor"></span>  <span class="comment">/* Compute an initial orientation from accel and just set heading to zero */</span>
 <a name="l00107"></a>00107   <a class="code" href="ahrs__int__utils_8h.html#a01b7d1167e626e382675619369a1fc49">ahrs_int_get_quat_from_accel</a>(&amp;<a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#aa55b72aff2e4f10587e7bbd90da4b418">ltp_to_imu_quat</a>, &amp;<a class="code" href="ahrs__aligner_8c.html#a66a55f68c9554dcf5ae9dd4dbd4479e3">ahrs_aligner</a>.<a class="code" href="structAhrsAligner.html#abfbd315f6a7fc5b98831eb3741d07e55">lp_accel</a>);
-<a name="l00108"></a>00108   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c">heading_aligned</a> = FALSE;
+<a name="l00108"></a>00108   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c">heading_aligned</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00109"></a>00109 <span class="preprocessor">#endif</span>
 <a name="l00110"></a>00110 <span class="preprocessor"></span>
 <a name="l00111"></a>00111   <a class="code" href="ahrs__int__cmpl__quat_8c.html#abea8ede7c8ebc5179487d3464ab513bb">set_body_state_from_quat</a>();
@@ -230,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00125"></a>00125 <span class="comment"> *</span>
 <a name="l00126"></a>00126 <span class="comment"> *</span>
 <a name="l00127"></a>00127 <span class="comment"> */</span>
-<a name="l00128"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#af8f4df7ae38ca5b239eac30e7d259e46">00128</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__float__cmpl_8c.html#af8f4df7ae38ca5b239eac30e7d259e46" title="Propagation.">ahrs_propagate</a>(<span class="keywordtype">void</span>) {
+<a name="l00128"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#af8f4df7ae38ca5b239eac30e7d259e46">00128</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__chimu__spi_8c.html#af8f4df7ae38ca5b239eac30e7d259e46" title="Propagation.">ahrs_propagate</a>(<span class="keywordtype">void</span>) {
 <a name="l00129"></a>00129 
 <a name="l00130"></a>00130   <span class="comment">/* unbias gyro             */</span>
 <a name="l00131"></a>00131   <span class="keyword">struct </span><a class="code" href="structInt32Rates.html" title="angular rates">Int32Rates</a> omega;
@@ -261,7 +261,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00156"></a>00156 
 <a name="l00157"></a>00157 
 <a name="l00158"></a>00158 
-<a name="l00159"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#a8bf83860498b05e7e94484cdcbcb1b7a">00159</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__float__cmpl_8c.html#a8bf83860498b05e7e94484cdcbcb1b7a" title="Update AHRS state with accerleration measurements.">ahrs_update_accel</a>(<span class="keywordtype">void</span>) {
+<a name="l00159"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#a8bf83860498b05e7e94484cdcbcb1b7a">00159</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__chimu__spi_8c.html#a8bf83860498b05e7e94484cdcbcb1b7a" title="Update AHRS state with accerleration measurements.">ahrs_update_accel</a>(<span class="keywordtype">void</span>) {
 <a name="l00160"></a>00160 
 <a name="l00161"></a>00161   <span class="comment">// c2 = ltp z-axis in imu-frame</span>
 <a name="l00162"></a>00162   <span class="keyword">struct </span><a class="code" href="structInt32RMat.html" title="rotation matrix">Int32RMat</a> ltp_to_imu_rmat;
@@ -430,13 +430,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00325"></a>00325 
 <a name="l00326"></a>00326 }
 <a name="l00327"></a>00327 
-<a name="l00328"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#a0156f6669675c216bbcb413ea1879960">00328</a> <span class="keywordtype">void</span> <a class="code" href="modules_2ins_2ins__arduimu__basic_8c.html#a0156f6669675c216bbcb413ea1879960" title="Update AHRS state with GPS measurements.">ahrs_update_gps</a>(<span class="keywordtype">void</span>) {
+<a name="l00328"></a><a class="code" href="ahrs__int__cmpl__quat_8c.html#a0156f6669675c216bbcb413ea1879960">00328</a> <span class="keywordtype">void</span> <a class="code" href="ahrs__chimu__spi_8c.html#a0156f6669675c216bbcb413ea1879960" title="Update AHRS state with GPS measurements.">ahrs_update_gps</a>(<span class="keywordtype">void</span>) {
 <a name="l00329"></a>00329 <span class="preprocessor">#if AHRS_GRAVITY_UPDATE_COORDINATED_TURN &amp;&amp; USE_GPS</span>
 <a name="l00330"></a>00330 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#afeffb02bdd18d27a87e96bb77175168f" title="status of fix">fix</a> == <a class="code" href="gps_8h.html#ac5e980c8325a29dd79a45ed26af404be">GPS_FIX_3D</a>) {
 <a name="l00331"></a>00331     <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#aa634b9c59a692e01a3b2b5d3d98c26ac">ltp_vel_norm</a> = <a class="code" href="pprz__algebra__int_8h.html#af665ad3da6b5c3589c19d7bdc66e8fc4">SPEED_BFP_OF_REAL</a>(<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a6bbd07d59ce79d19e1027b08e76dbcf9" title="norm of 3d speed in cm/s">speed_3d</a> / 100.);
-<a name="l00332"></a>00332     <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ab7a89db70843c70b83fd358e881b5e7c">ltp_vel_norm_valid</a> = TRUE;
+<a name="l00332"></a>00332     <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ab7a89db70843c70b83fd358e881b5e7c">ltp_vel_norm_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00333"></a>00333   } <span class="keywordflow">else</span> {
-<a name="l00334"></a>00334     <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ab7a89db70843c70b83fd358e881b5e7c">ltp_vel_norm_valid</a> = FALSE;
+<a name="l00334"></a>00334     <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#ab7a89db70843c70b83fd358e881b5e7c">ltp_vel_norm_valid</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00335"></a>00335   }
 <a name="l00336"></a>00336 <span class="preprocessor">#endif</span>
 <a name="l00337"></a>00337 <span class="preprocessor"></span>
@@ -552,7 +552,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00447"></a>00447   <span class="comment">/* Set state */</span>
 <a name="l00448"></a>00448   <a class="code" href="group__state__attitude.html#ga48a6162b6f885b06c906931f33a9caa0" title="Set vehicle body attitude from quaternion (int).">stateSetNedToBodyQuat_i</a>(&amp;ltp_to_body_quat);
 <a name="l00449"></a>00449 
-<a name="l00450"></a>00450   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c">heading_aligned</a> = TRUE;
+<a name="l00450"></a>00450   <a class="code" href="ahrs__float__cmpl_8c.html#a90e8e1dcd1cef8d02c29de2c3d30d734">ahrs_impl</a>.<a class="code" href="structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c">heading_aligned</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00451"></a>00451 }
 <a name="l00452"></a>00452 
 <a name="l00453"></a>00453 
@@ -604,7 +604,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ahrs__int__cmpl__quat_8c.html">ahrs_int_cmpl_quat.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:45 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:56 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

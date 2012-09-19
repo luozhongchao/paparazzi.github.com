@@ -10,7 +10,5 @@ var ins_8h =
     [ "ins_update_baro", "ins_8h.html#a500f6f3a374bae3e14f780ed229b8b20", null ],
     [ "ins_update_gps", "ins_8h.html#aacc25a507c5c24309fc37b1f806f5d2b", null ],
     [ "ins_update_sonar", "ins_8h.html#aca8692ca4476d35914c3977f2ea1e138", null ],
-    [ "ins", "ins_8h.html#a93b83435a11f973aa9aceab13c2f2b3f", null ],
-    [ "ins_hf_realign", "ins_8h.html#adbd8ef97dc98ace19f2863662fd45b78", null ],
-    [ "ins_vf_realign", "ins_8h.html#a378f67328756b60bdeb5e4113ddd4e2f", null ]
+    [ "ins", "ins_8h.html#a93b83435a11f973aa9aceab13c2f2b3f", null ]
 ];

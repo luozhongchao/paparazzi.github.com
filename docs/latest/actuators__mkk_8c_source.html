@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -150,10 +150,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00049"></a>00049   }
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051 <span class="preprocessor">#if defined ACTUATORS_START_DELAY &amp;&amp; ! defined SITL</span>
-<a name="l00052"></a>00052 <span class="preprocessor"></span>  <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = FALSE;
+<a name="l00052"></a>00052 <span class="preprocessor"></span>  <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00053"></a>00053   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#a0583c93a24eed5f81e1f647ca63a652a">SysTimeTimerStart</a>(<a class="code" href="actuators__asctec_8c.html#adc112700ab9255ba4329c57403d81a59">actuators_delay_time</a>);
 <a name="l00054"></a>00054 <span class="preprocessor">#else</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span>  <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = TRUE;
+<a name="l00055"></a>00055 <span class="preprocessor"></span>  <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00056"></a>00056   <a class="code" href="actuators__asctec_8c.html#adc112700ab9255ba4329c57403d81a59">actuators_delay_time</a> = 0;
 <a name="l00057"></a>00057 <span class="preprocessor">#endif</span>
 <a name="l00058"></a>00058 <span class="preprocessor"></span>
@@ -164,11 +164,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00063"></a>00063 <span class="preprocessor">#if defined ACTUATORS_START_DELAY &amp;&amp; ! defined SITL</span>
 <a name="l00064"></a>00064 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (!<a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a>) {
 <a name="l00065"></a>00065     <span class="keywordflow">if</span> (<a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#a2dfaf7d6ae83a19972aca429fc687e87">SysTimeTimer</a>(<a class="code" href="actuators__asctec_8c.html#adc112700ab9255ba4329c57403d81a59">actuators_delay_time</a>) &lt; <a class="code" href="sys__time_8h.html#a16b92e3e15d99fcf7029503763a63b61">USEC_OF_SEC</a>(ACTUATORS_START_DELAY)) <span class="keywordflow">return</span>;
-<a name="l00066"></a>00066     <span class="keywordflow">else</span> <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = TRUE;
+<a name="l00066"></a>00066     <span class="keywordflow">else</span> <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00067"></a>00067   }
 <a name="l00068"></a>00068 <span class="preprocessor">#endif</span>
 <a name="l00069"></a>00069 <span class="preprocessor"></span>
-<a name="l00070"></a>00070   <a class="code" href="supervision_8c.html#ab048a1d9d47a93305ee45d5c3ec5aac9">supervision_run</a>(motors_on, FALSE, <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>);
+<a name="l00070"></a>00070   <a class="code" href="supervision_8c.html#ab048a1d9d47a93305ee45d5c3ec5aac9">supervision_run</a>(motors_on, <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>, <a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136">commands</a>);
 <a name="l00071"></a>00071   <span class="keywordflow">for</span> (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i=0; i&lt;ACTUATORS_MKK_NB; i++) {
 <a name="l00072"></a>00072 <span class="preprocessor">#ifdef KILL_MOTORS</span>
 <a name="l00073"></a>00073 <span class="preprocessor"></span>    <a class="code" href="actuators__mkk_8c.html#a97edde3b366f63d3157a2dcefe277415">actuators_mkk</a>.<a class="code" href="structActuatorsMkk.html#aa0d77df760e4f8a4ad2d9bcc869f920c">trans</a>[i].<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = 0;
@@ -198,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="actuators__mkk_8c.html">actuators_mkk.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:39 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:50 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

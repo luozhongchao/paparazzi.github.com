@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-226-gf68b8b7</span>
+   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a>00050 {
 <a name="l00051"></a>00051   <a class="code" href="itg3200_8c.html#a0478482f756ab1b2f3771a5a91d9296a">itg3200_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00052"></a>00052   <a class="code" href="itg3200_8c.html#a0478482f756ab1b2f3771a5a91d9296a">itg3200_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>;
-<a name="l00053"></a>00053   <a class="code" href="itg3200_8c.html#a2df8ed7451b6e731058fec338b7142a2">itg3200_initialized</a> = FALSE;
+<a name="l00053"></a>00053   <a class="code" href="itg3200_8c.html#a2df8ed7451b6e731058fec338b7142a2">itg3200_initialized</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00054"></a>00054   <a class="code" href="itg3200_8c.html#ab88b010187fac4a999ff70f1a61a6f36">itg3200_init_status</a> = <a class="code" href="itg3200_8c.html#ab5e5e46e3888af502ebae44b78660328">ITG_CONF_UNINIT</a>;
 <a name="l00055"></a>00055 }
 <a name="l00056"></a>00056 
@@ -188,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00083"></a>00083       <a class="code" href="itg3200_8c.html#ab88b010187fac4a999ff70f1a61a6f36">itg3200_init_status</a>++;
 <a name="l00084"></a>00084       <span class="keywordflow">break</span>;
 <a name="l00085"></a>00085     <span class="keywordflow">case</span> <a class="code" href="itg3200_8c.html#a233600c58679b221d482874ac3c30802">ITG_CONF_DONE</a>:
-<a name="l00086"></a>00086       <a class="code" href="itg3200_8c.html#a2df8ed7451b6e731058fec338b7142a2">itg3200_initialized</a> = TRUE;
+<a name="l00086"></a>00086       <a class="code" href="itg3200_8c.html#a2df8ed7451b6e731058fec338b7142a2">itg3200_initialized</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00087"></a>00087       <a class="code" href="itg3200_8c.html#a0478482f756ab1b2f3771a5a91d9296a">itg3200_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00088"></a>00088       <span class="keywordflow">break</span>;
 <a name="l00089"></a>00089     <span class="keywordflow">default</span>:
@@ -231,7 +231,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00126"></a>00126         <a class="code" href="itg3200_8c.html#ae276233bc1629ca3dd2a582e7e252c21">itg3200_data</a>.<a class="code" href="structInt32Rates.html#a34093c15eec29e77b8cc0102f6d216dd" title="in rad/s^2 with INT32_RATE_FRAC">p</a> = <a class="code" href="itg3200_8c.html#ae7e949d1dd6f5a5a814fac0cd6936966">Int16FromBuf</a>(<a class="code" href="itg3200_8c.html#a0478482f756ab1b2f3771a5a91d9296a">itg3200_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>,3);
 <a name="l00127"></a>00127         <a class="code" href="itg3200_8c.html#ae276233bc1629ca3dd2a582e7e252c21">itg3200_data</a>.<a class="code" href="structInt32Rates.html#a7c820bcf2018e94b89898d36d81d7f4a" title="in rad/s^2 with INT32_RATE_FRAC">q</a> = <a class="code" href="itg3200_8c.html#ae7e949d1dd6f5a5a814fac0cd6936966">Int16FromBuf</a>(<a class="code" href="itg3200_8c.html#a0478482f756ab1b2f3771a5a91d9296a">itg3200_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>,5);
 <a name="l00128"></a>00128         <a class="code" href="itg3200_8c.html#ae276233bc1629ca3dd2a582e7e252c21">itg3200_data</a>.<a class="code" href="structInt32Rates.html#a6875ec572190ce2b63fe2a5658978494" title="in rad/s^2 with INT32_RATE_FRAC">r</a> = <a class="code" href="itg3200_8c.html#ae7e949d1dd6f5a5a814fac0cd6936966">Int16FromBuf</a>(<a class="code" href="itg3200_8c.html#a0478482f756ab1b2f3771a5a91d9296a">itg3200_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>,7);
-<a name="l00129"></a>00129         <a class="code" href="itg3200_8c.html#a28360d513fc271e12167cdf766e60f26">itg3200_data_available</a> = TRUE;
+<a name="l00129"></a>00129         <a class="code" href="itg3200_8c.html#a28360d513fc271e12167cdf766e60f26">itg3200_data_available</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l00130"></a>00130       }
 <a name="l00131"></a>00131       <a class="code" href="itg3200_8c.html#a0478482f756ab1b2f3771a5a91d9296a">itg3200_i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00132"></a>00132     }
@@ -269,7 +269,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="itg3200_8c.html">itg3200.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 04:00:44 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 19 2012 21:40:55 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
