@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-239-g4fd65e3</span>
+   &#160;<span id="projectnumber">v4.1_unstable-241-g8c7356a</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -547,7 +547,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00489"></a>00489 
 <a name="l00490"></a>00490 
 <a name="l00491"></a>00491 <span class="preprocessor">#ifdef AHRS_TRIGGERED_ATTITUDE_LOOP</span>
-<a name="l00492"></a>00492 <span class="preprocessor"></span><span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="ahrs__chimu__spi_8c.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> = 0;
+<a name="l00492"></a>00492 <span class="preprocessor"></span><span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="ins__module_8h.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> = 0;
 <a name="l00493"></a>00493 <span class="preprocessor">#endif</span>
 <a name="l00494"></a>00494 <span class="preprocessor"></span>
 <a name="l00495"></a><a class="code" href="main__ap_8h.html#a315546d9034361bbc6970b3792dc8b67">00495</a> <span class="keywordtype">void</span> <a class="code" href="main__ap_8c.html#a315546d9034361bbc6970b3792dc8b67">attitude_loop</a>( <span class="keywordtype">void</span> ) {
@@ -705,11 +705,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00652"></a>00652   modules_event_task();
 <a name="l00653"></a>00653 
 <a name="l00654"></a>00654 <span class="preprocessor">#ifdef AHRS_TRIGGERED_ATTITUDE_LOOP</span>
-<a name="l00655"></a>00655 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="ahrs__chimu__spi_8c.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> &gt; 0)
+<a name="l00655"></a>00655 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="ins__module_8h.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> &gt; 0)
 <a name="l00656"></a>00656   {
 <a name="l00657"></a>00657     <a class="code" href="main__ap_8c.html#a315546d9034361bbc6970b3792dc8b67">attitude_loop</a>();
 <a name="l00658"></a>00658     <span class="comment">//LED_TOGGLE(3);</span>
-<a name="l00659"></a>00659     <a class="code" href="ahrs__chimu__spi_8c.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> = 0;
+<a name="l00659"></a>00659     <a class="code" href="ins__module_8h.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> = 0;
 <a name="l00660"></a>00660   }
 <a name="l00661"></a>00661 <span class="preprocessor">#endif</span>
 <a name="l00662"></a>00662 <span class="preprocessor"></span>
@@ -758,7 +758,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00705"></a>00705   <a class="code" href="ahrs__chimu__spi_8c.html#a8bf83860498b05e7e94484cdcbcb1b7a" title="Update AHRS state with accerleration measurements.">ahrs_update_accel</a>();
 <a name="l00706"></a>00706 
 <a name="l00707"></a>00707 <span class="preprocessor">#ifdef AHRS_TRIGGERED_ATTITUDE_LOOP</span>
-<a name="l00708"></a>00708 <span class="preprocessor"></span>  <a class="code" href="ahrs__chimu__spi_8c.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> = 1;
+<a name="l00708"></a>00708 <span class="preprocessor"></span>  <a class="code" href="ins__module_8h.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> = 1;
 <a name="l00709"></a>00709 <span class="preprocessor">#endif</span>
 <a name="l00710"></a>00710 <span class="preprocessor"></span>
 <a name="l00711"></a>00711 <span class="preprocessor">#else //PERIODIC_FREQUENCY</span>
@@ -796,7 +796,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00743"></a>00743     }
 <a name="l00744"></a>00744 
 <a name="l00745"></a>00745 <span class="preprocessor">#ifdef AHRS_TRIGGERED_ATTITUDE_LOOP</span>
-<a name="l00746"></a>00746 <span class="preprocessor"></span>    <a class="code" href="ahrs__chimu__spi_8c.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> = 1;
+<a name="l00746"></a>00746 <span class="preprocessor"></span>    <a class="code" href="ins__module_8h.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a> = 1;
 <a name="l00747"></a>00747 <span class="preprocessor">#endif</span>
 <a name="l00748"></a>00748 <span class="preprocessor"></span>  }
 <a name="l00749"></a>00749 <span class="preprocessor">#endif //PERIODIC_FREQUENCY</span>
@@ -848,7 +848,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="main__ap_8c.html">main_ap.c</a>      </li>
 
-    <li class="footer">Generated on Wed Sep 19 2012 21:40:49 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Sep 20 2012 04:00:33 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
