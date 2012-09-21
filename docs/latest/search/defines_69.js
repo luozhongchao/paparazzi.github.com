@@ -141,6 +141,7 @@ var searchData=
   ['ins_5fpitch_5fneutral_5fdefault',['INS_PITCH_NEUTRAL_DEFAULT',['../ahrs__float__dcm_8c.html#a4ed952896c549e2304de785adfda2bf9',1,'ahrs_float_dcm.c']]],
   ['ins_5froll_5fneutral_5fdefault',['INS_ROLL_NEUTRAL_DEFAULT',['../ahrs__float__dcm_8c.html#ae6d192ab41d6346816347a696bdd6dd1',1,'ahrs_float_dcm.c']]],
   ['ins_5frunning',['INS_RUNNING',['../ins_8h.html#a87f8301a9740df44f94d3565ed0be3e5',1,'ins.h']]],
+  ['ins_5fsonar_5foffset',['INS_SONAR_OFFSET',['../ins__int__extended_8c.html#ae01c6bda6cd6a46dbc1c5847604aa67b',1,'ins_int_extended.c']]],
   ['ins_5funinit',['INS_UNINIT',['../ins_8h.html#ab7a761fb8ab000e4a95cec8ce5efb813',1,'ins.h']]],
   ['ins_5fvn100_5fready',['INS_VN100_READY',['../ins__vn100_8h.html#a9d4bc643bab7246d44f8bb16f888e203',1,'ins_vn100.h']]],
   ['ins_5fvn100_5fset_5fadof',['INS_VN100_SET_ADOF',['../ins__vn100_8h.html#afe63d82797d9f689ff8c20c65a7e6ba9',1,'ins_vn100.h']]],

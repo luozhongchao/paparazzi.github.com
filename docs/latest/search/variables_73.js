@@ -81,6 +81,7 @@ var searchData=
   ['sonar_5fadc',['sonar_adc',['../sonar__maxbotix_8c.html#a5efa87f75f07d5497e0af5cf515eb6cf',1,'sonar_maxbotix.c']]],
   ['sonar_5fdata_5favailable',['sonar_data_available',['../sonar__maxbotix_8c.html#a0f9b99c29c7b19f98b1f068f90e79e91',1,'sonar_data_available():&#160;sonar_maxbotix.c'],['../sonar__maxbotix_8h.html#a0f9b99c29c7b19f98b1f068f90e79e91',1,'sonar_data_available():&#160;sonar_maxbotix.c']]],
   ['sonar_5fmeas',['sonar_meas',['../sonar__maxbotix_8c.html#a69fadebe7b519d56f5380f55216f5d9a',1,'sonar_meas():&#160;sonar_maxbotix.c'],['../sonar__maxbotix_8h.html#a69fadebe7b519d56f5380f55216f5d9a',1,'sonar_meas():&#160;sonar_maxbotix.c']]],
+  ['sonar_5fmedian',['sonar_median',['../ins__int__extended_8c.html#a9c9e7e23bdf76c7751d7ec88d7fe2883',1,'ins_int_extended.c']]],
   ['sortdata',['sortData',['../structMedianFilterInt.html#a2c396e971d0801f3fcdbb3f0766034be',1,'MedianFilterInt']]],
   ['spare1',['spare1',['../structCHIMU__sensor__data.html#a2edb0a07bba97c473e518f19eefb7949',1,'CHIMU_sensor_data']]],
   ['speed',['speed',['../structforce__.html#a8ed78b56d29dec183917ffa8f59e0691',1,'force_::speed()'],['../structVi__gps__info.html#a2174470bb84a5171bd9c0373bb1f06cf',1,'Vi_gps_info::speed()'],['../structVi__command.html#a834068d6816d14e04383a79066f8eb39',1,'Vi_command::speed()']]],

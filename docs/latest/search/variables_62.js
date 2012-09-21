@@ -115,6 +115,7 @@ var searchData=
   ['baro_5fhca_5fi2c_5ftrans',['baro_hca_i2c_trans',['../baro__hca_8c.html#ae5cec43bc2d58c755d2bd0ec39eec8d4',1,'baro_hca_i2c_trans():&#160;baro_hca.c'],['../baro__hca_8h.html#ae5cec43bc2d58c755d2bd0ec39eec8d4',1,'baro_hca_i2c_trans():&#160;baro_hca.c']]],
   ['baro_5fhca_5fp',['baro_hca_p',['../baro__hca_8c.html#a32e93627a89e70b20125510b12e15e9e',1,'baro_hca.c']]],
   ['baro_5fhca_5fvalid',['baro_hca_valid',['../baro__hca_8c.html#afe022591f96a1adc43324873d8155b1e',1,'baro_hca.c']]],
+  ['baro_5fmedian',['baro_median',['../ins__int__extended_8c.html#a02655061bc5b8de178ab7b24299cc174',1,'ins_int_extended.c']]],
   ['baro_5fms5534a_5favailable',['baro_MS5534A_available',['../sim__baro_8c.html#ac282a66f97101959b4845a0531a334c6',1,'baro_MS5534A_available():&#160;sim_baro.c'],['../baro__MS5534A_8c.html#ac282a66f97101959b4845a0531a334c6',1,'baro_MS5534A_available():&#160;baro_MS5534A.c']]],
   ['baro_5fms5534a_5fdo_5freset',['baro_MS5534A_do_reset',['../baro__MS5534A_8c.html#aefdd9c0ec500c072723be4929078b75d',1,'baro_MS5534A.c']]],
   ['baro_5fms5534a_5fground_5fpressure',['baro_MS5534A_ground_pressure',['../sim__baro_8c.html#af3da06ba0ea0b37b2a18eb14449677e5',1,'baro_MS5534A_ground_pressure():&#160;sim_baro.c'],['../baro__MS5534A_8c.html#af3da06ba0ea0b37b2a18eb14449677e5',1,'baro_MS5534A_ground_pressure():&#160;baro_MS5534A.c']]],

@@ -101,7 +101,6 @@ var searchData=
   ['periodic_5fsend_5fbaro_5fraw',['PERIODIC_SEND_BARO_RAW',['../ap__downlink_8h.html#a09132dd1094236e8356f48f2b6346888',1,'PERIODIC_SEND_BARO_RAW():&#160;ap_downlink.h'],['../telemetry_8h.html#a09132dd1094236e8356f48f2b6346888',1,'PERIODIC_SEND_BARO_RAW():&#160;telemetry.h']]],
   ['periodic_5fsend_5fbat',['PERIODIC_SEND_BAT',['../ap__downlink_8h.html#a5fac4af399f9185a97100ea06b1624a5',1,'ap_downlink.h']]],
   ['periodic_5fsend_5fbooz2_5fcam',['PERIODIC_SEND_BOOZ2_CAM',['../telemetry_8h.html#a583ae5a53924c1a7d35787adebbdf7bf',1,'telemetry.h']]],
-  ['periodic_5fsend_5fbooz2_5fsonar',['PERIODIC_SEND_BOOZ2_SONAR',['../telemetry_8h.html#a7abf2ca83a28e38449ba547591e4ae9e',1,'telemetry.h']]],
   ['periodic_5fsend_5fcalibration',['PERIODIC_SEND_CALIBRATION',['../ap__downlink_8h.html#a3660c24f6f834d803646cf4edfd12872',1,'ap_downlink.h']]],
   ['periodic_5fsend_5fcam_5fpoint',['PERIODIC_SEND_CAM_POINT',['../ap__downlink_8h.html#a78bc8fda2efb732c9dcf5b621283ba51',1,'ap_downlink.h']]],
   ['periodic_5fsend_5fcam_5ftrack',['PERIODIC_SEND_CAM_TRACK',['../telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763',1,'telemetry.h']]],

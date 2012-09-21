@@ -58,6 +58,8 @@ var searchData=
   ['vertical_5fmode_5falt',['VERTICAL_MODE_ALT',['../navigation_8h.html#a371a2b8dad9d98384f4a0711f8871a72',1,'navigation.h']]],
   ['vertical_5fmode_5fclimb',['VERTICAL_MODE_CLIMB',['../navigation_8h.html#ac0858268c920122dc71c10a52cf83b1b',1,'navigation.h']]],
   ['vertical_5fmode_5fmanual',['VERTICAL_MODE_MANUAL',['../navigation_8h.html#acd4ac1c69b7ba0c736108439491f5647',1,'navigation.h']]],
+  ['vff_5fr_5fsonar_5f0',['VFF_R_SONAR_0',['../ins__int__extended_8c.html#ada77053d6498e79d961b7e75c0e17bfe',1,'ins_int_extended.c']]],
+  ['vff_5fr_5fsonar_5fof_5fm',['VFF_R_SONAR_OF_M',['../ins__int__extended_8c.html#af5218bcadfb075963be3dc2a53f0b0b0',1,'ins_int_extended.c']]],
   ['vff_5fstate_5fsize',['VFF_STATE_SIZE',['../vf__extended__float_8h.html#a18723b10d465c48b447ad96b46f8a25b',1,'VFF_STATE_SIZE():&#160;vf_extended_float.h'],['../vf__float_8h.html#a18723b10d465c48b447ad96b46f8a25b',1,'VFF_STATE_SIZE():&#160;vf_float.h']]],
   ['vfi_5faccel_5fnoise',['VFI_ACCEL_NOISE',['../vf__int_8c.html#affdce61fde23e986795a226e11225d10',1,'vf_int.c']]],
   ['vfi_5fbias_5ffrac',['VFI_BIAS_FRAC',['../vf__int_8h.html#a9a2ed1a0ae002149efa5a3e62d4a6bb9',1,'vf_int.h']]],

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-241-g8c7356a</span>
+   &#160;<span id="projectnumber">v4.1_unstable-244-g18067bd</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -167,8 +167,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00062"></a>00062 bool_t  <a class="code" href="ins__alt__float_8c.html#adb5ec4a7eed57becdad86eaca63f95cd">ins_baro_initialised</a>;
 <a name="l00063"></a>00063 <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="ins__alt__float_8c.html#a27e0d1780b58ba41c14610e35c069363">ins_baro_alt</a>;
 <a name="l00064"></a>00064 <span class="preprocessor">#if USE_SONAR</span>
-<a name="l00065"></a>00065 <span class="preprocessor"></span>bool_t  ins_update_on_agl;
-<a name="l00066"></a>00066 <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> ins_sonar_offset;
+<a name="l00065"></a>00065 <span class="preprocessor"></span>bool_t  <a class="code" href="ins__int__extended_8c.html#a48b29e68cf7ccbd634bea7d5b0b34e3b">ins_update_on_agl</a>;
+<a name="l00066"></a>00066 <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="ins__int__extended_8c.html#a666dca075d406555182a061fbb5595bf">ins_sonar_offset</a>;
 <a name="l00067"></a>00067 <span class="preprocessor">#endif</span>
 <a name="l00068"></a>00068 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00069"></a>00069 <span class="preprocessor"></span>
@@ -200,7 +200,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00096"></a>00096 <span class="preprocessor"></span><span class="preprocessor">#if USE_VFF</span>
 <a name="l00097"></a>00097 <span class="preprocessor"></span>  <a class="code" href="ins__alt__float_8c.html#adb5ec4a7eed57becdad86eaca63f95cd">ins_baro_initialised</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00098"></a>00098 <span class="preprocessor">#if USE_SONAR</span>
-<a name="l00099"></a>00099 <span class="preprocessor"></span>  ins_update_on_agl = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00099"></a>00099 <span class="preprocessor"></span>  <a class="code" href="ins__int__extended_8c.html#a48b29e68cf7ccbd634bea7d5b0b34e3b">ins_update_on_agl</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00100"></a>00100 <span class="preprocessor">#endif</span>
 <a name="l00101"></a>00101 <span class="preprocessor"></span>  <a class="code" href="vf__extended__float_8c.html#a7858e35c59bd12fd401af33a4fbfa580">vff_init</a>(0., 0., 0.);
 <a name="l00102"></a>00102 <span class="preprocessor">#endif</span>
@@ -278,7 +278,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00174"></a>00174       <a class="code" href="ins_8c.html#a93b83435a11f973aa9aceab13c2f2b3f" title="global INS state">ins</a>.<a class="code" href="structIns.html#a565497311aa048dcd749df94bb5c0b17" title="realign vertically if true">vf_realign</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00175"></a>00175       <a class="code" href="ins__alt__float_8c.html#a4be91c3dbe9cbf03c544cd9509da74df">ins_qfe</a> = <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a088741c2889bc0752ef8927b0f8b849f">absolute</a>;
 <a name="l00176"></a>00176 <span class="preprocessor">#if USE_SONAR</span>
-<a name="l00177"></a>00177 <span class="preprocessor"></span>      ins_sonar_offset = <a class="code" href="sonar__maxbotix_8c.html#a69fadebe7b519d56f5380f55216f5d9a">sonar_meas</a>;
+<a name="l00177"></a>00177 <span class="preprocessor"></span>      <a class="code" href="ins__int__extended_8c.html#a666dca075d406555182a061fbb5595bf">ins_sonar_offset</a> = <a class="code" href="sonar__maxbotix_8c.html#a69fadebe7b519d56f5380f55216f5d9a">sonar_meas</a>;
 <a name="l00178"></a>00178 <span class="preprocessor">#endif</span>
 <a name="l00179"></a>00179 <span class="preprocessor"></span>      <a class="code" href="vf__extended__float_8c.html#a9871b34cda71fc04b9e312b8ce4f11af">vff_realign</a>(0.);
 <a name="l00180"></a>00180       <a class="code" href="ins__int_8c.html#a40b750394f04de20db66008c0b6a9f98">ins_ltp_accel</a>.<a class="code" href="structNedCoor__i.html#a52586e90ccb7aa5f0960bcb480bfcaa3">z</a> = <a class="code" href="pprz__algebra__int_8h.html#a5251aee74e02d2935ee9835ae7bc7b2e">ACCEL_BFP_OF_REAL</a>(<a class="code" href="vf__extended__float_8c.html#ac36a73bd31bb8d32ee5627b70aadd855">vff_zdotdot</a>);
@@ -359,8 +359,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00255"></a>00255 <span class="preprocessor"></span>  <span class="keyword">static</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> sonar_filtered = 0;
 <a name="l00256"></a>00256   sonar_filtered = (<a class="code" href="sonar__maxbotix_8c.html#a69fadebe7b519d56f5380f55216f5d9a">sonar_meas</a> + 2*sonar_filtered) / 3;
 <a name="l00257"></a>00257   <span class="comment">/* update baro_qfe assuming a flat ground */</span>
-<a name="l00258"></a>00258   <span class="keywordflow">if</span> (ins_update_on_agl &amp;&amp; <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a04ac659bb858b025824e2cccf5061027">status</a> == <a class="code" href="baro_8h.html#a40cc650f3a4b0b2f99d360f1a38addf4a4134e0992db0b1b7099ae1c7b87102cb">BS_RUNNING</a>) {
-<a name="l00259"></a>00259     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> d_sonar = (((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)sonar_filtered - ins_sonar_offset) * INS_SONAR_SENS_NUM) / INS_SONAR_SENS_DEN;
+<a name="l00258"></a>00258   <span class="keywordflow">if</span> (<a class="code" href="ins__int__extended_8c.html#a48b29e68cf7ccbd634bea7d5b0b34e3b">ins_update_on_agl</a> &amp;&amp; <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a04ac659bb858b025824e2cccf5061027">status</a> == <a class="code" href="baro_8h.html#a40cc650f3a4b0b2f99d360f1a38addf4a4134e0992db0b1b7099ae1c7b87102cb">BS_RUNNING</a>) {
+<a name="l00259"></a>00259     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> d_sonar = (((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)sonar_filtered - <a class="code" href="ins__int__extended_8c.html#a666dca075d406555182a061fbb5595bf">ins_sonar_offset</a>) * INS_SONAR_SENS_NUM) / INS_SONAR_SENS_DEN;
 <a name="l00260"></a>00260     <a class="code" href="ins__alt__float_8c.html#a4be91c3dbe9cbf03c544cd9509da74df">ins_qfe</a> = <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a088741c2889bc0752ef8927b0f8b849f">absolute</a> + (d_sonar * (INS_BARO_SENS_DEN))/INS_BARO_SENS_NUM;
 <a name="l00261"></a>00261   }
 <a name="l00262"></a>00262 <span class="preprocessor">#endif</span>
@@ -385,7 +385,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ins__int_8c.html">ins_int.c</a>      </li>
 
-    <li class="footer">Generated on Thu Sep 20 2012 04:00:39 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Sep 21 2012 04:00:46 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

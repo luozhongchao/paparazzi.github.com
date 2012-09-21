@@ -11,7 +11,6 @@ var telemetry_8h =
     [ "PERIODIC_SEND_ALIVE", "telemetry_8h.html#a03373609a4f23ae59327d141b635eb40", null ],
     [ "PERIODIC_SEND_BARO_RAW", "telemetry_8h.html#a09132dd1094236e8356f48f2b6346888", null ],
     [ "PERIODIC_SEND_BOOZ2_CAM", "telemetry_8h.html#a583ae5a53924c1a7d35787adebbdf7bf", null ],
-    [ "PERIODIC_SEND_BOOZ2_SONAR", "telemetry_8h.html#a7abf2ca83a28e38449ba547591e4ae9e", null ],
     [ "PERIODIC_SEND_CAM_TRACK", "telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763", null ],
     [ "PERIODIC_SEND_DL_VALUE", "telemetry_8h.html#aac3b084503a7ef7ccdf84a6651bb82e6", null ],
     [ "PERIODIC_SEND_FILTER", "telemetry_8h.html#a15695d977985ca91c290313d6591f699", null ],

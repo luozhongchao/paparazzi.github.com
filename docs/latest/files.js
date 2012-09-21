@@ -420,6 +420,7 @@ var files =
     [ "sw/airborne/math/pprz_geodetic_utm.h", "pprz__geodetic__utm_8h.html", "pprz__geodetic__utm_8h" ],
     [ "sw/airborne/math/pprz_geodetic_wgs84.h", "pprz__geodetic__wgs84_8h.html", "pprz__geodetic__wgs84_8h" ],
     [ "sw/airborne/math/pprz_simple_matrix.h", "pprz__simple__matrix_8h.html", "pprz__simple__matrix_8h" ],
+    [ "sw/airborne/math/pprz_stat.h", "pprz__stat_8h.html", "pprz__stat_8h" ],
     [ "sw/airborne/math/pprz_trig_int.c", "pprz__trig__int_8c.html", "pprz__trig__int_8c" ],
     [ "sw/airborne/math/pprz_trig_int.h", "pprz__trig__int_8h.html", "pprz__trig__int_8h" ],
     [ "sw/airborne/mcu_periph/adc.h", "adc_8h.html", "adc_8h" ],
