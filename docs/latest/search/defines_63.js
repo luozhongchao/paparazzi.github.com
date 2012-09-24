@@ -151,6 +151,7 @@ var searchData=
   ['command_5f',['COMMAND_',['../lpc21_2servos__direct__hw_8h.html#aa1e86fef0a1552f03b3151aba31fffdb',1,'servos_direct_hw.h']]],
   ['command_5fpitch_5ftrim',['COMMAND_PITCH_TRIM',['../commands_8c.html#af47ce5621dac0e4911b3769c1517c778',1,'commands.c']]],
   ['command_5froll_5ftrim',['COMMAND_ROLL_TRIM',['../commands_8c.html#a367677864db2bdf0324039485b3a1cf7',1,'commands.c']]],
+  ['computation_5ffrac',['COMPUTATION_FRAC',['../ahrs__int__cmpl__quat_8c.html#af8ed6034aba17fe334cfe8d8204d83f9',1,'ahrs_int_cmpl_quat.c']]],
   ['computechecksum',['ComputeChecksum',['../link__mcu_8c.html#abeef14f8339161330ff3b318837a904e',1,'link_mcu.c']]],
   ['configure_5fgps_5freset_5fpin',['Configure_GPS_RESET_Pin',['../logom__2_86_8h.html#a0fad87177073eb3f02c6fc96a97328e7',1,'Configure_GPS_RESET_Pin():&#160;logom_2.6.h'],['../sdlog__1_80_8h.html#a0fad87177073eb3f02c6fc96a97328e7',1,'Configure_GPS_RESET_Pin():&#160;sdlog_1.0.h'],['../tiny__2_81_8h.html#a0fad87177073eb3f02c6fc96a97328e7',1,'Configure_GPS_RESET_Pin():&#160;tiny_2.1.h']]],
   ['configured',['CONFIGURED',['../lisa__test__adxl345_8c.html#a514476189fbaf15c716d5e846955d2b8',1,'CONFIGURED():&#160;lisa_test_adxl345.c'],['../lisa__test__adxl345__dma_8c.html#a514476189fbaf15c716d5e846955d2b8',1,'CONFIGURED():&#160;lisa_test_adxl345_dma.c']]],

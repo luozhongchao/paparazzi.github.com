@@ -54,6 +54,8 @@ var searchData=
   ['return_5fangle',['return_angle',['../poly__survey__adv_8c.html#ad1d6524a44f3185175b04f7aa6c4c345',1,'poly_survey_adv.c']]],
   ['rgps_5fpos',['Rgps_pos',['../hf__float_8c.html#af6333ef44fbaf7aaf25c27a56429144f',1,'hf_float.c']]],
   ['rgps_5fvel',['Rgps_vel',['../hf__float_8c.html#afec83e3697675c3915f9d3b46f040fe1',1,'hf_float.c']]],
+  ['rmat_5ff',['rmat_f',['../structOrientationReps.html#a9a12faf04660fa348b0d5e474051c2fc',1,'OrientationReps']]],
+  ['rmat_5fi',['rmat_i',['../structOrientationReps.html#ac3014e532f5ca710919668e1dd48c791',1,'OrientationReps']]],
   ['roll',['roll',['../structInfrared.html#a14240b7cc3650b62e82d45af3082ed78',1,'Infrared']]],
   ['roll_5fcoef',['roll_coef',['../supervision_8c.html#afb8dd02b332334c9d126cd8e01f202ed',1,'supervision.c']]],
   ['roll_5fneutral',['roll_neutral',['../structInfrared.html#ae4ab1aa42b9d1fdb35e2ed68f6eb966a',1,'Infrared']]],

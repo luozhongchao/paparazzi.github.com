@@ -179,7 +179,6 @@ var searchData=
   ['aspirin2_5fmpu60x0',['aspirin2_mpu60x0',['../modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69',1,'aspirin2_mpu60x0():&#160;imu_aspirin2.c'],['../subsystems_2imu_2imu__aspirin2_8c.html#ab1c76f5f2e592621f85f64a822d64ad6',1,'aspirin2_mpu60x0():&#160;imu_aspirin2.c']]],
   ['atmega_5fi2c_5fcam_5fctrl_5fjust_5fsent_5fcommand',['atmega_i2c_cam_ctrl_just_sent_command',['../atmega__i2c__cam__ctrl_8c.html#a0e6be21afeddec942e18532618a95b6f',1,'atmega_i2c_cam_ctrl.c']]],
   ['atmega_5fi2c_5fcam_5fctrl_5ftrans',['atmega_i2c_cam_ctrl_trans',['../atmega__i2c__cam__ctrl_8c.html#ac18b747eea3fe6799a13cc8c84343749',1,'atmega_i2c_cam_ctrl.c']]],
-  ['att_5fstatus',['att_status',['../group__state__attitude.html#ga8db9671bb2f99f0b6272d36b59ab6e5a',1,'State']]],
   ['attitude',['attitude',['../structVi__command.html#aa3848211d7cc60e2d35c04940f734aed',1,'Vi_command']]],
   ['attitude_5ftid',['attitude_tid',['../main__ap_8c.html#a0ec3f3fdd96a65f68ac0561fed921520',1,'main_ap.c']]],
   ['audio_5ftelemetry_5fnb_5fovrn',['audio_telemetry_nb_ovrn',['../audio__telemetry__hw_8c.html#a836a6a5c7978f6cb2346532604df3a7c',1,'audio_telemetry_nb_ovrn():&#160;audio_telemetry_hw.c'],['../audio__telemetry_8h.html#a836a6a5c7978f6cb2346532604df3a7c',1,'audio_telemetry_nb_ovrn():&#160;audio_telemetry_hw.c']]],

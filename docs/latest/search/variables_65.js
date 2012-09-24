@@ -52,6 +52,8 @@ var searchData=
   ['estimator_5fz',['estimator_z',['../ins__alt__float_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8',1,'estimator_z():&#160;ins_alt_float.c'],['../ins__alt__float_8h.html#ae6fb57e3cab488ae76f30e5a33e24af8',1,'estimator_z():&#160;ins_alt_float.c']]],
   ['estimator_5fz_5fdot',['estimator_z_dot',['../ins__alt__float_8c.html#a863b6863992cc4e38bf85268acc93535',1,'estimator_z_dot():&#160;ins_alt_float.c'],['../ins__alt__float_8h.html#a863b6863992cc4e38bf85268acc93535',1,'estimator_z_dot():&#160;ins_alt_float.c']]],
   ['euler',['euler',['../structCHIMU__attitude__data.html#ad0641613169f58385b1020cb9a417c78',1,'CHIMU_attitude_data::euler()'],['../structVi__ahrs__info.html#abbdf276534da86017f0c40f4572bbed7',1,'Vi_ahrs_info::euler()']]],
+  ['eulers_5ff',['eulers_f',['../structOrientationReps.html#a2f18ced65428f3d06b94d6f33e4e00c8',1,'OrientationReps']]],
+  ['eulers_5fi',['eulers_i',['../structOrientationReps.html#ae5c1f10412db95ffca8c6f309997ac2a',1,'OrientationReps']]],
   ['event_5fchain',['event_chain',['../structi2c__errors.html#ad2ae3e645e69c1f27b109797accb0c1b',1,'i2c_errors']]],
   ['event_5fnumber',['event_number',['../structSysMon.html#aff98a43e0b4ac7c500e6a58b07eb227d',1,'SysMon']]],
   ['event_5ftimer',['event_timer',['../sys__mon_8c.html#a2adeca6a5c58a55de7459564c04ceee7',1,'sys_mon.c']]],
