@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-253-g2b7b89a</span>
+   &#160;<span id="projectnumber">v4.1_unstable-254-g22989e6</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -115,19 +115,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a><a class="code" href="nav__poles_8h.html#ae1ebfcfefd600a2c2c3252f10122371d">00012</a> <span class="keywordtype">bool</span> <a class="code" href="nav__poles_8c.html#ae1ebfcfefd600a2c2c3252f10122371d" title="computes position of wp1c and wp2c, reference points for an oval around waypoints wp1 and wp2...">nav_poles_init</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp1, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp2,
 <a name="l00013"></a>00013                     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp1c, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp2c,
 <a name="l00014"></a>00014         <span class="keywordtype">float</span> <a class="code" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>) {
-<a name="l00015"></a>00015   <span class="keywordtype">float</span> x = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp2) - <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp1);
-<a name="l00016"></a>00016   <span class="keywordtype">float</span> y = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp2) - <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp1);
+<a name="l00015"></a>00015   <span class="keywordtype">float</span> <a class="code" href="structInt32Vect3.html#aacbde96e85265b05620b8d4a04790911">x</a> = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp2) - <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp1);
+<a name="l00016"></a>00016   <span class="keywordtype">float</span> <a class="code" href="structInt32Vect3.html#ab617257f46107ac52602d44e6b8f274c">y</a> = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp2) - <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp1);
 <a name="l00017"></a>00017   <span class="keywordtype">float</span> d = sqrt(x*x+y*y);
 <a name="l00018"></a>00018 
 <a name="l00019"></a>00019   <span class="comment">/* Unit vector from wp1 to wp2 */</span>
 <a name="l00020"></a>00020   x /= d;
 <a name="l00021"></a>00021   y /= d;
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023   <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp2c) = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp2) - (x * <a class="code" href="nav__poles_8c.html#af12741cc685a5533fe2ed100d91649c4">SAFETY_MARGIN</a> + y) * radius;
-<a name="l00024"></a>00024   <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp2c) = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp2) - (y * <a class="code" href="nav__poles_8c.html#af12741cc685a5533fe2ed100d91649c4">SAFETY_MARGIN</a> - x) * radius;
+<a name="l00023"></a>00023   <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp2c) = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp2) - (x * <a class="code" href="nav__poles_8c.html#af12741cc685a5533fe2ed100d91649c4">SAFETY_MARGIN</a> + <a class="code" href="structInt32Vect3.html#ab617257f46107ac52602d44e6b8f274c">y</a>) * radius;
+<a name="l00024"></a>00024   <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp2c) = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp2) - (y * <a class="code" href="nav__poles_8c.html#af12741cc685a5533fe2ed100d91649c4">SAFETY_MARGIN</a> - <a class="code" href="structInt32Vect3.html#aacbde96e85265b05620b8d4a04790911">x</a>) * radius;
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026   <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp1c) = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp1) + (x * <a class="code" href="nav__poles_8c.html#af12741cc685a5533fe2ed100d91649c4">SAFETY_MARGIN</a> - y) * radius;
-<a name="l00027"></a>00027   <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp1c) = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp1) + (y * <a class="code" href="nav__poles_8c.html#af12741cc685a5533fe2ed100d91649c4">SAFETY_MARGIN</a> + x) * radius;
+<a name="l00026"></a>00026   <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp1c) = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(wp1) + (x * <a class="code" href="nav__poles_8c.html#af12741cc685a5533fe2ed100d91649c4">SAFETY_MARGIN</a> - <a class="code" href="structInt32Vect3.html#ab617257f46107ac52602d44e6b8f274c">y</a>) * radius;
+<a name="l00027"></a>00027   <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp1c) = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(wp1) + (y * <a class="code" href="nav__poles_8c.html#af12741cc685a5533fe2ed100d91649c4">SAFETY_MARGIN</a> + <a class="code" href="structInt32Vect3.html#aacbde96e85265b05620b8d4a04790911">x</a>) * radius;
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029   <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00030"></a>00030 }
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="nav__poles_8c.html">nav_poles.c</a>      </li>
 
-    <li class="footer">Generated on Tue Sep 25 2012 04:00:41 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Sep 26 2012 04:00:36 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
