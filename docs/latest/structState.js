@@ -35,7 +35,7 @@ var structState =
     [ "ned_pos_i", "group__state__position.html#ga075a2f37d850f94e481ecb1982e47e54", null ],
     [ "ned_speed_f", "group__state__velocity.html#ga31bee2c702671004d3dc9490dc2e2822", null ],
     [ "ned_speed_i", "group__state__velocity.html#ga86ec16926278b3e4c1a57e1ba9e5c2a7", null ],
-    [ "ned_to_body_orientation", "group__state__attitude.html#gac816bc9e56dde04e26318cba12267f57", null ],
+    [ "ned_to_body_orientation", "structState.html#ac816bc9e56dde04e26318cba12267f57", null ],
     [ "pos_status", "group__state__position.html#ga653583f32fe4e3e5e075f4b767859b7f", null ],
     [ "rate_status", "group__state__rate.html#gaeae71089ee6e103c1f8ca1211cfaf039", null ],
     [ "sideslip_f", "group__state__wind__airspeed.html#gac66f1a9684122eaae083c3dae67a8ed2", null ],

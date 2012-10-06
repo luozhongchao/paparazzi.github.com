@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.1_unstable-262-g7b3dda6</span>
+   &#160;<span id="projectnumber">v4.1_unstable-265-g5969b58</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -692,7 +692,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00587"></a><a class="code" href="hf__float_8c.html#a805d2311d32d8db051cf5526d70386d6">00587</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="hf__float_8c.html#a805d2311d32d8db051cf5526d70386d6">b2_hff_propagate_x</a>(<span class="keyword">struct</span> <a class="code" href="structHfilterFloat.html">HfilterFloat</a>* hff_work) {
 <a name="l00588"></a>00588   <span class="comment">/* update state */</span>
 <a name="l00589"></a>00589   hff_work-&gt;<a class="code" href="structHfilterFloat.html#aac3e4a95c04df145852ab40efa241835">xdotdot</a> = <a class="code" href="hf__float_8c.html#a2edaba013012a78ac32abbb828063526">b2_hff_xdd_meas</a>;
-<a name="l00590"></a>00590   hff_work-&gt;<a class="code" href="structHfilterFloat.html#a6e01846a801cbd7fe3ae1f69df70ce3b">x</a> = hff_work-&gt;<a class="code" href="structHfilterFloat.html#a6e01846a801cbd7fe3ae1f69df70ce3b">x</a> + <a class="code" href="hf__float_8h.html#a2ce79e63483fe0760f8a7c793ec4a05f">DT_HFILTER</a> * hff_work-&gt;<a class="code" href="structHfilterFloat.html#a3161286a7c402bf00b108cf84127542b">xdot</a>;
+<a name="l00590"></a>00590   hff_work-&gt;<a class="code" href="structHfilterFloat.html#a6e01846a801cbd7fe3ae1f69df70ce3b">x</a> = hff_work-&gt;<a class="code" href="structHfilterFloat.html#a6e01846a801cbd7fe3ae1f69df70ce3b">x</a> + <a class="code" href="hf__float_8h.html#a2ce79e63483fe0760f8a7c793ec4a05f">DT_HFILTER</a> * hff_work-&gt;<a class="code" href="structHfilterFloat.html#a3161286a7c402bf00b108cf84127542b">xdot</a> + <a class="code" href="hf__float_8h.html#a2ce79e63483fe0760f8a7c793ec4a05f">DT_HFILTER</a>*<a class="code" href="hf__float_8h.html#a2ce79e63483fe0760f8a7c793ec4a05f">DT_HFILTER</a>/2 * hff_work-&gt;<a class="code" href="structHfilterFloat.html#aac3e4a95c04df145852ab40efa241835">xdotdot</a>;
 <a name="l00591"></a>00591   hff_work-&gt;<a class="code" href="structHfilterFloat.html#a3161286a7c402bf00b108cf84127542b">xdot</a> = hff_work-&gt;<a class="code" href="structHfilterFloat.html#a3161286a7c402bf00b108cf84127542b">xdot</a> + <a class="code" href="hf__float_8h.html#a2ce79e63483fe0760f8a7c793ec4a05f">DT_HFILTER</a> * hff_work-&gt;<a class="code" href="structHfilterFloat.html#aac3e4a95c04df145852ab40efa241835">xdotdot</a>;
 <a name="l00592"></a>00592   <span class="comment">/* update covariance */</span>
 <a name="l00593"></a>00593   <span class="keyword">const</span> <span class="keywordtype">float</span> FPF00 = hff_work-&gt;<a class="code" href="structHfilterFloat.html#a9f2b092d078a04d786dff4f301397411">xP</a>[0][0] + <a class="code" href="hf__float_8h.html#a2ce79e63483fe0760f8a7c793ec4a05f">DT_HFILTER</a> * ( hff_work-&gt;<a class="code" href="structHfilterFloat.html#a9f2b092d078a04d786dff4f301397411">xP</a>[1][0] + hff_work-&gt;<a class="code" href="structHfilterFloat.html#a9f2b092d078a04d786dff4f301397411">xP</a>[0][1] + <a class="code" href="hf__float_8h.html#a2ce79e63483fe0760f8a7c793ec4a05f">DT_HFILTER</a> * hff_work-&gt;<a class="code" href="structHfilterFloat.html#a9f2b092d078a04d786dff4f301397411">xP</a>[1][1] );
@@ -882,7 +882,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="hf__float_8c.html">hf_float.c</a>      </li>
 
-    <li class="footer">Generated on Fri Oct 5 2012 14:08:44 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Oct 6 2012 04:00:40 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

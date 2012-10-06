@@ -5,5 +5,5 @@ var group__state__interface =
     [ "Acceleration representations", "group__state__acceleration.html", null ],
     [ "Angular rate representations", "group__state__rate.html", null ],
     [ "Wind- and airspeed representations", "group__state__wind__airspeed.html", null ],
-    [ "State_attitude", "group__state__attitude.html", null ]
+    [ "Attitude representations", "group__state__attitude.html", null ]
 ];

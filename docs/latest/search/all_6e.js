@@ -253,7 +253,7 @@ var searchData=
   ['ned_5fpos_5fi',['ned_pos_i',['../group__state__position.html#ga075a2f37d850f94e481ecb1982e47e54',1,'State']]],
   ['ned_5fspeed_5ff',['ned_speed_f',['../group__state__velocity.html#ga31bee2c702671004d3dc9490dc2e2822',1,'State']]],
   ['ned_5fspeed_5fi',['ned_speed_i',['../group__state__velocity.html#ga86ec16926278b3e4c1a57e1ba9e5c2a7',1,'State']]],
-  ['ned_5fto_5fbody_5forientation',['ned_to_body_orientation',['../group__state__attitude.html#gac816bc9e56dde04e26318cba12267f57',1,'State']]],
+  ['ned_5fto_5fbody_5forientation',['ned_to_body_orientation',['../structState.html#ac816bc9e56dde04e26318cba12267f57',1,'State']]],
   ['ned_5fvel',['ned_vel',['../structGpsState.html#a8c0416718a59e50261890cd870f716ea',1,'GpsState']]],
   ['nedcoor_5fd',['NedCoor_d',['../structNedCoor__d.html',1,'']]],
   ['nedcoor_5ff',['NedCoor_f',['../structNedCoor__f.html',1,'']]],
