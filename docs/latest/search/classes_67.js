@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['geomagvect',['GeoMagVect',['../structGeoMagVect.html',1,'']]],
   ['gpioregs_5ft',['gpioRegs_t',['../structgpioRegs__t.html',1,'']]],
   ['gps_5fubx_5fucenter_5fstruct',['gps_ubx_ucenter_struct',['../structgps__ubx__ucenter__struct.html',1,'']]],
   ['gpsmtk',['GpsMtk',['../structGpsMtk.html',1,'']]],

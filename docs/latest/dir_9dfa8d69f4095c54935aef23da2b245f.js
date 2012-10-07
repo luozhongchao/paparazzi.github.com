@@ -15,6 +15,7 @@ var dir_9dfa8d69f4095c54935aef23da2b245f =
     [ "display", "dir_22f738250d5f77487538bccf3099c686.html", null ],
     [ "drop", "dir_1ccf4fc1af5822dc1fe1e9ed2d71e229.html", null ],
     [ "enose", "dir_7aaff6717411fe507d0b4ee2605c1ad4.html", null ],
+    [ "geo_mag", "dir_f97da43a68f5f5424c1fd7d51caca2f4.html", null ],
     [ "gps", "dir_239fe99edf55334633dbf3b70b1009ab.html", null ],
     [ "gps_i2c", "dir_4c525d027a94194672ba4d48e48677d5.html", null ],
     [ "gsm", "dir_f7aa08b7fd451b387016ac677a61df12.html", null ],

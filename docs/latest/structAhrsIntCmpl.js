@@ -10,6 +10,7 @@ var structAhrsIntCmpl =
     [ "ltp_to_imu_quat", "structAhrsIntCmpl.html#a953a248c107b246727e6cc5e59d78b14", null ],
     [ "ltp_vel_norm", "structAhrsIntCmpl.html#aef05ef5216308fa52417f70f789a5410", null ],
     [ "ltp_vel_norm_valid", "structAhrsIntCmpl.html#a57470b48028419d9ef592c7db474d9f7", null ],
+    [ "mag_h", "structAhrsIntCmpl.html#a79a27cd3f423f291368fabe1eccd223c", null ],
     [ "rate_correction", "structAhrsIntCmpl.html#a92752ed156f572b0032ddae5b7fc2a0c", null ],
     [ "use_gravity_heuristic", "structAhrsIntCmpl.html#acf3812d8e1e73767000eef27b06a0da1", null ]
 ];

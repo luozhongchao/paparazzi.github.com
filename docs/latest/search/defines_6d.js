@@ -97,6 +97,8 @@ var searchData=
   ['max_5fspektrum_5fframes',['MAX_SPEKTRUM_FRAMES',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#acb180c84399fe9bba1e58aa96a86deb2',1,'spektrum_arch.c']]],
   ['max_5fspk',['MAX_SPK',['../lpc21_2subsystems_2radio__control_2spektrum__arch_8h.html#a50c12dfa5ecf8da6c0a440c0ad5e0272',1,'spektrum_arch.h']]],
   ['max_5fsum_5ferr',['MAX_SUM_ERR',['../stabilization__attitude__euler__float_8c.html#a5b0a3448308cccbf6109d3cb2f00c40a',1,'MAX_SUM_ERR():&#160;stabilization_attitude_euler_float.c'],['../stabilization__attitude__euler__int_8c.html#a5b0a3448308cccbf6109d3cb2f00c40a',1,'MAX_SUM_ERR():&#160;stabilization_attitude_euler_int.c'],['../stabilization__rate_8c.html#a5b0a3448308cccbf6109d3cb2f00c40a',1,'MAX_SUM_ERR():&#160;stabilization_rate.c']]],
+  ['maxcoeff',['MAXCOEFF',['../pprz__geodetic__wmm2010_8h.html#a79bd2810e131df6189e69ed5662911d1',1,'pprz_geodetic_wmm2010.h']]],
+  ['maxdeg',['MAXDEG',['../pprz__geodetic__wmm2010_8h.html#a8521f0d9a069c55226a07fc055408eed',1,'pprz_geodetic_wmm2010.h']]],
   ['maxfloat',['MaxFloat',['../OSAMNav_8h.html#a75197b2a5458093f02e396c7429f64ad',1,'OSAMNav.h']]],
   ['maxlen_5fcmti_5fanswer',['MAXLEN_CMTI_ANSWER',['../gsm_8c.html#a63d7f9a00199a0edc33281dda1588713',1,'gsm.c']]],
   ['maxlen_5fsms_5fcontent',['MAXLEN_SMS_CONTENT',['../gsm_8c.html#ab1d6e65a8e8fb9235a253aa6b10a596d',1,'gsm.c']]],

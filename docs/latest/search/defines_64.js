@@ -66,6 +66,8 @@ var searchData=
   ['double_5fquat_5fof_5feulers',['DOUBLE_QUAT_OF_EULERS',['../pprz__algebra__double_8h.html#a476c46d0dfb7cf3c974112af18f1b17c',1,'pprz_algebra_double.h']]],
   ['double_5frmat_5fof_5feulers',['DOUBLE_RMAT_OF_EULERS',['../pprz__algebra__double_8h.html#aaccff5473d8c658af79ac6ea8d89869b',1,'pprz_algebra_double.h']]],
   ['double_5frmat_5fof_5feulers_5f321',['DOUBLE_RMAT_OF_EULERS_321',['../pprz__algebra__double_8h.html#ab0e689a63d1ee1c625211dab0d678e13',1,'pprz_algebra_double.h']]],
+  ['double_5fvect3_5fassign',['DOUBLE_VECT3_ASSIGN',['../pprz__algebra__double_8h.html#a7c0962d4506304ea0719d838c89bce3b',1,'pprz_algebra_double.h']]],
+  ['double_5fvect3_5fcopy',['DOUBLE_VECT3_COPY',['../pprz__algebra__double_8h.html#a2fa77f06e73319649427ed8ff102b175',1,'pprz_algebra_double.h']]],
   ['double_5fvect3_5fcross_5fproduct',['DOUBLE_VECT3_CROSS_PRODUCT',['../pprz__algebra__double_8h.html#afcb647d0d390b6897771240db48e12fc',1,'pprz_algebra_double.h']]],
   ['double_5fvect3_5frint',['DOUBLE_VECT3_RINT',['../pprz__algebra__double_8h.html#aea462d460840d11dc543283860d883c3',1,'pprz_algebra_double.h']]],
   ['double_5fvect3_5fround',['DOUBLE_VECT3_ROUND',['../pprz__algebra__double_8h.html#a57f944678cda3405c13b3c2623e8cffe',1,'pprz_algebra_double.h']]],

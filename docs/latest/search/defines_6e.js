@@ -1,6 +1,7 @@
 var searchData=
 [
   ['n',['N',['../pprz__geodetic__utm_8h.html#a0240ac851181b84ac374872dc5434ee4',1,'pprz_geodetic_utm.h']]],
+  ['n_5fmax_5fof_5fgh',['N_MAX_OF_GH',['../pprz__geodetic__wmm2010_8h.html#a14fae9a0d6423e6436793d10df70feeb',1,'pprz_geodetic_wmm2010.h']]],
   ['nav5_5f2d_5fonly',['NAV5_2D_ONLY',['../gps__ubx__ucenter_8c.html#a1bb4e3a75fea929d9fa82afcc050be4e',1,'gps_ubx_ucenter.c']]],
   ['nav5_5f3d_5fonly',['NAV5_3D_ONLY',['../gps__ubx__ucenter_8c.html#af163b9e66520a0429b491db8fe8de61c',1,'gps_ubx_ucenter.c']]],
   ['nav5_5fauto',['NAV5_AUTO',['../gps__ubx__ucenter_8c.html#a1d28107542772a43fc57731dc6d7c5ba',1,'gps_ubx_ucenter.c']]],
@@ -100,6 +101,8 @@ var searchData=
   ['nextstageandbreak',['NextStageAndBreak',['../common__flight__plan_8h.html#ab6fa2c1db175998ff9eb1eb65b9411c1',1,'common_flight_plan.h']]],
   ['nextstageandbreakfrom',['NextStageAndBreakFrom',['../common__flight__plan_8h.html#aa64072da784959799353d18ae618cbc5',1,'common_flight_plan.h']]],
   ['nextstatus',['NextStatus',['../baro__MS5534A_8c.html#a33edcc7fcd680338e39f36a495b62dae',1,'baro_MS5534A.c']]],
+  ['nmax_5f1',['NMAX_1',['../pprz__geodetic__wmm2010_8h.html#ac384eb6e7db2995f6746bd4be6a0513a',1,'pprz_geodetic_wmm2010.h']]],
+  ['nmax_5f2',['NMAX_2',['../pprz__geodetic__wmm2010_8h.html#a27c719d328a05f8348ccf8d1961565d0',1,'pprz_geodetic_wmm2010.h']]],
   ['nmea_5fmaxlen',['NMEA_MAXLEN',['../gps__nmea_8h.html#aba1b916a956dfdb482db16b3ef018572',1,'gps_nmea.h']]],
   ['nmea_5fprint',['NMEA_PRINT',['../gps__nmea_8h.html#ae9073dcac41338b742f6168a9c506679',1,'gps_nmea.h']]],
   ['nmea_5fproto_5fmask',['NMEA_PROTO_MASK',['../gps__ubx__ucenter_8c.html#ab9aa18b1e00f53f983be44115151c92a',1,'gps_ubx_ucenter.c']]],

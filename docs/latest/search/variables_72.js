@@ -33,6 +33,7 @@ var searchData=
   ['read_5fbytes',['read_bytes',['../max3100__hw_8c.html#a72b3a08d1d674204a3afad4b51da7766',1,'read_bytes():&#160;max3100_hw.c'],['../max3100__hw_8h.html#a72b3a08d1d674204a3afad4b51da7766',1,'read_bytes():&#160;max3100_hw.c']]],
   ['reading_5fgyro',['reading_gyro',['../structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605',1,'ImuAspirin::reading_gyro()'],['../lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540',1,'reading_gyro():&#160;lisa_test_itg3200.c']]],
   ['reading_5fmag',['reading_mag',['../lisa__test__hmc5843_8c.html#ae7c0c0d7606c40277a928dc688cdbf34',1,'lisa_test_hmc5843.c']]],
+  ['ready',['ready',['../structGeoMagVect.html#af824842bef1cc8e81693d8779f8f5aaa',1,'GeoMagVect']]],
   ['recieveddata',['recievedData',['../modules_2ins_2ins__arduimu_8c.html#a7ad0b6baa7c668497b49a342fbddc246',1,'recievedData():&#160;ins_arduimu.c'],['../modules_2ins_2ins__arduimu__basic_8c.html#a7ad0b6baa7c668497b49a342fbddc246',1,'recievedData():&#160;ins_arduimu_basic.c']]],
   ['ref',['ref',['../temp__tcouple__adc_8c.html#a241f0aa542718c2480a4fa6ce56070f7',1,'temp_tcouple_adc.c']]],
   ['ref_5falt_5finit',['ref_alt_init',['../baro__amsys_8c.html#a00e20ebd6b78b77ed709bffa5219c051',1,'baro_amsys.c']]],

@@ -11,8 +11,10 @@ var searchData=
   ['wdmod',['WDMOD',['../LPC21xx_8h.html#a37c4add55fd2c30091f3e4d796feeca8',1,'LPC21xx.h']]],
   ['wdtc',['WDTC',['../LPC21xx_8h.html#a3e307aaee495eda03358a2ee3bf88c94',1,'LPC21xx.h']]],
   ['wdtv',['WDTV',['../LPC21xx_8h.html#ab558486d90264fa951c0cb12f09e328a',1,'LPC21xx.h']]],
+  ['weeks_5fin_5fyear',['WEEKS_IN_YEAR',['../pprz__geodetic__wmm2010_8h.html#ac2bdc89e52c860bf7f849b81fe4e5db2',1,'pprz_geodetic_wmm2010.h']]],
   ['wgs84_5fellipsoid_5fto_5fgeoid',['WGS84_ELLIPSOID_TO_GEOID',['../pprz__geodetic__wgs84_8h.html#acfd9257991fa9fb4cbf93c1ccda48e98',1,'pprz_geodetic_wgs84.h']]],
   ['wgs84_5fh',['WGS84_H',['../pprz__geodetic__wgs84_8h.html#a308d77871a261ab445d3d5b1501e35eb',1,'pprz_geodetic_wgs84.h']]],
   ['windspeed_5ff',['WINDSPEED_F',['../group__state__wind__airspeed.html#ga3eb2de8fbbcb8bb2d6660a06aa254790',1,'state.h']]],
-  ['windspeed_5fi',['WINDSPEED_I',['../group__state__wind__airspeed.html#ga09ac60b282bbb163ee76778d6b9c6323',1,'state.h']]]
+  ['windspeed_5fi',['WINDSPEED_I',['../group__state__wind__airspeed.html#ga09ac60b282bbb163ee76778d6b9c6323',1,'state.h']]],
+  ['wmm2010_5ffrac',['WMM2010_FRAC',['../pprz__geodetic__wmm2010_8h.html#a355ec7441e99aa2036bd3844ce708fdd',1,'pprz_geodetic_wmm2010.h']]]
 ];

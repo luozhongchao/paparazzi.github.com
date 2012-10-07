@@ -155,6 +155,9 @@ var searchData=
   ['expectedframes',['ExpectedFrames',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a9e647afdd07962700d7c5efd80315115',1,'spektrum_arch.c']]],
   ['ext',['ext',['../structscbRegs__t.html#affab500e3221dbdc83bf2c3524d968f1',1,'scbRegs_t']]],
   ['ext_5fclk',['EXT_CLK',['../lisa__l__1_80_8h.html#a91a5eb3f03c2f212cd15277ea67d65a2',1,'EXT_CLK():&#160;lisa_l_1.0.h'],['../lisa__m__1_80_8h.html#a91a5eb3f03c2f212cd15277ea67d65a2',1,'EXT_CLK():&#160;lisa_m_1.0.h'],['../lisa__m__2_80_8h.html#a91a5eb3f03c2f212cd15277ea67d65a2',1,'EXT_CLK():&#160;lisa_m_2.0.h'],['../olimex__stm32-h103_8h.html#a91a5eb3f03c2f212cd15277ea67d65a2',1,'EXT_CLK():&#160;olimex_stm32-h103.h']]],
+  ['ext_5fcoeff1',['EXT_COEFF1',['../pprz__geodetic__wmm2010_8h.html#ac16936073cc48edb3186d149aafd41f8',1,'pprz_geodetic_wmm2010.h']]],
+  ['ext_5fcoeff2',['EXT_COEFF2',['../pprz__geodetic__wmm2010_8h.html#a048c90b39198c639be47377aa4ab14d8',1,'pprz_geodetic_wmm2010.h']]],
+  ['ext_5fcoeff3',['EXT_COEFF3',['../pprz__geodetic__wmm2010_8h.html#a5aa3b0a443540fe85d7d89509782970b',1,'pprz_geodetic_wmm2010.h']]],
   ['extern',['EXTERN',['../abi__common_8h.html#a77366c1bd428629dc898e188bfd182a3',1,'EXTERN():&#160;abi_common.h'],['../datalink_8h.html#a77366c1bd428629dc898e188bfd182a3',1,'EXTERN():&#160;datalink.h']]],
   ['exti15_5f10_5firq_5fhandler',['exti15_10_irq_handler',['../lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#af28c7f63910b85ce6f653968e38a6a10',1,'exti15_10_irq_handler(void):&#160;imu_aspirin_arch.c'],['../lisa__test__itg3200_8c.html#af28c7f63910b85ce6f653968e38a6a10',1,'exti15_10_irq_handler(void):&#160;lisa_test_itg3200.c']]],
   ['exti15_5f10_5fisr',['exti15_10_isr',['../stm32_2subsystems_2imu_2imu__aspirin__arch_8c.html#a8aaa57c7903131c1c86605393bb4654e',1,'exti15_10_isr(void):&#160;imu_aspirin_arch.c'],['../lisa__test__itg3200_8c.html#a8aaa57c7903131c1c86605393bb4654e',1,'exti15_10_isr(void):&#160;imu_aspirin_arch.c']]],
@@ -173,5 +176,6 @@ var searchData=
   ['extra_5fpprz_5fdl_2eh',['extra_pprz_dl.h',['../extra__pprz__dl_8h.html',1,'']]],
   ['extra_5fpprz_5ftp',['extra_pprz_tp',['../extra__pprz__dl_8c.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c'],['../extra__pprz__dl_8h.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c']]],
   ['extradatalinkevent',['ExtraDatalinkEvent',['../extra__pprz__dl_8h.html#af4820b3e7cf7584c83a5c8ad19f99c47',1,'extra_pprz_dl.h']]],
+  ['extrapsh',['extrapsh',['../pprz__geodetic__wmm2010_8c.html#a57f76a5e5afe004c3b985f11b4f1b13e',1,'extrapsh(double date, double dte1, int16_t nmax1, int16_t nmax2, double *gh):&#160;pprz_geodetic_wmm2010.c'],['../pprz__geodetic__wmm2010_8h.html#a57f76a5e5afe004c3b985f11b4f1b13e',1,'extrapsh(double date, double dte1, int16_t nmax1, int16_t nmax2, double *gh):&#160;pprz_geodetic_wmm2010.c']]],
   ['extwake',['EXTWAKE',['../LPC21xx_8h.html#afbd68c79c7bbdfacfc15b6e537a7a1ab',1,'LPC21xx.h']]]
 ];

@@ -119,5 +119,5 @@ var searchData=
   ['pwm_5finput_5fduty_5fvalid',['pwm_input_duty_valid',['../pwm__input_8c.html#a8bba700f504dc9a8af8bfce95e08eb6e',1,'pwm_input.c']]],
   ['pwm_5finput_5fperiod_5ftics',['pwm_input_period_tics',['../pwm__input_8c.html#aa342afd936d8faba75ed025c2adb56bf',1,'pwm_input.c']]],
   ['pwm_5finput_5fperiod_5fvalid',['pwm_input_period_valid',['../pwm__input_8c.html#a1c3301e7803a112db96d86605e0d4832',1,'pwm_input.c']]],
-  ['pwm_5flatch_5fvalue',['pwm_latch_value',['../lpc21_2servos__direct__hw_8c.html#a6f09ce76df5c397c80d8bb9c1ab32d1a',1,'pwm_latch_value():&#160;servos_direct_hw.c'],['../lpc21_2servos__direct__hw_8h.html#a6f09ce76df5c397c80d8bb9c1ab32d1a',1,'pwm_latch_value():&#160;servos_direct_hw.c']]]
+  ['pwm_5flatch_5fvalue',['pwm_latch_value',['../lpc21_2subsystems_2actuators_2actuators__pwm__arch_8c.html#a6f09ce76df5c397c80d8bb9c1ab32d1a',1,'pwm_latch_value():&#160;actuators_pwm_arch.c'],['../lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a6f09ce76df5c397c80d8bb9c1ab32d1a',1,'pwm_latch_value():&#160;actuators_pwm_arch.c']]]
 ];
