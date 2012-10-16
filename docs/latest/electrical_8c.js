@@ -6,6 +6,6 @@ var electrical_8c =
     [ "electrical_init", "electrical_8c.html#ac5e9a56281268bdf6ddec2143b25f16a", null ],
     [ "electrical_periodic", "electrical_8c.html#aeef6ce2fb40e76ed52df5a1d45646ba1", null ],
     [ "electrical", "electrical_8c.html#a935f74638cd658e7dac75915bcb63bde", null ],
-    [ "electrical_priv", "electrical_8c.html#a32b8344d9c5cd588c0fe8d779cd8f9be", null ],
+    [ "electrical_priv", "electrical_8c.html#a52c7f993a75bb7b5615f23471990e413", null ],
     [ "vsupply_adc_buf", "electrical_8c.html#aabbc7f0c61aae2bb04d7e3bdc1b89bf9", null ]
 ];

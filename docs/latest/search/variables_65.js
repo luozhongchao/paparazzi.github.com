@@ -21,7 +21,7 @@ var searchData=
   ['eight_5fstatus',['eight_status',['../nav_8c.html#af4a85437e319605798991baf6a5c1b4b',1,'nav.c']]],
   ['elapsed',['elapsed',['../structsys__time__timer.html#af705c881b01c20d92164b4c111f57acb',1,'sys_time_timer']]],
   ['electrical',['electrical',['../electrical_8c.html#a935f74638cd658e7dac75915bcb63bde',1,'electrical():&#160;electrical.c'],['../electrical_8h.html#a935f74638cd658e7dac75915bcb63bde',1,'electrical():&#160;electrical.c']]],
-  ['electrical_5fpriv',['electrical_priv',['../electrical_8c.html#a32b8344d9c5cd588c0fe8d779cd8f9be',1,'electrical.c']]],
+  ['electrical_5fpriv',['electrical_priv',['../electrical_8c.html#a52c7f993a75bb7b5615f23471990e413',1,'electrical.c']]],
   ['electrical_5ftid',['electrical_tid',['../main__fbw_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe',1,'electrical_tid():&#160;main_fbw.c'],['../firmwares_2rotorcraft_2main_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe',1,'electrical_tid():&#160;main.c']]],
   ['elev',['elev',['../structSVinfo.html#a296d46cd0ebd7609174b75c1ed5e7905',1,'SVinfo']]],
   ['emr',['emr',['../structpwmTmrRegs__t.html#aecb455d317e88728454727caa448c876',1,'pwmTmrRegs_t']]],
@@ -45,7 +45,7 @@ var searchData=
   ['er_5firq_5fcnt',['er_irq_cnt',['../structi2c__errors.html#a8cde2b0ff7f6f4c7672018c51789da1c',1,'i2c_errors']]],
   ['errid',['ErrID',['../structVN100__Res__Packet.html#a42be581f2cfc78b3e93e0f0a7f2df767',1,'VN100_Res_Packet']]],
   ['error',['error',['../structtransport.html#a34d02eba52e4dd983ff7fd714254c943',1,'transport']]],
-  ['error_5fcnt',['error_cnt',['../structGpsMtk.html#a4dfb0920b82ea4a0a39716d80e7f27f4',1,'GpsMtk::error_cnt()'],['../structGpsSkytraq.html#a0555e2341b230fb5eb5df2a5bd1a6783',1,'GpsSkytraq::error_cnt()'],['../structGpsUbx.html#ac25b1e02b2516fc07cdf47a8acab7d89',1,'GpsUbx::error_cnt()']]],
+  ['error_5fcnt',['error_cnt',['../structInterMcuData.html#a3eb5ae35dada682132e4d92957015940',1,'InterMcuData::error_cnt()'],['../structGpsMtk.html#a4dfb0920b82ea4a0a39716d80e7f27f4',1,'GpsMtk::error_cnt()'],['../structGpsSkytraq.html#a0555e2341b230fb5eb5df2a5bd1a6783',1,'GpsSkytraq::error_cnt()'],['../structGpsUbx.html#ac25b1e02b2516fc07cdf47a8acab7d89',1,'GpsUbx::error_cnt()']]],
   ['error_5fcounter',['error_counter',['../structrc__joby__parser__state.html#aa710b4fde27d4ba9ae71ab99dd67a4e2',1,'rc_joby_parser_state']]],
   ['error_5flast',['error_last',['../structGpsMtk.html#a27b19c29ab2245b2ef17cf6e1f6ef2da',1,'GpsMtk::error_last()'],['../structGpsSkytraq.html#acd2339068d8b59ab086755a9fbb185bf',1,'GpsSkytraq::error_last()'],['../structGpsUbx.html#ae2861c04c3c0c9810eb094f56d562685',1,'GpsUbx::error_last()']]],
   ['errors',['errors',['../structi2c__periph.html#a4b1270562d3320ff0151bd7856ec0c6e',1,'i2c_periph']]],
@@ -60,5 +60,6 @@ var searchData=
   ['expected_5fack',['expected_ack',['../gsm_8c.html#a9c33028c5983f61f72f3ce1a2e9b6570',1,'gsm.c']]],
   ['expectedframes',['ExpectedFrames',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a9e647afdd07962700d7c5efd80315115',1,'spektrum_arch.c']]],
   ['ext',['ext',['../structscbRegs__t.html#affab500e3221dbdc83bf2c3524d968f1',1,'scbRegs_t']]],
-  ['extra_5fpprz_5ftp',['extra_pprz_tp',['../extra__pprz__dl_8c.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c'],['../extra__pprz__dl_8h.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c']]]
+  ['extra_5fpprz_5ftp',['extra_pprz_tp',['../extra__pprz__dl_8c.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c'],['../extra__pprz__dl_8h.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c']]],
+  ['ezcurrent_5fi2c_5ftrans',['ezcurrent_i2c_trans',['../ezcurrent_8c.html#aace3bfef7af597fc8329642617405759',1,'ezcurrent.c']]]
 ];

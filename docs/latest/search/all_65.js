@@ -47,7 +47,7 @@ var searchData=
   ['electrical_2eh',['electrical.h',['../electrical_8h.html',1,'']]],
   ['electrical_5finit',['electrical_init',['../electrical_8c.html#ac5e9a56281268bdf6ddec2143b25f16a',1,'electrical_init(void):&#160;electrical.c'],['../electrical_8h.html#ac5e9a56281268bdf6ddec2143b25f16a',1,'electrical_init(void):&#160;electrical.c']]],
   ['electrical_5fperiodic',['electrical_periodic',['../electrical_8c.html#aeef6ce2fb40e76ed52df5a1d45646ba1',1,'electrical_periodic(void):&#160;electrical.c'],['../electrical_8h.html#aeef6ce2fb40e76ed52df5a1d45646ba1',1,'electrical_periodic(void):&#160;electrical.c']]],
-  ['electrical_5fpriv',['electrical_priv',['../electrical_8c.html#a32b8344d9c5cd588c0fe8d779cd8f9be',1,'electrical.c']]],
+  ['electrical_5fpriv',['electrical_priv',['../electrical_8c.html#a52c7f993a75bb7b5615f23471990e413',1,'electrical.c']]],
   ['electrical_5ftid',['electrical_tid',['../main__fbw_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe',1,'electrical_tid():&#160;main_fbw.c'],['../firmwares_2rotorcraft_2main_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe',1,'electrical_tid():&#160;main.c']]],
   ['elev',['elev',['../structSVinfo.html#a296d46cd0ebd7609174b75c1ed5e7905',1,'SVinfo']]],
   ['em7rad_5fof_5frad',['EM7RAD_OF_RAD',['../pprz__geodetic__int_8h.html#a5f71a1b0d5ebdc36a71b92528bb880d5',1,'pprz_geodetic_int.h']]],
@@ -120,7 +120,7 @@ var searchData=
   ['err',['ERR',['../poly__survey__adv_8h.html#aa46eae8395ef867c63e26dd5d86e97d5a0f886785b600b91048fcdc434c6b4a8e',1,'poly_survey_adv.h']]],
   ['errid',['ErrID',['../structVN100__Res__Packet.html#a42be581f2cfc78b3e93e0f0a7f2df767',1,'VN100_Res_Packet']]],
   ['error',['error',['../structtransport.html#a34d02eba52e4dd983ff7fd714254c943',1,'transport']]],
-  ['error_5fcnt',['error_cnt',['../structGpsMtk.html#a4dfb0920b82ea4a0a39716d80e7f27f4',1,'GpsMtk::error_cnt()'],['../structGpsSkytraq.html#a0555e2341b230fb5eb5df2a5bd1a6783',1,'GpsSkytraq::error_cnt()'],['../structGpsUbx.html#ac25b1e02b2516fc07cdf47a8acab7d89',1,'GpsUbx::error_cnt()']]],
+  ['error_5fcnt',['error_cnt',['../structInterMcuData.html#a3eb5ae35dada682132e4d92957015940',1,'InterMcuData::error_cnt()'],['../structGpsMtk.html#a4dfb0920b82ea4a0a39716d80e7f27f4',1,'GpsMtk::error_cnt()'],['../structGpsSkytraq.html#a0555e2341b230fb5eb5df2a5bd1a6783',1,'GpsSkytraq::error_cnt()'],['../structGpsUbx.html#ac25b1e02b2516fc07cdf47a8acab7d89',1,'GpsUbx::error_cnt()']]],
   ['error_5fcounter',['error_counter',['../structrc__joby__parser__state.html#aa710b4fde27d4ba9ae71ab99dd67a4e2',1,'rc_joby_parser_state']]],
   ['error_5flast',['error_last',['../structGpsMtk.html#a27b19c29ab2245b2ef17cf6e1f6ef2da',1,'GpsMtk::error_last()'],['../structGpsSkytraq.html#acd2339068d8b59ab086755a9fbb185bf',1,'GpsSkytraq::error_last()'],['../structGpsUbx.html#ae2861c04c3c0c9810eb094f56d562685',1,'GpsUbx::error_last()']]],
   ['errors',['errors',['../structi2c__periph.html#a4b1270562d3320ff0151bd7856ec0c6e',1,'i2c_periph']]],
@@ -177,5 +177,13 @@ var searchData=
   ['extra_5fpprz_5ftp',['extra_pprz_tp',['../extra__pprz__dl_8c.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c'],['../extra__pprz__dl_8h.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c']]],
   ['extradatalinkevent',['ExtraDatalinkEvent',['../extra__pprz__dl_8h.html#af4820b3e7cf7584c83a5c8ad19f99c47',1,'extra_pprz_dl.h']]],
   ['extrapsh',['extrapsh',['../pprz__geodetic__wmm2010_8c.html#a57f76a5e5afe004c3b985f11b4f1b13e',1,'extrapsh(double date, double dte1, int16_t nmax1, int16_t nmax2, double *gh):&#160;pprz_geodetic_wmm2010.c'],['../pprz__geodetic__wmm2010_8h.html#a57f76a5e5afe004c3b985f11b4f1b13e',1,'extrapsh(double date, double dte1, int16_t nmax1, int16_t nmax2, double *gh):&#160;pprz_geodetic_wmm2010.c']]],
-  ['extwake',['EXTWAKE',['../LPC21xx_8h.html#afbd68c79c7bbdfacfc15b6e537a7a1ab',1,'LPC21xx.h']]]
+  ['extwake',['EXTWAKE',['../LPC21xx_8h.html#afbd68c79c7bbdfacfc15b6e537a7a1ab',1,'LPC21xx.h']]],
+  ['ezcurrent_2ec',['ezcurrent.c',['../ezcurrent_8c.html',1,'']]],
+  ['ezcurrent_2eh',['ezcurrent.h',['../ezcurrent_8h.html',1,'']]],
+  ['ezcurrent_5faddr',['EZCURRENT_ADDR',['../ezcurrent_8c.html#aa886cba5a2a1531e321cb6e0a97303a7',1,'ezcurrent.c']]],
+  ['ezcurrent_5fi2c_5fdev',['EZCURRENT_I2C_DEV',['../ezcurrent_8c.html#a8af665e63bcbbaeaa0b466913558fed5',1,'ezcurrent.c']]],
+  ['ezcurrent_5fi2c_5ftrans',['ezcurrent_i2c_trans',['../ezcurrent_8c.html#aace3bfef7af597fc8329642617405759',1,'ezcurrent.c']]],
+  ['ezcurrent_5finit',['ezcurrent_init',['../ezcurrent_8c.html#aa6804824f29b51877de0aa02559004b2',1,'ezcurrent_init(void):&#160;ezcurrent.c'],['../ezcurrent_8h.html#aa6804824f29b51877de0aa02559004b2',1,'ezcurrent_init(void):&#160;ezcurrent.c']]],
+  ['ezcurrent_5fread_5fevent',['ezcurrent_read_event',['../ezcurrent_8c.html#ad4bee3c589fed6c866015ae65bde6d72',1,'ezcurrent_read_event(void):&#160;ezcurrent.c'],['../ezcurrent_8h.html#ad4bee3c589fed6c866015ae65bde6d72',1,'ezcurrent_read_event(void):&#160;ezcurrent.c']]],
+  ['ezcurrent_5fread_5fperiodic',['ezcurrent_read_periodic',['../ezcurrent_8c.html#a882435b923f29a6c1551dfc546124ea2',1,'ezcurrent_read_periodic(void):&#160;ezcurrent.c'],['../ezcurrent_8h.html#a882435b923f29a6c1551dfc546124ea2',1,'ezcurrent_read_periodic(void):&#160;ezcurrent.c']]]
 ];

@@ -28,5 +28,6 @@ var searchData=
   ['int64quat',['Int64Quat',['../structInt64Quat.html',1,'']]],
   ['int64rates',['Int64Rates',['../structInt64Rates.html',1,'']]],
   ['int64vect2',['Int64Vect2',['../structInt64Vect2.html',1,'']]],
-  ['int64vect3',['Int64Vect3',['../structInt64Vect3.html',1,'']]]
+  ['int64vect3',['Int64Vect3',['../structInt64Vect3.html',1,'']]],
+  ['intermcudata',['InterMcuData',['../structInterMcuData.html',1,'']]]
 ];

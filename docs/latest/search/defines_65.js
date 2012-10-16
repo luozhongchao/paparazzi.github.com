@@ -50,5 +50,7 @@ var searchData=
   ['extmode',['EXTMODE',['../LPC21xx_8h.html#a6b7d1399a94b686e878b95b16b46ff4a',1,'LPC21xx.h']]],
   ['extpolar',['EXTPOLAR',['../LPC21xx_8h.html#ac9d407f43c17d5499f0d9ccd9acbf256',1,'LPC21xx.h']]],
   ['extradatalinkevent',['ExtraDatalinkEvent',['../extra__pprz__dl_8h.html#af4820b3e7cf7584c83a5c8ad19f99c47',1,'extra_pprz_dl.h']]],
-  ['extwake',['EXTWAKE',['../LPC21xx_8h.html#afbd68c79c7bbdfacfc15b6e537a7a1ab',1,'LPC21xx.h']]]
+  ['extwake',['EXTWAKE',['../LPC21xx_8h.html#afbd68c79c7bbdfacfc15b6e537a7a1ab',1,'LPC21xx.h']]],
+  ['ezcurrent_5faddr',['EZCURRENT_ADDR',['../ezcurrent_8c.html#aa886cba5a2a1531e321cb6e0a97303a7',1,'ezcurrent.c']]],
+  ['ezcurrent_5fi2c_5fdev',['EZCURRENT_I2C_DEV',['../ezcurrent_8c.html#a8af665e63bcbbaeaa0b466913558fed5',1,'ezcurrent.c']]]
 ];

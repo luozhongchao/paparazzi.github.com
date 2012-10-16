@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-102-g1ad3759</span>
+   &#160;<span id="projectnumber">v4.9_devel-120-g3f192fa</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -161,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00062"></a><a class="code" href="baro__ms5611__i2c_8c.html#ac92bb53a0de957a11772a19f68ea6189">00062</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aef44329758059c91c76d334e8fc09700">int8_t</a> <a class="code" href="baro__ms5611__i2c_8c.html#ac92bb53a0de957a11772a19f68ea6189">baro_ms5611_crc</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>* prom) {
 <a name="l00063"></a>00063   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> i, j;
 <a name="l00064"></a>00064   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> res = 0;
-<a name="l00065"></a>00065   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="link__mcu_8c.html#aa60093a9a5d5d17864cfda66c47733e3">crc</a> = prom[7] &amp; 0xF;
+<a name="l00065"></a>00065   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="link__mcu__spi_8c.html#aa60093a9a5d5d17864cfda66c47733e3">crc</a> = prom[7] &amp; 0xF;
 <a name="l00066"></a>00066   prom[7] &amp;= 0xFF00;
 <a name="l00067"></a>00067   <span class="keywordflow">for</span> (i = 0; i &lt; 16; i++) {
 <a name="l00068"></a>00068     <span class="keywordflow">if</span> (i &amp; 1) res ^= ((prom[i&gt;&gt;1]) &amp; 0x00FF);
@@ -171,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00072"></a>00072       res &lt;&lt;= 1;
 <a name="l00073"></a>00073     }
 <a name="l00074"></a>00074   }
-<a name="l00075"></a>00075   prom[7] |= <a class="code" href="link__mcu_8c.html#aa60093a9a5d5d17864cfda66c47733e3">crc</a>;
+<a name="l00075"></a>00075   prom[7] |= <a class="code" href="link__mcu__spi_8c.html#aa60093a9a5d5d17864cfda66c47733e3">crc</a>;
 <a name="l00076"></a>00076   <span class="keywordflow">if</span> (crc == ((res &gt;&gt; 12) &amp; 0xF)) <span class="keywordflow">return</span> 0;
 <a name="l00077"></a>00077   <span class="keywordflow">else</span> <span class="keywordflow">return</span> -1;
 <a name="l00078"></a>00078 }
@@ -352,7 +352,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="baro__ms5611__i2c_8c.html">baro_ms5611_i2c.c</a>      </li>
 
-    <li class="footer">Generated on Sun Oct 7 2012 04:00:39 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Oct 16 2012 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

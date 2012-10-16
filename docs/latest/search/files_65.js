@@ -7,5 +7,7 @@ var searchData=
   ['enose_2ec',['enose.c',['../enose_8c.html',1,'']]],
   ['enose_2eh',['enose.h',['../enose_8h.html',1,'']]],
   ['extra_5fpprz_5fdl_2ec',['extra_pprz_dl.c',['../extra__pprz__dl_8c.html',1,'']]],
-  ['extra_5fpprz_5fdl_2eh',['extra_pprz_dl.h',['../extra__pprz__dl_8h.html',1,'']]]
+  ['extra_5fpprz_5fdl_2eh',['extra_pprz_dl.h',['../extra__pprz__dl_8h.html',1,'']]],
+  ['ezcurrent_2ec',['ezcurrent.c',['../ezcurrent_8c.html',1,'']]],
+  ['ezcurrent_2eh',['ezcurrent.h',['../ezcurrent_8h.html',1,'']]]
 ];

@@ -7,7 +7,7 @@ var searchData=
   ['uint',['UInt',['../unionVN100__Param.html#adbe313d9cb7774810f07231de6da2a90',1,'VN100_Param']]],
   ['unexpected_5fevent_5fcnt',['unexpected_event_cnt',['../structi2c__errors.html#a874ae9784489639f832a7b6d8b9d0993',1,'i2c_errors']]],
   ['unit',['unit',['../nav_8c.html#a04b783250b1673126fa3f4729cb2078e',1,'nav.c']]],
-  ['up',['up',['../structLisaOveroLink.html#a2d7e0751ac036b43a32f76473eeb2181',1,'LisaOveroLink::up()'],['../light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d',1,'up():&#160;light_solar.c'],['../light__solar_8h.html#a865f598ce218c5496c018323caf1fb4d',1,'up():&#160;light_solar.c']]],
+  ['up',['up',['../structLisaOveroLink.html#a53ad63f7fd63f79f918c6ca212740e7b',1,'LisaOveroLink::up()'],['../light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d',1,'up():&#160;light_solar.c'],['../light__solar_8h.html#a865f598ce218c5496c018323caf1fb4d',1,'up():&#160;light_solar.c']]],
   ['update_5fmatrix',['Update_Matrix',['../ahrs__float__dcm_8c.html#ad127bd0b0b65b831860abe0ac9234672',1,'ahrs_float_dcm.c']]],
   ['use_5fairspeed_5fratio',['use_airspeed_ratio',['../stabilization__adaptive_8c.html#aa3cf0ada6c21e17a8269616f13439532',1,'use_airspeed_ratio():&#160;stabilization_adaptive.c'],['../stabilization__adaptive_8h.html#aa3cf0ada6c21e17a8269616f13439532',1,'use_airspeed_ratio():&#160;stabilization_adaptive.c']]],
   ['use_5fgravity_5fheuristic',['use_gravity_heuristic',['../structAhrsIntCmpl.html#acf3812d8e1e73767000eef27b06a0da1',1,'AhrsIntCmpl']]],
