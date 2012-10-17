@@ -9,5 +9,5 @@ var stm32_2mcu__periph_2adc__arch_8c =
     [ "adc_push_sample", "stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54", null ],
     [ "adc_channel_map", "stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728", null ],
     [ "adc_injected_channels", "stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829", null ],
-    [ "adc_new_data_trigger", "stm32_2mcu__periph_2adc__arch_8c.html#a9a5be07f63aca3718abe2d190b3189aa", null ]
+    [ "adc_new_data_trigger", "stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188", null ]
 ];

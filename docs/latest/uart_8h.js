@@ -7,6 +7,6 @@ var uart_8h =
     [ "UartGetch", "uart_8h.html#ae1d63752b5b258b1e7ddc03f3d335355", null ],
     [ "uart_check_free_space", "uart_8h.html#abd3d741fab97eedc4b48bbda25b74e50", null ],
     [ "uart_periph_init", "uart_8h.html#a43baf084a9bcc968ef00790e25becbb7", null ],
-    [ "uart_periph_set_baudrate", "uart_8h.html#a3eff2a82ddc632e5626c04ad4e717e3b", null ],
+    [ "uart_periph_set_baudrate", "uart_8h.html#af6637ac7b9ed636ac62fcfd8140b04e1", null ],
     [ "uart_transmit", "uart_8h.html#a916fbda270604fca87f8bc235ddcbaaa", null ]
 ];

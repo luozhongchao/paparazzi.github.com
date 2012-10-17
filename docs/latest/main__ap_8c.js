@@ -42,5 +42,5 @@ var main__ap_8c =
     [ "sensors_tid", "main__ap_8c.html#a85f2bbcc30b52c5f658d292da699729b", null ],
     [ "telemetry_tid", "main__ap_8c.html#aaaaf875f33da06aeb2b503fde86862c1", null ],
     [ "version", "main__ap_8c.html#ac2c943a33c6a4bd3bdba4e10213cc140", null ],
-    [ "vsupply", "main__ap_8c.html#ad32aad7f4e3f9236375798ec1cad31dd", null ]
+    [ "vsupply", "main__ap_8c.html#a32da1e6e29634773a0e491df93f92414", null ]
 ];

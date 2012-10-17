@@ -118,6 +118,6 @@ var searchData=
   ['vi',['vi',['../vi_8c.html#aabb8e0aff2e1b128575804c32ea1f4d0',1,'vi():&#160;vi.c'],['../vi_8h.html#aabb8e0aff2e1b128575804c32ea1f4d0',1,'vi():&#160;vi.c']]],
   ['volt_5fgeiger',['volt_geiger',['../geiger__counter_8c.html#af9dbdd1fb84676af7d2a603f1f7717d3',1,'geiger_counter.c']]],
   ['vpbdiv',['vpbdiv',['../structscbRegs__t.html#a32e0204bcb52f6cfd60d06782d05c99a',1,'scbRegs_t']]],
-  ['vsupply',['vsupply',['../structElectrical.html#ac0f9582d6de09fedde9a35cae83da45e',1,'Electrical::vsupply()'],['../fixedwing_2autopilot_8h.html#ad32aad7f4e3f9236375798ec1cad31dd',1,'vsupply():&#160;main_ap.c'],['../main__ap_8c.html#ad32aad7f4e3f9236375798ec1cad31dd',1,'vsupply():&#160;main_ap.c']]],
+  ['vsupply',['vsupply',['../structElectrical.html#aa06d22221dc04d5615b4bbc0a7e66556',1,'Electrical::vsupply()'],['../fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414',1,'vsupply():&#160;main_ap.c'],['../main__ap_8c.html#a32da1e6e29634773a0e491df93f92414',1,'vsupply():&#160;main_ap.c']]],
   ['vsupply_5fadc_5fbuf',['vsupply_adc_buf',['../electrical_8c.html#aabbc7f0c61aae2bb04d7e3bdc1b89bf9',1,'electrical.c']]]
 ];

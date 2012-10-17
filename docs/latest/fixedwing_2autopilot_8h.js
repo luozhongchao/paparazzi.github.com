@@ -32,5 +32,5 @@ var fixedwing_2autopilot_8h =
     [ "launch", "fixedwing_2autopilot_8h.html#af32f81f02a3187c12c08e11caf354abd", null ],
     [ "power_switch", "fixedwing_2autopilot_8h.html#adda0cb88d172048dd19b50ad66e7881e", null ],
     [ "pprz_mode", "fixedwing_2autopilot_8h.html#aebf57c26248ee8c66d3eacdbd6a155cd", null ],
-    [ "vsupply", "fixedwing_2autopilot_8h.html#ad32aad7f4e3f9236375798ec1cad31dd", null ]
+    [ "vsupply", "fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414", null ]
 ];

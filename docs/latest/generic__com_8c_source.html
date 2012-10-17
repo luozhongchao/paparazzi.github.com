@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-122-gdcf98cc</span>
+   &#160;<span id="projectnumber">v4.9_devel-135-g6be3882</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -182,7 +182,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00077"></a>00077   <a class="code" href="generic__com_8c.html#a0a7332f7d2ae2b60fb67c96ec27d63fd">FillBufWith16bit</a>(<a class="code" href="generic__com_8c.html#aacf77b866e79c13fe19296fa3402f472">com_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>, 11, <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a17cba6d73da4b727be6494d436160933" title="norm of 2d ground speed in cm/s">gspeed</a>); <span class="comment">// ground speed (cm/s)</span>
 <a name="l00078"></a>00078   <a class="code" href="generic__com_8c.html#a0a7332f7d2ae2b60fb67c96ec27d63fd">FillBufWith16bit</a>(<a class="code" href="generic__com_8c.html#aacf77b866e79c13fe19296fa3402f472">com_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>, 13, (<a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>)(<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS heading in rad*1e7 (CW/north)">course</a>/1e4)); <span class="comment">// course (1e3rad)</span>
 <a name="l00079"></a>00079   <a class="code" href="generic__com_8c.html#a0a7332f7d2ae2b60fb67c96ec27d63fd">FillBufWith16bit</a>(<a class="code" href="generic__com_8c.html#aacf77b866e79c13fe19296fa3402f472">com_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>, 15, (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)((*<a class="code" href="group__state__wind__airspeed.html#ga0ab69b83eeebb79cbdb2c8e81bfb659b" title="Get airspeed (float).">stateGetAirspeed_f</a>())*100)); <span class="comment">// TAS (cm/s)</span>
-<a name="l00080"></a>00080   <a class="code" href="generic__com_8c.html#aacf77b866e79c13fe19296fa3402f472">com_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[17] = <a class="code" href="electrical_8c.html#a935f74638cd658e7dac75915bcb63bde">electrical</a>.<a class="code" href="structElectrical.html#ac0f9582d6de09fedde9a35cae83da45e">vsupply</a>; <span class="comment">// decivolts</span>
+<a name="l00080"></a>00080   <a class="code" href="generic__com_8c.html#aacf77b866e79c13fe19296fa3402f472">com_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[17] = <a class="code" href="electrical_8c.html#a935f74638cd658e7dac75915bcb63bde">electrical</a>.<a class="code" href="structElectrical.html#aa06d22221dc04d5615b4bbc0a7e66556">vsupply</a>; <span class="comment">// decivolts</span>
 <a name="l00081"></a>00081   <a class="code" href="generic__com_8c.html#aacf77b866e79c13fe19296fa3402f472">com_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[18] = (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>)(<a class="code" href="fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a" title="Fuel consumption (mAh) TODO: move to electrical subsystem.">energy</a>/100); <span class="comment">// deciAh</span>
 <a name="l00082"></a>00082   <a class="code" href="generic__com_8c.html#aacf77b866e79c13fe19296fa3402f472">com_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[19] = (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>)(<a class="code" href="inter__mcu_8c.html#ac13671906f2663b39fde033f4cb4a410">ap_state</a>-&gt;commands[COMMAND_THROTTLE]*100/<a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
 <a name="l00083"></a>00083   <a class="code" href="generic__com_8c.html#aacf77b866e79c13fe19296fa3402f472">com_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[20] = <a class="code" href="fixedwing_2autopilot_8h.html#aebf57c26248ee8c66d3eacdbd6a155cd">pprz_mode</a>;
@@ -230,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="generic__com_8c.html">generic_com.c</a>      </li>
 
-    <li class="footer">Generated on Tue Oct 16 2012 10:21:35 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Oct 17 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

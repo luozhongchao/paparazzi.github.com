@@ -488,6 +488,6 @@ var searchData=
   ['vpbdiv_5fvalue',['VPBDIV_VALUE',['../lpcSCB_8h.html#afcffdd2a4f43249779157957ddc111aa',1,'lpcSCB.h']]],
   ['vpoint',['vPoint',['../point_8c.html#a3317a3a368f54d6c89acfbbaa49b4ed2',1,'vPoint(float fPlaneEast, float fPlaneNorth, float fPlaneAltitude, float fRollAngle, float fPitchAngle, float fYawAngle, float fObjectEast, float fObjectNorth, float fAltitude, float *fPan, float *fTilt):&#160;point.c'],['../point_8h.html#a3317a3a368f54d6c89acfbbaa49b4ed2',1,'vPoint(float fPlaneEast, float fPlaneNorth, float fPlaneAltitude, float fRollAngle, float fPitchAngle, float fYawAngle, float fObjectEast, float fObjectNorth, float fAltitude, float *fPan, float *fTilt):&#160;point.c']]],
   ['vsubtractvectors',['vSubtractVectors',['../point_8c.html#a553fdfb308cb850023076e6a58842796',1,'point.c']]],
-  ['vsupply',['vsupply',['../structElectrical.html#ac0f9582d6de09fedde9a35cae83da45e',1,'Electrical::vsupply()'],['../fixedwing_2autopilot_8h.html#ad32aad7f4e3f9236375798ec1cad31dd',1,'vsupply():&#160;main_ap.c'],['../main__ap_8c.html#ad32aad7f4e3f9236375798ec1cad31dd',1,'vsupply():&#160;main_ap.c']]],
+  ['vsupply',['vsupply',['../structElectrical.html#aa06d22221dc04d5615b4bbc0a7e66556',1,'Electrical::vsupply()'],['../fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414',1,'vsupply():&#160;main_ap.c'],['../main__ap_8c.html#a32da1e6e29634773a0e491df93f92414',1,'vsupply():&#160;main_ap.c']]],
   ['vsupply_5fadc_5fbuf',['vsupply_adc_buf',['../electrical_8c.html#aabbc7f0c61aae2bb04d7e3bdc1b89bf9',1,'electrical.c']]]
 ];
