@@ -30,7 +30,7 @@ var searchData=
   ['end_5fof_5ftable',['end_of_table',['../structcan__accept__Regs__t.html#a999e58b664a98aa9e12dcc6b00a4ff02',1,'can_accept_Regs_t']]],
   ['end_5ftime',['end_time',['../structsys__time__timer.html#abbf23b4993e74efe48aef5d7c8bfe0dd',1,'sys_time_timer']]],
   ['endmessage',['EndMessage',['../structDownlinkTransport.html#acaff3d5b3da73ba8ea27f78040b346bf',1,'DownlinkTransport']]],
-  ['energy',['energy',['../fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a',1,'energy():&#160;main_ap.c'],['../main__ap_8c.html#a2d107b3b2dcebab8a10c9d39894f6b2a',1,'energy():&#160;main_ap.c']]],
+  ['energy',['energy',['../fixedwing_2autopilot_8c.html#a2d107b3b2dcebab8a10c9d39894f6b2a',1,'energy():&#160;autopilot.c'],['../fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a',1,'energy():&#160;autopilot.c']]],
   ['enose_5fconf_5frequested',['enose_conf_requested',['../enose_8c.html#a99e55f6c9834135636443ab574151f50',1,'enose.c']]],
   ['enose_5fheat',['enose_heat',['../sim__enose_8c.html#a144d489eba34956aac35471312de5348',1,'enose_heat():&#160;sim_enose.c'],['../enose_8c.html#a144d489eba34956aac35471312de5348',1,'enose_heat():&#160;enose.c'],['../enose_8h.html#a144d489eba34956aac35471312de5348',1,'enose_heat():&#160;sim_enose.c']]],
   ['enose_5fi2c_5fdone',['enose_i2c_done',['../enose_8c.html#a173bc44c12c25f9553770b6feaed415e',1,'enose.c']]],

@@ -1,5 +1,8 @@
 var umarim__1_80_8h =
 [
+    [ "ActuatorDefaultSet", "umarim__1_80_8h.html#a3fc5f96f074d833b909fd75c92b7d2d0", null ],
+    [ "ActuatorsDefaultCommit", "umarim__1_80_8h.html#a0ceadf6a913477832e04b0cb7cd17210", null ],
+    [ "ActuatorsDefaultInit", "umarim__1_80_8h.html#ab68f28871d18c17e7e70ae63277d37c2", null ],
     [ "ADC_0", "umarim__1_80_8h.html#a5cbcaa568e20fcd4cc9325927d370860", null ],
     [ "ADC_1", "umarim__1_80_8h.html#a3d767e16f12a6ee542079f3c9677192c", null ],
     [ "ADC_2", "umarim__1_80_8h.html#a01ac9d2f00660408bcc8c809020904f9", null ],
@@ -7,6 +10,7 @@ var umarim__1_80_8h =
     [ "ADC_CHANNEL_VSUPPLY", "umarim__1_80_8h.html#ad5a6636ee170fccf62a748fc72374d3b", null ],
     [ "BOARD_HAS_BARO", "umarim__1_80_8h.html#af8df7cce5dd52da8571b6774d51bda77", null ],
     [ "CCLK", "umarim__1_80_8h.html#addec7d88e04ddfe6ac90caf602636c51", null ],
+    [ "DEFAULT_ACTUATORS", "umarim__1_80_8h.html#aa7699f41fbe105c8f5061cc48a5f6307", null ],
     [ "DefaultVoltageOfAdc", "umarim__1_80_8h.html#a94fa241ceca04635f282e09bdd829f5f", null ],
     [ "FOSC", "umarim__1_80_8h.html#a802b2b582b121e4632aa9a491d503720", null ],
     [ "LED_1_BANK", "umarim__1_80_8h.html#a27043d2a36fed64b2808c882c24a1465", null ],

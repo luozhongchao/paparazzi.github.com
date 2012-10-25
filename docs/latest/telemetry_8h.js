@@ -1,5 +1,6 @@
 var telemetry_8h =
 [
+    [ "PERIODIC_SEND_ACTUATORS", "telemetry_8h.html#aa134fd1db52cbf4539e6d13c9d8db784", null ],
     [ "PERIODIC_SEND_AHRS_EULER_INT", "telemetry_8h.html#aaac4f18b8e53aac9f81ac213efa47d94", null ],
     [ "PERIODIC_SEND_AHRS_LKF", "telemetry_8h.html#ab9bf71b3b8895aa9113ae71fcfe1a174", null ],
     [ "PERIODIC_SEND_AHRS_LKF_ACC_DBG", "telemetry_8h.html#a91a15eadb7869ec9f8b6aad895b9b8f8", null ],
@@ -10,7 +11,6 @@ var telemetry_8h =
     [ "PERIODIC_SEND_AHRS_RMAT_INT", "telemetry_8h.html#a806854db1171310fd3100bbf63c4dbab", null ],
     [ "PERIODIC_SEND_ALIVE", "telemetry_8h.html#a03373609a4f23ae59327d141b635eb40", null ],
     [ "PERIODIC_SEND_BARO_RAW", "telemetry_8h.html#a09132dd1094236e8356f48f2b6346888", null ],
-    [ "PERIODIC_SEND_BOOZ2_CAM", "telemetry_8h.html#a583ae5a53924c1a7d35787adebbdf7bf", null ],
     [ "PERIODIC_SEND_CAM_TRACK", "telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763", null ],
     [ "PERIODIC_SEND_DL_VALUE", "telemetry_8h.html#aac3b084503a7ef7ccdf84a6651bb82e6", null ],
     [ "PERIODIC_SEND_FILTER", "telemetry_8h.html#a15695d977985ca91c290313d6591f699", null ],
@@ -38,6 +38,7 @@ var telemetry_8h =
     [ "PERIODIC_SEND_PPM", "telemetry_8h.html#a6a44870053f61a55cb8960842d14fa8b", null ],
     [ "PERIODIC_SEND_RATE_LOOP", "telemetry_8h.html#ac76cdb71d897a98a9c261818b2de0184", null ],
     [ "PERIODIC_SEND_RC", "telemetry_8h.html#ad4e1797d10a9144cf94f1e21875aa6d3", null ],
+    [ "PERIODIC_SEND_ROTORCRAFT_CAM", "telemetry_8h.html#ad80dcb80b7adb736a79073ce796cf998", null ],
     [ "PERIODIC_SEND_ROTORCRAFT_CMD", "telemetry_8h.html#a860ac151b60ac4a101d75800681523f4", null ],
     [ "PERIODIC_SEND_ROTORCRAFT_FP", "telemetry_8h.html#abde7d7656cc8d9531edae9a588ea61a3", null ],
     [ "PERIODIC_SEND_ROTORCRAFT_NAV_STATUS", "telemetry_8h.html#a7b4102cb6e84d79ea414e72190f775bd", null ],

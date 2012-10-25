@@ -88,6 +88,7 @@ var searchData=
   ['modules_5ftid',['modules_tid',['../main__ap_8c.html#ad22206414845137916e0ed83054bdfc8',1,'main_ap.c']]],
   ['monitor_5ftid',['monitor_tid',['../main__ap_8c.html#a1cefad60c98eeae5ce7826c1efd8f700',1,'main_ap.c']]],
   ['month',['month',['../structrtcRegs__t.html#a94538e214f8c74b6f65115221340e6e2',1,'rtcRegs_t::month()'],['../structXsensTime.html#a929428e8300dc3a1a40679be7e38e6c4',1,'XsensTime::month()']]],
+  ['motor_5fmixing',['motor_mixing',['../motor__mixing_8c.html#a56f7b209886f3636c9c5f7f0431ce3f0',1,'motor_mixing():&#160;motor_mixing.c'],['../motor__mixing_8h.html#a56f7b209886f3636c9c5f7f0431ce3f0',1,'motor_mixing():&#160;motor_mixing.c']]],
   ['mppt_5fdata',['MPPT_data',['../MPPT_8c.html#a13227707deb233f37302dde38f46a1db',1,'MPPT_data():&#160;MPPT.c'],['../sim__MPPT_8c.html#a13227707deb233f37302dde38f46a1db',1,'MPPT_data():&#160;sim_MPPT.c']]],
   ['mppt_5fmode',['MPPT_mode',['../MPPT_8c.html#a204d628ca12dfdc88844dcdd0380d93a',1,'MPPT_mode():&#160;MPPT.c'],['../MPPT_8h.html#a204d628ca12dfdc88844dcdd0380d93a',1,'MPPT_mode():&#160;MPPT.c'],['../sim__MPPT_8c.html#a204d628ca12dfdc88844dcdd0380d93a',1,'MPPT_mode():&#160;sim_MPPT.c']]],
   ['mppt_5fstatus',['MPPT_status',['../MPPT_8c.html#a5409ee7a2fa184373fe705ed81dc8e5a',1,'MPPT.c']]],

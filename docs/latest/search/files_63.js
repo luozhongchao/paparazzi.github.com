@@ -22,8 +22,6 @@ var searchData=
   ['chemotaxis_2eh',['chemotaxis.h',['../chemotaxis_8h.html',1,'']]],
   ['classix_5f1_2e0_2eh',['classix_1.0.h',['../classix__1_80_8h.html',1,'']]],
   ['commands_2ec',['commands.c',['../commands_8c.html',1,'']]],
-  ['commands_2ec',['commands.c',['../firmwares_2rotorcraft_2commands_8c.html',1,'']]],
-  ['commands_2eh',['commands.h',['../firmwares_2rotorcraft_2commands_8h.html',1,'']]],
   ['commands_2eh',['commands.h',['../commands_8h.html',1,'']]],
   ['common_5fflight_5fplan_2ec',['common_flight_plan.c',['../common__flight__plan_8c.html',1,'']]],
   ['common_5fflight_5fplan_2eh',['common_flight_plan.h',['../common__flight__plan_8h.html',1,'']]],

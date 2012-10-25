@@ -1,5 +1,8 @@
 var lisa__m__1_80_8h =
 [
+    [ "ActuatorDefaultSet", "lisa__m__1_80_8h.html#a3fc5f96f074d833b909fd75c92b7d2d0", null ],
+    [ "ActuatorsDefaultCommit", "lisa__m__1_80_8h.html#a0ceadf6a913477832e04b0cb7cd17210", null ],
+    [ "ActuatorsDefaultInit", "lisa__m__1_80_8h.html#ab68f28871d18c17e7e70ae63277d37c2", null ],
     [ "ADC_1", "lisa__m__1_80_8h.html#a3d767e16f12a6ee542079f3c9677192c", null ],
     [ "ADC_2", "lisa__m__1_80_8h.html#a01ac9d2f00660408bcc8c809020904f9", null ],
     [ "ADC_3", "lisa__m__1_80_8h.html#a474279f28350114950d862951d72de66", null ],
@@ -11,6 +14,7 @@ var lisa__m__1_80_8h =
     [ "BOARD_ADC_CHANNEL_4", "lisa__m__1_80_8h.html#a22e9ee18df47febcc0511bbe4dd739f4", null ],
     [ "BOARD_HAS_BARO", "lisa__m__1_80_8h.html#af8df7cce5dd52da8571b6774d51bda77", null ],
     [ "BOARD_LISA_M", "lisa__m__1_80_8h.html#a7eeaab0a07ca1795ca1835de3438d88c", null ],
+    [ "DEFAULT_ACTUATORS", "lisa__m__1_80_8h.html#aa7699f41fbe105c8f5061cc48a5f6307", null ],
     [ "DefaultVoltageOfAdc", "lisa__m__1_80_8h.html#a94fa241ceca04635f282e09bdd829f5f", null ],
     [ "EXT_CLK", "lisa__m__1_80_8h.html#a91a5eb3f03c2f212cd15277ea67d65a2", null ],
     [ "IMU_ACC_DRDY_GPIO", "lisa__m__1_80_8h.html#adb2a88589926c012c6b98bf23cbe651d", null ],

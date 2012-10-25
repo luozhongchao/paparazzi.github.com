@@ -11,7 +11,6 @@ var searchData=
   ['spistream_5fstate_5ft',['spistream_state_t',['../structspistream__state__t.html',1,'']]],
   ['spistream_5fuart_5fmsg',['spistream_uart_msg',['../structspistream__uart__msg.html',1,'']]],
   ['state',['State',['../structState.html',1,'']]],
-  ['supervision',['Supervision',['../structSupervision.html',1,'']]],
   ['svinfo',['SVinfo',['../structSVinfo.html',1,'']]],
   ['sys_5ftime',['sys_time',['../structsys__time.html',1,'']]],
   ['sys_5ftime_5ftimer',['sys_time_timer',['../structsys__time__timer.html',1,'']]],

@@ -58,8 +58,6 @@ var searchData=
   ['navcopywaypoint',['NavCopyWaypoint',['../navigation_8h.html#ad1fdef45d106c8299210ed0b252c049c',1,'navigation.h']]],
   ['navcoursecloseto',['NavCourseCloseTo',['../navigation_8h.html#a68ab3f04c3fcd85380c950db512fd97e',1,'NavCourseCloseTo():&#160;navigation.h'],['../nav_8h.html#a68ab3f04c3fcd85380c950db512fd97e',1,'NavCourseCloseTo():&#160;nav.h']]],
   ['navdetectground',['NavDetectGround',['../navigation_8h.html#adbe74c0d89a5354a1825c9ce2c0d9834',1,'navigation.h']]],
-  ['navdropclose',['NavDropClose',['../booz__drop_8h.html#ac90eb21740cf70fbb1d5493e8810d6dc',1,'booz_drop.h']]],
-  ['navdropnow',['NavDropNow',['../booz__drop_8h.html#afd0d25b67f358a88109a64e54c599b3b',1,'booz_drop.h']]],
   ['navfollow',['NavFollow',['../nav_8c.html#a8691e5b760e30c9091d5a981d3663441',1,'nav.c']]],
   ['navglide',['NavGlide',['../navigation_8h.html#aa7303abf34661cdf531cce2f4fddfe86',1,'NavGlide():&#160;navigation.h'],['../nav_8c.html#aa7303abf34661cdf531cce2f4fddfe86',1,'NavGlide():&#160;nav.c']]],
   ['navgotowaypoint',['NavGotoWaypoint',['../navigation_8h.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c',1,'NavGotoWaypoint():&#160;navigation.h'],['../nav_8h.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c',1,'NavGotoWaypoint():&#160;nav.h']]],

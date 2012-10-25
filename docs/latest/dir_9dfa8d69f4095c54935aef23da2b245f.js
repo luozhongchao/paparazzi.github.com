@@ -13,7 +13,6 @@ var dir_9dfa8d69f4095c54935aef23da2b245f =
     [ "deploy_sonar_buoy", "dir_af20b8732e9130792d3e236a1e590695.html", null ],
     [ "digital_cam", "dir_2fd8561059e119bd45b0a0ad64d7c791.html", null ],
     [ "display", "dir_22f738250d5f77487538bccf3099c686.html", null ],
-    [ "drop", "dir_1ccf4fc1af5822dc1fe1e9ed2d71e229.html", null ],
     [ "enose", "dir_7aaff6717411fe507d0b4ee2605c1ad4.html", null ],
     [ "geo_mag", "dir_f97da43a68f5f5424c1fd7d51caca2f4.html", null ],
     [ "gps", "dir_239fe99edf55334633dbf3b70b1009ab.html", null ],

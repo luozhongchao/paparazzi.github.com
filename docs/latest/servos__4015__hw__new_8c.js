@@ -11,7 +11,7 @@ var servos__4015__hw__new_8c =
     [ "PWMPCR_ENA_SERV0", "servos__4015__hw__new_8c.html#a52de9fb2d666b57ca289808aade994b5", null ],
     [ "PWMPCR_ENA_SERV1", "servos__4015__hw__new_8c.html#ace1caae4db674c7a52fd9ad097839f3c", null ],
     [ "SERVO_REFRESH_TICS", "servos__4015__hw__new_8c.html#a9687b33a6de1a893fe628126b21b5506", null ],
-    [ "actuators_init", "servos__4015__hw__new_8c.html#a7ba1bde30e3a87694e878b244de10c47", null ],
+    [ "actuators_4015_init", "servos__4015__hw__new_8c.html#a054224a43b3db62988b5d8f7cb514d11", null ],
     [ "PWM_ISR", "servos__4015__hw__new_8c.html#acc0989397cc1f16c3baa379ad4395382", null ],
     [ "servos_delay", "servos__4015__hw__new_8c.html#ab97f8d95b7ca4a7363e3e62be967e421", null ],
     [ "servos_idx", "servos__4015__hw__new_8c.html#a9a5aa8c5ab796d9829a49fb69b226455", null ],

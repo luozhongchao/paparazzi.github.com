@@ -25,22 +25,13 @@ var main__ap_8c =
     [ "telecommand_task", "main__ap_8c.html#add4d9babf9be4522b8a4a97e1f1e7b84", null ],
     [ "ahrs_timeout_counter", "main__ap_8c.html#ab98ff2e1a9ff28c569fcd467ccc39c8f", null ],
     [ "attitude_tid", "main__ap_8c.html#a0ec3f3fdd96a65f68ac0561fed921520", null ],
-    [ "autopilot_flight_time", "main__ap_8c.html#a643a1732fc06296050835ab61968d726", null ],
     [ "current", "main__ap_8c.html#ae6a404c4d3d4da15402e4a8629e7e272", null ],
-    [ "energy", "main__ap_8c.html#a2d107b3b2dcebab8a10c9d39894f6b2a", null ],
-    [ "gps_lost", "main__ap_8c.html#ad5b2dcab0bbd14934aac4f5e0eea8b18", null ],
-    [ "kill_throttle", "main__ap_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c", null ],
-    [ "lateral_mode", "main__ap_8c.html#ab559c6867326333905f9133432ff9315", null ],
-    [ "launch", "main__ap_8c.html#af32f81f02a3187c12c08e11caf354abd", null ],
     [ "mcu1_ppm_cpt", "main__ap_8c.html#a53d30b2d883a7ba04909609a620eca9d", null ],
     [ "mcu1_status", "main__ap_8c.html#a4b46ee9ade673c44f54f4ad3497c16b9", null ],
     [ "modules_tid", "main__ap_8c.html#ad22206414845137916e0ed83054bdfc8", null ],
     [ "monitor_tid", "main__ap_8c.html#a1cefad60c98eeae5ce7826c1efd8f700", null ],
     [ "navigation_tid", "main__ap_8c.html#afbb849341601baaa13492537a91c1375", null ],
-    [ "power_switch", "main__ap_8c.html#adda0cb88d172048dd19b50ad66e7881e", null ],
-    [ "pprz_mode", "main__ap_8c.html#aebf57c26248ee8c66d3eacdbd6a155cd", null ],
     [ "sensors_tid", "main__ap_8c.html#a85f2bbcc30b52c5f658d292da699729b", null ],
     [ "telemetry_tid", "main__ap_8c.html#aaaaf875f33da06aeb2b503fde86862c1", null ],
-    [ "version", "main__ap_8c.html#ac2c943a33c6a4bd3bdba4e10213cc140", null ],
-    [ "vsupply", "main__ap_8c.html#a32da1e6e29634773a0e491df93f92414", null ]
+    [ "version", "main__ap_8c.html#ac2c943a33c6a4bd3bdba4e10213cc140", null ]
 ];

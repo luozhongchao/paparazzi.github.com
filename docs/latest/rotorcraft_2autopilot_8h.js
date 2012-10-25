@@ -20,6 +20,7 @@ var rotorcraft_2autopilot_8h =
     [ "MODE_AUTO1", "rotorcraft_2autopilot_8h.html#a34a5f79db5ce56dc453dc23e9cbcb49e", null ],
     [ "MODE_AUTO2", "rotorcraft_2autopilot_8h.html#a08f66aa60f30903c4240dac601ab555a", null ],
     [ "MODE_MANUAL", "rotorcraft_2autopilot_8h.html#ab3d62edb632309d9a423661747cdb73b", null ],
+    [ "RotorcraftCommandsTest", "rotorcraft_2autopilot_8h.html#a97bc649e036bc9192e841e5dafd12498", null ],
     [ "THRESHOLD_1_PPRZ", "rotorcraft_2autopilot_8h.html#a29020e550d0d136a0212ba92940fd672", null ],
     [ "THRESHOLD_2_PPRZ", "rotorcraft_2autopilot_8h.html#a042859caaa6cc4c56b7918a0715b674d", null ],
     [ "THRESHOLD_GROUND_DETECT", "rotorcraft_2autopilot_8h.html#a691189e2b0e9182bc6a3fe84b6e0a267", null ],

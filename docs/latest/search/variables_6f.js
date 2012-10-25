@@ -15,8 +15,8 @@ var searchData=
   ['oval_5fstatus',['oval_status',['../nav_8c.html#a80cf41be180b9c15f127bcbee731fb9b',1,'nav.c']]],
   ['over_5funder_5fcnt',['over_under_cnt',['../structi2c__errors.html#a872cdd33256c33ad0a4ec29b5ff2ac85',1,'i2c_errors']]],
   ['overo_5flink',['overo_link',['../lisa__overo__link_8c.html#a112a0d05fef7aba1a3b417fa75f7e3e2',1,'overo_link():&#160;lisa_overo_link.c'],['../lisa__overo__link_8h.html#a112a0d05fef7aba1a3b417fa75f7e3e2',1,'overo_link():&#160;lisa_overo_link.c']]],
-  ['override_5fenabled',['override_enabled',['../structSupervision.html#ad8d5b38cf95e634006197a6456ee0b58',1,'Supervision']]],
-  ['override_5fvalue',['override_value',['../structSupervision.html#a0af4098fa91090d6a3fc9b4fcd81757f',1,'Supervision']]],
+  ['override_5fenabled',['override_enabled',['../structMotorMixing.html#a18d6ee455128950bc3404cd02792d2cc',1,'MotorMixing']]],
+  ['override_5fvalue',['override_value',['../structMotorMixing.html#a01243d97bfe086020377a3da7b2349c5',1,'MotorMixing']]],
   ['overrun',['Overrun',['../structDownlinkTransport.html#a9061bdece09e78b62a62cc8a3510d4e6',1,'DownlinkTransport']]],
   ['ovrn',['ovrn',['../structtransport.html#a8d98c3deb9e8d4a405eecc6140b22a81',1,'transport']]]
 ];

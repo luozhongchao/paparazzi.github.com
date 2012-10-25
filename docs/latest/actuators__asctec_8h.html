@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: sw/airborne/firmwares/rotorcraft/actuators/actuators_asctec.h File Reference</title>
+<title>Paparazzi UAS: sw/airborne/subsystems/actuators/actuators_asctec.h File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-136-g3cf6754</span>
+   &#160;<span id="projectnumber">v4.9_devel-170-g5b8e4dd</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -103,6 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Defines</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">actuators_asctec.h File Reference</div>  </div>
@@ -112,23 +113,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Actuators driver for Asctec motor controllers.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="i2c_8h_source.html">mcu_periph/i2c.h</a>&quot;</code><br/>
+<code>#include &quot;generated/airframe.h&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for actuators_asctec.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="actuators__asctec_8h__incl.png" border="0" usemap="#sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__asctec_8h" alt=""/></div>
-<map name="sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__asctec_8h" id="sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__asctec_8h">
-<area shape="rect" id="node3" href="i2c_8h.html" title="mcu_periph/i2c.h" alt="" coords="148,83,279,112"/></map>
+<div class="center"><img src="actuators__asctec_8h__incl.png" border="0" usemap="#sw_2airborne_2subsystems_2actuators_2actuators__asctec_8h" alt=""/></div>
+<map name="sw_2airborne_2subsystems_2actuators_2actuators__asctec_8h" id="sw_2airborne_2subsystems_2actuators_2actuators__asctec_8h">
+<area shape="rect" id="node3" href="i2c_8h.html" title="mcu_periph/i2c.h" alt="" coords="100,83,231,112"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="actuators__asctec_8h__dep__incl.png" border="0" usemap="#sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__asctec_8hdep" alt=""/></div>
-<map name="sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__asctec_8hdep" id="sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__asctec_8hdep">
-<area shape="rect" id="node3" href="actuators__asctec_8c.html" title="Actuators driver for Asctec motor controllers." alt="" coords="5,83,419,112"/><area shape="rect" id="node5" href="lisa__test__actuators__mkk_8c.html" title="sw/airborne/lisa/test/lisa_test_actuators_mkk.c" alt="" coords="443,83,760,112"/></map>
+<div class="center"><img src="actuators__asctec_8h__dep__incl.png" border="0" usemap="#sw_2airborne_2subsystems_2actuators_2actuators__asctec_8hdep" alt=""/></div>
+<map name="sw_2airborne_2subsystems_2actuators_2actuators__asctec_8hdep" id="sw_2airborne_2subsystems_2actuators_2actuators__asctec_8hdep">
+<area shape="rect" id="node3" href="lisa__test__actuators__mkk_8c.html" title="sw/airborne/lisa/test/lisa_test_actuators_mkk.c" alt="" coords="5,83,323,112"/><area shape="rect" id="node5" href="actuators__asctec_8c.html" title="Actuators driver for Asctec motor controllers." alt="" coords="347,83,712,112"/></map>
 </div>
 </div>
 <p><a href="actuators__asctec_8h_source.html">Go to the source code of this file.</a></p>
@@ -141,27 +143,34 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#af02f740489dfbd0383c93800adf3ee43">actuators_asctec_SetCommand</a>(_v)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#ab7bd5cc0de58bd8301c3e334262371cd">actuators_asctec_SetNewAddr</a>(_v)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#aeb1af6ecdd88f08c58a53207a3e7b657">actuators_asctec_SetCurAddr</a>(_v)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#a51ed5541f172177fb696ad4c54b4a0fd">ActuatorAsctecSet</a>(_i, _v)&#160;&#160;&#160;{ <a class="el" href="baro__MS5534A_8c.html#acc83a800cce22059364f96ae20c0e197">actuators_asctec.cmds</a>[_i] = _v; }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#a3505965ab607898b508887fd73d2356e">ActuatorsAsctecInit</a>()&#160;&#160;&#160;<a class="el" href="actuators__asctec_8h.html#a1ace4a1a7e525f56051442a39ef51873">actuators_asctec_init</a>()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#a22f9e74ba355be337eda7df43fdc012d">ActuatorsAsctecCommit</a>()&#160;&#160;&#160;<a class="el" href="actuators__asctec_8h.html#a5201bd845c92dc5549ffa0c10f098d70">actuators_asctec_set</a>(<a class="el" href="rotorcraft_2autopilot_8h.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>)</td></tr>
 <tr><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09">actuators_astec_cmd</a> { <a class="el" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>, 
-<a class="el" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09ab2f0cd22b1963becef8b91d29d567fe8">TEST</a>, 
-<a class="el" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09a906b7cc20b42994dda4da492767c1de9">REVERSE</a>, 
-<a class="el" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09a94edc8e83fd7d0718449d0caeb168ad9">SET_ADDR</a>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#a6ab1b9217ee457a8e4352cf0b28af79d">actuators_asctec_cmd</a> { <a class="el" href="actuators__asctec_8h.html#a6ab1b9217ee457a8e4352cf0b28af79dac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>, 
+<a class="el" href="actuators__asctec_8h.html#a6ab1b9217ee457a8e4352cf0b28af79dab2f0cd22b1963becef8b91d29d567fe8">TEST</a>, 
+<a class="el" href="actuators__asctec_8h.html#a6ab1b9217ee457a8e4352cf0b28af79da906b7cc20b42994dda4da492767c1de9">REVERSE</a>, 
+<a class="el" href="actuators__asctec_8h.html#a6ab1b9217ee457a8e4352cf0b28af79da94edc8e83fd7d0718449d0caeb168ad9">SET_ADDR</a>
  }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4ea">actuators_astec_addr</a> { <a class="el" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaa76bd5ec6ea9d8a1b582d8d5e43102a02">FRONT</a>, 
-<a class="el" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaac921ff2cfc571c1d19b0485d7f6926ee">BACK</a>, 
-<a class="el" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaadb45120aafd37a973140edee24708065">LEFT</a>, 
-<a class="el" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4eaaec8379af7490bb9eaaf579cf17876f38">RIGHT</a>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#ad2db450a6c9862a4f81ba35a4d5f4f20">actuators_asctec_addr</a> { <a class="el" href="actuators__asctec_8h.html#ad2db450a6c9862a4f81ba35a4d5f4f20a76bd5ec6ea9d8a1b582d8d5e43102a02">FRONT</a>, 
+<a class="el" href="actuators__asctec_8h.html#ad2db450a6c9862a4f81ba35a4d5f4f20ac921ff2cfc571c1d19b0485d7f6926ee">BACK</a>, 
+<a class="el" href="actuators__asctec_8h.html#ad2db450a6c9862a4f81ba35a4d5f4f20adb45120aafd37a973140edee24708065">LEFT</a>, 
+<a class="el" href="actuators__asctec_8h.html#ad2db450a6c9862a4f81ba35a4d5f4f20aec8379af7490bb9eaaf579cf17876f38">RIGHT</a>
  }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#a3194e0388b61ab95b70fd62252277355">actuators_astec_cmds</a> { <br/>
-&#160;&#160;<a class="el" href="actuators__asctec_8h.html#a3194e0388b61ab95b70fd62252277355aa4ed247aa19723caf868d2b2dd5cf4ff">PITCH</a>, 
-<a class="el" href="actuators__asctec_8h.html#a3194e0388b61ab95b70fd62252277355a2eeb9fef8a6a516fa6437a44a6efbd52">ROLL</a>, 
-<a class="el" href="actuators__asctec_8h.html#a3194e0388b61ab95b70fd62252277355a60ae774ecd1cf97a0e91f76970d64491">YAW</a>, 
-<a class="el" href="actuators__asctec_8h.html#a3194e0388b61ab95b70fd62252277355adfdf258d59ed8c122e1d14550f0d5ccb">THRUST</a>, 
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1d">actuators_asctec_cmds</a> { <br/>
+&#160;&#160;<a class="el" href="actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1daa4ed247aa19723caf868d2b2dd5cf4ff">PITCH</a>, 
+<a class="el" href="actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1da2eeb9fef8a6a516fa6437a44a6efbd52">ROLL</a>, 
+<a class="el" href="actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1da60ae774ecd1cf97a0e91f76970d64491">YAW</a>, 
+<a class="el" href="actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1dadfdf258d59ed8c122e1d14550f0d5ccb">THRUST</a>, 
 <br/>
-&#160;&#160;<a class="el" href="actuators__asctec_8h.html#a3194e0388b61ab95b70fd62252277355a6d952c26335c49b12fbee2de9d3608a7">CMD_NB</a>
+&#160;&#160;<a class="el" href="actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1da6d952c26335c49b12fbee2de9d3608a7">CMD_NB</a>
 <br/>
  }</td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#a1ace4a1a7e525f56051442a39ef51873">actuators_asctec_init</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#a5201bd845c92dc5549ffa0c10f098d70">actuators_asctec_set</a> (bool_t motors_on)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structActuatorsAsctec.html">ActuatorsAsctec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__asctec_8h.html#abee9d7c8002e2186b52287e15e09606c">actuators_asctec</a></td></tr>
@@ -171,6 +180,35 @@ Variables</h2></td></tr>
 
 <p>Definition in file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
 </div><hr/><h2>Define Documentation</h2>
+<a class="anchor" id="a51ed5541f172177fb696ad4c54b4a0fd"></a><!-- doxytag: member="actuators_asctec.h::ActuatorAsctecSet" ref="a51ed5541f172177fb696ad4c54b4a0fd" args="(_i, _v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="actuators__asctec_8h.html#a51ed5541f172177fb696ad4c54b4a0fd">ActuatorAsctecSet</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_i, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_v&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ <a class="el" href="baro__MS5534A_8c.html#acc83a800cce22059364f96ae20c0e197">actuators_asctec.cmds</a>[_i] = _v; }</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00077">77</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="af02f740489dfbd0383c93800adf3ee43"></a><!-- doxytag: member="actuators_asctec.h::actuators_asctec_SetCommand" ref="af02f740489dfbd0383c93800adf3ee43" args="(_v)" -->
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +227,7 @@ Variables</h2></td></tr>
     actuators_asctec.cmd = _v;             \
   }
 </pre></div>
-<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00060">60</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00062">62</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
 
 </div>
 </div>
@@ -211,7 +249,7 @@ Variables</h2></td></tr>
     actuators_asctec.cur_addr = _v;        \
   }
 </pre></div>
-<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00068">68</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00070">70</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
 
 </div>
 </div>
@@ -233,91 +271,181 @@ Variables</h2></td></tr>
     actuators_asctec.new_addr = _v;        \
   }
 </pre></div>
-<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00064">64</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00066">66</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a22f9e74ba355be337eda7df43fdc012d"></a><!-- doxytag: member="actuators_asctec.h::ActuatorsAsctecCommit" ref="a22f9e74ba355be337eda7df43fdc012d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="actuators__asctec_8h.html#a22f9e74ba355be337eda7df43fdc012d">ActuatorsAsctecCommit</a></td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="actuators__asctec_8h.html#a5201bd845c92dc5549ffa0c10f098d70">actuators_asctec_set</a>(<a class="el" href="rotorcraft_2autopilot_8h.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00079">79</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3505965ab607898b508887fd73d2356e"></a><!-- doxytag: member="actuators_asctec.h::ActuatorsAsctecInit" ref="a3505965ab607898b508887fd73d2356e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="actuators__asctec_8h.html#a3505965ab607898b508887fd73d2356e">ActuatorsAsctecInit</a></td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="actuators__asctec_8h.html#a1ace4a1a7e525f56051442a39ef51873">actuators_asctec_init</a>()</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00078">78</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="ade953b27121d6b7fd408e6b5b366b4ea"></a><!-- doxytag: member="actuators_asctec.h::actuators_astec_addr" ref="ade953b27121d6b7fd408e6b5b366b4ea" args="" -->
+<a class="anchor" id="ad2db450a6c9862a4f81ba35a4d5f4f20"></a><!-- doxytag: member="actuators_asctec.h::actuators_asctec_addr" ref="ad2db450a6c9862a4f81ba35a4d5f4f20" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="actuators__asctec_8h.html#ade953b27121d6b7fd408e6b5b366b4ea">actuators_astec_addr</a></td>
+          <td class="memname">enum <a class="el" href="actuators__asctec_8h.html#ad2db450a6c9862a4f81ba35a4d5f4f20">actuators_asctec_addr</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ade953b27121d6b7fd408e6b5b366b4eaa76bd5ec6ea9d8a1b582d8d5e43102a02"></a><!-- doxytag: member="FRONT" ref="ade953b27121d6b7fd408e6b5b366b4eaa76bd5ec6ea9d8a1b582d8d5e43102a02" args="" -->FRONT</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ad2db450a6c9862a4f81ba35a4d5f4f20a76bd5ec6ea9d8a1b582d8d5e43102a02"></a><!-- doxytag: member="FRONT" ref="ad2db450a6c9862a4f81ba35a4d5f4f20a76bd5ec6ea9d8a1b582d8d5e43102a02" args="" -->FRONT</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ade953b27121d6b7fd408e6b5b366b4eaac921ff2cfc571c1d19b0485d7f6926ee"></a><!-- doxytag: member="BACK" ref="ade953b27121d6b7fd408e6b5b366b4eaac921ff2cfc571c1d19b0485d7f6926ee" args="" -->BACK</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ad2db450a6c9862a4f81ba35a4d5f4f20ac921ff2cfc571c1d19b0485d7f6926ee"></a><!-- doxytag: member="BACK" ref="ad2db450a6c9862a4f81ba35a4d5f4f20ac921ff2cfc571c1d19b0485d7f6926ee" args="" -->BACK</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ade953b27121d6b7fd408e6b5b366b4eaadb45120aafd37a973140edee24708065"></a><!-- doxytag: member="LEFT" ref="ade953b27121d6b7fd408e6b5b366b4eaadb45120aafd37a973140edee24708065" args="" -->LEFT</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ad2db450a6c9862a4f81ba35a4d5f4f20adb45120aafd37a973140edee24708065"></a><!-- doxytag: member="LEFT" ref="ad2db450a6c9862a4f81ba35a4d5f4f20adb45120aafd37a973140edee24708065" args="" -->LEFT</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ade953b27121d6b7fd408e6b5b366b4eaaec8379af7490bb9eaaf579cf17876f38"></a><!-- doxytag: member="RIGHT" ref="ade953b27121d6b7fd408e6b5b366b4eaaec8379af7490bb9eaaf579cf17876f38" args="" -->RIGHT</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ad2db450a6c9862a4f81ba35a4d5f4f20aec8379af7490bb9eaaf579cf17876f38"></a><!-- doxytag: member="RIGHT" ref="ad2db450a6c9862a4f81ba35a4d5f4f20aec8379af7490bb9eaaf579cf17876f38" args="" -->RIGHT</em>&nbsp;</td><td>
 </td></tr>
 </table>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00036">36</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00038">38</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad74b30e6cf6bb9cfaae5d6b79f8eaa09"></a><!-- doxytag: member="actuators_asctec.h::actuators_astec_cmd" ref="ad74b30e6cf6bb9cfaae5d6b79f8eaa09" args="" -->
+<a class="anchor" id="a6ab1b9217ee457a8e4352cf0b28af79d"></a><!-- doxytag: member="actuators_asctec.h::actuators_asctec_cmd" ref="a6ab1b9217ee457a8e4352cf0b28af79d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="actuators__asctec_8h.html#ad74b30e6cf6bb9cfaae5d6b79f8eaa09">actuators_astec_cmd</a></td>
+          <td class="memname">enum <a class="el" href="actuators__asctec_8h.html#a6ab1b9217ee457a8e4352cf0b28af79d">actuators_asctec_cmd</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ad74b30e6cf6bb9cfaae5d6b79f8eaa09ac157bdf0b85a40d2619cbc8bc1ae5fe2"></a><!-- doxytag: member="NONE" ref="ad74b30e6cf6bb9cfaae5d6b79f8eaa09ac157bdf0b85a40d2619cbc8bc1ae5fe2" args="" -->NONE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a6ab1b9217ee457a8e4352cf0b28af79dac157bdf0b85a40d2619cbc8bc1ae5fe2"></a><!-- doxytag: member="NONE" ref="a6ab1b9217ee457a8e4352cf0b28af79dac157bdf0b85a40d2619cbc8bc1ae5fe2" args="" -->NONE</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ad74b30e6cf6bb9cfaae5d6b79f8eaa09ab2f0cd22b1963becef8b91d29d567fe8"></a><!-- doxytag: member="TEST" ref="ad74b30e6cf6bb9cfaae5d6b79f8eaa09ab2f0cd22b1963becef8b91d29d567fe8" args="" -->TEST</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a6ab1b9217ee457a8e4352cf0b28af79dab2f0cd22b1963becef8b91d29d567fe8"></a><!-- doxytag: member="TEST" ref="a6ab1b9217ee457a8e4352cf0b28af79dab2f0cd22b1963becef8b91d29d567fe8" args="" -->TEST</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ad74b30e6cf6bb9cfaae5d6b79f8eaa09a906b7cc20b42994dda4da492767c1de9"></a><!-- doxytag: member="REVERSE" ref="ad74b30e6cf6bb9cfaae5d6b79f8eaa09a906b7cc20b42994dda4da492767c1de9" args="" -->REVERSE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a6ab1b9217ee457a8e4352cf0b28af79da906b7cc20b42994dda4da492767c1de9"></a><!-- doxytag: member="REVERSE" ref="a6ab1b9217ee457a8e4352cf0b28af79da906b7cc20b42994dda4da492767c1de9" args="" -->REVERSE</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ad74b30e6cf6bb9cfaae5d6b79f8eaa09a94edc8e83fd7d0718449d0caeb168ad9"></a><!-- doxytag: member="SET_ADDR" ref="ad74b30e6cf6bb9cfaae5d6b79f8eaa09a94edc8e83fd7d0718449d0caeb168ad9" args="" -->SET_ADDR</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a6ab1b9217ee457a8e4352cf0b28af79da94edc8e83fd7d0718449d0caeb168ad9"></a><!-- doxytag: member="SET_ADDR" ref="a6ab1b9217ee457a8e4352cf0b28af79da94edc8e83fd7d0718449d0caeb168ad9" args="" -->SET_ADDR</em>&nbsp;</td><td>
 </td></tr>
 </table>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00031">31</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00033">33</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3194e0388b61ab95b70fd62252277355"></a><!-- doxytag: member="actuators_asctec.h::actuators_astec_cmds" ref="a3194e0388b61ab95b70fd62252277355" args="" -->
+<a class="anchor" id="a82d0d12190beb7d9db322455bf6a4d1d"></a><!-- doxytag: member="actuators_asctec.h::actuators_asctec_cmds" ref="a82d0d12190beb7d9db322455bf6a4d1d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="actuators__asctec_8h.html#a3194e0388b61ab95b70fd62252277355">actuators_astec_cmds</a></td>
+          <td class="memname">enum <a class="el" href="actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1d">actuators_asctec_cmds</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="a3194e0388b61ab95b70fd62252277355aa4ed247aa19723caf868d2b2dd5cf4ff"></a><!-- doxytag: member="PITCH" ref="a3194e0388b61ab95b70fd62252277355aa4ed247aa19723caf868d2b2dd5cf4ff" args="" -->PITCH</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a82d0d12190beb7d9db322455bf6a4d1daa4ed247aa19723caf868d2b2dd5cf4ff"></a><!-- doxytag: member="PITCH" ref="a82d0d12190beb7d9db322455bf6a4d1daa4ed247aa19723caf868d2b2dd5cf4ff" args="" -->PITCH</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a3194e0388b61ab95b70fd62252277355a2eeb9fef8a6a516fa6437a44a6efbd52"></a><!-- doxytag: member="ROLL" ref="a3194e0388b61ab95b70fd62252277355a2eeb9fef8a6a516fa6437a44a6efbd52" args="" -->ROLL</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a82d0d12190beb7d9db322455bf6a4d1da2eeb9fef8a6a516fa6437a44a6efbd52"></a><!-- doxytag: member="ROLL" ref="a82d0d12190beb7d9db322455bf6a4d1da2eeb9fef8a6a516fa6437a44a6efbd52" args="" -->ROLL</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a3194e0388b61ab95b70fd62252277355a60ae774ecd1cf97a0e91f76970d64491"></a><!-- doxytag: member="YAW" ref="a3194e0388b61ab95b70fd62252277355a60ae774ecd1cf97a0e91f76970d64491" args="" -->YAW</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a82d0d12190beb7d9db322455bf6a4d1da60ae774ecd1cf97a0e91f76970d64491"></a><!-- doxytag: member="YAW" ref="a82d0d12190beb7d9db322455bf6a4d1da60ae774ecd1cf97a0e91f76970d64491" args="" -->YAW</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a3194e0388b61ab95b70fd62252277355adfdf258d59ed8c122e1d14550f0d5ccb"></a><!-- doxytag: member="THRUST" ref="a3194e0388b61ab95b70fd62252277355adfdf258d59ed8c122e1d14550f0d5ccb" args="" -->THRUST</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a82d0d12190beb7d9db322455bf6a4d1dadfdf258d59ed8c122e1d14550f0d5ccb"></a><!-- doxytag: member="THRUST" ref="a82d0d12190beb7d9db322455bf6a4d1dadfdf258d59ed8c122e1d14550f0d5ccb" args="" -->THRUST</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a3194e0388b61ab95b70fd62252277355a6d952c26335c49b12fbee2de9d3608a7"></a><!-- doxytag: member="CMD_NB" ref="a3194e0388b61ab95b70fd62252277355a6d952c26335c49b12fbee2de9d3608a7" args="" -->CMD_NB</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a82d0d12190beb7d9db322455bf6a4d1da6d952c26335c49b12fbee2de9d3608a7"></a><!-- doxytag: member="CMD_NB" ref="a82d0d12190beb7d9db322455bf6a4d1da6d952c26335c49b12fbee2de9d3608a7" args="" -->CMD_NB</em>&nbsp;</td><td>
 </td></tr>
 </table>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00042">42</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+<p>Definition at line <a class="el" href="actuators__asctec_8h_source.html#l00044">44</a> of file <a class="el" href="actuators__asctec_8h_source.html">actuators_asctec.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a1ace4a1a7e525f56051442a39ef51873"></a><!-- doxytag: member="actuators_asctec.h::actuators_asctec_init" ref="a1ace4a1a7e525f56051442a39ef51873" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="actuators__asctec_8h.html#a1ace4a1a7e525f56051442a39ef51873">actuators_asctec_init</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__asctec_8c_source.html#l00043">43</a> of file <a class="el" href="actuators__asctec_8c_source.html">actuators_asctec.c</a>.</p>
+
+<p>References <a class="el" href="actuators__asctec_8c_source.html#l00038">actuators_asctec</a>, <a class="el" href="actuators__asctec_8c_source.html#l00041">actuators_delay_done</a>, <a class="el" href="actuators__asctec_8c_source.html#l00040">actuators_delay_time</a>, <a class="el" href="actuators__asctec_8h_source.html#l00051">ActuatorsAsctec::cmd</a>, <a class="el" href="actuators__asctec_8h_source.html#l00052">ActuatorsAsctec::cur_addr</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="actuators__asctec_8h_source.html#l00038">FRONT</a>, <a class="el" href="actuators__asctec_8h_source.html#l00055">ActuatorsAsctec::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00017">I2CTransSuccess</a>, <a class="el" href="i2c_8h_source.html#l00009">I2CTransTx</a>, <a class="el" href="i2c_8h_source.html#l00045">i2c_transaction::len_w</a>, <a class="el" href="actuators__asctec_8h_source.html#l00056">ActuatorsAsctec::nb_err</a>, <a class="el" href="actuators__asctec_8h_source.html#l00053">ActuatorsAsctec::new_addr</a>, <a class="el" href="actuators__asctec_8h_source.html#l00033">NONE</a>, <a class="el" href="i2c_8h_source.html#l00043">i2c_transaction::slave_addr</a>, <a class="el" href="i2c_8h_source.html#l00047">i2c_transaction::status</a>, <a class="el" href="lpc21_2mcu__periph_2sys__time__arch_8h_source.html#l00070">SysTimeTimerStart</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, and <a class="el" href="i2c_8h_source.html#l00042">i2c_transaction::type</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5201bd845c92dc5549ffa0c10f098d70"></a><!-- doxytag: member="actuators_asctec.h::actuators_asctec_set" ref="a5201bd845c92dc5549ffa0c10f098d70" args="(bool_t motors_on)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="actuators__asctec_8h.html#a5201bd845c92dc5549ffa0c10f098d70">actuators_asctec_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool_t&#160;</td>
+          <td class="paramname"><em>motors_on</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__asctec_8c_source.html#l00068">68</a> of file <a class="el" href="actuators__asctec_8c_source.html">actuators_asctec.c</a>.</p>
+
+<p>References <a class="el" href="actuators__asctec_8c_source.html#l00038">actuators_asctec</a>, <a class="el" href="actuators__asctec_8c_source.html#l00041">actuators_delay_done</a>, <a class="el" href="actuators__asctec_8c_source.html#l00040">actuators_delay_time</a>, <a class="el" href="actuators__asctec_8c_source.html#l00033">ASCTEC_MAX_CMD</a>, <a class="el" href="actuators__asctec_8c_source.html#l00036">ASCTEC_MAX_THROTTLE</a>, <a class="el" href="actuators__asctec_8c_source.html#l00032">ASCTEC_MIN_CMD</a>, <a class="el" href="actuators__asctec_8c_source.html#l00035">ASCTEC_MIN_THROTTLE</a>, <a class="el" href="i2c_8h_source.html#l00046">i2c_transaction::buf</a>, <a class="el" href="actuators__asctec_8h_source.html#l00051">ActuatorsAsctec::cmd</a>, <a class="el" href="actuators__asctec_8h_source.html#l00054">ActuatorsAsctec::cmds</a>, <a class="el" href="actuators__asctec_8h_source.html#l00052">ActuatorsAsctec::cur_addr</a>, <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00321">i2c_submit()</a>, <a class="el" href="actuators__asctec_8h_source.html#l00055">ActuatorsAsctec::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00019">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00018">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00017">I2CTransSuccess</a>, <a class="el" href="actuators__asctec_8h_source.html#l00056">ActuatorsAsctec::nb_err</a>, <a class="el" href="actuators__asctec_8h_source.html#l00053">ActuatorsAsctec::new_addr</a>, <a class="el" href="actuators__asctec_8h_source.html#l00033">NONE</a>, <a class="el" href="actuators__asctec_8h_source.html#l00044">PITCH</a>, <a class="el" href="actuators__asctec_8h_source.html#l00035">REVERSE</a>, <a class="el" href="actuators__asctec_8h_source.html#l00045">ROLL</a>, <a class="el" href="actuators__asctec_8h_source.html#l00036">SET_ADDR</a>, <a class="el" href="i2c_8h_source.html#l00047">i2c_transaction::status</a>, <a class="el" href="lpc21_2mcu__periph_2sys__time__arch_8h_source.html#l00071">SysTimeTimer</a>, <a class="el" href="actuators__asctec_8h_source.html#l00034">TEST</a>, <a class="el" href="actuators__asctec_8h_source.html#l00047">THRUST</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="sys__time_8h_source.html#l00124">USEC_OF_SEC</a>, and <a class="el" href="actuators__asctec_8h_source.html#l00046">YAW</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="actuators__asctec_8h_a5201bd845c92dc5549ffa0c10f098d70_cgraph.png" border="0" usemap="#actuators__asctec_8h_a5201bd845c92dc5549ffa0c10f098d70_cgraph" alt=""/></div>
+<map name="actuators__asctec_8h_a5201bd845c92dc5549ffa0c10f098d70_cgraph" id="actuators__asctec_8h_a5201bd845c92dc5549ffa0c10f098d70_cgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="213,5,304,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -333,9 +461,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="actuators__asctec_8c_source.html#l00043">43</a> of file <a class="el" href="actuators__asctec_8c_source.html">actuators_asctec.c</a>.</p>
+<p>Definition at line <a class="el" href="actuators__asctec_8c_source.html#l00038">38</a> of file <a class="el" href="actuators__asctec_8c_source.html">actuators_asctec.c</a>.</p>
 
-<p>Referenced by <a class="el" href="actuators__asctec_8c_source.html#l00048">actuators_init()</a>, <a class="el" href="actuators__asctec_8c_source.html#l00077">actuators_set()</a>, and <a class="el" href="lisa__test__actuators__mkk_8c_source.html#l00060">main_periodic_task()</a>.</p>
+<p>Referenced by <a class="el" href="actuators__asctec_8c_source.html#l00043">actuators_asctec_init()</a>, <a class="el" href="actuators__asctec_8c_source.html#l00068">actuators_asctec_set()</a>, and <a class="el" href="lisa__test__actuators__mkk_8c_source.html#l00060">main_periodic_task()</a>.</p>
 
 </div>
 </div>
@@ -359,7 +487,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="actuators__asctec_8h.html">actuators_asctec.h</a>      </li>
 
-    <li class="footer">Generated on Thu Oct 18 2012 04:00:10 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Oct 25 2012 04:00:15 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -1,5 +1,7 @@
 var energy__ctrl_8c =
 [
+    [ "AIRSPEED_SETPOINT_SLEW", "energy__ctrl_8c.html#ab4065ae5c48f475e71a58912ef369529", null ],
+    [ "STALL_AIRSPEED", "energy__ctrl_8c.html#aa56870347fa24cdb4c6356c21dfa3111", null ],
     [ "V_CTL_THROTTLE_SLEW", "energy__ctrl_8c.html#abce76ecdbe377a7dee4611131b720a66", null ],
     [ "ac_char_average", "energy__ctrl_8c.html#a6ed33fea47e2678fee588f2c94b40a77", null ],
     [ "ac_char_update", "energy__ctrl_8c.html#a1fca0891379c02432d10e73daef730d3", null ],
@@ -26,7 +28,7 @@ var energy__ctrl_8c =
     [ "v_ctl_altitude_setpoint", "energy__ctrl_8c.html#a8ca3adfa488b360ca07396ef54c199f3", null ],
     [ "v_ctl_auto_airspeed_controlled", "energy__ctrl_8c.html#a41fdcf4ec5465153f878ae82130eddf7", null ],
     [ "v_ctl_auto_airspeed_setpoint", "energy__ctrl_8c.html#ad4e989e42aa23948f14c82731b0e12af", null ],
-    [ "v_ctl_auto_groundspeed_setpoint", "energy__ctrl_8c.html#af20f673ea44900420471aa1349b3ad6b", null ],
+    [ "v_ctl_auto_airspeed_setpoint_slew", "energy__ctrl_8c.html#ab11f9dd68ecf0f3f476c9f92fe9a5cf8", null ],
     [ "v_ctl_auto_pitch_of_airspeed_dgain", "energy__ctrl_8c.html#a6c37af0b620267b3b6f6e0807f67352c", null ],
     [ "v_ctl_auto_pitch_of_airspeed_igain", "energy__ctrl_8c.html#a1008ba6babcf9bde8ecab1d13ba5ce65", null ],
     [ "v_ctl_auto_pitch_of_airspeed_pgain", "energy__ctrl_8c.html#adeb7dc89a42be2b72adbbda095ee308a", null ],

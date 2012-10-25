@@ -24,6 +24,7 @@ var fixedwing_2autopilot_8h =
     [ "THRESHOLD2", "fixedwing_2autopilot_8h.html#a12ff5dfa8cfe1cbe08d1289b3e8da55c", null ],
     [ "THRESHOLD_MANUAL_PPRZ", "fixedwing_2autopilot_8h.html#ac68ed9030b448307d20a265af6f102cf", null ],
     [ "THROTTLE_THRESHOLD_TAKEOFF", "fixedwing_2autopilot_8h.html#a1c2e8ec07daf2aa0b8e54a832ea70139", null ],
+    [ "autopilot_init", "fixedwing_2autopilot_8h.html#a9d3557653abfc3d4c428724b249f6d5e", null ],
     [ "autopilot_flight_time", "fixedwing_2autopilot_8h.html#a643a1732fc06296050835ab61968d726", null ],
     [ "energy", "fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a", null ],
     [ "gps_lost", "fixedwing_2autopilot_8h.html#ad5b2dcab0bbd14934aac4f5e0eea8b18", null ],

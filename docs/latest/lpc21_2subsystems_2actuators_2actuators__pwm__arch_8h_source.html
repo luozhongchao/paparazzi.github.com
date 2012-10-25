@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-136-g3cf6754</span>
+   &#160;<span id="projectnumber">v4.9_devel-170-g5b8e4dd</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -103,89 +103,123 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">actuators_pwm_arch.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef ACTUATORS_PWM_ARCH_H</span>
-<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define ACTUATORS_PWM_ARCH_H</span>
-<a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="LPC21xx_8h.html">LPC21xx.h</a>&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
-<a name="l00006"></a>00006 
-<a name="l00007"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a3f3dc2facc39f9d40f3fae4b4c9f3d93">00007</a> <span class="preprocessor">#define SERVOS_TICS_OF_USEC(s) CPU_TICKS_OF_USEC(s)</span>
-<a name="l00008"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a4b3ddbb108e57195911bc60ea22ff123">00008</a> <span class="preprocessor"></span><span class="preprocessor">#define ChopServo(x,a,b) Chop(x, a, b)</span>
-<a name="l00009"></a>00009 <span class="preprocessor"></span>
-<a name="l00010"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#adaea37c90f378b73f03050c0740a9e25">00010</a> <span class="preprocessor">#define SERVO_REG_0 PWMMR5</span>
-<a name="l00011"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a233f2c6524de7d4f4dc62daa17c31099">00011</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_1 PWMMR3</span>
-<a name="l00012"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#af66d33a7ec197c3c1712a85b7aec9bc5">00012</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_2 PWMMR1</span>
-<a name="l00013"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#abecec64bb8ad997757d2059670b43468">00013</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_3 PWMMR6</span>
-<a name="l00014"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a0b9a21e50da5b51c7d11c6776d75d220">00014</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_4 PWMMR4</span>
-<a name="l00015"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a159605dca598db16b4454e6b145c80d8">00015</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_5 PWMMR2</span>
-<a name="l00016"></a>00016 <span class="preprocessor"></span>
-<a name="l00017"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aa1e86fef0a1552f03b3151aba31fffdb">00017</a> <span class="preprocessor">#define COMMAND_(i) SERVO_REG_ ## i</span>
-<a name="l00018"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a49853fbbf7f4c5d50207763da45af5ad">00018</a> <span class="preprocessor"></span><span class="preprocessor">#define Actuator(i) COMMAND_(i)</span>
-<a name="l00019"></a>00019 <span class="preprocessor"></span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="comment">/*</span>
-<a name="l00022"></a>00022 <span class="comment">   wiring on classix PWM connector</span>
-<a name="l00023"></a>00023 <span class="comment">connector   LPC   shared         port</span>
-<a name="l00024"></a>00024 <span class="comment">PWM1        PWM5  AD1_6  CAP1_3  P0.21</span>
-<a name="l00025"></a>00025 <span class="comment">PWM2        PWM3  RXD0   EINT0   P0.1</span>
-<a name="l00026"></a>00026 <span class="comment">PWM3        PWM1  TXD0           P0.0</span>
-<a name="l00027"></a>00027 <span class="comment">PWM4        PWM6  RXD1   EINT3   P0.9</span>
-<a name="l00028"></a>00028 <span class="comment">PWM5        PWM4  TXD1   AD1_1   P0.8</span>
-<a name="l00029"></a>00029 <span class="comment">PWM6        PWM2  SSEL0  EINT2   P0.7</span>
-<a name="l00030"></a>00030 <span class="comment"></span>
-<a name="l00031"></a>00031 <span class="comment">*/</span>
-<a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aea414212045d6f244450e028498e1609">00033</a> <span class="preprocessor">#define PWM_PINSEL_MASK_VAL 3</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span>
-<a name="l00035"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a148e7481e378b5f5273c05e37c73edd8">00035</a> <span class="preprocessor">#define PWM_SERVO_0_PINSEL PINSEL1</span>
-<a name="l00036"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ac8728c0bd1ad658478914885e1d379bf">00036</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_0_PINSEL_VAL 1</span>
-<a name="l00037"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aca6d4de4f4ea27a165ee730b30f7375f">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_0_PINSEL_BIT 10</span>
-<a name="l00038"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a7f07ce9e99e8fd34fb83ab777d2402fc">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_0_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_0_PINSEL_BIT)</span>
-<a name="l00039"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a6b6e7f5caefe0d1525478c6c108d80f1">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_0_ENA PWMPCR_ENA5</span>
-<a name="l00040"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a4e9e77e5b9362d8d46d2bc36b5b61b2d">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_0_LATCH PWMLER_LATCH5</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span>
-<a name="l00042"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aaddc5c286427894cdf60c93937d6b368">00042</a> <span class="preprocessor">#define PWM_SERVO_1_PINSEL PINSEL0</span>
-<a name="l00043"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a40812924f670a55b88faf41a491967c8">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_PINSEL_VAL 2</span>
-<a name="l00044"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a9e7854d8bb49f7aa2c8fc5e83df178f9">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_PINSEL_BIT 2</span>
-<a name="l00045"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a4558906224321323e984f23fad3a638f">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_1_PINSEL_BIT)</span>
-<a name="l00046"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a8c4049c5550eea58312ee8c4f80d7701">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_ENA PWMPCR_ENA3</span>
-<a name="l00047"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a1d803aa0761fbc41d4c9659d88b24664">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_LATCH PWMLER_LATCH3</span>
-<a name="l00048"></a>00048 <span class="preprocessor"></span>
-<a name="l00049"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ade4c1f031e0fba6b387114ff01c90098">00049</a> <span class="preprocessor">#define PWM_SERVO_2_PINSEL PINSEL0</span>
-<a name="l00050"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a33cecc1d8d67210009478ca9beaca44a">00050</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_PINSEL_VAL 2</span>
-<a name="l00051"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a2c03a8a2378ac619ddce95275df4c406">00051</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_PINSEL_BIT 0</span>
-<a name="l00052"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a52a9f4a8669b6708e4b31237fdcb6c6d">00052</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_2_PINSEL_BIT)</span>
-<a name="l00053"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a44b8e8d144b15a6a57b4c471d20045a6">00053</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_ENA PWMPCR_ENA1</span>
-<a name="l00054"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a837a1ce8db146b18191c4a521766b969">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_LATCH PWMLER_LATCH1</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span>
-<a name="l00056"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a369226bb9659c80bc6ca18e03487b217">00056</a> <span class="preprocessor">#define PWM_SERVO_3_PINSEL PINSEL0</span>
-<a name="l00057"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ae2f8e09800b443870104eaa5efb6af47">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_PINSEL_VAL 2</span>
-<a name="l00058"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ab64eb646b1d1b1f40910d72a4d550a72">00058</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_PINSEL_BIT 18</span>
-<a name="l00059"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ae21b43e5ed88958344f5d3dead34d485">00059</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_3_PINSEL_BIT)</span>
-<a name="l00060"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a927d218c7c235f2cc60b371cf52c9645">00060</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_ENA PWMPCR_ENA6</span>
-<a name="l00061"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aea5348650db13a1920ba248e53a880a8">00061</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_LATCH PWMLER_LATCH6</span>
+<a href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (C) 2010 The Paparazzi Team</span>
+<a name="l00003"></a>00003 <span class="comment"> *</span>
+<a name="l00004"></a>00004 <span class="comment"> * This file is part of Paparazzi.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> * Paparazzi is free software; you can redistribute it and/or modify</span>
+<a name="l00007"></a>00007 <span class="comment"> * it under the terms of the GNU General Public License as published by</span>
+<a name="l00008"></a>00008 <span class="comment"> * the Free Software Foundation; either version 2, or (at your option)</span>
+<a name="l00009"></a>00009 <span class="comment"> * any later version.</span>
+<a name="l00010"></a>00010 <span class="comment"> *</span>
+<a name="l00011"></a>00011 <span class="comment"> * Paparazzi is distributed in the hope that it will be useful,</span>
+<a name="l00012"></a>00012 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00013"></a>00013 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00014"></a>00014 <span class="comment"> * GNU General Public License for more details.</span>
+<a name="l00015"></a>00015 <span class="comment"> *</span>
+<a name="l00016"></a>00016 <span class="comment"> * You should have received a copy of the GNU General Public License</span>
+<a name="l00017"></a>00017 <span class="comment"> * along with Paparazzi; see the file COPYING.  If not, write to</span>
+<a name="l00018"></a>00018 <span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span>
+<a name="l00019"></a>00019 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
+<a name="l00020"></a>00020 <span class="comment"> */</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#ifndef ACTUATORS_PWM_ARCH_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define ACTUATORS_PWM_ARCH_H</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="LPC21xx_8h.html">LPC21xx.h</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="comment">/*</span>
+<a name="l00030"></a>00030 <span class="comment">   wiring on classix PWM connector</span>
+<a name="l00031"></a>00031 <span class="comment">connector   LPC   shared         port</span>
+<a name="l00032"></a>00032 <span class="comment">PWM1        PWM5  AD1_6  CAP1_3  P0.21</span>
+<a name="l00033"></a>00033 <span class="comment">PWM2        PWM3  RXD0   EINT0   P0.1</span>
+<a name="l00034"></a>00034 <span class="comment">PWM3        PWM1  TXD0           P0.0</span>
+<a name="l00035"></a>00035 <span class="comment">PWM4        PWM6  RXD1   EINT3   P0.9</span>
+<a name="l00036"></a>00036 <span class="comment">PWM5        PWM4  TXD1   AD1_1   P0.8</span>
+<a name="l00037"></a>00037 <span class="comment">PWM6        PWM2  SSEL0  EINT2   P0.7</span>
+<a name="l00038"></a>00038 <span class="comment"></span>
+<a name="l00039"></a>00039 <span class="comment">*/</span>
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a3f3dc2facc39f9d40f3fae4b4c9f3d93">00041</a> <span class="preprocessor">#define SERVOS_TICS_OF_USEC(s) CPU_TICKS_OF_USEC(s)</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span>
+<a name="l00043"></a>00043 <span class="comment">/* default definition of servo (from classix order) */</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#ifndef SERVO_REG_0</span>
+<a name="l00045"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#adaea37c90f378b73f03050c0740a9e25">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_0 PWMMR5</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#ifndef SERVO_REG_1</span>
+<a name="l00048"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a233f2c6524de7d4f4dc62daa17c31099">00048</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_1 PWMMR3</span>
+<a name="l00049"></a>00049 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span><span class="preprocessor">#ifndef SERVO_REG_2</span>
+<a name="l00051"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#af66d33a7ec197c3c1712a85b7aec9bc5">00051</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_2 PWMMR1</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#ifndef SERVO_REG_3</span>
+<a name="l00054"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#abecec64bb8ad997757d2059670b43468">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_3 PWMMR6</span>
+<a name="l00055"></a>00055 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span><span class="preprocessor">#ifndef SERVO_REG_4</span>
+<a name="l00057"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a0b9a21e50da5b51c7d11c6776d75d220">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_4 PWMMR4</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span><span class="preprocessor">#ifndef SERVO_REG_5</span>
+<a name="l00060"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a159605dca598db16b4454e6b145c80d8">00060</a> <span class="preprocessor"></span><span class="preprocessor">#define SERVO_REG_5 PWMMR2</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00062"></a>00062 <span class="preprocessor"></span>
-<a name="l00063"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a07c22c9d84b91dbe95d15225c8e483de">00063</a> <span class="preprocessor">#define PWM_SERVO_4_PINSEL PINSEL0</span>
-<a name="l00064"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ae646d064d5eb5bd06cd69dff2c543313">00064</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_PINSEL_VAL 2</span>
-<a name="l00065"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ab6d8e5129a0a8269a23880220b009e4e">00065</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_PINSEL_BIT 16</span>
-<a name="l00066"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aed7f6336ce0dbdef94e12e40fbbccfd2">00066</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_4_PINSEL_BIT)</span>
-<a name="l00067"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a7dd1c9eed993752907caa08dbebe389e">00067</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_ENA PWMPCR_ENA4</span>
-<a name="l00068"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aa770ad9d2d3a08ca30e181b6901b7093">00068</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_LATCH PWMLER_LATCH4</span>
-<a name="l00069"></a>00069 <span class="preprocessor"></span>
-<a name="l00070"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ac2071c5a0a744776ae566c21f67d7987">00070</a> <span class="preprocessor">#define PWM_SERVO_5_PINSEL PINSEL0</span>
-<a name="l00071"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aeff163723caa9ed1d6951d7157bdca90">00071</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_PINSEL_VAL 2</span>
-<a name="l00072"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a73324f929f081719f23086e958b460c6">00072</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_PINSEL_BIT 14</span>
-<a name="l00073"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ae68be01a6ba163e7950834e101bd6db8">00073</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_5_PINSEL_BIT)</span>
-<a name="l00074"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a5d0b80f99f93508154d004b249801822">00074</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_ENA PWMPCR_ENA2</span>
-<a name="l00075"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a2500f92b97c2a4609e36fe26341b3495">00075</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_LATCH PWMLER_LATCH2</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span>
-<a name="l00077"></a>00077 <span class="keyword">extern</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8c.html#a6f09ce76df5c397c80d8bb9c1ab32d1a">pwm_latch_value</a>;
-<a name="l00078"></a>00078 
-<a name="l00079"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a07eabec879875ba0cdd5b193d1e4a515">00079</a> <span class="preprocessor">#define ActuatorsCommit() { \</span>
-<a name="l00080"></a>00080 <span class="preprocessor">    PWMLER = pwm_latch_value;   \</span>
-<a name="l00081"></a>00081 <span class="preprocessor">  }</span>
+<a name="l00063"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aa1e86fef0a1552f03b3151aba31fffdb">00063</a> <span class="preprocessor">#define COMMAND_(i) SERVO_REG_ ## i</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span>
+<a name="l00065"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a3e02a20951a8d18ade2922fd0c3fac1f">00065</a> <span class="preprocessor">#define ActuatorPwmSet(_i, _v) { COMMAND_(_i) = SERVOS_TICS_OF_USEC(_v); }</span>
+<a name="l00066"></a>00066 <span class="preprocessor"></span>
+<a name="l00067"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aea414212045d6f244450e028498e1609">00067</a> <span class="preprocessor">#define PWM_PINSEL_MASK_VAL 3</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>
+<a name="l00069"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aaddc5c286427894cdf60c93937d6b368">00069</a> <span class="preprocessor">#define PWM_SERVO_1_PINSEL PINSEL0</span>
+<a name="l00070"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a40812924f670a55b88faf41a491967c8">00070</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_PINSEL_VAL 2</span>
+<a name="l00071"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a9e7854d8bb49f7aa2c8fc5e83df178f9">00071</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_PINSEL_BIT 0</span>
+<a name="l00072"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a4558906224321323e984f23fad3a638f">00072</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_1_PINSEL_BIT)</span>
+<a name="l00073"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a8c4049c5550eea58312ee8c4f80d7701">00073</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_ENA PWMPCR_ENA1</span>
+<a name="l00074"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a1d803aa0761fbc41d4c9659d88b24664">00074</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_1_LATCH PWMLER_LATCH1</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span>
+<a name="l00076"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ade4c1f031e0fba6b387114ff01c90098">00076</a> <span class="preprocessor">#define PWM_SERVO_2_PINSEL PINSEL0</span>
+<a name="l00077"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a33cecc1d8d67210009478ca9beaca44a">00077</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_PINSEL_VAL 2</span>
+<a name="l00078"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a2c03a8a2378ac619ddce95275df4c406">00078</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_PINSEL_BIT 14</span>
+<a name="l00079"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a52a9f4a8669b6708e4b31237fdcb6c6d">00079</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_2_PINSEL_BIT)</span>
+<a name="l00080"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a44b8e8d144b15a6a57b4c471d20045a6">00080</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_ENA PWMPCR_ENA2</span>
+<a name="l00081"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a837a1ce8db146b18191c4a521766b969">00081</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_2_LATCH PWMLER_LATCH2</span>
 <a name="l00082"></a>00082 <span class="preprocessor"></span>
-<a name="l00083"></a>00083 <span class="preprocessor">#endif </span><span class="comment">/* ACTUATORS_PWM_ARCH_H */</span>
+<a name="l00083"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a369226bb9659c80bc6ca18e03487b217">00083</a> <span class="preprocessor">#define PWM_SERVO_3_PINSEL PINSEL0</span>
+<a name="l00084"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ae2f8e09800b443870104eaa5efb6af47">00084</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_PINSEL_VAL 2</span>
+<a name="l00085"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ab64eb646b1d1b1f40910d72a4d550a72">00085</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_PINSEL_BIT 2</span>
+<a name="l00086"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ae21b43e5ed88958344f5d3dead34d485">00086</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_3_PINSEL_BIT)</span>
+<a name="l00087"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a927d218c7c235f2cc60b371cf52c9645">00087</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_ENA PWMPCR_ENA3</span>
+<a name="l00088"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aea5348650db13a1920ba248e53a880a8">00088</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_3_LATCH PWMLER_LATCH3</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span>
+<a name="l00090"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a07c22c9d84b91dbe95d15225c8e483de">00090</a> <span class="preprocessor">#define PWM_SERVO_4_PINSEL PINSEL0</span>
+<a name="l00091"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ae646d064d5eb5bd06cd69dff2c543313">00091</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_PINSEL_VAL 2</span>
+<a name="l00092"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ab6d8e5129a0a8269a23880220b009e4e">00092</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_PINSEL_BIT 16</span>
+<a name="l00093"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aed7f6336ce0dbdef94e12e40fbbccfd2">00093</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_4_PINSEL_BIT)</span>
+<a name="l00094"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a7dd1c9eed993752907caa08dbebe389e">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_ENA PWMPCR_ENA4</span>
+<a name="l00095"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aa770ad9d2d3a08ca30e181b6901b7093">00095</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_4_LATCH PWMLER_LATCH4</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span>
+<a name="l00097"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ac2071c5a0a744776ae566c21f67d7987">00097</a> <span class="preprocessor">#define PWM_SERVO_5_PINSEL PINSEL1</span>
+<a name="l00098"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#aeff163723caa9ed1d6951d7157bdca90">00098</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_PINSEL_VAL 1</span>
+<a name="l00099"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a73324f929f081719f23086e958b460c6">00099</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_PINSEL_BIT 10</span>
+<a name="l00100"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ae68be01a6ba163e7950834e101bd6db8">00100</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_5_PINSEL_BIT)</span>
+<a name="l00101"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a5d0b80f99f93508154d004b249801822">00101</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_ENA PWMPCR_ENA5</span>
+<a name="l00102"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a2500f92b97c2a4609e36fe26341b3495">00102</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_5_LATCH PWMLER_LATCH5</span>
+<a name="l00103"></a>00103 <span class="preprocessor"></span>
+<a name="l00104"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a7f93d04c672a30097178cb826a3130e9">00104</a> <span class="preprocessor">#define PWM_SERVO_6_PINSEL PINSEL0</span>
+<a name="l00105"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a15713fb21abf6621deac46a51742d4e9">00105</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_6_PINSEL_VAL 2</span>
+<a name="l00106"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a5615d7b0810f887002aec0b2b4f1bb35">00106</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_6_PINSEL_BIT 18</span>
+<a name="l00107"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a8d12af88c4c8197a882fc04cd45c7e74">00107</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_6_PINSEL_MASK ~(PWM_PINSEL_MASK_VAL &lt;&lt; PWM_SERVO_6_PINSEL_BIT)</span>
+<a name="l00108"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a270298f6d45e50c12ca3a53ad9bfeeb4">00108</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_6_ENA PWMPCR_ENA6</span>
+<a name="l00109"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ac3c1ace02adbca4a544569fa24b4628a">00109</a> <span class="preprocessor"></span><span class="preprocessor">#define PWM_SERVO_6_LATCH PWMLER_LATCH6</span>
+<a name="l00110"></a>00110 <span class="preprocessor"></span>
+<a name="l00111"></a>00111 <span class="keyword">extern</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8c.html#a6f09ce76df5c397c80d8bb9c1ab32d1a">pwm_latch_value</a>;
+<a name="l00112"></a>00112 
+<a name="l00114"></a><a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#ad35eb8ed0c548021d922168b3b58d1a4">00114</a> <span class="preprocessor">#define ActuatorsPwmCommit() { \</span>
+<a name="l00115"></a>00115 <span class="preprocessor">    PWMLER = pwm_latch_value;   \</span>
+<a name="l00116"></a>00116 <span class="preprocessor">  }</span>
+<a name="l00117"></a>00117 <span class="preprocessor"></span>
+<a name="l00118"></a>00118 <span class="preprocessor">#endif </span><span class="comment">/* ACTUATORS_PWM_ARCH_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -206,7 +240,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html">actuators_pwm_arch.h</a>      </li>
 
-    <li class="footer">Generated on Thu Oct 18 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Oct 25 2012 04:00:11 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

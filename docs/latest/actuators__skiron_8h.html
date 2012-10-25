@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: sw/airborne/firmwares/rotorcraft/actuators/actuators_skiron.h File Reference</title>
+<title>Paparazzi UAS: sw/airborne/subsystems/actuators/actuators_skiron.h File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-136-g3cf6754</span>
+   &#160;<span id="projectnumber">v4.9_devel-170-g5b8e4dd</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -102,6 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Defines</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">actuators_skiron.h File Reference</div>  </div>
@@ -113,24 +114,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &quot;std.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="i2c_8h_source.html">mcu_periph/i2c.h</a>&quot;</code><br/>
 <code>#include &quot;generated/airframe.h&quot;</code><br/>
-<code>#include &quot;<a class="el" href="supervision_8h_source.html">firmwares/rotorcraft/actuators/supervision.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for actuators_skiron.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="actuators__skiron_8h__incl.png" border="0" usemap="#sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__skiron_8h" alt=""/></div>
-<map name="sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__skiron_8h" id="sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__skiron_8h">
-<area shape="rect" id="node5" href="i2c_8h.html" title="mcu_periph/i2c.h" alt="" coords="155,83,285,112"/><area shape="rect" id="node14" href="supervision_8h.html" title="Supervision." alt="" coords="360,83,661,112"/></map>
+<div class="center"><img src="actuators__skiron_8h__incl.png" border="0" usemap="#sw_2airborne_2subsystems_2actuators_2actuators__skiron_8h" alt=""/></div>
+<map name="sw_2airborne_2subsystems_2actuators_2actuators__skiron_8h" id="sw_2airborne_2subsystems_2actuators_2actuators__skiron_8h">
+<area shape="rect" id="node5" href="i2c_8h.html" title="mcu_periph/i2c.h" alt="" coords="121,83,252,112"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="actuators__skiron_8h__dep__incl.png" border="0" usemap="#sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__skiron_8hdep" alt=""/></div>
-<map name="sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__skiron_8hdep" id="sw_2airborne_2firmwares_2rotorcraft_2actuators_2actuators__skiron_8hdep">
-<area shape="rect" id="node3" href="actuators__skiron_8c.html" title="Skiron motor speed controller by Michel." alt="" coords="5,83,416,112"/></map>
+<div class="center"><img src="actuators__skiron_8h__dep__incl.png" border="0" usemap="#sw_2airborne_2subsystems_2actuators_2actuators__skiron_8hdep" alt=""/></div>
+<map name="sw_2airborne_2subsystems_2actuators_2actuators__skiron_8hdep" id="sw_2airborne_2subsystems_2actuators_2actuators__skiron_8hdep">
+<area shape="rect" id="node3" href="actuators__skiron_8c.html" title="Skiron motor speed controller by Michel." alt="" coords="5,83,368,112"/></map>
 </div>
 </div>
 <p><a href="actuators__skiron_8h_source.html">Go to the source code of this file.</a></p>
@@ -141,6 +141,13 @@ Data Structures</h2></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__skiron_8h.html#a52f3dcab939a267f2d83e75f7fd8fae6">ACTUATORS_SKIRON_I2C_ADDR</a>&#160;&#160;&#160;0x00</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__skiron_8h.html#aa5058c1f195bd6c4094bfa2e68a34a94">ActuatorSkironSet</a>(_i, _v)&#160;&#160;&#160;{ actuators_skiron.trans.buf[_i] = _v; }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__skiron_8h.html#ad4bb8403ca4a658d6f4215bc9f78c7df">ActuatorsSkironInit</a>()&#160;&#160;&#160;<a class="el" href="actuators__skiron_8h.html#a8bdc276cefb770cff68ea0ca570c5b4a">actuators_skiron_init</a>()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__skiron_8h.html#a39ad757c8335998cc6de139e59b76a8a">ActuatorsSkironCommit</a>()&#160;&#160;&#160;<a class="el" href="actuators__skiron_8h.html#a3a40f71f6dba7faf29f5c8b336a12c4a">actuators_skiron_set</a>()</td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__skiron_8h.html#a8bdc276cefb770cff68ea0ca570c5b4a">actuators_skiron_init</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__skiron_8h.html#a3a40f71f6dba7faf29f5c8b336a12c4a">actuators_skiron_set</a> (void)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structActuatorsSkiron.html">ActuatorsSkiron</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actuators__skiron_8h.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a></td></tr>
@@ -163,7 +170,126 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="actuators__skiron_8h_source.html#l00035">35</a> of file <a class="el" href="actuators__skiron_8h_source.html">actuators_skiron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="actuators__skiron_8c_source.html#l00040">actuators_init()</a>.</p>
+<p>Referenced by <a class="el" href="actuators__skiron_8c_source.html#l00038">actuators_skiron_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa5058c1f195bd6c4094bfa2e68a34a94"></a><!-- doxytag: member="actuators_skiron.h::ActuatorSkironSet" ref="aa5058c1f195bd6c4094bfa2e68a34a94" args="(_i, _v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="actuators__skiron_8h.html#aa5058c1f195bd6c4094bfa2e68a34a94">ActuatorSkironSet</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_i, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_v&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ actuators_skiron.trans.buf[_i] = _v; }</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__skiron_8h_source.html#l00046">46</a> of file <a class="el" href="actuators__skiron_8h_source.html">actuators_skiron.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a39ad757c8335998cc6de139e59b76a8a"></a><!-- doxytag: member="actuators_skiron.h::ActuatorsSkironCommit" ref="a39ad757c8335998cc6de139e59b76a8a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="actuators__skiron_8h.html#a39ad757c8335998cc6de139e59b76a8a">ActuatorsSkironCommit</a></td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="actuators__skiron_8h.html#a3a40f71f6dba7faf29f5c8b336a12c4a">actuators_skiron_set</a>()</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__skiron_8h_source.html#l00048">48</a> of file <a class="el" href="actuators__skiron_8h_source.html">actuators_skiron.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4bb8403ca4a658d6f4215bc9f78c7df"></a><!-- doxytag: member="actuators_skiron.h::ActuatorsSkironInit" ref="ad4bb8403ca4a658d6f4215bc9f78c7df" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="actuators__skiron_8h.html#ad4bb8403ca4a658d6f4215bc9f78c7df">ActuatorsSkironInit</a></td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="actuators__skiron_8h.html#a8bdc276cefb770cff68ea0ca570c5b4a">actuators_skiron_init</a>()</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__skiron_8h_source.html#l00047">47</a> of file <a class="el" href="actuators__skiron_8h_source.html">actuators_skiron.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a8bdc276cefb770cff68ea0ca570c5b4a"></a><!-- doxytag: member="actuators_skiron.h::actuators_skiron_init" ref="a8bdc276cefb770cff68ea0ca570c5b4a" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="actuators__skiron_8h.html#a8bdc276cefb770cff68ea0ca570c5b4a">actuators_skiron_init</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__skiron_8c_source.html#l00038">38</a> of file <a class="el" href="actuators__skiron_8c_source.html">actuators_skiron.c</a>.</p>
+
+<p>References <a class="el" href="actuators__asctec_8c_source.html#l00041">actuators_delay_done</a>, <a class="el" href="actuators__asctec_8c_source.html#l00040">actuators_delay_time</a>, <a class="el" href="actuators__skiron_8c_source.html#l00032">actuators_skiron</a>, <a class="el" href="actuators__skiron_8h_source.html#l00035">ACTUATORS_SKIRON_I2C_ADDR</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="i2c_8h_source.html#l00019">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00009">I2CTransTx</a>, <a class="el" href="i2c_8h_source.html#l00045">i2c_transaction::len_w</a>, <a class="el" href="i2c_8h_source.html#l00043">i2c_transaction::slave_addr</a>, <a class="el" href="i2c_8h_source.html#l00047">i2c_transaction::status</a>, <a class="el" href="lpc21_2mcu__periph_2sys__time__arch_8h_source.html#l00070">SysTimeTimerStart</a>, <a class="el" href="actuators__skiron_8h_source.html#l00038">ActuatorsSkiron::trans</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, and <a class="el" href="i2c_8h_source.html#l00042">i2c_transaction::type</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a40f71f6dba7faf29f5c8b336a12c4a"></a><!-- doxytag: member="actuators_skiron.h::actuators_skiron_set" ref="a3a40f71f6dba7faf29f5c8b336a12c4a" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="actuators__skiron_8h.html#a3a40f71f6dba7faf29f5c8b336a12c4a">actuators_skiron_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="actuators__skiron_8c_source.html#l00055">55</a> of file <a class="el" href="actuators__skiron_8c_source.html">actuators_skiron.c</a>.</p>
+
+<p>References <a class="el" href="actuators__asctec_8c_source.html#l00041">actuators_delay_done</a>, <a class="el" href="actuators__asctec_8c_source.html#l00040">actuators_delay_time</a>, <a class="el" href="actuators__skiron_8c_source.html#l00032">actuators_skiron</a>, <a class="el" href="i2c_8h_source.html#l00046">i2c_transaction::buf</a>, <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00321">i2c_submit()</a>, <a class="el" href="lpc21_2mcu__periph_2sys__time__arch_8h_source.html#l00071">SysTimeTimer</a>, <a class="el" href="actuators__skiron_8h_source.html#l00038">ActuatorsSkiron::trans</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, and <a class="el" href="sys__time_8h_source.html#l00124">USEC_OF_SEC</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="actuators__skiron_8h_a3a40f71f6dba7faf29f5c8b336a12c4a_cgraph.png" border="0" usemap="#actuators__skiron_8h_a3a40f71f6dba7faf29f5c8b336a12c4a_cgraph" alt=""/></div>
+<map name="actuators__skiron_8h_a3a40f71f6dba7faf29f5c8b336a12c4a_cgraph" id="actuators__skiron_8h_a3a40f71f6dba7faf29f5c8b336a12c4a_cgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="208,5,299,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -179,9 +305,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="actuators__skiron_8c_source.html#l00034">34</a> of file <a class="el" href="actuators__skiron_8c_source.html">actuators_skiron.c</a>.</p>
+<p>Definition at line <a class="el" href="actuators__skiron_8c_source.html#l00032">32</a> of file <a class="el" href="actuators__skiron_8c_source.html">actuators_skiron.c</a>.</p>
 
-<p>Referenced by <a class="el" href="actuators__skiron_8c_source.html#l00040">actuators_init()</a>, and <a class="el" href="actuators__skiron_8c_source.html#l00062">actuators_set()</a>.</p>
+<p>Referenced by <a class="el" href="actuators__skiron_8c_source.html#l00038">actuators_skiron_init()</a>, and <a class="el" href="actuators__skiron_8c_source.html#l00055">actuators_skiron_set()</a>.</p>
 
 </div>
 </div>
@@ -205,7 +331,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="actuators__skiron_8h.html">actuators_skiron.h</a>      </li>
 
-    <li class="footer">Generated on Thu Oct 18 2012 04:00:10 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Oct 25 2012 04:00:15 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

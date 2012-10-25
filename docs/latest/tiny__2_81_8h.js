@@ -1,5 +1,8 @@
 var tiny__2_81_8h =
 [
+    [ "ActuatorDefaultSet", "tiny__2_81_8h.html#a3fc5f96f074d833b909fd75c92b7d2d0", null ],
+    [ "ActuatorsDefaultCommit", "tiny__2_81_8h.html#a0ceadf6a913477832e04b0cb7cd17210", null ],
+    [ "ActuatorsDefaultInit", "tiny__2_81_8h.html#ab68f28871d18c17e7e70ae63277d37c2", null ],
     [ "ADC_0", "tiny__2_81_8h.html#a5cbcaa568e20fcd4cc9325927d370860", null ],
     [ "ADC_1", "tiny__2_81_8h.html#a3d767e16f12a6ee542079f3c9677192c", null ],
     [ "ADC_2", "tiny__2_81_8h.html#a01ac9d2f00660408bcc8c809020904f9", null ],
@@ -12,6 +15,7 @@ var tiny__2_81_8h =
     [ "CAM_SWITCH_LED", "tiny__2_81_8h.html#a8e38748f9b461b496baa62fac23d0090", null ],
     [ "CCLK", "tiny__2_81_8h.html#addec7d88e04ddfe6ac90caf602636c51", null ],
     [ "Configure_GPS_RESET_Pin", "tiny__2_81_8h.html#a0fad87177073eb3f02c6fc96a97328e7", null ],
+    [ "DEFAULT_ACTUATORS", "tiny__2_81_8h.html#aa7699f41fbe105c8f5061cc48a5f6307", null ],
     [ "DefaultVoltageOfAdc", "tiny__2_81_8h.html#a94fa241ceca04635f282e09bdd829f5f", null ],
     [ "FOSC", "tiny__2_81_8h.html#a802b2b582b121e4632aa9a491d503720", null ],
     [ "GPS_RESET", "tiny__2_81_8h.html#a79cf0509379071409bf7b9151a4b5320", null ],

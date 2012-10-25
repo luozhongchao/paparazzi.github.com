@@ -1,5 +1,8 @@
 var tiny__1_81_8h =
 [
+    [ "ActuatorDefaultSet", "tiny__1_81_8h.html#a3fc5f96f074d833b909fd75c92b7d2d0", null ],
+    [ "ActuatorsDefaultCommit", "tiny__1_81_8h.html#a0ceadf6a913477832e04b0cb7cd17210", null ],
+    [ "ActuatorsDefaultInit", "tiny__1_81_8h.html#ab68f28871d18c17e7e70ae63277d37c2", null ],
     [ "ADC_0", "tiny__1_81_8h.html#a5cbcaa568e20fcd4cc9325927d370860", null ],
     [ "ADC_1", "tiny__1_81_8h.html#a3d767e16f12a6ee542079f3c9677192c", null ],
     [ "ADC_2", "tiny__1_81_8h.html#a01ac9d2f00660408bcc8c809020904f9", null ],
@@ -10,6 +13,7 @@ var tiny__1_81_8h =
     [ "ADC_7", "tiny__1_81_8h.html#aa8ade7e32d46ae622ee886a90b1ea9c8", null ],
     [ "ADC_CHANNEL_VSUPPLY", "tiny__1_81_8h.html#ad5a6636ee170fccf62a748fc72374d3b", null ],
     [ "CCLK", "tiny__1_81_8h.html#addec7d88e04ddfe6ac90caf602636c51", null ],
+    [ "DEFAULT_ACTUATORS", "tiny__1_81_8h.html#aa7699f41fbe105c8f5061cc48a5f6307", null ],
     [ "DefaultVoltageOfAdc", "tiny__1_81_8h.html#a94fa241ceca04635f282e09bdd829f5f", null ],
     [ "FOSC", "tiny__1_81_8h.html#a802b2b582b121e4632aa9a491d503720", null ],
     [ "LED_1_BANK", "tiny__1_81_8h.html#a27043d2a36fed64b2808c882c24a1465", null ],

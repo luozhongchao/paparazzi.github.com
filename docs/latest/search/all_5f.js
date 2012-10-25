@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['_5f4015_5fnb_5fchannels',['_4015_NB_CHANNELS',['../servos__4015__hw_8h.html#a01d345e483b0f49e71e53e8b1abdb1e7',1,'_4015_NB_CHANNELS():&#160;servos_4015_hw.h'],['../servos__4015__MAT__hw_8h.html#a01d345e483b0f49e71e53e8b1abdb1e7',1,'_4015_NB_CHANNELS():&#160;servos_4015_MAT_hw.h']]],
-  ['_5f4017_5fnb_5fchannels',['_4017_NB_CHANNELS',['../servos__4017__hw_8h.html#aa12c1955cf1acfb8495f5d63faf8e54d',1,'servos_4017_hw.h']]],
+  ['_5f4015_5fnb_5fchannels',['_4015_NB_CHANNELS',['../servos__4015__hw_8h.html#a01d345e483b0f49e71e53e8b1abdb1e7',1,'_4015_NB_CHANNELS():&#160;servos_4015_hw.h'],['../lpc21_2subsystems_2actuators_2servos__4015__MAT__hw_8h.html#a01d345e483b0f49e71e53e8b1abdb1e7',1,'_4015_NB_CHANNELS():&#160;servos_4015_MAT_hw.h']]],
+  ['_5f4017_5fnb_5fchannels',['_4017_NB_CHANNELS',['../lpc21_2subsystems_2actuators_2servos__4017__hw_8h.html#aa12c1955cf1acfb8495f5d63faf8e54d',1,'servos_4017_hw.h']]],
   ['_5f_5fcamlink',['__CamLink',['../cam__track_8h.html#a2965bd624b7d19e7fc7499a39ef496b2',1,'cam_track.h']]],
   ['_5f_5fdisable_5firq',['__disable_irq',['../stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012',1,'i2c_arch.c']]],
   ['_5f_5fdrdy_5fport',['__DRDY_PORT',['../stm32_2peripherals_2max1168__arch_8c.html#aaac0199a1fd4c29e612b9e7b7f9462ca',1,'max1168_arch.c']]],
@@ -79,7 +79,7 @@ var searchData=
   ['_5fpad8',['_pad8',['../structrtcRegs__t.html#a5ebe477eb1faee94c44d80cefcd141d6',1,'rtcRegs_t']]],
   ['_5fpad9',['_pad9',['../structrtcRegs__t.html#a8cd84f16ace99d3f4f0dcd73b770edc5',1,'rtcRegs_t']]],
   ['_5fperiodic',['_periodic',['../structTestFuns.html#ac8d05df08ed4ec552924a2df41590617',1,'TestFuns']]],
-  ['_5fppm_5fnb_5fchannels',['_PPM_NB_CHANNELS',['../servos__ppm__hw_8h.html#a0ac20efd1417e65cb9eb991e5c7fc73d',1,'servos_ppm_hw.h']]],
+  ['_5fppm_5fnb_5fchannels',['_PPM_NB_CHANNELS',['../lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#a0ac20efd1417e65cb9eb991e5c7fc73d',1,'servos_ppm_hw.h']]],
   ['_5fprimaryuart',['_PrimaryUart',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a740973878a8ab8df043a7527aec05039',1,'spektrum_arch.c']]],
   ['_5fprinthex',['_PrintHex',['../print_8h.html#aff81ddae4ecb821b8988bc67f85c9bfb',1,'print.h']]],
   ['_5fprinthex16',['_PrintHex16',['../print_8h.html#a365f5d82398aad5b7adbafa68e59017a',1,'print.h']]],
@@ -90,6 +90,8 @@ var searchData=
   ['_5fsbrk',['_sbrk',['../plug__sys_8c.html#a50d0541bd42367bb4b26013ff383318d',1,'plug_sys.c']]],
   ['_5fsecondaryuart',['_SecondaryUart',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a2afa2bab76efba19977a6a7b839ccc9f',1,'spektrum_arch.c']]],
   ['_5fselectcapreg',['_SelectCapReg',['../lpc21_2modules_2core_2trigger__ext__hw_8h.html#ab3e364ee7d92f36afd92c199b64bb65c',1,'trigger_ext_hw.h']]],
+  ['_5fservo_5fparam',['_SERVO_PARAM',['../rotorcraft__cam_8c.html#aaf58f5e334fb7dca4ff1779515d23b1c',1,'rotorcraft_cam.c']]],
+  ['_5fservoswitch',['_ServoSwitch',['../servo__switch_8c.html#a2898288953e900c8d5caf54d9a510136',1,'servo_switch.c']]],
   ['_5fsetintflag',['_SetIntFlag',['../lpc21_2modules_2core_2trigger__ext__hw_8h.html#a8dac7fdc11c02e79638603980a8f12b0',1,'trigger_ext_hw.h']]],
   ['_5fstart',['_start',['../structTestFuns.html#aba3f2240dae5b2803b2019bd868bd92b',1,'TestFuns']]],
   ['_5ftim_5foc_5finit',['_TIM_OC_INIT',['../stm32_2subsystems_2actuators_2actuators__pwm__arch_8c.html#ab0b20841c1a4c61580d6704ccf82cbf3',1,'actuators_pwm_arch.c']]],
