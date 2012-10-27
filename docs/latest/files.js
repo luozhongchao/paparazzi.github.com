@@ -512,6 +512,8 @@ var files =
     [ "sw/airborne/modules/ins/ins_xsens.c", "ins__xsens_8c.html", "ins__xsens_8c" ],
     [ "sw/airborne/modules/ins/ins_xsens.h", "ins__xsens_8h.html", "ins__xsens_8h" ],
     [ "sw/airborne/modules/ins/VN100.h", "VN100_8h.html", "VN100_8h" ],
+    [ "sw/airborne/modules/led_safety_status/led_safety_status.c", "led__safety__status_8c.html", null ],
+    [ "sw/airborne/modules/led_safety_status/led_safety_status.h", "led__safety__status_8h.html", "led__safety__status_8h" ],
     [ "sw/airborne/modules/light/light.c", "light_8c.html", "light_8c" ],
     [ "sw/airborne/modules/light/light.h", "light_8h.html", "light_8h" ],
     [ "sw/airborne/modules/max3100/max3100_hw.c", "max3100__hw_8c.html", "max3100__hw_8c" ],

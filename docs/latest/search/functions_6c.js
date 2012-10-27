@@ -16,6 +16,8 @@ var searchData=
   ['led_5finit',['LED_INIT',['../i2c__attempt1_8c.html#a9b6469497fa6627a29285492e557d8f8',1,'LED_INIT(void):&#160;i2c_attempt1.c'],['../i2c__attempt3__subtra_8c.html#a9b6469497fa6627a29285492e557d8f8',1,'LED_INIT(void):&#160;i2c_attempt3_subtra.c'],['../i2c__attempt4__nodouble__isr_8c.html#a9b6469497fa6627a29285492e557d8f8',1,'LED_INIT(void):&#160;i2c_attempt4_nodouble_isr.c'],['../led_8h.html#a9d9d9b1f30592189c3aa7358c626218f',1,'led_init(void):&#160;led.h']]],
   ['led_5foff',['led_off',['../test__led_8c.html#a68f6f0e99f1a5967f352672dbe265d68',1,'test_led.c']]],
   ['led_5fon',['led_on',['../test__led_8c.html#a46fb9ed9bb9bcfa6c96f6686000653d4',1,'test_led.c']]],
+  ['led_5fsafety_5fstatus_5finit',['led_safety_status_init',['../led__safety__status_8h.html#a61564ee30374a2d6bcbbb6df938c430f',1,'led_safety_status.h']]],
+  ['led_5fsafety_5fstatus_5fperiodic',['led_safety_status_periodic',['../led__safety__status_8h.html#a7f1deadd78bb601c82a73606f2deae42',1,'led_safety_status.h']]],
   ['led_5fshow_5factive_5fbits',['LED_SHOW_ACTIVE_BITS',['../i2c__attempt3__subtra_8c.html#aee1107ad547f53d5d1a705d04d62458b',1,'LED_SHOW_ACTIVE_BITS(I2C_TypeDef *regs):&#160;i2c_attempt3_subtra.c'],['../i2c__attempt4__nodouble__isr_8c.html#aee1107ad547f53d5d1a705d04d62458b',1,'LED_SHOW_ACTIVE_BITS(I2C_TypeDef *regs):&#160;i2c_attempt4_nodouble_isr.c']]],
   ['led_5fstrobe2',['LED_STROBE2',['../i2c__attempt1_8c.html#a30209f2b182aa961e470f80c0a9908df',1,'i2c_attempt1.c']]],
   ['light_5fsolar_5finit',['light_solar_init',['../light__solar_8c.html#ac0e039b9f8ad2272b10b4129733d1114',1,'light_solar_init(void):&#160;light_solar.c'],['../light__solar_8h.html#ac0e039b9f8ad2272b10b4129733d1114',1,'light_solar_init(void):&#160;light_solar.c']]],

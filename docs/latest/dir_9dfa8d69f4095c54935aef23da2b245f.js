@@ -19,6 +19,7 @@ var dir_9dfa8d69f4095c54935aef23da2b245f =
     [ "gps_i2c", "dir_4c525d027a94194672ba4d48e48677d5.html", null ],
     [ "gsm", "dir_f7aa08b7fd451b387016ac677a61df12.html", null ],
     [ "ins", "dir_aceb506880699b3e0f5e676a26174efb.html", null ],
+    [ "led_safety_status", "dir_b13ad51dceb8813c421b1453552791d2.html", null ],
     [ "light", "dir_c4bf5f1ebfb3091301604ef452c90515.html", null ],
     [ "max3100", "dir_1d4fb6582b82a22379de05c567abf6f9.html", null ],
     [ "meteo", "dir_47cc60c21a3fe979b569d447262d849b.html", null ],

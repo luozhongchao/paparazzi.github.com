@@ -526,7 +526,7 @@ var searchData=
   ['spistream_5fwrite_5fpkg',['spistream_write_pkg',['../lisa__spistream_8h.html#af1349ed9a602bfb1697a5f3af132de33',1,'lisa_spistream.h']]],
   ['spitransmit',['SpiTransmit',['../lpc21_2mcu__periph_2spi__arch_8h.html#a214e2aa498763a308fead27a8150c9c1',1,'spi_arch.h']]],
   ['spurious_5finterrupt',['SPURIOUS_INTERRUPT',['../i2c__arch_8old_8c.html#ab81219b1393fe184d5856db1a6eabf73',1,'SPURIOUS_INTERRUPT():&#160;i2c_arch.old.c'],['../i2c__arch_8very__old_8c.html#a2e2db234d7e56b2b6133133807482e24',1,'SPURIOUS_INTERRUPT():&#160;i2c_arch.very_old.c'],['../i2c__attempt1_8c.html#ab81219b1393fe184d5856db1a6eabf73',1,'SPURIOUS_INTERRUPT():&#160;i2c_attempt1.c']]],
-  ['square',['Square',['../nav_8h.html#a5b322de63943d278a002687f820ac41c',1,'Square():&#160;nav.h'],['../pprz__algebra_8h.html#a26f8bb75deabaaf4adafe0a093144971',1,'SQUARE():&#160;pprz_algebra.h']]],
+  ['square',['SQUARE',['../pprz__algebra_8h.html#a26f8bb75deabaaf4adafe0a093144971',1,'SQUARE():&#160;pprz_algebra.h'],['../nav_8h.html#a5b322de63943d278a002687f820ac41c',1,'Square():&#160;nav.h']]],
   ['squaresumerr_5fairspeed',['SquareSumErr_airspeed',['../flight__benchmark_8c.html#a7cba1520680a1e1397eec3f8605b3cee',1,'flight_benchmark.c']]],
   ['squaresumerr_5faltitude',['SquareSumErr_altitude',['../flight__benchmark_8c.html#ade3a33aa6a5dde5d1520c3a72f2bddad',1,'flight_benchmark.c']]],
   ['squaresumerr_5fposition',['SquareSumErr_position',['../flight__benchmark_8c.html#a5f69b98a1398d874503d8b86e47e19b1',1,'flight_benchmark.c']]],
