@@ -329,7 +329,7 @@ var searchData=
   ['compute_5fbody_5forientation_5fand_5frates',['compute_body_orientation_and_rates',['../ahrs__float__cmpl_8c.html#a2e90a05e5a4ca369d0308bb72e68171d',1,'ahrs_float_cmpl.c']]],
   ['compute_5fdist2_5fto_5fhome',['compute_dist2_to_home',['../navigation_8h.html#a4603515f41786b54ea9383a65a9f249e',1,'compute_dist2_to_home(void):&#160;common_nav.c'],['../common__nav_8c.html#a4603515f41786b54ea9383a65a9f249e',1,'compute_dist2_to_home(void):&#160;common_nav.c'],['../common__nav_8h.html#a4603515f41786b54ea9383a65a9f249e',1,'compute_dist2_to_home(void):&#160;common_nav.c']]],
   ['compute_5fground_5fspeed',['compute_ground_speed',['../snav_8c.html#a68858681c254fdbf4ba0bc2a9ec72748',1,'snav.c']]],
-  ['compute_5ftod',['compute_tod',['../bomb_8h.html#a6d63c302f49aef554eb08d3bd7a1e938',1,'compute_tod(void):&#160;bomb.h'],['../nav_8c.html#ad9cc0030bdcfa2192dda22875ca68934',1,'compute_TOD(uint8_t _af, uint8_t _td, uint8_t _tod, float glide_airspeed, float glide_vspeed):&#160;nav.c']]],
+  ['compute_5ftod',['compute_TOD',['../nav_8c.html#ad9cc0030bdcfa2192dda22875ca68934',1,'compute_TOD(uint8_t _af, uint8_t _td, uint8_t _tod, float glide_airspeed, float glide_vspeed):&#160;nav.c'],['../bomb_8h.html#a6d63c302f49aef554eb08d3bd7a1e938',1,'compute_tod(void):&#160;bomb.h']]],
   ['computechecksum',['ComputeChecksum',['../link__mcu__spi_8c.html#abeef14f8339161330ff3b318837a904e',1,'link_mcu_spi.c']]],
   ['con',['con',['../structscbRegs__t.html#a37142170690ba5a84193e3219287c8e2',1,'scbRegs_t']]],
   ['conclr',['conclr',['../structi2cRegs__t.html#af89b47ba4860454523c1df43eee9f069',1,'i2cRegs_t']]],
