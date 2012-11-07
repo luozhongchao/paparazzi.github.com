@@ -519,6 +519,7 @@ var files =
     [ "sw/airborne/modules/ins/ins_arduimu_basic.c", "modules_2ins_2ins__arduimu__basic_8c.html", "modules_2ins_2ins__arduimu__basic_8c" ],
     [ "sw/airborne/modules/ins/ins_arduimu_basic.h", "ins__arduimu__basic_8h.html", "ins__arduimu__basic_8h" ],
     [ "sw/airborne/modules/ins/ins_chimu_spi.c", "ins__chimu__spi_8c.html", "ins__chimu__spi_8c" ],
+    [ "sw/airborne/modules/ins/ins_chimu_spi.h", "ins__chimu__spi_8h.html", "ins__chimu__spi_8h" ],
     [ "sw/airborne/modules/ins/ins_chimu_uart.c", "ins__chimu__uart_8c.html", "ins__chimu__uart_8c" ],
     [ "sw/airborne/modules/ins/ins_module.h", "ins__module_8h.html", "ins__module_8h" ],
     [ "sw/airborne/modules/ins/ins_vn100.c", "ins__vn100_8c.html", "ins__vn100_8c" ],
