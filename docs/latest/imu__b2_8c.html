@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-188-g22c376a</span>
+   &#160;<span id="projectnumber">v4.9_devel-252-gc708ce0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -106,6 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="imu_8h_source.html">subsystems/imu.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for imu_b2.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -113,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__b2_8c__incl.png" border="0" usemap="#sw_2airborne_2subsystems_2imu_2imu__b2_8c" alt=""/></div>
 <map name="sw_2airborne_2subsystems_2imu_2imu__b2_8c" id="sw_2airborne_2subsystems_2imu_2imu__b2_8c">
-<area shape="rect" id="node3" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="346,83,484,112"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="88,160,267,189"/><area shape="rect" id="node22" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="320,160,510,189"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="287,237,442,267"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="23,237,172,267"/></map>
+<area shape="rect" id="node3" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="346,83,484,112"/><area shape="rect" id="node30" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="508,83,562,112"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="88,160,267,189"/><area shape="rect" id="node22" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="320,160,510,189"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="287,237,442,267"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="23,237,172,267"/></map>
 </div>
 </div>
 <p><a href="imu__b2_8c_source.html">Go to the source code of this file.</a></p>
@@ -121,6 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__b2_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__b2_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a> (void)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ad32faae58e391642ec8048cb11011998"></a><!-- doxytag: member="imu_b2.c::imu_impl_init" ref="ad32faae58e391642ec8048cb11011998" args="(void)" -->
@@ -138,9 +140,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__b2_8c_source.html#l00026">26</a> of file <a class="el" href="imu__b2_8c_source.html">imu_b2.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__b2_8c_source.html#l00025">25</a> of file <a class="el" href="imu__b2_8c_source.html">imu_b2.c</a>.</p>
 
-<p>References <a class="el" href="ami601_8c_source.html#l00012">ami601_init()</a>, <a class="el" href="hmc5843_8c_source.html#l00016">hmc5843_init()</a>, <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_init()</a>, <a class="el" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c_source.html#l00062">imu_b2_arch_init()</a>, <a class="el" href="max1168_8c_source.html#l00031">max1168_init()</a>, and <a class="el" href="ms2100_8c_source.html#l00029">ms2100_init()</a>.</p>
+<p>References <a class="el" href="ami601_8c_source.html#l00012">ami601_init()</a>, <a class="el" href="hmc5843_8c_source.html#l00016">hmc5843_init()</a>, <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_init()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, and <a class="el" href="ms2100_8c_source.html#l00043">ms2100_init()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -149,7 +151,39 @@ Functions</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__b2_8c_ad32faae58e391642ec8048cb11011998_cgraph.png" border="0" usemap="#imu__b2_8c_ad32faae58e391642ec8048cb11011998_cgraph" alt=""/></div>
 <map name="imu__b2_8c_ad32faae58e391642ec8048cb11011998_cgraph" id="imu__b2_8c_ad32faae58e391642ec8048cb11011998_cgraph">
-<area shape="rect" id="node3" href="ami601_8c.html#a371838c77c193499b453d769fb6d4cc2" title="ami601_init" alt="" coords="177,5,273,35"/><area shape="rect" id="node5" href="hmc5843_8c.html#af07ba9764727d8692eb33cd271080cdc" title="hmc5843_init" alt="" coords="172,59,279,88"/><area shape="rect" id="node9" href="hmc58xx_8c.html#a7bc4b0378663330442beb515f4e9cc54" title="hmc58xx_init" alt="" coords="172,112,279,141"/><area shape="rect" id="node11" href="lpc21_2subsystems_2imu_2imu__b2__arch_8c.html#ae45e9b3a240b1c85c2c8c52b98b5af95" title="imu_b2_arch_init" alt="" coords="160,165,291,195"/><area shape="rect" id="node13" href="max1168_8c.html#a6130e20b7ea3c56aa94a9e449b773b4a" title="max1168_init" alt="" coords="172,219,279,248"/><area shape="rect" id="node17" href="ms2100_8c.html#afb7a7007f9faecc8810acf64cd97c204" title="ms2100_init" alt="" coords="176,272,275,301"/><area shape="rect" id="node7" href="sim_2peripherals_2hmc5843__arch_8c.html#ac346fa452f9a5c3412581aba7e5af4e7" title="hmc5843_arch_init" alt="" coords="340,59,481,88"/><area shape="rect" id="node15" href="lpc21_2peripherals_2max1168__arch_8c.html#a712f39d80c2b46e08a4d0230bf74bef2" title="max1168_arch_init" alt="" coords="340,219,481,248"/><area shape="rect" id="node19" href="lpc21_2peripherals_2ms2100__arch_8c.html#a6c42c614481a60c538d48f9ceef25132" title="ms2100_arch_init" alt="" coords="344,272,477,301"/></map>
+<area shape="rect" id="node3" href="ami601_8c.html#a371838c77c193499b453d769fb6d4cc2" title="ami601_init" alt="" coords="167,5,263,35"/><area shape="rect" id="node5" href="hmc5843_8c.html#af07ba9764727d8692eb33cd271080cdc" title="hmc5843_init" alt="" coords="161,59,268,88"/><area shape="rect" id="node9" href="hmc58xx_8c.html#a7bc4b0378663330442beb515f4e9cc54" title="hmc58xx_init" alt="" coords="161,112,268,141"/><area shape="rect" id="node11" href="max1168_8c.html#a6130e20b7ea3c56aa94a9e449b773b4a" title="max1168_init" alt="" coords="161,165,268,195"/><area shape="rect" id="node19" href="ms2100_8c.html#afb7a7007f9faecc8810acf64cd97c204" title="ms2100_init" alt="" coords="165,219,264,248"/><area shape="rect" id="node7" href="sim_2peripherals_2hmc5843__arch_8c.html#ac346fa452f9a5c3412581aba7e5af4e7" title="hmc5843_arch_init" alt="" coords="319,59,460,88"/><area shape="rect" id="node13" href="lpc21_2peripherals_2max1168__arch_8c.html#a712f39d80c2b46e08a4d0230bf74bef2" title="max1168_arch_init" alt="" coords="319,112,460,141"/><area shape="rect" id="node15" href="max1168_8c.html#a65bdce5cdf607ff4f87fd590f20d16c3" title="max1168_lock_cb" alt="" coords="321,165,457,195"/><area shape="rect" id="node17" href="sim_2mcu__periph_2spi__arch_8c.html#a2db1b869a8aea431e3d3e63106290db9" title="spi_lock" alt="" coords="509,165,581,195"/><area shape="rect" id="node21" href="lpc21_2peripherals_2ms2100__arch_8c.html#a6c42c614481a60c538d48f9ceef25132" title="ms2100_arch_init" alt="" coords="323,219,456,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6623d4c90e7b1bfb73abc0da1195f29b"></a><!-- doxytag: member="imu_b2.c::imu_periodic" ref="a6623d4c90e7b1bfb73abc0da1195f29b" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="imu_8h.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="imu__b2_8c_source.html#l00041">41</a> of file <a class="el" href="imu__b2_8c_source.html">imu_b2.c</a>.</p>
+
+<p>References <a class="el" href="ami601_8c_source.html#l00025">ami601_read()</a>, <a class="el" href="hmc58xx_8h_source.html#l00091">Hmc58xxPeriodic</a>, <a class="el" href="max1168_8h_source.html#l00068">Max1168Periodic</a>, and <a class="el" href="ms2100_8h_source.html#l00057">Ms2100Periodic</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="imu__b2_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph.png" border="0" usemap="#imu__b2_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" alt=""/></div>
+<map name="imu__b2_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" id="imu__b2_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph">
+<area shape="rect" id="node3" href="ami601_8c.html#a71d937e3a4fb4dd1db1861fa6711b417" title="ami601_read" alt="" coords="157,5,264,35"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="312,5,403,35"/></map>
 </div>
 </p>
 
@@ -175,7 +209,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="imu__b2_8c.html">imu_b2.c</a>      </li>
 
-    <li class="footer">Generated on Wed Nov 7 2012 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Nov 8 2012 04:00:13 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

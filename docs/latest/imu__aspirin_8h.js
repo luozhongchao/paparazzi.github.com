@@ -33,7 +33,6 @@ var imu__aspirin_8h =
     [ "accel_copy_spi", "imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5", null ],
     [ "gyro_copy_i2c", "imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0", null ],
     [ "gyro_read_i2c", "imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf", null ],
-    [ "i2c2_er_isr", "imu__aspirin_8h.html#a3df7b2279162375f9355501159318219", null ],
     [ "imu_aspirin_arch_init", "imu__aspirin_8h.html#a592698b1cfe18b6c6a33e450221ea2cf", null ],
     [ "imu_aspirin_event", "imu__aspirin_8h.html#a0abb6ddc3c6db196f1fcd2db351f8be6", null ],
     [ "imu_aspirin", "imu__aspirin_8h.html#aeafeb2e52542aacfde056216e597ab1a", null ]

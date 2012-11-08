@@ -2,7 +2,6 @@ var lisa__test__itg3200_8c =
 [
     [ "INITIALIZED", "lisa__test__itg3200_8c.html#a05b386d4bad60f6f9236de6d3be866e0", null ],
     [ "exti15_10_irq_handler", "lisa__test__itg3200_8c.html#af28c7f63910b85ce6f653968e38a6a10", null ],
-    [ "exti15_10_isr", "lisa__test__itg3200_8c.html#a8aaa57c7903131c1c86605393bb4654e", null ],
     [ "main", "lisa__test__itg3200_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
     [ "main_event_task", "lisa__test__itg3200_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1", null ],
     [ "main_init", "lisa__test__itg3200_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1", null ],

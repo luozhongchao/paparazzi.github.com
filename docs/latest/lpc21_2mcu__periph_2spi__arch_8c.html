@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-188-g22c376a</span>
+   &#160;<span id="projectnumber">v4.9_devel-252-gc708ce0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -101,15 +101,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#define-members">Defines</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">spi_arch.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Handling of SPI hardware for lpc21xx.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="spi_8h_source.html">mcu_periph/spi.h</a>&quot;</code><br/>
 <code>#include &quot;std.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="LPC21xx_8h_source.html">LPC21xx.h</a>&quot;</code><br/>
+<code>#include &quot;interrupt_hw.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="armVIC_8h_source.html">armVIC.h</a>&quot;</code><br/>
+<code>#include &lt;BOARD_CONFIG&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for spi_arch.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -117,45 +122,176 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c__incl.png" border="0" usemap="#sw_2airborne_2arch_2lpc21_2mcu__periph_2spi__arch_8c" alt=""/></div>
 <map name="sw_2airborne_2arch_2lpc21_2mcu__periph_2spi__arch_8c" id="sw_2airborne_2arch_2lpc21_2mcu__periph_2spi__arch_8c">
-<area shape="rect" id="node3" href="spi_8h.html" title="arch independent SPI (Serial Peripheral Interface) API" alt="" coords="313,83,444,112"/><area shape="rect" id="node7" href="LPC21xx_8h.html" title="LPC21xx.h" alt="" coords="545,83,633,112"/><area shape="rect" id="node33" href="armVIC_8h.html" title="armVIC.h" alt="" coords="657,83,737,112"/><area shape="rect" id="node9" href="lpcWD_8h.html" title="lpcWD.h" alt="" coords="5,160,77,189"/><area shape="rect" id="node11" href="lpcTMR_8h.html" title="lpcTMR.h" alt="" coords="101,160,179,189"/><area shape="rect" id="node13" href="lpcUART_8h.html" title="lpcUART.h" alt="" coords="203,160,285,189"/><area shape="rect" id="node15" href="lpcI2C_8h.html" title="lpcI2C.h" alt="" coords="309,160,381,189"/><area shape="rect" id="node17" href="lpcSPI_8h.html" title="lpcSPI.h" alt="" coords="405,160,477,189"/><area shape="rect" id="node19" href="lpcRTC_8h.html" title="lpcRTC.h" alt="" coords="501,160,576,189"/><area shape="rect" id="node21" href="lpcGPIO_8h.html" title="lpcGPIO.h" alt="" coords="600,160,683,189"/><area shape="rect" id="node23" href="lpcPIN_8h.html" title="lpcPIN.h" alt="" coords="707,160,779,189"/><area shape="rect" id="node25" href="lpcADC_8h.html" title="lpcADC.h" alt="" coords="803,160,883,189"/><area shape="rect" id="node27" href="lpcSCB_8h.html" title="lpcSCB.h" alt="" coords="907,160,984,189"/><area shape="rect" id="node29" href="lpcVIC_8h.html" title="lpcVIC.h" alt="" coords="1008,160,1080,189"/><area shape="rect" id="node31" href="lpcCAN_8h.html" title="lpcCAN.h" alt="" coords="1104,160,1184,189"/></map>
+<area shape="rect" id="node3" href="spi_8h.html" title="Architecture independent SPI (Serial Peripheral Interface) API." alt="" coords="100,83,231,112"/><area shape="rect" id="node10" href="LPC21xx_8h.html" title="LPC21xx.h" alt="" coords="712,83,800,112"/><area shape="rect" id="node38" href="armVIC_8h.html" title="armVIC.h" alt="" coords="960,83,1040,112"/><area shape="rect" id="node12" href="lpcWD_8h.html" title="lpcWD.h" alt="" coords="272,160,344,189"/><area shape="rect" id="node14" href="lpcTMR_8h.html" title="lpcTMR.h" alt="" coords="368,160,445,189"/><area shape="rect" id="node16" href="lpcUART_8h.html" title="lpcUART.h" alt="" coords="469,160,552,189"/><area shape="rect" id="node18" href="lpcI2C_8h.html" title="lpcI2C.h" alt="" coords="576,160,648,189"/><area shape="rect" id="node20" href="lpcSPI_8h.html" title="lpcSPI.h" alt="" coords="672,160,744,189"/><area shape="rect" id="node22" href="lpcRTC_8h.html" title="lpcRTC.h" alt="" coords="768,160,843,189"/><area shape="rect" id="node24" href="lpcGPIO_8h.html" title="lpcGPIO.h" alt="" coords="867,160,949,189"/><area shape="rect" id="node26" href="lpcPIN_8h.html" title="lpcPIN.h" alt="" coords="973,160,1045,189"/><area shape="rect" id="node28" href="lpcADC_8h.html" title="lpcADC.h" alt="" coords="1069,160,1149,189"/><area shape="rect" id="node30" href="lpcSCB_8h.html" title="lpcSCB.h" alt="" coords="1173,160,1251,189"/><area shape="rect" id="node32" href="lpcVIC_8h.html" title="lpcVIC.h" alt="" coords="1275,160,1347,189"/><area shape="rect" id="node34" href="lpcCAN_8h.html" title="lpcCAN.h" alt="" coords="1371,160,1451,189"/></map>
 </div>
 </div>
 <p><a href="lpc21_2mcu__periph_2spi__arch_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3d65fe8634fad2755d523e202674a1b0">PINSEL1_SCK</a>&#160;&#160;&#160;(2 &lt;&lt; 2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a9ded33dee825d86d167cd72f2225c020">PINSEL1_MISO</a>&#160;&#160;&#160;(2 &lt;&lt; 4)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a83fe52dea5a9e78230b1b751d64d81d2">PINSEL1_MOSI</a>&#160;&#160;&#160;(2 &lt;&lt; 6)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a232db58a94564ed9dfd068333e683b41">PINSEL1_SSEL</a>&#160;&#160;&#160;(2 &lt;&lt; 8)</td></tr>
-<tr><td colspan="2"><h2><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1502e2aa31d7d4374f81dba7badbdf50">spi_tx_idx</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">handling of arm7 SPI hardware for now only SPI1 ( aka SSP )  <a href="#a1502e2aa31d7d4374f81dba7badbdf50"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#ad35eae278262b392b0b57dba7bbf6219">spi_rx_idx</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb42128c95b6c43585972be5260875f">SPI_SELECT_SLAVE_IO__</a>(port, reg)&#160;&#160;&#160;IO ## port ## reg</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Slave selection functions and macros.  <a href="#a3eb42128c95b6c43585972be5260875f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(port, reg)&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb42128c95b6c43585972be5260875f">SPI_SELECT_SLAVE_IO__</a>(port, reg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#acf71ef21c3bd436e76f8203423ba366b">SPI_SELECT_SLAVE0_IODIR</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="umarim__lite__2_80_8h.html#a62cb06db3908015c7305ca6833f90159">SPI_SELECT_SLAVE0_PORT</a>, DIR)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a88f59b0eaea73c1e891d6d78d2112186">SPI_SELECT_SLAVE0_IOCLR</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="umarim__lite__2_80_8h.html#a62cb06db3908015c7305ca6833f90159">SPI_SELECT_SLAVE0_PORT</a>, CLR)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1354efbc27aa57be50028df297684e0b">SPI_SELECT_SLAVE0_IOSET</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="umarim__lite__2_80_8h.html#a62cb06db3908015c7305ca6833f90159">SPI_SELECT_SLAVE0_PORT</a>, SET)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a725323f569301be53abc825b654588a4">SPI_SELECT_SLAVE1_IODIR</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="booz__1_80_8h.html#abed465f8e9387dc4c034b1d71989043c">SPI_SELECT_SLAVE1_PORT</a>, DIR)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6c64158fd68cf62e9f342193e6247dc0">SPI_SELECT_SLAVE1_IOCLR</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="booz__1_80_8h.html#abed465f8e9387dc4c034b1d71989043c">SPI_SELECT_SLAVE1_PORT</a>, CLR)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a17160a1a86d88dab88569b0a6cf6a0d0">SPI_SELECT_SLAVE1_IOSET</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="booz__1_80_8h.html#abed465f8e9387dc4c034b1d71989043c">SPI_SELECT_SLAVE1_PORT</a>, SET)</td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#ab639bd461acc9159f2a8566bfe1ebdd0">SpiSlaveSelect</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#af3a0a783f898c0211f2c0e5498c746a0">SpiSlaveUnselect</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1126b0a8388d4a8eb8ded8bbe8ab940e">SpiSetCPOL</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Spi clock polarity and phase functions.  <a href="#a1126b0a8388d4a8eb8ded8bbe8ab940e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#afddc6318837a832e08ac2096474632f8">SpiClearCPOL</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3f8c8db30e82381d4d60a444f1708517">SpiSetCPHA</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac8a1011a8423019c3b94e3a1a9744b6b">SpiClearCPHA</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#ad816c76c7fe692f51942efa74bdb1d86">SpiSetDataSize</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, enum <a class="el" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92">SPIDataSizeSelect</a> dss)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Spi data size functions.  <a href="#ad816c76c7fe692f51942efa74bdb1d86"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4bb68d5cebfe43c482fc48ca2a1ed6de">SpiEnable</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Spi control functions.  <a href="#a4bb68d5cebfe43c482fc48ca2a1ed6de"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa52dd5d739bbdf340a29fe5231ceb61b">SpiDisable</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a2f597567924a3000e5afb340e4aa5592">SpiEnableRti</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac0c832a0cfacb2b5760c91177b6d791b">SpiDisableRti</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4c328147d259ed459aa71ba246bbf1cf">SpiClearRti</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#acb7e2c245885f1b82d6791148172e592">SpiEnableTxi</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a945eb366ac13567f396285aaa6381cec">SpiDisableTxi</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#abfcef171cdc3c844d374d456143958d6">SpiEnableRxi</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a649c778152304f2059342a5fe38347f6">SpiDisableRxi</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#af00370ab8f8ea4fe1ac8bf434230a398">SpiSend</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb699fd2b2cdeb5f20bb0a47c04a844">SpiRead</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *<a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314">SpiTransmit</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *t)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a102eac917026120b55e6560517771598">SpiReceive</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *t)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a5c38f72da3e7ef54561ec617cdde67e5">SpiInitBuf</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *t)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff">SpiStart</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *t)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea">SpiEndOfTransaction</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *t)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997">SpiAutomaton</a> (struct <a class="el" href="structspi__periph.html">spi_periph</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>)</td></tr>
 </table>
-<hr/><h2>Define Documentation</h2>
-<a class="anchor" id="a9ded33dee825d86d167cd72f2225c020"></a><!-- doxytag: member="spi_arch.c::PINSEL1_MISO" ref="a9ded33dee825d86d167cd72f2225c020" args="" -->
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Handling of SPI hardware for lpc21xx. </p>
+<p>for now only SPI1 ( aka SSP ) </p>
+
+<p>Definition in file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+</div><hr/><h2>Define Documentation</h2>
+<a class="anchor" id="a88f59b0eaea73c1e891d6d78d2112186"></a><!-- doxytag: member="spi_arch.c::SPI_SELECT_SLAVE0_IOCLR" ref="a88f59b0eaea73c1e891d6d78d2112186" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="max3100__hw_8c.html#a9ded33dee825d86d167cd72f2225c020">PINSEL1_MISO</a>&#160;&#160;&#160;(2 &lt;&lt; 4)</td>
+          <td class="memname">#define <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a88f59b0eaea73c1e891d6d78d2112186">SPI_SELECT_SLAVE0_IOCLR</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="umarim__lite__2_80_8h.html#a62cb06db3908015c7305ca6833f90159">SPI_SELECT_SLAVE0_PORT</a>, CLR)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00044">44</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00048">48</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00055">SpiSlaveSelect()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a83fe52dea5a9e78230b1b751d64d81d2"></a><!-- doxytag: member="spi_arch.c::PINSEL1_MOSI" ref="a83fe52dea5a9e78230b1b751d64d81d2" args="" -->
+<a class="anchor" id="acf71ef21c3bd436e76f8203423ba366b"></a><!-- doxytag: member="spi_arch.c::SPI_SELECT_SLAVE0_IODIR" ref="acf71ef21c3bd436e76f8203423ba366b" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="max3100__hw_8c.html#a83fe52dea5a9e78230b1b751d64d81d2">PINSEL1_MOSI</a>&#160;&#160;&#160;(2 &lt;&lt; 6)</td>
+          <td class="memname">#define <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#acf71ef21c3bd436e76f8203423ba366b">SPI_SELECT_SLAVE0_IODIR</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="umarim__lite__2_80_8h.html#a62cb06db3908015c7305ca6833f90159">SPI_SELECT_SLAVE0_PORT</a>, DIR)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00047">47</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1354efbc27aa57be50028df297684e0b"></a><!-- doxytag: member="spi_arch.c::SPI_SELECT_SLAVE0_IOSET" ref="a1354efbc27aa57be50028df297684e0b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1354efbc27aa57be50028df297684e0b">SPI_SELECT_SLAVE0_IOSET</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="umarim__lite__2_80_8h.html#a62cb06db3908015c7305ca6833f90159">SPI_SELECT_SLAVE0_PORT</a>, SET)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00049">49</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00072">SpiSlaveUnselect()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c64158fd68cf62e9f342193e6247dc0"></a><!-- doxytag: member="spi_arch.c::SPI_SELECT_SLAVE1_IOCLR" ref="a6c64158fd68cf62e9f342193e6247dc0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6c64158fd68cf62e9f342193e6247dc0">SPI_SELECT_SLAVE1_IOCLR</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="booz__1_80_8h.html#abed465f8e9387dc4c034b1d71989043c">SPI_SELECT_SLAVE1_PORT</a>, CLR)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00052">52</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00055">SpiSlaveSelect()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a725323f569301be53abc825b654588a4"></a><!-- doxytag: member="spi_arch.c::SPI_SELECT_SLAVE1_IODIR" ref="a725323f569301be53abc825b654588a4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a725323f569301be53abc825b654588a4">SPI_SELECT_SLAVE1_IODIR</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="booz__1_80_8h.html#abed465f8e9387dc4c034b1d71989043c">SPI_SELECT_SLAVE1_PORT</a>, DIR)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00051">51</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a17160a1a86d88dab88569b0a6cf6a0d0"></a><!-- doxytag: member="spi_arch.c::SPI_SELECT_SLAVE1_IOSET" ref="a17160a1a86d88dab88569b0a6cf6a0d0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a17160a1a86d88dab88569b0a6cf6a0d0">SPI_SELECT_SLAVE1_IOSET</a>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a>(<a class="el" href="booz__1_80_8h.html#abed465f8e9387dc4c034b1d71989043c">SPI_SELECT_SLAVE1_PORT</a>, SET)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00053">53</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00072">SpiSlaveUnselect()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6666aed242e8cbfb24bb3c9bc99d13da"></a><!-- doxytag: member="spi_arch.c::SPI_SELECT_SLAVE_IO_" ref="a6666aed242e8cbfb24bb3c9bc99d13da" args="(port, reg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">SPI_SELECT_SLAVE_IO_</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">port, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">reg&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb42128c95b6c43585972be5260875f">SPI_SELECT_SLAVE_IO__</a>(port, reg)</td>
         </tr>
       </table>
 </div>
@@ -165,66 +301,960 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3d65fe8634fad2755d523e202674a1b0"></a><!-- doxytag: member="spi_arch.c::PINSEL1_SCK" ref="a3d65fe8634fad2755d523e202674a1b0" args="" -->
+<a class="anchor" id="a3eb42128c95b6c43585972be5260875f"></a><!-- doxytag: member="spi_arch.c::SPI_SELECT_SLAVE_IO__" ref="a3eb42128c95b6c43585972be5260875f" args="(port, reg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="max3100__hw_8c.html#a3d65fe8634fad2755d523e202674a1b0">PINSEL1_SCK</a>&#160;&#160;&#160;(2 &lt;&lt; 2)</td>
+          <td class="memname">#define <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb42128c95b6c43585972be5260875f">SPI_SELECT_SLAVE_IO__</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">port, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">reg&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;IO ## port ## reg</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00043">43</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+<p>Slave selection functions and macros. </p>
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00044">44</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a232db58a94564ed9dfd068333e683b41"></a><!-- doxytag: member="spi_arch.c::PINSEL1_SSEL" ref="a232db58a94564ed9dfd068333e683b41" args="" -->
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a0c3a952b26b4118dcd848cb234062997"></a><!-- doxytag: member="spi_arch.c::SpiAutomaton" ref="a0c3a952b26b4118dcd848cb234062997" args="(struct spi_periph *p)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="max3100__hw_8c.html#a232db58a94564ed9dfd068333e683b41">PINSEL1_SSEL</a>&#160;&#160;&#160;(2 &lt;&lt; 8)</td>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997">SpiAutomaton</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00046">46</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00278">278</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00281">BSY</a>, <a class="el" href="spi_8h_source.html#l00136">spi_transaction::input_length</a>, <a class="el" href="spi_8h_source.html#l00137">spi_transaction::output_length</a>, <a class="el" href="LPC21xx_8h_source.html#l00285">RTMIS</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00142">SpiClearRti()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00138">SpiDisableRti()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00146">SpiEnableTxi()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00251">SpiEndOfTransaction()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00195">SpiReceive()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00170">SpiTransmit()</a>, and <a class="el" href="LPC21xx_8h_source.html#l00287">TXMIS</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a0c3a952b26b4118dcd848cb234062997_cgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a0c3a952b26b4118dcd848cb234062997_cgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a0c3a952b26b4118dcd848cb234062997_cgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a0c3a952b26b4118dcd848cb234062997_cgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4c328147d259ed459aa71ba246bbf1cf" title="SpiClearRti" alt="" coords="199,8,289,37"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac0c832a0cfacb2b5760c91177b6d791b" title="SpiDisableRti" alt="" coords="192,61,296,91"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#acb7e2c245885f1b82d6791148172e592" title="SpiEnableTxi" alt="" coords="560,5,661,35"/><area shape="rect" id="node9" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="168,192,320,221"/><area shape="rect" id="node33" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314" title="SpiTransmit" alt="" coords="720,485,816,515"/><area shape="rect" id="node42" href="lpc21_2mcu__periph_2spi__arch_8c.html#a102eac917026120b55e6560517771598" title="SpiReceive" alt="" coords="199,589,289,619"/><area shape="rect" id="node11" href="lpc21_2mcu__periph_2spi__arch_8c.html#af3a0a783f898c0211f2c0e5498c746a0" title="SpiSlaveUnselect" alt="" coords="368,165,501,195"/><area shape="rect" id="node13" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa52dd5d739bbdf340a29fe5231ceb61b" title="SpiDisable" alt="" coords="391,219,479,248"/><area shape="rect" id="node15" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="397,272,472,301"/><area shape="rect" id="node17" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1126b0a8388d4a8eb8ded8bbe8ab940e" title="Spi clock polarity and phase functions." alt="" coords="561,59,660,88"/><area shape="rect" id="node19" href="lpc21_2mcu__periph_2spi__arch_8c.html#afddc6318837a832e08ac2096474632f8" title="SpiClearCPOL" alt="" coords="556,112,665,141"/><area shape="rect" id="node21" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3f8c8db30e82381d4d60a444f1708517" title="SpiSetCPHA" alt="" coords="561,165,660,195"/><area shape="rect" id="node23" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac8a1011a8423019c3b94e3a1a9744b6b" title="SpiClearCPHA" alt="" coords="556,219,665,248"/><area shape="rect" id="node25" href="lpc21_2mcu__periph_2spi__arch_8c.html#ad816c76c7fe692f51942efa74bdb1d86" title="Spi data size functions." alt="" coords="549,272,672,301"/><area shape="rect" id="node27" href="lpc21_2mcu__periph_2spi__arch_8c.html#ab639bd461acc9159f2a8566bfe1ebdd0" title="SpiSlaveSelect" alt="" coords="552,325,669,355"/><area shape="rect" id="node29" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4bb68d5cebfe43c482fc48ca2a1ed6de" title="Spi control functions." alt="" coords="568,379,653,408"/><area shape="rect" id="node31" href="lpc21_2mcu__periph_2spi__arch_8c.html#a5c38f72da3e7ef54561ec617cdde67e5" title="SpiInitBuf" alt="" coords="569,432,652,461"/><area shape="rect" id="node40" href="lpc21_2mcu__periph_2spi__arch_8c.html#a2f597567924a3000e5afb340e4aa5592" title="SpiEnableRti" alt="" coords="560,485,661,515"/><area shape="rect" id="node35" href="lpc21_2mcu__periph_2spi__arch_8c.html#af00370ab8f8ea4fe1ac8bf434230a398" title="SpiSend" alt="" coords="880,459,955,488"/><area shape="rect" id="node37" href="lpc21_2mcu__periph_2spi__arch_8c.html#a945eb366ac13567f396285aaa6381cec" title="SpiDisableTxi" alt="" coords="864,512,971,541"/><area shape="rect" id="node44" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb699fd2b2cdeb5f20bb0a47c04a844" title="SpiRead" alt="" coords="399,589,471,619"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="ad35eae278262b392b0b57dba7bbf6219"></a><!-- doxytag: member="spi_arch.c::spi_rx_idx" ref="ad35eae278262b392b0b57dba7bbf6219" args="" -->
+<a class="anchor" id="ac8a1011a8423019c3b94e3a1a9744b6b"></a><!-- doxytag: member="spi_arch.c::SpiClearCPHA" ref="ac8a1011a8423019c3b94e3a1a9744b6b" args="(struct spi_periph *p)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="lpc21_2mcu__periph_2spi__arch_8h.html#ad35eae278262b392b0b57dba7bbf6219">spi_rx_idx</a></td>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac8a1011a8423019c3b94e3a1a9744b6b">SpiClearCPHA</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00035">35</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00104">104</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00246">CPHA</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_ac8a1011a8423019c3b94e3a1a9744b6b_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_ac8a1011a8423019c3b94e3a1a9744b6b_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_ac8a1011a8423019c3b94e3a1a9744b6b_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_ac8a1011a8423019c3b94e3a1a9744b6b_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="165,137,240,167"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="291,5,443,35"/><area shape="rect" id="node9" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="313,59,420,88"/><area shape="rect" id="node11" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="503,85,599,115"/><area shape="rect" id="node20" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="288,163,445,192"/><area shape="rect" id="node22" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="312,216,421,245"/><area shape="rect" id="node26" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="303,269,431,299"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="493,5,608,35"/><area shape="rect" id="node13" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="656,85,763,115"/><area shape="rect" id="node15" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="836,59,972,88"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="811,112,997,141"/><area shape="rect" id="node24" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="501,216,600,245"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a1502e2aa31d7d4374f81dba7badbdf50"></a><!-- doxytag: member="spi_arch.c::spi_tx_idx" ref="a1502e2aa31d7d4374f81dba7badbdf50" args="" -->
+<a class="anchor" id="afddc6318837a832e08ac2096474632f8"></a><!-- doxytag: member="spi_arch.c::SpiClearCPOL" ref="afddc6318837a832e08ac2096474632f8" args="(struct spi_periph *p)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="lpc21_2mcu__periph_2spi__arch_8h.html#a1502e2aa31d7d4374f81dba7badbdf50">spi_tx_idx</a></td>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#afddc6318837a832e08ac2096474632f8">SpiClearCPOL</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>handling of arm7 SPI hardware for now only SPI1 ( aka SSP ) </p>
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00096">96</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
 
-<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00034">34</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00245">CPOL</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_afddc6318837a832e08ac2096474632f8_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_afddc6318837a832e08ac2096474632f8_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_afddc6318837a832e08ac2096474632f8_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_afddc6318837a832e08ac2096474632f8_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="163,137,237,167"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="288,5,440,35"/><area shape="rect" id="node9" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="311,59,417,88"/><area shape="rect" id="node11" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="500,85,596,115"/><area shape="rect" id="node20" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="285,163,443,192"/><area shape="rect" id="node22" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="309,216,419,245"/><area shape="rect" id="node26" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="300,269,428,299"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="491,5,605,35"/><area shape="rect" id="node13" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="653,85,760,115"/><area shape="rect" id="node15" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="833,59,969,88"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="808,112,995,141"/><area shape="rect" id="node24" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="499,216,597,245"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c328147d259ed459aa71ba246bbf1cf"></a><!-- doxytag: member="spi_arch.c::SpiClearRti" ref="a4c328147d259ed459aa71ba246bbf1cf" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4c328147d259ed459aa71ba246bbf1cf">SpiClearRti</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00142">142</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00291">RTIC</a>.</p>
+
+<p>Referenced by <a class="el" href="ADS8344_8c_source.html#l00125">ADS8344_start()</a>, <a class="el" href="lcd__dogm__hw_8c_source.html#l00054">lcd_spi_tx()</a>, <a class="el" href="max3100__hw_8h_source.html#l00104">max3100_transmit()</a>, <a class="el" href="ADS8344_8c_source.html#l00133">SPI1_ISR()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00278">SpiAutomaton()</a>.</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a4c328147d259ed459aa71ba246bbf1cf_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a4c328147d259ed459aa71ba246bbf1cf_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a4c328147d259ed459aa71ba246bbf1cf_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a4c328147d259ed459aa71ba246bbf1cf_icgraph">
+<area shape="rect" id="node3" href="stm32_2subsystems_2imu_2imu__crista__arch_8h.html#a998b4ce1e557d7dd9256f33a85c1ec37" title="ADS8344_start" alt="" coords="157,5,275,35"/><area shape="rect" id="node5" href="lcd__dogm__hw_8h.html#a366ee955fa7d05ec9dcc324178a212d7" title="lcd_spi_tx" alt="" coords="175,59,257,88"/><area shape="rect" id="node14" href="max3100__hw_8h.html#a8c3a887b4b8368102717fb3f4dd8a73e" title="max3100_transmit" alt="" coords="145,112,287,141"/><area shape="rect" id="node16" href="ADS8344_8c.html#a65d6ea131026affbdf33be235dfdb49d" title="SPI1_ISR" alt="" coords="177,165,255,195"/><area shape="rect" id="node20" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="159,219,273,248"/><area shape="rect" id="node7" href="lcd__dogm_8h.html#a013ebbab9fe5f1d401ebb0706f6499be" title="lcd_cmd" alt="" coords="353,32,428,61"/><area shape="rect" id="node11" href="lcd__dogm_8h.html#ad0729d2cba627825a089ca1fff12ba29" title="lcd_data" alt="" coords="353,85,428,115"/><area shape="rect" id="node9" href="lcd__dogm_8h.html#ab6acaab38b691cf2bd50ff3f9cd5a9e9" title="lcd_dogm_init" alt="" coords="495,59,604,88"/><area shape="rect" id="node18" href="ADS8344_8h.html#aa25a279dd8571513ab369b489a858484" title="ADS8344_init" alt="" coords="337,165,444,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa52dd5d739bbdf340a29fe5231ceb61b"></a><!-- doxytag: member="spi_arch.c::SpiDisable" ref="aa52dd5d739bbdf340a29fe5231ceb61b" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa52dd5d739bbdf340a29fe5231ceb61b">SpiDisable</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00130">130</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00266">SSE</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00251">SpiEndOfTransaction()</a>.</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_aa52dd5d739bbdf340a29fe5231ceb61b_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_aa52dd5d739bbdf340a29fe5231ceb61b_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_aa52dd5d739bbdf340a29fe5231ceb61b_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_aa52dd5d739bbdf340a29fe5231ceb61b_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="144,5,296,35"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="344,5,459,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0c832a0cfacb2b5760c91177b6d791b"></a><!-- doxytag: member="spi_arch.c::SpiDisableRti" ref="ac0c832a0cfacb2b5760c91177b6d791b" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac0c832a0cfacb2b5760c91177b6d791b">SpiDisableRti</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00138">138</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00272">RTIM</a>.</p>
+
+<p>Referenced by <a class="el" href="lcd__dogm__hw_8c_source.html#l00083">SPI1_ISR()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00278">SpiAutomaton()</a>.</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_ac0c832a0cfacb2b5760c91177b6d791b_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_ac0c832a0cfacb2b5760c91177b6d791b_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_ac0c832a0cfacb2b5760c91177b6d791b_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_ac0c832a0cfacb2b5760c91177b6d791b_icgraph">
+<area shape="rect" id="node3" href="lcd__dogm__hw_8c.html#a65d6ea131026affbdf33be235dfdb49d" title="SPI1_ISR" alt="" coords="179,5,256,35"/><area shape="rect" id="node9" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="160,59,275,88"/><area shape="rect" id="node5" href="lcd__dogm__hw_8h.html#a763c731963e6543e5a42a499549e00dd" title="lcd_dogm_init_hw" alt="" coords="324,5,457,35"/><area shape="rect" id="node7" href="lcd__dogm_8h.html#ab6acaab38b691cf2bd50ff3f9cd5a9e9" title="lcd_dogm_init" alt="" coords="508,5,617,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a649c778152304f2059342a5fe38347f6"></a><!-- doxytag: member="spi_arch.c::SpiDisableRxi" ref="a649c778152304f2059342a5fe38347f6" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a649c778152304f2059342a5fe38347f6">SpiDisableRxi</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00158">158</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00273">RXIM</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a945eb366ac13567f396285aaa6381cec"></a><!-- doxytag: member="spi_arch.c::SpiDisableTxi" ref="a945eb366ac13567f396285aaa6381cec" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a945eb366ac13567f396285aaa6381cec">SpiDisableTxi</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00150">150</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00274">TXIM</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00170">SpiTransmit()</a>.</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a945eb366ac13567f396285aaa6381cec_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a945eb366ac13567f396285aaa6381cec_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a945eb366ac13567f396285aaa6381cec_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a945eb366ac13567f396285aaa6381cec_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314" title="SpiTransmit" alt="" coords="160,19,256,48"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#a5c38f72da3e7ef54561ec617cdde67e5" title="SpiInitBuf" alt="" coords="304,96,387,125"/><area shape="rect" id="node11" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="763,5,877,35"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="435,135,509,164"/><area shape="rect" id="node9" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="560,31,712,60"/><area shape="rect" id="node13" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="583,135,689,164"/><area shape="rect" id="node15" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="772,109,868,139"/><area shape="rect" id="node24" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="557,188,715,217"/><area shape="rect" id="node26" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="581,241,691,271"/><area shape="rect" id="node30" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="572,295,700,324"/><area shape="rect" id="node17" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="925,109,1032,139"/><area shape="rect" id="node19" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="1105,83,1241,112"/><area shape="rect" id="node21" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="1080,136,1267,165"/><area shape="rect" id="node28" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="771,241,869,271"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bb68d5cebfe43c482fc48ca2a1ed6de"></a><!-- doxytag: member="spi_arch.c::SpiEnable" ref="a4bb68d5cebfe43c482fc48ca2a1ed6de" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4bb68d5cebfe43c482fc48ca2a1ed6de">SpiEnable</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Spi control functions. </p>
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00126">126</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00266">SSE</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a4bb68d5cebfe43c482fc48ca2a1ed6de_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a4bb68d5cebfe43c482fc48ca2a1ed6de_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a4bb68d5cebfe43c482fc48ca2a1ed6de_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a4bb68d5cebfe43c482fc48ca2a1ed6de_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="139,137,213,167"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="264,5,416,35"/><area shape="rect" id="node9" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="287,59,393,88"/><area shape="rect" id="node11" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="476,85,572,115"/><area shape="rect" id="node20" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="261,163,419,192"/><area shape="rect" id="node22" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="285,216,395,245"/><area shape="rect" id="node26" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="276,269,404,299"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="467,5,581,35"/><area shape="rect" id="node13" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="629,85,736,115"/><area shape="rect" id="node15" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="809,59,945,88"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="784,112,971,141"/><area shape="rect" id="node24" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="475,216,573,245"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f597567924a3000e5afb340e4aa5592"></a><!-- doxytag: member="spi_arch.c::SpiEnableRti" ref="a2f597567924a3000e5afb340e4aa5592" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a2f597567924a3000e5afb340e4aa5592">SpiEnableRti</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00134">134</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00272">RTIM</a>.</p>
+
+<p>Referenced by <a class="el" href="ADS8344_8c_source.html#l00125">ADS8344_start()</a>, <a class="el" href="baro__scp_8c_source.html#l00152">baro_scp_start_high_res_measurement()</a>, <a class="el" href="lcd__dogm__hw_8c_source.html#l00054">lcd_spi_tx()</a>, <a class="el" href="max3100__hw_8h_source.html#l00104">max3100_transmit()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a2f597567924a3000e5afb340e4aa5592_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a2f597567924a3000e5afb340e4aa5592_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a2f597567924a3000e5afb340e4aa5592_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a2f597567924a3000e5afb340e4aa5592_icgraph">
+<area shape="rect" id="node3" href="stm32_2subsystems_2imu_2imu__crista__arch_8h.html#a998b4ce1e557d7dd9256f33a85c1ec37" title="ADS8344_start" alt="" coords="235,5,352,35"/><area shape="rect" id="node5" href="baro__scp_8c.html#a550d0f8163f4c79ce3c4e77ac6f02fa4" title="baro_scp_start_high_res_measurement" alt="" coords="156,59,431,88"/><area shape="rect" id="node9" href="lcd__dogm__hw_8h.html#a366ee955fa7d05ec9dcc324178a212d7" title="lcd_spi_tx" alt="" coords="252,112,335,141"/><area shape="rect" id="node18" href="max3100__hw_8h.html#a8c3a887b4b8368102717fb3f4dd8a73e" title="max3100_transmit" alt="" coords="223,165,364,195"/><area shape="rect" id="node20" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="256,297,331,327"/><area shape="rect" id="node7" href="baro__scp__i2c_8h.html#a7995b8df4beede8b8da2998349693108" title="baro_scp_periodic" alt="" coords="491,32,627,61"/><area shape="rect" id="node11" href="lcd__dogm_8h.html#a013ebbab9fe5f1d401ebb0706f6499be" title="lcd_cmd" alt="" coords="521,85,596,115"/><area shape="rect" id="node15" href="lcd__dogm_8h.html#ad0729d2cba627825a089ca1fff12ba29" title="lcd_data" alt="" coords="521,139,596,168"/><area shape="rect" id="node13" href="lcd__dogm_8h.html#ab6acaab38b691cf2bd50ff3f9cd5a9e9" title="lcd_dogm_init" alt="" coords="688,112,797,141"/><area shape="rect" id="node22" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="483,192,635,221"/><area shape="rect" id="node26" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="505,245,612,275"/><area shape="rect" id="node28" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="695,272,791,301"/><area shape="rect" id="node37" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="480,349,637,379"/><area shape="rect" id="node39" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="504,403,613,432"/><area shape="rect" id="node43" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="495,456,623,485"/><area shape="rect" id="node24" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="685,192,800,221"/><area shape="rect" id="node30" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="848,272,955,301"/><area shape="rect" id="node32" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="1028,245,1164,275"/><area shape="rect" id="node34" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="1003,299,1189,328"/><area shape="rect" id="node41" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="693,403,792,432"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abfcef171cdc3c844d374d456143958d6"></a><!-- doxytag: member="spi_arch.c::SpiEnableRxi" ref="abfcef171cdc3c844d374d456143958d6" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#abfcef171cdc3c844d374d456143958d6">SpiEnableRxi</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00154">154</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00273">RXIM</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb7e2c245885f1b82d6791148172e592"></a><!-- doxytag: member="spi_arch.c::SpiEnableTxi" ref="acb7e2c245885f1b82d6791148172e592" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#acb7e2c245885f1b82d6791148172e592">SpiEnableTxi</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00146">146</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00274">TXIM</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00278">SpiAutomaton()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_acb7e2c245885f1b82d6791148172e592_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_acb7e2c245885f1b82d6791148172e592_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_acb7e2c245885f1b82d6791148172e592_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_acb7e2c245885f1b82d6791148172e592_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="485,5,600,35"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="157,136,232,165"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="283,31,435,60"/><area shape="rect" id="node10" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="305,84,412,113"/><area shape="rect" id="node12" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="495,111,591,140"/><area shape="rect" id="node21" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="280,188,437,217"/><area shape="rect" id="node23" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="304,241,413,271"/><area shape="rect" id="node27" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="295,295,423,324"/><area shape="rect" id="node14" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="648,111,755,140"/><area shape="rect" id="node16" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="828,84,964,113"/><area shape="rect" id="node18" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="803,137,989,167"/><area shape="rect" id="node25" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="493,241,592,271"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa77dd16c5b07dd46e54d274ad55016ea"></a><!-- doxytag: member="spi_arch.c::SpiEndOfTransaction" ref="aa77dd16c5b07dd46e54d274ad55016ea" args="(struct spi_periph *p, struct spi_transaction *t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea">SpiEndOfTransaction</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00251">251</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00130">SpiDisable()</a>, <a class="el" href="spi_8h_source.html#l00097">SPIIdle</a>, <a class="el" href="spi_8h_source.html#l00053">SPISelectUnselect</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00072">SpiSlaveUnselect()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>, <a class="el" href="spi_8h_source.html#l00089">SPITransSuccess</a>, and <a class="el" href="spi_8h_source.html#l00055">SPIUnselect</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00278">SpiAutomaton()</a>.</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_aa77dd16c5b07dd46e54d274ad55016ea_cgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_aa77dd16c5b07dd46e54d274ad55016ea_cgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_aa77dd16c5b07dd46e54d274ad55016ea_cgraph" id="lpc21_2mcu__periph_2spi__arch_8c_aa77dd16c5b07dd46e54d274ad55016ea_cgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa52dd5d739bbdf340a29fe5231ceb61b" title="SpiDisable" alt="" coords="228,139,316,168"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#af3a0a783f898c0211f2c0e5498c746a0" title="SpiSlaveUnselect" alt="" coords="205,192,339,221"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="235,245,309,275"/><area shape="rect" id="node9" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1126b0a8388d4a8eb8ded8bbe8ab940e" title="Spi clock polarity and phase functions." alt="" coords="399,5,497,35"/><area shape="rect" id="node11" href="lpc21_2mcu__periph_2spi__arch_8c.html#afddc6318837a832e08ac2096474632f8" title="SpiClearCPOL" alt="" coords="393,59,503,88"/><area shape="rect" id="node13" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3f8c8db30e82381d4d60a444f1708517" title="SpiSetCPHA" alt="" coords="399,112,497,141"/><area shape="rect" id="node15" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac8a1011a8423019c3b94e3a1a9744b6b" title="SpiClearCPHA" alt="" coords="393,165,503,195"/><area shape="rect" id="node17" href="lpc21_2mcu__periph_2spi__arch_8c.html#ad816c76c7fe692f51942efa74bdb1d86" title="Spi data size functions." alt="" coords="387,219,509,248"/><area shape="rect" id="node19" href="lpc21_2mcu__periph_2spi__arch_8c.html#ab639bd461acc9159f2a8566bfe1ebdd0" title="SpiSlaveSelect" alt="" coords="389,272,507,301"/><area shape="rect" id="node21" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4bb68d5cebfe43c482fc48ca2a1ed6de" title="Spi control functions." alt="" coords="405,325,491,355"/><area shape="rect" id="node23" href="lpc21_2mcu__periph_2spi__arch_8c.html#a5c38f72da3e7ef54561ec617cdde67e5" title="SpiInitBuf" alt="" coords="407,379,489,408"/><area shape="rect" id="node31" href="lpc21_2mcu__periph_2spi__arch_8c.html#acb7e2c245885f1b82d6791148172e592" title="SpiEnableTxi" alt="" coords="397,432,499,461"/><area shape="rect" id="node33" href="lpc21_2mcu__periph_2spi__arch_8c.html#a2f597567924a3000e5afb340e4aa5592" title="SpiEnableRti" alt="" coords="397,485,499,515"/><area shape="rect" id="node25" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314" title="SpiTransmit" alt="" coords="557,379,653,408"/><area shape="rect" id="node27" href="lpc21_2mcu__periph_2spi__arch_8c.html#af00370ab8f8ea4fe1ac8bf434230a398" title="SpiSend" alt="" coords="717,352,792,381"/><area shape="rect" id="node29" href="lpc21_2mcu__periph_2spi__arch_8c.html#a945eb366ac13567f396285aaa6381cec" title="SpiDisableTxi" alt="" coords="701,405,808,435"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_aa77dd16c5b07dd46e54d274ad55016ea_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_aa77dd16c5b07dd46e54d274ad55016ea_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_aa77dd16c5b07dd46e54d274ad55016ea_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_aa77dd16c5b07dd46e54d274ad55016ea_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="205,5,320,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c38f72da3e7ef54561ec617cdde67e5"></a><!-- doxytag: member="spi_arch.c::SpiInitBuf" ref="a5c38f72da3e7ef54561ec617cdde67e5" args="(struct spi_periph *p, struct spi_transaction *t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a5c38f72da3e7ef54561ec617cdde67e5">SpiInitBuf</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00216">216</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00170">SpiTransmit()</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a5c38f72da3e7ef54561ec617cdde67e5_cgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a5c38f72da3e7ef54561ec617cdde67e5_cgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a5c38f72da3e7ef54561ec617cdde67e5_cgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a5c38f72da3e7ef54561ec617cdde67e5_cgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314" title="SpiTransmit" alt="" coords="136,32,232,61"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#af00370ab8f8ea4fe1ac8bf434230a398" title="SpiSend" alt="" coords="296,5,371,35"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#a945eb366ac13567f396285aaa6381cec" title="SpiDisableTxi" alt="" coords="280,59,387,88"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a5c38f72da3e7ef54561ec617cdde67e5_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a5c38f72da3e7ef54561ec617cdde67e5_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a5c38f72da3e7ef54561ec617cdde67e5_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a5c38f72da3e7ef54561ec617cdde67e5_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="136,137,211,167"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="261,5,413,35"/><area shape="rect" id="node9" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="284,59,391,88"/><area shape="rect" id="node11" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="473,85,569,115"/><area shape="rect" id="node20" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="259,163,416,192"/><area shape="rect" id="node22" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="283,216,392,245"/><area shape="rect" id="node26" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="273,269,401,299"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="464,5,579,35"/><area shape="rect" id="node13" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="627,85,733,115"/><area shape="rect" id="node15" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="807,59,943,88"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="781,112,968,141"/><area shape="rect" id="node24" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="472,216,571,245"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3eb699fd2b2cdeb5f20bb0a47c04a844"></a><!-- doxytag: member="spi_arch.c::SpiRead" ref="a3eb699fd2b2cdeb5f20bb0a47c04a844" args="(struct spi_periph *p, uint16_t *c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb699fd2b2cdeb5f20bb0a47c04a844">SpiRead</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00166">166</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00195">SpiReceive()</a>.</p>
+
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a3eb699fd2b2cdeb5f20bb0a47c04a844_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a3eb699fd2b2cdeb5f20bb0a47c04a844_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a3eb699fd2b2cdeb5f20bb0a47c04a844_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a3eb699fd2b2cdeb5f20bb0a47c04a844_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a102eac917026120b55e6560517771598" title="SpiReceive" alt="" coords="128,5,219,35"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="267,5,381,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a102eac917026120b55e6560517771598"></a><!-- doxytag: member="spi_arch.c::SpiReceive" ref="a102eac917026120b55e6560517771598" args="(struct spi_periph *p, struct spi_transaction *t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a102eac917026120b55e6560517771598">SpiReceive</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00195">195</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="main__demo5_8c_source.html#l00054">foo</a>, <a class="el" href="LPC21xx_8h_source.html#l00279">RNE</a>, <a class="el" href="spi_8h_source.html#l00081">SPIDss16bit</a>, <a class="el" href="spi_8h_source.html#l00080">SPIDss8bit</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00166">SpiRead()</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00278">SpiAutomaton()</a>.</p>
+
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a102eac917026120b55e6560517771598_cgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a102eac917026120b55e6560517771598_cgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a102eac917026120b55e6560517771598_cgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a102eac917026120b55e6560517771598_cgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb699fd2b2cdeb5f20bb0a47c04a844" title="SpiRead" alt="" coords="145,5,217,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a102eac917026120b55e6560517771598_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a102eac917026120b55e6560517771598_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a102eac917026120b55e6560517771598_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a102eac917026120b55e6560517771598_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="144,5,259,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af00370ab8f8ea4fe1ac8bf434230a398"></a><!-- doxytag: member="spi_arch.c::SpiSend" ref="af00370ab8f8ea4fe1ac8bf434230a398" args="(struct spi_periph *p, uint16_t c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#af00370ab8f8ea4fe1ac8bf434230a398">SpiSend</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00162">162</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00170">SpiTransmit()</a>.</p>
+
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_af00370ab8f8ea4fe1ac8bf434230a398_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_af00370ab8f8ea4fe1ac8bf434230a398_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_af00370ab8f8ea4fe1ac8bf434230a398_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_af00370ab8f8ea4fe1ac8bf434230a398_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314" title="SpiTransmit" alt="" coords="128,19,224,48"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#a5c38f72da3e7ef54561ec617cdde67e5" title="SpiInitBuf" alt="" coords="272,96,355,125"/><area shape="rect" id="node11" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="731,5,845,35"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="403,135,477,164"/><area shape="rect" id="node9" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="528,31,680,60"/><area shape="rect" id="node13" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="551,135,657,164"/><area shape="rect" id="node15" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="740,109,836,139"/><area shape="rect" id="node24" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="525,188,683,217"/><area shape="rect" id="node26" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="549,241,659,271"/><area shape="rect" id="node30" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="540,295,668,324"/><area shape="rect" id="node17" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="893,109,1000,139"/><area shape="rect" id="node19" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="1073,83,1209,112"/><area shape="rect" id="node21" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="1048,136,1235,165"/><area shape="rect" id="node28" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="739,241,837,271"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f8c8db30e82381d4d60a444f1708517"></a><!-- doxytag: member="spi_arch.c::SpiSetCPHA" ref="a3f8c8db30e82381d4d60a444f1708517" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3f8c8db30e82381d4d60a444f1708517">SpiSetCPHA</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00100">100</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00246">CPHA</a>.</p>
+
+<p>Referenced by <a class="el" href="baro__MS5534A_8c_source.html#l00166">baro_MS5534A_send()</a>, <a class="el" href="fw__ins__vn100_8c_source.html#l00038">ins_init()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a3f8c8db30e82381d4d60a444f1708517_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a3f8c8db30e82381d4d60a444f1708517_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a3f8c8db30e82381d4d60a444f1708517_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a3f8c8db30e82381d4d60a444f1708517_icgraph">
+<area shape="rect" id="node3" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="277,112,435,141"/><area shape="rect" id="node5" href="ins_8h.html#abf3028c2ada542781b8a5e1eb20c17ce" title="INS initialization." alt="" coords="159,59,225,88"/><area shape="rect" id="node13" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="155,217,229,247"/><area shape="rect" id="node7" href="main_8h.html#a092df25ac46a6a4ca72c023d8821f9b2" title="main_init" alt="" coords="316,5,396,35"/><area shape="rect" id="node9" href="main__ap_8h.html#a0913f0248fbbe56a5ec65e10e36c9f30" title="init_ap" alt="" coords="324,59,388,88"/><area shape="rect" id="node11" href="sim__ap_8c.html#a739fbef2e03619a863b4d7fd8d0da157" title="sim_init" alt="" coords="505,59,575,88"/><area shape="rect" id="node15" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="280,376,432,405"/><area shape="rect" id="node19" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="303,323,409,352"/><area shape="rect" id="node21" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="492,271,588,300"/><area shape="rect" id="node31" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="301,165,411,195"/><area shape="rect" id="node35" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="292,269,420,299"/><area shape="rect" id="node17" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="483,376,597,405"/><area shape="rect" id="node23" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="645,271,752,300"/><area shape="rect" id="node25" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="825,244,961,273"/><area shape="rect" id="node27" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="800,297,987,327"/><area shape="rect" id="node33" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="491,165,589,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1126b0a8388d4a8eb8ded8bbe8ab940e"></a><!-- doxytag: member="spi_arch.c::SpiSetCPOL" ref="a1126b0a8388d4a8eb8ded8bbe8ab940e" args="(struct spi_periph *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1126b0a8388d4a8eb8ded8bbe8ab940e">SpiSetCPOL</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Spi clock polarity and phase functions. </p>
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00092">92</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00245">CPOL</a>.</p>
+
+<p>Referenced by <a class="el" href="fw__ins__vn100_8c_source.html#l00038">ins_init()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a1126b0a8388d4a8eb8ded8bbe8ab940e_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a1126b0a8388d4a8eb8ded8bbe8ab940e_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a1126b0a8388d4a8eb8ded8bbe8ab940e_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a1126b0a8388d4a8eb8ded8bbe8ab940e_icgraph">
+<area shape="rect" id="node3" href="ins_8h.html#abf3028c2ada542781b8a5e1eb20c17ce" title="INS initialization." alt="" coords="156,59,223,88"/><area shape="rect" id="node11" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="152,217,227,247"/><area shape="rect" id="node5" href="main_8h.html#a092df25ac46a6a4ca72c023d8821f9b2" title="main_init" alt="" coords="313,5,393,35"/><area shape="rect" id="node7" href="main__ap_8h.html#a0913f0248fbbe56a5ec65e10e36c9f30" title="init_ap" alt="" coords="321,59,385,88"/><area shape="rect" id="node9" href="sim__ap_8c.html#a739fbef2e03619a863b4d7fd8d0da157" title="sim_init" alt="" coords="503,59,572,88"/><area shape="rect" id="node13" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="277,112,429,141"/><area shape="rect" id="node17" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="300,165,407,195"/><area shape="rect" id="node19" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="489,192,585,221"/><area shape="rect" id="node28" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="275,269,432,299"/><area shape="rect" id="node30" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="299,323,408,352"/><area shape="rect" id="node34" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="289,376,417,405"/><area shape="rect" id="node15" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="480,112,595,141"/><area shape="rect" id="node21" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="643,192,749,221"/><area shape="rect" id="node23" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="823,165,959,195"/><area shape="rect" id="node25" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="797,219,984,248"/><area shape="rect" id="node32" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="488,323,587,352"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad816c76c7fe692f51942efa74bdb1d86"></a><!-- doxytag: member="spi_arch.c::SpiSetDataSize" ref="ad816c76c7fe692f51942efa74bdb1d86" args="(struct spi_periph *p, enum SPIDataSizeSelect dss)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#ad816c76c7fe692f51942efa74bdb1d86">SpiSetDataSize</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92">SPIDataSizeSelect</a>&#160;</td>
+          <td class="paramname"><em>dss</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Spi data size functions. </p>
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00111">111</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00243">DSS</a>, <a class="el" href="LPC21xx_8h_source.html#l00262">DSS_VAL16</a>, <a class="el" href="LPC21xx_8h_source.html#l00254">DSS_VAL8</a>, <a class="el" href="spi_8h_source.html#l00081">SPIDss16bit</a>, and <a class="el" href="spi_8h_source.html#l00080">SPIDss8bit</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_ad816c76c7fe692f51942efa74bdb1d86_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_ad816c76c7fe692f51942efa74bdb1d86_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_ad816c76c7fe692f51942efa74bdb1d86_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_ad816c76c7fe692f51942efa74bdb1d86_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="176,137,251,167"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="301,5,453,35"/><area shape="rect" id="node9" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="324,59,431,88"/><area shape="rect" id="node11" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="513,85,609,115"/><area shape="rect" id="node20" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="299,163,456,192"/><area shape="rect" id="node22" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="323,216,432,245"/><area shape="rect" id="node26" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="313,269,441,299"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="504,5,619,35"/><area shape="rect" id="node13" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="667,85,773,115"/><area shape="rect" id="node15" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="847,59,983,88"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="821,112,1008,141"/><area shape="rect" id="node24" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="512,216,611,245"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab639bd461acc9159f2a8566bfe1ebdd0"></a><!-- doxytag: member="spi_arch.c::SpiSlaveSelect" ref="ab639bd461acc9159f2a8566bfe1ebdd0" args="(uint8_t slave)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#ab639bd461acc9159f2a8566bfe1ebdd0">SpiSlaveSelect</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>slave</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00055">55</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00048">SPI_SELECT_SLAVE0_IOCLR</a>, <a class="el" href="booz__1_80_8h_source.html#l00133">SPI_SELECT_SLAVE0_PIN</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00052">SPI_SELECT_SLAVE1_IOCLR</a>, and <a class="el" href="booz__1_80_8h_source.html#l00139">SPI_SELECT_SLAVE1_PIN</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">SpiStart()</a>.</p>
+
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_ab639bd461acc9159f2a8566bfe1ebdd0_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_ab639bd461acc9159f2a8566bfe1ebdd0_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_ab639bd461acc9159f2a8566bfe1ebdd0_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_ab639bd461acc9159f2a8566bfe1ebdd0_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="171,137,245,167"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="296,5,448,35"/><area shape="rect" id="node9" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="319,59,425,88"/><area shape="rect" id="node11" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="508,85,604,115"/><area shape="rect" id="node20" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="293,163,451,192"/><area shape="rect" id="node22" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="317,216,427,245"/><area shape="rect" id="node26" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="308,269,436,299"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="499,5,613,35"/><area shape="rect" id="node13" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="661,85,768,115"/><area shape="rect" id="node15" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="841,59,977,88"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="816,112,1003,141"/><area shape="rect" id="node24" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="507,216,605,245"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af3a0a783f898c0211f2c0e5498c746a0"></a><!-- doxytag: member="spi_arch.c::SpiSlaveUnselect" ref="af3a0a783f898c0211f2c0e5498c746a0" args="(uint8_t slave)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#af3a0a783f898c0211f2c0e5498c746a0">SpiSlaveUnselect</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>slave</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00072">72</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00049">SPI_SELECT_SLAVE0_IOSET</a>, <a class="el" href="booz__1_80_8h_source.html#l00133">SPI_SELECT_SLAVE0_PIN</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00053">SPI_SELECT_SLAVE1_IOSET</a>, and <a class="el" href="booz__1_80_8h_source.html#l00139">SPI_SELECT_SLAVE1_PIN</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00251">SpiEndOfTransaction()</a>.</p>
+
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_af3a0a783f898c0211f2c0e5498c746a0_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_af3a0a783f898c0211f2c0e5498c746a0_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_af3a0a783f898c0211f2c0e5498c746a0_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_af3a0a783f898c0211f2c0e5498c746a0_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="187,5,339,35"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="387,5,501,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abcda020ad14ec4732c4ffff453060fff"></a><!-- doxytag: member="spi_arch.c::SpiStart" ref="abcda020ad14ec4732c4ffff453060fff" args="(struct spi_periph *p, struct spi_transaction *t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff">SpiStart</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00223">223</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00104">SpiClearCPHA()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00096">SpiClearCPOL()</a>, <a class="el" href="spi_8h_source.html#l00065">SPICphaEdge2</a>, <a class="el" href="spi_8h_source.html#l00074">SPICpolIdleHigh</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00126">SpiEnable()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00134">SpiEnableRti()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00146">SpiEnableTxi()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00216">SpiInitBuf()</a>, <a class="el" href="spi_8h_source.html#l00098">SPIRunning</a>, <a class="el" href="spi_8h_source.html#l00054">SPISelect</a>, <a class="el" href="spi_8h_source.html#l00053">SPISelectUnselect</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00100">SpiSetCPHA()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00092">SpiSetCPOL()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00111">SpiSetDataSize()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00055">SpiSlaveSelect()</a>, and <a class="el" href="spi_8h_source.html#l00088">SPITransRunning</a>.</p>
+
+<p>Referenced by <a class="el" href="baro__MS5534A_8c_source.html#l00166">baro_MS5534A_send()</a>, <a class="el" href="fw__ins__vn100_8c_source.html#l00057">ins_configure()</a>, <a class="el" href="fw__ins__vn100_8c_source.html#l00085">ins_periodic()</a>, <a class="el" href="sd__card_8c_source.html#l00074">sd_card_periodic()</a>, <a class="el" href="sd__card_8c_source.html#l00050">send1_on_spi()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00251">SpiEndOfTransaction()</a>.</p>
+
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_abcda020ad14ec4732c4ffff453060fff_cgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_abcda020ad14ec4732c4ffff453060fff_cgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_abcda020ad14ec4732c4ffff453060fff_cgraph" id="lpc21_2mcu__periph_2spi__arch_8c_abcda020ad14ec4732c4ffff453060fff_cgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac8a1011a8423019c3b94e3a1a9744b6b" title="SpiClearCPHA" alt="" coords="135,5,244,35"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#afddc6318837a832e08ac2096474632f8" title="SpiClearCPOL" alt="" coords="135,59,244,88"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4bb68d5cebfe43c482fc48ca2a1ed6de" title="Spi control functions." alt="" coords="147,112,232,141"/><area shape="rect" id="node9" href="lpc21_2mcu__periph_2spi__arch_8c.html#a2f597567924a3000e5afb340e4aa5592" title="SpiEnableRti" alt="" coords="139,165,240,195"/><area shape="rect" id="node11" href="lpc21_2mcu__periph_2spi__arch_8c.html#acb7e2c245885f1b82d6791148172e592" title="SpiEnableTxi" alt="" coords="139,219,240,248"/><area shape="rect" id="node13" href="lpc21_2mcu__periph_2spi__arch_8c.html#a5c38f72da3e7ef54561ec617cdde67e5" title="SpiInitBuf" alt="" coords="148,272,231,301"/><area shape="rect" id="node21" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3f8c8db30e82381d4d60a444f1708517" title="SpiSetCPHA" alt="" coords="140,325,239,355"/><area shape="rect" id="node23" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1126b0a8388d4a8eb8ded8bbe8ab940e" title="Spi clock polarity and phase functions." alt="" coords="140,379,239,408"/><area shape="rect" id="node25" href="lpc21_2mcu__periph_2spi__arch_8c.html#ad816c76c7fe692f51942efa74bdb1d86" title="Spi data size functions." alt="" coords="128,432,251,461"/><area shape="rect" id="node27" href="lpc21_2mcu__periph_2spi__arch_8c.html#ab639bd461acc9159f2a8566bfe1ebdd0" title="SpiSlaveSelect" alt="" coords="131,485,248,515"/><area shape="rect" id="node15" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314" title="SpiTransmit" alt="" coords="299,272,395,301"/><area shape="rect" id="node17" href="lpc21_2mcu__periph_2spi__arch_8c.html#af00370ab8f8ea4fe1ac8bf434230a398" title="SpiSend" alt="" coords="459,245,533,275"/><area shape="rect" id="node19" href="lpc21_2mcu__periph_2spi__arch_8c.html#a945eb366ac13567f396285aaa6381cec" title="SpiDisableTxi" alt="" coords="443,299,549,328"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_abcda020ad14ec4732c4ffff453060fff_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_abcda020ad14ec4732c4ffff453060fff_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_abcda020ad14ec4732c4ffff453060fff_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_abcda020ad14ec4732c4ffff453060fff_icgraph">
+<area shape="rect" id="node3" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="128,5,285,35"/><area shape="rect" id="node5" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="153,59,260,88"/><area shape="rect" id="node7" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="343,85,439,115"/><area shape="rect" id="node16" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="143,163,271,192"/><area shape="rect" id="node18" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="152,216,261,245"/><area shape="rect" id="node22" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="131,269,283,299"/><area shape="rect" id="node9" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="496,85,603,115"/><area shape="rect" id="node11" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="676,59,812,88"/><area shape="rect" id="node13" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="651,112,837,141"/><area shape="rect" id="node20" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="341,216,440,245"/><area shape="rect" id="node24" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="333,269,448,299"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e9017646922bf67dc34451d35696314"></a><!-- doxytag: member="spi_arch.c::SpiTransmit" ref="a3e9017646922bf67dc34451d35696314" args="(struct spi_periph *p, struct spi_transaction *t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314">SpiTransmit</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__periph.html">spi_periph</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00170">170</a> of file <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
+
+<p>References <a class="el" href="common__flight__plan_8h_source.html#l00057">Max</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00150">SpiDisableTxi()</a>, <a class="el" href="spi_8h_source.html#l00081">SPIDss16bit</a>, <a class="el" href="spi_8h_source.html#l00080">SPIDss8bit</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00162">SpiSend()</a>, and <a class="el" href="LPC21xx_8h_source.html#l00278">TNF</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00278">SpiAutomaton()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00216">SpiInitBuf()</a>.</p>
+
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a3e9017646922bf67dc34451d35696314_cgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a3e9017646922bf67dc34451d35696314_cgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a3e9017646922bf67dc34451d35696314_cgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a3e9017646922bf67dc34451d35696314_cgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a945eb366ac13567f396285aaa6381cec" title="SpiDisableTxi" alt="" coords="149,5,256,35"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#af00370ab8f8ea4fe1ac8bf434230a398" title="SpiSend" alt="" coords="165,59,240,88"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lpc21_2mcu__periph_2spi__arch_8c_a3e9017646922bf67dc34451d35696314_icgraph.png" border="0" usemap="#lpc21_2mcu__periph_2spi__arch_8c_a3e9017646922bf67dc34451d35696314_icgraph" alt=""/></div>
+<map name="lpc21_2mcu__periph_2spi__arch_8c_a3e9017646922bf67dc34451d35696314_icgraph" id="lpc21_2mcu__periph_2spi__arch_8c_a3e9017646922bf67dc34451d35696314_icgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997" title="SpiAutomaton" alt="" coords="608,5,723,35"/><area shape="rect" id="node5" href="lpc21_2mcu__periph_2spi__arch_8c.html#a5c38f72da3e7ef54561ec617cdde67e5" title="SpiInitBuf" alt="" coords="149,83,232,112"/><area shape="rect" id="node7" href="lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff" title="SpiStart" alt="" coords="280,136,355,165"/><area shape="rect" id="node9" href="baro__MS5534A_8c.html#a2c7f6fba111434a3d7c371359bc24fc4" title="baro_MS5534A_send" alt="" coords="403,84,560,113"/><area shape="rect" id="node11" href="fw__ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420" title="ins_configure" alt="" coords="428,188,535,217"/><area shape="rect" id="node13" href="ins_8h.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call." alt="" coords="617,163,713,192"/><area shape="rect" id="node22" href="sd__card_8h.html#a1be8d347ac90e89922850113d6c264df" title="sd_card_periodic" alt="" coords="417,241,545,271"/><area shape="rect" id="node24" href="sd__card_8c.html#a05c544ee58a1ca76294c5ab3686e696b" title="send1_on_spi" alt="" coords="427,295,536,324"/><area shape="rect" id="node28" href="lpc21_2mcu__periph_2spi__arch_8c.html#aa77dd16c5b07dd46e54d274ad55016ea" title="SpiEndOfTransaction" alt="" coords="405,31,557,60"/><area shape="rect" id="node15" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="771,163,877,192"/><area shape="rect" id="node17" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="951,136,1087,165"/><area shape="rect" id="node19" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="925,189,1112,219"/><area shape="rect" id="node26" href="sd__card_8h.html#a30a6606432c076e1debe5a37d6c44169" title="sd_card_init" alt="" coords="616,295,715,324"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -248,7 +1278,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html">spi_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Nov 7 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Nov 8 2012 04:00:12 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

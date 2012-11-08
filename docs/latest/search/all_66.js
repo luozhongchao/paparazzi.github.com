@@ -214,6 +214,7 @@ var searchData=
   ['frame_5frate',['frame_rate',['../structRadioControl.html#aa6eb017ab6023648e26cedd9de0c6c8c',1,'RadioControl']]],
   ['framecnt',['FrameCnt',['../structSpektrumStateStruct.html#a0f1bca7c6c4c57019ffea65b382a25de',1,'SpektrumStateStruct']]],
   ['fref',['fref',['../temp__tcouple__adc_8c.html#aa67736b889b8eff5752f3d0b6367906c',1,'temp_tcouple_adc.c']]],
+  ['frf',['FRF',['../LPC21xx_8h.html#a16bb5201c0534fcdf25f6a313efc67e5',1,'LPC21xx.h']]],
   ['from_5fap',['from_ap',['../structlink__mcu__msg.html#a25fa2f904ea4f65116b263dca709a1d8',1,'link_mcu_msg']]],
   ['from_5ffbw',['from_fbw',['../structlink__mcu__msg.html#ae9e530355d58a057acaccb22f6c3ee1e',1,'link_mcu_msg']]],
   ['front',['FRONT',['../actuators__asctec_8h.html#ad2db450a6c9862a4f81ba35a4d5f4f20a76bd5ec6ea9d8a1b582d8d5e43102a02',1,'actuators_asctec.h']]],

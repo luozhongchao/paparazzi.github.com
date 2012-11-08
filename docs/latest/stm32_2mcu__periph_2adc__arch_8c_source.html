@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-188-g22c376a</span>
+   &#160;<span id="projectnumber">v4.9_devel-252-gc708ce0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -179,445 +179,443 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00088"></a>00088 <span class="preprocessor">#include &lt;libopencm3/stm32/f1/adc.h&gt;</span>
 <a name="l00089"></a>00089 <span class="preprocessor">#include &lt;libopencm3/stm32/f1/gpio.h&gt;</span>
 <a name="l00090"></a>00090 <span class="preprocessor">#include &lt;libopencm3/stm32/timer.h&gt;</span>
-<a name="l00091"></a>00091 <span class="preprocessor">#include &lt;libopencm3/stm32/nvic.h&gt;</span>
+<a name="l00091"></a>00091 <span class="preprocessor">#include &lt;libopencm3/stm32/f1/nvic.h&gt;</span>
 <a name="l00092"></a>00092 <span class="preprocessor">#include &lt;string.h&gt;</span>
 <a name="l00093"></a>00093 <span class="preprocessor">#include &quot;std.h&quot;</span>
 <a name="l00094"></a>00094 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00095"></a>00095 <span class="preprocessor">#include BOARD_CONFIG</span>
 <a name="l00096"></a>00096 <span class="preprocessor"></span>
-<a name="l00097"></a>00097 <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a24a193e153476793ea3f9089893cf6f4" title="This is the driver for the analog to digital converters on STM32.">adc1_2_isr</a>(<span class="keywordtype">void</span>);
+<a name="l00097"></a><a class="code" href="test__adc_8c.html#a9a5be07f63aca3718abe2d190b3189aa">00097</a> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188" title="This is the driver for the analog to digital converters on STM32.">adc_new_data_trigger</a>;
 <a name="l00098"></a>00098 
-<a name="l00099"></a><a class="code" href="test__adc_8c.html#a9a5be07f63aca3718abe2d190b3189aa">00099</a> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a>;
+<a name="l00099"></a>00099 <span class="comment">/* Static functions */</span>
 <a name="l00100"></a>00100 
-<a name="l00101"></a>00101 <span class="comment">/* Static functions */</span>
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">adc_init_single</a>(<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> adc,
-<a name="l00104"></a>00104                    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan1, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan2,
-<a name="l00105"></a>00105                    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan3, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan4);
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(<span class="keyword">struct</span> <a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * buf,
-<a name="l00108"></a>00108                    <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> sample);
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6">adc_init_rcc</a>( <span class="keywordtype">void</span> );
-<a name="l00111"></a>00111 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f">adc_init_irq</a>( <span class="keywordtype">void</span> );
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113 <span class="preprocessor">#ifdef USE_AD2</span>
-<a name="l00114"></a>00114 <span class="preprocessor"></span><span class="preprocessor">#error NOT_IMPLEMENTED__currently_only_ADC1_is_supported</span>
-<a name="l00115"></a>00115 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00116"></a>00116 <span class="preprocessor"></span>
-<a name="l00117"></a>00117 <span class="comment">/*</span>
-<a name="l00118"></a>00118 <span class="comment">  Only 4 ADC channels may be enabled at the same time</span>
-<a name="l00119"></a>00119 <span class="comment">  on each ADC, as there are only 4 injection registers.</span>
-<a name="l00120"></a>00120 <span class="comment">*/</span>
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122 <span class="comment">// ADCx_GPIO_INIT</span>
-<a name="l00123"></a>00123 <span class="comment">// {{{</span>
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125 <span class="comment">/*</span>
-<a name="l00126"></a>00126 <span class="comment">  GPIO mapping for ADC1 pins (PB.1, PB.0, PC.5, PC.3).</span>
-<a name="l00127"></a>00127 <span class="comment">    Can be changed by predefining ADC1_GPIO_INIT.</span>
-<a name="l00128"></a>00128 <span class="comment">*/</span>
-<a name="l00129"></a>00129 <span class="preprocessor">#ifdef USE_AD1</span>
-<a name="l00130"></a>00130 <span class="preprocessor"></span><span class="preprocessor">#ifndef ADC1_GPIO_INIT</span>
-<a name="l00131"></a>00131 <span class="preprocessor"></span><span class="preprocessor">#define ADC1_GPIO_INIT() {      \</span>
-<a name="l00132"></a>00132 <span class="preprocessor">  gpio_set_mode(GPIOB, GPIO_MODE_INPUT, \</span>
-<a name="l00133"></a>00133 <span class="preprocessor">    GPIO_CNF_INPUT_ANALOG,    \</span>
-<a name="l00134"></a>00134 <span class="preprocessor">    GPIO1 | GPIO0);     \</span>
-<a name="l00135"></a>00135 <span class="preprocessor">  gpio_set_mode(GPIOC, GPIO_MODE_INPUT, \</span>
-<a name="l00136"></a>00136 <span class="preprocessor">    GPIO_CNF_INPUT_ANALOG,    \</span>
-<a name="l00137"></a>00137 <span class="preprocessor">    GPIO5 | GPIO3);     \</span>
-<a name="l00138"></a>00138 <span class="preprocessor">}</span>
-<a name="l00139"></a>00139 <span class="preprocessor"></span><span class="preprocessor">#endif // ADC1_GPIO_INIT</span>
-<a name="l00140"></a>00140 <span class="preprocessor"></span><span class="preprocessor">#endif // USE_AD1</span>
-<a name="l00141"></a>00141 <span class="preprocessor"></span>
-<a name="l00142"></a>00142 <span class="comment">/*</span>
-<a name="l00143"></a>00143 <span class="comment">  GPIO mapping for ADC2 pins.</span>
-<a name="l00144"></a>00144 <span class="comment">    Can be changed by predefining ADC2_GPIO_INIT.</span>
-<a name="l00145"></a>00145 <span class="comment">    Uses the same GPIOs as ADC1 (lisa specific).</span>
-<a name="l00146"></a>00146 <span class="comment">*/</span>
-<a name="l00147"></a>00147 <span class="preprocessor">#ifdef USE_AD2</span>
-<a name="l00148"></a>00148 <span class="preprocessor"></span><span class="preprocessor">#ifndef ADC2_GPIO_INIT</span>
-<a name="l00149"></a>00149 <span class="preprocessor"></span><span class="preprocessor">#define ADC2_GPIO_INIT() {      \</span>
-<a name="l00150"></a>00150 <span class="preprocessor">    gpio_set_mode(GPIOB, GPIO_MODE_INPUT, \</span>
-<a name="l00151"></a>00151 <span class="preprocessor">      GPIO_CNF_INPUT_ANALOG,    \</span>
-<a name="l00152"></a>00152 <span class="preprocessor">      GPIO1 | GPIO0);     \</span>
-<a name="l00153"></a>00153 <span class="preprocessor">    gpio_set_mode(GPIOC, GPIO_MODE_INPUT, \</span>
-<a name="l00154"></a>00154 <span class="preprocessor">      GPIO_CNF_INPUT_ANALOG,    \</span>
-<a name="l00155"></a>00155 <span class="preprocessor">      GPIO5 | GPIO3);     \</span>
-<a name="l00156"></a>00156 <span class="preprocessor">  }</span>
-<a name="l00157"></a>00157 <span class="preprocessor"></span><span class="preprocessor">#endif // ADC2_GPIO_INIT</span>
-<a name="l00158"></a>00158 <span class="preprocessor"></span><span class="preprocessor">#endif // USE_AD2</span>
-<a name="l00159"></a>00159 <span class="preprocessor"></span>
-<a name="l00160"></a>00160 <span class="comment">// }}}</span>
-<a name="l00161"></a>00161 
-<a name="l00162"></a>00162 <span class="comment">/*</span>
-<a name="l00163"></a>00163 <span class="comment">  Currently, the enums adc1_channels and adc2_channels only</span>
-<a name="l00164"></a>00164 <span class="comment">  serve to resolve the number of channels on each ADC.</span>
-<a name="l00165"></a>00165 <span class="comment">*/</span>
-<a name="l00166"></a>00166 
-<a name="l00167"></a>00167 <span class="comment">/*</span>
-<a name="l00168"></a>00168 <span class="comment">    Separate buffers for each ADC.</span>
-<a name="l00169"></a>00169 <span class="comment">    Every ADC has a list of buffers, one for each active</span>
-<a name="l00170"></a>00170 <span class="comment">    channel.</span>
-<a name="l00171"></a>00171 <span class="comment">*/</span>
-<a name="l00172"></a>00172 
-<a name="l00173"></a>00173 <span class="preprocessor">#ifdef USE_AD1</span>
-<a name="l00174"></a>00174 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * adc1_buffers[<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>];
-<a name="l00175"></a>00175 <span class="preprocessor">#endif</span>
-<a name="l00176"></a>00176 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_AD2</span>
-<a name="l00177"></a>00177 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * adc2_buffers[<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4">NB_ADC2_CHANNELS</a>];
-<a name="l00178"></a>00178 <span class="preprocessor">#endif</span>
-<a name="l00179"></a>00179 <span class="preprocessor"></span>
-<a name="l00180"></a>00180 <span class="comment">/*</span>
-<a name="l00181"></a>00181 <span class="comment">    Static mapping from channel index to channel injection</span>
-<a name="l00182"></a>00182 <span class="comment">    index:</span>
-<a name="l00183"></a>00183 <span class="comment">*/</span>
-<a name="l00184"></a>00184 
-<a name="l00185"></a>00185 <span class="comment">/*</span>
-<a name="l00186"></a>00186 <span class="comment"> Maps integer value x to ADC_InjectedChannel_x,</span>
-<a name="l00187"></a>00187 <span class="comment"> so they can be iterated safely</span>
-<a name="l00188"></a>00188 <span class="comment">*/</span>
-<a name="l00189"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">00189</a> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[4];
-<a name="l00190"></a>00190 <span class="comment">/*</span>
-<a name="l00191"></a>00191 <span class="comment"> Maps integer value x to ADC_Channel_y, like</span>
-<a name="l00192"></a>00192 <span class="comment"></span>
-<a name="l00193"></a>00193 <span class="comment"> 0 --&gt; ADC_Channel_5</span>
-<a name="l00194"></a>00194 <span class="comment"> 1 --&gt; ADC_Channel_8</span>
-<a name="l00195"></a>00195 <span class="comment"> 2 --&gt; ADC_Channel_13</span>
-<a name="l00196"></a>00196 <span class="comment"></span>
-<a name="l00197"></a>00197 <span class="comment"> so they can be iterated incrementally.</span>
-<a name="l00198"></a>00198 <span class="comment">*/</span>
-<a name="l00199"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">00199</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[4];
-<a name="l00200"></a>00200 
-<a name="l00201"></a>00201 <span class="comment">/*</span>
-<a name="l00202"></a>00202 <span class="comment">  TODO: Extend interface to allow adressing a</span>
-<a name="l00203"></a>00203 <span class="comment">  specific ADC (at least ADC1 and ADC2)?</span>
-<a name="l00204"></a>00204 <span class="comment">*/</span>
-<a name="l00205"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824">00205</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> adc_channel,
-<a name="l00206"></a>00206              <span class="keyword">struct</span> <a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * s,
-<a name="l00207"></a>00207              <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>)
-<a name="l00208"></a>00208 {
-<a name="l00209"></a>00209   adc1_buffers[adc_channel] = s;
-<a name="l00210"></a>00210   s-&gt;<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a> = <a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>;
-<a name="l00211"></a>00211 }
-<a name="l00212"></a>00212 
-<a name="l00213"></a>00213 <span class="comment">// #define USE_AD_TIM4</span>
-<a name="l00214"></a>00214 <span class="comment">/* Configure and enable RCC for peripherals (ADC1, ADC2, Timer) */</span>
-<a name="l00215"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6">00215</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6">adc_init_rcc</a>( <span class="keywordtype">void</span> )
-<a name="l00216"></a>00216 { <span class="comment">// {{{</span>
-<a name="l00217"></a>00217 <span class="preprocessor">#if defined (USE_AD1) || defined (USE_AD2)</span>
-<a name="l00218"></a>00218 <span class="preprocessor"></span>    <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> timer;
-<a name="l00219"></a>00219     <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> *rcc_apbenr;
-<a name="l00220"></a>00220     <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> rcc_apb;
-<a name="l00221"></a>00221 <span class="preprocessor">#if defined(USE_AD_TIM4)</span>
-<a name="l00222"></a>00222 <span class="preprocessor"></span>    timer   = TIM4;
-<a name="l00223"></a>00223     rcc_apbenr = &amp;RCC_APB1ENR;
-<a name="l00224"></a>00224     rcc_apb = RCC_APB1ENR_TIM4EN;
-<a name="l00225"></a>00225 <span class="preprocessor">#elif defined(USE_AD_TIM1)</span>
-<a name="l00226"></a>00226 <span class="preprocessor"></span>    timer   = TIM1;
-<a name="l00227"></a>00227     rcc_apbenr = &amp;RCC_APB2ENR;
-<a name="l00228"></a>00228     rcc_apb = RCC_APB2ENR_TIM1EN;
-<a name="l00229"></a>00229 <span class="preprocessor">#else</span>
-<a name="l00230"></a>00230 <span class="preprocessor"></span>    timer   = TIM2;
-<a name="l00231"></a>00231     rcc_apbenr = &amp;RCC_APB1ENR;
-<a name="l00232"></a>00232     rcc_apb = RCC_APB1ENR_TIM2EN;
-<a name="l00233"></a>00233 <span class="preprocessor">#endif</span>
-<a name="l00234"></a>00234 <span class="preprocessor"></span>
-<a name="l00235"></a>00235     <span class="comment">/*</span>
-<a name="l00236"></a>00236 <span class="comment">     * Historic Note:</span>
-<a name="l00237"></a>00237 <span class="comment">     * Previously in libstm32 we were setting the ADC clock here.</span>
-<a name="l00238"></a>00238 <span class="comment">     * It was being set to PCLK2 DIV2 resulting in 36MHz clock on the ADC. I am</span>
-<a name="l00239"></a>00239 <span class="comment">     * pretty sure that this is wrong as based on the datasheet the ADC clock</span>
-<a name="l00240"></a>00240 <span class="comment">     * must not exceed 14MHz! Now the clock is being set by the clock init</span>
-<a name="l00241"></a>00241 <span class="comment">     * routine in libopencm3 so we don&#39;t have to set up this clock ourselves any</span>
-<a name="l00242"></a>00242 <span class="comment">     * more. This comment is here just as a reminder and may be removed in the</span>
-<a name="l00243"></a>00243 <span class="comment">     * future when we know that everything is working properly.</span>
-<a name="l00244"></a>00244 <span class="comment">     * (by Esden the historian :D)</span>
-<a name="l00245"></a>00245 <span class="comment">     */</span>
-<a name="l00246"></a>00246 
-<a name="l00247"></a>00247     <span class="comment">/* Timer peripheral clock enable. */</span>
-<a name="l00248"></a>00248     rcc_peripheral_enable_clock(rcc_apbenr, rcc_apb);
-<a name="l00249"></a>00249     <span class="comment">/* GPIO peripheral clock enable. */</span>
-<a name="l00250"></a>00250     rcc_peripheral_enable_clock(&amp;RCC_APB2ENR, RCC_APB2ENR_IOPBEN |
-<a name="l00251"></a>00251                             RCC_APB2ENR_IOPCEN);
-<a name="l00252"></a>00252 
-<a name="l00253"></a>00253     <span class="comment">/* Enable ADC peripheral clocks. */</span>
-<a name="l00254"></a>00254 <span class="preprocessor">#ifdef USE_AD1</span>
-<a name="l00255"></a>00255 <span class="preprocessor"></span>    rcc_peripheral_enable_clock(&amp;RCC_APB2ENR, RCC_APB2ENR_ADC1EN);
-<a name="l00256"></a>00256 <span class="preprocessor">#endif</span>
-<a name="l00257"></a>00257 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_AD2</span>
-<a name="l00258"></a>00258 <span class="preprocessor"></span>    rcc_peripheral_enable_clock(&amp;RCC_APB2ENR, RCC_APB2ENR_ADC2EN);
-<a name="l00259"></a>00259 <span class="preprocessor">#endif</span>
-<a name="l00260"></a>00260 <span class="preprocessor"></span>
-<a name="l00261"></a>00261     <span class="comment">/* Time Base configuration */</span>
-<a name="l00262"></a>00262     timer_reset(timer);
-<a name="l00263"></a>00263     timer_set_mode(timer, TIM_CR1_CKD_CK_INT,
-<a name="l00264"></a>00264       TIM_CR1_CMS_EDGE, TIM_CR1_DIR_UP);
-<a name="l00265"></a>00265     timer_set_period(timer, 0xFF);
-<a name="l00266"></a>00266     timer_set_prescaler(timer, 0x8);
-<a name="l00267"></a>00267     timer_set_clock_division(timer, 0x0);
-<a name="l00268"></a>00268     <span class="comment">/* Generate TRGO on every update. */</span>
-<a name="l00269"></a>00269     timer_set_master_mode(timer, TIM_CR2_MMS_UPDATE);
-<a name="l00270"></a>00270     timer_enable_counter(timer);
-<a name="l00271"></a>00271 
-<a name="l00272"></a>00272 <span class="preprocessor">#endif // defined (USE_AD1) || defined (USE_AD2)</span>
-<a name="l00273"></a>00273 <span class="preprocessor"></span>} <span class="comment">// }}}</span>
-<a name="l00274"></a>00274 
-<a name="l00275"></a>00275 <span class="comment">/* Configure and enable ADC interrupt */</span>
-<a name="l00276"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f">00276</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f">adc_init_irq</a>( <span class="keywordtype">void</span> )
-<a name="l00277"></a>00277 { <span class="comment">// {{{</span>
-<a name="l00278"></a>00278     nvic_set_priority(NVIC_ADC1_2_IRQ, 0);
-<a name="l00279"></a>00279     nvic_enable_irq(NVIC_ADC1_2_IRQ);
-<a name="l00280"></a>00280 } <span class="comment">// }}}</span>
-<a name="l00281"></a>00281 
-<a name="l00282"></a>00282 <span class="comment">/*</span>
-<a name="l00283"></a>00283 <span class="comment">    Usage:</span>
+<a name="l00101"></a>00101 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">adc_init_single</a>(<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> adc,
+<a name="l00102"></a>00102                    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan1, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan2,
+<a name="l00103"></a>00103                    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan3, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan4);
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(<span class="keyword">struct</span> <a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * buf,
+<a name="l00106"></a>00106                    <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> sample);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6">adc_init_rcc</a>( <span class="keywordtype">void</span> );
+<a name="l00109"></a>00109 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f">adc_init_irq</a>( <span class="keywordtype">void</span> );
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 <span class="preprocessor">#ifdef USE_AD2</span>
+<a name="l00112"></a>00112 <span class="preprocessor"></span><span class="preprocessor">#error NOT_IMPLEMENTED__currently_only_ADC1_is_supported</span>
+<a name="l00113"></a>00113 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00114"></a>00114 <span class="preprocessor"></span>
+<a name="l00115"></a>00115 <span class="comment">/*</span>
+<a name="l00116"></a>00116 <span class="comment">  Only 4 ADC channels may be enabled at the same time</span>
+<a name="l00117"></a>00117 <span class="comment">  on each ADC, as there are only 4 injection registers.</span>
+<a name="l00118"></a>00118 <span class="comment">*/</span>
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120 <span class="comment">// ADCx_GPIO_INIT</span>
+<a name="l00121"></a>00121 <span class="comment">// {{{</span>
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123 <span class="comment">/*</span>
+<a name="l00124"></a>00124 <span class="comment">  GPIO mapping for ADC1 pins (PB.1, PB.0, PC.5, PC.3).</span>
+<a name="l00125"></a>00125 <span class="comment">    Can be changed by predefining ADC1_GPIO_INIT.</span>
+<a name="l00126"></a>00126 <span class="comment">*/</span>
+<a name="l00127"></a>00127 <span class="preprocessor">#ifdef USE_AD1</span>
+<a name="l00128"></a>00128 <span class="preprocessor"></span><span class="preprocessor">#ifndef ADC1_GPIO_INIT</span>
+<a name="l00129"></a>00129 <span class="preprocessor"></span><span class="preprocessor">#define ADC1_GPIO_INIT() {      \</span>
+<a name="l00130"></a>00130 <span class="preprocessor">  gpio_set_mode(GPIOB, GPIO_MODE_INPUT, \</span>
+<a name="l00131"></a>00131 <span class="preprocessor">    GPIO_CNF_INPUT_ANALOG,    \</span>
+<a name="l00132"></a>00132 <span class="preprocessor">    GPIO1 | GPIO0);     \</span>
+<a name="l00133"></a>00133 <span class="preprocessor">  gpio_set_mode(GPIOC, GPIO_MODE_INPUT, \</span>
+<a name="l00134"></a>00134 <span class="preprocessor">    GPIO_CNF_INPUT_ANALOG,    \</span>
+<a name="l00135"></a>00135 <span class="preprocessor">    GPIO5 | GPIO3);     \</span>
+<a name="l00136"></a>00136 <span class="preprocessor">}</span>
+<a name="l00137"></a>00137 <span class="preprocessor"></span><span class="preprocessor">#endif // ADC1_GPIO_INIT</span>
+<a name="l00138"></a>00138 <span class="preprocessor"></span><span class="preprocessor">#endif // USE_AD1</span>
+<a name="l00139"></a>00139 <span class="preprocessor"></span>
+<a name="l00140"></a>00140 <span class="comment">/*</span>
+<a name="l00141"></a>00141 <span class="comment">  GPIO mapping for ADC2 pins.</span>
+<a name="l00142"></a>00142 <span class="comment">    Can be changed by predefining ADC2_GPIO_INIT.</span>
+<a name="l00143"></a>00143 <span class="comment">    Uses the same GPIOs as ADC1 (lisa specific).</span>
+<a name="l00144"></a>00144 <span class="comment">*/</span>
+<a name="l00145"></a>00145 <span class="preprocessor">#ifdef USE_AD2</span>
+<a name="l00146"></a>00146 <span class="preprocessor"></span><span class="preprocessor">#ifndef ADC2_GPIO_INIT</span>
+<a name="l00147"></a>00147 <span class="preprocessor"></span><span class="preprocessor">#define ADC2_GPIO_INIT() {      \</span>
+<a name="l00148"></a>00148 <span class="preprocessor">    gpio_set_mode(GPIOB, GPIO_MODE_INPUT, \</span>
+<a name="l00149"></a>00149 <span class="preprocessor">      GPIO_CNF_INPUT_ANALOG,    \</span>
+<a name="l00150"></a>00150 <span class="preprocessor">      GPIO1 | GPIO0);     \</span>
+<a name="l00151"></a>00151 <span class="preprocessor">    gpio_set_mode(GPIOC, GPIO_MODE_INPUT, \</span>
+<a name="l00152"></a>00152 <span class="preprocessor">      GPIO_CNF_INPUT_ANALOG,    \</span>
+<a name="l00153"></a>00153 <span class="preprocessor">      GPIO5 | GPIO3);     \</span>
+<a name="l00154"></a>00154 <span class="preprocessor">  }</span>
+<a name="l00155"></a>00155 <span class="preprocessor"></span><span class="preprocessor">#endif // ADC2_GPIO_INIT</span>
+<a name="l00156"></a>00156 <span class="preprocessor"></span><span class="preprocessor">#endif // USE_AD2</span>
+<a name="l00157"></a>00157 <span class="preprocessor"></span>
+<a name="l00158"></a>00158 <span class="comment">// }}}</span>
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160 <span class="comment">/*</span>
+<a name="l00161"></a>00161 <span class="comment">  Currently, the enums adc1_channels and adc2_channels only</span>
+<a name="l00162"></a>00162 <span class="comment">  serve to resolve the number of channels on each ADC.</span>
+<a name="l00163"></a>00163 <span class="comment">*/</span>
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165 <span class="comment">/*</span>
+<a name="l00166"></a>00166 <span class="comment">    Separate buffers for each ADC.</span>
+<a name="l00167"></a>00167 <span class="comment">    Every ADC has a list of buffers, one for each active</span>
+<a name="l00168"></a>00168 <span class="comment">    channel.</span>
+<a name="l00169"></a>00169 <span class="comment">*/</span>
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171 <span class="preprocessor">#ifdef USE_AD1</span>
+<a name="l00172"></a>00172 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * adc1_buffers[<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>];
+<a name="l00173"></a>00173 <span class="preprocessor">#endif</span>
+<a name="l00174"></a>00174 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_AD2</span>
+<a name="l00175"></a>00175 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * adc2_buffers[<a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4">NB_ADC2_CHANNELS</a>];
+<a name="l00176"></a>00176 <span class="preprocessor">#endif</span>
+<a name="l00177"></a>00177 <span class="preprocessor"></span>
+<a name="l00178"></a>00178 <span class="comment">/*</span>
+<a name="l00179"></a>00179 <span class="comment">    Static mapping from channel index to channel injection</span>
+<a name="l00180"></a>00180 <span class="comment">    index:</span>
+<a name="l00181"></a>00181 <span class="comment">*/</span>
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183 <span class="comment">/*</span>
+<a name="l00184"></a>00184 <span class="comment"> Maps integer value x to ADC_InjectedChannel_x,</span>
+<a name="l00185"></a>00185 <span class="comment"> so they can be iterated safely</span>
+<a name="l00186"></a>00186 <span class="comment">*/</span>
+<a name="l00187"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">00187</a> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[4];
+<a name="l00188"></a>00188 <span class="comment">/*</span>
+<a name="l00189"></a>00189 <span class="comment"> Maps integer value x to ADC_Channel_y, like</span>
+<a name="l00190"></a>00190 <span class="comment"></span>
+<a name="l00191"></a>00191 <span class="comment"> 0 --&gt; ADC_Channel_5</span>
+<a name="l00192"></a>00192 <span class="comment"> 1 --&gt; ADC_Channel_8</span>
+<a name="l00193"></a>00193 <span class="comment"> 2 --&gt; ADC_Channel_13</span>
+<a name="l00194"></a>00194 <span class="comment"></span>
+<a name="l00195"></a>00195 <span class="comment"> so they can be iterated incrementally.</span>
+<a name="l00196"></a>00196 <span class="comment">*/</span>
+<a name="l00197"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">00197</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[4];
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199 <span class="comment">/*</span>
+<a name="l00200"></a>00200 <span class="comment">  TODO: Extend interface to allow adressing a</span>
+<a name="l00201"></a>00201 <span class="comment">  specific ADC (at least ADC1 and ADC2)?</span>
+<a name="l00202"></a>00202 <span class="comment">*/</span>
+<a name="l00203"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824">00203</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> adc_channel,
+<a name="l00204"></a>00204              <span class="keyword">struct</span> <a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * s,
+<a name="l00205"></a>00205              <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>)
+<a name="l00206"></a>00206 {
+<a name="l00207"></a>00207   adc1_buffers[adc_channel] = s;
+<a name="l00208"></a>00208   s-&gt;<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a> = <a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>;
+<a name="l00209"></a>00209 }
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211 <span class="comment">// #define USE_AD_TIM4</span>
+<a name="l00212"></a>00212 <span class="comment">/* Configure and enable RCC for peripherals (ADC1, ADC2, Timer) */</span>
+<a name="l00213"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6">00213</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6">adc_init_rcc</a>( <span class="keywordtype">void</span> )
+<a name="l00214"></a>00214 { <span class="comment">// {{{</span>
+<a name="l00215"></a>00215 <span class="preprocessor">#if defined (USE_AD1) || defined (USE_AD2)</span>
+<a name="l00216"></a>00216 <span class="preprocessor"></span>    <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> timer;
+<a name="l00217"></a>00217     <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> *rcc_apbenr;
+<a name="l00218"></a>00218     <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> rcc_apb;
+<a name="l00219"></a>00219 <span class="preprocessor">#if defined(USE_AD_TIM4)</span>
+<a name="l00220"></a>00220 <span class="preprocessor"></span>    timer   = TIM4;
+<a name="l00221"></a>00221     rcc_apbenr = &amp;RCC_APB1ENR;
+<a name="l00222"></a>00222     rcc_apb = RCC_APB1ENR_TIM4EN;
+<a name="l00223"></a>00223 <span class="preprocessor">#elif defined(USE_AD_TIM1)</span>
+<a name="l00224"></a>00224 <span class="preprocessor"></span>    timer   = TIM1;
+<a name="l00225"></a>00225     rcc_apbenr = &amp;RCC_APB2ENR;
+<a name="l00226"></a>00226     rcc_apb = RCC_APB2ENR_TIM1EN;
+<a name="l00227"></a>00227 <span class="preprocessor">#else</span>
+<a name="l00228"></a>00228 <span class="preprocessor"></span>    timer   = TIM2;
+<a name="l00229"></a>00229     rcc_apbenr = &amp;RCC_APB1ENR;
+<a name="l00230"></a>00230     rcc_apb = RCC_APB1ENR_TIM2EN;
+<a name="l00231"></a>00231 <span class="preprocessor">#endif</span>
+<a name="l00232"></a>00232 <span class="preprocessor"></span>
+<a name="l00233"></a>00233     <span class="comment">/*</span>
+<a name="l00234"></a>00234 <span class="comment">     * Historic Note:</span>
+<a name="l00235"></a>00235 <span class="comment">     * Previously in libstm32 we were setting the ADC clock here.</span>
+<a name="l00236"></a>00236 <span class="comment">     * It was being set to PCLK2 DIV2 resulting in 36MHz clock on the ADC. I am</span>
+<a name="l00237"></a>00237 <span class="comment">     * pretty sure that this is wrong as based on the datasheet the ADC clock</span>
+<a name="l00238"></a>00238 <span class="comment">     * must not exceed 14MHz! Now the clock is being set by the clock init</span>
+<a name="l00239"></a>00239 <span class="comment">     * routine in libopencm3 so we don&#39;t have to set up this clock ourselves any</span>
+<a name="l00240"></a>00240 <span class="comment">     * more. This comment is here just as a reminder and may be removed in the</span>
+<a name="l00241"></a>00241 <span class="comment">     * future when we know that everything is working properly.</span>
+<a name="l00242"></a>00242 <span class="comment">     * (by Esden the historian :D)</span>
+<a name="l00243"></a>00243 <span class="comment">     */</span>
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245     <span class="comment">/* Timer peripheral clock enable. */</span>
+<a name="l00246"></a>00246     rcc_peripheral_enable_clock(rcc_apbenr, rcc_apb);
+<a name="l00247"></a>00247     <span class="comment">/* GPIO peripheral clock enable. */</span>
+<a name="l00248"></a>00248     rcc_peripheral_enable_clock(&amp;RCC_APB2ENR, RCC_APB2ENR_IOPBEN |
+<a name="l00249"></a>00249                             RCC_APB2ENR_IOPCEN);
+<a name="l00250"></a>00250 
+<a name="l00251"></a>00251     <span class="comment">/* Enable ADC peripheral clocks. */</span>
+<a name="l00252"></a>00252 <span class="preprocessor">#ifdef USE_AD1</span>
+<a name="l00253"></a>00253 <span class="preprocessor"></span>    rcc_peripheral_enable_clock(&amp;RCC_APB2ENR, RCC_APB2ENR_ADC1EN);
+<a name="l00254"></a>00254 <span class="preprocessor">#endif</span>
+<a name="l00255"></a>00255 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_AD2</span>
+<a name="l00256"></a>00256 <span class="preprocessor"></span>    rcc_peripheral_enable_clock(&amp;RCC_APB2ENR, RCC_APB2ENR_ADC2EN);
+<a name="l00257"></a>00257 <span class="preprocessor">#endif</span>
+<a name="l00258"></a>00258 <span class="preprocessor"></span>
+<a name="l00259"></a>00259     <span class="comment">/* Time Base configuration */</span>
+<a name="l00260"></a>00260     timer_reset(timer);
+<a name="l00261"></a>00261     timer_set_mode(timer, TIM_CR1_CKD_CK_INT,
+<a name="l00262"></a>00262       TIM_CR1_CMS_EDGE, TIM_CR1_DIR_UP);
+<a name="l00263"></a>00263     timer_set_period(timer, 0xFF);
+<a name="l00264"></a>00264     timer_set_prescaler(timer, 0x8);
+<a name="l00265"></a>00265     timer_set_clock_division(timer, 0x0);
+<a name="l00266"></a>00266     <span class="comment">/* Generate TRGO on every update. */</span>
+<a name="l00267"></a>00267     timer_set_master_mode(timer, TIM_CR2_MMS_UPDATE);
+<a name="l00268"></a>00268     timer_enable_counter(timer);
+<a name="l00269"></a>00269 
+<a name="l00270"></a>00270 <span class="preprocessor">#endif // defined (USE_AD1) || defined (USE_AD2)</span>
+<a name="l00271"></a>00271 <span class="preprocessor"></span>} <span class="comment">// }}}</span>
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273 <span class="comment">/* Configure and enable ADC interrupt */</span>
+<a name="l00274"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f">00274</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f">adc_init_irq</a>( <span class="keywordtype">void</span> )
+<a name="l00275"></a>00275 { <span class="comment">// {{{</span>
+<a name="l00276"></a>00276     nvic_set_priority(NVIC_ADC1_2_IRQ, 0);
+<a name="l00277"></a>00277     nvic_enable_irq(NVIC_ADC1_2_IRQ);
+<a name="l00278"></a>00278 } <span class="comment">// }}}</span>
+<a name="l00279"></a>00279 
+<a name="l00280"></a>00280 <span class="comment">/*</span>
+<a name="l00281"></a>00281 <span class="comment">    Usage:</span>
+<a name="l00282"></a>00282 <span class="comment"></span>
+<a name="l00283"></a>00283 <span class="comment">        adc_init_single(ADC1, 1, 1, 0, 0);</span>
 <a name="l00284"></a>00284 <span class="comment"></span>
-<a name="l00285"></a>00285 <span class="comment">        adc_init_single(ADC1, 1, 1, 0, 0);</span>
-<a name="l00286"></a>00286 <span class="comment"></span>
-<a name="l00287"></a>00287 <span class="comment">    ... would enable ADC1, enabling channels 1 and 2,</span>
-<a name="l00288"></a>00288 <span class="comment">    but not 3 and 4.</span>
-<a name="l00289"></a>00289 <span class="comment">*/</span>
-<a name="l00290"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">00290</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">adc_init_single</a>(<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> adc,
-<a name="l00291"></a>00291                    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan1, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan2,
-<a name="l00292"></a>00292                    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan3, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan4)
-<a name="l00293"></a>00293 {
-<a name="l00294"></a>00294     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> num_channels, rank;
-<a name="l00295"></a>00295     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> channels[4];
-<a name="l00296"></a>00296 
-<a name="l00297"></a>00297     <span class="comment">// Paranoia, must be down for 2+ ADC clock cycles before calibration</span>
-<a name="l00298"></a>00298     adc_off(adc);
-<a name="l00299"></a>00299 
-<a name="l00300"></a>00300     <span class="comment">/* enable adc clock */</span>
-<a name="l00301"></a>00301     <span class="keywordflow">if</span> (adc == <a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>) {
-<a name="l00302"></a>00302 <span class="preprocessor">#ifdef USE_AD1</span>
-<a name="l00303"></a>00303 <span class="preprocessor"></span>        num_channels = <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>;
-<a name="l00304"></a>00304         ADC1_GPIO_INIT();
-<a name="l00305"></a>00305 <span class="preprocessor">#endif</span>
-<a name="l00306"></a>00306 <span class="preprocessor"></span>    }
-<a name="l00307"></a>00307     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (adc == ADC2) {
-<a name="l00308"></a>00308 <span class="preprocessor">#ifdef USE_AD2</span>
-<a name="l00309"></a>00309 <span class="preprocessor"></span>        num_channels = <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4">NB_ADC2_CHANNELS</a>;
-<a name="l00310"></a>00310         ADC2_GPIO_INIT();
-<a name="l00311"></a>00311 <span class="preprocessor">#endif</span>
-<a name="l00312"></a>00312 <span class="preprocessor"></span>    }
+<a name="l00285"></a>00285 <span class="comment">    ... would enable ADC1, enabling channels 1 and 2,</span>
+<a name="l00286"></a>00286 <span class="comment">    but not 3 and 4.</span>
+<a name="l00287"></a>00287 <span class="comment">*/</span>
+<a name="l00288"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">00288</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">adc_init_single</a>(<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> adc,
+<a name="l00289"></a>00289                    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan1, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan2,
+<a name="l00290"></a>00290                    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan3, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan4)
+<a name="l00291"></a>00291 {
+<a name="l00292"></a>00292     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> num_channels, rank;
+<a name="l00293"></a>00293     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> channels[4];
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295     <span class="comment">// Paranoia, must be down for 2+ ADC clock cycles before calibration</span>
+<a name="l00296"></a>00296     adc_off(adc);
+<a name="l00297"></a>00297 
+<a name="l00298"></a>00298     <span class="comment">/* enable adc clock */</span>
+<a name="l00299"></a>00299     <span class="keywordflow">if</span> (adc == <a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>) {
+<a name="l00300"></a>00300 <span class="preprocessor">#ifdef USE_AD1</span>
+<a name="l00301"></a>00301 <span class="preprocessor"></span>        num_channels = <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>;
+<a name="l00302"></a>00302         ADC1_GPIO_INIT();
+<a name="l00303"></a>00303 <span class="preprocessor">#endif</span>
+<a name="l00304"></a>00304 <span class="preprocessor"></span>    }
+<a name="l00305"></a>00305     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (adc == ADC2) {
+<a name="l00306"></a>00306 <span class="preprocessor">#ifdef USE_AD2</span>
+<a name="l00307"></a>00307 <span class="preprocessor"></span>        num_channels = <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4">NB_ADC2_CHANNELS</a>;
+<a name="l00308"></a>00308         ADC2_GPIO_INIT();
+<a name="l00309"></a>00309 <span class="preprocessor">#endif</span>
+<a name="l00310"></a>00310 <span class="preprocessor"></span>    }
+<a name="l00311"></a>00311 
+<a name="l00312"></a>00312     <span class="comment">/* Configure ADC */</span>
 <a name="l00313"></a>00313 
-<a name="l00314"></a>00314     <span class="comment">/* Configure ADC */</span>
+<a name="l00314"></a>00314     <span class="comment">/* Explicitly setting most registers, reset/default values are correct for most */</span>
 <a name="l00315"></a>00315 
-<a name="l00316"></a>00316     <span class="comment">/* Explicitly setting most registers, reset/default values are correct for most */</span>
+<a name="l00316"></a>00316     <span class="comment">/* Set CR1 register. */</span>
 <a name="l00317"></a>00317 
-<a name="l00318"></a>00318     <span class="comment">/* Set CR1 register. */</span>
-<a name="l00319"></a>00319 
-<a name="l00320"></a>00320     <span class="comment">/* Clear AWDEN */</span>
-<a name="l00321"></a>00321     adc_disable_analog_watchdog_regular(adc);
-<a name="l00322"></a>00322     <span class="comment">/* Clear JAWDEN */</span>
-<a name="l00323"></a>00323     adc_disable_analog_watchdog_injected(adc);
-<a name="l00324"></a>00324     <span class="comment">/* Clear DISCEN */</span>
-<a name="l00325"></a>00325     adc_disable_discontinuous_mode_regular(adc);
-<a name="l00326"></a>00326     <span class="comment">/* Clear JDISCEN */</span>
-<a name="l00327"></a>00327     adc_disable_discontinuous_mode_injected(adc);
-<a name="l00328"></a>00328     <span class="comment">/* Clear JAUTO */</span>
-<a name="l00329"></a>00329     adc_disable_automatic_injected_group_conversion(adc);
-<a name="l00330"></a>00330     <span class="comment">/* Set SCAN */</span>
-<a name="l00331"></a>00331     adc_enable_scan_mode(adc);
-<a name="l00332"></a>00332     <span class="comment">/* Enable ADC&lt;X&gt; JEOC interrupt (Set JEOCIE) */</span>
-<a name="l00333"></a>00333     adc_enable_eoc_interrupt_injected(adc);
-<a name="l00334"></a>00334     <span class="comment">/* Clear AWDIE */</span>
-<a name="l00335"></a>00335     adc_disable_awd_interrupt(adc);
-<a name="l00336"></a>00336     <span class="comment">/* Clear EOCIE */</span>
-<a name="l00337"></a>00337     adc_disable_eoc_interrupt(adc);
+<a name="l00318"></a>00318     <span class="comment">/* Clear AWDEN */</span>
+<a name="l00319"></a>00319     adc_disable_analog_watchdog_regular(adc);
+<a name="l00320"></a>00320     <span class="comment">/* Clear JAWDEN */</span>
+<a name="l00321"></a>00321     adc_disable_analog_watchdog_injected(adc);
+<a name="l00322"></a>00322     <span class="comment">/* Clear DISCEN */</span>
+<a name="l00323"></a>00323     adc_disable_discontinuous_mode_regular(adc);
+<a name="l00324"></a>00324     <span class="comment">/* Clear JDISCEN */</span>
+<a name="l00325"></a>00325     adc_disable_discontinuous_mode_injected(adc);
+<a name="l00326"></a>00326     <span class="comment">/* Clear JAUTO */</span>
+<a name="l00327"></a>00327     adc_disable_automatic_injected_group_conversion(adc);
+<a name="l00328"></a>00328     <span class="comment">/* Set SCAN */</span>
+<a name="l00329"></a>00329     adc_enable_scan_mode(adc);
+<a name="l00330"></a>00330     <span class="comment">/* Enable ADC&lt;X&gt; JEOC interrupt (Set JEOCIE) */</span>
+<a name="l00331"></a>00331     adc_enable_eoc_interrupt_injected(adc);
+<a name="l00332"></a>00332     <span class="comment">/* Clear AWDIE */</span>
+<a name="l00333"></a>00333     adc_disable_awd_interrupt(adc);
+<a name="l00334"></a>00334     <span class="comment">/* Clear EOCIE */</span>
+<a name="l00335"></a>00335     adc_disable_eoc_interrupt(adc);
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337     <span class="comment">/* Set CR2 register. */</span>
 <a name="l00338"></a>00338 
-<a name="l00339"></a>00339     <span class="comment">/* Set CR2 register. */</span>
-<a name="l00340"></a>00340 
-<a name="l00341"></a>00341     <span class="comment">/* Clear TSVREFE */</span>
-<a name="l00342"></a>00342     adc_disable_temperature_sensor(adc);
-<a name="l00343"></a>00343     <span class="comment">/* Clear EXTTRIG */</span>
-<a name="l00344"></a>00344     adc_disable_external_trigger_regular(adc);
-<a name="l00345"></a>00345     <span class="comment">/* Clear ALIGN */</span>
-<a name="l00346"></a>00346     adc_set_right_aligned(adc);
-<a name="l00347"></a>00347     <span class="comment">/* Clear DMA */</span>
-<a name="l00348"></a>00348     adc_disable_dma(adc);
-<a name="l00349"></a>00349     <span class="comment">/* Clear CONT */</span>
-<a name="l00350"></a>00350     adc_set_single_conversion_mode(adc);
-<a name="l00351"></a>00351 
-<a name="l00352"></a>00352     rank = 0;
-<a name="l00353"></a>00353     <span class="keywordflow">if</span> (chan1) {
-<a name="l00354"></a>00354      adc_set_sample_time(adc, <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[0], ADC_SMPR1_SMP_41DOT5CYC);
-<a name="l00355"></a>00355      channels[rank] = <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[0];
-<a name="l00356"></a>00356         rank++;
-<a name="l00357"></a>00357     }
-<a name="l00358"></a>00358     <span class="keywordflow">if</span> (chan2) {
-<a name="l00359"></a>00359      adc_set_sample_time(adc, <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[1], ADC_SMPR1_SMP_41DOT5CYC);
-<a name="l00360"></a>00360      channels[rank] = <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[1];
-<a name="l00361"></a>00361         rank++;
-<a name="l00362"></a>00362     }
-<a name="l00363"></a>00363     <span class="keywordflow">if</span> (chan3) {
-<a name="l00364"></a>00364      adc_set_sample_time(adc, <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[2], ADC_SMPR1_SMP_41DOT5CYC);
-<a name="l00365"></a>00365      channels[rank] = <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[2];
-<a name="l00366"></a>00366         rank++;
-<a name="l00367"></a>00367     }
-<a name="l00368"></a>00368     <span class="keywordflow">if</span> (chan4) {
-<a name="l00369"></a>00369      adc_set_sample_time(adc, <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[3], ADC_SMPR1_SMP_41DOT5CYC);
-<a name="l00370"></a>00370      channels[rank] = <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[3];
-<a name="l00371"></a>00371     }
+<a name="l00339"></a>00339     <span class="comment">/* Clear TSVREFE */</span>
+<a name="l00340"></a>00340     adc_disable_temperature_sensor(adc);
+<a name="l00341"></a>00341     <span class="comment">/* Clear EXTTRIG */</span>
+<a name="l00342"></a>00342     adc_disable_external_trigger_regular(adc);
+<a name="l00343"></a>00343     <span class="comment">/* Clear ALIGN */</span>
+<a name="l00344"></a>00344     adc_set_right_aligned(adc);
+<a name="l00345"></a>00345     <span class="comment">/* Clear DMA */</span>
+<a name="l00346"></a>00346     adc_disable_dma(adc);
+<a name="l00347"></a>00347     <span class="comment">/* Clear CONT */</span>
+<a name="l00348"></a>00348     adc_set_single_conversion_mode(adc);
+<a name="l00349"></a>00349 
+<a name="l00350"></a>00350     rank = 0;
+<a name="l00351"></a>00351     <span class="keywordflow">if</span> (chan1) {
+<a name="l00352"></a>00352      adc_set_sample_time(adc, <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[0], ADC_SMPR1_SMP_41DOT5CYC);
+<a name="l00353"></a>00353      channels[rank] = <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[0];
+<a name="l00354"></a>00354         rank++;
+<a name="l00355"></a>00355     }
+<a name="l00356"></a>00356     <span class="keywordflow">if</span> (chan2) {
+<a name="l00357"></a>00357      adc_set_sample_time(adc, <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[1], ADC_SMPR1_SMP_41DOT5CYC);
+<a name="l00358"></a>00358      channels[rank] = <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[1];
+<a name="l00359"></a>00359         rank++;
+<a name="l00360"></a>00360     }
+<a name="l00361"></a>00361     <span class="keywordflow">if</span> (chan3) {
+<a name="l00362"></a>00362      adc_set_sample_time(adc, <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[2], ADC_SMPR1_SMP_41DOT5CYC);
+<a name="l00363"></a>00363      channels[rank] = <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[2];
+<a name="l00364"></a>00364         rank++;
+<a name="l00365"></a>00365     }
+<a name="l00366"></a>00366     <span class="keywordflow">if</span> (chan4) {
+<a name="l00367"></a>00367      adc_set_sample_time(adc, <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[3], ADC_SMPR1_SMP_41DOT5CYC);
+<a name="l00368"></a>00368      channels[rank] = <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[3];
+<a name="l00369"></a>00369     }
+<a name="l00370"></a>00370 
+<a name="l00371"></a>00371     adc_set_injected_sequence(adc, num_channels, channels);
 <a name="l00372"></a>00372 
-<a name="l00373"></a>00373     adc_set_injected_sequence(adc, num_channels, channels);
-<a name="l00374"></a>00374 
-<a name="l00375"></a>00375 <span class="preprocessor">#if defined(USE_AD_TIM4)</span>
-<a name="l00376"></a>00376 <span class="preprocessor"></span>    adc_enable_external_trigger_injected(adc, ADC_CR2_JEXTSEL_TIM4_TRGO);
-<a name="l00377"></a>00377 <span class="preprocessor">#elif defined(USE_AD_TIM1)</span>
-<a name="l00378"></a>00378 <span class="preprocessor"></span>    adc_enable_external_trigger_injected(adc, ADC_CR2_JEXTSEL_TIM1_TRGO);
-<a name="l00379"></a>00379 <span class="preprocessor">#else</span>
-<a name="l00380"></a>00380 <span class="preprocessor"></span>    adc_enable_external_trigger_injected(adc, ADC_CR2_JEXTSEL_TIM2_TRGO);
-<a name="l00381"></a>00381 <span class="preprocessor">#endif</span>
-<a name="l00382"></a>00382 <span class="preprocessor"></span>
-<a name="l00383"></a>00383     <span class="comment">/* Enable ADC&lt;X&gt; */</span>
-<a name="l00384"></a>00384     adc_power_on(adc);
-<a name="l00385"></a>00385 
-<a name="l00386"></a>00386     <span class="comment">/* Enable ADC&lt;X&gt; reset calibaration register */</span>
-<a name="l00387"></a>00387     adc_reset_calibration(adc);
-<a name="l00388"></a>00388     <span class="comment">/* Check the end of ADC&lt;X&gt; reset calibration */</span>
-<a name="l00389"></a>00389     <span class="keywordflow">while</span> ((ADC_CR2(adc) &amp; ADC_CR2_RSTCAL) != 0);
-<a name="l00390"></a>00390     <span class="comment">/* Start ADC&lt;X&gt; calibaration */</span>
-<a name="l00391"></a>00391     adc_calibration(adc);
-<a name="l00392"></a>00392     <span class="comment">/* Check the end of ADC&lt;X&gt; calibration */</span>
-<a name="l00393"></a>00393     <span class="keywordflow">while</span> ((ADC_CR2(adc) &amp; ADC_CR2_CAL) != 0);
+<a name="l00373"></a>00373 <span class="preprocessor">#if defined(USE_AD_TIM4)</span>
+<a name="l00374"></a>00374 <span class="preprocessor"></span>    adc_enable_external_trigger_injected(adc, ADC_CR2_JEXTSEL_TIM4_TRGO);
+<a name="l00375"></a>00375 <span class="preprocessor">#elif defined(USE_AD_TIM1)</span>
+<a name="l00376"></a>00376 <span class="preprocessor"></span>    adc_enable_external_trigger_injected(adc, ADC_CR2_JEXTSEL_TIM1_TRGO);
+<a name="l00377"></a>00377 <span class="preprocessor">#else</span>
+<a name="l00378"></a>00378 <span class="preprocessor"></span>    adc_enable_external_trigger_injected(adc, ADC_CR2_JEXTSEL_TIM2_TRGO);
+<a name="l00379"></a>00379 <span class="preprocessor">#endif</span>
+<a name="l00380"></a>00380 <span class="preprocessor"></span>
+<a name="l00381"></a>00381     <span class="comment">/* Enable ADC&lt;X&gt; */</span>
+<a name="l00382"></a>00382     adc_power_on(adc);
+<a name="l00383"></a>00383 
+<a name="l00384"></a>00384     <span class="comment">/* Enable ADC&lt;X&gt; reset calibaration register */</span>
+<a name="l00385"></a>00385     adc_reset_calibration(adc);
+<a name="l00386"></a>00386     <span class="comment">/* Check the end of ADC&lt;X&gt; reset calibration */</span>
+<a name="l00387"></a>00387     <span class="keywordflow">while</span> ((ADC_CR2(adc) &amp; ADC_CR2_RSTCAL) != 0);
+<a name="l00388"></a>00388     <span class="comment">/* Start ADC&lt;X&gt; calibaration */</span>
+<a name="l00389"></a>00389     adc_calibration(adc);
+<a name="l00390"></a>00390     <span class="comment">/* Check the end of ADC&lt;X&gt; calibration */</span>
+<a name="l00391"></a>00391     <span class="keywordflow">while</span> ((ADC_CR2(adc) &amp; ADC_CR2_CAL) != 0);
+<a name="l00392"></a>00392 
+<a name="l00393"></a>00393 } <span class="comment">// adc_init_single</span>
 <a name="l00394"></a>00394 
-<a name="l00395"></a>00395 } <span class="comment">// adc_init_single</span>
+<a name="l00395"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0">00395</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0" title="Starts conversions.">adc_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00396"></a>00396 
-<a name="l00397"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0">00397</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0" title="Starts conversions.">adc_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00398"></a>00398 
-<a name="l00399"></a>00399     <span class="comment">/* initialize buffer pointers with 0 (not set).</span>
-<a name="l00400"></a>00400 <span class="comment">       buffer null pointers will be ignored in interrupt</span>
-<a name="l00401"></a>00401 <span class="comment">       handler, which is important as there are no</span>
-<a name="l00402"></a>00402 <span class="comment">       buffers registered at the time the ADC trigger</span>
-<a name="l00403"></a>00403 <span class="comment">       interrupt is enabled.</span>
-<a name="l00404"></a>00404 <span class="comment">    */</span>
-<a name="l00405"></a>00405     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>;
-<a name="l00406"></a>00406 <span class="preprocessor">#ifdef USE_AD1</span>
-<a name="l00407"></a>00407 <span class="preprocessor"></span>    <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>; channel++)
-<a name="l00408"></a>00408         adc1_buffers[channel] = NULL;
-<a name="l00409"></a>00409     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[0] = &amp;ADC_JDR1(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>);
-<a name="l00410"></a>00410     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[1] = &amp;ADC_JDR2(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>);
-<a name="l00411"></a>00411     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[2] = &amp;ADC_JDR3(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>);
-<a name="l00412"></a>00412     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[3] = &amp;ADC_JDR4(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>);
-<a name="l00413"></a>00413 <span class="preprocessor">#endif</span>
-<a name="l00414"></a>00414 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_AD2</span>
-<a name="l00415"></a>00415 <span class="preprocessor"></span>    <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4">NB_ADC2_CHANNELS</a>; channel++)
-<a name="l00416"></a>00416         adc2_buffers[channel] = NULL;
-<a name="l00417"></a>00417     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[0] = &amp;ADC_JDR1(ADC2);
-<a name="l00418"></a>00418     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[1] = &amp;ADC_JDR2(ADC2);
-<a name="l00419"></a>00419     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[2] = &amp;ADC_JDR3(ADC2);
-<a name="l00420"></a>00420     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[3] = &amp;ADC_JDR4(ADC2);
-<a name="l00421"></a>00421 <span class="preprocessor">#endif</span>
-<a name="l00422"></a>00422 <span class="preprocessor"></span>
-<a name="l00423"></a>00423     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
-<a name="l00424"></a>00424     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[0] = <a class="code" href="lisa__l__1_80_8h.html#a60592e1d9547350dfd75d670738dcf44">BOARD_ADC_CHANNEL_1</a>;
-<a name="l00425"></a>00425     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[1] = <a class="code" href="lisa__l__1_80_8h.html#a65c392281a7e695fa5bbe3d1e5a117c6">BOARD_ADC_CHANNEL_2</a>;
-<a name="l00426"></a>00426     <span class="comment">// FIXME for now we get battery voltage this way</span>
-<a name="l00427"></a>00427     <span class="comment">//    adc_channel_map[2] = BOARD_ADC_CHANNEL_3;</span>
-<a name="l00428"></a>00428     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[2] = <a class="code" href="lisa__l__1_80_8h.html#ab2c7cc66bae5143da7346cf2fcad84e0">BOARD_ADC_CHANNEL_3</a>;
-<a name="l00429"></a>00429     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[3] = <a class="code" href="lisa__l__1_80_8h.html#a22e9ee18df47febcc0511bbe4dd739f4">BOARD_ADC_CHANNEL_4</a>;
-<a name="l00430"></a>00430 
-<a name="l00431"></a>00431     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6">adc_init_rcc</a>();
-<a name="l00432"></a>00432     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f">adc_init_irq</a>();
-<a name="l00433"></a>00433 
-<a name="l00434"></a>00434 <span class="comment">// adc_init_single(ADCx, c1, c2, c3, c4)</span>
-<a name="l00435"></a>00435 <span class="comment">// {{{</span>
-<a name="l00436"></a>00436 <span class="preprocessor">#ifdef USE_AD1</span>
-<a name="l00437"></a>00437 <span class="preprocessor"></span>    <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">adc_init_single</a>(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>,
-<a name="l00438"></a>00438 #ifdef USE_AD1_1
-<a name="l00439"></a>00439             1,
-<a name="l00440"></a>00440 #<span class="keywordflow">else</span>
-<a name="l00441"></a>00441             0,
-<a name="l00442"></a>00442 #endif
-<a name="l00443"></a>00443 #ifdef <a class="code" href="booz__1_80_8h.html#a695ab2b4d2370667dc3e2563f8ebf77a">USE_AD1_2</a>
-<a name="l00444"></a>00444             1,
-<a name="l00445"></a>00445 #<span class="keywordflow">else</span>
-<a name="l00446"></a>00446             0,
-<a name="l00447"></a>00447 #endif
-<a name="l00448"></a>00448 #ifdef USE_AD1_3
-<a name="l00449"></a>00449             1,
-<a name="l00450"></a>00450 #<span class="keywordflow">else</span>
-<a name="l00451"></a>00451             0,
-<a name="l00452"></a>00452 #endif
-<a name="l00453"></a>00453 #ifdef <a class="code" href="logom__2_86_8h.html#a0ece50cfc3eaccb22264b9342085ba7c">USE_AD1_4</a>
-<a name="l00454"></a>00454             1
-<a name="l00455"></a>00455 #<span class="keywordflow">else</span>
-<a name="l00456"></a>00456             0
-<a name="l00457"></a>00457 #endif
-<a name="l00458"></a>00458     );
-<a name="l00459"></a>00459 <span class="preprocessor">#endif // USE_AD1</span>
-<a name="l00460"></a>00460 <span class="preprocessor"></span>
-<a name="l00461"></a>00461 <span class="preprocessor">#ifdef USE_AD2</span>
-<a name="l00462"></a>00462 <span class="preprocessor"></span>    <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">adc_init_single</a>(ADC2,
-<a name="l00463"></a>00463 #ifdef USE_AD2_1
-<a name="l00464"></a>00464             1,
-<a name="l00465"></a>00465 #<span class="keywordflow">else</span>
-<a name="l00466"></a>00466             0,
-<a name="l00467"></a>00467 #endif
-<a name="l00468"></a>00468 #ifdef USE_AD2_2
-<a name="l00469"></a>00469             1,
-<a name="l00470"></a>00470 #<span class="keywordflow">else</span>
-<a name="l00471"></a>00471             0,
-<a name="l00472"></a>00472 #endif
-<a name="l00473"></a>00473 #ifdef USE_AD2_3
-<a name="l00474"></a>00474             1,
-<a name="l00475"></a>00475 #<span class="keywordflow">else</span>
-<a name="l00476"></a>00476             0,
-<a name="l00477"></a>00477 #endif
-<a name="l00478"></a>00478 #ifdef USE_AD2_4
-<a name="l00479"></a>00479             1
-<a name="l00480"></a>00480 #<span class="keywordflow">else</span>
-<a name="l00481"></a>00481             0
-<a name="l00482"></a>00482 #endif
-<a name="l00483"></a>00483     );
-<a name="l00484"></a>00484 <span class="preprocessor">#endif // USE_AD2</span>
-<a name="l00485"></a>00485 <span class="preprocessor"></span>
-<a name="l00486"></a>00486 <span class="comment">// }}}</span>
-<a name="l00487"></a>00487 }
-<a name="l00488"></a>00488 
-<a name="l00489"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">00489</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(<span class="keyword">struct</span> <a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> value) {
-<a name="l00490"></a>00490     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_head = buf-&gt;<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a> + 1;
-<a name="l00491"></a>00491 
-<a name="l00492"></a>00492     <span class="keywordflow">if</span> (new_head &gt;= buf-&gt;<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>) { new_head = 0; }
-<a name="l00493"></a>00493     buf-&gt;<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> -= buf-&gt;<a class="code" href="structadc__buf.html#ab453b0005ea1cc8b8cbf62aff579f60b">values</a>[new_head];
-<a name="l00494"></a>00494     buf-&gt;<a class="code" href="structadc__buf.html#ab453b0005ea1cc8b8cbf62aff579f60b">values</a>[new_head] = value;
-<a name="l00495"></a>00495     buf-&gt;<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> += value;
-<a name="l00496"></a>00496     buf-&gt;<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a> = new_head;
-<a name="l00497"></a>00497 }
-<a name="l00498"></a>00498 
-<a name="l00502"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a24a193e153476793ea3f9089893cf6f4">00502</a> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a24a193e153476793ea3f9089893cf6f4" title="This is the driver for the analog to digital converters on STM32.">adc1_2_isr</a>(<span class="keywordtype">void</span>)
-<a name="l00503"></a>00503 {
-<a name="l00504"></a>00504     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a> = 0;
-<a name="l00505"></a>00505     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> value  = 0;
-<a name="l00506"></a>00506     <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * buf;
-<a name="l00507"></a>00507 
-<a name="l00508"></a>00508 <span class="preprocessor">#ifdef USE_AD1</span>
-<a name="l00509"></a>00509 <span class="preprocessor"></span>    <span class="comment">// Clear Injected End Of Conversion</span>
-<a name="l00510"></a>00510     ADC_SR(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>) &amp;= ~ADC_SR_JEOC;
-<a name="l00511"></a>00511     <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>; channel++) {
-<a name="l00512"></a>00512         buf = adc1_buffers[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
-<a name="l00513"></a>00513         <span class="keywordflow">if</span>(buf) {
-<a name="l00514"></a>00514             value = *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
-<a name="l00515"></a>00515             <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(buf, value);
-<a name="l00516"></a>00516         }
-<a name="l00517"></a>00517     }
-<a name="l00518"></a>00518     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a> = 1;
-<a name="l00519"></a>00519 <span class="preprocessor">#endif</span>
-<a name="l00520"></a>00520 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_AD2</span>
-<a name="l00521"></a>00521 <span class="preprocessor"></span>    <span class="comment">// Clear Injected End Of Conversion</span>
-<a name="l00522"></a>00522     ADC_SR(ADC2) &amp;= ~ADC_SR_JEOC;
-<a name="l00523"></a>00523     <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4">NB_ADC2_CHANNELS</a>; channel++) {
-<a name="l00524"></a>00524         buf = adc2_buffers[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
-<a name="l00525"></a>00525         <span class="keywordflow">if</span>(buf) {
-<a name="l00526"></a>00526             value = *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
-<a name="l00527"></a>00527             <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(buf, value);
-<a name="l00528"></a>00528         }
-<a name="l00529"></a>00529     }
-<a name="l00530"></a>00530     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a> = 1;
-<a name="l00531"></a>00531 <span class="preprocessor">#endif</span>
-<a name="l00532"></a>00532 <span class="preprocessor"></span>}
+<a name="l00397"></a>00397     <span class="comment">/* initialize buffer pointers with 0 (not set).</span>
+<a name="l00398"></a>00398 <span class="comment">       buffer null pointers will be ignored in interrupt</span>
+<a name="l00399"></a>00399 <span class="comment">       handler, which is important as there are no</span>
+<a name="l00400"></a>00400 <span class="comment">       buffers registered at the time the ADC trigger</span>
+<a name="l00401"></a>00401 <span class="comment">       interrupt is enabled.</span>
+<a name="l00402"></a>00402 <span class="comment">    */</span>
+<a name="l00403"></a>00403     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>;
+<a name="l00404"></a>00404 <span class="preprocessor">#ifdef USE_AD1</span>
+<a name="l00405"></a>00405 <span class="preprocessor"></span>    <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>; channel++)
+<a name="l00406"></a>00406         adc1_buffers[channel] = NULL;
+<a name="l00407"></a>00407     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[0] = &amp;ADC_JDR1(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>);
+<a name="l00408"></a>00408     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[1] = &amp;ADC_JDR2(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>);
+<a name="l00409"></a>00409     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[2] = &amp;ADC_JDR3(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>);
+<a name="l00410"></a>00410     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[3] = &amp;ADC_JDR4(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>);
+<a name="l00411"></a>00411 <span class="preprocessor">#endif</span>
+<a name="l00412"></a>00412 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_AD2</span>
+<a name="l00413"></a>00413 <span class="preprocessor"></span>    <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4">NB_ADC2_CHANNELS</a>; channel++)
+<a name="l00414"></a>00414         adc2_buffers[channel] = NULL;
+<a name="l00415"></a>00415     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[0] = &amp;ADC_JDR1(ADC2);
+<a name="l00416"></a>00416     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[1] = &amp;ADC_JDR2(ADC2);
+<a name="l00417"></a>00417     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[2] = &amp;ADC_JDR3(ADC2);
+<a name="l00418"></a>00418     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[3] = &amp;ADC_JDR4(ADC2);
+<a name="l00419"></a>00419 <span class="preprocessor">#endif</span>
+<a name="l00420"></a>00420 <span class="preprocessor"></span>
+<a name="l00421"></a>00421     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188" title="This is the driver for the analog to digital converters on STM32.">adc_new_data_trigger</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00422"></a>00422     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[0] = <a class="code" href="lisa__l__1_80_8h.html#a60592e1d9547350dfd75d670738dcf44">BOARD_ADC_CHANNEL_1</a>;
+<a name="l00423"></a>00423     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[1] = <a class="code" href="lisa__l__1_80_8h.html#a65c392281a7e695fa5bbe3d1e5a117c6">BOARD_ADC_CHANNEL_2</a>;
+<a name="l00424"></a>00424     <span class="comment">// FIXME for now we get battery voltage this way</span>
+<a name="l00425"></a>00425     <span class="comment">//    adc_channel_map[2] = BOARD_ADC_CHANNEL_3;</span>
+<a name="l00426"></a>00426     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[2] = <a class="code" href="lisa__l__1_80_8h.html#ab2c7cc66bae5143da7346cf2fcad84e0">BOARD_ADC_CHANNEL_3</a>;
+<a name="l00427"></a>00427     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[3] = <a class="code" href="lisa__l__1_80_8h.html#a22e9ee18df47febcc0511bbe4dd739f4">BOARD_ADC_CHANNEL_4</a>;
+<a name="l00428"></a>00428 
+<a name="l00429"></a>00429     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6">adc_init_rcc</a>();
+<a name="l00430"></a>00430     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f">adc_init_irq</a>();
+<a name="l00431"></a>00431 
+<a name="l00432"></a>00432 <span class="comment">// adc_init_single(ADCx, c1, c2, c3, c4)</span>
+<a name="l00433"></a>00433 <span class="comment">// {{{</span>
+<a name="l00434"></a>00434 <span class="preprocessor">#ifdef USE_AD1</span>
+<a name="l00435"></a>00435 <span class="preprocessor"></span>    <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">adc_init_single</a>(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>,
+<a name="l00436"></a>00436 #ifdef USE_AD1_1
+<a name="l00437"></a>00437             1,
+<a name="l00438"></a>00438 #<span class="keywordflow">else</span>
+<a name="l00439"></a>00439             0,
+<a name="l00440"></a>00440 #endif
+<a name="l00441"></a>00441 #ifdef <a class="code" href="booz__1_80_8h.html#a695ab2b4d2370667dc3e2563f8ebf77a">USE_AD1_2</a>
+<a name="l00442"></a>00442             1,
+<a name="l00443"></a>00443 #<span class="keywordflow">else</span>
+<a name="l00444"></a>00444             0,
+<a name="l00445"></a>00445 #endif
+<a name="l00446"></a>00446 #ifdef USE_AD1_3
+<a name="l00447"></a>00447             1,
+<a name="l00448"></a>00448 #<span class="keywordflow">else</span>
+<a name="l00449"></a>00449             0,
+<a name="l00450"></a>00450 #endif
+<a name="l00451"></a>00451 #ifdef <a class="code" href="logom__2_86_8h.html#a0ece50cfc3eaccb22264b9342085ba7c">USE_AD1_4</a>
+<a name="l00452"></a>00452             1
+<a name="l00453"></a>00453 #<span class="keywordflow">else</span>
+<a name="l00454"></a>00454             0
+<a name="l00455"></a>00455 #endif
+<a name="l00456"></a>00456     );
+<a name="l00457"></a>00457 <span class="preprocessor">#endif // USE_AD1</span>
+<a name="l00458"></a>00458 <span class="preprocessor"></span>
+<a name="l00459"></a>00459 <span class="preprocessor">#ifdef USE_AD2</span>
+<a name="l00460"></a>00460 <span class="preprocessor"></span>    <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">adc_init_single</a>(ADC2,
+<a name="l00461"></a>00461 #ifdef USE_AD2_1
+<a name="l00462"></a>00462             1,
+<a name="l00463"></a>00463 #<span class="keywordflow">else</span>
+<a name="l00464"></a>00464             0,
+<a name="l00465"></a>00465 #endif
+<a name="l00466"></a>00466 #ifdef USE_AD2_2
+<a name="l00467"></a>00467             1,
+<a name="l00468"></a>00468 #<span class="keywordflow">else</span>
+<a name="l00469"></a>00469             0,
+<a name="l00470"></a>00470 #endif
+<a name="l00471"></a>00471 #ifdef USE_AD2_3
+<a name="l00472"></a>00472             1,
+<a name="l00473"></a>00473 #<span class="keywordflow">else</span>
+<a name="l00474"></a>00474             0,
+<a name="l00475"></a>00475 #endif
+<a name="l00476"></a>00476 #ifdef USE_AD2_4
+<a name="l00477"></a>00477             1
+<a name="l00478"></a>00478 #<span class="keywordflow">else</span>
+<a name="l00479"></a>00479             0
+<a name="l00480"></a>00480 #endif
+<a name="l00481"></a>00481     );
+<a name="l00482"></a>00482 <span class="preprocessor">#endif // USE_AD2</span>
+<a name="l00483"></a>00483 <span class="preprocessor"></span>
+<a name="l00484"></a>00484 <span class="comment">// }}}</span>
+<a name="l00485"></a>00485 }
+<a name="l00486"></a>00486 
+<a name="l00487"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">00487</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(<span class="keyword">struct</span> <a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> value) {
+<a name="l00488"></a>00488     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_head = buf-&gt;<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a> + 1;
+<a name="l00489"></a>00489 
+<a name="l00490"></a>00490     <span class="keywordflow">if</span> (new_head &gt;= buf-&gt;<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>) { new_head = 0; }
+<a name="l00491"></a>00491     buf-&gt;<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> -= buf-&gt;<a class="code" href="structadc__buf.html#ab453b0005ea1cc8b8cbf62aff579f60b">values</a>[new_head];
+<a name="l00492"></a>00492     buf-&gt;<a class="code" href="structadc__buf.html#ab453b0005ea1cc8b8cbf62aff579f60b">values</a>[new_head] = value;
+<a name="l00493"></a>00493     buf-&gt;<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> += value;
+<a name="l00494"></a>00494     buf-&gt;<a class="code" href="structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3">head</a> = new_head;
+<a name="l00495"></a>00495 }
+<a name="l00496"></a>00496 
+<a name="l00500"></a><a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a24a193e153476793ea3f9089893cf6f4">00500</a> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a24a193e153476793ea3f9089893cf6f4" title="ADC1+2 interrupt hander.">adc1_2_isr</a>(<span class="keywordtype">void</span>)
+<a name="l00501"></a>00501 {
+<a name="l00502"></a>00502     <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a> = 0;
+<a name="l00503"></a>00503     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> value  = 0;
+<a name="l00504"></a>00504     <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> * buf;
+<a name="l00505"></a>00505 
+<a name="l00506"></a>00506 <span class="preprocessor">#ifdef USE_AD1</span>
+<a name="l00507"></a>00507 <span class="preprocessor"></span>    <span class="comment">// Clear Injected End Of Conversion</span>
+<a name="l00508"></a>00508     ADC_SR(<a class="code" href="LPC21xx_8h.html#a90d2d5c526ce5c0a551f533eccbee71a">ADC1</a>) &amp;= ~ADC_SR_JEOC;
+<a name="l00509"></a>00509     <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd">NB_ADC1_CHANNELS</a>; channel++) {
+<a name="l00510"></a>00510         buf = adc1_buffers[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
+<a name="l00511"></a>00511         <span class="keywordflow">if</span>(buf) {
+<a name="l00512"></a>00512             value = *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
+<a name="l00513"></a>00513             <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(buf, value);
+<a name="l00514"></a>00514         }
+<a name="l00515"></a>00515     }
+<a name="l00516"></a>00516     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188" title="This is the driver for the analog to digital converters on STM32.">adc_new_data_trigger</a> = 1;
+<a name="l00517"></a>00517 <span class="preprocessor">#endif</span>
+<a name="l00518"></a>00518 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_AD2</span>
+<a name="l00519"></a>00519 <span class="preprocessor"></span>    <span class="comment">// Clear Injected End Of Conversion</span>
+<a name="l00520"></a>00520     ADC_SR(ADC2) &amp;= ~ADC_SR_JEOC;
+<a name="l00521"></a>00521     <span class="keywordflow">for</span>(channel = 0; channel &lt; <a class="code" href="stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4">NB_ADC2_CHANNELS</a>; channel++) {
+<a name="l00522"></a>00522         buf = adc2_buffers[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
+<a name="l00523"></a>00523         <span class="keywordflow">if</span>(buf) {
+<a name="l00524"></a>00524             value = *<a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[<a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>];
+<a name="l00525"></a>00525             <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(buf, value);
+<a name="l00526"></a>00526         }
+<a name="l00527"></a>00527     }
+<a name="l00528"></a>00528     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188" title="This is the driver for the analog to digital converters on STM32.">adc_new_data_trigger</a> = 1;
+<a name="l00529"></a>00529 <span class="preprocessor">#endif</span>
+<a name="l00530"></a>00530 <span class="preprocessor"></span>}
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -638,7 +636,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html">adc_arch.c</a>      </li>
 
-    <li class="footer">Generated on Wed Nov 7 2012 04:00:10 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Nov 8 2012 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

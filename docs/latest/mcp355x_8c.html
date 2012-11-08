@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-188-g22c376a</span>
+   &#160;<span id="projectnumber">v4.9_devel-252-gc708ce0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="mcp355x_8c__incl.png" border="0" usemap="#sw_2airborne_2peripherals_2mcp355x_8c" alt=""/></div>
 <map name="sw_2airborne_2peripherals_2mcp355x_8c" id="sw_2airborne_2peripherals_2mcp355x_8c">
-<area shape="rect" id="node3" href="peripherals_2mcp355x_8h.html" title="peripherals/mcp355x.h" alt="" coords="5,83,173,112"/><area shape="rect" id="node7" href="spi_8h.html" title="arch independent SPI (Serial Peripheral Interface) API" alt="" coords="197,83,328,112"/></map>
+<area shape="rect" id="node3" href="peripherals_2mcp355x_8h.html" title="peripherals/mcp355x.h" alt="" coords="5,83,173,112"/><area shape="rect" id="node7" href="spi_8h.html" title="Architecture independent SPI (Serial Peripheral Interface) API." alt="" coords="197,83,328,112"/></map>
 </div>
 </div>
 <p><a href="mcp355x_8c_source.html">Go to the source code of this file.</a></p>
@@ -129,7 +129,8 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcp355x_8c.html#afea2582f132d52f27d13ca404fc52167">mcp355x_data_available</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcp355x_8c.html#a329ea6825fdd8dfeab29d6766309a493">mcp355x_data</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a> [4]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcp355x_8c.html#a6e0a43bb500fd96a3ae569f60b794a59">mcp355x_val</a> [4]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structspi__transaction.html">spi_transaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcp355x_8c.html#aae0b43d628a59af97de9845d70617437">mcp355x_spi_trans</a></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a432cd0706e314361d3602ac9528f2a05"></a><!-- doxytag: member="mcp355x.c::mcp355x_event" ref="a432cd0706e314361d3602ac9528f2a05" args="(void)" -->
@@ -147,9 +148,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00048">48</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
+<p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00055">55</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
 
-<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="mcp355x_8c_source.html#l00030">mcp355x_data</a>, <a class="el" href="mcp355x_8c_source.html#l00029">mcp355x_data_available</a>, <a class="el" href="mcp355x_8c_source.html#l00031">mcp355x_spi_buf</a>, <a class="el" href="sim__baro_8c_source.html#l00008">spi_message_received</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>References <a class="el" href="spi_8h_source.html#l00134">spi_transaction::input_buf</a>, <a class="el" href="mcp355x_8c_source.html#l00030">mcp355x_data</a>, <a class="el" href="mcp355x_8c_source.html#l00029">mcp355x_data_available</a>, <a class="el" href="mcp355x_8c_source.html#l00033">mcp355x_spi_trans</a>, <a class="el" href="spi_8h_source.html#l00091">SPITransDone</a>, <a class="el" href="spi_8h_source.html#l00090">SPITransFailed</a>, <a class="el" href="spi_8h_source.html#l00089">SPITransSuccess</a>, <a class="el" href="spi_8h_source.html#l00147">spi_transaction::status</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
 </div>
 </div>
@@ -168,9 +169,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00033">33</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
+<p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00035">35</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
 
-<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="mcp355x_8c_source.html#l00030">mcp355x_data</a>, <a class="el" href="mcp355x_8c_source.html#l00029">mcp355x_data_available</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8h_source.html#l00192">SpiClrCPHA</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8h_source.html#l00189">SpiClrCPOL</a>.</p>
+<p>References <a class="el" href="spi_8h_source.html#l00141">spi_transaction::cpha</a>, <a class="el" href="spi_8h_source.html#l00140">spi_transaction::cpol</a>, <a class="el" href="spi_8h_source.html#l00142">spi_transaction::dss</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="spi_8h_source.html#l00134">spi_transaction::input_buf</a>, <a class="el" href="spi_8h_source.html#l00136">spi_transaction::input_length</a>, <a class="el" href="mcp355x_8c_source.html#l00030">mcp355x_data</a>, <a class="el" href="mcp355x_8c_source.html#l00029">mcp355x_data_available</a>, <a class="el" href="mcp355x_8c_source.html#l00033">mcp355x_spi_trans</a>, <a class="el" href="mcp355x_8c_source.html#l00031">mcp355x_val</a>, <a class="el" href="spi_8h_source.html#l00135">spi_transaction::output_buf</a>, <a class="el" href="spi_8h_source.html#l00137">spi_transaction::output_length</a>, <a class="el" href="spi_8h_source.html#l00139">spi_transaction::select</a>, <a class="el" href="spi_8h_source.html#l00138">spi_transaction::slave_idx</a>, <a class="el" href="spi_8h_source.html#l00064">SPICphaEdge1</a>, <a class="el" href="spi_8h_source.html#l00073">SPICpolIdleLow</a>, <a class="el" href="spi_8h_source.html#l00080">SPIDss8bit</a>, and <a class="el" href="spi_8h_source.html#l00054">SPISelect</a>.</p>
 
 <p>Referenced by <a class="el" href="navgo_2baro__board_8c_source.html#l00039">baro_init()</a>.</p>
 
@@ -202,17 +203,28 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00041">41</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
+<p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00051">51</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
 
-<p>References <a class="el" href="mcp355x_8c_source.html#l00031">mcp355x_spi_buf</a>, <a class="el" href="spi_8c_source.html#l00028">spi_buffer_input</a>, and <a class="el" href="spi_8c_source.html#l00030">spi_buffer_length</a>.</p>
+<p>References <a class="el" href="mcp355x_8c_source.html#l00033">mcp355x_spi_trans</a>, and <a class="el" href="sim_2mcu__periph_2spi__arch_8c_source.html#l00025">spi_submit()</a>.</p>
 
-<p>Referenced by <a class="el" href="navgo_2baro__board_8c_source.html#l00051">baro_periodic()</a>.</p>
+<p>Referenced by <a class="el" href="navgo_2baro__board_8c_source.html#l00050">baro_periodic()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="mcp355x_8c_a43936b2cebe162bd29e00181b0282a91_cgraph.png" border="0" usemap="#mcp355x_8c_a43936b2cebe162bd29e00181b0282a91_cgraph" alt=""/></div>
+<map name="mcp355x_8c_a43936b2cebe162bd29e00181b0282a91_cgraph" id="mcp355x_8c_a43936b2cebe162bd29e00181b0282a91_cgraph">
+<area shape="rect" id="node3" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337" title="spi_submit" alt="" coords="171,5,261,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="mcp355x_8c_a43936b2cebe162bd29e00181b0282a91_icgraph.png" border="0" usemap="#mcp355x_8c_a43936b2cebe162bd29e00181b0282a91_icgraph" alt=""/></div>
 <map name="mcp355x_8c_a43936b2cebe162bd29e00181b0282a91_icgraph" id="mcp355x_8c_a43936b2cebe162bd29e00181b0282a91_icgraph">
 <area shape="rect" id="node3" href="navgo_2baro__board_8c.html#a23ed77c56ba44b3ed3cc3b8e378bdb00" title="baro_periodic" alt="" coords="172,5,279,35"/></map>
@@ -235,7 +247,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00030">30</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
 
-<p>Referenced by <a class="el" href="mcp355x_8c_source.html#l00048">mcp355x_event()</a>, and <a class="el" href="mcp355x_8c_source.html#l00033">mcp355x_init()</a>.</p>
+<p>Referenced by <a class="el" href="mcp355x_8c_source.html#l00055">mcp355x_event()</a>, and <a class="el" href="mcp355x_8c_source.html#l00035">mcp355x_init()</a>.</p>
 
 </div>
 </div>
@@ -252,16 +264,33 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00029">29</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
 
-<p>Referenced by <a class="el" href="mcp355x_8c_source.html#l00048">mcp355x_event()</a>, and <a class="el" href="mcp355x_8c_source.html#l00033">mcp355x_init()</a>.</p>
+<p>Referenced by <a class="el" href="mcp355x_8c_source.html#l00055">mcp355x_event()</a>, and <a class="el" href="mcp355x_8c_source.html#l00035">mcp355x_init()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0198e6aa052b2402fad873e4ce54f8bb"></a><!-- doxytag: member="mcp355x.c::mcp355x_spi_buf" ref="a0198e6aa052b2402fad873e4ce54f8bb" args="[4]" -->
+<a class="anchor" id="aae0b43d628a59af97de9845d70617437"></a><!-- doxytag: member="mcp355x.c::mcp355x_spi_trans" ref="aae0b43d628a59af97de9845d70617437" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="mcp355x_8c.html#a0198e6aa052b2402fad873e4ce54f8bb">mcp355x_spi_buf</a>[4]</td>
+          <td class="memname">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> <a class="el" href="mcp355x_8c.html#aae0b43d628a59af97de9845d70617437">mcp355x_spi_trans</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00033">33</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
+
+<p>Referenced by <a class="el" href="mcp355x_8c_source.html#l00055">mcp355x_event()</a>, <a class="el" href="mcp355x_8c_source.html#l00035">mcp355x_init()</a>, and <a class="el" href="mcp355x_8c_source.html#l00051">mcp355x_read()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e0a43bb500fd96a3ae569f60b794a59"></a><!-- doxytag: member="mcp355x.c::mcp355x_val" ref="a6e0a43bb500fd96a3ae569f60b794a59" args="[4]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="mcp355x_8c.html#a6e0a43bb500fd96a3ae569f60b794a59">mcp355x_val</a>[4]</td>
         </tr>
       </table>
 </div>
@@ -269,7 +298,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="mcp355x_8c_source.html#l00031">31</a> of file <a class="el" href="mcp355x_8c_source.html">mcp355x.c</a>.</p>
 
-<p>Referenced by <a class="el" href="mcp355x_8c_source.html#l00048">mcp355x_event()</a>, and <a class="el" href="mcp355x_8c_source.html#l00041">mcp355x_read()</a>.</p>
+<p>Referenced by <a class="el" href="mcp355x_8c_source.html#l00035">mcp355x_init()</a>.</p>
 
 </div>
 </div>
@@ -293,7 +322,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="mcp355x_8c.html">mcp355x.c</a>      </li>
 
-    <li class="footer">Generated on Wed Nov 7 2012 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Nov 8 2012 04:00:13 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
