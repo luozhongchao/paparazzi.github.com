@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-261-gba19f84</span>
+   &#160;<span id="projectnumber">v4.9_devel-262-gd5b5326</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -104,80 +104,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="stabilization__attitude__ref__euler__float_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> * $Id: stabilization_attitude_ref_traj_euler.h 3796 2009-07-25 00:01:02Z poine $</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (C) 2008-2009 Antoine Drouin &lt;poinix@gmail.com&gt;</span>
 <a name="l00003"></a>00003 <span class="comment"> *</span>
-<a name="l00004"></a>00004 <span class="comment"> * Copyright (C) 2008-2009 Antoine Drouin &lt;poinix@gmail.com&gt;</span>
+<a name="l00004"></a>00004 <span class="comment"> * This file is part of paparazzi.</span>
 <a name="l00005"></a>00005 <span class="comment"> *</span>
-<a name="l00006"></a>00006 <span class="comment"> * This file is part of paparazzi.</span>
-<a name="l00007"></a>00007 <span class="comment"> *</span>
-<a name="l00008"></a>00008 <span class="comment"> * paparazzi is free software; you can redistribute it and/or modify</span>
-<a name="l00009"></a>00009 <span class="comment"> * it under the terms of the GNU General Public License as published by</span>
-<a name="l00010"></a>00010 <span class="comment"> * the Free Software Foundation; either version 2, or (at your option)</span>
-<a name="l00011"></a>00011 <span class="comment"> * any later version.</span>
-<a name="l00012"></a>00012 <span class="comment"> *</span>
-<a name="l00013"></a>00013 <span class="comment"> * paparazzi is distributed in the hope that it will be useful,</span>
-<a name="l00014"></a>00014 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00015"></a>00015 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00016"></a>00016 <span class="comment"> * GNU General Public License for more details.</span>
-<a name="l00017"></a>00017 <span class="comment"> *</span>
-<a name="l00018"></a>00018 <span class="comment"> * You should have received a copy of the GNU General Public License</span>
-<a name="l00019"></a>00019 <span class="comment"> * along with paparazzi; see the file COPYING.  If not, write to</span>
-<a name="l00020"></a>00020 <span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span>
-<a name="l00021"></a>00021 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
-<a name="l00022"></a>00022 <span class="comment"> */</span>
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="preprocessor">#ifndef STABILIZATION_ATTITUDE_FLOAT_REF_EULER_FLOAT_H</span>
-<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define STABILIZATION_ATTITUDE_FLOAT_REF_EULER_FLOAT_H</span>
-<a name="l00026"></a>00026 <span class="preprocessor"></span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="radio__control_8h.html">subsystems/radio_control.h</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra.">math/pprz_algebra_float.h</a>&quot;</span>
-<a name="l00029"></a>00029 
+<a name="l00006"></a>00006 <span class="comment"> * paparazzi is free software; you can redistribute it and/or modify</span>
+<a name="l00007"></a>00007 <span class="comment"> * it under the terms of the GNU General Public License as published by</span>
+<a name="l00008"></a>00008 <span class="comment"> * the Free Software Foundation; either version 2, or (at your option)</span>
+<a name="l00009"></a>00009 <span class="comment"> * any later version.</span>
+<a name="l00010"></a>00010 <span class="comment"> *</span>
+<a name="l00011"></a>00011 <span class="comment"> * paparazzi is distributed in the hope that it will be useful,</span>
+<a name="l00012"></a>00012 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00013"></a>00013 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00014"></a>00014 <span class="comment"> * GNU General Public License for more details.</span>
+<a name="l00015"></a>00015 <span class="comment"> *</span>
+<a name="l00016"></a>00016 <span class="comment"> * You should have received a copy of the GNU General Public License</span>
+<a name="l00017"></a>00017 <span class="comment"> * along with paparazzi; see the file COPYING.  If not, write to</span>
+<a name="l00018"></a>00018 <span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span>
+<a name="l00019"></a>00019 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
+<a name="l00020"></a>00020 <span class="comment"> */</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#ifndef STABILIZATION_ATTITUDE_FLOAT_REF_EULER_FLOAT_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define STABILIZATION_ATTITUDE_FLOAT_REF_EULER_FLOAT_H</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="radio__control_8h.html">subsystems/radio_control.h</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra.">math/pprz_algebra_float.h</a>&quot;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="stabilization__attitude__ref__float_8h.html">stabilization_attitude_ref_float.h</a>&quot;</span>
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="stabilization__attitude__ref__float_8h.html">stabilization_attitude_ref_float.h</a>&quot;</span>
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="comment">/*</span>
-<a name="l00034"></a>00034 <span class="comment"> * Radio Control</span>
-<a name="l00035"></a>00035 <span class="comment"> */</span>
-<a name="l00036"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#abd019b51335ddda98c6bf5e5d368b8ea">00036</a> <span class="preprocessor">#define SP_MAX_PHI   STABILIZATION_ATTITUDE_FLOAT_SP_MAX_PHI</span>
-<a name="l00037"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a218ed832e3b97e115ac7ed996671d5ee">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_THETA STABILIZATION_ATTITUDE_FLOAT_SP_MAX_THETA</span>
-<a name="l00038"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a25142bf155063146ef43b6e239b1f438">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_R     STABILIZATION_ATTITUDE_FLOAT_SP_MAX_R</span>
-<a name="l00039"></a>00039 <span class="preprocessor"></span>
+<a name="l00031"></a>00031 <span class="comment">/*</span>
+<a name="l00032"></a>00032 <span class="comment"> * Radio Control</span>
+<a name="l00033"></a>00033 <span class="comment"> */</span>
+<a name="l00034"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#abd019b51335ddda98c6bf5e5d368b8ea">00034</a> <span class="preprocessor">#define SP_MAX_PHI   STABILIZATION_ATTITUDE_FLOAT_SP_MAX_PHI</span>
+<a name="l00035"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a218ed832e3b97e115ac7ed996671d5ee">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_THETA STABILIZATION_ATTITUDE_FLOAT_SP_MAX_THETA</span>
+<a name="l00036"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a25142bf155063146ef43b6e239b1f438">00036</a> <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_R     STABILIZATION_ATTITUDE_FLOAT_SP_MAX_R</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">00044</a> <span class="preprocessor">#define RC_UPDATE_FREQ 40.</span>
-<a name="l00045"></a>00045 <span class="preprocessor"></span>
-<a name="l00046"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a908110653d45fd82871ee768ffe38317">00046</a> <span class="preprocessor">#define YAW_DEADBAND_EXCEEDED()           \</span>
-<a name="l00047"></a>00047 <span class="preprocessor">  (radio_control.values[RADIO_YAW] &gt;  STABILIZATION_ATTITUDE_FLOAT_DEADBAND_R || \</span>
-<a name="l00048"></a>00048 <span class="preprocessor">   radio_control.values[RADIO_YAW] &lt; -STABILIZATION_ATTITUDE_FLOAT_DEADBAND_R)</span>
-<a name="l00049"></a>00049 <span class="preprocessor"></span>
-<a name="l00050"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a2e85a5e217f5e020bd9e5413f73c98f8">00050</a> <span class="preprocessor">#define STABILIZATION_ATTITUDE_FLOAT_READ_RC(_sp, _inflight) {          \</span>
-<a name="l00051"></a>00051 <span class="preprocessor">                                                                        \</span>
-<a name="l00052"></a>00052 <span class="preprocessor">    _sp.phi = (radio_control.values[RADIO_ROLL]  * SP_MAX_PHI / MAX_PPRZ); \</span>
-<a name="l00053"></a>00053 <span class="preprocessor">    _sp.theta = (radio_control.values[RADIO_PITCH] * SP_MAX_THETA / MAX_PPRZ); \</span>
-<a name="l00054"></a>00054 <span class="preprocessor">    if (_inflight) {                                                    \</span>
-<a name="l00055"></a>00055 <span class="preprocessor">      if (YAW_DEADBAND_EXCEEDED()) {                                    \</span>
-<a name="l00056"></a>00056 <span class="preprocessor">        _sp.psi +=                                                      \</span>
-<a name="l00057"></a>00057 <span class="preprocessor">          (radio_control.values[RADIO_YAW] * SP_MAX_R / MAX_PPRZ / RC_UPDATE_FREQ); \</span>
-<a name="l00058"></a>00058 <span class="preprocessor">        FLOAT_ANGLE_NORMALIZE(_sp.psi);                                 \</span>
-<a name="l00059"></a>00059 <span class="preprocessor">      }                                                                 \</span>
-<a name="l00060"></a>00060 <span class="preprocessor">    }                                                                   \</span>
-<a name="l00061"></a>00061 <span class="preprocessor">    else { </span><span class="comment">/* if not flying, use current yaw as setpoint */</span>             \
-<a name="l00062"></a>00062       _sp.psi = stateGetNedToBodyEulers_f()-&gt;psi;                       \
-<a name="l00063"></a>00063     }                                                                   \
-<a name="l00064"></a>00064   }
-<a name="l00065"></a>00065 
-<a name="l00066"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a7e28282ebe7026c87667454aedf02cf2">00066</a> <span class="preprocessor">#define STABILIZATION_ATTITUDE_FLOAT_ADD_SP(_add_sp) {  \</span>
-<a name="l00067"></a>00067 <span class="preprocessor">    struct FloatEulers add_sp_float;                    \</span>
-<a name="l00068"></a>00068 <span class="preprocessor">    EULERS_FLOAT_OF_BFP(add_sp_float, (_add_sp));   \</span>
-<a name="l00069"></a>00069 <span class="preprocessor">    EULERS_ADD(stabilization_att_sp,add_sp_float);    \</span>
-<a name="l00070"></a>00070 <span class="preprocessor">    FLOAT_ANGLE_NORMALIZE(stabilization_att_sp.psi);  \</span>
-<a name="l00071"></a>00071 <span class="preprocessor">  }</span>
-<a name="l00072"></a>00072 <span class="preprocessor"></span>
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075 <span class="preprocessor">#endif </span><span class="comment">/* STABILIZATION_ATTITUDE_FLOAT_REF_EULER_FLOAT_H */</span>
+<a name="l00042"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">00042</a> <span class="preprocessor">#define RC_UPDATE_FREQ 40.</span>
+<a name="l00043"></a>00043 <span class="preprocessor"></span>
+<a name="l00044"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a908110653d45fd82871ee768ffe38317">00044</a> <span class="preprocessor">#define YAW_DEADBAND_EXCEEDED()           \</span>
+<a name="l00045"></a>00045 <span class="preprocessor">  (radio_control.values[RADIO_YAW] &gt;  STABILIZATION_ATTITUDE_FLOAT_DEADBAND_R || \</span>
+<a name="l00046"></a>00046 <span class="preprocessor">   radio_control.values[RADIO_YAW] &lt; -STABILIZATION_ATTITUDE_FLOAT_DEADBAND_R)</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span>
+<a name="l00048"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a2e85a5e217f5e020bd9e5413f73c98f8">00048</a> <span class="preprocessor">#define STABILIZATION_ATTITUDE_FLOAT_READ_RC(_sp, _inflight) {          \</span>
+<a name="l00049"></a>00049 <span class="preprocessor">                                                                        \</span>
+<a name="l00050"></a>00050 <span class="preprocessor">    _sp.phi = (radio_control.values[RADIO_ROLL]  * SP_MAX_PHI / MAX_PPRZ); \</span>
+<a name="l00051"></a>00051 <span class="preprocessor">    _sp.theta = (radio_control.values[RADIO_PITCH] * SP_MAX_THETA / MAX_PPRZ); \</span>
+<a name="l00052"></a>00052 <span class="preprocessor">    if (_inflight) {                                                    \</span>
+<a name="l00053"></a>00053 <span class="preprocessor">      if (YAW_DEADBAND_EXCEEDED()) {                                    \</span>
+<a name="l00054"></a>00054 <span class="preprocessor">        _sp.psi +=                                                      \</span>
+<a name="l00055"></a>00055 <span class="preprocessor">          (radio_control.values[RADIO_YAW] * SP_MAX_R / MAX_PPRZ / RC_UPDATE_FREQ); \</span>
+<a name="l00056"></a>00056 <span class="preprocessor">        FLOAT_ANGLE_NORMALIZE(_sp.psi);                                 \</span>
+<a name="l00057"></a>00057 <span class="preprocessor">      }                                                                 \</span>
+<a name="l00058"></a>00058 <span class="preprocessor">    }                                                                   \</span>
+<a name="l00059"></a>00059 <span class="preprocessor">    else { </span><span class="comment">/* if not flying, use current yaw as setpoint */</span>             \
+<a name="l00060"></a>00060       _sp.psi = stateGetNedToBodyEulers_f()-&gt;psi;                       \
+<a name="l00061"></a>00061     }                                                                   \
+<a name="l00062"></a>00062   }
+<a name="l00063"></a>00063 
+<a name="l00064"></a><a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a7e28282ebe7026c87667454aedf02cf2">00064</a> <span class="preprocessor">#define STABILIZATION_ATTITUDE_FLOAT_ADD_SP(_add_sp) {  \</span>
+<a name="l00065"></a>00065 <span class="preprocessor">    struct FloatEulers add_sp_float;                    \</span>
+<a name="l00066"></a>00066 <span class="preprocessor">    EULERS_FLOAT_OF_BFP(add_sp_float, (_add_sp));   \</span>
+<a name="l00067"></a>00067 <span class="preprocessor">    EULERS_ADD(stabilization_att_sp,add_sp_float);    \</span>
+<a name="l00068"></a>00068 <span class="preprocessor">    FLOAT_ANGLE_NORMALIZE(stabilization_att_sp.psi);  \</span>
+<a name="l00069"></a>00069 <span class="preprocessor">  }</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span>
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="preprocessor">#endif </span><span class="comment">/* STABILIZATION_ATTITUDE_FLOAT_REF_EULER_FLOAT_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -198,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__ref__euler__float_8h.html">stabilization_attitude_ref_euler_float.h</a>      </li>
 
-    <li class="footer">Generated on Sun Nov 11 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Mon Nov 12 2012 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

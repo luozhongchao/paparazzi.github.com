@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-261-gba19f84</span>
+   &#160;<span id="projectnumber">v4.9_devel-262-gd5b5326</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -104,116 +104,114 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="vi_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> * $Id:  $</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (C) 2010 The Paparazzi Team</span>
 <a name="l00003"></a>00003 <span class="comment"> *</span>
-<a name="l00004"></a>00004 <span class="comment"> * Copyright (C) 2010 The Paparazzi Team</span>
+<a name="l00004"></a>00004 <span class="comment"> * This file is part of paparazzi.</span>
 <a name="l00005"></a>00005 <span class="comment"> *</span>
-<a name="l00006"></a>00006 <span class="comment"> * This file is part of paparazzi.</span>
-<a name="l00007"></a>00007 <span class="comment"> *</span>
-<a name="l00008"></a>00008 <span class="comment"> * This is the &quot;external interface&quot; to the autopilot. It allows an external device to</span>
-<a name="l00009"></a>00009 <span class="comment"> * fetch the vehicle state and input commands at different levels. We should support</span>
-<a name="l00010"></a>00010 <span class="comment"> * different hardware peripherals like i2c, spi or uart.</span>
-<a name="l00011"></a>00011 <span class="comment"> * For now we only have an implementation using datalink messages.</span>
-<a name="l00012"></a>00012 <span class="comment"> *</span>
-<a name="l00013"></a>00013 <span class="comment"> * This program is free software; you can redistribute it and/or modify</span>
-<a name="l00014"></a>00014 <span class="comment"> * it under the terms of the GNU General Public License as published by</span>
-<a name="l00015"></a>00015 <span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span>
-<a name="l00016"></a>00016 <span class="comment"> * (at your option) any later version.</span>
-<a name="l00017"></a>00017 <span class="comment"> *</span>
-<a name="l00018"></a>00018 <span class="comment"> * This program is distributed in the hope that it will be useful,</span>
-<a name="l00019"></a>00019 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00020"></a>00020 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00021"></a>00021 <span class="comment"> * GNU General Public License for more details.</span>
-<a name="l00022"></a>00022 <span class="comment"> *</span>
-<a name="l00023"></a>00023 <span class="comment"> * You should have received a copy of the GNU General Public License</span>
-<a name="l00024"></a>00024 <span class="comment"> * along with this program; if not, write to the Free Software</span>
-<a name="l00025"></a>00025 <span class="comment"> * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span>
-<a name="l00026"></a>00026 <span class="comment"> */</span>
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="preprocessor">#ifndef VEHICLE_INTERFACE_H</span>
-<a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#define VEHICLE_INTERFACE_H</span>
-<a name="l00030"></a>00030 <span class="preprocessor"></span>
-<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;std.h&quot;</span>
-<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra.">math/pprz_algebra_int.h</a>&quot;</span>
-<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="rotorcraft_2autopilot_8h.html">firmwares/rotorcraft/autopilot.h</a>&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="stabilization_8h.html" title="General stabilization interface for rotorcrafts.">firmwares/rotorcraft/stabilization.h</a>&quot;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="guidance_8h.html">firmwares/rotorcraft/guidance.h</a>&quot;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="navigation_8h.html">firmwares/rotorcraft/navigation.h</a>&quot;</span>
-<a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="structVi__imu__info.html">00038</a> <span class="keyword">struct </span><a class="code" href="structVi__imu__info.html">Vi_imu_info</a> {
-<a name="l00039"></a><a class="code" href="structVi__imu__info.html#aa6d86a777c2f00a72daa264ddf72b225">00039</a>   <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> <a class="code" href="structVi__imu__info.html#aa6d86a777c2f00a72daa264ddf72b225">gyro</a>;
-<a name="l00040"></a><a class="code" href="structVi__imu__info.html#ae820aa2c5fb42815b8e60029c0ace3fa">00040</a>   <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> <a class="code" href="structVi__imu__info.html#ae820aa2c5fb42815b8e60029c0ace3fa">accel</a>;
-<a name="l00041"></a><a class="code" href="structVi__imu__info.html#a6e59e458bc626853e5895e628d259a7e">00041</a>   <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> <a class="code" href="structVi__imu__info.html#a6e59e458bc626853e5895e628d259a7e">mag</a>;
-<a name="l00042"></a>00042 };
-<a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="structVi__gps__info.html">00044</a> <span class="keyword">struct </span><a class="code" href="structVi__gps__info.html">Vi_gps_info</a> {
-<a name="l00045"></a><a class="code" href="structVi__gps__info.html#ab702300a590e9e8e881ab73eafa6e1f8">00045</a>   <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> <a class="code" href="structVi__gps__info.html#ab702300a590e9e8e881ab73eafa6e1f8">pos</a>;
-<a name="l00046"></a><a class="code" href="structVi__gps__info.html#a2174470bb84a5171bd9c0373bb1f06cf">00046</a>   <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> <a class="code" href="structVi__gps__info.html#a2174470bb84a5171bd9c0373bb1f06cf">speed</a>;
-<a name="l00047"></a><a class="code" href="structVi__gps__info.html#a69fde2065c05cc8523ed0c68a5787d83">00047</a>   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structVi__gps__info.html#a69fde2065c05cc8523ed0c68a5787d83">pacc</a>;
-<a name="l00048"></a><a class="code" href="structVi__gps__info.html#a7d613e407626232ab0a3a8f1052e9eec">00048</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVi__gps__info.html#a7d613e407626232ab0a3a8f1052e9eec">num_sv</a>;
-<a name="l00049"></a><a class="code" href="structVi__gps__info.html#a26e03024ed8fa0fb35399e3f8ad85def">00049</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVi__gps__info.html#a26e03024ed8fa0fb35399e3f8ad85def">fix</a>;
-<a name="l00050"></a>00050 };
-<a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="structVi__ahrs__info.html">00052</a> <span class="keyword">struct </span><a class="code" href="structVi__ahrs__info.html">Vi_ahrs_info</a> {
-<a name="l00053"></a><a class="code" href="structVi__ahrs__info.html#abbdf276534da86017f0c40f4572bbed7">00053</a>   <span class="keyword">struct </span><a class="code" href="structInt16Eulers.html">Int16Eulers</a> <a class="code" href="structVi__ahrs__info.html#abbdf276534da86017f0c40f4572bbed7">euler</a>;
-<a name="l00054"></a><a class="code" href="structVi__ahrs__info.html#a66c48ea7afc8ba945d04e182efa49641">00054</a>   <span class="keyword">struct </span><a class="code" href="structInt16Eulers.html">Int16Eulers</a>  <a class="code" href="structVi__ahrs__info.html#a66c48ea7afc8ba945d04e182efa49641">rate</a>;
-<a name="l00055"></a>00055 };
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="structVi__info.html">00057</a> <span class="keyword">struct </span><a class="code" href="structVi__info.html">Vi_info</a> {
-<a name="l00058"></a><a class="code" href="structVi__info.html#a7f72ee067479504eedf58fbc154e7f96">00058</a>   <span class="keyword">struct </span><a class="code" href="structVi__imu__info.html">Vi_imu_info</a>  <a class="code" href="structVi__info.html#a7f72ee067479504eedf58fbc154e7f96">imu</a>;
-<a name="l00059"></a><a class="code" href="structVi__info.html#a6e54aacf5d0a9bc34d76eff887258546">00059</a>   <span class="keyword">struct </span><a class="code" href="structVi__gps__info.html">Vi_gps_info</a>  <a class="code" href="structVi__info.html#a6e54aacf5d0a9bc34d76eff887258546">gps</a>;
-<a name="l00060"></a><a class="code" href="structVi__info.html#a8506365ba62fbde59e0d8c97a2bf7523">00060</a>   <span class="keyword">struct </span><a class="code" href="structVi__ahrs__info.html">Vi_ahrs_info</a> <a class="code" href="structVi__info.html#a8506365ba62fbde59e0d8c97a2bf7523">ahrs</a>;
-<a name="l00061"></a>00061 };
-<a name="l00062"></a>00062 
-<a name="l00063"></a><a class="code" href="structVi__command.html">00063</a> <span class="keyword">struct </span><a class="code" href="structVi__command.html">Vi_command</a> {
-<a name="l00064"></a>00064   <span class="keyword">union </span>{
-<a name="l00065"></a><a class="code" href="structVi__command.html#ae0fc1ebecad84516da1b6d968cd5dda1">00065</a>     <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a>  <a class="code" href="structVi__command.html#ae0fc1ebecad84516da1b6d968cd5dda1">rate</a>;
-<a name="l00066"></a><a class="code" href="structVi__command.html#aa3848211d7cc60e2d35c04940f734aed">00066</a>     <span class="keyword">struct </span><a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> <a class="code" href="structVi__command.html#aa3848211d7cc60e2d35c04940f734aed">attitude</a>;
-<a name="l00067"></a><a class="code" href="structVi__command.html#a834068d6816d14e04383a79066f8eb39">00067</a>     <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> <a class="code" href="structVi__command.html#a834068d6816d14e04383a79066f8eb39">speed</a>; <span class="comment">//FIXME Warning z is heading rate</span>
-<a name="l00068"></a><a class="code" href="structVi__command.html#abff41d60c44f6e013c09253cfaa68867">00068</a>     <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> <a class="code" href="structVi__command.html#abff41d60c44f6e013c09253cfaa68867">pos</a>; <span class="comment">//FIXME Warning z is heading</span>
-<a name="l00069"></a>00069   } <a class="code" href="structVi__command.html#ad059023fed79107c17c6db74da0b01ba">h_sp</a>;
-<a name="l00070"></a>00070   <span class="keyword">union </span>{
-<a name="l00071"></a><a class="code" href="structVi__command.html#a15dc924407c5289fc8d1b7c5dfdc2235">00071</a>     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structVi__command.html#a15dc924407c5289fc8d1b7c5dfdc2235">direct</a>;
-<a name="l00072"></a><a class="code" href="structVi__command.html#aabead36fda41a5e8f7c6b2bbc1ea7d88">00072</a>     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structVi__command.html#aabead36fda41a5e8f7c6b2bbc1ea7d88">climb</a>;
-<a name="l00073"></a><a class="code" href="structVi__command.html#a333af16ed039a878ab7199851ea64a7b">00073</a>     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structVi__command.html#a333af16ed039a878ab7199851ea64a7b">height</a>;
-<a name="l00074"></a>00074   } <a class="code" href="structVi__command.html#a4f4be908cc91a959e7a2199b78934b83">v_sp</a>;
-<a name="l00075"></a><a class="code" href="structVi__command.html#a162939a96b3aa3f484ac56972b3ed848">00075</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVi__command.html#a162939a96b3aa3f484ac56972b3ed848">h_mode</a>;
-<a name="l00076"></a><a class="code" href="structVi__command.html#a674114cf71c612f56690f88da76d7e21">00076</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVi__command.html#a674114cf71c612f56690f88da76d7e21">v_mode</a>;
-<a name="l00077"></a>00077 };
-<a name="l00078"></a>00078 
-<a name="l00079"></a><a class="code" href="structVehicleInterface.html">00079</a> <span class="keyword">struct </span><a class="code" href="structVehicleInterface.html">VehicleInterface</a> {
-<a name="l00080"></a><a class="code" href="structVehicleInterface.html#a110d0b9ef3c54f7c7f30e622844680f3">00080</a>   bool_t <a class="code" href="structVehicleInterface.html#a110d0b9ef3c54f7c7f30e622844680f3">enabled</a>;
-<a name="l00081"></a><a class="code" href="structVehicleInterface.html#a57880e1cae1569eec6aa5bb86a4caa98">00081</a>   bool_t <a class="code" href="structVehicleInterface.html#a57880e1cae1569eec6aa5bb86a4caa98">timeouted</a>;
-<a name="l00082"></a><a class="code" href="structVehicleInterface.html#a1bfd15310f8c8127120cad9efcdb05ed">00082</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVehicleInterface.html#a1bfd15310f8c8127120cad9efcdb05ed">last_msg</a>;
-<a name="l00083"></a><a class="code" href="structVehicleInterface.html#ad561aa0f6e51fcc56e7379bd73806823">00083</a>   <span class="keyword">struct </span><a class="code" href="structVi__info.html">Vi_info</a> <a class="code" href="structVehicleInterface.html#ad561aa0f6e51fcc56e7379bd73806823">info</a>;
-<a name="l00084"></a><a class="code" href="structVehicleInterface.html#a63dca4642131593d26db22a363a88693">00084</a>   <span class="keyword">struct </span><a class="code" href="structVi__command.html">Vi_command</a> <a class="code" href="structVehicleInterface.html#a63dca4642131593d26db22a363a88693">input</a>;
-<a name="l00085"></a><a class="code" href="structVehicleInterface.html#aadd55a31046784d08346ca94a76ce893">00085</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVehicleInterface.html#aadd55a31046784d08346ca94a76ce893">available_sensors</a>;
-<a name="l00086"></a>00086 };
+<a name="l00006"></a>00006 <span class="comment"> * This is the &quot;external interface&quot; to the autopilot. It allows an external device to</span>
+<a name="l00007"></a>00007 <span class="comment"> * fetch the vehicle state and input commands at different levels. We should support</span>
+<a name="l00008"></a>00008 <span class="comment"> * different hardware peripherals like i2c, spi or uart.</span>
+<a name="l00009"></a>00009 <span class="comment"> * For now we only have an implementation using datalink messages.</span>
+<a name="l00010"></a>00010 <span class="comment"> *</span>
+<a name="l00011"></a>00011 <span class="comment"> * This program is free software; you can redistribute it and/or modify</span>
+<a name="l00012"></a>00012 <span class="comment"> * it under the terms of the GNU General Public License as published by</span>
+<a name="l00013"></a>00013 <span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span>
+<a name="l00014"></a>00014 <span class="comment"> * (at your option) any later version.</span>
+<a name="l00015"></a>00015 <span class="comment"> *</span>
+<a name="l00016"></a>00016 <span class="comment"> * This program is distributed in the hope that it will be useful,</span>
+<a name="l00017"></a>00017 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00018"></a>00018 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00019"></a>00019 <span class="comment"> * GNU General Public License for more details.</span>
+<a name="l00020"></a>00020 <span class="comment"> *</span>
+<a name="l00021"></a>00021 <span class="comment"> * You should have received a copy of the GNU General Public License</span>
+<a name="l00022"></a>00022 <span class="comment"> * along with this program; if not, write to the Free Software</span>
+<a name="l00023"></a>00023 <span class="comment"> * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span>
+<a name="l00024"></a>00024 <span class="comment"> */</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#ifndef VEHICLE_INTERFACE_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#define VEHICLE_INTERFACE_H</span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;std.h&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra.">math/pprz_algebra_int.h</a>&quot;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="rotorcraft_2autopilot_8h.html">firmwares/rotorcraft/autopilot.h</a>&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="stabilization_8h.html" title="General stabilization interface for rotorcrafts.">firmwares/rotorcraft/stabilization.h</a>&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="guidance_8h.html">firmwares/rotorcraft/guidance.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="navigation_8h.html">firmwares/rotorcraft/navigation.h</a>&quot;</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="structVi__imu__info.html">00036</a> <span class="keyword">struct </span><a class="code" href="structVi__imu__info.html">Vi_imu_info</a> {
+<a name="l00037"></a><a class="code" href="structVi__imu__info.html#aa6d86a777c2f00a72daa264ddf72b225">00037</a>   <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> <a class="code" href="structVi__imu__info.html#aa6d86a777c2f00a72daa264ddf72b225">gyro</a>;
+<a name="l00038"></a><a class="code" href="structVi__imu__info.html#ae820aa2c5fb42815b8e60029c0ace3fa">00038</a>   <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> <a class="code" href="structVi__imu__info.html#ae820aa2c5fb42815b8e60029c0ace3fa">accel</a>;
+<a name="l00039"></a><a class="code" href="structVi__imu__info.html#a6e59e458bc626853e5895e628d259a7e">00039</a>   <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> <a class="code" href="structVi__imu__info.html#a6e59e458bc626853e5895e628d259a7e">mag</a>;
+<a name="l00040"></a>00040 };
+<a name="l00041"></a>00041 
+<a name="l00042"></a><a class="code" href="structVi__gps__info.html">00042</a> <span class="keyword">struct </span><a class="code" href="structVi__gps__info.html">Vi_gps_info</a> {
+<a name="l00043"></a><a class="code" href="structVi__gps__info.html#ab702300a590e9e8e881ab73eafa6e1f8">00043</a>   <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> <a class="code" href="structVi__gps__info.html#ab702300a590e9e8e881ab73eafa6e1f8">pos</a>;
+<a name="l00044"></a><a class="code" href="structVi__gps__info.html#a2174470bb84a5171bd9c0373bb1f06cf">00044</a>   <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> <a class="code" href="structVi__gps__info.html#a2174470bb84a5171bd9c0373bb1f06cf">speed</a>;
+<a name="l00045"></a><a class="code" href="structVi__gps__info.html#a69fde2065c05cc8523ed0c68a5787d83">00045</a>   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structVi__gps__info.html#a69fde2065c05cc8523ed0c68a5787d83">pacc</a>;
+<a name="l00046"></a><a class="code" href="structVi__gps__info.html#a7d613e407626232ab0a3a8f1052e9eec">00046</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVi__gps__info.html#a7d613e407626232ab0a3a8f1052e9eec">num_sv</a>;
+<a name="l00047"></a><a class="code" href="structVi__gps__info.html#a26e03024ed8fa0fb35399e3f8ad85def">00047</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVi__gps__info.html#a26e03024ed8fa0fb35399e3f8ad85def">fix</a>;
+<a name="l00048"></a>00048 };
+<a name="l00049"></a>00049 
+<a name="l00050"></a><a class="code" href="structVi__ahrs__info.html">00050</a> <span class="keyword">struct </span><a class="code" href="structVi__ahrs__info.html">Vi_ahrs_info</a> {
+<a name="l00051"></a><a class="code" href="structVi__ahrs__info.html#abbdf276534da86017f0c40f4572bbed7">00051</a>   <span class="keyword">struct </span><a class="code" href="structInt16Eulers.html">Int16Eulers</a> <a class="code" href="structVi__ahrs__info.html#abbdf276534da86017f0c40f4572bbed7">euler</a>;
+<a name="l00052"></a><a class="code" href="structVi__ahrs__info.html#a66c48ea7afc8ba945d04e182efa49641">00052</a>   <span class="keyword">struct </span><a class="code" href="structInt16Eulers.html">Int16Eulers</a>  <a class="code" href="structVi__ahrs__info.html#a66c48ea7afc8ba945d04e182efa49641">rate</a>;
+<a name="l00053"></a>00053 };
+<a name="l00054"></a>00054 
+<a name="l00055"></a><a class="code" href="structVi__info.html">00055</a> <span class="keyword">struct </span><a class="code" href="structVi__info.html">Vi_info</a> {
+<a name="l00056"></a><a class="code" href="structVi__info.html#a7f72ee067479504eedf58fbc154e7f96">00056</a>   <span class="keyword">struct </span><a class="code" href="structVi__imu__info.html">Vi_imu_info</a>  <a class="code" href="structVi__info.html#a7f72ee067479504eedf58fbc154e7f96">imu</a>;
+<a name="l00057"></a><a class="code" href="structVi__info.html#a6e54aacf5d0a9bc34d76eff887258546">00057</a>   <span class="keyword">struct </span><a class="code" href="structVi__gps__info.html">Vi_gps_info</a>  <a class="code" href="structVi__info.html#a6e54aacf5d0a9bc34d76eff887258546">gps</a>;
+<a name="l00058"></a><a class="code" href="structVi__info.html#a8506365ba62fbde59e0d8c97a2bf7523">00058</a>   <span class="keyword">struct </span><a class="code" href="structVi__ahrs__info.html">Vi_ahrs_info</a> <a class="code" href="structVi__info.html#a8506365ba62fbde59e0d8c97a2bf7523">ahrs</a>;
+<a name="l00059"></a>00059 };
+<a name="l00060"></a>00060 
+<a name="l00061"></a><a class="code" href="structVi__command.html">00061</a> <span class="keyword">struct </span><a class="code" href="structVi__command.html">Vi_command</a> {
+<a name="l00062"></a>00062   <span class="keyword">union </span>{
+<a name="l00063"></a><a class="code" href="structVi__command.html#ae0fc1ebecad84516da1b6d968cd5dda1">00063</a>     <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a>  <a class="code" href="structVi__command.html#ae0fc1ebecad84516da1b6d968cd5dda1">rate</a>;
+<a name="l00064"></a><a class="code" href="structVi__command.html#aa3848211d7cc60e2d35c04940f734aed">00064</a>     <span class="keyword">struct </span><a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> <a class="code" href="structVi__command.html#aa3848211d7cc60e2d35c04940f734aed">attitude</a>;
+<a name="l00065"></a><a class="code" href="structVi__command.html#a834068d6816d14e04383a79066f8eb39">00065</a>     <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> <a class="code" href="structVi__command.html#a834068d6816d14e04383a79066f8eb39">speed</a>; <span class="comment">//FIXME Warning z is heading rate</span>
+<a name="l00066"></a><a class="code" href="structVi__command.html#abff41d60c44f6e013c09253cfaa68867">00066</a>     <span class="keyword">struct </span><a class="code" href="structInt32Vect3.html">Int32Vect3</a> <a class="code" href="structVi__command.html#abff41d60c44f6e013c09253cfaa68867">pos</a>; <span class="comment">//FIXME Warning z is heading</span>
+<a name="l00067"></a>00067   } <a class="code" href="structVi__command.html#ad059023fed79107c17c6db74da0b01ba">h_sp</a>;
+<a name="l00068"></a>00068   <span class="keyword">union </span>{
+<a name="l00069"></a><a class="code" href="structVi__command.html#a15dc924407c5289fc8d1b7c5dfdc2235">00069</a>     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structVi__command.html#a15dc924407c5289fc8d1b7c5dfdc2235">direct</a>;
+<a name="l00070"></a><a class="code" href="structVi__command.html#aabead36fda41a5e8f7c6b2bbc1ea7d88">00070</a>     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structVi__command.html#aabead36fda41a5e8f7c6b2bbc1ea7d88">climb</a>;
+<a name="l00071"></a><a class="code" href="structVi__command.html#a333af16ed039a878ab7199851ea64a7b">00071</a>     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="structVi__command.html#a333af16ed039a878ab7199851ea64a7b">height</a>;
+<a name="l00072"></a>00072   } <a class="code" href="structVi__command.html#a4f4be908cc91a959e7a2199b78934b83">v_sp</a>;
+<a name="l00073"></a><a class="code" href="structVi__command.html#a162939a96b3aa3f484ac56972b3ed848">00073</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVi__command.html#a162939a96b3aa3f484ac56972b3ed848">h_mode</a>;
+<a name="l00074"></a><a class="code" href="structVi__command.html#a674114cf71c612f56690f88da76d7e21">00074</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVi__command.html#a674114cf71c612f56690f88da76d7e21">v_mode</a>;
+<a name="l00075"></a>00075 };
+<a name="l00076"></a>00076 
+<a name="l00077"></a><a class="code" href="structVehicleInterface.html">00077</a> <span class="keyword">struct </span><a class="code" href="structVehicleInterface.html">VehicleInterface</a> {
+<a name="l00078"></a><a class="code" href="structVehicleInterface.html#a110d0b9ef3c54f7c7f30e622844680f3">00078</a>   bool_t <a class="code" href="structVehicleInterface.html#a110d0b9ef3c54f7c7f30e622844680f3">enabled</a>;
+<a name="l00079"></a><a class="code" href="structVehicleInterface.html#a57880e1cae1569eec6aa5bb86a4caa98">00079</a>   bool_t <a class="code" href="structVehicleInterface.html#a57880e1cae1569eec6aa5bb86a4caa98">timeouted</a>;
+<a name="l00080"></a><a class="code" href="structVehicleInterface.html#a1bfd15310f8c8127120cad9efcdb05ed">00080</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVehicleInterface.html#a1bfd15310f8c8127120cad9efcdb05ed">last_msg</a>;
+<a name="l00081"></a><a class="code" href="structVehicleInterface.html#ad561aa0f6e51fcc56e7379bd73806823">00081</a>   <span class="keyword">struct </span><a class="code" href="structVi__info.html">Vi_info</a> <a class="code" href="structVehicleInterface.html#ad561aa0f6e51fcc56e7379bd73806823">info</a>;
+<a name="l00082"></a><a class="code" href="structVehicleInterface.html#a63dca4642131593d26db22a363a88693">00082</a>   <span class="keyword">struct </span><a class="code" href="structVi__command.html">Vi_command</a> <a class="code" href="structVehicleInterface.html#a63dca4642131593d26db22a363a88693">input</a>;
+<a name="l00083"></a><a class="code" href="structVehicleInterface.html#aadd55a31046784d08346ca94a76ce893">00083</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structVehicleInterface.html#aadd55a31046784d08346ca94a76ce893">available_sensors</a>;
+<a name="l00084"></a>00084 };
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structVehicleInterface.html">VehicleInterface</a> <a class="code" href="vi_8c.html#aabb8e0aff2e1b128575804c32ea1f4d0">vi</a>;
 <a name="l00087"></a>00087 
-<a name="l00088"></a>00088 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structVehicleInterface.html">VehicleInterface</a> <a class="code" href="vi_8c.html#aabb8e0aff2e1b128575804c32ea1f4d0">vi</a>;
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8c.html#ab754a7182635d4dd588e2f2056bee397">vi_init</a>(<span class="keywordtype">void</span>);
-<a name="l00091"></a>00091 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8c.html#a1e261905e5dae17f32f66dfbf9c2b9e4">vi_set_enabled</a>(bool_t <a class="code" href="structVehicleInterface.html#a110d0b9ef3c54f7c7f30e622844680f3">enabled</a>);
-<a name="l00092"></a>00092 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8c.html#add1d7a0c17413874356c4dd72462671a">vi_periodic</a>(<span class="keywordtype">void</span>);
-<a name="l00093"></a>00093 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8c.html#a8c5289c2a71c5fa0341ddd59864d059d">vi_update_info</a>(<span class="keywordtype">void</span>);
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#ae5e1984ed0188c09d9bd0d0a39f281c3">vi_notify_imu_available</a>(<span class="keywordtype">void</span>);
-<a name="l00096"></a>00096 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#a0e05949840bd7c88ec8d003230527932">vi_notify_mag_available</a>(<span class="keywordtype">void</span>);
-<a name="l00097"></a>00097 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#ad039a7a58d57d531b8993fd821475a94">vi_notify_gps_available</a>(<span class="keywordtype">void</span>);
-<a name="l00098"></a>00098 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#a9029d0375622149abe074871ba771ed9">vi_notify_baro_abs_available</a>(<span class="keywordtype">void</span>);
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100 <span class="comment">/* must be implemented by specific module */</span>
-<a name="l00101"></a>00101 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#a2a3484b09409fdedb7b5c7d12faac617">vi_impl_init</a>(<span class="keywordtype">void</span>);
-<a name="l00102"></a>00102 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#a4dff3e5cadc38f5e2b40b4684dd3c6d0">vi_impl_periodic</a>(<span class="keywordtype">void</span>);
-<a name="l00103"></a>00103 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#af4f7b87856e653165e3aff355dcf115f">vi_impl_set_enabled</a>(bool_t <a class="code" href="structVehicleInterface.html#a110d0b9ef3c54f7c7f30e622844680f3">enabled</a>);
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105 
-<a name="l00106"></a><a class="code" href="vi_8h.html#a5a412b08b29448c00fe5cbd83d7d101d">00106</a> <span class="preprocessor">#define vi_SetEnabled(_val) {     \</span>
-<a name="l00107"></a>00107 <span class="preprocessor">    vi.enabled = _val;        \</span>
-<a name="l00108"></a>00108 <span class="preprocessor">    vi_set_enabled(_val);     \</span>
-<a name="l00109"></a>00109 <span class="preprocessor">  }</span>
-<a name="l00110"></a>00110 <span class="preprocessor"></span>
-<a name="l00111"></a>00111 <span class="preprocessor">#endif </span><span class="comment">/* VI_H */</span>
+<a name="l00088"></a>00088 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8c.html#ab754a7182635d4dd588e2f2056bee397">vi_init</a>(<span class="keywordtype">void</span>);
+<a name="l00089"></a>00089 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8c.html#a1e261905e5dae17f32f66dfbf9c2b9e4">vi_set_enabled</a>(bool_t <a class="code" href="structVehicleInterface.html#a110d0b9ef3c54f7c7f30e622844680f3">enabled</a>);
+<a name="l00090"></a>00090 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8c.html#add1d7a0c17413874356c4dd72462671a">vi_periodic</a>(<span class="keywordtype">void</span>);
+<a name="l00091"></a>00091 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8c.html#a8c5289c2a71c5fa0341ddd59864d059d">vi_update_info</a>(<span class="keywordtype">void</span>);
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#ae5e1984ed0188c09d9bd0d0a39f281c3">vi_notify_imu_available</a>(<span class="keywordtype">void</span>);
+<a name="l00094"></a>00094 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#a0e05949840bd7c88ec8d003230527932">vi_notify_mag_available</a>(<span class="keywordtype">void</span>);
+<a name="l00095"></a>00095 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#ad039a7a58d57d531b8993fd821475a94">vi_notify_gps_available</a>(<span class="keywordtype">void</span>);
+<a name="l00096"></a>00096 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#a9029d0375622149abe074871ba771ed9">vi_notify_baro_abs_available</a>(<span class="keywordtype">void</span>);
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 <span class="comment">/* must be implemented by specific module */</span>
+<a name="l00099"></a>00099 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#a2a3484b09409fdedb7b5c7d12faac617">vi_impl_init</a>(<span class="keywordtype">void</span>);
+<a name="l00100"></a>00100 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#a4dff3e5cadc38f5e2b40b4684dd3c6d0">vi_impl_periodic</a>(<span class="keywordtype">void</span>);
+<a name="l00101"></a>00101 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="vi_8h.html#af4f7b87856e653165e3aff355dcf115f">vi_impl_set_enabled</a>(bool_t <a class="code" href="structVehicleInterface.html#a110d0b9ef3c54f7c7f30e622844680f3">enabled</a>);
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 
+<a name="l00104"></a><a class="code" href="vi_8h.html#a5a412b08b29448c00fe5cbd83d7d101d">00104</a> <span class="preprocessor">#define vi_SetEnabled(_val) {     \</span>
+<a name="l00105"></a>00105 <span class="preprocessor">    vi.enabled = _val;        \</span>
+<a name="l00106"></a>00106 <span class="preprocessor">    vi_set_enabled(_val);     \</span>
+<a name="l00107"></a>00107 <span class="preprocessor">  }</span>
+<a name="l00108"></a>00108 <span class="preprocessor"></span>
+<a name="l00109"></a>00109 <span class="preprocessor">#endif </span><span class="comment">/* VI_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -234,7 +232,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="vi_8h.html">vi.h</a>      </li>
 
-    <li class="footer">Generated on Sun Nov 11 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Mon Nov 12 2012 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-261-gba19f84</span>
+   &#160;<span id="projectnumber">v4.9_devel-262-gd5b5326</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -104,378 +104,376 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="w5100_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">* $Id$</span>
+<a name="l00002"></a>00002 <span class="comment">* Copyright (C) 2006 Pascal Brisset, Antoine Drouin</span>
 <a name="l00003"></a>00003 <span class="comment">*</span>
-<a name="l00004"></a>00004 <span class="comment">* Copyright (C) 2006 Pascal Brisset, Antoine Drouin</span>
+<a name="l00004"></a>00004 <span class="comment">* This file is part of paparazzi.</span>
 <a name="l00005"></a>00005 <span class="comment">*</span>
-<a name="l00006"></a>00006 <span class="comment">* This file is part of paparazzi.</span>
-<a name="l00007"></a>00007 <span class="comment">*</span>
-<a name="l00008"></a>00008 <span class="comment">* paparazzi is free software; you can redistribute it and/or modify</span>
-<a name="l00009"></a>00009 <span class="comment">* it under the terms of the GNU General Public License as published by</span>
-<a name="l00010"></a>00010 <span class="comment">* the Free Software Foundation; either version 2, or (at your option)</span>
-<a name="l00011"></a>00011 <span class="comment">* any later version.</span>
-<a name="l00012"></a>00012 <span class="comment">*</span>
-<a name="l00013"></a>00013 <span class="comment">* paparazzi is distributed in the hope that it will be useful,</span>
-<a name="l00014"></a>00014 <span class="comment">* but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00015"></a>00015 <span class="comment">* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
-<a name="l00016"></a>00016 <span class="comment">* GNU General Public License for more details.</span>
-<a name="l00017"></a>00017 <span class="comment">*</span>
-<a name="l00018"></a>00018 <span class="comment">* You should have received a copy of the GNU General Public License</span>
-<a name="l00019"></a>00019 <span class="comment">* along with paparazzi; see the file COPYING. If not, write to</span>
-<a name="l00020"></a>00020 <span class="comment">* the Free Software Foundation, 59 Temple Place - Suite 330,</span>
-<a name="l00021"></a>00021 <span class="comment">* Boston, MA 02111-1307, USA.</span>
-<a name="l00022"></a>00022 <span class="comment">*</span>
-<a name="l00023"></a>00023 <span class="comment">*/</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="w5100_8h.html">subsystems/datalink/w5100.h</a>&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="spi_8h.html" title="Architecture independent SPI (Serial Peripheral Interface) API.">mcu_periph/spi.h</a>&quot;</span>
-<a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="w5100_8c.html#acd3caafdf38d3dd4bf97d4dd8da30f50">00029</a> <span class="preprocessor">#define TXBUF_BASE 0x4000</span>
-<a name="l00030"></a><a class="code" href="w5100_8c.html#a0b61d617d075e2e171480bd2839bf93f">00030</a> <span class="preprocessor"></span><span class="preprocessor">#define RXBUF_BASE 0x6000</span>
-<a name="l00031"></a><a class="code" href="w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1">00031</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCKETS 4</span>
-<a name="l00032"></a>00032 <span class="preprocessor"></span>
-<a name="l00033"></a><a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">00033</a> <span class="preprocessor">#define CMD_SOCKET 1</span>
-<a name="l00034"></a><a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">00034</a> <span class="preprocessor"></span><span class="preprocessor">#define TELEM_SOCKET 0</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span>
-<a name="l00036"></a><a class="code" href="w5100_8c.html#a636f8b657f22576bcfad360f742bfad9">00036</a> <span class="preprocessor">#define SOCK_OPEN 0x01</span>
-<a name="l00037"></a><a class="code" href="w5100_8c.html#a8f4628de17d167453812b9b584488d76">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_CLOSE 0x10</span>
-<a name="l00038"></a><a class="code" href="w5100_8c.html#a6049f750c09da977b6299efd5a0af246">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_SEND 0x20</span>
-<a name="l00039"></a><a class="code" href="w5100_8c.html#abc98ed17fb750f02216d70c4b6da40ec">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_RECV 0x40</span>
-<a name="l00040"></a><a class="code" href="w5100_8c.html#aa5d86eddff3ca0b84ffff887d7c806b4">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define SNMR_UDP 0x02</span>
-<a name="l00041"></a><a class="code" href="w5100_8c.html#a27a7f4fcae1e4146db1782e379e3444c">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define SNMR_MULTI 0x80</span>
-<a name="l00042"></a><a class="code" href="w5100_8c.html#a0bbdf22c42a9ad13bb54cbaad61472ba">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define SNIR_SEND_OK 0x10</span>
-<a name="l00043"></a><a class="code" href="w5100_8c.html#a1752c10c845a67b18410615cf629d66d">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define SNIR_TIMEOUT 0x08</span>
-<a name="l00044"></a><a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define CH_BASE 0x0400</span>
-<a name="l00045"></a><a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define CH_SIZE 0x0100</span>
-<a name="l00046"></a><a class="code" href="w5100_8c.html#ad4494f32880d6f779f9cff7a94b0678a">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define SMASK 0x07FF // Tx buffer MASK</span>
-<a name="l00047"></a><a class="code" href="w5100_8c.html#ab313966344db7ce2681d95597427a7b4">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define RMASK 0x07FF // Tx buffer MASK</span>
-<a name="l00048"></a>00048 <span class="preprocessor"></span>
-<a name="l00049"></a><a class="code" href="w5100_8c.html#abe96ee6618d7d5ccf3011633041e903e">00049</a> <span class="preprocessor">#define REG_MR 0x0000</span>
-<a name="l00050"></a><a class="code" href="w5100_8c.html#adb87d649f94c34872d5a697f772e22a2">00050</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_RX_MEM 0x001A</span>
-<a name="l00051"></a><a class="code" href="w5100_8c.html#a7a2cb6f59c40efdd86c06d66ba775ab1">00051</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_TX_MEM 0x001B</span>
-<a name="l00052"></a>00052 <span class="preprocessor"></span>
-<a name="l00053"></a><a class="code" href="w5100_8c.html#ad01ad9e1f2e1c69906bc64899514042c">00053</a> <span class="preprocessor">#define REG_GAR 0x0001</span>
-<a name="l00054"></a><a class="code" href="w5100_8c.html#a6d96f27f55e86e2e4840625d5f968cd7">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_SUBR 0x0005</span>
-<a name="l00055"></a><a class="code" href="w5100_8c.html#a0a9e020abbd0e1c8fadf03d40fbe5d01">00055</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_SHAR 0x0009</span>
-<a name="l00056"></a><a class="code" href="w5100_8c.html#a7821c0fdbad5da65159ded1d7149e7a3">00056</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_SIPR 0x000F</span>
-<a name="l00057"></a>00057 <span class="preprocessor"></span>
-<a name="l00058"></a><a class="code" href="w5100_8c.html#a0180d3a66239677229e29b16c8410d86">00058</a> <span class="preprocessor">#define SOCK_MR 0x0000</span>
-<a name="l00059"></a><a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">00059</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_CR 0x0001</span>
-<a name="l00060"></a><a class="code" href="w5100_8c.html#a7b93c9fe2b09c4a801b1a9100663dfa1">00060</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_IR 0x0002</span>
-<a name="l00061"></a><a class="code" href="w5100_8c.html#a7541b688a494a557f407330d46bdbb49">00061</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_PORT 0x0004</span>
-<a name="l00062"></a><a class="code" href="w5100_8c.html#a1db51e199a01561a9ff1a6d0cca1fd82">00062</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_DHAR 0x0006</span>
-<a name="l00063"></a><a class="code" href="w5100_8c.html#a9360ad167a844b7d94294102b0334898">00063</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_DIPR 0x000C</span>
-<a name="l00064"></a><a class="code" href="w5100_8c.html#a007858e4d2ae925606c519d06ee20468">00064</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_DPORT 0x0010</span>
-<a name="l00065"></a><a class="code" href="w5100_8c.html#a4fff7f755daec515393ac34063aeff48">00065</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_TX_WR 0x0024</span>
-<a name="l00066"></a><a class="code" href="w5100_8c.html#a4f8005d214ef828947e404654ac5ac73">00066</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_RSR 0x0026</span>
-<a name="l00067"></a><a class="code" href="w5100_8c.html#a8cbf60ec64a419d76436476f44083586">00067</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_RXRD 0x0028</span>
-<a name="l00068"></a>00068 <span class="preprocessor"></span>
-<a name="l00069"></a><a class="code" href="w5100_8h.html#aa13e8b2503eb7f29b572379d1cd21148">00069</a> <span class="keyword">struct </span><a class="code" href="structw5100__periph.html">w5100_periph</a> <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>;
-<a name="l00070"></a><a class="code" href="w5100_8c.html#aaef6f57fdac39726811fd081a16fa711">00070</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="audio__telemetry__hw_8c.html#a51ab444129c13f6f6f44765945b7c1f7">ck_a</a>, <a class="code" href="audio__telemetry__hw_8c.html#aaef6f57fdac39726811fd081a16fa711">ck_b</a>;
-<a name="l00071"></a><a class="code" href="w5100_8h.html#a0e465b84aa569b64e943366158b67b93">00071</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a0e465b84aa569b64e943366158b67b93">rx_buf</a>[<a class="code" href="w5100_8h.html#a69f74830d4721e548a692322b86ccf54">W5100_RX_BUFFER_SIZE</a>];
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 <span class="comment">// the media access control (ethernet hardware) address for the shield.</span>
-<a name="l00074"></a><a class="code" href="w5100_8c.html#ae4ea3e666683fd4d8b0a822031e742ff">00074</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#ae4ea3e666683fd4d8b0a822031e742ff">mac</a>[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076 <span class="comment">//the IP address for the shield:</span>
-<a name="l00077"></a><a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">00077</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>[] = { W5100_IP };
-<a name="l00078"></a><a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">00078</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">dest</a>[] = { W5100_MULTICAST_IP };
-<a name="l00079"></a><a class="code" href="w5100_8c.html#a77df0a4bb15ed6f86b91f4afe49b09e1">00079</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a77df0a4bb15ed6f86b91f4afe49b09e1">subnet</a>[] = { W5100_SUBNET };
-<a name="l00080"></a><a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">00080</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">dport</a> = W5100_MULTICAST_PORT;
+<a name="l00006"></a>00006 <span class="comment">* paparazzi is free software; you can redistribute it and/or modify</span>
+<a name="l00007"></a>00007 <span class="comment">* it under the terms of the GNU General Public License as published by</span>
+<a name="l00008"></a>00008 <span class="comment">* the Free Software Foundation; either version 2, or (at your option)</span>
+<a name="l00009"></a>00009 <span class="comment">* any later version.</span>
+<a name="l00010"></a>00010 <span class="comment">*</span>
+<a name="l00011"></a>00011 <span class="comment">* paparazzi is distributed in the hope that it will be useful,</span>
+<a name="l00012"></a>00012 <span class="comment">* but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00013"></a>00013 <span class="comment">* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<a name="l00014"></a>00014 <span class="comment">* GNU General Public License for more details.</span>
+<a name="l00015"></a>00015 <span class="comment">*</span>
+<a name="l00016"></a>00016 <span class="comment">* You should have received a copy of the GNU General Public License</span>
+<a name="l00017"></a>00017 <span class="comment">* along with paparazzi; see the file COPYING. If not, write to</span>
+<a name="l00018"></a>00018 <span class="comment">* the Free Software Foundation, 59 Temple Place - Suite 330,</span>
+<a name="l00019"></a>00019 <span class="comment">* Boston, MA 02111-1307, USA.</span>
+<a name="l00020"></a>00020 <span class="comment">*</span>
+<a name="l00021"></a>00021 <span class="comment">*/</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="w5100_8h.html">subsystems/datalink/w5100.h</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="spi_8h.html" title="Architecture independent SPI (Serial Peripheral Interface) API.">mcu_periph/spi.h</a>&quot;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="w5100_8c.html#acd3caafdf38d3dd4bf97d4dd8da30f50">00027</a> <span class="preprocessor">#define TXBUF_BASE 0x4000</span>
+<a name="l00028"></a><a class="code" href="w5100_8c.html#a0b61d617d075e2e171480bd2839bf93f">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define RXBUF_BASE 0x6000</span>
+<a name="l00029"></a><a class="code" href="w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCKETS 4</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>
+<a name="l00031"></a><a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">00031</a> <span class="preprocessor">#define CMD_SOCKET 1</span>
+<a name="l00032"></a><a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">00032</a> <span class="preprocessor"></span><span class="preprocessor">#define TELEM_SOCKET 0</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span>
+<a name="l00034"></a><a class="code" href="w5100_8c.html#a636f8b657f22576bcfad360f742bfad9">00034</a> <span class="preprocessor">#define SOCK_OPEN 0x01</span>
+<a name="l00035"></a><a class="code" href="w5100_8c.html#a8f4628de17d167453812b9b584488d76">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_CLOSE 0x10</span>
+<a name="l00036"></a><a class="code" href="w5100_8c.html#a6049f750c09da977b6299efd5a0af246">00036</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_SEND 0x20</span>
+<a name="l00037"></a><a class="code" href="w5100_8c.html#abc98ed17fb750f02216d70c4b6da40ec">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_RECV 0x40</span>
+<a name="l00038"></a><a class="code" href="w5100_8c.html#aa5d86eddff3ca0b84ffff887d7c806b4">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define SNMR_UDP 0x02</span>
+<a name="l00039"></a><a class="code" href="w5100_8c.html#a27a7f4fcae1e4146db1782e379e3444c">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define SNMR_MULTI 0x80</span>
+<a name="l00040"></a><a class="code" href="w5100_8c.html#a0bbdf22c42a9ad13bb54cbaad61472ba">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define SNIR_SEND_OK 0x10</span>
+<a name="l00041"></a><a class="code" href="w5100_8c.html#a1752c10c845a67b18410615cf629d66d">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define SNIR_TIMEOUT 0x08</span>
+<a name="l00042"></a><a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define CH_BASE 0x0400</span>
+<a name="l00043"></a><a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define CH_SIZE 0x0100</span>
+<a name="l00044"></a><a class="code" href="w5100_8c.html#ad4494f32880d6f779f9cff7a94b0678a">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define SMASK 0x07FF // Tx buffer MASK</span>
+<a name="l00045"></a><a class="code" href="w5100_8c.html#ab313966344db7ce2681d95597427a7b4">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define RMASK 0x07FF // Tx buffer MASK</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span>
+<a name="l00047"></a><a class="code" href="w5100_8c.html#abe96ee6618d7d5ccf3011633041e903e">00047</a> <span class="preprocessor">#define REG_MR 0x0000</span>
+<a name="l00048"></a><a class="code" href="w5100_8c.html#adb87d649f94c34872d5a697f772e22a2">00048</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_RX_MEM 0x001A</span>
+<a name="l00049"></a><a class="code" href="w5100_8c.html#a7a2cb6f59c40efdd86c06d66ba775ab1">00049</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_TX_MEM 0x001B</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span>
+<a name="l00051"></a><a class="code" href="w5100_8c.html#ad01ad9e1f2e1c69906bc64899514042c">00051</a> <span class="preprocessor">#define REG_GAR 0x0001</span>
+<a name="l00052"></a><a class="code" href="w5100_8c.html#a6d96f27f55e86e2e4840625d5f968cd7">00052</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_SUBR 0x0005</span>
+<a name="l00053"></a><a class="code" href="w5100_8c.html#a0a9e020abbd0e1c8fadf03d40fbe5d01">00053</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_SHAR 0x0009</span>
+<a name="l00054"></a><a class="code" href="w5100_8c.html#a7821c0fdbad5da65159ded1d7149e7a3">00054</a> <span class="preprocessor"></span><span class="preprocessor">#define REG_SIPR 0x000F</span>
+<a name="l00055"></a>00055 <span class="preprocessor"></span>
+<a name="l00056"></a><a class="code" href="w5100_8c.html#a0180d3a66239677229e29b16c8410d86">00056</a> <span class="preprocessor">#define SOCK_MR 0x0000</span>
+<a name="l00057"></a><a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_CR 0x0001</span>
+<a name="l00058"></a><a class="code" href="w5100_8c.html#a7b93c9fe2b09c4a801b1a9100663dfa1">00058</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_IR 0x0002</span>
+<a name="l00059"></a><a class="code" href="w5100_8c.html#a7541b688a494a557f407330d46bdbb49">00059</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_PORT 0x0004</span>
+<a name="l00060"></a><a class="code" href="w5100_8c.html#a1db51e199a01561a9ff1a6d0cca1fd82">00060</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_DHAR 0x0006</span>
+<a name="l00061"></a><a class="code" href="w5100_8c.html#a9360ad167a844b7d94294102b0334898">00061</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_DIPR 0x000C</span>
+<a name="l00062"></a><a class="code" href="w5100_8c.html#a007858e4d2ae925606c519d06ee20468">00062</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_DPORT 0x0010</span>
+<a name="l00063"></a><a class="code" href="w5100_8c.html#a4fff7f755daec515393ac34063aeff48">00063</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_TX_WR 0x0024</span>
+<a name="l00064"></a><a class="code" href="w5100_8c.html#a4f8005d214ef828947e404654ac5ac73">00064</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_RSR 0x0026</span>
+<a name="l00065"></a><a class="code" href="w5100_8c.html#a8cbf60ec64a419d76436476f44083586">00065</a> <span class="preprocessor"></span><span class="preprocessor">#define SOCK_RXRD 0x0028</span>
+<a name="l00066"></a>00066 <span class="preprocessor"></span>
+<a name="l00067"></a><a class="code" href="w5100_8h.html#aa13e8b2503eb7f29b572379d1cd21148">00067</a> <span class="keyword">struct </span><a class="code" href="structw5100__periph.html">w5100_periph</a> <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>;
+<a name="l00068"></a><a class="code" href="w5100_8c.html#aaef6f57fdac39726811fd081a16fa711">00068</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="audio__telemetry__hw_8c.html#a51ab444129c13f6f6f44765945b7c1f7">ck_a</a>, <a class="code" href="audio__telemetry__hw_8c.html#aaef6f57fdac39726811fd081a16fa711">ck_b</a>;
+<a name="l00069"></a><a class="code" href="w5100_8h.html#a0e465b84aa569b64e943366158b67b93">00069</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a0e465b84aa569b64e943366158b67b93">rx_buf</a>[<a class="code" href="w5100_8h.html#a69f74830d4721e548a692322b86ccf54">W5100_RX_BUFFER_SIZE</a>];
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 <span class="comment">// the media access control (ethernet hardware) address for the shield.</span>
+<a name="l00072"></a><a class="code" href="w5100_8c.html#ae4ea3e666683fd4d8b0a822031e742ff">00072</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#ae4ea3e666683fd4d8b0a822031e742ff">mac</a>[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 <span class="comment">//the IP address for the shield:</span>
+<a name="l00075"></a><a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">00075</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>[] = { W5100_IP };
+<a name="l00076"></a><a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">00076</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">dest</a>[] = { W5100_MULTICAST_IP };
+<a name="l00077"></a><a class="code" href="w5100_8c.html#a77df0a4bb15ed6f86b91f4afe49b09e1">00077</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a77df0a4bb15ed6f86b91f4afe49b09e1">subnet</a>[] = { W5100_SUBNET };
+<a name="l00078"></a><a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">00078</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">dport</a> = W5100_MULTICAST_PORT;
+<a name="l00079"></a>00079 
+<a name="l00080"></a><a class="code" href="w5100_8c.html#a627f213804256ddcafeb943052fa63e5">00080</a> <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a627f213804256ddcafeb943052fa63e5">RST</a> = 7; <span class="comment">// Reset BIT</span>
 <a name="l00081"></a>00081 
-<a name="l00082"></a><a class="code" href="w5100_8c.html#a627f213804256ddcafeb943052fa63e5">00082</a> <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#a627f213804256ddcafeb943052fa63e5">RST</a> = 7; <span class="comment">// Reset BIT</span>
-<a name="l00083"></a>00083 
-<a name="l00084"></a><a class="code" href="w5100_8c.html#ad5418936576f4ba56fbdb5f0ceea968a">00084</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#ad5418936576f4ba56fbdb5f0ceea968a">SBASE</a>[<a class="code" href="w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1">SOCKETS</a>]; <span class="comment">// Tx buffer base address</span>
-<a name="l00085"></a><a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">00085</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">RBASE</a>[<a class="code" href="w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1">SOCKETS</a>]; <span class="comment">// Rx buffer base address</span>
-<a name="l00086"></a><a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">00086</a> <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">SSIZE</a> = 2048; <span class="comment">// Max Tx buffer size</span>
-<a name="l00087"></a><a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">00087</a> <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">RSIZE</a> = 2048; <span class="comment">// Max Rx buffer size</span>
-<a name="l00088"></a>00088 
-<a name="l00089"></a><a class="code" href="w5100_8h.html#aaf33508c9c49aa3ee2c8fcf2deda8325">00089</a> <span class="keyword">struct </span><a class="code" href="structw5100__transport.html">w5100_transport</a> <a class="code" href="w5100_8c.html#aaf33508c9c49aa3ee2c8fcf2deda8325">w5100_tp</a>;
-<a name="l00090"></a><a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">00090</a> <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>;
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#abade1f8840f1a6de842036d8868706a8">w5100_close_socket</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s );
-<a name="l00093"></a>00093 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">configure_socket</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _flag, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _lport, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _dport, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_dest );
-<a name="l00094"></a>00094 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">w5100_read_data</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> s, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *src, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *dst, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> len );
-<a name="l00095"></a>00095 <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _len);
-<a name="l00096"></a>00096 
-<a name="l00097"></a><a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">00097</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _val)
-<a name="l00098"></a>00098 {
-<a name="l00099"></a>00099   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[0] = 0xF0;
-<a name="l00100"></a>00100   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[1] = _reg &gt;&gt; 8;
-<a name="l00101"></a>00101   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[2] = _reg &amp; 0xFF;
-<a name="l00102"></a>00102   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[3] = _val;
+<a name="l00082"></a><a class="code" href="w5100_8c.html#ad5418936576f4ba56fbdb5f0ceea968a">00082</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#ad5418936576f4ba56fbdb5f0ceea968a">SBASE</a>[<a class="code" href="w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1">SOCKETS</a>]; <span class="comment">// Tx buffer base address</span>
+<a name="l00083"></a><a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">00083</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">RBASE</a>[<a class="code" href="w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1">SOCKETS</a>]; <span class="comment">// Rx buffer base address</span>
+<a name="l00084"></a><a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">00084</a> <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">SSIZE</a> = 2048; <span class="comment">// Max Tx buffer size</span>
+<a name="l00085"></a><a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">00085</a> <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">RSIZE</a> = 2048; <span class="comment">// Max Rx buffer size</span>
+<a name="l00086"></a>00086 
+<a name="l00087"></a><a class="code" href="w5100_8h.html#aaf33508c9c49aa3ee2c8fcf2deda8325">00087</a> <span class="keyword">struct </span><a class="code" href="structw5100__transport.html">w5100_transport</a> <a class="code" href="w5100_8c.html#aaf33508c9c49aa3ee2c8fcf2deda8325">w5100_tp</a>;
+<a name="l00088"></a><a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">00088</a> <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#abade1f8840f1a6de842036d8868706a8">w5100_close_socket</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s );
+<a name="l00091"></a>00091 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">configure_socket</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _flag, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _lport, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _dport, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_dest );
+<a name="l00092"></a>00092 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">w5100_read_data</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> s, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *src, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *dst, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> len );
+<a name="l00093"></a>00093 <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _len);
+<a name="l00094"></a>00094 
+<a name="l00095"></a><a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">00095</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _val)
+<a name="l00096"></a>00096 {
+<a name="l00097"></a>00097   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[0] = 0xF0;
+<a name="l00098"></a>00098   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[1] = _reg &gt;&gt; 8;
+<a name="l00099"></a>00099   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[2] = _reg &amp; 0xFF;
+<a name="l00100"></a>00100   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[3] = _val;
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102   <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>( &amp;spi1, &amp;<a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a> );
 <a name="l00103"></a>00103 
-<a name="l00104"></a>00104   <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>( &amp;spi1, &amp;<a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a> );
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106   <span class="comment">// FIXME: no busy waiting! if really needed add a timeout!!!!</span>
-<a name="l00107"></a>00107   <span class="keywordflow">while</span>(<a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a> != <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>);
-<a name="l00108"></a>00108 }
-<a name="l00109"></a>00109 
-<a name="l00110"></a><a class="code" href="w5100_8c.html#adc92dea40c158d4eb47238bb053ef8b1">00110</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#adc92dea40c158d4eb47238bb053ef8b1">w5100_get</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg)
-<a name="l00111"></a>00111 {
-<a name="l00112"></a>00112   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[0] = 0x0F;
-<a name="l00113"></a>00113   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[1] = _reg &gt;&gt; 8;
-<a name="l00114"></a>00114   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[2] = _reg &amp; 0xFF;
+<a name="l00104"></a>00104   <span class="comment">// FIXME: no busy waiting! if really needed add a timeout!!!!</span>
+<a name="l00105"></a>00105   <span class="keywordflow">while</span>(<a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a> != <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>);
+<a name="l00106"></a>00106 }
+<a name="l00107"></a>00107 
+<a name="l00108"></a><a class="code" href="w5100_8c.html#adc92dea40c158d4eb47238bb053ef8b1">00108</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#adc92dea40c158d4eb47238bb053ef8b1">w5100_get</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg)
+<a name="l00109"></a>00109 {
+<a name="l00110"></a>00110   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[0] = 0x0F;
+<a name="l00111"></a>00111   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[1] = _reg &gt;&gt; 8;
+<a name="l00112"></a>00112   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>[2] = _reg &amp; 0xFF;
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114   <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>( &amp;spi1, &amp;<a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a> );
 <a name="l00115"></a>00115 
-<a name="l00116"></a>00116   <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>( &amp;spi1, &amp;<a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a> );
-<a name="l00117"></a>00117 
-<a name="l00118"></a>00118   <span class="comment">// FIXME: no busy waiting! if really needed add a timeout!!!!</span>
-<a name="l00119"></a>00119   <span class="keywordflow">while</span>(<a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a> != <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>);
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121   <span class="keywordflow">return</span> <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">input_buf</a>[3];
-<a name="l00122"></a>00122 }
-<a name="l00123"></a>00123 
-<a name="l00124"></a><a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">00124</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _len)
-<a name="l00125"></a>00125 {
-<a name="l00126"></a>00126   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;_len; i++) {
-<a name="l00127"></a>00127     <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( _reg, _buf[ i ] );
-<a name="l00128"></a>00128     _reg++;
-<a name="l00129"></a>00129   }
-<a name="l00130"></a>00130 }
-<a name="l00131"></a>00131 
-<a name="l00132"></a><a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">00132</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _sock, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _val) {
-<a name="l00133"></a>00133   <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( <a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">CH_BASE</a> + _sock * <a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">CH_SIZE</a> + _reg, _val );
-<a name="l00134"></a>00134 }
-<a name="l00135"></a>00135 
-<a name="l00136"></a><a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">00136</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _sock, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg) {
-<a name="l00137"></a>00137   <span class="keywordflow">return</span> <a class="code" href="w5100_8c.html#adc92dea40c158d4eb47238bb053ef8b1">w5100_get</a>( <a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">CH_BASE</a> + _sock * <a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">CH_SIZE</a> + _reg );
-<a name="l00138"></a>00138 }
-<a name="l00139"></a>00139 
-<a name="l00140"></a><a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">00140</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _sock, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg) {
-<a name="l00141"></a>00141     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> res = <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>(_sock, _reg);
-<a name="l00142"></a>00142     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> res2 = <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>(_sock, _reg + 1);
-<a name="l00143"></a>00143     res = res &lt;&lt; 8;
-<a name="l00144"></a>00144     res2 = res2 &amp; 0xFF;
-<a name="l00145"></a>00145     res = res | res2;
-<a name="l00146"></a>00146     <span class="keywordflow">return</span> res;
-<a name="l00147"></a>00147 }
+<a name="l00116"></a>00116   <span class="comment">// FIXME: no busy waiting! if really needed add a timeout!!!!</span>
+<a name="l00117"></a>00117   <span class="keywordflow">while</span>(<a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a> != <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>);
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119   <span class="keywordflow">return</span> <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">input_buf</a>[3];
+<a name="l00120"></a>00120 }
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">00122</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _len)
+<a name="l00123"></a>00123 {
+<a name="l00124"></a>00124   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;_len; i++) {
+<a name="l00125"></a>00125     <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( _reg, _buf[ i ] );
+<a name="l00126"></a>00126     _reg++;
+<a name="l00127"></a>00127   }
+<a name="l00128"></a>00128 }
+<a name="l00129"></a>00129 
+<a name="l00130"></a><a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">00130</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _sock, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _val) {
+<a name="l00131"></a>00131   <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( <a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">CH_BASE</a> + _sock * <a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">CH_SIZE</a> + _reg, _val );
+<a name="l00132"></a>00132 }
+<a name="l00133"></a>00133 
+<a name="l00134"></a><a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">00134</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _sock, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg) {
+<a name="l00135"></a>00135   <span class="keywordflow">return</span> <a class="code" href="w5100_8c.html#adc92dea40c158d4eb47238bb053ef8b1">w5100_get</a>( <a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">CH_BASE</a> + _sock * <a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">CH_SIZE</a> + _reg );
+<a name="l00136"></a>00136 }
+<a name="l00137"></a>00137 
+<a name="l00138"></a><a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">00138</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _sock, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _reg) {
+<a name="l00139"></a>00139     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> res = <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>(_sock, _reg);
+<a name="l00140"></a>00140     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> res2 = <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>(_sock, _reg + 1);
+<a name="l00141"></a>00141     res = res &lt;&lt; 8;
+<a name="l00142"></a>00142     res2 = res2 &amp; 0xFF;
+<a name="l00143"></a>00143     res = res | res2;
+<a name="l00144"></a>00144     <span class="keywordflow">return</span> res;
+<a name="l00145"></a>00145 }
+<a name="l00146"></a>00146 
+<a name="l00147"></a><a class="code" href="w5100_8h.html#a3a4ec6731e43710788d3e51f7749259c">00147</a> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a3a4ec6731e43710788d3e51f7749259c">w5100_init</a>( <span class="keywordtype">void</span> ) {
 <a name="l00148"></a>00148 
-<a name="l00149"></a><a class="code" href="w5100_8h.html#a3a4ec6731e43710788d3e51f7749259c">00149</a> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a3a4ec6731e43710788d3e51f7749259c">w5100_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00150"></a>00150 
-<a name="l00151"></a>00151   <span class="comment">// configure the SPI bus.</span>
-<a name="l00152"></a>00152   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#ad172d82768bb46939cb4e6ffbd230e77">slave_idx</a> = 1;
-<a name="l00153"></a>00153   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406">output_length</a> = 4;
-<a name="l00154"></a>00154   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a5d8b23bac2976e4245ac19747a122e71">input_length</a> = 4;
-<a name="l00155"></a>00155   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">select</a> = <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">SPISelectUnselect</a>;
-<a name="l00156"></a>00156   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">cpol</a> = <a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7a88d8aa68a47badab24e8237a333cc029">SPICpolIdleLow</a>;
-<a name="l00157"></a>00157   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">cpha</a> = <a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baaaef9737139e9d1ed3ef30d2200acc629e">SPICphaEdge1</a>;
-<a name="l00158"></a>00158   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">dss</a> = <a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">SPIDss8bit</a>;
-<a name="l00159"></a>00159   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">bitorder</a> = <a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">SPIMSBFirst</a>;
-<a name="l00160"></a>00160   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">cdiv</a> = <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">SPIDiv64</a>;
-<a name="l00161"></a>00161 
-<a name="l00162"></a>00162   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#af55158dce4e386eebe2a96871f729a56">status</a> = <a class="code" href="w5100_8h.html#a1b86a774f206095259ed0b6034d24c60add68bba90146d71b9a76a2bafdc99aa8">W5100StatusUninit</a>;
-<a name="l00163"></a>00163   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> = 0;
-<a name="l00164"></a>00164   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">input_buf</a> = &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a411e2d7c6d6feb9e4b0a7c22b23a4841">work_rx</a>[0];
-<a name="l00165"></a>00165   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a> = &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a18e099848ad54d37987e801ce3821d1f">work_tx</a>[0];
-<a name="l00166"></a>00166 
-<a name="l00167"></a>00167   <span class="comment">// wait one second for proper initialization (chip getting powered up).</span>
-<a name="l00168"></a>00168   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait, in microseconds.">sys_time_usleep</a>(1000000);
-<a name="l00169"></a>00169 
-<a name="l00170"></a>00170 gpio_set_mode( GPIOB, GPIO_MODE_OUTPUT_50_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, GPIO1 );
-<a name="l00171"></a>00171   gpio_clear( GPIOB, GPIO1 );
-<a name="l00172"></a>00172   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait, in microseconds.">sys_time_usleep</a>(200);
-<a name="l00173"></a>00173 gpio_set( GPIOB, GPIO1 );
-<a name="l00174"></a>00174   <span class="comment">// allow some time for the chip to wake up.</span>
-<a name="l00175"></a>00175   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait, in microseconds.">sys_time_usleep</a>(20000);
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177   <span class="comment">// write reset bit into mode register</span>
-<a name="l00178"></a>00178   <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( <a class="code" href="w5100_8c.html#abe96ee6618d7d5ccf3011633041e903e">REG_MR</a>, 1&lt;&lt;<a class="code" href="w5100_8c.html#a627f213804256ddcafeb943052fa63e5">RST</a> );
-<a name="l00179"></a>00179 
-<a name="l00180"></a>00180   <span class="comment">// allow some time to wake up...</span>
-<a name="l00181"></a>00181   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait, in microseconds.">sys_time_usleep</a>(20000);
-<a name="l00182"></a>00182 
-<a name="l00183"></a>00183   <span class="comment">// receive memory size</span>
-<a name="l00184"></a>00184   <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( <a class="code" href="w5100_8c.html#adb87d649f94c34872d5a697f772e22a2">REG_RX_MEM</a>, 0x55 );
-<a name="l00185"></a>00185 
-<a name="l00186"></a>00186   <span class="comment">// transmit memory size</span>
-<a name="l00187"></a>00187   <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( <a class="code" href="w5100_8c.html#a7a2cb6f59c40efdd86c06d66ba775ab1">REG_TX_MEM</a>, 0x55 );
-<a name="l00188"></a>00188 
-<a name="l00189"></a>00189   <span class="comment">// Setting the required socket base addresses for reads and writes to/from sockets</span>
-<a name="l00190"></a>00190   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1">SOCKETS</a>; i++) {
-<a name="l00191"></a>00191     <a class="code" href="w5100_8c.html#ad5418936576f4ba56fbdb5f0ceea968a">SBASE</a>[i] = <a class="code" href="w5100_8c.html#acd3caafdf38d3dd4bf97d4dd8da30f50">TXBUF_BASE</a> + <a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">SSIZE</a> * i;
-<a name="l00192"></a>00192     <a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">RBASE</a>[i] = <a class="code" href="w5100_8c.html#a0b61d617d075e2e171480bd2839bf93f">RXBUF_BASE</a> + <a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">RSIZE</a> * i;
-<a name="l00193"></a>00193   }
-<a name="l00194"></a>00194 
-<a name="l00195"></a>00195   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> gateway[4];
-<a name="l00196"></a>00196   gateway[0] = <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>[0];
-<a name="l00197"></a>00197   gateway[1] = <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>[1];
-<a name="l00198"></a>00198   gateway[2] = <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>[2];
-<a name="l00199"></a>00199   gateway[3] = 1;
-<a name="l00200"></a>00200 
-<a name="l00201"></a>00201   <span class="comment">// configure gateway, subnet, mac and ip on &quot;NIC&quot;.</span>
-<a name="l00202"></a>00202   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#ad01ad9e1f2e1c69906bc64899514042c">REG_GAR</a>, gateway, 4 );
-<a name="l00203"></a>00203   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a6d96f27f55e86e2e4840625d5f968cd7">REG_SUBR</a>, <a class="code" href="w5100_8c.html#a77df0a4bb15ed6f86b91f4afe49b09e1">subnet</a>, 4 );
-<a name="l00204"></a>00204   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a0a9e020abbd0e1c8fadf03d40fbe5d01">REG_SHAR</a>, <a class="code" href="w5100_8c.html#ae4ea3e666683fd4d8b0a822031e742ff">mac</a>, 6 );
-<a name="l00205"></a>00205   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a7821c0fdbad5da65159ded1d7149e7a3">REG_SIPR</a>, <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>, 4 );
-<a name="l00206"></a>00206 
-<a name="l00207"></a>00207   <span class="comment">// create a socket to send telemetry through.</span>
-<a name="l00208"></a>00208   <a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">configure_socket</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a27a7f4fcae1e4146db1782e379e3444c">SNMR_MULTI</a>, 1, <a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">dport</a>, <a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">dest</a> );
-<a name="l00209"></a>00209 
-<a name="l00210"></a>00210   <span class="comment">// make dest zero and configure socket to receive data</span>
-<a name="l00211"></a>00211   <a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">dest</a>[ 0 ] = 0x00;
-<a name="l00212"></a>00212   <a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">configure_socket</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, 0, <a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">dport</a>, <a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">dport</a>, <a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">dest</a> );
-<a name="l00213"></a>00213 }
+<a name="l00149"></a>00149   <span class="comment">// configure the SPI bus.</span>
+<a name="l00150"></a>00150   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#ad172d82768bb46939cb4e6ffbd230e77">slave_idx</a> = 1;
+<a name="l00151"></a>00151   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406">output_length</a> = 4;
+<a name="l00152"></a>00152   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a5d8b23bac2976e4245ac19747a122e71">input_length</a> = 4;
+<a name="l00153"></a>00153   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">select</a> = <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">SPISelectUnselect</a>;
+<a name="l00154"></a>00154   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">cpol</a> = <a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7a88d8aa68a47badab24e8237a333cc029">SPICpolIdleLow</a>;
+<a name="l00155"></a>00155   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">cpha</a> = <a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baaaef9737139e9d1ed3ef30d2200acc629e">SPICphaEdge1</a>;
+<a name="l00156"></a>00156   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">dss</a> = <a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">SPIDss8bit</a>;
+<a name="l00157"></a>00157   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">bitorder</a> = <a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">SPIMSBFirst</a>;
+<a name="l00158"></a>00158   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">cdiv</a> = <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">SPIDiv64</a>;
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#af55158dce4e386eebe2a96871f729a56">status</a> = <a class="code" href="w5100_8h.html#a1b86a774f206095259ed0b6034d24c60add68bba90146d71b9a76a2bafdc99aa8">W5100StatusUninit</a>;
+<a name="l00161"></a>00161   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> = 0;
+<a name="l00162"></a>00162   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">input_buf</a> = &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a411e2d7c6d6feb9e4b0a7c22b23a4841">work_rx</a>[0];
+<a name="l00163"></a>00163   <a class="code" href="w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d">w5100_spi</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a> = &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a18e099848ad54d37987e801ce3821d1f">work_tx</a>[0];
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165   <span class="comment">// wait one second for proper initialization (chip getting powered up).</span>
+<a name="l00166"></a>00166   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait, in microseconds.">sys_time_usleep</a>(1000000);
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168 gpio_set_mode( GPIOB, GPIO_MODE_OUTPUT_50_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, GPIO1 );
+<a name="l00169"></a>00169   gpio_clear( GPIOB, GPIO1 );
+<a name="l00170"></a>00170   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait, in microseconds.">sys_time_usleep</a>(200);
+<a name="l00171"></a>00171 gpio_set( GPIOB, GPIO1 );
+<a name="l00172"></a>00172   <span class="comment">// allow some time for the chip to wake up.</span>
+<a name="l00173"></a>00173   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait, in microseconds.">sys_time_usleep</a>(20000);
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175   <span class="comment">// write reset bit into mode register</span>
+<a name="l00176"></a>00176   <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( <a class="code" href="w5100_8c.html#abe96ee6618d7d5ccf3011633041e903e">REG_MR</a>, 1&lt;&lt;<a class="code" href="w5100_8c.html#a627f213804256ddcafeb943052fa63e5">RST</a> );
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178   <span class="comment">// allow some time to wake up...</span>
+<a name="l00179"></a>00179   <a class="code" href="lpc21_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait, in microseconds.">sys_time_usleep</a>(20000);
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181   <span class="comment">// receive memory size</span>
+<a name="l00182"></a>00182   <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( <a class="code" href="w5100_8c.html#adb87d649f94c34872d5a697f772e22a2">REG_RX_MEM</a>, 0x55 );
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184   <span class="comment">// transmit memory size</span>
+<a name="l00185"></a>00185   <a class="code" href="w5100_8c.html#acf688d7d46d5a20eb893df94ba4b2f5c">w5100_set</a>( <a class="code" href="w5100_8c.html#a7a2cb6f59c40efdd86c06d66ba775ab1">REG_TX_MEM</a>, 0x55 );
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187   <span class="comment">// Setting the required socket base addresses for reads and writes to/from sockets</span>
+<a name="l00188"></a>00188   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1">SOCKETS</a>; i++) {
+<a name="l00189"></a>00189     <a class="code" href="w5100_8c.html#ad5418936576f4ba56fbdb5f0ceea968a">SBASE</a>[i] = <a class="code" href="w5100_8c.html#acd3caafdf38d3dd4bf97d4dd8da30f50">TXBUF_BASE</a> + <a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">SSIZE</a> * i;
+<a name="l00190"></a>00190     <a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">RBASE</a>[i] = <a class="code" href="w5100_8c.html#a0b61d617d075e2e171480bd2839bf93f">RXBUF_BASE</a> + <a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">RSIZE</a> * i;
+<a name="l00191"></a>00191   }
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> gateway[4];
+<a name="l00194"></a>00194   gateway[0] = <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>[0];
+<a name="l00195"></a>00195   gateway[1] = <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>[1];
+<a name="l00196"></a>00196   gateway[2] = <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>[2];
+<a name="l00197"></a>00197   gateway[3] = 1;
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199   <span class="comment">// configure gateway, subnet, mac and ip on &quot;NIC&quot;.</span>
+<a name="l00200"></a>00200   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#ad01ad9e1f2e1c69906bc64899514042c">REG_GAR</a>, gateway, 4 );
+<a name="l00201"></a>00201   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a6d96f27f55e86e2e4840625d5f968cd7">REG_SUBR</a>, <a class="code" href="w5100_8c.html#a77df0a4bb15ed6f86b91f4afe49b09e1">subnet</a>, 4 );
+<a name="l00202"></a>00202   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a0a9e020abbd0e1c8fadf03d40fbe5d01">REG_SHAR</a>, <a class="code" href="w5100_8c.html#ae4ea3e666683fd4d8b0a822031e742ff">mac</a>, 6 );
+<a name="l00203"></a>00203   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a7821c0fdbad5da65159ded1d7149e7a3">REG_SIPR</a>, <a class="code" href="w5100_8c.html#a069642029dc2429e1906147cbda971bb">ip</a>, 4 );
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205   <span class="comment">// create a socket to send telemetry through.</span>
+<a name="l00206"></a>00206   <a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">configure_socket</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a27a7f4fcae1e4146db1782e379e3444c">SNMR_MULTI</a>, 1, <a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">dport</a>, <a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">dest</a> );
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208   <span class="comment">// make dest zero and configure socket to receive data</span>
+<a name="l00209"></a>00209   <a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">dest</a>[ 0 ] = 0x00;
+<a name="l00210"></a>00210   <a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">configure_socket</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, 0, <a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">dport</a>, <a class="code" href="w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3">dport</a>, <a class="code" href="w5100_8c.html#a1933bb767999546a3e2e6dfd20363641">dest</a> );
+<a name="l00211"></a>00211 }
+<a name="l00212"></a>00212 
+<a name="l00213"></a><a class="code" href="w5100_8h.html#a38d417bb07a2d9eeebe11b6009cd710d">00213</a> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a38d417bb07a2d9eeebe11b6009cd710d">w5100_transmit</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> data ) {
 <a name="l00214"></a>00214 
-<a name="l00215"></a><a class="code" href="w5100_8h.html#a38d417bb07a2d9eeebe11b6009cd710d">00215</a> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a38d417bb07a2d9eeebe11b6009cd710d">w5100_transmit</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> data ) {
+<a name="l00215"></a>00215   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> temp = (<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] + 1) % <a class="code" href="w5100_8h.html#a0c5eb0f23b68f787843e4f74561d7bb2">W5100_TX_BUFFER_SIZE</a>;
 <a name="l00216"></a>00216 
-<a name="l00217"></a>00217   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> temp = (<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] + 1) % <a class="code" href="w5100_8h.html#a0c5eb0f23b68f787843e4f74561d7bb2">W5100_TX_BUFFER_SIZE</a>;
-<a name="l00218"></a>00218 
-<a name="l00219"></a>00219   <span class="keywordflow">if</span> (temp == <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a0faa006a1d7adfbbeccee552f08e5990">tx_extract_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ]) {
-<a name="l00220"></a>00220     <span class="comment">// no more room in this transaction.</span>
-<a name="l00221"></a>00221     <span class="keywordflow">return</span>;
-<a name="l00222"></a>00222   }
-<a name="l00223"></a>00223 
-<a name="l00224"></a>00224   <span class="comment">// check if in process of sending data</span>
-<a name="l00225"></a>00225   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a951fd755f073f0b1c110be5612dd85a9">tx_buf</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ][ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] ] = data;
-<a name="l00226"></a>00226   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] = temp;
-<a name="l00227"></a>00227 }
-<a name="l00228"></a>00228 
-<a name="l00229"></a><a class="code" href="w5100_8h.html#a53e5379a5746a3b67460fe3afc1983cc">00229</a> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#ac5b78f6ff9ae6c8cd4a286b9b45f7d5e">w5100_send</a>() {
-<a name="l00230"></a>00230   <span class="comment">// Now send off spi transaction.</span>
-<a name="l00231"></a>00231   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> len = <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ];
-<a name="l00232"></a>00232   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> curbuf = <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a>;
-<a name="l00233"></a>00233 
-<a name="l00234"></a>00234   <span class="comment">// switch to other buffer to accept more chars.</span>
-<a name="l00235"></a>00235   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a>++;
-<a name="l00236"></a>00236   <span class="keywordflow">if</span> ( <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> &gt;= <a class="code" href="w5100_8h.html#ac8228007507bc3d4724a8ad3a9ba91b3">W5100_BUFFER_NUM</a> ) {
-<a name="l00237"></a>00237     <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> = 0;
-<a name="l00238"></a>00238   }
-<a name="l00239"></a>00239 
-<a name="l00240"></a>00240   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> ptr = <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a4fff7f755daec515393ac34063aeff48">SOCK_TX_WR</a> );
-<a name="l00241"></a>00241   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> offset = ptr &amp; <a class="code" href="w5100_8c.html#ad4494f32880d6f779f9cff7a94b0678a">SMASK</a>;
-<a name="l00242"></a>00242   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> dstAddr = offset + <a class="code" href="w5100_8c.html#ad5418936576f4ba56fbdb5f0ceea968a">SBASE</a>[ <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a> ];
-<a name="l00243"></a>00243 
-<a name="l00244"></a>00244   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] = 0;
-<a name="l00245"></a>00245   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a0faa006a1d7adfbbeccee552f08e5990">tx_extract_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] = 0;
-<a name="l00246"></a>00246 
-<a name="l00247"></a>00247   <span class="keywordflow">if</span> (offset + len &gt; <a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">SSIZE</a>) {
-<a name="l00248"></a>00248     <span class="comment">// Wrap around circular buffer</span>
-<a name="l00249"></a>00249     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> size = <a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">SSIZE</a> - offset;
-<a name="l00250"></a>00250     <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( dstAddr, &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a951fd755f073f0b1c110be5612dd85a9">tx_buf</a>[curbuf][0], size );
-<a name="l00251"></a>00251     <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( SBASE[ <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a> ], &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a951fd755f073f0b1c110be5612dd85a9">tx_buf</a>[curbuf][0] + size, len - size);
-<a name="l00252"></a>00252   }
-<a name="l00253"></a>00253   <span class="keywordflow">else</span> {
-<a name="l00254"></a>00254     <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( dstAddr, &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a951fd755f073f0b1c110be5612dd85a9">tx_buf</a>[curbuf][0], len);
-<a name="l00255"></a>00255   }
-<a name="l00256"></a>00256 
-<a name="l00257"></a>00257   <span class="comment">// Reset write pointer</span>
-<a name="l00258"></a>00258   ptr += len;
-<a name="l00259"></a>00259   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a4fff7f755daec515393ac34063aeff48">SOCK_TX_WR</a>, ptr &gt;&gt; 8 );
-<a name="l00260"></a>00260   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a4fff7f755daec515393ac34063aeff48">SOCK_TX_WR</a>+1, ptr &amp; 0xFF );
-<a name="l00261"></a>00261 
-<a name="l00262"></a>00262   <span class="comment">// send</span>
-<a name="l00263"></a>00263   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>, <a class="code" href="w5100_8c.html#a6049f750c09da977b6299efd5a0af246">SOCK_SEND</a> );
-<a name="l00264"></a>00264 
-<a name="l00265"></a>00265   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> complete = <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>);
-<a name="l00266"></a>00266   <span class="keywordflow">while</span> ( complete != 0x00 ) {
-<a name="l00267"></a>00267     complete = <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>);
-<a name="l00268"></a>00268   }
-<a name="l00269"></a>00269 }
-<a name="l00270"></a>00270 
-<a name="l00271"></a><a class="code" href="w5100_8h.html#a834e87b2f3c3cd190eee04e2c9162d92">00271</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#a834e87b2f3c3cd190eee04e2c9162d92">w5100_rx_size</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s ) {
-<a name="l00272"></a>00272   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>=0,val1=0;
-<a name="l00273"></a>00273 
-<a name="l00274"></a>00274   <span class="keywordflow">do</span> {
-<a name="l00275"></a>00275     val1 = <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( _s, <a class="code" href="w5100_8c.html#a4f8005d214ef828947e404654ac5ac73">SOCK_RSR</a> );
-<a name="l00276"></a>00276     <span class="keywordflow">if</span> (val1 != 0)
-<a name="l00277"></a>00277       val = <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( _s, <a class="code" href="w5100_8c.html#a4f8005d214ef828947e404654ac5ac73">SOCK_RSR</a> );
-<a name="l00278"></a>00278   }
-<a name="l00279"></a>00279   <span class="keywordflow">while</span> (val != val1);
-<a name="l00280"></a>00280   <span class="keywordflow">return</span> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>;
-<a name="l00281"></a>00281 }
-<a name="l00282"></a>00282 
-<a name="l00283"></a><a class="code" href="w5100_8c.html#abade1f8840f1a6de842036d8868706a8">00283</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#abade1f8840f1a6de842036d8868706a8">w5100_close_socket</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s ) {
-<a name="l00284"></a>00284   <span class="comment">// send command to close socket</span>
-<a name="l00285"></a>00285   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>, <a class="code" href="w5100_8c.html#a8f4628de17d167453812b9b584488d76">SOCK_CLOSE</a> );
-<a name="l00286"></a>00286   <span class="comment">// clear interrupt registers</span>
-<a name="l00287"></a>00287   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a7b93c9fe2b09c4a801b1a9100663dfa1">SOCK_IR</a>, 0xFF );
-<a name="l00288"></a>00288 }
-<a name="l00289"></a>00289 
-<a name="l00290"></a><a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">00290</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">configure_socket</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _flag, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _lport, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _dport, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_dest ) {
-<a name="l00291"></a>00291   <span class="comment">// Configure socket that receives data on 1234</span>
-<a name="l00292"></a>00292   <a class="code" href="w5100_8c.html#abade1f8840f1a6de842036d8868706a8">w5100_close_socket</a>( _s );
-<a name="l00293"></a>00293   <span class="comment">// configure type of socket</span>
-<a name="l00294"></a>00294   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a0180d3a66239677229e29b16c8410d86">SOCK_MR</a>, <a class="code" href="w5100_8c.html#aa5d86eddff3ca0b84ffff887d7c806b4">SNMR_UDP</a> | _flag );
-<a name="l00295"></a>00295   <span class="comment">// configure MSB+LSB of local port number</span>
-<a name="l00296"></a>00296   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a7541b688a494a557f407330d46bdbb49">SOCK_PORT</a>, _lport &gt;&gt; 8 );
-<a name="l00297"></a>00297   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a7541b688a494a557f407330d46bdbb49">SOCK_PORT</a>+1, _lport &amp; 0xFF );
-<a name="l00298"></a>00298   <span class="keywordflow">if</span> ( _dest[0] != 0x00 ) {
-<a name="l00299"></a>00299     <span class="comment">// configure destination to send stuff to.</span>
-<a name="l00300"></a>00300     <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">CH_BASE</a> + _s * <a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">CH_SIZE</a> + <a class="code" href="w5100_8c.html#a9360ad167a844b7d94294102b0334898">SOCK_DIPR</a>, _dest, 4 );
-<a name="l00301"></a>00301   }
-<a name="l00302"></a>00302 
-<a name="l00303"></a>00303   <span class="comment">// this mac corresponds to a mac for multicasting....</span>
-<a name="l00304"></a>00304   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> mac_multi[] = { 0x01, 0x00, 0x5E, 0x01, 0x01, 0x0B };
-<a name="l00305"></a>00305   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">CH_BASE</a> + _s * <a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">CH_SIZE</a> + <a class="code" href="w5100_8c.html#a1db51e199a01561a9ff1a6d0cca1fd82">SOCK_DHAR</a>, mac_multi, 6 );
-<a name="l00306"></a>00306 
-<a name="l00307"></a>00307   <span class="comment">// configure destination port</span>
-<a name="l00308"></a>00308   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a007858e4d2ae925606c519d06ee20468">SOCK_DPORT</a>, _dport &gt;&gt; 8 );
-<a name="l00309"></a>00309   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a007858e4d2ae925606c519d06ee20468">SOCK_DPORT</a>+1, _dport &amp; 0xFF );
-<a name="l00310"></a>00310 
-<a name="l00311"></a>00311   <span class="comment">// send command to open the socket</span>
-<a name="l00312"></a>00312   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>, <a class="code" href="w5100_8c.html#a636f8b657f22576bcfad360f742bfad9">SOCK_OPEN</a> );
-<a name="l00313"></a>00313 }
-<a name="l00314"></a>00314 
-<a name="l00315"></a><a class="code" href="w5100_8h.html#afd09c437e15b551fa76f1bf6439a2109">00315</a> bool_t <a class="code" href="w5100_8c.html#a39c39cab10e51d6a05cc91620a96739f">w5100_ch_available</a>() {
-<a name="l00316"></a>00316   <span class="keywordflow">if</span> ( <a class="code" href="w5100_8c.html#a834e87b2f3c3cd190eee04e2c9162d92">w5100_rx_size</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a> ) &gt; 0 ) {
-<a name="l00317"></a>00317     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
-<a name="l00318"></a>00318   }
-<a name="l00319"></a>00319   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
-<a name="l00320"></a>00320 }
-<a name="l00321"></a>00321 
-<a name="l00322"></a><a class="code" href="w5100_8h.html#abf3016ffe8faf50c1bf56f6f21ceb261">00322</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#abf3016ffe8faf50c1bf56f6f21ceb261">w5100_receive</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> len ) {
-<a name="l00323"></a>00323   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> head[8];
-<a name="l00324"></a>00324   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> data_len=0;
-<a name="l00325"></a>00325   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> ptr=0;
-<a name="l00326"></a>00326 
-<a name="l00327"></a>00327   <span class="comment">// Get socket read pointer</span>
-<a name="l00328"></a>00328   ptr = <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, <a class="code" href="w5100_8c.html#a8cbf60ec64a419d76436476f44083586">SOCK_RXRD</a> );
-<a name="l00329"></a>00329   <a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">w5100_read_data</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)ptr, head, 0x08);
-<a name="l00330"></a>00330   ptr += 8;
-<a name="l00331"></a>00331   data_len = head[6];
-<a name="l00332"></a>00332   data_len = (data_len &lt;&lt; 8) + head[7];
-<a name="l00333"></a>00333 
-<a name="l00334"></a>00334   <span class="comment">// read data from buffer.</span>
-<a name="l00335"></a>00335   <a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">w5100_read_data</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)ptr, buf, data_len); <span class="comment">// data copy.</span>
-<a name="l00336"></a>00336   ptr += data_len;
-<a name="l00337"></a>00337 
-<a name="l00338"></a>00338   <span class="comment">// update read pointer</span>
-<a name="l00339"></a>00339   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, <a class="code" href="w5100_8c.html#a8cbf60ec64a419d76436476f44083586">SOCK_RXRD</a>, ptr &gt;&gt; 8);
-<a name="l00340"></a>00340   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, <a class="code" href="w5100_8c.html#a8cbf60ec64a419d76436476f44083586">SOCK_RXRD</a>+1, ptr &amp; 0xFF );
-<a name="l00341"></a>00341 
-<a name="l00342"></a>00342   <span class="comment">// finalize read.</span>
-<a name="l00343"></a>00343   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>, <a class="code" href="w5100_8c.html#abc98ed17fb750f02216d70c4b6da40ec">SOCK_RECV</a>);
-<a name="l00344"></a>00344   <span class="keywordflow">return</span> data_len;
-<a name="l00345"></a>00345 }
-<a name="l00346"></a>00346 
-<a name="l00347"></a><a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">00347</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">w5100_read_data</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> s, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *src, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *dst, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> len ) {
-<a name="l00348"></a>00348   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> size;
-<a name="l00349"></a>00349   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> src_mask;
-<a name="l00350"></a>00350   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> src_ptr;
-<a name="l00351"></a>00351 
-<a name="l00352"></a>00352   src_mask = (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)src &amp; <a class="code" href="w5100_8c.html#ab313966344db7ce2681d95597427a7b4">RMASK</a>;
-<a name="l00353"></a>00353   src_ptr = <a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">RBASE</a>[<a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>] + src_mask;
-<a name="l00354"></a>00354 
-<a name="l00355"></a>00355   <span class="keywordflow">if</span>( (src_mask + len) &gt; <a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">RSIZE</a> ) {
-<a name="l00356"></a>00356     size = <a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">RSIZE</a> - src_mask;
-<a name="l00357"></a>00357     <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(src_ptr, (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)dst, size);
-<a name="l00358"></a>00358     dst += size;
-<a name="l00359"></a>00359     <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(<a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">RBASE</a>[<a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>], (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *) dst, len - size);
-<a name="l00360"></a>00360   } <span class="keywordflow">else</span> {
-<a name="l00361"></a>00361     <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(src_ptr, (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *) dst, len);
-<a name="l00362"></a>00362   }
-<a name="l00363"></a>00363 }
-<a name="l00364"></a>00364 
-<a name="l00365"></a><a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">00365</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _len)
-<a name="l00366"></a>00366 {
-<a name="l00367"></a>00367   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;_len; i++) {
-<a name="l00368"></a>00368     _buf[i] = <a class="code" href="w5100_8c.html#adc92dea40c158d4eb47238bb053ef8b1">w5100_get</a>( _addr );
-<a name="l00369"></a>00369     _addr++;
-<a name="l00370"></a>00370   }
-<a name="l00371"></a>00371   <span class="keywordflow">return</span> _len;
-<a name="l00372"></a>00372 }
-<a name="l00373"></a>00373 
+<a name="l00217"></a>00217   <span class="keywordflow">if</span> (temp == <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a0faa006a1d7adfbbeccee552f08e5990">tx_extract_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ]) {
+<a name="l00218"></a>00218     <span class="comment">// no more room in this transaction.</span>
+<a name="l00219"></a>00219     <span class="keywordflow">return</span>;
+<a name="l00220"></a>00220   }
+<a name="l00221"></a>00221 
+<a name="l00222"></a>00222   <span class="comment">// check if in process of sending data</span>
+<a name="l00223"></a>00223   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a951fd755f073f0b1c110be5612dd85a9">tx_buf</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ][ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] ] = data;
+<a name="l00224"></a>00224   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] = temp;
+<a name="l00225"></a>00225 }
+<a name="l00226"></a>00226 
+<a name="l00227"></a><a class="code" href="w5100_8h.html#a53e5379a5746a3b67460fe3afc1983cc">00227</a> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#ac5b78f6ff9ae6c8cd4a286b9b45f7d5e">w5100_send</a>() {
+<a name="l00228"></a>00228   <span class="comment">// Now send off spi transaction.</span>
+<a name="l00229"></a>00229   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> len = <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ];
+<a name="l00230"></a>00230   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> curbuf = <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a>;
+<a name="l00231"></a>00231 
+<a name="l00232"></a>00232   <span class="comment">// switch to other buffer to accept more chars.</span>
+<a name="l00233"></a>00233   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a>++;
+<a name="l00234"></a>00234   <span class="keywordflow">if</span> ( <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> &gt;= <a class="code" href="w5100_8h.html#ac8228007507bc3d4724a8ad3a9ba91b3">W5100_BUFFER_NUM</a> ) {
+<a name="l00235"></a>00235     <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> = 0;
+<a name="l00236"></a>00236   }
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> ptr = <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a4fff7f755daec515393ac34063aeff48">SOCK_TX_WR</a> );
+<a name="l00239"></a>00239   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> offset = ptr &amp; <a class="code" href="w5100_8c.html#ad4494f32880d6f779f9cff7a94b0678a">SMASK</a>;
+<a name="l00240"></a>00240   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> dstAddr = offset + <a class="code" href="w5100_8c.html#ad5418936576f4ba56fbdb5f0ceea968a">SBASE</a>[ <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a> ];
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4">tx_insert_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] = 0;
+<a name="l00243"></a>00243   <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a0faa006a1d7adfbbeccee552f08e5990">tx_extract_idx</a>[ <a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed">curbuf</a> ] = 0;
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245   <span class="keywordflow">if</span> (offset + len &gt; <a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">SSIZE</a>) {
+<a name="l00246"></a>00246     <span class="comment">// Wrap around circular buffer</span>
+<a name="l00247"></a>00247     <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> size = <a class="code" href="w5100_8c.html#a79b71d620c1b85a9987045b9faec417b">SSIZE</a> - offset;
+<a name="l00248"></a>00248     <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( dstAddr, &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a951fd755f073f0b1c110be5612dd85a9">tx_buf</a>[curbuf][0], size );
+<a name="l00249"></a>00249     <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( SBASE[ <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a> ], &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a951fd755f073f0b1c110be5612dd85a9">tx_buf</a>[curbuf][0] + size, len - size);
+<a name="l00250"></a>00250   }
+<a name="l00251"></a>00251   <span class="keywordflow">else</span> {
+<a name="l00252"></a>00252     <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( dstAddr, &amp;<a class="code" href="w5100_8c.html#aa13e8b2503eb7f29b572379d1cd21148">chip0</a>.<a class="code" href="structw5100__periph.html#a951fd755f073f0b1c110be5612dd85a9">tx_buf</a>[curbuf][0], len);
+<a name="l00253"></a>00253   }
+<a name="l00254"></a>00254 
+<a name="l00255"></a>00255   <span class="comment">// Reset write pointer</span>
+<a name="l00256"></a>00256   ptr += len;
+<a name="l00257"></a>00257   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a4fff7f755daec515393ac34063aeff48">SOCK_TX_WR</a>, ptr &gt;&gt; 8 );
+<a name="l00258"></a>00258   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a4fff7f755daec515393ac34063aeff48">SOCK_TX_WR</a>+1, ptr &amp; 0xFF );
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260   <span class="comment">// send</span>
+<a name="l00261"></a>00261   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>, <a class="code" href="w5100_8c.html#a6049f750c09da977b6299efd5a0af246">SOCK_SEND</a> );
+<a name="l00262"></a>00262 
+<a name="l00263"></a>00263   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> complete = <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>);
+<a name="l00264"></a>00264   <span class="keywordflow">while</span> ( complete != 0x00 ) {
+<a name="l00265"></a>00265     complete = <a class="code" href="w5100_8c.html#aa329ee90cfec600285df9d7382a2c623">w5100_sock_get</a>( <a class="code" href="w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407">TELEM_SOCKET</a>, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>);
+<a name="l00266"></a>00266   }
+<a name="l00267"></a>00267 }
+<a name="l00268"></a>00268 
+<a name="l00269"></a><a class="code" href="w5100_8h.html#a834e87b2f3c3cd190eee04e2c9162d92">00269</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#a834e87b2f3c3cd190eee04e2c9162d92">w5100_rx_size</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s ) {
+<a name="l00270"></a>00270   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>=0,val1=0;
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272   <span class="keywordflow">do</span> {
+<a name="l00273"></a>00273     val1 = <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( _s, <a class="code" href="w5100_8c.html#a4f8005d214ef828947e404654ac5ac73">SOCK_RSR</a> );
+<a name="l00274"></a>00274     <span class="keywordflow">if</span> (val1 != 0)
+<a name="l00275"></a>00275       val = <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( _s, <a class="code" href="w5100_8c.html#a4f8005d214ef828947e404654ac5ac73">SOCK_RSR</a> );
+<a name="l00276"></a>00276   }
+<a name="l00277"></a>00277   <span class="keywordflow">while</span> (val != val1);
+<a name="l00278"></a>00278   <span class="keywordflow">return</span> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>;
+<a name="l00279"></a>00279 }
+<a name="l00280"></a>00280 
+<a name="l00281"></a><a class="code" href="w5100_8c.html#abade1f8840f1a6de842036d8868706a8">00281</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#abade1f8840f1a6de842036d8868706a8">w5100_close_socket</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s ) {
+<a name="l00282"></a>00282   <span class="comment">// send command to close socket</span>
+<a name="l00283"></a>00283   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>, <a class="code" href="w5100_8c.html#a8f4628de17d167453812b9b584488d76">SOCK_CLOSE</a> );
+<a name="l00284"></a>00284   <span class="comment">// clear interrupt registers</span>
+<a name="l00285"></a>00285   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a7b93c9fe2b09c4a801b1a9100663dfa1">SOCK_IR</a>, 0xFF );
+<a name="l00286"></a>00286 }
+<a name="l00287"></a>00287 
+<a name="l00288"></a><a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">00288</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4">configure_socket</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _s, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _flag, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _lport, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _dport, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_dest ) {
+<a name="l00289"></a>00289   <span class="comment">// Configure socket that receives data on 1234</span>
+<a name="l00290"></a>00290   <a class="code" href="w5100_8c.html#abade1f8840f1a6de842036d8868706a8">w5100_close_socket</a>( _s );
+<a name="l00291"></a>00291   <span class="comment">// configure type of socket</span>
+<a name="l00292"></a>00292   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a0180d3a66239677229e29b16c8410d86">SOCK_MR</a>, <a class="code" href="w5100_8c.html#aa5d86eddff3ca0b84ffff887d7c806b4">SNMR_UDP</a> | _flag );
+<a name="l00293"></a>00293   <span class="comment">// configure MSB+LSB of local port number</span>
+<a name="l00294"></a>00294   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a7541b688a494a557f407330d46bdbb49">SOCK_PORT</a>, _lport &gt;&gt; 8 );
+<a name="l00295"></a>00295   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a7541b688a494a557f407330d46bdbb49">SOCK_PORT</a>+1, _lport &amp; 0xFF );
+<a name="l00296"></a>00296   <span class="keywordflow">if</span> ( _dest[0] != 0x00 ) {
+<a name="l00297"></a>00297     <span class="comment">// configure destination to send stuff to.</span>
+<a name="l00298"></a>00298     <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">CH_BASE</a> + _s * <a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">CH_SIZE</a> + <a class="code" href="w5100_8c.html#a9360ad167a844b7d94294102b0334898">SOCK_DIPR</a>, _dest, 4 );
+<a name="l00299"></a>00299   }
+<a name="l00300"></a>00300 
+<a name="l00301"></a>00301   <span class="comment">// this mac corresponds to a mac for multicasting....</span>
+<a name="l00302"></a>00302   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> mac_multi[] = { 0x01, 0x00, 0x5E, 0x01, 0x01, 0x0B };
+<a name="l00303"></a>00303   <a class="code" href="w5100_8c.html#a0e5e1246b804cc518d06492f384ae50d">w5100_set_buffer</a>( <a class="code" href="w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa">CH_BASE</a> + _s * <a class="code" href="w5100_8c.html#ab1805e3dc2190fd3c6accde94758b0d1">CH_SIZE</a> + <a class="code" href="w5100_8c.html#a1db51e199a01561a9ff1a6d0cca1fd82">SOCK_DHAR</a>, mac_multi, 6 );
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305   <span class="comment">// configure destination port</span>
+<a name="l00306"></a>00306   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a007858e4d2ae925606c519d06ee20468">SOCK_DPORT</a>, _dport &gt;&gt; 8 );
+<a name="l00307"></a>00307   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a007858e4d2ae925606c519d06ee20468">SOCK_DPORT</a>+1, _dport &amp; 0xFF );
+<a name="l00308"></a>00308 
+<a name="l00309"></a>00309   <span class="comment">// send command to open the socket</span>
+<a name="l00310"></a>00310   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( _s, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>, <a class="code" href="w5100_8c.html#a636f8b657f22576bcfad360f742bfad9">SOCK_OPEN</a> );
+<a name="l00311"></a>00311 }
+<a name="l00312"></a>00312 
+<a name="l00313"></a><a class="code" href="w5100_8h.html#afd09c437e15b551fa76f1bf6439a2109">00313</a> bool_t <a class="code" href="w5100_8c.html#a39c39cab10e51d6a05cc91620a96739f">w5100_ch_available</a>() {
+<a name="l00314"></a>00314   <span class="keywordflow">if</span> ( <a class="code" href="w5100_8c.html#a834e87b2f3c3cd190eee04e2c9162d92">w5100_rx_size</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a> ) &gt; 0 ) {
+<a name="l00315"></a>00315     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
+<a name="l00316"></a>00316   }
+<a name="l00317"></a>00317   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00318"></a>00318 }
+<a name="l00319"></a>00319 
+<a name="l00320"></a><a class="code" href="w5100_8h.html#abf3016ffe8faf50c1bf56f6f21ceb261">00320</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#abf3016ffe8faf50c1bf56f6f21ceb261">w5100_receive</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> len ) {
+<a name="l00321"></a>00321   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> head[8];
+<a name="l00322"></a>00322   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> data_len=0;
+<a name="l00323"></a>00323   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> ptr=0;
+<a name="l00324"></a>00324 
+<a name="l00325"></a>00325   <span class="comment">// Get socket read pointer</span>
+<a name="l00326"></a>00326   ptr = <a class="code" href="w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524">w5100_sock_get16</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, <a class="code" href="w5100_8c.html#a8cbf60ec64a419d76436476f44083586">SOCK_RXRD</a> );
+<a name="l00327"></a>00327   <a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">w5100_read_data</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)ptr, head, 0x08);
+<a name="l00328"></a>00328   ptr += 8;
+<a name="l00329"></a>00329   data_len = head[6];
+<a name="l00330"></a>00330   data_len = (data_len &lt;&lt; 8) + head[7];
+<a name="l00331"></a>00331 
+<a name="l00332"></a>00332   <span class="comment">// read data from buffer.</span>
+<a name="l00333"></a>00333   <a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">w5100_read_data</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)ptr, buf, data_len); <span class="comment">// data copy.</span>
+<a name="l00334"></a>00334   ptr += data_len;
+<a name="l00335"></a>00335 
+<a name="l00336"></a>00336   <span class="comment">// update read pointer</span>
+<a name="l00337"></a>00337   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, <a class="code" href="w5100_8c.html#a8cbf60ec64a419d76436476f44083586">SOCK_RXRD</a>, ptr &gt;&gt; 8);
+<a name="l00338"></a>00338   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, <a class="code" href="w5100_8c.html#a8cbf60ec64a419d76436476f44083586">SOCK_RXRD</a>+1, ptr &amp; 0xFF );
+<a name="l00339"></a>00339 
+<a name="l00340"></a>00340   <span class="comment">// finalize read.</span>
+<a name="l00341"></a>00341   <a class="code" href="w5100_8c.html#add4fef731325e39e35816a0372d6e9c6">w5100_sock_set</a>( <a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>, <a class="code" href="w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46">SOCK_CR</a>, <a class="code" href="w5100_8c.html#abc98ed17fb750f02216d70c4b6da40ec">SOCK_RECV</a>);
+<a name="l00342"></a>00342   <span class="keywordflow">return</span> data_len;
+<a name="l00343"></a>00343 }
+<a name="l00344"></a>00344 
+<a name="l00345"></a><a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">00345</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb">w5100_read_data</a>( <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> s, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *src, <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *dst, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> len ) {
+<a name="l00346"></a>00346   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> size;
+<a name="l00347"></a>00347   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> src_mask;
+<a name="l00348"></a>00348   <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> src_ptr;
+<a name="l00349"></a>00349 
+<a name="l00350"></a>00350   src_mask = (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)src &amp; <a class="code" href="w5100_8c.html#ab313966344db7ce2681d95597427a7b4">RMASK</a>;
+<a name="l00351"></a>00351   src_ptr = <a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">RBASE</a>[<a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>] + src_mask;
+<a name="l00352"></a>00352 
+<a name="l00353"></a>00353   <span class="keywordflow">if</span>( (src_mask + len) &gt; <a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">RSIZE</a> ) {
+<a name="l00354"></a>00354     size = <a class="code" href="w5100_8c.html#a80a9583c56581301cc2877a18176b654">RSIZE</a> - src_mask;
+<a name="l00355"></a>00355     <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(src_ptr, (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)dst, size);
+<a name="l00356"></a>00356     dst += size;
+<a name="l00357"></a>00357     <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(<a class="code" href="w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134">RBASE</a>[<a class="code" href="w5100_8c.html#ae41d38ffc1a2d919c07eb86b81fc1343">CMD_SOCKET</a>], (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *) dst, len - size);
+<a name="l00358"></a>00358   } <span class="keywordflow">else</span> {
+<a name="l00359"></a>00359     <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(src_ptr, (<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *) dst, len);
+<a name="l00360"></a>00360   }
+<a name="l00361"></a>00361 }
+<a name="l00362"></a>00362 
+<a name="l00363"></a><a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">00363</a> <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="w5100_8c.html#aa07a01f5b03c499e6bbcc4edcd14c301">w5100_read</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *_buf, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> _len)
+<a name="l00364"></a>00364 {
+<a name="l00365"></a>00365   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;_len; i++) {
+<a name="l00366"></a>00366     _buf[i] = <a class="code" href="w5100_8c.html#adc92dea40c158d4eb47238bb053ef8b1">w5100_get</a>( _addr );
+<a name="l00367"></a>00367     _addr++;
+<a name="l00368"></a>00368   }
+<a name="l00369"></a>00369   <span class="keywordflow">return</span> _len;
+<a name="l00370"></a>00370 }
+<a name="l00371"></a>00371 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -496,7 +494,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="w5100_8c.html">w5100.c</a>      </li>
 
-    <li class="footer">Generated on Sun Nov 11 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Mon Nov 12 2012 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
