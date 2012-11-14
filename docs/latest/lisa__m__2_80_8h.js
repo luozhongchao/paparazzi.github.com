@@ -92,6 +92,5 @@ var lisa__m__2_80_8h =
     [ "USE_LED_2", "lisa__m__2_80_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf", null ],
     [ "USE_LED_3", "lisa__m__2_80_8h.html#a4da08b59c725550efa312cf16ecdd77c", null ],
     [ "USE_LED_4", "lisa__m__2_80_8h.html#ae74a702840b15e71530a2716b1ef497c", null ],
-    [ "USE_LED_5", "lisa__m__2_80_8h.html#aa8b07cb021b87d0c5868a3cb2851510e", null ],
-    [ "USE_OPENCM3", "lisa__m__2_80_8h.html#a30812227726636f5d87aca10ba40141f", null ]
+    [ "USE_LED_5", "lisa__m__2_80_8h.html#aa8b07cb021b87d0c5868a3cb2851510e", null ]
 ];

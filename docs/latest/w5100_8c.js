@@ -34,6 +34,8 @@ var w5100_8c =
     [ "SOCKETS", "w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1", null ],
     [ "TELEM_SOCKET", "w5100_8c.html#ad9e6b49b12cd9c7ea56b37a36d7e3407", null ],
     [ "TXBUF_BASE", "w5100_8c.html#acd3caafdf38d3dd4bf97d4dd8da30f50", null ],
+    [ "W5100_SLAVE_IDX", "w5100_8c.html#a7972983695fe0e1fc867196359ce0a86", null ],
+    [ "W5100_SPI_DEV", "w5100_8c.html#aa3af4f16178f96f9162b967d4efc9f8e", null ],
     [ "configure_socket", "w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4", null ],
     [ "w5100_ch_available", "w5100_8c.html#a39c39cab10e51d6a05cc91620a96739f", null ],
     [ "w5100_close_socket", "w5100_8c.html#abade1f8840f1a6de842036d8868706a8", null ],

@@ -1,5 +1,7 @@
 var subsystems_2imu_2imu__aspirin2_8c =
 [
+    [ "MPU6000_SLAVE_IDX", "subsystems_2imu_2imu__aspirin2_8c.html#accc2d61152a9b41c4e03d09c4a4cbe07", null ],
+    [ "MPU6000_SPI_DEV", "subsystems_2imu_2imu__aspirin2_8c.html#a938277375a679897d534c11a669eb1be", null ],
     [ "imu_impl_init", "subsystems_2imu_2imu__aspirin2_8c.html#ad32faae58e391642ec8048cb11011998", null ],
     [ "imu_periodic", "subsystems_2imu_2imu__aspirin2_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b", null ],
     [ "mpu_configure", "subsystems_2imu_2imu__aspirin2_8c.html#a990fb9e5514231fb172d12da32a01928", null ],

@@ -192,6 +192,8 @@ var searchData=
   ['mppt_5fstatus_5fidle',['MPPT_STATUS_IDLE',['../MPPT_8c.html#a422b4c80642187846fa2e64832b54937',1,'MPPT.c']]],
   ['mppt_5fstatus_5freading',['MPPT_STATUS_READING',['../MPPT_8c.html#ae8214e69568b6569f5b6b9c11dd5d2f2',1,'MPPT.c']]],
   ['mppt_5fstatus_5fwriting',['MPPT_STATUS_WRITING',['../MPPT_8c.html#ab968d6b4299a0b1a0f87b28b01d9e713',1,'MPPT.c']]],
+  ['mpu6000_5fslave_5fidx',['MPU6000_SLAVE_IDX',['../subsystems_2imu_2imu__aspirin2_8c.html#accc2d61152a9b41c4e03d09c4a4cbe07',1,'imu_aspirin2.c']]],
+  ['mpu6000_5fspi_5fdev',['MPU6000_SPI_DEV',['../subsystems_2imu_2imu__aspirin2_8c.html#a938277375a679897d534c11a669eb1be',1,'imu_aspirin2.c']]],
   ['mpu60x0_5faddr',['MPU60X0_ADDR',['../mpu60X0_8h.html#a90ef447074cb5203d9e9556e89f39cca',1,'mpu60X0.h']]],
   ['mpu60x0_5faddr_5falt',['MPU60X0_ADDR_ALT',['../mpu60X0_8h.html#ace7e3e1e303b603f39e69d3c64e270bd',1,'mpu60X0.h']]],
   ['mpu60x0_5fext_5fsens_5fdata',['MPU60X0_EXT_SENS_DATA',['../mpu60X0_8h.html#a91309260b3e0204570dd8205f6678fb9',1,'mpu60X0.h']]],

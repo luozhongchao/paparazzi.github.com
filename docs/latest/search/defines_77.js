@@ -2,6 +2,8 @@ var searchData=
 [
   ['w5100_5fbuffer_5fnum',['W5100_BUFFER_NUM',['../w5100_8h.html#ac8228007507bc3d4724a8ad3a9ba91b3',1,'w5100.h']]],
   ['w5100_5frx_5fbuffer_5fsize',['W5100_RX_BUFFER_SIZE',['../w5100_8h.html#a69f74830d4721e548a692322b86ccf54',1,'w5100.h']]],
+  ['w5100_5fslave_5fidx',['W5100_SLAVE_IDX',['../w5100_8c.html#a7972983695fe0e1fc867196359ce0a86',1,'w5100.c']]],
+  ['w5100_5fspi_5fdev',['W5100_SPI_DEV',['../w5100_8c.html#aa3af4f16178f96f9162b967d4efc9f8e',1,'w5100.c']]],
   ['w5100_5ftx_5fbuffer_5fsize',['W5100_TX_BUFFER_SIZE',['../w5100_8h.html#a0c5eb0f23b68f787843e4f74561d7bb2',1,'w5100.h']]],
   ['w5100buffer',['W5100Buffer',['../w5100_8h.html#a27b6c05e347f54865d7238288d7a2ea1',1,'w5100.h']]],
   ['w5100chavailable',['W5100ChAvailable',['../w5100_8h.html#a7fe7ca330613f8ff81d2e6d7690ec322',1,'w5100.h']]],

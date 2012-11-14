@@ -25,7 +25,8 @@ var searchData=
   ['updatecrc',['UpdateCRC',['../imu__chimu_8c.html#a2c788af1398c314b3985546d7177df54',1,'imu_chimu.c']]],
   ['usart_5fenable_5firq',['usart_enable_irq',['../stm32_2mcu__periph_2uart__arch_8c.html#aeceeee4af393efc796026d860ee9845d',1,'uart_arch.c']]],
   ['usart_5fisr',['usart_isr',['../stm32_2mcu__periph_2uart__arch_8c.html#ad0ce3e25719e0b3fc9b7b71fc1685625',1,'uart_arch.c']]],
-  ['usb_5flp_5fcan1_5frx0_5firq_5fhandler',['usb_lp_can1_rx0_irq_handler',['../can__arch_8c.html#a709ff5731598a42ba2cf29ddc0bba6a1',1,'usb_lp_can1_rx0_irq_handler(void):&#160;can_arch.c'],['../can__arch_8h.html#a709ff5731598a42ba2cf29ddc0bba6a1',1,'usb_lp_can1_rx0_irq_handler(void):&#160;can_arch.c']]],
+  ['usb_5flp_5fcan1_5frx0_5firq_5fhandler',['usb_lp_can1_rx0_irq_handler',['../can__arch_8h.html#a709ff5731598a42ba2cf29ddc0bba6a1',1,'can_arch.h']]],
+  ['usb_5flp_5fcan_5frx0_5fisr',['usb_lp_can_rx0_isr',['../can__arch_8c.html#aac0d36e759b3f7a070fe08d9dddc9cd0',1,'can_arch.c']]],
   ['usbinthandler',['USBIntHandler',['../usb__ser__hw_8c.html#ae891f923dd9e5e6d7630c5ffc64ce0ec',1,'usb_ser_hw.c']]],
   ['utm_5fof_5flla_5ff',['utm_of_lla_f',['../pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd',1,'utm_of_lla_f(struct UtmCoor_f *utm, struct LlaCoor_f *lla):&#160;pprz_geodetic_float.c'],['../pprz__geodetic__float_8h.html#af99d4775df518f30b741b49c26eceedd',1,'utm_of_lla_f(struct UtmCoor_f *utm, struct LlaCoor_f *lla):&#160;pprz_geodetic_float.c']]]
 ];
