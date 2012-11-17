@@ -222,6 +222,7 @@ var searchData=
   ['humidhtm',['humidhtm',['../humid__htm__b71_8c.html#ac59566e59062a875450e1230e7b03826',1,'humid_htm_b71.c']]],
   ['humidsht',['humidsht',['../humid__sht_8c.html#a24ccb0d3307ade52bfb1c68cf4b4bad6',1,'humidsht():&#160;humid_sht.c'],['../humid__sht_8h.html#a24ccb0d3307ade52bfb1c68cf4b4bad6',1,'humidsht():&#160;humid_sht.c']]],
   ['humidsht_5fi2c',['humidsht_i2c',['../humid__sht__i2c_8c.html#aebb59623691f8f575810941203d0557b',1,'humidsht_i2c():&#160;humid_sht_i2c.c'],['../humid__sht__i2c_8h.html#aebb59623691f8f575810941203d0557b',1,'humidsht_i2c():&#160;humid_sht_i2c.c']]],
+  ['hw_5finit',['hw_init',['../lisa__test__adxl345__dma_8c.html#ae58df14f30461cb37e8607aca5522846',1,'lisa_test_adxl345_dma.c']]],
   ['hw_5fver_5fh',['hw_ver_h',['../structgps__ubx__ucenter__struct.html#a874437be54c3f9c1625d1479133c9bc2',1,'gps_ubx_ucenter_struct']]],
   ['hw_5fver_5fl',['hw_ver_l',['../structgps__ubx__ucenter__struct.html#a4c6a3b4aebc4658f28b6dd1caa61fd5c',1,'gps_ubx_ucenter_struct']]]
 ];

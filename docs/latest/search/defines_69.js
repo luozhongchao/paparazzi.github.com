@@ -313,6 +313,7 @@ var searchData=
   ['itg3200_5fdlpf_5ffs',['ITG3200_DLPF_FS',['../itg3200_8extra_8h.html#a3a5e93297af57e9ff2883aee8f539d16',1,'itg3200.extra.h']]],
   ['itg3200_5ffs_5fsel',['ITG3200_FS_SEL',['../itg3200_8extra_8h.html#a79b3f63caffaadab21d6443a3b08cf64',1,'itg3200.extra.h']]],
   ['itg3200_5fi2c_5faddr',['ITG3200_I2C_ADDR',['../itg3200_8extra_8h.html#a18cb68b584a6ac78296c4fb6a581a1cb',1,'itg3200.extra.h']]],
+  ['itg3200_5fi2c_5fdev',['ITG3200_I2C_DEV',['../imu__aspirin_8c.html#a70937094341b5f90bb4fd9f54de87913',1,'imu_aspirin.c']]],
   ['itg3200_5fi2c_5fdevice',['ITG3200_I2C_DEVICE',['../itg3200_8extra_8h.html#aeeeb1cff286308734e99d9c961a8ab72',1,'itg3200.extra.h']]],
   ['itg3200_5fint_5fcfg',['ITG3200_INT_CFG',['../itg3200_8extra_8h.html#a71eccda656c6a23f70d9aaa9d45d1518',1,'itg3200.extra.h']]],
   ['itg3200_5fpwr_5fmgm',['ITG3200_PWR_MGM',['../itg3200_8extra_8h.html#a0e87ceb8fb5273a841c78ccb9bebd49d',1,'itg3200.extra.h']]],

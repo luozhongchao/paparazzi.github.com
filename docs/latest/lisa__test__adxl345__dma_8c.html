@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-290-gc69e337</span>
+   &#160;<span id="projectnumber">v4.9_devel-294-g40954d8</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,17 +107,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">lisa_test_adxl345_dma.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;libopencm3/stm32/f1/gpio.h&gt;</code><br/>
-<code>#include &lt;libopencm3/stm32/exti.h&gt;</code><br/>
-<code>#include &lt;libopencm3/stm32/spi.h&gt;</code><br/>
-<code>#include &lt;libopencm3/stm32/f1/dma.h&gt;</code><br/>
+<div class="textblock"><code>#include &quot;libopencm3/stm32/f1/gpio.h&quot;</code><br/>
+<code>#include &quot;libopencm3/stm32/f1/nvic.h&quot;</code><br/>
+<code>#include &quot;libopencm3/stm32/exti.h&quot;</code><br/>
 <code>#include &lt;BOARD_CONFIG&gt;</code><br/>
 <code>#include &quot;<a class="el" href="mcu_8h_source.html">mcu.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="sys__time_8h_source.html">mcu_periph/sys_time.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="uart_8h_source.html">mcu_periph/uart.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="downlink_8h_source.html">subsystems/datalink/downlink.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="spi_8h_source.html">mcu_periph/spi.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="adxl345_8h_source.html">peripherals/adxl345.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="my__debug__servo_8h_source.html">my_debug_servo.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for lisa_test_adxl345_dma.c:</div>
@@ -126,92 +125,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="lisa__test__adxl345__dma_8c__incl.png" border="0" usemap="#sw_2airborne_2lisa_2test_2lisa__test__adxl345__dma_8c" alt=""/></div>
 <map name="sw_2airborne_2lisa_2test_2lisa__test__adxl345__dma_8c" id="sw_2airborne_2lisa_2test_2lisa__test__adxl345__dma_8c">
-<area shape="rect" id="node13" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities" alt="" coords="23,83,84,112"/><area shape="rect" id="node17" href="sys__time_8h.html" title="Architecture independent timing functions." alt="" coords="785,83,956,112"/><area shape="rect" id="node28" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="1281,83,1420,112"/><area shape="rect" id="node33" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="1927,83,2148,112"/><area shape="rect" id="node67" href="adxl345_8h.html" title="peripherals/adxl345.h" alt="" coords="1444,83,1601,112"/><area shape="rect" id="node69" href="my__debug__servo_8h.html" title="my_debug_servo.h" alt="" coords="1031,83,1172,112"/><area shape="rect" id="node74" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="2172,83,2225,112"/><area shape="rect" id="node19" href="inttypes_8h.html" title="inttypes.h" alt="" coords="1520,315,1605,344"/><area shape="rect" id="node42" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="1647,160,1908,189"/><area shape="rect" id="node55" href="xbee_8h.html" title="subsystems/datalink/xbee.h" alt="" coords="2471,160,2671,189"/><area shape="rect" id="node62" href="w5100_8h.html" title="subsystems/datalink/w5100.h" alt="" coords="1932,160,2143,189"/><area shape="rect" id="node46" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1999,237,2217,267"/><area shape="rect" id="node51" href="transport_8h.html" title="generic transport header" alt="" coords="1748,237,1975,267"/><area shape="rect" id="node59" href="xbee24_8h.html" title="subsystems/datalink/xbee24.h" alt="" coords="2320,237,2536,267"/></map>
+<area shape="rect" id="node11" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities" alt="" coords="1913,83,1974,112"/><area shape="rect" id="node15" href="sys__time_8h.html" title="Architecture independent timing functions." alt="" coords="1350,83,1521,112"/><area shape="rect" id="node26" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="1596,83,1734,112"/><area shape="rect" id="node31" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="698,83,920,112"/><area shape="rect" id="node65" href="spi_8h.html" title="Architecture independent SPI (Serial Peripheral Interface) API." alt="" coords="1758,83,1889,112"/><area shape="rect" id="node70" href="adxl345_8h.html" title="peripherals/adxl345.h" alt="" coords="1998,83,2156,112"/><area shape="rect" id="node72" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="2180,83,2233,112"/><area shape="rect" id="node17" href="inttypes_8h.html" title="inttypes.h" alt="" coords="337,315,422,344"/><area shape="rect" id="node40" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="160,160,421,189"/><area shape="rect" id="node53" href="xbee_8h.html" title="subsystems/datalink/xbee.h" alt="" coords="912,160,1112,189"/><area shape="rect" id="node60" href="w5100_8h.html" title="subsystems/datalink/w5100.h" alt="" coords="445,160,656,189"/><area shape="rect" id="node44" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="618,237,837,267"/><area shape="rect" id="node49" href="transport_8h.html" title="generic transport header" alt="" coords="368,237,594,267"/><area shape="rect" id="node57" href="xbee24_8h.html" title="subsystems/datalink/xbee24.h" alt="" coords="1042,237,1258,267"/></map>
 </div>
 </div>
 <p><a href="lisa__test__adxl345__dma_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#aba10b2e800f8ec5b603df37f9b752fd9">ADXL345_SLAVE_IDX</a>&#160;&#160;&#160;SPI_SLAVE2</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>&#160;&#160;&#160;spi2</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a514476189fbaf15c716d5e846955d2b8">CONFIGURED</a>&#160;&#160;&#160;6</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#ae4c7f2761e1268cdd7ed6ff6c396919c">AccUnselect</a>()&#160;&#160;&#160;GPIOB-&gt;BSRR = GPIO_Pin_12</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a796a9ac81334e56c79537da011a0d40f">AccSelect</a>()&#160;&#160;&#160;GPIOB-&gt;BRR = GPIO_Pin_12</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a6fa455971d2245e1c1e0e6918b3863d9">AccToggleSelect</a>()&#160;&#160;&#160;GPIOB-&gt;ODR ^= GPIO_Pin_12</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95">write_to_reg</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> addr, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">adxl345_trans_cb</a> (struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *trans)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a54bdc6b87da1873d9a1430ed16e2eff4">init_adxl345_spi_trans</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8">read_data</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a7cebb03b0c23cce4e13ca34789f475a4">main_init_hw</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#ae58df14f30461cb37e8607aca5522846">hw_init</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95">write_to_reg</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> addr, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a9b189d56eb86ceed6da94442aeb278b6">read_fom_reg</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> addr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8">read_data</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a40747dba0f93159403e51109a87575fd">exti2_isr</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#ac13fd4f156b4a88afac6d174103a88a8">dma1_channel4_isr</a> (void)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#aae8dbf74d528a8bee347327657c2f748">acc_status</a> = 0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#ae1e4fdfa81659c51f2db494597e54e58">acc_data_available</a> = <a class="el" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#aad9480ffa38c1335bd7c5b85a82280d2">foo</a> = <a class="el" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structspi__transaction.html">spi_transaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a3491e4b6639386063c95420363dd317b">dma_tx_buf</a> [7]</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lisa__test__adxl345__dma_8c.html#a786c2c9cb859677db86b71efe2fa58dc">dma_rx_buf</a> [7]</td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
-<a class="anchor" id="a796a9ac81334e56c79537da011a0d40f"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::AccSelect" ref="a796a9ac81334e56c79537da011a0d40f" args="()" -->
+<a class="anchor" id="aba10b2e800f8ec5b603df37f9b752fd9"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::ADXL345_SLAVE_IDX" ref="aba10b2e800f8ec5b603df37f9b752fd9" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="lisa__test__aspirin_8c.html#a796a9ac81334e56c79537da011a0d40f">AccSelect</a></td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;GPIOB-&gt;BRR = GPIO_Pin_12</td>
+          <td class="memname">#define <a class="el" href="imu__aspirin_8c.html#aba10b2e800f8ec5b603df37f9b752fd9">ADXL345_SLAVE_IDX</a>&#160;&#160;&#160;SPI_SLAVE2</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00072">72</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00037">37</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00111">read_data()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00091">read_fom_reg()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00075">write_to_reg()</a>.</p>
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00144">init_adxl345_spi_trans()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a6fa455971d2245e1c1e0e6918b3863d9"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::AccToggleSelect" ref="a6fa455971d2245e1c1e0e6918b3863d9" args="()" -->
+<a class="anchor" id="ac0618ea628aedaa3ea0099dbcc83a44a"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::ADXL345_SPI_DEV" ref="ac0618ea628aedaa3ea0099dbcc83a44a" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="lisa__test__aspirin_8c.html#a6fa455971d2245e1c1e0e6918b3863d9">AccToggleSelect</a></td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;GPIOB-&gt;ODR ^= GPIO_Pin_12</td>
+          <td class="memname">#define <a class="el" href="imu__aspirin_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>&#160;&#160;&#160;spi2</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00073">73</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00041">41</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="ae4c7f2761e1268cdd7ed6ff6c396919c"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::AccUnselect" ref="ae4c7f2761e1268cdd7ed6ff6c396919c" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="lisa__test__aspirin_8c.html#ae4c7f2761e1268cdd7ed6ff6c396919c">AccUnselect</a></td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;GPIOB-&gt;BSRR = GPIO_Pin_12</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00071">71</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
-
-<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00307">dma1_channel4_isr()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00217">main_init_hw()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00091">read_fom_reg()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00075">write_to_reg()</a>.</p>
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00134">read_data()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00126">write_to_reg()</a>.</p>
 
 </div>
 </div>
@@ -226,31 +202,44 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00064">64</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00044">44</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00202">main_event_task()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00171">main_periodic_task()</a>.</p>
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00109">main_event_task()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00083">main_periodic_task()</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ac13fd4f156b4a88afac6d174103a88a8"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::dma1_channel4_isr" ref="ac13fd4f156b4a88afac6d174103a88a8" args="(void)" -->
+<a class="anchor" id="ad3c6a8e87c499edd13e2b41b79310f15"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::adxl345_trans_cb" ref="ad3c6a8e87c499edd13e2b41b79310f15" args="(struct spi_transaction *trans)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="lisa__test__adxl345__dma_8c.html#ac13fd4f156b4a88afac6d174103a88a8">dma1_channel4_isr</a> </td>
+          <td class="memname">static void <a class="el" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">adxl345_trans_cb</a> </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *&#160;</td>
+          <td class="paramname"><em>trans</em></td><td>)</td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00307">307</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00140">140</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00071">AccUnselect</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00046">acc_data_available</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00144">init_adxl345_spi_trans()</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lisa__test__adxl345__dma_8c_ad3c6a8e87c499edd13e2b41b79310f15_icgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_ad3c6a8e87c499edd13e2b41b79310f15_icgraph" alt=""/></div>
+<map name="lisa__test__adxl345__dma_8c_ad3c6a8e87c499edd13e2b41b79310f15_icgraph" id="lisa__test__adxl345__dma_8c_ad3c6a8e87c499edd13e2b41b79310f15_icgraph">
+<area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a54bdc6b87da1873d9a1430ed16e2eff4" title="init_adxl345_spi_trans" alt="" coords="189,5,352,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -269,18 +258,58 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00296">296</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00173">173</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00111">read_data()</a>.</p>
+<p>References <a class="el" href="main__demo5_8c_source.html#l00054">foo</a>, <a class="el" href="lpc21_2led__hw_8h_source.html#l00030">LED_TOGGLE</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="lisa__test__adxl345__dma_8c_a40747dba0f93159403e51109a87575fd_cgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a40747dba0f93159403e51109a87575fd_cgraph" alt=""/></div>
-<map name="lisa__test__adxl345__dma_8c_a40747dba0f93159403e51109a87575fd_cgraph" id="lisa__test__adxl345__dma_8c_a40747dba0f93159403e51109a87575fd_cgraph">
-<area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8" title="read_data" alt="" coords="129,5,215,35"/></map>
+</div>
+<a class="anchor" id="ae58df14f30461cb37e8607aca5522846"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::hw_init" ref="ae58df14f30461cb37e8607aca5522846" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="lisa__test__adxl345__dma_8c.html#ae58df14f30461cb37e8607aca5522846">hw_init</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00159">159</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54bdc6b87da1873d9a1430ed16e2eff4"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::init_adxl345_spi_trans" ref="a54bdc6b87da1873d9a1430ed16e2eff4" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="lisa__test__adxl345__dma_8c.html#a54bdc6b87da1873d9a1430ed16e2eff4">init_adxl345_spi_trans</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00144">144</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+
+<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00037">ADXL345_SLAVE_IDX</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00048">adxl345_spi_trans</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00140">adxl345_trans_cb()</a>, <a class="el" href="spi_8h_source.html#l00146">spi_transaction::after_cb</a>, <a class="el" href="spi_8h_source.html#l00143">spi_transaction::bitorder</a>, <a class="el" href="spi_8h_source.html#l00144">spi_transaction::cdiv</a>, <a class="el" href="spi_8h_source.html#l00141">spi_transaction::cpha</a>, <a class="el" href="spi_8h_source.html#l00140">spi_transaction::cpol</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00051">dma_rx_buf</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00050">dma_tx_buf</a>, <a class="el" href="spi_8h_source.html#l00142">spi_transaction::dss</a>, <a class="el" href="spi_8h_source.html#l00134">spi_transaction::input_buf</a>, <a class="el" href="spi_8h_source.html#l00136">spi_transaction::input_length</a>, <a class="el" href="spi_8h_source.html#l00135">spi_transaction::output_buf</a>, <a class="el" href="spi_8h_source.html#l00137">spi_transaction::output_length</a>, <a class="el" href="spi_8h_source.html#l00139">spi_transaction::select</a>, <a class="el" href="spi_8h_source.html#l00138">spi_transaction::slave_idx</a>, <a class="el" href="spi_8h_source.html#l00065">SPICphaEdge2</a>, <a class="el" href="spi_8h_source.html#l00074">SPICpolIdleHigh</a>, <a class="el" href="spi_8h_source.html#l00112">SPIDiv64</a>, <a class="el" href="spi_8h_source.html#l00080">SPIDss8bit</a>, <a class="el" href="spi_8h_source.html#l00102">SPIMSBFirst</a>, and <a class="el" href="spi_8h_source.html#l00053">SPISelectUnselect</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lisa__test__adxl345__dma_8c_a54bdc6b87da1873d9a1430ed16e2eff4_cgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a54bdc6b87da1873d9a1430ed16e2eff4_cgraph" alt=""/></div>
+<map name="lisa__test__adxl345__dma_8c_a54bdc6b87da1873d9a1430ed16e2eff4_cgraph" id="lisa__test__adxl345__dma_8c_a54bdc6b87da1873d9a1430ed16e2eff4_cgraph">
+<area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#ad3c6a8e87c499edd13e2b41b79310f15" title="adxl345_trans_cb" alt="" coords="217,5,351,35"/></map>
 </div>
 </p>
 
@@ -301,18 +330,18 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00043">43</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00064">64</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00202">main_event_task()</a>, <a class="el" href="booz_2test__baro_8c_source.html#l00056">main_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00171">main_periodic_task()</a>, and <a class="el" href="sys__time_8h_source.html#l00090">sys_time_check_and_ack_timer()</a>.</p>
+<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00109">main_event_task()</a>, <a class="el" href="booz_2test__baro_8c_source.html#l00056">main_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00083">main_periodic_task()</a>, and <a class="el" href="sys__time_8h_source.html#l00090">sys_time_check_and_ack_timer()</a>.</p>
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="lisa__test__adxl345__dma_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" alt=""/></div>
 <map name="lisa__test__adxl345__dma_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" id="lisa__test__adxl345__dma_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph">
-<area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1" title="main_event_task" alt="" coords="156,165,287,195"/><area shape="rect" id="node5" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1" title="main_init" alt="" coords="181,219,261,248"/><area shape="rect" id="node29" href="lisa__test__adxl345__dma_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="149,272,293,301"/><area shape="rect" id="node35" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666" title="sys_time_check_and_ack_timer" alt="" coords="109,325,333,355"/><area shape="rect" id="node7" href="booz_2baro__board_8c.html#a9b25546908842f1d38fc56e438d46e21" title="baro_init" alt="" coords="431,112,508,141"/><area shape="rect" id="node9" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b" title="mcu_init" alt="" coords="432,165,507,195"/><area shape="rect" id="node27" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer." alt="" coords="381,219,557,248"/><area shape="rect" id="node11" href="lpc21_2mcu__arch_8c.html#a87671303c7d4a9264b1ffbb07e87f454" title="mcu_arch_init" alt="" coords="608,5,717,35"/><area shape="rect" id="node13" href="sys__time_8c.html#a1e6b75f4db9128a3326d8a6283b0af43" title="sys_time_init" alt="" coords="611,59,715,88"/><area shape="rect" id="node17" href="led_8h.html#a9d9d9b1f30592189c3aa7358c626218f" title="led_init" alt="" coords="629,112,696,141"/><area shape="rect" id="node19" href="lpc21_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0" title="Starts conversions." alt="" coords="628,165,697,195"/><area shape="rect" id="node21" href="usb__serial_8h.html#a96a54f28bfc8bc28963cd2fac74609cd" title="VCOM_init" alt="" coords="620,219,705,248"/><area shape="rect" id="node23" href="sim_2mcu__periph_2spi__arch_8c.html#afc9125c5764a6749703ae4f1303a16f3" title="spi_init_slaves" alt="" coords="607,272,719,301"/><area shape="rect" id="node25" href="dac__arch_8c.html#a6e622fafee8436bf9cf9f6b120352e3c" title="dac_init" alt="" coords="628,325,697,355"/><area shape="rect" id="node15" href="lpc21_2mcu__periph_2sys__time__arch_8c.html#a9b31c2feb846b96205ae20ea6883e1c4" title="sys_time_arch_init" alt="" coords="769,59,908,88"/><area shape="rect" id="node31" href="lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95" title="write_to_reg" alt="" coords="420,272,519,301"/><area shape="rect" id="node33" href="lisa__test__adxl345__dma_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8" title="read_data" alt="" coords="427,325,512,355"/></map>
+<area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1" title="main_event_task" alt="" coords="156,219,287,248"/><area shape="rect" id="node5" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1" title="main_init" alt="" coords="181,272,261,301"/><area shape="rect" id="node29" href="lisa__test__adxl345__dma_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="149,325,293,355"/><area shape="rect" id="node38" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666" title="sys_time_check_and_ack_timer" alt="" coords="109,379,333,408"/><area shape="rect" id="node7" href="booz_2baro__board_8c.html#a9b25546908842f1d38fc56e438d46e21" title="baro_init" alt="" coords="431,165,508,195"/><area shape="rect" id="node9" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b" title="mcu_init" alt="" coords="432,219,507,248"/><area shape="rect" id="node27" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer." alt="" coords="381,272,557,301"/><area shape="rect" id="node11" href="lpc21_2mcu__arch_8c.html#a87671303c7d4a9264b1ffbb07e87f454" title="mcu_arch_init" alt="" coords="608,5,717,35"/><area shape="rect" id="node13" href="sys__time_8c.html#a1e6b75f4db9128a3326d8a6283b0af43" title="sys_time_init" alt="" coords="611,59,715,88"/><area shape="rect" id="node17" href="led_8h.html#a9d9d9b1f30592189c3aa7358c626218f" title="led_init" alt="" coords="629,112,696,141"/><area shape="rect" id="node19" href="lpc21_2mcu__periph_2adc__arch_8c.html#a2b815e6730e8723a6d1d06d9ef8f31c0" title="Starts conversions." alt="" coords="628,165,697,195"/><area shape="rect" id="node21" href="usb__serial_8h.html#a96a54f28bfc8bc28963cd2fac74609cd" title="VCOM_init" alt="" coords="620,219,705,248"/><area shape="rect" id="node23" href="sim_2mcu__periph_2spi__arch_8c.html#afc9125c5764a6749703ae4f1303a16f3" title="spi_init_slaves" alt="" coords="607,272,719,301"/><area shape="rect" id="node25" href="dac__arch_8c.html#a6e622fafee8436bf9cf9f6b120352e3c" title="dac_init" alt="" coords="628,325,697,355"/><area shape="rect" id="node15" href="lpc21_2mcu__periph_2sys__time__arch_8c.html#a9b31c2feb846b96205ae20ea6883e1c4" title="sys_time_arch_init" alt="" coords="769,59,908,88"/><area shape="rect" id="node31" href="lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95" title="write_to_reg" alt="" coords="420,325,519,355"/><area shape="rect" id="node35" href="lisa__test__adxl345__dma_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8" title="read_data" alt="" coords="427,379,512,408"/><area shape="rect" id="node33" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337" title="spi_submit" alt="" coords="617,379,708,408"/></map>
 </div>
 </p>
 
@@ -333,17 +362,17 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00202">202</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00109">109</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00064">CONFIGURED</a>, <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, and <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>.</p>
+<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00046">acc_data_available</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00045">acc_status</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00044">CONFIGURED</a>, <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00051">dma_rx_buf</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="main__demo5_8c_source.html#l00054">foo</a>, and <a class="el" href="lpc21_2led__hw_8h_source.html#l00030">LED_TOGGLE</a>.</p>
 
-<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00043">main()</a>.</p>
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00064">main()</a>.</p>
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="lisa__test__adxl345__dma_8c_a1cd23e45d5c51116ae1e3096912ea1d1_icgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a1cd23e45d5c51116ae1e3096912ea1d1_icgraph" alt=""/></div>
 <map name="lisa__test__adxl345__dma_8c_a1cd23e45d5c51116ae1e3096912ea1d1_icgraph" id="lisa__test__adxl345__dma_8c_a1cd23e45d5c51116ae1e3096912ea1d1_icgraph">
 <area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="185,5,239,35"/></map>
@@ -369,27 +398,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7cebb03b0c23cce4e13ca34789f475a4"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::main_init_hw" ref="a7cebb03b0c23cce4e13ca34789f475a4" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void <a class="el" href="lisa__test__itg3200_8c.html#a7cebb03b0c23cce4e13ca34789f475a4">main_init_hw</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00217">217</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
-
-<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00071">AccUnselect</a>, <a class="el" href="my__debug__servo_8h_source.html#l00046">DEBUG_SERVO2_INIT</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00021">IMU_ACC_DRDY_GPIO</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00022">IMU_ACC_DRDY_GPIO_PORTSOURCE</a>, and <a class="el" href="lisa__l__1_80_8h_source.html#l00020">IMU_ACC_DRDY_RCC_GPIO</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a791eaf74023b4de8d10fbfe0de040ed8"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::main_periodic_task" ref="a791eaf74023b4de8d10fbfe0de040ed8" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -405,28 +413,28 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00171">171</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00083">83</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-<p>References <a class="el" href="adxl345_8h_source.html#l00009">ADXL345_REG_BW_RATE</a>, <a class="el" href="adxl345_8h_source.html#l00012">ADXL345_REG_DATA_FORMAT</a>, <a class="el" href="adxl345_8h_source.html#l00011">ADXL345_REG_INT_ENABLE</a>, <a class="el" href="adxl345_8h_source.html#l00010">ADXL345_REG_POWER_CTL</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00064">CONFIGURED</a>, <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="lpc21_2led__hw_8h_source.html#l00008">LED_PERIODIC</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00111">read_data()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00075">write_to_reg()</a>.</p>
+<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00045">acc_status</a>, <a class="el" href="adxl345_8h_source.html#l00009">ADXL345_REG_BW_RATE</a>, <a class="el" href="adxl345_8h_source.html#l00012">ADXL345_REG_DATA_FORMAT</a>, <a class="el" href="adxl345_8h_source.html#l00011">ADXL345_REG_INT_ENABLE</a>, <a class="el" href="adxl345_8h_source.html#l00010">ADXL345_REG_POWER_CTL</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00044">CONFIGURED</a>, <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="lpc21_2led__hw_8h_source.html#l00008">LED_PERIODIC</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00134">read_data()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00126">write_to_reg()</a>.</p>
 
-<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00043">main()</a>.</p>
-
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_cgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_cgraph" alt=""/></div>
-<map name="lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_cgraph" id="lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_cgraph">
-<area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8" title="read_data" alt="" coords="208,5,293,35"/><area shape="rect" id="node5" href="lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95" title="write_to_reg" alt="" coords="201,59,300,88"/></map>
-</div>
-</p>
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00064">main()</a>.</p>
 
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_cgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_cgraph" alt=""/></div>
+<map name="lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_cgraph" id="lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_cgraph">
+<area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8" title="read_data" alt="" coords="208,5,293,35"/><area shape="rect" id="node7" href="lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95" title="write_to_reg" alt="" coords="201,59,300,88"/><area shape="rect" id="node5" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337" title="spi_submit" alt="" coords="349,32,440,61"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_icgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_icgraph" alt=""/></div>
 <map name="lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_icgraph" id="lisa__test__adxl345__dma_8c_a791eaf74023b4de8d10fbfe0de040ed8_icgraph">
 <area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="201,5,255,35"/></map>
@@ -450,43 +458,33 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00111">111</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00134">134</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00072">AccSelect</a>, and <a class="el" href="adxl345_8h_source.html#l00013">ADXL345_REG_DATA_X0</a>.</p>
+<p>References <a class="el" href="adxl345_8h_source.html#l00013">ADXL345_REG_DATA_X0</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00041">ADXL345_SPI_DEV</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00048">adxl345_spi_trans</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00050">dma_tx_buf</a>, and <a class="el" href="sim_2mcu__periph_2spi__arch_8c_source.html#l00025">spi_submit()</a>.</p>
 
-<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00296">exti2_isr()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00171">main_periodic_task()</a>.</p>
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00083">main_periodic_task()</a>.</p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_icgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_icgraph" alt=""/></div>
-<map name="lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_icgraph" id="lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_icgraph">
-<area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a40747dba0f93159403e51109a87575fd" title="exti2_isr" alt="" coords="177,5,252,35"/><area shape="rect" id="node5" href="lisa__test__adxl345__dma_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="143,59,287,88"/><area shape="rect" id="node7" href="lisa__test__adxl345__dma_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="337,59,391,88"/></map>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_cgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_cgraph" alt=""/></div>
+<map name="lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_cgraph" id="lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_cgraph">
+<area shape="rect" id="node3" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337" title="spi_submit" alt="" coords="141,5,232,35"/></map>
 </div>
 </p>
 
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_icgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_icgraph" alt=""/></div>
+<map name="lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_icgraph" id="lisa__test__adxl345__dma_8c_a4d3a036fc48ecc9ddaaa6d21f5a7bcb8_icgraph">
+<area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="143,5,287,35"/><area shape="rect" id="node5" href="lisa__test__adxl345__dma_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="337,5,391,35"/></map>
 </div>
-<a class="anchor" id="a9b189d56eb86ceed6da94442aeb278b6"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::read_fom_reg" ref="a9b189d56eb86ceed6da94442aeb278b6" args="(uint8_t addr)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="lisa__test__adxl345__dma_8c.html#a9b189d56eb86ceed6da94442aeb278b6">read_fom_reg</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>addr</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00091">91</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
-
-<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00072">AccSelect</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00071">AccUnselect</a>, and <a class="el" href="humid__sht_8h_source.html#l00040">RESET</a>.</p>
+</p>
 
 </div>
 </div>
@@ -515,17 +513,28 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00075">75</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00126">126</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
-<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00072">AccSelect</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00071">AccUnselect</a>, and <a class="el" href="humid__sht_8h_source.html#l00040">RESET</a>.</p>
+<p>References <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00041">ADXL345_SPI_DEV</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00048">adxl345_spi_trans</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00050">dma_tx_buf</a>, <a class="el" href="sim_2mcu__periph_2spi__arch_8c_source.html#l00025">spi_submit()</a>, <a class="el" href="spi_8h_source.html#l00089">SPITransSuccess</a>, <a class="el" href="spi_8h_source.html#l00147">spi_transaction::status</a>, and <a class="el" href="temp__tcouple__adc_8c_source.html#l00052">val</a>.</p>
 
-<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00171">main_periodic_task()</a>.</p>
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00083">main_periodic_task()</a>.</p>
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lisa__test__adxl345__dma_8c_a49e92ddc14319ecfc71e3e0f92e1ce95_cgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a49e92ddc14319ecfc71e3e0f92e1ce95_cgraph" alt=""/></div>
+<map name="lisa__test__adxl345__dma_8c_a49e92ddc14319ecfc71e3e0f92e1ce95_cgraph" id="lisa__test__adxl345__dma_8c_a49e92ddc14319ecfc71e3e0f92e1ce95_cgraph">
+<area shape="rect" id="node3" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337" title="spi_submit" alt="" coords="155,5,245,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="lisa__test__adxl345__dma_8c_a49e92ddc14319ecfc71e3e0f92e1ce95_icgraph.png" border="0" usemap="#lisa__test__adxl345__dma_8c_a49e92ddc14319ecfc71e3e0f92e1ce95_icgraph" alt=""/></div>
 <map name="lisa__test__adxl345__dma_8c_a49e92ddc14319ecfc71e3e0f92e1ce95_icgraph" id="lisa__test__adxl345__dma_8c_a49e92ddc14319ecfc71e3e0f92e1ce95_icgraph">
 <area shape="rect" id="node3" href="lisa__test__adxl345__dma_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="156,5,300,35"/><area shape="rect" id="node5" href="lisa__test__adxl345__dma_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="351,5,404,35"/></map>
@@ -546,7 +555,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00066">66</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00046">46</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00140">adxl345_trans_cb()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00109">main_event_task()</a>.</p>
 
 </div>
 </div>
@@ -561,7 +572,26 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00065">65</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00045">45</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00109">main_event_task()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00083">main_periodic_task()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aabb0017e02a5e39940a8e67001fca26e"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::adxl345_spi_trans" ref="aabb0017e02a5e39940a8e67001fca26e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> <a class="el" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00048">48</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00144">init_adxl345_spi_trans()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00134">read_data()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00126">write_to_reg()</a>.</p>
 
 </div>
 </div>
@@ -576,7 +606,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00069">69</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00051">51</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00144">init_adxl345_spi_trans()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00109">main_event_task()</a>.</p>
 
 </div>
 </div>
@@ -591,7 +623,24 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00068">68</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00050">50</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
+
+<p>Referenced by <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00144">init_adxl345_spi_trans()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00134">read_data()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00126">write_to_reg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad9480ffa38c1335bd7c5b85a82280d2"></a><!-- doxytag: member="lisa_test_adxl345_dma.c::foo" ref="aad9480ffa38c1335bd7c5b85a82280d2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="lisa__test__aspirin_8c.html#a06cc3dbee55a2cf7b23bdb8ab4482f1a">foo</a> = <a class="el" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00047">47</a> of file <a class="el" href="lisa__test__adxl345__dma_8c_source.html">lisa_test_adxl345_dma.c</a>.</p>
 
 </div>
 </div>
@@ -615,7 +664,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="lisa__test__adxl345__dma_8c.html">lisa_test_adxl345_dma.c</a>      </li>
 
-    <li class="footer">Generated on Fri Nov 16 2012 04:00:09 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Nov 17 2012 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

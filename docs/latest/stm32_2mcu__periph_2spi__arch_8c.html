@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-290-gc69e337</span>
+   &#160;<span id="projectnumber">v4.9_devel-294-g40954d8</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -126,6 +126,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="stm32_2mcu__periph_2spi__arch_8c_source.html">Go to the source code of this file.</a></p>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Handling of SPI hardware for STM32. </p>
+<p>SPI Master code.</p>
+<p>This file manages the SPI implementation how it appears to the chip. The public "API" that is used across the modules has different ideas about the numbers used in the spi structures (<a class="el" href="structspi__periph.html">spi_periph</a>).</p>
+<p>This means that from the outside, a <a class="el" href="structspi__periph.html">spi_periph</a> 2 may be mapped to SPI2, even though it's not the primary spi peripheral to use. Alternatively, it may as well be spi0 (mcu_periph/spi.c) which connects to the IMU (SPI2), instead of spi2.</p>
+<p>See the "spix_arch_init()" functions to see where the mapping occurs.</p>
+<p>This does require modifications in the makefiles, because the correct arch_init needs to be called for the selection of aspirin v2.1 for example. </p>
 
 <p>Definition in file <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html">spi_arch.c</a>.</p>
 </div></div><!-- contents -->
@@ -148,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2spi__arch_8c.html">spi_arch.c</a>      </li>
 
-    <li class="footer">Generated on Fri Nov 16 2012 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Nov 17 2012 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
