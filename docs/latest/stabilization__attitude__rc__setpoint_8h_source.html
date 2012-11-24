@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-298-gd6e80de</span>
+   &#160;<span id="projectnumber">v4.9_devel-301-gbe7daca</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -124,8 +124,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
 <a name="l00020"></a>00020 <span class="comment"> */</span>
 <a name="l00021"></a>00021 
-<a name="l00026"></a>00026 <span class="preprocessor">#ifndef STABILISATION_ATTITUDE_RC_SETPOINT_H</span>
-<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#define STABILISATION_ATTITUDE_RC_SETPOINT_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#ifndef STABILIZATION_ATTITUDE_RC_SETPOINT_H</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#define STABILIZATION_ATTITUDE_RC_SETPOINT_H</span>
 <a name="l00028"></a>00028 <span class="preprocessor"></span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include &quot;std.h&quot;</span>
 <a name="l00030"></a>00030 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
@@ -135,17 +135,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="radio__control_8h.html">subsystems/radio_control.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span>
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="preprocessor">#ifdef STABILISATION_ATTITUDE_TYPE_INT</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#if defined STABILIZATION_ATTITUDE_TYPE_INT</span>
 <a name="l00038"></a>00038 <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_PHI     (int32_t)ANGLE_BFP_OF_REAL(STABILIZATION_ATTITUDE_SP_MAX_PHI)</span>
 <a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_THETA   (int32_t)ANGLE_BFP_OF_REAL(STABILIZATION_ATTITUDE_SP_MAX_THETA)</span>
 <a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_R       (int32_t)ANGLE_BFP_OF_REAL(STABILIZATION_ATTITUDE_SP_MAX_R)</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#endif // STABILISATION_ATTITUDE_TYPE_INT</span>
-<a name="l00042"></a>00042 <span class="preprocessor"></span>
-<a name="l00043"></a>00043 <span class="preprocessor">#ifdef STABILISATION_ATTITUDE_TYPE_FLOAT</span>
-<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_PHI   STABILIZATION_ATTITUDE_SP_MAX_PHI</span>
-<a name="l00045"></a>00045 <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_THETA STABILIZATION_ATTITUDE_SP_MAX_THETA</span>
-<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_R     STABILIZATION_ATTITUDE_SP_MAX_R</span>
-<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#endif // STABILISATION_ATTITUDE_TYPE_FLOAT</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#elif defined STABILIZATION_ATTITUDE_TYPE_FLOAT</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_PHI   STABILIZATION_ATTITUDE_SP_MAX_PHI</span>
+<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_THETA STABILIZATION_ATTITUDE_SP_MAX_THETA</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#define SP_MAX_R     STABILIZATION_ATTITUDE_SP_MAX_R</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#error &quot;STABILIZATION_ATTITUDE_TYPE not defined&quot;</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00048"></a>00048 <span class="preprocessor"></span>
 <a name="l00049"></a><a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">00049</a> <span class="preprocessor">#define RC_UPDATE_FREQ 40</span>
 <a name="l00050"></a>00050 <span class="preprocessor"></span>
@@ -169,66 +169,143 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068 <span class="preprocessor">  (radio_control.values[RADIO_YAW] &gt;  STABILIZATION_ATTITUDE_DEADBAND_R || \</span>
 <a name="l00069"></a>00069 <span class="preprocessor">   radio_control.values[RADIO_YAW] &lt; -STABILIZATION_ATTITUDE_DEADBAND_R)</span>
 <a name="l00070"></a>00070 <span class="preprocessor"></span>
-<a name="l00071"></a><a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185">00071</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185">stabilization_attitude_read_rc_setpoint_eulers</a>(<span class="keyword">struct</span> <a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> *sp, bool_t in_flight) {
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073   sp-&gt;<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a> = ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>) <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>]  * <a class="code" href="stabilization__attitude__ref__euler__float_8h.html#abd019b51335ddda98c6bf5e5d368b8ea">SP_MAX_PHI</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
-<a name="l00074"></a>00074   sp-&gt;<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a> = ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>) <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>] * <a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a218ed832e3b97e115ac7ed996671d5ee">SP_MAX_THETA</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076   <span class="keywordflow">if</span> (in_flight) {
-<a name="l00077"></a>00077     <span class="keywordflow">if</span> (<a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a908110653d45fd82871ee768ffe38317">YAW_DEADBAND_EXCEEDED</a>()) {
-<a name="l00078"></a>00078       sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> += ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>) <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6">RADIO_YAW</a>] * <a class="code" href="stabilization__attitude__ref__euler__float_8h.html#a25142bf155063146ef43b6e239b1f438">SP_MAX_R</a> / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">RC_UPDATE_FREQ</a>);
-<a name="l00079"></a>00079       <a class="code" href="pprz__algebra__int_8h.html#afafafd344e879ac5e7177086414524f3">INT32_ANGLE_NORMALIZE</a>(sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
-<a name="l00080"></a>00080     }
-<a name="l00081"></a>00081 <span class="preprocessor">#ifdef STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT</span>
-<a name="l00082"></a>00082 <span class="preprocessor"></span>    <span class="comment">// Make sure the yaw setpoint does not differ too much from the real yaw to prevent a sudden switch at 180 deg</span>
-<a name="l00083"></a>00083     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> delta_psi = sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> - <a class="code" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
-<a name="l00084"></a>00084     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> delta_limit = <a class="code" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT);
-<a name="l00085"></a>00085     <a class="code" href="pprz__algebra__int_8h.html#afafafd344e879ac5e7177086414524f3">INT32_ANGLE_NORMALIZE</a>(delta_psi);
-<a name="l00086"></a>00086     <span class="keywordflow">if</span> (delta_psi &gt; delta_limit){
-<a name="l00087"></a>00087       sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> = <a class="code" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> + delta_limit;
-<a name="l00088"></a>00088     }
-<a name="l00089"></a>00089     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (delta_psi &lt; -delta_limit){
-<a name="l00090"></a>00090       sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> = <a class="code" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> - delta_limit;
-<a name="l00091"></a>00091     }
-<a name="l00092"></a>00092     <a class="code" href="pprz__algebra__int_8h.html#afafafd344e879ac5e7177086414524f3">INT32_ANGLE_NORMALIZE</a>(sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
-<a name="l00093"></a>00093 <span class="preprocessor">#endif</span>
-<a name="l00094"></a>00094 <span class="preprocessor"></span>  }
-<a name="l00095"></a>00095   <span class="keywordflow">else</span> { <span class="comment">/* if not flying, use current yaw as setpoint */</span>
-<a name="l00096"></a>00096     sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> = <a class="code" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
-<a name="l00097"></a>00097   }
-<a name="l00098"></a>00098 }
-<a name="l00099"></a>00099 
-<a name="l00104"></a><a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a190bf96c3d055180f034b080fb11385b">00104</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a190bf96c3d055180f034b080fb11385b" title="Read roll/pitch command from RC as quaternion.">stabilization_attitude_read_rc_roll_pitch_quat</a>(<span class="keyword">struct</span> <a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a>* q) {
-<a name="l00105"></a>00105   q-&gt;<a class="code" href="structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb">qx</a> = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>] * STABILIZATION_ATTITUDE_SP_MAX_PHI / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / 2;
-<a name="l00106"></a>00106   q-&gt;<a class="code" href="structFloatQuat.html#a5ceb12dd2afeb86ce8b2065dde0cd61e">qy</a> = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>] * STABILIZATION_ATTITUDE_SP_MAX_THETA / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / 2;
-<a name="l00107"></a>00107   q-&gt;<a class="code" href="structFloatQuat.html#ada1c73599b4a1dca9752f4106c20d292">qz</a> = 0.0;
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109   <span class="comment">/* normalize */</span>
-<a name="l00110"></a>00110   <span class="keywordtype">float</span> norm = sqrtf(1.0 + <a class="code" href="pprz__algebra_8h.html#a26f8bb75deabaaf4adafe0a093144971">SQUARE</a>(q-&gt;<a class="code" href="structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb">qx</a>)+ <a class="code" href="pprz__algebra_8h.html#a26f8bb75deabaaf4adafe0a093144971">SQUARE</a>(q-&gt;<a class="code" href="structFloatQuat.html#a5ceb12dd2afeb86ce8b2065dde0cd61e">qy</a>));
-<a name="l00111"></a>00111   q-&gt;<a class="code" href="structFloatQuat.html#a4e645cefcbdb25a8cfb0fc0c76d63044">qi</a> = 1.0 / norm;
-<a name="l00112"></a>00112   q-&gt;<a class="code" href="structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb">qx</a> /= norm;
-<a name="l00113"></a>00113   q-&gt;<a class="code" href="structFloatQuat.html#a5ceb12dd2afeb86ce8b2065dde0cd61e">qy</a> /= norm;
-<a name="l00114"></a>00114 }
-<a name="l00115"></a>00115 
-<a name="l00120"></a><a class="code" href="stabilization__attitude__rc__setpoint_8h.html#ad2ad29601c78155e6cf592578253dafb">00120</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#ad2ad29601c78155e6cf592578253dafb" title="Read roll/pitch command from RC as quaternion.">stabilization_attitude_read_rc_roll_pitch_earth_quat</a>(<span class="keyword">struct</span> <a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a>* q) {
-<a name="l00121"></a>00121   <span class="comment">/* only non-zero entries for roll quaternion */</span>
-<a name="l00122"></a>00122   <span class="keywordtype">float</span> roll2 = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>] * STABILIZATION_ATTITUDE_SP_MAX_PHI / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / 2;
-<a name="l00123"></a>00123   <span class="keywordtype">float</span> qx_roll = sinf(roll2);
-<a name="l00124"></a>00124   <span class="keywordtype">float</span> qi_roll = cosf(roll2);
-<a name="l00125"></a>00125 
-<a name="l00126"></a>00126   <span class="comment">/* only non-zero entries for pitch quaternion */</span>
-<a name="l00127"></a>00127   <span class="keywordtype">float</span> pitch2 = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>] * STABILIZATION_ATTITUDE_SP_MAX_THETA / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / 2;
-<a name="l00128"></a>00128   <span class="keywordtype">float</span> qy_pitch = sinf(pitch2);
-<a name="l00129"></a>00129   <span class="keywordtype">float</span> qi_pitch = cosf(pitch2);
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131   <span class="comment">/* only multiply non-zero entries of FLOAT_QUAT_COMP(*q, q_roll, q_pitch) */</span>
-<a name="l00132"></a>00132   q-&gt;<a class="code" href="structFloatQuat.html#a4e645cefcbdb25a8cfb0fc0c76d63044">qi</a> = qi_roll * qi_pitch;
-<a name="l00133"></a>00133   q-&gt;<a class="code" href="structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb">qx</a> = qx_roll * qi_pitch;
-<a name="l00134"></a>00134   q-&gt;<a class="code" href="structFloatQuat.html#a5ceb12dd2afeb86ce8b2065dde0cd61e">qy</a> = qi_roll * qy_pitch;
-<a name="l00135"></a>00135   q-&gt;<a class="code" href="structFloatQuat.html#ada1c73599b4a1dca9752f4106c20d292">qz</a> = -qx_roll * qy_pitch;
-<a name="l00136"></a>00136 }
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138 <span class="preprocessor">#endif </span><span class="comment">/* STABILISATION_ATTITUDE_RC_SETPOINT_H */</span>
+<a name="l00071"></a>00071 
+<a name="l00072"></a><a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185">00072</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185">stabilization_attitude_read_rc_setpoint_eulers</a>(<span class="keyword">struct</span> <a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> *sp, bool_t in_flight) {
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074   sp-&gt;<a class="code" href="structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea" title="in rad with INT32_ANGLE_FRAC">phi</a> = ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>) <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>]  * SP_MAX_PHI / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00075"></a>00075   sp-&gt;<a class="code" href="structInt32Eulers.html#aba4fffb8281e9d4523f10bb9646e76a0" title="in rad with INT32_ANGLE_FRAC">theta</a> = ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>) <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>] * SP_MAX_THETA / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077   <span class="keywordflow">if</span> (in_flight) {
+<a name="l00078"></a>00078     <span class="keywordflow">if</span> (<a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a908110653d45fd82871ee768ffe38317">YAW_DEADBAND_EXCEEDED</a>()) {
+<a name="l00079"></a>00079       sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> += ((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>) <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6">RADIO_YAW</a>] * SP_MAX_R / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">RC_UPDATE_FREQ</a>);
+<a name="l00080"></a>00080       <a class="code" href="pprz__algebra__int_8h.html#afafafd344e879ac5e7177086414524f3">INT32_ANGLE_NORMALIZE</a>(sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
+<a name="l00081"></a>00081     }
+<a name="l00082"></a>00082 <span class="preprocessor">#ifdef STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT</span>
+<a name="l00083"></a>00083 <span class="preprocessor"></span>    <span class="comment">// Make sure the yaw setpoint does not differ too much from the real yaw to prevent a sudden switch at 180 deg</span>
+<a name="l00084"></a>00084     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> delta_psi = sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> - <a class="code" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
+<a name="l00085"></a>00085     <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> delta_limit = <a class="code" href="pprz__algebra__int_8h.html#a488bd4dc490bfad7ff4aa4eb489c193e">ANGLE_BFP_OF_REAL</a>(STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT);
+<a name="l00086"></a>00086     <a class="code" href="pprz__algebra__int_8h.html#afafafd344e879ac5e7177086414524f3">INT32_ANGLE_NORMALIZE</a>(delta_psi);
+<a name="l00087"></a>00087     <span class="keywordflow">if</span> (delta_psi &gt; delta_limit){
+<a name="l00088"></a>00088       sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> = <a class="code" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> + delta_limit;
+<a name="l00089"></a>00089     }
+<a name="l00090"></a>00090     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (delta_psi &lt; -delta_limit){
+<a name="l00091"></a>00091       sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> = <a class="code" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> - delta_limit;
+<a name="l00092"></a>00092     }
+<a name="l00093"></a>00093     <a class="code" href="pprz__algebra__int_8h.html#afafafd344e879ac5e7177086414524f3">INT32_ANGLE_NORMALIZE</a>(sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>);
+<a name="l00094"></a>00094 <span class="preprocessor">#endif</span>
+<a name="l00095"></a>00095 <span class="preprocessor"></span>  }
+<a name="l00096"></a>00096   <span class="keywordflow">else</span> { <span class="comment">/* if not flying, use current yaw as setpoint */</span>
+<a name="l00097"></a>00097     sp-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a> = <a class="code" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int).">stateGetNedToBodyEulers_i</a>()-&gt;<a class="code" href="structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae" title="in rad with INT32_ANGLE_FRAC">psi</a>;
+<a name="l00098"></a>00098   }
+<a name="l00099"></a>00099 }
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 
+<a name="l00102"></a><a class="code" href="stabilization__attitude__rc__setpoint_8h.html#aef80d4c7fedea68a6c45f7d181deda09">00102</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#aef80d4c7fedea68a6c45f7d181deda09">stabilization_attitude_read_rc_setpoint_eulers_f</a>(<span class="keyword">struct</span> <a class="code" href="structFloatEulers.html" title="euler angles">FloatEulers</a> *sp, bool_t in_flight) {
+<a name="l00103"></a>00103   sp-&gt;<a class="code" href="structFloatEulers.html#a4b2c73d59e89d78354658b20058720e0" title="in radians">phi</a> = (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>]  * SP_MAX_PHI / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00104"></a>00104   sp-&gt;<a class="code" href="structFloatEulers.html#a98f8790d7dbb4d3ef03e99cdf27f844e" title="in radians">theta</a> = (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>] * SP_MAX_THETA / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>);
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106   <span class="keywordflow">if</span> (in_flight) {
+<a name="l00107"></a>00107     <span class="keywordflow">if</span> (<a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a908110653d45fd82871ee768ffe38317">YAW_DEADBAND_EXCEEDED</a>()) {
+<a name="l00108"></a>00108       sp-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> += (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6">RADIO_YAW</a>] * SP_MAX_R / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e">RC_UPDATE_FREQ</a>);
+<a name="l00109"></a>00109       <a class="code" href="pprz__algebra__float_8h.html#a082a3591f2701fdcc77609946f1457ad">FLOAT_ANGLE_NORMALIZE</a>(sp-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>);
+<a name="l00110"></a>00110     }
+<a name="l00111"></a>00111 <span class="preprocessor">#ifdef STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT</span>
+<a name="l00112"></a>00112 <span class="preprocessor"></span>    <span class="comment">// Make sure the yaw setpoint does not differ too much from the real yaw to prevent a sudden switch at 180 deg</span>
+<a name="l00113"></a>00113     <span class="keywordtype">float</span> delta_psi = sp-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> - <a class="code" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float).">stateGetNedToBodyEulers_f</a>()-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>;
+<a name="l00114"></a>00114     <a class="code" href="pprz__algebra__float_8h.html#a082a3591f2701fdcc77609946f1457ad">FLOAT_ANGLE_NORMALIZE</a>(delta_psi);
+<a name="l00115"></a>00115     <span class="keywordflow">if</span> (delta_psi &gt; STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT){
+<a name="l00116"></a>00116       sp-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> = <a class="code" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float).">stateGetNedToBodyEulers_f</a>()-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> + STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT;
+<a name="l00117"></a>00117     }
+<a name="l00118"></a>00118     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (delta_psi &lt; -STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT){
+<a name="l00119"></a>00119       sp-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> = <a class="code" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float).">stateGetNedToBodyEulers_f</a>()-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> - STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT;
+<a name="l00120"></a>00120     }
+<a name="l00121"></a>00121     <a class="code" href="pprz__algebra__float_8h.html#a082a3591f2701fdcc77609946f1457ad">FLOAT_ANGLE_NORMALIZE</a>(sp-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>);
+<a name="l00122"></a>00122 <span class="preprocessor">#endif</span>
+<a name="l00123"></a>00123 <span class="preprocessor"></span>  }
+<a name="l00124"></a>00124   <span class="keywordflow">else</span> { <span class="comment">/* if not flying, use current yaw as setpoint */</span>
+<a name="l00125"></a>00125     sp-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a> = <a class="code" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float).">stateGetNedToBodyEulers_f</a>()-&gt;<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>;
+<a name="l00126"></a>00126   }
+<a name="l00127"></a>00127 }
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129 
+<a name="l00134"></a><a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a1cfb0dd0e377d4eb4090bab758c6890d">00134</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a1cfb0dd0e377d4eb4090bab758c6890d" title="Read roll/pitch command from RC as quaternion.">stabilization_attitude_read_rc_roll_pitch_quat_f</a>(<span class="keyword">struct</span> <a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a>* q) {
+<a name="l00135"></a>00135   q-&gt;<a class="code" href="structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb">qx</a> = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>] * STABILIZATION_ATTITUDE_SP_MAX_PHI / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / 2;
+<a name="l00136"></a>00136   q-&gt;<a class="code" href="structFloatQuat.html#a5ceb12dd2afeb86ce8b2065dde0cd61e">qy</a> = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>] * STABILIZATION_ATTITUDE_SP_MAX_THETA / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / 2;
+<a name="l00137"></a>00137   q-&gt;<a class="code" href="structFloatQuat.html#ada1c73599b4a1dca9752f4106c20d292">qz</a> = 0.0;
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139   <span class="comment">/* normalize */</span>
+<a name="l00140"></a>00140   <span class="keywordtype">float</span> norm = sqrtf(1.0 + <a class="code" href="pprz__algebra_8h.html#a26f8bb75deabaaf4adafe0a093144971">SQUARE</a>(q-&gt;<a class="code" href="structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb">qx</a>)+ <a class="code" href="pprz__algebra_8h.html#a26f8bb75deabaaf4adafe0a093144971">SQUARE</a>(q-&gt;<a class="code" href="structFloatQuat.html#a5ceb12dd2afeb86ce8b2065dde0cd61e">qy</a>));
+<a name="l00141"></a>00141   q-&gt;<a class="code" href="structFloatQuat.html#a4e645cefcbdb25a8cfb0fc0c76d63044">qi</a> = 1.0 / norm;
+<a name="l00142"></a>00142   q-&gt;<a class="code" href="structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb">qx</a> /= norm;
+<a name="l00143"></a>00143   q-&gt;<a class="code" href="structFloatQuat.html#a5ceb12dd2afeb86ce8b2065dde0cd61e">qy</a> /= norm;
+<a name="l00144"></a>00144 }
+<a name="l00145"></a>00145 
+<a name="l00150"></a><a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a24bfef588516ec3298735cd90a41ebd0">00150</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a24bfef588516ec3298735cd90a41ebd0" title="Read roll/pitch command from RC as quaternion.">stabilization_attitude_read_rc_roll_pitch_earth_quat_f</a>(<span class="keyword">struct</span> <a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a>* q) {
+<a name="l00151"></a>00151   <span class="comment">/* only non-zero entries for roll quaternion */</span>
+<a name="l00152"></a>00152   <span class="keywordtype">float</span> roll2 = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>] * STABILIZATION_ATTITUDE_SP_MAX_PHI / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / 2;
+<a name="l00153"></a>00153   <span class="keywordtype">float</span> qx_roll = sinf(roll2);
+<a name="l00154"></a>00154   <span class="keywordtype">float</span> qi_roll = cosf(roll2);
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156   <span class="comment">/* only non-zero entries for pitch quaternion */</span>
+<a name="l00157"></a>00157   <span class="keywordtype">float</span> pitch2 = <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>] * STABILIZATION_ATTITUDE_SP_MAX_THETA / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> / 2;
+<a name="l00158"></a>00158   <span class="keywordtype">float</span> qy_pitch = sinf(pitch2);
+<a name="l00159"></a>00159   <span class="keywordtype">float</span> qi_pitch = cosf(pitch2);
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161   <span class="comment">/* only multiply non-zero entries of FLOAT_QUAT_COMP(*q, q_roll, q_pitch) */</span>
+<a name="l00162"></a>00162   q-&gt;<a class="code" href="structFloatQuat.html#a4e645cefcbdb25a8cfb0fc0c76d63044">qi</a> = qi_roll * qi_pitch;
+<a name="l00163"></a>00163   q-&gt;<a class="code" href="structFloatQuat.html#a0687e8bd8978426a17705719298d2bdb">qx</a> = qx_roll * qi_pitch;
+<a name="l00164"></a>00164   q-&gt;<a class="code" href="structFloatQuat.html#a5ceb12dd2afeb86ce8b2065dde0cd61e">qy</a> = qi_roll * qy_pitch;
+<a name="l00165"></a>00165   q-&gt;<a class="code" href="structFloatQuat.html#ada1c73599b4a1dca9752f4106c20d292">qz</a> = -qx_roll * qy_pitch;
+<a name="l00166"></a>00166 }
+<a name="l00167"></a>00167 
+<a name="l00168"></a><a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a3d647a4366d4be6b8ffd5f6d4653058c">00168</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a3d647a4366d4be6b8ffd5f6d4653058c">stabilization_attitude_read_rc_setpoint_quat_f</a>(<span class="keyword">struct</span> <a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a>* q_sp, bool_t in_flight) {
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170   <span class="comment">// FIXME: remove me, do in quaternion directly</span>
+<a name="l00171"></a>00171   <span class="comment">// is currently still needed, since the yaw setpoint integration is done in eulers</span>
+<a name="l00172"></a>00172 <span class="preprocessor">#if defined STABILIZATION_ATTITUDE_TYPE_INT</span>
+<a name="l00173"></a>00173 <span class="preprocessor"></span>  <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185">stabilization_attitude_read_rc_setpoint_eulers</a>(&amp;<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>, in_flight);
+<a name="l00174"></a>00174 <span class="preprocessor">#else</span>
+<a name="l00175"></a>00175 <span class="preprocessor"></span>  <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#aef80d4c7fedea68a6c45f7d181deda09">stabilization_attitude_read_rc_setpoint_eulers_f</a>(&amp;<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>, in_flight);
+<a name="l00176"></a>00176 <span class="preprocessor">#endif</span>
+<a name="l00177"></a>00177 <span class="preprocessor"></span>
+<a name="l00178"></a>00178   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_rp_cmd;
+<a name="l00179"></a>00179 <span class="preprocessor">#if USE_EARTH_BOUND_RC_SETPOINT</span>
+<a name="l00180"></a>00180 <span class="preprocessor"></span>  <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a24bfef588516ec3298735cd90a41ebd0" title="Read roll/pitch command from RC as quaternion.">stabilization_attitude_read_rc_roll_pitch_earth_quat_f</a>(&amp;q_rp_cmd);
+<a name="l00181"></a>00181 <span class="preprocessor">#else</span>
+<a name="l00182"></a>00182 <span class="preprocessor"></span>  <a class="code" href="stabilization__attitude__rc__setpoint_8h.html#a1cfb0dd0e377d4eb4090bab758c6890d" title="Read roll/pitch command from RC as quaternion.">stabilization_attitude_read_rc_roll_pitch_quat_f</a>(&amp;q_rp_cmd);
+<a name="l00183"></a>00183 <span class="preprocessor">#endif</span>
+<a name="l00184"></a>00184 <span class="preprocessor"></span>
+<a name="l00185"></a>00185   <span class="comment">/* get current heading */</span>
+<a name="l00186"></a>00186   <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structFloatVect3.html">FloatVect3</a> zaxis = {0., 0., 1.};
+<a name="l00187"></a>00187   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_yaw;
+<a name="l00188"></a>00188   <a class="code" href="pprz__algebra__float_8h.html#a37771817d997b294fb506a9e0892c915">FLOAT_QUAT_OF_AXIS_ANGLE</a>(q_yaw, zaxis, <a class="code" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float).">stateGetNedToBodyEulers_f</a>()-&gt;psi);
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190   <span class="comment">/* roll/pitch commands applied to to current heading */</span>
+<a name="l00191"></a>00191   <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_rp_sp;
+<a name="l00192"></a>00192   <a class="code" href="pprz__algebra__float_8h.html#a0a76eb680a60ea46d382cee034fbfeb8">FLOAT_QUAT_COMP</a>(q_rp_sp, q_yaw, q_rp_cmd);
+<a name="l00193"></a>00193   <a class="code" href="pprz__algebra__float_8h.html#a9cd81f9e9b5e04260cb4cc54fec267ce">FLOAT_QUAT_NORMALIZE</a>(q_rp_sp);
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195   <span class="keywordflow">if</span> (in_flight)
+<a name="l00196"></a>00196   {
+<a name="l00197"></a>00197     <span class="comment">/* get current heading setpoint */</span>
+<a name="l00198"></a>00198     <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_yaw_sp;
+<a name="l00199"></a>00199 <span class="preprocessor">#if defined STABILIZATION_ATTITUDE_TYPE_INT</span>
+<a name="l00200"></a>00200 <span class="preprocessor"></span>    <a class="code" href="pprz__algebra__float_8h.html#a37771817d997b294fb506a9e0892c915">FLOAT_QUAT_OF_AXIS_ANGLE</a>(q_yaw_sp, zaxis, <a class="code" href="pprz__algebra__int_8h.html#acb03bec97dc344a1416432700179ee1c">ANGLE_FLOAT_OF_BFP</a>(<a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>));
+<a name="l00201"></a>00201 <span class="preprocessor">#else</span>
+<a name="l00202"></a>00202 <span class="preprocessor"></span>    <a class="code" href="pprz__algebra__float_8h.html#a37771817d997b294fb506a9e0892c915">FLOAT_QUAT_OF_AXIS_ANGLE</a>(q_yaw_sp, zaxis, <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>.<a class="code" href="structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75" title="in radians">psi</a>);
+<a name="l00203"></a>00203 <span class="preprocessor">#endif</span>
+<a name="l00204"></a>00204 <span class="preprocessor"></span>
+<a name="l00205"></a>00205     <span class="comment">/* rotation between current yaw and yaw setpoint */</span>
+<a name="l00206"></a>00206     <span class="keyword">struct </span><a class="code" href="structFloatQuat.html" title="Roation quaternion.">FloatQuat</a> q_yaw_diff;
+<a name="l00207"></a>00207     <a class="code" href="pprz__algebra__float_8h.html#a2002d50ff30d8c76d3525ceb83f59fc6">FLOAT_QUAT_COMP_INV</a>(q_yaw_diff, q_yaw_sp, q_yaw);
+<a name="l00208"></a>00208 
+<a name="l00209"></a>00209     <span class="comment">/* compute final setpoint with yaw */</span>
+<a name="l00210"></a>00210     <a class="code" href="pprz__algebra__float_8h.html#a94b4840be39239a9e900434466dc8c73">FLOAT_QUAT_COMP_NORM_SHORTEST</a>(*q_sp, q_rp_sp, q_yaw_diff);
+<a name="l00211"></a>00211   } <span class="keywordflow">else</span> {
+<a name="l00212"></a>00212     <a class="code" href="pprz__algebra_8h.html#aac90b1ef45f1b296e418ee1b5cded854">QUAT_COPY</a>(*q_sp, q_rp_sp);
+<a name="l00213"></a>00213   }
+<a name="l00214"></a>00214 }
+<a name="l00215"></a>00215 <span class="preprocessor">#endif </span><span class="comment">/* STABILIZATION_ATTITUDE_RC_SETPOINT_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -249,7 +326,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stabilization__attitude__rc__setpoint_8h.html">stabilization_attitude_rc_setpoint.h</a>      </li>
 
-    <li class="footer">Generated on Wed Nov 21 2012 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Nov 24 2012 04:00:12 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

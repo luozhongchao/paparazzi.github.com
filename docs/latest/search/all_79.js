@@ -4,7 +4,7 @@ var searchData=
   ['yapa_5f2_2e0_2eh',['yapa_2.0.h',['../yapa__2_80_8h.html',1,'']]],
   ['yaw',['YAW',['../actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1da60ae774ecd1cf97a0e91f76970d64491',1,'actuators_asctec.h']]],
   ['yaw_5fcoef',['YAW_COEF',['../quat__setpoint__int_8c.html#a42bb19be137e2155e693447119d0d21a',1,'YAW_COEF():&#160;quat_setpoint_int.c'],['../motor__mixing_8c.html#a2ae1edcc370497aedc22bc48bba04dd0',1,'yaw_coef():&#160;motor_mixing.c']]],
-  ['yaw_5fdeadband_5fexceeded',['YAW_DEADBAND_EXCEEDED',['../stabilization__attitude__rc__setpoint_8h.html#a908110653d45fd82871ee768ffe38317',1,'YAW_DEADBAND_EXCEEDED():&#160;stabilization_attitude_rc_setpoint.h'],['../stabilization__attitude__ref__euler__float_8h.html#a908110653d45fd82871ee768ffe38317',1,'YAW_DEADBAND_EXCEEDED():&#160;stabilization_attitude_ref_euler_float.h']]],
+  ['yaw_5fdeadband_5fexceeded',['YAW_DEADBAND_EXCEEDED',['../stabilization__attitude__rc__setpoint_8h.html#a908110653d45fd82871ee768ffe38317',1,'stabilization_attitude_rc_setpoint.h']]],
   ['yaw_5frate_5fdeadband_5fexceeded',['YAW_RATE_DEADBAND_EXCEEDED',['../stabilization__rate_8c.html#a30d84448bbdf76dca4d17af8f6bc219c',1,'stabilization_rate.c']]],
   ['yaw_5fstick_5fcentered',['YAW_STICK_CENTERED',['../autopilot__rc__helpers_8h.html#aa893fedb4c84c86bcbc8f7ec075ced57',1,'autopilot_rc_helpers.h']]],
   ['yaw_5fstick_5fpushed',['YAW_STICK_PUSHED',['../autopilot__rc__helpers_8h.html#acd1ef4f5d7952bb8e3088e8800fa1ce5',1,'autopilot_rc_helpers.h']]],

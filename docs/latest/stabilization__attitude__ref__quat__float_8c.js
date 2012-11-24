@@ -4,7 +4,7 @@ var stabilization__attitude__ref__quat__float_8c =
     [ "REF_ACCEL_MAX_P", "stabilization__attitude__ref__quat__float_8c.html#aa2941d3d67e37b8762d12eb56c349d78", null ],
     [ "REF_ACCEL_MAX_Q", "stabilization__attitude__ref__quat__float_8c.html#abd4a56cc72ad97fefe95cae5f11b5924", null ],
     [ "REF_ACCEL_MAX_R", "stabilization__attitude__ref__quat__float_8c.html#a51e82f953cec8b116f7f07a25bb6dae2", null ],
-    [ "reset_psi_ref_from_body", "stabilization__attitude__ref__quat__float_8c.html#a60f842edfa8dd98a227f18def04a0b55", null ],
+    [ "STABILIZATION_ATTITUDE_FLOAT_REF_QUAT_INFINITESIMAL_STEP", "stabilization__attitude__ref__quat__float_8c.html#a2c02e3ba163b2b7122f6ed51e8d30d34", null ],
     [ "stabilization_attitude_ref_enter", "stabilization__attitude__ref__quat__float_8c.html#a4653dafe8c5e5680c05207027db750f0", null ],
     [ "stabilization_attitude_ref_init", "stabilization__attitude__ref__quat__float_8c.html#a7682c717beab8da148168162d84cb33e", null ],
     [ "stabilization_attitude_ref_schedule", "stabilization__attitude__ref__quat__float_8c.html#ae1354f18f6f9687f682984d2bccbfb98", null ],
