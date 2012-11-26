@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r',['r',['../structDoubleRates.html#a7900fc423e0731a60ec3b3a502cef75a',1,'DoubleRates::r()'],['../structFloatRates.html#a75e3090314c4ad6edf12f7c08d9c5c0a',1,'FloatRates::r()'],['../structInt16Rates.html#a981fb53a44086f40352161c1698b20e4',1,'Int16Rates::r()'],['../structInt32Rates.html#a6875ec572190ce2b63fe2a5658978494',1,'Int32Rates::r()'],['../structInt64Rates.html#a25556c78d8f5eaeab686329f6104da26',1,'Int64Rates::r()'],['../structAccBuf.html#a6782c0cfbb2b87c5e512c706b60f921b',1,'AccBuf::r()'],['../agl__vfilter_8c.html#a5c71a5e59a53413cd6c270266d63b031',1,'R():&#160;agl_vfilter.c'],['../alt__vfilter_8c.html#a5c71a5e59a53413cd6c270266d63b031',1,'R():&#160;alt_vfilter.c'],['../vf__float_8c.html#a5c71a5e59a53413cd6c270266d63b031',1,'R():&#160;vf_float.c']]],
+  ['r',['r',['../structDoubleRates.html#a7900fc423e0731a60ec3b3a502cef75a',1,'DoubleRates::r()'],['../structFloatRates.html#a75e3090314c4ad6edf12f7c08d9c5c0a',1,'FloatRates::r()'],['../structInt16Rates.html#a981fb53a44086f40352161c1698b20e4',1,'Int16Rates::r()'],['../structInt32Rates.html#a6875ec572190ce2b63fe2a5658978494',1,'Int32Rates::r()'],['../structInt64Rates.html#a25556c78d8f5eaeab686329f6104da26',1,'Int64Rates::r()'],['../structAccBuf.html#a6782c0cfbb2b87c5e512c706b60f921b',1,'AccBuf::r()'],['../agl__vfilter_8c.html#a5c71a5e59a53413cd6c270266d63b031',1,'R():&#160;agl_vfilter.c'],['../alt__vfilter_8c.html#a5c71a5e59a53413cd6c270266d63b031',1,'R():&#160;alt_vfilter.c']]],
   ['r1t',['R1T',['../nav_8c.html#aab42b8493c217be79eb8f2523b6aed32abe183b30b1054c0977b12028d7a38ae0',1,'nav.c']]],
   ['r2t',['R2T',['../nav_8c.html#aab42b8493c217be79eb8f2523b6aed32ac3a5bc8a5c131d8463ba354e54b2305b',1,'nav.c']]],
   ['r_5falt',['R_ALT',['../vf__extended__float_8c.html#a42afc75d03c75255f5d5b8d5f7bdcec9',1,'vf_extended_float.c']]],
@@ -86,7 +86,7 @@ var searchData=
   ['rc_5fjoby_5fmagic_5fstart',['RC_JOBY_MAGIC_START',['../joby_8h.html#acff1028e77a8cf43922bc2bb1d783361',1,'joby.h']]],
   ['rc_5fjoby_5fparse',['rc_joby_parse',['../joby_8c.html#a6df4cf9bcc7728136dcfe12367a00491',1,'rc_joby_parse(int8_t c, void(*callback)(void)):&#160;joby.c'],['../joby_8h.html#a6df4cf9bcc7728136dcfe12367a00491',1,'rc_joby_parse(int8_t c, void(*callback)(void)):&#160;joby.c']]],
   ['rc_5fjoby_5fparser_5fstate',['rc_joby_parser_state',['../structrc__joby__parser__state.html',1,'']]],
-  ['rc_5fjoby_5fsigns',['RC_JOBY_SIGNS',['../joby__9ch_8h.html#a2233530c891bc879ec3bca1afb40d9e7',1,'RC_JOBY_SIGNS():&#160;joby_9ch.h'],['../joby_8c.html#a93ce8a01d5e7d089748390be0aa30a67',1,'rc_joby_signs():&#160;joby.c']]],
+  ['rc_5fjoby_5fsigns',['rc_joby_signs',['../joby_8c.html#a93ce8a01d5e7d089748390be0aa30a67',1,'rc_joby_signs():&#160;joby.c'],['../joby__9ch_8h.html#a2233530c891bc879ec3bca1afb40d9e7',1,'RC_JOBY_SIGNS():&#160;joby_9ch.h']]],
   ['rc_5fjoby_5fsync_5f2',['RC_JOBY_SYNC_2',['../joby__9ch_8h.html#a4f61bcae9d06003dc3cf168ee48c055a',1,'joby_9ch.h']]],
   ['rc_5flost',['RC_LOST',['../radio__control_8h.html#ae260ed6c98624fcd1d70c232038204d2',1,'radio_control.h']]],
   ['rc_5flost_5fmode',['RC_LOST_MODE',['../main__ap_8c.html#ad2d4961da684eacdb42ba6907edc216d',1,'main_ap.c']]],
@@ -185,7 +185,7 @@ var searchData=
   ['reporting_5ftask',['reporting_task',['../main__ap_8c.html#a35e24bbf955d315ca24de207ead69ce2',1,'reporting_task(void):&#160;main_ap.c'],['../main__ap_8h.html#a35e24bbf955d315ca24de207ead69ce2',1,'reporting_task(void):&#160;main_ap.c']]],
   ['request_5ffor_5fmsg',['request_for_msg',['../gsm_8c.html#a377a0f36a72423ed3927a7e7c93b6b9d',1,'gsm.c']]],
   ['reserved',['RESERVED',['../gps__ubx__ucenter_8c.html#a56701f18aaad537f7fc0e9be309503c3',1,'gps_ubx_ucenter.c']]],
-  ['reset',['reset',['../structGpsState.html#ae9f9449dccc1b1f9404d44246245ef7b',1,'GpsState::reset()'],['../baro__MS5534A_8c.html#ae9f68c6af70342cbaad9f8500d0b6f23',1,'reset():&#160;baro_MS5534A.c'],['../lpc21_2mcu__arch_8c.html#a3aea9deb2a0bfea9ff05a898f4822e31',1,'reset(void):&#160;mcu_arch.c'],['../humid__sht_8h.html#ab702106cf3b3e96750b6845ded4e0299',1,'RESET():&#160;humid_sht.h']]],
+  ['reset',['reset',['../structGpsState.html#ae9f9449dccc1b1f9404d44246245ef7b',1,'GpsState::reset()'],['../humid__sht_8h.html#ab702106cf3b3e96750b6845ded4e0299',1,'RESET():&#160;humid_sht.h'],['../baro__MS5534A_8c.html#ae9f68c6af70342cbaad9f8500d0b6f23',1,'reset():&#160;baro_MS5534A.c'],['../lpc21_2mcu__arch_8c.html#a3aea9deb2a0bfea9ff05a898f4822e31',1,'reset(void):&#160;mcu_arch.c']]],
   ['reset_5fpsi_5fref_5ffrom_5fbody',['reset_psi_ref_from_body',['../stabilization__attitude__ref__float_8h.html#a60f842edfa8dd98a227f18def04a0b55',1,'reset_psi_ref_from_body(void):&#160;stabilization_attitude_ref_float.h'],['../stabilization__attitude__ref__int_8h.html#a60f842edfa8dd98a227f18def04a0b55',1,'reset_psi_ref_from_body(void):&#160;stabilization_attitude_ref_int.h']]],
   ['reset_5fsp_5fquat',['reset_sp_quat',['../quat__setpoint__int_8c.html#ab326c21111c586e9f1971b52b8444c49',1,'quat_setpoint_int.c']]],
   ['residual',['residual',['../structAhrsIntCmplEuler.html#a65da0278b786a678fc1bd6fd9fb61cee',1,'AhrsIntCmplEuler']]],

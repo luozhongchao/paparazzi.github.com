@@ -64,7 +64,7 @@ var searchData=
   ['accel_5fned_5ff',['ACCEL_NED_F',['../group__state__acceleration.html#ga2dee1fa8ad515c618138f1646ddc484f',1,'state.h']]],
   ['accel_5fned_5fi',['ACCEL_NED_I',['../group__state__acceleration.html#gadda4d0520e9e62ad57b57482439a7c51',1,'state.h']]],
   ['accel_5fneutral',['accel_neutral',['../structImu.html#ab126bba936ccd50bad68d42e83b81a28',1,'Imu']]],
-  ['accel_5fnoise',['ACCEL_NOISE',['../vf__extended__float_8c.html#ab9860884bcc40dbf52ddde46120acc65',1,'ACCEL_NOISE():&#160;vf_extended_float.c'],['../vf__float_8c.html#ab9860884bcc40dbf52ddde46120acc65',1,'ACCEL_NOISE():&#160;vf_float.c']]],
+  ['accel_5fnoise',['ACCEL_NOISE',['../vf__extended__float_8c.html#ab9860884bcc40dbf52ddde46120acc65',1,'vf_extended_float.c']]],
   ['accel_5fprev',['accel_prev',['../structImu.html#ab29bc6fde030f41e3e990323a4fa2fd5',1,'Imu']]],
   ['accel_5frx_5fbuf',['accel_rx_buf',['../structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b',1,'ImuAspirin']]],
   ['accel_5fstatus',['accel_status',['../group__state__acceleration.html#ga42a40deda3336374ca2d3322c9e176d9',1,'State']]],

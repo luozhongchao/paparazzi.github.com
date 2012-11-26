@@ -1,11 +1,11 @@
 var vf__float_8c =
 [
-    [ "ACCEL_NOISE", "vf__float_8c.html#ab9860884bcc40dbf52ddde46120acc65", null ],
-    [ "INIT_PXX", "vf__float_8c.html#a9de0af96144a82e765244bb6df486243", null ],
     [ "Qbiasbias", "vf__float_8c.html#a70f5ca9eb3931cae7b39b297ec278141", null ],
     [ "Qzdotzdot", "vf__float_8c.html#a99b541a7423858873e12150399506ed3", null ],
     [ "Qzz", "vf__float_8c.html#a31ece75d157943bfda2cedd5408cc865", null ],
-    [ "R", "vf__float_8c.html#a5c71a5e59a53413cd6c270266d63b031", null ],
+    [ "VF_FLOAT_ACCEL_NOISE", "vf__float_8c.html#acb4baca80337ffcb10d0a2222821d751", null ],
+    [ "VF_FLOAT_INIT_PXX", "vf__float_8c.html#a5d05db290cef2174d4d839d3daa420ea", null ],
+    [ "VF_FLOAT_MEAS_NOISE", "vf__float_8c.html#af00eb9fdc82dccb69788197286213614", null ],
     [ "update_vz_conf", "vf__float_8c.html#a0b39a581ab3b41a47578b26dd98f567f", null ],
     [ "update_z_conf", "vf__float_8c.html#aafd7012999c4a5c623b6b6f311ec595a", null ],
     [ "vff_init", "vf__float_8c.html#a29db6a6034952b28118ae9ea1ec00ca4", null ],

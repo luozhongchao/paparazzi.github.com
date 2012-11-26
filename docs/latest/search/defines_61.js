@@ -19,7 +19,7 @@ var searchData=
   ['accel_5ffloat_5fof_5fbfp',['ACCEL_FLOAT_OF_BFP',['../pprz__algebra__int_8h.html#aeb7ad4ba2eac8c6f8e608fa42ab9c144',1,'pprz_algebra_int.h']]],
   ['accel_5fned_5ff',['ACCEL_NED_F',['../group__state__acceleration.html#ga2dee1fa8ad515c618138f1646ddc484f',1,'state.h']]],
   ['accel_5fned_5fi',['ACCEL_NED_I',['../group__state__acceleration.html#gadda4d0520e9e62ad57b57482439a7c51',1,'state.h']]],
-  ['accel_5fnoise',['ACCEL_NOISE',['../vf__extended__float_8c.html#ab9860884bcc40dbf52ddde46120acc65',1,'ACCEL_NOISE():&#160;vf_extended_float.c'],['../vf__float_8c.html#ab9860884bcc40dbf52ddde46120acc65',1,'ACCEL_NOISE():&#160;vf_float.c']]],
+  ['accel_5fnoise',['ACCEL_NOISE',['../vf__extended__float_8c.html#ab9860884bcc40dbf52ddde46120acc65',1,'vf_extended_float.c']]],
   ['accelevent',['AccelEvent',['../adxl345_8extra__i2c_8h.html#a9c96b00b0a86a153571ed477af60b305',1,'adxl345.extra_i2c.h']]],
   ['accels_5fbfp_5fof_5freal',['ACCELS_BFP_OF_REAL',['../pprz__algebra_8h.html#abb921965daa8027b7a6075f16e2d1d40',1,'pprz_algebra.h']]],
   ['accels_5ffloat_5fof_5fbfp',['ACCELS_FLOAT_OF_BFP',['../pprz__algebra_8h.html#af9eb2d25685d01da0856faf230a6e5d5',1,'pprz_algebra.h']]],

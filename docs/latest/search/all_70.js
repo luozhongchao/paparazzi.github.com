@@ -296,7 +296,7 @@ var searchData=
   ['pinsel2',['PINSEL2',['../LPC21xx_8h.html#ac43539e28c63bbab43998e0fde66a96f',1,'LPC21xx.h']]],
   ['pipe_5fstream',['pipe_stream',['../sim__uart_8c.html#a4dafaba9a225a8b97dbfbf25fedfcd4d',1,'pipe_stream():&#160;sim_uart.c'],['../sim__uart_8h.html#a4dafaba9a225a8b97dbfbf25fedfcd4d',1,'pipe_stream():&#160;sim_uart.c']]],
   ['pitch',['pitch',['../structInfrared.html#ae86ecec8d0eda43d29fd65efba9bbc69',1,'Infrared::pitch()'],['../actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1daa4ed247aa19723caf868d2b2dd5cf4ff',1,'PITCH():&#160;actuators_asctec.h']]],
-  ['pitch_5fcoef',['PITCH_COEF',['../quat__setpoint__int_8c.html#a95eedd3b24667c8e3cb33326ee60e934',1,'PITCH_COEF():&#160;quat_setpoint_int.c'],['../motor__mixing_8c.html#a283724cdd12c661eabd1bbdb1af0a853',1,'pitch_coef():&#160;motor_mixing.c']]],
+  ['pitch_5fcoef',['pitch_coef',['../motor__mixing_8c.html#a283724cdd12c661eabd1bbdb1af0a853',1,'pitch_coef():&#160;motor_mixing.c'],['../quat__setpoint__int_8c.html#a95eedd3b24667c8e3cb33326ee60e934',1,'PITCH_COEF():&#160;quat_setpoint_int.c']]],
   ['pitch_5fdeadband_5fexceeded',['PITCH_DEADBAND_EXCEEDED',['../stabilization__attitude__rc__setpoint_8h.html#a502a88bbc096e471006af59f53dc060a',1,'stabilization_attitude_rc_setpoint.h']]],
   ['pitch_5fneutral',['pitch_neutral',['../structInfrared.html#ada37f5ce5e10d1409e25bcbad218bd11',1,'Infrared']]],
   ['pitch_5fof_5fthrottle_5fgain',['pitch_of_throttle_gain',['../arch_2sim_2modules_2ins_2ins__arduimu_8c.html#a50d9ed747ef12e52637cf7ec8283cfe6',1,'pitch_of_throttle_gain():&#160;ins_arduimu.c'],['../ins__arduimu_8h.html#a50d9ed747ef12e52637cf7ec8283cfe6',1,'pitch_of_throttle_gain():&#160;ins_arduimu.c']]],

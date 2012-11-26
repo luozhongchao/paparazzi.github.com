@@ -92,6 +92,7 @@ var searchData=
   ['baro_5fhca_5fmax_5fpressure',['BARO_HCA_MAX_PRESSURE',['../baro__hca_8c.html#a31d557ee22aeebd73b36dd6865750a35',1,'baro_hca.c']]],
   ['baro_5fhca_5fmin_5fout',['BARO_HCA_MIN_OUT',['../baro__hca_8c.html#a00f99dbc0fdb2058a5c6b931db4939f1',1,'baro_hca.c']]],
   ['baro_5fhca_5fmin_5fpressure',['BARO_HCA_MIN_PRESSURE',['../baro__hca_8c.html#a3e38004862118278da012335fd096011',1,'baro_hca.c']]],
+  ['baro_5fperiodic_5ffrequency',['BARO_PERIODIC_FREQUENCY',['../firmwares_2rotorcraft_2main_8c.html#a124e8be962a54f3f7a0957fa34ec5876',1,'main.c']]],
   ['baro_5fscp_5fidle',['BARO_SCP_IDLE',['../baro__scp__i2c_8h.html#a4a5962e918a5fc89f6f1092e261095d6',1,'baro_scp_i2c.h']]],
   ['baro_5fscp_5frd_5fpress_5f0',['BARO_SCP_RD_PRESS_0',['../baro__scp__i2c_8h.html#a92b45c3898d6cc60a581ab86517e51b8',1,'baro_scp_i2c.h']]],
   ['baro_5fscp_5frd_5fpress_5f1',['BARO_SCP_RD_PRESS_1',['../baro__scp__i2c_8h.html#a4b0893442f7483e473f3c86c1abe6876',1,'baro_scp_i2c.h']]],

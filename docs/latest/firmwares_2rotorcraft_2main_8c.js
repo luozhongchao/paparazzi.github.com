@@ -1,5 +1,6 @@
 var firmwares_2rotorcraft_2main_8c =
 [
+    [ "BARO_PERIODIC_FREQUENCY", "firmwares_2rotorcraft_2main_8c.html#a124e8be962a54f3f7a0957fa34ec5876", null ],
     [ "MODULES_C", "firmwares_2rotorcraft_2main_8c.html#ac3c586d9cc5d614d34061b3844a1e45b", null ],
     [ "failsafe_check", "firmwares_2rotorcraft_2main_8c.html#a6266a73fe8c0512f1de72cea96e5110b", null ],
     [ "handle_periodic_tasks", "firmwares_2rotorcraft_2main_8c.html#acfa2a521a46d9beb8a3fa77bb0c9e407", null ],

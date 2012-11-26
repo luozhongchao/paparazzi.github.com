@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-301-gbe7daca</span>
+   &#160;<span id="projectnumber">v4.9_devel-305-g9423ab5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -122,12 +122,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a9de0af96144a82e765244bb6df486243">INIT_PXX</a>&#160;&#160;&#160;1.</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#ab9860884bcc40dbf52ddde46120acc65">ACCEL_NOISE</a>&#160;&#160;&#160;0.5</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a31ece75d157943bfda2cedd5408cc865">Qzz</a>&#160;&#160;&#160;<a class="el" href="vf__float_8c.html#ab9860884bcc40dbf52ddde46120acc65">ACCEL_NOISE</a>/512./512./2.</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a99b541a7423858873e12150399506ed3">Qzdotzdot</a>&#160;&#160;&#160;<a class="el" href="vf__float_8c.html#ab9860884bcc40dbf52ddde46120acc65">ACCEL_NOISE</a>/512.</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a5d05db290cef2174d4d839d3daa420ea">VF_FLOAT_INIT_PXX</a>&#160;&#160;&#160;1.0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#acb4baca80337ffcb10d0a2222821d751">VF_FLOAT_ACCEL_NOISE</a>&#160;&#160;&#160;0.5</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#af00eb9fdc82dccb69788197286213614">VF_FLOAT_MEAS_NOISE</a>&#160;&#160;&#160;1.0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a31ece75d157943bfda2cedd5408cc865">Qzz</a>&#160;&#160;&#160;<a class="el" href="vf__float_8c.html#acb4baca80337ffcb10d0a2222821d751">VF_FLOAT_ACCEL_NOISE</a> * DT_VFILTER * DT_VFILTER / 2.</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a99b541a7423858873e12150399506ed3">Qzdotzdot</a>&#160;&#160;&#160;<a class="el" href="vf__float_8c.html#acb4baca80337ffcb10d0a2222821d751">VF_FLOAT_ACCEL_NOISE</a> * DT_VFILTER</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a70f5ca9eb3931cae7b39b297ec278141">Qbiasbias</a>&#160;&#160;&#160;1e-7</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a5c71a5e59a53413cd6c270266d63b031">R</a>&#160;&#160;&#160;1.</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a29db6a6034952b28118ae9ea1ec00ca4">vff_init</a> (float init_z, float init_zdot, float init_bias)</td></tr>
@@ -148,38 +148,6 @@ Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vf__float_8c.html#a70bf4fe0af826d88a29e934e4768b9fc">vff_z_meas</a></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
-<a class="anchor" id="ab9860884bcc40dbf52ddde46120acc65"></a><!-- doxytag: member="vf_float.c::ACCEL_NOISE" ref="ab9860884bcc40dbf52ddde46120acc65" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="vf__float_8c.html#ab9860884bcc40dbf52ddde46120acc65">ACCEL_NOISE</a>&#160;&#160;&#160;0.5</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00036">36</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9de0af96144a82e765244bb6df486243"></a><!-- doxytag: member="vf_float.c::INIT_PXX" ref="a9de0af96144a82e765244bb6df486243" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="vf__float_8c.html#a9de0af96144a82e765244bb6df486243">INIT_PXX</a>&#160;&#160;&#160;1.</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00034">34</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
-
-<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00051">vff_init()</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a70f5ca9eb3931cae7b39b297ec278141"></a><!-- doxytag: member="vf_float.c::Qbiasbias" ref="a70f5ca9eb3931cae7b39b297ec278141" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -191,9 +159,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00039">39</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00051">51</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
-<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00082">vff_propagate()</a>.</p>
+<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00093">vff_propagate()</a>.</p>
 
 </div>
 </div>
@@ -202,15 +170,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="vf__float_8c.html#a99b541a7423858873e12150399506ed3">Qzdotzdot</a>&#160;&#160;&#160;<a class="el" href="vf__float_8c.html#ab9860884bcc40dbf52ddde46120acc65">ACCEL_NOISE</a>/512.</td>
+          <td class="memname">#define <a class="el" href="vf__float_8c.html#a99b541a7423858873e12150399506ed3">Qzdotzdot</a>&#160;&#160;&#160;<a class="el" href="vf__float_8c.html#acb4baca80337ffcb10d0a2222821d751">VF_FLOAT_ACCEL_NOISE</a> * DT_VFILTER</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00038">38</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00050">50</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
-<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00082">vff_propagate()</a>.</p>
+<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00093">vff_propagate()</a>.</p>
 
 </div>
 </div>
@@ -219,24 +187,24 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="vf__float_8c.html#a31ece75d157943bfda2cedd5408cc865">Qzz</a>&#160;&#160;&#160;<a class="el" href="vf__float_8c.html#ab9860884bcc40dbf52ddde46120acc65">ACCEL_NOISE</a>/512./512./2.</td>
+          <td class="memname">#define <a class="el" href="vf__float_8c.html#a31ece75d157943bfda2cedd5408cc865">Qzz</a>&#160;&#160;&#160;<a class="el" href="vf__float_8c.html#acb4baca80337ffcb10d0a2222821d751">VF_FLOAT_ACCEL_NOISE</a> * DT_VFILTER * DT_VFILTER / 2.</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00037">37</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00049">49</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
-<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00082">vff_propagate()</a>.</p>
+<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00093">vff_propagate()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5c71a5e59a53413cd6c270266d63b031"></a><!-- doxytag: member="vf_float.c::R" ref="a5c71a5e59a53413cd6c270266d63b031" args="" -->
+<a class="anchor" id="acb4baca80337ffcb10d0a2222821d751"></a><!-- doxytag: member="vf_float.c::VF_FLOAT_ACCEL_NOISE" ref="acb4baca80337ffcb10d0a2222821d751" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="vf__float_8c.html#a5c71a5e59a53413cd6c270266d63b031">R</a>&#160;&#160;&#160;1.</td>
+          <td class="memname">#define <a class="el" href="vf__float_8c.html#acb4baca80337ffcb10d0a2222821d751">VF_FLOAT_ACCEL_NOISE</a>&#160;&#160;&#160;0.5</td>
         </tr>
       </table>
 </div>
@@ -244,7 +212,39 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="vf__float_8c_source.html#l00040">40</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
-<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00158">vff_update()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a5d05db290cef2174d4d839d3daa420ea"></a><!-- doxytag: member="vf_float.c::VF_FLOAT_INIT_PXX" ref="a5d05db290cef2174d4d839d3daa420ea" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="vf__float_8c.html#a5d05db290cef2174d4d839d3daa420ea">VF_FLOAT_INIT_PXX</a>&#160;&#160;&#160;1.0</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00035">35</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+
+<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00062">vff_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af00eb9fdc82dccb69788197286213614"></a><!-- doxytag: member="vf_float.c::VF_FLOAT_MEAS_NOISE" ref="af00eb9fdc82dccb69788197286213614" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="vf__float_8c.html#af00eb9fdc82dccb69788197286213614">VF_FLOAT_MEAS_NOISE</a>&#160;&#160;&#160;1.0</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00045">45</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+
+<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00169">vff_update()</a>.</p>
 
 </div>
 </div>
@@ -274,11 +274,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00180">180</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00191">191</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 <p>References <a class="el" href="vf__extended__float_8c_source.html#l00056">vff_bias</a>, <a class="el" href="vf__extended__float_8c_source.html#l00060">vff_P</a>, <a class="el" href="vf__extended__float_8c_source.html#l00054">vff_z</a>, and <a class="el" href="vf__extended__float_8c_source.html#l00055">vff_zdot</a>.</p>
 
-<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00213">vff_update_vz_conf()</a>.</p>
+<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00224">vff_update_vz_conf()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -318,11 +318,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00123">123</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00134">134</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 <p>References <a class="el" href="vf__extended__float_8c_source.html#l00056">vff_bias</a>, <a class="el" href="vf__extended__float_8c_source.html#l00060">vff_P</a>, <a class="el" href="vf__extended__float_8c_source.html#l00054">vff_z</a>, <a class="el" href="vf__extended__float_8c_source.html#l00062">vff_z_meas</a>, <a class="el" href="vf__extended__float_8c_source.html#l00055">vff_zdot</a>, and <a class="el" href="pprz__algebra__float_8h_source.html#l00045">FloatVect2::y</a>.</p>
 
-<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00158">vff_update()</a>, and <a class="el" href="vf__float_8c_source.html#l00162">vff_update_z_conf()</a>.</p>
+<p>Referenced by <a class="el" href="vf__float_8c_source.html#l00169">vff_update()</a>, and <a class="el" href="vf__float_8c_source.html#l00173">vff_update_z_conf()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -368,9 +368,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00051">51</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00062">62</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
-<p>References <a class="el" href="vf__float_8c_source.html#l00034">INIT_PXX</a>, <a class="el" href="vf__extended__float_8c_source.html#l00056">vff_bias</a>, <a class="el" href="vf__extended__float_8c_source.html#l00060">vff_P</a>, <a class="el" href="vf__extended__float_8h_source.html#l00026">VFF_STATE_SIZE</a>, <a class="el" href="vf__extended__float_8c_source.html#l00054">vff_z</a>, and <a class="el" href="vf__extended__float_8c_source.html#l00055">vff_zdot</a>.</p>
+<p>References <a class="el" href="vf__float_8c_source.html#l00035">VF_FLOAT_INIT_PXX</a>, <a class="el" href="vf__extended__float_8c_source.html#l00056">vff_bias</a>, <a class="el" href="vf__extended__float_8c_source.html#l00060">vff_P</a>, <a class="el" href="vf__extended__float_8h_source.html#l00026">VFF_STATE_SIZE</a>, <a class="el" href="vf__extended__float_8c_source.html#l00054">vff_z</a>, and <a class="el" href="vf__extended__float_8c_source.html#l00055">vff_zdot</a>.</p>
 
 </div>
 </div>
@@ -389,7 +389,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00082">82</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00093">93</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 <p>References <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="vf__extended__float_8c_source.html#l00048">Qbiasbias</a>, <a class="el" href="vf__extended__float_8c_source.html#l00049">Qoffoff</a>, <a class="el" href="vf__extended__float_8c_source.html#l00047">Qzdotzdot</a>, <a class="el" href="vf__extended__float_8c_source.html#l00046">Qzz</a>, <a class="el" href="vf__extended__float_8c_source.html#l00056">vff_bias</a>, <a class="el" href="vf__extended__float_8c_source.html#l00057">vff_offset</a>, <a class="el" href="vf__extended__float_8c_source.html#l00060">vff_P</a>, <a class="el" href="vf__extended__float_8c_source.html#l00054">vff_z</a>, <a class="el" href="vf__extended__float_8c_source.html#l00062">vff_z_meas</a>, <a class="el" href="vf__extended__float_8c_source.html#l00063">vff_z_meas_baro</a>, <a class="el" href="vf__extended__float_8c_source.html#l00055">vff_zdot</a>, and <a class="el" href="vf__extended__float_8c_source.html#l00058">vff_zdotdot</a>.</p>
 
@@ -410,7 +410,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00217">217</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00228">228</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 <p>References <a class="el" href="vf__extended__float_8c_source.html#l00065">vff_init()</a>, <a class="el" href="vf__extended__float_8c_source.html#l00054">vff_z</a>, and <a class="el" href="vf__extended__float_8c_source.html#l00055">vff_zdot</a>.</p>
 
@@ -442,9 +442,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00158">158</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00169">169</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
-<p>References <a class="el" href="vf__float_8c_source.html#l00040">R</a>, and <a class="el" href="vf__float_8c_source.html#l00123">update_z_conf()</a>.</p>
+<p>References <a class="el" href="vf__float_8c_source.html#l00134">update_z_conf()</a>, and <a class="el" href="vf__float_8c_source.html#l00045">VF_FLOAT_MEAS_NOISE</a>.</p>
 
 <p>Referenced by <a class="el" href="ins__int_8c_source.html#l00166">ins_update_baro()</a>.</p>
 
@@ -497,9 +497,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00213">213</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00224">224</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
-<p>References <a class="el" href="vf__float_8c_source.html#l00180">update_vz_conf()</a>.</p>
+<p>References <a class="el" href="vf__float_8c_source.html#l00191">update_vz_conf()</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -539,9 +539,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00162">162</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00173">173</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
-<p>References <a class="el" href="vf__float_8c_source.html#l00123">update_z_conf()</a>.</p>
+<p>References <a class="el" href="vf__float_8c_source.html#l00134">update_z_conf()</a>.</p>
 
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -568,7 +568,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00043">43</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00054">54</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 </div>
 </div>
@@ -583,7 +583,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00047">47</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00058">58</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 </div>
 </div>
@@ -598,7 +598,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00042">42</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00053">53</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 </div>
 </div>
@@ -613,7 +613,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00049">49</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00060">60</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 </div>
 </div>
@@ -628,7 +628,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00044">44</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00055">55</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 </div>
 </div>
@@ -643,7 +643,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00045">45</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
+<p>Definition at line <a class="el" href="vf__float_8c_source.html#l00056">56</a> of file <a class="el" href="vf__float_8c_source.html">vf_float.c</a>.</p>
 
 </div>
 </div>
@@ -667,7 +667,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="vf__float_8c.html">vf_float.c</a>      </li>
 
-    <li class="footer">Generated on Sat Nov 24 2012 04:00:15 for Paparazzi UAS by
+    <li class="footer">Generated on Mon Nov 26 2012 04:00:13 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
