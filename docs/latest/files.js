@@ -494,7 +494,6 @@ var files =
     [ "sw/airborne/modules/ins/ahrs_chimu_uart.c", "ahrs__chimu__uart_8c.html", "ahrs__chimu__uart_8c" ],
     [ "sw/airborne/modules/ins/alt_filter.c", "alt__filter_8c.html", "alt__filter_8c" ],
     [ "sw/airborne/modules/ins/alt_filter.h", "alt__filter_8h.html", "alt__filter_8h" ],
-    [ "sw/airborne/modules/ins/fw_ins_vn100.c", "fw__ins__vn100_8c.html", "fw__ins__vn100_8c" ],
     [ "sw/airborne/modules/ins/imu_chimu.c", "imu__chimu_8c.html", "imu__chimu_8c" ],
     [ "sw/airborne/modules/ins/imu_chimu.h", "imu__chimu_8h.html", "imu__chimu_8h" ],
     [ "sw/airborne/modules/ins/ins_arduimu.c", "modules_2ins_2ins__arduimu_8c.html", "modules_2ins_2ins__arduimu_8c" ],

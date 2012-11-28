@@ -1,8 +1,15 @@
 var ins__vn100_8c =
 [
     [ "DOWNLINK_DEVICE", "ins__vn100_8c.html#a2978a46b47cbc9d17a0924014ff9658b", null ],
-    [ "ins_report_task", "ins__vn100_8c.html#a6764cc19c533754cd78ee6ec1ed91af5", null ],
-    [ "parse_ins_msg", "ins__vn100_8c.html#a8cb976f9e02352af6815c51a4b18faec", null ],
+    [ "INS_YAW_NEUTRAL_DEFAULT", "ins__vn100_8c.html#a365ce013c6173931397c8585232aa33d", null ],
+    [ "VN100_SLAVE_IDX", "ins__vn100_8c.html#ae2451df4f492f57cb782103233e2abfb", null ],
+    [ "VN100_SPI_DEV", "ins__vn100_8c.html#a09072ddf7ce5e6ca445567a6cdce6019", null ],
+    [ "ins_configure", "ins__vn100_8c.html#a78e5c992e41a5e0983748ef1970c3420", null ],
+    [ "parse_ins_msg", "ins__vn100_8c.html#a9ea3d2bf0a03b37852747429c24bee61", null ],
+    [ "vn100_event_task", "ins__vn100_8c.html#a579de7597d4a8e23e8577ca9745c385d", null ],
+    [ "vn100_init", "ins__vn100_8c.html#a5d7ed5111626de36fa92c1727cd4cb6a", null ],
+    [ "vn100_periodic_task", "ins__vn100_8c.html#a315de9dd8d9761361e22f6789b80da31", null ],
+    [ "vn100_report_task", "ins__vn100_8c.html#a40558cb39426f8f1c7729a7bf5ef2436", null ],
     [ "ins_accel", "ins__vn100_8c.html#ad8b814168fe2648fc2624cddbf45c2e2", null ],
     [ "ins_adof", "ins__vn100_8c.html#a281cdf3f820bcbd806002351f8f26ee1", null ],
     [ "ins_ador", "ins__vn100_8c.html#af15fb77fb390a32bcfe86200e0190975", null ],
@@ -18,5 +25,6 @@ var ins__vn100_8c =
     [ "ins_roll_neutral", "ins__vn100_8c.html#a70b61a4232cbf0e9acbde8d9b62ce1c5", null ],
     [ "ins_yaw_neutral", "ins__vn100_8c.html#a02db2d48724fb0b925d49bcd774eb9be", null ],
     [ "last_received_packet", "ins__vn100_8c.html#a273cc8a61a7331cfb89c91d78d7f0761", null ],
-    [ "last_send_packet", "ins__vn100_8c.html#a1d0a3455364a38bf83c1f87c9a808cb5", null ]
+    [ "last_send_packet", "ins__vn100_8c.html#a1d0a3455364a38bf83c1f87c9a808cb5", null ],
+    [ "vn100_trans", "ins__vn100_8c.html#ae8a66511f5a1d4eea4a23def9763c6b5", null ]
 ];
