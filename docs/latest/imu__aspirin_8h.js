@@ -27,13 +27,14 @@ var imu__aspirin_8h =
     [ "IMU_GYRO_R_SENS_DEN", "imu__aspirin_8h.html#aecb2f43265d239ba7661dfcc8523123e", null ],
     [ "IMU_GYRO_R_SENS_NUM", "imu__aspirin_8h.html#a6f808c71190e714287442af3bb7008b3", null ],
     [ "IMU_GYRO_R_SIGN", "imu__aspirin_8h.html#a91fa3d93fbfb5edbdf7f3b34436b53da", null ],
-    [ "ImuEvent", "imu__aspirin_8h.html#a5b61834fdd9dc32e2f93b974354c7402", null ],
     [ "ImuMagEvent", "imu__aspirin_8h.html#a62850cb40d836d423b8e389ab9c9bc26", null ],
+    [ "ITG3200_I2C_ADDR", "imu__aspirin_8h.html#a18cb68b584a6ac78296c4fb6a581a1cb", null ],
+    [ "ITG3200_I2C_DEV", "imu__aspirin_8h.html#a70937094341b5f90bb4fd9f54de87913", null ],
     [ "AspirinStatus", "imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8", null ],
     [ "accel_copy_spi", "imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5", null ],
     [ "gyro_copy_i2c", "imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0", null ],
     [ "gyro_read_i2c", "imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf", null ],
     [ "imu_aspirin_arch_init", "imu__aspirin_8h.html#a592698b1cfe18b6c6a33e450221ea2cf", null ],
-    [ "imu_aspirin_event", "imu__aspirin_8h.html#a0abb6ddc3c6db196f1fcd2db351f8be6", null ],
+    [ "ImuEvent", "imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a", null ],
     [ "imu_aspirin", "imu__aspirin_8h.html#aeafeb2e52542aacfde056216e597ab1a", null ]
 ];

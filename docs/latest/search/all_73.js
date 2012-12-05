@@ -554,7 +554,7 @@ var searchData=
   ['spislaveautomaton',['SpiSlaveAutomaton',['../lpc21_2mcu__periph_2spi__arch_8c.html#a54b1260ddbea815fbb38efa3d44917b9',1,'spi_arch.c']]],
   ['spislavechavailable',['SpiSlaveChAvailable',['../spi__slave__hs__arch_8h.html#a36b09a040a5d52e6d4043f627f59aa77',1,'spi_slave_hs_arch.h']]],
   ['spislavegetch',['SpiSlaveGetch',['../spi__slave__hs__arch_8h.html#a5622c0e4deede3abdb79719a069306ed',1,'spi_slave_hs_arch.h']]],
-  ['spislaveselect',['SPISlaveSelect',['../spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3',1,'SPISlaveSelect():&#160;spi.h'],['../lpc21_2mcu__periph_2spi__arch_8c.html#ab639bd461acc9159f2a8566bfe1ebdd0',1,'SpiSlaveSelect(uint8_t slave):&#160;spi_arch.c']]],
+  ['spislaveselect',['SpiSlaveSelect',['../lpc21_2mcu__periph_2spi__arch_8c.html#ab639bd461acc9159f2a8566bfe1ebdd0',1,'SpiSlaveSelect(uint8_t slave):&#160;spi_arch.c'],['../spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3',1,'SPISlaveSelect():&#160;spi.h']]],
   ['spislavestart',['SpiSlaveStart',['../lpc21_2mcu__periph_2spi__arch_8c.html#a377ad6b429dbff1ca278ff6262a2914d',1,'spi_arch.c']]],
   ['spislavetransmit',['SpiSlaveTransmit',['../spi__slave__hs__arch_8h.html#a7e07fd264652464911f044274b0fc367',1,'spi_slave_hs_arch.h']]],
   ['spislaveunselect',['SpiSlaveUnselect',['../lpc21_2mcu__periph_2spi__arch_8c.html#af3a0a783f898c0211f2c0e5498c746a0',1,'spi_arch.c']]],

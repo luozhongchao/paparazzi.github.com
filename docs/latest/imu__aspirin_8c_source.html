@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-309-g0f36a81</span>
+   &#160;<span id="projectnumber">v4.9_devel-311-g9ec9a92</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -142,145 +142,151 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a><a class="code" href="imu__aspirin_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define ADXL345_SPI_DEV spi2</span>
 <a name="l00043"></a>00043 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00044"></a>00044 <span class="preprocessor"></span>
-<a name="l00045"></a>00045 <span class="preprocessor">#ifndef ITG3200_I2C_DEV</span>
-<a name="l00046"></a><a class="code" href="imu__aspirin_8c.html#a70937094341b5f90bb4fd9f54de87913">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define ITG3200_I2C_DEV i2c2</span>
-<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00048"></a>00048 <span class="preprocessor"></span>
-<a name="l00049"></a><a class="code" href="imu__aspirin_8h.html#aeafeb2e52542aacfde056216e597ab1a">00049</a> <span class="keyword">struct </span><a class="code" href="structImuAspirin.html">ImuAspirin</a> <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>;
-<a name="l00050"></a>00050 
-<a name="l00051"></a><a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">00051</a> <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>;
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="keywordtype">void</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _val);
-<a name="l00054"></a>00054 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">adxl345_trans_cb</a>( <span class="keyword">struct</span> <a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> *trans );
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 <span class="comment">/* initialize peripherals */</span>
-<a name="l00057"></a>00057 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8">configure_gyro</a>(<span class="keywordtype">void</span>);
-<a name="l00058"></a>00058 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2">configure_accel</a>(<span class="keywordtype">void</span>);
-<a name="l00059"></a>00059 <span class="comment">//static void configure_mag(void);</span>
-<a name="l00060"></a>00060 
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="preprocessor">#ifndef ITG3200_SMPLRT_DIV</span>
+<a name="l00047"></a><a class="code" href="imu__aspirin_8c.html#a6a4e522675e16652ff09958a124f9098">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define ITG3200_SMPLRT_DIV 0x0E // Sample rate divider defaults to 533Hz</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00049"></a>00049 <span class="preprocessor"></span><span class="preprocessor">#ifndef ITG3200_FS_SEL</span>
+<a name="l00050"></a><a class="code" href="imu__aspirin_8c.html#a79b3f63caffaadab21d6443a3b08cf64">00050</a> <span class="preprocessor"></span><span class="preprocessor">#define ITG3200_FS_SEL 0x3 // Full scale range +- 2000°/s</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span><span class="preprocessor">#ifndef ITG3200_DLPF_CFG</span>
+<a name="l00053"></a><a class="code" href="imu__aspirin_8c.html#a86cfe9749207da7380d0d71cf67d2a52">00053</a> <span class="preprocessor"></span><span class="preprocessor">#define ITG3200_DLPF_CFG 0x0 // Internal sampling (8kHz, 256Hz LP Bandwidth)</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00055"></a>00055 <span class="preprocessor"></span><span class="preprocessor">#ifndef ITG3200_CLK_SEL</span>
+<a name="l00056"></a><a class="code" href="imu__aspirin_8c.html#a843b7fc9886a8cb6d324b5c0378ba8ef">00056</a> <span class="preprocessor"></span><span class="preprocessor">#define ITG3200_CLK_SEL 0x1 // PLL with X gyro reference</span>
+<a name="l00057"></a>00057 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span>
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="imu__aspirin_8h.html#aeafeb2e52542aacfde056216e597ab1a">00060</a> <span class="keyword">struct </span><a class="code" href="structImuAspirin.html">ImuAspirin</a> <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>;
 <a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="comment">// FIXME: there should be no arch dependent code here!</span>
-<a name="l00063"></a><a class="code" href="imu__aspirin_8c.html#a79565ef3973d9b120d9c909c2a06f313">00063</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#a79565ef3973d9b120d9c909c2a06f313">send_i2c_msg_with_retry</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
-<a name="l00064"></a>00064   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> max_retry = 8;
-<a name="l00065"></a>00065   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> nb_retry = 0;
-<a name="l00066"></a>00066   <span class="keywordflow">do</span> {
-<a name="l00067"></a>00067     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2, t);
-<a name="l00068"></a>00068     <span class="keywordflow">while</span>((I2C2_SR2 &amp; I2C_SR2_BUSY));
-<a name="l00069"></a>00069     <span class="comment">//while(I2C_GetFlagStatus(I2C2, I2C_FLAG_BUSY));</span>
-<a name="l00070"></a>00070     <span class="keywordflow">while</span> (t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a> || t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a24a67dd6fad229ed23a02353bb820a10">I2CTransRunning</a>);
-<a name="l00071"></a>00071     <span class="keywordflow">if</span> (t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>)
-<a name="l00072"></a>00072       nb_retry++;
-<a name="l00073"></a>00073   }
-<a name="l00074"></a>00074   <span class="keywordflow">while</span> (t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> != <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a> &amp;&amp; nb_retry &lt; max_retry);
-<a name="l00075"></a>00075 }
-<a name="l00076"></a>00076 
-<a name="l00077"></a><a class="code" href="imu__aspirin_8c.html#ad32faae58e391642ec8048cb11011998">00077</a> <span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a>(<span class="keywordtype">void</span>) {
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> = <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a>;
-<a name="l00080"></a>00080   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
-<a name="l00081"></a>00081   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a6999a418c1b4aa1c64a88393570a6880">mag_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
-<a name="l00082"></a>00082   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">select</a> = <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">SPISelectUnselect</a>;
-<a name="l00085"></a>00085   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">cpol</a> = <a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7abb9d597cb05133176eac7d6a87b5f9af">SPICpolIdleHigh</a>;
-<a name="l00086"></a>00086   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">cpha</a> = <a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baaa0819b3eda26f2666ff69ced98db281ce">SPICphaEdge2</a>;
-<a name="l00087"></a>00087   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">dss</a> = <a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">SPIDss8bit</a>;
-<a name="l00088"></a>00088   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">bitorder</a> = <a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">SPIMSBFirst</a>;
-<a name="l00089"></a>00089   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">cdiv</a> = <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">SPIDiv64</a>;
-<a name="l00090"></a>00090   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#ad172d82768bb46939cb4e6ffbd230e77">slave_idx</a> = <a class="code" href="imu__aspirin_8c.html#aba10b2e800f8ec5b603df37f9b752fd9">ADXL345_SLAVE_IDX</a>;
-<a name="l00091"></a>00091   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406">output_length</a> = 7;
-<a name="l00092"></a>00092   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a5d8b23bac2976e4245ac19747a122e71">input_length</a> = 7;
-<a name="l00093"></a>00093   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a42f7b32b71120469bf60af28f5880177">after_cb</a> = <a class="code" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">adxl345_trans_cb</a>;
-<a name="l00094"></a>00094   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">input_buf</a> = &amp;<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[0];
-<a name="l00095"></a>00095   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a> = &amp;<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[0];
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>;
-<a name="l00098"></a>00098   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a56104f058052665032fd6b1e7936ad55">ITG3200_REG_GYRO_XOUT_H</a>;
-<a name="l00099"></a>00099   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>;
-<a name="l00100"></a>00100   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
-<a name="l00101"></a>00101   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 6;
-<a name="l00102"></a>00102   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>;
-<a name="l00103"></a>00103 
-<a name="l00104"></a>00104   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a592698b1cfe18b6c6a33e450221ea2cf">imu_aspirin_arch_init</a>();
-<a name="l00105"></a>00105   <a class="code" href="hmc5843_8c.html#af07ba9764727d8692eb33cd271080cdc">hmc5843_init</a>();
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107 }
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109 
-<a name="l00110"></a><a class="code" href="imu__aspirin_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">00110</a> <span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a>(<span class="keywordtype">void</span>) {
-<a name="l00111"></a>00111   <a class="code" href="hmc5843_8c.html#ab17f5e43fbd1dcadea20ede30e06568b">hmc5843_periodic</a>();
-<a name="l00112"></a>00112   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> == <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a>) {
-<a name="l00113"></a>00113     <a class="code" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8">configure_gyro</a>();
-<a name="l00114"></a>00114     <a class="code" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2">configure_accel</a>();
-<a name="l00115"></a>00115     <span class="comment">//imu_aspirin_arch_int_enable();</span>
-<a name="l00116"></a>00116     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[0] = (1&lt;&lt;7|1&lt;&lt;6|<a class="code" href="adxl345_8h.html#a26d195d59722f158ccb2d2f0da63b32e">ADXL345_REG_DATA_X0</a>);
-<a name="l00117"></a>00117     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> = <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a1b79e5ac74270b36feeacbdc6a2dcc7a">AspirinStatusIdle</a>;
-<a name="l00118"></a>00118   } <span class="keywordflow">else</span> {
-<a name="l00119"></a>00119     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
-<a name="l00120"></a>00120     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a>++;
-<a name="l00121"></a>00121     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a3e60a747f5a4f228f17bdb6924e2ce9c">time_since_last_accel_reading</a>++;
-<a name="l00122"></a>00122     <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>(&amp;(<a class="code" href="imu__aspirin_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>), &amp;<a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>);
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124     <span class="comment">//if (imu_aspirin.time_since_last_accel_reading &gt; ASPIRIN_ACCEL_TIMEOUT) {</span>
-<a name="l00125"></a>00125     <span class="comment">//  configure_accel();</span>
-<a name="l00126"></a>00126     <span class="comment">//  imu_aspirin.time_since_last_accel_reading=0;</span>
-<a name="l00127"></a>00127     <span class="comment">//}</span>
-<a name="l00128"></a>00128   }
-<a name="l00129"></a>00129 }
-<a name="l00130"></a>00130 
-<a name="l00131"></a><a class="code" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">00131</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">adxl345_trans_cb</a>( <span class="keyword">struct</span> <a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> *trans ) {
-<a name="l00132"></a>00132   <span class="keywordflow">if</span> ( <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> != <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a> ) {
-<a name="l00133"></a>00133     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
-<a name="l00134"></a>00134   }
-<a name="l00135"></a>00135 }
-<a name="l00136"></a>00136 
-<a name="l00137"></a>00137 <span class="comment">/* sends a serie of I2C commands to configure the ITG3200 gyro */</span>
-<a name="l00138"></a><a class="code" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8">00138</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8">configure_gyro</a>(<span class="keywordtype">void</span>) {
-<a name="l00139"></a>00139   <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> t;
-<a name="l00140"></a>00140   t.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
-<a name="l00141"></a>00141   t.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>;
-<a name="l00142"></a>00142   <span class="comment">/* set gyro range to 2000deg/s and low pass at 256Hz */</span>
-<a name="l00143"></a>00143   t.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a653510a2ba2abd795efbfc86e643a447">ITG3200_REG_DLPF_FS</a>;
-<a name="l00144"></a>00144   t.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (0x03&lt;&lt;3);
-<a name="l00145"></a>00145   t.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 2;
-<a name="l00146"></a>00146   <span class="comment">//send_i2c_msg_with_retry(&amp;t);</span>
-<a name="l00147"></a>00147   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;(<a class="code" href="imu__aspirin_8c.html#a70937094341b5f90bb4fd9f54de87913">ITG3200_I2C_DEV</a>), &amp;t);
-<a name="l00148"></a>00148   <span class="comment">/* set sample rate to 533Hz */</span>
-<a name="l00149"></a>00149   t.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a9490677e66932d9240ff143714a5846a">ITG3200_REG_SMPLRT_DIV</a>;
-<a name="l00150"></a>00150   t.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = 0x0E;
-<a name="l00151"></a>00151   <span class="comment">//send_i2c_msg_with_retry(&amp;t);</span>
-<a name="l00152"></a>00152   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;(<a class="code" href="imu__aspirin_8c.html#a70937094341b5f90bb4fd9f54de87913">ITG3200_I2C_DEV</a>), &amp;t);
-<a name="l00153"></a>00153   <span class="comment">/* switch to gyroX clock */</span>
-<a name="l00154"></a>00154   t.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a85621ed4be861a41e44f01cd79c29015">ITG3200_REG_PWR_MGM</a>;
-<a name="l00155"></a>00155   t.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = 0x01;
-<a name="l00156"></a>00156   <span class="comment">//send_i2c_msg_with_retry(&amp;t);</span>
-<a name="l00157"></a>00157   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;(<a class="code" href="imu__aspirin_8c.html#a70937094341b5f90bb4fd9f54de87913">ITG3200_I2C_DEV</a>), &amp;t);
-<a name="l00158"></a>00158   <span class="comment">/* enable interrupt on data ready, idle high, latch until read any register */</span>
-<a name="l00159"></a>00159   t.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a355f46a6c4c401c94d75a04ffef2161e">ITG3200_REG_INT_CFG</a>;
-<a name="l00160"></a>00160   t.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (0x01 | (0x1&lt;&lt;4) | (0x1&lt;&lt;5) | 0x01&lt;&lt;7);
-<a name="l00161"></a>00161   <span class="comment">//send_i2c_msg_with_retry(&amp;t);</span>
-<a name="l00162"></a>00162   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;(<a class="code" href="imu__aspirin_8c.html#a70937094341b5f90bb4fd9f54de87913">ITG3200_I2C_DEV</a>), &amp;t);
-<a name="l00163"></a>00163 }
+<a name="l00062"></a><a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">00062</a> <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 <span class="keywordtype">void</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _val);
+<a name="l00065"></a>00065 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">adxl345_trans_cb</a>( <span class="keyword">struct</span> <a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> *trans );
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="comment">/* initialize peripherals */</span>
+<a name="l00068"></a>00068 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8">configure_gyro</a>(<span class="keywordtype">void</span>);
+<a name="l00069"></a>00069 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2">configure_accel</a>(<span class="keywordtype">void</span>);
+<a name="l00070"></a>00070 <span class="comment">//static void configure_mag(void);</span>
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="comment">// FIXME: there should be no arch dependent code here!</span>
+<a name="l00074"></a><a class="code" href="imu__aspirin_8c.html#a79565ef3973d9b120d9c909c2a06f313">00074</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#a79565ef3973d9b120d9c909c2a06f313">send_i2c_msg_with_retry</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
+<a name="l00075"></a>00075   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> max_retry = 8;
+<a name="l00076"></a>00076   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> nb_retry = 0;
+<a name="l00077"></a>00077   <span class="keywordflow">do</span> {
+<a name="l00078"></a>00078     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2, t);
+<a name="l00079"></a>00079     <span class="keywordflow">while</span>((I2C2_SR2 &amp; I2C_SR2_BUSY));
+<a name="l00080"></a>00080     <span class="comment">//while(I2C_GetFlagStatus(I2C2, I2C_FLAG_BUSY));</span>
+<a name="l00081"></a>00081     <span class="keywordflow">while</span> (t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a> || t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a24a67dd6fad229ed23a02353bb820a10">I2CTransRunning</a>);
+<a name="l00082"></a>00082     <span class="keywordflow">if</span> (t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>)
+<a name="l00083"></a>00083       nb_retry++;
+<a name="l00084"></a>00084   }
+<a name="l00085"></a>00085   <span class="keywordflow">while</span> (t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> != <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a> &amp;&amp; nb_retry &lt; max_retry);
+<a name="l00086"></a>00086 }
+<a name="l00087"></a>00087 
+<a name="l00088"></a><a class="code" href="imu__aspirin_8c.html#ad32faae58e391642ec8048cb11011998">00088</a> <span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a>(<span class="keywordtype">void</span>) {
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> = <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a>;
+<a name="l00091"></a>00091   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00092"></a>00092   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a6999a418c1b4aa1c64a88393570a6880">mag_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00093"></a>00093   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">select</a> = <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">SPISelectUnselect</a>;
+<a name="l00096"></a>00096   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">cpol</a> = <a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7abb9d597cb05133176eac7d6a87b5f9af">SPICpolIdleHigh</a>;
+<a name="l00097"></a>00097   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">cpha</a> = <a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baaa0819b3eda26f2666ff69ced98db281ce">SPICphaEdge2</a>;
+<a name="l00098"></a>00098   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">dss</a> = <a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">SPIDss8bit</a>;
+<a name="l00099"></a>00099   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">bitorder</a> = <a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">SPIMSBFirst</a>;
+<a name="l00100"></a>00100   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">cdiv</a> = <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">SPIDiv64</a>;
+<a name="l00101"></a>00101   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#ad172d82768bb46939cb4e6ffbd230e77">slave_idx</a> = <a class="code" href="imu__aspirin_8c.html#aba10b2e800f8ec5b603df37f9b752fd9">ADXL345_SLAVE_IDX</a>;
+<a name="l00102"></a>00102   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406">output_length</a> = 7;
+<a name="l00103"></a>00103   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a5d8b23bac2976e4245ac19747a122e71">input_length</a> = 7;
+<a name="l00104"></a>00104   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a42f7b32b71120469bf60af28f5880177">after_cb</a> = <a class="code" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">adxl345_trans_cb</a>;
+<a name="l00105"></a>00105   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">input_buf</a> = &amp;<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[0];
+<a name="l00106"></a>00106   <a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a> = &amp;<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[0];
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>;
+<a name="l00109"></a>00109   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a56104f058052665032fd6b1e7936ad55">ITG3200_REG_GYRO_XOUT_H</a>;
+<a name="l00110"></a>00110   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>;
+<a name="l00111"></a>00111   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
+<a name="l00112"></a>00112   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 6;
+<a name="l00113"></a>00113   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>;
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a592698b1cfe18b6c6a33e450221ea2cf">imu_aspirin_arch_init</a>();
+<a name="l00116"></a>00116   <a class="code" href="hmc5843_8c.html#af07ba9764727d8692eb33cd271080cdc">hmc5843_init</a>();
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 }
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120 
+<a name="l00121"></a><a class="code" href="imu__aspirin_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">00121</a> <span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a>(<span class="keywordtype">void</span>) {
+<a name="l00122"></a>00122   <a class="code" href="hmc5843_8c.html#ab17f5e43fbd1dcadea20ede30e06568b">hmc5843_periodic</a>();
+<a name="l00123"></a>00123   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> == <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a>) {
+<a name="l00124"></a>00124     <a class="code" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8">configure_gyro</a>();
+<a name="l00125"></a>00125     <a class="code" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2">configure_accel</a>();
+<a name="l00126"></a>00126     <span class="comment">//imu_aspirin_arch_int_enable();</span>
+<a name="l00127"></a>00127     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[0] = (1&lt;&lt;7|1&lt;&lt;6|<a class="code" href="adxl345_8h.html#a26d195d59722f158ccb2d2f0da63b32e">ADXL345_REG_DATA_X0</a>);
+<a name="l00128"></a>00128     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> = <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a1b79e5ac74270b36feeacbdc6a2dcc7a">AspirinStatusIdle</a>;
+<a name="l00129"></a>00129   } <span class="keywordflow">else</span> {
+<a name="l00130"></a>00130     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
+<a name="l00131"></a>00131     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a>++;
+<a name="l00132"></a>00132     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a3e60a747f5a4f228f17bdb6924e2ce9c">time_since_last_accel_reading</a>++;
+<a name="l00133"></a>00133     <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>(&amp;(<a class="code" href="imu__aspirin_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>), &amp;<a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>);
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135     <span class="comment">//if (imu_aspirin.time_since_last_accel_reading &gt; ASPIRIN_ACCEL_TIMEOUT) {</span>
+<a name="l00136"></a>00136     <span class="comment">//  configure_accel();</span>
+<a name="l00137"></a>00137     <span class="comment">//  imu_aspirin.time_since_last_accel_reading=0;</span>
+<a name="l00138"></a>00138     <span class="comment">//}</span>
+<a name="l00139"></a>00139   }
+<a name="l00140"></a>00140 }
+<a name="l00141"></a>00141 
+<a name="l00142"></a><a class="code" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">00142</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">adxl345_trans_cb</a>( <span class="keyword">struct</span> <a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> *trans ) {
+<a name="l00143"></a>00143   <span class="keywordflow">if</span> ( <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> != <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a> ) {
+<a name="l00144"></a>00144     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
+<a name="l00145"></a>00145   }
+<a name="l00146"></a>00146 }
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148 <span class="comment">/* sends a serie of I2C commands to configure the ITG3200 gyro */</span>
+<a name="l00149"></a><a class="code" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8">00149</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8">configure_gyro</a>(<span class="keywordtype">void</span>) {
+<a name="l00150"></a>00150   <span class="comment">/* set gyro range to 2000deg/s and low pass at 256Hz */</span>
+<a name="l00151"></a>00151   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a653510a2ba2abd795efbfc86e643a447">ITG3200_REG_DLPF_FS</a>;
+<a name="l00152"></a>00152   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (<a class="code" href="imu__aspirin_8c.html#a79b3f63caffaadab21d6443a3b08cf64">ITG3200_FS_SEL</a>&lt;&lt;3)|(<a class="code" href="imu__aspirin_8c.html#a86cfe9749207da7380d0d71cf67d2a52">ITG3200_DLPF_CFG</a>);
+<a name="l00153"></a>00153   <a class="code" href="i2c_8h.html#ace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="imu__aspirin_8h.html#a70937094341b5f90bb4fd9f54de87913">ITG3200_I2C_DEV</a>, <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>, <a class="code" href="itg3200_8extra_8h.html#a18cb68b584a6ac78296c4fb6a581a1cb">ITG3200_I2C_ADDR</a>, 2);
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155   <span class="comment">/* set sample rate to 533Hz */</span>
+<a name="l00156"></a>00156   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a9490677e66932d9240ff143714a5846a">ITG3200_REG_SMPLRT_DIV</a>;
+<a name="l00157"></a>00157   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = <a class="code" href="imu__aspirin_8c.html#a6a4e522675e16652ff09958a124f9098">ITG3200_SMPLRT_DIV</a>;
+<a name="l00158"></a>00158   <a class="code" href="i2c_8h.html#ace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="imu__aspirin_8h.html#a70937094341b5f90bb4fd9f54de87913">ITG3200_I2C_DEV</a>, <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>, <a class="code" href="itg3200_8extra_8h.html#a18cb68b584a6ac78296c4fb6a581a1cb">ITG3200_I2C_ADDR</a>, 2);
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160   <span class="comment">/* switch to gyroX clock */</span>
+<a name="l00161"></a>00161   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a85621ed4be861a41e44f01cd79c29015">ITG3200_REG_PWR_MGM</a>;
+<a name="l00162"></a>00162   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = <a class="code" href="imu__aspirin_8c.html#a843b7fc9886a8cb6d324b5c0378ba8ef">ITG3200_CLK_SEL</a>;
+<a name="l00163"></a>00163   <a class="code" href="i2c_8h.html#ace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="imu__aspirin_8h.html#a70937094341b5f90bb4fd9f54de87913">ITG3200_I2C_DEV</a>, <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>, <a class="code" href="itg3200_8extra_8h.html#a18cb68b584a6ac78296c4fb6a581a1cb">ITG3200_I2C_ADDR</a>, 2);
 <a name="l00164"></a>00164 
-<a name="l00165"></a>00165 <span class="keywordtype">void</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _val) {
-<a name="l00166"></a>00166   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[0] = _reg;
-<a name="l00167"></a>00167   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[1] = _val;
-<a name="l00168"></a>00168   <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>(&amp;(<a class="code" href="imu__aspirin_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>), &amp;<a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>);
-<a name="l00169"></a>00169 
-<a name="l00170"></a>00170   <span class="comment">// FIXME: no busy waiting! if really needed add a timeout!!!!</span>
-<a name="l00171"></a>00171   <span class="keywordflow">while</span>(<a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a> != <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>);
-<a name="l00172"></a>00172 }
-<a name="l00173"></a>00173 
-<a name="l00174"></a><a class="code" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2">00174</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2">configure_accel</a>(<span class="keywordtype">void</span>) {
-<a name="l00175"></a>00175   <span class="comment">/* set data rate to 800Hz and bandwidth to 400Hz (unless set otherwise) */</span>
-<a name="l00176"></a>00176   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="adxl345_8h.html#a51ce19e9e208c52fb41348c472b428ab">ADXL345_REG_BW_RATE</a>, <a class="code" href="imu__aspirin_8c.html#acb451ad1ab622550e7a1ba1e535d2a4d">ASPIRIN_ACCEL_RATE</a>);
-<a name="l00177"></a>00177   <span class="comment">/* switch to measurememnt mode */</span>
-<a name="l00178"></a>00178   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="adxl345_8h.html#aa8b343258a85689467d33fb6e7a92d18">ADXL345_REG_POWER_CTL</a>, 1&lt;&lt;3);
-<a name="l00179"></a>00179   <span class="comment">/* enable data ready interrupt */</span>
-<a name="l00180"></a>00180   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="adxl345_8h.html#ae54dd63a35ee5baec0ba7bfa8892d005">ADXL345_REG_INT_ENABLE</a>, 1&lt;&lt;7);
-<a name="l00181"></a>00181   <span class="comment">/* Enable full res with +-16g range and interrupt active low */</span>
-<a name="l00182"></a>00182   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="adxl345_8h.html#a599ba3e5ed5a1ff931b9b268590a54a3">ADXL345_REG_DATA_FORMAT</a>, <a class="code" href="adxl345_8h.html#a3d50abf02ab8bea3939b9093b152eec4">ADXL345_FULL_RES</a>|<a class="code" href="adxl345_8h.html#a8cb06ef9eec9ffa9a68ea76ac50bda7c">ADXL345_RANGE_16G</a>|<a class="code" href="adxl345_8h.html#a50b70186263b37c82dc4dd4a27ce6dd9">ADXL345_INT_INVERT</a>);
-<a name="l00183"></a>00183 }
+<a name="l00165"></a>00165   <span class="comment">/* enable interrupt on data ready, idle high, latch until read any register */</span>
+<a name="l00166"></a>00166   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a355f46a6c4c401c94d75a04ffef2161e">ITG3200_REG_INT_CFG</a>;
+<a name="l00167"></a>00167   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (0x01 | (0x1&lt;&lt;4) | (0x1&lt;&lt;5) | 0x01&lt;&lt;7);
+<a name="l00168"></a>00168   <a class="code" href="i2c_8h.html#ace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="imu__aspirin_8h.html#a70937094341b5f90bb4fd9f54de87913">ITG3200_I2C_DEV</a>, <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>, <a class="code" href="itg3200_8extra_8h.html#a18cb68b584a6ac78296c4fb6a581a1cb">ITG3200_I2C_ADDR</a>, 2);
+<a name="l00169"></a>00169 }
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171 <span class="keywordtype">void</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _reg, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _val) {
+<a name="l00172"></a>00172   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[0] = _reg;
+<a name="l00173"></a>00173   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[1] = _val;
+<a name="l00174"></a>00174   <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>(&amp;(<a class="code" href="imu__aspirin_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>), &amp;<a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>);
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176   <span class="comment">// FIXME: no busy waiting! if really needed add a timeout!!!!</span>
+<a name="l00177"></a>00177   <span class="keywordflow">while</span>(<a class="code" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a>.<a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a> != <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>);
+<a name="l00178"></a>00178 }
+<a name="l00179"></a>00179 
+<a name="l00180"></a><a class="code" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2">00180</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2">configure_accel</a>(<span class="keywordtype">void</span>) {
+<a name="l00181"></a>00181   <span class="comment">/* set data rate to 800Hz and bandwidth to 400Hz (unless set otherwise) */</span>
+<a name="l00182"></a>00182   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="adxl345_8h.html#a51ce19e9e208c52fb41348c472b428ab">ADXL345_REG_BW_RATE</a>, <a class="code" href="imu__aspirin_8c.html#acb451ad1ab622550e7a1ba1e535d2a4d">ASPIRIN_ACCEL_RATE</a>);
+<a name="l00183"></a>00183   <span class="comment">/* switch to measurememnt mode */</span>
+<a name="l00184"></a>00184   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="adxl345_8h.html#aa8b343258a85689467d33fb6e7a92d18">ADXL345_REG_POWER_CTL</a>, 1&lt;&lt;3);
+<a name="l00185"></a>00185   <span class="comment">/* enable data ready interrupt */</span>
+<a name="l00186"></a>00186   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="adxl345_8h.html#ae54dd63a35ee5baec0ba7bfa8892d005">ADXL345_REG_INT_ENABLE</a>, 1&lt;&lt;7);
+<a name="l00187"></a>00187   <span class="comment">/* Enable full res with +-16g range and interrupt active low */</span>
+<a name="l00188"></a>00188   <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a>(<a class="code" href="adxl345_8h.html#a599ba3e5ed5a1ff931b9b268590a54a3">ADXL345_REG_DATA_FORMAT</a>, <a class="code" href="adxl345_8h.html#a3d50abf02ab8bea3939b9093b152eec4">ADXL345_FULL_RES</a>|<a class="code" href="adxl345_8h.html#a8cb06ef9eec9ffa9a68ea76ac50bda7c">ADXL345_RANGE_16G</a>|<a class="code" href="adxl345_8h.html#a50b70186263b37c82dc4dd4a27ce6dd9">ADXL345_INT_INVERT</a>);
+<a name="l00189"></a>00189 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -301,7 +307,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="imu__aspirin_8c.html">imu_aspirin.c</a>      </li>
 
-    <li class="footer">Generated on Fri Nov 30 2012 04:00:09 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Dec 5 2012 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

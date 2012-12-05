@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-309-g0f36a81</span>
+   &#160;<span id="projectnumber">v4.9_devel-311-g9ec9a92</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -207,140 +207,141 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00121"></a><a class="code" href="imu__aspirin_8h.html#ae62fbd99f815974f80f911bfa1b1d514">00121</a> <span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Z_SENS_DEN 100</span>
 <a name="l00122"></a>00122 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00123"></a>00123 <span class="preprocessor"></span>
-<a name="l00124"></a>00124 
-<a name="l00125"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8">00125</a> <span class="keyword">enum</span> <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8">AspirinStatus</a>
-<a name="l00126"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">00126</a>   { <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a>,
-<a name="l00127"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a1b79e5ac74270b36feeacbdc6a2dcc7a">00127</a>     <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a1b79e5ac74270b36feeacbdc6a2dcc7a">AspirinStatusIdle</a>,
-<a name="l00128"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8ab37b7939ff4b174c1ebf94ed48fa1162">00128</a>     <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8ab37b7939ff4b174c1ebf94ed48fa1162">AspirinStatusReadingGyro</a>,
-<a name="l00129"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8af9fe0832964e38413e3e1b8880521d50">00129</a>     <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8af9fe0832964e38413e3e1b8880521d50">AspirinStatusReadingMag</a>
-<a name="l00130"></a>00130   };
-<a name="l00131"></a>00131 
-<a name="l00132"></a><a class="code" href="structImuAspirin.html">00132</a> <span class="keyword">struct </span><a class="code" href="structImuAspirin.html">ImuAspirin</a> {
-<a name="l00133"></a><a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">00133</a>   <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8">AspirinStatus</a> <a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a>;
-<a name="l00134"></a><a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">00134</a>   <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> <a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>;
-<a name="l00135"></a><a class="code" href="structImuAspirin.html#a659333de53a58ee21c8d734c97b240d9">00135</a>   <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> <a class="code" href="structImuAspirin.html#a659333de53a58ee21c8d734c97b240d9">i2c_trans_mag</a>;
-<a name="l00136"></a><a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">00136</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a>;
-<a name="l00137"></a><a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">00137</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[7];
-<a name="l00138"></a><a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">00138</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[7];
-<a name="l00139"></a><a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">00139</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a>;
-<a name="l00140"></a><a class="code" href="structImuAspirin.html#a3e60a747f5a4f228f17bdb6924e2ce9c">00140</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structImuAspirin.html#a3e60a747f5a4f228f17bdb6924e2ce9c">time_since_last_accel_reading</a>;
-<a name="l00141"></a><a class="code" href="structImuAspirin.html#a6999a418c1b4aa1c64a88393570a6880">00141</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#a6999a418c1b4aa1c64a88393570a6880">mag_available</a>;
-<a name="l00142"></a><a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">00142</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a>;
-<a name="l00143"></a><a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">00143</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a>;
-<a name="l00144"></a>00144 };
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structImuAspirin.html">ImuAspirin</a> <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>;
-<a name="l00147"></a><a class="code" href="imu__aspirin_8h.html#aecd8b6c5ae659db1c8fa12b2587f5b36">00147</a> <span class="preprocessor">#define ASPIRIN_GYRO_TIMEOUT 3</span>
-<a name="l00148"></a><a class="code" href="imu__aspirin_8h.html#a921646a056c0d8db6afd55d0467d0ca5">00148</a> <span class="preprocessor"></span><span class="preprocessor">#define ASPIRIN_ACCEL_TIMEOUT 3</span>
-<a name="l00149"></a>00149 <span class="preprocessor"></span>
-<a name="l00150"></a><a class="code" href="imu__aspirin_8h.html#a23553118551649e9fe4ddf7d2f3f96a7">00150</a> <span class="preprocessor">#define foo_handler() {}</span>
-<a name="l00151"></a><a class="code" href="imu__aspirin_8h.html#a62850cb40d836d423b8e389ab9c9bc26">00151</a> <span class="preprocessor"></span><span class="preprocessor">#define ImuMagEvent(_mag_handler) {         \</span>
-<a name="l00152"></a>00152 <span class="preprocessor">    MagEvent(foo_handler);                          \</span>
-<a name="l00153"></a>00153 <span class="preprocessor">    if (hmc5843.data_available) {     \</span>
-<a name="l00154"></a>00154 <span class="preprocessor">      imu.mag_unscaled.x = hmc5843.data.value[IMU_MAG_X_CHAN];    \</span>
-<a name="l00155"></a>00155 <span class="preprocessor">      imu.mag_unscaled.y = hmc5843.data.value[IMU_MAG_Y_CHAN];    \</span>
-<a name="l00156"></a>00156 <span class="preprocessor">      imu.mag_unscaled.z = hmc5843.data.value[IMU_MAG_Z_CHAN];    \</span>
-<a name="l00157"></a>00157 <span class="preprocessor">      _mag_handler();             \</span>
-<a name="l00158"></a>00158 <span class="preprocessor">      hmc5843.data_available = FALSE;   \</span>
-<a name="l00159"></a>00159 <span class="preprocessor">    }                 \</span>
-<a name="l00160"></a>00160 <span class="preprocessor">}</span>
-<a name="l00161"></a>00161 <span class="preprocessor"></span>
-<a name="l00162"></a>00162 <span class="comment">/* underlying architecture */</span>
-<a name="l00163"></a>00163 <span class="preprocessor">#include &quot;subsystems/imu/imu_aspirin_arch.h&quot;</span>
-<a name="l00164"></a>00164 <span class="comment">/* must be implemented by underlying architecture */</span>
-<a name="l00165"></a>00165 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a592698b1cfe18b6c6a33e450221ea2cf">imu_aspirin_arch_init</a>(<span class="keywordtype">void</span>);
-<a name="l00166"></a>00166 
-<a name="l00167"></a><a class="code" href="imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf">00167</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf">gyro_read_i2c</a>(<span class="keywordtype">void</span>)
-<a name="l00168"></a>00168 {
-<a name="l00169"></a>00169   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>;
-<a name="l00170"></a>00170   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
-<a name="l00171"></a>00171   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 6;
-<a name="l00172"></a>00172   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a56104f058052665032fd6b1e7936ad55">ITG3200_REG_GYRO_XOUT_H</a>;
-<a name="l00173"></a>00173   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>);
-<a name="l00174"></a>00174   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a> = 1;
-<a name="l00175"></a>00175 }
-<a name="l00176"></a>00176 
-<a name="l00177"></a><a class="code" href="imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0">00177</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0">gyro_copy_i2c</a>(<span class="keywordtype">void</span>)
-<a name="l00178"></a>00178 {
-<a name="l00179"></a>00179   <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> gp = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0]&lt;&lt;8 | <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1];
-<a name="l00180"></a>00180   <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> gq = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[2]&lt;&lt;8 | <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[3];
-<a name="l00181"></a>00181   <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> gr = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[4]&lt;&lt;8 | <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[5];
-<a name="l00182"></a>00182   <a class="code" href="pprz__algebra_8h.html#a4edec404f97e53a3bfac68662016a2d3">RATES_ASSIGN</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>, gp, gq, gr);
-<a name="l00183"></a>00183 }
-<a name="l00184"></a>00184 
-<a name="l00185"></a><a class="code" href="imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5">00185</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5">accel_copy_spi</a>(<span class="keywordtype">void</span>)
-<a name="l00186"></a>00186 {
-<a name="l00187"></a>00187   <span class="keyword">const</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> ax = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[1] | (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[2]&lt;&lt;8);
-<a name="l00188"></a>00188   <span class="keyword">const</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> ay = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[3] | (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[4]&lt;&lt;8);
-<a name="l00189"></a>00189   <span class="keyword">const</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> az = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[5] | (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[6]&lt;&lt;8);
-<a name="l00190"></a>00190   <a class="code" href="pprz__algebra_8h.html#aabe6b68b36e19217c178ddc14515c9af">VECT3_ASSIGN</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#abf7c6149da2d7b989713f6fc919ccb10" title="unscaled accelerometer measurements">accel_unscaled</a>, ax, ay, az);
-<a name="l00191"></a>00191 }
-<a name="l00192"></a>00192 
-<a name="l00193"></a><a class="code" href="imu__aspirin_8h.html#a0abb6ddc3c6db196f1fcd2db351f8be6">00193</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8h.html#a0abb6ddc3c6db196f1fcd2db351f8be6">imu_aspirin_event</a>(<span class="keywordtype">void</span> (* _gyro_handler)(<span class="keywordtype">void</span>), <span class="keywordtype">void</span> (* _accel_handler)(<span class="keywordtype">void</span>), <span class="keywordtype">void</span> (* _mag_handler)(<span class="keywordtype">void</span>))
-<a name="l00194"></a>00194 {
-<a name="l00195"></a>00195   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> == <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a>) <span class="keywordflow">return</span>;
-<a name="l00196"></a>00196 
-<a name="l00197"></a>00197   <span class="comment">//imu_aspirin_arch_int_disable();</span>
-<a name="l00198"></a>00198   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a>) {
-<a name="l00199"></a>00199     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a3e60a747f5a4f228f17bdb6924e2ce9c">time_since_last_accel_reading</a> = 0;
-<a name="l00200"></a>00200     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
-<a name="l00201"></a>00201     <a class="code" href="imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5">accel_copy_spi</a>();
-<a name="l00202"></a>00202     _accel_handler();
-<a name="l00203"></a>00203   }
-<a name="l00204"></a>00204   <span class="comment">//imu_aspirin_arch_int_enable();</span>
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206 <span class="preprocessor">#if 0</span>
-<a name="l00207"></a>00207 <span class="preprocessor"></span>  <span class="comment">// Reset everything if we&#39;ve been waiting too long</span>
-<a name="l00208"></a>00208   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a> &gt; <a class="code" href="imu__aspirin_8h.html#aecd8b6c5ae659db1c8fa12b2587f5b36">ASPIRIN_GYRO_TIMEOUT</a>) {
-<a name="l00209"></a>00209     <span class="comment">// FIXME: there should be no arch specific code like that here!</span>
-<a name="l00210"></a>00210     i2c2_er_isr();
-<a name="l00211"></a>00211     <a class="code" href="imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf">gyro_read_i2c</a>();
-<a name="l00212"></a>00212     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a> = 0;
-<a name="l00213"></a>00213     <span class="keywordflow">return</span>;
-<a name="l00214"></a>00214   }
-<a name="l00215"></a>00215 <span class="preprocessor">#endif</span>
-<a name="l00216"></a>00216 <span class="preprocessor"></span>
-<a name="l00217"></a>00217   <span class="comment">// Try again later if transaction is in progress</span>
-<a name="l00218"></a>00218   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a> || <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a24a67dd6fad229ed23a02353bb820a10">I2CTransRunning</a>)
-<a name="l00219"></a>00219   {
-<a name="l00220"></a>00220     <span class="keywordflow">return</span>;
-<a name="l00221"></a>00221   }
-<a name="l00222"></a>00222 
-<a name="l00223"></a>00223   <a class="code" href="imu__aspirin_8h.html#a62850cb40d836d423b8e389ab9c9bc26">ImuMagEvent</a>(_mag_handler);
-<a name="l00224"></a>00224 
-<a name="l00225"></a>00225   <span class="comment">// Try back later if things are not idle</span>
-<a name="l00226"></a>00226   <span class="keywordflow">if</span> ((i2c2.status != <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>) || !<a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(&amp;i2c2)) {
-<a name="l00227"></a>00227     <span class="keywordflow">return</span>;
-<a name="l00228"></a>00228   }
+<a name="l00124"></a>00124 <span class="comment">/* Default I2C address and device for the ITG3200/IMU300 gyro */</span>
+<a name="l00125"></a>00125 <span class="preprocessor">#ifndef ITG3200_I2C_ADDR</span>
+<a name="l00126"></a><a class="code" href="imu__aspirin_8h.html#a18cb68b584a6ac78296c4fb6a581a1cb">00126</a> <span class="preprocessor"></span><span class="preprocessor">#define ITG3200_I2C_ADDR ITG3200_ADDR</span>
+<a name="l00127"></a>00127 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00128"></a>00128 <span class="preprocessor"></span><span class="preprocessor">#ifndef ITG3200_I2C_DEV</span>
+<a name="l00129"></a><a class="code" href="imu__aspirin_8h.html#a70937094341b5f90bb4fd9f54de87913">00129</a> <span class="preprocessor"></span><span class="preprocessor">#define ITG3200_I2C_DEV i2c2</span>
+<a name="l00130"></a>00130 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00131"></a>00131 <span class="preprocessor"></span>
+<a name="l00132"></a>00132 
+<a name="l00133"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8">00133</a> <span class="keyword">enum</span> <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8">AspirinStatus</a>
+<a name="l00134"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">00134</a>   { <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a>,
+<a name="l00135"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a1b79e5ac74270b36feeacbdc6a2dcc7a">00135</a>     <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a1b79e5ac74270b36feeacbdc6a2dcc7a">AspirinStatusIdle</a>,
+<a name="l00136"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8ab37b7939ff4b174c1ebf94ed48fa1162">00136</a>     <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8ab37b7939ff4b174c1ebf94ed48fa1162">AspirinStatusReadingGyro</a>,
+<a name="l00137"></a><a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8af9fe0832964e38413e3e1b8880521d50">00137</a>     <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8af9fe0832964e38413e3e1b8880521d50">AspirinStatusReadingMag</a>
+<a name="l00138"></a>00138   };
+<a name="l00139"></a>00139 
+<a name="l00140"></a><a class="code" href="structImuAspirin.html">00140</a> <span class="keyword">struct </span><a class="code" href="structImuAspirin.html">ImuAspirin</a> {
+<a name="l00141"></a><a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">00141</a>   <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8">AspirinStatus</a> <a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a>;
+<a name="l00142"></a><a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">00142</a>   <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> <a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>;
+<a name="l00143"></a><a class="code" href="structImuAspirin.html#a659333de53a58ee21c8d734c97b240d9">00143</a>   <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> <a class="code" href="structImuAspirin.html#a659333de53a58ee21c8d734c97b240d9">i2c_trans_mag</a>;
+<a name="l00144"></a><a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">00144</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a>;
+<a name="l00145"></a><a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">00145</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#ae12dea21d7b8529620b1927313e97497">accel_tx_buf</a>[7];
+<a name="l00146"></a><a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">00146</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[7];
+<a name="l00147"></a><a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">00147</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a>;
+<a name="l00148"></a><a class="code" href="structImuAspirin.html#a3e60a747f5a4f228f17bdb6924e2ce9c">00148</a>   <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="structImuAspirin.html#a3e60a747f5a4f228f17bdb6924e2ce9c">time_since_last_accel_reading</a>;
+<a name="l00149"></a><a class="code" href="structImuAspirin.html#a6999a418c1b4aa1c64a88393570a6880">00149</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#a6999a418c1b4aa1c64a88393570a6880">mag_available</a>;
+<a name="l00150"></a><a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">00150</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a>;
+<a name="l00151"></a><a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">00151</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a>;
+<a name="l00152"></a>00152 };
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structImuAspirin.html">ImuAspirin</a> <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>;
+<a name="l00155"></a><a class="code" href="imu__aspirin_8h.html#aecd8b6c5ae659db1c8fa12b2587f5b36">00155</a> <span class="preprocessor">#define ASPIRIN_GYRO_TIMEOUT 3</span>
+<a name="l00156"></a><a class="code" href="imu__aspirin_8h.html#a921646a056c0d8db6afd55d0467d0ca5">00156</a> <span class="preprocessor"></span><span class="preprocessor">#define ASPIRIN_ACCEL_TIMEOUT 3</span>
+<a name="l00157"></a>00157 <span class="preprocessor"></span>
+<a name="l00158"></a><a class="code" href="imu__aspirin_8h.html#a23553118551649e9fe4ddf7d2f3f96a7">00158</a> <span class="preprocessor">#define foo_handler() {}</span>
+<a name="l00159"></a><a class="code" href="imu__aspirin_8h.html#a62850cb40d836d423b8e389ab9c9bc26">00159</a> <span class="preprocessor"></span><span class="preprocessor">#define ImuMagEvent(_mag_handler) {         \</span>
+<a name="l00160"></a>00160 <span class="preprocessor">    MagEvent(foo_handler);                          \</span>
+<a name="l00161"></a>00161 <span class="preprocessor">    if (hmc5843.data_available) {     \</span>
+<a name="l00162"></a>00162 <span class="preprocessor">      imu.mag_unscaled.x = hmc5843.data.value[IMU_MAG_X_CHAN];    \</span>
+<a name="l00163"></a>00163 <span class="preprocessor">      imu.mag_unscaled.y = hmc5843.data.value[IMU_MAG_Y_CHAN];    \</span>
+<a name="l00164"></a>00164 <span class="preprocessor">      imu.mag_unscaled.z = hmc5843.data.value[IMU_MAG_Z_CHAN];    \</span>
+<a name="l00165"></a>00165 <span class="preprocessor">      _mag_handler();             \</span>
+<a name="l00166"></a>00166 <span class="preprocessor">      hmc5843.data_available = FALSE;   \</span>
+<a name="l00167"></a>00167 <span class="preprocessor">    }                 \</span>
+<a name="l00168"></a>00168 <span class="preprocessor">}</span>
+<a name="l00169"></a>00169 <span class="preprocessor"></span>
+<a name="l00170"></a>00170 <span class="comment">/* underlying architecture */</span>
+<a name="l00171"></a>00171 <span class="preprocessor">#include &quot;subsystems/imu/imu_aspirin_arch.h&quot;</span>
+<a name="l00172"></a>00172 <span class="comment">/* must be implemented by underlying architecture */</span>
+<a name="l00173"></a>00173 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a592698b1cfe18b6c6a33e450221ea2cf">imu_aspirin_arch_init</a>(<span class="keywordtype">void</span>);
+<a name="l00174"></a>00174 
+<a name="l00175"></a><a class="code" href="imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf">00175</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf">gyro_read_i2c</a>(<span class="keywordtype">void</span>)
+<a name="l00176"></a>00176 {
+<a name="l00177"></a>00177   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a56104f058052665032fd6b1e7936ad55">ITG3200_REG_GYRO_XOUT_H</a>;
+<a name="l00178"></a>00178   <a class="code" href="i2c_8h.html#ab01a8cb5cf13045d58e495056b3d2652">I2CTransceive</a>(<a class="code" href="imu__aspirin_8h.html#a70937094341b5f90bb4fd9f54de87913">ITG3200_I2C_DEV</a>, <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>, <a class="code" href="imu__aspirin_8h.html#a18cb68b584a6ac78296c4fb6a581a1cb">ITG3200_I2C_ADDR</a>, 1, 6);
+<a name="l00179"></a>00179   <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a> = 1;
+<a name="l00180"></a>00180 }
+<a name="l00181"></a>00181 
+<a name="l00182"></a><a class="code" href="imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0">00182</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0">gyro_copy_i2c</a>(<span class="keywordtype">void</span>)
+<a name="l00183"></a>00183 {
+<a name="l00184"></a>00184   <span class="keyword">const</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> gp = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0]&lt;&lt;8 | <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1];
+<a name="l00185"></a>00185   <span class="keyword">const</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> gq = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[2]&lt;&lt;8 | <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[3];
+<a name="l00186"></a>00186   <span class="keyword">const</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> gr = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[4]&lt;&lt;8 | <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[5];
+<a name="l00187"></a>00187   <a class="code" href="pprz__algebra_8h.html#a4edec404f97e53a3bfac68662016a2d3">RATES_ASSIGN</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75" title="unscaled gyroscope measurements">gyro_unscaled</a>, gp, gq, gr);
+<a name="l00188"></a>00188 }
+<a name="l00189"></a>00189 
+<a name="l00190"></a><a class="code" href="imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5">00190</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5">accel_copy_spi</a>(<span class="keywordtype">void</span>)
+<a name="l00191"></a>00191 {
+<a name="l00192"></a>00192   <span class="keyword">const</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> ax = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[1] | (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[2]&lt;&lt;8);
+<a name="l00193"></a>00193   <span class="keyword">const</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> ay = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[3] | (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[4]&lt;&lt;8);
+<a name="l00194"></a>00194   <span class="keyword">const</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> az = <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[5] | (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b">accel_rx_buf</a>[6]&lt;&lt;8);
+<a name="l00195"></a>00195   <a class="code" href="pprz__algebra_8h.html#aabe6b68b36e19217c178ddc14515c9af">VECT3_ASSIGN</a>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a>.<a class="code" href="structImu.html#abf7c6149da2d7b989713f6fc919ccb10" title="unscaled accelerometer measurements">accel_unscaled</a>, ax, ay, az);
+<a name="l00196"></a>00196 }
+<a name="l00197"></a>00197 
+<a name="l00198"></a><a class="code" href="imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a">00198</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a">ImuEvent</a>(<span class="keywordtype">void</span> (* _gyro_handler)(<span class="keywordtype">void</span>), <span class="keywordtype">void</span> (* _accel_handler)(<span class="keywordtype">void</span>), <span class="keywordtype">void</span> (* _mag_handler)(<span class="keywordtype">void</span>))
+<a name="l00199"></a>00199 {
+<a name="l00200"></a>00200   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1">status</a> == <a class="code" href="imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd">AspirinStatusUninit</a>) <span class="keywordflow">return</span>;
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202   <span class="comment">//imu_aspirin_arch_int_disable();</span>
+<a name="l00203"></a>00203   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a>) {
+<a name="l00204"></a>00204     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a3e60a747f5a4f228f17bdb6924e2ce9c">time_since_last_accel_reading</a> = 0;
+<a name="l00205"></a>00205     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0">accel_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00206"></a>00206     <a class="code" href="imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5">accel_copy_spi</a>();
+<a name="l00207"></a>00207     _accel_handler();
+<a name="l00208"></a>00208   }
+<a name="l00209"></a>00209   <span class="comment">//imu_aspirin_arch_int_enable();</span>
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211 <span class="preprocessor">#if 0</span>
+<a name="l00212"></a>00212 <span class="preprocessor"></span>  <span class="comment">// Reset everything if we&#39;ve been waiting too long</span>
+<a name="l00213"></a>00213   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a> &gt; <a class="code" href="imu__aspirin_8h.html#aecd8b6c5ae659db1c8fa12b2587f5b36">ASPIRIN_GYRO_TIMEOUT</a>) {
+<a name="l00214"></a>00214     <span class="comment">// FIXME: there should be no arch specific code like that here!</span>
+<a name="l00215"></a>00215     i2c2_er_isr();
+<a name="l00216"></a>00216     <a class="code" href="imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf">gyro_read_i2c</a>();
+<a name="l00217"></a>00217     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a> = 0;
+<a name="l00218"></a>00218     <span class="keywordflow">return</span>;
+<a name="l00219"></a>00219   }
+<a name="l00220"></a>00220 <span class="preprocessor">#endif</span>
+<a name="l00221"></a>00221 <span class="preprocessor"></span>
+<a name="l00222"></a>00222   <span class="comment">// Try again later if transaction is in progress</span>
+<a name="l00223"></a>00223   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a> || <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a24a67dd6fad229ed23a02353bb820a10">I2CTransRunning</a>)
+<a name="l00224"></a>00224   {
+<a name="l00225"></a>00225     <span class="keywordflow">return</span>;
+<a name="l00226"></a>00226   }
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228   <a class="code" href="imu__aspirin_8h.html#a62850cb40d836d423b8e389ab9c9bc26">ImuMagEvent</a>(_mag_handler);
 <a name="l00229"></a>00229 
-<a name="l00230"></a>00230   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a>) {
-<a name="l00231"></a>00231     <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>) {
-<a name="l00232"></a>00232       <a class="code" href="imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0">gyro_copy_i2c</a>();
-<a name="l00233"></a>00233       <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a>) {
-<a name="l00234"></a>00234         <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
-<a name="l00235"></a>00235         _gyro_handler();
-<a name="l00236"></a>00236       }
-<a name="l00237"></a>00237     }
-<a name="l00238"></a>00238     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a> = 0;
-<a name="l00239"></a>00239     <span class="keywordflow">return</span>;
-<a name="l00240"></a>00240   }
-<a name="l00241"></a>00241 
-<a name="l00242"></a>00242   <span class="comment">// If we&#39;re not already waiting for read, schedule a read</span>
-<a name="l00243"></a>00243   <span class="keywordflow">if</span> (!<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a> &amp;&amp; i2c2.status == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a> &amp;&amp; <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(&amp;i2c2)) {
-<a name="l00244"></a>00244     <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>) {
-<a name="l00245"></a>00245       <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a> = 0;
-<a name="l00246"></a>00246     }
-<a name="l00247"></a>00247     <a class="code" href="imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf">gyro_read_i2c</a>();
-<a name="l00248"></a>00248     <span class="keywordflow">return</span>;
-<a name="l00249"></a>00249   }
-<a name="l00250"></a>00250 
-<a name="l00251"></a>00251 }
-<a name="l00252"></a>00252 
-<a name="l00253"></a><a class="code" href="imu__aspirin_8h.html#a5b61834fdd9dc32e2f93b974354c7402">00253</a> <span class="preprocessor">#define ImuEvent(_gyro_handler, _accel_handler, _mag_handler) do {    \</span>
-<a name="l00254"></a>00254 <span class="preprocessor">  imu_aspirin_event(_gyro_handler, _accel_handler, _mag_handler); \</span>
-<a name="l00255"></a>00255 <span class="preprocessor">} while(0);</span>
-<a name="l00256"></a>00256 <span class="preprocessor"></span>
-<a name="l00257"></a>00257 <span class="preprocessor">#endif </span><span class="comment">/* IMU_ASPIRIN_H */</span>
+<a name="l00230"></a>00230   <span class="comment">// Try back later if things are not idle</span>
+<a name="l00231"></a>00231   <span class="keywordflow">if</span> ((i2c2.status != <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>) || !<a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(&amp;i2c2)) {
+<a name="l00232"></a>00232     <span class="keywordflow">return</span>;
+<a name="l00233"></a>00233   }
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235   <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a>) {
+<a name="l00236"></a>00236     <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>) {
+<a name="l00237"></a>00237       <a class="code" href="imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0">gyro_copy_i2c</a>();
+<a name="l00238"></a>00238       <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a>) {
+<a name="l00239"></a>00239         <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a">gyro_available_blaaa</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00240"></a>00240         _gyro_handler();
+<a name="l00241"></a>00241       }
+<a name="l00242"></a>00242     }
+<a name="l00243"></a>00243     <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a> = 0;
+<a name="l00244"></a>00244     <span class="keywordflow">return</span>;
+<a name="l00245"></a>00245   }
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247   <span class="comment">// If we&#39;re not already waiting for read, schedule a read</span>
+<a name="l00248"></a>00248   <span class="keywordflow">if</span> (!<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605">reading_gyro</a> &amp;&amp; i2c2.status == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a> &amp;&amp; <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(&amp;i2c2)) {
+<a name="l00249"></a>00249     <span class="keywordflow">if</span> (<a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a30496a2189b7666a243e42d985846a63">i2c_trans_gyro</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>) {
+<a name="l00250"></a>00250       <a class="code" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a>.<a class="code" href="structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755">time_since_last_reading</a> = 0;
+<a name="l00251"></a>00251     }
+<a name="l00252"></a>00252     <a class="code" href="imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf">gyro_read_i2c</a>();
+<a name="l00253"></a>00253     <span class="keywordflow">return</span>;
+<a name="l00254"></a>00254   }
+<a name="l00255"></a>00255 
+<a name="l00256"></a>00256 }
+<a name="l00257"></a>00257 
+<a name="l00258"></a>00258 <span class="preprocessor">#endif </span><span class="comment">/* IMU_ASPIRIN_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -361,7 +362,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="imu__aspirin_8h.html">imu_aspirin.h</a>      </li>
 
-    <li class="footer">Generated on Fri Nov 30 2012 04:00:09 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Dec 5 2012 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
