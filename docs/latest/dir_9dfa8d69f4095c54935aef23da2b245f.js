@@ -14,6 +14,7 @@ var dir_9dfa8d69f4095c54935aef23da2b245f =
     [ "digital_cam", "dir_2fd8561059e119bd45b0a0ad64d7c791.html", null ],
     [ "display", "dir_22f738250d5f77487538bccf3099c686.html", null ],
     [ "enose", "dir_7aaff6717411fe507d0b4ee2605c1ad4.html", null ],
+    [ "gain_scheduling", "dir_5f6dad2f389efcc9a11b9cd5a6cf2e65.html", null ],
     [ "geo_mag", "dir_f97da43a68f5f5424c1fd7d51caca2f4.html", null ],
     [ "gps", "dir_239fe99edf55334633dbf3b70b1009ab.html", null ],
     [ "gps_i2c", "dir_4c525d027a94194672ba4d48e48677d5.html", null ],

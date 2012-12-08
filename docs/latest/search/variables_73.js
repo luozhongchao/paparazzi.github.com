@@ -7,6 +7,7 @@ var searchData=
   ['save_5fcounter',['save_counter',['../hf__float_8c.html#a1192d11b26ebaf8d615bd1e7032ceb85',1,'save_counter():&#160;hf_float.c'],['../hf__float_8h.html#a1192d11b26ebaf8d615bd1e7032ceb85',1,'save_counter():&#160;hf_float.c']]],
   ['sbase',['SBASE',['../w5100_8c.html#ad5418936576f4ba56fbdb5f0ceea968a',1,'w5100.c']]],
   ['sc18is600',['sc18is600',['../sc18i600_8c.html#ac9869125d40e6f7e0c17c02b20c21fe6',1,'sc18is600():&#160;sc18i600.c'],['../sc18i600_8h.html#ac9869125d40e6f7e0c17c02b20c21fe6',1,'sc18is600():&#160;sc18i600.c']]],
+  ['scheduling_5fpoints',['scheduling_points',['../gain__scheduling_8c.html#a3f55d71dfb3b7469a5986e5e8487b7af',1,'gain_scheduling.c']]],
   ['scl_5fpin',['scl_pin',['../structi2c__periph.html#ad0b6c0f7fa20c6925a5686f87d645800',1,'i2c_periph']]],
   ['sclh',['sclh',['../structi2cRegs__t.html#a107114e174ebcb0ecdf5802c65040e22',1,'i2cRegs_t']]],
   ['scll',['scll',['../structi2cRegs__t.html#a0a7c42eb309325575c03b361889260ff',1,'i2cRegs_t']]],

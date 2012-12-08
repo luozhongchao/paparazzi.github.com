@@ -494,6 +494,7 @@ var searchData=
   ['int32_5frate_5ffrac',['INT32_RATE_FRAC',['../pprz__algebra__int_8h.html#acd293568d358a48f21774753cf9f095b',1,'pprz_algebra_int.h']]],
   ['int32_5frates_5fof_5feulers_5fdot',['INT32_RATES_OF_EULERS_DOT',['../pprz__algebra__int_8h.html#abd6d3beeb6788f8e15f07d37858dab91',1,'pprz_algebra_int.h']]],
   ['int32_5frates_5fof_5feulers_5fdot_5f321',['INT32_RATES_OF_EULERS_DOT_321',['../pprz__algebra__int_8h.html#aa6c81a434acabe3861fd9f1498d6f4fe',1,'pprz_algebra_int.h']]],
+  ['int32_5fratio_5ffrac',['INT32_RATIO_FRAC',['../gain__scheduling_8c.html#a6607c5031785ec6ba8573364fc40cc6f',1,'gain_scheduling.c']]],
   ['int32_5frmat_5fcomp',['INT32_RMAT_COMP',['../pprz__algebra__int_8h.html#a2c49118762379f814f60a1994e8b3c94',1,'pprz_algebra_int.h']]],
   ['int32_5frmat_5fcomp_5finv',['INT32_RMAT_COMP_INV',['../pprz__algebra__int_8h.html#a24baf88f9a3ca8016fdf5bc40b4f8570',1,'pprz_algebra_int.h']]],
   ['int32_5frmat_5fof_5feulers',['INT32_RMAT_OF_EULERS',['../pprz__algebra__int_8h.html#afff0280f8ca7d9accdb4db59511b2e8d',1,'pprz_algebra_int.h']]],

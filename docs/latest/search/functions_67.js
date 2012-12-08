@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['gain_5fscheduling_5finit',['gain_scheduling_init',['../gain__scheduling_8c.html#ae7be3ffc700495dfdf7aa7631a5713f6',1,'gain_scheduling_init(void):&#160;gain_scheduling.c'],['../gain__scheduling_8h.html#ae7be3ffc700495dfdf7aa7631a5713f6',1,'gain_scheduling_init(void):&#160;gain_scheduling.c']]],
+  ['gain_5fscheduling_5fperiodic',['gain_scheduling_periodic',['../gain__scheduling_8c.html#a4e89953041f33d51c4b1b6c588a66ff8',1,'gain_scheduling_periodic(void):&#160;gain_scheduling.c'],['../gain__scheduling_8h.html#a4e89953041f33d51c4b1b6c588a66ff8',1,'gain_scheduling_periodic(void):&#160;gain_scheduling.c']]],
   ['gc_5fof_5fgd_5flat_5fd',['gc_of_gd_lat_d',['../pprz__geodetic__double_8c.html#a11cc21abdae02f0439da4b235acb4e4a',1,'gc_of_gd_lat_d(double gd_lat, double hmsl):&#160;pprz_geodetic_double.c'],['../pprz__geodetic__double_8h.html#a11cc21abdae02f0439da4b235acb4e4a',1,'gc_of_gd_lat_d(double gd_lat, double hmsl):&#160;pprz_geodetic_double.c']]],
   ['geiger_5fcounter_5fevent',['geiger_counter_event',['../geiger__counter_8c.html#ac77d02c87e3708fee71f7423a6b23fea',1,'geiger_counter_event(void):&#160;geiger_counter.c'],['../geiger__counter_8h.html#ac77d02c87e3708fee71f7423a6b23fea',1,'geiger_counter_event(void):&#160;geiger_counter.c']]],
   ['geiger_5fcounter_5finit',['geiger_counter_init',['../geiger__counter_8c.html#a540c1be1c58c71a3c93050ba104fe83d',1,'geiger_counter_init(void):&#160;geiger_counter.c'],['../geiger__counter_8h.html#a540c1be1c58c71a3c93050ba104fe83d',1,'geiger_counter_init(void):&#160;geiger_counter.c']]],

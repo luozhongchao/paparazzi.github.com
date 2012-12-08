@@ -2,6 +2,7 @@ var searchData=
 [
   ['g_5fdt',['G_Dt',['../ahrs__float__dcm_8c.html#a8afcaa0b0df0db5ad885df050d994a7f',1,'ahrs_float_dcm.c']]],
   ['gain_5fidx',['gain_idx',['../stabilization__attitude__quat__float_8c.html#a88471162c0f269059f892bf96fbc7260',1,'stabilization_attitude_quat_float.c']]],
+  ['gainlibrary',['gainlibrary',['../gain__scheduling_8c.html#a5b3f2ec9266c8b0bd6d859d5c9790492',1,'gainlibrary():&#160;gain_scheduling.c'],['../gain__scheduling_8h.html#a5b3f2ec9266c8b0bd6d859d5c9790492',1,'gainlibrary():&#160;gain_scheduling.c']]],
   ['gcalstatus',['gCalStatus',['../structCHIMU__PARSER__DATA.html#aef84e707b8e8fbf399dbdbc3fdd4e903',1,'CHIMU_PARSER_DATA']]],
   ['gchimu_5fbit',['gCHIMU_BIT',['../structCHIMU__PARSER__DATA.html#ae4341b0de3991b9ed967e637f1ccd2a8',1,'CHIMU_PARSER_DATA']]],
   ['gchimu_5fsw_5fexclaim',['gCHIMU_SW_Exclaim',['../structCHIMU__PARSER__DATA.html#af0e910c2b81bc5141dd9a8222ea50b51',1,'CHIMU_PARSER_DATA']]],

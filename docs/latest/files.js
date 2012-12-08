@@ -481,6 +481,8 @@ var files =
     [ "sw/airborne/modules/enose/chemotaxis.h", "chemotaxis_8h.html", "chemotaxis_8h" ],
     [ "sw/airborne/modules/enose/enose.c", "enose_8c.html", "enose_8c" ],
     [ "sw/airborne/modules/enose/enose.h", "enose_8h.html", "enose_8h" ],
+    [ "sw/airborne/modules/gain_scheduling/gain_scheduling.c", "gain__scheduling_8c.html", "gain__scheduling_8c" ],
+    [ "sw/airborne/modules/gain_scheduling/gain_scheduling.h", "gain__scheduling_8h.html", "gain__scheduling_8h" ],
     [ "sw/airborne/modules/geo_mag/geo_mag.c", "geo__mag_8c.html", "geo__mag_8c" ],
     [ "sw/airborne/modules/geo_mag/geo_mag.h", "geo__mag_8h.html", "geo__mag_8h" ],
     [ "sw/airborne/modules/gps/gps_ubx_uart.h", "gps__ubx__uart_8h.html", null ],
