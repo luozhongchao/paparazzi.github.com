@@ -117,7 +117,6 @@ var searchData=
   ['rmat_5fvect3_5fmul',['RMAT_VECT3_MUL',['../pprz__algebra_8h.html#a978057ca926406c880508021a4148731',1,'pprz_algebra.h']]],
   ['rmat_5fvect3_5ftransp_5fmul',['RMAT_VECT3_TRANSP_MUL',['../pprz__algebra_8h.html#ae7dc355f24f14a07a1b7c162b572370d',1,'pprz_algebra.h']]],
   ['rne',['RNE',['../LPC21xx_8h.html#a17c4fbbef09cdf2b491c0bb5ae7d01b9',1,'LPC21xx.h']]],
-  ['roll_5fcoef',['ROLL_COEF',['../quat__setpoint__int_8c.html#a5948a9863126732755023c8ae0d5eef6',1,'quat_setpoint_int.c']]],
   ['roll_5fdeadband_5fexceeded',['ROLL_DEADBAND_EXCEEDED',['../stabilization__attitude__rc__setpoint_8h.html#ade5e3cdd965d34f8d9076b0724f54c02',1,'stabilization_attitude_rc_setpoint.h']]],
   ['roll_5frate_5fdeadband_5fexceeded',['ROLL_RATE_DEADBAND_EXCEEDED',['../stabilization__rate_8c.html#aa6b12451b039befdc1fce7c6b5fd10cb',1,'stabilization_rate.c']]],
   ['roll_5fstick_5fcentered',['ROLL_STICK_CENTERED',['../autopilot__rc__helpers_8h.html#a4283b5e77477e4c499cfba6c902cdea7',1,'autopilot_rc_helpers.h']]],

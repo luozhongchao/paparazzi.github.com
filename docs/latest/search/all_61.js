@@ -646,7 +646,7 @@ var searchData=
   ['app_5fangle',['APP_ANGLE',['../gls_8c.html#a54c976fc74097d0392e6b3efaf8730f0',1,'APP_ANGLE():&#160;gls.c'],['../gls_8c.html#a1b37b4a92dd8212f13cd6b465f34d3dd',1,'app_angle():&#160;gls.c']]],
   ['app_5fintercept_5faf_5ftod',['APP_INTERCEPT_AF_TOD',['../gls_8c.html#a2165aeac056655dfaf26f2cf8758d8b5',1,'APP_INTERCEPT_AF_TOD():&#160;gls.c'],['../gls_8c.html#accab3557492d425c887c32e0f2debd25',1,'app_intercept_af_tod():&#160;gls.c']]],
   ['app_5ftarget_5fspeed',['APP_TARGET_SPEED',['../gls_8c.html#ad6a9f5ab245044a721ba99060d5cdcfd',1,'gls.c']]],
-  ['apply_5fdeadband',['APPLY_DEADBAND',['../quat__setpoint__int_8c.html#ae30007ac762e650a2e03a8c3edf00272',1,'APPLY_DEADBAND():&#160;quat_setpoint_int.c'],['../stabilization__attitude__ref__quat__float_8h.html#ae30007ac762e650a2e03a8c3edf00272',1,'APPLY_DEADBAND():&#160;stabilization_attitude_ref_quat_float.h']]],
+  ['apply_5fdeadband',['APPLY_DEADBAND',['../stabilization__attitude__ref__quat__float_8h.html#ae30007ac762e650a2e03a8c3edf00272',1,'stabilization_attitude_ref_quat_float.h']]],
   ['approach',['Approach',['../OSAMNav_8c.html#a61a75394da51ededcb57cd59a9e3cefeaa19b7b7f6eb8f8eedb2055bf1050f81f',1,'OSAMNav.c']]],
   ['approachqdr',['ApproachQDR',['../OSAMNav_8c.html#a296529c7c1399de6db0cd520b5c660e7',1,'OSAMNav.c']]],
   ['arb_5flost_5fcnt',['arb_lost_cnt',['../structi2c__errors.html#af759b5450d828fa43aa04b203bab42cd',1,'i2c_errors']]],

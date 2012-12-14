@@ -311,8 +311,6 @@ var files =
     [ "sw/airborne/firmwares/rotorcraft/guidance/guidance_v.h", "rotorcraft_2guidance_2guidance__v_8h.html", "rotorcraft_2guidance_2guidance__v_8h" ],
     [ "sw/airborne/firmwares/rotorcraft/guidance/guidance_v_adpt.h", "guidance__v__adpt_8h.html", "guidance__v__adpt_8h" ],
     [ "sw/airborne/firmwares/rotorcraft/guidance/guidance_v_ref.h", "guidance__v__ref_8h.html", "guidance__v__ref_8h" ],
-    [ "sw/airborne/firmwares/rotorcraft/stabilization/quat_setpoint_int.c", "quat__setpoint__int_8c.html", "quat__setpoint__int_8c" ],
-    [ "sw/airborne/firmwares/rotorcraft/stabilization/quat_setpoint_int.h", "quat__setpoint__int_8h.html", "quat__setpoint__int_8h" ],
     [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_attitude.h", "rotorcraft_2stabilization_2stabilization__attitude_8h.html", "rotorcraft_2stabilization_2stabilization__attitude_8h" ],
     [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_attitude_euler_float.c", "stabilization__attitude__euler__float_8c.html", "stabilization__attitude__euler__float_8c" ],
     [ "sw/airborne/firmwares/rotorcraft/stabilization/stabilization_attitude_euler_int.c", "stabilization__attitude__euler__int_8c.html", "stabilization__attitude__euler__int_8c" ],

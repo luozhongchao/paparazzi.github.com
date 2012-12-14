@@ -277,7 +277,7 @@ var searchData=
   ['app_5fangle',['APP_ANGLE',['../gls_8c.html#a54c976fc74097d0392e6b3efaf8730f0',1,'gls.c']]],
   ['app_5fintercept_5faf_5ftod',['APP_INTERCEPT_AF_TOD',['../gls_8c.html#a2165aeac056655dfaf26f2cf8758d8b5',1,'gls.c']]],
   ['app_5ftarget_5fspeed',['APP_TARGET_SPEED',['../gls_8c.html#ad6a9f5ab245044a721ba99060d5cdcfd',1,'gls.c']]],
-  ['apply_5fdeadband',['APPLY_DEADBAND',['../quat__setpoint__int_8c.html#ae30007ac762e650a2e03a8c3edf00272',1,'APPLY_DEADBAND():&#160;quat_setpoint_int.c'],['../stabilization__attitude__ref__quat__float_8h.html#ae30007ac762e650a2e03a8c3edf00272',1,'APPLY_DEADBAND():&#160;stabilization_attitude_ref_quat_float.h']]],
+  ['apply_5fdeadband',['APPLY_DEADBAND',['../stabilization__attitude__ref__quat__float_8h.html#ae30007ac762e650a2e03a8c3edf00272',1,'stabilization_attitude_ref_quat_float.h']]],
   ['arduimu_5fi2c_5fdev',['ARDUIMU_I2C_DEV',['../modules_2ins_2ins__arduimu_8c.html#a5a51d08f24d0844a38d7226509de72f6',1,'ARDUIMU_I2C_DEV():&#160;ins_arduimu.c'],['../modules_2ins_2ins__arduimu__basic_8c.html#a5a51d08f24d0844a38d7226509de72f6',1,'ARDUIMU_I2C_DEV():&#160;ins_arduimu_basic.c']]],
   ['arduimu_5fslave_5faddr',['ArduIMU_SLAVE_ADDR',['../modules_2ins_2ins__arduimu_8c.html#ad14a8d61af1149c06d36d19a4d6a9c12',1,'ArduIMU_SLAVE_ADDR():&#160;ins_arduimu.c'],['../modules_2ins_2ins__arduimu__basic_8c.html#ad14a8d61af1149c06d36d19a4d6a9c12',1,'ArduIMU_SLAVE_ADDR():&#160;ins_arduimu_basic.c']]],
   ['arrived_5fat_5fwaypoint',['ARRIVED_AT_WAYPOINT',['../navigation_8c.html#af75d742659e3579da1aa27aacf087fe0',1,'navigation.c']]],

@@ -14,7 +14,7 @@ var searchData=
   ['dc_5fsend_5fshot_5fposition',['dc_send_shot_position',['../dc_8h.html#a6975f41e5584f2d9d5d4a3904452bf98',1,'dc.h']]],
   ['dc_5fstop',['dc_Stop',['../dc_8h.html#a9fa3be838c4c15559b76805ff40adae8',1,'dc.h']]],
   ['dc_5fsurvey',['dc_Survey',['../dc_8h.html#a4dd1c5ffa5ca99523ce090e17d5ca9dc',1,'dc.h']]],
-  ['deadband_5fexceeded',['DEADBAND_EXCEEDED',['../quat__setpoint__int_8c.html#a75d3fc035fedc18f7c153e35a59a138a',1,'DEADBAND_EXCEEDED():&#160;quat_setpoint_int.c'],['../stabilization__attitude__ref__quat__float_8h.html#a75d3fc035fedc18f7c153e35a59a138a',1,'DEADBAND_EXCEEDED():&#160;stabilization_attitude_ref_quat_float.h']]],
+  ['deadband_5fexceeded',['DEADBAND_EXCEEDED',['../stabilization__attitude__ref__quat__float_8h.html#a75d3fc035fedc18f7c153e35a59a138a',1,'stabilization_attitude_ref_quat_float.h']]],
   ['debug_5fs1_5foff',['DEBUG_S1_OFF',['../my__debug__servo_8h.html#af742478d6139b542e6df6e4b073e8823',1,'my_debug_servo.h']]],
   ['debug_5fs1_5fon',['DEBUG_S1_ON',['../my__debug__servo_8h.html#abe5c86aefddc6013db380979dfdbb1dc',1,'my_debug_servo.h']]],
   ['debug_5fs1_5ftoggle',['DEBUG_S1_TOGGLE',['../my__debug__servo_8h.html#a2fc4732c60ca4eb1dee90fc4fc04ff6f',1,'my_debug_servo.h']]],

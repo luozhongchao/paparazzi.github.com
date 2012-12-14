@@ -189,7 +189,6 @@ var searchData=
   ['pinsel1_5fsck',['PINSEL1_SCK',['../lcd__dogm__hw_8c.html#a3d65fe8634fad2755d523e202674a1b0',1,'PINSEL1_SCK():&#160;lcd_dogm_hw.c'],['../max3100__hw_8c.html#a3d65fe8634fad2755d523e202674a1b0',1,'PINSEL1_SCK():&#160;max3100_hw.c']]],
   ['pinsel1_5fssel',['PINSEL1_SSEL',['../lcd__dogm__hw_8c.html#a232db58a94564ed9dfd068333e683b41',1,'PINSEL1_SSEL():&#160;lcd_dogm_hw.c'],['../max3100__hw_8c.html#a232db58a94564ed9dfd068333e683b41',1,'PINSEL1_SSEL():&#160;max3100_hw.c']]],
   ['pinsel2',['PINSEL2',['../LPC21xx_8h.html#ac43539e28c63bbab43998e0fde66a96f',1,'LPC21xx.h']]],
-  ['pitch_5fcoef',['PITCH_COEF',['../quat__setpoint__int_8c.html#a95eedd3b24667c8e3cb33326ee60e934',1,'quat_setpoint_int.c']]],
   ['pitch_5fdeadband_5fexceeded',['PITCH_DEADBAND_EXCEEDED',['../stabilization__attitude__rc__setpoint_8h.html#a502a88bbc096e471006af59f53dc060a',1,'stabilization_attitude_rc_setpoint.h']]],
   ['pitch_5frate_5fdeadband_5fexceeded',['PITCH_RATE_DEADBAND_EXCEEDED',['../stabilization__rate_8c.html#ad06c8f59dff42c9ca2ec66fa7a879210',1,'stabilization_rate.c']]],
   ['pitch_5fstick_5fcentered',['PITCH_STICK_CENTERED',['../autopilot__rc__helpers_8h.html#a5541af1f39db9db37eb4e4d1673aac4c',1,'autopilot_rc_helpers.h']]],

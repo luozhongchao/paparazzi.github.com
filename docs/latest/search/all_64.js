@@ -84,7 +84,7 @@ var searchData=
   ['dc_5fwider',['DC_WIDER',['../dc_8h.html#a5bcad6137b0e9f54ae973b52e8a94d34a6f7a704df22428ad15570dee4f1337b8',1,'dc.h']]],
   ['dcm_5fmatrix',['DCM_Matrix',['../ahrs__float__dcm_8c.html#a24d90a916e25a097b018392beefabebe',1,'ahrs_float_dcm.c']]],
   ['dd',['dd',['../structFloatAttitudeGains.html#a8ce7bbebd00044be34b96bf126cd672d',1,'FloatAttitudeGains::dd()'],['../structInt32AttitudeGains.html#a6bbc38ebd4313ff8c277cbbeb168cdbc',1,'Int32AttitudeGains::dd()']]],
-  ['deadband_5fexceeded',['DEADBAND_EXCEEDED',['../quat__setpoint__int_8c.html#a75d3fc035fedc18f7c153e35a59a138a',1,'DEADBAND_EXCEEDED():&#160;quat_setpoint_int.c'],['../stabilization__attitude__ref__quat__float_8h.html#a75d3fc035fedc18f7c153e35a59a138a',1,'DEADBAND_EXCEEDED():&#160;stabilization_attitude_ref_quat_float.h']]],
+  ['deadband_5fexceeded',['DEADBAND_EXCEEDED',['../stabilization__attitude__ref__quat__float_8h.html#a75d3fc035fedc18f7c153e35a59a138a',1,'stabilization_attitude_ref_quat_float.h']]],
   ['debug_5fs1_5foff',['DEBUG_S1_OFF',['../my__debug__servo_8h.html#af742478d6139b542e6df6e4b073e8823',1,'my_debug_servo.h']]],
   ['debug_5fs1_5fon',['DEBUG_S1_ON',['../my__debug__servo_8h.html#abe5c86aefddc6013db380979dfdbb1dc',1,'my_debug_servo.h']]],
   ['debug_5fs1_5ftoggle',['DEBUG_S1_TOGGLE',['../my__debug__servo_8h.html#a2fc4732c60ca4eb1dee90fc4fc04ff6f',1,'my_debug_servo.h']]],
