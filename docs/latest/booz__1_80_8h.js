@@ -28,6 +28,7 @@ var booz__1_80_8h =
     [ "MAX1168_EOC_PINSEL", "booz__1_80_8h.html#aaa37fe060b308c5808f70b01dda594af", null ],
     [ "MAX1168_EOC_PINSEL_BIT", "booz__1_80_8h.html#a71c3b1fdd7659914d02a8bf6264be3eb", null ],
     [ "MAX1168_EOC_PINSEL_VAL", "booz__1_80_8h.html#a1347ad37483e68bb377d42aa75d93cd4", null ],
+    [ "MAX1168_EOC_VIC_IT", "booz__1_80_8h.html#a95e1345d4cad8a75168286fda32885f1", null ],
     [ "MS2100_DRDY_EINT", "booz__1_80_8h.html#a8a5e2eca7376532b45b7f8b8b494a24b", null ],
     [ "MS2100_DRDY_PIN", "booz__1_80_8h.html#a167ae3b374a30e0612d83d88d89eacb2", null ],
     [ "MS2100_DRDY_PINSEL", "booz__1_80_8h.html#a30ad5199fceac9f1b29c182b7c94502d", null ],

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['zero_5foffset_5fdegrees',['ZERO_OFFSET_DEGREES',['../wind__gfi_8c.html#a1c27d6803cac68644bf4d9b90f9efdcf',1,'wind_gfi.c']]],
-  ['zeros_5ferr_5fcounter',['ZEROS_ERR_COUNTER',['../i2c_8h.html#a0c590ace0cfbd91af9173a07cc211362',1,'i2c.h']]],
+  ['zeros_5ferr_5fcounter',['ZEROS_ERR_COUNTER',['../group__i2c.html#ga0c590ace0cfbd91af9173a07cc211362',1,'i2c.h']]],
   ['zeta_5fomega_5fp',['ZETA_OMEGA_P',['../stabilization__attitude__ref__euler__int_8c.html#a0d93c149b0777920a61387dbb073fe4c',1,'ZETA_OMEGA_P():&#160;stabilization_attitude_ref_euler_int.c'],['../stabilization__attitude__ref__quat__int_8c.html#a0d93c149b0777920a61387dbb073fe4c',1,'ZETA_OMEGA_P():&#160;stabilization_attitude_ref_quat_int.c']]],
   ['zeta_5fomega_5fp_5fres',['ZETA_OMEGA_P_RES',['../stabilization__attitude__ref__euler__int_8c.html#a33aba348bdb40cec6290d75d0d177ae5',1,'ZETA_OMEGA_P_RES():&#160;stabilization_attitude_ref_euler_int.c'],['../stabilization__attitude__ref__quat__int_8c.html#a33aba348bdb40cec6290d75d0d177ae5',1,'ZETA_OMEGA_P_RES():&#160;stabilization_attitude_ref_quat_int.c']]],
   ['zeta_5fomega_5fq',['ZETA_OMEGA_Q',['../stabilization__attitude__ref__euler__int_8c.html#ad997fd15a0c0e3656449580fe279a7ff',1,'ZETA_OMEGA_Q():&#160;stabilization_attitude_ref_euler_int.c'],['../stabilization__attitude__ref__quat__int_8c.html#ad997fd15a0c0e3656449580fe279a7ff',1,'ZETA_OMEGA_Q():&#160;stabilization_attitude_ref_quat_int.c']]],

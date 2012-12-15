@@ -8,8 +8,8 @@ var i2c__arch_8very__old_8c =
     [ "i2c_apply_config", "i2c__arch_8very__old_8c.html#ac5ee6c8f53bfc4dc0e3663771e5b53d2", null ],
     [ "i2c_delay", "i2c__arch_8very__old_8c.html#a08967c9db96aa56272046212a73938f3", null ],
     [ "i2c_hard_reset", "i2c__arch_8very__old_8c.html#a630280dc71eab6f3f8fa80ebd9bbbe40", null ],
-    [ "i2c_idle", "i2c__arch_8very__old_8c.html#a54cb2dd83ed5b0dacc02764aa234f564", null ],
+    [ "i2c_idle", "group__i2c.html#ga54cb2dd83ed5b0dacc02764aa234f564", null ],
     [ "i2c_reset_init", "i2c__arch_8very__old_8c.html#a1cd0e133116ad27682527799d671b229", null ],
-    [ "i2c_submit", "i2c__arch_8very__old_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa", null ],
+    [ "i2c_submit", "group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa", null ],
     [ "start_transaction", "i2c__arch_8very__old_8c.html#abd8c86aaaefc9c14ee42387064ecd5bb", null ]
 ];

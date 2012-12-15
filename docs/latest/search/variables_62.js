@@ -164,6 +164,7 @@ var searchData=
   ['bmp_5fup',['bmp_up',['../baro__bmp_8c.html#a544f34f9f69ac754cc504df2bef091c6',1,'baro_bmp.c']]],
   ['bmp_5fut',['bmp_ut',['../baro__bmp_8c.html#af4c96d55e57edbc028b7e2b6a4877b5a',1,'baro_bmp.c']]],
   ['bnumberofcorners',['bNumberOfCorners',['../flightzone_8c.html#a22877bf3911bcd082ef23b669d55df9e',1,'flightzone.c']]],
+  ['bo',['bo',['../structspi__periph__dma.html#a6956aff142bd54afdb5a60540c939b59',1,'spi_periph_dma']]],
   ['body_5frates_5ff',['body_rates_f',['../group__state__rate.html#ga7f86e8d9743c1cc28439f1019d5b7e6a',1,'State']]],
   ['body_5frates_5fi',['body_rates_i',['../group__state__rate.html#gac383a9698fc97dca5d56ef455babfa71',1,'State']]],
   ['body_5fto_5fimu_5feulers',['body_to_imu_eulers',['../structImuFloat.html#a3249aead96a7995e642cdd6911b7956f',1,'ImuFloat']]],

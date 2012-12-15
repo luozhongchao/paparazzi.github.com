@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -136,9 +136,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 <span class="preprocessor">#include &lt;libopencm3/stm32/spi.h&gt;</span>
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033 <span class="preprocessor">#include BOARD_CONFIG</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="Arch independent mcu ( Micro Controller Unit ) utilities.">mcu.h</a>&quot;</span>
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html" title="Architecture independent I2C (Inter-Integrated Circuit Bus) API.">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
 <a name="l00039"></a>00039 <span class="preprocessor">#include &quot;std.h&quot;</span>
@@ -173,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068 }
 <a name="l00069"></a>00069 
 <a name="l00070"></a>00070 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00071"></a>00071   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
+<a name="l00071"></a>00071   <a class="code" href="group__mcu__periph.html#ga9af744358ff4b1e3e33d7dd170862f9b" title="Microcontroller peripherals initialization.">mcu_init</a>();
 <a name="l00072"></a>00072   <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);
 <a name="l00073"></a>00073   <a class="code" href="lisa__test__itg3200_8c.html#a7cebb03b0c23cce4e13ca34789f475a4">main_init_hw</a>();
 <a name="l00074"></a>00074 }
@@ -213,47 +213,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00108"></a>00108 
 <a name="l00109"></a>00109   <span class="keywordflow">case</span> 1:
 <a name="l00110"></a>00110     <span class="comment">/* dummy one byte write for testing */</span>
-<a name="l00111"></a>00111     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00111"></a>00111     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
 <a name="l00112"></a>00112     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>;
 <a name="l00113"></a>00113     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#ad5cb0cc5cd2bd2a6785d66355028ee23">ITG3200_REG_TEMP_OUT_H</a>;
 <a name="l00114"></a>00114     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
-<a name="l00115"></a>00115     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
+<a name="l00115"></a>00115     <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
 <a name="l00116"></a>00116     <span class="keywordflow">break</span>;
 <a name="l00117"></a>00117   <span class="keywordflow">case</span> 2:
 <a name="l00118"></a>00118     <span class="comment">/* set gyro range to 2000deg/s and low pass at 256Hz */</span>
-<a name="l00119"></a>00119     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00119"></a>00119     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
 <a name="l00120"></a>00120     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>;
 <a name="l00121"></a>00121     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a653510a2ba2abd795efbfc86e643a447">ITG3200_REG_DLPF_FS</a>;
 <a name="l00122"></a>00122     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (0x03&lt;&lt;3);
 <a name="l00123"></a>00123     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 2;
-<a name="l00124"></a>00124     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
+<a name="l00124"></a>00124     <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
 <a name="l00125"></a>00125     <span class="keywordflow">break</span>;
 <a name="l00126"></a>00126   <span class="keywordflow">case</span> 3:
 <a name="l00127"></a>00127     <span class="comment">/* set sample rate to 533Hz */</span>
-<a name="l00128"></a>00128     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00128"></a>00128     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
 <a name="l00129"></a>00129     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>;
 <a name="l00130"></a>00130     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a9490677e66932d9240ff143714a5846a">ITG3200_REG_SMPLRT_DIV</a>;
 <a name="l00131"></a>00131     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = 0x0E;
 <a name="l00132"></a>00132     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 2;
-<a name="l00133"></a>00133     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
+<a name="l00133"></a>00133     <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
 <a name="l00134"></a>00134     <span class="keywordflow">break</span>;
 <a name="l00135"></a>00135   <span class="keywordflow">case</span> 4:
 <a name="l00136"></a>00136     <span class="comment">/* switch to gyroX clock */</span>
-<a name="l00137"></a>00137     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00137"></a>00137     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
 <a name="l00138"></a>00138     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>;
 <a name="l00139"></a>00139     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a85621ed4be861a41e44f01cd79c29015">ITG3200_REG_PWR_MGM</a>;
 <a name="l00140"></a>00140     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = 0x01;
 <a name="l00141"></a>00141     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 2;
-<a name="l00142"></a>00142     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
+<a name="l00142"></a>00142     <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
 <a name="l00143"></a>00143     <span class="keywordflow">break</span>;
 <a name="l00144"></a>00144   <span class="keywordflow">case</span> 5:
 <a name="l00145"></a>00145     <span class="comment">/* enable interrupt on data ready, idle hight */</span>
-<a name="l00146"></a>00146     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00146"></a>00146     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
 <a name="l00147"></a>00147     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>;
 <a name="l00148"></a>00148     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#a355f46a6c4c401c94d75a04ffef2161e">ITG3200_REG_INT_CFG</a>;
 <a name="l00149"></a>00149     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (0x01 | 0x01&lt;&lt;7);
 <a name="l00150"></a>00150     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 2;
-<a name="l00151"></a>00151     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
+<a name="l00151"></a>00151     <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
 <a name="l00152"></a>00152     <span class="keywordflow">break</span>;
 <a name="l00153"></a>00153   <span class="keywordflow">case</span> <a class="code" href="lisa__test__itg3200_8c.html#a05b386d4bad60f6f9236de6d3be866e0">INITIALIZED</a>:
 <a name="l00154"></a>00154     <span class="comment">/* reads 8 bytes from address 0x1b */</span>
@@ -277,13 +277,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00172"></a><a class="code" href="lisa__test__itg3200_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">00172</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__itg3200_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> ) {
 <a name="l00173"></a>00173 
 <a name="l00174"></a>00174   <span class="keywordflow">if</span> (<a class="code" href="lisa__test__itg3200_8c.html#abefa58e269e2b435d5bb95045deea991">gyro_state</a> == <a class="code" href="lisa__test__itg3200_8c.html#a05b386d4bad60f6f9236de6d3be866e0">INITIALIZED</a> &amp;&amp; <a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> &amp;&amp;
-<a name="l00175"></a>00175       ( <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a> || <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>)) {
+<a name="l00175"></a>00175       ( <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a> || <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>)) {
 <a name="l00176"></a>00176     <span class="comment">/* reads 8 bytes from address 0x1b */</span>
-<a name="l00177"></a>00177     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>;
+<a name="l00177"></a>00177     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>;
 <a name="l00178"></a>00178     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="itg3200_8h.html#ad5cb0cc5cd2bd2a6785d66355028ee23">ITG3200_REG_TEMP_OUT_H</a>;
 <a name="l00179"></a>00179     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
 <a name="l00180"></a>00180     <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 8;
-<a name="l00181"></a>00181     <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
+<a name="l00181"></a>00181     <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;i2c2,&amp;<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>);
 <a name="l00182"></a>00182     <span class="comment">//   i2c2.buf[0] = ITG3200_REG_GYRO_XOUT_H;</span>
 <a name="l00183"></a>00183     <span class="comment">//    i2c2_transceive(ITG3200_ADDR,1, 6, &amp;i2c_done);</span>
 <a name="l00184"></a>00184     <a class="code" href="lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
@@ -291,7 +291,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00186"></a>00186   }
 <a name="l00187"></a>00187 
 <a name="l00188"></a>00188   <span class="keywordflow">if</span> (<a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">reading_gyro</a> &amp;&amp;
-<a name="l00189"></a>00189       (<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a> || <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>)) {
+<a name="l00189"></a>00189       (<a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a> || <a class="code" href="lisa__test__itg3200_8c.html#aa677b28486685e7da072d5b7cb370e38">i2c_trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a>==<a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>)) {
 <a name="l00190"></a>00190     <span class="comment">//    DEBUG_S5_ON();</span>
 <a name="l00191"></a>00191     <a class="code" href="lisa__test__itg3200_8c.html#a1a2864e52a7db719c34e7f2670f51540">reading_gyro</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00192"></a>00192     <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> tgp, tgq, tgr;
@@ -411,7 +411,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lisa__test__itg3200_8c.html">lisa_test_itg3200.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

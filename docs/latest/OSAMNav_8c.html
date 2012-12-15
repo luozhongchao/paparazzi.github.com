@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -135,6 +135,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#a6e9a68be1e55ed84e119c2423756d6e2">Takeoff_Speed</a>&#160;&#160;&#160;15</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#acb95b1f3ec6438f933df979885a4ac2a">Takeoff_MinSpeed</a>&#160;&#160;&#160;5</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#a69676f9f382d6a82e373aec9d860cb9e">Landing_AFHeight</a>&#160;&#160;&#160;50</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Landing Routine.  <a href="#a69676f9f382d6a82e373aec9d860cb9e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#afe149d09b8622d1bcd6457866c52b806">Landing_FinalHeight</a>&#160;&#160;&#160;5</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#a2317c33e09955ba185932b5912189786">Landing_FinalStageTime</a>&#160;&#160;&#160;5</td></tr>
 <tr><td colspan="2"><h2><a name="enum-members"></a>
@@ -203,6 +204,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#a35730be09cdeb6b537eb047c0bff7b38">FlightLineBlock</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> First_WP, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> Last_WP, float <a class="el" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>, float Space_Before, float Space_After)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#af0bd4fedce9feee425bcbd4ee20439bb">TranslateAndRotateFromWorld</a> (struct <a class="el" href="structPoint2D.html">Point2D</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, float Zrot, float transX, float transY)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#a48c160b16e812b494516ffb30413d169">RotateAndTranslateToWorld</a> (struct <a class="el" href="structPoint2D.html">Point2D</a> *<a class="el" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, float Zrot, float transX, float transY)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates point round z by -Zrot then translates so (0,0) becomes (transX,transY)  <a href="#a48c160b16e812b494516ffb30413d169"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#a7d7df26d6723c61622ad77133554b6f1">FindInterceptOfTwoLines</a> (float *x, float *y, struct <a class="el" href="structLine.html">Line</a> L1, struct <a class="el" href="structLine.html">Line</a> L2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#a095112377dc73ffde222b7ea1bd05a3f">EvaluateLineForY</a> (float x, struct <a class="el" href="structLine.html">Line</a> L)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#a369fb753abd22e08ec5990479b0dcbcf">EvaluateLineForX</a> (float y, struct <a class="el" href="structLine.html">Line</a> L)</td></tr>
@@ -271,7 +273,10 @@ Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#ac5ac5c92ab9959db425b53c1c14b0dcd">FLRadius</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OSAMNav_8c.html#a6153b4202ff509ca28071434233c4ccb">FLBlockCount</a> = 0</td></tr>
 </table>
-<hr/><h2>Define Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition in file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+</div><hr/><h2>Define Documentation</h2>
 <a class="anchor" id="a69676f9f382d6a82e373aec9d860cb9e"></a><!-- doxytag: member="OSAMNav.c::Landing_AFHeight" ref="a69676f9f382d6a82e373aec9d860cb9e" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -283,9 +288,17 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00869">869</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Landing Routine. </p>
+<div class="fragment"><pre class="fragment">
+   &lt;section name="Landing" prefix="Landing_"&gt;
+   &lt;define name="AFHeight" value="50" unit="m"/&gt;
+   &lt;define name="FinalHeight" value="5" unit="m"/&gt;
+   &lt;define name="FinalStageTime" value="5" unit="s"/&gt;
+   &lt;/section&gt;
+   </pre></div> 
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00896">896</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -300,9 +313,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00872">872</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00899">899</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -317,9 +330,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00875">875</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00902">902</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -334,9 +347,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00034">34</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00060">60</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -351,9 +364,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00037">37</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00063">63</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>, <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>, <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -369,12 +382,18 @@ Variables</h2></td></tr>
 <div class="memdoc">
 
 <p>Takeoff functions for bungee takeoff. </p>
-<p>Run initialize function when the plane is on the bungee, the bungee is fully extended and you are ready to launch the plane. After initialized, the plane will follow a line drawn by the position of the plane on initialization and the position of the bungee (given in the arguments). Once the plane crosses the throttle line, which is perpendicular to the line the plane is following, and intersects the position of the bungee (plus or minus a fixed distance (TakeOff_Distance in airframe file) from the bungee just in case the bungee doesn't release directly above the bungee) the prop will come on. The plane will then continue to follow the line until it has reached a specific height (defined in as Takeoff_Height in airframe file) above the bungee waypoint and speed (defined as Takeoff_Speed in the airframe file).</p>
-<p>&lt;section name="Takeoff" prefix="Takeoff_"&gt; &lt;define name="Height" value="30" unit="m"&gt; &lt;define name="Speed" value="15" unit="m/s"&gt; &lt;define name="Distance" value="10" unit="m"&gt; &lt;define name="MinSpeed" value="5" unit="m/s"&gt; &lt;/section&gt; </p>
+<p>Run initialize function when the plane is on the bungee, the bungee is fully extended and you are ready to launch the plane. After initialized, the plane will follow a line drawn by the position of the plane on initialization and the position of the bungee (given in the arguments). Once the plane crosses the throttle line, which is perpendicular to the line the plane is following, and intersects the position of the bungee (plus or minus a fixed distance (TakeOff_Distance in airframe file) from the bungee just in case the bungee doesn't release directly above the bungee) the prop will come on. The plane will then continue to follow the line until it has reached a specific height (defined in as Takeoff_Height in airframe file) above the bungee waypoint and speed (defined as Takeoff_Speed in the airframe file). </p>
+<div class="fragment"><pre class="fragment">
+    &lt;section name="Takeoff" prefix="Takeoff_"&gt;
+    &lt;define name="Height" value="30" unit="m"/&gt;
+    &lt;define name="Speed" value="15" unit="m/s"/&gt;
+    &lt;define name="Distance" value="10" unit="m"/&gt;
+    &lt;define name="MinSpeed" value="5" unit="m/s"/&gt;
+    &lt;/section&gt;
+    </pre></div> 
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00182">182</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00155">155</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
-
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -389,9 +408,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00158">158</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00185">185</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -406,9 +425,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00164">164</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00191">191</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -423,9 +442,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00161">161</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00188">188</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -454,7 +473,7 @@ Variables</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00015">15</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00041">41</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
 </div>
 </div>
@@ -481,7 +500,7 @@ Variables</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00997">997</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01024">1024</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
 </div>
 </div>
@@ -508,7 +527,7 @@ Variables</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00878">878</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00905">905</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
 </div>
 </div>
@@ -562,7 +581,7 @@ Variables</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00741">741</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00768">768</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
 </div>
 </div>
@@ -591,7 +610,7 @@ Variables</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00332">332</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00359">359</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
 </div>
 </div>
@@ -616,7 +635,7 @@ Variables</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00167">167</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00194">194</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
 </div>
 </div>
@@ -636,9 +655,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00233">233</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00260">260</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8c_source.html#l00174">AboveLine</a>, <a class="el" href="OSAMNav_8c_source.html#l00175">BungeeAlt</a>, <a class="el" href="OSAMNav_8c_source.html#l00177">BungeeWaypoint</a>, <a class="el" href="OSAMNav_8c_source.html#l00168">CTakeoffStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00167">Finished</a>, <a class="el" href="OSAMNav_8c_source.html#l00171">initialx</a>, <a class="el" href="OSAMNav_8c_source.html#l00172">initialy</a>, <a class="el" href="fixedwing_2autopilot_8c_source.html#l00031">kill_throttle</a>, <a class="el" href="OSAMNav_8c_source.html#l00167">Launch</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="navigation_8h_source.html#l00166">NavVerticalThrottleMode</a>, <a class="el" href="state_8h_source.html#l00863">stateGetHorizontalSpeedNorm_f()</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00158">Takeoff_Height</a>, <a class="el" href="OSAMNav_8c_source.html#l00164">Takeoff_MinSpeed</a>, <a class="el" href="OSAMNav_8c_source.html#l00161">Takeoff_Speed</a>, <a class="el" href="OSAMNav_8c_source.html#l00176">TDistance</a>, <a class="el" href="OSAMNav_8c_source.html#l00167">Throttle</a>, <a class="el" href="OSAMNav_8c_source.html#l00169">throttlePx</a>, <a class="el" href="OSAMNav_8c_source.html#l00170">throttlePy</a>, <a class="el" href="OSAMNav_8c_source.html#l00173">ThrottleSlope</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+<p>References <a class="el" href="OSAMNav_8c_source.html#l00201">AboveLine</a>, <a class="el" href="OSAMNav_8c_source.html#l00202">BungeeAlt</a>, <a class="el" href="OSAMNav_8c_source.html#l00204">BungeeWaypoint</a>, <a class="el" href="OSAMNav_8c_source.html#l00195">CTakeoffStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00194">Finished</a>, <a class="el" href="OSAMNav_8c_source.html#l00198">initialx</a>, <a class="el" href="OSAMNav_8c_source.html#l00199">initialy</a>, <a class="el" href="fixedwing_2autopilot_8c_source.html#l00033">kill_throttle</a>, <a class="el" href="OSAMNav_8c_source.html#l00194">Launch</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="navigation_8h_source.html#l00166">NavVerticalThrottleMode</a>, <a class="el" href="state_8h_source.html#l00863">stateGetHorizontalSpeedNorm_f()</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00185">Takeoff_Height</a>, <a class="el" href="OSAMNav_8c_source.html#l00191">Takeoff_MinSpeed</a>, <a class="el" href="OSAMNav_8c_source.html#l00188">Takeoff_Speed</a>, <a class="el" href="OSAMNav_8c_source.html#l00203">TDistance</a>, <a class="el" href="OSAMNav_8c_source.html#l00194">Throttle</a>, <a class="el" href="OSAMNav_8c_source.html#l00196">throttlePx</a>, <a class="el" href="OSAMNav_8c_source.html#l00197">throttlePy</a>, <a class="el" href="OSAMNav_8c_source.html#l00200">ThrottleSlope</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -678,9 +697,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01192">1192</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01217">1217</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::y</a>.</p>
+<p>References <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::y</a>.</p>
 
 </div>
 </div>
@@ -709,11 +728,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01187">1187</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01212">1212</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8h_source.html#l00008">Line::b</a>, and <a class="el" href="OSAMNav_8h_source.html#l00008">Line::m</a>.</p>
+<p>References <a class="el" href="OSAMNav_8h_source.html#l00034">Line::b</a>, and <a class="el" href="OSAMNav_8h_source.html#l00034">Line::m</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -753,9 +772,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01182">1182</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01207">1207</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8h_source.html#l00008">Line::b</a>, and <a class="el" href="OSAMNav_8h_source.html#l00008">Line::m</a>.</p>
+<p>References <a class="el" href="OSAMNav_8h_source.html#l00034">Line::b</a>, and <a class="el" href="OSAMNav_8h_source.html#l00034">Line::m</a>.</p>
 
 </div>
 </div>
@@ -796,11 +815,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01176">1176</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01201">1201</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8h_source.html#l00008">Line::b</a>, and <a class="el" href="OSAMNav_8h_source.html#l00008">Line::m</a>.</p>
+<p>References <a class="el" href="OSAMNav_8h_source.html#l00034">Line::b</a>, and <a class="el" href="OSAMNav_8h_source.html#l00034">Line::m</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>.</p>
 
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -858,11 +877,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01005">1005</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01032">1032</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8c_source.html#l00998">CFLStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00999">FLCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l00997">FLCircleS</a>, <a class="el" href="OSAMNav_8c_source.html#l00997">FLFinished</a>, <a class="el" href="OSAMNav_8c_source.html#l01000">FLFROMWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00997">FLInitialize</a>, <a class="el" href="OSAMNav_8c_source.html#l00997">FLLine</a>, <a class="el" href="OSAMNav_8c_source.html#l01002">FLQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l01003">FLRadius</a>, <a class="el" href="OSAMNav_8c_source.html#l01001">FLTOWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00034">LINE_START_FUNCTION</a>, <a class="el" href="OSAMNav_8c_source.html#l00037">LINE_STOP_FUNCTION</a>, <a class="el" href="nav_8c_source.html#l00312">nav_approaching_xy()</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00116">NavCircleCount</a>, <a class="el" href="navigation_8h_source.html#l00120">NavQdrCloseTo</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="chemotaxis_8c_source.html#l00015">radius</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l01150">TranslateAndRotateFromWorld()</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::x</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::y</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+<p>References <a class="el" href="OSAMNav_8c_source.html#l01025">CFLStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l01026">FLCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l01024">FLCircleS</a>, <a class="el" href="OSAMNav_8c_source.html#l01024">FLFinished</a>, <a class="el" href="OSAMNav_8c_source.html#l01027">FLFROMWP</a>, <a class="el" href="OSAMNav_8c_source.html#l01024">FLInitialize</a>, <a class="el" href="OSAMNav_8c_source.html#l01024">FLLine</a>, <a class="el" href="OSAMNav_8c_source.html#l01029">FLQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l01030">FLRadius</a>, <a class="el" href="OSAMNav_8c_source.html#l01028">FLTOWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00060">LINE_START_FUNCTION</a>, <a class="el" href="OSAMNav_8c_source.html#l00063">LINE_STOP_FUNCTION</a>, <a class="el" href="nav_8c_source.html#l00312">nav_approaching_xy()</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00116">NavCircleCount</a>, <a class="el" href="navigation_8h_source.html#l00120">NavQdrCloseTo</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="chemotaxis_8c_source.html#l00015">radius</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l01177">TranslateAndRotateFromWorld()</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::x</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::y</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01112">FlightLineBlock()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01139">FlightLineBlock()</a>.</p>
 
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -931,9 +950,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01112">1112</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01139">1139</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8c_source.html#l00998">CFLStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l01110">FLBlockCount</a>, <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>, <a class="el" href="OSAMNav_8c_source.html#l00997">FLInitialize</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>References <a class="el" href="OSAMNav_8c_source.html#l01025">CFLStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l01137">FLBlockCount</a>, <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>, <a class="el" href="OSAMNav_8c_source.html#l01024">FLInitialize</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -963,9 +982,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00070">70</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00096">96</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="common__nav_8h_source.html#l00038">point::a</a>, <a class="el" href="OSAMNav_8c_source.html#l00030">Center</a>, <a class="el" href="OSAMNav_8c_source.html#l00016">CFlowerStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00015">Circle</a>, <a class="el" href="OSAMNav_8c_source.html#l00017">CircleX</a>, <a class="el" href="OSAMNav_8c_source.html#l00018">CircleY</a>, <a class="el" href="OSAMNav_8c_source.html#l00027">DistanceFromCenter</a>, <a class="el" href="OSAMNav_8c_source.html#l00031">Edge</a>, <a class="el" href="OSAMNav_8c_source.html#l00025">EdgeCurrentX</a>, <a class="el" href="OSAMNav_8c_source.html#l00026">EdgeCurrentY</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00015">FlowerLine</a>, <a class="el" href="OSAMNav_8c_source.html#l00029">Flowerradius</a>, <a class="el" href="OSAMNav_8c_source.html#l00028">FlowerTheta</a>, <a class="el" href="OSAMNav_8c_source.html#l00019">Fly2X</a>, <a class="el" href="OSAMNav_8c_source.html#l00020">Fly2Y</a>, <a class="el" href="OSAMNav_8c_source.html#l00021">FlyFromX</a>, <a class="el" href="OSAMNav_8c_source.html#l00022">FlyFromY</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="navigation_8c_source.html#l00060">nav_radius</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="OSAMNav_8c_source.html#l00015">Outside</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00023">TransCurrentX</a>, <a class="el" href="OSAMNav_8c_source.html#l00024">TransCurrentY</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+<p>References <a class="el" href="common__nav_8h_source.html#l00038">point::a</a>, <a class="el" href="OSAMNav_8c_source.html#l00056">Center</a>, <a class="el" href="OSAMNav_8c_source.html#l00042">CFlowerStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00041">Circle</a>, <a class="el" href="OSAMNav_8c_source.html#l00043">CircleX</a>, <a class="el" href="OSAMNav_8c_source.html#l00044">CircleY</a>, <a class="el" href="OSAMNav_8c_source.html#l00053">DistanceFromCenter</a>, <a class="el" href="OSAMNav_8c_source.html#l00057">Edge</a>, <a class="el" href="OSAMNav_8c_source.html#l00051">EdgeCurrentX</a>, <a class="el" href="OSAMNav_8c_source.html#l00052">EdgeCurrentY</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00041">FlowerLine</a>, <a class="el" href="OSAMNav_8c_source.html#l00055">Flowerradius</a>, <a class="el" href="OSAMNav_8c_source.html#l00054">FlowerTheta</a>, <a class="el" href="OSAMNav_8c_source.html#l00045">Fly2X</a>, <a class="el" href="OSAMNav_8c_source.html#l00046">Fly2Y</a>, <a class="el" href="OSAMNav_8c_source.html#l00047">FlyFromX</a>, <a class="el" href="OSAMNav_8c_source.html#l00048">FlyFromY</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="navigation_8c_source.html#l00060">nav_radius</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="OSAMNav_8c_source.html#l00041">Outside</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00049">TransCurrentX</a>, <a class="el" href="OSAMNav_8c_source.html#l00050">TransCurrentY</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
 
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -995,9 +1014,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00179">179</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00206">206</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8c_source.html#l00174">AboveLine</a>, <a class="el" href="OSAMNav_8c_source.html#l00175">BungeeAlt</a>, <a class="el" href="OSAMNav_8c_source.html#l00177">BungeeWaypoint</a>, <a class="el" href="OSAMNav_8c_source.html#l00168">CTakeoffStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00171">initialx</a>, <a class="el" href="OSAMNav_8c_source.html#l00172">initialy</a>, <a class="el" href="fixedwing_2autopilot_8c_source.html#l00031">kill_throttle</a>, <a class="el" href="OSAMNav_8c_source.html#l00167">Launch</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00155">Takeoff_Distance</a>, <a class="el" href="OSAMNav_8c_source.html#l00176">TDistance</a>, <a class="el" href="OSAMNav_8c_source.html#l00169">throttlePx</a>, <a class="el" href="OSAMNav_8c_source.html#l00170">throttlePy</a>, <a class="el" href="OSAMNav_8c_source.html#l00173">ThrottleSlope</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+<p>References <a class="el" href="OSAMNav_8c_source.html#l00201">AboveLine</a>, <a class="el" href="OSAMNav_8c_source.html#l00202">BungeeAlt</a>, <a class="el" href="OSAMNav_8c_source.html#l00204">BungeeWaypoint</a>, <a class="el" href="OSAMNav_8c_source.html#l00195">CTakeoffStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00198">initialx</a>, <a class="el" href="OSAMNav_8c_source.html#l00199">initialy</a>, <a class="el" href="fixedwing_2autopilot_8c_source.html#l00033">kill_throttle</a>, <a class="el" href="OSAMNav_8c_source.html#l00194">Launch</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00182">Takeoff_Distance</a>, <a class="el" href="OSAMNav_8c_source.html#l00203">TDistance</a>, <a class="el" href="OSAMNav_8c_source.html#l00196">throttlePx</a>, <a class="el" href="OSAMNav_8c_source.html#l00197">throttlePy</a>, <a class="el" href="OSAMNav_8c_source.html#l00200">ThrottleSlope</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
 
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1037,9 +1056,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00040">40</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00066">66</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8c_source.html#l00030">Center</a>, <a class="el" href="OSAMNav_8c_source.html#l00016">CFlowerStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00017">CircleX</a>, <a class="el" href="OSAMNav_8c_source.html#l00018">CircleY</a>, <a class="el" href="OSAMNav_8c_source.html#l00027">DistanceFromCenter</a>, <a class="el" href="OSAMNav_8c_source.html#l00031">Edge</a>, <a class="el" href="OSAMNav_8c_source.html#l00025">EdgeCurrentX</a>, <a class="el" href="OSAMNav_8c_source.html#l00026">EdgeCurrentY</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00015">FlowerLine</a>, <a class="el" href="OSAMNav_8c_source.html#l00029">Flowerradius</a>, <a class="el" href="OSAMNav_8c_source.html#l00028">FlowerTheta</a>, <a class="el" href="OSAMNav_8c_source.html#l00019">Fly2X</a>, <a class="el" href="OSAMNav_8c_source.html#l00020">Fly2Y</a>, <a class="el" href="OSAMNav_8c_source.html#l00021">FlyFromX</a>, <a class="el" href="OSAMNav_8c_source.html#l00022">FlyFromY</a>, <a class="el" href="OSAMNav_8c_source.html#l00015">Outside</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00023">TransCurrentX</a>, <a class="el" href="OSAMNav_8c_source.html#l00024">TransCurrentY</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+<p>References <a class="el" href="OSAMNav_8c_source.html#l00056">Center</a>, <a class="el" href="OSAMNav_8c_source.html#l00042">CFlowerStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00043">CircleX</a>, <a class="el" href="OSAMNav_8c_source.html#l00044">CircleY</a>, <a class="el" href="OSAMNav_8c_source.html#l00053">DistanceFromCenter</a>, <a class="el" href="OSAMNav_8c_source.html#l00057">Edge</a>, <a class="el" href="OSAMNav_8c_source.html#l00051">EdgeCurrentX</a>, <a class="el" href="OSAMNav_8c_source.html#l00052">EdgeCurrentY</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00041">FlowerLine</a>, <a class="el" href="OSAMNav_8c_source.html#l00055">Flowerradius</a>, <a class="el" href="OSAMNav_8c_source.html#l00054">FlowerTheta</a>, <a class="el" href="OSAMNav_8c_source.html#l00045">Fly2X</a>, <a class="el" href="OSAMNav_8c_source.html#l00046">Fly2Y</a>, <a class="el" href="OSAMNav_8c_source.html#l00047">FlyFromX</a>, <a class="el" href="OSAMNav_8c_source.html#l00048">FlyFromY</a>, <a class="el" href="OSAMNav_8c_source.html#l00041">Outside</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00049">TransCurrentX</a>, <a class="el" href="OSAMNav_8c_source.html#l00050">TransCurrentY</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
 
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1091,9 +1110,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00351">351</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00378">378</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8h_source.html#l00008">Line::b</a>, <a class="el" href="OSAMNav_8c_source.html#l00333">CSurveyStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00339">dSweep</a>, <a class="el" href="OSAMNav_8c_source.html#l00336">EdgeMaxY</a>, <a class="el" href="OSAMNav_8c_source.html#l00337">EdgeMinY</a>, <a class="el" href="OSAMNav_8c_source.html#l00335">Edges</a>, <a class="el" href="OSAMNav_8c_source.html#l00332">Entry</a>, <a class="el" href="OSAMNav_8c_source.html#l01187">EvaluateLineForX()</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l01176">FindInterceptOfTwoLines()</a>, <a class="el" href="OSAMNav_8c_source.html#l00332">Init</a>, <a class="el" href="OSAMNav_8c_source.html#l00037">LINE_STOP_FUNCTION</a>, <a class="el" href="OSAMNav_8h_source.html#l00008">Line::m</a>, <a class="el" href="OSAMNav_8h_source.html#l00020">MaxFloat</a>, <a class="el" href="OSAMNav_8c_source.html#l00347">MaxY</a>, <a class="el" href="OSAMNav_8c_source.html#l00349">PolySurveySweepBackNum</a>, <a class="el" href="OSAMNav_8c_source.html#l00348">PolySurveySweepNum</a>, <a class="el" href="OSAMNav_8c_source.html#l00334">SmallestCorner</a>, <a class="el" href="OSAMNav_8c_source.html#l00343">SurveyCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l00346">SurveyCircleQdr</a>, <a class="el" href="OSAMNav_8c_source.html#l00344">SurveyEntryWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00342">SurveyFromWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00340">SurveyRadius</a>, <a class="el" href="OSAMNav_8c_source.html#l00345">SurveySize</a>, <a class="el" href="OSAMNav_8c_source.html#l00338">SurveyTheta</a>, <a class="el" href="OSAMNav_8c_source.html#l00341">SurveyToWP</a>, <a class="el" href="OSAMNav_8c_source.html#l01150">TranslateAndRotateFromWorld()</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::x</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00075">EnuCoor_i::x</a>, <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::y</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00076">EnuCoor_i::y</a>.</p>
+<p>References <a class="el" href="OSAMNav_8h_source.html#l00034">Line::b</a>, <a class="el" href="OSAMNav_8c_source.html#l00360">CSurveyStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00366">dSweep</a>, <a class="el" href="OSAMNav_8c_source.html#l00363">EdgeMaxY</a>, <a class="el" href="OSAMNav_8c_source.html#l00364">EdgeMinY</a>, <a class="el" href="OSAMNav_8c_source.html#l00362">Edges</a>, <a class="el" href="OSAMNav_8c_source.html#l00359">Entry</a>, <a class="el" href="OSAMNav_8c_source.html#l01212">EvaluateLineForX()</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l01201">FindInterceptOfTwoLines()</a>, <a class="el" href="OSAMNav_8c_source.html#l00359">Init</a>, <a class="el" href="OSAMNav_8c_source.html#l00063">LINE_STOP_FUNCTION</a>, <a class="el" href="OSAMNav_8h_source.html#l00034">Line::m</a>, <a class="el" href="OSAMNav_8h_source.html#l00046">MaxFloat</a>, <a class="el" href="OSAMNav_8c_source.html#l00374">MaxY</a>, <a class="el" href="OSAMNav_8c_source.html#l00376">PolySurveySweepBackNum</a>, <a class="el" href="OSAMNav_8c_source.html#l00375">PolySurveySweepNum</a>, <a class="el" href="OSAMNav_8c_source.html#l00361">SmallestCorner</a>, <a class="el" href="OSAMNav_8c_source.html#l00370">SurveyCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l00373">SurveyCircleQdr</a>, <a class="el" href="OSAMNav_8c_source.html#l00371">SurveyEntryWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00369">SurveyFromWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00367">SurveyRadius</a>, <a class="el" href="OSAMNav_8c_source.html#l00372">SurveySize</a>, <a class="el" href="OSAMNav_8c_source.html#l00365">SurveyTheta</a>, <a class="el" href="OSAMNav_8c_source.html#l00368">SurveyToWP</a>, <a class="el" href="OSAMNav_8c_source.html#l01177">TranslateAndRotateFromWorld()</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::x</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00075">EnuCoor_i::x</a>, <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::y</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00076">EnuCoor_i::y</a>.</p>
 
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1139,9 +1158,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00890">890</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00917">917</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8c_source.html#l00880">AFWaypoint</a>, <a class="el" href="OSAMNav_8c_source.html#l00886">ApproachQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l00878">CircleDown</a>, <a class="el" href="OSAMNav_8c_source.html#l00879">CLandingStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00887">FinalLandAltitude</a>, <a class="el" href="OSAMNav_8c_source.html#l00888">FinalLandCount</a>, <a class="el" href="OSAMNav_8c_source.html#l00884">LandAppAlt</a>, <a class="el" href="OSAMNav_8c_source.html#l00883">LandCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l00885">LandCircleQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l00869">Landing_AFHeight</a>, <a class="el" href="OSAMNav_8c_source.html#l00872">Landing_FinalHeight</a>, <a class="el" href="OSAMNav_8c_source.html#l00882">LandRadius</a>, <a class="el" href="chemotaxis_8c_source.html#l00015">radius</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00881">TDWaypoint</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::x</a>, <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::y</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00075">EnuCoor_f::z</a>.</p>
+<p>References <a class="el" href="OSAMNav_8c_source.html#l00907">AFWaypoint</a>, <a class="el" href="OSAMNav_8c_source.html#l00913">ApproachQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l00905">CircleDown</a>, <a class="el" href="OSAMNav_8c_source.html#l00906">CLandingStatus</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00914">FinalLandAltitude</a>, <a class="el" href="OSAMNav_8c_source.html#l00915">FinalLandCount</a>, <a class="el" href="OSAMNav_8c_source.html#l00911">LandAppAlt</a>, <a class="el" href="OSAMNav_8c_source.html#l00910">LandCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l00912">LandCircleQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l00896">Landing_AFHeight</a>, <a class="el" href="OSAMNav_8c_source.html#l00899">Landing_FinalHeight</a>, <a class="el" href="OSAMNav_8c_source.html#l00909">LandRadius</a>, <a class="el" href="chemotaxis_8c_source.html#l00015">radius</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00908">TDWaypoint</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::x</a>, <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::y</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00075">EnuCoor_f::z</a>.</p>
 
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1171,7 +1190,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00744">744</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00771">771</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
 <p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, and <a class="el" href="border__line_8c_source.html#l00040">LR12</a>.</p>
 
@@ -1192,9 +1211,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00547">547</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00574">574</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8c_source.html#l00333">CSurveyStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00339">dSweep</a>, <a class="el" href="OSAMNav_8c_source.html#l00336">EdgeMaxY</a>, <a class="el" href="OSAMNav_8c_source.html#l00337">EdgeMinY</a>, <a class="el" href="OSAMNav_8c_source.html#l00335">Edges</a>, <a class="el" href="OSAMNav_8c_source.html#l00332">Entry</a>, <a class="el" href="OSAMNav_8c_source.html#l01187">EvaluateLineForX()</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00332">Init</a>, <a class="el" href="OSAMNav_8c_source.html#l00034">LINE_START_FUNCTION</a>, <a class="el" href="OSAMNav_8c_source.html#l00037">LINE_STOP_FUNCTION</a>, <a class="el" href="OSAMNav_8c_source.html#l00347">MaxY</a>, <a class="el" href="nav_8c_source.html#l00312">nav_approaching_xy()</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00116">NavCircleCount</a>, <a class="el" href="navigation_8h_source.html#l00120">NavQdrCloseTo</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="OSAMNav_8c_source.html#l00349">PolySurveySweepBackNum</a>, <a class="el" href="OSAMNav_8c_source.html#l00348">PolySurveySweepNum</a>, <a class="el" href="OSAMNav_8c_source.html#l01165">RotateAndTranslateToWorld()</a>, <a class="el" href="OSAMNav_8c_source.html#l00334">SmallestCorner</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00343">SurveyCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l00346">SurveyCircleQdr</a>, <a class="el" href="OSAMNav_8c_source.html#l00344">SurveyEntryWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00342">SurveyFromWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00340">SurveyRadius</a>, <a class="el" href="OSAMNav_8c_source.html#l00345">SurveySize</a>, <a class="el" href="OSAMNav_8c_source.html#l00338">SurveyTheta</a>, <a class="el" href="OSAMNav_8c_source.html#l00341">SurveyToWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00332">Sweep</a>, <a class="el" href="OSAMNav_8c_source.html#l00332">SweepCircle</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::y</a>.</p>
+<p>References <a class="el" href="OSAMNav_8c_source.html#l00360">CSurveyStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00366">dSweep</a>, <a class="el" href="OSAMNav_8c_source.html#l00363">EdgeMaxY</a>, <a class="el" href="OSAMNav_8c_source.html#l00364">EdgeMinY</a>, <a class="el" href="OSAMNav_8c_source.html#l00362">Edges</a>, <a class="el" href="OSAMNav_8c_source.html#l00359">Entry</a>, <a class="el" href="OSAMNav_8c_source.html#l01212">EvaluateLineForX()</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="OSAMNav_8c_source.html#l00359">Init</a>, <a class="el" href="OSAMNav_8c_source.html#l00060">LINE_START_FUNCTION</a>, <a class="el" href="OSAMNav_8c_source.html#l00063">LINE_STOP_FUNCTION</a>, <a class="el" href="OSAMNav_8c_source.html#l00374">MaxY</a>, <a class="el" href="nav_8c_source.html#l00312">nav_approaching_xy()</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00116">NavCircleCount</a>, <a class="el" href="navigation_8h_source.html#l00120">NavQdrCloseTo</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="OSAMNav_8c_source.html#l00376">PolySurveySweepBackNum</a>, <a class="el" href="OSAMNav_8c_source.html#l00375">PolySurveySweepNum</a>, <a class="el" href="OSAMNav_8c_source.html#l01190">RotateAndTranslateToWorld()</a>, <a class="el" href="OSAMNav_8c_source.html#l00361">SmallestCorner</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00370">SurveyCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l00373">SurveyCircleQdr</a>, <a class="el" href="OSAMNav_8c_source.html#l00371">SurveyEntryWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00369">SurveyFromWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00367">SurveyRadius</a>, <a class="el" href="OSAMNav_8c_source.html#l00372">SurveySize</a>, <a class="el" href="OSAMNav_8c_source.html#l00365">SurveyTheta</a>, <a class="el" href="OSAMNav_8c_source.html#l00368">SurveyToWP</a>, <a class="el" href="OSAMNav_8c_source.html#l00359">Sweep</a>, <a class="el" href="OSAMNav_8c_source.html#l00359">SweepCircle</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::y</a>.</p>
 
 <p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1203,7 +1222,7 @@ Variables</h2></td></tr>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="OSAMNav_8c_af8143af1dfd5795fb74590b32ff0d7d9_cgraph.png" border="0" usemap="#OSAMNav_8c_af8143af1dfd5795fb74590b32ff0d7d9_cgraph" alt=""/></div>
 <map name="OSAMNav_8c_af8143af1dfd5795fb74590b32ff0d7d9_cgraph" id="OSAMNav_8c_af8143af1dfd5795fb74590b32ff0d7d9_cgraph">
-<area shape="rect" id="node3" href="OSAMNav_8c.html#a369fb753abd22e08ec5990479b0dcbcf" title="EvaluateLineForX" alt="" coords="201,53,332,83"/><area shape="rect" id="node5" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint." alt="" coords="411,5,563,35"/><area shape="rect" id="node11" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="645,163,808,192"/><area shape="rect" id="node34" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y)." alt="" coords="213,157,320,187"/><area shape="rect" id="node46" href="navigation_8c.html#a2580ee456d7dd3d157fd7c43ad2eac2d" title="nav_init_stage" alt="" coords="209,315,324,344"/><area shape="rect" id="node48" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment." alt="" coords="213,211,320,240"/><area shape="rect" id="node52" href="OSAMNav_8c.html#a48c160b16e812b494516ffb30413d169" title="RotateAndTranslateToWorld" alt="" coords="171,368,363,397"/><area shape="rect" id="node7" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="612,56,841,85"/><area shape="rect" id="node9" href="group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4" title="stateCalcHorizontalSpeedNorm_f" alt="" coords="891,56,1125,85"/><area shape="rect" id="node13" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="925,163,1091,192"/><area shape="rect" id="node15" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="1385,57,1535,87"/><area shape="rect" id="node17" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1175,163,1321,192"/><area shape="rect" id="node19" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="1180,109,1316,139"/><area shape="rect" id="node24" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="1199,216,1297,245"/><area shape="rect" id="node28" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="1199,269,1297,299"/><area shape="rect" id="node21" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="1411,111,1509,140"/><area shape="rect" id="node26" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1408,216,1512,245"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1387,323,1533,352"/><area shape="rect" id="node32" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude_fast_f" alt="" coords="1371,269,1549,299"/><area shape="rect" id="node36" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="448,109,525,139"/><area shape="rect" id="node38" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="620,109,833,139"/><area shape="rect" id="node40" href="group__state__velocity.html#gad9b7b6ea39d5a4ee3e824f97204c4bb5" title="stateCalcHorizontalSpeedDir_f" alt="" coords="900,109,1116,139"/></map>
+<area shape="rect" id="node3" href="OSAMNav_8c.html#a369fb753abd22e08ec5990479b0dcbcf" title="EvaluateLineForX" alt="" coords="201,53,332,83"/><area shape="rect" id="node5" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint." alt="" coords="411,5,563,35"/><area shape="rect" id="node11" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="645,163,808,192"/><area shape="rect" id="node34" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y)." alt="" coords="213,157,320,187"/><area shape="rect" id="node46" href="navigation_8c.html#a2580ee456d7dd3d157fd7c43ad2eac2d" title="nav_init_stage" alt="" coords="209,315,324,344"/><area shape="rect" id="node48" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment." alt="" coords="213,211,320,240"/><area shape="rect" id="node52" href="OSAMNav_8c.html#a48c160b16e812b494516ffb30413d169" title="Rotates point round z by &#45;Zrot then translates so (0,0) becomes (transX,transY)" alt="" coords="171,368,363,397"/><area shape="rect" id="node7" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="612,56,841,85"/><area shape="rect" id="node9" href="group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4" title="stateCalcHorizontalSpeedNorm_f" alt="" coords="891,56,1125,85"/><area shape="rect" id="node13" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="925,163,1091,192"/><area shape="rect" id="node15" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="1385,57,1535,87"/><area shape="rect" id="node17" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1175,163,1321,192"/><area shape="rect" id="node19" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="1180,109,1316,139"/><area shape="rect" id="node24" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="1199,216,1297,245"/><area shape="rect" id="node28" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="1199,269,1297,299"/><area shape="rect" id="node21" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="1411,111,1509,140"/><area shape="rect" id="node26" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1408,216,1512,245"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1387,323,1533,352"/><area shape="rect" id="node32" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude_fast_f" alt="" coords="1371,269,1549,299"/><area shape="rect" id="node36" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="448,109,525,139"/><area shape="rect" id="node38" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="620,109,833,139"/><area shape="rect" id="node40" href="group__state__velocity.html#gad9b7b6ea39d5a4ee3e824f97204c4bb5" title="stateCalcHorizontalSpeedDir_f" alt="" coords="900,109,1116,139"/></map>
 </div>
 </p>
 
@@ -1246,11 +1265,13 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01165">1165</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Rotates point round z by -Zrot then translates so (0,0) becomes (transX,transY) </p>
 
-<p>References <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::y</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01190">1190</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>References <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::y</a>.</p>
+
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 <p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -1280,9 +1301,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00929">929</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00956">956</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8c_source.html#l00880">AFWaypoint</a>, <a class="el" href="OSAMNav_8c_source.html#l00878">Approach</a>, <a class="el" href="OSAMNav_8c_source.html#l00886">ApproachQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l00878">CircleDown</a>, <a class="el" href="OSAMNav_8c_source.html#l00879">CLandingStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00878">Final</a>, <a class="el" href="OSAMNav_8c_source.html#l00887">FinalLandAltitude</a>, <a class="el" href="OSAMNav_8c_source.html#l00888">FinalLandCount</a>, <a class="el" href="fixedwing_2autopilot_8c_source.html#l00031">kill_throttle</a>, <a class="el" href="OSAMNav_8c_source.html#l00884">LandAppAlt</a>, <a class="el" href="OSAMNav_8c_source.html#l00883">LandCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l00885">LandCircleQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l00875">Landing_FinalStageTime</a>, <a class="el" href="OSAMNav_8c_source.html#l00878">LandingWait</a>, <a class="el" href="OSAMNav_8c_source.html#l00882">LandRadius</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00116">NavCircleCount</a>, <a class="el" href="navigation_8h_source.html#l00120">NavQdrCloseTo</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="common__flight__plan_8c_source.html#l00029">stage_time</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00881">TDWaypoint</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::y</a>.</p>
+<p>References <a class="el" href="OSAMNav_8c_source.html#l00907">AFWaypoint</a>, <a class="el" href="OSAMNav_8c_source.html#l00905">Approach</a>, <a class="el" href="OSAMNav_8c_source.html#l00913">ApproachQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l00905">CircleDown</a>, <a class="el" href="OSAMNav_8c_source.html#l00906">CLandingStatus</a>, <a class="el" href="OSAMNav_8c_source.html#l00905">Final</a>, <a class="el" href="OSAMNav_8c_source.html#l00914">FinalLandAltitude</a>, <a class="el" href="OSAMNav_8c_source.html#l00915">FinalLandCount</a>, <a class="el" href="fixedwing_2autopilot_8c_source.html#l00033">kill_throttle</a>, <a class="el" href="OSAMNav_8c_source.html#l00911">LandAppAlt</a>, <a class="el" href="OSAMNav_8c_source.html#l00910">LandCircle</a>, <a class="el" href="OSAMNav_8c_source.html#l00912">LandCircleQDR</a>, <a class="el" href="OSAMNav_8c_source.html#l00902">Landing_FinalStageTime</a>, <a class="el" href="OSAMNav_8c_source.html#l00905">LandingWait</a>, <a class="el" href="OSAMNav_8c_source.html#l00909">LandRadius</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00116">NavCircleCount</a>, <a class="el" href="navigation_8h_source.html#l00120">NavQdrCloseTo</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="common__flight__plan_8c_source.html#l00029">stage_time</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="OSAMNav_8c_source.html#l00908">TDWaypoint</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::y</a>.</p>
 
 <p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1334,11 +1355,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01150">1150</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01177">1177</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>References <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00007">Point2D::y</a>.</p>
+<p>References <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::x</a>, and <a class="el" href="OSAMNav_8h_source.html#l00033">Point2D::y</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>.</p>
 
 <p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -1390,7 +1411,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00749">749</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00776">776</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
 <p>References <a class="el" href="common__nav_8h_source.html#l00038">point::a</a>, <a class="el" href="border__line_8c_source.html#l00040">LQC11</a>, <a class="el" href="border__line_8c_source.html#l00040">LQC12</a>, <a class="el" href="border__line_8c_source.html#l00040">LQC21</a>, <a class="el" href="border__line_8c_source.html#l00040">LQC22</a>, <a class="el" href="border__line_8c_source.html#l00040">LR12</a>, <a class="el" href="border__line_8c_source.html#l00040">LR21</a>, <a class="el" href="border__line_8c_source.html#l00040">LTC1</a>, <a class="el" href="border__line_8c_source.html#l00040">LTC2</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="navigation_8c_source.html#l00271">nav_init_stage()</a>, <a class="el" href="navigation_8h_source.html#l00140">NavApproachingFrom</a>, <a class="el" href="navigation_8h_source.html#l00120">NavQdrCloseTo</a>, <a class="el" href="navigation_8h_source.html#l00125">NavSegment</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8h_source.html#l00094">WaypointAlt</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="common__nav_8h_source.html#l00036">point::x</a>, and <a class="el" href="common__nav_8h_source.html#l00037">point::y</a>.</p>
 
@@ -1419,9 +1440,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00174">174</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00201">201</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -1436,9 +1457,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00880">880</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00907">907</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -1453,9 +1474,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00886">886</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00913">913</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -1470,9 +1491,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00175">175</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00202">202</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -1487,9 +1508,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00177">177</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00204">204</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -1504,9 +1525,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00030">30</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00056">56</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1521,9 +1542,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00016">16</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00042">42</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1538,9 +1559,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00998">998</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01025">1025</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>, and <a class="el" href="OSAMNav_8c_source.html#l01112">FlightLineBlock()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>, and <a class="el" href="OSAMNav_8c_source.html#l01139">FlightLineBlock()</a>.</p>
 
 </div>
 </div>
@@ -1555,9 +1576,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00017">17</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00043">43</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1572,9 +1593,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00018">18</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00044">44</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1589,9 +1610,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00879">879</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00906">906</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -1606,9 +1627,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00333">333</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00360">360</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -1623,9 +1644,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00168">168</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00195">195</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -1640,9 +1661,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00027">27</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00053">53</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1657,9 +1678,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00339">339</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00366">366</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -1674,9 +1695,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00031">31</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00057">57</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1691,9 +1712,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00025">25</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00051">51</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1708,9 +1729,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00026">26</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00052">52</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1725,9 +1746,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00336">336</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00363">363</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -1742,9 +1763,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00337">337</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00364">364</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -1759,9 +1780,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00335">335</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00362">362</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -1776,9 +1797,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00887">887</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00914">914</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -1793,9 +1814,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00888">888</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00915">915</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -1810,9 +1831,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01110">1110</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01137">1137</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01112">FlightLineBlock()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01139">FlightLineBlock()</a>.</p>
 
 </div>
 </div>
@@ -1827,9 +1848,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00999">999</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01026">1026</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>.</p>
 
 </div>
 </div>
@@ -1844,9 +1865,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01000">1000</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01027">1027</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>.</p>
 
 </div>
 </div>
@@ -1861,9 +1882,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00029">29</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00055">55</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1878,9 +1899,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00028">28</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00054">54</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1895,9 +1916,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01002">1002</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01029">1029</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>.</p>
 
 </div>
 </div>
@@ -1912,9 +1933,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01003">1003</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01030">1030</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>.</p>
 
 </div>
 </div>
@@ -1929,9 +1950,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01001">1001</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l01028">1028</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01005">FlightLine()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>.</p>
 
 </div>
 </div>
@@ -1946,9 +1967,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00019">19</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00045">45</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1963,9 +1984,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00020">20</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00046">46</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1980,9 +2001,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00021">21</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00047">47</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -1997,9 +2018,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00022">22</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00048">48</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -2014,9 +2035,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00171">171</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00198">198</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -2031,9 +2052,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00172">172</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00199">199</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -2048,9 +2069,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00884">884</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00911">911</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -2065,9 +2086,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00883">883</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00910">910</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -2082,9 +2103,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00885">885</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00912">912</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -2099,9 +2120,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00882">882</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00909">909</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -2116,7 +2137,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00742">742</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00769">769</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
 </div>
 </div>
@@ -2131,9 +2152,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00347">347</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00374">374</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2148,9 +2169,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00349">349</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00376">376</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2165,9 +2186,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00348">348</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00375">375</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2182,9 +2203,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00334">334</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00361">361</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2199,9 +2220,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00343">343</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00370">370</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2216,9 +2237,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00346">346</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00373">373</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2233,9 +2254,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00344">344</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00371">371</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2250,9 +2271,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00342">342</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00369">369</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2267,9 +2288,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00340">340</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00367">367</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2284,9 +2305,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00345">345</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00372">372</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2301,9 +2322,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00338">338</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00365">365</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2318,9 +2339,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00341">341</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00368">368</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00351">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00547">PolygonSurvey()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00378">InitializePolygonSurvey()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>.</p>
 
 </div>
 </div>
@@ -2335,9 +2356,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00176">176</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00203">203</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -2352,9 +2373,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00881">881</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00908">908</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00890">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00929">SkidLanding()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00917">InitializeSkidLanding()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>.</p>
 
 </div>
 </div>
@@ -2369,9 +2390,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00169">169</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00196">196</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -2386,9 +2407,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00170">170</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00197">197</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -2403,9 +2424,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00173">173</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00200">200</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00233">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00179">InitializeBungeeTakeoff()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00206">InitializeBungeeTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -2420,9 +2441,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00023">23</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00049">49</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -2437,9 +2458,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00024">24</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
+<p>Definition at line <a class="el" href="OSAMNav_8c_source.html#l00050">50</a> of file <a class="el" href="OSAMNav_8c_source.html">OSAMNav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00070">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00040">InitializeFlower()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00066">InitializeFlower()</a>.</p>
 
 </div>
 </div>
@@ -2463,7 +2484,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="OSAMNav_8c.html">OSAMNav.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:14 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

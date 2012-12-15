@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -125,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021 <span class="preprocessor">#include &lt;math.h&gt;</span>
 <a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="modules_2sensors_2imu__aspirin2_8h.html">imu_aspirin2.h</a>&quot;</span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html" title="Architecture independent I2C (Inter-Integrated Circuit Bus) API.">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="comment">// Downlink</span>
@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00057"></a><a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#ad32faae58e391642ec8048cb11011998">00057</a> <span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a>(<span class="keywordtype">void</span>)
 <a name="l00058"></a>00058 {
 <a name="l00060"></a>00060   <span class="comment">// MPU60X0</span>
-<a name="l00061"></a>00061   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00061"></a>00061   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
 <a name="l00062"></a>00062   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="mpu60X0_8h.html#a90ef447074cb5203d9e9556e89f39cca">MPU60X0_ADDR</a>;
 <a name="l00063"></a>00063   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 0;
 <a name="l00064"></a>00064   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 2;
@@ -180,8 +180,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00077"></a>00077   <span class="comment">// -switch to gyroX clock</span>
 <a name="l00078"></a>00078   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a5ec5b6507bf2191e70f03ed3ae26074c">MPU60X0_REG_PWR_MGMT_1</a>;
 <a name="l00079"></a>00079   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = 0x01;
-<a name="l00080"></a>00080   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
-<a name="l00081"></a>00081     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
+<a name="l00080"></a>00080   <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
+<a name="l00081"></a>00081     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
 <a name="l00082"></a>00082 
 <a name="l00083"></a>00083   <span class="comment">// MPU60X0_REG_PWR_MGMT_2: Nothing should be in standby: default OK</span>
 <a name="l00084"></a>00084 
@@ -199,29 +199,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00097"></a>00097 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00098"></a>00098 <span class="preprocessor"></span>  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a2b7ce956fb494e1a661a645dba83afde">MPU60X0_REG_CONFIG</a>;
 <a name="l00099"></a>00099   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (2 &lt;&lt; 3) | (3 &lt;&lt; 0);
-<a name="l00100"></a>00100   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
-<a name="l00101"></a>00101     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
+<a name="l00100"></a>00100   <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
+<a name="l00101"></a>00101     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
 <a name="l00102"></a>00102 
 <a name="l00103"></a>00103   <span class="comment">// MPU60X0_REG_SMPLRT_DIV</span>
 <a name="l00104"></a>00104   <span class="comment">// -100Hz output = 1kHz / (9 + 1)</span>
 <a name="l00105"></a>00105   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#aaa8b385c8d2539602ded2330fb3bcc57">MPU60X0_REG_SMPLRT_DIV</a>;
 <a name="l00106"></a>00106   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = 9;
-<a name="l00107"></a>00107   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
-<a name="l00108"></a>00108     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
+<a name="l00107"></a>00107   <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
+<a name="l00108"></a>00108     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
 <a name="l00109"></a>00109 
 <a name="l00110"></a>00110   <span class="comment">// MPU60X0_REG_GYRO_CONFIG</span>
 <a name="l00111"></a>00111   <span class="comment">// -2000deg/sec</span>
 <a name="l00112"></a>00112   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a28332b01b4b9f2bdbc89887e11eb406f">MPU60X0_REG_GYRO_CONFIG</a>;
 <a name="l00113"></a>00113   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (3&lt;&lt;3);
-<a name="l00114"></a>00114   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
-<a name="l00115"></a>00115     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
+<a name="l00114"></a>00114   <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
+<a name="l00115"></a>00115     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
 <a name="l00116"></a>00116 
 <a name="l00117"></a>00117   <span class="comment">// MPU60X0_REG_ACCEL_CONFIG</span>
 <a name="l00118"></a>00118   <span class="comment">// 16g, no HPFL</span>
 <a name="l00119"></a>00119   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a83dd394cafdbc08b8afc3dafe80c6d15">MPU60X0_REG_ACCEL_CONFIG</a>;
 <a name="l00120"></a>00120   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (3&lt;&lt;3);
-<a name="l00121"></a>00121   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
-<a name="l00122"></a>00122     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
+<a name="l00121"></a>00121   <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
+<a name="l00122"></a>00122     <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);
 <a name="l00123"></a>00123 
 <a name="l00124"></a>00124 
 <a name="l00125"></a>00125 
@@ -264,11 +264,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00163"></a><a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">00163</a> <span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a>( <span class="keywordtype">void</span> )
 <a name="l00164"></a>00164 {
 <a name="l00165"></a>00165   <span class="comment">// Start reading the latest gyroscope data</span>
-<a name="l00166"></a>00166   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>;
+<a name="l00166"></a>00166   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>;
 <a name="l00167"></a>00167   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 21;
 <a name="l00168"></a>00168   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;
 <a name="l00169"></a>00169   <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a4f448949c60adfeee3f9234a95187569">MPU60X0_REG_INT_STATUS</a>;
-<a name="l00170"></a>00170   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE, &amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
+<a name="l00170"></a>00170   <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE, &amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);
 <a name="l00171"></a>00171 
 <a name="l00172"></a>00172 <span class="comment">/*</span>
 <a name="l00173"></a>00173 <span class="comment">  // Start reading the latest accelerometer data</span>
@@ -306,7 +306,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00205"></a>00205   <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> x, y, z;
 <a name="l00206"></a>00206 
 <a name="l00207"></a>00207   <span class="comment">// If the itg3200 I2C transaction has succeeded: convert the data</span>
-<a name="l00208"></a>00208   <span class="keywordflow">if</span> (<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>)
+<a name="l00208"></a>00208   <span class="keywordflow">if</span> (<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>)
 <a name="l00209"></a>00209   {
 <a name="l00210"></a>00210 <span class="preprocessor">#define MPU_OFFSET_GYRO 9</span>
 <a name="l00211"></a>00211 <span class="preprocessor"></span>    x = (<a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>) ((<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0+<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#ae4ae2cd9131c03b2087647cf04c63a53">MPU_OFFSET_GYRO</a>] &lt;&lt; 8) | <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1+<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#ae4ae2cd9131c03b2087647cf04c63a53">MPU_OFFSET_GYRO</a>]);
@@ -332,7 +332,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00231"></a>00231     {
 <a name="l00232"></a>00232     }
 <a name="l00233"></a>00233 
-<a name="l00234"></a>00234     <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;  <span class="comment">// remove the I2CTransSuccess status, otherwise data ready will be triggered again without new data</span>
+<a name="l00234"></a>00234     <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;  <span class="comment">// remove the I2CTransSuccess status, otherwise data ready will be triggered again without new data</span>
 <a name="l00235"></a>00235   }
 <a name="l00236"></a>00236 <span class="comment">/*</span>
 <a name="l00237"></a>00237 <span class="comment">  // If the adxl345 I2C transaction has succeeded: convert the data</span>
@@ -391,7 +391,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="modules_2sensors_2imu__aspirin2_8c.html">imu_aspirin2.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

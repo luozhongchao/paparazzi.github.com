@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;libopencm3/stm32/exti.h&quot;</span>
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="preprocessor">#include BOARD_CONFIG</span>
-<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="arch independent mcu ( Micro Controller Unit ) utilities">mcu.h</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="mcu_8h.html" title="Arch independent mcu ( Micro Controller Unit ) utilities.">mcu.h</a>&quot;</span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span>
 <a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span>
@@ -179,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00074"></a>00074 }
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076 <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {
-<a name="l00077"></a>00077   <a class="code" href="mcu_8c.html#a9af744358ff4b1e3e33d7dd170862f9b">mcu_init</a>();
+<a name="l00077"></a>00077   <a class="code" href="group__mcu__periph.html#ga9af744358ff4b1e3e33d7dd170862f9b" title="Microcontroller peripherals initialization.">mcu_init</a>();
 <a name="l00078"></a>00078   <a class="code" href="lisa__test__adxl345__dma_8c.html#ae58df14f30461cb37e8607aca5522846">hw_init</a>();
 <a name="l00079"></a>00079   <a class="code" href="lisa__test__adxl345__dma_8c.html#a54bdc6b87da1873d9a1430ed16e2eff4">init_adxl345_spi_trans</a>();
 <a name="l00080"></a>00080   <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);
@@ -231,14 +231,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00126"></a><a class="code" href="lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95">00126</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95">write_to_reg</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> addr, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>) {
 <a name="l00127"></a>00127   <a class="code" href="lisa__test__adxl345__dma_8c.html#a3491e4b6639386063c95420363dd317b">dma_tx_buf</a>[0] = addr;
 <a name="l00128"></a>00128   <a class="code" href="lisa__test__adxl345__dma_8c.html#a3491e4b6639386063c95420363dd317b">dma_tx_buf</a>[1] = <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>;
-<a name="l00129"></a>00129   <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>(&amp;(<a class="code" href="lisa__test__adxl345__dma_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>), &amp;<a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>);
+<a name="l00129"></a>00129   <a class="code" href="group__spi.html#gaf1bcfc102840a0e6287b4db20bd78337" title="Submit a spi transaction.">spi_submit</a>(&amp;(<a class="code" href="lisa__test__adxl345__dma_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>), &amp;<a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>);
 <a name="l00130"></a>00130   <span class="comment">// FIXME: no busy waiting! if really needed add a timeout!!!!</span>
-<a name="l00131"></a>00131   <span class="keywordflow">while</span>(<a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a> != <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>);
+<a name="l00131"></a>00131   <span class="keywordflow">while</span>(<a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a> != <a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>);
 <a name="l00132"></a>00132 }
 <a name="l00133"></a>00133 
 <a name="l00134"></a><a class="code" href="lisa__test__adxl345__dma_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8">00134</a> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__adxl345__dma_8c.html#a4d3a036fc48ecc9ddaaa6d21f5a7bcb8">read_data</a>(<span class="keywordtype">void</span>) {
 <a name="l00135"></a>00135   <a class="code" href="lisa__test__adxl345__dma_8c.html#a3491e4b6639386063c95420363dd317b">dma_tx_buf</a>[0] = (1&lt;&lt;7|1&lt;&lt;6|<a class="code" href="adxl345_8h.html#a26d195d59722f158ccb2d2f0da63b32e">ADXL345_REG_DATA_X0</a>);
-<a name="l00136"></a>00136   <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>(&amp;(<a class="code" href="lisa__test__adxl345__dma_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>), &amp;<a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>);
+<a name="l00136"></a>00136   <a class="code" href="group__spi.html#gaf1bcfc102840a0e6287b4db20bd78337" title="Submit a spi transaction.">spi_submit</a>(&amp;(<a class="code" href="lisa__test__adxl345__dma_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>), &amp;<a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>);
 <a name="l00137"></a>00137 }
 <a name="l00138"></a>00138 
 <a name="l00139"></a>00139 
@@ -247,12 +247,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00142"></a>00142 }
 <a name="l00143"></a>00143 
 <a name="l00144"></a><a class="code" href="lisa__test__adxl345__dma_8c.html#a54bdc6b87da1873d9a1430ed16e2eff4">00144</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__test__adxl345__dma_8c.html#a54bdc6b87da1873d9a1430ed16e2eff4">init_adxl345_spi_trans</a>( <span class="keywordtype">void</span> ) {
-<a name="l00145"></a>00145   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">select</a> = <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">SPISelectUnselect</a>;
-<a name="l00146"></a>00146   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">cpol</a> = <a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7abb9d597cb05133176eac7d6a87b5f9af">SPICpolIdleHigh</a>;
-<a name="l00147"></a>00147   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">cpha</a> = <a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baaa0819b3eda26f2666ff69ced98db281ce">SPICphaEdge2</a>;
-<a name="l00148"></a>00148   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">dss</a> = <a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">SPIDss8bit</a>;
-<a name="l00149"></a>00149   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">bitorder</a> = <a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">SPIMSBFirst</a>;
-<a name="l00150"></a>00150   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">cdiv</a> = <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">SPIDiv64</a>;
+<a name="l00145"></a>00145   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">select</a> = <a class="code" href="group__spi.html#gga7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">SPISelectUnselect</a>;
+<a name="l00146"></a>00146   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">cpol</a> = <a class="code" href="group__spi.html#gga585d188d86d5ad9a6fe2d3d11af58ca7abb9d597cb05133176eac7d6a87b5f9af">SPICpolIdleHigh</a>;
+<a name="l00147"></a>00147   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">cpha</a> = <a class="code" href="group__spi.html#gga133152bd9fd803ef729bdfb9dc488baaa0819b3eda26f2666ff69ced98db281ce">SPICphaEdge2</a>;
+<a name="l00148"></a>00148   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">dss</a> = <a class="code" href="group__spi.html#ggab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">SPIDss8bit</a>;
+<a name="l00149"></a>00149   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">bitorder</a> = <a class="code" href="group__spi.html#ggaa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">SPIMSBFirst</a>;
+<a name="l00150"></a>00150   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">cdiv</a> = <a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">SPIDiv64</a>;
 <a name="l00151"></a>00151   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#ad172d82768bb46939cb4e6ffbd230e77">slave_idx</a> = <a class="code" href="lisa__test__adxl345__dma_8c.html#aba10b2e800f8ec5b603df37f9b752fd9">ADXL345_SLAVE_IDX</a>;
 <a name="l00152"></a>00152   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406">output_length</a> = 7;
 <a name="l00153"></a>00153   <a class="code" href="lisa__test__adxl345__dma_8c.html#aabb0017e02a5e39940a8e67001fca26e">adxl345_spi_trans</a>.<a class="code" href="structspi__transaction.html#a5d8b23bac2976e4245ac19747a122e71">input_length</a> = 7;
@@ -303,7 +303,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="lisa__test__adxl345__dma_8c.html">lisa_test_adxl345_dma.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -5,6 +5,7 @@ var searchData=
   ['slot_5f',['slot_',['../structslot__.html',1,'']]],
   ['spektrumstatestruct',['SpektrumStateStruct',['../structSpektrumStateStruct.html',1,'']]],
   ['spi_5fperiph',['spi_periph',['../structspi__periph.html',1,'']]],
+  ['spi_5fperiph_5fdma',['spi_periph_dma',['../structspi__periph__dma.html',1,'']]],
   ['spi_5ftransaction',['spi_transaction',['../structspi__transaction.html',1,'']]],
   ['spiregs_5ft',['spiRegs_t',['../structspiRegs__t.html',1,'']]],
   ['spistream_5fbuffers_5ft',['spistream_buffers_t',['../structspistream__buffers__t.html',1,'']]],

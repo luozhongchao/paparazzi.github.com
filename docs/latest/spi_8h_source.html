@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -125,202 +125,202 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 <span class="comment"> *</span>
 <a name="l00021"></a>00021 <span class="comment"> */</span>
 <a name="l00022"></a>00022 
-<a name="l00029"></a>00029 <span class="preprocessor">#ifndef SPI_H</span>
-<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#define SPI_H</span>
-<a name="l00031"></a>00031 <span class="preprocessor"></span>
-<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;std.h&quot;</span>
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;mcu_periph/spi_arch.h&quot;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#ifndef SPI_H</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span><span class="preprocessor">#define SPI_H</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;std.h&quot;</span>
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036 <span class="comment">// FIXME how to use this properly ?</span>
-<a name="l00037"></a><a class="code" href="spi_8h.html#a96e7e9bbfca8b326307e8b20ba4706e1">00037</a> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a96e7e9bbfca8b326307e8b20ba4706e1">SPIMode</a> {
-<a name="l00038"></a><a class="code" href="spi_8h.html#a96e7e9bbfca8b326307e8b20ba4706e1a42c50a3ec0aa45334136059636fcfc46">00038</a>   <a class="code" href="spi_8h.html#a96e7e9bbfca8b326307e8b20ba4706e1a42c50a3ec0aa45334136059636fcfc46">SPIMaster</a>,
-<a name="l00039"></a><a class="code" href="spi_8h.html#a96e7e9bbfca8b326307e8b20ba4706e1aaacd1a7fa6337c467a920af720dc752b">00039</a>   <a class="code" href="spi_8h.html#a96e7e9bbfca8b326307e8b20ba4706e1aaacd1a7fa6337c467a920af720dc752b">SPISlave</a>
-<a name="l00040"></a>00040 };
-<a name="l00041"></a>00041 
-<a name="l00052"></a><a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3">00052</a> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3" title="SPI slave selection behavior.">SPISlaveSelect</a> {
-<a name="l00053"></a><a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">00053</a>   <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">SPISelectUnselect</a>,
-<a name="l00054"></a><a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3a0e6e45a45e7561f69cca8cfbe140758b">00054</a>   <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3a0e6e45a45e7561f69cca8cfbe140758b">SPISelect</a>,
-<a name="l00055"></a><a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3acfd3336d9cd80d7a1b9eb7582848def5">00055</a>   <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3acfd3336d9cd80d7a1b9eb7582848def5">SPIUnselect</a>,
-<a name="l00056"></a><a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3a7ff904f6a0c454d8b486537f343062f3">00056</a>   <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3a7ff904f6a0c454d8b486537f343062f3">SPINoSelect</a>
-<a name="l00057"></a>00057 };
-<a name="l00058"></a>00058 
-<a name="l00063"></a><a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baa">00063</a> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baa" title="SPI clock phase control.">SPIClockPhase</a> {
-<a name="l00064"></a><a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baaaef9737139e9d1ed3ef30d2200acc629e">00064</a>   <a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baaaef9737139e9d1ed3ef30d2200acc629e">SPICphaEdge1</a>,
-<a name="l00065"></a><a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baaa0819b3eda26f2666ff69ced98db281ce">00065</a>   <a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baaa0819b3eda26f2666ff69ced98db281ce">SPICphaEdge2</a>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;mcu_periph/spi_arch.h&quot;</span>
+<a name="l00037"></a>00037 
+<a name="l00045"></a>00045 <span class="comment">// FIXME how to use this properly ?</span>
+<a name="l00046"></a><a class="code" href="group__spi.html#ga96e7e9bbfca8b326307e8b20ba4706e1">00046</a> <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga96e7e9bbfca8b326307e8b20ba4706e1">SPIMode</a> {
+<a name="l00047"></a><a class="code" href="group__spi.html#gga96e7e9bbfca8b326307e8b20ba4706e1a42c50a3ec0aa45334136059636fcfc46">00047</a>   <a class="code" href="group__spi.html#gga96e7e9bbfca8b326307e8b20ba4706e1a42c50a3ec0aa45334136059636fcfc46">SPIMaster</a>,
+<a name="l00048"></a><a class="code" href="group__spi.html#gga96e7e9bbfca8b326307e8b20ba4706e1aaacd1a7fa6337c467a920af720dc752b">00048</a>   <a class="code" href="group__spi.html#gga96e7e9bbfca8b326307e8b20ba4706e1aaacd1a7fa6337c467a920af720dc752b">SPISlave</a>
+<a name="l00049"></a>00049 };
+<a name="l00050"></a>00050 
+<a name="l00061"></a><a class="code" href="group__spi.html#ga7a54d65ebae5c91cb0b5f28cd7111ae3">00061</a> <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga7a54d65ebae5c91cb0b5f28cd7111ae3" title="SPI slave selection behavior.">SPISlaveSelect</a> {
+<a name="l00062"></a><a class="code" href="group__spi.html#gga7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">00062</a>   <a class="code" href="group__spi.html#gga7a54d65ebae5c91cb0b5f28cd7111ae3aba395831c171e283b2479f63db99d00c">SPISelectUnselect</a>,
+<a name="l00063"></a><a class="code" href="group__spi.html#gga7a54d65ebae5c91cb0b5f28cd7111ae3a0e6e45a45e7561f69cca8cfbe140758b">00063</a>   <a class="code" href="group__spi.html#gga7a54d65ebae5c91cb0b5f28cd7111ae3a0e6e45a45e7561f69cca8cfbe140758b">SPISelect</a>,
+<a name="l00064"></a><a class="code" href="group__spi.html#gga7a54d65ebae5c91cb0b5f28cd7111ae3acfd3336d9cd80d7a1b9eb7582848def5">00064</a>   <a class="code" href="group__spi.html#gga7a54d65ebae5c91cb0b5f28cd7111ae3acfd3336d9cd80d7a1b9eb7582848def5">SPIUnselect</a>,
+<a name="l00065"></a><a class="code" href="group__spi.html#gga7a54d65ebae5c91cb0b5f28cd7111ae3a7ff904f6a0c454d8b486537f343062f3">00065</a>   <a class="code" href="group__spi.html#gga7a54d65ebae5c91cb0b5f28cd7111ae3a7ff904f6a0c454d8b486537f343062f3">SPINoSelect</a>
 <a name="l00066"></a>00066 };
 <a name="l00067"></a>00067 
-<a name="l00072"></a><a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7">00072</a> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7" title="SPI clock polarity control.">SPIClockPolarity</a> {
-<a name="l00073"></a><a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7a88d8aa68a47badab24e8237a333cc029">00073</a>   <a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7a88d8aa68a47badab24e8237a333cc029">SPICpolIdleLow</a>,
-<a name="l00074"></a><a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7abb9d597cb05133176eac7d6a87b5f9af">00074</a>   <a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7abb9d597cb05133176eac7d6a87b5f9af">SPICpolIdleHigh</a>
+<a name="l00072"></a><a class="code" href="group__spi.html#ga133152bd9fd803ef729bdfb9dc488baa">00072</a> <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga133152bd9fd803ef729bdfb9dc488baa" title="SPI clock phase control.">SPIClockPhase</a> {
+<a name="l00073"></a><a class="code" href="group__spi.html#gga133152bd9fd803ef729bdfb9dc488baaaef9737139e9d1ed3ef30d2200acc629e">00073</a>   <a class="code" href="group__spi.html#gga133152bd9fd803ef729bdfb9dc488baaaef9737139e9d1ed3ef30d2200acc629e">SPICphaEdge1</a>,
+<a name="l00074"></a><a class="code" href="group__spi.html#gga133152bd9fd803ef729bdfb9dc488baaa0819b3eda26f2666ff69ced98db281ce">00074</a>   <a class="code" href="group__spi.html#gga133152bd9fd803ef729bdfb9dc488baaa0819b3eda26f2666ff69ced98db281ce">SPICphaEdge2</a>
 <a name="l00075"></a>00075 };
 <a name="l00076"></a>00076 
-<a name="l00079"></a><a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92">00079</a> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92" title="SPI Data size transfer.">SPIDataSizeSelect</a> {
-<a name="l00080"></a><a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">00080</a>   <a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">SPIDss8bit</a>,
-<a name="l00081"></a><a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92af211626475dc974e0c1a2256c7ff4de9">00081</a>   <a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92af211626475dc974e0c1a2256c7ff4de9">SPIDss16bit</a>
-<a name="l00082"></a>00082 };
-<a name="l00083"></a>00083 
-<a name="l00086"></a><a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baac">00086</a> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baac" title="SPI transaction status.">SPITransactionStatus</a> {
-<a name="l00087"></a><a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacadf5763363daaa43ebba32c0f56b85db9">00087</a>   <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacadf5763363daaa43ebba32c0f56b85db9">SPITransPending</a>,
-<a name="l00088"></a><a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa9502bb1de8d8491ceb5443ef51c4f4a">00088</a>   <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa9502bb1de8d8491ceb5443ef51c4f4a">SPITransRunning</a>,
-<a name="l00089"></a><a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">00089</a>   <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>,
-<a name="l00090"></a><a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baaca3f30804ee098adcaa3b21455346c3707">00090</a>   <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baaca3f30804ee098adcaa3b21455346c3707">SPITransFailed</a>,
-<a name="l00091"></a><a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaf68ce6dfcd0fd5b2210ce03c86bb4580">00091</a>   <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baacaf68ce6dfcd0fd5b2210ce03c86bb4580">SPITransDone</a>
-<a name="l00092"></a>00092 };
-<a name="l00093"></a>00093 
-<a name="l00096"></a><a class="code" href="spi_8h.html#a495f0019475966e28264aaf8e37c6529">00096</a> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a495f0019475966e28264aaf8e37c6529" title="SPI peripheral status.">SPIStatus</a> {
-<a name="l00097"></a><a class="code" href="spi_8h.html#a495f0019475966e28264aaf8e37c6529a043fd5f30e831835768732e5f373dada">00097</a>   <a class="code" href="spi_8h.html#a495f0019475966e28264aaf8e37c6529a043fd5f30e831835768732e5f373dada">SPIIdle</a>,
-<a name="l00098"></a><a class="code" href="spi_8h.html#a495f0019475966e28264aaf8e37c6529a55c7e2679f705c1f9e501a69908f7f28">00098</a>   <a class="code" href="spi_8h.html#a495f0019475966e28264aaf8e37c6529a55c7e2679f705c1f9e501a69908f7f28">SPIRunning</a>
-<a name="l00099"></a>00099 };
-<a name="l00100"></a>00100 
-<a name="l00101"></a><a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647">00101</a> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647">SPIBitOrder</a> {
-<a name="l00102"></a><a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">00102</a>   <a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">SPIMSBFirst</a>,
-<a name="l00103"></a><a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647aacaa28dc2358c67ffb8f7dea18311863">00103</a>   <a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647aacaa28dc2358c67ffb8f7dea18311863">SPILSBFirst</a>
-<a name="l00104"></a>00104 };
-<a name="l00105"></a>00105 
-<a name="l00106"></a><a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069b">00106</a> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069b">SPIClockDiv</a> {
-<a name="l00107"></a><a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba32d98a42e45177c17732d3388c7db470">00107</a>   <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba32d98a42e45177c17732d3388c7db470">SPIDiv2</a>,
-<a name="l00108"></a><a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba02d4312b29bafe6c8cebac74e7160f6c">00108</a>   <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba02d4312b29bafe6c8cebac74e7160f6c">SPIDiv4</a>,
-<a name="l00109"></a><a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba069c09961b2c5687f6b657659d891074">00109</a>   <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba069c09961b2c5687f6b657659d891074">SPIDiv8</a>,
-<a name="l00110"></a><a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baf3bcf0017ccafa26ed467d7a4474b167">00110</a>   <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baf3bcf0017ccafa26ed467d7a4474b167">SPIDiv16</a>,
-<a name="l00111"></a><a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baa2b44a4b5e42910ff3ac1243d150ef8f">00111</a>   <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baa2b44a4b5e42910ff3ac1243d150ef8f">SPIDiv32</a>,
-<a name="l00112"></a><a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">00112</a>   <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">SPIDiv64</a>,
-<a name="l00113"></a><a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba82c78797afbfbba58ef1f977ef52691f">00113</a>   <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba82c78797afbfbba58ef1f977ef52691f">SPIDiv128</a>,
-<a name="l00114"></a><a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba5d633b4ee4d696627a0c4b437a20e2a9">00114</a>   <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069ba5d633b4ee4d696627a0c4b437a20e2a9">SPIDiv256</a>
-<a name="l00115"></a>00115 };
-<a name="l00116"></a>00116 
-<a name="l00121"></a>00121 <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a>;
-<a name="l00122"></a><a class="code" href="spi_8h.html#aa52d88d236eb343ac78b3192a5c9c4c3">00122</a> <span class="keyword">typedef</span> void (*<a class="code" href="spi_8h.html#aa52d88d236eb343ac78b3192a5c9c4c3">SPICallback</a>)( <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> *trans );
-<a name="l00123"></a>00123 
-<a name="l00133"></a><a class="code" href="structspi__transaction.html">00133</a> <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> {
-<a name="l00134"></a><a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">00134</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>* <a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">input_buf</a>;
-<a name="l00135"></a><a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">00135</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>* <a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>;
-<a name="l00136"></a><a class="code" href="structspi__transaction.html#a5d8b23bac2976e4245ac19747a122e71">00136</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__transaction.html#a5d8b23bac2976e4245ac19747a122e71">input_length</a>;
-<a name="l00137"></a><a class="code" href="structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406">00137</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406">output_length</a>;
-<a name="l00138"></a><a class="code" href="structspi__transaction.html#ad172d82768bb46939cb4e6ffbd230e77">00138</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__transaction.html#ad172d82768bb46939cb4e6ffbd230e77">slave_idx</a>;
-<a name="l00139"></a><a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">00139</a>   <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a7a54d65ebae5c91cb0b5f28cd7111ae3" title="SPI slave selection behavior.">SPISlaveSelect</a> <a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">select</a>;
-<a name="l00140"></a><a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">00140</a>   <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a585d188d86d5ad9a6fe2d3d11af58ca7" title="SPI clock polarity control.">SPIClockPolarity</a> <a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">cpol</a>;
-<a name="l00141"></a><a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">00141</a>   <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a133152bd9fd803ef729bdfb9dc488baa" title="SPI clock phase control.">SPIClockPhase</a> <a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">cpha</a>;
-<a name="l00142"></a><a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">00142</a>   <span class="keyword">enum</span> <a class="code" href="spi_8h.html#ab7f6befabf036cdd2fcc73e688d17f92" title="SPI Data size transfer.">SPIDataSizeSelect</a> <a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">dss</a>; <span class="comment">// Architecture dependant options (LPC21) ?</span>
-<a name="l00143"></a><a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">00143</a>   <span class="keyword">enum</span> <a class="code" href="spi_8h.html#aa97b351a297dda534c3f9cee0d5b4647">SPIBitOrder</a> <a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">bitorder</a>;
-<a name="l00144"></a><a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">00144</a>   <span class="keyword">enum</span> <a class="code" href="spi_8h.html#aaabe4f085d398b1dabe6526437d0069b">SPIClockDiv</a> <a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">cdiv</a>;
-<a name="l00145"></a><a class="code" href="structspi__transaction.html#a34d366d59c97ab1993da279ec6c19658">00145</a>   <a class="code" href="spi_8h.html#aa52d88d236eb343ac78b3192a5c9c4c3">SPICallback</a> <a class="code" href="structspi__transaction.html#a34d366d59c97ab1993da279ec6c19658">before_cb</a>;
-<a name="l00146"></a><a class="code" href="structspi__transaction.html#a42f7b32b71120469bf60af28f5880177">00146</a>   <a class="code" href="spi_8h.html#aa52d88d236eb343ac78b3192a5c9c4c3">SPICallback</a> <a class="code" href="structspi__transaction.html#a42f7b32b71120469bf60af28f5880177">after_cb</a>;
-<a name="l00147"></a><a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">00147</a>   <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a52e70c55efc6a9b04903157a0965baac" title="SPI transaction status.">SPITransactionStatus</a> <a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a>;
-<a name="l00148"></a>00148 };
-<a name="l00149"></a>00149 
-<a name="l00150"></a>00150 <span class="preprocessor">#ifndef SPI_TRANSACTION_QUEUE_LEN</span>
-<a name="l00151"></a>00151 <span class="preprocessor"></span><span class="preprocessor">#define SPI_TRANSACTION_QUEUE_LEN 8</span>
-<a name="l00152"></a>00152 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00153"></a>00153 <span class="preprocessor"></span>
-<a name="l00154"></a><a class="code" href="structspi__periph.html">00154</a> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> {
-<a name="l00155"></a>00155   <span class="comment">/* circular buffer holding transactions */</span>
-<a name="l00156"></a><a class="code" href="structspi__periph.html#a5f319ec82695509b414649937a379da6">00156</a>   <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a>* <a class="code" href="structspi__periph.html#a5f319ec82695509b414649937a379da6">trans</a>[SPI_TRANSACTION_QUEUE_LEN];
-<a name="l00157"></a><a class="code" href="structspi__periph.html#ab96104b648a016e934752e01ec4f2b59">00157</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#ab96104b648a016e934752e01ec4f2b59">trans_insert_idx</a>;
-<a name="l00158"></a><a class="code" href="structspi__periph.html#af1cd87f1e6b8cf0bfad3ba646224601f">00158</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#af1cd87f1e6b8cf0bfad3ba646224601f">trans_extract_idx</a>;
-<a name="l00159"></a>00159   <span class="comment">/* internal state of the peripheral */</span>
-<a name="l00160"></a><a class="code" href="structspi__periph.html#a413be255346b4fefbb01e9a55ee8a286">00160</a>   <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a495f0019475966e28264aaf8e37c6529" title="SPI peripheral status.">SPIStatus</a> <a class="code" href="structspi__periph.html#a413be255346b4fefbb01e9a55ee8a286">status</a>;
-<a name="l00161"></a><a class="code" href="structspi__periph.html#abc8a928c600b119ddffed3496001a84e">00161</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#abc8a928c600b119ddffed3496001a84e">tx_idx_buf</a>;
-<a name="l00162"></a><a class="code" href="structspi__periph.html#afcfe0aec04a43703058ea02491970336">00162</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#afcfe0aec04a43703058ea02491970336">rx_idx_buf</a>;
-<a name="l00163"></a><a class="code" href="structspi__periph.html#a655488ef6fbcef7c997285db2ac03b4d">00163</a>   <span class="keywordtype">void</span>* <a class="code" href="structspi__periph.html#a655488ef6fbcef7c997285db2ac03b4d">reg_addr</a>;
-<a name="l00164"></a><a class="code" href="structspi__periph.html#a8b32489ec5498094c97fd4d31209ab47">00164</a>   <span class="keywordtype">void</span> *<a class="code" href="structspi__periph.html#a8b32489ec5498094c97fd4d31209ab47">init_struct</a>;
-<a name="l00165"></a><a class="code" href="structspi__periph.html#ae01a3c5cd0e42a84335722c8d6b3fce2">00165</a>   <span class="keyword">enum</span> <a class="code" href="spi_8h.html#a96e7e9bbfca8b326307e8b20ba4706e1">SPIMode</a> <a class="code" href="structspi__periph.html#ae01a3c5cd0e42a84335722c8d6b3fce2">mode</a>;
-<a name="l00166"></a>00166   <span class="comment">/* control for stop/resume of the fifo */</span>
-<a name="l00167"></a><a class="code" href="structspi__periph.html#acd3194574f680b35ece651e784c4327a">00167</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#acd3194574f680b35ece651e784c4327a">suspend</a>;
-<a name="l00168"></a>00168 };
-<a name="l00169"></a>00169 
-<a name="l00170"></a>00170 <span class="preprocessor">#if SPI_MASTER</span>
-<a name="l00171"></a>00171 <span class="preprocessor"></span>
-<a name="l00172"></a>00172 <span class="preprocessor">#define SPI_SLAVE0 0</span>
-<a name="l00173"></a>00173 <span class="preprocessor"></span><span class="preprocessor">#define SPI_SLAVE1 1</span>
-<a name="l00174"></a>00174 <span class="preprocessor"></span><span class="preprocessor">#define SPI_SLAVE2 2</span>
-<a name="l00175"></a>00175 <span class="preprocessor"></span><span class="preprocessor">#define SPI_SLAVE3 3</span>
-<a name="l00176"></a>00176 <span class="preprocessor"></span><span class="preprocessor">#define SPI_SLAVE4 4</span>
-<a name="l00177"></a>00177 <span class="preprocessor"></span>
-<a name="l00178"></a>00178 <span class="comment">//extern uint8_t spi_nb_ovrn; //TODO SPI error struct</span>
-<a name="l00179"></a>00179 
-<a name="l00180"></a>00180 <span class="preprocessor">#if USE_SPI0</span>
-<a name="l00181"></a>00181 <span class="preprocessor"></span>
-<a name="l00182"></a>00182 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> spi0;
-<a name="l00183"></a>00183 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi0_init(<span class="keywordtype">void</span>);
-<a name="l00184"></a>00184 
-<a name="l00188"></a>00188 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi0_arch_init(<span class="keywordtype">void</span>);
-<a name="l00189"></a>00189 
-<a name="l00190"></a>00190 <span class="preprocessor">#endif</span>
-<a name="l00191"></a>00191 <span class="preprocessor"></span>
-<a name="l00192"></a>00192 <span class="preprocessor">#if USE_SPI1</span>
-<a name="l00193"></a>00193 <span class="preprocessor"></span>
-<a name="l00194"></a>00194 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> spi1;
-<a name="l00195"></a>00195 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi1_init(<span class="keywordtype">void</span>);
-<a name="l00196"></a>00196 
-<a name="l00200"></a>00200 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi1_arch_init(<span class="keywordtype">void</span>);
-<a name="l00201"></a>00201 
-<a name="l00202"></a>00202 <span class="preprocessor">#endif</span>
-<a name="l00203"></a>00203 <span class="preprocessor"></span>
-<a name="l00204"></a>00204 <span class="preprocessor">#if USE_SPI2</span>
-<a name="l00205"></a>00205 <span class="preprocessor"></span>
-<a name="l00206"></a>00206 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> spi2;
-<a name="l00207"></a>00207 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi2_init(<span class="keywordtype">void</span>);
-<a name="l00208"></a>00208 
-<a name="l00212"></a>00212 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi2_arch_init(<span class="keywordtype">void</span>);
-<a name="l00213"></a>00213 
-<a name="l00214"></a>00214 
-<a name="l00215"></a>00215 <span class="preprocessor">#endif</span>
-<a name="l00216"></a>00216 <span class="preprocessor"></span>
-<a name="l00220"></a>00220 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="spi__slave__hs__arch_8c.html#ae909944aa85ae98323073c628be541aa">spi_init</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>);
-<a name="l00221"></a>00221 
-<a name="l00224"></a>00224 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#afc9125c5764a6749703ae4f1303a16f3">spi_init_slaves</a>(<span class="keywordtype">void</span>);
-<a name="l00225"></a>00225 
-<a name="l00232"></a>00232 <span class="keyword">extern</span> bool_t <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#af1bcfc102840a0e6287b4db20bd78337">spi_submit</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <span class="keyword">struct</span> <a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a>* t);
-<a name="l00233"></a>00233 
-<a name="l00237"></a>00237 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#ad43916477f5d87b42eaa7d2099771568">spi_slave_select</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave);
-<a name="l00238"></a>00238 
-<a name="l00242"></a>00242 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#a99507da72932c02e5d8daf9a7170ed69">spi_slave_unselect</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave);
-<a name="l00243"></a>00243 
-<a name="l00252"></a>00252 <span class="keyword">extern</span> bool_t <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#a2db1b869a8aea431e3d3e63106290db9">spi_lock</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave);
-<a name="l00253"></a>00253 
-<a name="l00260"></a>00260 <span class="keyword">extern</span> bool_t <a class="code" href="sim_2mcu__periph_2spi__arch_8c.html#a5e9947e5b87e3a86a773b4a174ec6f08">spi_resume</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave);
-<a name="l00261"></a>00261 
-<a name="l00262"></a>00262 <span class="preprocessor">#endif </span><span class="comment">/* SPI_MASTER */</span>
-<a name="l00263"></a>00263 
-<a name="l00264"></a>00264 <span class="preprocessor">#if SPI_SLAVE</span>
-<a name="l00265"></a>00265 <span class="preprocessor"></span>
-<a name="l00266"></a>00266 <span class="preprocessor">#if USE_SPI0_SLAVE</span>
-<a name="l00267"></a>00267 <span class="preprocessor"></span>
-<a name="l00268"></a>00268 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> spi0;
-<a name="l00269"></a>00269 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi0_slave_init(<span class="keywordtype">void</span>);
+<a name="l00081"></a><a class="code" href="group__spi.html#ga585d188d86d5ad9a6fe2d3d11af58ca7">00081</a> <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga585d188d86d5ad9a6fe2d3d11af58ca7" title="SPI clock polarity control.">SPIClockPolarity</a> {
+<a name="l00082"></a><a class="code" href="group__spi.html#gga585d188d86d5ad9a6fe2d3d11af58ca7a88d8aa68a47badab24e8237a333cc029">00082</a>   <a class="code" href="group__spi.html#gga585d188d86d5ad9a6fe2d3d11af58ca7a88d8aa68a47badab24e8237a333cc029">SPICpolIdleLow</a>,
+<a name="l00083"></a><a class="code" href="group__spi.html#gga585d188d86d5ad9a6fe2d3d11af58ca7abb9d597cb05133176eac7d6a87b5f9af">00083</a>   <a class="code" href="group__spi.html#gga585d188d86d5ad9a6fe2d3d11af58ca7abb9d597cb05133176eac7d6a87b5f9af">SPICpolIdleHigh</a>
+<a name="l00084"></a>00084 };
+<a name="l00085"></a>00085 
+<a name="l00088"></a><a class="code" href="group__spi.html#gab7f6befabf036cdd2fcc73e688d17f92">00088</a> <span class="keyword">enum</span> <a class="code" href="group__spi.html#gab7f6befabf036cdd2fcc73e688d17f92" title="SPI Data size transfer.">SPIDataSizeSelect</a> {
+<a name="l00089"></a><a class="code" href="group__spi.html#ggab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">00089</a>   <a class="code" href="group__spi.html#ggab7f6befabf036cdd2fcc73e688d17f92a616ab1558f18f3b3c58f22e0f16fe40e">SPIDss8bit</a>,
+<a name="l00090"></a><a class="code" href="group__spi.html#ggab7f6befabf036cdd2fcc73e688d17f92af211626475dc974e0c1a2256c7ff4de9">00090</a>   <a class="code" href="group__spi.html#ggab7f6befabf036cdd2fcc73e688d17f92af211626475dc974e0c1a2256c7ff4de9">SPIDss16bit</a>
+<a name="l00091"></a>00091 };
+<a name="l00092"></a>00092 
+<a name="l00095"></a><a class="code" href="group__spi.html#ga52e70c55efc6a9b04903157a0965baac">00095</a> <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga52e70c55efc6a9b04903157a0965baac" title="SPI transaction status.">SPITransactionStatus</a> {
+<a name="l00096"></a><a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baacadf5763363daaa43ebba32c0f56b85db9">00096</a>   <a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baacadf5763363daaa43ebba32c0f56b85db9">SPITransPending</a>,
+<a name="l00097"></a><a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baacaa9502bb1de8d8491ceb5443ef51c4f4a">00097</a>   <a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baacaa9502bb1de8d8491ceb5443ef51c4f4a">SPITransRunning</a>,
+<a name="l00098"></a><a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">00098</a>   <a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baacaa4021c68696337695cfdb356866f3b53">SPITransSuccess</a>,
+<a name="l00099"></a><a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baaca3f30804ee098adcaa3b21455346c3707">00099</a>   <a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baaca3f30804ee098adcaa3b21455346c3707">SPITransFailed</a>,
+<a name="l00100"></a><a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baacaf68ce6dfcd0fd5b2210ce03c86bb4580">00100</a>   <a class="code" href="group__spi.html#gga52e70c55efc6a9b04903157a0965baacaf68ce6dfcd0fd5b2210ce03c86bb4580">SPITransDone</a>
+<a name="l00101"></a>00101 };
+<a name="l00102"></a>00102 
+<a name="l00105"></a><a class="code" href="group__spi.html#ga495f0019475966e28264aaf8e37c6529">00105</a> <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga495f0019475966e28264aaf8e37c6529" title="SPI peripheral status.">SPIStatus</a> {
+<a name="l00106"></a><a class="code" href="group__spi.html#gga495f0019475966e28264aaf8e37c6529a043fd5f30e831835768732e5f373dada">00106</a>   <a class="code" href="group__spi.html#gga495f0019475966e28264aaf8e37c6529a043fd5f30e831835768732e5f373dada">SPIIdle</a>,
+<a name="l00107"></a><a class="code" href="group__spi.html#gga495f0019475966e28264aaf8e37c6529a55c7e2679f705c1f9e501a69908f7f28">00107</a>   <a class="code" href="group__spi.html#gga495f0019475966e28264aaf8e37c6529a55c7e2679f705c1f9e501a69908f7f28">SPIRunning</a>
+<a name="l00108"></a>00108 };
+<a name="l00109"></a>00109 
+<a name="l00110"></a><a class="code" href="group__spi.html#gaa97b351a297dda534c3f9cee0d5b4647">00110</a> <span class="keyword">enum</span> <a class="code" href="group__spi.html#gaa97b351a297dda534c3f9cee0d5b4647">SPIBitOrder</a> {
+<a name="l00111"></a><a class="code" href="group__spi.html#ggaa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">00111</a>   <a class="code" href="group__spi.html#ggaa97b351a297dda534c3f9cee0d5b4647ab95f234ab8475459a286da0c132240e9">SPIMSBFirst</a>,
+<a name="l00112"></a><a class="code" href="group__spi.html#ggaa97b351a297dda534c3f9cee0d5b4647aacaa28dc2358c67ffb8f7dea18311863">00112</a>   <a class="code" href="group__spi.html#ggaa97b351a297dda534c3f9cee0d5b4647aacaa28dc2358c67ffb8f7dea18311863">SPILSBFirst</a>
+<a name="l00113"></a>00113 };
+<a name="l00114"></a>00114 
+<a name="l00115"></a><a class="code" href="group__spi.html#gaaabe4f085d398b1dabe6526437d0069b">00115</a> <span class="keyword">enum</span> <a class="code" href="group__spi.html#gaaabe4f085d398b1dabe6526437d0069b">SPIClockDiv</a> {
+<a name="l00116"></a><a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba32d98a42e45177c17732d3388c7db470">00116</a>   <a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba32d98a42e45177c17732d3388c7db470">SPIDiv2</a>,
+<a name="l00117"></a><a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba02d4312b29bafe6c8cebac74e7160f6c">00117</a>   <a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba02d4312b29bafe6c8cebac74e7160f6c">SPIDiv4</a>,
+<a name="l00118"></a><a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba069c09961b2c5687f6b657659d891074">00118</a>   <a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba069c09961b2c5687f6b657659d891074">SPIDiv8</a>,
+<a name="l00119"></a><a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069baf3bcf0017ccafa26ed467d7a4474b167">00119</a>   <a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069baf3bcf0017ccafa26ed467d7a4474b167">SPIDiv16</a>,
+<a name="l00120"></a><a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069baa2b44a4b5e42910ff3ac1243d150ef8f">00120</a>   <a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069baa2b44a4b5e42910ff3ac1243d150ef8f">SPIDiv32</a>,
+<a name="l00121"></a><a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">00121</a>   <a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069baedf1306791ecf55a11a2a37dbbd6b1b1">SPIDiv64</a>,
+<a name="l00122"></a><a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba82c78797afbfbba58ef1f977ef52691f">00122</a>   <a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba82c78797afbfbba58ef1f977ef52691f">SPIDiv128</a>,
+<a name="l00123"></a><a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba5d633b4ee4d696627a0c4b437a20e2a9">00123</a>   <a class="code" href="group__spi.html#ggaaabe4f085d398b1dabe6526437d0069ba5d633b4ee4d696627a0c4b437a20e2a9">SPIDiv256</a>
+<a name="l00124"></a>00124 };
+<a name="l00125"></a>00125 
+<a name="l00130"></a>00130 <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a>;
+<a name="l00131"></a><a class="code" href="group__spi.html#gaa52d88d236eb343ac78b3192a5c9c4c3">00131</a> <span class="keyword">typedef</span> void (*<a class="code" href="group__spi.html#gaa52d88d236eb343ac78b3192a5c9c4c3">SPICallback</a>)( <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> *trans );
+<a name="l00132"></a>00132 
+<a name="l00142"></a><a class="code" href="structspi__transaction.html">00142</a> <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a> {
+<a name="l00143"></a><a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">00143</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>* <a class="code" href="structspi__transaction.html#ab7151a300fa12304ed1f32fbe135c143">input_buf</a>;
+<a name="l00144"></a><a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">00144</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>* <a class="code" href="structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb">output_buf</a>;
+<a name="l00145"></a><a class="code" href="structspi__transaction.html#a5d8b23bac2976e4245ac19747a122e71">00145</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__transaction.html#a5d8b23bac2976e4245ac19747a122e71">input_length</a>;
+<a name="l00146"></a><a class="code" href="structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406">00146</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406">output_length</a>;
+<a name="l00147"></a><a class="code" href="structspi__transaction.html#ad172d82768bb46939cb4e6ffbd230e77">00147</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__transaction.html#ad172d82768bb46939cb4e6ffbd230e77">slave_idx</a>;
+<a name="l00148"></a><a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">00148</a>   <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga7a54d65ebae5c91cb0b5f28cd7111ae3" title="SPI slave selection behavior.">SPISlaveSelect</a> <a class="code" href="structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba">select</a>;
+<a name="l00149"></a><a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">00149</a>   <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga585d188d86d5ad9a6fe2d3d11af58ca7" title="SPI clock polarity control.">SPIClockPolarity</a> <a class="code" href="structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539">cpol</a>;
+<a name="l00150"></a><a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">00150</a>   <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga133152bd9fd803ef729bdfb9dc488baa" title="SPI clock phase control.">SPIClockPhase</a> <a class="code" href="structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485">cpha</a>;
+<a name="l00151"></a><a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">00151</a>   <span class="keyword">enum</span> <a class="code" href="group__spi.html#gab7f6befabf036cdd2fcc73e688d17f92" title="SPI Data size transfer.">SPIDataSizeSelect</a> <a class="code" href="structspi__transaction.html#a815b95697425c9e24fb81e83f4a13385">dss</a>; <span class="comment">// Architecture dependant options (LPC21) ?</span>
+<a name="l00152"></a><a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">00152</a>   <span class="keyword">enum</span> <a class="code" href="group__spi.html#gaa97b351a297dda534c3f9cee0d5b4647">SPIBitOrder</a> <a class="code" href="structspi__transaction.html#af804a20f8372631a24aad61be1383307">bitorder</a>;
+<a name="l00153"></a><a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">00153</a>   <span class="keyword">enum</span> <a class="code" href="group__spi.html#gaaabe4f085d398b1dabe6526437d0069b">SPIClockDiv</a> <a class="code" href="structspi__transaction.html#a8d8c70f4ac840678b944e410e93f779e">cdiv</a>;
+<a name="l00154"></a><a class="code" href="structspi__transaction.html#a34d366d59c97ab1993da279ec6c19658">00154</a>   <a class="code" href="group__spi.html#gaa52d88d236eb343ac78b3192a5c9c4c3">SPICallback</a> <a class="code" href="structspi__transaction.html#a34d366d59c97ab1993da279ec6c19658">before_cb</a>;
+<a name="l00155"></a><a class="code" href="structspi__transaction.html#a42f7b32b71120469bf60af28f5880177">00155</a>   <a class="code" href="group__spi.html#gaa52d88d236eb343ac78b3192a5c9c4c3">SPICallback</a> <a class="code" href="structspi__transaction.html#a42f7b32b71120469bf60af28f5880177">after_cb</a>;
+<a name="l00156"></a><a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">00156</a>   <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga52e70c55efc6a9b04903157a0965baac" title="SPI transaction status.">SPITransactionStatus</a> <a class="code" href="structspi__transaction.html#afcc49de6913e59398111a070be5aeda2">status</a>;
+<a name="l00157"></a>00157 };
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159 <span class="preprocessor">#ifndef SPI_TRANSACTION_QUEUE_LEN</span>
+<a name="l00160"></a>00160 <span class="preprocessor"></span><span class="preprocessor">#define SPI_TRANSACTION_QUEUE_LEN 8</span>
+<a name="l00161"></a>00161 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00162"></a>00162 <span class="preprocessor"></span>
+<a name="l00163"></a><a class="code" href="structspi__periph.html">00163</a> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> {
+<a name="l00164"></a>00164   <span class="comment">/* circular buffer holding transactions */</span>
+<a name="l00165"></a><a class="code" href="structspi__periph.html#a5f319ec82695509b414649937a379da6">00165</a>   <span class="keyword">struct </span><a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a>* <a class="code" href="structspi__periph.html#a5f319ec82695509b414649937a379da6">trans</a>[SPI_TRANSACTION_QUEUE_LEN];
+<a name="l00166"></a><a class="code" href="structspi__periph.html#ab96104b648a016e934752e01ec4f2b59">00166</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#ab96104b648a016e934752e01ec4f2b59">trans_insert_idx</a>;
+<a name="l00167"></a><a class="code" href="structspi__periph.html#af1cd87f1e6b8cf0bfad3ba646224601f">00167</a>   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#af1cd87f1e6b8cf0bfad3ba646224601f">trans_extract_idx</a>;
+<a name="l00168"></a>00168   <span class="comment">/* internal state of the peripheral */</span>
+<a name="l00169"></a><a class="code" href="structspi__periph.html#a413be255346b4fefbb01e9a55ee8a286">00169</a>   <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga495f0019475966e28264aaf8e37c6529" title="SPI peripheral status.">SPIStatus</a> <a class="code" href="structspi__periph.html#a413be255346b4fefbb01e9a55ee8a286">status</a>;
+<a name="l00170"></a><a class="code" href="structspi__periph.html#abc8a928c600b119ddffed3496001a84e">00170</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#abc8a928c600b119ddffed3496001a84e">tx_idx_buf</a>;
+<a name="l00171"></a><a class="code" href="structspi__periph.html#afcfe0aec04a43703058ea02491970336">00171</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#afcfe0aec04a43703058ea02491970336">rx_idx_buf</a>;
+<a name="l00172"></a><a class="code" href="structspi__periph.html#a655488ef6fbcef7c997285db2ac03b4d">00172</a>   <span class="keywordtype">void</span>* <a class="code" href="structspi__periph.html#a655488ef6fbcef7c997285db2ac03b4d">reg_addr</a>;
+<a name="l00173"></a><a class="code" href="structspi__periph.html#a8b32489ec5498094c97fd4d31209ab47">00173</a>   <span class="keywordtype">void</span> *<a class="code" href="structspi__periph.html#a8b32489ec5498094c97fd4d31209ab47">init_struct</a>;
+<a name="l00174"></a><a class="code" href="structspi__periph.html#ae01a3c5cd0e42a84335722c8d6b3fce2">00174</a>   <span class="keyword">enum</span> <a class="code" href="group__spi.html#ga96e7e9bbfca8b326307e8b20ba4706e1">SPIMode</a> <a class="code" href="structspi__periph.html#ae01a3c5cd0e42a84335722c8d6b3fce2">mode</a>;
+<a name="l00175"></a>00175   <span class="comment">/* control for stop/resume of the fifo */</span>
+<a name="l00176"></a><a class="code" href="structspi__periph.html#acd3194574f680b35ece651e784c4327a">00176</a>   <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="structspi__periph.html#acd3194574f680b35ece651e784c4327a">suspend</a>;
+<a name="l00177"></a>00177 };
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179 <span class="preprocessor">#if SPI_MASTER</span>
+<a name="l00180"></a>00180 <span class="preprocessor"></span>
+<a name="l00181"></a><a class="code" href="group__spi.html#ga0fa22f23eb96f7d513dfbe9802596a32">00181</a> <span class="preprocessor">#define SPI_SLAVE0 0</span>
+<a name="l00182"></a><a class="code" href="group__spi.html#ga96cc97e73af8ec7cffa9e1d4526692fc">00182</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI_SLAVE1 1</span>
+<a name="l00183"></a><a class="code" href="group__spi.html#gaf58a9c9069d93bd0664d2197c87ce9ff">00183</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI_SLAVE2 2</span>
+<a name="l00184"></a><a class="code" href="group__spi.html#ga1b6e7752f4befcdab3201ef0136ab1ea">00184</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI_SLAVE3 3</span>
+<a name="l00185"></a><a class="code" href="group__spi.html#ga20816bc66e8bf5ca76796cb07066ec9f">00185</a> <span class="preprocessor"></span><span class="preprocessor">#define SPI_SLAVE4 4</span>
+<a name="l00186"></a>00186 <span class="preprocessor"></span>
+<a name="l00187"></a>00187 <span class="comment">//extern uint8_t spi_nb_ovrn; //TODO SPI error struct</span>
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189 <span class="preprocessor">#if USE_SPI0</span>
+<a name="l00190"></a>00190 <span class="preprocessor"></span>
+<a name="l00191"></a>00191 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> <a class="code" href="group__spi.html#gae920399b05f855df64dd584fe647eab3">spi0</a>;
+<a name="l00192"></a>00192 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#ga2437939c4fca0a4a5a4f79460ed3f731">spi0_init</a>(<span class="keywordtype">void</span>);
+<a name="l00193"></a>00193 
+<a name="l00197"></a>00197 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#gab8cb9f918fae47c201bf233a0b3b282f" title="Architecture dependant SPI0 initialization.">spi0_arch_init</a>(<span class="keywordtype">void</span>);
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199 <span class="preprocessor">#endif</span>
+<a name="l00200"></a>00200 <span class="preprocessor"></span>
+<a name="l00201"></a>00201 <span class="preprocessor">#if USE_SPI1</span>
+<a name="l00202"></a>00202 <span class="preprocessor"></span>
+<a name="l00203"></a>00203 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> <a class="code" href="group__spi.html#gaedccba8390a9d630d522a0b282c4f9b9">spi1</a>;
+<a name="l00204"></a>00204 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#ga7da3469436debceb731ecb76c920efda">spi1_init</a>(<span class="keywordtype">void</span>);
+<a name="l00205"></a>00205 
+<a name="l00209"></a>00209 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#gaaba00866ddaf960c0c761e61f81e5216" title="Architecture dependant SPI1 initialization.">spi1_arch_init</a>(<span class="keywordtype">void</span>);
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211 <span class="preprocessor">#endif</span>
+<a name="l00212"></a>00212 <span class="preprocessor"></span>
+<a name="l00213"></a>00213 <span class="preprocessor">#if USE_SPI2</span>
+<a name="l00214"></a>00214 <span class="preprocessor"></span>
+<a name="l00215"></a>00215 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> <a class="code" href="group__spi.html#gabc3004247e95c09c15cfdf7d3e6402b7">spi2</a>;
+<a name="l00216"></a>00216 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#ga1c8c4e89459606c70f6749714abd4a86">spi2_init</a>(<span class="keywordtype">void</span>);
+<a name="l00217"></a>00217 
+<a name="l00221"></a>00221 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#gae6c7e2bb3fb354f3b98282386b41bf70" title="Architecture dependant SPI2 initialization.">spi2_arch_init</a>(<span class="keywordtype">void</span>);
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224 <span class="preprocessor">#endif</span>
+<a name="l00225"></a>00225 <span class="preprocessor"></span>
+<a name="l00229"></a>00229 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="spi__slave__hs__arch_8c.html#ae909944aa85ae98323073c628be541aa">spi_init</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>);
+<a name="l00230"></a>00230 
+<a name="l00233"></a>00233 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#gafc9125c5764a6749703ae4f1303a16f3" title="Initialize all used slaves and uselect them.">spi_init_slaves</a>(<span class="keywordtype">void</span>);
+<a name="l00234"></a>00234 
+<a name="l00241"></a>00241 <span class="keyword">extern</span> bool_t <a class="code" href="group__spi.html#gaf1bcfc102840a0e6287b4db20bd78337" title="Submit a spi transaction.">spi_submit</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <span class="keyword">struct</span> <a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a>* t);
+<a name="l00242"></a>00242 
+<a name="l00246"></a>00246 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#gad43916477f5d87b42eaa7d2099771568" title="Select a slave.">spi_slave_select</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave);
+<a name="l00247"></a>00247 
+<a name="l00251"></a>00251 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#ga99507da72932c02e5d8daf9a7170ed69" title="Unselect a slave.">spi_slave_unselect</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave);
+<a name="l00252"></a>00252 
+<a name="l00261"></a>00261 <span class="keyword">extern</span> bool_t <a class="code" href="group__spi.html#ga2db1b869a8aea431e3d3e63106290db9" title="Lock the SPI fifo.">spi_lock</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave);
+<a name="l00262"></a>00262 
+<a name="l00269"></a>00269 <span class="keyword">extern</span> bool_t <a class="code" href="group__spi.html#ga5e9947e5b87e3a86a773b4a174ec6f08" title="Resume the SPI fifo.">spi_resume</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> slave);
 <a name="l00270"></a>00270 
-<a name="l00274"></a>00274 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi0_slave_arch_init(<span class="keywordtype">void</span>);
-<a name="l00275"></a>00275 
-<a name="l00276"></a>00276 <span class="preprocessor">#endif</span>
-<a name="l00277"></a>00277 <span class="preprocessor"></span>
-<a name="l00278"></a>00278 <span class="preprocessor">#if USE_SPI1_SLAVE</span>
-<a name="l00279"></a>00279 <span class="preprocessor"></span>
-<a name="l00280"></a>00280 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> spi1;
-<a name="l00281"></a>00281 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi1_slave_init(<span class="keywordtype">void</span>);
-<a name="l00282"></a>00282 
-<a name="l00286"></a>00286 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi1_slave_arch_init(<span class="keywordtype">void</span>);
-<a name="l00287"></a>00287 
-<a name="l00288"></a>00288 <span class="preprocessor">#endif</span>
-<a name="l00289"></a>00289 <span class="preprocessor"></span>
-<a name="l00290"></a>00290 <span class="preprocessor">#if USE_SPI2_SLAVE</span>
-<a name="l00291"></a>00291 <span class="preprocessor"></span>
-<a name="l00292"></a>00292 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> spi2;
-<a name="l00293"></a>00293 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi2_slave_init(<span class="keywordtype">void</span>);
-<a name="l00294"></a>00294 
-<a name="l00298"></a>00298 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi2_slave_arch_init(<span class="keywordtype">void</span>);
-<a name="l00299"></a>00299 
-<a name="l00300"></a>00300 <span class="preprocessor">#endif</span>
-<a name="l00301"></a>00301 <span class="preprocessor"></span>
-<a name="l00305"></a>00305 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi_slave_init(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>);
-<a name="l00306"></a>00306 
-<a name="l00313"></a>00313 <span class="keyword">extern</span> bool_t spi_slave_register(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <span class="keyword">struct</span> <a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a>* t);
-<a name="l00314"></a>00314 
-<a name="l00321"></a>00321 <span class="keyword">extern</span> bool_t spi_slave_wait(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>);
-<a name="l00322"></a>00322 
-<a name="l00323"></a>00323 <span class="preprocessor">#endif </span><span class="comment">/* SPI_SLAVE */</span>
-<a name="l00324"></a>00324 
-<a name="l00325"></a>00325 <span class="preprocessor">#endif </span><span class="comment">/* SPI_H */</span>
+<a name="l00271"></a>00271 <span class="preprocessor">#endif </span><span class="comment">/* SPI_MASTER */</span>
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273 <span class="preprocessor">#if SPI_SLAVE</span>
+<a name="l00274"></a>00274 <span class="preprocessor"></span>
+<a name="l00275"></a>00275 <span class="preprocessor">#if USE_SPI0_SLAVE</span>
+<a name="l00276"></a>00276 <span class="preprocessor"></span>
+<a name="l00277"></a>00277 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> <a class="code" href="group__spi.html#gae920399b05f855df64dd584fe647eab3">spi0</a>;
+<a name="l00278"></a>00278 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi0_slave_init(<span class="keywordtype">void</span>);
+<a name="l00279"></a>00279 
+<a name="l00283"></a>00283 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi0_slave_arch_init(<span class="keywordtype">void</span>);
+<a name="l00284"></a>00284 
+<a name="l00285"></a>00285 <span class="preprocessor">#endif</span>
+<a name="l00286"></a>00286 <span class="preprocessor"></span>
+<a name="l00287"></a>00287 <span class="preprocessor">#if USE_SPI1_SLAVE</span>
+<a name="l00288"></a>00288 <span class="preprocessor"></span>
+<a name="l00289"></a>00289 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> <a class="code" href="group__spi.html#gaedccba8390a9d630d522a0b282c4f9b9">spi1</a>;
+<a name="l00290"></a>00290 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi1_slave_init(<span class="keywordtype">void</span>);
+<a name="l00291"></a>00291 
+<a name="l00295"></a>00295 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi1_slave_arch_init(<span class="keywordtype">void</span>);
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297 <span class="preprocessor">#endif</span>
+<a name="l00298"></a>00298 <span class="preprocessor"></span>
+<a name="l00299"></a>00299 <span class="preprocessor">#if USE_SPI2_SLAVE</span>
+<a name="l00300"></a>00300 <span class="preprocessor"></span>
+<a name="l00301"></a>00301 <span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structspi__periph.html">spi_periph</a> <a class="code" href="group__spi.html#gabc3004247e95c09c15cfdf7d3e6402b7">spi2</a>;
+<a name="l00302"></a>00302 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi2_slave_init(<span class="keywordtype">void</span>);
+<a name="l00303"></a>00303 
+<a name="l00307"></a>00307 <span class="keyword">extern</span> <span class="keywordtype">void</span> spi2_slave_arch_init(<span class="keywordtype">void</span>);
+<a name="l00308"></a>00308 
+<a name="l00309"></a>00309 <span class="preprocessor">#endif</span>
+<a name="l00310"></a>00310 <span class="preprocessor"></span>
+<a name="l00314"></a>00314 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__spi.html#ga7321d472bfa9548243ea6f22cf3ff8a4" title="Initialize a spi peripheral in slave mode.">spi_slave_init</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>);
+<a name="l00315"></a>00315 
+<a name="l00322"></a>00322 <span class="keyword">extern</span> bool_t <a class="code" href="group__spi.html#ga02a7edceaff0d9adc8e9b236b9915415" title="Register one (and only one) transaction to use spi as slave.">spi_slave_register</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <span class="keyword">struct</span> <a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a>* t);
+<a name="l00323"></a>00323 
+<a name="l00330"></a>00330 <span class="keyword">extern</span> bool_t <a class="code" href="group__spi.html#ga8d7be322aab918538305c7da8af7233e" title="Initialized and wait for the next transaction.">spi_slave_wait</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>);
+<a name="l00331"></a>00331 
+<a name="l00332"></a>00332 <span class="preprocessor">#endif </span><span class="comment">/* SPI_SLAVE */</span>
+<a name="l00333"></a>00333 
+<a name="l00337"></a>00337 <span class="preprocessor">#endif </span><span class="comment">/* SPI_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -341,7 +341,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="spi_8h.html">spi.h</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

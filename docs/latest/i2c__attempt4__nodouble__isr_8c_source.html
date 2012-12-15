@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">i2c_attempt4_nodouble_isr.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="i2c__attempt4__nodouble__isr_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
+<a href="i2c__attempt4__nodouble__isr_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html" title="Architecture independent I2C (Inter-Integrated Circuit Bus) API.">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00002"></a>00002 
 <a name="l00003"></a>00003 <span class="preprocessor">#include &lt;stm32/rcc.h&gt;</span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;<a class="code" href="stm32_2gpio_8h.html">stm32/gpio.h</a>&gt;</span>
@@ -412,7 +412,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00314"></a>00314 
 <a name="l00315"></a>00315   <span class="comment">// Issue a new start</span>
 <a name="l00316"></a>00316   regs-&gt;CR1 =  (<a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a852eceee90a414486caf44196448cc4c">I2C_CR1_BIT_START</a> | <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#aa360724d78ebbc092a89dd5b568d7c3a">I2C_CR1_BIT_PE</a>);
-<a name="l00317"></a>00317   periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> = <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785becac38326f97d97d96d564d1064ff3313c1">I2CStartRequested</a>;
+<a name="l00317"></a>00317   periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> = <a class="code" href="group__i2c.html#gga9bec282875cd65e00172e875ef785becac38326f97d97d96d564d1064ff3313c1">I2CStartRequested</a>;
 <a name="l00318"></a>00318 
 <a name="l00319"></a>00319 
 <a name="l00320"></a>00320 <span class="preprocessor">#ifdef I2C_DEBUG_LED</span>
@@ -488,10 +488,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00392"></a>00392   <span class="comment">// BTF: means last byte was sent</span>
 <a name="l00393"></a>00393   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>(<a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a7c07b96456b3a30522e236a9acaac684">I2C_SR1_BIT_BTF</a>, SR1) )
 <a name="l00394"></a>00394   {
-<a name="l00395"></a>00395       <span class="keywordflow">if</span> (trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> == <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>)
+<a name="l00395"></a>00395       <span class="keywordflow">if</span> (trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> == <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>)
 <a name="l00396"></a>00396       {
 <a name="l00397"></a>00397         <span class="comment">// Tell the driver we are ready</span>
-<a name="l00398"></a>00398         trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>;
+<a name="l00398"></a>00398         trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>;
 <a name="l00399"></a>00399       }
 <a name="l00400"></a>00400 
 <a name="l00401"></a>00401       <span class="keywordflow">return</span> <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a3e5aa70e49e955c0fe96861a45b77fa8a657b9cff002b8bfa10f223178d9ec469">STMI2C_SubTra_Ready</a>;
@@ -542,7 +542,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00446"></a>00446     trans-&gt;<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = regs-&gt;DR;
 <a name="l00447"></a>00447 
 <a name="l00448"></a>00448     <span class="comment">// We got all the results (stop condition might still be in progress but this is the last interrupt)</span>
-<a name="l00449"></a>00449     trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>;
+<a name="l00449"></a>00449     trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>;
 <a name="l00450"></a>00450 
 <a name="l00451"></a>00451     <span class="keywordflow">return</span> <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a3e5aa70e49e955c0fe96861a45b77fa8a2bf43d2a6766ade733171703bb4f0ae1">STMI2C_SubTra_Ready_StopRequested</a>;
 <a name="l00452"></a>00452   }
@@ -596,7 +596,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00500"></a>00500     trans-&gt;<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = regs-&gt;DR;
 <a name="l00501"></a>00501 
 <a name="l00502"></a>00502     <span class="comment">// We got all the results</span>
-<a name="l00503"></a>00503     trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>;
+<a name="l00503"></a>00503     trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>;
 <a name="l00504"></a>00504 
 <a name="l00505"></a>00505     <span class="keywordflow">return</span> <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a3e5aa70e49e955c0fe96861a45b77fa8a2bf43d2a6766ade733171703bb4f0ae1">STMI2C_SubTra_Ready_StopRequested</a>;
 <a name="l00506"></a>00506   }
@@ -659,7 +659,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00563"></a>00563       periph-&gt;<a class="code" href="structi2c__periph.html#adc23e331e23ecbdabc4510adeb43f8c2">idx_buf</a> ++;
 <a name="l00564"></a>00564 
 <a name="l00565"></a>00565       <span class="comment">// We got all the results</span>
-<a name="l00566"></a>00566       trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>;
+<a name="l00566"></a>00566       trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a2884da616ec2ff9183e649f8fab1073b">I2CTransSuccess</a>;
 <a name="l00567"></a>00567 
 <a name="l00568"></a>00568       <span class="keywordflow">return</span> <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a3e5aa70e49e955c0fe96861a45b77fa8a2bf43d2a6766ade733171703bb4f0ae1">STMI2C_SubTra_Ready_StopRequested</a>;
 <a name="l00569"></a>00569     }
@@ -901,7 +901,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00809"></a>00809     <span class="comment">// Mark this as a special error</span>
 <a name="l00810"></a>00810     periph-&gt;<a class="code" href="structi2c__periph.html#a4b1270562d3320ff0151bd7856ec0c6e">errors</a>-&gt;<a class="code" href="structi2c__errors.html#a874ae9784489639f832a7b6d8b9d0993">unexpected_event_cnt</a>++;
 <a name="l00811"></a>00811 
-<a name="l00812"></a>00812     periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> = <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>;
+<a name="l00812"></a>00812     periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> = <a class="code" href="group__i2c.html#gga9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>;
 <a name="l00813"></a>00813 
 <a name="l00814"></a>00814     <span class="comment">// There are no transactions anymore:</span>
 <a name="l00815"></a>00815     <span class="comment">// furtheron we need a transaction pointer: so we are not allowed to continue</span>
@@ -924,13 +924,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00833"></a>00833 <span class="preprocessor">#endif</span>
 <a name="l00834"></a>00834 <span class="preprocessor"></span>
 <a name="l00835"></a>00835     <span class="comment">// Set result in transaction</span>
-<a name="l00836"></a>00836     trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>;
+<a name="l00836"></a>00836     trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>;
 <a name="l00837"></a>00837 
 <a name="l00838"></a>00838     <span class="comment">// Prepare for next</span>
 <a name="l00839"></a>00839     ret = <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a3e5aa70e49e955c0fe96861a45b77fa8a657b9cff002b8bfa10f223178d9ec469">STMI2C_SubTra_Ready</a>;
 <a name="l00840"></a>00840 
 <a name="l00841"></a>00841     <span class="comment">// Make sure a TxRx does not Restart</span>
-<a name="l00842"></a>00842     trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea0a6a2eb5c566606a3ea9acc6734b4f91">I2CTransRx</a>;
+<a name="l00842"></a>00842     trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea0a6a2eb5c566606a3ea9acc6734b4f91">I2CTransRx</a>;
 <a name="l00843"></a>00843 
 <a name="l00844"></a>00844 <span class="comment">/*</span>
 <a name="l00845"></a>00845 <span class="comment">    // There are 2 types of errors: some need a STOP, some better do without: Following will not get an extra stop</span>
@@ -959,7 +959,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00869"></a>00869   <span class="keywordflow">else</span>
 <a name="l00870"></a>00870   {
 <a name="l00871"></a>00871 
-<a name="l00872"></a>00872     <span class="keywordflow">if</span> (trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> == <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea0a6a2eb5c566606a3ea9acc6734b4f91">I2CTransRx</a>) <span class="comment">// TxRx are converted to Rx after the Tx Part</span>
+<a name="l00872"></a>00872     <span class="keywordflow">if</span> (trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> == <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea0a6a2eb5c566606a3ea9acc6734b4f91">I2CTransRx</a>) <span class="comment">// TxRx are converted to Rx after the Tx Part</span>
 <a name="l00873"></a>00873     {
 <a name="l00874"></a>00874       <span class="keywordflow">switch</span> (trans-&gt;<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a>)
 <a name="l00875"></a>00875       {
@@ -984,7 +984,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00895"></a>00895   <span class="keywordflow">if</span> (ret != <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a3e5aa70e49e955c0fe96861a45b77fa8a4ed7b09a37e06d3f30b2e8592e77356a">STMI2C_SubTra_Busy</a>)
 <a name="l00896"></a>00896   {
 <a name="l00897"></a>00897     <span class="comment">// If a restart is not needed</span>
-<a name="l00898"></a>00898     <span class="keywordflow">if</span> (trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> != <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>)
+<a name="l00898"></a>00898     <span class="keywordflow">if</span> (trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> != <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea8fa3bedf5ded2c2a0a7d3d07dc776d7b">I2CTransTxRx</a>)
 <a name="l00899"></a>00899     {
 <a name="l00900"></a>00900       <span class="comment">// Ready, no stop condition set yet</span>
 <a name="l00901"></a>00901       <span class="keywordflow">if</span> (ret == <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a3e5aa70e49e955c0fe96861a45b77fa8a657b9cff002b8bfa10f223178d9ec469">STMI2C_SubTra_Ready</a>)
@@ -1001,7 +1001,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00912"></a>00912       <span class="keywordflow">if</span> (ret == <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a3e5aa70e49e955c0fe96861a45b77fa8aac32cddf112f82c12b7fa82bd28a0bac">STMI2C_SubTra_Error</a>)
 <a name="l00913"></a>00913       {
 <a name="l00914"></a>00914 
-<a name="l00915"></a>00915         trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>;
+<a name="l00915"></a>00915         trans-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a4a8906d81bf97d49da468e6c6b9f39e9">I2CTransFailed</a>;
 <a name="l00916"></a>00916 
 <a name="l00917"></a>00917     <span class="comment">// Error</span>
 <a name="l00918"></a>00918 <span class="preprocessor">#ifdef I2C_DEBUG_LED</span>
@@ -1021,11 +1021,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00932"></a>00932 
 <a name="l00933"></a>00933       <span class="comment">// Jump to the next transaction</span>
 <a name="l00934"></a>00934       periph-&gt;<a class="code" href="structi2c__periph.html#a4e572be9f28f1037d7c749a223329aaf">trans_extract_idx</a>++;
-<a name="l00935"></a>00935       <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#a4e572be9f28f1037d7c749a223329aaf">trans_extract_idx</a> &gt;= <a class="code" href="i2c_8h.html#a1e8f7694d49989f4823aa34cffae6319">I2C_TRANSACTION_QUEUE_LEN</a>)
+<a name="l00935"></a>00935       <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#a4e572be9f28f1037d7c749a223329aaf">trans_extract_idx</a> &gt;= <a class="code" href="group__i2c.html#ga1e8f7694d49989f4823aa34cffae6319">I2C_TRANSACTION_QUEUE_LEN</a>)
 <a name="l00936"></a>00936         periph-&gt;<a class="code" href="structi2c__periph.html#a4e572be9f28f1037d7c749a223329aaf">trans_extract_idx</a> = 0;
 <a name="l00937"></a>00937 
 <a name="l00938"></a>00938       <span class="comment">// Tell everyone we are ready</span>
-<a name="l00939"></a>00939       periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> = <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>;
+<a name="l00939"></a>00939       periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> = <a class="code" href="group__i2c.html#gga9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>;
 <a name="l00940"></a>00940 
 <a name="l00941"></a>00941 
 <a name="l00942"></a>00942       <span class="comment">// if we have no more transaction to process, stop here</span>
@@ -1054,8 +1054,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00965"></a>00965     <span class="comment">// RxTx -&gt; Restart and do Rx part</span>
 <a name="l00966"></a>00966     <span class="keywordflow">else</span>
 <a name="l00967"></a>00967     {
-<a name="l00968"></a>00968       trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea0a6a2eb5c566606a3ea9acc6734b4f91">I2CTransRx</a>;
-<a name="l00969"></a>00969       periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> = <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785becac38326f97d97d96d564d1064ff3313c1">I2CStartRequested</a>;
+<a name="l00968"></a>00968       trans-&gt;<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea0a6a2eb5c566606a3ea9acc6734b4f91">I2CTransRx</a>;
+<a name="l00969"></a>00969       periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> = <a class="code" href="group__i2c.html#gga9bec282875cd65e00172e875ef785becac38326f97d97d96d564d1064ff3313c1">I2CStartRequested</a>;
 <a name="l00970"></a>00970       regs-&gt;CR1 |= <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a852eceee90a414486caf44196448cc4c">I2C_CR1_BIT_START</a>;
 <a name="l00971"></a>00971 
 <a name="l00972"></a>00972       <span class="comment">// Silent any BTF that would occur before SB</span>
@@ -1142,7 +1142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01053"></a>01053   i2c1.errors = &amp;i2c1_errors;
 <a name="l01054"></a>01054 
 <a name="l01055"></a>01055   <span class="comment">/* zeros error counter */</span>
-<a name="l01056"></a>01056   <a class="code" href="i2c_8h.html#a0c590ace0cfbd91af9173a07cc211362">ZEROS_ERR_COUNTER</a>(i2c1_errors);
+<a name="l01056"></a>01056   <a class="code" href="group__i2c.html#ga0c590ace0cfbd91af9173a07cc211362">ZEROS_ERR_COUNTER</a>(i2c1_errors);
 <a name="l01057"></a>01057 
 <a name="l01058"></a>01058   <span class="comment">// Extra</span>
 <a name="l01059"></a>01059 <span class="preprocessor">#ifdef I2C_DEBUG_LED</span>
@@ -1217,7 +1217,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01128"></a>01128   i2c2.errors = &amp;i2c2_errors;
 <a name="l01129"></a>01129 
 <a name="l01130"></a>01130   <span class="comment">/* zeros error counter */</span>
-<a name="l01131"></a>01131   <a class="code" href="i2c_8h.html#a0c590ace0cfbd91af9173a07cc211362">ZEROS_ERR_COUNTER</a>(i2c2_errors);
+<a name="l01131"></a>01131   <a class="code" href="group__i2c.html#ga0c590ace0cfbd91af9173a07cc211362">ZEROS_ERR_COUNTER</a>(i2c2_errors);
 <a name="l01132"></a>01132 
 <a name="l01133"></a>01133   <span class="comment">/* reset peripheral to default state ( sometimes not achieved on reset :(  ) */</span>
 <a name="l01134"></a>01134   <span class="comment">//I2C_DeInit(I2C2);</span>
@@ -1276,9 +1276,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01187"></a>01187 <span class="preprocessor">#endif </span><span class="comment">/* USE_I2C2 */</span>
 <a name="l01188"></a>01188 
 <a name="l01189"></a>01189 
-<a name="l01190"></a><a class="code" href="i2c__attempt4__nodouble__isr_8c.html#ae0020434d1c13d73a4a7ec1d726eb913">01190</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a886c0abe64ca0d366a35abba80cf2eff">i2c_setbitrate</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a> *periph, <span class="keywordtype">int</span> bitrate)
+<a name="l01190"></a><a class="code" href="group__i2c.html#ga886c0abe64ca0d366a35abba80cf2eff">01190</a> <span class="keywordtype">void</span> <a class="code" href="group__i2c.html#ga886c0abe64ca0d366a35abba80cf2eff">i2c_setbitrate</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a> *periph, <span class="keywordtype">int</span> bitrate)
 <a name="l01191"></a>01191 {
-<a name="l01192"></a>01192   <span class="keywordflow">if</span> (<a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(periph))
+<a name="l01192"></a>01192   <span class="keywordflow">if</span> (<a class="code" href="group__i2c.html#ga54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(periph))
 <a name="l01193"></a>01193   {
 <a name="l01194"></a>01194     <span class="keywordflow">if</span> (periph == &amp;i2c2)
 <a name="l01195"></a>01195     {
@@ -1304,7 +1304,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01215"></a>01215    }
 <a name="l01216"></a>01216 }
 <a name="l01217"></a>01217 
-<a name="l01218"></a><a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a05763355d0e087ba41feab61dd773fe6">01218</a> <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a05763355d0e087ba41feab61dd773fe6">i2c_event</a>(<span class="keywordtype">void</span>)
+<a name="l01218"></a><a class="code" href="group__i2c.html#ga05763355d0e087ba41feab61dd773fe6">01218</a> <span class="keywordtype">void</span> <a class="code" href="group__i2c.html#ga05763355d0e087ba41feab61dd773fe6">i2c_event</a>(<span class="keywordtype">void</span>)
 <a name="l01219"></a>01219 {
 <a name="l01220"></a>01220   <span class="keyword">static</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> cnt = 0;
 <a name="l01221"></a>01221   <span class="comment">//I2C_TypeDef *regs;</span>
@@ -1313,9 +1313,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01224"></a>01224 
 <a name="l01225"></a>01225 <span class="preprocessor">#ifndef I2C_DEBUG_LED</span>
 <a name="l01226"></a>01226 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_I2C1</span>
-<a name="l01227"></a>01227 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i2c1.status == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
+<a name="l01227"></a>01227 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (i2c1.status == <a class="code" href="group__i2c.html#gga9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
 <a name="l01228"></a>01228   {
-<a name="l01229"></a>01229     <span class="keywordflow">if</span> (<a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(&amp;i2c1))
+<a name="l01229"></a>01229     <span class="keywordflow">if</span> (<a class="code" href="group__i2c.html#ga54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(&amp;i2c1))
 <a name="l01230"></a>01230     {
 <a name="l01231"></a>01231       <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012">__disable_irq</a>();
 <a name="l01232"></a>01232       <span class="comment">// More work to do</span>
@@ -1346,12 +1346,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01257"></a>01257   <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
 <a name="l01258"></a>01258         <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
 <a name="l01259"></a>01259   <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
-<a name="l01260"></a>01260         <span class="keywordflow">if</span> (i2c2.status == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
+<a name="l01260"></a>01260         <span class="keywordflow">if</span> (i2c2.status == <a class="code" href="group__i2c.html#gga9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
 <a name="l01261"></a>01261         {
 <a name="l01262"></a>01262           <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
 <a name="l01263"></a>01263       <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
 <a name="l01264"></a>01264         }
-<a name="l01265"></a>01265         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i2c2.status == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785becac38326f97d97d96d564d1064ff3313c1">I2CStartRequested</a>)
+<a name="l01265"></a>01265         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i2c2.status == <a class="code" href="group__i2c.html#gga9bec282875cd65e00172e875ef785becac38326f97d97d96d564d1064ff3313c1">I2CStartRequested</a>)
 <a name="l01266"></a>01266         {
 <a name="l01267"></a>01267           <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#adca41342b73071391bc20f0dbb808d53">LED1_ON</a>();
 <a name="l01268"></a>01268       <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b">LED1_OFF</a>();
@@ -1388,15 +1388,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01299"></a>01299 
 <a name="l01301"></a>01301 <span class="comment">// Implement Interface Functions</span>
 <a name="l01302"></a>01302 
-<a name="l01303"></a><a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a59213a43635fa8bf16e5a5ceb20ebb2e">01303</a> bool_t <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a>* periph, <span class="keyword">struct</span> <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
+<a name="l01303"></a><a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">01303</a> bool_t <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a>* periph, <span class="keyword">struct</span> <a class="code" href="structi2c__transaction.html">i2c_transaction</a>* t) {
 <a name="l01304"></a>01304 
 <a name="l01305"></a>01305   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> temp;
 <a name="l01306"></a>01306   temp = periph-&gt;<a class="code" href="structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c">trans_insert_idx</a> + 1;
-<a name="l01307"></a>01307   <span class="keywordflow">if</span> (temp &gt;= <a class="code" href="i2c_8h.html#a1e8f7694d49989f4823aa34cffae6319">I2C_TRANSACTION_QUEUE_LEN</a>) temp = 0;
+<a name="l01307"></a>01307   <span class="keywordflow">if</span> (temp &gt;= <a class="code" href="group__i2c.html#ga1e8f7694d49989f4823aa34cffae6319">I2C_TRANSACTION_QUEUE_LEN</a>) temp = 0;
 <a name="l01308"></a>01308   <span class="keywordflow">if</span> (temp == periph-&gt;<a class="code" href="structi2c__periph.html#a4e572be9f28f1037d7c749a223329aaf">trans_extract_idx</a>)
 <a name="l01309"></a>01309     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                          <span class="comment">// queue full</span>
 <a name="l01310"></a>01310 
-<a name="l01311"></a>01311   t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>;
+<a name="l01311"></a>01311   t-&gt;<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>;
 <a name="l01312"></a>01312 
 <a name="l01313"></a>01313   <a class="code" href="stm32_2mcu__periph_2i2c__arch_8c.html#a6b9c651bba2afc97b6578902bae95012">__disable_irq</a>();
 <a name="l01314"></a>01314   <span class="comment">/* put transacation in queue */</span>
@@ -1405,7 +1405,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01317"></a>01317 
 <a name="l01318"></a>01318   <span class="comment">/* if peripheral is idle, start the transaction */</span>
 <a name="l01319"></a>01319   <span class="comment">// if (PPRZ_I2C_IS_IDLE(p))</span>
-<a name="l01320"></a>01320   <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
+<a name="l01320"></a>01320   <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="group__i2c.html#gga9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
 <a name="l01321"></a>01321   {
 <a name="l01322"></a>01322     <span class="comment">//if (i2c_idle(periph))</span>
 <a name="l01323"></a>01323     {
@@ -1427,7 +1427,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01339"></a>01339   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l01340"></a>01340 }
 <a name="l01341"></a>01341 
-<a name="l01342"></a><a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a78c67d54f9c18514a2eb38edfc0fc66d">01342</a> bool_t <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a>* periph)
+<a name="l01342"></a><a class="code" href="group__i2c.html#ga54cb2dd83ed5b0dacc02764aa234f564">01342</a> bool_t <a class="code" href="group__i2c.html#ga54cb2dd83ed5b0dacc02764aa234f564">i2c_idle</a>(<span class="keyword">struct</span> <a class="code" href="structi2c__periph.html">i2c_periph</a>* periph)
 <a name="l01343"></a>01343 {
 <a name="l01344"></a>01344   I2C_TypeDef *regs = (I2C_TypeDef *) periph-&gt;<a class="code" href="structi2c__periph.html#ab87b1de4062efa2a073a28748b9cec38">reg_addr</a>;
 <a name="l01345"></a>01345 
@@ -1437,7 +1437,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01349"></a>01349     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
 <a name="l01350"></a>01350         }
 <a name="l01351"></a>01351 <span class="preprocessor">#endif</span>
-<a name="l01352"></a>01352 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="i2c_8h.html#a9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
+<a name="l01352"></a>01352 <span class="preprocessor"></span>  <span class="keywordflow">if</span> (periph-&gt;<a class="code" href="structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85">status</a> == <a class="code" href="group__i2c.html#gga9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788">I2CIdle</a>)
 <a name="l01353"></a>01353     <span class="keywordflow">return</span> ! (<a class="code" href="i2c__attempt4__nodouble__isr_8c.html#a007bb527478e35deb7dd7bac8a81ae96">BIT_X_IS_SET_IN_REG</a>( <a class="code" href="i2c__attempt4__nodouble__isr_8c.html#af95409bc7cef22e3da1b681f48a96e05">I2C_SR2_BIT_BUSY</a>, regs-&gt;SR2 ) );
 <a name="l01354"></a>01354   <span class="keywordflow">else</span>
 <a name="l01355"></a>01355     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
@@ -1464,7 +1464,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="i2c__attempt4__nodouble__isr_8c.html">i2c_attempt4_nodouble_isr.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

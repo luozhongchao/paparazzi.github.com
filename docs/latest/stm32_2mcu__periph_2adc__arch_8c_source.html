@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -104,28 +104,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="stm32_2mcu__periph_2adc__arch_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> *</span>
-<a name="l00003"></a>00003 <span class="comment"> * Copyright (C) 2010 The Paparazzi Team</span>
-<a name="l00004"></a>00004 <span class="comment"> *</span>
-<a name="l00005"></a>00005 <span class="comment"> * This file is part of paparazzi.</span>
-<a name="l00006"></a>00006 <span class="comment"> *</span>
-<a name="l00007"></a>00007 <span class="comment"> * paparazzi is free software; you can redistribute it and/or modify</span>
-<a name="l00008"></a>00008 <span class="comment"> * it under the terms of the GNU General Public License as published by</span>
-<a name="l00009"></a>00009 <span class="comment"> * the Free Software Foundation; either version 2, or (at your option)</span>
-<a name="l00010"></a>00010 <span class="comment"> * any later version.</span>
-<a name="l00011"></a>00011 <span class="comment"> *</span>
-<a name="l00012"></a>00012 <span class="comment"> * paparazzi is distributed in the hope that it will be useful,</span>
-<a name="l00013"></a>00013 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00014"></a>00014 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00015"></a>00015 <span class="comment"> * GNU General Public License for more details.</span>
-<a name="l00016"></a>00016 <span class="comment"> *</span>
-<a name="l00017"></a>00017 <span class="comment"> * You should have received a copy of the GNU General Public License</span>
-<a name="l00018"></a>00018 <span class="comment"> * along with paparazzi; see the file COPYING.  If not, write to</span>
-<a name="l00019"></a>00019 <span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span>
-<a name="l00020"></a>00020 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
-<a name="l00021"></a>00021 <span class="comment"> *</span>
-<a name="l00022"></a>00022 <span class="comment"> */</span>
-<a name="l00023"></a>00023 
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (C) 2010-2012 The Paparazzi Team</span>
+<a name="l00003"></a>00003 <span class="comment"> *</span>
+<a name="l00004"></a>00004 <span class="comment"> * This file is part of paparazzi.</span>
+<a name="l00005"></a>00005 <span class="comment"> *</span>
+<a name="l00006"></a>00006 <span class="comment"> * paparazzi is free software; you can redistribute it and/or modify</span>
+<a name="l00007"></a>00007 <span class="comment"> * it under the terms of the GNU General Public License as published by</span>
+<a name="l00008"></a>00008 <span class="comment"> * the Free Software Foundation; either version 2, or (at your option)</span>
+<a name="l00009"></a>00009 <span class="comment"> * any later version.</span>
+<a name="l00010"></a>00010 <span class="comment"> *</span>
+<a name="l00011"></a>00011 <span class="comment"> * paparazzi is distributed in the hope that it will be useful,</span>
+<a name="l00012"></a>00012 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00013"></a>00013 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00014"></a>00014 <span class="comment"> * GNU General Public License for more details.</span>
+<a name="l00015"></a>00015 <span class="comment"> *</span>
+<a name="l00016"></a>00016 <span class="comment"> * You should have received a copy of the GNU General Public License</span>
+<a name="l00017"></a>00017 <span class="comment"> * along with paparazzi; see the file COPYING.  If not, write to</span>
+<a name="l00018"></a>00018 <span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span>
+<a name="l00019"></a>00019 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
+<a name="l00020"></a>00020 <span class="comment"> *</span>
+<a name="l00021"></a>00021 <span class="comment"> */</span>
+<a name="l00022"></a>00022 
 <a name="l00038"></a>00038 <span class="comment">/*</span>
 <a name="l00039"></a>00039 <span class="comment">  For better understanding of timer and GPIO settings:</span>
 <a name="l00040"></a>00040 <span class="comment"></span>
@@ -185,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00094"></a>00094 <span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span>
 <a name="l00095"></a>00095 <span class="preprocessor">#include BOARD_CONFIG</span>
 <a name="l00096"></a>00096 <span class="preprocessor"></span>
-<a name="l00097"></a><a class="code" href="test__adc_8c.html#a9a5be07f63aca3718abe2d190b3189aa">00097</a> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188" title="This is the driver for the analog to digital converters on STM32.">adc_new_data_trigger</a>;
+<a name="l00097"></a><a class="code" href="test__adc_8c.html#a9a5be07f63aca3718abe2d190b3189aa">00097</a> <span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a>;
 <a name="l00098"></a>00098 
 <a name="l00099"></a>00099 <span class="comment">/* Static functions */</span>
 <a name="l00100"></a>00100 
@@ -509,7 +508,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00418"></a>00418     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a>[3] = &amp;ADC_JDR4(ADC2);
 <a name="l00419"></a>00419 <span class="preprocessor">#endif</span>
 <a name="l00420"></a>00420 <span class="preprocessor"></span>
-<a name="l00421"></a>00421     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188" title="This is the driver for the analog to digital converters on STM32.">adc_new_data_trigger</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00421"></a>00421     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00422"></a>00422     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[0] = <a class="code" href="lisa__l__1_80_8h.html#a60592e1d9547350dfd75d670738dcf44">BOARD_ADC_CHANNEL_1</a>;
 <a name="l00423"></a>00423     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a>[1] = <a class="code" href="lisa__l__1_80_8h.html#a65c392281a7e695fa5bbe3d1e5a117c6">BOARD_ADC_CHANNEL_2</a>;
 <a name="l00424"></a>00424     <span class="comment">// FIXME for now we get battery voltage this way</span>
@@ -601,7 +600,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00513"></a>00513             <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(buf, value);
 <a name="l00514"></a>00514         }
 <a name="l00515"></a>00515     }
-<a name="l00516"></a>00516     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188" title="This is the driver for the analog to digital converters on STM32.">adc_new_data_trigger</a> = 1;
+<a name="l00516"></a>00516     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a> = 1;
 <a name="l00517"></a>00517 <span class="preprocessor">#endif</span>
 <a name="l00518"></a>00518 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_AD2</span>
 <a name="l00519"></a>00519 <span class="preprocessor"></span>    <span class="comment">// Clear Injected End Of Conversion</span>
@@ -613,7 +612,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00525"></a>00525             <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a>(buf, value);
 <a name="l00526"></a>00526         }
 <a name="l00527"></a>00527     }
-<a name="l00528"></a>00528     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188" title="This is the driver for the analog to digital converters on STM32.">adc_new_data_trigger</a> = 1;
+<a name="l00528"></a>00528     <a class="code" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a> = 1;
 <a name="l00529"></a>00529 <span class="preprocessor">#endif</span>
 <a name="l00530"></a>00530 <span class="preprocessor"></span>}
 </pre></div></div><!-- contents -->
@@ -636,7 +635,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html">adc_arch.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:07 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

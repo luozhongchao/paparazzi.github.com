@@ -105,5 +105,6 @@ var searchData=
   ['num_5frx_5fbytes',['num_rx_bytes',['../structuart__state.html#a38acbfde383d1377ad4128cb3400f57a',1,'uart_state']]],
   ['num_5fsv',['num_sv',['../structVi__gps__info.html#a7d613e407626232ab0a3a8f1052e9eec',1,'Vi_gps_info::num_sv()'],['../structGpsState.html#af6d2ba472d4430528868fd65b9d0c59c',1,'GpsState::num_sv()']]],
   ['numberofrailtodo',['numberofrailtodo',['../cartography_8c.html#aca3ab59c0bb6ec010bc6eb6dea8ce6a8',1,'cartography.c']]],
-  ['nv_5ftemp',['NV_temp',['../structPCAP01VALUE.html#a4538f734084a1f8281cd8feabe189b9a',1,'PCAP01VALUE']]]
+  ['nv_5ftemp',['NV_temp',['../structPCAP01VALUE.html#a4538f734084a1f8281cd8feabe189b9a',1,'PCAP01VALUE']]],
+  ['nvic_5firq',['nvic_irq',['../structspi__periph__dma.html#a9a689b71e186b6ceee15cc0e94f621d2',1,'spi_periph_dma']]]
 ];

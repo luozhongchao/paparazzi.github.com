@@ -2,8 +2,8 @@ var i2c__attempt1_8c =
 [
     [ "OUT_OF_SYNC_STATE_MACHINE", "i2c__attempt1_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1", null ],
     [ "SPURIOUS_INTERRUPT", "i2c__attempt1_8c.html#ab81219b1393fe184d5856db1a6eabf73", null ],
-    [ "i2c_idle", "i2c__attempt1_8c.html#a78c67d54f9c18514a2eb38edfc0fc66d", null ],
-    [ "i2c_submit", "i2c__attempt1_8c.html#a59213a43635fa8bf16e5a5ceb20ebb2e", null ],
+    [ "i2c_idle", "group__i2c.html#ga54cb2dd83ed5b0dacc02764aa234f564", null ],
+    [ "i2c_submit", "group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa", null ],
     [ "LED1_OFF", "i2c__attempt1_8c.html#a9df4cafa6dff563e72b9a38cfc0af78b", null ],
     [ "LED1_ON", "i2c__attempt1_8c.html#adca41342b73071391bc20f0dbb808d53", null ],
     [ "LED2_OFF", "i2c__attempt1_8c.html#ab72bc6c4cacf74b59b180a845d011e98", null ],

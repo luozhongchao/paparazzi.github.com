@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -165,15 +165,47 @@ Variables</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Add to airframe file: </p>
-<p>&lt;section name="Photogrammetry" prefix="PHOTOGRAMMETRY_"&gt;</p>
-<p>&lt;define name="FOCAL_LENGTH" value="35" unit="mm"&gt; &lt;define name="SENSOR_WIDTH" value="24" unit="mm"&gt; &lt;define name="SENSOR_HEIGHT" value="13.5" unit="mm"&gt; &lt;define name="PIXELS_WIDTH" value="1024" unit=""&gt;</p>
-<p>&lt;define name="HEIGHT_MIN" value="35" unit="m"&gt; &lt;define name="HEIGHT_MAX" value="500" unit="m"&gt; &lt;define name="RADIUS_MIN" value="70" unit="m"&gt; &lt;/section&gt;</p>
-<p>&lt;modules&gt; &lt;load name="photogrammetry_calculator.xml"&gt; &lt;/modules&gt;</p>
-<p>Add to flightplan or airframe file:</p>
-<p>Add to flightplan</p>
-<p>&lt;header&gt; #define PHOTOGRAMMETRY_SWEEP_ANGLE 53 // Degrees from the North #define PHOTOGRAMMETRY_OVERLAP 50 // 1-99 Procent #define PHOTOGRAMMETRY_SIDELAP 50 // 1-99 Procent #define PHOTOGRAMMETRY_RESOLUTION 80 // mm pixel projection size &lt;/header&gt;</p>
-<p>&lt;block group="survey" name="Initialize Poly Survey 56789" strip_button="Survey5678" strip_icon="survey.png"&gt; &lt;call fun="PhotogrammetryCalculatorPolygonSurvey(WP_5, 5)"&gt; &lt;call fun="PolygonSurvey()"&gt; &lt;/block&gt; &lt;block group="survey" name="Initialize ADV Poly 1234 Survey" strip_button="SurveyADV" strip_icon="survey.png"&gt; &lt;call fun="PhotogrammetryCalculatorPolygonSurveyADV(WP_1, 4)"&gt; &lt;call fun="poly_survey_adv()"&gt; &lt;/block&gt; </p>
+<div class="fragment"><pre class="fragment">
+  &lt;section name="Photogrammetry" prefix="PHOTOGRAMMETRY_"&gt;
+    &lt;!-- Camera Parameters --&gt;
+    &lt;define name="FOCAL_LENGTH" value="35" unit="mm"/&gt;
+    &lt;define name="SENSOR_WIDTH" value="24" unit="mm"/&gt;		&lt;!-- In direction of the plane's wings --&gt;
+    &lt;define name="SENSOR_HEIGHT" value="13.5" unit="mm"/&gt;	&lt;!-- In direction of the plane's nose --&gt;
+    &lt;define name="PIXELS_WIDTH" value="1024" unit=""/&gt;
 
+    &lt;!-- Flight Safety Parameters --&gt;
+    &lt;define name="HEIGHT_MIN" value="35" unit="m"/&gt;
+    &lt;define name="HEIGHT_MAX" value="500" unit="m"/&gt;
+    &lt;define name="RADIUS_MIN" value="70" unit="m"/&gt;
+  &lt;/section&gt;
+
+  &lt;modules&gt;
+    &lt;load name="photogrammetry_calculator.xml" /&gt;
+  &lt;/modules&gt;
+</pre></div><p>Add to flightplan or airframe file: </p>
+<div class="fragment"><pre class="fragment">
+    &lt;!-- Photogrammetry Parameters: define these in the flightplan--&gt;
+    &lt;define name="OVERLAP" value="0.5" unit="PROCENT"/&gt;
+    &lt;define name="SIDELAP" value="0.5" unit="PROCENT"/&gt;
+    &lt;define name="RESOLUTION" value="50" unit="mm pixel projection"/&gt;
+</pre></div><p>Add to flightplan </p>
+<div class="fragment"><pre class="fragment">
+  &lt;header&gt;
+#define PHOTOGRAMMETRY_SWEEP_ANGLE 53		// Degrees from the North
+#define PHOTOGRAMMETRY_OVERLAP 50		// 1-99 Procent
+#define PHOTOGRAMMETRY_SIDELAP 50		// 1-99 Procent
+#define PHOTOGRAMMETRY_RESOLUTION 80		// mm pixel projection size
+&lt;/header&gt;
+
+    &lt;block group="survey" name="Initialize Poly Survey 56789" strip_button="Survey5678" strip_icon="survey.png"&gt;
+      &lt;call fun="PhotogrammetryCalculatorPolygonSurvey(WP_5, 5)"/&gt;
+      &lt;call fun="PolygonSurvey()"/&gt;
+    &lt;/block&gt;
+    &lt;block group="survey" name="Initialize ADV Poly 1234 Survey" strip_button="SurveyADV" strip_icon="survey.png"&gt;
+      &lt;call fun="PhotogrammetryCalculatorPolygonSurveyADV(WP_1, 4)"/&gt;
+      &lt;call fun="poly_survey_adv()"/&gt;
+    &lt;/block&gt;
+</pre></div> 
 <p>Definition in file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
 </div><hr/><h2>Define Documentation</h2>
 <a class="anchor" id="a4e8a2f66c719602ebfd80bf658168064"></a><!-- doxytag: member="photogrammetry_calculator.h::photogrammetry_calculator_UpdateHeight" ref="a4e8a2f66c719602ebfd80bf658168064" args="(X)" -->
@@ -195,7 +227,7 @@ Variables</h2></td></tr>
   photogrammetry_calculator_update_flightplan2camera();   \
 }
 </pre></div>
-<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00120">120</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
+<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00122">122</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
 
 </div>
 </div>
@@ -218,7 +250,7 @@ Variables</h2></td></tr>
   photogrammetry_calculator_update_camera2flightplan();   \
 }
 </pre></div>
-<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00109">109</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
+<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00111">111</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
 
 </div>
 </div>
@@ -241,7 +273,7 @@ Variables</h2></td></tr>
   photogrammetry_calculator_update_camera2flightplan();   \
 }
 </pre></div>
-<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00114">114</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
+<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00116">116</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
 
 </div>
 </div>
@@ -264,7 +296,7 @@ Variables</h2></td></tr>
   photogrammetry_calculator_update_camera2flightplan();   \
 }
 </pre></div>
-<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00104">104</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
+<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00106">106</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
 
 </div>
 </div>
@@ -287,7 +319,7 @@ Variables</h2></td></tr>
   photogrammetry_calculator_update_flightplan2camera();   \
 }
 </pre></div>
-<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00125">125</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
+<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00127">127</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
 
 </div>
 </div>
@@ -310,7 +342,7 @@ Variables</h2></td></tr>
   photogrammetry_calculator_update_flightplan2camera();   \
 }
 </pre></div>
-<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00130">130</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
+<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00132">132</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
 
 </div>
 </div>
@@ -345,7 +377,7 @@ Variables</h2></td></tr>
   <a class="code" href="OSAMNav_8c.html#ac7c8a601c7f9d340bda688d25caf3406">InitializePolygonSurvey</a>((_WP), (_COUNT), 2*<a class="code" href="photogrammetry__calculator_8c.html#a1dbe925a7f90228d2b3ca852585492d0">photogrammetry_sidestep</a>, _ang);  \
 }
 </pre></div>
-<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00137">137</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
+<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00139">139</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
 
 </div>
 </div>
@@ -379,7 +411,7 @@ Variables</h2></td></tr>
   <a class="code" href="photogrammetry__calculator_8c.html#a4417b4836a8a82e7a8f11b640602e648">photogrammetry_radius_min</a>,  <a class="code" href="photogrammetry__calculator_8c.html#a45930e976ca587d4b9d1d0e225f23410">photogrammetry_height</a> + GROUND_ALT);    \
 }
 </pre></div>
-<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00144">144</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
+<p>Definition at line <a class="el" href="photogrammetry__calculator_8h_source.html#l00146">146</a> of file <a class="el" href="photogrammetry__calculator_8h_source.html">photogrammetry_calculator.h</a>.</p>
 
 </div>
 </div>
@@ -662,7 +694,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="photogrammetry__calculator_8h.html">photogrammetry_calculator.h</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

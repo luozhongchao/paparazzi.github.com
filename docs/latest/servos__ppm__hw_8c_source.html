@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -124,39 +124,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
 <a name="l00020"></a>00020 <span class="comment"> *</span>
 <a name="l00021"></a>00021 <span class="comment"> */</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="actuators_8h.html" title="Hardware independent API for actuators (servos, motor controllers).">subsystems/actuators.h</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="paparazzi_8h.html">paparazzi.h</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
-<a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#a2eded3b068b06e16353413d12309e40c">00031</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="servos__ppm__hw_8c.html#a2eded3b068b06e16353413d12309e40c">servos_PPM_idx</a>;
-<a name="l00032"></a><a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#ae2a4eb3b6da0f57c0747c6bda8186398">00032</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="servos__ppm__hw_8c.html#ae2a4eb3b6da0f57c0747c6bda8186398">ppm_pulse</a>;
-<a name="l00033"></a><a class="code" href="servos__ppm__hw_8c.html#ab97f8d95b7ca4a7363e3e62be967e421">00033</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="servos__4015__hw_8c.html#ab97f8d95b7ca4a7363e3e62be967e421">servos_delay</a> = <a class="code" href="servos__4015__hw_8c.html#a9687b33a6de1a893fe628126b21b5506">SERVO_REFRESH_TICS</a>;
+<a name="l00022"></a>00022 
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="actuators_8h.html" title="Hardware independent API for actuators (servos, motor controllers).">subsystems/actuators.h</a>&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="paparazzi_8h.html">paparazzi.h</a>&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;generated/airframe.h&quot;</span>
 <a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="servos__ppm__hw_8c.html#a0525bb869371e594a31064887054b8ef">00035</a> <span class="preprocessor">#define START_TIMEOUT 0xFFFF;</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span>
-<a name="l00037"></a><a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#ade2fb5e18285a47f44933f493951e595">00037</a> <span class="keywordtype">void</span> <a class="code" href="servos__ppm__hw_8c.html#ade2fb5e18285a47f44933f493951e595">actuators_ppm_init</a> ( <span class="keywordtype">void</span> ) {
-<a name="l00038"></a>00038   <span class="comment">/* select ppm output pin as MAT0.1 output */</span>
-<a name="l00039"></a>00039   <a class="code" href="hb__1_81_8h.html#a15781ef2b1129627dacdeff006954788">SERVO_CLOCK_PINSEL</a> |= <a class="code" href="hb__1_81_8h.html#a4b04c8175ead918a9ee42816b06a04e8">SERVO_CLOCK_PINSEL_VAL</a> &lt;&lt; <a class="code" href="hb__1_81_8h.html#a87fe8b338732e7a3887c2ab363ecf535">SERVO_CLOCK_PINSEL_BIT</a>;
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041   <span class="comment">/* enable match 1 interrupt */</span>
-<a name="l00042"></a>00042   <a class="code" href="LPC21xx_8h.html#a301ebbd28f97690cab064ef6ca985e01">T0MCR</a> |= <a class="code" href="lpcTMR_8h.html#a280da1b0c25c135962d7e1e5afdfa676">TMCR_MR1_I</a>;
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044   <span class="comment">/* lower clock         */</span>
-<a name="l00045"></a>00045   <a class="code" href="LPC21xx_8h.html#a3f7bfa7a4ec72334b5628f6f0b2276fa">T0EMR</a> &amp;= ~<a class="code" href="lpcTMR_8h.html#ad6204fd25b98b4e34f9840ef0e1df299">TEMR_EM1</a>;
-<a name="l00046"></a>00046   <span class="comment">/* set high on match 1 */</span>
-<a name="l00047"></a>00047   <a class="code" href="LPC21xx_8h.html#a3f7bfa7a4ec72334b5628f6f0b2276fa">T0EMR</a> |= <a class="code" href="lpcTMR_8h.html#a92ae3ae73a7e3e0c1487fbf27cce0108">TEMR_EMC1_2</a>;
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049   <span class="comment">/* set first pulse in a while */</span>
-<a name="l00050"></a>00050   <a class="code" href="LPC21xx_8h.html#afcda6dd57c1f5114f0574f9a8c668636">T0MR1</a> = <a class="code" href="servos__ppm__hw_8c.html#a0525bb869371e594a31064887054b8ef">START_TIMEOUT</a>;
-<a name="l00051"></a>00051   <a class="code" href="servos__ppm__hw_8c.html#a2eded3b068b06e16353413d12309e40c">servos_PPM_idx</a> = <a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#a0ac20efd1417e65cb9eb991e5c7fc73d">_PPM_NB_CHANNELS</a>;
-<a name="l00052"></a>00052   <span class="comment">/* Set all servos to their midpoints */</span>
-<a name="l00053"></a>00053   <span class="comment">/* compulsory for unused servos  */</span>
-<a name="l00054"></a>00054   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i;
-<a name="l00055"></a>00055   <span class="keywordflow">for</span>( i=0 ; i &lt; <a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#a0ac20efd1417e65cb9eb991e5c7fc73d">_PPM_NB_CHANNELS</a> ; i++ )
-<a name="l00056"></a>00056     <a class="code" href="servos__4015__hw_8c.html#a0aa50148c78707ea0b28584413671fcb">servos_values</a>[i] = <a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a3f3dc2facc39f9d40f3fae4b4c9f3d93">SERVOS_TICS_OF_USEC</a>(1500);
-<a name="l00057"></a>00057 }
-<a name="l00058"></a><a class="code" href="servos__ppm__hw_8c.html#a917d93baea26b98c24982dcb984d94af">00058</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="servos__4015__hw_8c.html#a0aa50148c78707ea0b28584413671fcb">servos_values</a>[<a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#a0ac20efd1417e65cb9eb991e5c7fc73d">_PPM_NB_CHANNELS</a>];
-<a name="l00059"></a>00059 
+<a name="l00035"></a><a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#a2eded3b068b06e16353413d12309e40c">00035</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="servos__ppm__hw_8c.html#a2eded3b068b06e16353413d12309e40c">servos_PPM_idx</a>;
+<a name="l00036"></a><a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#ae2a4eb3b6da0f57c0747c6bda8186398">00036</a> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="servos__ppm__hw_8c.html#ae2a4eb3b6da0f57c0747c6bda8186398">ppm_pulse</a>;
+<a name="l00037"></a><a class="code" href="servos__ppm__hw_8c.html#ab97f8d95b7ca4a7363e3e62be967e421">00037</a> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="servos__4015__hw_8c.html#ab97f8d95b7ca4a7363e3e62be967e421">servos_delay</a> = <a class="code" href="servos__4015__hw_8c.html#a9687b33a6de1a893fe628126b21b5506">SERVO_REFRESH_TICS</a>;
+<a name="l00038"></a>00038 
+<a name="l00039"></a><a class="code" href="servos__ppm__hw_8c.html#a0525bb869371e594a31064887054b8ef">00039</a> <span class="preprocessor">#define START_TIMEOUT 0xFFFF;</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span>
+<a name="l00041"></a><a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#ade2fb5e18285a47f44933f493951e595">00041</a> <span class="keywordtype">void</span> <a class="code" href="servos__ppm__hw_8c.html#ade2fb5e18285a47f44933f493951e595">actuators_ppm_init</a> ( <span class="keywordtype">void</span> ) {
+<a name="l00042"></a>00042   <span class="comment">/* select ppm output pin as MAT0.1 output */</span>
+<a name="l00043"></a>00043   <a class="code" href="hb__1_81_8h.html#a15781ef2b1129627dacdeff006954788">SERVO_CLOCK_PINSEL</a> |= <a class="code" href="hb__1_81_8h.html#a4b04c8175ead918a9ee42816b06a04e8">SERVO_CLOCK_PINSEL_VAL</a> &lt;&lt; <a class="code" href="hb__1_81_8h.html#a87fe8b338732e7a3887c2ab363ecf535">SERVO_CLOCK_PINSEL_BIT</a>;
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045   <span class="comment">/* enable match 1 interrupt */</span>
+<a name="l00046"></a>00046   <a class="code" href="LPC21xx_8h.html#a301ebbd28f97690cab064ef6ca985e01">T0MCR</a> |= <a class="code" href="lpcTMR_8h.html#a280da1b0c25c135962d7e1e5afdfa676">TMCR_MR1_I</a>;
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048   <span class="comment">/* lower clock         */</span>
+<a name="l00049"></a>00049   <a class="code" href="LPC21xx_8h.html#a3f7bfa7a4ec72334b5628f6f0b2276fa">T0EMR</a> &amp;= ~<a class="code" href="lpcTMR_8h.html#ad6204fd25b98b4e34f9840ef0e1df299">TEMR_EM1</a>;
+<a name="l00050"></a>00050   <span class="comment">/* set high on match 1 */</span>
+<a name="l00051"></a>00051   <a class="code" href="LPC21xx_8h.html#a3f7bfa7a4ec72334b5628f6f0b2276fa">T0EMR</a> |= <a class="code" href="lpcTMR_8h.html#a92ae3ae73a7e3e0c1487fbf27cce0108">TEMR_EMC1_2</a>;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053   <span class="comment">/* set first pulse in a while */</span>
+<a name="l00054"></a>00054   <a class="code" href="LPC21xx_8h.html#afcda6dd57c1f5114f0574f9a8c668636">T0MR1</a> = <a class="code" href="servos__ppm__hw_8c.html#a0525bb869371e594a31064887054b8ef">START_TIMEOUT</a>;
+<a name="l00055"></a>00055   <a class="code" href="servos__ppm__hw_8c.html#a2eded3b068b06e16353413d12309e40c">servos_PPM_idx</a> = <a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#a0ac20efd1417e65cb9eb991e5c7fc73d">_PPM_NB_CHANNELS</a>;
+<a name="l00056"></a>00056   <span class="comment">/* Set all servos to their midpoints */</span>
+<a name="l00057"></a>00057   <span class="comment">/* compulsory for unused servos  */</span>
+<a name="l00058"></a>00058   <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i;
+<a name="l00059"></a>00059   <span class="keywordflow">for</span>( i=0 ; i &lt; <a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#a0ac20efd1417e65cb9eb991e5c7fc73d">_PPM_NB_CHANNELS</a> ; i++ )
+<a name="l00060"></a>00060     <a class="code" href="servos__4015__hw_8c.html#a0aa50148c78707ea0b28584413671fcb">servos_values</a>[i] = <a class="code" href="lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a3f3dc2facc39f9d40f3fae4b4c9f3d93">SERVOS_TICS_OF_USEC</a>(1500);
+<a name="l00061"></a>00061 }
+<a name="l00062"></a><a class="code" href="servos__ppm__hw_8c.html#a917d93baea26b98c24982dcb984d94af">00062</a> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="servos__4015__hw_8c.html#a0aa50148c78707ea0b28584413671fcb">servos_values</a>[<a class="code" href="lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#a0ac20efd1417e65cb9eb991e5c7fc73d">_PPM_NB_CHANNELS</a>];
+<a name="l00063"></a>00063 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -177,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="servos__ppm__hw_8c.html">servos_ppm_hw.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

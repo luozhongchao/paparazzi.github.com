@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00041"></a>00041   ads1114_1.trans.buf[0] = <a class="code" href="ads1114_8h.html#aafae103198ebfb38ca2a0de2a3ec68e0">ADS1114_POINTER_CONFIG_REG</a>;
 <a name="l00042"></a>00042   ads1114_1.trans.buf[1] = <a class="code" href="ads1114_8h.html#a3cfd628b8399f2d26bd9bac3ef4bfa55">ADS1114_1_CONFIG_MSB</a>;
 <a name="l00043"></a>00043   ads1114_1.trans.buf[2] = <a class="code" href="ads1114_8h.html#a9f57a3dd102d1f12ad66579dc6c0efdd">ADS1114_1_CONFIG_LSB</a>;
-<a name="l00044"></a>00044   <a class="code" href="i2c_8h.html#ace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="ads1114_8h.html#a1c9bb5bd80247d09e8c302106a6b7c60">ADS1114_I2C_DEVICE</a>, ads1114_1.trans, <a class="code" href="ads1114_8h.html#a6419143abca5b550cc447ce0d380bbbe">ADS1114_1_I2C_ADDR</a>, 3);
+<a name="l00044"></a>00044   <a class="code" href="group__i2c.html#gace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="ads1114_8h.html#a1c9bb5bd80247d09e8c302106a6b7c60">ADS1114_I2C_DEVICE</a>, ads1114_1.trans, <a class="code" href="ads1114_8h.html#a6419143abca5b550cc447ce0d380bbbe">ADS1114_1_I2C_ADDR</a>, 3);
 <a name="l00045"></a>00045   ads1114_1.config_done = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00046"></a>00046   ads1114_1.data_available = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00052"></a>00052   ads1114_2.trans.buf[0] = <a class="code" href="ads1114_8h.html#aafae103198ebfb38ca2a0de2a3ec68e0">ADS1114_POINTER_CONFIG_REG</a>;
 <a name="l00053"></a>00053   ads1114_2.trans.buf[1] = <a class="code" href="ads1114_8h.html#a8de2984b6dede4a6b7322b2b45264159">ADS1114_2_CONFIG_MSB</a>;
 <a name="l00054"></a>00054   ads1114_2.trans.buf[2] = <a class="code" href="ads1114_8h.html#ad4ac8f54dda95d042a48d8493bf43c06">ADS1114_2_CONFIG_LSB</a>;
-<a name="l00055"></a>00055   <a class="code" href="i2c_8h.html#ace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="ads1114_8h.html#a1c9bb5bd80247d09e8c302106a6b7c60">ADS1114_I2C_DEVICE</a>, ads1114_2.trans, <a class="code" href="ads1114_8h.html#a441f770754b7054424145b84a4fec2e3">ADS1114_2_I2C_ADDR</a>, 3);
+<a name="l00055"></a>00055   <a class="code" href="group__i2c.html#gace5632482330f26861415117ae09229f">I2CTransmit</a>(<a class="code" href="ads1114_8h.html#a1c9bb5bd80247d09e8c302106a6b7c60">ADS1114_I2C_DEVICE</a>, ads1114_2.trans, <a class="code" href="ads1114_8h.html#a441f770754b7054424145b84a4fec2e3">ADS1114_2_I2C_ADDR</a>, 3);
 <a name="l00056"></a>00056   ads1114_2.config_done = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00057"></a>00057   ads1114_2.data_available = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
 <a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
@@ -167,9 +167,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00062"></a><a class="code" href="ads1114_8h.html#a4ba628257d14fc3773ddfc484a18e199">00062</a> <span class="keywordtype">void</span> <a class="code" href="ads1114_8c.html#a4ba628257d14fc3773ddfc484a18e199">ads1114_read</a>( <span class="keyword">struct</span> <a class="code" href="structads1114__periph.html">ads1114_periph</a> * <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a> ) {
 <a name="l00063"></a>00063   <span class="comment">// Config done with success</span>
 <a name="l00064"></a>00064   <span class="comment">// start new reading when previous is done (and read if success)</span>
-<a name="l00065"></a>00065   <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structads1114__periph.html#a92f5a29419a924033bcadd5caf8ad6e7">config_done</a> &amp;&amp; p-&gt;<a class="code" href="structads1114__periph.html#acae0e4a8e0865e9cc6d5d3e1f3d9a809">trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>) {
+<a name="l00065"></a>00065   <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structads1114__periph.html#a92f5a29419a924033bcadd5caf8ad6e7">config_done</a> &amp;&amp; p-&gt;<a class="code" href="structads1114__periph.html#acae0e4a8e0865e9cc6d5d3e1f3d9a809">trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>) {
 <a name="l00066"></a>00066     p-&gt;<a class="code" href="structads1114__periph.html#acae0e4a8e0865e9cc6d5d3e1f3d9a809">trans</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="ads1114_8h.html#af1ae9279a23301b436a1faccfc6e8f66">ADS1114_POINTER_CONV_REG</a>;
-<a name="l00067"></a>00067     <a class="code" href="i2c_8h.html#ab01a8cb5cf13045d58e495056b3d2652">I2CTransceive</a>(<a class="code" href="ads1114_8h.html#a1c9bb5bd80247d09e8c302106a6b7c60">ADS1114_I2C_DEVICE</a>, p-&gt;<a class="code" href="structads1114__periph.html#acae0e4a8e0865e9cc6d5d3e1f3d9a809">trans</a>, p-&gt;<a class="code" href="structads1114__periph.html#a761a47a8b62cef73bbe01ea9e9cd1f41">i2c_addr</a>, 1, 2);
+<a name="l00067"></a>00067     <a class="code" href="group__i2c.html#gab01a8cb5cf13045d58e495056b3d2652">I2CTransceive</a>(<a class="code" href="ads1114_8h.html#a1c9bb5bd80247d09e8c302106a6b7c60">ADS1114_I2C_DEVICE</a>, p-&gt;<a class="code" href="structads1114__periph.html#acae0e4a8e0865e9cc6d5d3e1f3d9a809">trans</a>, p-&gt;<a class="code" href="structads1114__periph.html#a761a47a8b62cef73bbe01ea9e9cd1f41">i2c_addr</a>, 1, 2);
 <a name="l00068"></a>00068   }
 <a name="l00069"></a>00069 }
 <a name="l00070"></a>00070 
@@ -194,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="ads1114_8c.html">ads1114.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

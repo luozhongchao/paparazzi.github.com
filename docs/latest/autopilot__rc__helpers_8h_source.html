@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -124,61 +124,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019 <span class="comment"> * Boston, MA 02111-1307, USA.</span>
 <a name="l00020"></a>00020 <span class="comment"> */</span>
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <span class="preprocessor">#ifndef AUTOPILOT_RC_HELPERS_H</span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define AUTOPILOT_RC_HELPERS_H</span>
-<a name="l00024"></a>00024 <span class="preprocessor"></span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="radio__control_8h.html">subsystems/radio_control.h</a>&quot;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="autopilot__rc__helpers_8h.html#a745dcdb712b34556e5bea0b416760894">00027</a> <span class="preprocessor">#define AUTOPILOT_THROTTLE_THRESHOLD      (MAX_PPRZ / 20)</span>
-<a name="l00028"></a><a class="code" href="autopilot__rc__helpers_8h.html#a5844738d9e11a99f5799b6eaa0d57480">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define AUTOPILOT_YAW_THRESHOLD           (MAX_PPRZ * 19 / 20)</span>
-<a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#ifndef AUTOPILOT_STICK_CENTER_THRESHOLD</span>
-<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#define AUTOPILOT_STICK_CENTER_THRESHOLD  (MAX_PPRZ * 1 / 20)</span>
-<a name="l00031"></a>00031 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00032"></a>00032 <span class="preprocessor"></span>
-<a name="l00033"></a><a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">00033</a> <span class="preprocessor">#define THROTTLE_STICK_DOWN()                                           \</span>
-<a name="l00034"></a>00034 <span class="preprocessor">  (radio_control.values[RADIO_THROTTLE] &lt; AUTOPILOT_THROTTLE_THRESHOLD)</span>
-<a name="l00035"></a><a class="code" href="autopilot__rc__helpers_8h.html#acd1ef4f5d7952bb8e3088e8800fa1ce5">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define YAW_STICK_PUSHED()                                      \</span>
-<a name="l00036"></a>00036 <span class="preprocessor">  (radio_control.values[RADIO_YAW] &gt; AUTOPILOT_YAW_THRESHOLD ||  \</span>
-<a name="l00037"></a>00037 <span class="preprocessor">   radio_control.values[RADIO_YAW] &lt; -AUTOPILOT_YAW_THRESHOLD)</span>
-<a name="l00038"></a><a class="code" href="autopilot__rc__helpers_8h.html#aa893fedb4c84c86bcbc8f7ec075ced57">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define YAW_STICK_CENTERED()                                            \</span>
-<a name="l00039"></a>00039 <span class="preprocessor">  (radio_control.values[RADIO_YAW] &lt; AUTOPILOT_STICK_CENTER_THRESHOLD &amp;&amp; \</span>
-<a name="l00040"></a>00040 <span class="preprocessor">   radio_control.values[RADIO_YAW] &gt; -AUTOPILOT_STICK_CENTER_THRESHOLD)</span>
-<a name="l00041"></a><a class="code" href="autopilot__rc__helpers_8h.html#a5541af1f39db9db37eb4e4d1673aac4c">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define PITCH_STICK_CENTERED()                                          \</span>
-<a name="l00042"></a>00042 <span class="preprocessor">  (radio_control.values[RADIO_PITCH] &lt; AUTOPILOT_STICK_CENTER_THRESHOLD &amp;&amp; \</span>
-<a name="l00043"></a>00043 <span class="preprocessor">   radio_control.values[RADIO_PITCH] &gt; -AUTOPILOT_STICK_CENTER_THRESHOLD)</span>
-<a name="l00044"></a><a class="code" href="autopilot__rc__helpers_8h.html#a4283b5e77477e4c499cfba6c902cdea7">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define ROLL_STICK_CENTERED()                                           \</span>
-<a name="l00045"></a>00045 <span class="preprocessor">  (radio_control.values[RADIO_ROLL] &lt; AUTOPILOT_STICK_CENTER_THRESHOLD &amp;&amp; \</span>
-<a name="l00046"></a>00046 <span class="preprocessor">   radio_control.values[RADIO_ROLL] &gt; -AUTOPILOT_STICK_CENTER_THRESHOLD)</span>
-<a name="l00047"></a>00047 <span class="preprocessor"></span>
-<a name="l00048"></a><a class="code" href="autopilot__rc__helpers_8h.html#ac346fd81983479ea51d3439a7dfca6c6">00048</a> <span class="keyword">static</span> <span class="keyword">inline</span> bool_t <a class="code" href="autopilot__rc__helpers_8h.html#ac346fd81983479ea51d3439a7dfca6c6">rc_attitude_sticks_centered</a>(<span class="keywordtype">void</span>) {
-<a name="l00049"></a>00049   <span class="keywordflow">return</span> <a class="code" href="autopilot__rc__helpers_8h.html#a4283b5e77477e4c499cfba6c902cdea7">ROLL_STICK_CENTERED</a>() &amp;&amp; <a class="code" href="autopilot__rc__helpers_8h.html#a5541af1f39db9db37eb4e4d1673aac4c">PITCH_STICK_CENTERED</a>() &amp;&amp; <a class="code" href="autopilot__rc__helpers_8h.html#aa893fedb4c84c86bcbc8f7ec075ced57">YAW_STICK_CENTERED</a>();
-<a name="l00050"></a>00050 }
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052 <span class="preprocessor">#ifdef RADIO_KILL_SWITCH</span>
-<a name="l00053"></a>00053 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> bool_t <a class="code" href="autopilot__rc__helpers_8h.html#a4e9918f217a6eaf344d248a9d34e674d">kill_switch_is_on</a>(<span class="keywordtype">void</span>) {
-<a name="l00054"></a>00054   <span class="keywordflow">if</span> (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="spektrum__dx7se__joby_8h.html#aaf81f14818697e4134650e3d7cea4e3f">RADIO_KILL_SWITCH</a>] &lt; 0)
-<a name="l00055"></a>00055     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
-<a name="l00056"></a>00056   <span class="keywordflow">else</span>
-<a name="l00057"></a>00057     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
-<a name="l00058"></a>00058 }
-<a name="l00059"></a>00059 <span class="preprocessor">#else</span>
-<a name="l00060"></a><a class="code" href="autopilot__rc__helpers_8h.html#a4e9918f217a6eaf344d248a9d34e674d">00060</a> <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> bool_t <a class="code" href="autopilot__rc__helpers_8h.html#a4e9918f217a6eaf344d248a9d34e674d">kill_switch_is_on</a>(<span class="keywordtype">void</span>) {
-<a name="l00061"></a>00061   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
-<a name="l00062"></a>00062 }
-<a name="l00063"></a>00063 <span class="preprocessor">#endif</span>
-<a name="l00064"></a>00064 <span class="preprocessor"></span>
-<a name="l00065"></a><a class="code" href="autopilot__rc__helpers_8h.html#a7769f1bee81960265c7c0bb2980d1edd">00065</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="autopilot__rc__helpers_8h.html#a7769f1bee81960265c7c0bb2980d1edd">percent_from_rc</a>(<span class="keywordtype">int</span> <a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>)
-<a name="l00066"></a>00066 {
-<a name="l00067"></a>00067   <span class="keywordtype">int</span> per = (<a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> + (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[channel]) * 50 / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>;
-<a name="l00068"></a>00068   <span class="keywordflow">if</span> (per &lt; 0)
-<a name="l00069"></a>00069     per = 0;
-<a name="l00070"></a>00070   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (per &gt; 100)
-<a name="l00071"></a>00071     per = 100;
-<a name="l00072"></a>00072   <span class="keywordflow">return</span> per;
-<a name="l00073"></a>00073 }
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076 <span class="preprocessor">#endif </span><span class="comment">/* AUTOPILOT_RC_HELPERS_H */</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#ifndef AUTOPILOT_RC_HELPERS_H</span>
+<a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#define AUTOPILOT_RC_HELPERS_H</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="radio__control_8h.html">subsystems/radio_control.h</a>&quot;</span>
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="autopilot__rc__helpers_8h.html#a745dcdb712b34556e5bea0b416760894">00033</a> <span class="preprocessor">#define AUTOPILOT_THROTTLE_THRESHOLD      (MAX_PPRZ / 20)</span>
+<a name="l00034"></a><a class="code" href="autopilot__rc__helpers_8h.html#a5844738d9e11a99f5799b6eaa0d57480">00034</a> <span class="preprocessor"></span><span class="preprocessor">#define AUTOPILOT_YAW_THRESHOLD           (MAX_PPRZ * 19 / 20)</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#ifndef AUTOPILOT_STICK_CENTER_THRESHOLD</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#define AUTOPILOT_STICK_CENTER_THRESHOLD  (MAX_PPRZ * 1 / 20)</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span>
+<a name="l00039"></a><a class="code" href="autopilot__rc__helpers_8h.html#a1658edfb25039379849b94dda1eada9b">00039</a> <span class="preprocessor">#define THROTTLE_STICK_DOWN()                                           \</span>
+<a name="l00040"></a>00040 <span class="preprocessor">  (radio_control.values[RADIO_THROTTLE] &lt; AUTOPILOT_THROTTLE_THRESHOLD)</span>
+<a name="l00041"></a><a class="code" href="autopilot__rc__helpers_8h.html#acd1ef4f5d7952bb8e3088e8800fa1ce5">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define YAW_STICK_PUSHED()                                      \</span>
+<a name="l00042"></a>00042 <span class="preprocessor">  (radio_control.values[RADIO_YAW] &gt; AUTOPILOT_YAW_THRESHOLD ||  \</span>
+<a name="l00043"></a>00043 <span class="preprocessor">   radio_control.values[RADIO_YAW] &lt; -AUTOPILOT_YAW_THRESHOLD)</span>
+<a name="l00044"></a><a class="code" href="autopilot__rc__helpers_8h.html#aa893fedb4c84c86bcbc8f7ec075ced57">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define YAW_STICK_CENTERED()                                            \</span>
+<a name="l00045"></a>00045 <span class="preprocessor">  (radio_control.values[RADIO_YAW] &lt; AUTOPILOT_STICK_CENTER_THRESHOLD &amp;&amp; \</span>
+<a name="l00046"></a>00046 <span class="preprocessor">   radio_control.values[RADIO_YAW] &gt; -AUTOPILOT_STICK_CENTER_THRESHOLD)</span>
+<a name="l00047"></a><a class="code" href="autopilot__rc__helpers_8h.html#a5541af1f39db9db37eb4e4d1673aac4c">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define PITCH_STICK_CENTERED()                                          \</span>
+<a name="l00048"></a>00048 <span class="preprocessor">  (radio_control.values[RADIO_PITCH] &lt; AUTOPILOT_STICK_CENTER_THRESHOLD &amp;&amp; \</span>
+<a name="l00049"></a>00049 <span class="preprocessor">   radio_control.values[RADIO_PITCH] &gt; -AUTOPILOT_STICK_CENTER_THRESHOLD)</span>
+<a name="l00050"></a><a class="code" href="autopilot__rc__helpers_8h.html#a4283b5e77477e4c499cfba6c902cdea7">00050</a> <span class="preprocessor"></span><span class="preprocessor">#define ROLL_STICK_CENTERED()                                           \</span>
+<a name="l00051"></a>00051 <span class="preprocessor">  (radio_control.values[RADIO_ROLL] &lt; AUTOPILOT_STICK_CENTER_THRESHOLD &amp;&amp; \</span>
+<a name="l00052"></a>00052 <span class="preprocessor">   radio_control.values[RADIO_ROLL] &gt; -AUTOPILOT_STICK_CENTER_THRESHOLD)</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span>
+<a name="l00054"></a><a class="code" href="autopilot__rc__helpers_8h.html#ac346fd81983479ea51d3439a7dfca6c6">00054</a> <span class="keyword">static</span> <span class="keyword">inline</span> bool_t <a class="code" href="autopilot__rc__helpers_8h.html#ac346fd81983479ea51d3439a7dfca6c6">rc_attitude_sticks_centered</a>(<span class="keywordtype">void</span>) {
+<a name="l00055"></a>00055   <span class="keywordflow">return</span> <a class="code" href="autopilot__rc__helpers_8h.html#a4283b5e77477e4c499cfba6c902cdea7">ROLL_STICK_CENTERED</a>() &amp;&amp; <a class="code" href="autopilot__rc__helpers_8h.html#a5541af1f39db9db37eb4e4d1673aac4c">PITCH_STICK_CENTERED</a>() &amp;&amp; <a class="code" href="autopilot__rc__helpers_8h.html#aa893fedb4c84c86bcbc8f7ec075ced57">YAW_STICK_CENTERED</a>();
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="preprocessor">#ifdef RADIO_KILL_SWITCH</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> bool_t <a class="code" href="autopilot__rc__helpers_8h.html#a4e9918f217a6eaf344d248a9d34e674d">kill_switch_is_on</a>(<span class="keywordtype">void</span>) {
+<a name="l00060"></a>00060   <span class="keywordflow">if</span> (<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="spektrum__dx7se__joby_8h.html#aaf81f14818697e4134650e3d7cea4e3f">RADIO_KILL_SWITCH</a>] &lt; 0)
+<a name="l00061"></a>00061     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;
+<a name="l00062"></a>00062   <span class="keywordflow">else</span>
+<a name="l00063"></a>00063     <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00064"></a>00064 }
+<a name="l00065"></a>00065 <span class="preprocessor">#else</span>
+<a name="l00066"></a><a class="code" href="autopilot__rc__helpers_8h.html#a4e9918f217a6eaf344d248a9d34e674d">00066</a> <span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> bool_t <a class="code" href="autopilot__rc__helpers_8h.html#a4e9918f217a6eaf344d248a9d34e674d">kill_switch_is_on</a>(<span class="keywordtype">void</span>) {
+<a name="l00067"></a>00067   <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
+<a name="l00068"></a>00068 }
+<a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span>
+<a name="l00071"></a><a class="code" href="autopilot__rc__helpers_8h.html#a7769f1bee81960265c7c0bb2980d1edd">00071</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="autopilot__rc__helpers_8h.html#a7769f1bee81960265c7c0bb2980d1edd">percent_from_rc</a>(<span class="keywordtype">int</span> <a class="code" href="ADS8344_8c.html#a715f5cb061d11eb75981741eda4dafcd">channel</a>)
+<a name="l00072"></a>00072 {
+<a name="l00073"></a>00073   <span class="keywordtype">int</span> per = (<a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> + (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[channel]) * 50 / <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>;
+<a name="l00074"></a>00074   <span class="keywordflow">if</span> (per &lt; 0)
+<a name="l00075"></a>00075     per = 0;
+<a name="l00076"></a>00076   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (per &gt; 100)
+<a name="l00077"></a>00077     per = 100;
+<a name="l00078"></a>00078   <span class="keywordflow">return</span> per;
+<a name="l00079"></a>00079 }
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 <span class="preprocessor">#endif </span><span class="comment">/* AUTOPILOT_RC_HELPERS_H */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -199,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="autopilot__rc__helpers_8h.html">autopilot_rc_helpers.h</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="actuators_8h.html" title="Hardware independent API for actuators (servos, motor controllers).">subsystems/actuators.h</a>&quot;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="actuators__skiron_8h.html" title="Skiron motor speed controller by Michel.">subsystems/actuators/actuators_skiron.h</a>&quot;</span>
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">mcu_periph/i2c.h</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html" title="Architecture independent I2C (Inter-Integrated Circuit Bus) API.">mcu_periph/i2c.h</a>&quot;</span>
 <a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span>
 <a name="l00031"></a>00031 
 <a name="l00032"></a><a class="code" href="actuators__skiron_8h.html#af6c6cc43745668052551cc7f54439122">00032</a> <span class="keyword">struct </span><a class="code" href="structActuatorsSkiron.html">ActuatorsSkiron</a> <a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>;
@@ -138,10 +138,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037 
 <a name="l00038"></a><a class="code" href="actuators__skiron_8h.html#a8bdc276cefb770cff68ea0ca570c5b4a">00038</a> <span class="keywordtype">void</span> <a class="code" href="actuators__skiron_8c.html#a8bdc276cefb770cff68ea0ca570c5b4a">actuators_skiron_init</a>(<span class="keywordtype">void</span>) {
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040   <a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>.<a class="code" href="structActuatorsSkiron.html#a0e9925535b84d90eb046a481e8a0ece3">trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="i2c_8h.html#ae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
+<a name="l00040"></a>00040   <a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>.<a class="code" href="structActuatorsSkiron.html#a0e9925535b84d90eb046a481e8a0ece3">trans</a>.<a class="code" href="structi2c__transaction.html#ab23c7469258089742bb0c2950599b232">type</a> = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;
 <a name="l00041"></a>00041   <a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>.<a class="code" href="structActuatorsSkiron.html#a0e9925535b84d90eb046a481e8a0ece3">trans</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = SERVOS_SKIRON_NB;
 <a name="l00042"></a>00042   <a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>.<a class="code" href="structActuatorsSkiron.html#a0e9925535b84d90eb046a481e8a0ece3">trans</a>.<a class="code" href="structi2c__transaction.html#af0c94c610e2f7b712f06b87440849ab6">slave_addr</a> = <a class="code" href="actuators__skiron_8h.html#a52f3dcab939a267f2d83e75f7fd8fae6">ACTUATORS_SKIRON_I2C_ADDR</a>;
-<a name="l00043"></a>00043   <a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>.<a class="code" href="structActuatorsSkiron.html#a0e9925535b84d90eb046a481e8a0ece3">trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="i2c_8h.html#ab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
+<a name="l00043"></a>00043   <a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>.<a class="code" href="structActuatorsSkiron.html#a0e9925535b84d90eb046a481e8a0ece3">trans</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> = <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442a6d2d46dfea9ba1457201928eabeccace">I2CTransDone</a>;
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045 <span class="preprocessor">#if defined ACTUATORS_START_DELAY &amp;&amp; ! defined SITL</span>
 <a name="l00046"></a>00046 <span class="preprocessor"></span>  <a class="code" href="actuators__asctec_8c.html#ae73bf0feb96afd47f37938363cb4b331">actuators_delay_done</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00066"></a>00066   }
 <a name="l00067"></a>00067 <span class="preprocessor">#endif</span>
 <a name="l00068"></a>00068 <span class="preprocessor"></span>
-<a name="l00069"></a>00069   <a class="code" href="lpc21_2mcu__periph_2i2c__arch_8c.html#a4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;ACTUATORS_SKIRON_DEVICE, &amp;<a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>.<a class="code" href="structActuatorsSkiron.html#a0e9925535b84d90eb046a481e8a0ece3">trans</a>);
+<a name="l00069"></a>00069   <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;ACTUATORS_SKIRON_DEVICE, &amp;<a class="code" href="actuators__skiron_8c.html#af6c6cc43745668052551cc7f54439122">actuators_skiron</a>.<a class="code" href="structActuatorsSkiron.html#a0e9925535b84d90eb046a481e8a0ece3">trans</a>);
 <a name="l00070"></a>00070 }
 </pre></div></div><!-- contents -->
 </div>
@@ -189,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="actuators__skiron_8c.html">actuators_skiron.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:12 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

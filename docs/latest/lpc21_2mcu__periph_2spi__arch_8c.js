@@ -1,5 +1,14 @@
 var lpc21_2mcu__periph_2spi__arch_8c =
 [
+    [ "MASTER_SSP_CPHA", "lpc21_2mcu__periph_2spi__arch_8c.html#a363bb3cf49bc3d9477fe99944c8555e8", null ],
+    [ "MASTER_SSP_CPOL", "lpc21_2mcu__periph_2spi__arch_8c.html#a05f5fe2d2632777cb0399bdb2110bed6", null ],
+    [ "MASTER_SSP_DSS", "lpc21_2mcu__periph_2spi__arch_8c.html#a8ce686875edd9f52d8dcc16d2266fde9", null ],
+    [ "MASTER_SSP_FRF", "lpc21_2mcu__periph_2spi__arch_8c.html#a848d83e49d33efd3fa1fed8dff214c36", null ],
+    [ "MASTER_SSP_LBM", "lpc21_2mcu__periph_2spi__arch_8c.html#a698702cbfb0f2a42aa90c7eebcce3f79", null ],
+    [ "MASTER_SSP_MS", "lpc21_2mcu__periph_2spi__arch_8c.html#a0d0eea1c82e8a797608475d1d1301fe2", null ],
+    [ "MASTER_SSP_SCR", "lpc21_2mcu__periph_2spi__arch_8c.html#a7ed0007196480a6ee2c6f60089a5d1f3", null ],
+    [ "MASTER_SSP_SOD", "lpc21_2mcu__periph_2spi__arch_8c.html#a1f125d3bbe6e5729889471a08122684c", null ],
+    [ "MASTER_SSP_SSE", "lpc21_2mcu__periph_2spi__arch_8c.html#a22b03089e309c4ad8389e27f85a2919b", null ],
     [ "SPI1_VIC_SLOT", "lpc21_2mcu__periph_2spi__arch_8c.html#ad43efa9901f253a6a901a4bddd1b7f5f", null ],
     [ "SPI_SELECT_SLAVE0_IOCLR", "lpc21_2mcu__periph_2spi__arch_8c.html#a88f59b0eaea73c1e891d6d78d2112186", null ],
     [ "SPI_SELECT_SLAVE0_IODIR", "lpc21_2mcu__periph_2spi__arch_8c.html#acf71ef21c3bd436e76f8203423ba366b", null ],
@@ -13,6 +22,18 @@ var lpc21_2mcu__periph_2spi__arch_8c =
     [ "SSP_PINSEL1_MOSI", "lpc21_2mcu__periph_2spi__arch_8c.html#a39ad8cd75ea287d18491e7e6f4a8eb98", null ],
     [ "SSP_PINSEL1_SCK", "lpc21_2mcu__periph_2spi__arch_8c.html#afcf7f4865ce680550daeffbc6104929a", null ],
     [ "SSP_PINSEL1_SSEL", "lpc21_2mcu__periph_2spi__arch_8c.html#a9a5ce8a9a794e79f0f1882af3c28a1d2", null ],
+    [ "SSPCPSR_VAL", "lpc21_2mcu__periph_2spi__arch_8c.html#af0a07b3e285c4f239f705eccc3936459", null ],
+    [ "spi0_arch_init", "group__spi.html#gab8cb9f918fae47c201bf233a0b3b282f", null ],
+    [ "spi1_arch_init", "group__spi.html#gaaba00866ddaf960c0c761e61f81e5216", null ],
+    [ "spi1_ISR", "lpc21_2mcu__periph_2spi__arch_8c.html#a757fa003ca462da8fabcb89abf3943d3", null ],
+    [ "spi_init_slaves", "group__spi.html#gafc9125c5764a6749703ae4f1303a16f3", null ],
+    [ "spi_lock", "group__spi.html#ga2db1b869a8aea431e3d3e63106290db9", null ],
+    [ "spi_resume", "group__spi.html#ga5e9947e5b87e3a86a773b4a174ec6f08", null ],
+    [ "spi_slave_register", "group__spi.html#ga02a7edceaff0d9adc8e9b236b9915415", null ],
+    [ "spi_slave_select", "group__spi.html#gad43916477f5d87b42eaa7d2099771568", null ],
+    [ "spi_slave_unselect", "group__spi.html#ga99507da72932c02e5d8daf9a7170ed69", null ],
+    [ "spi_slave_wait", "group__spi.html#ga8d7be322aab918538305c7da8af7233e", null ],
+    [ "spi_submit", "group__spi.html#gaf1bcfc102840a0e6287b4db20bd78337", null ],
     [ "SpiAutomaton", "lpc21_2mcu__periph_2spi__arch_8c.html#a0c3a952b26b4118dcd848cb234062997", null ],
     [ "SpiClearCPHA", "lpc21_2mcu__periph_2spi__arch_8c.html#ac8a1011a8423019c3b94e3a1a9744b6b", null ],
     [ "SpiClearCPOL", "lpc21_2mcu__periph_2spi__arch_8c.html#afddc6318837a832e08ac2096474632f8", null ],
@@ -38,5 +59,7 @@ var lpc21_2mcu__periph_2spi__arch_8c =
     [ "SpiSlaveStart", "lpc21_2mcu__periph_2spi__arch_8c.html#a377ad6b429dbff1ca278ff6262a2914d", null ],
     [ "SpiSlaveUnselect", "lpc21_2mcu__periph_2spi__arch_8c.html#af3a0a783f898c0211f2c0e5498c746a0", null ],
     [ "SpiStart", "lpc21_2mcu__periph_2spi__arch_8c.html#abcda020ad14ec4732c4ffff453060fff", null ],
-    [ "SpiTransmit", "lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314", null ]
+    [ "SpiTransmit", "lpc21_2mcu__periph_2spi__arch_8c.html#a3e9017646922bf67dc34451d35696314", null ],
+    [ "spi0_vic_slot", "lpc21_2mcu__periph_2spi__arch_8c.html#a022ec912e1b81df783c3a1e80bb4743b", null ],
+    [ "spi1_vic_slot", "lpc21_2mcu__periph_2spi__arch_8c.html#af31d42d87624578ce73a01a31710929b", null ]
 ];

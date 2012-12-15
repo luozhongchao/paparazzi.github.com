@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-326-g9b424ba</span>
+   &#160;<span id="projectnumber">v4.9_devel-330-gbf2dbf0</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -103,9 +103,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">adc_arch.c File Reference</div>  </div>
+<div class="title">adc_arch.c File Reference<div class="ingroups"><a class="el" href="group__stm32__arch.html">STM32 architecture</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Driver for the analog to digital converters on STM32.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="adc_8h_source.html">mcu_periph/adc.h</a>&quot;</code><br/>
 <code>#include &lt;libopencm3/stm32/f1/rcc.h&gt;</code><br/>
 <code>#include &lt;libopencm3/stm32/f1/adc.h&gt;</code><br/>
@@ -143,11 +146,17 @@ Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the driver for the analog to digital converters on STM32.  <a href="#aab487aca11cc57fb49587571d20c2188"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a> [4]</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a> [4]</td></tr>
 </table>
-<hr/><h2>Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Driver for the analog to digital converters on STM32. </p>
+<p>Usage: Define flags for ADCs to use and their channels:</p>
+<p>-DUSE_AD1 -DUSE_AD1_1 -DUSE_AD1_3</p>
+<p>would enable ADC1 and it's channels 1 and 3. </p>
+
+<p>Definition in file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+</div><hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a24a193e153476793ea3f9089893cf6f4"></a><!-- doxytag: member="adc_arch.c::adc1_2_isr" ref="a24a193e153476793ea3f9089893cf6f4" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -167,7 +176,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00500">500</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
-<p>References <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00187">adc_injected_channels</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">adc_new_data_trigger</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00487">adc_push_sample()</a>, <a class="el" href="ADS8344_8c_source.html#l00080">channel</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00054">NB_ADC1_CHANNELS</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00070">NB_ADC2_CHANNELS</a>.</p>
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00187">adc_injected_channels</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">adc_new_data_trigger</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00487">adc_push_sample()</a>, <a class="el" href="ADS8344_8c_source.html#l00080">channel</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00061">NB_ADC1_CHANNELS</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00077">NB_ADC2_CHANNELS</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -243,7 +252,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">395</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
-<p>References <a class="el" href="armVIC_8h_source.html#l00020">_VIC_ADDR</a>, <a class="el" href="armVIC_8h_source.html#l00019">_VIC_CNTL</a>, <a class="el" href="LPC21xx_8h_source.html#l00356">AD0CR</a>, <a class="el" href="LPC21xx_8h_source.html#l00373">AD1CR</a>, <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00133">ADC_AD0CR_SEL_HW_SCAN</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00160">ADC_AD1CR_SEL_HW_SCAN</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00197">adc_channel_map</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00274">adc_init_irq()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00213">adc_init_rcc()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00288">adc_init_single()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00187">adc_injected_channels</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">adc_new_data_trigger</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00079">ADC_PINSEL0_ONES</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00106">ADC_PINSEL1_ONES</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00226">adcISR0()</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00247">adcISR1()</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00038">BOARD_ADC_CHANNEL_1</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00039">BOARD_ADC_CHANNEL_2</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00042">BOARD_ADC_CHANNEL_3</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00043">BOARD_ADC_CHANNEL_4</a>, <a class="el" href="ADS8344_8c_source.html#l00080">channel</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00054">NB_ADC1_CHANNELS</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00070">NB_ADC2_CHANNELS</a>, <a class="el" href="LPC21xx_8h_source.html#l00347">PINSEL0</a>, <a class="el" href="LPC21xx_8h_source.html#l00348">PINSEL1</a>, <a class="el" href="booz__1_80_8h_source.html#l00128">USE_AD1_2</a>, <a class="el" href="logom__2_86_8h_source.html#l00175">USE_AD1_4</a>, <a class="el" href="lpcVIC_8h_source.html#l00088">VIC_AD0</a>, <a class="el" href="lpcVIC_8h_source.html#l00091">VIC_AD1</a>, <a class="el" href="lpcVIC_8h_source.html#l00105">VIC_BIT</a>, <a class="el" href="lpcVIC_8h_source.html#l00102">VIC_ENABLE</a>, <a class="el" href="LPC21xx_8h_source.html#l00431">VICIntEnable</a>, and <a class="el" href="LPC21xx_8h_source.html#l00430">VICIntSelect</a>.</p>
+<p>References <a class="el" href="armVIC_8h_source.html#l00020">_VIC_ADDR</a>, <a class="el" href="armVIC_8h_source.html#l00019">_VIC_CNTL</a>, <a class="el" href="LPC21xx_8h_source.html#l00356">AD0CR</a>, <a class="el" href="LPC21xx_8h_source.html#l00373">AD1CR</a>, <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00140">ADC_AD0CR_SEL_HW_SCAN</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00167">ADC_AD1CR_SEL_HW_SCAN</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00197">adc_channel_map</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00274">adc_init_irq()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00213">adc_init_rcc()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00288">adc_init_single()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00187">adc_injected_channels</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">adc_new_data_trigger</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00086">ADC_PINSEL0_ONES</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00113">ADC_PINSEL1_ONES</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00233">adcISR0()</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00254">adcISR1()</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00038">BOARD_ADC_CHANNEL_1</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00039">BOARD_ADC_CHANNEL_2</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00042">BOARD_ADC_CHANNEL_3</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00043">BOARD_ADC_CHANNEL_4</a>, <a class="el" href="ADS8344_8c_source.html#l00080">channel</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00061">NB_ADC1_CHANNELS</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00077">NB_ADC2_CHANNELS</a>, <a class="el" href="LPC21xx_8h_source.html#l00347">PINSEL0</a>, <a class="el" href="LPC21xx_8h_source.html#l00348">PINSEL1</a>, <a class="el" href="booz__1_80_8h_source.html#l00128">USE_AD1_2</a>, <a class="el" href="logom__2_86_8h_source.html#l00175">USE_AD1_4</a>, <a class="el" href="lpcVIC_8h_source.html#l00088">VIC_AD0</a>, <a class="el" href="lpcVIC_8h_source.html#l00091">VIC_AD1</a>, <a class="el" href="lpcVIC_8h_source.html#l00105">VIC_BIT</a>, <a class="el" href="lpcVIC_8h_source.html#l00102">VIC_ENABLE</a>, <a class="el" href="LPC21xx_8h_source.html#l00431">VICIntEnable</a>, and <a class="el" href="LPC21xx_8h_source.html#l00430">VICIntSelect</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -367,7 +376,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00288">288</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
-<p>References <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00197">adc_channel_map</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00054">NB_ADC1_CHANNELS</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00070">NB_ADC2_CHANNELS</a>.</p>
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00197">adc_channel_map</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00061">NB_ADC1_CHANNELS</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00077">NB_ADC2_CHANNELS</a>.</p>
 
 <p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">adc_init()</a>.</p>
 
@@ -474,11 +483,6 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>This is the driver for the analog to digital converters on STM32. </p>
-<p>Usage: Define flags for ADCs to use and their channels:</p>
-<p>-DUSE_AD1 -DUSE_AD1_1 -DUSE_AD1_3</p>
-<p>would enable ADC1 and it's channels 1 and 3. </p>
-
 <p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">97</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
 <p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00500">adc1_2_isr()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">adc_init()</a>, and <a class="el" href="test__adc_8c_source.html#l00071">main_event_task()</a>.</p>
@@ -505,7 +509,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html">adc_arch.c</a>      </li>
 
-    <li class="footer">Generated on Fri Dec 14 2012 04:00:12 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 15 2012 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
