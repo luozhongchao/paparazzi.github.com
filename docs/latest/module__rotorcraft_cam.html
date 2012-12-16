@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-333-g2dda346</span>
+   &#160;<span id="projectnumber">v4.9_devel-336-gfaa2a66</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -105,26 +105,45 @@ Module configuration options</h2>
 Airframe file section</h3>
 <ul>
 <li><b>section</b> name: <code>CAM</code> prefix: <code>ROTORCRAFT_CAM_</code> <ul>
-<li><b>name</b> <code>DEFAULT_MODE</code> <b>value:</b> <code>MODE_NONE|MODE_MANUAL|MODE_HEADING|MODE_WP</code> <br/>
+<li><b>name</b> <code>DEFAULT_MODE</code> <b>value:</b> <em>MODE_NONE|MODE_MANUAL|MODE_HEADING|MODE_WP</em> <br/>
  Description: Select default mode (default: MODE_NONE)</li>
-<li><b>name</b> <code>CAM_ON</code> <b>value:</b> <code>handler</code> <br/>
+<li><b>name</b> <code>CAM_ON</code> <b>value:</b> <em>handler</em> <br/>
  Description: Handler to power on the camera ({} to disable)</li>
-<li><b>name</b> <code>CAM_OFF</code> <b>value:</b> <code>handler</code> <br/>
+<li><b>name</b> <code>CAM_OFF</code> <b>value:</b> <em>handler</em> <br/>
  Description: Handler to power off the camera ({} to disable)</li>
-<li><b>name</b> <code>TILT_SERVO</code> <b>value:</b> <code>name</code> <br/>
+<li><b>name</b> <code>TILT_SERVO</code> <b>value:</b> <em>name</em> <br/>
  Description: Servo name for tilt control (no tilt control if not defined)</li>
-<li><b>name</b> <code>TILT_ANGLE_MIN</code> <b>value:</b> <code>angle</code> <br/>
+<li><b>name</b> <code>TILT_ANGLE_MIN</code> <b>value:</b> <em>angle</em> <br/>
  Description: Tilt angle corresponding to the servo min position</li>
-<li><b>name</b> <code>TILT_ANGLE_MAX</code> <b>value:</b> <code>angle</code> <br/>
+<li><b>name</b> <code>TILT_ANGLE_MAX</code> <b>value:</b> <em>angle</em> <br/>
  Description: Tilt angle corresponding to the servo max position</li>
-<li><b>name</b> <code>USE_PAN</code> <b>value:</b> <code>TRUE|FALSE</code> <br/>
+<li><b>name</b> <code>USE_PAN</code> <b>value:</b> <em>TRUE|FALSE</em> <br/>
  Description: Enable pan control with heading (default: TRUE)</li>
-<li><b>name</b> <code>TRACK_WP</code> <b>value:</b> <code>WP_XXX</code> <br/>
+<li><b>name</b> <code>TRACK_WP</code> <b>value:</b> <em>WP_XXX</em> <br/>
  Description: Enable waypoint tracking mode on the selected WP (default: enable if waypoint CAM is defined)</li>
-<li><b>name</b> <code>STICK_TILT_INC</code> <b>value:</b> <code>angle/stick_input</code> <br/>
+<li><b>name</b> <code>STICK_TILT_INC</code> <b>value:</b> <em>angle/stick_input</em> <br/>
  Description: Sensitivity of the datalink stick tilt control (default: 10 deg)</li>
-<li><b>name</b> <code>STICK_PAN_INC</code> <b>value:</b> <code>angle/stick_input</code> <br/>
+<li><b>name</b> <code>STICK_PAN_INC</code> <b>value:</b> <em>angle/stick_input</em> <br/>
  Description: Sensitivity of the datalink stick pan control (default: 20 deg)</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="functions"></a>
+Module functions</h2>
+<h3><a class="anchor" id="init_functions"></a>
+Init Functions</h3>
+<p>These initialization functions are called once on startup.</p>
+<ul>
+<li><a class="el" href="rotorcraft__cam_8c.html#a9714f023c0b83d4d973e8758e053a6ce">rotorcraft_cam_init()</a></li>
+</ul>
+<h3><a class="anchor" id="periodic_functions"></a>
+Periodic Functions</h3>
+<p>These functions are called periodically at the specified frequency from the module periodic loop.</p>
+<ul>
+<li><a class="el" href="rotorcraft__cam_8c.html#a64fb59f54ef1b4ddcec941fbe4cb8d9e">rotorcraft_cam_periodic()</a><ul>
+<li>Frequency in Hz: <em>10</em>.</li>
+<li>Autorun: <em>LOCK</em> <br/>
+ Periodic function automatically starts after init and can't be stopped.</li>
 </ul>
 </li>
 </ul>
@@ -196,7 +215,7 @@ Raw infrared_i2c.xml file:</h3>
     <ul>
       <li class="navelem"><a class="el" href="onboard_modules.html">Onboard Modules</a>      </li>
 
-    <li class="footer">Generated on Sat Dec 15 2012 21:07:14 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Dec 16 2012 16:59:14 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

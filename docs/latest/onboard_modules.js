@@ -11,7 +11,6 @@ var onboard_modules =
     [ "Camera control for rotorcraft", "module__rotorcraft_cam.html", null ],
     [ "Cartography sweeping pattern for navigation", "module__cartography.html", null ],
     [ "Photogrammetry navigation functions", "module__photogrammetry_calculator.html", null ],
-    [ "Extra datalink channel (PPRZ transport)", "module__booz_extra_dl.html", null ],
     [ "pwm input measurement mcu periph access and init wrapper for other modules", "module__pwm_meas.html", null ],
     [ "System monitor", "module__sys_mon.html", null ],
     [ "Trigger Ext", "module__trig_test.html", null ],

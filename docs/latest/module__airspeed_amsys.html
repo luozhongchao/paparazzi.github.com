@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-333-g2dda346</span>
+   &#160;<span id="projectnumber">v4.9_devel-336-gfaa2a66</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -104,14 +104,39 @@ Module configuration options</h2>
 <h3><a class="anchor" id="define"></a>
 Define Options</h3>
 <ul>
-<li><b>name:</b> <code>AIRSPEED_AMSYS_I2C_DEV</code> <b>value:</b> <code>i2cX</code> <br/>
+<li><b>name:</b> <code>AIRSPEED_AMSYS_I2C_DEV</code> <b>value:</b> <em>i2cX</em> <br/>
  Description: change default i2c peripheral</li>
-<li><b>name:</b> <code>AIRSPEED_AMSYS_OFFSET</code> <b>value:</b> <code>sensor</code> offset</li>
-<li><b>name:</b> <code>AIRSPEED_AMSYS_SCALE</code> <b>value:</b> <code>sensor</code> scale factor</li>
-<li><b>name:</b> <code>USE_AIRSPEED</code> <b>value:</b> <code>None</code> <br/>
+<li><b>name:</b> <code>AIRSPEED_AMSYS_OFFSET</code> <b>value:</b> <em>sensor offset</em></li>
+<li><b>name:</b> <code>AIRSPEED_AMSYS_SCALE</code> <b>value:</b> <em>sensor scale factor</em></li>
+<li><b>name:</b> <code>USE_AIRSPEED</code> <b>value:</b> <em>None</em> <br/>
  Description: flag to use the data for airspeed control</li>
-<li><b>name:</b> <code>SENSOR_SYNC_SEND</code> <b>value:</b> <code>None</code> <br/>
+<li><b>name:</b> <code>SENSOR_SYNC_SEND</code> <b>value:</b> <em>None</em> <br/>
  Description: flag to transmit the data as it is acquired</li>
+</ul>
+<h2><a class="anchor" id="functions"></a>
+Module functions</h2>
+<h3><a class="anchor" id="init_functions"></a>
+Init Functions</h3>
+<p>These initialization functions are called once on startup.</p>
+<ul>
+<li><a class="el" href="airspeed__amsys_8c.html#a0daf8e4d433868ce846502383f05491f">airspeed_amsys_init()</a></li>
+</ul>
+<h3><a class="anchor" id="event_functions"></a>
+Event Functions</h3>
+<p>These event functions are called in each cycle of the module event loop.</p>
+<ul>
+<li><a class="el" href="airspeed__amsys_8h.html#a57d3c4a41d2ff24a9ed4557e492572b8">AirspeedAmsysEvent()</a></li>
+</ul>
+<h3><a class="anchor" id="periodic_functions"></a>
+Periodic Functions</h3>
+<p>These functions are called periodically at the specified frequency from the module periodic loop.</p>
+<ul>
+<li><a class="el" href="airspeed__amsys_8c.html#aca26a3f68b1ae04d73408bcb37d62869">airspeed_amsys_read_periodic()</a><ul>
+<li>Frequency in Hz: <em>10</em>.</li>
+<li>Autorun: <em>LOCK</em> <br/>
+ Periodic function automatically starts after init and can't be stopped.</li>
+</ul>
+</li>
 </ul>
 <h2><a class="anchor" id="files"></a>
 Files</h2>
@@ -181,7 +206,7 @@ Airspeed AMSYS module (I2C)
     <ul>
       <li class="navelem"><a class="el" href="onboard_modules.html">Onboard Modules</a>      </li>
 
-    <li class="footer">Generated on Sat Dec 15 2012 21:07:14 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Dec 16 2012 16:59:14 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

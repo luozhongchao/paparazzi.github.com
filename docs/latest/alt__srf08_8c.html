@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-333-g2dda346</span>
+   &#160;<span id="projectnumber">v4.9_devel-336-gfaa2a66</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,6 +107,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">alt_srf08.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Basic library for SRF08 telemeter.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="i2c_8h_source.html">mcu_periph/i2c.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="alt__srf08_8h_source.html">alt_srf08.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="uart_8h_source.html">mcu_periph/uart.h</a>&quot;</code><br/>
@@ -120,7 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="alt__srf08_8c__incl.png" border="0" usemap="#sw_2airborne_2modules_2sensors_2alt__srf08_8c" alt=""/></div>
 <map name="sw_2airborne_2modules_2sensors_2alt__srf08_8c" id="sw_2airborne_2modules_2sensors_2alt__srf08_8c">
-<area shape="rect" id="node3" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="168,83,299,112"/><area shape="rect" id="node11" href="alt__srf08_8h.html" title="alt_srf08.h" alt="" coords="327,83,415,112"/><area shape="rect" id="node13" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="439,83,577,112"/><area shape="rect" id="node20" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="728,83,949,112"/><area shape="rect" id="node54" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="973,83,1027,112"/><area shape="rect" id="node22" href="inttypes_8h.html" title="inttypes.h" alt="" coords="889,315,975,344"/><area shape="rect" id="node29" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="941,160,1203,189"/><area shape="rect" id="node42" href="xbee_8h.html" title="subsystems/datalink/xbee.h" alt="" coords="1461,160,1661,189"/><area shape="rect" id="node49" href="w5100_8h.html" title="subsystems/datalink/w5100.h" alt="" coords="1227,160,1437,189"/><area shape="rect" id="node33" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1209,237,1428,267"/><area shape="rect" id="node38" href="transport_8h.html" title="generic transport header" alt="" coords="959,237,1185,267"/><area shape="rect" id="node46" href="xbee24_8h.html" title="subsystems/datalink/xbee24.h" alt="" coords="1452,237,1668,267"/></map>
+<area shape="rect" id="node3" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="168,83,299,112"/><area shape="rect" id="node11" href="alt__srf08_8h.html" title="Basic library for SRF08 telemeter." alt="" coords="327,83,415,112"/><area shape="rect" id="node13" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="439,83,577,112"/><area shape="rect" id="node20" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="728,83,949,112"/><area shape="rect" id="node54" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="973,83,1027,112"/><area shape="rect" id="node22" href="inttypes_8h.html" title="inttypes.h" alt="" coords="889,315,975,344"/><area shape="rect" id="node29" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="941,160,1203,189"/><area shape="rect" id="node42" href="xbee_8h.html" title="subsystems/datalink/xbee.h" alt="" coords="1461,160,1661,189"/><area shape="rect" id="node49" href="w5100_8h.html" title="subsystems/datalink/w5100.h" alt="" coords="1227,160,1437,189"/><area shape="rect" id="node33" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1209,237,1428,267"/><area shape="rect" id="node38" href="transport_8h.html" title="generic transport header" alt="" coords="959,237,1185,267"/><area shape="rect" id="node46" href="xbee24_8h.html" title="subsystems/datalink/xbee24.h" alt="" coords="1452,237,1668,267"/></map>
 </div>
 </div>
 <p><a href="alt__srf08_8c_source.html">Go to the source code of this file.</a></p>
@@ -149,7 +152,11 @@ Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alt__srf08_8c.html#aaa86fa4e14a90dbda8f426e3cc1caf97">srf_trans</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alt__srf08_8c.html#a9b4c04cf312158dd1fc012c9c04ee4e9">srf08_range</a></td></tr>
 </table>
-<hr/><h2>Define Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Basic library for SRF08 telemeter. </p>
+
+<p>Definition in file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+</div><hr/><h2>Define Documentation</h2>
 <a class="anchor" id="a2978a46b47cbc9d17a0924014ff9658b"></a><!-- doxytag: member="alt_srf08.c::DOWNLINK_DEVICE" ref="a2978a46b47cbc9d17a0924014ff9658b" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +168,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00036">36</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00038">38</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
 </div>
 </div>
@@ -176,9 +183,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00040">40</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00042">42</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00051">srf08_init()</a>, <a class="el" href="alt__srf08_8c_source.html#l00069">srf08_initiate_ranging()</a>, <a class="el" href="alt__srf08_8c_source.html#l00085">srf08_read()</a>, <a class="el" href="alt__srf08_8c_source.html#l00104">srf08_read_register()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00077">srf08_receive()</a>.</p>
+<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00053">srf08_init()</a>, <a class="el" href="alt__srf08_8c_source.html#l00071">srf08_initiate_ranging()</a>, <a class="el" href="alt__srf08_8c_source.html#l00087">srf08_read()</a>, <a class="el" href="alt__srf08_8c_source.html#l00106">srf08_read_register()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00079">srf08_receive()</a>.</p>
 
 </div>
 </div>
@@ -200,11 +207,11 @@ Variables</h2></td></tr>
 
 <p>Copy the I2C buffer. </p>
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00091">91</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00093">93</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="alt__srf08_8c_source.html#l00046">srf08_range</a>, and <a class="el" href="alt__srf08_8c_source.html#l00045">srf_trans</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="alt__srf08_8c_source.html#l00048">srf08_range</a>, and <a class="el" href="alt__srf08_8c_source.html#l00047">srf_trans</a>.</p>
 
-<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00135">srf08_event()</a>.</p>
+<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00137">srf08_event()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -235,9 +242,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>Handling of data sent by the device (initiated by <a class="el" href="alt__srf08_8c.html#a6f923c4979345945f33e6c927fcdf3b1" title="Ask the value to the device.">srf08_receive()</a> </p>
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00135">135</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00137">137</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>References <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="alt__srf08_8c_source.html#l00091">srf08_copy()</a>, <a class="el" href="alt__srf08_8c_source.html#l00044">srf08_got</a>, <a class="el" href="alt__srf08_8c_source.html#l00046">srf08_range</a>, <a class="el" href="alt__srf08_8c_source.html#l00085">srf08_read()</a>, <a class="el" href="alt__srf08_8c_source.html#l00044">srf08_received</a>, <a class="el" href="alt__srf08_8c_source.html#l00045">srf_trans</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
+<p>References <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="alt__srf08_8c_source.html#l00093">srf08_copy()</a>, <a class="el" href="alt__srf08_8c_source.html#l00046">srf08_got</a>, <a class="el" href="alt__srf08_8c_source.html#l00048">srf08_range</a>, <a class="el" href="alt__srf08_8c_source.html#l00087">srf08_read()</a>, <a class="el" href="alt__srf08_8c_source.html#l00046">srf08_received</a>, <a class="el" href="alt__srf08_8c_source.html#l00047">srf_trans</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -268,9 +275,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>Setting the gain to the minimun value (to avoid echos ?) </p>
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00051">51</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00053">53</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="i2c_8h_source.html#l00184">I2CTransmit</a>, <a class="el" href="alt__srf08_8c_source.html#l00044">srf08_got</a>, <a class="el" href="alt__srf08_8c_source.html#l00040">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8h_source.html#l00060">SRF08_MIN_GAIN</a>, <a class="el" href="alt__srf08_8c_source.html#l00044">srf08_received</a>, <a class="el" href="alt__srf08_8h_source.html#l00071">SRF08_SET_GAIN</a>, <a class="el" href="alt__srf08_8h_source.html#l00037">SRF08_UNIT_0</a>, and <a class="el" href="alt__srf08_8c_source.html#l00045">srf_trans</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="i2c_8h_source.html#l00184">I2CTransmit</a>, <a class="el" href="alt__srf08_8c_source.html#l00046">srf08_got</a>, <a class="el" href="alt__srf08_8c_source.html#l00042">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8h_source.html#l00062">SRF08_MIN_GAIN</a>, <a class="el" href="alt__srf08_8c_source.html#l00046">srf08_received</a>, <a class="el" href="alt__srf08_8h_source.html#l00073">SRF08_SET_GAIN</a>, <a class="el" href="alt__srf08_8h_source.html#l00039">SRF08_UNIT_0</a>, and <a class="el" href="alt__srf08_8c_source.html#l00047">srf_trans</a>.</p>
 
 </div>
 </div>
@@ -289,11 +296,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00069">69</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00071">71</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="i2c_8h_source.html#l00184">I2CTransmit</a>, <a class="el" href="lpc21_2led__hw_8h_source.html#l00028">LED_ON</a>, <a class="el" href="alt__srf08_8h_source.html#l00066">SRF08_CENTIMETERS</a>, <a class="el" href="alt__srf08_8h_source.html#l00070">SRF08_COMMAND</a>, <a class="el" href="alt__srf08_8c_source.html#l00040">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8h_source.html#l00037">SRF08_UNIT_0</a>, and <a class="el" href="alt__srf08_8c_source.html#l00045">srf_trans</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="i2c_8h_source.html#l00184">I2CTransmit</a>, <a class="el" href="lpc21_2led__hw_8h_source.html#l00028">LED_ON</a>, <a class="el" href="alt__srf08_8h_source.html#l00068">SRF08_CENTIMETERS</a>, <a class="el" href="alt__srf08_8h_source.html#l00072">SRF08_COMMAND</a>, <a class="el" href="alt__srf08_8c_source.html#l00042">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8h_source.html#l00039">SRF08_UNIT_0</a>, and <a class="el" href="alt__srf08_8c_source.html#l00047">srf_trans</a>.</p>
 
-<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00095">srf08_ping()</a>.</p>
+<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00097">srf08_ping()</a>.</p>
 
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -323,9 +330,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00095">95</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00097">97</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="alt__srf08_8c_source.html#l00069">srf08_initiate_ranging()</a>, <a class="el" href="alt__srf08_8c_source.html#l00077">srf08_receive()</a>, <a class="el" href="alt__srf08_8c_source.html#l00045">srf_trans</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="alt__srf08_8c_source.html#l00071">srf08_initiate_ranging()</a>, <a class="el" href="alt__srf08_8c_source.html#l00079">srf08_receive()</a>, <a class="el" href="alt__srf08_8c_source.html#l00047">srf_trans</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
 
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -357,11 +364,11 @@ Variables</h2></td></tr>
 
 <p>Read values on the bus. </p>
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00085">85</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00087">87</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00176">I2CReceive</a>, <a class="el" href="alt__srf08_8c_source.html#l00044">srf08_got</a>, <a class="el" href="alt__srf08_8c_source.html#l00040">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8h_source.html#l00037">SRF08_UNIT_0</a>, <a class="el" href="alt__srf08_8c_source.html#l00045">srf_trans</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00176">I2CReceive</a>, <a class="el" href="alt__srf08_8c_source.html#l00046">srf08_got</a>, <a class="el" href="alt__srf08_8c_source.html#l00042">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8h_source.html#l00039">SRF08_UNIT_0</a>, <a class="el" href="alt__srf08_8c_source.html#l00047">srf_trans</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
-<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00135">srf08_event()</a>.</p>
+<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00137">srf08_event()</a>.</p>
 
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -391,9 +398,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00104">104</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00106">106</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="i2c_8h_source.html#l00192">I2CTransceive</a>, <a class="el" href="alt__srf08_8c_source.html#l00040">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8h_source.html#l00037">SRF08_UNIT_0</a>, and <a class="el" href="alt__srf08_8c_source.html#l00045">srf_trans</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="i2c_8h_source.html#l00192">I2CTransceive</a>, <a class="el" href="alt__srf08_8c_source.html#l00042">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8h_source.html#l00039">SRF08_UNIT_0</a>, and <a class="el" href="alt__srf08_8c_source.html#l00047">srf_trans</a>.</p>
 
 </div>
 </div>
@@ -414,11 +421,11 @@ Variables</h2></td></tr>
 
 <p>Ask the value to the device. </p>
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00077">77</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00079">79</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="i2c_8h_source.html#l00184">I2CTransmit</a>, <a class="el" href="lpc21_2led__hw_8h_source.html#l00029">LED_OFF</a>, <a class="el" href="alt__srf08_8h_source.html#l00073">SRF08_ECHO_1</a>, <a class="el" href="alt__srf08_8c_source.html#l00040">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8c_source.html#l00044">srf08_received</a>, <a class="el" href="alt__srf08_8h_source.html#l00037">SRF08_UNIT_0</a>, <a class="el" href="alt__srf08_8c_source.html#l00045">srf_trans</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="i2c_8h_source.html#l00184">I2CTransmit</a>, <a class="el" href="lpc21_2led__hw_8h_source.html#l00029">LED_OFF</a>, <a class="el" href="alt__srf08_8h_source.html#l00075">SRF08_ECHO_1</a>, <a class="el" href="alt__srf08_8c_source.html#l00042">SRF08_I2C_DEV</a>, <a class="el" href="alt__srf08_8c_source.html#l00046">srf08_received</a>, <a class="el" href="alt__srf08_8h_source.html#l00039">SRF08_UNIT_0</a>, <a class="el" href="alt__srf08_8c_source.html#l00047">srf_trans</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
-<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00095">srf08_ping()</a>.</p>
+<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00097">srf08_ping()</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -445,9 +452,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00044">44</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00046">46</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00135">srf08_event()</a>, <a class="el" href="alt__srf08_8c_source.html#l00051">srf08_init()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00085">srf08_read()</a>.</p>
+<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00137">srf08_event()</a>, <a class="el" href="alt__srf08_8c_source.html#l00053">srf08_init()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00087">srf08_read()</a>.</p>
 
 </div>
 </div>
@@ -462,9 +469,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00046">46</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00048">48</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00091">srf08_copy()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00135">srf08_event()</a>.</p>
+<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00093">srf08_copy()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00137">srf08_event()</a>.</p>
 
 </div>
 </div>
@@ -479,9 +486,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00044">44</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00046">46</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00135">srf08_event()</a>, <a class="el" href="alt__srf08_8c_source.html#l00051">srf08_init()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00077">srf08_receive()</a>.</p>
+<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00137">srf08_event()</a>, <a class="el" href="alt__srf08_8c_source.html#l00053">srf08_init()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00079">srf08_receive()</a>.</p>
 
 </div>
 </div>
@@ -496,9 +503,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00045">45</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
+<p>Definition at line <a class="el" href="alt__srf08_8c_source.html#l00047">47</a> of file <a class="el" href="alt__srf08_8c_source.html">alt_srf08.c</a>.</p>
 
-<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00091">srf08_copy()</a>, <a class="el" href="alt__srf08_8c_source.html#l00135">srf08_event()</a>, <a class="el" href="alt__srf08_8c_source.html#l00051">srf08_init()</a>, <a class="el" href="alt__srf08_8c_source.html#l00069">srf08_initiate_ranging()</a>, <a class="el" href="alt__srf08_8c_source.html#l00095">srf08_ping()</a>, <a class="el" href="alt__srf08_8c_source.html#l00085">srf08_read()</a>, <a class="el" href="alt__srf08_8c_source.html#l00104">srf08_read_register()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00077">srf08_receive()</a>.</p>
+<p>Referenced by <a class="el" href="alt__srf08_8c_source.html#l00093">srf08_copy()</a>, <a class="el" href="alt__srf08_8c_source.html#l00137">srf08_event()</a>, <a class="el" href="alt__srf08_8c_source.html#l00053">srf08_init()</a>, <a class="el" href="alt__srf08_8c_source.html#l00071">srf08_initiate_ranging()</a>, <a class="el" href="alt__srf08_8c_source.html#l00097">srf08_ping()</a>, <a class="el" href="alt__srf08_8c_source.html#l00087">srf08_read()</a>, <a class="el" href="alt__srf08_8c_source.html#l00106">srf08_read_register()</a>, and <a class="el" href="alt__srf08_8c_source.html#l00079">srf08_receive()</a>.</p>
 
 </div>
 </div>
@@ -522,7 +529,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="alt__srf08_8c.html">alt_srf08.c</a>      </li>
 
-    <li class="footer">Generated on Sat Dec 15 2012 21:07:13 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Dec 16 2012 16:59:13 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
