@@ -35,7 +35,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-348-gda4c1d7</span>
+   &#160;<span id="projectnumber">v4.9_devel-351-ge04623c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -134,6 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678">adc_init_single</a> (<a class="el" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> adc, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan1, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan2, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan3, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> chan4)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable selected channels on specified ADC.  <a href="#a83fd981d2e66f9adad6a6b23a63b3678"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54">adc_push_sample</a> (struct <a class="el" href="structadc__buf.html">adc_buf</a> *buf, <a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> sample)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6">adc_init_rcc</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f">adc_init_irq</a> (void)</td></tr>
@@ -147,7 +148,9 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188">adc_new_data_trigger</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#a28046801179845f23844f2afbfe82829">adc_injected_channels</a> [4]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps integer value x to ADC_InjectedChannel_x.  <a href="#a28046801179845f23844f2afbfe82829"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728">adc_channel_map</a> [4]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps integer value x to ADC_Channel_y.  <a href="#a566f642cb026377ff51f9d43b3a54728"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Driver for the analog to digital converters on STM32. </p>
@@ -174,9 +177,9 @@ Variables</h2></td></tr>
 
 <p>ADC1+2 interrupt hander. </p>
 
-<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00500">500</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00502">502</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
-<p>References <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00187">adc_injected_channels</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">adc_new_data_trigger</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00487">adc_push_sample()</a>, <a class="el" href="ADS8344_8c_source.html#l00080">channel</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00061">NB_ADC1_CHANNELS</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00077">NB_ADC2_CHANNELS</a>.</p>
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00188">adc_injected_channels</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">adc_new_data_trigger</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00487">adc_push_sample()</a>, <a class="el" href="ADS8344_8c_source.html#l00080">channel</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00047">NB_ADC1_CHANNELS</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00063">NB_ADC2_CHANNELS</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -227,7 +230,7 @@ Variables</h2></td></tr>
     <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(1, &amp;channel_buf, 12);
 </pre></div><p> Registers channel_buf as buffer for ADC channel 1, with max index 12 (12 samples). </p>
 
-<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00203">203</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00205">205</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
 <p>References <a class="el" href="adc_8h_source.html#l00064">adc_buf::av_nb_sample</a>.</p>
 
@@ -250,9 +253,9 @@ Variables</h2></td></tr>
 
 <p>Starts conversions. </p>
 
-<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">395</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00399">399</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
-<p>References <a class="el" href="armVIC_8h_source.html#l00020">_VIC_ADDR</a>, <a class="el" href="armVIC_8h_source.html#l00019">_VIC_CNTL</a>, <a class="el" href="LPC21xx_8h_source.html#l00356">AD0CR</a>, <a class="el" href="LPC21xx_8h_source.html#l00373">AD1CR</a>, <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00140">ADC_AD0CR_SEL_HW_SCAN</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00167">ADC_AD1CR_SEL_HW_SCAN</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00197">adc_channel_map</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00274">adc_init_irq()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00213">adc_init_rcc()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00288">adc_init_single()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00187">adc_injected_channels</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">adc_new_data_trigger</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00086">ADC_PINSEL0_ONES</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00113">ADC_PINSEL1_ONES</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00233">adcISR0()</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00254">adcISR1()</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00038">BOARD_ADC_CHANNEL_1</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00039">BOARD_ADC_CHANNEL_2</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00042">BOARD_ADC_CHANNEL_3</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00043">BOARD_ADC_CHANNEL_4</a>, <a class="el" href="ADS8344_8c_source.html#l00080">channel</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00061">NB_ADC1_CHANNELS</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00077">NB_ADC2_CHANNELS</a>, <a class="el" href="LPC21xx_8h_source.html#l00347">PINSEL0</a>, <a class="el" href="LPC21xx_8h_source.html#l00348">PINSEL1</a>, <a class="el" href="booz__1_80_8h_source.html#l00128">USE_AD1_2</a>, <a class="el" href="logom__2_86_8h_source.html#l00175">USE_AD1_4</a>, <a class="el" href="lpcVIC_8h_source.html#l00088">VIC_AD0</a>, <a class="el" href="lpcVIC_8h_source.html#l00091">VIC_AD1</a>, <a class="el" href="lpcVIC_8h_source.html#l00105">VIC_BIT</a>, <a class="el" href="lpcVIC_8h_source.html#l00102">VIC_ENABLE</a>, <a class="el" href="LPC21xx_8h_source.html#l00431">VICIntEnable</a>, and <a class="el" href="LPC21xx_8h_source.html#l00430">VICIntSelect</a>.</p>
+<p>References <a class="el" href="armVIC_8h_source.html#l00020">_VIC_ADDR</a>, <a class="el" href="armVIC_8h_source.html#l00019">_VIC_CNTL</a>, <a class="el" href="LPC21xx_8h_source.html#l00356">AD0CR</a>, <a class="el" href="LPC21xx_8h_source.html#l00373">AD1CR</a>, <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00140">ADC_AD0CR_SEL_HW_SCAN</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00167">ADC_AD1CR_SEL_HW_SCAN</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00199">adc_channel_map</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00276">adc_init_irq()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00215">adc_init_rcc()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00291">adc_init_single()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00188">adc_injected_channels</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">adc_new_data_trigger</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00086">ADC_PINSEL0_ONES</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00113">ADC_PINSEL1_ONES</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00233">adcISR0()</a>, <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00254">adcISR1()</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00038">BOARD_ADC_CHANNEL_1</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00039">BOARD_ADC_CHANNEL_2</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00042">BOARD_ADC_CHANNEL_3</a>, <a class="el" href="lisa__l__1_80_8h_source.html#l00043">BOARD_ADC_CHANNEL_4</a>, <a class="el" href="ADS8344_8c_source.html#l00080">channel</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00047">NB_ADC1_CHANNELS</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00063">NB_ADC2_CHANNELS</a>, <a class="el" href="LPC21xx_8h_source.html#l00347">PINSEL0</a>, <a class="el" href="LPC21xx_8h_source.html#l00348">PINSEL1</a>, <a class="el" href="booz__1_80_8h_source.html#l00128">USE_AD1_2</a>, <a class="el" href="logom__2_86_8h_source.html#l00175">USE_AD1_4</a>, <a class="el" href="lpcVIC_8h_source.html#l00088">VIC_AD0</a>, <a class="el" href="lpcVIC_8h_source.html#l00091">VIC_AD1</a>, <a class="el" href="lpcVIC_8h_source.html#l00105">VIC_BIT</a>, <a class="el" href="lpcVIC_8h_source.html#l00102">VIC_ENABLE</a>, <a class="el" href="LPC21xx_8h_source.html#l00431">VICIntEnable</a>, and <a class="el" href="LPC21xx_8h_source.html#l00430">VICIntSelect</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -261,7 +264,7 @@ Variables</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="stm32_2mcu__periph_2adc__arch_8c_a2b815e6730e8723a6d1d06d9ef8f31c0_cgraph.png" border="0" usemap="#stm32_2mcu__periph_2adc__arch_8c_a2b815e6730e8723a6d1d06d9ef8f31c0_cgraph" alt=""/></div>
 <map name="stm32_2mcu__periph_2adc__arch_8c_a2b815e6730e8723a6d1d06d9ef8f31c0_cgraph" id="stm32_2mcu__periph_2adc__arch_8c_a2b815e6730e8723a6d1d06d9ef8f31c0_cgraph">
-<area shape="rect" id="node3" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f" title="adc_init_irq" alt="" coords="136,5,229,35"/><area shape="rect" id="node5" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6" title="adc_init_rcc" alt="" coords="135,59,231,88"/><area shape="rect" id="node7" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678" title="adc_init_single" alt="" coords="125,112,240,141"/><area shape="rect" id="node9" href="lpc21_2mcu__periph_2adc__arch_8c.html#a5020bf7d8186fe55c08833bf69d23421" title="adcISR0" alt="" coords="147,165,219,195"/><area shape="rect" id="node11" href="lpc21_2mcu__periph_2adc__arch_8c.html#a7197102040e60a099e91a01fa23f2af3" title="adcISR1" alt="" coords="147,219,219,248"/></map>
+<area shape="rect" id="node3" href="stm32_2mcu__periph_2adc__arch_8c.html#a316b59457ea0e415ac46c1c897849a7f" title="adc_init_irq" alt="" coords="136,5,229,35"/><area shape="rect" id="node5" href="stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6" title="adc_init_rcc" alt="" coords="135,59,231,88"/><area shape="rect" id="node7" href="stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678" title="Enable selected channels on specified ADC." alt="" coords="125,112,240,141"/><area shape="rect" id="node9" href="lpc21_2mcu__periph_2adc__arch_8c.html#a5020bf7d8186fe55c08833bf69d23421" title="adcISR0" alt="" coords="147,165,219,195"/><area shape="rect" id="node11" href="lpc21_2mcu__periph_2adc__arch_8c.html#a7197102040e60a099e91a01fa23f2af3" title="adcISR1" alt="" coords="147,219,219,248"/></map>
 </div>
 </p>
 
@@ -282,9 +285,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00274">274</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00276">276</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
-<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">adc_init()</a>.</p>
+<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00399">adc_init()</a>.</p>
 
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -314,9 +317,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00213">213</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00215">215</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
-<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">adc_init()</a>.</p>
+<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00399">adc_init()</a>.</p>
 
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -374,11 +377,16 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00288">288</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+<p>Enable selected channels on specified ADC. </p>
+<p>Usage:</p>
+<p>adc_init_single(ADC1, 1, 1, 0, 0);</p>
+<p>... would enable ADC1, enabling channels 1 and 2, but not 3 and 4. </p>
 
-<p>References <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00197">adc_channel_map</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00061">NB_ADC1_CHANNELS</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00077">NB_ADC2_CHANNELS</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00291">291</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
-<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">adc_init()</a>.</p>
+<p>References <a class="el" href="LPC21xx_8h_source.html#l00370">ADC1</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00199">adc_channel_map</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00047">NB_ADC1_CHANNELS</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8h_source.html#l00063">NB_ADC2_CHANNELS</a>.</p>
+
+<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00399">adc_init()</a>.</p>
 
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -422,7 +430,7 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="adc_8h_source.html#l00064">adc_buf::av_nb_sample</a>, <a class="el" href="adc_8h_source.html#l00063">adc_buf::head</a>, <a class="el" href="adc_8h_source.html#l00061">adc_buf::sum</a>, and <a class="el" href="adc_8h_source.html#l00062">adc_buf::values</a>.</p>
 
-<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00500">adc1_2_isr()</a>.</p>
+<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00502">adc1_2_isr()</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -449,9 +457,18 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00197">197</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+<p>Maps integer value x to ADC_Channel_y. </p>
+<p>like e.g.</p>
+<ul>
+<li>0 --&gt; ADC_Channel_5</li>
+<li>1 --&gt; ADC_Channel_8</li>
+<li>2 --&gt; ADC_Channel_13</li>
+</ul>
+<p>so they can be iterated incrementally. </p>
 
-<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">adc_init()</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00288">adc_init_single()</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00199">199</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+
+<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00399">adc_init()</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00291">adc_init_single()</a>.</p>
 
 </div>
 </div>
@@ -466,9 +483,12 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00187">187</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+<p>Maps integer value x to ADC_InjectedChannel_x. </p>
+<p>so they can be iterated safely </p>
 
-<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00500">adc1_2_isr()</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">adc_init()</a>.</p>
+<p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00188">188</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
+
+<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00502">adc1_2_isr()</a>, and <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00399">adc_init()</a>.</p>
 
 </div>
 </div>
@@ -485,7 +505,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00097">97</a> of file <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html">adc_arch.c</a>.</p>
 
-<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00500">adc1_2_isr()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00395">adc_init()</a>, and <a class="el" href="test__adc_8c_source.html#l00071">main_event_task()</a>.</p>
+<p>Referenced by <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00502">adc1_2_isr()</a>, <a class="el" href="stm32_2mcu__periph_2adc__arch_8c_source.html#l00399">adc_init()</a>, and <a class="el" href="test__adc_8c_source.html#l00071">main_event_task()</a>.</p>
 
 </div>
 </div>
@@ -509,7 +529,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="stm32_2mcu__periph_2adc__arch_8c.html">adc_arch.c</a>      </li>
 
-    <li class="footer">Generated on Sat Dec 29 2012 04:00:09 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Dec 29 2012 22:12:57 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
