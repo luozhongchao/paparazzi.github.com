@@ -22,6 +22,7 @@ var searchData=
   ['i2c1stat',['I2C1STAT',['../LPC21xx_8h.html#adbba5de491b6cf3df5876cfd40c9feb1',1,'LPC21xx.h']]],
   ['i2c2_5fclock_5fspeed',['I2C2_CLOCK_SPEED',['../stm32_2mcu__periph_2i2c__arch_8c.html#ac0a2e46dae466187803c62e2e9bef045',1,'i2c_arch.c']]],
   ['i2c2_5fsetbitrate',['i2c2_setbitrate',['../sim_2mcu__periph_2i2c__arch_8c.html#ad112b0625b198d3c676bb44a48c11d87',1,'i2c_arch.c']]],
+  ['i2c2transmitwithretry',['I2C2TransmitWithRetry',['../imu__aspirin_8c.html#a79e01c2784da8d83042a7177ec455570',1,'imu_aspirin.c']]],
   ['i2c_5fabuse_5fsend_5ftransaction',['i2c_abuse_send_transaction',['../i2c__abuse__test_8c.html#a730009caebd8f50471432adbc55d7732',1,'i2c_abuse_test.c']]],
   ['i2c_5fabuse_5ftest_2ec',['i2c_abuse_test.c',['../i2c__abuse__test_8c.html',1,'']]],
   ['i2c_5fabuse_5ftest_2eh',['i2c_abuse_test.h',['../i2c__abuse__test_8h.html',1,'']]],

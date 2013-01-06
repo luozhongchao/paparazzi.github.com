@@ -3,6 +3,7 @@ var imu__aspirin_8c =
     [ "ADXL345_SLAVE_IDX", "imu__aspirin_8c.html#aba10b2e800f8ec5b603df37f9b752fd9", null ],
     [ "ADXL345_SPI_DEV", "imu__aspirin_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a", null ],
     [ "ASPIRIN_ACCEL_RATE", "imu__aspirin_8c.html#acb451ad1ab622550e7a1ba1e535d2a4d", null ],
+    [ "I2C2TransmitWithRetry", "imu__aspirin_8c.html#a79e01c2784da8d83042a7177ec455570", null ],
     [ "ITG3200_CLK_SEL", "imu__aspirin_8c.html#a843b7fc9886a8cb6d324b5c0378ba8ef", null ],
     [ "ITG3200_DLPF_CFG", "imu__aspirin_8c.html#a86cfe9749207da7380d0d71cf67d2a52", null ],
     [ "ITG3200_FS_SEL", "imu__aspirin_8c.html#a79b3f63caffaadab21d6443a3b08cf64", null ],

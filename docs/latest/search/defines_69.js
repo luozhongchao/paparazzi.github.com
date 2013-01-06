@@ -18,6 +18,7 @@ var searchData=
   ['i2c1scll',['I2C1SCLL',['../LPC21xx_8h.html#a3bc586426ccbc2edd96c50babaa62c36',1,'LPC21xx.h']]],
   ['i2c1stat',['I2C1STAT',['../LPC21xx_8h.html#adbba5de491b6cf3df5876cfd40c9feb1',1,'LPC21xx.h']]],
   ['i2c2_5fclock_5fspeed',['I2C2_CLOCK_SPEED',['../stm32_2mcu__periph_2i2c__arch_8c.html#ac0a2e46dae466187803c62e2e9bef045',1,'i2c_arch.c']]],
+  ['i2c2transmitwithretry',['I2C2TransmitWithRetry',['../imu__aspirin_8c.html#a79e01c2784da8d83042a7177ec455570',1,'imu_aspirin.c']]],
   ['i2c_5fbuf_5flen',['I2C_BUF_LEN',['../group__i2c.html#ga4757adc18b278c40ced0d79f4e104460',1,'i2c.h']]],
   ['i2c_5fbusy',['I2C_BUSY',['../i2c__arch_8old_8c.html#ad7e560082ad99fc26904882405b26377',1,'I2C_BUSY():&#160;i2c_arch.old.c'],['../i2c__arch_8very__old_8c.html#ad7e560082ad99fc26904882405b26377',1,'I2C_BUSY():&#160;i2c_arch.very_old.c']]],
   ['i2c_5fcr1_5fbit_5fack',['I2C_CR1_BIT_ACK',['../i2c__attempt2__nolib_8c.html#a2876c6a06c42a78106d7ce7798189f13',1,'I2C_CR1_BIT_ACK():&#160;i2c_attempt2_nolib.c'],['../i2c__attempt3__subtra_8c.html#a2876c6a06c42a78106d7ce7798189f13',1,'I2C_CR1_BIT_ACK():&#160;i2c_attempt3_subtra.c'],['../i2c__attempt4__nodouble__isr_8c.html#a2876c6a06c42a78106d7ce7798189f13',1,'I2C_CR1_BIT_ACK():&#160;i2c_attempt4_nodouble_isr.c']]],
