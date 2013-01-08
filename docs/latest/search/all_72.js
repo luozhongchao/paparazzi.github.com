@@ -250,7 +250,6 @@ var searchData=
   ['rotorcraft_5fcam_5ftilt_5fpwm',['rotorcraft_cam_tilt_pwm',['../rotorcraft__cam_8c.html#adda457c04709dca302b7342870c93dc8',1,'rotorcraft_cam_tilt_pwm():&#160;rotorcraft_cam.c'],['../rotorcraft__cam_8h.html#adda457c04709dca302b7342870c93dc8',1,'rotorcraft_cam_tilt_pwm():&#160;rotorcraft_cam.c']]],
   ['rotorcraft_5fcam_5fuse_5fpan',['ROTORCRAFT_CAM_USE_PAN',['../rotorcraft__cam_8h.html#a17b684c400fcff7720d1096e2cba7a74',1,'rotorcraft_cam.h']]],
   ['rotorcraft_5fcam_5fuse_5ftilt',['ROTORCRAFT_CAM_USE_TILT',['../rotorcraft__cam_8h.html#a2d9ecb115620709d71bf6fbdf71e0608',1,'rotorcraft_cam.h']]],
-  ['rotorcraftcommandstest',['RotorcraftCommandsTest',['../rotorcraft_2autopilot_8h.html#a97bc649e036bc9192e841e5dafd12498',1,'autopilot.h']]],
   ['rsize',['RSIZE',['../w5100_8c.html#a80a9583c56581301cc2877a18176b654',1,'w5100.c']]],
   ['rst',['RST',['../w5100_8c.html#a627f213804256ddcafeb943052fa63e5',1,'w5100.c']]],
   ['rt1',['RT1',['../nav_8c.html#aab42b8493c217be79eb8f2523b6aed32a6975c28de6cfc40ea7b0a60d2bad7953',1,'nav.c']]],

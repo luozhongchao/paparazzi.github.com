@@ -105,6 +105,7 @@ var searchData=
   ['setacinfo',['SetAcInfo',['../traffic__info_8h.html#a9c6b528a41fdb94abf2163b08523e82c',1,'traffic_info.h']]],
   ['setcommands',['SetCommands',['../commands_8h.html#a75054f73ea928d6ec314b745bf672106',1,'commands.h']]],
   ['setintflag',['SetIntFlag',['../lpc21_2modules_2core_2trigger__ext__hw_8h.html#a5658c774b5ef4bc5375472a1beba9ddc',1,'trigger_ext_hw.h']]],
+  ['setrotorcraftcommands',['SetRotorcraftCommands',['../rotorcraft_2autopilot_8h.html#a0c2bf031c6045d8734301710cd080aa8',1,'autopilot.h']]],
   ['settings_5fstoresettings',['settings_StoreSettings',['../settings_8h.html#a154b4e2fefccf2a235cf571d56b0efc2',1,'settings.h']]],
   ['sgl_5fdif',['SGL_DIF',['../ADS8344_8c.html#a87866f9987fb38ca70a19a737bbd0628',1,'SGL_DIF():&#160;ADS8344.c'],['../lpc21_2subsystems_2imu_2imu__crista__arch_8c.html#a87866f9987fb38ca70a19a737bbd0628',1,'SGL_DIF():&#160;imu_crista_arch.c'],['../stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a87866f9987fb38ca70a19a737bbd0628',1,'SGL_DIF():&#160;imu_crista_arch.c']]],
   ['sht2_5fread_5fuser',['SHT2_READ_USER',['../humid__sht__i2c_8h.html#a41e0fee930e34c43906324ff6b369cd8',1,'humid_sht_i2c.h']]],
