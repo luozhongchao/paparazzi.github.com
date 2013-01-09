@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['navigation_20leds',['Navigation leds',['../module__light.html',1,'onboard_modules']]],
+  ['navigate_20around_20two_20poles',['Navigate around two poles',['../module__poles.html',1,'onboard_modules']]],
   ['n',['n',['../structAccBuf.html#a687326ed76add3d29ee2fd00f3c6d5fc',1,'AccBuf::n()'],['../pprz__geodetic__utm_8h.html#a0240ac851181b84ac374872dc5434ee4',1,'N():&#160;pprz_geodetic_utm.h']]],
   ['n_5fevent',['n_event',['../sys__mon_8c.html#a2ffeeceeb63d6563ea035e8cd72848cf',1,'sys_mon.c']]],
   ['n_5fmax_5fof_5fgh',['N_MAX_OF_GH',['../pprz__geodetic__wmm2010_8h.html#a14fae9a0d6423e6436793d10df70feeb',1,'pprz_geodetic_wmm2010.h']]],
@@ -38,7 +40,7 @@ var searchData=
   ['nav_5fcatapult_5fhighrate_5fmodule',['nav_catapult_highrate_module',['../nav__catapult_8c.html#afc9cb27f8b568c7117d4fc7bfd09afbc',1,'nav_catapult_highrate_module(void):&#160;nav_catapult.c'],['../nav__catapult_8h.html#afc9cb27f8b568c7117d4fc7bfd09afbc',1,'nav_catapult_highrate_module(void):&#160;nav_catapult.c']]],
   ['nav_5fcatapult_5finit',['nav_catapult_init',['../nav__catapult_8c.html#a5f1c9ada9f5651d5cd3324b22f869c4b',1,'nav_catapult_init(void):&#160;nav_catapult.c'],['../nav__catapult_8h.html#a5f1c9ada9f5651d5cd3324b22f869c4b',1,'nav_catapult_init(void):&#160;nav_catapult.c']]],
   ['nav_5fcatapult_5finitial_5fpitch',['nav_catapult_initial_pitch',['../nav__catapult_8c.html#aa26f9a9c248db58f29f546944be2cf4c',1,'nav_catapult_initial_pitch():&#160;nav_catapult.c'],['../nav__catapult_8h.html#aa26f9a9c248db58f29f546944be2cf4c',1,'nav_catapult_initial_pitch():&#160;nav_catapult.c'],['../nav__catapult_8c.html#a698a2e847494cc1bde2f621a2d5bc958',1,'NAV_CATAPULT_INITIAL_PITCH():&#160;nav_catapult.c']]],
-  ['nav_5fcatapult_5finitial_5fthrottle',['nav_catapult_initial_throttle',['../nav__catapult_8c.html#aee421b9216367f9e94954796dadc0d12',1,'nav_catapult_initial_throttle():&#160;nav_catapult.c'],['../nav__catapult_8h.html#aee421b9216367f9e94954796dadc0d12',1,'nav_catapult_initial_throttle():&#160;nav_catapult.c'],['../nav__catapult_8c.html#a605f716f37ba4dd117402212690eabd1',1,'NAV_CATAPULT_INITIAL_THROTTLE():&#160;nav_catapult.c']]],
+  ['nav_5fcatapult_5finitial_5fthrottle',['NAV_CATAPULT_INITIAL_THROTTLE',['../nav__catapult_8c.html#a605f716f37ba4dd117402212690eabd1',1,'NAV_CATAPULT_INITIAL_THROTTLE():&#160;nav_catapult.c'],['../nav__catapult_8c.html#aee421b9216367f9e94954796dadc0d12',1,'nav_catapult_initial_throttle():&#160;nav_catapult.c'],['../nav__catapult_8h.html#aee421b9216367f9e94954796dadc0d12',1,'nav_catapult_initial_throttle():&#160;nav_catapult.c']]],
   ['nav_5fcatapult_5flaunch',['nav_catapult_launch',['../nav__catapult_8c.html#a673bbbfaee6f1a668f788e96d1b76224',1,'nav_catapult.c']]],
   ['nav_5fcatapult_5fmotor_5fdelay',['NAV_CATAPULT_MOTOR_DELAY',['../nav__catapult_8c.html#a5ff5d0d94501c89d3c6c886b3cb6ad46',1,'NAV_CATAPULT_MOTOR_DELAY():&#160;nav_catapult.c'],['../nav__catapult_8c.html#a1f9c6847f3fe9019fbe8a7b406b8cc72',1,'nav_catapult_motor_delay():&#160;nav_catapult.c'],['../nav__catapult_8h.html#a1f9c6847f3fe9019fbe8a7b406b8cc72',1,'nav_catapult_motor_delay():&#160;nav_catapult.c']]],
   ['nav_5fcatapult_5fx',['nav_catapult_x',['../nav__catapult_8c.html#a8bf80d1e289a2e3df569465f176d5bd2',1,'nav_catapult.c']]],
@@ -213,7 +215,7 @@ var searchData=
   ['navverticalthrottlemode',['NavVerticalThrottleMode',['../navigation_8h.html#a6f740d9f9313ba73fa7dcd9dd53c4440',1,'NavVerticalThrottleMode():&#160;navigation.h'],['../nav_8h.html#a6f740d9f9313ba73fa7dcd9dd53c4440',1,'NavVerticalThrottleMode():&#160;nav.h']]],
   ['nb_5facs',['NB_ACS',['../traffic__info_8h.html#aa9ad271011923751218b103cae2e0bfd',1,'traffic_info.h']]],
   ['nb_5facs_5fid',['NB_ACS_ID',['../traffic__info_8h.html#aa556f49efe565705c817f8a7c01f97a9',1,'traffic_info.h']]],
-  ['nb_5fadc',['NB_ADC',['../stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4',1,'adc_arch.h']]],
+  ['nb_5fadc',['NB_ADC',['../stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4',1,'NB_ADC():&#160;adc_arch.h'],['../adc_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4',1,'NB_ADC():&#160;adc.h']]],
   ['nb_5fadc1_5fchannels',['NB_ADC1_CHANNELS',['../stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd',1,'adc_arch.h']]],
   ['nb_5fadc2_5fchannels',['NB_ADC2_CHANNELS',['../stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4',1,'adc_arch.h']]],
   ['nb_5fanalog_5fimu_5fadc',['NB_ANALOG_IMU_ADC',['../imu__analog_8h.html#aa951d9420e2582f372f30512a5c47940',1,'imu_analog.h']]],

@@ -15,7 +15,14 @@ var nav_8c =
     [ "PowerVoltage", "nav_8c.html#ac654524aa60945f0eab4bed7521c3011", null ],
     [ "RCLost", "nav_8c.html#ac3892fe123b99e805c0c5d5b1b4cd144", null ],
     [ "RcRoll", "nav_8c.html#a7c6d9ca050122212a8a269e08f8c23f2", null ],
-    [ "eight_status", "nav_8c.html#aab42b8493c217be79eb8f2523b6aed32", null ],
+    [ "eight_status", "nav_8c.html#aab42b8493c217be79eb8f2523b6aed32", [
+      [ "R1T", "nav_8c.html#aab42b8493c217be79eb8f2523b6aed32abe183b30b1054c0977b12028d7a38ae0", null ],
+      [ "RT2", "nav_8c.html#aab42b8493c217be79eb8f2523b6aed32a64f284f7c34d2b28e318b452acd38672", null ],
+      [ "C2", "nav_8c.html#aab42b8493c217be79eb8f2523b6aed32a5e602f1d68586231698bda7be6af7d2e", null ],
+      [ "R2T", "nav_8c.html#aab42b8493c217be79eb8f2523b6aed32ac3a5bc8a5c131d8463ba354e54b2305b", null ],
+      [ "RT1", "nav_8c.html#aab42b8493c217be79eb8f2523b6aed32a6975c28de6cfc40ea7b0a60d2bad7953", null ],
+      [ "C1", "nav_8c.html#aab42b8493c217be79eb8f2523b6aed32ae54c31a855b907f263d49edcdbe677bd", null ]
+    ] ],
     [ "compute_TOD", "nav_8c.html#ad9cc0030bdcfa2192dda22875ca68934", null ],
     [ "fly_to_xy", "nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0", null ],
     [ "nav_approaching_xy", "nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b", null ],

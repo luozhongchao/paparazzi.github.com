@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['u_2dblox_20gps_20_28i2c_29',['U-blox GPS (I2C)',['../module__gps_i2c.html',1,'onboard_modules']]],
+  ['ublox_20gps_20_28uart_29',['Ublox gps (uart)',['../module__gps_ubx_uart.html',1,'onboard_modules']]],
+  ['ublox_20gps_20autoconfiguration',['Ublox GPS autoconfiguration',['../module__gps_ubx_ucenter.html',1,'onboard_modules']]],
   ['u0_5fpinmask',['U0_PINMASK',['../LPC21xx_8h.html#a410f6d3e8d84bad7213cf910855cbd2d',1,'LPC21xx.h']]],
   ['u0_5fpinmask_5frx',['U0_PINMASK_RX',['../LPC21xx_8h.html#adb530dd7a2d0161c771a71d5f39dcca2',1,'LPC21xx.h']]],
   ['u0_5fpinsel',['U0_PINSEL',['../LPC21xx_8h.html#af0bd75f427852595defc905beac76626',1,'LPC21xx.h']]],

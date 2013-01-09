@@ -1,5 +1,6 @@
 var abi__common_8h =
 [
+    [ "abi_struct", "structabi__struct.html", "structabi__struct" ],
     [ "ABI_BROADCAST", "abi__common_8h.html#a89a673124c7bb521be4e42d4bc0d29cb", null ],
     [ "ABI_FOREACH", "abi__common_8h.html#ac90a3c737b2277bc87d97c927db20f2f", null ],
     [ "ABI_PREPEND", "abi__common_8h.html#a8930c13ddeafcf5d6d9c9eb23595e7bb", null ],

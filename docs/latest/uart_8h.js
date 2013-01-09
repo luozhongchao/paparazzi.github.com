@@ -1,5 +1,6 @@
 var uart_8h =
 [
+    [ "uart_periph", "structuart__periph.html", "structuart__periph" ],
     [ "UART_DEV_NAME_SIZE", "uart_8h.html#a3051c7589823b3d87a8942c960ccada6", null ],
     [ "UART_RX_BUFFER_SIZE", "uart_8h.html#a5bdd6772c246436bb14377095de79b31", null ],
     [ "UART_TX_BUFFER_SIZE", "uart_8h.html#a05f5d709605c6317c97e4974bec3402a", null ],

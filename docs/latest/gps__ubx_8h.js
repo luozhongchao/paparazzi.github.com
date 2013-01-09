@@ -1,5 +1,6 @@
 var gps__ubx_8h =
 [
+    [ "GpsUbx", "structGpsUbx.html", "structGpsUbx" ],
     [ "__GpsLink", "gps__ubx_8h.html#ab289c425d7a9205c6967a627e7bf250b", null ],
     [ "_GpsLink", "gps__ubx_8h.html#ac6a92e682d6ac01b41c965dbd3985d1a", null ],
     [ "CFG_RST_Reset_Controlled", "gps__ubx_8h.html#a7aade7f623e99ebbe8b4dfb6f04d0c71", null ],

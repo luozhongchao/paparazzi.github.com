@@ -1,5 +1,11 @@
 var pprz__geodetic__float_8h =
 [
+    [ "EcefCoor_f", "structEcefCoor__f.html", "structEcefCoor__f" ],
+    [ "LlaCoor_f", "structLlaCoor__f.html", "structLlaCoor__f" ],
+    [ "NedCoor_f", "structNedCoor__f.html", "structNedCoor__f" ],
+    [ "EnuCoor_f", "structEnuCoor__f.html", "structEnuCoor__f" ],
+    [ "UtmCoor_f", "structUtmCoor__f.html", "structUtmCoor__f" ],
+    [ "LtpDef_f", "structLtpDef__f.html", "structLtpDef__f" ],
     [ "ecef_of_enu_point_f", "pprz__geodetic__float_8h.html#a197187e7b04018beddfcd6a7a4ab3972", null ],
     [ "ecef_of_enu_vect_f", "pprz__geodetic__float_8h.html#a47f5b349030d33970728f4c332c70cf0", null ],
     [ "ecef_of_lla_f", "pprz__geodetic__float_8h.html#a65bc5ba8b61d014ca659035759cc001c", null ],

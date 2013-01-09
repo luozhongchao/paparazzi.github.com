@@ -1,5 +1,6 @@
 var hf__float_8c =
 [
+    [ "AccBuf", "structAccBuf.html", "structAccBuf" ],
     [ "ACC_RB_MAXN", "hf__float_8c.html#ab59a210a73537a6d1ac061cb5f2e718f", null ],
     [ "HFF_ACCEL_NOISE", "hf__float_8c.html#adfd8e6a9e652df9dde3ea9c95e4f2a10", null ],
     [ "HFF_R_POS", "hf__float_8c.html#acbec0ef7b48091f19b3b02b5f0d4c83d", null ],

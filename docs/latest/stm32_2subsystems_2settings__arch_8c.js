@@ -1,5 +1,6 @@
 var stm32_2subsystems_2settings__arch_8c =
 [
+    [ "FlashInfo", "structFlashInfo.html", "structFlashInfo" ],
     [ "FCHK", "stm32_2subsystems_2settings__arch_8c.html#a486ad2adc27b733aa4476b6ddcfa2edb", null ],
     [ "FLASH_BEGIN", "stm32_2subsystems_2settings__arch_8c.html#a6c625081eebc2da015cedc450022605b", null ],
     [ "FLASH_SIZE_", "stm32_2subsystems_2settings__arch_8c.html#a8ae63999104fb3116e6c03e0b3dd4912", null ],

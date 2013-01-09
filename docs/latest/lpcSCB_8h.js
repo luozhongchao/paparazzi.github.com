@@ -1,5 +1,7 @@
 var lpcSCB_8h =
 [
+    [ "scbRegs_t", "structscbRegs__t.html", "structscbRegs__t" ],
+    [ "CCLK", "lpcSCB_8h.html#addec7d88e04ddfe6ac90caf602636c51", null ],
     [ "FCCO", "lpcSCB_8h.html#a9145c93ff5bd698e9d4b12d5cebd366e", null ],
     [ "FCCO_MAX", "lpcSCB_8h.html#a32689e6253c6c01f13e146be0464de03", null ],
     [ "MAMCR_FULL", "lpcSCB_8h.html#af8c1097a1eff196c54e4c26220a84e11", null ],

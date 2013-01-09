@@ -1,5 +1,6 @@
 var ahrs_8h =
 [
+    [ "Ahrs", "structAhrs.html", "structAhrs" ],
     [ "AHRS_RUNNING", "ahrs_8h.html#aaf3251b3c47097842d7dda09c76930f4", null ],
     [ "AHRS_UNINIT", "ahrs_8h.html#a7e2c3de6a795ce2c01d6c2083293cf39", null ],
     [ "ahrs_align", "ahrs_8h.html#a81e17b09f47068c02c345da1523f589b", null ],

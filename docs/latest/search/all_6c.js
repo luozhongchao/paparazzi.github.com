@@ -213,6 +213,7 @@ var searchData=
   ['light_2ec',['light.c',['../light_8c.html',1,'']]],
   ['light_2eh',['light.h',['../light_8h.html',1,'']]],
   ['light_5fcnt',['light_cnt',['../light__solar_8c.html#a831ddfb4155fdd57df9ff70f0df6033b',1,'light_cnt():&#160;light_solar.c'],['../light__solar_8h.html#a831ddfb4155fdd57df9ff70f0df6033b',1,'light_cnt():&#160;light_solar.c']]],
+  ['light_5fled_5fstrobe',['LIGHT_LED_STROBE',['../light_8h.html#a4b7458780574fd74d37dbe62a9bc35b1',1,'light.h']]],
   ['light_5fnb',['LIGHT_NB',['../light__solar_8h.html#a625b0cd4756749febeb68c16df8085f9',1,'light_solar.h']]],
   ['light_5fsolar_2ec',['light_solar.c',['../light__solar_8c.html',1,'']]],
   ['light_5fsolar_2eh',['light_solar.h',['../light__solar_8h.html',1,'']]],
@@ -313,6 +314,7 @@ var searchData=
   ['lp_5fgyro',['lp_gyro',['../structAhrsAligner.html#abe1c42a62eceda126bf111397c3e7571',1,'AhrsAligner']]],
   ['lp_5fmag',['lp_mag',['../structAhrsAligner.html#aaf9f84dd40ecc27b22541b3e22096c98',1,'AhrsAligner']]],
   ['lp_5fvdot',['lp_vdot',['../energy__ctrl_8c.html#aae48bdb85c0ca48d03f94624444fe775',1,'energy_ctrl.c']]],
+  ['lpc21_20architecture',['LPC21 architecture',['../group__lpc21__arch.html',1,'']]],
   ['lpc21xx_2eh',['LPC21xx.h',['../LPC21xx_8h.html',1,'']]],
   ['lpcadc_2eh',['lpcADC.h',['../lpcADC_8h.html',1,'']]],
   ['lpccan_2eh',['lpcCAN.h',['../lpcCAN_8h.html',1,'']]],
@@ -352,5 +354,9 @@ var searchData=
   ['ltpdef_5ff',['LtpDef_f',['../structLtpDef__f.html',1,'']]],
   ['ltpdef_5fi',['LtpDef_i',['../structLtpDef__i.html',1,'']]],
   ['lut_5ferr_5fad',['lut_err_ad',['../structcan__accept__Regs__t.html#ab6d16f8be412a9600fd2e4c2c635fb7c',1,'can_accept_Regs_t']]],
-  ['lut_5ferr_5freg',['lut_err_reg',['../structcan__accept__Regs__t.html#ac8311f647b75a7b740445675a8ea199a',1,'can_accept_Regs_t']]]
+  ['lut_5ferr_5freg',['lut_err_reg',['../structcan__accept__Regs__t.html#ac8311f647b75a7b740445675a8ea199a',1,'can_accept_Regs_t']]],
+  ['led_20safety_20indicator',['LED safety indicator',['../module__led_safety_status.html',1,'onboard_modules']]],
+  ['light_20solar',['Light Solar',['../module__light_solar.html',1,'onboard_modules']]],
+  ['light_20temt',['Light Temt',['../module__light_temt.html',1,'onboard_modules']]],
+  ['lm75_20temparature_20sensor',['LM75 temparature sensor',['../module__temp_lm75.html',1,'onboard_modules']]]
 ];

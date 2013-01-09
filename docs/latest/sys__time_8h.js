@@ -1,5 +1,7 @@
 var sys__time_8h =
 [
+    [ "sys_time_timer", "structsys__time__timer.html", "structsys__time__timer" ],
+    [ "sys_time", "structsys__time.html", "structsys__time" ],
     [ "CPU_TICKS_OF_NSEC", "sys__time_8h.html#a1789d5dc7529caa0810e31b80b6e6343", null ],
     [ "CPU_TICKS_OF_USEC", "sys__time_8h.html#a167a98a5809c390ff634c56319833917", null ],
     [ "CPU_TICKS_PER_SEC", "sys__time_8h.html#a57db0faf759b28c0d876dcbe04cfeb57", null ],

@@ -1,5 +1,6 @@
 var lpcUART_8h =
 [
+    [ "uartRegs_t", "structuartRegs__t.html", "structuartRegs__t" ],
     [ "UFCR_FIFO_ENABLE", "lpcUART_8h.html#afb78513339161a1be97c900f3bacd025", null ],
     [ "UFCR_FIFO_TRIG1", "lpcUART_8h.html#a4e5a644a8f0c48bee043adf174157906", null ],
     [ "UFCR_FIFO_TRIG14", "lpcUART_8h.html#a42a07241cb417751203f7189b1cfd961", null ],

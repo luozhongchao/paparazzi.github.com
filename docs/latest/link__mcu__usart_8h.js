@@ -1,5 +1,6 @@
 var link__mcu__usart_8h =
 [
+    [ "link_mcu_msg", "structlink__mcu__msg.html", "structlink__mcu__msg" ],
     [ "link_mcu_event_task", "link__mcu__usart_8h.html#ac8ca91741aea5e6803a8db35d4c8188e", null ],
     [ "link_mcu_init", "link__mcu__usart_8h.html#a4811adaa420099181f04d75d5ba24c25", null ],
     [ "link_mcu_periodic_task", "link__mcu__usart_8h.html#a822c4985aa0c0410ceb98e31dc539aa9", null ],

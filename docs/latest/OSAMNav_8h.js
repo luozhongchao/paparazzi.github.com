@@ -1,5 +1,7 @@
 var OSAMNav_8h =
 [
+    [ "Point2D", "structPoint2D.html", "structPoint2D" ],
+    [ "Line", "structLine.html", "structLine" ],
     [ "MaxFloat", "OSAMNav_8h.html#a75197b2a5458093f02e396c7429f64ad", null ],
     [ "MinFloat", "OSAMNav_8h.html#a81eb8d41067d9dbbd7d939bbed2befda", null ],
     [ "PolygonSize", "OSAMNav_8h.html#ae51783bbeba64f5dc4e0671bc34998f8", null ],

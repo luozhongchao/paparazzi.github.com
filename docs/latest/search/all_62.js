@@ -499,5 +499,14 @@ var searchData=
   ['buoy_5f1',['buoy_1',['../deploy__sonar__buoy_8c.html#a2b8c3cc9abbd176e7ff6eb3869fe03c1',1,'buoy_1():&#160;deploy_sonar_buoy.c'],['../deploy__sonar__buoy_8h.html#a2b8c3cc9abbd176e7ff6eb3869fe03c1',1,'buoy_1():&#160;deploy_sonar_buoy.c']]],
   ['buoy_5f2',['buoy_2',['../deploy__sonar__buoy_8c.html#afa4a947f87d2bd4b6e76201f7c68264f',1,'buoy_2():&#160;deploy_sonar_buoy.c'],['../deploy__sonar__buoy_8h.html#afa4a947f87d2bd4b6e76201f7c68264f',1,'buoy_2():&#160;deploy_sonar_buoy.c']]],
   ['busy',['BUSY',['../lisa__overo__link_8h.html#ad9636c84365cd0534987d1dc1d6bb602aa6e504d57ec9777faa0185fbd3b93b97',1,'lisa_overo_link.h']]],
-  ['buzzer_5fled',['BUZZER_LED',['../hb__1_81_8h.html#aad18f93c20dfcc437ec0ea0fd4d81f08',1,'hb_1.1.h']]]
+  ['buzzer_5fled',['BUZZER_LED',['../hb__1_81_8h.html#aad18f93c20dfcc437ec0ea0fd4d81f08',1,'hb_1.1.h']]],
+  ['baro_20ets_20_28i2c_29',['Baro ETS (I2C)',['../module__baro_amsys.html',1,'onboard_modules']]],
+  ['bosch_20bmp085_20pressure_20sensor',['Bosch BMP085 pressure sensor',['../module__baro_bmp.html',1,'onboard_modules']]],
+  ['baro_20board_20wrapper',['Baro board wrapper',['../module__baro_board.html',1,'onboard_modules']]],
+  ['baro_20ets_20_28i2c_29',['Baro ETS (I2C)',['../module__baro_ets.html',1,'onboard_modules']]],
+  ['baro_20sensortechnics_20hca_20_28i2c_29',['Baro sensortechnics HCA (I2C)',['../module__baro_hca.html',1,'onboard_modules']]],
+  ['baro_20mpl3115a2_20_28i2c_29',['Baro MPL3115A2 (I2C)',['../module__baro_mpl3115.html',1,'onboard_modules']]],
+  ['baro_20ms5611_20_28i2c_29',['Baro MS5611 (I2C)',['../module__baro_ms5611_i2c.html',1,'onboard_modules']]],
+  ['battery_20checker_20module',['Battery checker module',['../module__bat_checker.html',1,'onboard_modules']]],
+  ['benchmark',['Benchmark',['../module__i2c_abuse_test.html',1,'onboard_modules']]]
 ];

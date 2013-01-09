@@ -1,5 +1,6 @@
 var imu__nps_8h =
 [
+    [ "ImuNps", "structImuNps.html", "structImuNps" ],
     [ "IMU_ACCEL_X_SENS", "imu__nps_8h.html#a8ac88fc00cde506229b92c6a1e2c3122", null ],
     [ "IMU_ACCEL_X_SENS_DEN", "imu__nps_8h.html#a8acf299c1bfb2daa92b1894556ca50ad", null ],
     [ "IMU_ACCEL_X_SENS_NUM", "imu__nps_8h.html#ada91099469f16df2d8aeafa82d365c4b", null ],

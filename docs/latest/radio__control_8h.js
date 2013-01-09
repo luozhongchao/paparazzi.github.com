@@ -1,5 +1,6 @@
 var radio__control_8h =
 [
+    [ "RadioControl", "structRadioControl.html", "structRadioControl" ],
     [ "RC_AVG_PERIOD", "radio__control_8h.html#adb1604ef051d981df6de90b770a9ef19", null ],
     [ "RC_LOST", "radio__control_8h.html#ae260ed6c98624fcd1d70c232038204d2", null ],
     [ "RC_LOST_TIME", "radio__control_8h.html#a404df0edd984fbb9364e5b09e46fff5d", null ],

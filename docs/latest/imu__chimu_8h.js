@@ -1,5 +1,11 @@
 var imu__chimu_8h =
 [
+    [ "CHIMU_Euler", "structCHIMU__Euler.html", "structCHIMU__Euler" ],
+    [ "CHIMU_Vector", "structCHIMU__Vector.html", "structCHIMU__Vector" ],
+    [ "CHIMU_Quaternion", "structCHIMU__Quaternion.html", "structCHIMU__Quaternion" ],
+    [ "CHIMU_attitude_data", "structCHIMU__attitude__data.html", "structCHIMU__attitude__data" ],
+    [ "CHIMU_sensor_data", "structCHIMU__sensor__data.html", "structCHIMU__sensor__data" ],
+    [ "CHIMU_PARSER_DATA", "structCHIMU__PARSER__DATA.html", "structCHIMU__PARSER__DATA" ],
     [ "CHIMU_BROADCAST", "imu__chimu_8h.html#aa622d4ac568cbc8ddad01a16b7eb1004", null ],
     [ "CHIMU_Msg_0_Ping", "imu__chimu_8h.html#a540bbc5a40973634a607d66075662134", null ],
     [ "CHIMU_Msg_10_Res", "imu__chimu_8h.html#acbcd14134a7f8d69c70047caf2e59a05", null ],

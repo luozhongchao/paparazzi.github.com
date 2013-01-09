@@ -1,5 +1,7 @@
 var ins__xsens_8h =
 [
+    [ "XsensTime", "structXsensTime.html", "structXsensTime" ],
+    [ "ImuXsens", "structImuXsens.html", "structImuXsens" ],
     [ "ImuEvent", "ins__xsens_8h.html#a5b61834fdd9dc32e2f93b974354c7402", null ],
     [ "imu_xsens", "ins__xsens_8h.html#a324f6180f03e88fef60ce50a04a7c165", null ],
     [ "xsens_msg_status", "ins__xsens_8h.html#a05acf815522ac351803010e46bdd0630", null ],

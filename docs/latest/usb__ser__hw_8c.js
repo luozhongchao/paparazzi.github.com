@@ -1,5 +1,7 @@
 var usb__ser__hw_8c =
 [
+    [ "fifo_t", "structfifo__t.html", "structfifo__t" ],
+    [ "TLineCoding", "structTLineCoding.html", "structTLineCoding" ],
     [ "ASSERT", "usb__ser__hw_8c.html#aca68c0d4ac8df0838e209fb5300f7be3", null ],
     [ "BULK_IN_EP", "usb__ser__hw_8c.html#a2b14747c794ad7a348cd918e9df57d36", null ],
     [ "BULK_OUT_EP", "usb__ser__hw_8c.html#adc59cdd5baf21c8e5065bdfe7a5a928b", null ],

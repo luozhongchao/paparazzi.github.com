@@ -183,5 +183,9 @@ var searchData=
   ['ezcurrent_5fi2c_5ftrans',['ezcurrent_i2c_trans',['../ezcurrent_8c.html#aace3bfef7af597fc8329642617405759',1,'ezcurrent.c']]],
   ['ezcurrent_5finit',['ezcurrent_init',['../ezcurrent_8c.html#aa6804824f29b51877de0aa02559004b2',1,'ezcurrent_init(void):&#160;ezcurrent.c'],['../ezcurrent_8h.html#aa6804824f29b51877de0aa02559004b2',1,'ezcurrent_init(void):&#160;ezcurrent.c']]],
   ['ezcurrent_5fread_5fevent',['ezcurrent_read_event',['../ezcurrent_8c.html#ad4bee3c589fed6c866015ae65bde6d72',1,'ezcurrent_read_event(void):&#160;ezcurrent.c'],['../ezcurrent_8h.html#ad4bee3c589fed6c866015ae65bde6d72',1,'ezcurrent_read_event(void):&#160;ezcurrent.c']]],
-  ['ezcurrent_5fread_5fperiodic',['ezcurrent_read_periodic',['../ezcurrent_8c.html#a882435b923f29a6c1551dfc546124ea2',1,'ezcurrent_read_periodic(void):&#160;ezcurrent.c'],['../ezcurrent_8h.html#a882435b923f29a6c1551dfc546124ea2',1,'ezcurrent_read_periodic(void):&#160;ezcurrent.c']]]
+  ['ezcurrent_5fread_5fperiodic',['ezcurrent_read_periodic',['../ezcurrent_8c.html#a882435b923f29a6c1551dfc546124ea2',1,'ezcurrent_read_periodic(void):&#160;ezcurrent.c'],['../ezcurrent_8h.html#a882435b923f29a6c1551dfc546124ea2',1,'ezcurrent_read_periodic(void):&#160;ezcurrent.c']]],
+  ['extra_20datalink_20_28pprz_20transport_29',['Extra datalink (PPRZ transport)',['../module__extra_dl.html',1,'onboard_modules']]],
+  ['ezosd_20current_20sensor_20_28i2c_29',['EzOSD Current sensor (I2C)',['../module__ezcurrent.html',1,'onboard_modules']]],
+  ['ea_20dog_2dm163_20lcd_20_28spi_29',['EA DOG-M163 LCD (SPI)',['../module__lcd_dogm.html',1,'onboard_modules']]],
+  ['external_20trigger',['External trigger',['../module__trigger_ext.html',1,'onboard_modules']]]
 ];

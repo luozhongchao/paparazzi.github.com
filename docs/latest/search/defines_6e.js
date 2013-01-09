@@ -83,7 +83,7 @@ var searchData=
   ['navverticalthrottlemode',['NavVerticalThrottleMode',['../navigation_8h.html#a6f740d9f9313ba73fa7dcd9dd53c4440',1,'NavVerticalThrottleMode():&#160;navigation.h'],['../nav_8h.html#a6f740d9f9313ba73fa7dcd9dd53c4440',1,'NavVerticalThrottleMode():&#160;nav.h']]],
   ['nb_5facs',['NB_ACS',['../traffic__info_8h.html#aa9ad271011923751218b103cae2e0bfd',1,'traffic_info.h']]],
   ['nb_5facs_5fid',['NB_ACS_ID',['../traffic__info_8h.html#aa556f49efe565705c817f8a7c01f97a9',1,'traffic_info.h']]],
-  ['nb_5fadc',['NB_ADC',['../stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4',1,'adc_arch.h']]],
+  ['nb_5fadc',['NB_ADC',['../stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4',1,'NB_ADC():&#160;adc_arch.h'],['../adc_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4',1,'NB_ADC():&#160;adc.h']]],
   ['nb_5fanalog_5fimu_5fadc',['NB_ANALOG_IMU_ADC',['../imu__analog_8h.html#aa951d9420e2582f372f30512a5c47940',1,'imu_analog.h']]],
   ['nb_5fangles',['NB_ANGLES',['../snav_8c.html#aaaf4149e0c6f6cd045fc7eab557c0744',1,'snav.c']]],
   ['nb_5fchannels',['NB_CHANNELS',['../ADS8344_8h.html#a4559069a0477805f310137e5a551b7a0',1,'ADS8344.h']]],

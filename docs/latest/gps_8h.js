@@ -1,5 +1,8 @@
 var gps_8h =
 [
+    [ "SVinfo", "structSVinfo.html", "structSVinfo" ],
+    [ "GpsState", "structGpsState.html", "structGpsState" ],
+    [ "GpsTimeSync", "structGpsTimeSync.html", "structGpsTimeSync" ],
     [ "CFG_RST_BBR_Coldstart", "gps_8h.html#a033eb7e9d0a2d4c052b2b7dc540a6f78", null ],
     [ "CFG_RST_BBR_Hotstart", "gps_8h.html#a7ae89f9ea32678711d1805a2ae91a52d", null ],
     [ "CFG_RST_BBR_Warmstart", "gps_8h.html#ab3c7d3272c3494d2c52673856636091f", null ],

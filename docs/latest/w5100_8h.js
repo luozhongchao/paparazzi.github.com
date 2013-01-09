@@ -1,5 +1,7 @@
 var w5100_8h =
 [
+    [ "w5100_periph", "structw5100__periph.html", "structw5100__periph" ],
+    [ "w5100_transport", "structw5100__transport.html", "structw5100__transport" ],
     [ "GOT_CRC1", "w5100_8h.html#aab6cb4f3e687be8d98c60f8bb14872b8", null ],
     [ "GOT_LENGTH", "w5100_8h.html#a74b9c2790d0a3e81489a3da279ccc98e", null ],
     [ "GOT_PAYLOAD", "w5100_8h.html#a6d9ad6e4a25bbf5ef73a8dcefd5cc687", null ],
@@ -45,7 +47,11 @@ var w5100_8h =
     [ "W5100TransportSizeOf", "w5100_8h.html#a83aabe5b249eecbd590ba8bbfe4e68d2", null ],
     [ "W5100TransportTrailer", "w5100_8h.html#aa91ac60ee9a6d2f96a27282c2a8844b4", null ],
     [ "W5100TxRunning", "w5100_8h.html#adba3e401c58d09c949ea860f6bab4266", null ],
-    [ "W5100Status", "w5100_8h.html#a1b86a774f206095259ed0b6034d24c60", null ],
+    [ "W5100Status", "w5100_8h.html#a1b86a774f206095259ed0b6034d24c60", [
+      [ "W5100StatusUninit", "w5100_8h.html#a1b86a774f206095259ed0b6034d24c60add68bba90146d71b9a76a2bafdc99aa8", null ],
+      [ "W5100StatusIdle", "w5100_8h.html#a1b86a774f206095259ed0b6034d24c60a6a38ad46c46871635bc8259ced43cac2", null ],
+      [ "W5100StatusReading", "w5100_8h.html#a1b86a774f206095259ed0b6034d24c60a3a6a9f662ae29489dc46fd5fbffaa805", null ]
+    ] ],
     [ "parse_w5100", "w5100_8h.html#aa74d44e0651e573e7f40c02784fce1c4", null ],
     [ "w5100_ch_available", "w5100_8h.html#afd09c437e15b551fa76f1bf6439a2109", null ],
     [ "w5100_init", "w5100_8h.html#a3a4ec6731e43710788d3e51f7749259c", null ],

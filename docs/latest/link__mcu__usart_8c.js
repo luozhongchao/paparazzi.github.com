@@ -1,5 +1,6 @@
 var link__mcu__usart_8c =
 [
+    [ "InterMcuData", "structInterMcuData.html", "structInterMcuData" ],
     [ "__InterMcuLink", "link__mcu__usart_8c.html#a1837d499c8ba31f4e5e9274573c7281c", null ],
     [ "_InterMcuLink", "link__mcu__usart_8c.html#a366264684970cbd9bbbd4ea5c54d8323", null ],
     [ "GOT_CHECKSUM1", "link__mcu__usart_8c.html#a7a53eb7b7d725c83beee8dd21cb9f74f", null ],

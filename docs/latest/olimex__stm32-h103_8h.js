@@ -1,4 +1,4 @@
-var olimex__stm32-h103_8h =
+var olimex__stm32_h103_8h =
 [
     [ "AHB_CLK", "olimex__stm32-h103_8h.html#add4f03b6c5c9bcabeba314491a310346", null ],
     [ "EXT_CLK", "olimex__stm32-h103_8h.html#a91a5eb3f03c2f212cd15277ea67d65a2", null ],

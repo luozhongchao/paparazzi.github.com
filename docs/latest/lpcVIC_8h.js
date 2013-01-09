@@ -1,5 +1,6 @@
 var lpcVIC_8h =
 [
+    [ "vicRegs_t", "structvicRegs__t.html", "structvicRegs__t" ],
     [ "VIC_AD0", "lpcVIC_8h.html#a0e2535d4e45cf807172622fde21c7916", null ],
     [ "VIC_AD1", "lpcVIC_8h.html#addf6e814886a5bd8623ba55fdb5dd6f4", null ],
     [ "VIC_ARMCore0", "lpcVIC_8h.html#a9fc709d47d806bc716dacbfcc937dcf9", null ],

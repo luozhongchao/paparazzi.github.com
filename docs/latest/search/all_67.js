@@ -466,5 +466,12 @@ var searchData=
   ['gyro_5fstate',['gyro_state',['../lisa__test__itg3200_8c.html#abefa58e269e2b435d5bb95045deea991',1,'lisa_test_itg3200.c']]],
   ['gyro_5fsum',['gyro_sum',['../ahrs__aligner_8c.html#af1cca58ed89c86a319265f768f1b5e40',1,'ahrs_aligner.c']]],
   ['gyro_5funscaled',['gyro_unscaled',['../structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75',1,'Imu']]],
-  ['gyroevent',['GyroEvent',['../itg3200_8extra_8h.html#a1c26f88891af4250f93a7c56376048ad',1,'itg3200.extra.h']]]
+  ['gyroevent',['GyroEvent',['../itg3200_8extra_8h.html#a1c26f88891af4250f93a7c56376048ad',1,'itg3200.extra.h']]],
+  ['generic_20orientation_20representations',['Generic Orientation Representations',['../group__math__orientation__representation.html',1,'']]],
+  ['generic_20adc',['Generic ADC',['../module__adc_generic.html',1,'onboard_modules']]],
+  ['gain_20set_20interpolation',['Gain set interpolation',['../module__gain_scheduling.html',1,'onboard_modules']]],
+  ['geiger_20counter_20sensor',['Geiger counter sensor',['../module__geiger_counter.html',1,'onboard_modules']]],
+  ['generic_20com',['Generic com',['../module__generic_com.html',1,'onboard_modules']]],
+  ['geo_20mag_20modell',['Geo Mag modell',['../module__geo_mag.html',1,'onboard_modules']]],
+  ['gsm_20module',['GSM module',['../module__gsm.html',1,'onboard_modules']]]
 ];

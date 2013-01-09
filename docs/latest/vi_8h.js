@@ -1,5 +1,11 @@
 var vi_8h =
 [
+    [ "Vi_imu_info", "structVi__imu__info.html", "structVi__imu__info" ],
+    [ "Vi_gps_info", "structVi__gps__info.html", "structVi__gps__info" ],
+    [ "Vi_ahrs_info", "structVi__ahrs__info.html", "structVi__ahrs__info" ],
+    [ "Vi_info", "structVi__info.html", "structVi__info" ],
+    [ "Vi_command", "structVi__command.html", "structVi__command" ],
+    [ "VehicleInterface", "structVehicleInterface.html", "structVehicleInterface" ],
     [ "vi_SetEnabled", "vi_8h.html#a5a412b08b29448c00fe5cbd83d7d101d", null ],
     [ "vi_impl_init", "vi_8h.html#a2a3484b09409fdedb7b5c7d12faac617", null ],
     [ "vi_impl_periodic", "vi_8h.html#a4dff3e5cadc38f5e2b40b4684dd3c6d0", null ],

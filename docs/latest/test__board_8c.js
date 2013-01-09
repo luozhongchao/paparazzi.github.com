@@ -1,8 +1,12 @@
 var test__board_8c =
 [
+    [ "TestFuns", "structTestFuns.html", "structTestFuns" ],
     [ "DATALINK_C", "test__board_8c.html#ace2f20f3712314ddd9e83035468ab745", null ],
     [ "IdOfMsg", "test__board_8c.html#af9bfeb49b8ea12c64a72e4a4fb5a6002", null ],
-    [ "UartTestType", "test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131b", null ],
+    [ "UartTestType", "test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131b", [
+      [ "OneToThree", "test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131babad3dcd847f569ea7d2243ed2a90115a", null ],
+      [ "ThreeToOne", "test__board_8c.html#ae20ba424b6d7597bb18cfbf04bf7131bab1b0170a8ab3ed2bc9f86d47d98a9fd0", null ]
+    ] ],
     [ "all_led_green", "test__board_8c.html#ac43319afd82411be560db281a609682a", null ],
     [ "all_led_off", "test__board_8c.html#af8ad82fe61ac86c3ac1908c1cf413783", null ],
     [ "all_led_red", "test__board_8c.html#a230fab82d7cd295da503d583f4a3079b", null ],

@@ -1,5 +1,6 @@
 var ins_8h =
 [
+    [ "Ins", "structIns.html", "structIns" ],
     [ "INS_RUNNING", "ins_8h.html#a87f8301a9740df44f94d3565ed0be3e5", null ],
     [ "INS_UNINIT", "ins_8h.html#ab7a761fb8ab000e4a95cec8ce5efb813", null ],
     [ "ins_init", "ins_8h.html#abf3028c2ada542781b8a5e1eb20c17ce", null ],

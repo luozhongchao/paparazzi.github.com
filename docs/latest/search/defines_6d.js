@@ -2,6 +2,7 @@ var searchData=
 [
   ['m_5fof_5fcm',['M_OF_CM',['../pprz__geodetic__int_8h.html#a323e38587003d16eec378abdb625e8e8',1,'pprz_geodetic_int.h']]],
   ['m_5fof_5fmm',['M_OF_MM',['../pprz__geodetic__int_8h.html#ad03183a10a0abd52538f3c4fc943519a',1,'pprz_geodetic_int.h']]],
+  ['m_5fsqrt2',['M_SQRT2',['../pprz__algebra__float_8h.html#a66b3ab30f1332874326ed93969e496e0',1,'pprz_algebra_float.h']]],
   ['mag_5fbfp_5fof_5freal',['MAG_BFP_OF_REAL',['../pprz__algebra__int_8h.html#a7a246ed59b41685b79922379c91f5f08',1,'pprz_algebra_int.h']]],
   ['mag_5ffloat_5fof_5fbfp',['MAG_FLOAT_OF_BFP',['../pprz__algebra__int_8h.html#aeee9cfe0a5a7a8bdc1103e32b472e3c8',1,'pprz_algebra_int.h']]],
   ['magevent',['MagEvent',['../hmc5843_8h.html#ae3e9aa2c2547ce80037579b50ed48492',1,'MagEvent():&#160;hmc5843.h'],['../hmc58xx_8h.html#ae3e9aa2c2547ce80037579b50ed48492',1,'MagEvent():&#160;hmc58xx.h']]],

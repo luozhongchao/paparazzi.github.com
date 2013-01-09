@@ -1,7 +1,12 @@
 var spiral_8c =
 [
     [ "MIN_CIRCLE_RADIUS", "spiral_8c.html#aee9f4f70bf30cd2bad7f2fcd8c625f41", null ],
-    [ "SpiralStatus", "spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026", null ],
+    [ "SpiralStatus", "spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026", [
+      [ "Outside", "spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a97428abf4f6a11dfc00d53c330031e95", null ],
+      [ "StartCircle", "spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7f1609667ab956472d5f383683e4b996", null ],
+      [ "Circle", "spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026ad3ce82743a8255ccd69f5b67d257c489", null ],
+      [ "IncSpiral", "spiral_8c.html#ab1ef3d1e834bd62f55deec9293529026a7624d52a843fdb1bd260d79db614b2b5", null ]
+    ] ],
     [ "InitializeSpiral", "spiral_8c.html#a50d4841c173e2de5bf9c39d33daf46b0", null ],
     [ "SpiralNav", "spiral_8c.html#af5423b91973dcb13dc1409e5131d194d", null ],
     [ "Alphalimit", "spiral_8c.html#a76a53cfbc4e236e79d7fb3510fbab54f", null ],
