@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,7 +128,14 @@ $(document).ready(function(){initNavTree('openlog_8c_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * This module provides a timestamp-message, allowing</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * sw/logalizer/openlog2tlm to convert a recorded dumpfile,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * created by openlog into the pprz-tlm format, to be converted into</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * .data and .log files by sw/logalizer/sd2log</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="openlog_8h.html" title="This module provides a timestamp-message, allowing sw/logalizer/openlog2tlm to convert a recorded dum...">openlog.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;messages.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span></div>
@@ -138,8 +145,8 @@ $(document).ready(function(){initNavTree('openlog_8c_source.html','');});
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="openlog_8c.html#a2978a46b47cbc9d17a0924014ff9658b">   36</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="openlog_8c.html#ab20b0c7772544cf5d318507f34231fbe">   39</a></span>&#160;<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="openlog_8c.html#ab20b0c7772544cf5d318507f34231fbe" title="Timestamp to be incremented during operation.">timestamp</a> = 0; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="openlog_8c.html#ab20b0c7772544cf5d318507f34231fbe">   39</a></span>&#160;<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="openlog_8c.html#ab20b0c7772544cf5d318507f34231fbe" title="Timestamp to be incremented during operation.">timestamp</a> = 0; <span class="comment">///&lt; Timestamp to be incremented during operation</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="openlog_8h.html#afbf30ba91f5cd840b5d53739ab75fad8">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openlog_8c.html#afbf30ba91f5cd840b5d53739ab75fad8">init_openlog</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
@@ -153,7 +160,7 @@ $(document).ready(function(){initNavTree('openlog_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_3eb6d4adf8b347d27d1524d555cf1f2c.html">openlog</a></li><li class="navelem"><a class="el" href="openlog_8c.html">openlog.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

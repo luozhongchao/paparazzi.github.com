@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -134,8 +134,9 @@ $(document).ready(function(){initNavTree('link__mcu__usart_8c_source.html','');}
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="commands_8h.html" title="Hardware independent code for commands handling.">subsystems/commands.h</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// LINK</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span><span class="comment">// LINK</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#a1837d499c8ba31f4e5e9274573c7281c">   32</a></span>&#160;<span class="preprocessor">#define __InterMcuLink(dev, _x) dev##_x</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#a366264684970cbd9bbbd4ea5c54d8323">   33</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _InterMcuLink(dev, _x)  __InterMcuLink(dev, _x)</span></div>
@@ -147,8 +148,9 @@ $(document).ready(function(){initNavTree('link__mcu__usart_8c_source.html','');}
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#a59cd5ead08f9eb3871bacf5bd7d70a86">   39</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define InterMcuUartSetBaudrate(_a) InterMcuLink(SetBaudrate(_a))</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#a253fd43483742344214f86e314709a2e">   40</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define InterMcuUartRunning InterMcuLink(TxRunning)</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#a8768854b509847eda93037a5caa9f09c">   41</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define InterMcuUartSendMessage InterMcuLink(SendMessage)</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// PROTOCOL</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span><span class="comment">// PROTOCOL</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#aebbc0839e447c2342eff6bfd4011a245">   46</a></span>&#160;<span class="preprocessor">#define INTERMCU_SYNC1 0xB5</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#ae722e0fce0398661d09fd16516b0157a">   47</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INTERMCU_SYNC2 0x62</span></div>
@@ -171,8 +173,9 @@ $(document).ready(function(){initNavTree('link__mcu__usart_8c_source.html','');}
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">    InterMcuSend1(msg_id);                           \</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">    InterMcuSend2(len);                              \</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">  }</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// MESSAGES</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span><span class="comment">// MESSAGES</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// class</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#a70c9cadbe54feb9c12e737265e47c7d6">   72</a></span>&#160;<span class="preprocessor">#define MSG_INTERMCU_ID 100</span></div>
@@ -231,8 +234,9 @@ $(document).ready(function(){initNavTree('link__mcu__usart_8c_source.html','');}
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">  uint16_t _pitch = pitch; InterMcuSend2ByAddr((uint8_t*)&amp;_pitch);\</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">  InterMcuTrailer();\</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">// PARSER</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">//////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"></span><span class="comment">// PARSER</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">/* parser status */</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#a7668dedbc74a47bde384b2b911379073">  133</a></span>&#160;<span class="preprocessor">#define UNINIT        0</span></div>
@@ -339,8 +343,9 @@ $(document).ready(function(){initNavTree('link__mcu__usart_8c_source.html','');}
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">// USER</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">//////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment"></span><span class="comment">// USER</span></div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
 <div class="line"><a name="l00242"></a><span class="lineno"><a class="code" href="link__mcu__usart_8c.html#a4d130fa66a5074c64197b7cd4bf535de">  242</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structlink__mcu__msg.html" title="Transport for the communication between FBW and AP in a bi-process architecture.">link_mcu_msg</a> <a class="code" href="link__mcu__spi_8c.html#a4d130fa66a5074c64197b7cd4bf535de">link_mcu_from_ap_msg</a>;</div>
@@ -427,7 +432,8 @@ $(document).ready(function(){initNavTree('link__mcu__usart_8c_source.html','');}
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  {</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// 20 Hz</span></div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    SixtyHzCounter = 0;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    inter_mcu_fill_fbw_state(); </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    inter_mcu_fill_fbw_state(); <span class="comment">/** Prepares the next message for AP */</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="link__mcu__usart_8c.html#aec4f6ff46123230012994546ef8f5290">InterMcuSend_INTERMCU_FBW</a>(</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;ppm_cpt,</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  <a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;status,</div>
@@ -460,7 +466,7 @@ $(document).ready(function(){initNavTree('link__mcu__usart_8c_source.html','');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="link__mcu__usart_8c.html">link_mcu_usart.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

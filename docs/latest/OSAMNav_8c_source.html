@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -127,7 +127,12 @@ $(document).ready(function(){initNavTree('OSAMNav_8c_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @file subsystems/navigation/OSAMNav.c</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="OSAMNav_8h.html">subsystems/navigation/OSAMNav.h</a>&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span></div>
@@ -136,7 +141,12 @@ $(document).ready(function(){initNavTree('OSAMNav_8c_source.html','');});
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;generated/flight_plan.h&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/************** Flower Navigation **********************************************/</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/** Makes a flower pattern.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">  CenterWP is the center of the flower. The Navigation Height is taken from this waypoint.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">  EdgeWP defines the radius of the flower (distance from CenterWP to EdgeWP)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551a97428abf4f6a11dfc00d53c330031e95">   41</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551" title="Makes a flower pattern.">FlowerStatus</a> { <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551a97428abf4f6a11dfc00d53c330031e95">Outside</a>, <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551a67ace41cbedde07dc60db766a1f42b2f">FlowerLine</a>, <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551ad3ce82743a8255ccd69f5b67d257c489">Circle</a> };</div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#a2775e7004e7029fd9494780202041322">   42</a></span>&#160;<span class="keyword">static</span> <span class="keyword">enum</span> <a class="code" href="OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551" title="Makes a flower pattern.">FlowerStatus</a> <a class="code" href="OSAMNav_8c.html#a2775e7004e7029fd9494780202041322">CFlowerStatus</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#a55fc24033aca1f53a853e7462a098bed">   43</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="OSAMNav_8c.html#a55fc24033aca1f53a853e7462a098bed">CircleX</a>;</div>
@@ -260,7 +270,23 @@ $(document).ready(function(){initNavTree('OSAMNav_8c_source.html','');});
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">/************** Bungee Takeoff **********************************************/</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">/** Takeoff functions for bungee takeoff.</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">    Run initialize function when the plane is on the bungee, the bungee is fully extended and you are ready to</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">    launch the plane. After initialized, the plane will follow a line drawn by the position of the plane on initialization and the</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">    position of the bungee (given in the arguments). Once the plane crosses the throttle line, which is perpendicular to the line the plane is following,</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">    and intersects the position of the bungee (plus or minus a fixed distance (TakeOff_Distance in airframe file) from the bungee just in case the bungee doesn&#39;t release directly above the bungee) the prop will come on. The plane will then continue to follow the line until it has reached a specific</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">    height (defined in as Takeoff_Height in airframe file) above the bungee waypoint and speed (defined as Takeoff_Speed in the airframe file).</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">    @verbatim</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">    &lt;section name=&quot;Takeoff&quot; prefix=&quot;Takeoff_&quot;&gt;</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">    &lt;define name=&quot;Height&quot; value=&quot;30&quot; unit=&quot;m&quot;/&gt;</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">    &lt;define name=&quot;Speed&quot; value=&quot;15&quot; unit=&quot;m/s&quot;/&gt;</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">    &lt;define name=&quot;Distance&quot; value=&quot;10&quot; unit=&quot;m&quot;/&gt;</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">    &lt;define name=&quot;MinSpeed&quot; value=&quot;5&quot; unit=&quot;m/s&quot;/&gt;</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">    &lt;/section&gt;</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">    @endverbatim</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#ifndef Takeoff_Distance</span></div>
 <div class="line"><a name="l00182"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#aaac5d1da7fab8699a8c224aa9a5a8347">  182</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Takeoff_Distance 10</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
@@ -435,7 +461,10 @@ $(document).ready(function(){initNavTree('OSAMNav_8c_source.html','');});
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">/************** Polygon Survey **********************************************/</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">/** This routine will cover the enitre area of any Polygon defined in the flightplan which is a convex polygon.</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
 <div class="line"><a name="l00359"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5ac555870e8a5a6176a7a76bd11a66065c">  359</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5" title="This routine will cover the enitre area of any Polygon defined in the flightplan which is a convex po...">SurveyStatus</a> { <a class="code" href="OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5a1ff76aa808bb8209a13fcdbaf330587e">Init</a>, <a class="code" href="OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5a6429a96682b7c66ac1c02883210c1d87">Entry</a>, <a class="code" href="OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5a6e181b59624c49600dfdb1df3b47272f">Sweep</a>, <a class="code" href="OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5ac555870e8a5a6176a7a76bd11a66065c">SweepCircle</a> };</div>
 <div class="line"><a name="l00360"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#afce7c6f90680c0f71017fb73d9d82623">  360</a></span>&#160;<span class="keyword">static</span> <span class="keyword">enum</span> <a class="code" href="OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5" title="This routine will cover the enitre area of any Polygon defined in the flightplan which is a convex po...">SurveyStatus</a> <a class="code" href="OSAMNav_8c.html#afce7c6f90680c0f71017fb73d9d82623">CSurveyStatus</a>;</div>
 <div class="line"><a name="l00361"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#a5a6904dba2d8a4c35b19da1a0b765ad9">  361</a></span>&#160;<span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structPoint2D.html">Point2D</a> <a class="code" href="OSAMNav_8c.html#a5a6904dba2d8a4c35b19da1a0b765ad9">SmallestCorner</a>;</div>
@@ -841,7 +870,10 @@ $(document).ready(function(){initNavTree('OSAMNav_8c_source.html','');});
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;}</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;<span class="comment">/************** Vertical Raster **********************************************/</span></div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;<span class="comment">/** Copy of nav line. The only difference is it changes altitude every sweep, but doesn&#39;t come out of circle until</span></div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;<span class="comment">    it reaches altitude.</span></div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00768"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a8b5deafb5a78d799c0691bef43de80ce">  768</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4" title="Status along the pattern.">line_status</a> { <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497acfcd68d903867d509a779613b2ccfba5">LR12</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a04ad51045635dee83d454860ae6b135c">LQC21</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a8b5deafb5a78d799c0691bef43de80ce">LTC2</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a31099427ddf1cb13114e28c9472b3c68">LQC22</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a383219705a1e85c6f680e43d1f304f5b">LR21</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497aca3f9b2462e0f5298f41a92f75fa11cd">LQC12</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497ad74fa6a689e1a6c8373a3359bba8d124">LTC1</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a7f637cfcb9990910ded6a6f84bafed9b">LQC11</a> };</div>
 <div class="line"><a name="l00769"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#a1e4b07456818b9e3350d99d1931205fd">  769</a></span>&#160;<span class="keyword">static</span> <span class="keyword">enum</span> <a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4" title="Status along the pattern.">line_status</a> <a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4" title="Status along the pattern.">line_status</a>;</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;</div>
@@ -956,7 +988,19 @@ $(document).ready(function(){initNavTree('OSAMNav_8c_source.html','');});
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>; <span class="comment">/* This pattern never ends */</span></div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;}</div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;<span class="comment">/************** SkidLanding **********************************************/</span></div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;<span class="comment">/************** SkidLanding **********************************************/</span><span class="comment"></span></div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="comment">   Landing Routine</span></div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;<span class="comment">   @verbatim</span></div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;<span class="comment">   &lt;section name=&quot;Landing&quot; prefix=&quot;Landing_&quot;&gt;</span></div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;<span class="comment">   &lt;define name=&quot;AFHeight&quot; value=&quot;50&quot; unit=&quot;m&quot;/&gt;</span></div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="comment">   &lt;define name=&quot;FinalHeight&quot; value=&quot;5&quot; unit=&quot;m&quot;/&gt;</span></div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;<span class="comment">   &lt;define name=&quot;FinalStageTime&quot; value=&quot;5&quot; unit=&quot;s&quot;/&gt;</span></div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;<span class="comment">   &lt;/section&gt;</span></div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;<span class="comment">   @endverbatim</span></div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;</div>
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;<span class="preprocessor">#ifndef Landing_AFHeight</span></div>
 <div class="line"><a name="l00896"></a><span class="lineno"><a class="code" href="OSAMNav_8c.html#a69676f9f382d6a82e373aec9d860cb9e">  896</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Landing_AFHeight 50</span></div>
 <div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
@@ -1250,8 +1294,9 @@ $(document).ready(function(){initNavTree('OSAMNav_8c_source.html','');});
 <div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;  p-&gt;<a class="code" href="structPoint2D.html#a2a5ef0ad00bc9e912a9aefcedf004cc4">x</a> = p-&gt;<a class="code" href="structPoint2D.html#a2a5ef0ad00bc9e912a9aefcedf004cc4">x</a>*cos(Zrot)+p-&gt;<a class="code" href="structPoint2D.html#a989485fd2d8026ceec5d57e8c7e629ab">y</a>*sin(Zrot);</div>
 <div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;  p-&gt;<a class="code" href="structPoint2D.html#a989485fd2d8026ceec5d57e8c7e629ab">y</a> = -temp*sin(Zrot)+p-&gt;<a class="code" href="structPoint2D.html#a989485fd2d8026ceec5d57e8c7e629ab">y</a>*cos(Zrot);</div>
 <div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;}</div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;</div>
-<div class="line"><a name="l01190"></a><span class="lineno"><a class="code" href="OSAMNav_8h.html#a48c160b16e812b494516ffb30413d169"> 1190</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="OSAMNav_8c.html#a48c160b16e812b494516ffb30413d169" title="Rotates point round z by -Zrot then translates so (0,0) becomes (transX,transY)">RotateAndTranslateToWorld</a>(<span class="keyword">struct</span> <a class="code" href="structPoint2D.html">Point2D</a> *<a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <span class="keywordtype">float</span> Zrot, <span class="keywordtype">float</span> transX, <span class="keywordtype">float</span> transY)</div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;<span class="comment">/// Rotates point round z by -Zrot then translates so (0,0) becomes (transX,transY)</span></div>
+<div class="line"><a name="l01190"></a><span class="lineno"><a class="code" href="OSAMNav_8h.html#a48c160b16e812b494516ffb30413d169"> 1190</a></span>&#160;<span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="OSAMNav_8c.html#a48c160b16e812b494516ffb30413d169" title="Rotates point round z by -Zrot then translates so (0,0) becomes (transX,transY)">RotateAndTranslateToWorld</a>(<span class="keyword">struct</span> <a class="code" href="structPoint2D.html">Point2D</a> *<a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <span class="keywordtype">float</span> Zrot, <span class="keywordtype">float</span> transX, <span class="keywordtype">float</span> transY)</div>
 <div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;{</div>
 <div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;  <span class="keywordtype">float</span> temp = p-&gt;<a class="code" href="structPoint2D.html#a2a5ef0ad00bc9e912a9aefcedf004cc4">x</a>;</div>
 <div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;</div>
@@ -1288,7 +1333,7 @@ $(document).ready(function(){initNavTree('OSAMNav_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8a28edc49a666abb23d4888eaf71220c.html">navigation</a></li><li class="navelem"><a class="el" href="OSAMNav_8c.html">OSAMNav.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:06 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:36 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

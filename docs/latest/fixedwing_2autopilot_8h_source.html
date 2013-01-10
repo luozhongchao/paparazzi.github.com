@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,7 +128,14 @@ $(document).ready(function(){initNavTree('fixedwing_2autopilot_8h_source.html','
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @file firmwares/fixedwing/autopilot.h</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * Autopilot modes.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef AUTOPILOT_H</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define AUTOPILOT_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
@@ -138,13 +145,19 @@ $(document).ready(function(){initNavTree('fixedwing_2autopilot_8h_source.html','
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;generated/airframe.h&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/** Autopilot inititalization.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="fixedwing_2autopilot_8c.html#a9d3557653abfc3d4c428724b249f6d5e" title="Autopilot inititalization.">autopilot_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/** Threshold for RC mode detection.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#ac68ed9030b448307d20a265af6f102cf">   46</a></span>&#160;<span class="preprocessor">#define THRESHOLD_MANUAL_PPRZ (MIN_PPRZ / 2)</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#ac20e76441d7ca028ceda37a41ce688e1">   47</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define THRESHOLD1 THRESHOLD_MANUAL_PPRZ</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a12ff5dfa8cfe1cbe08d1289b3e8da55c">   48</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define THRESHOLD2 (MAX_PPRZ/2)</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/** AP modes.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a34715de2d7ba74623671ee30dfed3afa">   52</a></span>&#160;<span class="preprocessor">#define  PPRZ_MODE_MANUAL 0</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#aad97f5d43922c63769f4a4ea97b9df8d">   53</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define  PPRZ_MODE_AUTO1 1</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a7248dd1183b2fe1d11cdc66a01fe5744">   54</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define  PPRZ_MODE_AUTO2 2</span></div>
@@ -158,7 +171,8 @@ $(document).ready(function(){initNavTree('fixedwing_2autopilot_8h_source.html','
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#aebf57c26248ee8c66d3eacdbd6a155cd">pprz_mode</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> bool_t <a class="code" href="fixedwing_2autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/** flight time in seconds. */</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#a643a1732fc06296050835ab61968d726" title="flight time in seconds.">autopilot_flight_time</a>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a260ba1d03869070e8be5b23878957e5d">   69</a></span>&#160;<span class="preprocessor">#define autopilot_ResetFlightTimeAndLaunch(_) { \</span></div>
@@ -178,21 +192,31 @@ $(document).ready(function(){initNavTree('fixedwing_2autopilot_8h_source.html','
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#aa08d012f2139a6ef9e5b92e5efcf555b">   83</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FLOAT_OF_PPRZ(pprz, center, travel) ((float)pprz / (float)MAX_PPRZ * travel + center)</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a1c2e8ec07daf2aa0b8e54a832ea70139">   85</a></span>&#160;<span class="preprocessor">#define THROTTLE_THRESHOLD_TAKEOFF (pprz_t)(MAX_PPRZ * 0.9)</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/** Supply voltage in deciVolt.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * This the ap copy of the measurement from fbw</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#a32da1e6e29634773a0e491df93f92414" title="Supply voltage in deciVolt.">vsupply</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">/** Fuel consumption (mAh)</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> * TODO: move to electrical subsystem</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="fixedwing_2autopilot_8c.html#a2d107b3b2dcebab8a10c9d39894f6b2a" title="Fuel consumption (mAh) TODO: move to electrical subsystem.">energy</a>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">extern</span> bool_t <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">extern</span> bool_t <a class="code" href="fixedwing_2autopilot_8c.html#ad5b2dcab0bbd14934aac4f5e0eea8b18">gps_lost</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">/** Assignment, returning _old_value != _value</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> * Using GCC expression statements */</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a1bf7cecdbe3f008fdb8dd8404c4e510f">  103</a></span>&#160;<span class="preprocessor">#define ModeUpdate(_mode, _value) ({ \</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">  uint8_t new_mode = _value; \</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">  (_mode != new_mode ? _mode = new_mode, TRUE : FALSE); \</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">})</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/** Power switch control.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">extern</span> bool_t <a class="code" href="fixedwing_2autopilot_8c.html#adda0cb88d172048dd19b50ad66e7881e" title="Power switch control.">power_switch</a>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#ifdef POWER_SWITCH_LED</span></div>
@@ -232,7 +256,7 @@ $(document).ready(function(){initNavTree('fixedwing_2autopilot_8h_source.html','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_cb1b347b64b61ba7f369ccfe68448b26.html">fixedwing</a></li><li class="navelem"><a class="el" href="fixedwing_2autopilot_8h.html">autopilot.h</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

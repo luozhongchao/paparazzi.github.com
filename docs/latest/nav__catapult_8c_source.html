@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -129,7 +129,22 @@ $(document).ready(function(){initNavTree('nav__catapult_8c_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @file modules/nav/nav_catapult.h</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @brief catapult launch timing system</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * Phase 1: -Zero Roll, Climb Pitch, Zero Throttle</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * Phase 2: After Feeling the Start Acceleration</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *          -Zero Roll, Climb Pitch, Full Throttle</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * Phase 3: After feeling the GPS heading (time based)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *          -Place climb 300m in front of us</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> *          -GoTo(climb)</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;generated/airframe.h&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ap__downlink_8h.html" title="Set of macros defining the periodic telemetry messages of AP process.">ap_downlink.h</a>&quot;</span></div>
@@ -182,8 +197,9 @@ $(document).ready(function(){initNavTree('nav__catapult_8c_source.html','');});
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="nav__catapult_8h.html#aee421b9216367f9e94954796dadc0d12">   90</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="nav__catapult_8c.html#aee421b9216367f9e94954796dadc0d12">nav_catapult_initial_throttle</a> = <a class="code" href="nav__catapult_8c.html#a605f716f37ba4dd117402212690eabd1">NAV_CATAPULT_INITIAL_THROTTLE</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">/////// Store Take-Off Point</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="nav__catapult_8c.html#a8bf80d1e289a2e3df569465f176d5bd2">   94</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="nav__catapult_8c.html#a8bf80d1e289a2e3df569465f176d5bd2">nav_catapult_x</a> = 0;</div>
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="nav__catapult_8c.html#afd15a44471d7c80a391d78ccc2730cff">   95</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="nav__catapult_8c.html#afd15a44471d7c80a391d78ccc2730cff">nav_catapult_y</a> = 0;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
@@ -316,7 +332,7 @@ $(document).ready(function(){initNavTree('nav__catapult_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_984e899df90dd104b2eabcdbb76ec71f.html">nav</a></li><li class="navelem"><a class="el" href="nav__catapult_8c.html">nav_catapult.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

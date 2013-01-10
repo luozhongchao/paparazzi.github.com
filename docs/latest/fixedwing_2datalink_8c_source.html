@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,7 +128,13 @@ $(document).ready(function(){initNavTree('fixedwing_2datalink_8c_source.html',''
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @file firmwares/fixedwing/datalink.c</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Handling of messages coming from ground and other A/Cs.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="fixedwing_2datalink_8c.html#ace2f20f3712314ddd9e83035468ab745">   29</a></span>&#160;<span class="preprocessor">#define DATALINK_C</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="fixedwing_2datalink_8c.html#abfcb795f0df1bc44a2fc9e4ef8a51c39">   31</a></span>&#160;<span class="preprocessor">#define MODULES_DATALINK_C</span></div>
@@ -235,8 +241,8 @@ $(document).ready(function(){initNavTree('fixedwing_2datalink_8c_source.html',''
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="common__flight__plan_8c.html#ad5b3972efdfb4b34574a534615be3db2">nav_goto_block</a>(DL_BLOCK_block_id(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>));</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="ap__downlink_8h.html#a5b7ee5828a4a65359ce9393a365f5d2d">SEND_NAVIGATION</a>(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif </span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#ifdef WIND_INFO</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/** NAV */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifdef WIND_INFO</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (msg_id == DL_WIND_INFO &amp;&amp; DL_WIND_INFO_ac_id(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>) == AC_ID) {</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">struct </span><a class="code" href="structFloatVect2.html">FloatVect2</a> wind;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    wind.<a class="code" href="structFloatVect2.html#a965d6b4f04fcc6d2aa179c4016d7ee44">x</a> = DL_WIND_INFO_north(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);</div>
@@ -250,14 +256,17 @@ $(document).ready(function(){initNavTree('fixedwing_2datalink_8c_source.html',''
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor"></span>    DOWNLINK_SEND_WIND_INFO_RET(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;wind.<a class="code" href="structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669">y</a>, &amp;wind.<a class="code" href="structFloatVect2.html#a965d6b4f04fcc6d2aa179c4016d7ee44">x</a>, <a class="code" href="group__state__wind__airspeed.html#ga0ab69b83eeebb79cbdb2c8e81bfb659b" title="Get airspeed (float).">stateGetAirspeed_f</a>());</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor"></span>  } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#endif </span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/** WIND_INFO */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#ifdef HITL</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordflow">if</span> (msg_id == DL_HITL_INFRARED) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor"></span><span class="comment">  /** Infrared and GPS sensors are replaced by messages on the datalink */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordflow">if</span> (msg_id == DL_HITL_INFRARED) {<span class="comment"></span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">    /** This code simulates infrared.c:ir_update() */</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="infrared_8c.html#aa0faf6997978eddf1c526c0f022c7dd5">infrared</a>.<a class="code" href="structInfrared.html#a14240b7cc3650b62e82d45af3082ed78">roll</a> = DL_HITL_INFRARED_roll(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="infrared_8c.html#aa0faf6997978eddf1c526c0f022c7dd5">infrared</a>.<a class="code" href="structInfrared.html#ae86ecec8d0eda43d29fd65efba9bbc69">pitch</a> = DL_HITL_INFRARED_pitch(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="infrared_8c.html#aa0faf6997978eddf1c526c0f022c7dd5">infrared</a>.<a class="code" href="structInfrared.html#ac68772476ec395a4ee1fa1f916e40a4a">top</a> = DL_HITL_INFRARED_top(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg_id == DL_HITL_UBX) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg_id == DL_HITL_UBX) {<span class="comment"></span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">    /** This code simulates gps_ubx.c:parse_ubx() */</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (gps_msg_received) {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <a class="code" href="jsbsim__hw_8c.html#af998d186c77bb7530e38d3fd4e7eee2a">gps_nb_ovrn</a>++;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -281,8 +290,8 @@ $(document).ready(function(){initNavTree('fixedwing_2datalink_8c_source.html',''
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a> = settings_get_value(i);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    DOWNLINK_SEND_DL_VALUE(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;i, &amp;val);</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#endif </span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#if USE_JOYSTICK</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/** Else there is no dl_settings section in the flight plan */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if USE_JOYSTICK</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">if</span> (msg_id == DL_JOYSTICK_RAW &amp;&amp; DL_JOYSTICK_RAW_ac_id(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>) == AC_ID) {</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <a class="code" href="joystick_8h.html#a8718265b29fc6ef3903f580e3ad894b2">JoystickHandeDatalink</a>(DL_JOYSTICK_RAW_roll(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>),</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;          DL_JOYSTICK_RAW_pitch(<a class="code" href="main__demo5_8c.html#a41ca1f0c42c768e235066d83071b1ed9">dl_buffer</a>),</div>
@@ -322,7 +331,7 @@ $(document).ready(function(){initNavTree('fixedwing_2datalink_8c_source.html',''
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_cb1b347b64b61ba7f369ccfe68448b26.html">fixedwing</a></li><li class="navelem"><a class="el" href="fixedwing_2datalink_8c.html">datalink.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

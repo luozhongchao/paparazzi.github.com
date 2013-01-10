@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -118,7 +118,11 @@ $(document).ready(function(){initNavTree('poly__survey__adv_8c_source.html','');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="dc_8h.html" title="Standard Digital Camera Control Interface.">modules/digital_cam/dc.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">The following variables are set by poly_survey_init and not changed later on</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">**/</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// precomputed vectors to ease calculations</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="poly__survey__adv_8c.html#a3e38b4d7c8bb1c72fa2a5129337d4060">   18</a></span>&#160;<a class="code" href="structpoint2d.html">point2d</a> <a class="code" href="poly__survey__adv_8c.html#a3e38b4d7c8bb1c72fa2a5129337d4060" title="The following variables are set by poly_survey_init and not changed later on.">dir_vec</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="poly__survey__adv_8c.html#a4213bf54f98e0fc3b6c044427b6dc119">   19</a></span>&#160;<a class="code" href="structpoint2d.html">point2d</a> <a class="code" href="poly__survey__adv_8c.html#a4213bf54f98e0fc3b6c044427b6dc119">sweep_vec</a>;</div>
@@ -137,7 +141,11 @@ $(document).ready(function(){initNavTree('poly__survey__adv_8c_source.html','');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//direction for the flyover (0° == N)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="poly__survey__adv_8c.html#a2a6fd0142c89a2b743125a4c972f38b6">   33</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="poly__survey__adv_8c.html#a2a6fd0142c89a2b743125a4c972f38b6">segment_angle</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="poly__survey__adv_8c.html#ad1d6524a44f3185175b04f7aa6c4c345">   34</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="poly__survey__adv_8c.html#ad1d6524a44f3185175b04f7aa6c4c345">return_angle</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">The Following variables are dynamic, changed while navigating.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">**/</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">psa_stage starts at ENTRY and than circles trought the other</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">states until to polygon is completely covered</span></div>
@@ -175,7 +183,15 @@ $(document).ready(function(){initNavTree('poly__survey__adv_8c_source.html','');
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment.">nav_route_xy</a>(start.<a class="code" href="structpoint2d.html#a6e9238b52e9b297f08e0c5103400268e">x</a>, start.<a class="code" href="structpoint2d.html#a0e90a15d05bd385761a5afe03ecdc152">y</a>, end.<a class="code" href="structpoint2d.html#a6e9238b52e9b297f08e0c5103400268e">x</a>, end.<a class="code" href="structpoint2d.html#a0e90a15d05bd385761a5afe03ecdc152">y</a>);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   intercept two lines and give back the point of intersection</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   returns        : FALSE if no intersection can be found or intersection does not lie between points a and b</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   else TRUE</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   p              : returns intersection</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">   x, y           : first line is defined by point x and y (goes through this points)</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">   a1, a2, b1, b2 : second line by coordinates a1/a2, b1/b2</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">**/</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="poly__survey__adv_8c.html#a18328213f5f7eb12aff6416a77260bcc">   86</a></span>&#160;<span class="keyword">static</span> bool_t <a class="code" href="poly__survey__adv_8c.html#a18328213f5f7eb12aff6416a77260bcc" title="intercept two lines and give back the point of intersection returns : FALSE if no intersection can be...">intercept_two_lines</a>(<a class="code" href="structpoint2d.html">point2d</a> *<a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="code" href="structpoint2d.html">point2d</a> x, <a class="code" href="structpoint2d.html">point2d</a> y, <span class="keywordtype">float</span> a1, <span class="keywordtype">float</span> a2, <span class="keywordtype">float</span> b1, <span class="keywordtype">float</span> b2)</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">float</span> divider, fac;</div>
@@ -191,7 +207,13 @@ $(document).ready(function(){initNavTree('poly__survey__adv_8c_source.html','');
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">   intersects a line with the polygon and gives back the two intersection points</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">   returns : TRUE if two intersection can be found, else FALSE</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">   x, y    : intersection points</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">   a, b    : define the line to intersection</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">**/</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="poly__survey__adv_8c.html#af66f67850d03f7edf3bc4758b6bbcd11">  108</a></span>&#160;<span class="keyword">static</span> bool_t <a class="code" href="poly__survey__adv_8c.html#af66f67850d03f7edf3bc4758b6bbcd11" title="intersects a line with the polygon and gives back the two intersection points returns : TRUE if two i...">get_two_intersects</a>(<a class="code" href="structpoint2d.html">point2d</a> *x, <a class="code" href="structpoint2d.html">point2d</a> *y, <a class="code" href="structpoint2d.html">point2d</a> a, <a class="code" href="structpoint2d.html">point2d</a> b)</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">int</span> i, count = 0;</div>
@@ -236,7 +258,17 @@ $(document).ready(function(){initNavTree('poly__survey__adv_8c_source.html','');
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">   initializes the variables needed for the survey to start</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">   first_wp    :  the first Waypoint of the polygon</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">   size        :  the number of points that make up the polygon</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">   angle       :  angle in which to do the flyovers</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">   sweep_width :  distance between the sweeps</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">   shot_dist   :  distance between the shots</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">   min_rad     :  minimal radius when navigating</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">   altitude    :  the altitude that must be reached before the flyover starts</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">**/</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno"><a class="code" href="poly__survey__adv_8h.html#a95c1f962b434b35f546fec5afc204949">  163</a></span>&#160;bool_t <a class="code" href="poly__survey__adv_8c.html#a95c1f962b434b35f546fec5afc204949" title="initializes the variables needed for the survey to start first_wp : the first Waypoint of the polygon...">init_poly_survey_adv</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> first_wp, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> size, <span class="keywordtype">float</span> angle, <span class="keywordtype">float</span> sweep_width, <span class="keywordtype">float</span> shot_dist, <span class="keywordtype">float</span> min_rad, <span class="keywordtype">float</span> altitude)</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">int</span> i;</div>
@@ -340,7 +372,12 @@ $(document).ready(function(){initNavTree('poly__survey__adv_8c_source.html','');
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">   main navigation routine. This is called periodically evaluates the current</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">   Position and stage and navigates accordingly.</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">   Returns True until the survey is finished</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">**/</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno"><a class="code" href="poly__survey__adv_8h.html#a586979cca6c5ffbd1852333c379cc959">  272</a></span>&#160;bool_t <a class="code" href="poly__survey__adv_8c.html#a586979cca6c5ffbd1852333c379cc959" title="main navigation routine.">poly_survey_adv</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <a class="code" href="navigation_8h.html#af95d040500e23a05d6b095662fb18b59" title="Set the climb control to auto-throttle with the specified pitch pre-command.">NavVerticalAutoThrottleMode</a>(0.0);</div>
@@ -419,7 +456,7 @@ $(document).ready(function(){initNavTree('poly__survey__adv_8c_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8a28edc49a666abb23d4888eaf71220c.html">navigation</a></li><li class="navelem"><a class="el" href="poly__survey__adv_8c.html">poly_survey_adv.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:06 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:36 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

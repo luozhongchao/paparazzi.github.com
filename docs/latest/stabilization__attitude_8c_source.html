@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,7 +128,13 @@ $(document).ready(function(){initNavTree('stabilization__attitude_8c_source.html
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * fixed wing horizontal control</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;std.h&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span></div>
@@ -271,7 +277,11 @@ $(document).ready(function(){initNavTree('stabilization__attitude_8c_source.html
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor"></span>nav_ratio=0;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"> * \brief</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno"><a class="code" href="stabilization__attitude_8c.html#a02ae04f0f1bbe7588572e87e3dadb381">  176</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stabilization__adaptive_8c.html#a02ae04f0f1bbe7588572e87e3dadb381">h_ctl_course_loop</a> ( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">float</span> last_err;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
@@ -371,7 +381,7 @@ $(document).ready(function(){initNavTree('stabilization__attitude_8c_source.html
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">#if defined(AGR_CLIMB) &amp;&amp; !USE_AIRSPEED</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor"></span><span class="comment">  /** limit navigation during extreme altitude changes */</span></div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordflow">if</span> (AGR_BLEND_START &gt; AGR_BLEND_END &amp;&amp; AGR_BLEND_END &gt; 0) { <span class="comment">/* prevent divide by zero, reversed or negative values */</span></div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="energy__ctrl_8c.html#a5bd299dd0de5503b8d89214c741fcfc3">v_ctl_auto_throttle_submode</a> == <a class="code" href="guidance__common_8h.html#a95d5459920e030436a220afb89fd2c00">V_CTL_AUTO_THROTTLE_AGRESSIVE</a> || <a class="code" href="guidance__common_8h.html#afe3710a1edbd048b18de785146ce29a2">V_CTL_AUTO_THROTTLE_BLENDED</a>) {</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      BoundAbs(cmd, <a class="code" href="stabilization__adaptive_8c.html#a36b4caa0eb30ecfb44d54f83ad1ada2a">h_ctl_roll_max_setpoint</a>); <span class="comment">/* bound cmd before NAV_RATIO and again after */</span></div>
@@ -426,7 +436,8 @@ $(document).ready(function(){initNavTree('stabilization__attitude_8c_source.html
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor">#else // H_CTL_ROLL_ATTITUDE_GAIN</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">/** Computes h_ctl_aileron_setpoint from h_ctl_roll_setpoint */</span></div>
 <div class="line"><a name="l00332"></a><span class="lineno"><a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80">  332</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="stabilization__attitude_8c.html#a56e08c7c847634b91bec39dc929ade80" title="Computes h_ctl_aileron_setpoint from h_ctl_roll_setpoint.">h_ctl_roll_loop</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  <span class="keywordtype">float</span> err = <a class="code" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float).">stateGetNedToBodyEulers_f</a>()-&gt;<a class="code" href="structFloatEulers.html#a4b2c73d59e89d78354658b20058720e0" title="in radians">phi</a> - <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a>;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keywordtype">float</span> cmd = <a class="code" href="stabilization__adaptive_8c.html#a32ff0f8ef82c3d882051a3b504cb2f51">h_ctl_roll_pgain</a> * err</div>
@@ -434,7 +445,8 @@ $(document).ready(function(){initNavTree('stabilization__attitude_8c_source.html
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <a class="code" href="stabilization__adaptive_8c.html#a6221c03ea36102def261884c24cacb69">h_ctl_aileron_setpoint</a> = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(cmd);</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor">#ifdef H_CTL_RATE_LOOP</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="stabilization__adaptive_8c.html#a411e22787d626834c693dcbf3ca62be2">h_ctl_auto1_rate</a>) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="stabilization__adaptive_8c.html#a411e22787d626834c693dcbf3ca62be2">h_ctl_auto1_rate</a>) {<span class="comment"></span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">    /** Runs only the roll rate loop */</span></div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    h_ctl_roll_rate_setpoint = <a class="code" href="stabilization__adaptive_8c.html#a3a1314c56cb0890cfff183968904f0ce">h_ctl_roll_setpoint</a> * 10.;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    h_ctl_roll_rate_loop();</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  } <span class="keywordflow">else</span> {</div>
@@ -553,7 +565,7 @@ $(document).ready(function(){initNavTree('stabilization__attitude_8c_source.html
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_cb1b347b64b61ba7f369ccfe68448b26.html">fixedwing</a></li><li class="navelem"><a class="el" href="dir_517430ae22334069e857fa1922a1fddc.html">stabilization</a></li><li class="navelem"><a class="el" href="stabilization__attitude_8c.html">stabilization_attitude.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

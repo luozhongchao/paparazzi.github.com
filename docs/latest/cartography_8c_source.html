@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -127,7 +127,15 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span><span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/** \file cartography.c</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  \brief Navigation functions for cartography of the ground</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;stdio.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
@@ -135,9 +143,11 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;generated/flight_plan.h&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;std.h&quot;</span>  <span class="comment">//macros pas mal dans sw/include</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//for fast debbuging, the simulation can be accelerated using the gaia software from an xterm console</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//              /home/bvdp/paparazzi3/sw/simulator/gaia</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span><span class="comment">//for fast debbuging, the simulation can be accelerated using the gaia software from an xterm console</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//              /home/bvdp/paparazzi3/sw/simulator/gaia</span><span class="comment"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span><span class="comment">// for explanations about debugging macros:</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//http://gcc.gnu.org/onlinedocs/cpp/Stringification.html#Stringification</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
@@ -164,8 +174,9 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> PRTDEB(lf,PolygonCenter.x)</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> PRTDEB(lf,PolygonCenter.y)</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> */</span><span class="comment"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="cartography_8c.html#a3d1b86b3ab86d70dd7a130b7528a4ad2">   71</a></span>&#160;<span class="preprocessor">#define DISTXY(P1X,P1Y,P2X,P2Y)\</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">(sqrt(  ( (P2X-P1X) * (P2X-P1X) ) + ( (P2Y-P1Y) * (P2Y-P1Y) )  ) )</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span></div>
@@ -176,12 +187,14 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">//max distance between the estimator position and an objective points to consider that the objective points is atteined</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="cartography_8c.html#ac7b4c560923e7b969de7d5cf6a0a5dde">   80</a></span>&#160;<span class="preprocessor">#define DISTLIMIT 30</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="cartography_8c.html#a20a0aca5f2607987909da6278f59c1dc">   84</a></span>&#160;<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="cartography_8c.html#a20a0aca5f2607987909da6278f59c1dc">railnumberSinceBoot</a>=1; <span class="comment">//used to count the number of rails the plane has achieved since the boot, to number the sequences of saved images</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">//the number 1 is reserved for snapshot fonctions that take only one image, the 2-65535 numbers are used to number the following sequences</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="cartography_8c.html#a080ac69f1b64d76f6d739ca2799c61d2">   88</a></span>&#160;<span class="preprocessor">#define USE_ONBOARD_CAMERA 1</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="cartography_8c.html#a080ac69f1b64d76f6d739ca2799c61d2">   88</a></span>&#160;<span class="comment"></span><span class="preprocessor">#define USE_ONBOARD_CAMERA 1</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#if USE_ONBOARD_CAMERA</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="cartography_8c.html#a15a1b1c1da23f83e6bbebb276a9f0e82">   91</a></span>&#160;<span class="preprocessor"></span><a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="cartography_8c.html#a15a1b1c1da23f83e6bbebb276a9f0e82">camera_snapshot_image_number</a>=0;</div>
@@ -189,8 +202,9 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="cartography_8c.html#a07750a9decc5f8c3eeb1d5fe4a1bb8a4">   98</a></span>&#160;bool_t <a class="code" href="cartography_8c.html#a07750a9decc5f8c3eeb1d5fe4a1bb8a4">survey_losange_uturn</a>;<span class="comment">//this flag indicates if the aircraft is turning between 2 rails (1) or if it is flying straight forward in the rail direction (0)</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="cartography_8c.html#a07750a9decc5f8c3eeb1d5fe4a1bb8a4">   98</a></span>&#160;<span class="comment"></span>bool_t <a class="code" href="cartography_8c.html#a07750a9decc5f8c3eeb1d5fe4a1bb8a4">survey_losange_uturn</a>;<span class="comment">//this flag indicates if the aircraft is turning between 2 rails (1) or if it is flying straight forward in the rail direction (0)</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="cartography_8c.html#acc8576eed4bd78ffeb5b48ab9fe51753">  100</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="cartography_8c.html#acc8576eed4bd78ffeb5b48ab9fe51753">railnumber</a>;  <span class="comment">//indicate the number of the rail being acquired</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="cartography_8c.html#aca3ab59c0bb6ec010bc6eb6dea8ce6a8">  101</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="cartography_8c.html#aca3ab59c0bb6ec010bc6eb6dea8ce6a8">numberofrailtodo</a>;</div>
@@ -215,8 +229,9 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="cartography_8c.html#a2f04aff589413d1e6cc89dcd7a827b78">  121</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="cartography_8c.html#a2f04aff589413d1e6cc89dcd7a827b78">tempcircleradius</a>;<span class="comment">// used to compute the radius of the UTURN after a rail</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="cartography_8c.html#adf3216e43778c7b6f01086007dc39dbe">  122</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="cartography_8c.html#adf3216e43778c7b6f01086007dc39dbe">circleradiusmin</a>=40;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="cartography_8c.html#afc419e20296f110428d595612d47da40">  125</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="cartography_8c.html#afc419e20296f110428d595612d47da40">normBM</a>,<a class="code" href="cartography_8c.html#a5bd0eac75b0bee5a435f6da1c9104397">normAM</a>,<a class="code" href="cartography_8c.html#ae9888b63ebf545f6b2b02fde49d3a247">distancefromrail</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="cartography_8c.html#afc419e20296f110428d595612d47da40">  125</a></span>&#160;<span class="comment"></span><span class="keywordtype">float</span> <a class="code" href="cartography_8c.html#afc419e20296f110428d595612d47da40">normBM</a>,<a class="code" href="cartography_8c.html#a5bd0eac75b0bee5a435f6da1c9104397">normAM</a>,<a class="code" href="cartography_8c.html#ae9888b63ebf545f6b2b02fde49d3a247">distancefromrail</a>;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
 <div class="line"><a name="l00128"></a><span class="lineno"><a class="code" href="cartography_8c.html#a685735819d98fcac11b5db9f1dc3cfc7">  128</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="cartography_8c.html#a685735819d98fcac11b5db9f1dc3cfc7">course_next_rail</a>;</div>
@@ -237,8 +252,9 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#include &quot;std.h&quot;</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00149"></a><span class="lineno"><a class="code" href="cartography_8h.html#a8a3ba9e357ce33b86c23aa001f430698">  149</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="cartography_8c.html#a8a3ba9e357ce33b86c23aa001f430698" title="Automatic survey of an oriented rectangle (defined by three points)">init_carto</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
@@ -253,37 +269,42 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="code" href="cartography_8h.html#a243677c7fe09d4135f5f39799b09cf63">  165</a></span>&#160;bool_t <a class="code" href="cartography_8c.html#a243677c7fe09d4135f5f39799b09cf63">nav_survey_Inc_railnumberSinceBoot</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">///////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="code" href="cartography_8h.html#a243677c7fe09d4135f5f39799b09cf63">  165</a></span>&#160;<span class="comment"></span>bool_t <a class="code" href="cartography_8c.html#a243677c7fe09d4135f5f39799b09cf63">nav_survey_Inc_railnumberSinceBoot</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="cartography_8c.html#a20a0aca5f2607987909da6278f59c1dc">railnumberSinceBoot</a>++;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
-<div class="line"><a name="l00171"></a><span class="lineno"><a class="code" href="cartography_8h.html#a03f5b7afff6175c3a3fd55924a58463b">  171</a></span>&#160;bool_t <a class="code" href="cartography_8c.html#a03f5b7afff6175c3a3fd55924a58463b">nav_survey_Snapshoot</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">///////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="code" href="cartography_8h.html#a03f5b7afff6175c3a3fd55924a58463b">  171</a></span>&#160;<span class="comment"></span>bool_t <a class="code" href="cartography_8c.html#a03f5b7afff6175c3a3fd55924a58463b">nav_survey_Snapshoot</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <a class="code" href="cartography_8c.html#a15a1b1c1da23f83e6bbebb276a9f0e82">camera_snapshot_image_number</a>=<a class="code" href="cartography_8c.html#a20a0aca5f2607987909da6278f59c1dc">railnumberSinceBoot</a>;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <a class="code" href="cartography_8c.html#ab4d504bc731abbbb62912532a300b5d7">PRTDEBSTR</a>(SNAPSHOT)</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  cartography_periodic_downlink_carto_status = MODULES_START;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
-<div class="line"><a name="l00180"></a><span class="lineno"><a class="code" href="cartography_8h.html#abb04ae8175157b84134d6a62bc3c874f">  180</a></span>&#160;bool_t <a class="code" href="cartography_8c.html#abb04ae8175157b84134d6a62bc3c874f">nav_survey_Snapshoot_Continu</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">///////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="code" href="cartography_8h.html#abb04ae8175157b84134d6a62bc3c874f">  180</a></span>&#160;<span class="comment"></span>bool_t <a class="code" href="cartography_8c.html#abb04ae8175157b84134d6a62bc3c874f">nav_survey_Snapshoot_Continu</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <a class="code" href="cartography_8c.html#a15a1b1c1da23f83e6bbebb276a9f0e82">camera_snapshot_image_number</a>=<a class="code" href="cartography_8c.html#a20a0aca5f2607987909da6278f59c1dc">railnumberSinceBoot</a>;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <a class="code" href="cartography_8c.html#ab4d504bc731abbbb62912532a300b5d7">PRTDEBSTR</a>(SNAPSHOT)</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  cartography_periodic_downlink_carto_status = MODULES_START;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="code" href="cartography_8h.html#a13c5f7d99cf568fb35d8b269f8d4cc62">  189</a></span>&#160;bool_t <a class="code" href="cartography_8c.html#a13c5f7d99cf568fb35d8b269f8d4cc62">nav_survey_StopSnapshoot</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">///////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="code" href="cartography_8h.html#a13c5f7d99cf568fb35d8b269f8d4cc62">  189</a></span>&#160;<span class="comment"></span>bool_t <a class="code" href="cartography_8c.html#a13c5f7d99cf568fb35d8b269f8d4cc62">nav_survey_StopSnapshoot</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <a class="code" href="cartography_8c.html#a15a1b1c1da23f83e6bbebb276a9f0e82">camera_snapshot_image_number</a>=0;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="cartography_8c.html#ab4d504bc731abbbb62912532a300b5d7">PRTDEBSTR</a>(STOP SNAPSHOT)</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  cartography_periodic_downlink_carto_status = MODULES_START;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">///////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00199"></a><span class="lineno"><a class="code" href="cartography_8h.html#a2174c11ed9b1791e77d8f836925d3fb7">  199</a></span>&#160;bool_t <a class="code" href="cartography_8c.html#a2174c11ed9b1791e77d8f836925d3fb7">nav_survey_computefourth_corner</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp1, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp2,  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp3, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp4 )</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp4].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a>=<a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp2].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a>+<a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp3].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a>-<a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp1].<a class="code" href="structEnuCoor__i.html#ac9bd889fdbf79a382a838c440e5cd324">x</a>;</div>
@@ -294,8 +315,9 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <a class="code" href="cartography_8c.html#a53755989fb6246b8bff7b8835790bc0c">PRTDEB</a>(f,<a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[wp4].<a class="code" href="structpoint.html#a616ad85a2096d1566f5971666bbc3b3f">y</a>)</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;bool_t  <a class="code" href="cartography_8c.html#a063dac7fd8c1e9ea74615aba7b2b62bb">nav_survey_ComputeProjectionOnLine</a>(<span class="keyword">struct</span> <a class="code" href="structpoint.html">point</a> pointAf,<span class="keyword">struct</span> <a class="code" href="structpoint.html">point</a> pointBf,<span class="keywordtype">float</span> pos_xf,<span class="keywordtype">float</span> pos_yf,<span class="keywordtype">float</span> *normAMf,<span class="keywordtype">float</span> *normBMf,<span class="keywordtype">float</span> *distancefromrailf);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment"></span>bool_t  <a class="code" href="cartography_8c.html#a063dac7fd8c1e9ea74615aba7b2b62bb">nav_survey_ComputeProjectionOnLine</a>(<span class="keyword">struct</span> <a class="code" href="structpoint.html">point</a> pointAf,<span class="keyword">struct</span> <a class="code" href="structpoint.html">point</a> pointBf,<span class="keywordtype">float</span> pos_xf,<span class="keywordtype">float</span> pos_yf,<span class="keywordtype">float</span> *normAMf,<span class="keywordtype">float</span> *normBMf,<span class="keywordtype">float</span> *distancefromrailf);</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
 <div class="line"><a name="l00214"></a><span class="lineno"><a class="code" href="cartography_8c.html#a063dac7fd8c1e9ea74615aba7b2b62bb">  214</a></span>&#160;bool_t  <a class="code" href="cartography_8c.html#a063dac7fd8c1e9ea74615aba7b2b62bb">nav_survey_ComputeProjectionOnLine</a>(<span class="keyword">struct</span> <a class="code" href="structpoint.html">point</a> pointAf,<span class="keyword">struct</span> <a class="code" href="structpoint.html">point</a> pointBf,<span class="keywordtype">float</span> pos_xf,<span class="keywordtype">float</span> pos_yf,<span class="keywordtype">float</span> *normAMf,<span class="keywordtype">float</span> *normBMf,<span class="keywordtype">float</span> *distancefromrailf)</div>
@@ -389,8 +411,9 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="cartography_8c.html#ab4d504bc731abbbb62912532a300b5d7">PRTDEBSTR</a>(INSIDE)</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  }</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">//if distrailinit = 0, the aircraft travel from  wp1 -&gt; wp2 then do the inverse travel passing through  the wp3,</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">///////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment"></span><span class="comment">//if distrailinit = 0, the aircraft travel from  wp1 -&gt; wp2 then do the inverse travel passing through  the wp3,</span></div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">//This mode could be use to register bands of images aquired in a first nav_survey_losange_carto, done perpendicularly</span></div>
 <div class="line"><a name="l00309"></a><span class="lineno"><a class="code" href="cartography_8h.html#aa59a5a778f562a5f1e63a61644817c1c">  309</a></span>&#160;bool_t <a class="code" href="cartography_8c.html#a4b665f7af3982470588f99b13fe9d623">nav_survey_losange_carto_init</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp1, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp2,  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp3, <span class="keywordtype">float</span> distrailinit, <span class="keywordtype">float</span> distplusinit)</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;{</div>
@@ -488,8 +511,9 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  <span class="comment">//dans le flight_plan.h</span></div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  <span class="comment">//        if (! (nav_survey_losange_carto()))</span></div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  <span class="comment">//          NextStageAndBreak();</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}</div>
-<div class="line"><a name="l00407"></a><span class="lineno"><a class="code" href="cartography_8h.html#a7b94efa215c22c1373bed3e596c4daac">  407</a></span>&#160;bool_t <a class="code" href="cartography_8c.html#a7b94efa215c22c1373bed3e596c4daac">nav_survey_losange_carto</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno"><a class="code" href="cartography_8h.html#a7b94efa215c22c1373bed3e596c4daac">  407</a></span>&#160;<span class="comment"></span>bool_t <a class="code" href="cartography_8c.html#a7b94efa215c22c1373bed3e596c4daac">nav_survey_losange_carto</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;{</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  <span class="comment">//test pour modifier en vol la valeur distrail</span></div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;</div>
@@ -796,8 +820,9 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    }</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;  }</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;  <span class="comment">//NavVerticalAutoThrottleMode(0.); /* No pitch */</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="comment">  //////////////// FAUT IL METTRE l&#39;APPEL A CES FONCTIONS???????????????,</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="comment"></span>  <span class="comment">//NavVerticalAutoThrottleMode(0.); /* No pitch */</span></div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;  <span class="comment">//NavVerticalAltitudeMode(WaypointAlt(wp1), 0.); /* No preclimb */</span></div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;</div>
@@ -805,8 +830,9 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;  cartography_periodic_downlink_carto_status = MODULES_START;</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>; <span class="comment">//apparament pour les fonctions de tache=&gt; true</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;}</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -814,7 +840,7 @@ $(document).ready(function(){initNavTree('cartography_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_792c2a84fee7c4fb401cf6815b5aa97f.html">cartography</a></li><li class="navelem"><a class="el" href="cartography_8c.html">cartography.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,7 +128,14 @@ $(document).ready(function(){initNavTree('infrared__adc_8c_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/** \file subsystems/sensors/infrared_adc.c</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  \brief Regroup all functions link to ADC \a ir</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="subsystems_2sensors_2infrared__adc_8h.html">subsystems/sensors/infrared_adc.h</a>&quot;</span></div>
@@ -164,7 +171,10 @@ $(document).ready(function(){initNavTree('infrared__adc_8c_source.html','');});
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/* No event with adc ir */</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="infrared__adc_8c.html#adb9448639911594432d760f80443b4d7">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="infrared_8h.html#adb9448639911594432d760f80443b4d7">infrared_event</a>(<span class="keywordtype">void</span>) {}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/** \brief Initialisation of \a ir */</span><span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/** Initialize \a adc_buf_channel</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="subsystems_2sensors_2infrared__adc_8h.html#afd9b914e78df4722702ab0113752a2b0">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="infrared__adc_8c.html#afd9b914e78df4722702ab0113752a2b0" title="Initialisation of ir.">infrared_adc_init</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#if ! (defined SITL || defined HITL)</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span>  <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(ADC_CHANNEL_IR1, &amp;<a class="code" href="infrared__adc_8c.html#a3e1ff4a003990d5886e6200c674b7782">buf_ir1</a>, <a class="code" href="infrared__adc_8c.html#aeef783659a6c1dc929542d65be5d7fc4">ADC_CHANNEL_IR_NB_SAMPLES</a>);</div>
@@ -181,7 +191,10 @@ $(document).ready(function(){initNavTree('infrared__adc_8c_source.html','');});
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/** \brief Update \a ir_roll and ir_pitch from ADCs or from simulator</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * message in HITL and SITL modes</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="subsystems_2sensors_2infrared__adc_8h.html#a246a1412611e4887b2bd242f67504af2">   89</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="infrared__adc_8c.html#a246a1412611e4887b2bd242f67504af2" title="Update ir_roll and ir_pitch from ADCs or from simulator message in HITL and SITL modes.">infrared_adc_update</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#if ! (defined SITL || defined HITL)</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor"></span>  <a class="code" href="infrared__adc_8c.html#a29f0aefb8b8d33559dc1db02be8b5020">ir_adc</a>.<a class="code" href="structInfrared__raw.html#a6fba13edcc29d9bc27f6a6c9034a71b9">ir1</a> = (<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)(<a class="code" href="infrared__adc_8c.html#a3e1ff4a003990d5886e6200c674b7782">buf_ir1</a>.<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a>/<a class="code" href="infrared__adc_8c.html#a3e1ff4a003990d5886e6200c674b7782">buf_ir1</a>.<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>) - IR_ADC_IR1_NEUTRAL;</div>
@@ -199,7 +212,7 @@ $(document).ready(function(){initNavTree('infrared__adc_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_e01cf89a864aaa577ca086acf087ca29.html">sensors</a></li><li class="navelem"><a class="el" href="infrared__adc_8c.html">infrared_adc.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:06 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:36 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

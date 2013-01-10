@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -127,12 +127,17 @@ $(document).ready(function(){initNavTree('stabilization__attitude__ref__euler__i
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/** @file stabilization_attitude_ref_euler_int.c</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  Rotorcraft attitude reference generation (euler int version)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="stabilization_8h.html" title="General stabilization interface for rotorcrafts.">firmwares/rotorcraft/stabilization.h</a>&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#a5b355848d1ce79a73b3fe67c8e86cd42">   29</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0" title="with INT32_ANGLE_FRAC">stab_att_sp_euler</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#a231402ac57a681e4714bd44789e009e9">   30</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a141d82bdde469aa835758b7d0a490884" title="with REF_ANGLE_FRAC">stab_att_ref_euler</a>;  </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#affeb5583e4199cd130f1280c5bbd4f49">   31</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structInt32Rates.html" title="angular rates">Int32Rates</a>  <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#aa3575b0d9e11804fbd1f963d1b255699" title="with REF_RATE_FRAC">stab_att_ref_rate</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#a231402ac57a681e4714bd44789e009e9">   30</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structInt32Eulers.html" title="euler angles">Int32Eulers</a> <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a141d82bdde469aa835758b7d0a490884" title="with REF_ANGLE_FRAC">stab_att_ref_euler</a>;  <span class="comment">///&lt; with #REF_ANGLE_FRAC</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#affeb5583e4199cd130f1280c5bbd4f49">   31</a></span>&#160;<span class="comment"></span><span class="keyword">struct </span><a class="code" href="structInt32Rates.html" title="angular rates">Int32Rates</a>  <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#aa3575b0d9e11804fbd1f963d1b255699" title="with REF_RATE_FRAC">stab_att_ref_rate</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#a8c021676f88d01483c0c1aba3a1ace4f">   32</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structInt32Rates.html" title="angular rates">Int32Rates</a>  <a class="code" href="stabilization__attitude__ref__euler__float_8c.html#a40375b94775800b50d2f5f4121a394d7" title="with REF_ACCEL_FRAC">stab_att_ref_accel</a>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#a7682c717beab8da148168162d84cb33e">   34</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="rotorcraft_2stabilization_2stabilization__attitude_8h.html#a7682c717beab8da148168162d84cb33e">stabilization_attitude_ref_init</a>(<span class="keywordtype">void</span>) {</div>
@@ -176,7 +181,8 @@ $(document).ready(function(){initNavTree('stabilization__attitude__ref__euler__i
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#ae5d3df9f98a48109685c58dcf246ef06">   72</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define OMEGA_2_R_RES 7</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#af9a027cbb9ccf27b7008821ad5e5e952">   73</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define OMEGA_2_R    BFP_OF_REAL((OMEGA_R*OMEGA_R), OMEGA_2_R_RES)</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">/** explicitly define to zero to disable attitude reference generation */</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#ifndef USE_ATTITUDE_REF</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="stabilization__attitude__ref__euler__int_8c.html#a0a9d2b9bafb223dc523c3a8299033b27">   78</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define USE_ATTITUDE_REF 1</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
@@ -247,7 +253,7 @@ $(document).ready(function(){initNavTree('stabilization__attitude__ref__euler__i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_e37d355c72eb7c8e5b43c34bdea5a24b.html">rotorcraft</a></li><li class="navelem"><a class="el" href="dir_d1b81cc433edb6118e3c3e3bc7700be0.html">stabilization</a></li><li class="navelem"><a class="el" href="stabilization__attitude__ref__euler__int_8c.html">stabilization_attitude_ref_euler_int.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

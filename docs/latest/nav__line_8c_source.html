@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,11 +128,17 @@ $(document).ready(function(){initNavTree('nav__line_8c_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/** \file nav_line.c</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  \brief Navigation along a line with nice U-turns</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;generated/airframe.h&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nav__line_8h.html">subsystems/navigation/nav_line.h</a>&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/** Status along the pattern */</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4a8b5deafb5a78d799c0691bef43de80ce">   33</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4" title="Status along the pattern.">line_status</a> { <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497acfcd68d903867d509a779613b2ccfba5">LR12</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a04ad51045635dee83d454860ae6b135c">LQC21</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a8b5deafb5a78d799c0691bef43de80ce">LTC2</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a31099427ddf1cb13114e28c9472b3c68">LQC22</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a383219705a1e85c6f680e43d1f304f5b">LR21</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497aca3f9b2462e0f5298f41a92f75fa11cd">LQC12</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497ad74fa6a689e1a6c8373a3359bba8d124">LTC1</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a7f637cfcb9990910ded6a6f84bafed9b">LQC11</a> };</div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="nav__line_8c.html#a1e4b07456818b9e3350d99d1931205fd">   34</a></span>&#160;<span class="keyword">static</span> <span class="keyword">enum</span> <a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4" title="Status along the pattern.">line_status</a> <a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4" title="Status along the pattern.">line_status</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
@@ -251,7 +257,7 @@ $(document).ready(function(){initNavTree('nav__line_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8a28edc49a666abb23d4888eaf71220c.html">navigation</a></li><li class="navelem"><a class="el" href="nav__line_8c.html">nav_line.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:06 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:36 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

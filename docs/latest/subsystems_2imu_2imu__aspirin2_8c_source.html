@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -227,16 +227,18 @@ $(document).ready(function(){initNavTree('subsystems_2imu_2imu__aspirin2_8c_sour
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.output_length = 2;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.input_length = 2;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">// Reset the MPU</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">  ///////////////////</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"></span>  <span class="comment">// Reset the MPU</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="subsystems_2imu_2imu__aspirin2_8c.html#aa6d55b682ef18f3e23bec41e5cf2fa2a">mpu_set</a>( <a class="code" href="mpu60X0_8h.html#a5ec5b6507bf2191e70f03ed3ae26074c">MPU60X0_REG_PWR_MGMT_1</a>,</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;           0x01 &lt;&lt; 7);    <span class="comment">// -device reset</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="subsystems_2imu_2imu__aspirin2_8c.html#aa6d55b682ef18f3e23bec41e5cf2fa2a">mpu_set</a>( <a class="code" href="mpu60X0_8h.html#a013de3f9f2adc6db252ae7f4ae379d7e">MPU60X0_REG_USER_CTRL</a>,</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;     (1 &lt;&lt; 2) |           <span class="comment">// Trigger a FIFO_RESET</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;     (1 &lt;&lt; 1) |           <span class="comment">// Trigger a I2C_MST_RESET</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;     (1 &lt;&lt; 0) );          <span class="comment">// Trigger a SIG_COND_RESET</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="comment">// Configure power:</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">  ///////////////////</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"></span>  <span class="comment">// Configure power:</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="comment">// MPU60X0_REG_PWR_MGMT_1</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="subsystems_2imu_2imu__aspirin2_8c.html#aa6d55b682ef18f3e23bec41e5cf2fa2a">mpu_set</a>( <a class="code" href="mpu60X0_8h.html#a5ec5b6507bf2191e70f03ed3ae26074c">MPU60X0_REG_PWR_MGMT_1</a>,</div>
@@ -249,8 +251,9 @@ $(document).ready(function(){initNavTree('subsystems_2imu_2imu__aspirin2_8c_sour
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="comment">// MPU60X0_REG_PWR_MGMT_2: Nothing should be in standby: default OK</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="comment">// -No standby and no wake timer</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="comment">// Measurement Settings</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">  /////////////////////////</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"></span>  <span class="comment">// Measurement Settings</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#if PERIODIC_FREQUENCY == 60</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor"></span><span class="comment">// Accelerometer: Bandwidth 44Hz, Delay 4.9ms</span></div>
@@ -296,8 +299,9 @@ $(document).ready(function(){initNavTree('subsystems_2imu_2imu__aspirin2_8c_sour
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;           (3 &lt;&lt; 3) );      <span class="comment">// Full Scale = 16g</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#ifndef MPU6000_NO_SLAVES</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="comment">// SPI Slave Configuration Section</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">  /////////////////////////////////////</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment"></span>  <span class="comment">// SPI Slave Configuration Section</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="comment">// Power the Aux I2C Circuit:</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="comment">// MPU60X0_REG_AUX_VDDIO = 0 (good on startup):  (0 &lt;&lt; 7);  // MPU6000: 0=Vdd. MPU6050 : 0=VLogic 1=Vdd</span></div>
@@ -441,7 +445,7 @@ $(document).ready(function(){initNavTree('subsystems_2imu_2imu__aspirin2_8c_sour
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8b2fa0708e2db44c1b91938af97bac44.html">imu</a></li><li class="navelem"><a class="el" href="subsystems_2imu_2imu__aspirin2_8c.html">imu_aspirin2.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

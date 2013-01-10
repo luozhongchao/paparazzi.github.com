@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -129,10 +129,19 @@ $(document).ready(function(){initNavTree('gps__ubx__ucenter_8c_source.html','');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * Initial author: C. De Wagter</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @file modules/gps/gps_ubx_ucenter.c</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @brief Configure Ublox GPS</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="gps__ubx__ucenter_8h.html" title="Configure Ublox GPS.">gps_ubx_ucenter.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span><span class="comment">//</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// UCENTER: init, periodic and event</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">static</span> bool_t <a class="code" href="gps__ubx__ucenter_8c.html#a3adbb7ebc13de8a91ecb98ae0abc7ab7">gps_ubx_ucenter_autobaud</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> nr);</div>
@@ -150,8 +159,9 @@ $(document).ready(function(){initNavTree('gps__ubx__ucenter_8c_source.html','');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// All U-Center data</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="gps__ubx__ucenter_8h.html#a080e2318dbd7b4cb34822c4fbbfc701d">   51</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structgps__ubx__ucenter__struct.html">gps_ubx_ucenter_struct</a> <a class="code" href="gps__ubx__ucenter_8c.html#a080e2318dbd7b4cb34822c4fbbfc701d">gps_ubx_ucenter</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// Init Function</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/////////////////////////////</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span><span class="comment">// Init Function</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="gps__ubx__ucenter_8h.html#ab3e87f1813c44b35cf8df6774715a4a9">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="gps__ubx__ucenter_8c.html#ab3e87f1813c44b35cf8df6774715a4a9">gps_ubx_ucenter_init</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
@@ -174,8 +184,9 @@ $(document).ready(function(){initNavTree('gps__ubx__ucenter_8c_source.html','');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// Periodic Function</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/////////////////////////////</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span><span class="comment">// Periodic Function</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// -time-based configuration</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="gps__ubx__ucenter_8h.html#a483da5be54cf6eca071cd6c1ee0e3675">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="gps__ubx__ucenter_8c.html#a483da5be54cf6eca071cd6c1ee0e3675">gps_ubx_ucenter_periodic</a>(<span class="keywordtype">void</span>)</div>
@@ -215,8 +226,9 @@ $(document).ready(function(){initNavTree('gps__ubx__ucenter_8c_source.html','');
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">// Event Function</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">/////////////////////////////</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"></span><span class="comment">// Event Function</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">// -fetch replies: ACK and VERSION info</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
 <div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="gps__ubx__ucenter_8h.html#a6cb0d0e14aa4700bc5058890f146ca74">  125</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="gps__ubx_8h.html#ab05acbd0da9a2284e41c534e29ae87ca">gps_ubx_ucenter_event</a>(<span class="keywordtype">void</span>)</div>
@@ -249,8 +261,10 @@ $(document).ready(function(){initNavTree('gps__ubx__ucenter_8c_source.html','');
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">//////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">//////////////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment"></span><span class="comment">//</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">// UCENTER Configuration Functions</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
@@ -315,8 +329,9 @@ $(document).ready(function(){initNavTree('gps__ubx__ucenter_8c_source.html','');
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">// UBlox internal Navigation Solution</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">/////////////////////////////////////</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment"></span><span class="comment">// UBlox internal Navigation Solution</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
 <div class="line"><a name="l00227"></a><span class="lineno"><a class="code" href="gps__ubx__ucenter_8c.html#a8a90f2cd7dab634e840dc14d79431494">  227</a></span>&#160;<span class="preprocessor">#define NAV_DYN_STATIONARY  1</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno"><a class="code" href="gps__ubx__ucenter_8c.html#a160ab6bb8aade8f3e23693bdca032c11">  228</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NAV_DYN_PEDESTRIAN  2</span></div>
@@ -357,8 +372,9 @@ $(document).ready(function(){initNavTree('gps__ubx__ucenter_8c_source.html','');
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">// UBlox port and protocol GPS configuration</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">/////////////////////////////////////</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment"></span><span class="comment">// UBlox port and protocol GPS configuration</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
 <div class="line"><a name="l00270"></a><span class="lineno"><a class="code" href="gps__ubx__ucenter_8c.html#a80ea5ec151a883bb9d4526d7362c0bb2">  270</a></span>&#160;<span class="preprocessor">#define UBX_PROTO_MASK  0x0001</span></div>
 <div class="line"><a name="l00271"></a><span class="lineno"><a class="code" href="gps__ubx__ucenter_8c.html#ab9aa18b1e00f53f983be44115151c92a">  271</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NMEA_PROTO_MASK 0x0002</span></div>
@@ -453,8 +469,9 @@ $(document).ready(function(){initNavTree('gps__ubx__ucenter_8c_source.html','');
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <a class="code" href="gps__ubx__ucenter_8c.html#a080e2318dbd7b4cb34822c4fbbfc701d">gps_ubx_ucenter</a>.<a class="code" href="structgps__ubx__ucenter__struct.html#a96a918070719f68d1651fa36b9abac71">replies</a>[4] = <a class="code" href="gps__ubx__ucenter_8c.html#a080e2318dbd7b4cb34822c4fbbfc701d">gps_ubx_ucenter</a>.<a class="code" href="structgps__ubx__ucenter__struct.html#a874437be54c3f9c1625d1479133c9bc2">hw_ver_h</a>;</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <a class="code" href="gps__ubx__ucenter_8c.html#a080e2318dbd7b4cb34822c4fbbfc701d">gps_ubx_ucenter</a>.<a class="code" href="structgps__ubx__ucenter__struct.html#a96a918070719f68d1651fa36b9abac71">replies</a>[5] = <a class="code" href="gps__ubx__ucenter_8c.html#a080e2318dbd7b4cb34822c4fbbfc701d">gps_ubx_ucenter</a>.<a class="code" href="structgps__ubx__ucenter__struct.html#a4c6a3b4aebc4658f28b6dd1caa61fd5c">hw_ver_l</a>;</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    DOWNLINK_SEND_DEBUG(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,6,<a class="code" href="gps__ubx__ucenter_8c.html#a080e2318dbd7b4cb34822c4fbbfc701d">gps_ubx_ucenter</a>.<a class="code" href="structgps__ubx__ucenter__struct.html#a96a918070719f68d1651fa36b9abac71">replies</a>);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="comment">// Actual configuration start</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">    //////////////////////////////////</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment"></span>    <span class="comment">// Actual configuration start</span></div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">// Use old baudrate to issue a baudrate change command</span></div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <a class="code" href="gps__ubx__ucenter_8c.html#ac1011da76f5f001b5595df797f278664">gps_ubx_ucenter_config_port</a>();</div>
@@ -517,7 +534,7 @@ $(document).ready(function(){initNavTree('gps__ubx__ucenter_8c_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_5e5c455c6cc9b4955752fc2ddd0b9fff.html">gps</a></li><li class="navelem"><a class="el" href="gps__ubx__ucenter_8c.html">gps_ubx_ucenter.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

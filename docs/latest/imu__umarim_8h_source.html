@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -148,7 +148,12 @@ $(document).ready(function(){initNavTree('imu__umarim_8h_source.html','');});
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="imu__umarim_8h.html#a20144cb4fd6b12baf8d74063f8dc87e3">   39</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Y_SIGN  1</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="imu__umarim_8h.html#ad8bdd9e68ab45b4ec5950f2e718d8f6c">   40</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_Z_SIGN  1</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/** default gyro sensitivy and neutral from the datasheet</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * ITG3200 has 14.375 LSB/(deg/s)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * sens = 1/14.375 * pi/180 * 2^INT32_RATE_FRAC</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * sens = 1/14.375 * pi/180 * 4096 = 4.973126</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#if !defined IMU_GYRO_P_SENS &amp; !defined IMU_GYRO_Q_SENS &amp; !defined IMU_GYRO_R_SENS</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="imu__umarim_8h.html#ad08f71586fceaa57ea361681bb6543b7">   49</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_P_SENS 4.973</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="imu__umarim_8h.html#aa59c24839f4a36f23c98da339dea1224">   50</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_P_SENS_NUM 4973</span></div>
@@ -166,7 +171,18 @@ $(document).ready(function(){initNavTree('imu__umarim_8h_source.html','');});
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="imu__umarim_8h.html#adb9273d5a997fde171fc41b58191f597">   62</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_GYRO_R_NEUTRAL 0</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/** default accel sensitivy from the ADXL345 datasheet</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> * sensitivity of x &amp; y axes depends on supply voltage:</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> *   - 256 LSB/g @ 2.5V</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> *   - 265 LSB/g @ 3.3V</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * z sensitivity stays at 256 LSB/g</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * fixed point sens: 9.81 [m/s^2] / 256 [LSB/g] * 2^INT32_ACCEL_FRAC</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * x/y sens = 9.81 / 265 * 1024 = 37.91</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * z sens   = 9.81 / 256 * 1024 = 39.24</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> * what about the offset at 3.3V?</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#if !defined IMU_ACCEL_X_SENS &amp; !defined IMU_ACCEL_Y_SENS &amp; !defined IMU_ACCEL_Z_SENS</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="imu__umarim_8h.html#a8ac88fc00cde506229b92c6a1e2c3122">   78</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_X_SENS 37.91</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="imu__umarim_8h.html#ada91099469f16df2d8aeafa82d365c4b">   79</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_ACCEL_X_SENS_NUM 3791</span></div>
@@ -215,7 +231,7 @@ $(document).ready(function(){initNavTree('imu__umarim_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e030268cd18297cf6282390f76bfcf7f.html">boards</a></li><li class="navelem"><a class="el" href="dir_414104448893b1ba2b157e67b87d5a33.html">umarim</a></li><li class="navelem"><a class="el" href="imu__umarim_8h.html">imu_umarim.h</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

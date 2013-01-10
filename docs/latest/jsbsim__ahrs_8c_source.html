@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,16 +107,23 @@ $(document).ready(function(){initNavTree('jsbsim__ahrs_8c_source.html','');});
 <div class="title">jsbsim_ahrs.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="jsbsim__ahrs_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<a href="jsbsim__ahrs_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/** \file jsbsim_ahrs.c</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *  \brief Regroup functions to simulate an ahrs</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Ahrs soft simulation.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;std.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#ae73eb249a7855e34f52f6b873bb64807">   11</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ae73eb249a7855e34f52f6b873bb64807" title="in radians">sim_phi</a>;    </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda">   12</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda" title="in radians">sim_theta</a>;  </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#a944f26a7ad5a7811d8b671cd5d5b2dce">   13</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#a944f26a7ad5a7811d8b671cd5d5b2dce" title="in radians">sim_psi</a>;    </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#ad0537dfc8e7b1504a61bd86cf944e774">   14</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774" title="in radians/s">sim_p</a>;      </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#a1d08d1f86a284110ac777ccb661113af">   15</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af" title="in radians/s">sim_q</a>;      </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee">   16</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee" title="in radians/s">sim_r</a>;      </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="ahrs__sim_8h.html#a1db1788a280ee0f6279a9b8fc9124e5b">   17</a></span>&#160;bool_t <a class="code" href="jsbsim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b">ahrs_sim_available</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#ae73eb249a7855e34f52f6b873bb64807">   11</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ae73eb249a7855e34f52f6b873bb64807" title="in radians">sim_phi</a>;    <span class="comment">///&lt; in radians</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda">   12</a></span>&#160;<span class="comment"></span><span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda" title="in radians">sim_theta</a>;  <span class="comment">///&lt; in radians</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#a944f26a7ad5a7811d8b671cd5d5b2dce">   13</a></span>&#160;<span class="comment"></span><span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#a944f26a7ad5a7811d8b671cd5d5b2dce" title="in radians">sim_psi</a>;    <span class="comment">///&lt; in radians</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#ad0537dfc8e7b1504a61bd86cf944e774">   14</a></span>&#160;<span class="comment"></span><span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774" title="in radians/s">sim_p</a>;      <span class="comment">///&lt; in radians/s</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#a1d08d1f86a284110ac777ccb661113af">   15</a></span>&#160;<span class="comment"></span><span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af" title="in radians/s">sim_q</a>;      <span class="comment">///&lt; in radians/s</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="ahrs__sim_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee">   16</a></span>&#160;<span class="comment"></span><span class="keywordtype">float</span> <a class="code" href="jsbsim__ahrs_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee" title="in radians/s">sim_r</a>;      <span class="comment">///&lt; in radians/s</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="ahrs__sim_8h.html#a1db1788a280ee0f6279a9b8fc9124e5b">   17</a></span>&#160;<span class="comment"></span>bool_t <a class="code" href="jsbsim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b">ahrs_sim_available</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// Updates from jsbsim</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="jsbsim__hw_8h.html#a31e4e2c10a51f313d79445d44f54aaff">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="jsbsim__ahrs_8c.html#a31e4e2c10a51f313d79445d44f54aaff">provide_attitude_and_rates</a>(<span class="keywordtype">float</span> phi, <span class="keywordtype">float</span> theta, <span class="keywordtype">float</span> psi, <span class="keywordtype">float</span> <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <span class="keywordtype">float</span> q, <span class="keywordtype">float</span> r) {</div>
@@ -135,7 +142,7 @@ $(document).ready(function(){initNavTree('jsbsim__ahrs_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_c87a6d12365ead88e0b90ddbc1b3c9bb.html">sim</a></li><li class="navelem"><a class="el" href="jsbsim__ahrs_8c.html">jsbsim_ahrs.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

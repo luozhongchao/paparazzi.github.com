@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -219,7 +219,12 @@ $(document).ready(function(){initNavTree('lisa__stm__gps__passthrough__main_8c_s
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                 &amp;<a class="code" href="lisa__stm__gps__passthrough__main_8c.html#accea76ca9b1788b525757170fb4a3267">on_spistream_msg_sent</a>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> * Handler for commands (messages from Overo-&gt;STM).</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> * Right now, it is just sending the command back for</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"> * debugging purposes.</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970">  119</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#a1cc80e89a96148cbe46cde4f0312a970" title="Handler for commands (messages from Overo-&gt;STM).">on_spistream_msg_received</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> msg_id,</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                             <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> * data,</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                             <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> num_bytes)</div>
@@ -241,7 +246,17 @@ $(document).ready(function(){initNavTree('lisa__stm__gps__passthrough__main_8c_s
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  });</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment"> * Every SPI transfer contains exactly two packages of type</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"> * AutopilotMessagePTStream, one for each direction</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"> * (up: STM-&gt;Overo, down: Overo-&gt;STM).</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"> * As we delegate SPI message handling to spistream, the SPI</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"> * event just passes both packages to</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> * spistream_read_pkg(down_pkg) and spistream_write_pkg(up_pkg).</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"> * Apart from that, we just don&#39;t care about the SPI driver</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment"> * itself.</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno"><a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115">  151</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="lisa__stm__gps__passthrough__main_8c.html#abab689efb09e677b0b7833c21bed8115" title="Every SPI transfer contains exactly two packages of type AutopilotMessagePTStream, one for each direction (up: STM-&gt;Overo, down: Overo-&gt;STM).">on_overo_link_msg_received</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="lisa__spistream_8h.html#ad56d7ad7c03b6038f5456e3e668f21c9" title="Read a single package into internal RX buffer.">spistream_read_pkg</a>(&amp;<a class="code" href="lisa__overo__link_8c.html#a112a0d05fef7aba1a3b417fa75f7e3e2">overo_link</a>.<a class="code" href="structLisaOveroLink.html#ab7734fbbfced96a80d067c0b52eab703">down</a>.<a class="code" href="structLisaOveroLink.html#ae6cae29f4eb30631e6878d633198996e">msg</a>);</div>
@@ -273,7 +288,14 @@ $(document).ready(function(){initNavTree('lisa__stm__gps__passthrough__main_8c_s
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  }</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment"> * spistream stress test: Send big (500-700 bytes) messages</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment"> * with different message lengths for every channel and</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment"> * length varying in every message.</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment"> * Fool around with timeout to increase/decrease message</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment"> * rate to see when it can&#39;t keep up any more.</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#ifdef SPISTREAM_DEBUG</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> uart_debug_transfer_event(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keyword">static</span> <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> len = 0;</div>
@@ -439,7 +461,7 @@ $(document).ready(function(){initNavTree('lisa__stm__gps__passthrough__main_8c_s
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_619681cec2e2b8e1da0a59f060b05c88.html">lisa</a></li><li class="navelem"><a class="el" href="lisa__stm__gps__passthrough__main_8c.html">lisa_stm_gps_passthrough_main.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

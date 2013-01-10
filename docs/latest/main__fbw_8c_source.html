@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,7 +128,16 @@ $(document).ready(function(){initNavTree('main__fbw_8c_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/** \file main_fbw.c</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  \brief FBW ( FlyByWire ) process</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *   This process is responsible for decoding radio control, generating actuators</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * signals either from the radio control or from the commands provided by the</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * AP (autopilot) process. It also performs a telemetry task and a low level monitoring</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * ( for parameters like the supply )</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;generated/airframe.h&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main__fbw_8h.html" title="FBW ( FlyByWire ) process API.">firmwares/fixedwing/main_fbw.h</a>&quot;</span></div>
@@ -155,7 +164,9 @@ $(document).ready(function(){initNavTree('main__fbw_8c_source.html','');});
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="inter__mcu_8h.html">inter_mcu.h</a>&quot;</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/** Trim commands for roll and pitch/</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#ifndef COMMAND_ROLL_TRIM</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="main__fbw_8c.html#a367677864db2bdf0324039485b3a1cf7">   62</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define COMMAND_ROLL_TRIM 0</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
@@ -170,9 +181,9 @@ $(document).ready(function(){initNavTree('main__fbw_8c_source.html','');});
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="main__fbw_8c.html#a52feb6433e219a78c4d8963c5d86b3f4">   73</a></span>&#160;<span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__fbw_8c.html#a52feb6433e219a78c4d8963c5d86b3f4">fbw_new_actuators</a> = 0;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="main__fbw_8c.html#a8b339ec2322e68d92dab4078a68bd8c7">   75</a></span>&#160;<a class="code" href="sys__time_8h.html#aa448b29ae120d238dba2cb20079540ab" title="sys_time timer id type">tid_t</a> <a class="code" href="main__fbw_8c.html#a8b339ec2322e68d92dab4078a68bd8c7" title="id for periodic_task_fbw() timer">fbw_periodic_tid</a>; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="main__fbw_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe">   76</a></span>&#160;<a class="code" href="sys__time_8h.html#aa448b29ae120d238dba2cb20079540ab" title="sys_time timer id type">tid_t</a> <a class="code" href="main__fbw_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe" title="id for electrical_periodic() timer">electrical_tid</a>;   </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="main__fbw_8c.html#a8b339ec2322e68d92dab4078a68bd8c7">   75</a></span>&#160;<a class="code" href="sys__time_8h.html#aa448b29ae120d238dba2cb20079540ab" title="sys_time timer id type">tid_t</a> <a class="code" href="main__fbw_8c.html#a8b339ec2322e68d92dab4078a68bd8c7" title="id for periodic_task_fbw() timer">fbw_periodic_tid</a>; <span class="comment">///&lt; id for periodic_task_fbw() timer</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="main__fbw_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe">   76</a></span>&#160;<span class="comment"></span><a class="code" href="sys__time_8h.html#aa448b29ae120d238dba2cb20079540ab" title="sys_time timer id type">tid_t</a> <a class="code" href="main__fbw_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe" title="id for electrical_periodic() timer">electrical_tid</a>;   <span class="comment">///&lt; id for electrical_periodic() timer</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/********** INIT *************************************************************/</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="main__fbw_8h.html#ad86b7fe577a2414df2c7a5a9222aa45a">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main__fbw_8c.html#ad86b7fe577a2414df2c7a5a9222aa45a">init_fbw</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
@@ -272,9 +283,9 @@ $(document).ready(function(){initNavTree('main__fbw_8c_source.html','');});
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#ifdef SINGLE_MCU</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor"></span>    inter_mcu_fill_fbw_state();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#endif </span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">  }</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/**Else the buffer is filled even if the last receive was not correct */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor"></span>  }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#if OUTBACK_CHALLENGE_VERY_DANGEROUS_RULE_AP_CAN_FORCE_FAILSAFE</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#warning DANGER DANGER DANGER DANGER: Outback Challenge Rule FORCE-CRASH-RULE: DANGER DANGER: AP is now capable to FORCE your FBW in failsafe mode EVEN IF RC IS NOT LOST: Consider the consequences.</span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor"></span></div>
@@ -316,8 +327,8 @@ $(document).ready(function(){initNavTree('main__fbw_8c_source.html','');});
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">#ifdef MCU_SPI_LINK</span></div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="link__mcu__spi_8c.html#a5fbd44c122e7afa4afdb9368a7a6b2a4">link_mcu_received</a>) {</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="link__mcu__spi_8c.html#a5fbd44c122e7afa4afdb9368a7a6b2a4">link_mcu_received</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    inter_mcu_fill_fbw_state(); </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    link_mcu_restart(); </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    inter_mcu_fill_fbw_state(); <span class="comment">/** Prepares the next message for AP */</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    link_mcu_restart(); <span class="comment">/** Prepares the next SPI communication */</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  }</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MCU_SPI_LINK */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* INTER_MCU */</span><span class="preprocessor"></span></div>
@@ -376,7 +387,7 @@ $(document).ready(function(){initNavTree('main__fbw_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_cb1b347b64b61ba7f369ccfe68448b26.html">fixedwing</a></li><li class="navelem"><a class="el" href="main__fbw_8c.html">main_fbw.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

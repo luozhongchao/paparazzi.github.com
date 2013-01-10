@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -127,7 +127,13 @@ $(document).ready(function(){initNavTree('fixedwing_2guidance_2guidance__v_8c_so
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  @file firmwares/fixedwing/guidance/guidance_v.c</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  Vertical control for fixed wing vehicles.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2guidance_2guidance__v_8h.html" title="Vertical control for fixed wing vehicles.">firmwares/fixedwing/guidance/guidance_v.h</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span></div>
@@ -292,7 +298,11 @@ $(document).ready(function(){initNavTree('fixedwing_2guidance_2guidance__v_8c_so
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor"></span><span class="preprocessor">  #define   AGR_DESCENT_NAV_RATIO agr_descent_nav_ratio</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment"> * outer loop</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment"> * \brief Computes v_ctl_climb_setpoint and sets v_ctl_auto_throttle_submode</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno"><a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ab78a678ff1021823256d747800db3140">  197</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#ab78a678ff1021823256d747800db3140" title="outer loop">v_ctl_altitude_loop</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordtype">float</span> altitude_pgain_boost = 1.0;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
@@ -340,7 +350,12 @@ $(document).ready(function(){initNavTree('fixedwing_2guidance_2guidance__v_8c_so
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor"></span>  }</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment"> * auto throttle inner loop</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment"> * \brief</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">#if !USE_AIRSPEED</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00252"></a><span class="lineno"><a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ae1b6858ee2485b993f9f294027dbd032">  252</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#ae1b6858ee2485b993f9f294027dbd032" title="auto throttle inner loop">v_ctl_climb_auto_throttle_loop</a>(<span class="keywordtype">void</span>) {</div>
@@ -454,7 +469,11 @@ $(document).ready(function(){initNavTree('fixedwing_2guidance_2guidance__v_8c_so
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="preprocessor">#endif // USE_AIRSPEED</span></div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment"> * auto pitch inner loop</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment"> * \brief computes a v_ctl_pitch_setpoint from a climb_setpoint given a fixed throttle</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#ifdef V_CTL_AUTO_PITCH_PGAIN</span></div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor"></span><span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> v_ctl_climb_auto_pitch_loop(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <span class="keywordtype">float</span> err  = <a class="code" href="group__state__velocity.html#ga8e7f86fe83bd1b767f9c5016ed245822" title="Get ground speed in local ENU coordinates (float).">stateGetSpeedEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#af45d8ff67563a7c7bf0c7883aa0f3e3a" title="in meters">z</a> - <a class="code" href="energy__ctrl_8c.html#af6673f0686b827efdacc838902dc0ab3">v_ctl_climb_setpoint</a>;</div>
@@ -474,7 +493,9 @@ $(document).ready(function(){initNavTree('fixedwing_2guidance_2guidance__v_8c_so
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="preprocessor">#ifndef V_CTL_THROTTLE_SLEW</span></div>
 <div class="line"><a name="l00385"></a><span class="lineno"><a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#abce76ecdbe377a7dee4611131b720a66">  385</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define V_CTL_THROTTLE_SLEW 1.</span></div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor"></span><span class="comment">/** \brief Computes slewed throttle from throttle setpoint</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="comment">    called at 20Hz</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00390"></a><span class="lineno"><a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#a7fefa3c115f6c0f7453db6c2edd2dbbb">  390</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="energy__ctrl_8c.html#a7fefa3c115f6c0f7453db6c2edd2dbbb" title="Computes slewed throttle from throttle setpoint called at 20Hz.">v_ctl_throttle_slew</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  <a class="code" href="paparazzi_8h.html#a3fd988f23519b41e9aea4d38bfb45e1c">pprz_t</a> diff_throttle = <a class="code" href="energy__ctrl_8c.html#a1ee0cbf7d1ed331f44539840507a7436">v_ctl_throttle_setpoint</a> - <a class="code" href="energy__ctrl_8c.html#a91af08f8c8981542a5e44b874c7c39ad">v_ctl_throttle_slewed</a>;</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  BoundAbs(diff_throttle, <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(<a class="code" href="fixedwing_2guidance_2guidance__v_8c.html#abce76ecdbe377a7dee4611131b720a66" title="auto pitch inner loop">V_CTL_THROTTLE_SLEW</a>*<a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>));</div>
@@ -486,7 +507,7 @@ $(document).ready(function(){initNavTree('fixedwing_2guidance_2guidance__v_8c_so
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_cb1b347b64b61ba7f369ccfe68448b26.html">fixedwing</a></li><li class="navelem"><a class="el" href="dir_ed1aed0b4c5a033d4a5b36c06a1a768a.html">guidance</a></li><li class="navelem"><a class="el" href="fixedwing_2guidance_2guidance__v_8c.html">guidance_v.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

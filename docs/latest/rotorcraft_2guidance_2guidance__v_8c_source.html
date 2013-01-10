@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -127,7 +127,12 @@ $(document).ready(function(){initNavTree('rotorcraft_2guidance_2guidance__v_8c_s
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/** @file firmwares/rotorcraft/guidance/guidance_v.c</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  Vertical guidance for rotorcrafts.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#aa0f41746a6abcf647cc576a9d67a29a5">   27</a></span>&#160;<span class="preprocessor">#define GUIDANCE_V_C</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a16359294662b66c27957d73c45cb8ff6">   28</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GUIDANCE_V_USE_REF 1</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html" title="Vertical guidance for rotorcrafts.">firmwares/rotorcraft/guidance/guidance_v.h</a>&quot;</span></div>
@@ -165,9 +170,16 @@ $(document).ready(function(){initNavTree('rotorcraft_2guidance_2guidance__v_8c_s
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a730aebac96eaf548439f844e69456190">   62</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a730aebac96eaf548439f844e69456190" title="nominal throttle for hover.">guidance_v_nominal_throttle</a>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/** Direct throttle from radio control.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> *  range 0:#MAX_PPRZ</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a53779fb4d8ef92130859d3680c988156">   68</a></span>&#160;<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a53779fb4d8ef92130859d3680c988156" title="Direct throttle from radio control.">guidance_v_rc_delta_t</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/** Vertical speed setpoint from radio control.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> *  fixed point representation: Q12.19</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> *  accuracy 0.0000019, range +/-4096</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a6277e157223b959624eb89a3ab5c0630">   74</a></span>&#160;<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a6277e157223b959624eb89a3ab5c0630" title="Vertical speed setpoint from radio control.">guidance_v_rc_zd_sp</a>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="rotorcraft_2guidance_2guidance__v_8h.html#a29bc59ad2410e5768283d22eaeb1dc06">   76</a></span>&#160;<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a29bc59ad2410e5768283d22eaeb1dc06" title="altitude setpoint in meters (input).">guidance_v_z_sp</a>;</div>
@@ -411,7 +423,7 @@ $(document).ready(function(){initNavTree('rotorcraft_2guidance_2guidance__v_8c_s
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_e37d355c72eb7c8e5b43c34bdea5a24b.html">rotorcraft</a></li><li class="navelem"><a class="el" href="dir_3d64810a495a8e63c02e8d4ee1418813.html">guidance</a></li><li class="navelem"><a class="el" href="rotorcraft_2guidance_2guidance__v_8c.html">guidance_v.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

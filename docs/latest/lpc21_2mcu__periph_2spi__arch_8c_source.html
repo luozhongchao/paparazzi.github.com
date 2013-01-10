@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-369-gbe91f82</span>
+   &#160;<span id="projectnumber">v4.9_devel-370-g27891d5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,7 +128,17 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @file arch/lpc21/mcu_periph/spi_arch.c</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @ingroup lpc21_arch</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * Handling of SPI hardware for lpc21xx.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * for now only SPI1 ( aka SSP )</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * TODO current implementation only works for SPI1 (SSP)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="spi_8h.html" title="Architecture independent SPI (Serial Peripheral Interface) API.">mcu_periph/spi.h</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;std.h&quot;</span></div>
@@ -136,9 +146,12 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;interrupt_hw.h&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="armVIC_8h.html">armVIC.h</a>&quot;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include BOARD_CONFIG</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb42128c95b6c43585972be5260875f">   45</a></span>&#160;<span class="preprocessor">#define SPI_SELECT_SLAVE_IO__(port, reg) IO ## port ## reg</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/** @name Slave selection</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> *  Slave selection functions and macros.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> */</span><span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">///@{</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a3eb42128c95b6c43585972be5260875f">   45</a></span>&#160;<span class="comment"></span><span class="preprocessor">#define SPI_SELECT_SLAVE_IO__(port, reg) IO ## port ## reg</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da">   46</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SPI_SELECT_SLAVE_IO_(port, reg) SPI_SELECT_SLAVE_IO__(port, reg)</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#acf71ef21c3bd436e76f8203423ba366b">   48</a></span>&#160;<span class="preprocessor">#define SPI_SELECT_SLAVE0_IODIR SPI_SELECT_SLAVE_IO_(SPI_SELECT_SLAVE0_PORT, DIR)</span></div>
@@ -181,10 +194,14 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1126b0a8388d4a8eb8ded8bbe8ab940e">   95</a></span>&#160;__attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1126b0a8388d4a8eb8ded8bbe8ab940e">SpiSetCPOL</a>(struct <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">///@}</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"></span><span class="comment"></span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/** @name SPI clock</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> *  Spi clock polarity and phase functions.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> */</span><span class="comment"></span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">///@{</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1126b0a8388d4a8eb8ded8bbe8ab940e">   95</a></span>&#160;<span class="comment"></span>__attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1126b0a8388d4a8eb8ded8bbe8ab940e">SpiSetCPOL</a>(struct <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>) {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  SetBit(((<a class="code" href="structsspRegs__t.html">sspRegs_t</a> *)(p-&gt;reg_addr))-&gt;cr0, <a class="code" href="LPC21xx_8h.html#a0eb64d85804990e6ee5259451c7f5a0d">CPOL</a>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
@@ -198,9 +215,15 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
 <div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac8a1011a8423019c3b94e3a1a9744b6b">  107</a></span>&#160;__attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#ac8a1011a8423019c3b94e3a1a9744b6b">SpiClearCPHA</a>(struct <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>) {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  ClearBit(((<a class="code" href="structsspRegs__t.html">sspRegs_t</a> *)(p-&gt;reg_addr))-&gt;cr0, <a class="code" href="LPC21xx_8h.html#ad8529d2df242f4448a2e66aab0eef9a3">CPHA</a>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">///@}</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> * Set the SPI data size to 8 or 16bit.</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> * @param p SPI peripheral to set</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> * @param dss data size</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#ad816c76c7fe692f51942efa74bdb1d86">  118</a></span>&#160;__attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#ad816c76c7fe692f51942efa74bdb1d86" title="Set the SPI data size to 8 or 16bit.">SpiSetDataSize</a>(struct <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, enum <a class="code" href="group__spi.html#gab7f6befabf036cdd2fcc73e688d17f92" title="SPI Data size transfer.">SPIDataSizeSelect</a> dss) {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">switch</span> (dss) {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">default</span>:</div>
@@ -213,9 +236,12 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  }</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4bb68d5cebfe43c482fc48ca2a1ed6de">  135</a></span>&#160;__attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4bb68d5cebfe43c482fc48ca2a1ed6de">SpiEnable</a>(struct <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">/** @name SPI control</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"> *  Spi control functions.</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"> */</span><span class="comment"></span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">///@{</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4bb68d5cebfe43c482fc48ca2a1ed6de">  135</a></span>&#160;<span class="comment"></span>__attribute__ ((always_inline)) static inline <span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a4bb68d5cebfe43c482fc48ca2a1ed6de">SpiEnable</a>(struct <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>) {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  SetBit(((<a class="code" href="structsspRegs__t.html">sspRegs_t</a> *)(p-&gt;reg_addr))-&gt;cr1, <a class="code" href="LPC21xx_8h.html#ad518177eb0b052ffed6ce4d0d63e6ae4">SSE</a>);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
@@ -436,8 +462,9 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    p-&gt;status = <a class="code" href="group__spi.html#gga495f0019475966e28264aaf8e37c6529a043fd5f30e831835768732e5f373dada">SPIIdle</a>;</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  }</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">///@}</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">/* SSP (SPI1) pins (UM10120_1.pdf page 76)</span></div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">   P0.17 SCK    PINSEL1 2 &lt;&lt; 2</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment">   P0.18 MISO   PINSEL1 2 &lt;&lt; 4</span></div>
@@ -448,7 +475,8 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div class="line"><a name="l00366"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a7380b29f54b19837cc7265f92e7cea68">  366</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SSP_PINSEL1_MISO (2 &lt;&lt; 4)</span></div>
 <div class="line"><a name="l00367"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a39ad8cd75ea287d18491e7e6f4a8eb98">  367</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SSP_PINSEL1_MOSI (2 &lt;&lt; 6)</span></div>
 <div class="line"><a name="l00368"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a9a5ce8a9a794e79f0f1882af3c28a1d2">  368</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SSP_PINSEL1_SSEL (2 &lt;&lt; 8)</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment">/** default initial settings */</span></div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="preprocessor">#ifndef SPI1_VIC_SLOT</span></div>
 <div class="line"><a name="l00372"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#ad43efa9901f253a6a901a4bddd1b7f5f">  372</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SPI1_VIC_SLOT 7</span></div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
@@ -489,19 +517,22 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="preprocessor">#if USE_SPI1</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment">/* SSPCR0 settings */</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a8ce686875edd9f52d8dcc16d2266fde9">  411</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_DSS  0x07 &lt;&lt; 0  </span></div>
-<div class="line"><a name="l00412"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a848d83e49d33efd3fa1fed8dff214c36">  412</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_FRF  0x00 &lt;&lt; 4  </span></div>
-<div class="line"><a name="l00413"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a05f5fe2d2632777cb0399bdb2110bed6">  413</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_CPOL 0x00 &lt;&lt; 6  </span></div>
-<div class="line"><a name="l00414"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a363bb3cf49bc3d9477fe99944c8555e8">  414</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_CPHA 0x00 &lt;&lt; 7  </span></div>
-<div class="line"><a name="l00415"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a7ed0007196480a6ee2c6f60089a5d1f3">  415</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_SCR  0x0F &lt;&lt; 8  </span></div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="preprocessor"></span><span class="comment">/* SSPCR1 settings */</span></div>
-<div class="line"><a name="l00418"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a698702cbfb0f2a42aa90c7eebcce3f79">  418</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_LBM  0x00 &lt;&lt; 0  </span></div>
-<div class="line"><a name="l00419"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a22b03089e309c4ad8389e27f85a2919b">  419</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_SSE  0x00 &lt;&lt; 1  </span></div>
-<div class="line"><a name="l00420"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0d0eea1c82e8a797608475d1d1301fe2">  420</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_MS   0x00 &lt;&lt; 2  </span></div>
-<div class="line"><a name="l00421"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1f125d3bbe6e5729889471a08122684c">  421</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_SOD  0x00 &lt;&lt; 3  </span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00411"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a8ce686875edd9f52d8dcc16d2266fde9">  411</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_DSS  0x07 &lt;&lt; 0  </span><span class="comment">///&lt; data size         : 8 bits</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a848d83e49d33efd3fa1fed8dff214c36">  412</a></span>&#160;<span class="comment"></span>#define MASTER_SSP_FRF  0x00 &lt;&lt; 4  <span class="comment">///&lt; frame format      : SPI</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a05f5fe2d2632777cb0399bdb2110bed6">  413</a></span>&#160;<span class="comment"></span>#define MASTER_SSP_CPOL 0x00 &lt;&lt; 6  <span class="comment">///&lt; clock polarity    : SCK idles low</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a363bb3cf49bc3d9477fe99944c8555e8">  414</a></span>&#160;<span class="comment"></span>#define MASTER_SSP_CPHA 0x00 &lt;&lt; 7  <span class="comment">///&lt; clock phase       : data captured on first clock transition</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a7ed0007196480a6ee2c6f60089a5d1f3">  415</a></span>&#160;<span class="comment"></span>#define MASTER_SSP_SCR  0x0F &lt;&lt; 8  <span class="comment">///&lt; serial clock rate : divide by 16</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="comment">/* SSPCR1 settings */</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a698702cbfb0f2a42aa90c7eebcce3f79">  418</a></span>&#160;<span class="preprocessor">#define MASTER_SSP_LBM  0x00 &lt;&lt; 0  </span><span class="comment">///&lt; loopback mode     : disabled</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a22b03089e309c4ad8389e27f85a2919b">  419</a></span>&#160;<span class="comment"></span>#define MASTER_SSP_SSE  0x00 &lt;&lt; 1  <span class="comment">///&lt; SSP enable        : disabled</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a0d0eea1c82e8a797608475d1d1301fe2">  420</a></span>&#160;<span class="comment"></span>#define MASTER_SSP_MS   0x00 &lt;&lt; 2  <span class="comment">///&lt; master slave mode : master</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#a1f125d3bbe6e5729889471a08122684c">  421</a></span>&#160;<span class="comment"></span>#define MASTER_SSP_SOD  0x00 &lt;&lt; 3  <span class="comment">///&lt; slave output disable : don&#39;t care when master</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="comment">/** Clock prescaler.</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="comment"> * SPI clock rate = PCLK / (CPSR*(SCR+1))</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="comment"> * with PCLK = 30 MHz, CPSR = 2 and SCR = 15 -&gt; clock ~ 1 MHz</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="preprocessor">#ifndef SSPCPSR_VAL</span></div>
 <div class="line"><a name="l00428"></a><span class="lineno"><a class="code" href="lpc21_2mcu__periph_2spi__arch_8c.html#af0a07b3e285c4f239f705eccc3936459">  428</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SSPCPSR_VAL 0x02    </span><span class="comment">/* clock prescale */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
@@ -718,7 +749,8 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;}</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;<span class="comment">/** Register one (and only one) transaction to use spi as slave */</span></div>
 <div class="line"><a name="l00645"></a><span class="lineno"><a class="code" href="group__spi.html#ga02a7edceaff0d9adc8e9b236b9915415">  645</a></span>&#160;bool_t <a class="code" href="group__spi.html#ga02a7edceaff0d9adc8e9b236b9915415" title="Register one (and only one) transaction to use spi as slave.">spi_slave_register</a>(<span class="keyword">struct</span> <a class="code" href="structspi__periph.html">spi_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <span class="keyword">struct</span> <a class="code" href="structspi__transaction.html" title="SPI transaction structure.">spi_transaction</a>* t) {</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;  <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structspi__periph.html#ab96104b648a016e934752e01ec4f2b59">trans_insert_idx</a> &gt;= 1) {</div>
@@ -759,7 +791,7 @@ $(document).ready(function(){initNavTree('lpc21_2mcu__periph_2spi__arch_8c_sourc
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_3f7617cb4a5e4fe5cc816b7b3bbdea3a.html">lpc21</a></li><li class="navelem"><a class="el" href="dir_52b0b5e73fdd6096ec81364edad665ef.html">mcu_periph</a></li><li class="navelem"><a class="el" href="lpc21_2mcu__periph_2spi__arch_8c.html">spi_arch.c</a></li>
-    <li class="footer">Generated on Thu Jan 10 2013 11:58:05 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 10 2013 12:36:35 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>
