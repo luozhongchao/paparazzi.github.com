@@ -1,5 +1,12 @@
 var NAVTREEINDEX37 =
 {
+"module__light_temt.html#files":[2,44,1],
+"module__light_temt.html#functions":[2,44,0],
+"module__light_temt.html#headers":[2,44,1,0],
+"module__light_temt.html#init_functions":[2,44,0,0],
+"module__light_temt.html#module_xml__light_temt":[2,44,1,2],
+"module__light_temt.html#periodic_functions":[2,44,0,1],
+"module__light_temt.html#sources":[2,44,1,1],
 "module__mag_hmc5843.html":[2,75],
 "module__mag_hmc5843.html#event_functions":[2,75,0,1],
 "module__mag_hmc5843.html#files":[2,75,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX37 =
 "module__xtend_rssi.html#functions":[2,16,1],
 "module__xtend_rssi.html#headers":[2,16,2,0],
 "module__xtend_rssi.html#module_xml__xtend_rssi":[2,16,2,2],
-"module__xtend_rssi.html#periodic_functions":[2,16,1,0],
-"module__xtend_rssi.html#sources":[2,16,2,1],
-"modules.html":[6],
-"modules_2adcs_2mcp355x_8h.html":[8,0,0,0,7,0,4],
-"modules_2adcs_2mcp355x_8h_source.html":[8,0,0,0,7,0,4],
-"modules_2ins_2ins__arduimu_8c.html":[8,0,0,0,7,19,6],
-"modules_2ins_2ins__arduimu_8c.html#a2978a46b47cbc9d17a0924014ff9658b":[8,0,0,0,7,19,6,2],
-"modules_2ins_2ins__arduimu_8c.html#a336d5d67196f2aee02defc9616be4cb0":[8,0,0,0,7,19,6,12]
+"module__xtend_rssi.html#periodic_functions":[2,16,1,0]
 };

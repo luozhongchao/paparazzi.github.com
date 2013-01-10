@@ -1,5 +1,10 @@
 var NAVTREEINDEX53 =
 {
+"stm32_2subsystems_2settings__arch_8h.html":[8,0,0,0,0,3,2,4],
+"stm32_2subsystems_2settings__arch_8h_source.html":[8,0,0,0,0,3,2,4],
+"stm__test__spi__link_8c.html":[8,0,0,0,4,8],
+"stm__test__spi__link_8c.html#a085b7a7e09c9e63d14a73bb376a7c70f":[8,0,0,0,4,8,4],
+"stm__test__spi__link_8c.html#a319a645047f275499aa30b0bc08c6e10":[8,0,0,0,4,8,1],
 "stm__test__spi__link_8c.html#a433218491d8e51ae032540c2c00d263f":[8,0,0,0,4,8,2],
 "stm__test__spi__link_8c.html#a72b481de85a64c4798564d72ede15864":[8,0,0,0,4,8,3],
 "stm__test__spi__link_8c.html#a840291bc02cba5474a4cb46a9b9566fe":[8,0,0,0,4,8,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX53 =
 "structGeoMagVect.html#a4a73d66428a39b27c19d8ec813f699aa":[7,0,57,3],
 "structGeoMagVect.html#a738a146d57a985196e40458eaf7ebfdb":[7,0,57,1],
 "structGeoMagVect.html#af824842bef1cc8e81693d8779f8f5aaa":[7,0,57,0],
-"structGpsMtk.html":[7,0,60],
-"structGpsMtk.html#a024b9f5f34836c6a109a5ca0cb3f8913":[7,0,60,12],
-"structGpsMtk.html#a091cf7d70df3af29e8d27e61b67f5865":[7,0,60,7],
-"structGpsMtk.html#a0e175612bfc03126f5a22700d85ab747":[7,0,60,11],
-"structGpsMtk.html#a27b19c29ab2245b2ef17cf6e1f6ef2da":[7,0,60,3],
-"structGpsMtk.html#a38f9bcda01299c0a0caed07e24b05945":[7,0,60,10]
+"structGpsMtk.html":[7,0,60]
 };

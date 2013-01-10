@@ -2,6 +2,13 @@ var itg3200_8h =
 [
     [ "ITG3200_ADDR", "itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c", null ],
     [ "ITG3200_ADDR_ALT", "itg3200_8h.html#a3ca4418d93d526d62a562ba7ec586065", null ],
+    [ "ITG3200_DLPF_05HZ", "itg3200_8h.html#a4075a1619bce935e1d79d0f4035bbcce", null ],
+    [ "ITG3200_DLPF_10HZ", "itg3200_8h.html#a5337380d9d28423801e14b4866476f53", null ],
+    [ "ITG3200_DLPF_188HZ", "itg3200_8h.html#a7b958d8c2bd0160840dcb43441b833df", null ],
+    [ "ITG3200_DLPF_20HZ", "itg3200_8h.html#aa5f87e2bff12aa03306b851f83a8ad55", null ],
+    [ "ITG3200_DLPF_256HZ", "itg3200_8h.html#a134ce782c0b3a3b0b595b8a4b8875594", null ],
+    [ "ITG3200_DLPF_42HZ", "itg3200_8h.html#ac1bc0f2741cc77c0192e574a00d2b864", null ],
+    [ "ITG3200_DLPF_98HZ", "itg3200_8h.html#a81794a2c8ea393b6237ebd5d48e9ca10", null ],
     [ "ITG3200_REG_DLPF_FS", "itg3200_8h.html#a653510a2ba2abd795efbfc86e643a447", null ],
     [ "ITG3200_REG_GYRO_XOUT_H", "itg3200_8h.html#a56104f058052665032fd6b1e7936ad55", null ],
     [ "ITG3200_REG_GYRO_XOUT_L", "itg3200_8h.html#aab272e41744195958478972c7d148504", null ],

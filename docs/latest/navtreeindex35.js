@@ -1,5 +1,12 @@
 var NAVTREEINDEX35 =
 {
+"module__baro_ets.html#define":[2,64,0,0],
+"module__baro_ets.html#event_functions":[2,64,1,1],
+"module__baro_ets.html#files":[2,64,2],
+"module__baro_ets.html#functions":[2,64,1],
+"module__baro_ets.html#headers":[2,64,2,0],
+"module__baro_ets.html#init_functions":[2,64,1,0],
+"module__baro_ets.html#module_xml__baro_ets":[2,64,2,2],
 "module__baro_ets.html#periodic_functions":[2,64,1,2],
 "module__baro_ets.html#sources":[2,64,2,1],
 "module__baro_hca.html":[2,65],
@@ -242,12 +249,5 @@ var NAVTREEINDEX35 =
 "module__generic_com.html#module_xml__generic_com":[2,88,2,2],
 "module__generic_com.html#periodic_functions":[2,88,1,2],
 "module__generic_com.html#sources":[2,88,2,1],
-"module__geo_mag.html":[2,89],
-"module__geo_mag.html#event_functions":[2,89,0,1],
-"module__geo_mag.html#files":[2,89,1],
-"module__geo_mag.html#functions":[2,89,0],
-"module__geo_mag.html#headers":[2,89,1,0],
-"module__geo_mag.html#init_functions":[2,89,0,0],
-"module__geo_mag.html#module_xml__geo_mag":[2,89,1,2],
-"module__geo_mag.html#periodic_functions":[2,89,0,2]
+"module__geo_mag.html":[2,89]
 };

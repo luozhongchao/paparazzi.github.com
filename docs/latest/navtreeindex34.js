@@ -1,5 +1,12 @@
 var NAVTREEINDEX34 =
 {
+"max3100__hw_8c.html#a5ac06ec72a80731511c49635c3f06f7e":[8,0,0,0,7,22,0,25],
+"max3100__hw_8c.html#a60b75144d77bfcbd80fb0d7a5ecfb40b":[8,0,0,0,7,22,0,15],
+"max3100__hw_8c.html#a65d6ea131026affbdf33be235dfdb49d":[8,0,0,0,7,22,0,17],
+"max3100__hw_8c.html#a72b3a08d1d674204a3afad4b51da7766":[8,0,0,0,7,22,0,27],
+"max3100__hw_8c.html#a83fe52dea5a9e78230b1b751d64d81d2":[8,0,0,0,7,22,0,1],
+"max3100__hw_8c.html#a8484136e7496673fca205e0ef7730109":[8,0,0,0,7,22,0,11],
+"max3100__hw_8c.html#a84d6e1503d04379acd66f99f581e47e4":[8,0,0,0,7,22,0,19],
 "max3100__hw_8c.html#a9352403dc1ba8d2d9cb2d78ff761c2e5":[8,0,0,0,7,22,0,20],
 "max3100__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b":[8,0,0,0,7,22,0,14],
 "max3100__hw_8c.html#a9ded33dee825d86d167cd72f2225c020":[8,0,0,0,7,22,0,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX34 =
 "module__baro_board.html#module_xml__baro_board":[2,63,0,2],
 "module__baro_board.html#sources":[2,63,0,1],
 "module__baro_ets.html":[2,64],
-"module__baro_ets.html#configuration":[2,64,0],
-"module__baro_ets.html#define":[2,64,0,0],
-"module__baro_ets.html#event_functions":[2,64,1,1],
-"module__baro_ets.html#files":[2,64,2],
-"module__baro_ets.html#functions":[2,64,1],
-"module__baro_ets.html#headers":[2,64,2,0],
-"module__baro_ets.html#init_functions":[2,64,1,0],
-"module__baro_ets.html#module_xml__baro_ets":[2,64,2,2]
+"module__baro_ets.html#configuration":[2,64,0]
 };

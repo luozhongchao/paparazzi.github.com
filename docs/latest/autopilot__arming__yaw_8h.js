@@ -1,6 +1,6 @@
 var autopilot__arming__yaw_8h =
 [
-    [ "AUTOPILOT_MOTOR_ON_TIME", "autopilot__arming__yaw_8h.html#ae23792cc1081225b0f4f8f6657609374", null ],
+    [ "MOTOR_ARMING_DELAY", "autopilot__arming__yaw_8h.html#a2ac6665da7b4202f8acb8c81e491e051", null ],
     [ "arming_state", "autopilot__arming__yaw_8h.html#abd7b974a7084669ffc2893dd65db427e", [
       [ "STATE_UNINIT", "autopilot__arming__yaw_8h.html#abd7b974a7084669ffc2893dd65db427ea0075eeb0f3377fa2dad84d3656ab8c6d", null ],
       [ "STATE_WAITING", "autopilot__arming__yaw_8h.html#abd7b974a7084669ffc2893dd65db427ead79a43d70eda33549c20a9f8490e44c1", null ],

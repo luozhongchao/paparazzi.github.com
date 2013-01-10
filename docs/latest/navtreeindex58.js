@@ -1,5 +1,10 @@
 var NAVTREEINDEX58 =
 {
+"structw5100__periph.html#ae4c6de4389f9f8939d615e026acea87a":[7,0,168,8],
+"structw5100__periph.html#aef5b35c1844805e406b8099a5ec12df4":[7,0,168,7],
+"structw5100__periph.html#af0dc6d17a069ba3ff67be8c179521ad1":[7,0,168,1],
+"structw5100__periph.html#af55158dce4e386eebe2a96871f729a56":[7,0,168,4],
+"structw5100__transport.html":[7,0,169],
 "structw5100__transport.html#a0a23f04a0a1c9246b64144b683bc4e5c":[7,0,169,1],
 "structw5100__transport.html#a20e482f1d6c86f5c3bc99c82e2673bcf":[7,0,169,4],
 "structw5100__transport.html#ae884fb68c78565ce6bd5818e144bcace":[7,0,169,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX58 =
 "telemetry_8h.html#a24b614904288d1db502a3b9d3e2e3948":[8,0,0,0,3,1,17,7],
 "telemetry_8h.html#a25fa8df9fad289f46a1bcc92ba02f56b":[8,0,0,0,3,1,17,26],
 "telemetry_8h.html#a262c1bcb37f2cc3336b2855bc42f010c":[8,0,0,0,3,1,17,46],
-"telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763":[8,0,0,0,3,1,17,11],
-"telemetry_8h.html#a660336da5d716d96bb92d253f977d20d":[8,0,0,0,3,1,17,16],
-"telemetry_8h.html#a6864cff2ed3065e68c8debdaca61b6f5":[8,0,0,0,3,1,17,43],
-"telemetry_8h.html#a6a44870053f61a55cb8960842d14fa8b":[8,0,0,0,3,1,17,35],
-"telemetry_8h.html#a6afa507ab03fdc8c88d8998486795641":[8,0,0,0,3,1,17,33],
-"telemetry_8h.html#a7b4102cb6e84d79ea414e72190f775bd":[8,0,0,0,3,1,17,41]
+"telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763":[8,0,0,0,3,1,17,11]
 };

@@ -1,5 +1,12 @@
 var NAVTREEINDEX49 =
 {
+"stabilization_8h.html":[8,0,0,0,3,1,15],
+"stabilization_8h.html#a7db6cb929d989e142cf136ac4af10add":[8,0,0,0,3,1,15,1],
+"stabilization_8h.html#adfc80da254aa5bbac3fc038eaaa3d9ad":[8,0,0,0,3,1,15,0],
+"stabilization_8h_source.html":[8,0,0,0,3,1,15],
+"stabilization__adaptive_8c.html":[8,0,0,0,3,0,1,0],
+"stabilization__adaptive_8c.html#a029ab27e9bceb4766b54229ec6e7b098":[8,0,0,0,3,0,1,0,1],
+"stabilization__adaptive_8c.html#a02ae04f0f1bbe7588572e87e3dadb381":[8,0,0,0,3,0,1,0,22],
 "stabilization__adaptive_8c.html#a02c5961350a53d8e5f9a0c0ff3a7a3b8":[8,0,0,0,3,0,1,0,5],
 "stabilization__adaptive_8c.html#a10c9851e192217d5a4e7b6dc98e16c2d":[8,0,0,0,3,0,1,0,24],
 "stabilization__adaptive_8c.html#a134ad933d69b7de8c8142a698d231864":[8,0,0,0,3,0,1,0,45],
@@ -242,12 +249,5 @@ var NAVTREEINDEX49 =
 "stabilization__attitude__ref__euler__float_8c.html#a51e82f953cec8b116f7f07a25bb6dae2":[8,0,0,0,3,1,1,9,6],
 "stabilization__attitude__ref__euler__float_8c.html#a59ce1a73acc3ff15337be2a1782545f2":[8,0,0,0,3,1,1,9,0],
 "stabilization__attitude__ref__euler__float_8c.html#a608ba2cf6b2f506c7a5a19cfe514f278":[8,0,0,0,3,1,1,9,12],
-"stabilization__attitude__ref__euler__float_8c.html#a7682c717beab8da148168162d84cb33e":[8,0,0,0,3,1,1,9,14],
-"stabilization__attitude__ref__euler__float_8c.html#aa2941d3d67e37b8762d12eb56c349d78":[8,0,0,0,3,1,1,9,4],
-"stabilization__attitude__ref__euler__float_8c.html#aa3575b0d9e11804fbd1f963d1b255699":[8,0,0,0,3,1,1,9,18],
-"stabilization__attitude__ref__euler__float_8c.html#aa81d4bbb6fc4913f6b9165b818a577c5":[8,0,0,0,3,1,1,9,15],
-"stabilization__attitude__ref__euler__float_8c.html#abd4a56cc72ad97fefe95cae5f11b5924":[8,0,0,0,3,1,1,9,5],
-"stabilization__attitude__ref__euler__float_8c.html#ac45f26bd8ff0228f320ed655d17777d5":[8,0,0,0,3,1,1,9,13],
-"stabilization__attitude__ref__euler__float_8c.html#afb103afd5c597aa1a40e8eb331ee1568":[8,0,0,0,3,1,1,9,2],
-"stabilization__attitude__ref__euler__float_8c_source.html":[8,0,0,0,3,1,1,9]
+"stabilization__attitude__ref__euler__float_8c.html#a7682c717beab8da148168162d84cb33e":[8,0,0,0,3,1,1,9,14]
 };
