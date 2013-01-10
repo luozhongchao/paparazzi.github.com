@@ -391,7 +391,7 @@ var searchData=
   ['mode_5fauto2',['MODE_AUTO2',['../rotorcraft_2autopilot_8h.html#a08f66aa60f30903c4240dac601ab555a',1,'autopilot.h']]],
   ['mode_5fmanual',['MODE_MANUAL',['../rotorcraft_2autopilot_8h.html#ab3d62edb632309d9a423661747cdb73b',1,'autopilot.h']]],
   ['modeupdate',['ModeUpdate',['../fixedwing_2autopilot_8h.html#a1bf7cecdbe3f008fdb8dd8404c4e510f',1,'autopilot.h']]],
-  ['ms5611_20barometer_20_28spi_29',['MS5611 barometer (SPI)',['../module__baro_ms5534a.html',1,'onboard_modules']]],
+  ['ms5534a_20barometer_20_28spi_29',['MS5534a barometer (SPI)',['../module__baro_ms5534a.html',1,'onboard_modules']]],
   ['micromag_20magnetometer',['Micromag magnetometer',['../module__mag_micromag_fw.html',1,'onboard_modules']]],
   ['max11040_20adc',['Max11040 ADC',['../module__max11040.html',1,'onboard_modules']]],
   ['max3100_20spi_2fuart_20converter',['MAX3100 SPI/Uart converter',['../module__max3100.html',1,'onboard_modules']]],

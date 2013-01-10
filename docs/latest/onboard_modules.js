@@ -713,7 +713,7 @@ var onboard_modules =
         [ "Raw alt_srf08.xml file:", "module__alt_srf08.html#module_xml__alt_srf08", null ]
       ] ]
     ] ],
-    [ "MS5611 barometer (SPI)", "module__baro_ms5534a.html", [
+    [ "MS5534a barometer (SPI)", "module__baro_ms5534a.html", [
       [ "Module functions", "module__baro_ms5534a.html#functions", [
         [ "Init Functions", "module__baro_ms5534a.html#init_functions", null ],
         [ "Event Functions", "module__baro_ms5534a.html#event_functions", null ],

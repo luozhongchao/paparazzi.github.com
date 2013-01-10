@@ -1,7 +1,7 @@
 var searchData=
 [
   ['math_20functions',['Math Functions',['../math.html',1,'']]],
-  ['ms5611_20barometer_20_28spi_29',['MS5611 barometer (SPI)',['../module__baro_ms5534a.html',1,'onboard_modules']]],
+  ['ms5534a_20barometer_20_28spi_29',['MS5534a barometer (SPI)',['../module__baro_ms5534a.html',1,'onboard_modules']]],
   ['micromag_20magnetometer',['Micromag magnetometer',['../module__mag_micromag_fw.html',1,'onboard_modules']]],
   ['max11040_20adc',['Max11040 ADC',['../module__max11040.html',1,'onboard_modules']]],
   ['max3100_20spi_2fuart_20converter',['MAX3100 SPI/Uart converter',['../module__max3100.html',1,'onboard_modules']]],
