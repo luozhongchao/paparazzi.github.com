@@ -1,5 +1,14 @@
 var NAVTREEINDEX17 =
 {
+"group__math__orientation__representation.html#ga33edf7d5bd278bed617fb5aa88559dc2":[6,0,0,10],
+"group__math__orientation__representation.html#ga35d21d17eb2d2ef8352f0aceb8ad7001":[6,0,0,22],
+"group__math__orientation__representation.html#ga449d2dae2d46b5827d1b53db7eb9c8f9":[6,0,0,4],
+"group__math__orientation__representation.html#ga4bc38966bac43e1f55b2f042d8f2e411":[6,0,0,16],
+"group__math__orientation__representation.html#ga4bf5cf32d339495bd9ea2d6ba91ad712":[6,0,0,2],
+"group__math__orientation__representation.html#ga4d3e785c7decf12ad0331c6ec207ded7":[6,0,0,19],
+"group__math__orientation__representation.html#ga5ca8cd93a67e7ddcd8534f523961edaf":[6,0,0,1],
+"group__math__orientation__representation.html#ga6b55b77641f1a911a919a4d579932514":[6,0,0,7],
+"group__math__orientation__representation.html#ga7c6b7dc05095bcaba232c62358335d81":[6,0,0,20],
 "group__math__orientation__representation.html#ga86b153b2106a638cef8e314125c47306":[6,0,0,17],
 "group__math__orientation__representation.html#ga8a3e395362b89b24cee7c3dd6dddb03c":[6,0,0,23],
 "group__math__orientation__representation.html#ga8b8bf1c74adb971f399f0dd4f84d9388":[6,0,0,8],
@@ -240,14 +249,5 @@ var NAVTREEINDEX17 =
 "group__state__velocity.html#ga8418fe1b0b5f43777c4a25970252f12d":[6,4,1,8],
 "group__state__velocity.html#ga86ec16926278b3e4c1a57e1ba9e5c2a7":[7,0,140,34],
 "group__state__velocity.html#ga86ec16926278b3e4c1a57e1ba9e5c2a7":[6,4,1,47],
-"group__state__velocity.html#ga8828affd49f4aa91907296d4f2ddb94d":[7,0,140,19],
-"group__state__velocity.html#ga8828affd49f4aa91907296d4f2ddb94d":[6,4,1,44],
-"group__state__velocity.html#ga8e7f86fe83bd1b767f9c5016ed245822":[6,4,1,26],
-"group__state__velocity.html#ga8fb41529b42f0ca81c0b87adba9b0658":[7,0,140,18],
-"group__state__velocity.html#ga8fb41529b42f0ca81c0b87adba9b0658":[6,4,1,43],
-"group__state__velocity.html#ga97af69f9c2d848327057cc3217686459":[7,0,140,17],
-"group__state__velocity.html#ga97af69f9c2d848327057cc3217686459":[6,4,1,42],
-"group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4":[6,4,1,12],
-"group__state__velocity.html#ga9f0b9996f906ca1d4c1a9691bf23ff6d":[7,0,140,20],
-"group__state__velocity.html#ga9f0b9996f906ca1d4c1a9691bf23ff6d":[6,4,1,45]
+"group__state__velocity.html#ga8828affd49f4aa91907296d4f2ddb94d":[7,0,140,19]
 };

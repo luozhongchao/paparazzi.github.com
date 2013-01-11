@@ -1,5 +1,14 @@
 var NAVTREEINDEX32 =
 {
+"lpcTMR_8h.html#a72dc18a8a23a184f15cd6c9019b306da":[8,0,0,0,0,0,0,10,36],
+"lpcTMR_8h.html#a7440b9eb671232aedf8d91718bd0324b":[8,0,0,0,0,0,0,10,61],
+"lpcTMR_8h.html#a7cfc38eef54efdfeda7964b9059e63e6":[8,0,0,0,0,0,0,10,17],
+"lpcTMR_8h.html#a820a0cbb8297242c933850950cf739f4":[8,0,0,0,0,0,0,10,24],
+"lpcTMR_8h.html#a83a88d5129a701f5153f5cfd89ffe774":[8,0,0,0,0,0,0,10,14],
+"lpcTMR_8h.html#a862bc9eb489da67bd5435e375565b591":[8,0,0,0,0,0,0,10,71],
+"lpcTMR_8h.html#a88aa3e89496a3b826beaa56a192b7910":[8,0,0,0,0,0,0,10,43],
+"lpcTMR_8h.html#a88ea3ba18b96e4594f311da398a6b414":[8,0,0,0,0,0,0,10,39],
+"lpcTMR_8h.html#a8e01f233e96db0313117572e7241d2e1":[8,0,0,0,0,0,0,10,49],
 "lpcTMR_8h.html#a9045ae13eeee6ece1aecb81a5a6d1b6a":[8,0,0,0,0,0,0,10,46],
 "lpcTMR_8h.html#a92ae3ae73a7e3e0c1487fbf27cce0108":[8,0,0,0,0,0,0,10,75],
 "lpcTMR_8h.html#a9752f3c1395d00a25511ffcc6e8039cb":[8,0,0,0,0,0,0,10,67],
@@ -240,14 +249,5 @@ var NAVTREEINDEX32 =
 "mag__micromag__fw__hw_8h.html#a6659763b67b24fab2b362581cf2b327d":[8,0,0,0,0,0,2,3,1,3],
 "mag__micromag__fw__hw_8h.html#a6fd1be1018da2680772839b5a97688f9":[8,0,0,0,0,0,2,3,1,6],
 "mag__micromag__fw__hw_8h.html#a74bd3bcf9c09982e320e3061ec2d645c":[8,0,0,0,0,0,2,3,1,11],
-"mag__micromag__fw__hw_8h.html#a8c65dd4394b59699e4799c2e9ccd1915":[8,0,0,0,0,0,2,3,1,12],
-"mag__micromag__fw__hw_8h.html#a8c9b52c1a93be4ec72afdebbe46fb6f7":[8,0,0,0,0,0,2,3,1,8],
-"mag__micromag__fw__hw_8h.html#a98e92be1904c746b953b59fce5a3cd78":[8,0,0,0,0,0,2,3,1,0],
-"mag__micromag__fw__hw_8h.html#ac24def41b788f2afef49e1ca8c65cfd8":[8,0,0,0,0,0,2,3,1,9],
-"mag__micromag__fw__hw_8h.html#acf22b7da1e4ef8133bc669324306313d":[8,0,0,0,0,0,2,3,1,10],
-"mag__micromag__fw__hw_8h.html#acf7b95f7bd0d848cfd2e8b8f0ce9216c":[8,0,0,0,0,0,2,3,1,4],
-"mag__micromag__fw__hw_8h.html#af6ef3ef2aba1141ed67f876f722cbf8b":[8,0,0,0,0,0,2,3,1,2],
-"mag__micromag__fw__hw_8h.html#afe3f773b3af5d8e6379f98ddb4714069":[8,0,0,0,0,0,2,3,1,13],
-"mag__micromag__fw__hw_8h_source.html":[8,0,0,0,0,0,2,3,1],
-"main_8h.html":[8,0,0,0,3,1,11]
+"mag__micromag__fw__hw_8h.html#a8c65dd4394b59699e4799c2e9ccd1915":[8,0,0,0,0,0,2,3,1,12]
 };

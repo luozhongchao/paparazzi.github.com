@@ -1,5 +1,14 @@
 var NAVTREEINDEX29 =
 {
+"lisa__test__adxl345_8c.html#a840291bc02cba5474a4cb46a9b9566fe":[8,0,0,0,4,1,2,5],
+"lisa__test__adxl345_8c.html#a9b189d56eb86ceed6da94442aeb278b6":[8,0,0,0,4,1,2,11],
+"lisa__test__adxl345_8c.html#aae8dbf74d528a8bee347327657c2f748":[8,0,0,0,4,1,2,14],
+"lisa__test__adxl345_8c.html#add1e278a89ce77044f5c82f58a72a001":[8,0,0,0,4,1,2,13],
+"lisa__test__adxl345_8c.html#ae4c7f2761e1268cdd7ed6ff6c396919c":[8,0,0,0,4,1,2,2],
+"lisa__test__adxl345_8c.html#af47cf112b37cdbfec13f9d57476b3728":[8,0,0,0,4,1,2,15],
+"lisa__test__adxl345_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1":[8,0,0,0,4,1,2,7],
+"lisa__test__adxl345_8c_source.html":[8,0,0,0,4,1,2],
+"lisa__test__adxl345__dma_8c.html":[8,0,0,0,4,1,3],
 "lisa__test__adxl345__dma_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1":[8,0,0,0,4,1,3,8],
 "lisa__test__adxl345__dma_8c.html#a3491e4b6639386063c95420363dd317b":[8,0,0,0,4,1,3,17],
 "lisa__test__adxl345__dma_8c.html#a40747dba0f93159403e51109a87575fd":[8,0,0,0,4,1,3,4],
@@ -240,14 +249,5 @@ var NAVTREEINDEX29 =
 "lpc21_2mcu__periph_2i2c__arch_8c.html#acdbd394ef74a63a820f27896dac939a0":[8,0,0,0,0,0,1,5,9],
 "lpc21_2mcu__periph_2i2c__arch_8c.html#ae043ee1aa1fc223bbd70ad4904cc4c62":[8,0,0,0,0,0,1,5,11],
 "lpc21_2mcu__periph_2i2c__arch_8c.html#af119ba58dde22a418cce1352734266b4":[8,0,0,0,0,0,1,5,12],
-"lpc21_2mcu__periph_2i2c__arch_8c.html#afeedcbbb1955ba3dc334152678f8ca8d":[8,0,0,0,0,0,1,5,6],
-"lpc21_2mcu__periph_2i2c__arch_8c.html#ga05763355d0e087ba41feab61dd773fe6":[8,0,0,0,0,0,1,5,0],
-"lpc21_2mcu__periph_2i2c__arch_8c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa":[8,0,0,0,0,0,1,5,3],
-"lpc21_2mcu__periph_2i2c__arch_8c.html#ga54cb2dd83ed5b0dacc02764aa234f564":[8,0,0,0,0,0,1,5,1],
-"lpc21_2mcu__periph_2i2c__arch_8c.html#ga886c0abe64ca0d366a35abba80cf2eff":[8,0,0,0,0,0,1,5,2],
-"lpc21_2mcu__periph_2i2c__arch_8c_source.html":[8,0,0,0,0,0,1,5],
-"lpc21_2mcu__periph_2i2c__arch_8h.html":[8,0,0,0,0,0,1,6],
-"lpc21_2mcu__periph_2i2c__arch_8h.html#a194fc5bf4767d52a7c9e42dc63ad6451":[8,0,0,0,0,0,1,6,6],
-"lpc21_2mcu__periph_2i2c__arch_8h.html#a238e3537d5d99a0c7ff5e9cd2cc0752d":[8,0,0,0,0,0,1,6,5],
-"lpc21_2mcu__periph_2i2c__arch_8h.html#a4b22ba2f26e18d7a0b9b8d91c9ff1cb8":[8,0,0,0,0,0,1,6,8]
+"lpc21_2mcu__periph_2i2c__arch_8c.html#afeedcbbb1955ba3dc334152678f8ca8d":[8,0,0,0,0,0,1,5,6]
 };

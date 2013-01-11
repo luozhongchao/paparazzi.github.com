@@ -1,5 +1,14 @@
 var NAVTREEINDEX36 =
 {
+"module__generic_com.html#event_functions":[2,88,1,1],
+"module__generic_com.html#files":[2,88,2],
+"module__generic_com.html#functions":[2,88,1],
+"module__generic_com.html#headers":[2,88,2,0],
+"module__generic_com.html#init_functions":[2,88,1,0],
+"module__generic_com.html#module_xml__generic_com":[2,88,2,2],
+"module__generic_com.html#periodic_functions":[2,88,1,2],
+"module__generic_com.html#sources":[2,88,2,1],
+"module__geo_mag.html":[2,89],
 "module__geo_mag.html#event_functions":[2,89,0,1],
 "module__geo_mag.html#files":[2,89,1],
 "module__geo_mag.html#functions":[2,89,0],
@@ -240,14 +249,5 @@ var NAVTREEINDEX36 =
 "module__light.html#init_functions":[2,94,1,0],
 "module__light.html#module_xml__light":[2,94,2,2],
 "module__light.html#periodic_functions":[2,94,1,1],
-"module__light.html#sources":[2,94,2,1],
-"module__light_solar.html":[2,43],
-"module__light_solar.html#files":[2,43,1],
-"module__light_solar.html#functions":[2,43,0],
-"module__light_solar.html#headers":[2,43,1,0],
-"module__light_solar.html#init_functions":[2,43,0,0],
-"module__light_solar.html#module_xml__light_solar":[2,43,1,2],
-"module__light_solar.html#periodic_functions":[2,43,0,1],
-"module__light_solar.html#sources":[2,43,1,1],
-"module__light_temt.html":[2,44]
+"module__light.html#sources":[2,94,2,1]
 };

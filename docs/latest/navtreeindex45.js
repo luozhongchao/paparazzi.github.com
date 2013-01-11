@@ -1,5 +1,14 @@
 var NAVTREEINDEX45 =
 {
+"radio__control_8h.html#a120dfe0c6e09f9048b5e575786d1011a":[8,0,0,0,10,28,5],
+"radio__control_8h.html#a228b66a6f5b5e3e5f891cbfbd21c9f8d":[8,0,0,0,10,28,10],
+"radio__control_8h.html#a404df0edd984fbb9364e5b09e46fff5d":[8,0,0,0,10,28,3],
+"radio__control_8h.html#a49d0c23f0651ada64ce2cfb001f7c47c":[8,0,0,0,10,28,6],
+"radio__control_8h.html#a6ba4bebf68f7ff39f4569dfe3b1f2832":[8,0,0,0,10,28,8],
+"radio__control_8h.html#a8fe61a8aa3f1859efec4bb06bc1134dc":[8,0,0,0,10,28,11],
+"radio__control_8h.html#a9d676995fa1caf4d119b636f85c21d8e":[8,0,0,0,10,28,9],
+"radio__control_8h.html#ab1debb075d0e280a92155d1715f894cc":[8,0,0,0,10,28,7],
+"radio__control_8h.html#ac96a9e3f6c17299d532eb572ef0ea415":[8,0,0,0,10,28,4],
 "radio__control_8h.html#adb1604ef051d981df6de90b770a9ef19":[8,0,0,0,10,28,1],
 "radio__control_8h.html#ae260ed6c98624fcd1d70c232038204d2":[8,0,0,0,10,28,2],
 "radio__control_8h_source.html":[8,0,0,0,10,28],
@@ -240,14 +249,5 @@ var NAVTREEINDEX45 =
 "sc18is600__arch_8c.html#a25c7fe956a00de07290f7a78d27c7c89":[8,0,0,0,0,3,1,6,10],
 "sc18is600__arch_8c.html#a3c74f8f665bf79385644bbf6fe68be08":[8,0,0,0,0,3,1,6,17],
 "sc18is600__arch_8c.html#a3df6a67a9ecdea88437b0e828c9bc9ed":[8,0,0,0,0,3,1,6,13],
-"sc18is600__arch_8c.html#a4a669b9d2efca9fcda5db4b642a990e4":[8,0,0,0,0,3,1,6,9],
-"sc18is600__arch_8c.html#a53a41aa1909993004992f786c867d137":[8,0,0,0,0,3,1,6,2],
-"sc18is600__arch_8c.html#a5a3d5a1edec633bfac661ca249bb427d":[8,0,0,0,0,3,1,6,3],
-"sc18is600__arch_8c.html#a69371678e6c79a215e525ee7b1cab7b8":[8,0,0,0,0,3,1,6,4],
-"sc18is600__arch_8c.html#a6a0f93f4b8b69f9fe4fb2bf269a8e394":[8,0,0,0,0,3,1,6,7],
-"sc18is600__arch_8c.html#a6ec77863a14e00725ad080007694371b":[8,0,0,0,0,3,1,6,15],
-"sc18is600__arch_8c.html#a823c4e497e4b4b951e899a0253d89278":[8,0,0,0,0,3,1,6,6],
-"sc18is600__arch_8c.html#aa07ad7fec289510362e44fa75fa6e90a":[8,0,0,0,0,3,1,6,0],
-"sc18is600__arch_8c.html#aaa6a7f3f130aa729e537ae4e4f0685ab":[8,0,0,0,0,3,1,6,16],
-"sc18is600__arch_8c.html#ac1c3ce0a750435f184d007337842d76c":[8,0,0,0,0,3,1,6,14]
+"sc18is600__arch_8c.html#a4a669b9d2efca9fcda5db4b642a990e4":[8,0,0,0,0,3,1,6,9]
 };

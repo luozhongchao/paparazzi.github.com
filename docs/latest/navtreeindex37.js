@@ -1,5 +1,14 @@
 var NAVTREEINDEX37 =
 {
+"module__light_solar.html":[2,43],
+"module__light_solar.html#files":[2,43,1],
+"module__light_solar.html#functions":[2,43,0],
+"module__light_solar.html#headers":[2,43,1,0],
+"module__light_solar.html#init_functions":[2,43,0,0],
+"module__light_solar.html#module_xml__light_solar":[2,43,1,2],
+"module__light_solar.html#periodic_functions":[2,43,0,1],
+"module__light_solar.html#sources":[2,43,1,1],
+"module__light_temt.html":[2,44],
 "module__light_temt.html#files":[2,44,1],
 "module__light_temt.html#functions":[2,44,0],
 "module__light_temt.html#headers":[2,44,1,0],
@@ -240,14 +249,5 @@ var NAVTREEINDEX37 =
 "module__windturbine.html#functions":[2,50,0],
 "module__windturbine.html#headers":[2,50,1,0],
 "module__windturbine.html#module_xml__windturbine":[2,50,1,2],
-"module__windturbine.html#periodic_functions":[2,50,0,0],
-"module__windturbine.html#sources":[2,50,1,1],
-"module__xtend_rssi.html":[2,16],
-"module__xtend_rssi.html#configuration":[2,16,0],
-"module__xtend_rssi.html#configure":[2,16,0,0],
-"module__xtend_rssi.html#files":[2,16,2],
-"module__xtend_rssi.html#functions":[2,16,1],
-"module__xtend_rssi.html#headers":[2,16,2,0],
-"module__xtend_rssi.html#module_xml__xtend_rssi":[2,16,2,2],
-"module__xtend_rssi.html#periodic_functions":[2,16,1,0]
+"module__windturbine.html#periodic_functions":[2,50,0,0]
 };

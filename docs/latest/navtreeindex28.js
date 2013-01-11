@@ -1,5 +1,14 @@
 var NAVTREEINDEX28 =
 {
+"lisa__m__1_80_8h.html#a7ae5162492c27a9f944435eb96e1cdec":[8,0,0,0,1,12,32],
+"lisa__m__1_80_8h.html#a7eeaab0a07ca1795ca1835de3438d88c":[8,0,0,0,1,12,13],
+"lisa__m__1_80_8h.html#a844db1e680f18109b59149b9e33dbb51":[8,0,0,0,1,12,51],
+"lisa__m__1_80_8h.html#a8acf68fac1dc0e8fb6706578f21a9409":[8,0,0,0,1,12,46],
+"lisa__m__1_80_8h.html#a91a5eb3f03c2f212cd15277ea67d65a2":[8,0,0,0,1,12,16],
+"lisa__m__1_80_8h.html#a94fa241ceca04635f282e09bdd829f5f":[8,0,0,0,1,12,15],
+"lisa__m__1_80_8h.html#a9837d23c93232321c9acf271941a22d6":[8,0,0,0,1,12,22],
+"lisa__m__1_80_8h.html#aa5ea83d926a661df064db0e68bc60690":[8,0,0,0,1,12,42],
+"lisa__m__1_80_8h.html#aa6840f28e52717a5ded7e68a11e9aa9c":[8,0,0,0,1,12,37],
 "lisa__m__1_80_8h.html#aa7699f41fbe105c8f5061cc48a5f6307":[8,0,0,0,1,12,14],
 "lisa__m__1_80_8h.html#aa8b07cb021b87d0c5868a3cb2851510e":[8,0,0,0,1,12,61],
 "lisa__m__1_80_8h.html#aa8f2cb80a6b289c9ca114be0cbae45cc":[8,0,0,0,1,12,40],
@@ -240,14 +249,5 @@ var NAVTREEINDEX28 =
 "lisa__test__adxl345_8c.html#a6fa455971d2245e1c1e0e6918b3863d9":[8,0,0,0,4,1,2,1],
 "lisa__test__adxl345_8c.html#a791eaf74023b4de8d10fbfe0de040ed8":[8,0,0,0,4,1,2,9],
 "lisa__test__adxl345_8c.html#a796a9ac81334e56c79537da011a0d40f":[8,0,0,0,4,1,2,0],
-"lisa__test__adxl345_8c.html#a7cebb03b0c23cce4e13ca34789f475a4":[8,0,0,0,4,1,2,8],
-"lisa__test__adxl345_8c.html#a840291bc02cba5474a4cb46a9b9566fe":[8,0,0,0,4,1,2,5],
-"lisa__test__adxl345_8c.html#a9b189d56eb86ceed6da94442aeb278b6":[8,0,0,0,4,1,2,11],
-"lisa__test__adxl345_8c.html#aae8dbf74d528a8bee347327657c2f748":[8,0,0,0,4,1,2,14],
-"lisa__test__adxl345_8c.html#add1e278a89ce77044f5c82f58a72a001":[8,0,0,0,4,1,2,13],
-"lisa__test__adxl345_8c.html#ae4c7f2761e1268cdd7ed6ff6c396919c":[8,0,0,0,4,1,2,2],
-"lisa__test__adxl345_8c.html#af47cf112b37cdbfec13f9d57476b3728":[8,0,0,0,4,1,2,15],
-"lisa__test__adxl345_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1":[8,0,0,0,4,1,2,7],
-"lisa__test__adxl345_8c_source.html":[8,0,0,0,4,1,2],
-"lisa__test__adxl345__dma_8c.html":[8,0,0,0,4,1,3]
+"lisa__test__adxl345_8c.html#a7cebb03b0c23cce4e13ca34789f475a4":[8,0,0,0,4,1,2,8]
 };

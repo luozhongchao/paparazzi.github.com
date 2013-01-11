@@ -1,5 +1,14 @@
 var NAVTREEINDEX53 =
 {
+"stm32_2subsystems_2settings__arch_8c.html#a22c9ce72b72cd4dfe56c4008626cff19":[8,0,0,0,0,3,2,3,8],
+"stm32_2subsystems_2settings__arch_8c.html#a411e0bd753ef59a0381f9d478d3d1bd2":[8,0,0,0,0,3,2,3,9],
+"stm32_2subsystems_2settings__arch_8c.html#a486ad2adc27b733aa4476b6ddcfa2edb":[8,0,0,0,0,3,2,3,1],
+"stm32_2subsystems_2settings__arch_8c.html#a4d0dc6e4cdefbf2eeba08f82b8e15a37":[8,0,0,0,0,3,2,3,6],
+"stm32_2subsystems_2settings__arch_8c.html#a6c625081eebc2da015cedc450022605b":[8,0,0,0,0,3,2,3,2],
+"stm32_2subsystems_2settings__arch_8c.html#a6e9ee5b58a0f71f5267a43dbca4fc5b5":[8,0,0,0,0,3,2,3,5],
+"stm32_2subsystems_2settings__arch_8c.html#a8ae63999104fb3116e6c03e0b3dd4912":[8,0,0,0,0,3,2,3,3],
+"stm32_2subsystems_2settings__arch_8c.html#aad7842fbef06c8ec39045d2bf58455b9":[8,0,0,0,0,3,2,3,4],
+"stm32_2subsystems_2settings__arch_8c_source.html":[8,0,0,0,0,3,2,3],
 "stm32_2subsystems_2settings__arch_8h.html":[8,0,0,0,0,3,2,4],
 "stm32_2subsystems_2settings__arch_8h_source.html":[8,0,0,0,0,3,2,4],
 "stm__test__spi__link_8c.html":[8,0,0,0,4,8],
@@ -240,14 +249,5 @@ var NAVTREEINDEX53 =
 "structFloatVect2.html":[7,0,54],
 "structFloatVect2.html#a965d6b4f04fcc6d2aa179c4016d7ee44":[7,0,54,0],
 "structFloatVect2.html#aff743c76e4a26ffde83e0c7d05457669":[7,0,54,1],
-"structFloatVect3.html":[7,0,55],
-"structFloatVect3.html#aa44c74404cf8ef0b143066e970352adb":[7,0,55,0],
-"structFloatVect3.html#ac5e44e02fe71768bf56eb39a14f3cc5b":[7,0,55,1],
-"structFloatVect3.html#adeaa53529844ee1fa7df48e61c3994f7":[7,0,55,2],
-"structGeoMagVect.html":[7,0,57],
-"structGeoMagVect.html#a4a34a14c4dfef79d3c3cc9ba3875fced":[7,0,57,2],
-"structGeoMagVect.html#a4a73d66428a39b27c19d8ec813f699aa":[7,0,57,3],
-"structGeoMagVect.html#a738a146d57a985196e40458eaf7ebfdb":[7,0,57,1],
-"structGeoMagVect.html#af824842bef1cc8e81693d8779f8f5aaa":[7,0,57,0],
-"structGpsMtk.html":[7,0,60]
+"structFloatVect3.html":[7,0,55]
 };
