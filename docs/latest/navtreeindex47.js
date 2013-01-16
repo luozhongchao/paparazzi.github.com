@@ -1,5 +1,17 @@
 var NAVTREEINDEX47 =
 {
+"settings_8c.html#a1e257e558a37f9aa4480067eb301deaf":[8,0,0,0,10,29,1],
+"settings_8c.html#a5f9a5a2e826aec11c77548f2a541fb9e":[8,0,0,0,10,29,0],
+"settings_8c.html#ac61513879fdb7add6de0457920c8e59e":[8,0,0,0,10,29,2],
+"settings_8c_source.html":[8,0,0,0,10,29],
+"settings_8h.html":[8,0,0,0,10,30],
+"settings_8h.html#a13f5ba1374d451bc61a957f86034111f":[8,0,0,0,10,30,5],
+"settings_8h.html#a1497901ac40153b238ee0524257a5f3b":[8,0,0,0,10,30,2],
+"settings_8h.html#a154b4e2fefccf2a235cf571d56b0efc2":[8,0,0,0,10,30,0],
+"settings_8h.html#a1e257e558a37f9aa4480067eb301deaf":[8,0,0,0,10,30,4],
+"settings_8h.html#a4d0dc6e4cdefbf2eeba08f82b8e15a37":[8,0,0,0,10,30,1],
+"settings_8h.html#a5f9a5a2e826aec11c77548f2a541fb9e":[8,0,0,0,10,30,3],
+"settings_8h_source.html":[8,0,0,0,10,30],
 "setup__actuators_8c.html":[8,0,0,0,3,2,0],
 "setup__actuators_8c.html#a02fb7014646db38d7d3bca6a12719f15":[8,0,0,0,3,2,0,7],
 "setup__actuators_8c.html#a2978a46b47cbc9d17a0924014ff9658b":[8,0,0,0,3,2,0,1],
@@ -237,17 +249,5 @@ var NAVTREEINDEX47 =
 "sim__gps_8c.html#a07f63734731109c0ed43e4f4dbcb98f2":[8,0,0,0,0,2,27,0],
 "sim__gps_8c.html#a7e916af45c0d2dea26e3e5faff0bd3e5":[8,0,0,0,0,2,27,1],
 "sim__gps_8c_source.html":[8,0,0,0,0,2,27],
-"sim__i2c__cam__ctrl_8c.html":[8,0,0,0,7,11,8],
-"sim__i2c__cam__ctrl_8c.html#a2978a46b47cbc9d17a0924014ff9658b":[8,0,0,0,7,11,8,0],
-"sim__i2c__cam__ctrl_8c.html#a623f6c883be11330b494fec437a3787b":[8,0,0,0,7,11,8,1],
-"sim__i2c__cam__ctrl_8c.html#a9aa5dbe7af9ddeb4f68c6bd2f0c7cf1e":[8,0,0,0,7,11,8,2],
-"sim__i2c__cam__ctrl_8c.html#ad7c06f4d1c398ba41252eb2e7ecd1a85":[8,0,0,0,7,11,8,4],
-"sim__i2c__cam__ctrl_8c.html#aeb25c30f109ccd0c3046715e4f3df6b5":[8,0,0,0,7,11,8,3],
-"sim__i2c__cam__ctrl_8c_source.html":[8,0,0,0,7,11,8],
-"sim__ir_8c.html":[8,0,0,0,0,2,28],
-"sim__ir_8c.html#a81e0ed18d453a87b0260260516565713":[8,0,0,0,0,2,28,0],
-"sim__ir_8c.html#ab146572909cffd2d05eed3914a652667":[8,0,0,0,0,2,28,1],
-"sim__ir_8c.html#ace3c7ebb7c161817631e5a3d72d7ff5d":[8,0,0,0,0,2,28,2],
-"sim__ir_8c_source.html":[8,0,0,0,0,2,28],
-"sim__uart_8c.html":[8,0,0,0,0,2,29]
+"sim__i2c__cam__ctrl_8c.html":[8,0,0,0,7,11,8]
 };

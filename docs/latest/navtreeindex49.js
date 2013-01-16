@@ -1,5 +1,17 @@
 var NAVTREEINDEX49 =
 {
+"spiral_8c_source.html":[8,0,0,0,10,6,26],
+"spiral_8h.html":[8,0,0,0,10,6,27],
+"spiral_8h.html#a50d4841c173e2de5bf9c39d33daf46b0":[8,0,0,0,10,6,27,0],
+"spiral_8h.html#af5423b91973dcb13dc1409e5131d194d":[8,0,0,0,10,6,27,1],
+"spiral_8h_source.html":[8,0,0,0,10,6,27],
+"ssp__hw_8h.html":[8,0,0,0,0,0,20],
+"ssp__hw_8h.html#a01a6d487d94c0df1c08aed4fee822e46":[8,0,0,0,0,0,20,8],
+"ssp__hw_8h.html#a09f595f86412858d1361046d48012366":[8,0,0,0,0,0,20,7],
+"ssp__hw_8h.html#a24124324be8bab22c1e6511e1d85e77f":[8,0,0,0,0,0,20,1],
+"ssp__hw_8h.html#a2cf263bf3e3b3a803aad79647ad59026":[8,0,0,0,0,0,20,2],
+"ssp__hw_8h.html#ab980ecc80fa242b19bd9e22954c77401":[8,0,0,0,0,0,20,6],
+"ssp__hw_8h.html#ad0223fcd891044f2c66a0df2d803b818":[8,0,0,0,0,0,20,9],
 "ssp__hw_8h.html#af89500f2193953e5ee9e6df045129434":[8,0,0,0,0,0,20,4],
 "ssp__hw_8h.html#afb337ea47755ca323ec0c7b030bd343f":[8,0,0,0,0,0,20,0],
 "ssp__hw_8h.html#afd28b97fc5d47a7ae9da92c91da8c0b8":[8,0,0,0,0,0,20,3],
@@ -237,17 +249,5 @@ var NAVTREEINDEX49 =
 "stabilization__attitude__rc__setpoint_8h.html#a3d647a4366d4be6b8ffd5f6d4653058c":[8,0,0,0,3,1,1,7,8],
 "stabilization__attitude__rc__setpoint_8h.html#a502a88bbc096e471006af59f53dc060a":[8,0,0,0,3,1,1,7,0],
 "stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185":[8,0,0,0,3,1,1,7,6],
-"stabilization__attitude__rc__setpoint_8h.html#a908110653d45fd82871ee768ffe38317":[8,0,0,0,3,1,1,7,3],
-"stabilization__attitude__rc__setpoint_8h.html#ade5e3cdd965d34f8d9076b0724f54c02":[8,0,0,0,3,1,1,7,2],
-"stabilization__attitude__rc__setpoint_8h.html#aef80d4c7fedea68a6c45f7d181deda09":[8,0,0,0,3,1,1,7,7],
-"stabilization__attitude__rc__setpoint_8h_source.html":[8,0,0,0,3,1,1,7],
-"stabilization__attitude__ref_8h.html":[8,0,0,0,3,1,1,8],
-"stabilization__attitude__ref_8h.html#a39160d897abc3d75d1c608880b0c5aad":[8,0,0,0,3,1,1,8,0],
-"stabilization__attitude__ref_8h_source.html":[8,0,0,0,3,1,1,8],
-"stabilization__attitude__ref__euler__float_8c.html":[8,0,0,0,3,1,1,9],
-"stabilization__attitude__ref__euler__float_8c.html#a01282d6152bdea90e6faaad6d11196ca":[8,0,0,0,3,1,1,9,8],
-"stabilization__attitude__ref__euler__float_8c.html#a015228f30f34102b8d41c6c08c752cc0":[8,0,0,0,3,1,1,9,19],
-"stabilization__attitude__ref__euler__float_8c.html#a09d0136bb7fcef1b5563cfce0110bce2":[8,0,0,0,3,1,1,9,11],
-"stabilization__attitude__ref__euler__float_8c.html#a141d82bdde469aa835758b7d0a490884":[8,0,0,0,3,1,1,9,17],
-"stabilization__attitude__ref__euler__float_8c.html#a215bd0f15e33a9d2e43a791a9235a50d":[8,0,0,0,3,1,1,9,9]
+"stabilization__attitude__rc__setpoint_8h.html#a908110653d45fd82871ee768ffe38317":[8,0,0,0,3,1,1,7,3]
 };

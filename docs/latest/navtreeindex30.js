@@ -1,7 +1,5 @@
 var NAVTREEINDEX30 =
 {
-"lpc21_2mcu__periph_2i2c__arch_8c.html#ga05763355d0e087ba41feab61dd773fe6":[8,0,0,0,0,0,1,5,0],
-"lpc21_2mcu__periph_2i2c__arch_8c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa":[8,0,0,0,0,0,1,5,3],
 "lpc21_2mcu__periph_2i2c__arch_8c.html#ga54cb2dd83ed5b0dacc02764aa234f564":[8,0,0,0,0,0,1,5,1],
 "lpc21_2mcu__periph_2i2c__arch_8c.html#ga886c0abe64ca0d366a35abba80cf2eff":[8,0,0,0,0,0,1,5,2],
 "lpc21_2mcu__periph_2i2c__arch_8c_source.html":[8,0,0,0,0,0,1,5],
@@ -249,5 +247,7 @@ var NAVTREEINDEX30 =
 "lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a73324f929f081719f23086e958b460c6":[8,0,0,0,0,0,4,0,1,31],
 "lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a7dd1c9eed993752907caa08dbebe389e":[8,0,0,0,0,0,4,0,1,22],
 "lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a7f93d04c672a30097178cb826a3130e9":[8,0,0,0,0,0,4,0,1,36],
-"lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a837a1ce8db146b18191c4a521766b969":[8,0,0,0,0,0,4,0,1,11]
+"lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a837a1ce8db146b18191c4a521766b969":[8,0,0,0,0,0,4,0,1,11],
+"lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a8c4049c5550eea58312ee8c4f80d7701":[8,0,0,0,0,0,4,0,1,4],
+"lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a8d12af88c4c8197a882fc04cd45c7e74":[8,0,0,0,0,0,4,0,1,38]
 };

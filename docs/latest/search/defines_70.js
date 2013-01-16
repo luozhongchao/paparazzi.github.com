@@ -269,7 +269,7 @@ var searchData=
   ['pprztransporttrailer',['PprzTransportTrailer',['../pprz__transport_8h.html#a66b883086e1ba0a9b52cf0b83addf887',1,'pprz_transport.h']]],
   ['primaryuart',['PrimaryUart',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74',1,'spektrum_arch.c']]],
   ['print_5fdbg',['PRINT_DBG',['../hf__float_8c.html#a0f2cd18289868b5160262b21047dbd51',1,'hf_float.c']]],
-  ['prom_5fnb',['PROM_NB',['../baro__ms5611__i2c_8h.html#a22f63e90af0ec7d29bff584215f56a8a',1,'baro_ms5611_i2c.h']]],
+  ['prom_5fnb',['PROM_NB',['../baro__ms5611__i2c_8h.html#a22f63e90af0ec7d29bff584215f56a8a',1,'PROM_NB():&#160;baro_ms5611_i2c.h'],['../ms5611_8h.html#a22f63e90af0ec7d29bff584215f56a8a',1,'PROM_NB():&#160;ms5611.h']]],
   ['prtdeb',['PRTDEB',['../cartography_8c.html#a53755989fb6246b8bff7b8835790bc0c',1,'cartography.c']]],
   ['prtdebstr',['PRTDEBSTR',['../cartography_8c.html#ab4d504bc731abbbb62912532a300b5d7',1,'cartography.c']]],
   ['pwm',['PWM',['../LPC21xx_8h.html#a538e3ec60828cfabae7e3011d73d2093',1,'LPC21xx.h']]],

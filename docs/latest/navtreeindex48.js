@@ -1,5 +1,17 @@
 var NAVTREEINDEX48 =
 {
+"sim__i2c__cam__ctrl_8c.html#a2978a46b47cbc9d17a0924014ff9658b":[8,0,0,0,7,11,8,0],
+"sim__i2c__cam__ctrl_8c.html#a623f6c883be11330b494fec437a3787b":[8,0,0,0,7,11,8,1],
+"sim__i2c__cam__ctrl_8c.html#a9aa5dbe7af9ddeb4f68c6bd2f0c7cf1e":[8,0,0,0,7,11,8,2],
+"sim__i2c__cam__ctrl_8c.html#ad7c06f4d1c398ba41252eb2e7ecd1a85":[8,0,0,0,7,11,8,4],
+"sim__i2c__cam__ctrl_8c.html#aeb25c30f109ccd0c3046715e4f3df6b5":[8,0,0,0,7,11,8,3],
+"sim__i2c__cam__ctrl_8c_source.html":[8,0,0,0,7,11,8],
+"sim__ir_8c.html":[8,0,0,0,0,2,28],
+"sim__ir_8c.html#a81e0ed18d453a87b0260260516565713":[8,0,0,0,0,2,28,0],
+"sim__ir_8c.html#ab146572909cffd2d05eed3914a652667":[8,0,0,0,0,2,28,1],
+"sim__ir_8c.html#ace3c7ebb7c161817631e5a3d72d7ff5d":[8,0,0,0,0,2,28,2],
+"sim__ir_8c_source.html":[8,0,0,0,0,2,28],
+"sim__uart_8c.html":[8,0,0,0,0,2,29],
 "sim__uart_8c.html#a4dafaba9a225a8b97dbfbf25fedfcd4d":[8,0,0,0,0,2,29,0],
 "sim__uart_8c_source.html":[8,0,0,0,0,2,29],
 "sim__uart_8h.html":[8,0,0,0,0,2,30],
@@ -237,17 +249,5 @@ var NAVTREEINDEX48 =
 "spiral_8c.html#aeffb7d7a5a63efc8c73e80cfafee4d39":[8,0,0,0,10,6,26,17],
 "spiral_8c.html#af5423b91973dcb13dc1409e5131d194d":[8,0,0,0,10,6,26,3],
 "spiral_8c.html#af6d463c4b378d16ee32cab987c978ec9":[8,0,0,0,10,6,26,15],
-"spiral_8c.html#af82bcee94a4f402fe4aa29dd12c1dae9":[8,0,0,0,10,6,26,23],
-"spiral_8c_source.html":[8,0,0,0,10,6,26],
-"spiral_8h.html":[8,0,0,0,10,6,27],
-"spiral_8h.html#a50d4841c173e2de5bf9c39d33daf46b0":[8,0,0,0,10,6,27,0],
-"spiral_8h.html#af5423b91973dcb13dc1409e5131d194d":[8,0,0,0,10,6,27,1],
-"spiral_8h_source.html":[8,0,0,0,10,6,27],
-"ssp__hw_8h.html":[8,0,0,0,0,0,20],
-"ssp__hw_8h.html#a01a6d487d94c0df1c08aed4fee822e46":[8,0,0,0,0,0,20,8],
-"ssp__hw_8h.html#a09f595f86412858d1361046d48012366":[8,0,0,0,0,0,20,7],
-"ssp__hw_8h.html#a24124324be8bab22c1e6511e1d85e77f":[8,0,0,0,0,0,20,1],
-"ssp__hw_8h.html#a2cf263bf3e3b3a803aad79647ad59026":[8,0,0,0,0,0,20,2],
-"ssp__hw_8h.html#ab980ecc80fa242b19bd9e22954c77401":[8,0,0,0,0,0,20,6],
-"ssp__hw_8h.html#ad0223fcd891044f2c66a0df2d803b818":[8,0,0,0,0,0,20,9]
+"spiral_8c.html#af82bcee94a4f402fe4aa29dd12c1dae9":[8,0,0,0,10,6,26,23]
 };

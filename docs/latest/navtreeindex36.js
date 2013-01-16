@@ -1,7 +1,5 @@
 var NAVTREEINDEX36 =
 {
-"module__generic_com.html#event_functions":[2,88,1,1],
-"module__generic_com.html#files":[2,88,2],
 "module__generic_com.html#functions":[2,88,1],
 "module__generic_com.html#headers":[2,88,2,0],
 "module__generic_com.html#init_functions":[2,88,1,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX36 =
 "module__light.html#init_functions":[2,94,1,0],
 "module__light.html#module_xml__light":[2,94,2,2],
 "module__light.html#periodic_functions":[2,94,1,1],
-"module__light.html#sources":[2,94,2,1]
+"module__light.html#sources":[2,94,2,1],
+"module__light_solar.html":[2,43],
+"module__light_solar.html#files":[2,43,1]
 };

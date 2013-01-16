@@ -1,5 +1,17 @@
 var NAVTREEINDEX46 =
 {
+"sc18i600_8h.html#ac9869125d40e6f7e0c17c02b20c21fe6":[8,0,0,0,8,25,17],
+"sc18i600_8h.html#ae16a7aeb125e9e32e8780060b4d78f18":[8,0,0,0,8,25,6],
+"sc18i600_8h.html#ae7b01ef0e67a76c8f1818747562fdb21":[8,0,0,0,8,25,2],
+"sc18i600_8h_source.html":[8,0,0,0,8,25],
+"sc18is600__arch_8c.html":[8,0,0,0,0,3,1,6],
+"sc18is600__arch_8c.html#a072341bc9d026a4ed4ed0eb22c5cc180":[8,0,0,0,0,3,1,6,1],
+"sc18is600__arch_8c.html#a0a518286d8eb6608e4d000960ce395b1":[8,0,0,0,0,3,1,6,12],
+"sc18is600__arch_8c.html#a0e39d8303331a272f98d723934b9dd8e":[8,0,0,0,0,3,1,6,11],
+"sc18is600__arch_8c.html#a25c7fe956a00de07290f7a78d27c7c89":[8,0,0,0,0,3,1,6,10],
+"sc18is600__arch_8c.html#a3c74f8f665bf79385644bbf6fe68be08":[8,0,0,0,0,3,1,6,17],
+"sc18is600__arch_8c.html#a3df6a67a9ecdea88437b0e828c9bc9ed":[8,0,0,0,0,3,1,6,13],
+"sc18is600__arch_8c.html#a4a669b9d2efca9fcda5db4b642a990e4":[8,0,0,0,0,3,1,6,9],
 "sc18is600__arch_8c.html#a53a41aa1909993004992f786c867d137":[8,0,0,0,0,3,1,6,2],
 "sc18is600__arch_8c.html#a5a3d5a1edec633bfac661ca249bb427d":[8,0,0,0,0,3,1,6,3],
 "sc18is600__arch_8c.html#a69371678e6c79a215e525ee7b1cab7b8":[8,0,0,0,0,3,1,6,4],
@@ -237,17 +249,5 @@ var NAVTREEINDEX46 =
 "servos__ppm__hw_8c.html#ae2a4eb3b6da0f57c0747c6bda8186398":[8,0,0,0,0,0,4,0,9,2],
 "servos__ppm__hw_8c_source.html":[8,0,0,0,0,0,4,0,9],
 "settings_8c.html":[8,0,0,0,10,29],
-"settings_8c.html#a13f5ba1374d451bc61a957f86034111f":[8,0,0,0,10,29,3],
-"settings_8c.html#a1e257e558a37f9aa4480067eb301deaf":[8,0,0,0,10,29,1],
-"settings_8c.html#a5f9a5a2e826aec11c77548f2a541fb9e":[8,0,0,0,10,29,0],
-"settings_8c.html#ac61513879fdb7add6de0457920c8e59e":[8,0,0,0,10,29,2],
-"settings_8c_source.html":[8,0,0,0,10,29],
-"settings_8h.html":[8,0,0,0,10,30],
-"settings_8h.html#a13f5ba1374d451bc61a957f86034111f":[8,0,0,0,10,30,5],
-"settings_8h.html#a1497901ac40153b238ee0524257a5f3b":[8,0,0,0,10,30,2],
-"settings_8h.html#a154b4e2fefccf2a235cf571d56b0efc2":[8,0,0,0,10,30,0],
-"settings_8h.html#a1e257e558a37f9aa4480067eb301deaf":[8,0,0,0,10,30,4],
-"settings_8h.html#a4d0dc6e4cdefbf2eeba08f82b8e15a37":[8,0,0,0,10,30,1],
-"settings_8h.html#a5f9a5a2e826aec11c77548f2a541fb9e":[8,0,0,0,10,30,3],
-"settings_8h_source.html":[8,0,0,0,10,30]
+"settings_8c.html#a13f5ba1374d451bc61a957f86034111f":[8,0,0,0,10,29,3]
 };

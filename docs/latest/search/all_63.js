@@ -58,7 +58,7 @@ var searchData=
   ['cacc',['cacc',['../structGpsState.html#a2d6027f58f74a82bd49944931a2a2beb',1,'GpsState']]],
   ['cadd',['CAdd',['../pprz__geodetic__float_8c.html#a2046a6c42d3a5eace70002925d6d4b91',1,'pprz_geodetic_float.c']]],
   ['calc_5fsht',['calc_sht',['../humid__sht_8c.html#a73fae161c1291d629d3ddd86f3c8d4ba',1,'humid_sht.c']]],
-  ['calibration',['calibration',['../lisa__m_2baro__board_8c.html#aa21a9b1497f1873e1c86a26c09450a8c',1,'calibration():&#160;baro_board.c'],['../lisa__m_2baro__board_8h.html#ab51ad6c7c3755bde4a4403ff0ad56c4c',1,'calibration():&#160;baro_board.c'],['../baro__MS5534A_8c.html#ab30c346cfd9bc2364001128c169e7898',1,'calibration(void):&#160;baro_MS5534A.c']]],
+  ['calibration',['calibration',['../baro__MS5534A_8c.html#ab30c346cfd9bc2364001128c169e7898',1,'baro_MS5534A.c']]],
   ['calltcas',['CallTCAS',['../tcas_8h.html#ac6cf4a93985d655ea6d4b96cbe2b6ed0',1,'tcas.h']]],
   ['cam_2ec',['cam.c',['../cam_8c.html',1,'']]],
   ['cam_2eh',['cam.h',['../cam_8h.html',1,'']]],

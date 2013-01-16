@@ -1,7 +1,5 @@
 var NAVTREEINDEX35 =
 {
-"module__baro_bmp.html#periodic_functions":[2,62,1,2],
-"module__baro_bmp.html#sources":[2,62,2,1],
 "module__baro_board.html":[2,63],
 "module__baro_board.html#files":[2,63,0],
 "module__baro_board.html#headers":[2,63,0,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX35 =
 "module__geiger_counter.html#sources":[2,35,1,1],
 "module__generic_com.html":[2,88],
 "module__generic_com.html#configuration":[2,88,0],
-"module__generic_com.html#define":[2,88,0,0]
+"module__generic_com.html#define":[2,88,0,0],
+"module__generic_com.html#event_functions":[2,88,1,1],
+"module__generic_com.html#files":[2,88,2]
 };
