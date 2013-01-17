@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
+   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -127,66 +127,53 @@ $(document).ready(function(){initNavTree('cam_8h_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span><span class="comment"></span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/** \file cam.h</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  \brief Pan/Tilt camera API</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef CAM_H</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_H</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="inttypes_8h.html">inttypes.h</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="inter__mcu_8h.html">inter_mcu.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;inttypes.h&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;inter_mcu.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="cam_8h.html#a93eec0e06d1a217a7e621adbf8e9ad07">   33</a></span>&#160;<span class="preprocessor">#define CAM_MODE_OFF 0         </span><span class="comment">/* Do nothing */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="cam_8h.html#af444395cc7f1d0cd5258ea4d7d26e6ce">   34</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_ANGLES 1      </span><span class="comment">/* Input: servo angles */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="cam_8h.html#a933c399f34ccdae63ac67cc5c25fe6dc">   35</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_NADIR 2       </span><span class="comment">/* Input: () */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="cam_8h.html#a395b235b33834a4a8eaaf45dcc21c9a6">   36</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_XY_TARGET 3   </span><span class="comment">/* Input: target_x, target_y */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="cam_8h.html#af4a85b32498b5c09fe818ae2ee8ee705">   37</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_WP_TARGET 4   </span><span class="comment">/* Input: waypoint no */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="cam_8h.html#ad0776e221f01b80e4348412a192a1288">   38</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_AC_TARGET 5   </span><span class="comment">/* Input: ac id */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="cam_8h.html#a97b5c061df35626ce068e936593c6004">   39</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_STABILIZED    6   // Stabilized mode, input: camera angles from the pan and tilt radio channels, output pointing coordinates.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="cam_8h.html#a6d8021bcd6108d1570a82f2980340f11">   40</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_RC            7   // Manual mode, input: camera angles from the pan and tilt radio channels, output servo positions.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define CAM_MODE_OFF 0         </span><span class="comment">/* Do nothing */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_ANGLES 1      </span><span class="comment">/* Input: servo angles */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_NADIR 2       </span><span class="comment">/* Input: () */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_XY_TARGET 3   </span><span class="comment">/* Input: target_x, target_y */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_WP_TARGET 4   </span><span class="comment">/* Input: waypoint no */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_AC_TARGET 5   </span><span class="comment">/* Input: ac id */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_STABILIZED    6   // Stabilized mode, input: camera angles from the pan and tilt radio channels, output pointing coordinates.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_MODE_RC            7   // Manual mode, input: camera angles from the pan and tilt radio channels, output servo positions.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//FIXME: use radians</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifndef CAM_PAN_MAX</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="cam_8h.html#aeaa4e162788aba72ce183878d76e537c">   44</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_PAN_MAX 90</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_PAN_MAX 90</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef CAM_PAN_MIN</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="cam_8h.html#a3a670def5d1c8a0ff6c43422d7c58ae1">   47</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_PAN_MIN -90</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_PAN_MIN -90</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef CAM_TILT_MAX</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="cam_8h.html#ab9462cb1f8768b2fb5682351d04b4fbc">   50</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_TILT_MAX 90</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_TILT_MAX 90</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef CAM_TILT_MIN</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="cam_8h.html#a90794536f5be1f71f0cd9aa9aca02131">   53</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_TILT_MIN -90</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CAM_TILT_MIN -90</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="cam_8c.html#a5882a9e0a38d9a046ead57d52a3e1474">cam_mode</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="cam_8c.html#a35d162b093b6571b64b7a31a952f6d6a">cam_lock</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">extern</span> uint8_t cam_mode;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span> uint8_t cam_lock;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="cam_8c.html#ad85e56de916c26f6c042330169092429">cam_phi_c</a>, <a class="code" href="cam_8c.html#adb4af45aa84f6d05dd019494eec7b0e2">cam_theta_c</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> cam_phi_c, cam_theta_c;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="cam_8c.html#a4594bf9761835894a1baa11831c37d50">cam_pan_c</a>, <a class="code" href="cam_8c.html#ad02900f1c2639aa4f8b6fd05614c26c6">cam_tilt_c</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/* pan (move left and right), tilt (move up and down) */</span><span class="comment"></span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/** Radians, for CAM_MODE_ANGLES mode */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a>, <a class="code" href="cam_8c.html#a271ee35440eae7b3a69afc6ebc167cac">cam_target_y</a>, <a class="code" href="cam_8c.html#af3098e4d774dcc8eb7650d54a737a9bd">cam_target_alt</a>;<span class="comment"></span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/** For CAM_MODE_XY_TARGET mode */</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="cam_8c.html#a8b3761e34c06cf1ad1f244c863b5aa90" title="For CAM_MODE_XY_TARGET mode.">cam_target_wp</a>;<span class="comment"></span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/** For CAM_MODE_WP_TARGET mode */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="cam_8c.html#a9a2c37c0754be9af1945a04e76e1f7c0" title="For CAM_MODE_WP_TARGET mode.">cam_target_ac</a>;<span class="comment"></span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">/** For CAM_MODE_AC_TARGET mode */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> cam_pan_c, cam_tilt_c;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/* pan (move left and right), tilt (move up and down) */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="cam_8c.html#ad2170cb84810320485d168a9ab8f7efc" title="Radians, for CAM_MODE_ANGLES mode.">cam_target_x</a>, cam_target_y, cam_target_alt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">extern</span> uint8_t <a class="code" href="cam_8c.html#a8b3761e34c06cf1ad1f244c863b5aa90" title="For CAM_MODE_XY_TARGET mode.">cam_target_wp</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">extern</span> uint8_t <a class="code" href="cam_8c.html#a9a2c37c0754be9af1945a04e76e1f7c0" title="For CAM_MODE_WP_TARGET mode.">cam_target_ac</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="cam_8c.html#a1ac78decc31cdd4c6b7584a8bf42d315" title="For CAM_MODE_AC_TARGET mode.">cam_periodic</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">void</span> <a class="code" href="cam_8c.html#a1d12354dff08edc23a4890724f1bb8fc">cam_init</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">void</span> cam_init( <span class="keywordtype">void</span> );</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="cam_8c.html#ad5dd3b0fa02d28e2446ad3dc20b43df7">cam_pan_command</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="cam_8h.html#ac04a208e6f3d3bff7bc8deee47823641">   78</a></span>&#160;<span class="preprocessor">#define cam_SetPanCommand(x) { ap_state-&gt;commands[COMMAND_CAM_PAN] = cam_pan_command = x;}</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span><span class="keyword">extern</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="cam_8c.html#ab910ec45b2d8634d013edd68616059ba">cam_tilt_command</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="cam_8h.html#a3a7c562b6791388d4689e198166a2fb3">   80</a></span>&#160;<span class="preprocessor">#define cam_SetTiltCommand(x) { ap_state-&gt;commands[COMMAND_CAM_TILT] = cam_tilt_command = x;}</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">extern</span> int16_t cam_pan_command;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define cam_SetPanCommand(x) { ap_state-&gt;commands[COMMAND_CAM_PAN] = cam_pan_command = x;}</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span><span class="keyword">extern</span> int16_t cam_tilt_command;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define cam_SetTiltCommand(x) { ap_state-&gt;commands[COMMAND_CAM_TILT] = cam_tilt_command = x;}</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#ifdef TEST_CAM</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">float</span> test_cam_estimator_x;</div>
@@ -212,7 +199,7 @@ $(document).ready(function(){initNavTree('cam_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_900c035387cecacfdb66232491aebefe.html">cam_control</a></li><li class="navelem"><a class="el" href="cam_8h.html">cam.h</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
+   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -109,7 +109,7 @@ Module functions</h1>
 Event Functions</h2>
 <p>These event functions are called in each cycle of the module event loop.</p>
 <ul>
-<li><a class="el" href="ahrs__chimu__spi_8c.html#a9ea3d2bf0a03b37852747429c24bee61">parse_ins_msg()</a></li>
+<li>parse_ins_msg()</li>
 </ul>
 <h1><a class="anchor" id="files"></a>
 Files</h1>
@@ -122,9 +122,9 @@ Header Files</h2>
 <h2><a class="anchor" id="sources"></a>
 Source Files</h2>
 <ul>
-<li><a class="el" href="ahrs__chimu__uart_8c.html">modules/ins/ahrs_chimu_uart.c</a></li>
-<li><a class="el" href="imu__chimu_8c.html">modules/ins/imu_chimu.c</a></li>
-<li><a class="el" href="ahrs_8c.html">subsystems/ahrs.c</a></li>
+<li><a class="el" href="ahrs__chimu__uart_8c_source.html">modules/ins/ahrs_chimu_uart.c</a></li>
+<li><a class="el" href="imu__chimu_8c_source.html">modules/ins/imu_chimu.c</a></li>
+<li><a class="el" href="ahrs_8c_source.html">subsystems/ahrs.c</a></li>
 </ul>
 <h2><a class="anchor" id="module_xml__ahrs_chimu_uart"></a>
 Raw ahrs_chimu_uart.xml file:</h2>
@@ -137,24 +137,24 @@ Raw ahrs_chimu_uart.xml file:</h2>
 <div class="line">      For older CHIMU v1.0 you should define CHIMU_BIG_ENDIAN</div>
 <div class="line">    &lt;/description&gt;</div>
 <div class="line">  &lt;/doc&gt;</div>
-<div class="line">  &lt;!-- &lt;depend conflict=&quot;<a class="code" href="ins_8c.html#a93b83435a11f973aa9aceab13c2f2b3f" title="global INS state">ins</a>&quot; --&gt;</div>
+<div class="line">  &lt;!-- &lt;depend conflict=&quot;ins&quot; --&gt;</div>
 <div class="line">  &lt;header&gt;</div>
 <div class="line">    &lt;file name=&quot;ins_module.h&quot;/&gt;</div>
 <div class="line">  &lt;/header&gt;</div>
 <div class="line">  &lt;!--&lt;periodic fun=&quot;<a class="code" href="ins__alt__float_8c.html#acb548b510075b086cc7cc5e2d80b3a71" title="INS periodic call.">ins_periodic</a>()&quot; freq=&quot;60&quot;/&gt;--&gt;</div>
-<div class="line">  &lt;event fun=&quot;<a class="code" href="ahrs__chimu__spi_8c.html#a9ea3d2bf0a03b37852747429c24bee61">parse_ins_msg</a>()&quot;/&gt;</div>
+<div class="line">  &lt;event fun=&quot;parse_ins_msg()&quot;/&gt;</div>
 <div class="line">  &lt;makefile target=&quot;ap&quot;&gt;</div>
 <div class="line">    &lt;define name=&quot;AHRS_TRIGGERED_ATTITUDE_LOOP&quot;/&gt;</div>
 <div class="line">    &lt;define name=&quot;USE_AHRS&quot;/&gt;</div>
 <div class="line">    &lt;define name=&quot;USE_INS_MODULE&quot;/&gt;</div>
 <div class="line">    &lt;define name=&quot;USE_UART$(CHIMU_UART_NR)&quot;/&gt;</div>
 <div class="line">    &lt;define name=&quot;INS_LINK&quot; value=&quot;Uart$(CHIMU_UART_NR)&quot;/&gt;</div>
-<div class="line">    &lt;define name=&quot;UART$(CHIMU_UART_NR)_BAUD&quot; value=&quot;<a class="code" href="lpc21_2mcu__periph_2uart__arch_8h.html#aef3a1340ea0fba1573691a9e74a43d11">B115200</a>&quot;/&gt;</div>
-<div class="line">    &lt;file name=&quot;ahrs_chimu_uart.<a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>&quot;/&gt;</div>
-<div class="line">    &lt;file name=&quot;imu_chimu.<a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>&quot;/&gt;</div>
-<div class="line">    &lt;file name=&quot;<a class="code" href="ahrs_8c.html#a36881ecb25696757541e4fa62cd45853" title="global AHRS state">ahrs</a>.<a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>&quot; dir=&quot;subsystems&quot;/&gt;</div>
+<div class="line">    &lt;define name=&quot;UART$(CHIMU_UART_NR)_BAUD&quot; value=&quot;B115200&quot;/&gt;</div>
+<div class="line">    &lt;file name=&quot;ahrs_chimu_uart.c&quot;/&gt;</div>
+<div class="line">    &lt;file name=&quot;imu_chimu.c&quot;/&gt;</div>
+<div class="line">    &lt;file name=&quot;ahrs.c&quot; dir=&quot;subsystems&quot;/&gt;</div>
 <div class="line">    &lt;raw&gt;</div>
-<div class="line">      ap.CFLAGS += -DAHRS_TYPE_H=\&quot;modules/<a class="code" href="ins_8c.html#a93b83435a11f973aa9aceab13c2f2b3f" title="global INS state">ins</a>/ins_module.h\&quot;</div>
+<div class="line">      ap.CFLAGS += -DAHRS_TYPE_H=\&quot;modules/ins/ins_module.h\&quot;</div>
 <div class="line">    &lt;/raw&gt;</div>
 <div class="line">  &lt;/makefile&gt;</div>
 <div class="line">&lt;/module&gt;</div>
@@ -164,7 +164,7 @@ Raw ahrs_chimu_uart.xml file:</h2>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="onboard_modules.html">Onboard Modules</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 14:39:38 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

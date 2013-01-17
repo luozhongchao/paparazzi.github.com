@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
+   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('imu__b2_8h_source.html','');});
 <div class="title">imu_b2.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="imu__b2_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2008-2009 Antoine Drouin &lt;poinix@gmail.com&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 2012 Gautier Hattenberger</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
@@ -135,14 +135,14 @@ $(document).ready(function(){initNavTree('imu__b2_8h_source.html','');});
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;generated/airframe.h&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="max1168_8h.html">peripherals/max1168.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;peripherals/max1168.h&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/* type of magnetometer */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="imu__b2_8h.html#a3173673eb3710fed5833aa1f94f39ca3">   32</a></span>&#160;<span class="preprocessor">#define IMU_B2_MAG_NONE     0</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="imu__b2_8h.html#a02caa3bf872d4a707a2559cf42f5c205">   33</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_B2_MAG_MS2100   1</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="imu__b2_8h.html#a3cbf7c0c5c5b6cc1799e3412bbaa9f98">   34</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_B2_MAG_AMI601   2</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="imu__b2_8h.html#a8dad8101f126d6e8469879c4ecadaa77">   35</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_B2_MAG_HMC5843  3</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="imu__b2_8h.html#ab4bf9be9bdc0a4c89308726e400bafdd">   36</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_B2_MAG_HMC58XX  4</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define IMU_B2_MAG_NONE     0</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_B2_MAG_MS2100   1</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_B2_MAG_AMI601   2</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_B2_MAG_HMC5843  3</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IMU_B2_MAG_HMC58XX  4</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifdef IMU_B2_VERSION_1_0</span></div>
@@ -251,10 +251,7 @@ $(document).ready(function(){initNavTree('imu__b2_8h_source.html','');});
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* IMU_B2_VERSION_1_2 */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">/** Event functions and macros for imu_b2.</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#if defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_MS2100</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="ms2100_8h.html" title="Driver for the ms2100 magnetic sensor from PNI.">peripherals/ms2100.h</a>&quot;</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#define ImuMagEvent(_mag_handler) {                     \</span></div>
@@ -268,7 +265,7 @@ $(document).ready(function(){initNavTree('imu__b2_8h_source.html','');});
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">  }                                                     \</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">}</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#elif defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_AMI601</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="ami601_8h.html">peripherals/ami601.h</a>&quot;</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;peripherals/ami601.h&quot;</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#define foo_handler() {}</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ImuMagEvent(_mag_handler) {                     \</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">  AMI601Event(foo_handler);                             \</span></div>
@@ -281,7 +278,7 @@ $(document).ready(function(){initNavTree('imu__b2_8h_source.html','');});
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">  }                                                     \</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">}</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#elif defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_HMC5843</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="hmc5843_8h.html">peripherals/hmc5843.h</a>&quot;</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;peripherals/hmc5843.h&quot;</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#define foo_handler() {}</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ImuMagEvent(_mag_handler) {                           \</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">  MagEvent(foo_handler);                                      \</span></div>
@@ -294,7 +291,7 @@ $(document).ready(function(){initNavTree('imu__b2_8h_source.html','');});
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">  }                                                           \</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">}</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#elif defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_HMC58XX</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="hmc58xx_8h.html">peripherals/hmc58xx.h</a>&quot;</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;peripherals/hmc58xx.h&quot;</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#define foo_handler() {}</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ImuMagEvent(_mag_handler) {       \</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">  MagEvent(foo_handler);                  \</span></div>
@@ -307,11 +304,11 @@ $(document).ready(function(){initNavTree('imu__b2_8h_source.html','');});
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">  }                                       \</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">}</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno"><a class="code" href="imu__b2_8h.html#a62850cb40d836d423b8e389ab9c9bc26">  201</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ImuMagEvent(_mag_handler) {}</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno"><a class="code" href="imu__b2_8h.html#a50349115276c4d6392b1a83c042d0910">  202</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ImuScaleMag(_imu) {}</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ImuMagEvent(_mag_handler) {}</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ImuScaleMag(_imu) {}</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00205"></a><span class="lineno"><a class="code" href="imu__b2_8h.html#a5b61834fdd9dc32e2f93b974354c7402">  205</a></span>&#160;<span class="preprocessor">#define ImuEvent(_gyro_handler, _accel_handler, _mag_handler) { \</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#define ImuEvent(_gyro_handler, _accel_handler, _mag_handler) { \</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">  max1168_event();                                              \</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">  if (max1168_status == MAX1168_DATA_AVAILABLE) {               \</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">    imu.gyro_unscaled.p  = max1168_values[IMU_GYRO_P_CHAN];     \</span></div>
@@ -334,8 +331,8 @@ $(document).ready(function(){initNavTree('imu__b2_8h_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8b2fa0708e2db44c1b91938af97bac44.html">imu</a></li><li class="navelem"><a class="el" href="imu__b2_8h.html">imu_b2.h</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 04:00:09 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8b2fa0708e2db44c1b91938af97bac44.html">imu</a></li><li class="navelem"><b>imu_b2.h</b></li>
+    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

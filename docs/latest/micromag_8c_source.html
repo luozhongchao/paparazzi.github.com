@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
+   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,31 +107,31 @@ $(document).ready(function(){initNavTree('micromag_8c_source.html','');});
 <div class="title">micromag.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="micromag_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="micromag_8h.html">micromag.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;micromag.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="code" href="mag__micromag__fw_8h.html#a4203779ce87bbb6b4fbbd6af0b1b08bb">    3</a></span>&#160;<span class="keyword">volatile</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="micromag_8c.html#a4203779ce87bbb6b4fbbd6af0b1b08bb">micromag_status</a>;</div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="mag__micromag__fw_8h.html#af3ea69b4bae4abbe9f43354a99f3651b">    4</a></span>&#160;<span class="keyword">volatile</span> <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="micromag_8c.html#af3ea69b4bae4abbe9f43354a99f3651b">micromag_values</a>[<a class="code" href="micromag_8h.html#a5f8f1be5381cbeeae5bb8ed79383231c">MM_NB_AXIS</a>];</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">volatile</span> uint8_t micromag_status;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">volatile</span> int16_t micromag_values[MM_NB_AXIS];</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="mag__micromag__fw_8h.html#ab828b942e043b9bd4e0a4767512d755b">    6</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="micromag_8c.html#ab828b942e043b9bd4e0a4767512d755b">micromag_init</a>( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">void</span> micromag_init( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="lpc21_2micromag__hw_8c.html#a8c65dd4394b59699e4799c2e9ccd1915">micromag_hw_init</a>();</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  micromag_hw_init();</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">for</span> (i=0; i&lt;<a class="code" href="micromag_8h.html#a5f8f1be5381cbeeae5bb8ed79383231c">MM_NB_AXIS</a>; i++)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="micromag_8c.html#af3ea69b4bae4abbe9f43354a99f3651b">micromag_values</a>[i] = 0;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="micromag_8c.html#a4203779ce87bbb6b4fbbd6af0b1b08bb">micromag_status</a> = <a class="code" href="micromag_8h.html#acb2db521f1fe150a1cf4af3904685dd2">MM_IDLE</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  uint8_t i;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">for</span> (i=0; i&lt;MM_NB_AXIS; i++)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    micromag_values[i] = 0;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  micromag_status = MM_IDLE;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="mag__micromag__fw_8h.html#a96f983e1d98d9af7b1c1b6ae37b26e6e">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="micromag_8c.html#a2316ec8758ece1995c6e4ef923d7da6b">micromag_reset</a>() {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="micromag_8c.html#a4203779ce87bbb6b4fbbd6af0b1b08bb">micromag_status</a> = <a class="code" href="micromag_8h.html#acb2db521f1fe150a1cf4af3904685dd2">MM_IDLE</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> micromag_reset() {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  micromag_status = MM_IDLE;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="micromag_8c.html">micromag.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 04:00:08 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><b>micromag.c</b></li>
+    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
+   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,24 +107,24 @@ $(document).ready(function(){initNavTree('alt__vfilter_8h_source.html','');});
 <div class="title">alt_vfilter.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="alt__vfilter_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ALT_VFILTER_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ALT_VFILTER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ALT_VFILTER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="alt__vfilter_8h.html#a7e3ce397037c8f4f14f7adc0b969b662">    4</a></span>&#160;<span class="preprocessor">#define STATE_SIZE 3</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define STATE_SIZE 3</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="alt__vfilter_8c.html#a215769e1a7eb2f28bafdc8f37fe906fa">alt_vf_z</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="alt__vfilter_8c.html#a74c5f2dc163ec12f11df06f2d1db8119">alt_vf_zdot</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="alt__vfilter_8c.html#ae3edb1cdb6af06f1a5c12153e37715a0">alt_vf_bias</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="alt__vfilter_8c.html#ad912591ab13af1fb735a74c428d099fc">alt_vf_P</a>[<a class="code" href="alt__vfilter_8h.html#a7e3ce397037c8f4f14f7adc0b969b662">STATE_SIZE</a>][<a class="code" href="alt__vfilter_8h.html#a7e3ce397037c8f4f14f7adc0b969b662">STATE_SIZE</a>];</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> alt_vf_z;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> alt_vf_zdot;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> alt_vf_bias;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> alt_vf_P[STATE_SIZE][STATE_SIZE];</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="alt__vfilter_8c.html#a7a0f396b80d66981e4da99c1c00bb12f">alt_vf_z_meas</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> alt_vf_z_meas;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="alt__vfilter_8c.html#af2fc35d9d8472813b8609b1d1f0a7aab">alt_vf_init</a>(<span class="keywordtype">float</span> z, <span class="keywordtype">float</span> zdot, <span class="keywordtype">float</span> bias);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="alt__vfilter_8c.html#abde12a068b5d20aa69a49a709a0be194">alt_vf_predict</a>(<span class="keywordtype">float</span> accel);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="alt__vfilter_8c.html#a5bef75db4d30d923b6310d75aab9e67a">alt_vf_update_z</a>(<span class="keywordtype">float</span> z_meas);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="alt__vfilter_8c.html#ac3a4d844dfd0f79c10df3a30cf30eb5a">alt_vf_update_vz</a>(<span class="keywordtype">float</span> vz);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> alt_vf_init(<span class="keywordtype">float</span> z, <span class="keywordtype">float</span> zdot, <span class="keywordtype">float</span> bias);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> alt_vf_predict(<span class="keywordtype">float</span> accel);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> alt_vf_update_z(<span class="keywordtype">float</span> z_meas);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> alt_vf_update_vz(<span class="keywordtype">float</span> vz);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="alt__vfilter_8h.html#a614f1ae0a023095222d515aa50ce869b">alt_vf_periodic_task</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> alt_vf_periodic_task(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#if USE_BARO_MS5534A</span></div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('alt__vfilter_8h_source.html','');});
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">}</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="alt__vfilter_8h.html#aa226241a51f76ebee809466c3a6667dc">   41</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define AltVFliterEvent() {}</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define AltVFliterEvent() {}</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
@@ -157,8 +157,8 @@ $(document).ready(function(){initNavTree('alt__vfilter_8h_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="alt__vfilter_8h.html">alt_vfilter.h</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 04:00:08 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><b>alt_vfilter.h</b></li>
+    <li class="footer">Generated on Thu Jan 17 2013 14:39:36 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

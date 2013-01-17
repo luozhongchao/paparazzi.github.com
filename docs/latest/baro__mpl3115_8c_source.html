@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
+   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('baro__mpl3115_8c_source.html','');});
 <div class="title">baro_mpl3115.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="baro__mpl3115_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2012 Gautier Hattenberger (ENAC)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is part of paparazzi.</span></div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('baro__mpl3115_8c_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="baro__mpl3115_8h.html">modules/sensors/baro_mpl3115.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;modules/sensors/baro_mpl3115.h&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//Messages</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span></div>
@@ -137,26 +137,26 @@ $(document).ready(function(){initNavTree('baro__mpl3115_8c_source.html','');});
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef DOWNLINK_DEVICE</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="baro__mpl3115_8c.html#a2978a46b47cbc9d17a0924014ff9658b">   31</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="baro__mpl3115_8h.html#a51d02f671661247a78075fe55d0315f5">   34</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="baro__mpl3115_8c.html#a51d02f671661247a78075fe55d0315f5">baro_mpl3115_init</a>( <span class="keywordtype">void</span> ) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="mpl3115_8c.html#ada3f2fa373d4c33d82ef9cfefa7adb32">mpl3115_init</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> baro_mpl3115_init( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  mpl3115_init();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="baro__mpl3115_8h.html#a28dec6a30759de1ada1c88d5eab50d98">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="baro__mpl3115_8c.html#a28dec6a30759de1ada1c88d5eab50d98">baro_mpl3115_read_periodic</a>( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> baro_mpl3115_read_periodic( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifdef SENSOR_SYNC_SEND</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="mpl3115_8c.html#a2ea37aae77d52d706a126d110741ed9a">mpl3115_data_available</a>) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    DOWNLINK_SEND_MPL3115_BARO(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="mpl3115_8c.html#a5c8358e505d899bcc90594c3c7c052b1">mpl3115_pressure</a>, &amp;<a class="code" href="mpl3115_8c.html#a3d6460253bfed42e621ef88a0b86b499">mpl3115_temperature</a>, &amp;<a class="code" href="mpl3115_8c.html#a1e5d15a6a5cdf0fdda483e68f3811670">mpl3115_alt</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (mpl3115_data_available) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    DOWNLINK_SEND_MPL3115_BARO(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, DefaultDevice, &amp;mpl3115_pressure, &amp;mpl3115_temperature, &amp;mpl3115_alt);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span>  <a class="code" href="mpl3115_8h.html#ae70e9865113a34d5c30431403e8899d9">Mpl3115Periodic</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span>  Mpl3115Periodic();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="baro__mpl3115_8h.html#aac1cfc0ff91f0501266ae0bf4c8ddc9c">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="baro__mpl3115_8c.html#aac1cfc0ff91f0501266ae0bf4c8ddc9c">baro_mpl3115_read_event</a>( <span class="keywordtype">void</span> ) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="mpl3115_8c.html#aafabbd4d78632b23f3b5c82a5a049f64">mpl3115_event</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> baro_mpl3115_read_event( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  mpl3115_event();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
@@ -178,8 +178,8 @@ $(document).ready(function(){initNavTree('baro__mpl3115_8c_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_2f48bbb566df394f79dcf8fe0631584a.html">sensors</a></li><li class="navelem"><a class="el" href="baro__mpl3115_8c.html">baro_mpl3115.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 04:00:08 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_2f48bbb566df394f79dcf8fe0631584a.html">sensors</a></li><li class="navelem"><b>baro_mpl3115.c</b></li>
+    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

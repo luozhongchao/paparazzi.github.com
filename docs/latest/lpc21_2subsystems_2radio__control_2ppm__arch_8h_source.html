@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
+   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('lpc21_2subsystems_2radio__control_2ppm
 <div class="title">ppm_arch.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2010 The Paparazzi Team</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is part of paparazzi.</span></div>
@@ -132,26 +132,20 @@ $(document).ready(function(){initNavTree('lpc21_2subsystems_2radio__control_2ppm
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PPM_ARCH_H</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LPC21xx_8h.html">LPC21xx.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;LPC21xx.h&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include BOARD_CONFIG</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sys__time_8h.html" title="Architecture independent timing functions.">mcu_periph/sys_time.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * On tiny (and booz) the ppm counter is running at the same speed as</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * the systic counter. There is no reason for this to be true.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * Let&#39;s add a pair of macros to make it possible for them to be different.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aa0e3c53e88196db8128751f6b65847b1">   37</a></span>&#160;<span class="preprocessor">#define RC_PPM_TICKS_OF_USEC        CPU_TICKS_OF_USEC</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#a6be8a6b6214c935bdb8f567e1f61b727">   38</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RC_PPM_SIGNED_TICKS_OF_USEC SIGNED_CPU_TICKS_OF_USEC</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#a0787c18cdf118ffe9896dd867a372a4e">   39</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define USEC_OF_RC_PPM_TICKS        USEC_OF_CPU_TICKS</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define RC_PPM_TICKS_OF_USEC        CPU_TICKS_OF_USEC</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RC_PPM_SIGNED_TICKS_OF_USEC SIGNED_CPU_TICKS_OF_USEC</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define USEC_OF_RC_PPM_TICKS        USEC_OF_CPU_TICKS</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aeaaf57e63686c19ad0a287287d33ce2f">   41</a></span>&#160;<span class="preprocessor">#define PPM_NB_CHANNEL RADIO_CONTROL_NB_CHANNEL</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define PPM_NB_CHANNEL RADIO_CONTROL_NB_CHANNEL</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aab5a9f3d57389dce4263cf122fdd8db5">   43</a></span>&#160;<span class="preprocessor">#define PPM_IT PPM_CRI</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define PPM_IT PPM_CRI</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#aead4f148a3edde98bbf0bff75fa896a5">   45</a></span>&#160;<span class="preprocessor">#define PPM_ISR() {       \</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define PPM_ISR() {       \</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">  uint32_t now = PPM_CR;  \</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">  DecodePpmFrame(now);    \</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">}</span></div>
@@ -163,8 +157,8 @@ $(document).ready(function(){initNavTree('lpc21_2subsystems_2radio__control_2ppm
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_3f7617cb4a5e4fe5cc816b7b3bbdea3a.html">lpc21</a></li><li class="navelem"><a class="el" href="dir_49e3baf8e4d0208391e8a23720cf4bc3.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_f690f2529ef2764b7e6effd3da88a775.html">radio_control</a></li><li class="navelem"><a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8h.html">ppm_arch.h</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 04:00:08 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_3f7617cb4a5e4fe5cc816b7b3bbdea3a.html">lpc21</a></li><li class="navelem"><a class="el" href="dir_49e3baf8e4d0208391e8a23720cf4bc3.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_f690f2529ef2764b7e6effd3da88a775.html">radio_control</a></li><li class="navelem"><b>ppm_arch.h</b></li>
+    <li class="footer">Generated on Thu Jan 17 2013 14:39:36 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

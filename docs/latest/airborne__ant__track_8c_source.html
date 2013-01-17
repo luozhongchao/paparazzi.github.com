@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
+   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('airborne__ant__track_8c_source.html','
 <div class="title">airborne_ant_track.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="airborne__ant__track_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Determines antenna pan angle.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * project:        Paparazzi</span></div>
@@ -127,14 +127,14 @@ $(document).ready(function(){initNavTree('airborne__ant__track_8c_source.html','
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#if defined(USE_AIRBORNE_ANT_TRACKING) &amp;&amp; USE_AIRBORNE_ANT_TRACKING == 1</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="inttypes_8h.html">inttypes.h</a>&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="inter__mcu_8h.html">inter_mcu.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common__nav_8h.html">subsystems/navigation/common_nav.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;inttypes.h&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;inter_mcu.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;subsystems/navigation/common_nav.h&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;autopilot.h&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;generated/flight_plan.h&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="traffic__info_8h.html" title="Informations relative to the other aircrafts.">subsystems/navigation/traffic_info.h</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="airborne__ant__track_8h.html">airborne_ant_track.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;airborne_ant_track.h&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
@@ -151,19 +151,19 @@ $(document).ready(function(){initNavTree('airborne__ant__track_8c_source.html','
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">static</span> bool_t ant_pan_positive = 0;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> ant_point(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="point_8c.html#a553fdfb308cb850023076e6a58842796">vSubtractVectors</a>(<a class="code" href="structVECTOR.html">VECTOR</a>* svA, <a class="code" href="structVECTOR.html">VECTOR</a> svB, <a class="code" href="structVECTOR.html">VECTOR</a> svC);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="point_8c.html#a0e392f07c1bc4a72fa292c1fb98fbffe">vMultiplyMatrixByVector</a>(<a class="code" href="structVECTOR.html">VECTOR</a>* svA, <a class="code" href="structMATRIX.html">MATRIX</a> smB, <a class="code" href="structVECTOR.html">VECTOR</a> svC);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> vSubtractVectors(<a class="code" href="structVECTOR.html">VECTOR</a>* svA, <a class="code" href="structVECTOR.html">VECTOR</a> svB, <a class="code" href="structVECTOR.html">VECTOR</a> svC);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> vMultiplyMatrixByVector(<a class="code" href="structVECTOR.html">VECTOR</a>* svA, <a class="code" href="structMATRIX.html">MATRIX</a> smB, <a class="code" href="structVECTOR.html">VECTOR</a> svC);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/*******************************************************************</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">; function name:   vSubtractVectors</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">; description:     subtracts two vectors a = b - c</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">; parameters:</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">;*******************************************************************/</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="point_8c.html#a553fdfb308cb850023076e6a58842796">vSubtractVectors</a>(<a class="code" href="structVECTOR.html">VECTOR</a>* svA, <a class="code" href="structVECTOR.html">VECTOR</a> svB, <a class="code" href="structVECTOR.html">VECTOR</a> svC)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> vSubtractVectors(<a class="code" href="structVECTOR.html">VECTOR</a>* svA, <a class="code" href="structVECTOR.html">VECTOR</a> svB, <a class="code" href="structVECTOR.html">VECTOR</a> svC)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  svA-&gt;<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a> = svB.<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a> - svC.<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  svA-&gt;<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a> = svB.<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a> - svC.<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  svA-&gt;<a class="code" href="structVECTOR.html#af2cd1aafbb7c19268a9715b5aa72dddb">fz</a> = svB.<a class="code" href="structVECTOR.html#af2cd1aafbb7c19268a9715b5aa72dddb">fz</a> - svC.<a class="code" href="structVECTOR.html#af2cd1aafbb7c19268a9715b5aa72dddb">fz</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  svA-&gt;fx = svB.fx - svC.fx;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  svA-&gt;fy = svB.fy - svC.fy;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  svA-&gt;fz = svB.fz - svC.fz;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/*******************************************************************</span></div>
@@ -171,11 +171,11 @@ $(document).ready(function(){initNavTree('airborne__ant__track_8c_source.html','
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">; description:     multiplies matrix by vector svA = smB * svC</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">; parameters:</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">;*******************************************************************/</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="point_8c.html#a0e392f07c1bc4a72fa292c1fb98fbffe">vMultiplyMatrixByVector</a>(<a class="code" href="structVECTOR.html">VECTOR</a>* svA, <a class="code" href="structMATRIX.html">MATRIX</a> smB, <a class="code" href="structVECTOR.html">VECTOR</a> svC)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> vMultiplyMatrixByVector(<a class="code" href="structVECTOR.html">VECTOR</a>* svA, <a class="code" href="structMATRIX.html">MATRIX</a> smB, <a class="code" href="structVECTOR.html">VECTOR</a> svC)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  svA-&gt;<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a> = smB.<a class="code" href="structMATRIX.html#a248961470ca16203383c44096a3d9ea4">fx1</a> * svC.<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a>  +  smB.<a class="code" href="structMATRIX.html#ada5936d0bdc850493f79abb3fd2ea360">fx2</a> * svC.<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a>  +  smB.<a class="code" href="structMATRIX.html#a224a62a77023da329f51213bf6acfc31">fx3</a> * svC.<a class="code" href="structVECTOR.html#af2cd1aafbb7c19268a9715b5aa72dddb">fz</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  svA-&gt;<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a> = smB.<a class="code" href="structMATRIX.html#a654c9b1a254603fd1219b71de281d17f">fy1</a> * svC.<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a>  +  smB.<a class="code" href="structMATRIX.html#a4806c71a150f9288af0fef5978bd3f87">fy2</a> * svC.<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a>  +  smB.<a class="code" href="structMATRIX.html#a78d01f95dd801e0e6844b1c75da953d3">fy3</a> * svC.<a class="code" href="structVECTOR.html#af2cd1aafbb7c19268a9715b5aa72dddb">fz</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  svA-&gt;<a class="code" href="structVECTOR.html#af2cd1aafbb7c19268a9715b5aa72dddb">fz</a> = smB.<a class="code" href="structMATRIX.html#a0c718c9636453759c23cff7592af712b">fz1</a> * svC.<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a>  +  smB.<a class="code" href="structMATRIX.html#a48b502d58a61ced8e9a7c150da79d788">fz2</a> * svC.<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a>  +  smB.<a class="code" href="structMATRIX.html#a99e2572b9e06d8a2877e921c15ecdae5">fz3</a> * svC.<a class="code" href="structVECTOR.html#af2cd1aafbb7c19268a9715b5aa72dddb">fz</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  svA-&gt;fx = smB.fx1 * svC.fx  +  smB.fx2 * svC.fy  +  smB.fx3 * svC.fz;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  svA-&gt;fy = smB.fy1 * svC.fx  +  smB.fy2 * svC.fy  +  smB.fy3 * svC.fz;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  svA-&gt;fz = smB.fz1 * svC.fx  +  smB.fz2 * svC.fy  +  smB.fz3 * svC.fz;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> airborne_ant_point_init(<span class="keywordtype">void</span>){</div>
@@ -194,29 +194,29 @@ $(document).ready(function(){initNavTree('airborne__ant__track_8c_source.html','
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">static</span> <a class="code" href="structMATRIX.html">MATRIX</a> smRotation;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  svPlanePosition.<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a> = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  svPlanePosition.<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a> = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  svPlanePosition.<a class="code" href="structVECTOR.html#af2cd1aafbb7c19268a9715b5aa72dddb">fz</a> = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#af45d8ff67563a7c7bf0c7883aa0f3e3a" title="in meters">z</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  svPlanePosition.fx = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a03a1d7fc5e459dd6cbdb7893ef631dde" title="in meters">y</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  svPlanePosition.fy = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#a1477647029e175947a6bd860322c98ff" title="in meters">x</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  svPlanePosition.fz = <a class="code" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float).">stateGetPositionEnu_f</a>()-&gt;<a class="code" href="structEnuCoor__f.html#af45d8ff67563a7c7bf0c7883aa0f3e3a" title="in meters">z</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  Home_Position.<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a> = <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(WP_HOME);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  Home_Position.<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a> = <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(WP_HOME);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  Home_Position.<a class="code" href="structVECTOR.html#af2cd1aafbb7c19268a9715b5aa72dddb">fz</a> = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[WP_HOME].a;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  Home_Position.fx = WaypointY(WP_HOME);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  Home_Position.fy = WaypointX(WP_HOME);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  Home_Position.fz = waypoints[WP_HOME].a;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="comment">/* distance between plane and object */</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="point_8c.html#a553fdfb308cb850023076e6a58842796">vSubtractVectors</a>(&amp;Home_PositionForPlane, Home_Position, svPlanePosition);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  vSubtractVectors(&amp;Home_PositionForPlane, Home_Position, svPlanePosition);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="comment">/* yaw */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  smRotation.<a class="code" href="structMATRIX.html#a248961470ca16203383c44096a3d9ea4">fx1</a> = (float)(cos((*<a class="code" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float).">stateGetHorizontalSpeedDir_f</a>())));</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  smRotation.<a class="code" href="structMATRIX.html#ada5936d0bdc850493f79abb3fd2ea360">fx2</a> = (float)(sin((*<a class="code" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float).">stateGetHorizontalSpeedDir_f</a>())));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  smRotation.<a class="code" href="structMATRIX.html#a224a62a77023da329f51213bf6acfc31">fx3</a> = 0.;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  smRotation.<a class="code" href="structMATRIX.html#a654c9b1a254603fd1219b71de281d17f">fy1</a> = -smRotation.<a class="code" href="structMATRIX.html#ada5936d0bdc850493f79abb3fd2ea360">fx2</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  smRotation.<a class="code" href="structMATRIX.html#a4806c71a150f9288af0fef5978bd3f87">fy2</a> = smRotation.<a class="code" href="structMATRIX.html#a248961470ca16203383c44096a3d9ea4">fx1</a>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  smRotation.<a class="code" href="structMATRIX.html#a78d01f95dd801e0e6844b1c75da953d3">fy3</a> = 0.;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  smRotation.<a class="code" href="structMATRIX.html#a0c718c9636453759c23cff7592af712b">fz1</a> = 0.;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  smRotation.<a class="code" href="structMATRIX.html#a48b502d58a61ced8e9a7c150da79d788">fz2</a> = 0.;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  smRotation.<a class="code" href="structMATRIX.html#a99e2572b9e06d8a2877e921c15ecdae5">fz3</a> = 1.;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  smRotation.fx1 = (float)(cos((*<a class="code" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float).">stateGetHorizontalSpeedDir_f</a>())));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  smRotation.fx2 = (float)(sin((*<a class="code" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float).">stateGetHorizontalSpeedDir_f</a>())));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  smRotation.fx3 = 0.;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  smRotation.fy1 = -smRotation.fx2;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  smRotation.fy2 = smRotation.fx1;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  smRotation.fy3 = 0.;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  smRotation.fz1 = 0.;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  smRotation.fz2 = 0.;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  smRotation.fz3 = 1.;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="point_8c.html#a0e392f07c1bc4a72fa292c1fb98fbffe">vMultiplyMatrixByVector</a>(&amp;Home_PositionForPlane2, smRotation, Home_PositionForPlane);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  vMultiplyMatrixByVector(&amp;Home_PositionForPlane2, smRotation, Home_PositionForPlane);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">/*</span></div>
@@ -251,7 +251,7 @@ $(document).ready(function(){initNavTree('airborne__ant__track_8c_source.html','
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">            -90  -&gt; antenna looks backwards</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">  */</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="comment">/* fixed to the plane*/</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  airborne_ant_pan = (float)(atan2(Home_PositionForPlane2.<a class="code" href="structVECTOR.html#a8e735ff9578a0cfb24ce83935e0128cb">fx</a>, (Home_PositionForPlane2.<a class="code" href="structVECTOR.html#abf0b5d78cfcb2b66cb05cfc74f18e7ac">fy</a>)));</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  airborne_ant_pan = (float)(atan2(Home_PositionForPlane2.fx, (Home_PositionForPlane2.fy)));</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;   <span class="comment">// I need to avoid oscillations around the 180 degree mark.</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;   <span class="keywordflow">if</span> (airborne_ant_pan &gt; 0 &amp;&amp; airborne_ant_pan &lt;= RadOfDeg(175)){ ant_pan_positive = 1; }</div>
@@ -268,15 +268,15 @@ $(document).ready(function(){initNavTree('airborne__ant__track_8c_source.html','
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#ifdef ANT_PAN_NEUTRAL</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor"></span>  airborne_ant_pan = airborne_ant_pan - RadOfDeg(ANT_PAN_NEUTRAL);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">if</span> (airborne_ant_pan &gt; 0)</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    airborne_ant_pan_servo = <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> * (airborne_ant_pan / (RadOfDeg(ANT_PAN_MAX - ANT_PAN_NEUTRAL)));</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    airborne_ant_pan_servo = MAX_PPRZ * (airborne_ant_pan / (RadOfDeg(ANT_PAN_MAX - ANT_PAN_NEUTRAL)));</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    airborne_ant_pan_servo = <a class="code" href="paparazzi_8h.html#aa403b9f7966b26d3ec9a52303deda944">MIN_PPRZ</a> * (airborne_ant_pan / (RadOfDeg(ANT_PAN_MIN - ANT_PAN_NEUTRAL)));</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    airborne_ant_pan_servo = MIN_PPRZ * (airborne_ant_pan / (RadOfDeg(ANT_PAN_MIN - ANT_PAN_NEUTRAL)));</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  airborne_ant_pan_servo = <a class="code" href="paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7">TRIM_PPRZ</a>(airborne_ant_pan_servo);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  airborne_ant_pan_servo = TRIM_PPRZ(airborne_ant_pan_servo);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#ifdef COMMAND_ANT_PAN</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor"></span>  <a class="code" href="inter__mcu_8c.html#ac13671906f2663b39fde033f4cb4a410">ap_state</a>-&gt;commands[COMMAND_ANT_PAN] = airborne_ant_pan_servo;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor"></span>  ap_state-&gt;commands[COMMAND_ANT_PAN] = airborne_ant_pan_servo;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
@@ -289,8 +289,8 @@ $(document).ready(function(){initNavTree('airborne__ant__track_8c_source.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_b38d3b7daf8f5f4aa9cdde7d2cfcefba.html">airborne_ant_track</a></li><li class="navelem"><a class="el" href="airborne__ant__track_8c.html">airborne_ant_track.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 04:00:08 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_b38d3b7daf8f5f4aa9cdde7d2cfcefba.html">airborne_ant_track</a></li><li class="navelem"><b>airborne_ant_track.c</b></li>
+    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

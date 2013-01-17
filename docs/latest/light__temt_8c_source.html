@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
+   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -128,49 +128,42 @@ $(document).ready(function(){initNavTree('light__temt_8c_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/** \file light_temt.c</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  \brief Vishay TEMT6000 ambient light sensor interface</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *   This reads the values for light intensity from the Vishay TEMT6000 sensor.</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="light__temt_8h.html">modules/meteo/light_temt.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;modules/meteo/light_temt.h&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="adc_8h.html" title="arch independent ADC (Analog to Digital Converter) API">mcu_periph/adc.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API">mcu_periph/uart.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;messages.h&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifndef ADC_CHANNEL_LIGHT_TEMT</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="light__temt_8c.html#af0114b805578cf94087430a3e5f2a379">   37</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_LIGHT_TEMT ADC_4</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_LIGHT_TEMT ADC_4</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifndef ADC_CHANNEL_LIGHT_NB_SAMPLES</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="light__temt_8c.html#a661e1b4ad75b88ab19e0d16c232d9f6d">   41</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_LIGHT_NB_SAMPLES 16</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_LIGHT_NB_SAMPLES 16</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#ifndef DOWNLINK_DEVICE</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="light__temt_8c.html#a2978a46b47cbc9d17a0924014ff9658b">   45</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="light__temt_8h.html#ab0d3b9bd2992f4ac120013dec2cf9a5f">   48</a></span>&#160;<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="light__temt_8c.html#ab0d3b9bd2992f4ac120013dec2cf9a5f">adc_light_temt</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;uint16_t adc_light_temt;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="light__temt_8c.html#af882154dfd2d4c4aac7e5d6e98566d4a">   50</a></span>&#160;<span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="light__temt_8c.html#af882154dfd2d4c4aac7e5d6e98566d4a">buf_light_temt</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> buf_light_temt;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="light__temt_8h.html#a0cdfdd43940fde9fe395ea50cbacd148">   52</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="light__temt_8c.html#a0cdfdd43940fde9fe395ea50cbacd148">light_temt_init</a>( <span class="keywordtype">void</span> ) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(<a class="code" href="light__temt_8c.html#af0114b805578cf94087430a3e5f2a379">ADC_CHANNEL_LIGHT_TEMT</a>, &amp;<a class="code" href="light__temt_8c.html#af882154dfd2d4c4aac7e5d6e98566d4a">buf_light_temt</a>, <a class="code" href="light__temt_8c.html#a661e1b4ad75b88ab19e0d16c232d9f6d">ADC_CHANNEL_LIGHT_NB_SAMPLES</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> light_temt_init( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(ADC_CHANNEL_LIGHT_TEMT, &amp;buf_light_temt, ADC_CHANNEL_LIGHT_NB_SAMPLES);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="light__temt_8h.html#ad79f291e455827d94f9b08e7a23716f3">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="light__temt_8c.html#ad79f291e455827d94f9b08e7a23716f3">light_temt_periodic</a>( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> light_temt_periodic( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">float</span> f_light_temt;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="light__temt_8c.html#ab0d3b9bd2992f4ac120013dec2cf9a5f">adc_light_temt</a> = <a class="code" href="light__temt_8c.html#af882154dfd2d4c4aac7e5d6e98566d4a">buf_light_temt</a>.<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / <a class="code" href="light__temt_8c.html#af882154dfd2d4c4aac7e5d6e98566d4a">buf_light_temt</a>.<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  adc_light_temt = buf_light_temt.sum / buf_light_temt.av_nb_sample;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">/* 3.6k/6.8k voltage divider, 10 bits adc */</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  f_light_temt = (<a class="code" href="light__temt_8c.html#ab0d3b9bd2992f4ac120013dec2cf9a5f">adc_light_temt</a> / 1024.) * 100.;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  f_light_temt = (adc_light_temt / 1024.) * 100.;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  DOWNLINK_SEND_TEMT_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="light__temt_8c.html#ab0d3b9bd2992f4ac120013dec2cf9a5f">adc_light_temt</a>, &amp;f_light_temt);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  DOWNLINK_SEND_TEMT_STATUS(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, DefaultDevice, &amp;adc_light_temt, &amp;f_light_temt);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
@@ -179,7 +172,7 @@ $(document).ready(function(){initNavTree('light__temt_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_dcc9af59dc35b42e32db80b18066e136.html">meteo</a></li><li class="navelem"><a class="el" href="light__temt_8c.html">light_temt.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

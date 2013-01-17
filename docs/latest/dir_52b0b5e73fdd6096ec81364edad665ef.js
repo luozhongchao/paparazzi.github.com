@@ -4,7 +4,7 @@ var dir_52b0b5e73fdd6096ec81364edad665ef =
     [ "adc_arch.h", "lpc21_2mcu__periph_2adc__arch_8h.html", "lpc21_2mcu__periph_2adc__arch_8h" ],
     [ "dac_arch.c", "dac__arch_8c.html", "dac__arch_8c" ],
     [ "dac_arch.h", "dac__arch_8h.html", "dac__arch_8h" ],
-    [ "gpio_arch.h", "lpc21_2mcu__periph_2gpio__arch_8h.html", "lpc21_2mcu__periph_2gpio__arch_8h" ],
+    [ "gpio_arch.h", "lpc21_2mcu__periph_2gpio__arch_8h_source.html", null ],
     [ "i2c_arch.c", "lpc21_2mcu__periph_2i2c__arch_8c.html", "lpc21_2mcu__periph_2i2c__arch_8c" ],
     [ "i2c_arch.h", "lpc21_2mcu__periph_2i2c__arch_8h.html", "lpc21_2mcu__periph_2i2c__arch_8h" ],
     [ "pwm_input_arch.c", "pwm__input__arch_8c.html", "pwm__input__arch_8c" ],

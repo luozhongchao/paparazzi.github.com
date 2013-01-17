@@ -1,13 +1,5 @@
 var group__state__acceleration =
 [
-    [ "ACCEL_ECEF_F", "group__state__acceleration.html#ga6facec929f628aeed9c9173f68283f00", null ],
-    [ "ACCEL_ECEF_I", "group__state__acceleration.html#ga0a85ee9e95009a2b8254012520a9f963", null ],
-    [ "ACCEL_NED_F", "group__state__acceleration.html#ga2dee1fa8ad515c618138f1646ddc484f", null ],
-    [ "ACCEL_NED_I", "group__state__acceleration.html#gadda4d0520e9e62ad57b57482439a7c51", null ],
-    [ "stateCalcAccelEcef_f", "group__state__acceleration.html#ga99ff3fbb7c78f6fa9d7357b8d4f374e3", null ],
-    [ "stateCalcAccelEcef_i", "group__state__acceleration.html#ga539c730e2fbf144e23135c782a6f110c", null ],
-    [ "stateCalcAccelNed_f", "group__state__acceleration.html#gaea5833c5515c007e9ebd4ef106e80071", null ],
-    [ "stateCalcAccelNed_i", "group__state__acceleration.html#ga48146adcdcd09bb704335795c6624ad8", null ],
     [ "stateGetAccelEcef_f", "group__state__acceleration.html#ga4195f5fca4133a0cd1bdd098e11dc94a", null ],
     [ "stateGetAccelEcef_i", "group__state__acceleration.html#gace87c8e2eac995ea2d6491bd30299e56", null ],
     [ "stateGetAccelNed_f", "group__state__acceleration.html#ga058e2128ff3a2a3ca5f3c606f4166dfe", null ],
