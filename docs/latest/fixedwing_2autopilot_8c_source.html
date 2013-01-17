@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-390-g19e8289</span>
+   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -126,56 +126,55 @@ $(document).ready(function(){initNavTree('fixedwing_2autopilot_8c_source.html','
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * along with paparazzi; see the file COPYING.  If not, write to</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @file firmwares/fixedwing/autopilot.c</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * Autopilot inititalization.</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2autopilot_8h.html" title="Autopilot modes.">firmwares/fixedwing/autopilot.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#aebf57c26248ee8c66d3eacdbd6a155cd">   32</a></span>&#160;<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#aebf57c26248ee8c66d3eacdbd6a155cd">pprz_mode</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="rotorcraft_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c">   33</a></span>&#160;bool_t <a class="code" href="fixedwing_2autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8c.html#af32f81f02a3187c12c08e11caf354abd">   35</a></span>&#160;bool_t <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/** flight time in seconds. */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="rotorcraft_2autopilot_8h.html#a643a1732fc06296050835ab61968d726">   38</a></span>&#160;<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#a643a1732fc06296050835ab61968d726" title="flight time in seconds.">autopilot_flight_time</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#ab559c6867326333905f9133432ff9315">   40</a></span>&#160;<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#ab559c6867326333905f9133432ff9315">lateral_mode</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414">   42</a></span>&#160;<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#a32da1e6e29634773a0e491df93f92414" title="Supply voltage in deciVolt.">vsupply</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a">   43</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="fixedwing_2autopilot_8c.html#a2d107b3b2dcebab8a10c9d39894f6b2a" title="Fuel consumption (mAh) TODO: move to electrical subsystem.">energy</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#ad5b2dcab0bbd14934aac4f5e0eea8b18">   45</a></span>&#160;bool_t <a class="code" href="fixedwing_2autopilot_8c.html#ad5b2dcab0bbd14934aac4f5e0eea8b18">gps_lost</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#adda0cb88d172048dd19b50ad66e7881e">   47</a></span>&#160;bool_t <a class="code" href="fixedwing_2autopilot_8c.html#adda0cb88d172048dd19b50ad66e7881e" title="Power switch control.">power_switch</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="rotorcraft_2autopilot_8h.html#a9d3557653abfc3d4c428724b249f6d5e">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="fixedwing_2autopilot_8c.html#a9d3557653abfc3d4c428724b249f6d5e" title="Autopilot inititalization.">autopilot_init</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#aebf57c26248ee8c66d3eacdbd6a155cd">pprz_mode</a> = <a class="code" href="fixedwing_2autopilot_8h.html#a7248dd1183b2fe1d11cdc66a01fe5744">PPRZ_MODE_AUTO2</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#a643a1732fc06296050835ab61968d726" title="flight time in seconds.">autopilot_flight_time</a> = 0;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#ab559c6867326333905f9133432ff9315">lateral_mode</a> = <a class="code" href="fixedwing_2autopilot_8h.html#a02c48fb8a64a9976f9e9fb9436ec2ad9">LATERAL_MODE_MANUAL</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#ad5b2dcab0bbd14934aac4f5e0eea8b18">gps_lost</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#adda0cb88d172048dd19b50ad66e7881e" title="Power switch control.">power_switch</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @file firmwares/fixedwing/autopilot.c</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Fixedwing autopilot inititalization.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2autopilot_8h.html" title="Fixedwing autopilot modes.">firmwares/fixedwing/autopilot.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#aebf57c26248ee8c66d3eacdbd6a155cd">   31</a></span>&#160;<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#aebf57c26248ee8c66d3eacdbd6a155cd">pprz_mode</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="rotorcraft_2autopilot_8h.html#a3f1a87c0a714ae1fe65f5214086d8c9c">   32</a></span>&#160;bool_t <a class="code" href="fixedwing_2autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8c.html#af32f81f02a3187c12c08e11caf354abd">   34</a></span>&#160;bool_t <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/** flight time in seconds. */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="rotorcraft_2autopilot_8h.html#a643a1732fc06296050835ab61968d726">   37</a></span>&#160;<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#a643a1732fc06296050835ab61968d726" title="flight time in seconds.">autopilot_flight_time</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#ab559c6867326333905f9133432ff9315">   39</a></span>&#160;<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#ab559c6867326333905f9133432ff9315">lateral_mode</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414">   41</a></span>&#160;<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="fixedwing_2autopilot_8c.html#a32da1e6e29634773a0e491df93f92414" title="Supply voltage in deciVolt.">vsupply</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a">   42</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="fixedwing_2autopilot_8c.html#a2d107b3b2dcebab8a10c9d39894f6b2a" title="Fuel consumption (mAh) TODO: move to electrical subsystem.">energy</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#ad5b2dcab0bbd14934aac4f5e0eea8b18">   44</a></span>&#160;bool_t <a class="code" href="fixedwing_2autopilot_8c.html#ad5b2dcab0bbd14934aac4f5e0eea8b18">gps_lost</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="fixedwing_2autopilot_8h.html#adda0cb88d172048dd19b50ad66e7881e">   46</a></span>&#160;bool_t <a class="code" href="fixedwing_2autopilot_8c.html#adda0cb88d172048dd19b50ad66e7881e" title="Power switch control.">power_switch</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="rotorcraft_2autopilot_8h.html#a9d3557653abfc3d4c428724b249f6d5e">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="fixedwing_2autopilot_8c.html#a9d3557653abfc3d4c428724b249f6d5e" title="Autopilot inititalization.">autopilot_init</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#aebf57c26248ee8c66d3eacdbd6a155cd">pprz_mode</a> = <a class="code" href="fixedwing_2autopilot_8h.html#a7248dd1183b2fe1d11cdc66a01fe5744">PPRZ_MODE_AUTO2</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="sim__ap_8c.html#af32f81f02a3187c12c08e11caf354abd">launch</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#a643a1732fc06296050835ab61968d726" title="flight time in seconds.">autopilot_flight_time</a> = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#ab559c6867326333905f9133432ff9315">lateral_mode</a> = <a class="code" href="fixedwing_2autopilot_8h.html#a02c48fb8a64a9976f9e9fb9436ec2ad9">LATERAL_MODE_MANUAL</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#ad5b2dcab0bbd14934aac4f5e0eea8b18">gps_lost</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="fixedwing_2autopilot_8c.html#adda0cb88d172048dd19b50ad66e7881e" title="Power switch control.">power_switch</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_cb1b347b64b61ba7f369ccfe68448b26.html">fixedwing</a></li><li class="navelem"><a class="el" href="fixedwing_2autopilot_8c.html">autopilot.c</a></li>
-    <li class="footer">Generated on Wed Jan 16 2013 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

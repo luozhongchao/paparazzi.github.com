@@ -115,7 +115,7 @@ var searchData=
   ['bind_5fpin',['BIND_PIN',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#aa51b8577574c67cba5343b224cec82df',1,'spektrum_arch.c']]],
   ['bind_5fpin_5fperiph',['BIND_PIN_PERIPH',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ab610b31bacaeaa0d945c1b9adebb9049',1,'spektrum_arch.c']]],
   ['bind_5fpin_5fport',['BIND_PIN_PORT',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a7fe270978e883ae4fb0389b6b898a231',1,'spektrum_arch.c']]],
-  ['bit_5fx_5fis_5fset_5fin_5freg',['BIT_X_IS_SET_IN_REG',['../stm32_2mcu__periph_2i2c__arch_8c.html#a007bb527478e35deb7dd7bac8a81ae96',1,'BIT_X_IS_SET_IN_REG():&#160;i2c_arch.c'],['../i2c__attempt2__nolib_8c.html#a007bb527478e35deb7dd7bac8a81ae96',1,'BIT_X_IS_SET_IN_REG():&#160;i2c_attempt2_nolib.c'],['../i2c__attempt3__subtra_8c.html#a007bb527478e35deb7dd7bac8a81ae96',1,'BIT_X_IS_SET_IN_REG():&#160;i2c_attempt3_subtra.c'],['../i2c__attempt4__nodouble__isr_8c.html#a007bb527478e35deb7dd7bac8a81ae96',1,'BIT_X_IS_SET_IN_REG():&#160;i2c_attempt4_nodouble_isr.c']]],
+  ['bit_5fx_5fis_5fset_5fin_5freg',['BIT_X_IS_SET_IN_REG',['../stm32_2mcu__periph_2i2c__arch_8c.html#a007bb527478e35deb7dd7bac8a81ae96',1,'i2c_arch.c']]],
   ['blink_5fmin',['BLINK_MIN',['../usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733',1,'usb_tunnel.c']]],
   ['block',['Block',['../common__flight__plan_8h.html#a3e749f8fe41a97ef62de0dd622dbe3e9',1,'common_flight_plan.h']]],
   ['bmp085_5fctrl_5freg',['BMP085_CTRL_REG',['../baro__bmp_8h.html#aba8a2ba67440fd080a0d0b32c2e8839b',1,'baro_bmp.h']]],

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-390-g19e8289</span>
+   &#160;<span id="projectnumber">v4.9_devel-398-g7016820</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -126,15 +126,15 @@ $(document).ready(function(){initNavTree('main__ap_8c_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * along with paparazzi; see the file COPYING.  If not, write to</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @file main_ap.c</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @file firmwares/fixedwing/main_ap.c</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * AP ( AutoPilot ) tasks</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * This process is reponsible for the collecting the different sensors data, fusing them to obtain</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * aircraft attitude and running the different control loops</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * This process is reponsible for the collecting the different sensors data,</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * calling the appropriate estimation algorithms and running the different control loops.</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="main__ap_8c.html#ac3c586d9cc5d614d34061b3844a1e45b">   31</a></span>&#160;<span class="preprocessor">#define MODULES_C</span></div>
@@ -168,8 +168,8 @@ $(document).ready(function(){initNavTree('main__ap_8c_source.html','');});
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// autopilot &amp; control</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_8h.html" title="API to get/set the generic vehicle states.">state.h</a>&quot;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2autopilot_8h.html" title="Autopilot modes.">firmwares/fixedwing/autopilot.h</a>&quot;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2autopilot_8h.html" title="Fixedwing autopilot modes.">firmwares/fixedwing/autopilot.h</a>&quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html" title="Fixed wing horizontal control.">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include CTRL_TYPE_H</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &quot;generated/flight_plan.h&quot;</span></div>
@@ -866,7 +866,7 @@ $(document).ready(function(){initNavTree('main__ap_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_cb1b347b64b61ba7f369ccfe68448b26.html">fixedwing</a></li><li class="navelem"><a class="el" href="main__ap_8c.html">main_ap.c</a></li>
-    <li class="footer">Generated on Wed Jan 16 2013 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

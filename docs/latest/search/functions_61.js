@@ -1,7 +1,6 @@
 var searchData=
 [
   ['abort',['abort',['../plug__sys_8c.html#a8dec7c95227ff149687066cf04029191',1,'plug_sys.c']]],
-  ['abort_5fand_5freset',['abort_and_reset',['../i2c__arch_8old_8c.html#ab49d2f1568c99f4568303c0cb6b1565c',1,'abort_and_reset(struct i2c_periph *p):&#160;i2c_arch.old.c'],['../i2c__arch_8very__old_8c.html#ab49d2f1568c99f4568303c0cb6b1565c',1,'abort_and_reset(struct i2c_periph *p):&#160;i2c_arch.very_old.c']]],
   ['ac_5fchar_5faverage',['ac_char_average',['../energy__ctrl_8c.html#a6ed33fea47e2678fee588f2c94b40a77',1,'energy_ctrl.c']]],
   ['ac_5fchar_5fupdate',['ac_char_update',['../energy__ctrl_8c.html#a1fca0891379c02432d10e73daef730d3',1,'energy_ctrl.c']]],
   ['accel_5fcopy_5fspi',['accel_copy_spi',['../imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5',1,'imu_aspirin.h']]],

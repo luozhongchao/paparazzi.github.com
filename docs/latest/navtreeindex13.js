@@ -1,6 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"energy__ctrl_8c.html#af1cec5e901bc7a2d3301ba6ee83043ce":[8,0,0,0,3,0,0,0,12],
 "energy__ctrl_8c.html#af20f673ea44900420471aa1349b3ad6b":[8,0,0,0,3,0,0,0,33],
 "energy__ctrl_8c.html#af6673f0686b827efdacc838902dc0ab3":[8,0,0,0,3,0,0,0,48],
 "energy__ctrl_8c.html#af86ee2319d3e187f491ac3b04b101c0e":[8,0,0,0,3,0,0,0,43],
@@ -249,5 +248,6 @@ var NAVTREEINDEX13 =
 "fixedwing_2guidance_2guidance__v_8h.html#a3b016dc45683d8fd0768330dffbc0180":[8,0,0,0,3,0,0,4,30],
 "fixedwing_2guidance_2guidance__v_8h.html#a56244df6f6f2b1e99747e854a6357d92":[8,0,0,0,3,0,0,4,37],
 "fixedwing_2guidance_2guidance__v_8h.html#a5a18835d4b08fd56ecb24ce5ed987bbd":[8,0,0,0,3,0,0,4,24],
-"fixedwing_2guidance_2guidance__v_8h.html#a5bd299dd0de5503b8d89214c741fcfc3":[8,0,0,0,3,0,0,4,35]
+"fixedwing_2guidance_2guidance__v_8h.html#a5bd299dd0de5503b8d89214c741fcfc3":[8,0,0,0,3,0,0,4,35],
+"fixedwing_2guidance_2guidance__v_8h.html#a70a371d9e90dc33439fd1553de50567e":[8,0,0,0,3,0,0,4,29]
 };

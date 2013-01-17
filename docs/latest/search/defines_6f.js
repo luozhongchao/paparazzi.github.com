@@ -15,7 +15,6 @@ var searchData=
   ['one_5fmhz_5fclk',['ONE_MHZ_CLK',['../stm32_2subsystems_2actuators_2actuators__pwm__arch_8c.html#a644a06e4166982dcb58fbd25d65f1f65',1,'actuators_pwm_arch.c']]],
   ['open_5fgps_5freset_5fpin',['Open_GPS_RESET_Pin',['../logom__2_86_8h.html#a2c81f574378f5a760da5224d7439cc92',1,'Open_GPS_RESET_Pin():&#160;logom_2.6.h'],['../sdlog__1_80_8h.html#a2c81f574378f5a760da5224d7439cc92',1,'Open_GPS_RESET_Pin():&#160;sdlog_1.0.h'],['../tiny__2_81_8h.html#a2c81f574378f5a760da5224d7439cc92',1,'Open_GPS_RESET_Pin():&#160;tiny_2.1.h']]],
   ['or',['Or',['../common__flight__plan_8h.html#a930c4658c4c62e1d04058018e9732a26',1,'common_flight_plan.h']]],
-  ['out_5fof_5fsync_5fstate_5fmachine',['OUT_OF_SYNC_STATE_MACHINE',['../i2c__arch_8old_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1',1,'OUT_OF_SYNC_STATE_MACHINE():&#160;i2c_arch.old.c'],['../i2c__arch_8very__old_8c.html#a81e271a1ba6d9c375769d4bd70ea180d',1,'OUT_OF_SYNC_STATE_MACHINE():&#160;i2c_arch.very_old.c'],['../i2c__attempt1_8c.html#a6a26bdf79ff9e0323b4d67d2d1bfceb1',1,'OUT_OF_SYNC_STATE_MACHINE():&#160;i2c_attempt1.c']]],
   ['output_5frate',['OUTPUT_RATE',['../gps__mtk_8c.html#aa51adf0f95cfeb0b28b11151cdc1274c',1,'gps_mtk.c']]],
   ['outputmode',['OUTPUTMODE',['../ahrs__float__dcm_8h.html#aca3c9e529eec0dcbf5ac2e4240391068',1,'ahrs_float_dcm.h']]],
   ['oval',['Oval',['../nav_8h.html#a3e1c9983a7508c42235e2fead19db8b1',1,'nav.h']]],

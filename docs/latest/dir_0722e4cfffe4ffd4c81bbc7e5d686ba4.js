@@ -1,6 +1,5 @@
 var dir_0722e4cfffe4ffd4c81bbc7e5d686ba4 =
 [
-    [ "obsolete", "dir_6efc55d26950647e6386d785ebf8ef80.html", "dir_6efc55d26950647e6386d785ebf8ef80" ],
     [ "adc_arch.c", "stm32_2mcu__periph_2adc__arch_8c.html", "stm32_2mcu__periph_2adc__arch_8c" ],
     [ "adc_arch.h", "stm32_2mcu__periph_2adc__arch_8h.html", "stm32_2mcu__periph_2adc__arch_8h" ],
     [ "can_arch.c", "can__arch_8c.html", "can__arch_8c" ],

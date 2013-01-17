@@ -725,7 +725,7 @@ var onboard_modules =
         [ "Raw baro_MS5534A.xml file:", "module__baro_ms5534a.html#module_xml__baro_ms5534a", null ]
       ] ]
     ] ],
-    [ "Baro ETS (I2C)", "module__baro_amsys.html", [
+    [ "Baro AMSYS (I2C)", "module__baro_amsys.html", [
       [ "Module configuration options", "module__baro_amsys.html#configuration", [
         [ "Define Options", "module__baro_amsys.html#define", null ]
       ] ],

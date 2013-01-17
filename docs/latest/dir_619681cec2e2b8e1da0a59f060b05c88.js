@@ -10,6 +10,7 @@ var dir_619681cec2e2b8e1da0a59f060b05c88 =
     [ "plug_sys.c", "plug__sys_8c.html", "plug__sys_8c" ],
     [ "stm_test_spi_link.c", "stm__test__spi__link_8c.html", "stm__test__spi__link_8c" ],
     [ "test_adc.c", "test__adc_8c.html", "test__adc_8c" ],
+    [ "test_baro.c", "lisa_2test__baro_8c.html", "lisa_2test__baro_8c" ],
     [ "test_can.c", "test__can_8c.html", "test__can_8c" ],
     [ "test_csc_servo.c", "test__csc__servo_8c.html", "test__csc__servo_8c" ],
     [ "test_datalink.c", "test__datalink_8c.html", "test__datalink_8c" ],

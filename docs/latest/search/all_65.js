@@ -61,7 +61,6 @@ var searchData=
   ['enablerise',['EnableRise',['../lpc21_2modules_2core_2trigger__ext__hw_8h.html#a927a42b11dde0e0eab30e26b50616e5a',1,'trigger_ext_hw.h']]],
   ['encodingtype',['EncodingType',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#afb5047901d3fea90c147a5477a9e441d',1,'spektrum_arch.c']]],
   ['end_5fof_5ftable',['end_of_table',['../structcan__accept__Regs__t.html#a999e58b664a98aa9e12dcc6b00a4ff02',1,'can_accept_Regs_t']]],
-  ['end_5fof_5ftransaction',['end_of_transaction',['../i2c__arch_8old_8c.html#aae9278b2c7ed90ab2e497ec1317e348f',1,'end_of_transaction(struct i2c_periph *p):&#160;i2c_arch.old.c'],['../i2c__arch_8very__old_8c.html#aae9278b2c7ed90ab2e497ec1317e348f',1,'end_of_transaction(struct i2c_periph *p):&#160;i2c_arch.very_old.c']]],
   ['end_5ftime',['end_time',['../structsys__time__timer.html#abbf23b4993e74efe48aef5d7c8bfe0dd',1,'sys_time_timer']]],
   ['endmessage',['EndMessage',['../structDownlinkTransport.html#acaff3d5b3da73ba8ea27f78040b346bf',1,'DownlinkTransport']]],
   ['energy',['energy',['../fixedwing_2autopilot_8c.html#a2d107b3b2dcebab8a10c9d39894f6b2a',1,'energy():&#160;autopilot.c'],['../fixedwing_2autopilot_8h.html#a2d107b3b2dcebab8a10c9d39894f6b2a',1,'energy():&#160;autopilot.c']]],

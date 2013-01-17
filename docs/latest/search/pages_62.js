@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['baro_20ets_20_28i2c_29',['Baro ETS (I2C)',['../module__baro_amsys.html',1,'onboard_modules']]],
+  ['baro_20amsys_20_28i2c_29',['Baro AMSYS (I2C)',['../module__baro_amsys.html',1,'onboard_modules']]],
   ['bosch_20bmp085_20pressure_20sensor',['Bosch BMP085 pressure sensor',['../module__baro_bmp.html',1,'onboard_modules']]],
   ['baro_20board_20wrapper',['Baro board wrapper',['../module__baro_board.html',1,'onboard_modules']]],
   ['baro_20ets_20_28i2c_29',['Baro ETS (I2C)',['../module__baro_ets.html',1,'onboard_modules']]],
