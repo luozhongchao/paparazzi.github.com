@@ -1,5 +1,15 @@
 var group__state__wind__airspeed =
 [
+    [ "AIRSPEED_F", "group__state__wind__airspeed.html#gac2617a40654953c01df7cfb49d0eb8ad", null ],
+    [ "AIRSPEED_I", "group__state__wind__airspeed.html#ga60e0277ee25b8a3c31c7c04dbae90c9e", null ],
+    [ "AOA_F", "group__state__wind__airspeed.html#gae173223c04cbb515678ee755f0465f71", null ],
+    [ "SIDESLIP_F", "group__state__wind__airspeed.html#ga7627a871c9cd0994b5f864b9281824a0", null ],
+    [ "WINDSPEED_F", "group__state__wind__airspeed.html#ga3eb2de8fbbcb8bb2d6660a06aa254790", null ],
+    [ "WINDSPEED_I", "group__state__wind__airspeed.html#ga09ac60b282bbb163ee76778d6b9c6323", null ],
+    [ "stateCalcAirspeed_f", "group__state__wind__airspeed.html#gac2516cd42b66afab524662b27fd96cd5", null ],
+    [ "stateCalcAirspeed_i", "group__state__wind__airspeed.html#ga82826b1ac55a708eb9854c7c19f4e172", null ],
+    [ "stateCalcHorizontalWindspeed_f", "group__state__wind__airspeed.html#gac9957602767f1a6c2a00c97e999ce48c", null ],
+    [ "stateCalcHorizontalWindspeed_i", "group__state__wind__airspeed.html#gadff5507f25f24d146d0669867f9fb509", null ],
     [ "stateGetAirspeed_f", "group__state__wind__airspeed.html#ga0ab69b83eeebb79cbdb2c8e81bfb659b", null ],
     [ "stateGetAirspeed_i", "group__state__wind__airspeed.html#ga1cc3270ab9d1cb75c10c60f45bbbc2bc", null ],
     [ "stateGetAngleOfAttack_f", "group__state__wind__airspeed.html#gaa5fd784b0de97bd0d783a518ecc5b94c", null ],

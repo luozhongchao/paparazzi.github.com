@@ -31,6 +31,7 @@ var state_8h =
     [ "SPEED_HDIR_I", "state_8h.html#gabe769f7635032608fa8d01232d6661ae", null ],
     [ "SPEED_HNORM_F", "state_8h.html#gad2bc20aa9d08dbe333b0ed7d27f7bb2a", null ],
     [ "SPEED_HNORM_I", "state_8h.html#gaf04a0427972657b9848fd0c2de814eaf", null ],
+    [ "SPEED_LOCAL_COORD", "state_8h.html#gaa0fa5ab309987a75fd9e623b29e67a2b", null ],
     [ "SPEED_NED_F", "state_8h.html#ga8418fe1b0b5f43777c4a25970252f12d", null ],
     [ "SPEED_NED_I", "state_8h.html#gad2f40b29920e3d9e602cdb3012db6210", null ],
     [ "WINDSPEED_F", "state_8h.html#ga3eb2de8fbbcb8bb2d6660a06aa254790", null ],

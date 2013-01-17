@@ -1,9 +1,9 @@
 var dir_1ca43f6a116d741d80fb1d0555a2b198 =
 [
     [ "adc.h", "adc_8h.html", "adc_8h" ],
-    [ "can.c", "can_8c_source.html", null ],
-    [ "can.h", "can_8h_source.html", null ],
-    [ "dac.h", "dac_8h_source.html", null ],
+    [ "can.c", "can_8c.html", "can_8c" ],
+    [ "can.h", "can_8h.html", "can_8h" ],
+    [ "dac.h", "dac_8h.html", "dac_8h" ],
     [ "i2c.c", "i2c_8c.html", "i2c_8c" ],
     [ "i2c.h", "i2c_8h.html", "i2c_8h" ],
     [ "pwm_input.c", "pwm__input_8c.html", "pwm__input_8c" ],
@@ -12,7 +12,7 @@ var dir_1ca43f6a116d741d80fb1d0555a2b198 =
     [ "spi.h", "spi_8h.html", "spi_8h" ],
     [ "sys_time.c", "sys__time_8c.html", "sys__time_8c" ],
     [ "sys_time.h", "sys__time_8h.html", "sys__time_8h" ],
-    [ "uart.c", "uart_8c_source.html", null ],
+    [ "uart.c", "uart_8c.html", "uart_8c" ],
     [ "uart.h", "uart_8h.html", "uart_8h" ],
     [ "usb_serial.h", "usb__serial_8h.html", "usb__serial_8h" ]
 ];

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('adxl345_8extra__i2c_8h_source.html',''
 <div class="title">adxl345.extra_i2c.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="adxl345_8extra__i2c_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2011 Gautier Hattenberger</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is part of paparazzi.</span></div>
@@ -141,65 +141,65 @@ $(document).ready(function(){initNavTree('adxl345_8extra__i2c_8h_source.html',''
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html" title="Architecture independent I2C (Inter-Integrated Circuit Bus) API.">mcu_periph/i2c.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/* Include address and register definition */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;peripherals/adxl345.h&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="adxl345_8h.html">peripherals/adxl345.h</a>&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/* Default conf */</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifndef ADXL345_BW_RATE</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_BW_RATE 0x0a // Output rate 100Hz, bandwidth 50Hz</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a6c544488de7b709a48f48ede00922ed3">   39</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_BW_RATE 0x0a // Output rate 100Hz, bandwidth 50Hz</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef ADXL345_POWER_CTL_MEASURE</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_POWER_CTL_MEASURE 0x1 // Continious measurement mode</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a6897be8c059c143e60d8678d1f893fcf">   42</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_POWER_CTL_MEASURE 0x1 // Continious measurement mode</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef ADXL345_INT_ENABLE</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_INT_ENABLE 0x0 // Disable interrups</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#ab4fe7d4de760324e97b7bd1534570766">   45</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_INT_ENABLE 0x0 // Disable interrups</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef ADXL345_DATA_FORMAT_FULL_RES</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_FULL_RES 0x1 // Full resolution mode</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a9fa3e80839409829b8aa5054114fe1a3">   48</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_FULL_RES 0x1 // Full resolution mode</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef ADXL345_DATA_FORMAT_JUSTIFY</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_JUSTIFY 0x0 // Right justified with sign extension</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#acf4dd5dcb9959963758a32c006f58b3d">   51</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_JUSTIFY 0x0 // Right justified with sign extension</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef ADXL345_DATA_FORMAT_RANGE</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_RANGE 0x3 // g Range: 16g</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a6cdbb4c8a358eedae3b181d3c69661e3">   54</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_RANGE 0x3 // g Range: 16g</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define ADXL345_POWER_CTL (ADXL345_POWER_CTL_MEASURE&lt;&lt;3)</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_DATA_FORMAT ((ADXL345_DATA_FORMAT_FULL_RES&lt;&lt;3)|(ADXL345_DATA_FORMAT_JUSTIFY&lt;&lt;2)|(ADXL345_DATA_FORMAT_RANGE))</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a5eb7ada4d70f1d789e7ecb3835dfaf0f">   57</a></span>&#160;<span class="preprocessor">#define ADXL345_POWER_CTL (ADXL345_POWER_CTL_MEASURE&lt;&lt;3)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a45aacd07b6d543e2b5d2e1ae160e21c9">   58</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_DATA_FORMAT ((ADXL345_DATA_FORMAT_FULL_RES&lt;&lt;3)|(ADXL345_DATA_FORMAT_JUSTIFY&lt;&lt;2)|(ADXL345_DATA_FORMAT_RANGE))</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/* Default I2C address */</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#ifndef ADXL345_I2C_ADDR</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_I2C_ADDR ADXL345_ADDR</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a77aa3743881cc009a6efb8e14e319d48">   62</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_I2C_ADDR ADXL345_ADDR</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/* Default I2C device */</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifndef ADXL345_I2C_DEVICE</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_I2C_DEVICE i2c1</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a97790d72c6867717548d25b648a054e1">   67</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_I2C_DEVICE i2c1</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// Config done flag</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">extern</span> bool_t adxl345_initialized;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">extern</span> bool_t <a class="code" href="adxl345_8extra__i2c_8h.html#ab7c82b4ce7bb53a9d449daa6b7cee27e">adxl345_initialized</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// Data ready flag</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t adxl345_data_available;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> bool_t <a class="code" href="adxl345_8extra__i2c_8h.html#a2756bff0cbab26746bfc89ce5a2788a3">adxl345_data_available</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// Data vector</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> adxl345_data;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structInt16Vect3.html">Int16Vect3</a> <a class="code" href="adxl345_8extra__i2c_8h.html#ac80555a5a4c17ffcf1bfca076ea83761">adxl345_data</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// I2C transaction structure</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> adxl345_trans;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> <a class="code" href="adxl345_8extra__i2c_8h.html#a389ebb982fd9be844fac9325d29d7d36">adxl345_trans</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// TODO IRQ handling</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// Functions</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> adxl345_init(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> adxl345_configure(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> adxl345_read(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> adxl345_event(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="adxl345_8extra__i2c_8h.html#aa1cecab7e55764cb5c393ec00ed2a00c">adxl345_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="adxl345_8extra__i2c_8h.html#a2d19717bcab1bb92bccefe1f9564dd85">adxl345_configure</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="adxl345_8extra__i2c_8h.html#a686db152275dbadc5615dc1d41c92163">adxl345_read</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="adxl345_8extra__i2c_8h.html#a7e4739c3ab3b83ea5ddaaa67efd54b5b">adxl345_event</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// Macro for using ADXL345 in periodic function</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#define Adxl345Periodic() {                 \</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a77d209f61f1de2e08cd05332e4dedb25">   88</a></span>&#160;<span class="preprocessor">#define Adxl345Periodic() {                 \</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">  if (adxl345_initialized) adxl345_read();  \</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">  else adxl345_configure();                 \</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">}</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define AccelEvent(_handler) {     \</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="adxl345_8extra__i2c_8h.html#a9c96b00b0a86a153571ed477af60b305">   93</a></span>&#160;<span class="preprocessor">#define AccelEvent(_handler) {     \</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">    adxl345_event();              \</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">    if (adxl345_data_available) { \</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">      _handler();                 \</span></div>
@@ -213,8 +213,8 @@ $(document).ready(function(){initNavTree('adxl345_8extra__i2c_8h_source.html',''
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_0a48ba2c0a76794adfddddc873522f67.html">peripherals</a></li><li class="navelem"><b>adxl345.extra_i2c.h</b></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_0a48ba2c0a76794adfddddc873522f67.html">peripherals</a></li><li class="navelem"><a class="el" href="adxl345_8extra__i2c_8h.html">adxl345.extra_i2c.h</a></li>
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:04 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

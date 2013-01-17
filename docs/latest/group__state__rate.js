@@ -1,5 +1,9 @@
 var group__state__rate =
 [
+    [ "RATE_F", "group__state__rate.html#ga71f169bc30580aceb3480ab83c226452", null ],
+    [ "RATE_I", "group__state__rate.html#ga95b2cf34bb81dce903081a414cc8dc3d", null ],
+    [ "stateCalcBodyRates_f", "group__state__rate.html#ga52294469408c263566a43c4c903cb3ca", null ],
+    [ "stateCalcBodyRates_i", "group__state__rate.html#gaa244b14b2780206f600f9ded7d7cf180", null ],
     [ "stateGetBodyRates_f", "group__state__rate.html#ga086f10e8804f8e95ace9a2b1cd26a66c", null ],
     [ "stateGetBodyRates_i", "group__state__rate.html#ga3fc058302e6f40bf0b8797ca9a7ed60f", null ],
     [ "stateIsRateValid", "group__state__rate.html#ga6e77b5909aa2c25d328e1c705b08a44d", null ],

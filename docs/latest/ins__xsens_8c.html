@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -115,9 +115,9 @@ $(document).ready(function(){initNavTree('ins__xsens_8c.html','');});
 <p>Parser for the Xsens protocol.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ins__module_8h_source.html">ins_module.h</a>&quot;</code><br/>
-<code>#include &quot;ins_xsens.h&quot;</code><br/>
-<code>#include &quot;subsystems/ins.h&quot;</code><br/>
-<code>#include &lt;inttypes.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="ins__xsens_8h_source.html">ins_xsens.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="ins_8h_source.html">subsystems/ins.h</a>&quot;</code><br/>
+<code>#include &lt;<a class="el" href="inttypes_8h_source.html">inttypes.h</a>&gt;</code><br/>
 <code>#include &quot;generated/airframe.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="sys__time_8h_source.html">mcu_periph/sys_time.h</a>&quot;</code><br/>
 <code>#include &quot;messages.h&quot;</code><br/>
@@ -131,153 +131,264 @@ $(document).ready(function(){initNavTree('ins__xsens_8c.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="ins__xsens_8c__incl.png" border="0" usemap="#sw_2airborne_2modules_2ins_2ins__xsens_8c" alt=""/></div>
 <map name="sw_2airborne_2modules_2ins_2ins__xsens_8c" id="sw_2airborne_2modules_2ins_2ins__xsens_8c">
-<area shape="rect" id="node3" href="ins__module_8h.html" title="Device independent INS code." alt="" coords="719,179,825,208"/><area shape="rect" id="node7" href="ins_8h_source.html" title="subsystems/ins.h" alt="" coords="491,256,624,285"/><area shape="rect" id="node54" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="876,256,1015,285"/><area shape="rect" id="node59" href="ins__xsens_8h_source.html" title="ins_xsens.h" alt="" coords="903,101,999,131"/><area shape="rect" id="node70" href="inttypes_8h_source.html" title="inttypes.h" alt="" coords="1532,631,1617,660"/><area shape="rect" id="node73" href="sys__time_8h.html" title="Architecture independent timing functions." alt="" coords="1081,535,1252,564"/><area shape="rect" id="node87" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="1431,334,1583,381"/><area shape="rect" id="node10" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations." alt="" coords="636,430,785,477"/><area shape="rect" id="node31" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="115,535,304,564"/><area shape="rect" id="node37" href="state_8h.html" title="API to get/set the generic vehicle states." alt="" coords="388,343,455,372"/><area shape="rect" id="node12" href="pprz__geodetic_8h_source.html" title="pprz_geodetic.h" alt="" coords="545,535,668,564"/><area shape="rect" id="node15" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="692,535,831,564"/><area shape="rect" id="node18" href="pprz__algebra_8h_source.html" title="math/pprz_algebra.h" alt="" coords="215,631,369,660"/><area shape="rect" id="node25" href="pprz__trig__int_8h_source.html" title="math/pprz_trig_int.h" alt="" coords="687,631,836,660"/><area shape="rect" id="node42" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations." alt="" coords="175,430,324,477"/><area shape="rect" id="node47" href="pprz__orientation__conversion_8h.html" title="Generic orientation representation and conversion." alt="" coords="399,430,561,477"/><area shape="rect" id="node63" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="809,439,948,468"/><area shape="rect" id="node94" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="1431,430,1583,477"/><area shape="rect" id="node107" href="xbee_8h_source.html" title="subsystems/datalink\l/xbee.h" alt="" coords="1964,430,2116,477"/><area shape="rect" id="node114" href="w5100_8h_source.html" title="subsystems/datalink\l/w5100.h" alt="" coords="1788,430,1940,477"/><area shape="rect" id="node98" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1839,526,1991,573"/><area shape="rect" id="node103" href="transport_8h.html" title="generic transport header" alt="" coords="1663,526,1815,573"/><area shape="rect" id="node111" href="xbee24_8h_source.html" title="subsystems/datalink\l/xbee24.h" alt="" coords="2015,526,2167,573"/></map>
+<area shape="rect" id="node3" href="ins__module_8h.html" title="Device independent INS code." alt="" coords="719,179,825,208"/><area shape="rect" id="node7" href="ins_8h.html" title="subsystems/ins.h" alt="" coords="491,256,624,285"/><area shape="rect" id="node54" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="876,256,1015,285"/><area shape="rect" id="node59" href="ins__xsens_8h.html" title="ins_xsens.h" alt="" coords="903,101,999,131"/><area shape="rect" id="node70" href="inttypes_8h.html" title="inttypes.h" alt="" coords="1532,631,1617,660"/><area shape="rect" id="node73" href="sys__time_8h.html" title="Architecture independent timing functions." alt="" coords="1081,535,1252,564"/><area shape="rect" id="node87" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="1431,334,1583,381"/><area shape="rect" id="node10" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations." alt="" coords="636,430,785,477"/><area shape="rect" id="node31" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="115,535,304,564"/><area shape="rect" id="node37" href="state_8h.html" title="API to get/set the generic vehicle states." alt="" coords="388,343,455,372"/><area shape="rect" id="node12" href="pprz__geodetic_8h.html" title="pprz_geodetic.h" alt="" coords="545,535,668,564"/><area shape="rect" id="node15" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="692,535,831,564"/><area shape="rect" id="node18" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="215,631,369,660"/><area shape="rect" id="node25" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="687,631,836,660"/><area shape="rect" id="node42" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations." alt="" coords="175,430,324,477"/><area shape="rect" id="node47" href="pprz__orientation__conversion_8h.html" title="Generic orientation representation and conversion." alt="" coords="399,430,561,477"/><area shape="rect" id="node63" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="809,439,948,468"/><area shape="rect" id="node94" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="1431,430,1583,477"/><area shape="rect" id="node107" href="xbee_8h.html" title="subsystems/datalink\l/xbee.h" alt="" coords="1964,430,2116,477"/><area shape="rect" id="node114" href="w5100_8h.html" title="subsystems/datalink\l/w5100.h" alt="" coords="1788,430,1940,477"/><area shape="rect" id="node98" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1839,526,1991,573"/><area shape="rect" id="node103" href="transport_8h.html" title="generic transport header" alt="" coords="1663,526,1815,573"/><area shape="rect" id="node111" href="xbee24_8h.html" title="subsystems/datalink\l/xbee24.h" alt="" coords="2015,526,2167,573"/></map>
 </div>
 </div>
 <p><a href="ins__xsens_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a209a5df2f3b2ca2cff354b8b96f2cd83"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a209a5df2f3b2ca2cff354b8b96f2cd83"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>XsensInitCheksum</b>()&#160;&#160;&#160;{ send_ck = 0; }</td></tr>
-<tr class="memitem:af174d6cd94fda273df23563c16e21b57"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af174d6cd94fda273df23563c16e21b57"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>XsensUpdateChecksum</b>(c)&#160;&#160;&#160;{ send_ck += c; }</td></tr>
-<tr class="memitem:a1346c87fd145b7be76f9ea35147f67d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1346c87fd145b7be76f9ea35147f67d1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>XsensSend1</b>(c)&#160;&#160;&#160;{ uint8_t i8=c; InsUartSend1(i8); XsensUpdateChecksum(i8); }</td></tr>
-<tr class="memitem:af887fa0d4f09868b11edbf01356683e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af887fa0d4f09868b11edbf01356683e2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>XsensSend1ByAddr</b>(x)&#160;&#160;&#160;{ XsensSend1(*x); }</td></tr>
-<tr class="memitem:ae273420a9b498dbf17ff7316fba11b3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae273420a9b498dbf17ff7316fba11b3c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>XsensSend2ByAddr</b>(x)&#160;&#160;&#160;{ XsensSend1(*(x+1)); XsensSend1(*x); }</td></tr>
-<tr class="memitem:a03da8c250f594fced17c9bb42029bf5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03da8c250f594fced17c9bb42029bf5f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>XsensSend4ByAddr</b>(x)&#160;&#160;&#160;{ XsensSend1(*(x+3)); XsensSend1(*(x+2)); XsensSend1(*(x+1)); XsensSend1(*x); }</td></tr>
-<tr class="memitem:a329bf417ce0c744132577fdef52b9206"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>XsensHeader</b>(msg_id, len)</td></tr>
-<tr class="memitem:a3b9f09f783f3ae62dd8f676059f23c55"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b9f09f783f3ae62dd8f676059f23c55"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>XsensTrailer</b>()&#160;&#160;&#160;{ uint8_t i8=0x100-send_ck; InsUartSend1(i8); }</td></tr>
-<tr class="memitem:a473d343a49500ecfb5624bdaf98f1f69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a473d343a49500ecfb5624bdaf98f1f69"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a473d343a49500ecfb5624bdaf98f1f69">XSENS_MAX_PAYLOAD</a>&#160;&#160;&#160;254</td></tr>
-<tr class="memdesc:a473d343a49500ecfb5624bdaf98f1f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Includes macros generated from xsens_MTi-G.xml. <br/></td></tr>
-<tr class="memitem:a7621f0904ca02261a898a74dcb5c6f55"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7621f0904ca02261a898a74dcb5c6f55"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>XSENS_OUTPUT_MODE</b>&#160;&#160;&#160;0x1836</td></tr>
-<tr class="memitem:a7c1e561f03f8acd6fda934c8cef1cc14"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c1e561f03f8acd6fda934c8cef1cc14"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>XSENS_OUTPUT_SETTINGS</b>&#160;&#160;&#160;0x80000C05</td></tr>
-<tr class="memitem:a7668dedbc74a47bde384b2b911379073"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7668dedbc74a47bde384b2b911379073"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>UNINIT</b>&#160;&#160;&#160;0</td></tr>
-<tr class="memitem:af7b9faabc17bf7ec5926e45080b01171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7b9faabc17bf7ec5926e45080b01171"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GOT_START</b>&#160;&#160;&#160;1</td></tr>
-<tr class="memitem:a50f2d2d7acbe051094fd37b71ce583e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50f2d2d7acbe051094fd37b71ce583e2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GOT_BID</b>&#160;&#160;&#160;2</td></tr>
-<tr class="memitem:a9487570e8ffd35b6a846e96a847fdddd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9487570e8ffd35b6a846e96a847fdddd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GOT_MID</b>&#160;&#160;&#160;3</td></tr>
-<tr class="memitem:a45fdf89b8ca3c3330f19878757d6b16f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45fdf89b8ca3c3330f19878757d6b16f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GOT_LEN</b>&#160;&#160;&#160;4</td></tr>
-<tr class="memitem:aec7844a7514970056d85f59ef5c97d6a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec7844a7514970056d85f59ef5c97d6a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GOT_DATA</b>&#160;&#160;&#160;5</td></tr>
-<tr class="memitem:a174938824d754f469eba1dfc241ec170"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a174938824d754f469eba1dfc241ec170"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GOT_CHECKSUM</b>&#160;&#160;&#160;6</td></tr>
-<tr class="memitem:a2978a46b47cbc9d17a0924014ff9658b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2978a46b47cbc9d17a0924014ff9658b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DOWNLINK_DEVICE</b>&#160;&#160;&#160;DOWNLINK_AP_DEVICE</td></tr>
+<tr class="memitem:a209a5df2f3b2ca2cff354b8b96f2cd83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a209a5df2f3b2ca2cff354b8b96f2cd83">XsensInitCheksum</a>()&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a934ca0061f712fc5b516fb27f5ee24a1">send_ck</a> = 0; }</td></tr>
+<tr class="memitem:af174d6cd94fda273df23563c16e21b57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#af174d6cd94fda273df23563c16e21b57">XsensUpdateChecksum</a>(<a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>)&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a934ca0061f712fc5b516fb27f5ee24a1">send_ck</a> += <a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>; }</td></tr>
+<tr class="memitem:a1346c87fd145b7be76f9ea35147f67d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(<a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>)&#160;&#160;&#160;{ <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i8=<a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>; <a class="el" href="ins__module_8h.html#ab54de1be72ee30247aa9295a6ff23b30">InsUartSend1</a>(i8); <a class="el" href="ins__xsens_8c.html#af174d6cd94fda273df23563c16e21b57">XsensUpdateChecksum</a>(i8); }</td></tr>
+<tr class="memitem:af887fa0d4f09868b11edbf01356683e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#af887fa0d4f09868b11edbf01356683e2">XsensSend1ByAddr</a>(x)&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*x); }</td></tr>
+<tr class="memitem:ae273420a9b498dbf17ff7316fba11b3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#ae273420a9b498dbf17ff7316fba11b3c">XsensSend2ByAddr</a>(x)&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*(x+1)); <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*x); }</td></tr>
+<tr class="memitem:a03da8c250f594fced17c9bb42029bf5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a03da8c250f594fced17c9bb42029bf5f">XsensSend4ByAddr</a>(x)&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*(x+3)); <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*(x+2)); <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*(x+1)); <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*x); }</td></tr>
+<tr class="memitem:a329bf417ce0c744132577fdef52b9206"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a329bf417ce0c744132577fdef52b9206">XsensHeader</a>(msg_id, len)</td></tr>
+<tr class="memitem:a3b9f09f783f3ae62dd8f676059f23c55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a3b9f09f783f3ae62dd8f676059f23c55">XsensTrailer</a>()&#160;&#160;&#160;{ <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i8=0x100-send_ck; InsUartSend1(i8); }</td></tr>
+<tr class="memitem:a473d343a49500ecfb5624bdaf98f1f69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a473d343a49500ecfb5624bdaf98f1f69">XSENS_MAX_PAYLOAD</a>&#160;&#160;&#160;254</td></tr>
+<tr class="memdesc:a473d343a49500ecfb5624bdaf98f1f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Includes macros generated from xsens_MTi-G.xml.  <a href="#a473d343a49500ecfb5624bdaf98f1f69"></a><br/></td></tr>
+<tr class="memitem:a7621f0904ca02261a898a74dcb5c6f55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a7621f0904ca02261a898a74dcb5c6f55">XSENS_OUTPUT_MODE</a>&#160;&#160;&#160;0x1836</td></tr>
+<tr class="memitem:a7c1e561f03f8acd6fda934c8cef1cc14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a7c1e561f03f8acd6fda934c8cef1cc14">XSENS_OUTPUT_SETTINGS</a>&#160;&#160;&#160;0x80000C05</td></tr>
+<tr class="memitem:a7668dedbc74a47bde384b2b911379073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a7668dedbc74a47bde384b2b911379073">UNINIT</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:af7b9faabc17bf7ec5926e45080b01171"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#af7b9faabc17bf7ec5926e45080b01171">GOT_START</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a50f2d2d7acbe051094fd37b71ce583e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a50f2d2d7acbe051094fd37b71ce583e2">GOT_BID</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memitem:a9487570e8ffd35b6a846e96a847fdddd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a9487570e8ffd35b6a846e96a847fdddd">GOT_MID</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memitem:a45fdf89b8ca3c3330f19878757d6b16f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a45fdf89b8ca3c3330f19878757d6b16f">GOT_LEN</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memitem:aec7844a7514970056d85f59ef5c97d6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#aec7844a7514970056d85f59ef5c97d6a">GOT_DATA</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memitem:a174938824d754f469eba1dfc241ec170"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a174938824d754f469eba1dfc241ec170">GOT_CHECKSUM</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memitem:a2978a46b47cbc9d17a0924014ff9658b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a2978a46b47cbc9d17a0924014ff9658b">DOWNLINK_DEVICE</a>&#160;&#160;&#160;DOWNLINK_AP_DEVICE</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a47f12136c89e8cc13ff45e72caab8a19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47f12136c89e8cc13ff45e72caab8a19"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_init</b> (void)</td></tr>
-<tr class="memitem:a6345aa5f7a6fc2de9539539d91bf0cba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6345aa5f7a6fc2de9539539d91bf0cba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_periodic</b> (void)</td></tr>
-<tr class="memitem:ad32faae58e391642ec8048cb11011998"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad32faae58e391642ec8048cb11011998"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>imu_impl_init</b> (void)</td></tr>
-<tr class="memitem:a6623d4c90e7b1bfb73abc0da1195f29b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6623d4c90e7b1bfb73abc0da1195f29b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>imu_periodic</b> (void)</td></tr>
-<tr class="memitem:ac5da428408b44b6b22e510c36f7f2bc7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5da428408b44b6b22e510c36f7f2bc7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handle_ins_msg</b> (void)</td></tr>
-<tr class="memitem:a8cb976f9e02352af6815c51a4b18faec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cb976f9e02352af6815c51a4b18faec"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>parse_ins_msg</b> (void)</td></tr>
-<tr class="memitem:a7cb52371283c2313f6dfe53139c56bb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7cb52371283c2313f6dfe53139c56bb4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>parse_ins_buffer</b> (uint8_t c)</td></tr>
+<tr class="memitem:a47f12136c89e8cc13ff45e72caab8a19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a47f12136c89e8cc13ff45e72caab8a19">xsens_init</a> (void)</td></tr>
+<tr class="memitem:a6345aa5f7a6fc2de9539539d91bf0cba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a6345aa5f7a6fc2de9539539d91bf0cba">xsens_periodic</a> (void)</td></tr>
+<tr class="memitem:ad32faae58e391642ec8048cb11011998"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a> (void)</td></tr>
+<tr class="memitem:a6623d4c90e7b1bfb73abc0da1195f29b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a> (void)</td></tr>
+<tr class="memitem:ac5da428408b44b6b22e510c36f7f2bc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#ac5da428408b44b6b22e510c36f7f2bc7">handle_ins_msg</a> (void)</td></tr>
+<tr class="memitem:a8cb976f9e02352af6815c51a4b18faec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a8cb976f9e02352af6815c51a4b18faec">parse_ins_msg</a> (void)</td></tr>
+<tr class="memitem:a7cb52371283c2313f6dfe53139c56bb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a7cb52371283c2313f6dfe53139c56bb4">parse_ins_buffer</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8ad9d86df432b5781940d3e8d4ed38d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ad9d86df432b5781940d3e8d4ed38d8"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_x</b></td></tr>
-<tr class="memitem:a45be47a3ce2e33557bf458bb64afe59d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45be47a3ce2e33557bf458bb64afe59d"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_y</b></td></tr>
-<tr class="memitem:a1686a38ed54472e4c6c7a73307c30bc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1686a38ed54472e4c6c7a73307c30bc1"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_z</b></td></tr>
-<tr class="memitem:aaad33cf3a9fa4147998f107a03f75757"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaad33cf3a9fa4147998f107a03f75757"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_vx</b></td></tr>
-<tr class="memitem:ab6f79c13aa2681ec2b99e99982ff17e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6f79c13aa2681ec2b99e99982ff17e8"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_vy</b></td></tr>
-<tr class="memitem:aaae2db83ca84ec0c21435a6c0892912c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaae2db83ca84ec0c21435a6c0892912c"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_vz</b></td></tr>
-<tr class="memitem:a98b23c9aa0e47bb2d1274d658f94b03f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98b23c9aa0e47bb2d1274d658f94b03f"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_phi</b></td></tr>
-<tr class="memitem:ae95b529ab6afa8aa453921f840640976"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae95b529ab6afa8aa453921f840640976"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_theta</b></td></tr>
-<tr class="memitem:a258360c1773596c4ea57026e65ff7fec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a258360c1773596c4ea57026e65ff7fec"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_psi</b></td></tr>
-<tr class="memitem:a1f3a2ed4931fa940b6e3fb1d2e66b70d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f3a2ed4931fa940b6e3fb1d2e66b70d"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_p</b></td></tr>
-<tr class="memitem:a59a328125b5034804ccf4881d258afd9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59a328125b5034804ccf4881d258afd9"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_q</b></td></tr>
-<tr class="memitem:a16dce4daa99684d42b6f4e159b2c3762"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16dce4daa99684d42b6f4e159b2c3762"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_r</b></td></tr>
-<tr class="memitem:a8b9d20805bf2e2f6650b54e078430b54"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b9d20805bf2e2f6650b54e078430b54"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_ax</b></td></tr>
-<tr class="memitem:a557d2f2616820b7c8ca7128048fbaaf0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a557d2f2616820b7c8ca7128048fbaaf0"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_ay</b></td></tr>
-<tr class="memitem:a6d32f38b168332331f5b42ca5f2911fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d32f38b168332331f5b42ca5f2911fe"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_az</b></td></tr>
-<tr class="memitem:a81ec12c20410fa078a450bdbdd3eb584"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81ec12c20410fa078a450bdbdd3eb584"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_mx</b></td></tr>
-<tr class="memitem:a2f8843ba5648755270172df9c0687b96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f8843ba5648755270172df9c0687b96"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_my</b></td></tr>
-<tr class="memitem:addf80ff74cc64f18481a14b5448f1645"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addf80ff74cc64f18481a14b5448f1645"></a>
-INS_FORMAT&#160;</td><td class="memItemRight" valign="bottom"><b>ins_mz</b></td></tr>
-<tr class="memitem:af3989b340d21f6f17c56833594d188c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3989b340d21f6f17c56833594d188c6"></a>
-volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>ins_msg_received</b></td></tr>
-<tr class="memitem:a1685356ace76940e06c455f2dcb00f75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1685356ace76940e06c455f2dcb00f75"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_msg_buf</b> [<a class="el" href="ins__xsens_8c.html#a473d343a49500ecfb5624bdaf98f1f69">XSENS_MAX_PAYLOAD</a>]</td></tr>
-<tr class="memitem:a6fd7226d58d4ca50080c605101d75f99"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fd7226d58d4ca50080c605101d75f99"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_errorcode</b></td></tr>
-<tr class="memitem:a05acf815522ac351803010e46bdd0630"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05acf815522ac351803010e46bdd0630"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_msg_status</b></td></tr>
-<tr class="memitem:a6b6eb281542b6309396be4ebf947d593"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b6eb281542b6309396be4ebf947d593"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_time_stamp</b></td></tr>
-<tr class="memitem:ab6203d489d4b6244e59ce3f8238f5c6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6203d489d4b6244e59ce3f8238f5c6f"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_output_mode</b></td></tr>
-<tr class="memitem:a9bc5e834a5f045e6a5aa1ef5dee81055"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bc5e834a5f045e6a5aa1ef5dee81055"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_output_settings</b></td></tr>
-<tr class="memitem:ab683c2ba74e0cb5f1486d131f61e885e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab683c2ba74e0cb5f1486d131f61e885e"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_declination</b> = 0</td></tr>
-<tr class="memitem:aec2a68072412ee418da6d630451db729"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec2a68072412ee418da6d630451db729"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_gps_arm_x</b> = 0</td></tr>
-<tr class="memitem:a54ec7092a7b67eda2d9987927c030f42"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54ec7092a7b67eda2d9987927c030f42"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_gps_arm_y</b> = 0</td></tr>
-<tr class="memitem:a977a8c04d63f730216cdb2338f9d26e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a977a8c04d63f730216cdb2338f9d26e5"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_gps_arm_z</b> = 0</td></tr>
-<tr class="memitem:a42ca5c3bdbce220f8861d3675b74609d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42ca5c3bdbce220f8861d3675b74609d"></a>
-struct <a class="el" href="structXsensTime.html">XsensTime</a>&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_time</b></td></tr>
-<tr class="memitem:a111cd99527acd754fc2ade66107a9090"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a111cd99527acd754fc2ade66107a9090"></a>
-static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_id</b></td></tr>
-<tr class="memitem:addde03e9808c81020c62215e7825254e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addde03e9808c81020c62215e7825254e"></a>
-static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_status</b></td></tr>
-<tr class="memitem:a4b386089bdea5bf512e4c33d39e1210c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b386089bdea5bf512e4c33d39e1210c"></a>
-static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_len</b></td></tr>
-<tr class="memitem:acf3f776fc3e9ac770d27763d6fad3417"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf3f776fc3e9ac770d27763d6fad3417"></a>
-static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_msg_idx</b></td></tr>
-<tr class="memitem:a8cc30b8cc0fb84cf89bd40f5e701c2b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cc30b8cc0fb84cf89bd40f5e701c2b1"></a>
-static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>ck</b></td></tr>
-<tr class="memitem:a934ca0061f712fc5b516fb27f5ee24a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a934ca0061f712fc5b516fb27f5ee24a1"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>send_ck</b></td></tr>
-<tr class="memitem:a652663821df4bab2d8e705a9d39cb8da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a652663821df4bab2d8e705a9d39cb8da"></a>
-volatile int&#160;</td><td class="memItemRight" valign="bottom"><b>xsens_configured</b> = 0</td></tr>
-<tr class="memitem:a324f6180f03e88fef60ce50a04a7c165"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a324f6180f03e88fef60ce50a04a7c165"></a>
-struct <a class="el" href="structImuXsens.html">ImuXsens</a>&#160;</td><td class="memItemRight" valign="bottom"><b>imu_xsens</b></td></tr>
+<tr class="memitem:a8ad9d86df432b5781940d3e8d4ed38d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a8ad9d86df432b5781940d3e8d4ed38d8">ins_x</a></td></tr>
+<tr class="memitem:a45be47a3ce2e33557bf458bb64afe59d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a45be47a3ce2e33557bf458bb64afe59d">ins_y</a></td></tr>
+<tr class="memitem:a1686a38ed54472e4c6c7a73307c30bc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a1686a38ed54472e4c6c7a73307c30bc1">ins_z</a></td></tr>
+<tr class="memitem:aaad33cf3a9fa4147998f107a03f75757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#aaad33cf3a9fa4147998f107a03f75757">ins_vx</a></td></tr>
+<tr class="memitem:ab6f79c13aa2681ec2b99e99982ff17e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#ab6f79c13aa2681ec2b99e99982ff17e8">ins_vy</a></td></tr>
+<tr class="memitem:aaae2db83ca84ec0c21435a6c0892912c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#aaae2db83ca84ec0c21435a6c0892912c">ins_vz</a></td></tr>
+<tr class="memitem:a98b23c9aa0e47bb2d1274d658f94b03f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a98b23c9aa0e47bb2d1274d658f94b03f">ins_phi</a></td></tr>
+<tr class="memitem:ae95b529ab6afa8aa453921f840640976"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#ae95b529ab6afa8aa453921f840640976">ins_theta</a></td></tr>
+<tr class="memitem:a258360c1773596c4ea57026e65ff7fec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a258360c1773596c4ea57026e65ff7fec">ins_psi</a></td></tr>
+<tr class="memitem:a1f3a2ed4931fa940b6e3fb1d2e66b70d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a1f3a2ed4931fa940b6e3fb1d2e66b70d">ins_p</a></td></tr>
+<tr class="memitem:a59a328125b5034804ccf4881d258afd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a59a328125b5034804ccf4881d258afd9">ins_q</a></td></tr>
+<tr class="memitem:a16dce4daa99684d42b6f4e159b2c3762"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a16dce4daa99684d42b6f4e159b2c3762">ins_r</a></td></tr>
+<tr class="memitem:a8b9d20805bf2e2f6650b54e078430b54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a8b9d20805bf2e2f6650b54e078430b54">ins_ax</a></td></tr>
+<tr class="memitem:a557d2f2616820b7c8ca7128048fbaaf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a557d2f2616820b7c8ca7128048fbaaf0">ins_ay</a></td></tr>
+<tr class="memitem:a6d32f38b168332331f5b42ca5f2911fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a6d32f38b168332331f5b42ca5f2911fe">ins_az</a></td></tr>
+<tr class="memitem:a81ec12c20410fa078a450bdbdd3eb584"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a81ec12c20410fa078a450bdbdd3eb584">ins_mx</a></td></tr>
+<tr class="memitem:a2f8843ba5648755270172df9c0687b96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a2f8843ba5648755270172df9c0687b96">ins_my</a></td></tr>
+<tr class="memitem:addf80ff74cc64f18481a14b5448f1645"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#addf80ff74cc64f18481a14b5448f1645">ins_mz</a></td></tr>
+<tr class="memitem:af3989b340d21f6f17c56833594d188c6"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#af3989b340d21f6f17c56833594d188c6">ins_msg_received</a></td></tr>
+<tr class="memitem:a1685356ace76940e06c455f2dcb00f75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a1685356ace76940e06c455f2dcb00f75">xsens_msg_buf</a> [<a class="el" href="ins__xsens_8c.html#a473d343a49500ecfb5624bdaf98f1f69">XSENS_MAX_PAYLOAD</a>]</td></tr>
+<tr class="memitem:a6fd7226d58d4ca50080c605101d75f99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a6fd7226d58d4ca50080c605101d75f99">xsens_errorcode</a></td></tr>
+<tr class="memitem:a05acf815522ac351803010e46bdd0630"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a05acf815522ac351803010e46bdd0630">xsens_msg_status</a></td></tr>
+<tr class="memitem:a6b6eb281542b6309396be4ebf947d593"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a6b6eb281542b6309396be4ebf947d593">xsens_time_stamp</a></td></tr>
+<tr class="memitem:ab6203d489d4b6244e59ce3f8238f5c6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#ab6203d489d4b6244e59ce3f8238f5c6f">xsens_output_mode</a></td></tr>
+<tr class="memitem:a9bc5e834a5f045e6a5aa1ef5dee81055"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a9bc5e834a5f045e6a5aa1ef5dee81055">xsens_output_settings</a></td></tr>
+<tr class="memitem:ab683c2ba74e0cb5f1486d131f61e885e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#ab683c2ba74e0cb5f1486d131f61e885e">xsens_declination</a> = 0</td></tr>
+<tr class="memitem:aec2a68072412ee418da6d630451db729"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#aec2a68072412ee418da6d630451db729">xsens_gps_arm_x</a> = 0</td></tr>
+<tr class="memitem:a54ec7092a7b67eda2d9987927c030f42"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a54ec7092a7b67eda2d9987927c030f42">xsens_gps_arm_y</a> = 0</td></tr>
+<tr class="memitem:a977a8c04d63f730216cdb2338f9d26e5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a977a8c04d63f730216cdb2338f9d26e5">xsens_gps_arm_z</a> = 0</td></tr>
+<tr class="memitem:a42ca5c3bdbce220f8861d3675b74609d"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structXsensTime.html">XsensTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a42ca5c3bdbce220f8861d3675b74609d">xsens_time</a></td></tr>
+<tr class="memitem:a111cd99527acd754fc2ade66107a9090"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a111cd99527acd754fc2ade66107a9090">xsens_id</a></td></tr>
+<tr class="memitem:addde03e9808c81020c62215e7825254e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#addde03e9808c81020c62215e7825254e">xsens_status</a></td></tr>
+<tr class="memitem:a4b386089bdea5bf512e4c33d39e1210c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a4b386089bdea5bf512e4c33d39e1210c">xsens_len</a></td></tr>
+<tr class="memitem:acf3f776fc3e9ac770d27763d6fad3417"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#acf3f776fc3e9ac770d27763d6fad3417">xsens_msg_idx</a></td></tr>
+<tr class="memitem:a8cc30b8cc0fb84cf89bd40f5e701c2b1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a8cc30b8cc0fb84cf89bd40f5e701c2b1">ck</a></td></tr>
+<tr class="memitem:a934ca0061f712fc5b516fb27f5ee24a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a934ca0061f712fc5b516fb27f5ee24a1">send_ck</a></td></tr>
+<tr class="memitem:a652663821df4bab2d8e705a9d39cb8da"><td class="memItemLeft" align="right" valign="top">volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a652663821df4bab2d8e705a9d39cb8da">xsens_configured</a> = 0</td></tr>
+<tr class="memitem:a324f6180f03e88fef60ce50a04a7c165"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structImuXsens.html">ImuXsens</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ins__xsens_8c.html#a324f6180f03e88fef60ce50a04a7c165">imu_xsens</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Parser for the Xsens protocol. </p>
 
 <p>Definition in file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
 </div><h2>Macro Definition Documentation</h2>
+<a class="anchor" id="a2978a46b47cbc9d17a0924014ff9658b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOWNLINK_DEVICE&#160;&#160;&#160;DOWNLINK_AP_DEVICE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00174">174</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a50f2d2d7acbe051094fd37b71ce583e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GOT_BID&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00166">166</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a174938824d754f469eba1dfc241ec170"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GOT_CHECKSUM&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00170">170</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec7844a7514970056d85f59ef5c97d6a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GOT_DATA&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00169">169</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45fdf89b8ca3c3330f19878757d6b16f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GOT_LEN&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00168">168</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9487570e8ffd35b6a846e96a847fdddd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GOT_MID&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00167">167</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7b9faabc17bf7ec5926e45080b01171"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GOT_START&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00165">165</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7668dedbc74a47bde384b2b911379073"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNINIT&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00164">164</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a473d343a49500ecfb5624bdaf98f1f69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XSENS_MAX_PAYLOAD&#160;&#160;&#160;254</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Includes macros generated from xsens_MTi-G.xml. </p>
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00107">107</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7621f0904ca02261a898a74dcb5c6f55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XSENS_OUTPUT_MODE&#160;&#160;&#160;0x1836</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00132">132</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c1e561f03f8acd6fda934c8cef1cc14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XSENS_OUTPUT_SETTINGS&#160;&#160;&#160;0x80000C05</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00161">161</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a329bf417ce0c744132577fdef52b9206"></a>
 <div class="memitem">
 <div class="memproto">
@@ -313,13 +424,992 @@ struct <a class="el" href="structImuXsens.html">ImuXsens</a>&#160;</td><td class
 
 </div>
 </div>
+<a class="anchor" id="a209a5df2f3b2ca2cff354b8b96f2cd83"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XsensInitCheksum</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a934ca0061f712fc5b516fb27f5ee24a1">send_ck</a> = 0; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00086">86</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1346c87fd145b7be76f9ea35147f67d1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XsensSend1</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a></td><td>)</td>
+          <td>&#160;&#160;&#160;{ <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i8=<a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>; <a class="el" href="ins__module_8h.html#ab54de1be72ee30247aa9295a6ff23b30">InsUartSend1</a>(i8); <a class="el" href="ins__xsens_8c.html#af174d6cd94fda273df23563c16e21b57">XsensUpdateChecksum</a>(i8); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00089">89</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af887fa0d4f09868b11edbf01356683e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XsensSend1ByAddr</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*x); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00090">90</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae273420a9b498dbf17ff7316fba11b3c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XsensSend2ByAddr</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*(x+1)); <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*x); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00091">91</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a03da8c250f594fced17c9bb42029bf5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XsensSend4ByAddr</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*(x+3)); <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*(x+2)); <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*(x+1)); <a class="el" href="ins__xsens_8c.html#a1346c87fd145b7be76f9ea35147f67d1">XsensSend1</a>(*x); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00092">92</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b9f09f783f3ae62dd8f676059f23c55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XsensTrailer</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;{ <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> i8=0x100-send_ck; InsUartSend1(i8); }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00101">101</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af174d6cd94fda273df23563c16e21b57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XsensUpdateChecksum</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a></td><td>)</td>
+          <td>&#160;&#160;&#160;{ <a class="el" href="ins__xsens_8c.html#a934ca0061f712fc5b516fb27f5ee24a1">send_ck</a> += <a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00087">87</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<h2>Function Documentation</h2>
+<a class="anchor" id="ac5da428408b44b6b22e510c36f7f2bc7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handle_ins_msg </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00357">357</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>References <a class="el" href="ins__xsens_8h_source.html#l00058">ImuXsens::accel_available</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00200">ACCEL_BFP_OF_REAL</a>, <a class="el" href="imu_8h_source.html#l00047">Imu::accel_unscaled</a>, <a class="el" href="gps_8h_source.html#l00071">GpsState::course</a>, <a class="el" href="gps_8h_source.html#l00077">GpsState::fix</a>, <a class="el" href="gps_8c_source.html#l00031">gps</a>, <a class="el" href="gps_8h_source.html#l00042">GPS_FIX_3D</a>, <a class="el" href="gps_8h_source.html#l00069">GpsState::gspeed</a>, <a class="el" href="ins__xsens_8h_source.html#l00057">ImuXsens::gyro_available</a>, <a class="el" href="imu_8h_source.html#l00046">Imu::gyro_unscaled</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="ins__xsens_8c_source.html#l00229">imu_xsens</a>, <a class="el" href="ins__xsens_8c_source.html#l00065">ins_ax</a>, <a class="el" href="ins__xsens_8c_source.html#l00066">ins_ay</a>, <a class="el" href="ins__xsens_8c_source.html#l00067">ins_az</a>, <a class="el" href="ins__xsens_8c_source.html#l00069">ins_mx</a>, <a class="el" href="ins__xsens_8c_source.html#l00070">ins_my</a>, <a class="el" href="ins__xsens_8c_source.html#l00071">ins_mz</a>, <a class="el" href="ins__xsens_8c_source.html#l00061">ins_p</a>, <a class="el" href="ins__xsens_8c_source.html#l00062">ins_q</a>, <a class="el" href="ins__xsens_8c_source.html#l00063">ins_r</a>, <a class="el" href="ins__xsens_8c_source.html#l00053">ins_vx</a>, <a class="el" href="ins__xsens_8c_source.html#l00054">ins_vy</a>, <a class="el" href="ins__xsens_8c_source.html#l00055">ins_vz</a>, <a class="el" href="ins__xsens_8h_source.html#l00059">ImuXsens::mag_available</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00202">MAG_BFP_OF_REAL</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::mag_unscaled</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00188">RATE_BFP_OF_REAL</a>, <a class="el" href="pprz__algebra_8h_source.html#l00294">RATES_ASSIGN</a>, <a class="el" href="gps_8h_source.html#l00070">GpsState::speed_3d</a>, and <a class="el" href="pprz__algebra_8h_source.html#l00097">VECT3_ASSIGN</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad32faae58e391642ec8048cb11011998"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imu_impl_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00231">231</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>References <a class="el" href="ins__xsens_8h_source.html#l00058">ImuXsens::accel_available</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="ins__xsens_8h_source.html#l00057">ImuXsens::gyro_available</a>, <a class="el" href="ins__xsens_8c_source.html#l00229">imu_xsens</a>, <a class="el" href="ins__xsens_8h_source.html#l00059">ImuXsens::mag_available</a>, and <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="ins__xsens_8c_ad32faae58e391642ec8048cb11011998_cgraph.png" border="0" usemap="#ins__xsens_8c_ad32faae58e391642ec8048cb11011998_cgraph" alt=""/></div>
+<map name="ins__xsens_8c_ad32faae58e391642ec8048cb11011998_cgraph" id="ins__xsens_8c_ad32faae58e391642ec8048cb11011998_cgraph">
+<area shape="rect" id="node3" href="ins__xsens_8c.html#a47f12136c89e8cc13ff45e72caab8a19" title="xsens_init" alt="" coords="160,5,245,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6623d4c90e7b1bfb73abc0da1195f29b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imu_periodic </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00238">238</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>References <a class="el" href="ins__xsens_8c_source.html#l00263">xsens_periodic()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="ins__xsens_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph.png" border="0" usemap="#ins__xsens_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" alt=""/></div>
+<map name="ins__xsens_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" id="ins__xsens_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph">
+<area shape="rect" id="node3" href="ins__xsens_8c.html#a6345aa5f7a6fc2de9539539d91bf0cba" title="xsens_periodic" alt="" coords="159,5,273,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7cb52371283c2313f6dfe53139c56bb4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void parse_ins_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00647">647</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>References <a class="el" href="discsurvey_8c_source.html#l00013">c</a>, <a class="el" href="ins__xsens_8c_source.html#l00204">ck</a>, <a class="el" href="ins__xsens_8c_source.html#l00166">GOT_BID</a>, <a class="el" href="ins__xsens_8c_source.html#l00169">GOT_DATA</a>, <a class="el" href="ins__xsens_8c_source.html#l00168">GOT_LEN</a>, <a class="el" href="ins__xsens_8c_source.html#l00167">GOT_MID</a>, <a class="el" href="ins__xsens_8c_source.html#l00165">GOT_START</a>, <a class="el" href="ins__vn100_8c_source.html#l00064">ins_msg_received</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="ins__xsens_8c_source.html#l00164">UNINIT</a>, <a class="el" href="ins__xsens_8c_source.html#l00200">xsens_id</a>, <a class="el" href="ins__xsens_8c_source.html#l00202">xsens_len</a>, <a class="el" href="ins__xsens_8c_source.html#l00107">XSENS_MAX_PAYLOAD</a>, <a class="el" href="ins__xsens_8c_source.html#l00108">xsens_msg_buf</a>, <a class="el" href="ins__xsens_8c_source.html#l00203">xsens_msg_idx</a>, and <a class="el" href="ins__xsens_8c_source.html#l00201">xsens_status</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8cb976f9e02352af6815c51a4b18faec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void parse_ins_msg </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00402">402</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>References <a class="el" href="ins__xsens_8h_source.html#l00058">ImuXsens::accel_available</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00059">LlaCoor_i::alt</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00086">UtmCoor_i::alt</a>, <a class="el" href="imu__chimu_8h_source.html#l00074">CHIMU_Msg_3_IMU_Attitude</a>, <a class="el" href="imu__chimu_8c_source.html#l00150">CHIMU_Parse()</a>, <a class="el" href="gps_8h_source.html#l00056">SVinfo::cno</a>, <a class="el" href="ins__xsens_8h_source.html#l00041">XsensTime::day</a>, <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00085">UtmCoor_i::east</a>, <a class="el" href="imu__chimu_8h_source.html#l00136">CHIMU_attitude_data::euler</a>, <a class="el" href="gps_8h_source.html#l00077">GpsState::fix</a>, <a class="el" href="gps_8h_source.html#l00054">SVinfo::flags</a>, <a class="el" href="gps_8c_source.html#l00031">gps</a>, <a class="el" href="gps_8h_source.html#l00042">GPS_FIX_3D</a>, <a class="el" href="gps_8h_source.html#l00040">GPS_FIX_NONE</a>, <a class="el" href="gps__nmea_8h_source.html#l00034">GPS_NB_CHANNELS</a>, <a class="el" href="ins__xsens_8h_source.html#l00057">ImuXsens::gyro_available</a>, <a class="el" href="gps_8h_source.html#l00066">GpsState::hmsl</a>, <a class="el" href="ins__xsens_8h_source.html#l00035">XsensTime::hour</a>, <a class="el" href="ins__xsens_8c_source.html#l00229">imu_xsens</a>, <a class="el" href="ins__xsens_8c_source.html#l00065">ins_ax</a>, <a class="el" href="ins__xsens_8c_source.html#l00066">ins_ay</a>, <a class="el" href="ins__xsens_8c_source.html#l00067">ins_az</a>, <a class="el" href="ins__module_8h_source.html#l00035">INS_FORMAT</a>, <a class="el" href="ins__xsens_8c_source.html#l00069">ins_mx</a>, <a class="el" href="ins__xsens_8c_source.html#l00070">ins_my</a>, <a class="el" href="ins__xsens_8c_source.html#l00071">ins_mz</a>, <a class="el" href="ins__xsens_8c_source.html#l00061">ins_p</a>, <a class="el" href="ins__xsens_8c_source.html#l00057">ins_phi</a>, <a class="el" href="ins__xsens_8c_source.html#l00059">ins_psi</a>, <a class="el" href="ins__xsens_8c_source.html#l00062">ins_q</a>, <a class="el" href="ins__xsens_8c_source.html#l00063">ins_r</a>, <a class="el" href="ins__xsens_8c_source.html#l00058">ins_theta</a>, <a class="el" href="ins__xsens_8c_source.html#l00053">ins_vx</a>, <a class="el" href="ins__xsens_8c_source.html#l00054">ins_vy</a>, <a class="el" href="ins__xsens_8c_source.html#l00055">ins_vz</a>, <a class="el" href="ins__xsens_8c_source.html#l00049">ins_x</a>, <a class="el" href="ins__xsens_8c_source.html#l00050">ins_y</a>, <a class="el" href="ins__xsens_8c_source.html#l00051">ins_z</a>, <a class="el" href="ins__module_8h_source.html#l00079">InsLink</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00058">LlaCoor_i::lat</a>, <a class="el" href="lpc21_2led__hw_8h_source.html#l00028">LED_ON</a>, <a class="el" href="lpc21_2led__hw_8h_source.html#l00030">LED_TOGGLE</a>, <a class="el" href="gps_8h_source.html#l00064">GpsState::lla_pos</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00057">LlaCoor_i::lon</a>, <a class="el" href="imu__chimu_8h_source.html#l00169">CHIMU_PARSER_DATA::m_attitude</a>, <a class="el" href="imu__chimu_8h_source.html#l00170">CHIMU_PARSER_DATA::m_attrates</a>, <a class="el" href="imu__chimu_8h_source.html#l00163">CHIMU_PARSER_DATA::m_MsgID</a>, <a class="el" href="imu__chimu_8h_source.html#l00171">CHIMU_PARSER_DATA::m_sensor</a>, <a class="el" href="ins__xsens_8h_source.html#l00059">ImuXsens::mag_available</a>, <a class="el" href="ins__xsens_8h_source.html#l00036">XsensTime::min</a>, <a class="el" href="common__flight__plan_8h_source.html#l00056">Min</a>, <a class="el" href="ins__xsens_8h_source.html#l00040">XsensTime::month</a>, <a class="el" href="ins__xsens_8h_source.html#l00038">XsensTime::nanosec</a>, <a class="el" href="common__nav_8c_source.html#l00040">nav_utm_zone0</a>, <a class="el" href="gps_8h_source.html#l00081">GpsState::nb_channels</a>, <a class="el" href="gps_8h_source.html#l00068">GpsState::ned_vel</a>, <a class="el" href="ins__module_8h.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00084">UtmCoor_i::north</a>, <a class="el" href="gps_8h_source.html#l00076">GpsState::num_sv</a>, <a class="el" href="gps_8h_source.html#l00072">GpsState::pacc</a>, <a class="el" href="gps_8h_source.html#l00075">GpsState::pdop</a>, <a class="el" href="imu__chimu_8h_source.html#l00119">CHIMU_Euler::phi</a>, <a class="el" href="imu__chimu_8h_source.html#l00121">CHIMU_Euler::psi</a>, <a class="el" href="gps_8h_source.html#l00055">SVinfo::qi</a>, <a class="el" href="imu__chimu_8h_source.html#l00150">CHIMU_sensor_data::rate</a>, <a class="el" href="gps_8h_source.html#l00073">GpsState::sacc</a>, <a class="el" href="ins__xsens_8h_source.html#l00037">XsensTime::sec</a>, <a class="el" href="state_8h_source.html#l01062">stateSetBodyRates_f()</a>, <a class="el" href="state_8h_source.html#l00995">stateSetNedToBodyEulers_f()</a>, <a class="el" href="gps_8h_source.html#l00053">SVinfo::svid</a>, <a class="el" href="gps_8h_source.html#l00082">GpsState::svinfos</a>, <a class="el" href="imu__chimu_8h_source.html#l00120">CHIMU_Euler::theta</a>, <a class="el" href="gps_8h_source.html#l00079">GpsState::tow</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="pprz__geodetic__float_8c_source.html#l00257">utm_of_lla_f()</a>, <a class="el" href="gps_8h_source.html#l00065">GpsState::utm_pos</a>, <a class="el" href="gps_8h_source.html#l00078">GpsState::week</a>, <a class="el" href="pprz__geodetic__wgs84_8h_source.html#l00024">WGS84_ELLIPSOID_TO_GEOID</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00066">NedCoor_i::x</a>, <a class="el" href="ins__xsens_8c_source.html#l00188">xsens_declination</a>, <a class="el" href="ins__xsens_8c_source.html#l00181">xsens_errorcode</a>, <a class="el" href="ins__xsens_8c_source.html#l00189">xsens_gps_arm_x</a>, <a class="el" href="ins__xsens_8c_source.html#l00190">xsens_gps_arm_y</a>, <a class="el" href="ins__xsens_8c_source.html#l00191">xsens_gps_arm_z</a>, <a class="el" href="ins__xsens_8c_source.html#l00200">xsens_id</a>, <a class="el" href="ins__xsens_8c_source.html#l00108">xsens_msg_buf</a>, <a class="el" href="ins__xsens_8c_source.html#l00182">xsens_msg_status</a>, <a class="el" href="ins__xsens_8c_source.html#l00184">xsens_output_mode</a>, <a class="el" href="ins__xsens_8c_source.html#l00185">xsens_output_settings</a>, <a class="el" href="ins__xsens_8c_source.html#l00198">xsens_time</a>, <a class="el" href="ins__xsens_8c_source.html#l00183">xsens_time_stamp</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00067">NedCoor_i::y</a>, <a class="el" href="ins__xsens_8h_source.html#l00039">XsensTime::year</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00068">NedCoor_i::z</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00087">UtmCoor_i::zone</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="ins__xsens_8c_a8cb976f9e02352af6815c51a4b18faec_cgraph.png" border="0" usemap="#ins__xsens_8c_a8cb976f9e02352af6815c51a4b18faec_cgraph" alt=""/></div>
+<map name="ins__xsens_8c_a8cb976f9e02352af6815c51a4b18faec_cgraph" id="ins__xsens_8c_a8cb976f9e02352af6815c51a4b18faec_cgraph">
+<area shape="rect" id="node3" href="imu__chimu_8c.html#a7ac39179eecc107f50d9730a179b1827" title="CHIMU_Parse" alt="" coords="220,59,327,88"/><area shape="rect" id="node13" href="group__state__rate.html#ga81d506386a5e2842d7e37cb6e1dbf252" title="Set vehicle body angular rate (float)." alt="" coords="196,112,351,141"/><area shape="rect" id="node15" href="group__state__attitude.html#ga738be1775d06ee00dbbf17124c230e04" title="Set vehicle body attitude from euler angles (float)." alt="" coords="175,165,372,195"/><area shape="rect" id="node19" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="224,219,323,248"/><area shape="rect" id="node5" href="imu__chimu_8c.html#a18b09515aee60d52a79df0c4b05d934d" title="CHIMU_ProcessMessage" alt="" coords="421,32,600,61"/><area shape="rect" id="node11" href="imu__chimu_8c.html#a2c788af1398c314b3985546d7177df54" title="UpdateCRC" alt="" coords="464,85,557,115"/><area shape="rect" id="node7" href="imu__chimu_8c.html#acda06f9abeac46aac0c37fe9faafcb5f" title="BitTest" alt="" coords="689,5,753,35"/><area shape="rect" id="node9" href="imu__chimu_8c.html#aa0df1ea95e60894cb1747257da38f17f" title="GetEulersFromQuat" alt="" coords="648,59,795,88"/><area shape="rect" id="node17" href="group__math__orientation__representation.html#ga7c6b7dc05095bcaba232c62358335d81" title="Set vehicle body attitude from euler angles (float)." alt="" coords="429,165,592,195"/><area shape="rect" id="node21" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="437,219,584,248"/><area shape="rect" id="node23" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="443,271,579,318"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a47f12136c89e8cc13ff45e72caab8a19"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xsens_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00212">212</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>References <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00015">ins_pitch_neutral</a>, <a class="el" href="ahrs__float__dcm_8c_source.html#l00065">INS_PITCH_NEUTRAL_DEFAULT</a>, <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00014">ins_roll_neutral</a>, <a class="el" href="ahrs__float__dcm_8c_source.html#l00062">INS_ROLL_NEUTRAL_DEFAULT</a>, <a class="el" href="ins__xsens_8c_source.html#l00164">UNINIT</a>, <a class="el" href="ins__xsens_8c_source.html#l00207">xsens_configured</a>, <a class="el" href="ins__xsens_8c_source.html#l00182">xsens_msg_status</a>, <a class="el" href="ins__xsens_8c_source.html#l00132">XSENS_OUTPUT_MODE</a>, <a class="el" href="ins__xsens_8c_source.html#l00184">xsens_output_mode</a>, <a class="el" href="ins__xsens_8c_source.html#l00161">XSENS_OUTPUT_SETTINGS</a>, <a class="el" href="ins__xsens_8c_source.html#l00185">xsens_output_settings</a>, <a class="el" href="ins__xsens_8c_source.html#l00201">xsens_status</a>, and <a class="el" href="ins__xsens_8c_source.html#l00183">xsens_time_stamp</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00231">imu_impl_init()</a>.</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="ins__xsens_8c_a47f12136c89e8cc13ff45e72caab8a19_icgraph.png" border="0" usemap="#ins__xsens_8c_a47f12136c89e8cc13ff45e72caab8a19_icgraph" alt=""/></div>
+<map name="ins__xsens_8c_a47f12136c89e8cc13ff45e72caab8a19_icgraph" id="ins__xsens_8c_a47f12136c89e8cc13ff45e72caab8a19_icgraph">
+<area shape="rect" id="node3" href="ins__xsens_8c.html#ad32faae58e391642ec8048cb11011998" title="imu_impl_init" alt="" coords="139,5,245,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6345aa5f7a6fc2de9539539d91bf0cba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xsens_periodic </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00263">263</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>References <a class="el" href="ahrs__magnetic__field__model_8h_source.html#l00007">AHRS_H_X</a>, <a class="el" href="ahrs__magnetic__field__model_8h_source.html#l00008">AHRS_H_Y</a>, <a class="el" href="ins__xsens_8c_source.html#l00207">xsens_configured</a>, <a class="el" href="ins__xsens_8c_source.html#l00188">xsens_declination</a>, <a class="el" href="ins__xsens_8c_source.html#l00184">xsens_output_mode</a>, and <a class="el" href="ins__xsens_8c_source.html#l00185">xsens_output_settings</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00238">imu_periodic()</a>.</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="ins__xsens_8c_a6345aa5f7a6fc2de9539539d91bf0cba_icgraph.png" border="0" usemap="#ins__xsens_8c_a6345aa5f7a6fc2de9539539d91bf0cba_icgraph" alt=""/></div>
+<map name="ins__xsens_8c_a6345aa5f7a6fc2de9539539d91bf0cba_icgraph" id="ins__xsens_8c_a6345aa5f7a6fc2de9539539d91bf0cba_icgraph">
+<area shape="rect" id="node3" href="ins__xsens_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="172,5,273,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Variable Documentation</h2>
+<a class="anchor" id="a8cc30b8cc0fb84cf89bd40f5e701c2b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> ck</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00204">204</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a324f6180f03e88fef60ce50a04a7c165"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structImuXsens.html">ImuXsens</a> imu_xsens</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00229">229</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, <a class="el" href="ins__xsens_8c_source.html#l00231">imu_impl_init()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b9d20805bf2e2f6650b54e078430b54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_ax</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00065">65</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a557d2f2616820b7c8ca7128048fbaaf0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_ay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00066">66</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6d32f38b168332331f5b42ca5f2911fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_az</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00067">67</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af3989b340d21f6f17c56833594d188c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> ins_msg_received</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00084">84</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a81ec12c20410fa078a450bdbdd3eb584"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_mx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00069">69</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f8843ba5648755270172df9c0687b96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_my</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00070">70</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="addf80ff74cc64f18481a14b5448f1645"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_mz</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00071">71</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f3a2ed4931fa940b6e3fb1d2e66b70d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_p</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00061">61</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a98b23c9aa0e47bb2d1274d658f94b03f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_phi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00057">57</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a258360c1773596c4ea57026e65ff7fec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_psi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00059">59</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59a328125b5034804ccf4881d258afd9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_q</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00062">62</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16dce4daa99684d42b6f4e159b2c3762"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_r</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00063">63</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae95b529ab6afa8aa453921f840640976"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_theta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00058">58</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaad33cf3a9fa4147998f107a03f75757"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_vx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00053">53</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6f79c13aa2681ec2b99e99982ff17e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_vy</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00054">54</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaae2db83ca84ec0c21435a6c0892912c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_vz</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00055">55</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00357">handle_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ad9d86df432b5781940d3e8d4ed38d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00049">49</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45be47a3ce2e33557bf458bb64afe59d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00050">50</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1686a38ed54472e4c6c7a73307c30bc1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a">INS_FORMAT</a> ins_z</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00051">51</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a934ca0061f712fc5b516fb27f5ee24a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> send_ck</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00205">205</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a652663821df4bab2d8e705a9d39cb8da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int xsens_configured = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00207">207</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00263">xsens_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab683c2ba74e0cb5f1486d131f61e885e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float xsens_declination = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00188">188</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00263">xsens_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6fd7226d58d4ca50080c605101d75f99"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> xsens_errorcode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00181">181</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec2a68072412ee418da6d630451db729"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float xsens_gps_arm_x = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00189">189</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54ec7092a7b67eda2d9987927c030f42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float xsens_gps_arm_y = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00190">190</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a977a8c04d63f730216cdb2338f9d26e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float xsens_gps_arm_z = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00191">191</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a111cd99527acd754fc2ade66107a9090"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> xsens_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00200">200</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b386089bdea5bf512e4c33d39e1210c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> xsens_len</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00202">202</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1685356ace76940e06c455f2dcb00f75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> xsens_msg_buf[<a class="el" href="ins__xsens_8c.html#a473d343a49500ecfb5624bdaf98f1f69">XSENS_MAX_PAYLOAD</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00108">108</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf3f776fc3e9ac770d27763d6fad3417"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> xsens_msg_idx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00203">203</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05acf815522ac351803010e46bdd0630"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> xsens_msg_status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00182">182</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6203d489d4b6244e59ce3f8238f5c6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> xsens_output_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00184">184</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>, <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00263">xsens_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9bc5e834a5f045e6a5aa1ef5dee81055"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> xsens_output_settings</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00185">185</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>, <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00263">xsens_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="addde03e9808c81020c62215e7825254e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> xsens_status</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00201">201</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00647">parse_ins_buffer()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a42ca5c3bdbce220f8861d3675b74609d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structXsensTime.html">XsensTime</a> xsens_time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00198">198</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b6eb281542b6309396be4ebf947d593"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> xsens_time_stamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ins__xsens_8c_source.html#l00183">183</a> of file <a class="el" href="ins__xsens_8c_source.html">ins_xsens.c</a>.</p>
+
+<p>Referenced by <a class="el" href="ins__xsens_8c_source.html#l00402">parse_ins_msg()</a>, and <a class="el" href="ins__xsens_8c_source.html#l00212">xsens_init()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_12fb52dac4e3837dec02c6544f4d82f8.html">ins</a></li><li class="navelem"><a class="el" href="ins__xsens_8c.html">ins_xsens.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:38 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -115,10 +115,10 @@ $(document).ready(function(){initNavTree('humid__hih_8c.html','');});
 <p>Honeywell HIH-4030 sensor interface.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;std.h&gt;</code><br/>
-<code>#include &quot;modules/meteo/humid_hih.h&quot;</code><br/>
-<code>#include &quot;modules/meteo/temp_tmp102.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="humid__hih_8h_source.html">modules/meteo/humid_hih.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="temp__tmp102_8h_source.html">modules/meteo/temp_tmp102.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="humid__dpicco_8h_source.html">modules/meteo/humid_dpicco.h</a>&quot;</code><br/>
-<code>#include &quot;modules/meteo/humid_sht.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="humid__sht_8h_source.html">modules/meteo/humid_sht.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="adc_8h_source.html">mcu_periph/adc.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="uart_8h_source.html">mcu_periph/uart.h</a>&quot;</code><br/>
 <code>#include &quot;messages.h&quot;</code><br/>
@@ -130,48 +130,196 @@ $(document).ready(function(){initNavTree('humid__hih_8c.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="humid__hih_8c__incl.png" border="0" usemap="#sw_2airborne_2modules_2meteo_2humid__hih_8c" alt=""/></div>
 <map name="sw_2airborne_2modules_2meteo_2humid__hih_8c" id="sw_2airborne_2modules_2meteo_2humid__hih_8c">
-<area shape="rect" id="node5" href="humid__hih_8h_source.html" title="modules/meteo/humid\l_hih.h" alt="" coords="5,294,171,341"/><area shape="rect" id="node8" href="temp__tmp102_8h_source.html" title="modules/meteo/temp\l_tmp102.h" alt="" coords="195,294,355,341"/><area shape="rect" id="node11" href="humid__dpicco_8h.html" title="DigiPicco I2C sensor interface." alt="" coords="187,102,352,149"/><area shape="rect" id="node14" href="humid__sht_8h_source.html" title="modules/meteo/humid\l_sht.h" alt="" coords="376,102,541,149"/><area shape="rect" id="node17" href="adc_8h.html" title="arch independent ADC (Analog to Digital Converter) API" alt="" coords="1657,111,1793,140"/><area shape="rect" id="node23" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="565,111,704,140"/><area shape="rect" id="node30" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="1099,102,1251,149"/><area shape="rect" id="node19" href="inttypes_8h_source.html" title="inttypes.h" alt="" coords="1484,389,1569,419"/><area shape="rect" id="node38" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="1363,198,1515,245"/><area shape="rect" id="node51" href="xbee_8h_source.html" title="subsystems/datalink\l/xbee.h" alt="" coords="1011,198,1163,245"/><area shape="rect" id="node58" href="w5100_8h_source.html" title="subsystems/datalink\l/w5100.h" alt="" coords="1187,198,1339,245"/><area shape="rect" id="node42" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1085,294,1237,341"/><area shape="rect" id="node47" href="transport_8h.html" title="generic transport header" alt="" coords="1261,294,1413,341"/><area shape="rect" id="node55" href="xbee24_8h_source.html" title="subsystems/datalink\l/xbee24.h" alt="" coords="728,294,880,341"/></map>
+<area shape="rect" id="node5" href="humid__hih_8h.html" title="modules/meteo/humid\l_hih.h" alt="" coords="5,294,171,341"/><area shape="rect" id="node8" href="temp__tmp102_8h.html" title="modules/meteo/temp\l_tmp102.h" alt="" coords="195,294,355,341"/><area shape="rect" id="node11" href="humid__dpicco_8h.html" title="DigiPicco I2C sensor interface." alt="" coords="187,102,352,149"/><area shape="rect" id="node14" href="humid__sht_8h.html" title="modules/meteo/humid\l_sht.h" alt="" coords="376,102,541,149"/><area shape="rect" id="node17" href="adc_8h.html" title="arch independent ADC (Analog to Digital Converter) API" alt="" coords="1657,111,1793,140"/><area shape="rect" id="node23" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="565,111,704,140"/><area shape="rect" id="node30" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="1099,102,1251,149"/><area shape="rect" id="node19" href="inttypes_8h.html" title="inttypes.h" alt="" coords="1484,389,1569,419"/><area shape="rect" id="node38" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="1363,198,1515,245"/><area shape="rect" id="node51" href="xbee_8h.html" title="subsystems/datalink\l/xbee.h" alt="" coords="1011,198,1163,245"/><area shape="rect" id="node58" href="w5100_8h.html" title="subsystems/datalink\l/w5100.h" alt="" coords="1187,198,1339,245"/><area shape="rect" id="node42" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1085,294,1237,341"/><area shape="rect" id="node47" href="transport_8h.html" title="generic transport header" alt="" coords="1261,294,1413,341"/><area shape="rect" id="node55" href="xbee24_8h.html" title="subsystems/datalink\l/xbee24.h" alt="" coords="728,294,880,341"/></map>
 </div>
 </div>
 <p><a href="humid__hih_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a2978a46b47cbc9d17a0924014ff9658b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2978a46b47cbc9d17a0924014ff9658b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DOWNLINK_DEVICE</b>&#160;&#160;&#160;DOWNLINK_AP_DEVICE</td></tr>
-<tr class="memitem:a07c872fb0d3571e1106bad886bb0e300"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07c872fb0d3571e1106bad886bb0e300"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_CHANNEL_HUMID_HIH</b>&#160;&#160;&#160;ADC_3</td></tr>
-<tr class="memitem:a229c6a961354be19cf6d3fbdebdab01a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a229c6a961354be19cf6d3fbdebdab01a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_CHANNEL_HUMID_NB_SAMPLES</b>&#160;&#160;&#160;16</td></tr>
+<tr class="memitem:a2978a46b47cbc9d17a0924014ff9658b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humid__hih_8c.html#a2978a46b47cbc9d17a0924014ff9658b">DOWNLINK_DEVICE</a>&#160;&#160;&#160;DOWNLINK_AP_DEVICE</td></tr>
+<tr class="memitem:a07c872fb0d3571e1106bad886bb0e300"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humid__hih_8c.html#a07c872fb0d3571e1106bad886bb0e300">ADC_CHANNEL_HUMID_HIH</a>&#160;&#160;&#160;<a class="el" href="umarim__lite__2_80_8h.html#a474279f28350114950d862951d72de66">ADC_3</a></td></tr>
+<tr class="memitem:a229c6a961354be19cf6d3fbdebdab01a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humid__hih_8c.html#a229c6a961354be19cf6d3fbdebdab01a">ADC_CHANNEL_HUMID_NB_SAMPLES</a>&#160;&#160;&#160;16</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acb068afb2e3c2f0e3c6c1a7c3abeaddf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb068afb2e3c2f0e3c6c1a7c3abeaddf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>humid_hih_init</b> (void)</td></tr>
-<tr class="memitem:a08aae8974ca70fb46b6b9792c27ddbc0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08aae8974ca70fb46b6b9792c27ddbc0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>humid_hih_periodic</b> (void)</td></tr>
+<tr class="memitem:acb068afb2e3c2f0e3c6c1a7c3abeaddf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humid__hih_8c.html#acb068afb2e3c2f0e3c6c1a7c3abeaddf">humid_hih_init</a> (void)</td></tr>
+<tr class="memitem:a08aae8974ca70fb46b6b9792c27ddbc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humid__hih_8c.html#a08aae8974ca70fb46b6b9792c27ddbc0">humid_hih_periodic</a> (void)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad568b53b95a1ce4d2c55ede2573555f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad568b53b95a1ce4d2c55ede2573555f7"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>adc_humid_hih</b></td></tr>
-<tr class="memitem:a97fa87a42640823c2a0146be4ef0a8a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97fa87a42640823c2a0146be4ef0a8a7"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>fhih_humid</b></td></tr>
-<tr class="memitem:aa22df465dcc7eafe232ff13587fe0c35"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa22df465dcc7eafe232ff13587fe0c35"></a>
-static struct <a class="el" href="structadc__buf.html">adc_buf</a>&#160;</td><td class="memItemRight" valign="bottom"><b>buf_humid_hih</b></td></tr>
+<tr class="memitem:ad568b53b95a1ce4d2c55ede2573555f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humid__hih_8c.html#ad568b53b95a1ce4d2c55ede2573555f7">adc_humid_hih</a></td></tr>
+<tr class="memitem:a97fa87a42640823c2a0146be4ef0a8a7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humid__hih_8c.html#a97fa87a42640823c2a0146be4ef0a8a7">fhih_humid</a></td></tr>
+<tr class="memitem:aa22df465dcc7eafe232ff13587fe0c35"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="structadc__buf.html">adc_buf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humid__hih_8c.html#aa22df465dcc7eafe232ff13587fe0c35">buf_humid_hih</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Honeywell HIH-4030 sensor interface. </p>
 <p>This reads the values for humidity from the Honeywell HIH-4030 sensor. </p>
 
 <p>Definition in file <a class="el" href="humid__hih_8c_source.html">humid_hih.c</a>.</p>
-</div></div><!-- contents -->
+</div><h2>Macro Definition Documentation</h2>
+<a class="anchor" id="a07c872fb0d3571e1106bad886bb0e300"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC_CHANNEL_HUMID_HIH&#160;&#160;&#160;<a class="el" href="umarim__lite__2_80_8h.html#a474279f28350114950d862951d72de66">ADC_3</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="humid__hih_8c_source.html#l00044">44</a> of file <a class="el" href="humid__hih_8c_source.html">humid_hih.c</a>.</p>
+
+<p>Referenced by <a class="el" href="humid__hih_8c_source.html#l00056">humid_hih_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a229c6a961354be19cf6d3fbdebdab01a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC_CHANNEL_HUMID_NB_SAMPLES&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="humid__hih_8c_source.html#l00048">48</a> of file <a class="el" href="humid__hih_8c_source.html">humid_hih.c</a>.</p>
+
+<p>Referenced by <a class="el" href="humid__hih_8c_source.html#l00056">humid_hih_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2978a46b47cbc9d17a0924014ff9658b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOWNLINK_DEVICE&#160;&#160;&#160;DOWNLINK_AP_DEVICE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="humid__hih_8c_source.html#l00040">40</a> of file <a class="el" href="humid__hih_8c_source.html">humid_hih.c</a>.</p>
+
+</div>
+</div>
+<h2>Function Documentation</h2>
+<a class="anchor" id="acb068afb2e3c2f0e3c6c1a7c3abeaddf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void humid_hih_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="humid__hih_8c_source.html#l00056">56</a> of file <a class="el" href="humid__hih_8c_source.html">humid_hih.c</a>.</p>
+
+<p>References <a class="el" href="lpc21_2mcu__periph_2adc__arch_8c_source.html#l00059">adc_buf_channel()</a>, <a class="el" href="humid__hih_8c_source.html#l00044">ADC_CHANNEL_HUMID_HIH</a>, <a class="el" href="humid__hih_8c_source.html#l00048">ADC_CHANNEL_HUMID_NB_SAMPLES</a>, and <a class="el" href="humid__hih_8c_source.html#l00054">buf_humid_hih</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="humid__hih_8c_acb068afb2e3c2f0e3c6c1a7c3abeaddf_cgraph.png" border="0" usemap="#humid__hih_8c_acb068afb2e3c2f0e3c6c1a7c3abeaddf_cgraph" alt=""/></div>
+<map name="humid__hih_8c_acb068afb2e3c2f0e3c6c1a7c3abeaddf_cgraph" id="humid__hih_8c_acb068afb2e3c2f0e3c6c1a7c3abeaddf_cgraph">
+<area shape="rect" id="node3" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:" alt="" coords="169,5,297,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a08aae8974ca70fb46b6b9792c27ddbc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void humid_hih_periodic </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="humid__hih_8c_source.html#l00060">60</a> of file <a class="el" href="humid__hih_8c_source.html">humid_hih.c</a>.</p>
+
+<p>References <a class="el" href="humid__hih_8c_source.html#l00051">adc_humid_hih</a>, <a class="el" href="adc_8h_source.html#l00064">adc_buf::av_nb_sample</a>, <a class="el" href="humid__hih_8c_source.html#l00054">buf_humid_hih</a>, <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="humid__hih_8c_source.html#l00052">fhih_humid</a>, <a class="el" href="humid__sht_8c_source.html#l00023">ftempsht</a>, and <a class="el" href="adc_8h_source.html#l00061">adc_buf::sum</a>.</p>
+
+</div>
+</div>
+<h2>Variable Documentation</h2>
+<a class="anchor" id="ad568b53b95a1ce4d2c55ede2573555f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> adc_humid_hih</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="humid__hih_8c_source.html#l00051">51</a> of file <a class="el" href="humid__hih_8c_source.html">humid_hih.c</a>.</p>
+
+<p>Referenced by <a class="el" href="humid__hih_8c_source.html#l00060">humid_hih_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa22df465dcc7eafe232ff13587fe0c35"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structadc__buf.html">adc_buf</a> buf_humid_hih</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="humid__hih_8c_source.html#l00054">54</a> of file <a class="el" href="humid__hih_8c_source.html">humid_hih.c</a>.</p>
+
+<p>Referenced by <a class="el" href="humid__hih_8c_source.html#l00056">humid_hih_init()</a>, and <a class="el" href="humid__hih_8c_source.html#l00060">humid_hih_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97fa87a42640823c2a0146be4ef0a8a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fhih_humid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="humid__hih_8c_source.html#l00052">52</a> of file <a class="el" href="humid__hih_8c_source.html">humid_hih.c</a>.</p>
+
+<p>Referenced by <a class="el" href="humid__hih_8c_source.html#l00060">humid_hih_periodic()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_dcc9af59dc35b42e32db80b18066e136.html">meteo</a></li><li class="navelem"><a class="el" href="humid__hih_8c.html">humid_hih.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:38 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

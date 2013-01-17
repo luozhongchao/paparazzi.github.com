@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('AOA__adc_8c_source.html','');});
 <div class="title">AOA_adc.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="AOA__adc_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2010 The Paparazzi Team</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Autor: Bruzzlee</span></div>
@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('AOA__adc_8c_source.html','');});
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;modules/sensors/AOA_adc.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AOA__adc_8h.html">modules/sensors/AOA_adc.h</a>&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="adc_8h.html" title="arch independent ADC (Analog to Digital Converter) API">mcu_periph/adc.h</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include BOARD_CONFIG</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;generated/airframe.h&quot;</span></div>
@@ -144,11 +144,11 @@ $(document).ready(function(){initNavTree('AOA__adc_8c_source.html','');});
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;messages.h&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;uint16_t adc_AOA_val;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="AOA__adc_8h.html#a9b23b7a2ced8621886544adc7c8a8433">   38</a></span>&#160;<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//Downlink</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifndef DOWNLINK_DEVICE</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="AOA__adc_8c.html#a2978a46b47cbc9d17a0924014ff9658b">   42</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifndef SITL // Use ADC if not in simulation</span></div>
@@ -158,36 +158,36 @@ $(document).ready(function(){initNavTree('AOA__adc_8c_source.html','');});
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#ifndef ADC_CHANNEL_AOA_NB_SAMPLES</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_AOA_NB_SAMPLES DEFAULT_AV_NB_SAMPLE</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="AOA__adc_8c.html#a15b42a2a7df458702844ac9db12c8ba5">   52</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADC_CHANNEL_AOA_NB_SAMPLES DEFAULT_AV_NB_SAMPLE</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> buf_AOA;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">float</span> AOA_offset, AOA_filter;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">float</span> AOA, AOA_old;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">   55</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structadc__buf.html" title="Generic interface for all ADC hardware drivers, independent from microcontroller architecture.">adc_buf</a> <a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">buf_AOA</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="AOA__adc_8h.html#a12b74598190dbef179e45e10df2bde2f">   56</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="AOA__adc_8c.html#a12b74598190dbef179e45e10df2bde2f">AOA_offset</a>, <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">   57</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>, <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> AOA_adc_init( <span class="keywordtype">void</span> ) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  AOA_offset = AOA_OFFSET;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  AOA_filter = AOA_FILTER;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  AOA_old = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="AOA__adc_8h.html#a636c6b4cdae6cfa4333568133735b52d">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="AOA__adc_8c.html#a636c6b4cdae6cfa4333568133735b52d">AOA_adc_init</a>( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="AOA__adc_8c.html#a12b74598190dbef179e45e10df2bde2f">AOA_offset</a> = AOA_OFFSET;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a> = AOA_FILTER;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a> = 0;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#ifndef SITL</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span>  <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(ADC_CHANNEL_AOA, &amp;buf_AOA, ADC_CHANNEL_AOA_NB_SAMPLES);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span>  <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(ADC_CHANNEL_AOA, &amp;<a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">buf_AOA</a>, <a class="code" href="AOA__adc_8c.html#a15b42a2a7df458702844ac9db12c8ba5">ADC_CHANNEL_AOA_NB_SAMPLES</a>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> AOA_adc_update( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="AOA__adc_8h.html#aee430e28b87aaca3aeb9fe9c726405b1">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="AOA__adc_8c.html#aee430e28b87aaca3aeb9fe9c726405b1">AOA_adc_update</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#ifndef SITL</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span>  adc_AOA_val = buf_AOA.sum / buf_AOA.av_nb_sample;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span>  <a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a> = <a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">buf_AOA</a>.<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a> / <a class="code" href="AOA__adc_8c.html#a0f58d6bd20e04708a9db650d4e30ddf6">buf_AOA</a>.<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//  PT1 filter and convert to rad</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  AOA = AOA_filter * AOA_old + (1 - AOA_filter) * (adc_AOA_val*(2*M_PI)/1024-M_PI+AOA_offset);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  AOA_old = AOA;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a> = <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a> * <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a> + (1 - <a class="code" href="AOA__adc_8c.html#ae22487bfad755156a7aed86d8dbd1230">AOA_filter</a>) * (<a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>*(2*M_PI)/1024-M_PI+<a class="code" href="AOA__adc_8c.html#a12b74598190dbef179e45e10df2bde2f">AOA_offset</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="AOA__adc_8c.html#a1fde6a5b440a4ace3180123ccb662f5e">AOA_old</a> = <a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span>  RunOnceEvery(30, DOWNLINK_SEND_AOA_adc(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, DefaultDevice, &amp;adc_AOA_val, &amp;AOA));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span>  RunOnceEvery(30, DOWNLINK_SEND_AOA_adc(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="AOA__adc_8c.html#a9b23b7a2ced8621886544adc7c8a8433">adc_AOA_val</a>, &amp;<a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>));</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#ifdef USE_AOA</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"></span>  <a class="code" href="group__state__wind__airspeed.html#gaefc2403532c93ff7821d26fa1ce3732b" title="Set angle of attack (float).">stateSetAngleOfAttack_f</a>(AOA);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"></span>  <a class="code" href="group__state__wind__airspeed.html#gaefc2403532c93ff7821d26fa1ce3732b" title="Set angle of attack (float).">stateSetAngleOfAttack_f</a>(<a class="code" href="AOA__adc_8c.html#afc0ca33296b032d8d797aa3bd4885d65">AOA</a>);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor"></span>}</div>
 </div><!-- fragment --></div><!-- contents -->
@@ -195,8 +195,8 @@ $(document).ready(function(){initNavTree('AOA__adc_8c_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_2f48bbb566df394f79dcf8fe0631584a.html">sensors</a></li><li class="navelem"><b>AOA_adc.c</b></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_2f48bbb566df394f79dcf8fe0631584a.html">sensors</a></li><li class="navelem"><a class="el" href="AOA__adc_8c.html">AOA_adc.c</a></li>
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:04 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

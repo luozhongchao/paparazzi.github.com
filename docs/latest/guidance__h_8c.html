@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('guidance__h_8c.html','');});
 <div class="textblock"><code>#include &quot;<a class="el" href="guidance__h_8h_source.html">firmwares/rotorcraft/guidance/guidance_h.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="stabilization_8h_source.html">firmwares/rotorcraft/stabilization.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="stabilization__attitude__rc__setpoint_8h_source.html">firmwares/rotorcraft/stabilization/stabilization_attitude_rc_setpoint.h</a>&quot;</code><br/>
-<code>#include &quot;firmwares/rotorcraft/navigation.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="navigation_8h_source.html">firmwares/rotorcraft/navigation.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="state_8h_source.html">state.h</a>&quot;</code><br/>
 <code>#include &quot;generated/airframe.h&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -127,95 +127,123 @@ $(document).ready(function(){initNavTree('guidance__h_8c.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="guidance__h_8c__incl.png" border="0" usemap="#sw_2airborne_2firmwares_2rotorcraft_2guidance_2guidance__h_8c" alt=""/></div>
 <map name="sw_2airborne_2firmwares_2rotorcraft_2guidance_2guidance__h_8c" id="sw_2airborne_2firmwares_2rotorcraft_2guidance_2guidance__h_8c">
-<area shape="rect" id="node3" href="guidance__h_8h.html" title="Horizontal guidance for rotorcrafts." alt="" coords="151,126,324,173"/><area shape="rect" id="node30" href="stabilization_8h.html" title="General stabilization interface for rotorcrafts." alt="" coords="829,230,976,277"/><area shape="rect" id="node48" href="stabilization__attitude__rc__setpoint_8h.html" title="Read an attitude setpoint from the RC." alt="" coords="1096,117,1277,181"/><area shape="rect" id="node69" href="state_8h.html" title="API to get/set the generic vehicle states." alt="" coords="1759,239,1825,268"/><area shape="rect" id="node91" href="navigation_8h_source.html" title="firmwares/rotorcraft\l/navigation.h" alt="" coords="2241,230,2388,277"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="868,455,1047,484"/><area shape="rect" id="node22" href="guidance__h__ref_8h.html" title="Reference generation for horizontal guidance." alt="" coords="5,230,200,277"/><area shape="rect" id="node9" href="pprz__algebra_8h_source.html" title="math/pprz_algebra.h" alt="" coords="653,559,808,588"/><area shape="rect" id="node16" href="pprz__trig__int_8h_source.html" title="math/pprz_trig_int.h" alt="" coords="883,559,1032,588"/><area shape="rect" id="node26" href="inttypes_8h_source.html" title="inttypes.h" alt="" coords="711,455,796,484"/><area shape="rect" id="node34" href="stabilization__none_8h.html" title="Dummy stabilization for rotorcrafts." alt="" coords="661,325,843,389"/><area shape="rect" id="node37" href="stabilization__rate_8h.html" title="Rate stabilization for rotorcrafts." alt="" coords="867,325,1048,389"/><area shape="rect" id="node40" href="rotorcraft_2stabilization_2stabilization__attitude_8h_source.html" title="firmwares/rotorcraft\l/stabilization/stabilization\l_attitude.h" alt="" coords="456,325,637,389"/><area shape="rect" id="node44" href="stabilization__attitude__ref_8h.html" title="Top level Rotorcraft attitude reference generation include." alt="" coords="276,437,457,501"/><area shape="rect" id="node53" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="1724,455,1913,484"/><area shape="rect" id="node59" href="radio__control_8h_source.html" title="subsystems/radio_control.h" alt="" coords="1275,239,1472,268"/><area shape="rect" id="node61" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="1275,343,1328,372"/><area shape="rect" id="node64" href="paparazzi_8h_source.html" title="paparazzi.h" alt="" coords="1352,343,1448,372"/><area shape="rect" id="node73" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations." alt="" coords="2067,334,2216,381"/><area shape="rect" id="node79" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations." alt="" coords="2240,334,2389,381"/><area shape="rect" id="node84" href="pprz__orientation__conversion_8h.html" title="Generic orientation representation and conversion." alt="" coords="1829,334,1992,381"/><area shape="rect" id="node75" href="pprz__geodetic_8h_source.html" title="pprz_geodetic.h" alt="" coords="2132,455,2255,484"/><area shape="rect" id="node96" href="common__flight__plan_8h_source.html" title="subsystems/navigation\l/common_flight_plan.h" alt="" coords="2464,550,2632,597"/></map>
+<area shape="rect" id="node3" href="guidance__h_8h.html" title="Horizontal guidance for rotorcrafts." alt="" coords="151,126,324,173"/><area shape="rect" id="node30" href="stabilization_8h.html" title="General stabilization interface for rotorcrafts." alt="" coords="829,230,976,277"/><area shape="rect" id="node48" href="stabilization__attitude__rc__setpoint_8h.html" title="Read an attitude setpoint from the RC." alt="" coords="1096,117,1277,181"/><area shape="rect" id="node69" href="state_8h.html" title="API to get/set the generic vehicle states." alt="" coords="1759,239,1825,268"/><area shape="rect" id="node91" href="navigation_8h.html" title="firmwares/rotorcraft\l/navigation.h" alt="" coords="2241,230,2388,277"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="868,455,1047,484"/><area shape="rect" id="node22" href="guidance__h__ref_8h.html" title="Reference generation for horizontal guidance." alt="" coords="5,230,200,277"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="653,559,808,588"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="883,559,1032,588"/><area shape="rect" id="node26" href="inttypes_8h.html" title="inttypes.h" alt="" coords="711,455,796,484"/><area shape="rect" id="node34" href="stabilization__none_8h.html" title="Dummy stabilization for rotorcrafts." alt="" coords="661,325,843,389"/><area shape="rect" id="node37" href="stabilization__rate_8h.html" title="Rate stabilization for rotorcrafts." alt="" coords="867,325,1048,389"/><area shape="rect" id="node40" href="rotorcraft_2stabilization_2stabilization__attitude_8h.html" title="firmwares/rotorcraft\l/stabilization/stabilization\l_attitude.h" alt="" coords="456,325,637,389"/><area shape="rect" id="node44" href="stabilization__attitude__ref_8h.html" title="Top level Rotorcraft attitude reference generation include." alt="" coords="276,437,457,501"/><area shape="rect" id="node53" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="1724,455,1913,484"/><area shape="rect" id="node59" href="radio__control_8h.html" title="subsystems/radio_control.h" alt="" coords="1275,239,1472,268"/><area shape="rect" id="node61" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="1275,343,1328,372"/><area shape="rect" id="node64" href="paparazzi_8h.html" title="paparazzi.h" alt="" coords="1352,343,1448,372"/><area shape="rect" id="node73" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations." alt="" coords="2067,334,2216,381"/><area shape="rect" id="node79" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations." alt="" coords="2240,334,2389,381"/><area shape="rect" id="node84" href="pprz__orientation__conversion_8h.html" title="Generic orientation representation and conversion." alt="" coords="1829,334,1992,381"/><area shape="rect" id="node75" href="pprz__geodetic_8h.html" title="pprz_geodetic.h" alt="" coords="2132,455,2255,484"/><area shape="rect" id="node96" href="common__flight__plan_8h.html" title="subsystems/navigation\l/common_flight_plan.h" alt="" coords="2464,550,2632,597"/></map>
 </div>
 </div>
 <p><a href="guidance__h_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ac6744252764358364619528e3fed73d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6744252764358364619528e3fed73d1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GUIDANCE_H_C</b></td></tr>
-<tr class="memitem:a722bbcc0f532796d2697f90fa80e4924"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a722bbcc0f532796d2697f90fa80e4924"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GUIDANCE_H_AGAIN</b>&#160;&#160;&#160;0</td></tr>
-<tr class="memitem:ae7c6988762e27257d928face4ee75d5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7c6988762e27257d928face4ee75d5a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GUIDANCE_H_MAX_BANK</b>&#160;&#160;&#160;RadOfDeg(20)</td></tr>
-<tr class="memitem:a06b246be8c5a95daf9856057dd2584f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>GuidanceHSetRef</b>(_pos, _speed, _accel)</td></tr>
-<tr class="memitem:a6bfc5d39a496e8a2ddbf5448dd610916"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bfc5d39a496e8a2ddbf5448dd610916"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_POS_ERR</b>&#160;&#160;&#160;POS_BFP_OF_REAL(16.)</td></tr>
-<tr class="memitem:a35d427821ffd914d9272e28e33d9e298"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35d427821ffd914d9272e28e33d9e298"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_SPEED_ERR</b>&#160;&#160;&#160;SPEED_BFP_OF_REAL(16.)</td></tr>
-<tr class="memitem:ad16eda9afe642a908a5e40c524de29a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad16eda9afe642a908a5e40c524de29a0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_POS_ERR_SUM</b>&#160;&#160;&#160;((int32_t)(MAX_POS_ERR)&lt;&lt; 12)</td></tr>
-<tr class="memitem:aa3ea72a4226a4ef662a4fc356c552278"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3ea72a4226a4ef662a4fc356c552278"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GH_GAIN_SCALE</b>&#160;&#160;&#160;2</td></tr>
-<tr class="memitem:a669618b358d48a98ea0b7c88a3db1854"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a669618b358d48a98ea0b7c88a3db1854"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a669618b358d48a98ea0b7c88a3db1854">TRAJ_MAX_BANK</a>&#160;&#160;&#160;BFP_OF_REAL(GUIDANCE_H_MAX_BANK, INT32_ANGLE_FRAC)</td></tr>
-<tr class="memdesc:a669618b358d48a98ea0b7c88a3db1854"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum bank angle: default 20 deg <br/></td></tr>
+<tr class="memitem:ac6744252764358364619528e3fed73d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#ac6744252764358364619528e3fed73d1">GUIDANCE_H_C</a></td></tr>
+<tr class="memitem:a722bbcc0f532796d2697f90fa80e4924"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a722bbcc0f532796d2697f90fa80e4924">GUIDANCE_H_AGAIN</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:ae7c6988762e27257d928face4ee75d5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#ae7c6988762e27257d928face4ee75d5a">GUIDANCE_H_MAX_BANK</a>&#160;&#160;&#160;RadOfDeg(20)</td></tr>
+<tr class="memitem:a06b246be8c5a95daf9856057dd2584f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a06b246be8c5a95daf9856057dd2584f9">GuidanceHSetRef</a>(_pos, _speed, _accel)</td></tr>
+<tr class="memitem:a6bfc5d39a496e8a2ddbf5448dd610916"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a6bfc5d39a496e8a2ddbf5448dd610916">MAX_POS_ERR</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#adf322ab1574f7999563eaaedce920522">POS_BFP_OF_REAL</a>(16.)</td></tr>
+<tr class="memitem:a35d427821ffd914d9272e28e33d9e298"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a35d427821ffd914d9272e28e33d9e298">MAX_SPEED_ERR</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#af665ad3da6b5c3589c19d7bdc66e8fc4">SPEED_BFP_OF_REAL</a>(16.)</td></tr>
+<tr class="memitem:ad16eda9afe642a908a5e40c524de29a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#ad16eda9afe642a908a5e40c524de29a0">MAX_POS_ERR_SUM</a>&#160;&#160;&#160;((<a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)(<a class="el" href="guidance__h_8c.html#a6bfc5d39a496e8a2ddbf5448dd610916">MAX_POS_ERR</a>)&lt;&lt; 12)</td></tr>
+<tr class="memitem:aa3ea72a4226a4ef662a4fc356c552278"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#aa3ea72a4226a4ef662a4fc356c552278">GH_GAIN_SCALE</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memitem:a669618b358d48a98ea0b7c88a3db1854"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a669618b358d48a98ea0b7c88a3db1854">TRAJ_MAX_BANK</a>&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#aa6bb9343d0a10947a0824bc67cf4a47d">BFP_OF_REAL</a>(<a class="el" href="guidance__h_8c.html#ae7c6988762e27257d928face4ee75d5a">GUIDANCE_H_MAX_BANK</a>, <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>)</td></tr>
+<tr class="memdesc:a669618b358d48a98ea0b7c88a3db1854"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum bank angle: default 20 deg  <a href="#a669618b358d48a98ea0b7c88a3db1854"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abe5eaebe6416b5b160ab966a4b5bbd17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe5eaebe6416b5b160ab966a4b5bbd17"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_update_reference</b> (bool_t use_ref)</td></tr>
-<tr class="memitem:a40a1b0fc372c07e0fc9e9a680578fe9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40a1b0fc372c07e0fc9e9a680578fe9b"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_traj_run</b> (bool_t in_flight)</td></tr>
-<tr class="memitem:a2a7de8dee0c85bd58633a392d8e2df91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a7de8dee0c85bd58633a392d8e2df91"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_hover_enter</b> (void)</td></tr>
-<tr class="memitem:acfce6969bcd9f8b676f79baf04ef4c00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfce6969bcd9f8b676f79baf04ef4c00"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_nav_enter</b> (void)</td></tr>
-<tr class="memitem:a7bc4ea0d5351c2ba6ee160db5a2e9f80"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7bc4ea0d5351c2ba6ee160db5a2e9f80"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_init</b> (void)</td></tr>
-<tr class="memitem:a2903786227eb11507928f99870099225"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2903786227eb11507928f99870099225"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_mode_changed</b> (uint8_t new_mode)</td></tr>
-<tr class="memitem:a7db3290fc5f62abc15a1bb1638b4922f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7db3290fc5f62abc15a1bb1638b4922f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_read_rc</b> (bool_t in_flight)</td></tr>
-<tr class="memitem:ac4cf6da90a4278b4d0b2e4f227b33f2c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4cf6da90a4278b4d0b2e4f227b33f2c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_run</b> (bool_t in_flight)</td></tr>
+<tr class="memitem:abe5eaebe6416b5b160ab966a4b5bbd17"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#abe5eaebe6416b5b160ab966a4b5bbd17">guidance_h_update_reference</a> (bool_t use_ref)</td></tr>
+<tr class="memitem:a40a1b0fc372c07e0fc9e9a680578fe9b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a40a1b0fc372c07e0fc9e9a680578fe9b">guidance_h_traj_run</a> (bool_t in_flight)</td></tr>
+<tr class="memitem:a2a7de8dee0c85bd58633a392d8e2df91"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a2a7de8dee0c85bd58633a392d8e2df91">guidance_h_hover_enter</a> (void)</td></tr>
+<tr class="memitem:acfce6969bcd9f8b676f79baf04ef4c00"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#acfce6969bcd9f8b676f79baf04ef4c00">guidance_h_nav_enter</a> (void)</td></tr>
+<tr class="memitem:a7bc4ea0d5351c2ba6ee160db5a2e9f80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a7bc4ea0d5351c2ba6ee160db5a2e9f80">guidance_h_init</a> (void)</td></tr>
+<tr class="memitem:a2903786227eb11507928f99870099225"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a2903786227eb11507928f99870099225">guidance_h_mode_changed</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_mode)</td></tr>
+<tr class="memitem:a7db3290fc5f62abc15a1bb1638b4922f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a7db3290fc5f62abc15a1bb1638b4922f">guidance_h_read_rc</a> (bool_t in_flight)</td></tr>
+<tr class="memitem:ac4cf6da90a4278b4d0b2e4f227b33f2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#ac4cf6da90a4278b4d0b2e4f227b33f2c">guidance_h_run</a> (bool_t in_flight)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8a5d124d4767559d3332e9e3cbaa0e98"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a5d124d4767559d3332e9e3cbaa0e98"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_mode</b></td></tr>
+<tr class="memitem:a8a5d124d4767559d3332e9e3cbaa0e98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a8a5d124d4767559d3332e9e3cbaa0e98">guidance_h_mode</a></td></tr>
 <tr class="memitem:ab5bfbde0d90688c7b32bdd7244be7a0b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#ab5bfbde0d90688c7b32bdd7244be7a0b">guidance_h_pos_sp</a></td></tr>
 <tr class="memdesc:ab5bfbde0d90688c7b32bdd7244be7a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">horizontal position setpoint in NED.  <a href="#ab5bfbde0d90688c7b32bdd7244be7a0b"></a><br/></td></tr>
-<tr class="memitem:a3811b775f659bc08d3beb46accbf3533"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3811b775f659bc08d3beb46accbf3533"></a>
-struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_pos_ref</b></td></tr>
-<tr class="memitem:ac6aeed1a6e68b3f3ec08aa90d36ae8f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6aeed1a6e68b3f3ec08aa90d36ae8f1"></a>
-struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_speed_ref</b></td></tr>
-<tr class="memitem:a3bc12d05515bf4df86b36fdeb2024d25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3bc12d05515bf4df86b36fdeb2024d25"></a>
-struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_accel_ref</b></td></tr>
-<tr class="memitem:a3e1465db4a9d539e7c6cba31f5458c70"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e1465db4a9d539e7c6cba31f5458c70"></a>
-struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_pos_err</b></td></tr>
-<tr class="memitem:a206725a549c15b4fefc505299fa3e08b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a206725a549c15b4fefc505299fa3e08b"></a>
-struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_speed_err</b></td></tr>
-<tr class="memitem:a38c8f96006ee44bb6e6e7af963f3cee2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38c8f96006ee44bb6e6e7af963f3cee2"></a>
-struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_pos_err_sum</b></td></tr>
-<tr class="memitem:aecdc2a055cb680ad15b5891d90d6ca20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aecdc2a055cb680ad15b5891d90d6ca20"></a>
-struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_nav_err</b></td></tr>
-<tr class="memitem:a48ab657ff45f2b091847a48360a96b52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48ab657ff45f2b091847a48360a96b52"></a>
-struct <a class="el" href="structInt32Eulers.html">Int32Eulers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52">guidance_h_rc_sp</a></td></tr>
-<tr class="memdesc:a48ab657ff45f2b091847a48360a96b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">with #INT32_ANGLE_FRAC <br/></td></tr>
-<tr class="memitem:ad788fb23a66bd2f875857f19a921caab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad788fb23a66bd2f875857f19a921caab"></a>
-struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_command_earth</b></td></tr>
-<tr class="memitem:a549244970dd85bfdf7dcf3c8aefa3b56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a549244970dd85bfdf7dcf3c8aefa3b56"></a>
-struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_stick_earth_sp</b></td></tr>
-<tr class="memitem:aeaa282c7aaf489235488c355f3464144"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeaa282c7aaf489235488c355f3464144"></a>
-struct <a class="el" href="structInt32Eulers.html">Int32Eulers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144">guidance_h_command_body</a></td></tr>
-<tr class="memdesc:aeaa282c7aaf489235488c355f3464144"><td class="mdescLeft">&#160;</td><td class="mdescRight">with #INT32_ANGLE_FRAC <br/></td></tr>
-<tr class="memitem:a515117efee08e8c0b81fa7381ac25981"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a515117efee08e8c0b81fa7381ac25981"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_pgain</b></td></tr>
-<tr class="memitem:aeaebd5d3b21312b12e26a2e066684812"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeaebd5d3b21312b12e26a2e066684812"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_dgain</b></td></tr>
-<tr class="memitem:ad1420057a2381ce4ded91b76745b3f18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1420057a2381ce4ded91b76745b3f18"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_igain</b></td></tr>
-<tr class="memitem:af3f2ebfd0110c37dd1b7f55e5b12d4eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3f2ebfd0110c37dd1b7f55e5b12d4eb"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_again</b></td></tr>
+<tr class="memitem:a3811b775f659bc08d3beb46accbf3533"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a3811b775f659bc08d3beb46accbf3533">guidance_h_pos_ref</a></td></tr>
+<tr class="memitem:ac6aeed1a6e68b3f3ec08aa90d36ae8f1"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1">guidance_h_speed_ref</a></td></tr>
+<tr class="memitem:a3bc12d05515bf4df86b36fdeb2024d25"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a3bc12d05515bf4df86b36fdeb2024d25">guidance_h_accel_ref</a></td></tr>
+<tr class="memitem:a3e1465db4a9d539e7c6cba31f5458c70"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a3e1465db4a9d539e7c6cba31f5458c70">guidance_h_pos_err</a></td></tr>
+<tr class="memitem:a206725a549c15b4fefc505299fa3e08b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a206725a549c15b4fefc505299fa3e08b">guidance_h_speed_err</a></td></tr>
+<tr class="memitem:a38c8f96006ee44bb6e6e7af963f3cee2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a38c8f96006ee44bb6e6e7af963f3cee2">guidance_h_pos_err_sum</a></td></tr>
+<tr class="memitem:aecdc2a055cb680ad15b5891d90d6ca20"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#aecdc2a055cb680ad15b5891d90d6ca20">guidance_h_nav_err</a></td></tr>
+<tr class="memitem:a48ab657ff45f2b091847a48360a96b52"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Eulers.html">Int32Eulers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52">guidance_h_rc_sp</a></td></tr>
+<tr class="memdesc:a48ab657ff45f2b091847a48360a96b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">with <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>  <a href="#a48ab657ff45f2b091847a48360a96b52"></a><br/></td></tr>
+<tr class="memitem:ad788fb23a66bd2f875857f19a921caab"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#ad788fb23a66bd2f875857f19a921caab">guidance_h_command_earth</a></td></tr>
+<tr class="memitem:a549244970dd85bfdf7dcf3c8aefa3b56"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a549244970dd85bfdf7dcf3c8aefa3b56">guidance_h_stick_earth_sp</a></td></tr>
+<tr class="memitem:aeaa282c7aaf489235488c355f3464144"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Eulers.html">Int32Eulers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144">guidance_h_command_body</a></td></tr>
+<tr class="memdesc:aeaa282c7aaf489235488c355f3464144"><td class="mdescLeft">&#160;</td><td class="mdescRight">with <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>  <a href="#aeaa282c7aaf489235488c355f3464144"></a><br/></td></tr>
+<tr class="memitem:a515117efee08e8c0b81fa7381ac25981"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#a515117efee08e8c0b81fa7381ac25981">guidance_h_pgain</a></td></tr>
+<tr class="memitem:aeaebd5d3b21312b12e26a2e066684812"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#aeaebd5d3b21312b12e26a2e066684812">guidance_h_dgain</a></td></tr>
+<tr class="memitem:ad1420057a2381ce4ded91b76745b3f18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#ad1420057a2381ce4ded91b76745b3f18">guidance_h_igain</a></td></tr>
+<tr class="memitem:af3f2ebfd0110c37dd1b7f55e5b12d4eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guidance__h_8c.html#af3f2ebfd0110c37dd1b7f55e5b12d4eb">guidance_h_again</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Horizontal guidance for rotorcrafts. </p>
 
 <p>Definition in file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
 </div><h2>Macro Definition Documentation</h2>
+<a class="anchor" id="aa3ea72a4226a4ef662a4fc356c552278"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GH_GAIN_SCALE&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00261">261</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a722bbcc0f532796d2697f90fa80e4924"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GUIDANCE_H_AGAIN&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00070">70</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac6744252764358364619528e3fed73d1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GUIDANCE_H_C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00027">27</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7c6988762e27257d928face4ee75d5a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GUIDANCE_H_MAX_BANK&#160;&#160;&#160;RadOfDeg(20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00078">78</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a06b246be8c5a95daf9856057dd2584f9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -247,16 +275,639 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_again</
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">{ \</div>
 <div class="line">    b2_gh_set_ref(_pos, _speed, _accel); \</div>
-<div class="line">    VECT2_COPY(guidance_h_pos_ref,   _pos); \</div>
-<div class="line">    VECT2_COPY(guidance_h_speed_ref, _speed); \</div>
-<div class="line">    VECT2_COPY(guidance_h_accel_ref, _accel); \</div>
+<div class="line">    VECT2_COPY(<a class="code" href="guidance__h_8c.html#a3811b775f659bc08d3beb46accbf3533">guidance_h_pos_ref</a>,   _pos); \</div>
+<div class="line">    VECT2_COPY(<a class="code" href="guidance__h_8c.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1">guidance_h_speed_ref</a>, _speed); \</div>
+<div class="line">    VECT2_COPY(<a class="code" href="guidance__h_8c.html#a3bc12d05515bf4df86b36fdeb2024d25">guidance_h_accel_ref</a>, _accel); \</div>
 <div class="line">  }</div>
 </div><!-- fragment -->
 <p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00086">86</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
 
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00339">guidance_h_nav_enter()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bfc5d39a496e8a2ddbf5448dd610916"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_POS_ERR&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#adf322ab1574f7999563eaaedce920522">POS_BFP_OF_REAL</a>(16.)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00255">255</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad16eda9afe642a908a5e40c524de29a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_POS_ERR_SUM&#160;&#160;&#160;((<a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)(<a class="el" href="guidance__h_8c.html#a6bfc5d39a496e8a2ddbf5448dd610916">MAX_POS_ERR</a>)&lt;&lt; 12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00257">257</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a35d427821ffd914d9272e28e33d9e298"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_SPEED_ERR&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#af665ad3da6b5c3589c19d7bdc66e8fc4">SPEED_BFP_OF_REAL</a>(16.)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00256">256</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a669618b358d48a98ea0b7c88a3db1854"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRAJ_MAX_BANK&#160;&#160;&#160;<a class="el" href="pprz__algebra__int_8h.html#aa6bb9343d0a10947a0824bc67cf4a47d">BFP_OF_REAL</a>(<a class="el" href="guidance__h_8c.html#ae7c6988762e27257d928face4ee75d5a">GUIDANCE_H_MAX_BANK</a>, <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>maximum bank angle: default 20 deg </p>
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00264">264</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<h2>Function Documentation</h2>
+<a class="anchor" id="a2a7de8dee0c85bd58633a392d8e2df91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void guidance_h_hover_enter </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00328">328</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>References <a class="el" href="guidance__h_8c_source.html#l00048">guidance_h_pos_err_sum</a>, <a class="el" href="guidance__h_8c_source.html#l00041">guidance_h_pos_sp</a>, <a class="el" href="guidance__h_8c_source.html#l00051">guidance_h_rc_sp</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00210">INT_VECT2_ZERO</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00130">Int32Eulers::psi</a>, <a class="el" href="stabilization__attitude__ref__float_8h_source.html#l00042">reset_psi_ref_from_body()</a>, <a class="el" href="state_8h_source.html#l01012">stateGetNedToBodyEulers_i()</a>, <a class="el" href="state_8h_source.html#l00630">stateGetPositionNed_i()</a>, and <a class="el" href="pprz__algebra_8h_source.html#l00043">VECT2_COPY</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00109">guidance_h_mode_changed()</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_a2a7de8dee0c85bd58633a392d8e2df91_cgraph.png" border="0" usemap="#guidance__h_8c_a2a7de8dee0c85bd58633a392d8e2df91_cgraph" alt=""/></div>
+<map name="guidance__h_8c_a2a7de8dee0c85bd58633a392d8e2df91_cgraph" id="guidance__h_8c_a2a7de8dee0c85bd58633a392d8e2df91_cgraph">
+<area shape="rect" id="node3" href="stabilization__attitude__ref__float_8h.html#a60f842edfa8dd98a227f18def04a0b55" title="reset_psi_ref_from_body" alt="" coords="243,12,421,41"/><area shape="rect" id="node11" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int)." alt="" coords="233,67,431,96"/><area shape="rect" id="node17" href="group__state__position.html#gaf9a3b3ed4f6a011ae65d49d78bf4aa25" title="Get position in local NED coordinates (int)." alt="" coords="251,152,413,181"/><area shape="rect" id="node5" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float)." alt="" coords="481,8,679,37"/><area shape="rect" id="node7" href="group__math__orientation__representation.html#gaaae3838d0b45682d48257d5dbfff3030" title="Get vehicle body attitude euler angles (float)." alt="" coords="731,7,893,36"/><area shape="rect" id="node9" href="group__math__orientation__representation.html#ga8b8bf1c74adb971f399f0dd4f84d9388" title="orientationCalcEulers_f" alt="" coords="944,5,1112,35"/><area shape="rect" id="node13" href="group__math__orientation__representation.html#gae05f220bbbdaafcbe11bc2d1fb622f39" title="Get vehicle body attitude euler angles (int)." alt="" coords="499,67,661,96"/><area shape="rect" id="node15" href="group__math__orientation__representation.html#gaa07c68d2ea52188413c8c90ce48b73c8" title="orientationCalcEulers_i" alt="" coords="729,67,895,96"/><area shape="rect" id="node19" href="group__state__position.html#gac60dff329c00697fc9fcc459406293c9" title="stateCalcPositionNed_i" alt="" coords="496,208,664,237"/><area shape="rect" id="node21" href="pprz__geodetic__int_8c.html#a9307e97057d51e781def8a03dea804f6" title="ned_of_ecef_point_i" alt="" coords="955,235,1101,264"/><area shape="rect" id="node25" href="pprz__geodetic__float_8c.html#a3045a5a383aa4ebf5b8a9763773b9b6d" title="ned_of_ecef_point_f" alt="" coords="737,285,887,315"/><area shape="rect" id="node29" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="763,339,861,368"/><area shape="rect" id="node31" href="pprz__geodetic__int_8c.html#a6618f634b774eaf7182dfec83d68f141" title="ned_of_lla_point_i" alt="" coords="745,181,879,211"/><area shape="rect" id="node38" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="763,128,861,157"/><area shape="rect" id="node23" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1161,235,1308,264"/><area shape="rect" id="node27" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="953,288,1103,317"/><area shape="rect" id="node33" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="979,181,1077,211"/><area shape="rect" id="node35" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1183,181,1287,211"/><area shape="rect" id="node40" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="955,128,1101,157"/><area shape="rect" id="node42" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="960,58,1096,105"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_a2a7de8dee0c85bd58633a392d8e2df91_icgraph.png" border="0" usemap="#guidance__h_8c_a2a7de8dee0c85bd58633a392d8e2df91_icgraph" alt=""/></div>
+<map name="guidance__h_8c_a2a7de8dee0c85bd58633a392d8e2df91_icgraph" id="guidance__h_8c_a2a7de8dee0c85bd58633a392d8e2df91_icgraph">
+<area shape="rect" id="node3" href="guidance__h_8h.html#a2903786227eb11507928f99870099225" title="guidance_h_mode_changed" alt="" coords="233,112,433,141"/><area shape="rect" id="node5" href="rotorcraft_2autopilot_8h.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64" title="autopilot_set_mode" alt="" coords="483,112,632,141"/><area shape="rect" id="node7" href="rotorcraft_2autopilot_8h.html#a7339f5741706cb9c2e2186b1174cc770" title="autopilot_on_rc_frame" alt="" coords="680,59,845,88"/><area shape="rect" id="node15" href="rotorcraft_2autopilot_8h.html#a1914661233fbbed6c2ee653b99757652" title="autopilot_periodic" alt="" coords="696,112,829,141"/><area shape="rect" id="node25" href="main_8h.html#a6266a73fe8c0512f1de72cea96e5110b" title="failsafe_check" alt="" coords="708,165,817,195"/><area shape="rect" id="node9" href="main_8h.html#a542234de10fcdadb4184efcd9c7d0d04" title="main_event" alt="" coords="907,5,1003,35"/><area shape="rect" id="node13" href="lisa__stm__passthrough__main_8c.html#a05af0e883be22f206a58099661bcad06" title="on_rc_message" alt="" coords="893,59,1016,88"/><area shape="rect" id="node11" href="firmwares_2rotorcraft_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1119,5,1172,35"/><area shape="rect" id="node17" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="900,112,1009,141"/><area shape="rect" id="node19" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="1064,165,1227,195"/><area shape="rect" id="node23" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1119,112,1172,141"/><area shape="rect" id="node21" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1276,165,1329,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bc4ea0d5351c2ba6ee160db5a2e9f80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void guidance_h_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00094">94</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>References <a class="el" href="guidance__h_8c_source.html#l00059">guidance_h_again</a>, <a class="el" href="guidance__h_8c_source.html#l00070">GUIDANCE_H_AGAIN</a>, <a class="el" href="guidance__h_8c_source.html#l00054">guidance_h_command_body</a>, <a class="el" href="guidance__h_8c_source.html#l00057">guidance_h_dgain</a>, <a class="el" href="guidance__h_8c_source.html#l00058">guidance_h_igain</a>, <a class="el" href="guidance__h_8c_source.html#l00039">guidance_h_mode</a>, <a class="el" href="guidance__h_8h_source.html#l00035">GUIDANCE_H_MODE_KILL</a>, <a class="el" href="guidance__h_8c_source.html#l00056">guidance_h_pgain</a>, <a class="el" href="guidance__h_8c_source.html#l00048">guidance_h_pos_err_sum</a>, <a class="el" href="guidance__h_8c_source.html#l00041">guidance_h_pos_sp</a>, <a class="el" href="guidance__h_8c_source.html#l00051">guidance_h_rc_sp</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00815">INT_EULERS_ZERO</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00210">INT_VECT2_ZERO</a>.</p>
+
+<p>Referenced by <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00105">main_init()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_a7bc4ea0d5351c2ba6ee160db5a2e9f80_icgraph.png" border="0" usemap="#guidance__h_8c_a7bc4ea0d5351c2ba6ee160db5a2e9f80_icgraph" alt=""/></div>
+<map name="guidance__h_8c_a7bc4ea0d5351c2ba6ee160db5a2e9f80_icgraph" id="guidance__h_8c_a7bc4ea0d5351c2ba6ee160db5a2e9f80_icgraph">
+<area shape="rect" id="node3" href="main_8h.html#a092df25ac46a6a4ca72c023d8821f9b2" title="main_init" alt="" coords="176,5,256,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2903786227eb11507928f99870099225"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void guidance_h_mode_changed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>new_mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00109">109</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>References <a class="el" href="guidance__h_8c_source.html#l00328">guidance_h_hover_enter()</a>, <a class="el" href="guidance__h_8c_source.html#l00039">guidance_h_mode</a>, <a class="el" href="guidance__h_8h_source.html#l00037">GUIDANCE_H_MODE_ATTITUDE</a>, <a class="el" href="guidance__h_8h_source.html#l00038">GUIDANCE_H_MODE_HOVER</a>, <a class="el" href="guidance__h_8h_source.html#l00039">GUIDANCE_H_MODE_NAV</a>, <a class="el" href="guidance__h_8h_source.html#l00036">GUIDANCE_H_MODE_RATE</a>, <a class="el" href="guidance__h_8h_source.html#l00040">GUIDANCE_H_MODE_RC_DIRECT</a>, <a class="el" href="guidance__h_8c_source.html#l00339">guidance_h_nav_enter()</a>, <a class="el" href="stabilization__attitude__euler__float_8c_source.html#l00074">stabilization_attitude_enter()</a>, <a class="el" href="stabilization__none_8c_source.html#l00048">stabilization_none_enter()</a>, and <a class="el" href="stabilization__rate_8c_source.html#l00167">stabilization_rate_enter()</a>.</p>
+
+<p>Referenced by <a class="el" href="rotorcraft_2autopilot_8c_source.html#l00123">autopilot_set_mode()</a>.</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_a2903786227eb11507928f99870099225_cgraph.png" border="0" usemap="#guidance__h_8c_a2903786227eb11507928f99870099225_cgraph" alt=""/></div>
+<map name="guidance__h_8c_a2903786227eb11507928f99870099225_cgraph" id="guidance__h_8c_a2903786227eb11507928f99870099225_cgraph">
+<area shape="rect" id="node3" href="guidance__h_8c.html#a2a7de8dee0c85bd58633a392d8e2df91" title="guidance_h_hover_enter" alt="" coords="256,128,435,157"/><area shape="rect" id="node46" href="guidance__h_8c.html#acfce6969bcd9f8b676f79baf04ef4c00" title="guidance_h_nav_enter" alt="" coords="263,181,428,211"/><area shape="rect" id="node59" href="rotorcraft_2stabilization_2stabilization__attitude_8h.html#a23f862ca823e6fd23fc9c111178be077" title="stabilization_attitude\l_enter" alt="" coords="268,58,423,105"/><area shape="rect" id="node65" href="stabilization__none_8c.html#a49478c0307e64c56d48cf0feaa0d8876" title="stabilization_none\l_enter" alt="" coords="277,234,413,281"/><area shape="rect" id="node67" href="stabilization__rate_8c.html#a3c8ef06f1db709ae713371b0a2a5054d" title="stabilization_rate\l_enter" alt="" coords="280,303,411,350"/><area shape="rect" id="node5" href="stabilization__attitude__ref__float_8h.html#a60f842edfa8dd98a227f18def04a0b55" title="reset_psi_ref_from_body" alt="" coords="493,128,672,157"/><area shape="rect" id="node13" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int)." alt="" coords="484,75,681,104"/><area shape="rect" id="node19" href="group__state__position.html#gaf9a3b3ed4f6a011ae65d49d78bf4aa25" title="Get position in local NED coordinates (int)." alt="" coords="501,181,664,211"/><area shape="rect" id="node7" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float)." alt="" coords="732,75,929,104"/><area shape="rect" id="node9" href="group__math__orientation__representation.html#gaaae3838d0b45682d48257d5dbfff3030" title="Get vehicle body attitude euler angles (float)." alt="" coords="981,61,1144,91"/><area shape="rect" id="node11" href="group__math__orientation__representation.html#ga8b8bf1c74adb971f399f0dd4f84d9388" title="orientationCalcEulers_f" alt="" coords="1195,61,1363,91"/><area shape="rect" id="node15" href="group__math__orientation__representation.html#gae05f220bbbdaafcbe11bc2d1fb622f39" title="Get vehicle body attitude euler angles (int)." alt="" coords="749,21,912,51"/><area shape="rect" id="node17" href="group__math__orientation__representation.html#gaa07c68d2ea52188413c8c90ce48b73c8" title="orientationCalcEulers_i" alt="" coords="980,8,1145,37"/><area shape="rect" id="node21" href="group__state__position.html#gac60dff329c00697fc9fcc459406293c9" title="stateCalcPositionNed_i" alt="" coords="747,208,915,237"/><area shape="rect" id="node23" href="pprz__geodetic__int_8c.html#a9307e97057d51e781def8a03dea804f6" title="ned_of_ecef_point_i" alt="" coords="1205,221,1352,251"/><area shape="rect" id="node27" href="pprz__geodetic__float_8c.html#a3045a5a383aa4ebf5b8a9763773b9b6d" title="ned_of_ecef_point_f" alt="" coords="988,115,1137,144"/><area shape="rect" id="node31" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="1013,221,1112,251"/><area shape="rect" id="node33" href="pprz__geodetic__int_8c.html#a6618f634b774eaf7182dfec83d68f141" title="ned_of_lla_point_i" alt="" coords="996,168,1129,197"/><area shape="rect" id="node40" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="1013,325,1112,355"/><area shape="rect" id="node25" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1412,221,1559,251"/><area shape="rect" id="node29" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="1204,115,1353,144"/><area shape="rect" id="node35" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="1229,168,1328,197"/><area shape="rect" id="node37" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1433,168,1537,197"/><area shape="rect" id="node42" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1205,275,1352,304"/><area shape="rect" id="node44" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="1211,327,1347,374"/><area shape="rect" id="node49" href="group__state__velocity.html#gaed641b0c36e2ad2407a97be88ec2506c" title="Get ground speed in local NED coordinates (int)." alt="" coords="505,304,660,333"/><area shape="rect" id="node51" href="group__state__velocity.html#gaefc74e9c1a2033ec07959a2fde629bd5" title="stateCalcSpeedNed_i" alt="" coords="752,360,909,389"/><area shape="rect" id="node53" href="pprz__geodetic__int_8c.html#ab4eda479f4c01e96082d8a352f16cfea" title="ned_of_ecef_vect_i" alt="" coords="992,388,1133,417"/><area shape="rect" id="node55" href="pprz__geodetic__int_8c.html#af0ee62cd162ca87bc294be6cfd107986" title="enu_of_ecef_vect_i" alt="" coords="1208,397,1349,427"/><area shape="rect" id="node62" href="stabilization__attitude__ref__quat__float_8c.html#a4653dafe8c5e5680c05207027db750f0" title="stabilization_attitude\l_ref_enter" alt="" coords="505,5,660,51"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_a2903786227eb11507928f99870099225_icgraph.png" border="0" usemap="#guidance__h_8c_a2903786227eb11507928f99870099225_icgraph" alt=""/></div>
+<map name="guidance__h_8c_a2903786227eb11507928f99870099225_icgraph" id="guidance__h_8c_a2903786227eb11507928f99870099225_icgraph">
+<area shape="rect" id="node3" href="rotorcraft_2autopilot_8h.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64" title="autopilot_set_mode" alt="" coords="256,112,405,141"/><area shape="rect" id="node5" href="rotorcraft_2autopilot_8h.html#a7339f5741706cb9c2e2186b1174cc770" title="autopilot_on_rc_frame" alt="" coords="453,59,619,88"/><area shape="rect" id="node13" href="rotorcraft_2autopilot_8h.html#a1914661233fbbed6c2ee653b99757652" title="autopilot_periodic" alt="" coords="469,112,603,141"/><area shape="rect" id="node23" href="main_8h.html#a6266a73fe8c0512f1de72cea96e5110b" title="failsafe_check" alt="" coords="481,165,591,195"/><area shape="rect" id="node7" href="main_8h.html#a542234de10fcdadb4184efcd9c7d0d04" title="main_event" alt="" coords="680,5,776,35"/><area shape="rect" id="node11" href="lisa__stm__passthrough__main_8c.html#a05af0e883be22f206a58099661bcad06" title="on_rc_message" alt="" coords="667,59,789,88"/><area shape="rect" id="node9" href="firmwares_2rotorcraft_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="892,5,945,35"/><area shape="rect" id="node15" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="673,112,783,141"/><area shape="rect" id="node17" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="837,165,1000,195"/><area shape="rect" id="node21" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="892,112,945,141"/><area shape="rect" id="node19" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1049,165,1103,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acfce6969bcd9f8b676f79baf04ef4c00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void guidance_h_nav_enter </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00339">339</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>References <a class="el" href="guidance__h_8c_source.html#l00048">guidance_h_pos_err_sum</a>, <a class="el" href="guidance__h_8c_source.html#l00041">guidance_h_pos_sp</a>, <a class="el" href="guidance__h_8c_source.html#l00086">GuidanceHSetRef</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00181">INT32_VECT2_NED_OF_ENU</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00210">INT_VECT2_ZERO</a>, <a class="el" href="navigation_8c_source.html#l00059">nav_heading</a>, <a class="el" href="navigation_8c_source.html#l00042">navigation_carrot</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00130">Int32Eulers::psi</a>, <a class="el" href="stabilization__attitude__ref__float_8h_source.html#l00042">reset_psi_ref_from_body()</a>, <a class="el" href="state_8h_source.html#l01012">stateGetNedToBodyEulers_i()</a>, <a class="el" href="state_8h_source.html#l00630">stateGetPositionNed_i()</a>, <a class="el" href="state_8h_source.html#l00798">stateGetSpeedNed_i()</a>, and <a class="el" href="pprz__algebra_8h_source.html#l00043">VECT2_COPY</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00109">guidance_h_mode_changed()</a>, and <a class="el" href="guidance__h_8c_source.html#l00178">guidance_h_run()</a>.</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_acfce6969bcd9f8b676f79baf04ef4c00_cgraph.png" border="0" usemap="#guidance__h_8c_acfce6969bcd9f8b676f79baf04ef4c00_cgraph" alt=""/></div>
+<map name="guidance__h_8c_acfce6969bcd9f8b676f79baf04ef4c00_cgraph" id="guidance__h_8c_acfce6969bcd9f8b676f79baf04ef4c00_cgraph">
+<area shape="rect" id="node3" href="stabilization__attitude__ref__float_8h.html#a60f842edfa8dd98a227f18def04a0b55" title="reset_psi_ref_from_body" alt="" coords="232,61,411,91"/><area shape="rect" id="node11" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int)." alt="" coords="223,141,420,171"/><area shape="rect" id="node17" href="group__state__position.html#gaf9a3b3ed4f6a011ae65d49d78bf4aa25" title="Get position in local NED coordinates (int)." alt="" coords="240,208,403,237"/><area shape="rect" id="node44" href="group__state__velocity.html#gaed641b0c36e2ad2407a97be88ec2506c" title="Get ground speed in local NED coordinates (int)." alt="" coords="244,320,399,349"/><area shape="rect" id="node5" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float)." alt="" coords="471,9,668,39"/><area shape="rect" id="node7" href="group__math__orientation__representation.html#gaaae3838d0b45682d48257d5dbfff3030" title="Get vehicle body attitude euler angles (float)." alt="" coords="720,5,883,35"/><area shape="rect" id="node9" href="group__math__orientation__representation.html#ga8b8bf1c74adb971f399f0dd4f84d9388" title="orientationCalcEulers_f" alt="" coords="933,5,1101,35"/><area shape="rect" id="node13" href="group__math__orientation__representation.html#gae05f220bbbdaafcbe11bc2d1fb622f39" title="Get vehicle body attitude euler angles (int)." alt="" coords="488,63,651,92"/><area shape="rect" id="node15" href="group__math__orientation__representation.html#gaa07c68d2ea52188413c8c90ce48b73c8" title="orientationCalcEulers_i" alt="" coords="719,59,884,88"/><area shape="rect" id="node19" href="group__state__position.html#gac60dff329c00697fc9fcc459406293c9" title="stateCalcPositionNed_i" alt="" coords="485,215,653,244"/><area shape="rect" id="node21" href="pprz__geodetic__int_8c.html#a9307e97057d51e781def8a03dea804f6" title="ned_of_ecef_point_i" alt="" coords="944,165,1091,195"/><area shape="rect" id="node25" href="pprz__geodetic__float_8c.html#a3045a5a383aa4ebf5b8a9763773b9b6d" title="ned_of_ecef_point_f" alt="" coords="727,327,876,356"/><area shape="rect" id="node29" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="752,112,851,141"/><area shape="rect" id="node31" href="pprz__geodetic__int_8c.html#a6618f634b774eaf7182dfec83d68f141" title="ned_of_lla_point_i" alt="" coords="735,165,868,195"/><area shape="rect" id="node38" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="752,269,851,299"/><area shape="rect" id="node23" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1151,165,1297,195"/><area shape="rect" id="node27" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="943,341,1092,371"/><area shape="rect" id="node33" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="968,112,1067,141"/><area shape="rect" id="node35" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1172,112,1276,141"/><area shape="rect" id="node40" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="944,288,1091,317"/><area shape="rect" id="node42" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="949,218,1085,265"/><area shape="rect" id="node46" href="group__state__velocity.html#gaefc74e9c1a2033ec07959a2fde629bd5" title="stateCalcSpeedNed_i" alt="" coords="491,360,648,389"/><area shape="rect" id="node48" href="pprz__geodetic__int_8c.html#ab4eda479f4c01e96082d8a352f16cfea" title="ned_of_ecef_vect_i" alt="" coords="731,389,872,419"/><area shape="rect" id="node50" href="pprz__geodetic__int_8c.html#af0ee62cd162ca87bc294be6cfd107986" title="enu_of_ecef_vect_i" alt="" coords="947,395,1088,424"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_acfce6969bcd9f8b676f79baf04ef4c00_icgraph.png" border="0" usemap="#guidance__h_8c_acfce6969bcd9f8b676f79baf04ef4c00_icgraph" alt=""/></div>
+<map name="guidance__h_8c_acfce6969bcd9f8b676f79baf04ef4c00_icgraph" id="guidance__h_8c_acfce6969bcd9f8b676f79baf04ef4c00_icgraph">
+<area shape="rect" id="node3" href="guidance__h_8h.html#a2903786227eb11507928f99870099225" title="guidance_h_mode_changed" alt="" coords="223,112,423,141"/><area shape="rect" id="node28" href="guidance__h_8h.html#ac4cf6da90a4278b4d0b2e4f227b33f2c" title="guidance_h_run" alt="" coords="485,164,608,193"/><area shape="rect" id="node5" href="rotorcraft_2autopilot_8h.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64" title="autopilot_set_mode" alt="" coords="472,111,621,140"/><area shape="rect" id="node7" href="rotorcraft_2autopilot_8h.html#a7339f5741706cb9c2e2186b1174cc770" title="autopilot_on_rc_frame" alt="" coords="669,57,835,87"/><area shape="rect" id="node15" href="rotorcraft_2autopilot_8h.html#a1914661233fbbed6c2ee653b99757652" title="autopilot_periodic" alt="" coords="685,164,819,193"/><area shape="rect" id="node25" href="main_8h.html#a6266a73fe8c0512f1de72cea96e5110b" title="failsafe_check" alt="" coords="697,111,807,140"/><area shape="rect" id="node9" href="main_8h.html#a542234de10fcdadb4184efcd9c7d0d04" title="main_event" alt="" coords="896,5,992,35"/><area shape="rect" id="node13" href="lisa__stm__passthrough__main_8c.html#a05af0e883be22f206a58099661bcad06" title="on_rc_message" alt="" coords="883,59,1005,88"/><area shape="rect" id="node11" href="firmwares_2rotorcraft_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1108,5,1161,35"/><area shape="rect" id="node17" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="889,164,999,193"/><area shape="rect" id="node19" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="1053,111,1216,140"/><area shape="rect" id="node23" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1108,164,1161,193"/><area shape="rect" id="node21" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1265,111,1319,140"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7db3290fc5f62abc15a1bb1638b4922f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void guidance_h_read_rc </td>
+          <td>(</td>
+          <td class="paramtype">bool_t&#160;</td>
+          <td class="paramname"><em>in_flight</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00143">143</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>References <a class="el" href="guidance__h_8c_source.html#l00039">guidance_h_mode</a>, <a class="el" href="guidance__h_8h_source.html#l00037">GUIDANCE_H_MODE_ATTITUDE</a>, <a class="el" href="guidance__h_8h_source.html#l00038">GUIDANCE_H_MODE_HOVER</a>, <a class="el" href="guidance__h_8h_source.html#l00039">GUIDANCE_H_MODE_NAV</a>, <a class="el" href="guidance__h_8h_source.html#l00036">GUIDANCE_H_MODE_RATE</a>, <a class="el" href="guidance__h_8h_source.html#l00040">GUIDANCE_H_MODE_RC_DIRECT</a>, <a class="el" href="guidance__h_8c_source.html#l00051">guidance_h_rc_sp</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00815">INT_EULERS_ZERO</a>, <a class="el" href="radio__control_8c_source.html#l00025">radio_control</a>, <a class="el" href="radio__control_8h_source.html#l00045">RC_OK</a>, <a class="el" href="stabilization__attitude__euler__float_8c_source.html#l00067">stabilization_attitude_read_rc()</a>, <a class="el" href="stabilization__attitude__rc__setpoint_8h_source.html#l00072">stabilization_attitude_read_rc_setpoint_eulers()</a>, <a class="el" href="stabilization__none_8c_source.html#l00041">stabilization_none_read_rc()</a>, <a class="el" href="stabilization__rate_8c_source.html#l00146">stabilization_rate_read_rc()</a>, and <a class="el" href="radio__control_8h_source.html#l00050">RadioControl::status</a>.</p>
+
+<p>Referenced by <a class="el" href="rotorcraft_2autopilot_8c_source.html#l00250">autopilot_on_rc_frame()</a>.</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_a7db3290fc5f62abc15a1bb1638b4922f_cgraph.png" border="0" usemap="#guidance__h_8c_a7db3290fc5f62abc15a1bb1638b4922f_cgraph" alt=""/></div>
+<map name="guidance__h_8c_a7db3290fc5f62abc15a1bb1638b4922f_cgraph" id="guidance__h_8c_a7db3290fc5f62abc15a1bb1638b4922f_cgraph">
+<area shape="rect" id="node3" href="rotorcraft_2stabilization_2stabilization__attitude_8h.html#a147b1b8bfdde52f82d0829ce748bf1e9" title="stabilization_attitude\l_read_rc" alt="" coords="205,82,360,129"/><area shape="rect" id="node5" href="stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185" title="stabilization_attitude\l_read_rc_setpoint_eulers" alt="" coords="647,5,828,51"/><area shape="rect" id="node31" href="stabilization__none_8c.html#a39657270c342b5a7f44894f10b5ad946" title="stabilization_none\l_read_rc" alt="" coords="215,151,351,198"/><area shape="rect" id="node33" href="stabilization__rate_8c.html#a007715357d8063fa371fb07433a1e3d7" title="stabilization_rate\l_read_rc" alt="" coords="217,221,348,267"/><area shape="rect" id="node13" href="stabilization__attitude__rc__setpoint_8h.html#aef80d4c7fedea68a6c45f7d181deda09" title="stabilization_attitude\l_read_rc_setpoint_eulers_f" alt="" coords="641,282,833,329"/><area shape="rect" id="node21" href="stabilization__attitude__rc__setpoint_8h.html#a3d647a4366d4be6b8ffd5f6d4653058c" title="stabilization_attitude\l_read_rc_setpoint_quat_f" alt="" coords="409,157,591,203"/><area shape="rect" id="node7" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int)." alt="" coords="884,13,1081,43"/><area shape="rect" id="node9" href="group__math__orientation__representation.html#gae05f220bbbdaafcbe11bc2d1fb622f39" title="Get vehicle body attitude euler angles (int)." alt="" coords="1132,13,1295,43"/><area shape="rect" id="node11" href="group__math__orientation__representation.html#gaa07c68d2ea52188413c8c90ce48b73c8" title="orientationCalcEulers_i" alt="" coords="1345,13,1511,43"/><area shape="rect" id="node15" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float)." alt="" coords="884,260,1081,289"/><area shape="rect" id="node17" href="group__math__orientation__representation.html#gaaae3838d0b45682d48257d5dbfff3030" title="Get vehicle body attitude euler angles (float)." alt="" coords="1132,260,1295,289"/><area shape="rect" id="node19" href="group__math__orientation__representation.html#ga8b8bf1c74adb971f399f0dd4f84d9388" title="orientationCalcEulers_f" alt="" coords="1344,260,1512,289"/><area shape="rect" id="node25" href="stabilization__attitude__rc__setpoint_8h.html#a24bfef588516ec3298735cd90a41ebd0" title="Read roll/pitch command from RC as quaternion." alt="" coords="647,75,828,139"/><area shape="rect" id="node27" href="stabilization__attitude__rc__setpoint_8h.html#a1cfb0dd0e377d4eb4090bab758c6890d" title="Read roll/pitch command from RC as quaternion." alt="" coords="644,162,831,209"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_a7db3290fc5f62abc15a1bb1638b4922f_icgraph.png" border="0" usemap="#guidance__h_8c_a7db3290fc5f62abc15a1bb1638b4922f_icgraph" alt=""/></div>
+<map name="guidance__h_8c_a7db3290fc5f62abc15a1bb1638b4922f_icgraph" id="guidance__h_8c_a7db3290fc5f62abc15a1bb1638b4922f_icgraph">
+<area shape="rect" id="node3" href="rotorcraft_2autopilot_8h.html#a7339f5741706cb9c2e2186b1174cc770" title="autopilot_on_rc_frame" alt="" coords="205,32,371,61"/><area shape="rect" id="node5" href="main_8h.html#a542234de10fcdadb4184efcd9c7d0d04" title="main_event" alt="" coords="432,5,528,35"/><area shape="rect" id="node9" href="lisa__stm__passthrough__main_8c.html#a05af0e883be22f206a58099661bcad06" title="on_rc_message" alt="" coords="419,59,541,88"/><area shape="rect" id="node7" href="firmwares_2rotorcraft_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="591,5,644,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac4cf6da90a4278b4d0b2e4f227b33f2c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void guidance_h_run </td>
+          <td>(</td>
+          <td class="paramtype">bool_t&#160;</td>
+          <td class="paramname"><em>in_flight</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00178">178</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="guidance__h_8c_source.html#l00054">guidance_h_command_body</a>, <a class="el" href="guidance__h_8c_source.html#l00039">guidance_h_mode</a>, <a class="el" href="guidance__h_8h_source.html#l00037">GUIDANCE_H_MODE_ATTITUDE</a>, <a class="el" href="guidance__h_8h_source.html#l00038">GUIDANCE_H_MODE_HOVER</a>, <a class="el" href="guidance__h_8h_source.html#l00039">GUIDANCE_H_MODE_NAV</a>, <a class="el" href="guidance__h_8h_source.html#l00036">GUIDANCE_H_MODE_RATE</a>, <a class="el" href="guidance__h_8h_source.html#l00040">GUIDANCE_H_MODE_RC_DIRECT</a>, <a class="el" href="guidance__h_8c_source.html#l00339">guidance_h_nav_enter()</a>, <a class="el" href="guidance__h_8c_source.html#l00041">guidance_h_pos_sp</a>, <a class="el" href="guidance__h_8c_source.html#l00051">guidance_h_rc_sp</a>, <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>, <a class="el" href="guidance__h_8c_source.html#l00240">guidance_h_update_reference()</a>, <a class="el" href="navigation_8c_source.html#l00050">horizontal_mode</a>, <a class="el" href="navigation_8h_source.html#l00056">HORIZONTAL_MODE_ATTITUDE</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00690">INT32_QUAT_OF_EULERS</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00554">INT32_QUAT_WRAP_SHORTEST</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00181">INT32_VECT2_NED_OF_ENU</a>, <a class="el" href="navigation_8c_source.html#l00059">nav_heading</a>, <a class="el" href="navigation_8c_source.html#l00058">nav_pitch</a>, <a class="el" href="navigation_8c_source.html#l00058">nav_roll</a>, <a class="el" href="navigation_8c_source.html#l00042">navigation_carrot</a>, <a class="el" href="pprz__algebra__float_8h_source.html#l00079">FloatEulers::phi</a>, <a class="el" href="pprz__algebra__float_8h_source.html#l00081">FloatEulers::psi</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00130">Int32Eulers::psi</a>, <a class="el" href="stabilization__attitude__ref__euler__float_8c_source.html#l00004">stab_att_sp_euler</a>, <a class="el" href="stabilization__attitude__ref__quat__float_8c_source.html#l00041">stab_att_sp_quat</a>, <a class="el" href="stabilization__attitude__euler__float_8c_source.html#l00084">stabilization_attitude_run()</a>, <a class="el" href="stabilization__none_8c_source.html#l00052">stabilization_none_run()</a>, <a class="el" href="stabilization__rate_8c_source.html#l00172">stabilization_rate_run()</a>, <a class="el" href="state_8h_source.html#l01012">stateGetNedToBodyEulers_i()</a>, <a class="el" href="pprz__algebra__float_8h_source.html#l00080">FloatEulers::theta</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+
+<p>Referenced by <a class="el" href="rotorcraft_2autopilot_8c_source.html#l00095">autopilot_periodic()</a>.</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_ac4cf6da90a4278b4d0b2e4f227b33f2c_cgraph.png" border="0" usemap="#guidance__h_8c_ac4cf6da90a4278b4d0b2e4f227b33f2c_cgraph" alt=""/></div>
+<map name="guidance__h_8c_ac4cf6da90a4278b4d0b2e4f227b33f2c_cgraph" id="guidance__h_8c_ac4cf6da90a4278b4d0b2e4f227b33f2c_cgraph">
+<area shape="rect" id="node3" href="guidance__h_8c.html#acfce6969bcd9f8b676f79baf04ef4c00" title="guidance_h_nav_enter" alt="" coords="201,263,367,292"/><area shape="rect" id="node13" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int)." alt="" coords="441,156,639,185"/><area shape="rect" id="node54" href="guidance__h_8c.html#a40a1b0fc372c07e0fc9e9a680578fe9b" title="guidance_h_traj_run" alt="" coords="209,209,359,239"/><area shape="rect" id="node59" href="guidance__h_8c.html#abe5eaebe6416b5b160ab966a4b5bbd17" title="guidance_h_update_reference" alt="" coords="177,596,391,625"/><area shape="rect" id="node61" href="rotorcraft_2stabilization_2stabilization__attitude_8h.html#afb59ecc3049842f940a46a81698b79e9" title="stabilization_attitude_run" alt="" coords="193,489,375,519"/><area shape="rect" id="node91" href="stabilization__none_8c.html#ad386c5e1b5d62194fa2eb827d8c6e2b2" title="stabilization_none_run" alt="" coords="201,649,367,679"/><area shape="rect" id="node93" href="stabilization__rate_8c.html#abd94877f79c42a6ee99622c7fc45a623" title="stabilization_rate_run" alt="" coords="205,543,363,572"/><area shape="rect" id="node5" href="stabilization__attitude__ref__float_8h.html#a60f842edfa8dd98a227f18def04a0b55" title="reset_psi_ref_from_body" alt="" coords="451,316,629,345"/><area shape="rect" id="node19" href="group__state__position.html#gaf9a3b3ed4f6a011ae65d49d78bf4aa25" title="Get position in local NED coordinates (int)." alt="" coords="459,209,621,239"/><area shape="rect" id="node46" href="group__state__velocity.html#gaed641b0c36e2ad2407a97be88ec2506c" title="Get ground speed in local NED coordinates (int)." alt="" coords="463,263,617,292"/><area shape="rect" id="node7" href="group__state__attitude.html#ga9a5e6bac6e7d78e1b33430e73344615b" title="Get vehicle body attitude euler angles (float)." alt="" coords="689,368,887,397"/><area shape="rect" id="node9" href="group__math__orientation__representation.html#gaaae3838d0b45682d48257d5dbfff3030" title="Get vehicle body attitude euler angles (float)." alt="" coords="939,388,1101,417"/><area shape="rect" id="node11" href="group__math__orientation__representation.html#ga8b8bf1c74adb971f399f0dd4f84d9388" title="orientationCalcEulers_f" alt="" coords="1152,392,1320,421"/><area shape="rect" id="node15" href="group__math__orientation__representation.html#gae05f220bbbdaafcbe11bc2d1fb622f39" title="Get vehicle body attitude euler angles (int)." alt="" coords="707,71,869,100"/><area shape="rect" id="node17" href="group__math__orientation__representation.html#gaa07c68d2ea52188413c8c90ce48b73c8" title="orientationCalcEulers_i" alt="" coords="937,5,1103,35"/><area shape="rect" id="node21" href="group__state__position.html#gac60dff329c00697fc9fcc459406293c9" title="stateCalcPositionNed_i" alt="" coords="704,189,872,219"/><area shape="rect" id="node23" href="pprz__geodetic__int_8c.html#a9307e97057d51e781def8a03dea804f6" title="ned_of_ecef_point_i" alt="" coords="1163,56,1309,85"/><area shape="rect" id="node27" href="pprz__geodetic__float_8c.html#a3045a5a383aa4ebf5b8a9763773b9b6d" title="ned_of_ecef_point_f" alt="" coords="945,163,1095,192"/><area shape="rect" id="node31" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="971,216,1069,245"/><area shape="rect" id="node33" href="pprz__geodetic__int_8c.html#a6618f634b774eaf7182dfec83d68f141" title="ned_of_lla_point_i" alt="" coords="953,109,1087,139"/><area shape="rect" id="node40" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="971,269,1069,299"/><area shape="rect" id="node25" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1369,56,1516,85"/><area shape="rect" id="node29" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="1161,163,1311,192"/><area shape="rect" id="node35" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="1187,109,1285,139"/><area shape="rect" id="node37" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1391,109,1495,139"/><area shape="rect" id="node42" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1163,216,1309,245"/><area shape="rect" id="node44" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="1168,269,1304,315"/><area shape="rect" id="node48" href="group__state__velocity.html#gaefc74e9c1a2033ec07959a2fde629bd5" title="stateCalcSpeedNed_i" alt="" coords="709,289,867,319"/><area shape="rect" id="node50" href="pprz__geodetic__int_8c.html#ab4eda479f4c01e96082d8a352f16cfea" title="ned_of_ecef_vect_i" alt="" coords="949,327,1091,356"/><area shape="rect" id="node52" href="pprz__geodetic__int_8c.html#af0ee62cd162ca87bc294be6cfd107986" title="enu_of_ecef_vect_i" alt="" coords="1165,339,1307,368"/><area shape="rect" id="node63" href="stabilization__attitude__quat__float_8c.html#abcf3f74ddd37dcf51e0df255d22c4a23" title="attitude_run_fb" alt="" coords="481,596,599,625"/><area shape="rect" id="node65" href="stabilization__attitude__quat__float_8c.html#a112d2235c054e7eadd1659fa0a78e4f4" title="attitude_run_ff" alt="" coords="483,703,597,732"/><area shape="rect" id="node67" href="rotorcraft_2stabilization_2stabilization__attitude_8h.html#af61a6690d534aff69bd6e90206a3a41b" title="stabilization_attitude\l_ref_update" alt="" coords="463,419,617,466"/><area shape="rect" id="node69" href="group__state__rate.html#ga086f10e8804f8e95ace9a2b1cd26a66c" title="Get vehicle body angular rate (float)." alt="" coords="461,489,619,519"/><area shape="rect" id="node73" href="group__state__rate.html#ga3fc058302e6f40bf0b8797ca9a7ed60f" title="Get vehicle body angular rate (int)." alt="" coords="463,756,617,785"/><area shape="rect" id="node79" href="group__state__attitude.html#gae03bd8f94b7150506835b77060b73311" title="Get vehicle body attitude quaternion (float)." alt="" coords="445,543,635,572"/><area shape="rect" id="node85" href="group__state__attitude.html#ga28e5de0a4822cabcfe8350e2343111ce" title="Get vehicle body attitude quaternion (int)." alt="" coords="445,649,635,679"/><area shape="rect" id="node71" href="group__state__rate.html#ga52294469408c263566a43c4c903cb3ca" title="stateCalcBodyRates_f" alt="" coords="708,489,868,519"/><area shape="rect" id="node75" href="group__state__rate.html#gaa244b14b2780206f600f9ded7d7cf180" title="stateCalcBodyRates_i" alt="" coords="708,756,868,785"/><area shape="rect" id="node81" href="group__math__orientation__representation.html#ga4bc38966bac43e1f55b2f042d8f2e411" title="Get vehicle body attitude quaternion (float)." alt="" coords="711,543,865,572"/><area shape="rect" id="node83" href="group__math__orientation__representation.html#ga33edf7d5bd278bed617fb5aa88559dc2" title="orientationCalcQuat_f" alt="" coords="940,543,1100,572"/><area shape="rect" id="node87" href="group__math__orientation__representation.html#ga86b153b2106a638cef8e314125c47306" title="Get vehicle body attitude quaternion (int)." alt="" coords="711,649,865,679"/><area shape="rect" id="node89" href="group__math__orientation__representation.html#gaa411e2093feec3fef9e18c4a52b74c38" title="orientationCalcQuat_i" alt="" coords="941,649,1099,679"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_ac4cf6da90a4278b4d0b2e4f227b33f2c_icgraph.png" border="0" usemap="#guidance__h_8c_ac4cf6da90a4278b4d0b2e4f227b33f2c_icgraph" alt=""/></div>
+<map name="guidance__h_8c_ac4cf6da90a4278b4d0b2e4f227b33f2c_icgraph" id="guidance__h_8c_ac4cf6da90a4278b4d0b2e4f227b33f2c_icgraph">
+<area shape="rect" id="node3" href="rotorcraft_2autopilot_8h.html#a1914661233fbbed6c2ee653b99757652" title="autopilot_periodic" alt="" coords="177,32,311,61"/><area shape="rect" id="node5" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="361,32,471,61"/><area shape="rect" id="node7" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="520,5,683,35"/><area shape="rect" id="node11" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="575,59,628,88"/><area shape="rect" id="node9" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="732,5,785,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a40a1b0fc372c07e0fc9e9a680578fe9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void guidance_h_traj_run </td>
+          <td>(</td>
+          <td class="paramtype">bool_t&#160;</td>
+          <td class="paramname"><em>in_flight</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00266">266</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>References <a class="el" href="pprz__algebra_8h_source.html#l00234">EULERS_COPY</a>, <a class="el" href="guidance__h_8c_source.html#l00261">GH_GAIN_SCALE</a>, <a class="el" href="guidance__h_8c_source.html#l00044">guidance_h_accel_ref</a>, <a class="el" href="guidance__h_8c_source.html#l00059">guidance_h_again</a>, <a class="el" href="guidance__h_8c_source.html#l00054">guidance_h_command_body</a>, <a class="el" href="guidance__h_8c_source.html#l00052">guidance_h_command_earth</a>, <a class="el" href="guidance__h_8c_source.html#l00057">guidance_h_dgain</a>, <a class="el" href="guidance__h_8c_source.html#l00058">guidance_h_igain</a>, <a class="el" href="guidance__h_8c_source.html#l00056">guidance_h_pgain</a>, <a class="el" href="guidance__h_8c_source.html#l00046">guidance_h_pos_err</a>, <a class="el" href="guidance__h_8c_source.html#l00048">guidance_h_pos_err_sum</a>, <a class="el" href="guidance__h_8c_source.html#l00042">guidance_h_pos_ref</a>, <a class="el" href="guidance__h_8c_source.html#l00051">guidance_h_rc_sp</a>, <a class="el" href="guidance__h_8c_source.html#l00047">guidance_h_speed_err</a>, <a class="el" href="guidance__h_8c_source.html#l00043">guidance_h_speed_ref</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00051">INT32_POS_FRAC</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00690">INT32_QUAT_OF_EULERS</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00554">INT32_QUAT_WRAP_SHORTEST</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00056">INT32_SPEED_FRAC</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00135">INT32_TRIG_FRAC</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00210">INT_VECT2_ZERO</a>, <a class="el" href="guidance__h_8c_source.html#l00255">MAX_POS_ERR</a>, <a class="el" href="guidance__h_8c_source.html#l00257">MAX_POS_ERR_SUM</a>, <a class="el" href="guidance__h_8c_source.html#l00256">MAX_SPEED_ERR</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00128">Int32Eulers::phi</a>, <a class="el" href="pprz__trig__int_8h_source.html#l00050">PPRZ_ITRIG_COS</a>, <a class="el" href="pprz__trig__int_8h_source.html#l00040">PPRZ_ITRIG_SIN</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00130">Int32Eulers::psi</a>, <a class="el" href="stabilization__attitude__ref__euler__float_8c_source.html#l00004">stab_att_sp_euler</a>, <a class="el" href="stabilization__attitude__ref__quat__float_8c_source.html#l00041">stab_att_sp_quat</a>, <a class="el" href="state_8h_source.html#l01012">stateGetNedToBodyEulers_i()</a>, <a class="el" href="state_8h_source.html#l00630">stateGetPositionNed_i()</a>, <a class="el" href="state_8h_source.html#l00798">stateGetSpeedNed_i()</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00129">Int32Eulers::theta</a>, <a class="el" href="guidance__h_8c_source.html#l00264">TRAJ_MAX_BANK</a>, <a class="el" href="pprz__algebra_8h_source.html#l00049">VECT2_ADD</a>, <a class="el" href="pprz__algebra_8h_source.html#l00067">VECT2_DIFF</a>, <a class="el" href="pprz__algebra_8h_source.html#l00085">VECT2_STRIM</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00065">Int32Vect2::x</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00066">Int32Vect2::y</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00178">guidance_h_run()</a>.</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_a40a1b0fc372c07e0fc9e9a680578fe9b_cgraph.png" border="0" usemap="#guidance__h_8c_a40a1b0fc372c07e0fc9e9a680578fe9b_cgraph" alt=""/></div>
+<map name="guidance__h_8c_a40a1b0fc372c07e0fc9e9a680578fe9b_cgraph" id="guidance__h_8c_a40a1b0fc372c07e0fc9e9a680578fe9b_cgraph">
+<area shape="rect" id="node3" href="group__state__attitude.html#ga5ae8778366c1fad669189cb2def40792" title="Get vehicle body attitude euler angles (int)." alt="" coords="207,100,404,129"/><area shape="rect" id="node9" href="group__state__position.html#gaf9a3b3ed4f6a011ae65d49d78bf4aa25" title="Get position in local NED coordinates (int)." alt="" coords="224,180,387,209"/><area shape="rect" id="node36" href="group__state__velocity.html#gaed641b0c36e2ad2407a97be88ec2506c" title="Get ground speed in local NED coordinates (int)." alt="" coords="228,285,383,315"/><area shape="rect" id="node5" href="group__math__orientation__representation.html#gae05f220bbbdaafcbe11bc2d1fb622f39" title="Get vehicle body attitude euler angles (int)." alt="" coords="456,48,619,77"/><area shape="rect" id="node7" href="group__math__orientation__representation.html#gaa07c68d2ea52188413c8c90ce48b73c8" title="orientationCalcEulers_i" alt="" coords="671,21,836,51"/><area shape="rect" id="node11" href="group__state__position.html#gac60dff329c00697fc9fcc459406293c9" title="stateCalcPositionNed_i" alt="" coords="453,180,621,209"/><area shape="rect" id="node13" href="pprz__geodetic__int_8c.html#a9307e97057d51e781def8a03dea804f6" title="ned_of_ecef_point_i" alt="" coords="887,181,1033,211"/><area shape="rect" id="node17" href="pprz__geodetic__float_8c.html#a3045a5a383aa4ebf5b8a9763773b9b6d" title="ned_of_ecef_point_f" alt="" coords="679,232,828,261"/><area shape="rect" id="node21" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="704,285,803,315"/><area shape="rect" id="node23" href="pprz__geodetic__int_8c.html#a6618f634b774eaf7182dfec83d68f141" title="ned_of_lla_point_i" alt="" coords="687,128,820,157"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="704,75,803,104"/><area shape="rect" id="node15" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1084,181,1231,211"/><area shape="rect" id="node19" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="885,235,1035,264"/><area shape="rect" id="node25" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="911,128,1009,157"/><area shape="rect" id="node27" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1105,128,1209,157"/><area shape="rect" id="node32" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="887,75,1033,104"/><area shape="rect" id="node34" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="892,5,1028,51"/><area shape="rect" id="node38" href="group__state__velocity.html#gaefc74e9c1a2033ec07959a2fde629bd5" title="stateCalcSpeedNed_i" alt="" coords="459,312,616,341"/><area shape="rect" id="node40" href="pprz__geodetic__int_8c.html#ab4eda479f4c01e96082d8a352f16cfea" title="ned_of_ecef_vect_i" alt="" coords="683,339,824,368"/><area shape="rect" id="node42" href="pprz__geodetic__int_8c.html#af0ee62cd162ca87bc294be6cfd107986" title="enu_of_ecef_vect_i" alt="" coords="889,339,1031,368"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_a40a1b0fc372c07e0fc9e9a680578fe9b_icgraph.png" border="0" usemap="#guidance__h_8c_a40a1b0fc372c07e0fc9e9a680578fe9b_icgraph" alt=""/></div>
+<map name="guidance__h_8c_a40a1b0fc372c07e0fc9e9a680578fe9b_icgraph" id="guidance__h_8c_a40a1b0fc372c07e0fc9e9a680578fe9b_icgraph">
+<area shape="rect" id="node3" href="guidance__h_8h.html#ac4cf6da90a4278b4d0b2e4f227b33f2c" title="guidance_h_run" alt="" coords="205,32,328,61"/><area shape="rect" id="node5" href="rotorcraft_2autopilot_8h.html#a1914661233fbbed6c2ee653b99757652" title="autopilot_periodic" alt="" coords="377,32,511,61"/><area shape="rect" id="node7" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="561,32,671,61"/><area shape="rect" id="node9" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="720,5,883,35"/><area shape="rect" id="node13" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="775,59,828,88"/><area shape="rect" id="node11" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="932,5,985,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abe5eaebe6416b5b160ab966a4b5bbd17"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void guidance_h_update_reference </td>
+          <td>(</td>
+          <td class="paramtype">bool_t&#160;</td>
+          <td class="paramname"><em>use_ref</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00240">240</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>References <a class="el" href="guidance__h__ref_8h.html#a1e875d1717b1a306b6b4b27c32e88501">b2_gh_accel_ref</a>, <a class="el" href="guidance__h__ref_8h_source.html#l00043">B2_GH_ACCEL_REF_FRAC</a>, <a class="el" href="guidance__h__ref_8h.html#a06af61d94a9397fc432612a84ffd108a">b2_gh_pos_ref</a>, <a class="el" href="guidance__h__ref_8h_source.html#l00053">B2_GH_POS_REF_FRAC</a>, <a class="el" href="guidance__h__ref_8h.html#a022160d39dcebb9eeafc89f4df5768a8">b2_gh_speed_ref</a>, <a class="el" href="guidance__h__ref_8h_source.html#l00048">B2_GH_SPEED_REF_FRAC</a>, <a class="el" href="guidance__h_8c_source.html#l00044">guidance_h_accel_ref</a>, <a class="el" href="guidance__h_8c_source.html#l00042">guidance_h_pos_ref</a>, <a class="el" href="guidance__h_8c_source.html#l00041">guidance_h_pos_sp</a>, <a class="el" href="guidance__h_8c_source.html#l00043">guidance_h_speed_ref</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00061">INT32_ACCEL_FRAC</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00051">INT32_POS_FRAC</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00056">INT32_SPEED_FRAC</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00224">INT32_VECT2_LSHIFT</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00219">INT32_VECT2_RSHIFT</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00210">INT_VECT2_ZERO</a>, and <a class="el" href="pprz__algebra_8h_source.html#l00043">VECT2_COPY</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00178">guidance_h_run()</a>.</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="guidance__h_8c_abe5eaebe6416b5b160ab966a4b5bbd17_icgraph.png" border="0" usemap="#guidance__h_8c_abe5eaebe6416b5b160ab966a4b5bbd17_icgraph" alt=""/></div>
+<map name="guidance__h_8c_abe5eaebe6416b5b160ab966a4b5bbd17_icgraph" id="guidance__h_8c_abe5eaebe6416b5b160ab966a4b5bbd17_icgraph">
+<area shape="rect" id="node3" href="guidance__h_8h.html#ac4cf6da90a4278b4d0b2e4f227b33f2c" title="guidance_h_run" alt="" coords="269,32,392,61"/><area shape="rect" id="node5" href="rotorcraft_2autopilot_8h.html#a1914661233fbbed6c2ee653b99757652" title="autopilot_periodic" alt="" coords="441,32,575,61"/><area shape="rect" id="node7" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="625,32,735,61"/><area shape="rect" id="node9" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="784,5,947,35"/><area shape="rect" id="node13" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="839,59,892,88"/><area shape="rect" id="node11" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="996,5,1049,35"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <h2>Variable Documentation</h2>
+<a class="anchor" id="a3bc12d05515bf4df86b36fdeb2024d25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a> guidance_h_accel_ref</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00044">44</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>, and <a class="el" href="guidance__h_8c_source.html#l00240">guidance_h_update_reference()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af3f2ebfd0110c37dd1b7f55e5b12d4eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> guidance_h_again</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00059">59</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>, and <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeaa282c7aaf489235488c355f3464144"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Eulers.html">Int32Eulers</a> guidance_h_command_body</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>with <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a> </p>
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00054">54</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>, <a class="el" href="guidance__h_8c_source.html#l00178">guidance_h_run()</a>, and <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad788fb23a66bd2f875857f19a921caab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a> guidance_h_command_earth</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00052">52</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeaebd5d3b21312b12e26a2e066684812"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> guidance_h_dgain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00057">57</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>, and <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1420057a2381ce4ded91b76745b3f18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> guidance_h_igain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00058">58</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>, and <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a5d124d4767559d3332e9e3cbaa0e98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> guidance_h_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00039">39</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>, <a class="el" href="guidance__h_8c_source.html#l00109">guidance_h_mode_changed()</a>, <a class="el" href="guidance__h_8c_source.html#l00143">guidance_h_read_rc()</a>, and <a class="el" href="guidance__h_8c_source.html#l00178">guidance_h_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aecdc2a055cb680ad15b5891d90d6ca20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a> guidance_h_nav_err</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00049">49</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a515117efee08e8c0b81fa7381ac25981"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> guidance_h_pgain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00056">56</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>, and <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e1465db4a9d539e7c6cba31f5458c70"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a> guidance_h_pos_err</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00046">46</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a38c8f96006ee44bb6e6e7af963f3cee2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a> guidance_h_pos_err_sum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00048">48</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00328">guidance_h_hover_enter()</a>, <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>, <a class="el" href="guidance__h_8c_source.html#l00339">guidance_h_nav_enter()</a>, and <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3811b775f659bc08d3beb46accbf3533"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a> guidance_h_pos_ref</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00042">42</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>, and <a class="el" href="guidance__h_8c_source.html#l00240">guidance_h_update_reference()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ab5bfbde0d90688c7b32bdd7244be7a0b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -272,6 +923,72 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_again</
 
 <p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00041">41</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
 
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00328">guidance_h_hover_enter()</a>, <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>, <a class="el" href="guidance__h_8c_source.html#l00339">guidance_h_nav_enter()</a>, <a class="el" href="guidance__h_8c_source.html#l00178">guidance_h_run()</a>, and <a class="el" href="guidance__h_8c_source.html#l00240">guidance_h_update_reference()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48ab657ff45f2b091847a48360a96b52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Eulers.html">Int32Eulers</a> guidance_h_rc_sp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>with <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a> </p>
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00051">51</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00328">guidance_h_hover_enter()</a>, <a class="el" href="guidance__h_8c_source.html#l00094">guidance_h_init()</a>, <a class="el" href="guidance__h_8c_source.html#l00143">guidance_h_read_rc()</a>, <a class="el" href="guidance__h_8c_source.html#l00178">guidance_h_run()</a>, and <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a206725a549c15b4fefc505299fa3e08b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a> guidance_h_speed_err</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00047">47</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac6aeed1a6e68b3f3ec08aa90d36ae8f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a> guidance_h_speed_ref</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00043">43</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
+<p>Referenced by <a class="el" href="guidance__h_8c_source.html#l00266">guidance_h_traj_run()</a>, and <a class="el" href="guidance__h_8c_source.html#l00240">guidance_h_update_reference()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a549244970dd85bfdf7dcf3c8aefa3b56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structInt32Vect2.html">Int32Vect2</a> guidance_h_stick_earth_sp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="guidance__h_8c_source.html#l00053">53</a> of file <a class="el" href="guidance__h_8c_source.html">guidance_h.c</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -280,7 +997,7 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>guidance_h_again</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_e37d355c72eb7c8e5b43c34bdea5a24b.html">rotorcraft</a></li><li class="navelem"><a class="el" href="dir_3d64810a495a8e63c02e8d4ee1418813.html">guidance</a></li><li class="navelem"><a class="el" href="guidance__h_8c.html">guidance_h.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:05 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

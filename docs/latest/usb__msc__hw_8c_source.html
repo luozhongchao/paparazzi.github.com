@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="title">usb_msc_hw.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="usb__msc__hw_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  LPCUSB, an USB device driver for LPC microcontrollers</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">  Copyright (C) 2006 Bertrik Sikken (bertrik@sikken.nl)</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  adapted to pprz    Martin Mueller (martinmm@pfump.org)</span></div>
@@ -169,14 +169,14 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;std.h&quot;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &quot;LPC21xx.h&quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &quot;armVIC.h&quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LPC21xx_8h.html">LPC21xx.h</a>&quot;</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="armVIC_8h.html">armVIC.h</a>&quot;</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#include BOARD_CONFIG</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#include &quot;lpcusb/usbapi.h&quot;</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#include &quot;msc_bot.h&quot;</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#include &quot;blockdev.h&quot;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#include &quot;usb_msc_hw.h&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="usb__msc__hw_8h.html">usb_msc_hw.h</a>&quot;</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#ifdef USE_USB_SERIAL</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if PCLK &lt; 18000000</span></div>
@@ -184,25 +184,25 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define MAX_PACKET_SIZE 64</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="usb__msc__hw_8c.html#a879456c3b8e2853f7044d764e9c180d4">   78</a></span>&#160;<span class="preprocessor">#define MAX_PACKET_SIZE 64</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define LE_WORD(x)              ((x)&amp;0xFF),((x)&gt;&gt;8)</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="usb__msc__hw_8c.html#aa0d3914e9175b898fb53021bd11c5dc0">   80</a></span>&#160;<span class="preprocessor">#define LE_WORD(x)              ((x)&amp;0xFF),((x)&gt;&gt;8)</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">static</span> U8 abClassReqData[4];</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="usb__msc__hw_8c.html#a3dfb41defd83016d0c2e2fe79e305723">   82</a></span>&#160;<span class="keyword">static</span> U8 <a class="code" href="usb__msc__hw_8c.html#a3dfb41defd83016d0c2e2fe79e305723">abClassReqData</a>[4];</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> U8 abDescriptors[] = {</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="usb__msc__hw_8c.html#adb3374ec0c6213eb4dec52a2d49ed61c">   84</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> U8 <a class="code" href="usb__msc__hw_8c.html#adb3374ec0c6213eb4dec52a2d49ed61c">abDescriptors</a>[] = {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// device descriptor</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  0x12,</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  DESC_DEVICE,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  LE_WORD(0x0200),    <span class="comment">// bcdUSB</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="usb__msc__hw_8c.html#aa0d3914e9175b898fb53021bd11c5dc0">LE_WORD</a>(0x0200),    <span class="comment">// bcdUSB</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  0x00,         <span class="comment">// bDeviceClass</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  0x00,         <span class="comment">// bDeviceSubClass</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  0x00,         <span class="comment">// bDeviceProtocol</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  MAX_PACKET_SIZE0,   <span class="comment">// bMaxPacketSize</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  LE_WORD(0x7070),    <span class="comment">// idVendor</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  LE_WORD(0x1236),    <span class="comment">// idProduct</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  LE_WORD(0x0100),    <span class="comment">// bcdDevice</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="usb__msc__hw_8c.html#aa0d3914e9175b898fb53021bd11c5dc0">LE_WORD</a>(0x7070),    <span class="comment">// idVendor</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="usb__msc__hw_8c.html#aa0d3914e9175b898fb53021bd11c5dc0">LE_WORD</a>(0x1236),    <span class="comment">// idProduct</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="usb__msc__hw_8c.html#aa0d3914e9175b898fb53021bd11c5dc0">LE_WORD</a>(0x0100),    <span class="comment">// bcdDevice</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  0x01,         <span class="comment">// iManufacturer</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  0x02,         <span class="comment">// iProduct</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  0x03,         <span class="comment">// iSerialNumber</span></div>
@@ -211,7 +211,7 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// configuration descriptor</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  0x09,</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  DESC_CONFIGURATION,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  LE_WORD(32),      <span class="comment">// wTotalLength</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="usb__msc__hw_8c.html#aa0d3914e9175b898fb53021bd11c5dc0">LE_WORD</a>(32),      <span class="comment">// wTotalLength</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  0x01,         <span class="comment">// bNumInterfaces</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  0x01,         <span class="comment">// bConfigurationValue</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  0x00,         <span class="comment">// iConfiguration</span></div>
@@ -233,20 +233,20 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  DESC_ENDPOINT,</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  MSC_BULK_IN_EP,     <span class="comment">// bEndpointAddress</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  0x02,         <span class="comment">// bmAttributes = bulk</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  LE_WORD(MAX_PACKET_SIZE),<span class="comment">// wMaxPacketSize</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="usb__msc__hw_8c.html#aa0d3914e9175b898fb53021bd11c5dc0">LE_WORD</a>(<a class="code" href="usb__msc__hw_8c.html#a879456c3b8e2853f7044d764e9c180d4">MAX_PACKET_SIZE</a>),<span class="comment">// wMaxPacketSize</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  0x00,         <span class="comment">// bInterval</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">// EP</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  0x07,</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  DESC_ENDPOINT,</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  MSC_BULK_OUT_EP,    <span class="comment">// bEndpointAddress</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  0x02,         <span class="comment">// bmAttributes = bulk</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  LE_WORD(MAX_PACKET_SIZE),<span class="comment">// wMaxPacketSize</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="usb__msc__hw_8c.html#aa0d3914e9175b898fb53021bd11c5dc0">LE_WORD</a>(<a class="code" href="usb__msc__hw_8c.html#a879456c3b8e2853f7044d764e9c180d4">MAX_PACKET_SIZE</a>),<span class="comment">// wMaxPacketSize</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  0x00,         <span class="comment">// bInterval</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">// string descriptors</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  0x04,</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  DESC_STRING,</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  LE_WORD(0x0409),</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <a class="code" href="usb__msc__hw_8c.html#aa0d3914e9175b898fb53021bd11c5dc0">LE_WORD</a>(0x0409),</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  0x0E,</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  DESC_STRING,</div>
@@ -275,10 +275,10 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">static</span> BOOL HandleClassRequest(TSetupPacket *pSetup, <span class="keywordtype">int</span> *piLen, U8 **ppbData)</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">if</span> (pSetup-&gt;wIndex != 0) {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> FALSE;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  }</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordflow">if</span> (pSetup-&gt;wValue != 0) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> FALSE;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  }</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordflow">switch</span> (pSetup-&gt;bRequest) {</div>
@@ -292,15 +292,15 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="comment">// MSC reset</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="keywordflow">case</span> 0xFF:</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (pSetup-&gt;wLength &gt; 0) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <span class="keywordflow">return</span> FALSE;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    MSCBotReset();</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> FALSE;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> TRUE;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
@@ -308,12 +308,12 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">  main</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">  ====</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">**************************************************************************/</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keywordtype">int</span> main_mass_storage(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keywordtype">int</span> <a class="code" href="usb__msc__hw_8h.html#a5cd758fb54c645f5937880d23af9999d">main_mass_storage</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">unsigned</span> cpsr;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// disable global interrupts, do it polling</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    cpsr = disableIRQ();</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    cpsr = <a class="code" href="armVIC_8c.html#a495b577a0ad5c4dc620339b2edff1ac5">disableIRQ</a>();</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="comment">// initialise the SD card</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  BlockDevInit();</div>
@@ -326,17 +326,17 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  USBHwNakIntEnable(INACK_BI);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="comment">// register descriptors</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  USBRegisterDescriptors(abDescriptors);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  USBRegisterDescriptors(<a class="code" href="usb__msc__hw_8c.html#adb3374ec0c6213eb4dec52a2d49ed61c">abDescriptors</a>);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="comment">// register class request handler</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  USBRegisterRequestHandler(REQTYPE_TYPE_CLASS, HandleClassRequest, abClassReqData);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  USBRegisterRequestHandler(REQTYPE_TYPE_CLASS, HandleClassRequest, <a class="code" href="usb__msc__hw_8c.html#a3dfb41defd83016d0c2e2fe79e305723">abClassReqData</a>);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="comment">// register endpoint handlers</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  USBHwRegisterEPIntHandler(MSC_BULK_IN_EP, MSCBotBulkIn);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  USBHwRegisterEPIntHandler(MSC_BULK_OUT_EP, MSCBotBulkOut);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="comment">// connect to bus</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  USBHwConnect(TRUE);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  USBHwConnect(<a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="comment">// call USB interrupt handler continuously</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordflow">while</span> (1) {</div>
@@ -344,7 +344,7 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">// possibly restore global interrupts (never happens)</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    restoreIRQ(cpsr);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="armVIC_8c.html#ae65947fbc714eff716bc3dd03d909ec8">restoreIRQ</a>(cpsr);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
@@ -356,8 +356,8 @@ $(document).ready(function(){initNavTree('usb__msc__hw_8c_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_3f7617cb4a5e4fe5cc816b7b3bbdea3a.html">lpc21</a></li><li class="navelem"><b>usb_msc_hw.c</b></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:36 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_3f7617cb4a5e4fe5cc816b7b3bbdea3a.html">lpc21</a></li><li class="navelem"><a class="el" href="usb__msc__hw_8c.html">usb_msc_hw.c</a></li>
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:03 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

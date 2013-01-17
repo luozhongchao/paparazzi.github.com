@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('omap_2mcu__periph_2uart__arch_8c_sourc
 <div class="title">uart_arch.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="omap_2mcu__periph_2uart__arch_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2009 Antoine Drouin &lt;poinix@gmail.com&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is part of paparazzi.</span></div>
@@ -139,69 +139,69 @@ $(document).ready(function(){initNavTree('omap_2mcu__periph_2uart__arch_8c_sourc
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;fms/fms_serial_port.h&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> uart_periph_set_baudrate(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p, uint16_t baud, bool_t hw_flow_control __attribute__ ((unused))) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="omap_2mcu__periph_2uart__arch_8c.html#a0a40c3d160ef44cada61f45e575808f0">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#af6637ac7b9ed636ac62fcfd8140b04e1">uart_periph_set_baudrate</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>, <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> baud, bool_t hw_flow_control __attribute__ ((unused))) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">struct </span>FmsSerialPort* fmssp;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// close serial port if already open</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (p-&gt;reg_addr != NULL) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    fmssp = (<span class="keyword">struct </span>FmsSerialPort*)(p-&gt;reg_addr);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a> != NULL) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    fmssp = (<span class="keyword">struct </span>FmsSerialPort*)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    serial_port_close(fmssp);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    serial_port_free(fmssp);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// open serial port</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  fmssp = serial_port_new();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// use register address to store SerialPort structure pointer...</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  p-&gt;reg_addr = (<span class="keywordtype">void</span>*)fmssp;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a> = (<span class="keywordtype">void</span>*)fmssp;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">//TODO: set device name in application and pass as argument</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  printf(<span class="stringliteral">&quot;opening %s on uart0 at %d\n&quot;</span>,p-&gt;dev,baud);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  serial_port_open_raw(fmssp,p-&gt;dev,baud);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  printf(<span class="stringliteral">&quot;opening %s on uart0 at %d\n&quot;</span>,p-&gt;<a class="code" href="structuart__periph.html#a646cfd0312fb4e9a1e55ce2594049970">dev</a>,baud);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  serial_port_open_raw(fmssp,p-&gt;<a class="code" href="structuart__periph.html#a646cfd0312fb4e9a1e55ce2594049970">dev</a>,baud);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> uart_transmit(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p, uint8_t data ) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  uint16_t temp = (p-&gt;tx_insert_idx + 1) % UART_TX_BUFFER_SIZE;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="omap_2mcu__periph_2uart__arch_8c.html#a916fbda270604fca87f8bc235ddcbaaa">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#a916fbda270604fca87f8bc235ddcbaaa">uart_transmit</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p, <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> data ) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> temp = (p-&gt;<a class="code" href="structuart__periph.html#aed710779dfbc59752a37be7ffbaa15a2">tx_insert_idx</a> + 1) % <a class="code" href="uart_8h.html#a05f5d709605c6317c97e4974bec3402a">UART_TX_BUFFER_SIZE</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (temp == p-&gt;tx_extract_idx)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (temp == p-&gt;<a class="code" href="structuart__periph.html#a24b5a50167052cd5e744eb381208f658">tx_extract_idx</a>)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span>;                          <span class="comment">// no room</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// check if in process of sending data</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (p-&gt;tx_running) { <span class="comment">// yes, add to queue</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    p-&gt;tx_buf[p-&gt;tx_insert_idx] = data;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    p-&gt;tx_insert_idx = temp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structuart__periph.html#a926e35297d3514a88e10efae438b3d54">tx_running</a>) { <span class="comment">// yes, add to queue</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    p-&gt;<a class="code" href="structuart__periph.html#a9dc10b9a1a2d379b6b30bec6d26a9c45">tx_buf</a>[p-&gt;<a class="code" href="structuart__periph.html#aed710779dfbc59752a37be7ffbaa15a2">tx_insert_idx</a>] = data;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    p-&gt;<a class="code" href="structuart__periph.html#aed710779dfbc59752a37be7ffbaa15a2">tx_insert_idx</a> = temp;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">else</span> { <span class="comment">// no, set running flag and write to output register</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    p-&gt;tx_running = TRUE;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">struct </span>FmsSerialPort* fmssp = (<span class="keyword">struct </span>FmsSerialPort*)(p-&gt;reg_addr);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    p-&gt;<a class="code" href="structuart__periph.html#a926e35297d3514a88e10efae438b3d54">tx_running</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">struct </span>FmsSerialPort* fmssp = (<span class="keyword">struct </span>FmsSerialPort*)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    write((<span class="keywordtype">int</span>)(fmssp-&gt;fd),&amp;data,1);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">//printf(&quot;w %x\n&quot;,data);</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> uart_handler(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c=<span class="charliteral">&#39;D&#39;</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="omap_2mcu__periph_2uart__arch_8c.html#ad10dd01bd5b72d929f5a626732567516">   70</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="omap_2mcu__periph_2uart__arch_8c.html#ad10dd01bd5b72d929f5a626732567516">uart_handler</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* p) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>=<span class="charliteral">&#39;D&#39;</span>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (p-&gt;reg_addr == NULL) <span class="keywordflow">return</span>; <span class="comment">// device not initialized ?</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a> == NULL) <span class="keywordflow">return</span>; <span class="comment">// device not initialized ?</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">struct </span>FmsSerialPort* fmssp = (<span class="keyword">struct </span>FmsSerialPort*)(p-&gt;reg_addr);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">struct </span>FmsSerialPort* fmssp = (<span class="keyword">struct </span>FmsSerialPort*)(p-&gt;<a class="code" href="structuart__periph.html#af4dc75629753b4166767a7a0b44e8828">reg_addr</a>);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">int</span> fd = fmssp-&gt;fd;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// check if more data to send</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">if</span> (p-&gt;tx_insert_idx != p-&gt;tx_extract_idx) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    write(fd,&amp;(p-&gt;tx_buf[p-&gt;tx_extract_idx]),1);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structuart__periph.html#aed710779dfbc59752a37be7ffbaa15a2">tx_insert_idx</a> != p-&gt;<a class="code" href="structuart__periph.html#a24b5a50167052cd5e744eb381208f658">tx_extract_idx</a>) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    write(fd,&amp;(p-&gt;<a class="code" href="structuart__periph.html#a9dc10b9a1a2d379b6b30bec6d26a9c45">tx_buf</a>[p-&gt;<a class="code" href="structuart__periph.html#a24b5a50167052cd5e744eb381208f658">tx_extract_idx</a>]),1);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//printf(&quot;w %x\n&quot;,p-&gt;tx_buf[p-&gt;tx_extract_idx]);</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    p-&gt;tx_extract_idx++;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    p-&gt;tx_extract_idx %= UART_TX_BUFFER_SIZE;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    p-&gt;<a class="code" href="structuart__periph.html#a24b5a50167052cd5e744eb381208f658">tx_extract_idx</a>++;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    p-&gt;<a class="code" href="structuart__periph.html#a24b5a50167052cd5e744eb381208f658">tx_extract_idx</a> %= <a class="code" href="uart_8h.html#a05f5d709605c6317c97e4974bec3402a">UART_TX_BUFFER_SIZE</a>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    p-&gt;tx_running = FALSE;   <span class="comment">// clear running flag</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    p-&gt;<a class="code" href="structuart__periph.html#a926e35297d3514a88e10efae438b3d54">tx_running</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;   <span class="comment">// clear running flag</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">if</span>(read(fd,&amp;c,1) &gt; 0){</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//printf(&quot;r %x %c\n&quot;,c,c);</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    uint16_t temp = (p-&gt;rx_insert_idx + 1) % UART_RX_BUFFER_SIZE;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    p-&gt;rx_buf[p-&gt;rx_insert_idx] = c;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> temp = (p-&gt;<a class="code" href="structuart__periph.html#a07e22f6950e141077f44b435852f1f84">rx_insert_idx</a> + 1) % <a class="code" href="uart_8h.html#a5bdd6772c246436bb14377095de79b31">UART_RX_BUFFER_SIZE</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    p-&gt;<a class="code" href="structuart__periph.html#aae582e1021f8139f7461a80477d1dc5b">rx_buf</a>[p-&gt;<a class="code" href="structuart__periph.html#a07e22f6950e141077f44b435852f1f84">rx_insert_idx</a>] = <a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// check for more room in queue</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (temp != p-&gt;rx_extract_idx)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      p-&gt;rx_insert_idx = temp; <span class="comment">// update insert index</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (temp != p-&gt;<a class="code" href="structuart__periph.html#a8f5faa6ee1d323375397db0a68603845">rx_extract_idx</a>)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      p-&gt;<a class="code" href="structuart__periph.html#a07e22f6950e141077f44b435852f1f84">rx_insert_idx</a> = temp; <span class="comment">// update insert index</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
@@ -209,14 +209,14 @@ $(document).ready(function(){initNavTree('omap_2mcu__periph_2uart__arch_8c_sourc
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#ifdef USE_UART0</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">void</span> uart0_init( <span class="keywordtype">void</span> ) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  uart_periph_init(&amp;uart0);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="uart_8c.html#a43baf084a9bcc968ef00790e25becbb7">uart_periph_init</a>(&amp;uart0);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  uart.dev = UART0_DEV;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  uart_periph_set_baudrate(&amp;uart0,UART0_BAUD);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="lpc21_2mcu__periph_2uart__arch_8c.html#af6637ac7b9ed636ac62fcfd8140b04e1">uart_periph_set_baudrate</a>(&amp;uart0,UART0_BAUD);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keywordtype">void</span> uart0_handler(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  uart_handler(&amp;uart0);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="omap_2mcu__periph_2uart__arch_8c.html#ad10dd01bd5b72d929f5a626732567516">uart_handler</a>(&amp;uart0);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* USE_UART0 */</span><span class="preprocessor"></span></div>
@@ -224,13 +224,13 @@ $(document).ready(function(){initNavTree('omap_2mcu__periph_2uart__arch_8c_sourc
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#ifdef USE_UART1</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">void</span> uart1_init( <span class="keywordtype">void</span> ) {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  uart_periph_init(&amp;uart1);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  uart.dev = UART1_DEV;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="uart_8c.html#a43baf084a9bcc968ef00790e25becbb7">uart_periph_init</a>(&amp;uart1);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  uart.dev = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8500674e433093202b888c0613c07501">UART1_DEV</a>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  uart_periph_init_param(&amp;uart1,UART1_BAUD);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keywordtype">void</span> uart1_handler(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  uart_handler(&amp;uart1);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="omap_2mcu__periph_2uart__arch_8c.html#ad10dd01bd5b72d929f5a626732567516">uart_handler</a>(&amp;uart1);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* USE_UART1 */</span><span class="preprocessor"></span></div>
@@ -240,8 +240,8 @@ $(document).ready(function(){initNavTree('omap_2mcu__periph_2uart__arch_8c_sourc
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_05bb9bcacf5fa0e2669053a6f23a5278.html">omap</a></li><li class="navelem"><a class="el" href="dir_db33ee18edb0b90d0e8973c246d257bc.html">mcu_periph</a></li><li class="navelem"><b>uart_arch.c</b></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:36 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_05bb9bcacf5fa0e2669053a6f23a5278.html">omap</a></li><li class="navelem"><a class="el" href="dir_db33ee18edb0b90d0e8973c246d257bc.html">mcu_periph</a></li><li class="navelem"><a class="el" href="omap_2mcu__periph_2uart__arch_8c.html">uart_arch.c</a></li>
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:03 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

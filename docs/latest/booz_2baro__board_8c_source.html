@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('booz_2baro__board_8c_source.html','');
 <div class="title">baro_board.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* $Id$</span></div>
+<a href="booz_2baro__board_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* $Id$</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 2010 The Paparazzi Team</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
@@ -137,58 +137,58 @@ $(document).ready(function(){initNavTree('booz_2baro__board_8c_source.html','');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/* threshold &gt;0 &amp;&amp; &lt;1023 */</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef BOOZ_ANALOG_BARO_THRESHOLD</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BOOZ_ANALOG_BARO_THRESHOLD 850</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="booz_2baro__board_8c.html#a67c9aca109fecabd8d15c3ac9cc8dae7">   31</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BOOZ_ANALOG_BARO_THRESHOLD 850</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="baro_8h.html#a115a7458b744530fecafb4a548e5d92a">   34</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structBaro.html">Baro</a> baro;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">struct </span><a class="code" href="structBaroBoard.html">BaroBoard</a> baro_board;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="baro_8h.html#a115a7458b744530fecafb4a548e5d92a">   34</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structBaro.html">Baro</a> <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="lisa__l_2baro__board_8h.html#acd0de6dfb119f91de310ea848fd7434d">   35</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structBaroBoard.html">BaroBoard</a> <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="baro_8h.html#a9b25546908842f1d38fc56e438d46e21">   38</a></span>&#160;<span class="keywordtype">void</span> baro_init( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="baro_8h.html#a9b25546908842f1d38fc56e438d46e21">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="booz_2baro__board_8c.html#a9b25546908842f1d38fc56e438d46e21">baro_init</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(ADC_CHANNEL_BARO, &amp;baro_board.buf, DEFAULT_AV_NB_SAMPLE);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="lpc21_2mcu__periph_2adc__arch_8c.html#a289883844d6749adab1cee5aabe41824" title="Registers a buffer to be used to store the specified converted channel Usage:">adc_buf_channel</a>(<a class="code" href="booz__1_80_8h.html#ad4c25248375975e44797d99bfeb3d026">ADC_CHANNEL_BARO</a>, &amp;<a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#ae0641a99787ef38d44a1b429e584d6fe">buf</a>, <a class="code" href="adc_8h.html#a926cfe25c54a1c6ac36923aeac21223a">DEFAULT_AV_NB_SAMPLE</a>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  baro.status = BS_UNINITIALIZED;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  baro.absolute     = 0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  baro.differential = 0; <span class="comment">/* not handled on this board */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a04ac659bb858b025824e2cccf5061027">status</a> = <a class="code" href="baro_8h.html#a40cc650f3a4b0b2f99d360f1a38addf4aed52327eb45c59d150acbe45ba842096">BS_UNINITIALIZED</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a088741c2889bc0752ef8927b0f8b849f">absolute</a>     = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#aaf34ad45e9abb7cb82a27d4b79dc4c5e">differential</a> = 0; <span class="comment">/* not handled on this board */</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  baro_board.offset = 1023;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  DACSet(baro_board.offset);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a3defb38aa63017ed666cd4dda92d9956">offset</a> = 1023;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="dac__arch_8h.html#a5a5ecfcdc62897bc847995c225e301af">DACSet</a>(<a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a3defb38aa63017ed666cd4dda92d9956">offset</a>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  baro_board.value_filtered = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  baro_board.data_available = FALSE;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a4dd28dda14a7f9e1152ed988e57c495c">value_filtered</a> = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a4f77396b0cfbf61466f2405ee7144359">data_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#ifdef ROTORCRAFT_BARO_LED</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span>  LED_OFF(ROTORCRAFT_BARO_LED);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span>  <a class="code" href="lpc21_2led__hw_8h.html#a76c86a9c700e32e68f48f85271970b7f">LED_OFF</a>(ROTORCRAFT_BARO_LED);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="baro_8h.html#a23ed77c56ba44b3ed3cc3b8e378bdb00">   56</a></span>&#160;<span class="keywordtype">void</span> baro_periodic(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="baro_8h.html#a23ed77c56ba44b3ed3cc3b8e378bdb00">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="booz_2baro__board_8c.html#a23ed77c56ba44b3ed3cc3b8e378bdb00">baro_periodic</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  baro.absolute = baro_board.buf.sum/baro_board.buf.av_nb_sample;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  baro_board.value_filtered = (3*baro_board.value_filtered + baro.absolute)/4;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (baro.status == BS_UNINITIALIZED) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    RunOnceEvery(10, { baro_board_calibrate();});</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a088741c2889bc0752ef8927b0f8b849f">absolute</a> = <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#ae0641a99787ef38d44a1b429e584d6fe">buf</a>.<a class="code" href="structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b">sum</a>/<a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#ae0641a99787ef38d44a1b429e584d6fe">buf</a>.<a class="code" href="structadc__buf.html#aceea4ff785000051676babf3e5f25287">av_nb_sample</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a4dd28dda14a7f9e1152ed988e57c495c">value_filtered</a> = (3*<a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a4dd28dda14a7f9e1152ed988e57c495c">value_filtered</a> + <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a088741c2889bc0752ef8927b0f8b849f">absolute</a>)/4;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a04ac659bb858b025824e2cccf5061027">status</a> == <a class="code" href="baro_8h.html#a40cc650f3a4b0b2f99d360f1a38addf4aed52327eb45c59d150acbe45ba842096">BS_UNINITIALIZED</a>) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    RunOnceEvery(10, { <a class="code" href="booz_2baro__board_8c.html#ad895d113447d7bd36be8c9f675349a0f">baro_board_calibrate</a>();});</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">/*  else */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  baro_board.data_available = TRUE;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a4f77396b0cfbf61466f2405ee7144359">data_available</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/* decrement offset until adc reading is over a threshold */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> baro_board_calibrate(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span> (baro_board.value_filtered &lt; BOOZ_ANALOG_BARO_THRESHOLD &amp;&amp; baro_board.offset &gt;= 1) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (baro_board.value_filtered == 0 &amp;&amp; baro_board.offset &gt; 15)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      baro_board.offset -= 15;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="booz_2baro__board_8h.html#ad895d113447d7bd36be8c9f675349a0f">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="booz_2baro__board_8c.html#ad895d113447d7bd36be8c9f675349a0f">baro_board_calibrate</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a4dd28dda14a7f9e1152ed988e57c495c">value_filtered</a> &lt; <a class="code" href="booz_2baro__board_8c.html#a67c9aca109fecabd8d15c3ac9cc8dae7">BOOZ_ANALOG_BARO_THRESHOLD</a> &amp;&amp; <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a3defb38aa63017ed666cd4dda92d9956">offset</a> &gt;= 1) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a4dd28dda14a7f9e1152ed988e57c495c">value_filtered</a> == 0 &amp;&amp; <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a3defb38aa63017ed666cd4dda92d9956">offset</a> &gt; 15)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a3defb38aa63017ed666cd4dda92d9956">offset</a> -= 15;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      baro_board.offset--;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    DACSet(baro_board.offset);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a3defb38aa63017ed666cd4dda92d9956">offset</a>--;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="dac__arch_8h.html#a5a5ecfcdc62897bc847995c225e301af">DACSet</a>(<a class="code" href="booz_2baro__board_8c.html#acd0de6dfb119f91de310ea848fd7434d">baro_board</a>.<a class="code" href="structBaroBoard.html#a3defb38aa63017ed666cd4dda92d9956">offset</a>);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifdef ROTORCRAFT_BARO_LED</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span>    LED_TOGGLE(ROTORCRAFT_BARO_LED);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span>    <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(ROTORCRAFT_BARO_LED);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span>  }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    baro.status = BS_RUNNING;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a04ac659bb858b025824e2cccf5061027">status</a> = <a class="code" href="baro_8h.html#a40cc650f3a4b0b2f99d360f1a38addf4a4134e0992db0b1b7099ae1c7b87102cb">BS_RUNNING</a>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#ifdef ROTORCRAFT_BARO_LED</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor"></span>    LED_ON(ROTORCRAFT_BARO_LED);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor"></span>    <a class="code" href="lpc21_2led__hw_8h.html#a3ab823c4004d96d154dfb8f69d18c47a">LED_ON</a>(ROTORCRAFT_BARO_LED);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span>  }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
@@ -201,8 +201,8 @@ $(document).ready(function(){initNavTree('booz_2baro__board_8c_source.html','');
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e030268cd18297cf6282390f76bfcf7f.html">boards</a></li><li class="navelem"><a class="el" href="dir_9a76711c9f7e4ea1008df76406a6ab5b.html">booz</a></li><li class="navelem"><b>baro_board.c</b></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:36 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e030268cd18297cf6282390f76bfcf7f.html">boards</a></li><li class="navelem"><a class="el" href="dir_9a76711c9f7e4ea1008df76406a6ab5b.html">booz</a></li><li class="navelem"><a class="el" href="booz_2baro__board_8c.html">baro_board.c</a></li>
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:03 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

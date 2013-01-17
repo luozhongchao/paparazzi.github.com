@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('test__spi__slave2_8c_source.html','');
 <div class="title">test_spi_slave2.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="test__spi__slave2_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2009 Antoine Drouin &lt;poinix@gmail.com&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is part of paparazzi.</span></div>
@@ -140,64 +140,64 @@ $(document).ready(function(){initNavTree('test__spi__slave2_8c_source.html','');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;fms/fms_autopilot_msg.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> main_init( <span class="keywordtype">void</span> );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> main_periodic_task( <span class="keywordtype">void</span> );</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> main_event_task( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="boards_2booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> );</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define USE_DMA 1</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#a95dc25e71503f6c12eeda9e8e09810d3">   38</a></span>&#160;<span class="preprocessor">#define USE_DMA 1</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define BufferSize       sizeof(struct AutopilotMessageFoo)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span>uint8_t SPI_SLAVE_Buffer_Rx[BufferSize];</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;uint8_t SPI_SLAVE_Buffer_Tx[BufferSize];</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> main_spi_slave_init(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> main_setup_dma(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> main_enable_dma(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#aa362edf6db9662acf6ef958a6db19c35">   40</a></span>&#160;<span class="preprocessor">#define BufferSize       sizeof(struct AutopilotMessageFoo)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#a9e1ed02005ac3a793675affcb4671a6e">   41</a></span>&#160;<span class="preprocessor"></span><a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="test__spi__slave2_8c.html#a9e1ed02005ac3a793675affcb4671a6e">SPI_SLAVE_Buffer_Rx</a>[<a class="code" href="test__spi__slave2_8c.html#aa362edf6db9662acf6ef958a6db19c35">BufferSize</a>];</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#a668661002eb65b97b83abba9da6c9d7d">   42</a></span>&#160;<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="test__spi__slave2_8c.html#a668661002eb65b97b83abba9da6c9d7d">SPI_SLAVE_Buffer_Tx</a>[<a class="code" href="test__spi__slave2_8c.html#aa362edf6db9662acf6ef958a6db19c35">BufferSize</a>];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#a6d13a36aea716e138d225cdc3658e76c">main_spi_slave_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#ab89e308356b0e372b4ea49286e4d8b43">main_setup_dma</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#a11497228e2b0f51e0b72e596746d8d2e">main_enable_dma</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  main_init();</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#a840291bc02cba5474a4cb46a9b9566fe">   47</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="uart__tunnel_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="boards_2booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">while</span>(1) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (sys_time_check_and_ack_timer(0))</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      main_periodic_task();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    main_event_task();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666">sys_time_check_and_ack_timer</a>(0))</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <a class="code" href="test__spi__slave2_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="test__spi__slave2_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> main_init( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="boards_2booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="group__mcu__periph.html#ga9af744358ff4b1e3e33d7dd170862f9b" title="Microcontroller peripherals initialization.">mcu_init</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./PERIODIC_FREQUENCY), NULL);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  main_spi_slave_init();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="sys__time_8c.html#a60ef6df0154a4b93f4424fd809c466a3" title="Register a new system timer.">sys_time_register_timer</a>((1./<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>), NULL);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="test__spi__slave2_8c.html#a6d13a36aea716e138d225cdc3658e76c">main_spi_slave_init</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> main_periodic_task( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">   66</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#a791eaf74023b4de8d10fbfe0de040ed8">main_periodic_task</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  RunOnceEvery(10,</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;         {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;     DOWNLINK_SEND_BOOT(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, DefaultDevice, &amp;<a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a2e86fdabba99a0ac8f6409e0d1e694a3" title="full seconds since startup">nb_sec</a>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;     LED_PERIODIC();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;     DOWNLINK_SEND_BOOT(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a2e86fdabba99a0ac8f6409e0d1e694a3" title="full seconds since startup">nb_sec</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;     <a class="code" href="lpc21_2led__hw_8h.html#aec278ae20b30da80a2fcdcee9d51571b">LED_PERIODIC</a>();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         });</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> main_event_task( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">   75</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#a1cd23e45d5c51116ae1e3096912ea1d1">main_event_task</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#ifdef USE_DMA</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (DMA_GetFlagStatus(DMA1_FLAG_TC2)) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    LED_TOGGLE(3);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    RunOnceEvery(10, {DOWNLINK_SEND_DEBUG_MCU_LINK(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, DefaultDevice, &amp;SPI_SLAVE_Buffer_Rx[0],</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                &amp;SPI_SLAVE_Buffer_Rx[1], &amp;SPI_SLAVE_Buffer_Rx[2]);});</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    memcpy(SPI_SLAVE_Buffer_Tx, SPI_SLAVE_Buffer_Rx, BufferSize);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    main_setup_dma();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    main_enable_dma();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(3);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    RunOnceEvery(10, {DOWNLINK_SEND_DEBUG_MCU_LINK(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>, <a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>, &amp;<a class="code" href="test__spi__slave2_8c.html#a9e1ed02005ac3a793675affcb4671a6e">SPI_SLAVE_Buffer_Rx</a>[0],</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                &amp;<a class="code" href="test__spi__slave2_8c.html#a9e1ed02005ac3a793675affcb4671a6e">SPI_SLAVE_Buffer_Rx</a>[1], &amp;<a class="code" href="test__spi__slave2_8c.html#a9e1ed02005ac3a793675affcb4671a6e">SPI_SLAVE_Buffer_Rx</a>[2]);});</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    memcpy(<a class="code" href="test__spi__slave2_8c.html#a668661002eb65b97b83abba9da6c9d7d">SPI_SLAVE_Buffer_Tx</a>, <a class="code" href="test__spi__slave2_8c.html#a9e1ed02005ac3a793675affcb4671a6e">SPI_SLAVE_Buffer_Rx</a>, <a class="code" href="test__spi__slave2_8c.html#aa362edf6db9662acf6ef958a6db19c35">BufferSize</a>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="test__spi__slave2_8c.html#ab89e308356b0e372b4ea49286e4d8b43">main_setup_dma</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="test__spi__slave2_8c.html#a11497228e2b0f51e0b72e596746d8d2e">main_enable_dma</a>();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> main_spi_slave_init( <span class="keywordtype">void</span> ) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#a6d13a36aea716e138d225cdc3658e76c">   91</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#a6d13a36aea716e138d225cdc3658e76c">main_spi_slave_init</a>( <span class="keywordtype">void</span> ) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#ifdef USE_DMA</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor"></span>  <span class="comment">/* Enable SPI_1 DMA clock ---------------------------------------------------*/</span></div>
@@ -227,29 +227,29 @@ $(document).ready(function(){initNavTree('test__spi__slave2_8c_source.html','');
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_4;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  SPI_InitStructure.SPI_CRCPolynomial = 7;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  SPI_Init(SPI1, &amp;SPI_InitStructure);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  SPI_Init(<a class="code" href="LPC21xx_8h.html#ad483be344a28ac800be8f03654a9612f">SPI1</a>, &amp;SPI_InitStructure);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">/* Enable SPI_SLAVE */</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  SPI_Cmd(SPI1, ENABLE);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  SPI_Cmd(<a class="code" href="LPC21xx_8h.html#ad483be344a28ac800be8f03654a9612f">SPI1</a>, ENABLE);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#ifdef USE_DMA</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor"></span>  <span class="comment">/* SPI_SLAVE_Rx_DMA_Channel configuration ------------------------------------*/</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  main_setup_dma();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  main_enable_dma();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="test__spi__slave2_8c.html#ab89e308356b0e372b4ea49286e4d8b43">main_setup_dma</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="test__spi__slave2_8c.html#a11497228e2b0f51e0b72e596746d8d2e">main_enable_dma</a>();</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> main_setup_dma(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#ab89e308356b0e372b4ea49286e4d8b43">  136</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#ab89e308356b0e372b4ea49286e4d8b43">main_setup_dma</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="comment">/* SPI_SLAVE_Rx_DMA_Channel configuration ------------------------------------*/</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  DMA_InitTypeDef  DMA_InitStructure;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  DMA_DeInit(DMA1_Channel2);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)(SPI1_BASE+0x0C);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)SPI_SLAVE_Buffer_Rx;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  DMA_InitStructure.DMA_PeripheralBaseAddr = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)(SPI1_BASE+0x0C);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  DMA_InitStructure.DMA_MemoryBaseAddr = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="test__spi__slave2_8c.html#a9e1ed02005ac3a793675affcb4671a6e">SPI_SLAVE_Buffer_Rx</a>;</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  DMA_InitStructure.DMA_BufferSize = BufferSize;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  DMA_InitStructure.DMA_BufferSize = <a class="code" href="test__spi__slave2_8c.html#aa362edf6db9662acf6ef958a6db19c35">BufferSize</a>;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;</div>
@@ -260,20 +260,20 @@ $(document).ready(function(){initNavTree('test__spi__slave2_8c_source.html','');
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  DMA_Init(DMA1_Channel2, &amp;DMA_InitStructure);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="comment">/* SPI_SLAVE_Tx_DMA_Channel configuration ------------------------------------*/</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  DMA_DeInit(DMA1_Channel3);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)(SPI1_BASE+0x0C);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)SPI_SLAVE_Buffer_Tx;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  DMA_InitStructure.DMA_PeripheralBaseAddr = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)(SPI1_BASE+0x0C);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  DMA_InitStructure.DMA_MemoryBaseAddr = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="test__spi__slave2_8c.html#a668661002eb65b97b83abba9da6c9d7d">SPI_SLAVE_Buffer_Tx</a>;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  DMA_InitStructure.DMA_Priority = DMA_Priority_Medium;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  DMA_Init(DMA1_Channel3, &amp;DMA_InitStructure);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> main_enable_dma(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#a11497228e2b0f51e0b72e596746d8d2e">  161</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#a11497228e2b0f51e0b72e596746d8d2e">main_enable_dma</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="comment">/* Enable SPI_1 Rx request */</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  SPI_I2S_DMACmd(SPI1, SPI_I2S_DMAReq_Rx, ENABLE);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  SPI_I2S_DMACmd(<a class="code" href="LPC21xx_8h.html#ad483be344a28ac800be8f03654a9612f">SPI1</a>, SPI_I2S_DMAReq_Rx, ENABLE);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="comment">/* Enable DMA1 Channel2 */</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  DMA_Cmd(DMA1_Channel2, ENABLE);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="comment">/* Enable SPI_1 Rx request */</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  SPI_I2S_DMACmd(SPI1, SPI_I2S_DMAReq_Tx, ENABLE);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  SPI_I2S_DMACmd(<a class="code" href="LPC21xx_8h.html#ad483be344a28ac800be8f03654a9612f">SPI1</a>, SPI_I2S_DMAReq_Tx, ENABLE);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="comment">/* Enable DMA1 Channel3 */</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  DMA_Cmd(DMA1_Channel3, ENABLE);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
@@ -281,26 +281,26 @@ $(document).ready(function(){initNavTree('test__spi__slave2_8c_source.html','');
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#if 0</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor"></span><span class="keywordtype">void</span> spi1_irq_handler(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  uint8_t foo = SPI_I2S_ReceiveData(SPI1);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keyword">static</span> uint8_t cnt = 0;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  SPI_I2S_SendData(SPI1, cnt);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="test__spi__slave_8c.html#a333a8b0669f90db2d79b31916f35c981">spi1_irq_handler</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="main__demo5_8c.html#ad690ee00a2cf77bbaaf89c3f1ef110d4">foo</a> = SPI_I2S_ReceiveData(<a class="code" href="LPC21xx_8h.html#ad483be344a28ac800be8f03654a9612f">SPI1</a>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> cnt = 0;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  SPI_I2S_SendData(<a class="code" href="LPC21xx_8h.html#ad483be344a28ac800be8f03654a9612f">SPI1</a>, cnt);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  cnt++;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  LED_TOGGLE(4);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(4);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keywordtype">void</span> spi1_dma_irq_handler(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;   LED_TOGGLE(5);</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="code" href="test__spi__slave2_8c.html#a5e3f30c66b14fef35b7f0b3a0f12f378">  185</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test__spi__slave2_8c.html#a5e3f30c66b14fef35b7f0b3a0f12f378">spi1_dma_irq_handler</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;   <a class="code" href="lpc21_2led__hw_8h.html#afd0bf6b0eebb00641365dc389a9fc449">LED_TOGGLE</a>(5);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_619681cec2e2b8e1da0a59f060b05c88.html">lisa</a></li><li class="navelem"><b>test_spi_slave2.c</b></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_619681cec2e2b8e1da0a59f060b05c88.html">lisa</a></li><li class="navelem"><a class="el" href="test__spi__slave2_8c.html">test_spi_slave2.c</a></li>
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:04 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

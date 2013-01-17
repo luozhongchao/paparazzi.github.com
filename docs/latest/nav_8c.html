@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -120,10 +120,10 @@ $(document).ready(function(){initNavTree('nav_8c.html','');});
 <code>#include &quot;<a class="el" href="gps_8h_source.html">subsystems/gps.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="fixedwing_2stabilization_2stabilization__attitude_8h_source.html">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="fixedwing_2autopilot_8h_source.html">firmwares/fixedwing/autopilot.h</a>&quot;</code><br/>
-<code>#include &quot;inter_mcu.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="inter__mcu_8h_source.html">inter_mcu.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="traffic__info_8h_source.html">subsystems/navigation/traffic_info.h</a>&quot;</code><br/>
 <code>#include &quot;generated/flight_plan.h&quot;</code><br/>
-<code>#include &quot;subsystems/navigation/common_nav.c&quot;</code><br/>
+<code>#include &quot;<a class="el" href="common__nav_8c_source.html">subsystems/navigation/common_nav.c</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for nav.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -131,197 +131,128 @@ $(document).ready(function(){initNavTree('nav_8c.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="nav_8c__incl.png" border="0" usemap="#sw_2airborne_2subsystems_2nav_8c" alt=""/></div>
 <map name="sw_2airborne_2subsystems_2nav_8c" id="sw_2airborne_2subsystems_2nav_8c">
-<area shape="rect" id="node5" href="nav_8h.html" title="Navigation library." alt="" coords="1403,111,1539,140"/><area shape="rect" id="node65" href="gps_8h.html" title="Device independent GPS code (interface)" alt="" coords="891,311,1029,340"/><area shape="rect" id="node78" href="fixedwing_2stabilization_2stabilization__attitude_8h.html" title="Fixed wing horizontal control." alt="" coords="1824,293,2005,357"/><area shape="rect" id="node85" href="fixedwing_2autopilot_8h.html" title="Fixedwing autopilot modes." alt="" coords="1575,302,1721,349"/><area shape="rect" id="node92" href="inter__mcu_8h_source.html" title="inter_mcu.h" alt="" coords="1847,111,1945,140"/><area shape="rect" id="node94" href="traffic__info_8h.html" title="Informations relative to the other aircrafts." alt="" coords="1969,102,2137,149"/><area shape="rect" id="node98" href="common__nav_8c_source.html" title="subsystems/navigation\l/common_nav.c" alt="" coords="876,102,1044,149"/><area shape="rect" id="node9" href="paparazzi_8h_source.html" title="paparazzi.h" alt="" coords="1867,415,1963,444"/><area shape="rect" id="node13" href="state_8h.html" title="API to get/set the generic vehicle states." alt="" coords="800,311,867,340"/><area shape="rect" id="node54" href="nav__survey__rectangle_8h_source.html" title="subsystems/navigation\l/nav_survey_rectangle.h" alt="" coords="1383,198,1559,245"/><area shape="rect" id="node57" href="common__flight__plan_8h_source.html" title="subsystems/navigation\l/common_flight_plan.h" alt="" coords="1383,302,1551,349"/><area shape="rect" id="node60" href="common__nav_8h_source.html" title="subsystems/navigation\l/common_nav.h" alt="" coords="997,198,1165,245"/><area shape="rect" id="node11" href="inttypes_8h_source.html" title="inttypes.h" alt="" coords="1753,511,1839,540"/><area shape="rect" id="node15" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="608,511,787,540"/><area shape="rect" id="node31" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="147,511,336,540"/><area shape="rect" id="node36" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations." alt="" coords="491,406,640,453"/><area shape="rect" id="node42" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations." alt="" coords="317,406,467,453"/><area shape="rect" id="node47" href="pprz__orientation__conversion_8h.html" title="Generic orientation representation and conversion." alt="" coords="664,406,827,453"/><area shape="rect" id="node18" href="pprz__algebra_8h_source.html" title="math/pprz_algebra.h" alt="" coords="197,597,352,627"/><area shape="rect" id="node25" href="pprz__trig__int_8h_source.html" title="math/pprz_trig_int.h" alt="" coords="587,597,736,627"/><area shape="rect" id="node38" href="pprz__geodetic_8h_source.html" title="pprz_geodetic.h" alt="" coords="411,511,533,540"/><area shape="rect" id="node69" href="sys__time_8h.html" title="Architecture independent timing functions." alt="" coords="1213,415,1384,444"/></map>
+<area shape="rect" id="node5" href="nav_8h.html" title="Navigation library." alt="" coords="1403,111,1539,140"/><area shape="rect" id="node65" href="gps_8h.html" title="Device independent GPS code (interface)" alt="" coords="891,311,1029,340"/><area shape="rect" id="node78" href="fixedwing_2stabilization_2stabilization__attitude_8h.html" title="Fixed wing horizontal control." alt="" coords="1824,293,2005,357"/><area shape="rect" id="node85" href="fixedwing_2autopilot_8h.html" title="Fixedwing autopilot modes." alt="" coords="1575,302,1721,349"/><area shape="rect" id="node92" href="inter__mcu_8h.html" title="inter_mcu.h" alt="" coords="1847,111,1945,140"/><area shape="rect" id="node94" href="traffic__info_8h.html" title="Informations relative to the other aircrafts." alt="" coords="1969,102,2137,149"/><area shape="rect" id="node98" href="common__nav_8c.html" title="subsystems/navigation\l/common_nav.c" alt="" coords="876,102,1044,149"/><area shape="rect" id="node9" href="paparazzi_8h.html" title="paparazzi.h" alt="" coords="1867,415,1963,444"/><area shape="rect" id="node13" href="state_8h.html" title="API to get/set the generic vehicle states." alt="" coords="800,311,867,340"/><area shape="rect" id="node54" href="nav__survey__rectangle_8h.html" title="subsystems/navigation\l/nav_survey_rectangle.h" alt="" coords="1383,198,1559,245"/><area shape="rect" id="node57" href="common__flight__plan_8h.html" title="subsystems/navigation\l/common_flight_plan.h" alt="" coords="1383,302,1551,349"/><area shape="rect" id="node60" href="common__nav_8h.html" title="subsystems/navigation\l/common_nav.h" alt="" coords="997,198,1165,245"/><area shape="rect" id="node11" href="inttypes_8h.html" title="inttypes.h" alt="" coords="1753,511,1839,540"/><area shape="rect" id="node15" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="608,511,787,540"/><area shape="rect" id="node31" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="147,511,336,540"/><area shape="rect" id="node36" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations." alt="" coords="491,406,640,453"/><area shape="rect" id="node42" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations." alt="" coords="317,406,467,453"/><area shape="rect" id="node47" href="pprz__orientation__conversion_8h.html" title="Generic orientation representation and conversion." alt="" coords="664,406,827,453"/><area shape="rect" id="node18" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="197,597,352,627"/><area shape="rect" id="node25" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="587,597,736,627"/><area shape="rect" id="node38" href="pprz__geodetic_8h.html" title="pprz_geodetic.h" alt="" coords="411,511,533,540"/><area shape="rect" id="node69" href="sys__time_8h.html" title="Architecture independent timing functions." alt="" coords="1213,415,1384,444"/></map>
 </div>
 </div>
 <p><a href="nav_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a291c0fda2fd988bf5f602f56157ab2b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a291c0fda2fd988bf5f602f56157ab2b7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>NAV_C</b></td></tr>
-<tr class="memitem:ac3892fe123b99e805c0c5d5b1b4cd144"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3892fe123b99e805c0c5d5b1b4cd144"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RCLost</b>()&#160;&#160;&#160;bit_is_set(fbw_state-&gt;status, RADIO_REALLY_LOST)</td></tr>
-<tr class="memitem:ae41368935fe1a9081b0c663d37f227e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae41368935fe1a9081b0c663d37f227e0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>NAV_GLIDE_PITCH_TRIM</b>&#160;&#160;&#160;0.</td></tr>
-<tr class="memitem:ac654524aa60945f0eab4bed7521c3011"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac654524aa60945f0eab4bed7521c3011"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PowerVoltage</b>()&#160;&#160;&#160;(<a class="el" href="fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414">vsupply</a>/10.)</td></tr>
-<tr class="memitem:a7c6d9ca050122212a8a269e08f8c23f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c6d9ca050122212a8a269e08f8c23f2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RcRoll</b>(travel)&#160;&#160;&#160;(fbw_state-&gt;channels[RADIO_ROLL]* (float)travel /(float)MAX_PPRZ)</td></tr>
-<tr class="memitem:a17976ef29f2f34221836e877f4712d19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17976ef29f2f34221836e877f4712d19"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MIN_DX</b>&#160;&#160;&#160;((int16_t)(MAX_PPRZ * 0.05))</td></tr>
-<tr class="memitem:aa7303abf34661cdf531cce2f4fddfe86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>NavGlide</b>(_last_wp, _wp)</td></tr>
-<tr class="memitem:ab1ea324968aaab7cb5e252bd5f22e76c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1ea324968aaab7cb5e252bd5f22e76c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_DIST_CARROT</b>&#160;&#160;&#160;250.</td></tr>
-<tr class="memitem:aa39efd810919cc75b7892bd6e6e37b44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa39efd810919cc75b7892bd6e6e37b44"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MIN_HEIGHT_CARROT</b>&#160;&#160;&#160;50.</td></tr>
-<tr class="memitem:a34e95d63fe245178d74b11e75a53811d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34e95d63fe245178d74b11e75a53811d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_HEIGHT_CARROT</b>&#160;&#160;&#160;150.</td></tr>
-<tr class="memitem:a2a52a892a193bd2f3d2f86d1b1ded87e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>Goto3D</b>(radius)</td></tr>
-<tr class="memitem:a8691e5b760e30c9091d5a981d3663441"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8691e5b760e30c9091d5a981d3663441"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>NavFollow</b>(_ac_id, _distance, _height)&#160;&#160;&#160;nav_follow(_ac_id, _distance, _height);</td></tr>
-<tr class="memitem:a86a682e52e440368e6ca96062ef7563f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86a682e52e440368e6ca96062ef7563f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LINE_START_FUNCTION</b>&#160;&#160;&#160;{}</td></tr>
-<tr class="memitem:a2788d8683c98c074cb18680dc2eea0af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2788d8683c98c074cb18680dc2eea0af"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LINE_STOP_FUNCTION</b>&#160;&#160;&#160;{}</td></tr>
-<tr class="memitem:abb778e487ebe98aedea7858361496264"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb778e487ebe98aedea7858361496264"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FAILSAFE_HOME_RADIUS</b>&#160;&#160;&#160;DEFAULT_CIRCLE_RADIUS</td></tr>
+<tr class="memitem:a291c0fda2fd988bf5f602f56157ab2b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a291c0fda2fd988bf5f602f56157ab2b7">NAV_C</a></td></tr>
+<tr class="memitem:ac3892fe123b99e805c0c5d5b1b4cd144"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ac3892fe123b99e805c0c5d5b1b4cd144">RCLost</a>()&#160;&#160;&#160;bit_is_set(<a class="el" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;<a class="el" href="anemotaxis_8c.html#a015eb90e0de9f16e87bd149d4b9ce959">status</a>, RADIO_REALLY_LOST)</td></tr>
+<tr class="memitem:ae41368935fe1a9081b0c663d37f227e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ae41368935fe1a9081b0c663d37f227e0">NAV_GLIDE_PITCH_TRIM</a>&#160;&#160;&#160;0.</td></tr>
+<tr class="memitem:ac654524aa60945f0eab4bed7521c3011"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ac654524aa60945f0eab4bed7521c3011">PowerVoltage</a>()&#160;&#160;&#160;(<a class="el" href="fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414">vsupply</a>/10.)</td></tr>
+<tr class="memitem:a7c6d9ca050122212a8a269e08f8c23f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a7c6d9ca050122212a8a269e08f8c23f2">RcRoll</a>(travel)&#160;&#160;&#160;(<a class="el" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;channels[<a class="el" href="spektrum__dx7se__joby_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>]* (float)travel /(float)<a class="el" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>)</td></tr>
+<tr class="memitem:a17976ef29f2f34221836e877f4712d19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a17976ef29f2f34221836e877f4712d19">MIN_DX</a>&#160;&#160;&#160;((<a class="el" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>)(<a class="el" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> * 0.05))</td></tr>
+<tr class="memitem:aa7303abf34661cdf531cce2f4fddfe86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aa7303abf34661cdf531cce2f4fddfe86">NavGlide</a>(_last_wp, _wp)</td></tr>
+<tr class="memitem:ab1ea324968aaab7cb5e252bd5f22e76c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ab1ea324968aaab7cb5e252bd5f22e76c">MAX_DIST_CARROT</a>&#160;&#160;&#160;250.</td></tr>
+<tr class="memitem:aa39efd810919cc75b7892bd6e6e37b44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aa39efd810919cc75b7892bd6e6e37b44">MIN_HEIGHT_CARROT</a>&#160;&#160;&#160;50.</td></tr>
+<tr class="memitem:a34e95d63fe245178d74b11e75a53811d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a34e95d63fe245178d74b11e75a53811d">MAX_HEIGHT_CARROT</a>&#160;&#160;&#160;150.</td></tr>
+<tr class="memitem:a2a52a892a193bd2f3d2f86d1b1ded87e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a2a52a892a193bd2f3d2f86d1b1ded87e">Goto3D</a>(<a class="el" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>)</td></tr>
+<tr class="memitem:a8691e5b760e30c9091d5a981d3663441"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a8691e5b760e30c9091d5a981d3663441">NavFollow</a>(_ac_id, _distance, _height)&#160;&#160;&#160;<a class="el" href="nav_8c.html#a51583ee86b14f2a389b28f2641c4e010">nav_follow</a>(_ac_id, _distance, _height);</td></tr>
+<tr class="memitem:a86a682e52e440368e6ca96062ef7563f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a86a682e52e440368e6ca96062ef7563f">LINE_START_FUNCTION</a>&#160;&#160;&#160;{}</td></tr>
+<tr class="memitem:a2788d8683c98c074cb18680dc2eea0af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a2788d8683c98c074cb18680dc2eea0af">LINE_STOP_FUNCTION</a>&#160;&#160;&#160;{}</td></tr>
+<tr class="memitem:abb778e487ebe98aedea7858361496264"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#abb778e487ebe98aedea7858361496264">FAILSAFE_HOME_RADIUS</a>&#160;&#160;&#160;<a class="el" href="navigation_8c.html#a8116828e6b4e93e72cd8b6d727aaf265">DEFAULT_CIRCLE_RADIUS</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aab42b8493c217be79eb8f2523b6aed32"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>eight_status</b> { <br/>
-&#160;&#160;<b>R1T</b>, 
-<b>RT2</b>, 
-<b>C2</b>, 
-<b>R2T</b>, 
+<tr class="memitem:aab42b8493c217be79eb8f2523b6aed32"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32">eight_status</a> { <br/>
+&#160;&#160;<a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32abe183b30b1054c0977b12028d7a38ae0">R1T</a>, 
+<a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32a64f284f7c34d2b28e318b452acd38672">RT2</a>, 
+<a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32a5e602f1d68586231698bda7be6af7d2e">C2</a>, 
+<a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32ac3a5bc8a5c131d8463ba354e54b2305b">R2T</a>, 
 <br/>
-&#160;&#160;<b>RT1</b>, 
-<b>C1</b>
+&#160;&#160;<a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32a6975c28de6cfc40ea7b0a60d2bad7953">RT1</a>, 
+<a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32ae54c31a855b907f263d49edcdbe677bd">C1</a>
 <br/>
  }</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2580ee456d7dd3d157fd7c43ad2eac2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2580ee456d7dd3d157fd7c43ad2eac2d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>nav_init_stage</b> (void)</td></tr>
-<tr class="memitem:ad1b9d2e8da4a32477ca8bedc0bca86fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe">nav_circle_XY</a> (float x, float y, float radius)</td></tr>
+<tr class="memitem:a2580ee456d7dd3d157fd7c43ad2eac2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a2580ee456d7dd3d157fd7c43ad2eac2d">nav_init_stage</a> (void)</td></tr>
+<tr class="memitem:ad1b9d2e8da4a32477ca8bedc0bca86fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe">nav_circle_XY</a> (float x, float y, float <a class="el" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>)</td></tr>
 <tr class="memdesc:ad1b9d2e8da4a32477ca8bedc0bca86fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigates around (x, y).  <a href="#ad1b9d2e8da4a32477ca8bedc0bca86fe"></a><br/></td></tr>
-<tr class="memitem:a51583ee86b14f2a389b28f2641c4e010"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51583ee86b14f2a389b28f2641c4e010"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>nav_follow</b> (uint8_t _ac_id, float _distance, float _height)</td></tr>
-<tr class="memitem:ad18f254456d7f982064ea9e36b29ed93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad18f254456d7f982064ea9e36b29ed93"></a>
-static bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>nav_compute_baseleg</b> (uint8_t wp_af, uint8_t wp_td, uint8_t wp_baseleg, float radius)</td></tr>
-<tr class="memitem:a7a738c44a399a9103371dc53dfabc9dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a738c44a399a9103371dc53dfabc9dc"></a>
-static bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>nav_compute_final_from_glide</b> (uint8_t wp_af, uint8_t wp_td, float glide)</td></tr>
-<tr class="memitem:ad9cc0030bdcfa2192dda22875ca68934"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9cc0030bdcfa2192dda22875ca68934"></a>
-static bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>compute_TOD</b> (uint8_t _af, uint8_t _td, uint8_t _tod, float glide_airspeed, float glide_vspeed)</td></tr>
+<tr class="memitem:a51583ee86b14f2a389b28f2641c4e010"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a51583ee86b14f2a389b28f2641c4e010">nav_follow</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _ac_id, float _distance, float _height)</td></tr>
+<tr class="memitem:ad18f254456d7f982064ea9e36b29ed93"><td class="memItemLeft" align="right" valign="top">static bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ad18f254456d7f982064ea9e36b29ed93">nav_compute_baseleg</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp_af, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp_td, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp_baseleg, float <a class="el" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>)</td></tr>
+<tr class="memitem:a7a738c44a399a9103371dc53dfabc9dc"><td class="memItemLeft" align="right" valign="top">static bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a7a738c44a399a9103371dc53dfabc9dc">nav_compute_final_from_glide</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp_af, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> wp_td, float glide)</td></tr>
+<tr class="memitem:ad9cc0030bdcfa2192dda22875ca68934"><td class="memItemLeft" align="right" valign="top">static bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ad9cc0030bdcfa2192dda22875ca68934">compute_TOD</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _af, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _td, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _tod, float glide_airspeed, float glide_vspeed)</td></tr>
 <tr class="memitem:a771b907350b836982ba4e31fd4bcbf4b"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b">nav_approaching_xy</a> (float x, float y, float from_x, float from_y, float approaching_time)</td></tr>
 <tr class="memdesc:a771b907350b836982ba4e31fd4bcbf4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide if the UAV is approaching the current waypoint.  <a href="#a771b907350b836982ba4e31fd4bcbf4b"></a><br/></td></tr>
-<tr class="memitem:ae9d11d2e378b23ecbee86419cbf341f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9d11d2e378b23ecbee86419cbf341f0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0">fly_to_xy</a> (float x, float y)</td></tr>
-<tr class="memdesc:ae9d11d2e378b23ecbee86419cbf341f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes <em>desired_x</em>, <em>desired_y</em> and <em>desired_course</em>. <br/></td></tr>
+<tr class="memitem:ae9d11d2e378b23ecbee86419cbf341f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0">fly_to_xy</a> (float x, float y)</td></tr>
+<tr class="memdesc:ae9d11d2e378b23ecbee86419cbf341f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes <em>desired_x</em>, <em>desired_y</em> and <em>desired_course</em>.  <a href="#ae9d11d2e378b23ecbee86419cbf341f0"></a><br/></td></tr>
 <tr class="memitem:ab4247c9f3dc0417690e1404add032cbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe">nav_route_xy</a> (float last_wp_x, float last_wp_y, float wp_x, float wp_y)</td></tr>
 <tr class="memdesc:ab4247c9f3dc0417690e1404add032cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the carrot position along the desired segment.  <a href="#ab4247c9f3dc0417690e1404add032cbe"></a><br/></td></tr>
-<tr class="memitem:afe6d4a5dd1de94f57126d27a6baac58f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe6d4a5dd1de94f57126d27a6baac58f"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>nav_set_altitude</b> (void)</td></tr>
+<tr class="memitem:afe6d4a5dd1de94f57126d27a6baac58f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#afe6d4a5dd1de94f57126d27a6baac58f">nav_set_altitude</a> (void)</td></tr>
 <tr class="memitem:a069e6b8f68b2e117cbbe03f29e30a2e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a069e6b8f68b2e117cbbe03f29e30a2e3">nav_home</a> (void)</td></tr>
 <tr class="memdesc:a069e6b8f68b2e117cbbe03f29e30a2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Home mode navigation (circle around HOME)  <a href="#a069e6b8f68b2e117cbbe03f29e30a2e3"></a><br/></td></tr>
-<tr class="memitem:ad40d34bcd8520f64bb073fae4a08878e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad40d34bcd8520f64bb073fae4a08878e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ad40d34bcd8520f64bb073fae4a08878e">nav_periodic_task</a> (void)</td></tr>
-<tr class="memdesc:ad40d34bcd8520f64bb073fae4a08878e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigation main: call to the code generated from the XML flight plan. <br/></td></tr>
-<tr class="memitem:a64a3814d1672e69989f80701a0ff5749"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64a3814d1672e69989f80701a0ff5749"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a64a3814d1672e69989f80701a0ff5749">nav_init</a> (void)</td></tr>
-<tr class="memdesc:a64a3814d1672e69989f80701a0ff5749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigation Initialisation. <br/></td></tr>
+<tr class="memitem:ad40d34bcd8520f64bb073fae4a08878e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ad40d34bcd8520f64bb073fae4a08878e">nav_periodic_task</a> (void)</td></tr>
+<tr class="memdesc:ad40d34bcd8520f64bb073fae4a08878e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigation main: call to the code generated from the XML flight plan.  <a href="#ad40d34bcd8520f64bb073fae4a08878e"></a><br/></td></tr>
+<tr class="memitem:a64a3814d1672e69989f80701a0ff5749"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a64a3814d1672e69989f80701a0ff5749">nav_init</a> (void)</td></tr>
+<tr class="memdesc:a64a3814d1672e69989f80701a0ff5749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigation Initialisation.  <a href="#a64a3814d1672e69989f80701a0ff5749"></a><br/></td></tr>
 <tr class="memitem:ab746572e63956a2ad40674328a85b029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ab746572e63956a2ad40674328a85b029">nav_without_gps</a> (void)</td></tr>
 <tr class="memdesc:ab746572e63956a2ad40674328a85b029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Failsafe navigation without position estimation.  <a href="#ab746572e63956a2ad40674328a85b029"></a><br/></td></tr>
-<tr class="memitem:ae9a835aee8c0898c8c5c65190d0b30bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9a835aee8c0898c8c5c65190d0b30bc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>nav_eight_init</b> (void)</td></tr>
-<tr class="memitem:a289c72677bdc1d6a83aa2cd266335601"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a289c72677bdc1d6a83aa2cd266335601">nav_eight</a> (uint8_t target, uint8_t c1, float radius)</td></tr>
+<tr class="memitem:ae9a835aee8c0898c8c5c65190d0b30bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ae9a835aee8c0898c8c5c65190d0b30bc">nav_eight_init</a> (void)</td></tr>
+<tr class="memitem:a289c72677bdc1d6a83aa2cd266335601"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a289c72677bdc1d6a83aa2cd266335601">nav_eight</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> target, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="discsurvey_8c.html#ae686c0c996ea6ecdf1eb6bf2def17830">c1</a>, float <a class="el" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>)</td></tr>
 <tr class="memdesc:a289c72677bdc1d6a83aa2cd266335601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigation along a figure 8.  <a href="#a289c72677bdc1d6a83aa2cd266335601"></a><br/></td></tr>
-<tr class="memitem:aa602ef7f7d2e485655a7cc97a35b80c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa602ef7f7d2e485655a7cc97a35b80c3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>nav_oval_init</b> (void)</td></tr>
-<tr class="memitem:ae660519c2f89e1c5f9aac7877f1e46e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae660519c2f89e1c5f9aac7877f1e46e6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>nav_oval</b> (uint8_t p1, uint8_t p2, float radius)</td></tr>
+<tr class="memitem:aa602ef7f7d2e485655a7cc97a35b80c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aa602ef7f7d2e485655a7cc97a35b80c3">nav_oval_init</a> (void)</td></tr>
+<tr class="memitem:ae660519c2f89e1c5f9aac7877f1e46e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ae660519c2f89e1c5f9aac7877f1e46e6">nav_oval</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> p1, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> p2, float <a class="el" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a80cf41be180b9c15f127bcbee731fb9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80cf41be180b9c15f127bcbee731fb9b"></a>
-enum oval_status&#160;</td><td class="memItemRight" valign="bottom"><b>oval_status</b></td></tr>
-<tr class="memitem:ab2e97613bcf8e5721e639812c7a3469a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2e97613bcf8e5721e639812c7a3469a"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>last_x</b></td></tr>
-<tr class="memitem:a38c13a13ef3e5a3b6480f71bf244e668"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38c13a13ef3e5a3b6480f71bf244e668"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>last_y</b></td></tr>
-<tr class="memitem:a280519e0d643e2e7ec41137b887d0b31"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a280519e0d643e2e7ec41137b887d0b31">last_wp</a></td></tr>
+<tr class="memitem:a80cf41be180b9c15f127bcbee731fb9b"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcf">oval_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a80cf41be180b9c15f127bcbee731fb9b">oval_status</a></td></tr>
+<tr class="memitem:ab2e97613bcf8e5721e639812c7a3469a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ab2e97613bcf8e5721e639812c7a3469a">last_x</a></td></tr>
+<tr class="memitem:a38c13a13ef3e5a3b6480f71bf244e668"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a38c13a13ef3e5a3b6480f71bf244e668">last_y</a></td></tr>
+<tr class="memitem:a280519e0d643e2e7ec41137b887d0b31"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a280519e0d643e2e7ec41137b887d0b31">last_wp</a></td></tr>
 <tr class="memdesc:a280519e0d643e2e7ec41137b887d0b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of last waypoint.  <a href="#a280519e0d643e2e7ec41137b887d0b31"></a><br/></td></tr>
-<tr class="memitem:ad1a9450df5c62410ea50a3e36aa963f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1a9450df5c62410ea50a3e36aa963f1"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>rc_pitch</b></td></tr>
-<tr class="memitem:a2bece6794aadefe30136dcd27b721f53"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2bece6794aadefe30136dcd27b721f53"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>carrot_x</b></td></tr>
-<tr class="memitem:a433f78b82598ad1380701b8b4e376632"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a433f78b82598ad1380701b8b4e376632"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>carrot_y</b></td></tr>
-<tr class="memitem:ae53708a0be0d9df410749c81a8458d6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae53708a0be0d9df410749c81a8458d6f"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ae53708a0be0d9df410749c81a8458d6f">nav_circle_radians</a></td></tr>
-<tr class="memdesc:ae53708a0be0d9df410749c81a8458d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status on the current circle. <br/></td></tr>
-<tr class="memitem:aa10361692f333adcd1ccfd84ff1d0974"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa10361692f333adcd1ccfd84ff1d0974"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_circle_trigo_qdr</b></td></tr>
-<tr class="memitem:a4e73a18879f679277a72ef00250e359e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e73a18879f679277a72ef00250e359e"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_radius</b></td></tr>
-<tr class="memitem:af90efaefda837fe910e6c1d55ea0e949"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af90efaefda837fe910e6c1d55ea0e949"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#af90efaefda837fe910e6c1d55ea0e949">nav_course</a></td></tr>
-<tr class="memdesc:af90efaefda837fe910e6c1d55ea0e949"><td class="mdescLeft">&#160;</td><td class="mdescRight">with #INT32_ANGLE_FRAC <br/></td></tr>
-<tr class="memitem:a45139c6cf4dbda18870cf748337fbea7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45139c6cf4dbda18870cf748337fbea7"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_climb</b></td></tr>
-<tr class="memitem:aae62d3a760ee0f535ee7bf9131df6d9c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae62d3a760ee0f535ee7bf9131df6d9c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_shift</b></td></tr>
+<tr class="memitem:ad1a9450df5c62410ea50a3e36aa963f1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ad1a9450df5c62410ea50a3e36aa963f1">rc_pitch</a></td></tr>
+<tr class="memitem:a2bece6794aadefe30136dcd27b721f53"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a2bece6794aadefe30136dcd27b721f53">carrot_x</a></td></tr>
+<tr class="memitem:a433f78b82598ad1380701b8b4e376632"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a433f78b82598ad1380701b8b4e376632">carrot_y</a></td></tr>
+<tr class="memitem:ae53708a0be0d9df410749c81a8458d6f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ae53708a0be0d9df410749c81a8458d6f">nav_circle_radians</a></td></tr>
+<tr class="memdesc:ae53708a0be0d9df410749c81a8458d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status on the current circle.  <a href="#ae53708a0be0d9df410749c81a8458d6f"></a><br/></td></tr>
+<tr class="memitem:aa10361692f333adcd1ccfd84ff1d0974"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aa10361692f333adcd1ccfd84ff1d0974">nav_circle_trigo_qdr</a></td></tr>
+<tr class="memitem:a4e73a18879f679277a72ef00250e359e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a4e73a18879f679277a72ef00250e359e">nav_radius</a></td></tr>
+<tr class="memitem:af90efaefda837fe910e6c1d55ea0e949"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#af90efaefda837fe910e6c1d55ea0e949">nav_course</a></td></tr>
+<tr class="memdesc:af90efaefda837fe910e6c1d55ea0e949"><td class="mdescLeft">&#160;</td><td class="mdescRight">with <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>  <a href="#af90efaefda837fe910e6c1d55ea0e949"></a><br/></td></tr>
+<tr class="memitem:a45139c6cf4dbda18870cf748337fbea7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a45139c6cf4dbda18870cf748337fbea7">nav_climb</a></td></tr>
+<tr class="memitem:aae62d3a760ee0f535ee7bf9131df6d9c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aae62d3a760ee0f535ee7bf9131df6d9c">nav_shift</a></td></tr>
 <tr class="memitem:a620eee3565104705439b86c0011d5ce5"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a620eee3565104705439b86c0011d5ce5">nav_leg_progress</a></td></tr>
 <tr class="memdesc:a620eee3565104705439b86c0011d5ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status on the current leg (percentage, 0.  <a href="#a620eee3565104705439b86c0011d5ce5"></a><br/></td></tr>
-<tr class="memitem:aacf1866dff03a2d6eba27ddefae85636"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aacf1866dff03a2d6eba27ddefae85636"></a>
-static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aacf1866dff03a2d6eba27ddefae85636">nav_leg_length</a></td></tr>
-<tr class="memdesc:aacf1866dff03a2d6eba27ddefae85636"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of the current leg (m) <br/></td></tr>
-<tr class="memitem:a3d597a1b316fdba0db5701a03ad56c7b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d597a1b316fdba0db5701a03ad56c7b"></a>
-bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>nav_in_circle</b> = FALSE</td></tr>
-<tr class="memitem:a70c77743e83862b67b86056fcc80a8ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70c77743e83862b67b86056fcc80a8ec"></a>
-bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>nav_in_segment</b> = FALSE</td></tr>
-<tr class="memitem:ac1af27920d41a6dbc343fc1d7f55e08c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1af27920d41a6dbc343fc1d7f55e08c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_circle_x</b></td></tr>
-<tr class="memitem:a7b01191b794559f9d485b67c2be62c39"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b01191b794559f9d485b67c2be62c39"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_circle_y</b></td></tr>
-<tr class="memitem:a3e545eca284b674d03e90c15f58e1ff4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e545eca284b674d03e90c15f58e1ff4"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_circle_radius</b></td></tr>
-<tr class="memitem:a8b5c072e3f61f9025578e3e6283ffcb1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b5c072e3f61f9025578e3e6283ffcb1"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_segment_x_1</b></td></tr>
-<tr class="memitem:aa04e457095198f649868d28f72969029"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa04e457095198f649868d28f72969029"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_segment_y_1</b></td></tr>
-<tr class="memitem:a123af850aca7872d4ae1f0fd561fc302"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a123af850aca7872d4ae1f0fd561fc302"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_segment_x_2</b></td></tr>
-<tr class="memitem:a2992c5b1e4da4284068a225e451877a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2992c5b1e4da4284068a225e451877a4"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_segment_y_2</b></td></tr>
-<tr class="memitem:ad2a5195a657a7961bfb54e3c2da48a21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2a5195a657a7961bfb54e3c2da48a21"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>horizontal_mode</b></td></tr>
-<tr class="memitem:a421ee656b2e10a372b13bddc4bf546b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a421ee656b2e10a372b13bddc4bf546b3"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>circle_bank</b> = 0</td></tr>
-<tr class="memitem:a1612ea0e1474e49b800cb3f497096523"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1612ea0e1474e49b800cb3f497096523"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a1612ea0e1474e49b800cb3f497096523">flight_altitude</a></td></tr>
-<tr class="memdesc:a1612ea0e1474e49b800cb3f497096523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically adjustable, reset to nav_altitude when it is changing. <br/></td></tr>
-<tr class="memitem:a0ac0aec8bffae1d911b4f2fa5e2be72b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ac0aec8bffae1d911b4f2fa5e2be72b"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_glide_pitch_trim</b></td></tr>
-<tr class="memitem:aeaf31d3e1ac7e38949cd2b45ea2ce21e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeaf31d3e1ac7e38949cd2b45ea2ce21e"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_ground_speed_setpoint</b></td></tr>
-<tr class="memitem:a4088688165aca8cabadaf45fb0b44643"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4088688165aca8cabadaf45fb0b44643"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_ground_speed_pgain</b></td></tr>
-<tr class="memitem:ad07af37c66417d0eac97740c696ace0d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad07af37c66417d0eac97740c696ace0d"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_survey_shift</b></td></tr>
-<tr class="memitem:aeb19008e34a80086cfcb00ae5ae32fdd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb19008e34a80086cfcb00ae5ae32fdd"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_survey_west</b></td></tr>
-<tr class="memitem:a1709471dbc0af61015c59e136100e118"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1709471dbc0af61015c59e136100e118"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_survey_east</b></td></tr>
-<tr class="memitem:a4bd5ccc05012fbe9ba362b941aea7294"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4bd5ccc05012fbe9ba362b941aea7294"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_survey_north</b></td></tr>
-<tr class="memitem:a5bd732618e35c5a855ef4e0549f733f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bd732618e35c5a855ef4e0549f733f0"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_survey_south</b></td></tr>
-<tr class="memitem:a68393cb43ffff9bfff53cce34d108e38"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68393cb43ffff9bfff53cce34d108e38"></a>
-bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>nav_survey_active</b></td></tr>
-<tr class="memitem:a100095dcf201264924107b608a3ed5cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a100095dcf201264924107b608a3ed5cd"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>nav_mode</b></td></tr>
-<tr class="memitem:a04b783250b1673126fa3f4729cb2078e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04b783250b1673126fa3f4729cb2078e"></a>
-static unit_t&#160;</td><td class="memItemRight" valign="bottom"><b>unit</b></td></tr>
-<tr class="memitem:a09096c05260cf7f225d988b6297168c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09096c05260cf7f225d988b6297168c0"></a>
-static float&#160;</td><td class="memItemRight" valign="bottom"><b>baseleg_out_qdr</b></td></tr>
-<tr class="memitem:a67342fe7d0a993249d4b4cd0e20821ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67342fe7d0a993249d4b4cd0e20821ce"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nav_altitude</b> = GROUND_ALT + MIN_HEIGHT_CARROT</td></tr>
-<tr class="memitem:a88f523b73a294f7cb312604f212c21ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88f523b73a294f7cb312604f212c21ab"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>desired_x</b></td></tr>
-<tr class="memitem:ab7d49633159601ed2eaa65f23d612805"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7d49633159601ed2eaa65f23d612805"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>desired_y</b></td></tr>
-<tr class="memitem:a5eb16c9d058ba78537ddf42c2ace1075"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5eb16c9d058ba78537ddf42c2ace1075"></a>
-pprz_t&#160;</td><td class="memItemRight" valign="bottom"><b>nav_throttle_setpoint</b></td></tr>
-<tr class="memitem:ac1ac32b055c0a7879329346b1662f313"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1ac32b055c0a7879329346b1662f313"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ac1ac32b055c0a7879329346b1662f313">nav_pitch</a></td></tr>
-<tr class="memdesc:ac1ac32b055c0a7879329346b1662f313"><td class="mdescLeft">&#160;</td><td class="mdescRight">with #INT32_ANGLE_FRAC <br/></td></tr>
-<tr class="memitem:a737a463b508f62286a0e62c5ed5648b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a737a463b508f62286a0e62c5ed5648b4"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>fp_pitch</b></td></tr>
-<tr class="memitem:af4a85437e319605798991baf6a5c1b4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4a85437e319605798991baf6a5c1b4b"></a>
-static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>eight_status</b></td></tr>
-<tr class="memitem:a3f8eab6736191ca3d1cb16738cbcf97f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a3f8eab6736191ca3d1cb16738cbcf97f">nav_oval_count</a></td></tr>
+<tr class="memitem:aacf1866dff03a2d6eba27ddefae85636"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aacf1866dff03a2d6eba27ddefae85636">nav_leg_length</a></td></tr>
+<tr class="memdesc:aacf1866dff03a2d6eba27ddefae85636"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of the current leg (m)  <a href="#aacf1866dff03a2d6eba27ddefae85636"></a><br/></td></tr>
+<tr class="memitem:a3d597a1b316fdba0db5701a03ad56c7b"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a3d597a1b316fdba0db5701a03ad56c7b">nav_in_circle</a> = <a class="el" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td></tr>
+<tr class="memitem:a70c77743e83862b67b86056fcc80a8ec"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a70c77743e83862b67b86056fcc80a8ec">nav_in_segment</a> = <a class="el" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td></tr>
+<tr class="memitem:ac1af27920d41a6dbc343fc1d7f55e08c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ac1af27920d41a6dbc343fc1d7f55e08c">nav_circle_x</a></td></tr>
+<tr class="memitem:a7b01191b794559f9d485b67c2be62c39"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a7b01191b794559f9d485b67c2be62c39">nav_circle_y</a></td></tr>
+<tr class="memitem:a3e545eca284b674d03e90c15f58e1ff4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a3e545eca284b674d03e90c15f58e1ff4">nav_circle_radius</a></td></tr>
+<tr class="memitem:a8b5c072e3f61f9025578e3e6283ffcb1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a8b5c072e3f61f9025578e3e6283ffcb1">nav_segment_x_1</a></td></tr>
+<tr class="memitem:aa04e457095198f649868d28f72969029"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aa04e457095198f649868d28f72969029">nav_segment_y_1</a></td></tr>
+<tr class="memitem:a123af850aca7872d4ae1f0fd561fc302"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a123af850aca7872d4ae1f0fd561fc302">nav_segment_x_2</a></td></tr>
+<tr class="memitem:a2992c5b1e4da4284068a225e451877a4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a2992c5b1e4da4284068a225e451877a4">nav_segment_y_2</a></td></tr>
+<tr class="memitem:ad2a5195a657a7961bfb54e3c2da48a21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ad2a5195a657a7961bfb54e3c2da48a21">horizontal_mode</a></td></tr>
+<tr class="memitem:a421ee656b2e10a372b13bddc4bf546b3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a421ee656b2e10a372b13bddc4bf546b3">circle_bank</a> = 0</td></tr>
+<tr class="memitem:a1612ea0e1474e49b800cb3f497096523"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a1612ea0e1474e49b800cb3f497096523">flight_altitude</a></td></tr>
+<tr class="memdesc:a1612ea0e1474e49b800cb3f497096523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically adjustable, reset to nav_altitude when it is changing.  <a href="#a1612ea0e1474e49b800cb3f497096523"></a><br/></td></tr>
+<tr class="memitem:a0ac0aec8bffae1d911b4f2fa5e2be72b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a0ac0aec8bffae1d911b4f2fa5e2be72b">nav_glide_pitch_trim</a></td></tr>
+<tr class="memitem:aeaf31d3e1ac7e38949cd2b45ea2ce21e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aeaf31d3e1ac7e38949cd2b45ea2ce21e">nav_ground_speed_setpoint</a></td></tr>
+<tr class="memitem:a4088688165aca8cabadaf45fb0b44643"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a4088688165aca8cabadaf45fb0b44643">nav_ground_speed_pgain</a></td></tr>
+<tr class="memitem:ad07af37c66417d0eac97740c696ace0d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ad07af37c66417d0eac97740c696ace0d">nav_survey_shift</a></td></tr>
+<tr class="memitem:aeb19008e34a80086cfcb00ae5ae32fdd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#aeb19008e34a80086cfcb00ae5ae32fdd">nav_survey_west</a></td></tr>
+<tr class="memitem:a1709471dbc0af61015c59e136100e118"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a1709471dbc0af61015c59e136100e118">nav_survey_east</a></td></tr>
+<tr class="memitem:a4bd5ccc05012fbe9ba362b941aea7294"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a4bd5ccc05012fbe9ba362b941aea7294">nav_survey_north</a></td></tr>
+<tr class="memitem:a5bd732618e35c5a855ef4e0549f733f0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a5bd732618e35c5a855ef4e0549f733f0">nav_survey_south</a></td></tr>
+<tr class="memitem:a68393cb43ffff9bfff53cce34d108e38"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a68393cb43ffff9bfff53cce34d108e38">nav_survey_active</a></td></tr>
+<tr class="memitem:a100095dcf201264924107b608a3ed5cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a100095dcf201264924107b608a3ed5cd">nav_mode</a></td></tr>
+<tr class="memitem:a04b783250b1673126fa3f4729cb2078e"><td class="memItemLeft" align="right" valign="top">static unit_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a04b783250b1673126fa3f4729cb2078e">unit</a></td></tr>
+<tr class="memitem:a09096c05260cf7f225d988b6297168c0"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a09096c05260cf7f225d988b6297168c0">baseleg_out_qdr</a></td></tr>
+<tr class="memitem:a67342fe7d0a993249d4b4cd0e20821ce"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a67342fe7d0a993249d4b4cd0e20821ce">nav_altitude</a> = GROUND_ALT + <a class="el" href="nav_8c.html#aa39efd810919cc75b7892bd6e6e37b44">MIN_HEIGHT_CARROT</a></td></tr>
+<tr class="memitem:a88f523b73a294f7cb312604f212c21ab"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a88f523b73a294f7cb312604f212c21ab">desired_x</a></td></tr>
+<tr class="memitem:ab7d49633159601ed2eaa65f23d612805"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ab7d49633159601ed2eaa65f23d612805">desired_y</a></td></tr>
+<tr class="memitem:a5eb16c9d058ba78537ddf42c2ace1075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="paparazzi_8h.html#a3fd988f23519b41e9aea4d38bfb45e1c">pprz_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a5eb16c9d058ba78537ddf42c2ace1075">nav_throttle_setpoint</a></td></tr>
+<tr class="memitem:ac1ac32b055c0a7879329346b1662f313"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#ac1ac32b055c0a7879329346b1662f313">nav_pitch</a></td></tr>
+<tr class="memdesc:ac1ac32b055c0a7879329346b1662f313"><td class="mdescLeft">&#160;</td><td class="mdescRight">with <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a>  <a href="#ac1ac32b055c0a7879329346b1662f313"></a><br/></td></tr>
+<tr class="memitem:a737a463b508f62286a0e62c5ed5648b4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a737a463b508f62286a0e62c5ed5648b4">fp_pitch</a></td></tr>
+<tr class="memitem:af4a85437e319605798991baf6a5c1b4b"><td class="memItemLeft" align="right" valign="top">static enum <a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32">eight_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#af4a85437e319605798991baf6a5c1b4b">eight_status</a></td></tr>
+<tr class="memitem:a3f8eab6736191ca3d1cb16738cbcf97f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav_8c.html#a3f8eab6736191ca3d1cb16738cbcf97f">nav_oval_count</a></td></tr>
 <tr class="memdesc:a3f8eab6736191ca3d1cb16738cbcf97f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigation along a figure O.  <a href="#a3f8eab6736191ca3d1cb16738cbcf97f"></a><br/></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -329,6 +260,22 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 <p>Definition in file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
 </div><h2>Macro Definition Documentation</h2>
+<a class="anchor" id="abb778e487ebe98aedea7858361496264"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAILSAFE_HOME_RADIUS&#160;&#160;&#160;<a class="el" href="navigation_8c.html#a8116828e6b4e93e72cd8b6d727aaf265">DEFAULT_CIRCLE_RADIUS</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00381">381</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00394">nav_home()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a2a52a892a193bd2f3d2f86d1b1ded87e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -337,37 +284,189 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
           <td class="memname">#define Goto3D</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">radius</td><td>)</td>
+          <td class="paramname"><a class="el" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">{ \</div>
-<div class="line">  if (pprz_mode == PPRZ_MODE_AUTO2) { \</div>
-<div class="line">    int16_t yaw = fbw_state-&gt;channels[RADIO_YAW]; \</div>
-<div class="line">    if (yaw &gt; MIN_DX || yaw &lt; -MIN_DX) { \</div>
-<div class="line">      carrot_x += FLOAT_OF_PPRZ(yaw, 0, -20.); \</div>
-<div class="line">      carrot_x = Min(carrot_x, MAX_DIST_CARROT); \</div>
-<div class="line">      carrot_x = Max(carrot_x, -MAX_DIST_CARROT); \</div>
+<div class="line">  if (<a class="code" href="fixedwing_2autopilot_8c.html#aebf57c26248ee8c66d3eacdbd6a155cd">pprz_mode</a> == <a class="code" href="fixedwing_2autopilot_8h.html#a7248dd1183b2fe1d11cdc66a01fe5744">PPRZ_MODE_AUTO2</a>) { <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">\</a></div>
+<div class="line"><a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">    int16_t</a> yaw = <a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;channels[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6">RADIO_YAW</a>]; \</div>
+<div class="line">    if (yaw &gt; <a class="code" href="nav_8c.html#a17976ef29f2f34221836e877f4712d19">MIN_DX</a> || yaw &lt; -<a class="code" href="nav_8c.html#a17976ef29f2f34221836e877f4712d19">MIN_DX</a>) { \</div>
+<div class="line">      carrot_x += <a class="code" href="fixedwing_2autopilot_8h.html#aa08d012f2139a6ef9e5b92e5efcf555b">FLOAT_OF_PPRZ</a>(yaw, 0, -20.); \</div>
+<div class="line">      carrot_x = <a class="code" href="common__flight__plan_8h.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(<a class="code" href="nav_8c.html#a2bece6794aadefe30136dcd27b721f53">carrot_x</a>, <a class="code" href="nav_8c.html#ab1ea324968aaab7cb5e252bd5f22e76c">MAX_DIST_CARROT</a>); \</div>
+<div class="line">      carrot_x = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(<a class="code" href="nav_8c.html#a2bece6794aadefe30136dcd27b721f53">carrot_x</a>, -<a class="code" href="nav_8c.html#ab1ea324968aaab7cb5e252bd5f22e76c">MAX_DIST_CARROT</a>); \</div>
+<div class="line">    } <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">\</a></div>
+<div class="line"><a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">    int16_t</a> pitch = <a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;channels[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a8e61ffe584bf24170117b9fcb2da4023">RADIO_PITCH</a>]; \</div>
+<div class="line">    if (pitch &gt; <a class="code" href="nav_8c.html#a17976ef29f2f34221836e877f4712d19">MIN_DX</a> || pitch &lt; -<a class="code" href="nav_8c.html#a17976ef29f2f34221836e877f4712d19">MIN_DX</a>) { \</div>
+<div class="line">      carrot_y += <a class="code" href="fixedwing_2autopilot_8h.html#aa08d012f2139a6ef9e5b92e5efcf555b">FLOAT_OF_PPRZ</a>(pitch, 0, -20.); \</div>
+<div class="line">      carrot_y = <a class="code" href="common__flight__plan_8h.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(<a class="code" href="nav_8c.html#a433f78b82598ad1380701b8b4e376632">carrot_y</a>, <a class="code" href="nav_8c.html#ab1ea324968aaab7cb5e252bd5f22e76c">MAX_DIST_CARROT</a>); \</div>
+<div class="line">      carrot_y = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(<a class="code" href="nav_8c.html#a433f78b82598ad1380701b8b4e376632">carrot_y</a>, -<a class="code" href="nav_8c.html#ab1ea324968aaab7cb5e252bd5f22e76c">MAX_DIST_CARROT</a>); \</div>
 <div class="line">    } \</div>
-<div class="line">    int16_t pitch = fbw_state-&gt;channels[RADIO_PITCH]; \</div>
-<div class="line">    if (pitch &gt; MIN_DX || pitch &lt; -MIN_DX) { \</div>
-<div class="line">      carrot_y += FLOAT_OF_PPRZ(pitch, 0, -20.); \</div>
-<div class="line">      carrot_y = Min(carrot_y, MAX_DIST_CARROT); \</div>
-<div class="line">      carrot_y = Max(carrot_y, -MAX_DIST_CARROT); \</div>
-<div class="line">    } \</div>
-<div class="line">    v_ctl_mode = V_CTL_MODE_AUTO_ALT; \</div>
-<div class="line">    int16_t roll =  fbw_state-&gt;channels[RADIO_ROLL]; \</div>
-<div class="line">    if (roll &gt; MIN_DX || roll &lt; -MIN_DX) { \</div>
-<div class="line">      nav_altitude += FLOAT_OF_PPRZ(roll, 0, -1.0); \</div>
-<div class="line">      nav_altitude = Max(nav_altitude, MIN_HEIGHT_CARROT+ground_alt); \</div>
-<div class="line">      nav_altitude = Min(nav_altitude, MAX_HEIGHT_CARROT+ground_alt); \</div>
+<div class="line">    v_ctl_mode = <a class="code" href="guidance__common_8h.html#aec395380896bebebddf245d6b676d5ed">V_CTL_MODE_AUTO_ALT</a>; <a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">\</a></div>
+<div class="line"><a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">    int16_t</a> roll =  <a class="code" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;channels[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>]; \</div>
+<div class="line">    if (roll &gt; <a class="code" href="nav_8c.html#a17976ef29f2f34221836e877f4712d19">MIN_DX</a> || roll &lt; -<a class="code" href="nav_8c.html#a17976ef29f2f34221836e877f4712d19">MIN_DX</a>) { \</div>
+<div class="line">      nav_altitude += <a class="code" href="fixedwing_2autopilot_8h.html#aa08d012f2139a6ef9e5b92e5efcf555b">FLOAT_OF_PPRZ</a>(roll, 0, -1.0); \</div>
+<div class="line">      nav_altitude = <a class="code" href="common__flight__plan_8h.html#a56957c78144b268fbcdbf7d9fb5acafe">Max</a>(<a class="code" href="navigation_8c.html#af0e2e459664ed595f936a2a9d5852286">nav_altitude</a>, <a class="code" href="nav_8c.html#aa39efd810919cc75b7892bd6e6e37b44">MIN_HEIGHT_CARROT</a>+<a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2" title="size == nb_waypoint, waypoint 0 is a dummy waypoint">ground_alt</a>); \</div>
+<div class="line">      nav_altitude = <a class="code" href="common__flight__plan_8h.html#a202767af7f06cef8e1c69d9771f157c3">Min</a>(<a class="code" href="navigation_8c.html#af0e2e459664ed595f936a2a9d5852286">nav_altitude</a>, <a class="code" href="nav_8c.html#a34e95d63fe245178d74b11e75a53811d">MAX_HEIGHT_CARROT</a>+<a class="code" href="navigation_8c.html#ab21c78d7a323ace0bcca84fc0be63cb2" title="size == nb_waypoint, waypoint 0 is a dummy waypoint">ground_alt</a>); \</div>
 <div class="line">    } \</div>
 <div class="line">  } \</div>
-<div class="line">  nav_circle_XY(carrot_x, carrot_y, radius); \</div>
+<div class="line">  nav_circle_XY(<a class="code" href="nav_8c.html#a2bece6794aadefe30136dcd27b721f53">carrot_x</a>, <a class="code" href="nav_8c.html#a433f78b82598ad1380701b8b4e376632">carrot_y</a>, <a class="code" href="chemotaxis_8c.html#a5050a760c11da521cd4aee6336f6529f">radius</a>); \</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p>Definition at line <a class="el" href="nav_8c_source.html#l00164">164</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a86a682e52e440368e6ca96062ef7563f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LINE_START_FUNCTION&#160;&#160;&#160;{}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00275">275</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00607">nav_oval()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2788d8683c98c074cb18680dc2eea0af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LINE_STOP_FUNCTION&#160;&#160;&#160;{}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00278">278</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00607">nav_oval()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1ea324968aaab7cb5e252bd5f22e76c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_DIST_CARROT&#160;&#160;&#160;250.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00160">160</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a34e95d63fe245178d74b11e75a53811d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_HEIGHT_CARROT&#160;&#160;&#160;150.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00162">162</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a17976ef29f2f34221836e877f4712d19"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_DX&#160;&#160;&#160;((<a class="el" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>)(<a class="el" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a> * 0.05))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00102">102</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa39efd810919cc75b7892bd6e6e37b44"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_HEIGHT_CARROT&#160;&#160;&#160;50.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00161">161</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a291c0fda2fd988bf5f602f56157ab2b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAV_C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00027">27</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae41368935fe1a9081b0c663d37f227e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAV_GLIDE_PITCH_TRIM&#160;&#160;&#160;0.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00074">74</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00431">nav_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8691e5b760e30c9091d5a981d3663441"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NavFollow</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_ac_id, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_distance, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_height&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="nav_8c.html#a51583ee86b14f2a389b28f2641c4e010">nav_follow</a>(_ac_id, _distance, _height);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00190">190</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
 
 </div>
 </div>
@@ -395,10 +494,10 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">{ \</div>
-<div class="line">  float start_alt = waypoints[_last_wp].a; \</div>
-<div class="line">  float diff_alt = waypoints[_wp].a - start_alt; \</div>
-<div class="line">  float alt = start_alt + <a class="code" href="nav_8c.html#a620eee3565104705439b86c0011d5ce5" title="Status on the current leg (percentage, 0.">nav_leg_progress</a> * diff_alt; \</div>
-<div class="line">  float pre_climb = (*<a class="code" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float).">stateGetHorizontalSpeedNorm_f</a>()) * diff_alt / <a class="code" href="nav_8c.html#aacf1866dff03a2d6eba27ddefae85636" title="length of the current leg (m)">nav_leg_length</a>; \</div>
+<div class="line">  float start_alt = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[_last_wp].a; \</div>
+<div class="line">  float diff_alt = <a class="code" href="navigation_8c.html#a3ab649c108c01e4dc636506eedc50fab">waypoints</a>[_wp].a - start_alt; \</div>
+<div class="line">  float alt = start_alt + <a class="code" href="navigation_8c.html#a42b0e2bd8bd15dbe64c4591a1f2e1f05">nav_leg_progress</a> * diff_alt; \</div>
+<div class="line">  float pre_climb = (*<a class="code" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float).">stateGetHorizontalSpeedNorm_f</a>()) * diff_alt / <a class="code" href="navigation_8c.html#a39dee0aec50f1bed176c4587cdf83dda">nav_leg_length</a>; \</div>
 <div class="line">  NavVerticalAltitudeMode(alt, pre_climb); \</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -406,7 +505,213 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 </div>
 </div>
+<a class="anchor" id="ac654524aa60945f0eab4bed7521c3011"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PowerVoltage</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414">vsupply</a>/10.)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00099">99</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3892fe123b99e805c0c5d5b1b4cd144"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RCLost</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;bit_is_set(<a class="el" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;<a class="el" href="anemotaxis_8c.html#a015eb90e0de9f16e87bd149d4b9ce959">status</a>, RADIO_REALLY_LOST)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00038">38</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c6d9ca050122212a8a269e08f8c23f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RcRoll</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">travel</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf">fbw_state</a>-&gt;channels[<a class="el" href="spektrum__dx7se__joby_8h.html#ae59b042496b1debe96e1d98fbc3e4b1f">RADIO_ROLL</a>]* (float)travel /(float)<a class="el" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00100">100</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="aab42b8493c217be79eb8f2523b6aed32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32">eight_status</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="aab42b8493c217be79eb8f2523b6aed32abe183b30b1054c0977b12028d7a38ae0"></a>R1T</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aab42b8493c217be79eb8f2523b6aed32a64f284f7c34d2b28e318b452acd38672"></a>RT2</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aab42b8493c217be79eb8f2523b6aed32a5e602f1d68586231698bda7be6af7d2e"></a>C2</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aab42b8493c217be79eb8f2523b6aed32ac3a5bc8a5c131d8463ba354e54b2305b"></a>R2T</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aab42b8493c217be79eb8f2523b6aed32a6975c28de6cfc40ea7b0a60d2bad7953"></a>RT1</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aab42b8493c217be79eb8f2523b6aed32ae54c31a855b907f263d49edcdbe677bd"></a>C1</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00471">471</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
 <h2>Function Documentation</h2>
+<a class="anchor" id="ad9cc0030bdcfa2192dda22875ca68934"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool_t compute_TOD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>_af</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>_td</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>_tod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>glide_airspeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>glide_vspeed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00258">258</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="state_8h_source.html#l01192">stateGetHorizontalWindspeed_f()</a>, <a class="el" href="navigation_8h_source.html#l00094">WaypointAlt</a>, <a class="el" href="navigation_8h_source.html#l00092">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00093">WaypointY</a>, <a class="el" href="pprz__algebra__float_8h_source.html#l00044">FloatVect2::x</a>, and <a class="el" href="pprz__algebra__float_8h_source.html#l00045">FloatVect2::y</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="nav_8c_ad9cc0030bdcfa2192dda22875ca68934_cgraph.png" border="0" usemap="#nav_8c_ad9cc0030bdcfa2192dda22875ca68934_cgraph" alt=""/></div>
+<map name="nav_8c_ad9cc0030bdcfa2192dda22875ca68934_cgraph" id="nav_8c_ad9cc0030bdcfa2192dda22875ca68934_cgraph">
+<area shape="rect" id="node3" href="group__state__wind__airspeed.html#gafca4742430c7c68d21649b89096dde8a" title="Get horizontal windspeed (float)." alt="" coords="169,5,391,35"/><area shape="rect" id="node5" href="group__state__wind__airspeed.html#gac9957602767f1a6c2a00c97e999ce48c" title="stateCalcHorizontalWindspeed_f" alt="" coords="440,5,667,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9d11d2e378b23ecbee86419cbf341f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fly_to_xy </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes <em>desired_x</em>, <em>desired_y</em> and <em>desired_course</em>. </p>
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00333">333</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="stabilization__adaptive_8c_source.html#l00044">h_ctl_course_pgain</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00041">h_ctl_course_setpoint</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00046">h_ctl_roll_max_setpoint</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00069">h_ctl_roll_setpoint</a>, <a class="el" href="fixedwing_2autopilot_8c_source.html#l00039">lateral_mode</a>, <a class="el" href="fixedwing_2autopilot_8h_source.html#l00077">LATERAL_MODE_COURSE</a>, <a class="el" href="fixedwing_2autopilot_8h_source.html#l00076">LATERAL_MODE_ROLL</a>, <a class="el" href="nav_8h_source.html#l00070">NAV_MODE_COURSE</a>, <a class="el" href="state_8h_source.html#l00861">stateGetHorizontalSpeedDir_f()</a>, <a class="el" href="state_8h_source.html#l00854">stateGetHorizontalSpeedNorm_f()</a>, <a class="el" href="state_8h_source.html#l00672">stateGetPositionEnu_f()</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+
+<p>Referenced by <a class="el" href="formation_8c_source.html#l00127">formation_flight()</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="nav_8c_source.html#l00283">nav_follow()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, and <a class="el" href="potential_8c_source.html#l00058">potential_task()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="nav_8c_ae9d11d2e378b23ecbee86419cbf341f0_cgraph.png" border="0" usemap="#nav_8c_ae9d11d2e378b23ecbee86419cbf341f0_cgraph" alt=""/></div>
+<map name="nav_8c_ae9d11d2e378b23ecbee86419cbf341f0_cgraph" id="nav_8c_ae9d11d2e378b23ecbee86419cbf341f0_cgraph">
+<area shape="rect" id="node3" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="140,21,353,51"/><area shape="rect" id="node7" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="132,83,361,112"/><area shape="rect" id="node11" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="165,140,328,169"/><area shape="rect" id="node5" href="group__state__velocity.html#gad9b7b6ea39d5a4ee3e824f97204c4bb5" title="stateCalcHorizontalSpeed\lDir_f" alt="" coords="412,5,599,51"/><area shape="rect" id="node9" href="group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4" title="stateCalcHorizontalSpeed\lNorm_f" alt="" coords="412,74,599,121"/><area shape="rect" id="node13" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="423,144,588,173"/><area shape="rect" id="node15" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="845,65,995,95"/><area shape="rect" id="node17" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="649,91,796,120"/><area shape="rect" id="node19" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="655,144,791,173"/><area shape="rect" id="node24" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="673,197,772,227"/><area shape="rect" id="node28" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="673,251,772,280"/><area shape="rect" id="node21" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="871,144,969,173"/><area shape="rect" id="node26" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="868,197,972,227"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="847,251,993,280"/><area shape="rect" id="node32" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="852,303,988,350"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="nav_8c_ae9d11d2e378b23ecbee86419cbf341f0_icgraph.png" border="0" usemap="#nav_8c_ae9d11d2e378b23ecbee86419cbf341f0_icgraph" alt=""/></div>
+<map name="nav_8c_ae9d11d2e378b23ecbee86419cbf341f0_icgraph" id="nav_8c_ae9d11d2e378b23ecbee86419cbf341f0_icgraph">
+<area shape="rect" id="node3" href="formation_8h.html#a18de0c4f9e864cb4db84458b33b463dd" title="formation_flight" alt="" coords="131,365,253,395"/><area shape="rect" id="node5" href="nav_8h.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Angle from center to mobile." alt="" coords="139,632,245,661"/><area shape="rect" id="node39" href="nav_8c.html#a51583ee86b14f2a389b28f2641c4e010" title="nav_follow" alt="" coords="149,685,235,715"/><area shape="rect" id="node41" href="nav_8h.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment." alt="" coords="139,419,245,448"/><area shape="rect" id="node63" href="potential_8h.html#a2ecae8ed4b80ccfece655453a56db7cd" title="potential_task" alt="" coords="136,739,248,768"/><area shape="rect" id="node7" href="nav_8h.html#a083964068940390afc5e6621f015c19f" title="Navigation along a figure 8." alt="" coords="341,632,424,661"/><area shape="rect" id="node9" href="nav_8h.html#a5a4a7ec5d3cf1734dca01d87b3d1eef5" title="nav_oval" alt="" coords="344,685,421,715"/><area shape="rect" id="node11" href="border__line_8h.html#a8f3e2c1e5e3fc9cad4148e41fcf3b02e" title="border_line" alt="" coords="336,789,429,819"/><area shape="rect" id="node13" href="discsurvey_8h.html#a66ae4c7ce2ec2a5a145c2d325814987a" title="disc_survey" alt="" coords="335,365,431,395"/><area shape="rect" id="node15" href="nav__line_8h.html#ac3f15d21270774050b4aca00e3d7bfa8" title="nav_line" alt="" coords="345,843,420,872"/><area shape="rect" id="node17" href="OSAMNav_8h.html#a7cfb0b1945fa72c85a15fe5f68957eaa" title="FlowerNav" alt="" coords="340,419,425,448"/><area shape="rect" id="node19" href="OSAMNav_8h.html#af8143af1dfd5795fb74590b32ff0d7d9" title="PolygonSurvey" alt="" coords="325,472,440,501"/><area shape="rect" id="node21" href="OSAMNav_8h.html#a09ea908213bb2d10a04f262d5c578854" title="VerticalRaster" alt="" coords="328,896,437,925"/><area shape="rect" id="node23" href="OSAMNav_8h.html#ad63babe6310a186e171b18cc98ed9158" title="SkidLanding" alt="" coords="333,525,432,555"/><area shape="rect" id="node25" href="OSAMNav_8h.html#a05ab832ffae933cb0abcbdd8f7ab16cd" title="FlightLine" alt="" coords="341,312,424,341"/><area shape="rect" id="node29" href="poly__survey__adv_8h.html#a586979cca6c5ffbd1852333c379cc959" title="main navigation routine." alt="" coords="513,551,639,580"/><area shape="rect" id="node31" href="snav_8h.html#ac14ae6946aa250ffb65064f0c479553c" title="snav_circle1" alt="" coords="333,949,432,979"/><area shape="rect" id="node33" href="snav_8h.html#acd06ffc96fc54df1e7cb4b835c4c2cdd" title="snav_circle2" alt="" coords="333,1003,432,1032"/><area shape="rect" id="node35" href="snav_8h.html#a3e498af4debb840cd3fec68d86b94b17" title="snav_on_time" alt="" coords="328,1056,437,1085"/><area shape="rect" id="node37" href="spiral_8h.html#af5423b91973dcb13dc1409e5131d194d" title="SpiralNav" alt="" coords="341,579,424,608"/><area shape="rect" id="node27" href="OSAMNav_8h.html#a35730be09cdeb6b537eb047c0bff7b38" title="FlightLineBlock" alt="" coords="519,312,633,341"/><area shape="rect" id="node43" href="cartography_8h.html#a7b94efa215c22c1373bed3e596c4daac" title="nav_survey_losange\l_carto" alt="" coords="308,29,457,75"/><area shape="rect" id="node49" href="nav__survey__rectangle_8h.html#a385a092826884a58b3b6fb909fe61c6f" title="nav_survey_rectangle" alt="" coords="303,99,463,128"/><area shape="rect" id="node52" href="OSAMNav_8h.html#a77610706017cbfb06ae7449b91382a01" title="BungeeTakeoff" alt="" coords="325,152,440,181"/><area shape="rect" id="node57" href="poly__survey__adv_8c.html#a41b3306deea7bd6aba91b132e93e1205" title="nav_points" alt="" coords="337,259,428,288"/><area shape="rect" id="node60" href="snav_8h.html#a74b915e272f1232d7ad01950b68557b1" title="snav_route" alt="" coords="336,205,429,235"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a771b907350b836982ba4e31fd4bcbf4b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -456,29 +761,29 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 <p>Definition at line <a class="el" href="nav_8c_source.html#l00312">312</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
 
-<p>References <a class="el" href="state_8h_source.html#l00863">stateGetHorizontalSpeedNorm_f()</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+<p>References <a class="el" href="common__nav_8c_source.html#l00029">dist2_to_wp</a>, <a class="el" href="state_8h_source.html#l00854">stateGetHorizontalSpeedNorm_f()</a>, <a class="el" href="state_8h_source.html#l00672">stateGetPositionEnu_f()</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
 
-<p>Referenced by <a class="el" href="nav_8c_source.html#l00486">nav_eight()</a>.</p>
+<p>Referenced by <a class="el" href="discsurvey_8c_source.html#l00026">disc_survey()</a>, <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>, <a class="el" href="nav_8c_source.html#l00486">nav_eight()</a>, <a class="el" href="nav_8c_source.html#l00607">nav_oval()</a>, <a class="el" href="poly__survey__adv_8c_source.html#l00272">poly_survey_adv()</a>, <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>, <a class="el" href="snav_8c_source.html#l00103">snav_route()</a>, and <a class="el" href="spiral_8c_source.html#l00087">SpiralNav()</a>.</p>
 
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="nav_8c_a771b907350b836982ba4e31fd4bcbf4b_cgraph.png" border="0" usemap="#nav_8c_a771b907350b836982ba4e31fd4bcbf4b_cgraph" alt=""/></div>
 <map name="nav_8c_a771b907350b836982ba4e31fd4bcbf4b_cgraph" id="nav_8c_a771b907350b836982ba4e31fd4bcbf4b_cgraph">
-<area shape="rect" id="node3" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="207,5,436,35"/><area shape="rect" id="node5" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="240,59,403,88"/></map>
+<area shape="rect" id="node3" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="207,34,436,63"/><area shape="rect" id="node7" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="240,89,403,118"/><area shape="rect" id="node5" href="group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4" title="stateCalcHorizontalSpeed\lNorm_f" alt="" coords="487,23,673,69"/><area shape="rect" id="node9" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="497,93,663,122"/><area shape="rect" id="node11" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="920,14,1069,43"/><area shape="rect" id="node13" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="724,39,871,69"/><area shape="rect" id="node15" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="729,93,865,122"/><area shape="rect" id="node20" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="748,146,847,175"/><area shape="rect" id="node24" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="748,199,847,229"/><area shape="rect" id="node17" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="945,93,1044,122"/><area shape="rect" id="node22" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="943,146,1047,175"/><area shape="rect" id="node26" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="921,199,1068,229"/><area shape="rect" id="node28" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="927,252,1063,299"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="nav_8c_a771b907350b836982ba4e31fd4bcbf4b_icgraph.png" border="0" usemap="#nav_8c_a771b907350b836982ba4e31fd4bcbf4b_icgraph" alt=""/></div>
 <map name="nav_8c_a771b907350b836982ba4e31fd4bcbf4b_icgraph" id="nav_8c_a771b907350b836982ba4e31fd4bcbf4b_icgraph">
-<area shape="rect" id="node3" href="nav_8h.html#a083964068940390afc5e6621f015c19f" title="Navigation along a figure 8." alt="" coords="207,5,289,35"/></map>
+<area shape="rect" id="node3" href="discsurvey_8h.html#a66ae4c7ce2ec2a5a145c2d325814987a" title="disc_survey" alt="" coords="221,5,317,35"/><area shape="rect" id="node5" href="OSAMNav_8h.html#a05ab832ffae933cb0abcbdd8f7ab16cd" title="FlightLine" alt="" coords="228,59,311,88"/><area shape="rect" id="node9" href="nav_8h.html#a083964068940390afc5e6621f015c19f" title="Navigation along a figure 8." alt="" coords="228,112,311,141"/><area shape="rect" id="node11" href="nav_8h.html#a5a4a7ec5d3cf1734dca01d87b3d1eef5" title="nav_oval" alt="" coords="231,165,308,195"/><area shape="rect" id="node13" href="poly__survey__adv_8h.html#a586979cca6c5ffbd1852333c379cc959" title="main navigation routine." alt="" coords="207,219,332,248"/><area shape="rect" id="node15" href="OSAMNav_8h.html#af8143af1dfd5795fb74590b32ff0d7d9" title="PolygonSurvey" alt="" coords="212,272,327,301"/><area shape="rect" id="node17" href="snav_8h.html#a74b915e272f1232d7ad01950b68557b1" title="snav_route" alt="" coords="223,325,316,355"/><area shape="rect" id="node19" href="spiral_8h.html#af5423b91973dcb13dc1409e5131d194d" title="SpiralNav" alt="" coords="228,379,311,408"/><area shape="rect" id="node7" href="OSAMNav_8h.html#a35730be09cdeb6b537eb047c0bff7b38" title="FlightLineBlock" alt="" coords="383,59,497,88"/></map>
 </div>
 </p>
 
@@ -521,31 +826,125 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 <p>Definition at line <a class="el" href="nav_8c_source.html#l00106">106</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
 
-<p>References <a class="el" href="nav_8c_source.html#l00333">fly_to_xy()</a>, <a class="el" href="state_8h_source.html#l00863">stateGetHorizontalSpeedNorm_f()</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+<p>References <a class="el" href="nav_8h_source.html#l00045">DistanceSquare</a>, <a class="el" href="nav_8c_source.html#l00333">fly_to_xy()</a>, <a class="el" href="nav_8h_source.html#l00043">G</a>, <a class="el" href="navigation_8h_source.html#l00055">HORIZONTAL_MODE_CIRCLE</a>, <a class="el" href="common__flight__plan_8h_source.html#l00057">Max</a>, <a class="el" href="common__flight__plan_8h_source.html#l00056">Min</a>, <a class="el" href="nav_8c_source.html#l00052">nav_circle_trigo_qdr</a>, <a class="el" href="nav_8h_source.html#l00070">NAV_MODE_COURSE</a>, <a class="el" href="nav_8c_source.html#l00053">nav_shift</a>, <a class="el" href="chemotaxis_8c_source.html#l00015">radius</a>, <a class="el" href="nav_8h_source.html#l00044">Square</a>, <a class="el" href="state_8h_source.html#l00854">stateGetHorizontalSpeedNorm_f()</a>, <a class="el" href="state_8h_source.html#l00672">stateGetPositionEnu_f()</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
 
-<p>Referenced by <a class="el" href="nav_8c_source.html#l00486">nav_eight()</a>.</p>
+<p>Referenced by <a class="el" href="border__line_8c_source.html#l00048">border_line()</a>, <a class="el" href="discsurvey_8c_source.html#l00026">disc_survey()</a>, <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>, <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, <a class="el" href="nav_8c_source.html#l00486">nav_eight()</a>, <a class="el" href="nav__line_8c_source.html#l00041">nav_line()</a>, <a class="el" href="nav_8c_source.html#l00607">nav_oval()</a>, <a class="el" href="poly__survey__adv_8c_source.html#l00272">poly_survey_adv()</a>, <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>, <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>, <a class="el" href="snav_8c_source.html#l00095">snav_circle1()</a>, <a class="el" href="snav_8c_source.html#l00112">snav_circle2()</a>, <a class="el" href="snav_8c_source.html#l00148">snav_on_time()</a>, <a class="el" href="spiral_8c_source.html#l00087">SpiralNav()</a>, and <a class="el" href="OSAMNav_8c_source.html#l00776">VerticalRaster()</a>.</p>
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="nav_8c_ad1b9d2e8da4a32477ca8bedc0bca86fe_cgraph.png" border="0" usemap="#nav_8c_ad1b9d2e8da4a32477ca8bedc0bca86fe_cgraph" alt=""/></div>
 <map name="nav_8c_ad1b9d2e8da4a32477ca8bedc0bca86fe_cgraph" id="nav_8c_ad1b9d2e8da4a32477ca8bedc0bca86fe_cgraph">
-<area shape="rect" id="node3" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="160,59,237,88"/><area shape="rect" id="node5" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="320,5,483,35"/><area shape="rect" id="node9" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="287,112,516,141"/><area shape="rect" id="node7" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="295,59,508,88"/></map>
+<area shape="rect" id="node3" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="160,83,237,112"/><area shape="rect" id="node9" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="287,29,516,59"/><area shape="rect" id="node13" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="320,136,483,165"/><area shape="rect" id="node5" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="295,83,508,112"/><area shape="rect" id="node7" href="group__state__velocity.html#gad9b7b6ea39d5a4ee3e824f97204c4bb5" title="stateCalcHorizontalSpeed\lDir_f" alt="" coords="567,74,753,121"/><area shape="rect" id="node11" href="group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4" title="stateCalcHorizontalSpeed\lNorm_f" alt="" coords="567,5,753,51"/><area shape="rect" id="node15" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="577,144,743,173"/><area shape="rect" id="node17" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="1000,65,1149,95"/><area shape="rect" id="node19" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="804,91,951,120"/><area shape="rect" id="node21" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="809,144,945,173"/><area shape="rect" id="node26" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="828,197,927,227"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="828,259,927,288"/><area shape="rect" id="node23" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="1025,144,1124,173"/><area shape="rect" id="node28" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1023,197,1127,227"/><area shape="rect" id="node32" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1001,320,1148,349"/><area shape="rect" id="node34" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="1007,250,1143,297"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="nav_8c_ad1b9d2e8da4a32477ca8bedc0bca86fe_icgraph.png" border="0" usemap="#nav_8c_ad1b9d2e8da4a32477ca8bedc0bca86fe_icgraph" alt=""/></div>
 <map name="nav_8c_ad1b9d2e8da4a32477ca8bedc0bca86fe_icgraph" id="nav_8c_ad1b9d2e8da4a32477ca8bedc0bca86fe_icgraph">
-<area shape="rect" id="node3" href="nav_8h.html#a083964068940390afc5e6621f015c19f" title="Navigation along a figure 8." alt="" coords="161,5,244,35"/></map>
+<area shape="rect" id="node3" href="border__line_8h.html#a8f3e2c1e5e3fc9cad4148e41fcf3b02e" title="border_line" alt="" coords="177,5,271,35"/><area shape="rect" id="node5" href="discsurvey_8h.html#a66ae4c7ce2ec2a5a145c2d325814987a" title="disc_survey" alt="" coords="176,59,272,88"/><area shape="rect" id="node7" href="OSAMNav_8h.html#a05ab832ffae933cb0abcbdd8f7ab16cd" title="FlightLine" alt="" coords="183,112,265,141"/><area shape="rect" id="node11" href="OSAMNav_8h.html#a7cfb0b1945fa72c85a15fe5f68957eaa" title="FlowerNav" alt="" coords="181,165,267,195"/><area shape="rect" id="node13" href="nav_8h.html#a083964068940390afc5e6621f015c19f" title="Navigation along a figure 8." alt="" coords="183,219,265,248"/><area shape="rect" id="node15" href="nav__line_8h.html#ac3f15d21270774050b4aca00e3d7bfa8" title="nav_line" alt="" coords="187,272,261,301"/><area shape="rect" id="node17" href="nav_8h.html#a5a4a7ec5d3cf1734dca01d87b3d1eef5" title="nav_oval" alt="" coords="185,325,263,355"/><area shape="rect" id="node19" href="poly__survey__adv_8h.html#a586979cca6c5ffbd1852333c379cc959" title="main navigation routine." alt="" coords="161,379,287,408"/><area shape="rect" id="node21" href="OSAMNav_8h.html#af8143af1dfd5795fb74590b32ff0d7d9" title="PolygonSurvey" alt="" coords="167,432,281,461"/><area shape="rect" id="node23" href="OSAMNav_8h.html#ad63babe6310a186e171b18cc98ed9158" title="SkidLanding" alt="" coords="175,485,273,515"/><area shape="rect" id="node25" href="snav_8h.html#ac14ae6946aa250ffb65064f0c479553c" title="snav_circle1" alt="" coords="175,539,273,568"/><area shape="rect" id="node27" href="snav_8h.html#acd06ffc96fc54df1e7cb4b835c4c2cdd" title="snav_circle2" alt="" coords="175,592,273,621"/><area shape="rect" id="node29" href="snav_8h.html#a3e498af4debb840cd3fec68d86b94b17" title="snav_on_time" alt="" coords="169,645,279,675"/><area shape="rect" id="node31" href="spiral_8h.html#af5423b91973dcb13dc1409e5131d194d" title="SpiralNav" alt="" coords="183,699,265,728"/><area shape="rect" id="node33" href="OSAMNav_8h.html#a09ea908213bb2d10a04f262d5c578854" title="VerticalRaster" alt="" coords="169,752,279,781"/><area shape="rect" id="node9" href="OSAMNav_8h.html#a35730be09cdeb6b537eb047c0bff7b38" title="FlightLineBlock" alt="" coords="337,112,452,141"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="ad18f254456d7f982064ea9e36b29ed93"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool_t nav_compute_baseleg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>wp_af</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>wp_td</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>wp_baseleg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00215">215</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="navigation_8c_source.html#l00060">nav_radius</a>, <a class="el" href="chemotaxis_8c_source.html#l00015">radius</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00075">EnuCoor_i::x</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00076">EnuCoor_i::y</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a738c44a399a9103371dc53dfabc9dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool_t nav_compute_final_from_glide </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>wp_af</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>wp_td</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>glide</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00236">236</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00075">EnuCoor_i::x</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00076">EnuCoor_i::y</a>.</p>
 
 </div>
 </div>
@@ -556,13 +955,13 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
         <tr>
           <td class="memname">void nav_eight </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
           <td class="paramname"><em>target</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
           <td class="paramname"><em>c1</em>, </td>
         </tr>
         <tr>
@@ -584,16 +983,91 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 <p>Definition at line <a class="el" href="nav_8c_source.html#l00486">486</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
 
-<p>References <a class="el" href="nav_8c_source.html#l00312">nav_approaching_xy()</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, and <a class="el" href="nav_8h_source.html#l00131">NavQdrCloseTo</a>.</p>
+<p>References <a class="el" href="baro__MS5534A_8c_source.html#l00196">c1</a>, <a class="el" href="nav_8c_source.html#l00471">C1</a>, <a class="el" href="nav_8c_source.html#l00471">C2</a>, <a class="el" href="common__flight__plan_8h_source.html#l00040">InitStage</a>, <a class="el" href="common__flight__plan_8h_source.html#l00057">Max</a>, <a class="el" href="nav_8c_source.html#l00312">nav_approaching_xy()</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00111">NavCircleWaypoint</a>, <a class="el" href="navigation_8h_source.html#l00120">NavQdrCloseTo</a>, <a class="el" href="nav_8c_source.html#l00471">R1T</a>, <a class="el" href="nav_8c_source.html#l00471">R2T</a>, <a class="el" href="nav_8c_source.html#l00471">RT1</a>, <a class="el" href="nav_8c_source.html#l00471">RT2</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="common__nav_8h_source.html#l00036">point::x</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00075">EnuCoor_i::x</a>, <a class="el" href="common__nav_8h_source.html#l00037">point::y</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00076">EnuCoor_i::y</a>.</p>
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="nav_8c_a289c72677bdc1d6a83aa2cd266335601_cgraph.png" border="0" usemap="#nav_8c_a289c72677bdc1d6a83aa2cd266335601_cgraph" alt=""/></div>
 <map name="nav_8c_a289c72677bdc1d6a83aa2cd266335601_cgraph" id="nav_8c_a289c72677bdc1d6a83aa2cd266335601_cgraph">
-<area shape="rect" id="node3" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint." alt="" coords="293,188,445,217"/><area shape="rect" id="node9" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y)." alt="" coords="139,86,245,116"/><area shape="rect" id="node19" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment." alt="" coords="139,33,245,62"/><area shape="rect" id="node5" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="495,137,724,166"/><area shape="rect" id="node7" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="528,84,691,113"/><area shape="rect" id="node11" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="331,33,408,62"/><area shape="rect" id="node14" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="503,30,716,60"/></map>
+<area shape="rect" id="node3" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint." alt="" coords="293,216,445,245"/><area shape="rect" id="node32" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y)." alt="" coords="139,115,245,144"/><area shape="rect" id="node44" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment." alt="" coords="139,61,245,91"/><area shape="rect" id="node5" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="495,168,724,197"/><area shape="rect" id="node9" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="528,111,691,140"/><area shape="rect" id="node7" href="group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4" title="stateCalcHorizontalSpeed\lNorm_f" alt="" coords="775,163,961,210"/><area shape="rect" id="node11" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="785,111,951,140"/><area shape="rect" id="node13" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="1208,5,1357,35"/><area shape="rect" id="node15" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1012,111,1159,140"/><area shape="rect" id="node17" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="1017,57,1153,87"/><area shape="rect" id="node22" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="1036,164,1135,193"/><area shape="rect" id="node26" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="1036,217,1135,247"/><area shape="rect" id="node19" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="1233,59,1332,88"/><area shape="rect" id="node24" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1231,164,1335,193"/><area shape="rect" id="node28" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1209,217,1356,247"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="1215,270,1351,317"/><area shape="rect" id="node34" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="331,61,408,91"/><area shape="rect" id="node36" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="503,53,716,83"/><area shape="rect" id="node38" href="group__state__velocity.html#gad9b7b6ea39d5a4ee3e824f97204c4bb5" title="stateCalcHorizontalSpeed\lDir_f" alt="" coords="775,41,961,87"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9a835aee8c0898c8c5c65190d0b30bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nav_eight_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00474">474</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="nav_8c_source.html#l00471">C1</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a51583ee86b14f2a389b28f2641c4e010"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void nav_follow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>_ac_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>_distance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>_height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00283">283</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="traffic__info_8h_source.html#l00038">ac_info_::alt</a>, <a class="el" href="traffic__info_8h_source.html#l00037">ac_info_::course</a>, <a class="el" href="traffic__info_8h_source.html#l00035">ac_info_::east</a>, <a class="el" href="nav_8c_source.html#l00333">fly_to_xy()</a>, <a class="el" href="traffic__info_8c_source.html#l00042">get_ac_info()</a>, <a class="el" href="navigation_8c_source.html#l00048">ground_alt</a>, <a class="el" href="traffic__info_8h_source.html#l00039">ac_info_::gspeed</a>, <a class="el" href="common__flight__plan_8h_source.html#l00057">Max</a>, <a class="el" href="navigation_8h_source.html#l00154">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00144">NavVerticalAutoThrottleMode</a>, <a class="el" href="traffic__info_8h_source.html#l00036">ac_info_::north</a>, <a class="el" href="state_8h_source.html#l00672">stateGetPositionEnu_f()</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="nav_8c_a51583ee86b14f2a389b28f2641c4e010_cgraph.png" border="0" usemap="#nav_8c_a51583ee86b14f2a389b28f2641c4e010_cgraph" alt=""/></div>
+<map name="nav_8c_a51583ee86b14f2a389b28f2641c4e010_cgraph" id="nav_8c_a51583ee86b14f2a389b28f2641c4e010_cgraph">
+<area shape="rect" id="node3" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="151,83,228,112"/><area shape="rect" id="node13" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="320,136,483,165"/><area shape="rect" id="node36" href="traffic__info_8c.html#a7e85d322af164f27094da0f8aca67b21" title="get_ac_info" alt="" coords="143,187,236,216"/><area shape="rect" id="node5" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="295,21,508,51"/><area shape="rect" id="node9" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="287,83,516,112"/><area shape="rect" id="node7" href="group__state__velocity.html#gad9b7b6ea39d5a4ee3e824f97204c4bb5" title="stateCalcHorizontalSpeed\lDir_f" alt="" coords="567,5,753,51"/><area shape="rect" id="node11" href="group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4" title="stateCalcHorizontalSpeed\lNorm_f" alt="" coords="567,74,753,121"/><area shape="rect" id="node15" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="577,144,743,173"/><area shape="rect" id="node17" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="1000,65,1149,95"/><area shape="rect" id="node19" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="804,91,951,120"/><area shape="rect" id="node21" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="809,144,945,173"/><area shape="rect" id="node26" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="828,197,927,227"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="828,251,927,280"/><area shape="rect" id="node23" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="1025,144,1124,173"/><area shape="rect" id="node28" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1023,197,1127,227"/><area shape="rect" id="node32" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1001,251,1148,280"/><area shape="rect" id="node34" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="1007,303,1143,350"/></map>
 </div>
 </p>
 
@@ -618,16 +1092,169 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 <p>Definition at line <a class="el" href="nav_8c_source.html#l00394">394</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00403">navigation_task()</a>.</p>
+<p>References <a class="el" href="common__nav_8c_source.html#l00046">compute_dist2_to_home()</a>, <a class="el" href="common__nav_8c_source.html#l00028">dist2_to_home</a>, <a class="el" href="common__nav_8c_source.html#l00029">dist2_to_wp</a>, <a class="el" href="nav_8c_source.html#l00381">FAILSAFE_HOME_RADIUS</a>, <a class="el" href="navigation_8c_source.html#l00048">ground_alt</a>, <a class="el" href="nav_8c_source.html#l00384">nav_set_altitude()</a>, <a class="el" href="navigation_8h_source.html#l00111">NavCircleWaypoint</a>, <a class="el" href="energy__ctrl_8c_source.html#l00077">v_ctl_mode</a>, and <a class="el" href="guidance__common_8h_source.html#l00039">V_CTL_MODE_AUTO_ALT</a>.</p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="nav_8c_a069e6b8f68b2e117cbbe03f29e30a2e3_icgraph.png" border="0" usemap="#nav_8c_a069e6b8f68b2e117cbbe03f29e30a2e3_icgraph" alt=""/></div>
-<map name="nav_8c_a069e6b8f68b2e117cbbe03f29e30a2e3_icgraph" id="nav_8c_a069e6b8f68b2e117cbbe03f29e30a2e3_icgraph">
-<area shape="rect" id="node3" href="main__ap_8h.html#a79f823520ea0823e20084686978281e6" title="Compute desired_course." alt="" coords="144,5,267,35"/></map>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="nav_8c_a069e6b8f68b2e117cbbe03f29e30a2e3_cgraph.png" border="0" usemap="#nav_8c_a069e6b8f68b2e117cbbe03f29e30a2e3_cgraph" alt=""/></div>
+<map name="nav_8c_a069e6b8f68b2e117cbbe03f29e30a2e3_cgraph" id="nav_8c_a069e6b8f68b2e117cbbe03f29e30a2e3_cgraph">
+<area shape="rect" id="node3" href="navigation_8h.html#a4603515f41786b54ea9383a65a9f249e" title="Computes square distance to the HOME waypoint potentially sets too_far_from_home." alt="" coords="144,5,325,35"/><area shape="rect" id="node5" href="nav_8c.html#afe6d4a5dd1de94f57126d27a6baac58f" title="nav_set_altitude" alt="" coords="172,59,297,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a64a3814d1672e69989f80701a0ff5749"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nav_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Navigation Initialisation. </p>
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00431">431</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="navigation_8c_source.html#l00063">DEFAULT_CIRCLE_RADIUS</a>, <a class="el" href="navigation_8c_source.html#l00048">ground_alt</a>, <a class="el" href="navigation_8h_source.html#l00053">HORIZONTAL_MODE_WAYPOINT</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00244">INT32_VECT3_COPY</a>, <a class="el" href="navigation_8c_source.html#l00068">nav_altitude</a>, <a class="el" href="common__flight__plan_8c_source.html#l00031">nav_block</a>, <a class="el" href="nav_8c_source.html#l00074">NAV_GLIDE_PITCH_TRIM</a>, <a class="el" href="nav_8h_source.html#l00070">NAV_MODE_COURSE</a>, <a class="el" href="common__flight__plan_8c_source.html#l00031">nav_stage</a>, <a class="el" href="navigation_8c_source.html#l00042">navigation_carrot</a>, <a class="el" href="navigation_8c_source.html#l00041">navigation_target</a>, <a class="el" href="navigation_8c_source.html#l00037">nb_waypoint</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00196">POS_BFP_OF_REAL</a>, <a class="el" href="navigation_8h_source.html#l00070">VERTICAL_MODE_ALT</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00075">EnuCoor_i::x</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00076">EnuCoor_i::y</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00077">EnuCoor_i::z</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2580ee456d7dd3d157fd7c43ad2eac2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nav_init_stage </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00088">88</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="navigation_8h_source.html#l00053">HORIZONTAL_MODE_WAYPOINT</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00244">INT32_VECT3_COPY</a>, <a class="el" href="nav_8c_source.html#l00042">last_x</a>, <a class="el" href="nav_8c_source.html#l00042">last_y</a>, <a class="el" href="navigation_8c_source.html#l00044">nav_last_point</a>, <a class="el" href="navigation_8c_source.html#l00058">nav_pitch</a>, <a class="el" href="common__flight__plan_8c_source.html#l00029">stage_time</a>, <a class="el" href="state_8h_source.html#l00672">stateGetPositionEnu_f()</a>, <a class="el" href="state_8h_source.html#l00637">stateGetPositionEnu_i()</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="nav_8c_a2580ee456d7dd3d157fd7c43ad2eac2d_cgraph.png" border="0" usemap="#nav_8c_a2580ee456d7dd3d157fd7c43ad2eac2d_cgraph" alt=""/></div>
+<map name="nav_8c_a2580ee456d7dd3d157fd7c43ad2eac2d_cgraph" id="nav_8c_a2580ee456d7dd3d157fd7c43ad2eac2d_cgraph">
+<area shape="rect" id="node3" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="168,162,331,192"/><area shape="rect" id="node26" href="group__state__position.html#gaf326b26862d91ded4ee4e856a511df47" title="Get position in local ENU coordinates (int)." alt="" coords="168,216,331,245"/><area shape="rect" id="node5" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="380,162,545,192"/><area shape="rect" id="node7" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="779,34,928,64"/><area shape="rect" id="node9" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="780,344,927,373"/><area shape="rect" id="node11" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="595,34,731,64"/><area shape="rect" id="node16" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="804,286,903,316"/><area shape="rect" id="node20" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="613,189,712,218"/><area shape="rect" id="node13" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="804,90,903,120"/><area shape="rect" id="node18" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="976,286,1080,316"/><area shape="rect" id="node22" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="780,220,927,249"/><area shape="rect" id="node24" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="785,150,921,196"/><area shape="rect" id="node28" href="group__state__position.html#gaf61c3a86bc000852a2d27d5727ceaa91" title="stateCalcPositionEnu_i" alt="" coords="380,216,545,245"/><area shape="rect" id="node33" href="pprz__geodetic__int_8c.html#ab462d1e8278e0dd9cbc9ff463cde8f5e" title="enu_of_lla_point_i" alt="" coords="596,344,729,373"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae660519c2f89e1c5f9aac7877f1e46e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nav_oval </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00607">607</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="common__flight__plan_8h_source.html#l00040">InitStage</a>, <a class="el" href="nav_8c_source.html#l00275">LINE_START_FUNCTION</a>, <a class="el" href="nav_8c_source.html#l00278">LINE_STOP_FUNCTION</a>, <a class="el" href="nav_8c_source.html#l00312">nav_approaching_xy()</a>, <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>, <a class="el" href="nav_8c_source.html#l00357">nav_route_xy()</a>, <a class="el" href="navigation_8h_source.html#l00120">NavQdrCloseTo</a>, <a class="el" href="nav_8h_source.html#l00047">OC1</a>, <a class="el" href="nav_8h_source.html#l00047">OC2</a>, <a class="el" href="nav_8h_source.html#l00047">OR12</a>, <a class="el" href="nav_8h_source.html#l00047">OR21</a>, <a class="el" href="chemotaxis_8c_source.html#l00015">radius</a>, <a class="el" href="navigation_8c_source.html#l00039">waypoints</a>, <a class="el" href="common__nav_8h_source.html#l00036">point::x</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00075">EnuCoor_i::x</a>, <a class="el" href="common__nav_8h_source.html#l00037">point::y</a>, and <a class="el" href="pprz__geodetic__int_8h_source.html#l00076">EnuCoor_i::y</a>.</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="nav_8c_ae660519c2f89e1c5f9aac7877f1e46e6_cgraph.png" border="0" usemap="#nav_8c_ae660519c2f89e1c5f9aac7877f1e46e6_cgraph" alt=""/></div>
+<map name="nav_8c_ae660519c2f89e1c5f9aac7877f1e46e6_cgraph" id="nav_8c_ae660519c2f89e1c5f9aac7877f1e46e6_cgraph">
+<area shape="rect" id="node3" href="nav_8c.html#a771b907350b836982ba4e31fd4bcbf4b" title="Decide if the UAV is approaching the current waypoint." alt="" coords="288,216,440,245"/><area shape="rect" id="node32" href="nav_8c.html#ad1b9d2e8da4a32477ca8bedc0bca86fe" title="Navigates around (x, y)." alt="" coords="133,115,240,144"/><area shape="rect" id="node44" href="nav_8c.html#ab4247c9f3dc0417690e1404add032cbe" title="Computes the carrot position along the desired segment." alt="" coords="133,61,240,91"/><area shape="rect" id="node5" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="489,168,719,197"/><area shape="rect" id="node9" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="523,111,685,140"/><area shape="rect" id="node7" href="group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4" title="stateCalcHorizontalSpeed\lNorm_f" alt="" coords="769,163,956,210"/><area shape="rect" id="node11" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="780,111,945,140"/><area shape="rect" id="node13" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="1203,5,1352,35"/><area shape="rect" id="node15" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1007,111,1153,140"/><area shape="rect" id="node17" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="1012,57,1148,87"/><area shape="rect" id="node22" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="1031,164,1129,193"/><area shape="rect" id="node26" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="1031,217,1129,247"/><area shape="rect" id="node19" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="1228,59,1327,88"/><area shape="rect" id="node24" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1225,164,1329,193"/><area shape="rect" id="node28" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1204,217,1351,247"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="1209,270,1345,317"/><area shape="rect" id="node34" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="325,61,403,91"/><area shape="rect" id="node36" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="497,53,711,83"/><area shape="rect" id="node38" href="group__state__velocity.html#gad9b7b6ea39d5a4ee3e824f97204c4bb5" title="stateCalcHorizontalSpeed\lDir_f" alt="" coords="769,41,956,87"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa602ef7f7d2e485655a7cc97a35b80c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nav_oval_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00602">602</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="nav_8h_source.html#l00047">OC2</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad40d34bcd8520f64bb073fae4a08878e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nav_periodic_task </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Navigation main: call to the code generated from the XML flight plan. </p>
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00409">409</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="common__flight__plan_8c_source.html#l00029">block_time</a>, <a class="el" href="common__nav_8c_source.html#l00046">compute_dist2_to_home()</a>, <a class="el" href="common__nav_8c_source.html#l00029">dist2_to_wp</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="stabilization__adaptive_8c_source.html#l00042">h_ctl_course_pre_bank</a>, <a class="el" href="pprz__geodetic__int_8h_source.html#l00099">LtpDef_i::hmsl</a>, <a class="el" href="ins__int_8c_source.html#l00049">ins_ltp_def</a>, <a class="el" href="navigation_8c_source.html#l00109">nav_run()</a>, <a class="el" href="nav_8c_source.html#l00384">nav_set_altitude()</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00196">POS_BFP_OF_REAL</a>, <a class="el" href="common__flight__plan_8c_source.html#l00029">stage_time</a>, <a class="el" href="guidance__common_8h_source.html#l00050">V_CTL_AUTO_THROTTLE_STANDARD</a>, <a class="el" href="energy__ctrl_8c_source.html#l00079">v_ctl_auto_throttle_submode</a>, <a class="el" href="energy__ctrl_8c_source.html#l00077">v_ctl_mode</a>, and <a class="el" href="guidance__common_8h_source.html#l00038">V_CTL_MODE_AUTO_CLIMB</a>.</p>
+
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="nav_8c_ad40d34bcd8520f64bb073fae4a08878e_cgraph.png" border="0" usemap="#nav_8c_ad40d34bcd8520f64bb073fae4a08878e_cgraph" alt=""/></div>
+<map name="nav_8c_ad40d34bcd8520f64bb073fae4a08878e_cgraph" id="nav_8c_ad40d34bcd8520f64bb073fae4a08878e_cgraph">
+<area shape="rect" id="node3" href="navigation_8h.html#a4603515f41786b54ea9383a65a9f249e" title="Computes square distance to the HOME waypoint potentially sets too_far_from_home." alt="" coords="189,5,371,35"/><area shape="rect" id="node5" href="navigation_8c.html#a4722a6d624ce0bb547c43724e2bb9f71" title="nav_run" alt="" coords="244,59,316,88"/><area shape="rect" id="node32" href="nav_8c.html#afe6d4a5dd1de94f57126d27a6baac58f" title="nav_set_altitude" alt="" coords="217,112,343,141"/><area shape="rect" id="node7" href="navigation_8c.html#afe6d4a5dd1de94f57126d27a6baac58f" title="nav_set_altitude" alt="" coords="437,32,563,61"/><area shape="rect" id="node9" href="group__state__position.html#gaf326b26862d91ded4ee4e856a511df47" title="Get position in local ENU coordinates (int)." alt="" coords="419,85,581,115"/><area shape="rect" id="node11" href="group__state__position.html#gaf61c3a86bc000852a2d27d5727ceaa91" title="stateCalcPositionEnu_i" alt="" coords="631,85,796,115"/><area shape="rect" id="node13" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="1044,33,1191,63"/><area shape="rect" id="node15" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="845,32,995,61"/><area shape="rect" id="node17" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="871,85,969,115"/><area shape="rect" id="node19" href="pprz__geodetic__int_8c.html#ab462d1e8278e0dd9cbc9ff463cde8f5e" title="enu_of_lla_point_i" alt="" coords="853,139,987,168"/><area shape="rect" id="node26" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="871,192,969,221"/><area shape="rect" id="node21" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="1068,139,1167,168"/><area shape="rect" id="node23" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1240,139,1344,168"/><area shape="rect" id="node28" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1044,192,1191,221"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="1049,245,1185,291"/></map>
 </div>
 </p>
 
@@ -674,29 +1301,70 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 <p>Definition at line <a class="el" href="nav_8c_source.html#l00357">357</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
 
-<p>References <a class="el" href="nav_8c_source.html#l00333">fly_to_xy()</a>, <a class="el" href="state_8h_source.html#l00681">stateGetPositionEnu_f()</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
+<p>References <a class="el" href="nav_8c_source.html#l00333">fly_to_xy()</a>, <a class="el" href="navigation_8h_source.html#l00054">HORIZONTAL_MODE_ROUTE</a>, <a class="el" href="common__flight__plan_8h_source.html#l00057">Max</a>, <a class="el" href="state_8h_source.html#l00672">stateGetPositionEnu_f()</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
 
-<p>Referenced by <a class="el" href="nav_8c_source.html#l00486">nav_eight()</a>.</p>
+<p>Referenced by <a class="el" href="OSAMNav_8c_source.html#l00260">BungeeTakeoff()</a>, <a class="el" href="discsurvey_8c_source.html#l00026">disc_survey()</a>, <a class="el" href="OSAMNav_8c_source.html#l01032">FlightLine()</a>, <a class="el" href="OSAMNav_8c_source.html#l00096">FlowerNav()</a>, <a class="el" href="nav_8c_source.html#l00486">nav_eight()</a>, <a class="el" href="nav_8c_source.html#l00607">nav_oval()</a>, <a class="el" href="poly__survey__adv_8c_source.html#l00073">nav_points()</a>, <a class="el" href="cartography_8c_source.html#l00407">nav_survey_losange_carto()</a>, <a class="el" href="nav__survey__rectangle_8c_source.html#l00056">nav_survey_rectangle()</a>, <a class="el" href="OSAMNav_8c_source.html#l00574">PolygonSurvey()</a>, <a class="el" href="OSAMNav_8c_source.html#l00956">SkidLanding()</a>, <a class="el" href="snav_8c_source.html#l00103">snav_route()</a>, and <a class="el" href="spiral_8c_source.html#l00087">SpiralNav()</a>.</p>
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="nav_8c_ab4247c9f3dc0417690e1404add032cbe_cgraph.png" border="0" usemap="#nav_8c_ab4247c9f3dc0417690e1404add032cbe_cgraph" alt=""/></div>
 <map name="nav_8c_ab4247c9f3dc0417690e1404add032cbe_cgraph" id="nav_8c_ab4247c9f3dc0417690e1404add032cbe_cgraph">
-<area shape="rect" id="node3" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="160,59,237,88"/><area shape="rect" id="node5" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="320,5,483,35"/><area shape="rect" id="node7" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="295,59,508,88"/><area shape="rect" id="node9" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="287,112,516,141"/></map>
+<area shape="rect" id="node3" href="nav_8c.html#ae9d11d2e378b23ecbee86419cbf341f0" title="Computes desired_x, desired_y and desired_course." alt="" coords="160,84,237,113"/><area shape="rect" id="node13" href="group__state__position.html#ga545d479db45e1a9711e59736b6d1309b" title="Get position in local ENU coordinates (float)." alt="" coords="320,136,483,165"/><area shape="rect" id="node5" href="group__state__velocity.html#gaf16409f23300380a2a5a84cb77f5305a" title="Get dir of horizontal ground speed (float)." alt="" coords="295,21,508,51"/><area shape="rect" id="node9" href="group__state__velocity.html#ga29dc407c432a84bed993054af670cf4a" title="Get norm of horizontal ground speed (float)." alt="" coords="287,83,516,112"/><area shape="rect" id="node7" href="group__state__velocity.html#gad9b7b6ea39d5a4ee3e824f97204c4bb5" title="stateCalcHorizontalSpeed\lDir_f" alt="" coords="567,5,753,51"/><area shape="rect" id="node11" href="group__state__velocity.html#ga990849172b82f2e3bc1ab9da2395c9c4" title="stateCalcHorizontalSpeed\lNorm_f" alt="" coords="567,74,753,121"/><area shape="rect" id="node15" href="group__state__position.html#ga718066acd9581365ca5c2aacb29130fd" title="stateCalcPositionEnu_f" alt="" coords="577,144,743,173"/><area shape="rect" id="node17" href="pprz__geodetic__float_8c.html#a2a82ebdce90a3e41d54f72c5e787fcd0" title="enu_of_ecef_point_f" alt="" coords="1000,65,1149,95"/><area shape="rect" id="node19" href="pprz__geodetic__int_8c.html#a85bcbfc73a43b120465422ec55647573" title="enu_of_ecef_point_i" alt="" coords="804,91,951,120"/><area shape="rect" id="node21" href="pprz__geodetic__float_8c.html#ab8d5cb7292ea74802e7a94e265c0703a" title="enu_of_lla_point_f" alt="" coords="809,144,945,173"/><area shape="rect" id="node26" href="pprz__geodetic__int_8c.html#a386f7bf340618bf1454ca2a3b5086100" title="ecef_of_lla_i" alt="" coords="828,197,927,227"/><area shape="rect" id="node30" href="pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd" title="utm_of_lla_f" alt="" coords="828,251,927,280"/><area shape="rect" id="node23" href="pprz__geodetic__float_8c.html#a65bc5ba8b61d014ca659035759cc001c" title="ecef_of_lla_f" alt="" coords="1025,144,1124,173"/><area shape="rect" id="node28" href="pprz__geodetic__double_8c.html#a33dae600eb50aea456b6cdbeec53c849" title="ecef_of_lla_d" alt="" coords="1023,197,1127,227"/><area shape="rect" id="node32" href="pprz__geodetic__float_8c.html#a25c5bd31de0ea0d0caf14a0d217ad3ea" title="isometric_latitude_f" alt="" coords="1001,251,1148,280"/><area shape="rect" id="node34" href="pprz__geodetic__float_8c.html#a21ea1b369f7d4abd984fb89c488dde24" title="isometric_latitude\l_fast_f" alt="" coords="1007,303,1143,350"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="nav_8c_ab4247c9f3dc0417690e1404add032cbe_icgraph.png" border="0" usemap="#nav_8c_ab4247c9f3dc0417690e1404add032cbe_icgraph" alt=""/></div>
 <map name="nav_8c_ab4247c9f3dc0417690e1404add032cbe_icgraph" id="nav_8c_ab4247c9f3dc0417690e1404add032cbe_icgraph">
-<area shape="rect" id="node3" href="nav_8h.html#a083964068940390afc5e6621f015c19f" title="Navigation along a figure 8." alt="" coords="161,5,244,35"/></map>
+<area shape="rect" id="node3" href="OSAMNav_8h.html#a77610706017cbfb06ae7449b91382a01" title="BungeeTakeoff" alt="" coords="184,5,299,35"/><area shape="rect" id="node5" href="discsurvey_8h.html#a66ae4c7ce2ec2a5a145c2d325814987a" title="disc_survey" alt="" coords="193,59,289,88"/><area shape="rect" id="node7" href="OSAMNav_8h.html#a05ab832ffae933cb0abcbdd8f7ab16cd" title="FlightLine" alt="" coords="200,112,283,141"/><area shape="rect" id="node11" href="OSAMNav_8h.html#a7cfb0b1945fa72c85a15fe5f68957eaa" title="FlowerNav" alt="" coords="199,165,284,195"/><area shape="rect" id="node13" href="nav_8h.html#a083964068940390afc5e6621f015c19f" title="Navigation along a figure 8." alt="" coords="200,219,283,248"/><area shape="rect" id="node15" href="nav_8h.html#a5a4a7ec5d3cf1734dca01d87b3d1eef5" title="nav_oval" alt="" coords="203,272,280,301"/><area shape="rect" id="node17" href="poly__survey__adv_8c.html#a41b3306deea7bd6aba91b132e93e1205" title="nav_points" alt="" coords="196,325,287,355"/><area shape="rect" id="node21" href="cartography_8h.html#a7b94efa215c22c1373bed3e596c4daac" title="nav_survey_losange\l_carto" alt="" coords="167,402,316,449"/><area shape="rect" id="node24" href="nav__survey__rectangle_8h.html#a385a092826884a58b3b6fb909fe61c6f" title="nav_survey_rectangle" alt="" coords="161,472,321,501"/><area shape="rect" id="node26" href="OSAMNav_8h.html#af8143af1dfd5795fb74590b32ff0d7d9" title="PolygonSurvey" alt="" coords="184,525,299,555"/><area shape="rect" id="node28" href="OSAMNav_8h.html#ad63babe6310a186e171b18cc98ed9158" title="SkidLanding" alt="" coords="192,579,291,608"/><area shape="rect" id="node30" href="snav_8h.html#a74b915e272f1232d7ad01950b68557b1" title="snav_route" alt="" coords="195,632,288,661"/><area shape="rect" id="node32" href="spiral_8h.html#af5423b91973dcb13dc1409e5131d194d" title="SpiralNav" alt="" coords="200,685,283,715"/><area shape="rect" id="node9" href="OSAMNav_8h.html#a35730be09cdeb6b537eb047c0bff7b38" title="FlightLineBlock" alt="" coords="377,112,492,141"/><area shape="rect" id="node19" href="poly__survey__adv_8h.html#a586979cca6c5ffbd1852333c379cc959" title="main navigation routine." alt="" coords="372,325,497,355"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afe6d4a5dd1de94f57126d27a6baac58f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void nav_set_altitude </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00384">384</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>References <a class="el" href="navigation_8c_source.html#l00069">flight_altitude</a>, <a class="el" href="navigation_8c_source.html#l00068">nav_altitude</a>, and <a class="el" href="energy__ctrl_8c_source.html#l00091">v_ctl_altitude_setpoint</a>.</p>
+
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00394">nav_home()</a>, and <a class="el" href="nav_8c_source.html#l00409">nav_periodic_task()</a>.</p>
+
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="nav_8c_afe6d4a5dd1de94f57126d27a6baac58f_icgraph.png" border="0" usemap="#nav_8c_afe6d4a5dd1de94f57126d27a6baac58f_icgraph" alt=""/></div>
+<map name="nav_8c_afe6d4a5dd1de94f57126d27a6baac58f_icgraph" id="nav_8c_afe6d4a5dd1de94f57126d27a6baac58f_icgraph">
+<area shape="rect" id="node3" href="nav_8c.html#a069e6b8f68b2e117cbbe03f29e30a2e3" title="Home mode navigation (circle around HOME)" alt="" coords="205,5,293,35"/><area shape="rect" id="node5" href="nav_8c.html#ad40d34bcd8520f64bb073fae4a08878e" title="Navigation main: call to the code generated from the XML flight plan." alt="" coords="181,59,317,88"/></map>
 </div>
 </p>
 
@@ -721,22 +1389,186 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 <p>Definition at line <a class="el" href="nav_8c_source.html#l00452">452</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
 
+<p>References <a class="el" href="stabilization__adaptive_8c_source.html#l00069">h_ctl_roll_setpoint</a>, <a class="el" href="fixedwing_2autopilot_8c_source.html#l00039">lateral_mode</a>, <a class="el" href="fixedwing_2autopilot_8h_source.html#l00076">LATERAL_MODE_ROLL</a>, <a class="el" href="paparazzi_8h_source.html#l00008">MAX_PPRZ</a>, <a class="el" href="paparazzi_8h_source.html#l00014">TRIM_UPPRZ</a>, <a class="el" href="energy__ctrl_8c_source.html#l00077">v_ctl_mode</a>, and <a class="el" href="guidance__common_8h_source.html#l00037">V_CTL_MODE_AUTO_THROTTLE</a>.</p>
+
 <p>Referenced by <a class="el" href="main__ap_8c_source.html#l00403">navigation_task()</a>.</p>
 
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="nav_8c_ab746572e63956a2ad40674328a85b029_icgraph.png" border="0" usemap="#nav_8c_ab746572e63956a2ad40674328a85b029_icgraph" alt=""/></div>
 <map name="nav_8c_ab746572e63956a2ad40674328a85b029_icgraph" id="nav_8c_ab746572e63956a2ad40674328a85b029_icgraph">
-<area shape="rect" id="node3" href="main__ap_8h.html#a79f823520ea0823e20084686978281e6" title="Compute desired_course." alt="" coords="181,5,304,35"/></map>
+<area shape="rect" id="node3" href="main__ap_8h.html#a79f823520ea0823e20084686978281e6" title="Compute desired_course." alt="" coords="181,32,304,61"/><area shape="rect" id="node5" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="352,5,539,35"/><area shape="rect" id="node7" href="sim__ap_8c.html#a8c0970e9878d0e3e3e6c5d6ff0741d4f" title="sim_nav_task" alt="" coords="391,59,500,88"/></map>
 </div>
 </p>
 
 </div>
 </div>
 <h2>Variable Documentation</h2>
+<a class="anchor" id="a09096c05260cf7f225d988b6297168c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float baseleg_out_qdr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00214">214</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2bece6794aadefe30136dcd27b721f53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float carrot_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00048">48</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a433f78b82598ad1380701b8b4e376632"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float carrot_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00048">48</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a421ee656b2e10a372b13bddc4bf546b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float circle_bank = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00067">67</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88f523b73a294f7cb312604f212c21ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float desired_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00300">300</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="cam__segment_8c_source.html#l00039">cam_segment_periodic()</a>, <a class="el" href="formation_8c_source.html#l00127">formation_flight()</a>, and <a class="el" href="potential_8c_source.html#l00058">potential_task()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7d49633159601ed2eaa65f23d612805"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float desired_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00300">300</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="cam__segment_8c_source.html#l00039">cam_segment_periodic()</a>, <a class="el" href="formation_8c_source.html#l00127">formation_flight()</a>, and <a class="el" href="potential_8c_source.html#l00058">potential_task()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af4a85437e319605798991baf6a5c1b4b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32">eight_status</a> <a class="el" href="nav_8c.html#aab42b8493c217be79eb8f2523b6aed32">eight_status</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00473">473</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1612ea0e1474e49b800cb3f497096523"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float flight_altitude</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dynamically adjustable, reset to nav_altitude when it is changing. </p>
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00070">70</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a737a463b508f62286a0e62c5ed5648b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_pitch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00303">303</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad2a5195a657a7961bfb54e3c2da48a21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> horizontal_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00066">66</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a280519e0d643e2e7ec41137b887d0b31"></a>
 <div class="memitem">
 <div class="memproto">
@@ -745,7 +1577,7 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t last_wp</td>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> last_wp</td>
         </tr>
       </table>
   </td>
@@ -759,6 +1591,258 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 <p>Used only in "go" stage in "route" horiz mode </p>
 
 <p>Definition at line <a class="el" href="nav_8c_source.html#l00045">45</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2e97613bcf8e5721e639812c7a3469a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float last_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00042">42</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00088">nav_init_stage()</a>, and <a class="el" href="poly__survey__adv_8c_source.html#l00272">poly_survey_adv()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a38c13a13ef3e5a3b6480f71bf244e668"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float last_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00042">42</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00088">nav_init_stage()</a>, and <a class="el" href="poly__survey__adv_8c_source.html#l00272">poly_survey_adv()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a67342fe7d0a993249d4b4cd0e20821ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_altitude = GROUND_ALT + <a class="el" href="nav_8c.html#aa39efd810919cc75b7892bd6e6e37b44">MIN_HEIGHT_CARROT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00299">299</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae53708a0be0d9df410749c81a8458d6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_circle_radians</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Status on the current circle. </p>
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00051">51</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e545eca284b674d03e90c15f58e1ff4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_circle_radius</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00064">64</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa10361692f333adcd1ccfd84ff1d0974"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_circle_trigo_qdr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00052">52</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1af27920d41a6dbc343fc1d7f55e08c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_circle_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00064">64</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="flight__benchmark_8c_source.html#l00051">flight_benchmark_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b01191b794559f9d485b67c2be62c39"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_circle_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00064">64</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="flight__benchmark_8c_source.html#l00051">flight_benchmark_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45139c6cf4dbda18870cf748337fbea7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_climb</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00053">53</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af90efaefda837fe910e6c1d55ea0e949"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_course</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>with <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a> </p>
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00053">53</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ac0aec8bffae1d911b4f2fa5e2be72b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_glide_pitch_trim</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00072">72</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4088688165aca8cabadaf45fb0b44643"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_ground_speed_pgain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00079">79</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeaf31d3e1ac7e38949cd2b45ea2ce21e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_ground_speed_setpoint</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00079">79</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d597a1b316fdba0db5701a03ad56c7b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t nav_in_circle = <a class="el" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00062">62</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav__survey__rectangle_8c_source.html#l00056">nav_survey_rectangle()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70c77743e83862b67b86056fcc80a8ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t nav_in_segment = <a class="el" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00063">63</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav__survey__rectangle_8c_source.html#l00056">nav_survey_rectangle()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aacf1866dff03a2d6eba27ddefae85636"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_leg_length</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>length of the current leg (m) </p>
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00060">60</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
 
 </div>
 </div>
@@ -787,12 +1871,26 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 </div>
 </div>
+<a class="anchor" id="a100095dcf201264924107b608a3ed5cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nav_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00086">86</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3f8eab6736191ca3d1cb16738cbcf97f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t nav_oval_count</td>
+          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> nav_oval_count</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -805,13 +1903,287 @@ static enum eight_status&#160;</td><td class="memItemRight" valign="bottom"><b>e
 
 </div>
 </div>
+<a class="anchor" id="ac1ac32b055c0a7879329346b1662f313"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_pitch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>with <a class="el" href="pprz__algebra__int_8h.html#aa44eb0f6e2852cfa82eadb3fa158a5e8">INT32_ANGLE_FRAC</a> </p>
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00302">302</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e73a18879f679277a72ef00250e359e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_radius</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00053">53</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b5c072e3f61f9025578e3e6283ffcb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_segment_x_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00065">65</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="flight__benchmark_8c_source.html#l00051">flight_benchmark_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a123af850aca7872d4ae1f0fd561fc302"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_segment_x_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00065">65</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="flight__benchmark_8c_source.html#l00051">flight_benchmark_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa04e457095198f649868d28f72969029"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_segment_y_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00065">65</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="flight__benchmark_8c_source.html#l00051">flight_benchmark_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2992c5b1e4da4284068a225e451877a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_segment_y_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00065">65</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="flight__benchmark_8c_source.html#l00051">flight_benchmark_periodic()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae62d3a760ee0f535ee7bf9131df6d9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_shift</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00053">53</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav_8c_source.html#l00106">nav_circle_XY()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a68393cb43ffff9bfff53cce34d108e38"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t nav_survey_active</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00084">84</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav__survey__rectangle_8c_source.html#l00056">nav_survey_rectangle()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1709471dbc0af61015c59e136100e118"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_survey_east</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00083">83</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav__survey__rectangle_8c_source.html#l00056">nav_survey_rectangle()</a>, and <a class="el" href="nav__survey__rectangle_8c_source.html#l00024">nav_survey_rectangle_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bd5ccc05012fbe9ba362b941aea7294"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_survey_north</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00083">83</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav__survey__rectangle_8c_source.html#l00056">nav_survey_rectangle()</a>, and <a class="el" href="nav__survey__rectangle_8c_source.html#l00024">nav_survey_rectangle_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad07af37c66417d0eac97740c696ace0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_survey_shift</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00082">82</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="discsurvey_8c_source.html#l00026">disc_survey()</a>, <a class="el" href="discsurvey_8c_source.html#l00017">disc_survey_init()</a>, <a class="el" href="nav__survey__rectangle_8c_source.html#l00056">nav_survey_rectangle()</a>, and <a class="el" href="nav__survey__rectangle_8c_source.html#l00024">nav_survey_rectangle_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5bd732618e35c5a855ef4e0549f733f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_survey_south</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00083">83</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav__survey__rectangle_8c_source.html#l00056">nav_survey_rectangle()</a>, and <a class="el" href="nav__survey__rectangle_8c_source.html#l00024">nav_survey_rectangle_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb19008e34a80086cfcb00ae5ae32fdd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nav_survey_west</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00083">83</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="nav__survey__rectangle_8c_source.html#l00056">nav_survey_rectangle()</a>, and <a class="el" href="nav__survey__rectangle_8c_source.html#l00024">nav_survey_rectangle_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5eb16c9d058ba78537ddf42c2ace1075"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="paparazzi_8h.html#a3fd988f23519b41e9aea4d38bfb45e1c">pprz_t</a> nav_throttle_setpoint</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00301">301</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00471">attitude_loop()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80cf41be180b9c15f127bcbee731fb9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcf">oval_status</a> <a class="el" href="nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcf">oval_status</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00040">40</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1a9450df5c62410ea50a3e36aa963f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float rc_pitch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00047">47</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04b783250b1673126fa3f4729cb2078e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unit_t unit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="nav_8c_source.html#l00194">194</a> of file <a class="el" href="nav_8c_source.html">nav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="sim_2subsystems_2radio__control_2ppm__arch_8c_source.html#l00084">send_ppm()</a>, <a class="el" href="sim__ap_8c_source.html#l00081">sim_init()</a>, <a class="el" href="sim__ap_8c_source.html#l00063">sim_monitor_task()</a>, <a class="el" href="sim__ap_8c_source.html#l00068">sim_nav_task()</a>, and <a class="el" href="sim__ap_8c_source.html#l00051">sim_periodic_task()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="nav_8c.html">nav.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:38 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:06 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

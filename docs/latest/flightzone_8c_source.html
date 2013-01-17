@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-402-gd5fd5f9</span>
+   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -131,11 +131,11 @@ $(document).ready(function(){initNavTree('flightzone_8c_source.html','');});
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="flightzone_8h.html" title="check whether a point is inside the polygon limiting the competition area">flightzone.h</a>&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="structPOINT.html">   49</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{ COORD_TYPE x;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;         COORD_TYPE y;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="structPOINT.html#a2b9073b85d9b1e78bfe7fdaf50ea15db">   49</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{ <a class="code" href="flightzone_8h.html#af5de27bf260c383ea42f075cea728384">COORD_TYPE</a> <a class="code" href="structPOINT.html#a2b9073b85d9b1e78bfe7fdaf50ea15db">x</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="structPOINT.html#a076ecd6c31c98d50d396981c58ab4b43">   50</a></span>&#160;         <a class="code" href="flightzone_8h.html#af5de27bf260c383ea42f075cea728384">COORD_TYPE</a> <a class="code" href="structPOINT.html#a076ecd6c31c98d50d396981c58ab4b43">y</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;         } <a class="code" href="structPOINT.html">POINT</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<a class="code" href="structPOINT.html">POINT</a> Corner[] = {</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="flightzone_8c.html#adf655c75bff5121aed88330226162f35">   53</a></span>&#160;<a class="code" href="structPOINT.html">POINT</a> <a class="code" href="flightzone_8c.html#adf655c75bff5121aed88330226162f35">Corner</a>[] = {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;         12, 18,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;         12, 25,</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;         15, 29,</div>
@@ -144,27 +144,27 @@ $(document).ready(function(){initNavTree('flightzone_8c_source.html','');});
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;         13.5, 16,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;         0 , 0}; <span class="comment">// last corner is a dummy, which must not be deleted!!!</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<a class="code" href="structPOINT.html">POINT</a> Orthogonal[20]; <span class="comment">// Attention!!! array must be at least as long as Corner[]</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="flightzone_8c.html#a99120a21f35efe1b1bbaaa3c2ea28984">   62</a></span>&#160;<a class="code" href="structPOINT.html">POINT</a> <a class="code" href="flightzone_8c.html#a99120a21f35efe1b1bbaaa3c2ea28984">Orthogonal</a>[20]; <span class="comment">// Attention!!! array must be at least as long as Corner[]</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> bNumberOfCorners = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="flightzone_8c.html#a22877bf3911bcd082ef23b669d55df9e">   64</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="flightzone_8c.html#a22877bf3911bcd082ef23b669d55df9e">bNumberOfCorners</a> = 0;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/*******************************************************************</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">; function name: vInitIsInsideBoundaries</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">; description:</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">;*******************************************************************/</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> vInitIsInsideBoundaries(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="flightzone_8h.html#a4c919c543a1bacf8204509b39a4418b8">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="flightzone_8c.html#a4c919c543a1bacf8204509b39a4418b8">vInitIsInsideBoundaries</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> i;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    bNumberOfCorners = <span class="keyword">sizeof</span>(Corner)/<span class="keyword">sizeof</span>(<a class="code" href="structPOINT.html">POINT</a>) - 1; <span class="comment">// last corner is always a dummy</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="flightzone_8c.html#a22877bf3911bcd082ef23b669d55df9e">bNumberOfCorners</a> = <span class="keyword">sizeof</span>(<a class="code" href="flightzone_8c.html#adf655c75bff5121aed88330226162f35">Corner</a>)/<span class="keyword">sizeof</span>(<a class="code" href="structPOINT.html">POINT</a>) - 1; <span class="comment">// last corner is always a dummy</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  Corner[bNumberOfCorners].x = Corner[0].x;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  Corner[bNumberOfCorners].y = Corner[0].y;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  Corner[<a class="code" href="flightzone_8c.html#a22877bf3911bcd082ef23b669d55df9e">bNumberOfCorners</a>].<a class="code" href="structPOINT.html#a2b9073b85d9b1e78bfe7fdaf50ea15db">x</a> = Corner[0].<a class="code" href="structPOINT.html#a2b9073b85d9b1e78bfe7fdaf50ea15db">x</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  Corner[<a class="code" href="flightzone_8c.html#a22877bf3911bcd082ef23b669d55df9e">bNumberOfCorners</a>].<a class="code" href="structPOINT.html#a076ecd6c31c98d50d396981c58ab4b43">y</a> = Corner[0].<a class="code" href="structPOINT.html#a076ecd6c31c98d50d396981c58ab4b43">y</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">for</span> (i = 0; i &lt; bNumberOfCorners; i++)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">for</span> (i = 0; i &lt; <a class="code" href="flightzone_8c.html#a22877bf3911bcd082ef23b669d55df9e">bNumberOfCorners</a>; i++)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    Orthogonal[i].x =     Corner[i+1].y - Corner[i].y;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    Orthogonal[i].y =  - (Corner[i+1].x - Corner[i].x);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    Orthogonal[i].<a class="code" href="structPOINT.html#a2b9073b85d9b1e78bfe7fdaf50ea15db">x</a> =     Corner[i+1].<a class="code" href="structPOINT.html#a076ecd6c31c98d50d396981c58ab4b43">y</a> - Corner[i].<a class="code" href="structPOINT.html#a076ecd6c31c98d50d396981c58ab4b43">y</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    Orthogonal[i].<a class="code" href="structPOINT.html#a076ecd6c31c98d50d396981c58ab4b43">y</a> =  - (Corner[i+1].<a class="code" href="structPOINT.html#a2b9073b85d9b1e78bfe7fdaf50ea15db">x</a> - Corner[i].<a class="code" href="structPOINT.html#a2b9073b85d9b1e78bfe7fdaf50ea15db">x</a>);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#if 0</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor"></span>    printf(<span class="stringliteral">&quot;%d: corner (%f, %f), orthogonal (%f, %f)\n&quot;</span>,</div>
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('flightzone_8c_source.html','');});
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">; returns:       1 if point is inside boundaries</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">;                0 if point is outside boundaries</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">;*******************************************************************/</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">int</span> iIsInsideBoundaries(COORD_TYPE x, COORD_TYPE y)</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="flightzone_8h.html#a40d398482255b0f45b1f3f0f3b6577b6">  102</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="flightzone_8c.html#a40d398482255b0f45b1f3f0f3b6577b6">iIsInsideBoundaries</a>(<a class="code" href="flightzone_8h.html#af5de27bf260c383ea42f075cea728384">COORD_TYPE</a> x, <a class="code" href="flightzone_8h.html#af5de27bf260c383ea42f075cea728384">COORD_TYPE</a> y)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">int</span> r = 1;</div>
@@ -192,7 +192,7 @@ $(document).ready(function(){initNavTree('flightzone_8c_source.html','');});
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  i = 0;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">while</span> (    (i &lt; bNumberOfCorners)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">while</span> (    (i &lt; <a class="code" href="flightzone_8c.html#a22877bf3911bcd082ef23b669d55df9e">bNumberOfCorners</a>)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;          &amp;&amp; (r == 1)</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      )</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('flightzone_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8a28edc49a666abb23d4888eaf71220c.html">navigation</a></li><li class="navelem"><a class="el" href="flightzone_8c.html">flightzone.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 14:39:37 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Jan 17 2013 15:36:04 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>
