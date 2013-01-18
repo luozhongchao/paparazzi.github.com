@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-406-g6562e25</span>
+   &#160;<span id="projectnumber">v4.9_devel-408-g930a3bb</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -126,12 +126,11 @@ $(document).ready(function(){initNavTree('nav__line_8c_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * along with paparazzi; see the file COPYING.  If not, write to</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;generated/airframe.h&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nav__line_8h.html">subsystems/navigation/nav_line.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Navigation library.">subsystems/nav.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nav__line_8h.html" title="Fixedwing navigation along a line with nice U-turns.">subsystems/navigation/nav_line.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nav_8h.html" title="Fixedwing Navigation library.">subsystems/nav.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4a8b5deafb5a78d799c0691bef43de80ce">   33</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4" title="Status along the pattern.">line_status</a> { <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497acfcd68d903867d509a779613b2ccfba5">LR12</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a04ad51045635dee83d454860ae6b135c">LQC21</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a8b5deafb5a78d799c0691bef43de80ce">LTC2</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a31099427ddf1cb13114e28c9472b3c68">LQC22</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a383219705a1e85c6f680e43d1f304f5b">LR21</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497aca3f9b2462e0f5298f41a92f75fa11cd">LQC12</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497ad74fa6a689e1a6c8373a3359bba8d124">LTC1</a>, <a class="code" href="border__line_8c.html#ab68f9d7ea8327317067ed38fc3ef0497a7f637cfcb9990910ded6a6f84bafed9b">LQC11</a> };</div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="nav__line_8c.html#a1e4b07456818b9e3350d99d1931205fd">   34</a></span>&#160;<span class="keyword">static</span> <span class="keyword">enum</span> <a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4" title="Status along the pattern.">line_status</a> <a class="code" href="nav__line_8c.html#ab8af100196e813e8f45013a015da1dc4" title="Status along the pattern.">line_status</a>;</div>
@@ -156,24 +155,24 @@ $(document).ready(function(){initNavTree('nav__line_8c_source.html','');});
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">/* The half circle centers and the other leg */</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> l2_c1 = { <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(l1) + radius * u_y,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;             <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l1) + radius * -u_x,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;             alt  };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                         <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l1) + radius * -u_x,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                         alt  };</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> l2_c2 = { <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(l1) + 1.732*radius * u_x,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;             <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l1) + 1.732*radius * u_y,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;             alt  };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                         <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l1) + 1.732*radius * u_y,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                         alt  };</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> l2_c3 = { <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(l1) + radius * -u_y,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;             <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l1) + radius * u_x,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;             alt  };</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                         <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l1) + radius * u_x,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                         alt  };</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> l1_c1 = { <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(l2) + radius * -u_y,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;             <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l2) + radius * u_x,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;             alt  };</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                         <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l2) + radius * u_x,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                         alt  };</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> l1_c2 = { <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(l2) +1.732*radius * -u_x,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;             <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l2) + 1.732*radius * -u_y,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;             alt  };</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                         <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l2) + 1.732*radius * -u_y,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                         alt  };</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> l1_c3 = { <a class="code" href="navigation_8h.html#a2d51bcd8e90e2dea91009f895a452a22">WaypointX</a>(l2) + radius * u_y,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;             <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l2) + radius * -u_x,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;             alt  };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                         <a class="code" href="navigation_8h.html#a983349c9ccc3f390fafe929d3c9fdd16">WaypointY</a>(l2) + radius * -u_x,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                         alt  };</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">float</span> qdr_out_2_1 = M_PI/3. - atan2(u_y, u_x);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">float</span> qdr_out_2_2 = -M_PI/3. - atan2(u_y, u_x);</div>
@@ -251,7 +250,7 @@ $(document).ready(function(){initNavTree('nav__line_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8a28edc49a666abb23d4888eaf71220c.html">navigation</a></li><li class="navelem"><a class="el" href="nav__line_8c.html">nav_line.c</a></li>
-    <li class="footer">Generated on Thu Jan 17 2013 15:36:04 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Jan 18 2013 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

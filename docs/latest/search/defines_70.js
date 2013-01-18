@@ -137,6 +137,7 @@ var searchData=
   ['periodic_5fsend_5fimu_5fgyro_5fraw',['PERIODIC_SEND_IMU_GYRO_RAW',['../ap__downlink_8h.html#ae6cb652b8dc533e9d7dd7a64739336a7',1,'PERIODIC_SEND_IMU_GYRO_RAW():&#160;ap_downlink.h'],['../telemetry_8h.html#ae6cb652b8dc533e9d7dd7a64739336a7',1,'PERIODIC_SEND_IMU_GYRO_RAW():&#160;telemetry.h']]],
   ['periodic_5fsend_5fimu_5fgyro_5fscaled',['PERIODIC_SEND_IMU_GYRO_SCALED',['../telemetry_8h.html#a7e38bd03f7d9efbc46115854a7798fad',1,'telemetry.h']]],
   ['periodic_5fsend_5fimu_5fmag',['PERIODIC_SEND_IMU_MAG',['../ap__downlink_8h.html#adc88639d668793236e94158afea7b7ad',1,'ap_downlink.h']]],
+  ['periodic_5fsend_5fimu_5fmag_5fcurrent_5fcalibration',['PERIODIC_SEND_IMU_MAG_CURRENT_CALIBRATION',['../telemetry_8h.html#a8a8a55b4b1cabf55ccc353683634511f',1,'telemetry.h']]],
   ['periodic_5fsend_5fimu_5fmag_5fraw',['PERIODIC_SEND_IMU_MAG_RAW',['../ap__downlink_8h.html#a93f3f1dac5e8e4be3f21159e01aa426f',1,'PERIODIC_SEND_IMU_MAG_RAW():&#160;ap_downlink.h'],['../telemetry_8h.html#a93f3f1dac5e8e4be3f21159e01aa426f',1,'PERIODIC_SEND_IMU_MAG_RAW():&#160;telemetry.h']]],
   ['periodic_5fsend_5fimu_5fmag_5fscaled',['PERIODIC_SEND_IMU_MAG_SCALED',['../telemetry_8h.html#afd066b7a778dc43e00b6231eb871c368',1,'telemetry.h']]],
   ['periodic_5fsend_5fins',['PERIODIC_SEND_INS',['../telemetry_8h.html#a1e5a3820680411c5e78d85acc9f41073',1,'telemetry.h']]],

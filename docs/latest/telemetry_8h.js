@@ -30,6 +30,7 @@ var telemetry_8h =
     [ "PERIODIC_SEND_IMU_ACCEL_SCALED", "telemetry_8h.html#abdbde6a1d5cc65d7d9b645891937adb0", null ],
     [ "PERIODIC_SEND_IMU_GYRO_RAW", "telemetry_8h.html#ae6cb652b8dc533e9d7dd7a64739336a7", null ],
     [ "PERIODIC_SEND_IMU_GYRO_SCALED", "telemetry_8h.html#a7e38bd03f7d9efbc46115854a7798fad", null ],
+    [ "PERIODIC_SEND_IMU_MAG_CURRENT_CALIBRATION", "telemetry_8h.html#a8a8a55b4b1cabf55ccc353683634511f", null ],
     [ "PERIODIC_SEND_IMU_MAG_RAW", "telemetry_8h.html#a93f3f1dac5e8e4be3f21159e01aa426f", null ],
     [ "PERIODIC_SEND_IMU_MAG_SCALED", "telemetry_8h.html#afd066b7a778dc43e00b6231eb871c368", null ],
     [ "PERIODIC_SEND_INS", "telemetry_8h.html#a1e5a3820680411c5e78d85acc9f41073", null ],
