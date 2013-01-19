@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-408-g930a3bb</span>
+   &#160;<span id="projectnumber">v4.9_devel-410-g3789ea8</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('telemetry_8h_source.html','');});
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#if USE_GPS</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html" title="Device independent GPS code (interface)">subsystems/gps.h</a>&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="ins_8h.html">subsystems/ins.h</a>&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="ins_8h.html" title="Integrated Navigation System interface.">subsystems/ins.h</a>&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// I2C Error counters</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html" title="Architecture independent I2C (Inter-Integrated Circuit Bus) API.">mcu_periph/i2c.h</a>&quot;</span></div>
@@ -419,7 +419,7 @@ $(document).ready(function(){initNavTree('telemetry_8h_source.html','');});
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* STABILIZATION_ATTITUDE_TYPE_FLOAT */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ahrs__aligner_8h.html">subsystems/ahrs/ahrs_aligner.h</a>&quot;</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ahrs__aligner_8h.html" title="Interface to align the AHRS via low-passed measurements at startup.">subsystems/ahrs/ahrs_aligner.h</a>&quot;</span></div>
 <div class="line"><a name="l00314"></a><span class="lineno"><a class="code" href="telemetry_8h.html#a86f05af63cdcddd400fe55e85a98c64a">  314</a></span>&#160;<span class="preprocessor">#define PERIODIC_SEND_FILTER_ALIGNER(_trans, _dev) {      \</span></div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_FILTER_ALIGNER(_trans, _dev,                  \</span></div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">                                 &amp;ahrs_aligner.lp_gyro.p,       \</span></div>
@@ -444,7 +444,7 @@ $(document).ready(function(){initNavTree('telemetry_8h_source.html','');});
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">#if USE_AHRS_CMPL_EULER</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="ahrs__int__cmpl__euler_8h.html">subsystems/ahrs/ahrs_int_cmpl_euler.h</a>&quot;</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="ahrs__int__cmpl__euler_8h.html" title="Complementary filter in euler representation (fixed-point).">subsystems/ahrs/ahrs_int_cmpl_euler.h</a>&quot;</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">#define PERIODIC_SEND_FILTER(_trans, _dev) {          \</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_FILTER(_trans, _dev,            \</span></div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor">             &amp;ahrs_impl.ltp_to_imu_euler.phi,     \</span></div>
@@ -469,7 +469,7 @@ $(document).ready(function(){initNavTree('telemetry_8h_source.html','');});
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="preprocessor">#if USE_AHRS_LKF</span></div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="ahrs_8h.html" title="Attitude and Heading Reference System interface.">subsystems/ahrs.h</a>&quot;</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ahrs__float__lkf_8h.html">ahrs/ahrs_float_lkf.h</a>&quot;</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ahrs__float__lkf_8h.html" title="Linearized Kalman Filter for attitude estimation.">ahrs/ahrs_float_lkf.h</a>&quot;</span></div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">#define PERIODIC_SEND_AHRS_LKF(_trans, _dev) {        \</span></div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_AHRS_LKF(&amp;bafl_eulers.phi,      \</span></div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="preprocessor">                _trans, _dev,         \</span></div>
@@ -598,7 +598,7 @@ $(document).ready(function(){initNavTree('telemetry_8h_source.html','');});
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;<span class="preprocessor">#if USE_VFF</span></div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="vf__float_8h.html">subsystems/ins/vf_float.h</a>&quot;</span></div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="vf__float_8h.html" title="Vertical filter (in float) estimating altitude, velocity and accel bias.">subsystems/ins/vf_float.h</a>&quot;</span></div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="preprocessor">#define PERIODIC_SEND_VFF(_trans, _dev) {   \</span></div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_VFF(_trans, _dev,     \</span></div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="preprocessor">                &amp;vff_z_meas,    \</span></div>
@@ -614,7 +614,7 @@ $(document).ready(function(){initNavTree('telemetry_8h_source.html','');});
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;<span class="preprocessor">#if USE_VFF_EXTENDED</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="vf__extended__float_8h.html">subsystems/ins/vf_extended_float.h</a>&quot;</span></div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="vf__extended__float_8h.html" title="Interface for extended vertical filter (in float).">subsystems/ins/vf_extended_float.h</a>&quot;</span></div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="preprocessor">#define PERIODIC_SEND_VFF_EXTENDED(_trans, _dev) {    \</span></div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_VFF_EXTENDED(_trans, _dev,      \</span></div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="preprocessor">                &amp;vff_z_meas,    \</span></div>
@@ -629,7 +629,7 @@ $(document).ready(function(){initNavTree('telemetry_8h_source.html','');});
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<span class="preprocessor">#if USE_HFF</span></div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include  &quot;<a class="code" href="hf__float_8h.html">subsystems/ins/hf_float.h</a>&quot;</span></div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include  &quot;<a class="code" href="hf__float_8h.html" title="Horizontal filter (x,y) to estimate position and velocity.">subsystems/ins/hf_float.h</a>&quot;</span></div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;<span class="preprocessor">#define PERIODIC_SEND_HFF(_trans, _dev) { \</span></div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_HFF(_trans, _dev,   \</span></div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;<span class="preprocessor">                            &amp;b2_hff_state.x,      \</span></div>
@@ -993,7 +993,7 @@ $(document).ready(function(){initNavTree('telemetry_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_e37d355c72eb7c8e5b43c34bdea5a24b.html">rotorcraft</a></li><li class="navelem"><a class="el" href="telemetry_8h.html">telemetry.h</a></li>
-    <li class="footer">Generated on Fri Jan 18 2013 04:00:09 for Paparazzi UAS by
+    <li class="footer">Generated on Sat Jan 19 2013 04:00:08 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

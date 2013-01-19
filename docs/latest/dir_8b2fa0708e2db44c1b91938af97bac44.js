@@ -12,5 +12,7 @@ var dir_8b2fa0708e2db44c1b91938af97bac44 =
     [ "imu_crista.h", "imu__crista_8h.html", "imu__crista_8h" ],
     [ "imu_dummy.c", "imu__dummy_8c.html", "imu__dummy_8c" ],
     [ "imu_nps.c", "imu__nps_8c.html", "imu__nps_8c" ],
-    [ "imu_nps.h", "imu__nps_8h.html", "imu__nps_8h" ]
+    [ "imu_nps.h", "imu__nps_8h.html", "imu__nps_8h" ],
+    [ "imu_um6.c", "imu__um6_8c.html", "imu__um6_8c" ],
+    [ "imu_um6.h", "imu__um6_8h.html", "imu__um6_8h" ]
 ];

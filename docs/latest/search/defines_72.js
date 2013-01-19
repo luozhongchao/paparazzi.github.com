@@ -76,6 +76,7 @@ var searchData=
   ['readi2cstatreg',['ReadI2CStatReg',['../sc18is600__arch_8c.html#aa07ad7fec289510362e44fa75fa6e90a',1,'sc18is600_arch.c']]],
   ['readinsbuffer',['ReadInsBuffer',['../ins__module_8h.html#a24cc16346054100a43d0b5aab4bbd857',1,'ins_module.h']]],
   ['readpprzbuffer',['ReadPprzBuffer',['../pprz__transport_8h.html#a473a61d28723049f23cabc2e5e32cb37',1,'pprz_transport.h']]],
+  ['readum6buffer',['ReadUM6Buffer',['../imu__um6_8h.html#aae5f28de4db07e7a7759767810aec01f',1,'imu_um6.h']]],
   ['readxbeebuffer',['ReadXBeeBuffer',['../xbee_8h.html#a7520b197bab0895e41da94633849ee58',1,'xbee.h']]],
   ['ref_5faccel_5ffrac',['REF_ACCEL_FRAC',['../stabilization__attitude__ref__int_8h.html#a94a3fc964bb686c26cc9fe01d9c7a50f',1,'stabilization_attitude_ref_int.h']]],
   ['ref_5faccel_5fmax_5fp',['REF_ACCEL_MAX_P',['../stabilization__attitude__ref__euler__float_8c.html#aa2941d3d67e37b8762d12eb56c349d78',1,'REF_ACCEL_MAX_P():&#160;stabilization_attitude_ref_euler_float.c'],['../stabilization__attitude__ref__euler__int_8c.html#aa2941d3d67e37b8762d12eb56c349d78',1,'REF_ACCEL_MAX_P():&#160;stabilization_attitude_ref_euler_int.c'],['../stabilization__attitude__ref__quat__float_8c.html#aa2941d3d67e37b8762d12eb56c349d78',1,'REF_ACCEL_MAX_P():&#160;stabilization_attitude_ref_quat_float.c'],['../stabilization__attitude__ref__quat__int_8c.html#aa2941d3d67e37b8762d12eb56c349d78',1,'REF_ACCEL_MAX_P():&#160;stabilization_attitude_ref_quat_int.c']]],

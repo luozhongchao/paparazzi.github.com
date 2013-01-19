@@ -14,5 +14,6 @@ var searchData=
   ['ahrsfloatcmpl',['AhrsFloatCmpl',['../structAhrsFloatCmpl.html',1,'']]],
   ['ahrsfloatdcm',['AhrsFloatDCM',['../structAhrsFloatDCM.html',1,'']]],
   ['ahrsintcmpl',['AhrsIntCmpl',['../structAhrsIntCmpl.html',1,'']]],
-  ['ahrsintcmpleuler',['AhrsIntCmplEuler',['../structAhrsIntCmplEuler.html',1,'']]]
+  ['ahrsintcmpleuler',['AhrsIntCmplEuler',['../structAhrsIntCmplEuler.html',1,'']]],
+  ['ahrsintexternquat',['AhrsIntExternQuat',['../structAhrsIntExternQuat.html',1,'']]]
 ];

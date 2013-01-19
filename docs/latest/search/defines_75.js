@@ -138,6 +138,8 @@ var searchData=
   ['ulsr_5frxfe',['ULSR_RXFE',['../lpcUART_8h.html#a5dfb6999862e286a2c90141e8ca1a7e4',1,'lpcUART.h']]],
   ['ulsr_5ftemt',['ULSR_TEMT',['../lpcUART_8h.html#aef2131b7c2e54283ed4621cdec3cc7e2',1,'lpcUART.h']]],
   ['ulsr_5fthre',['ULSR_THRE',['../lpcUART_8h.html#ac0d9a2740e24213d0bd5da88c503813c',1,'lpcUART.h']]],
+  ['um6buffer',['UM6Buffer',['../imu__um6_8h.html#a44daab3905408184fd45ef7c3c5208fb',1,'imu_um6.h']]],
+  ['um6link',['UM6Link',['../imu__um6_8h.html#a721f838910a218ad70736dfe3cf572e3',1,'imu_um6.h']]],
   ['umcr_5fdtr',['UMCR_DTR',['../lpcUART_8h.html#aac28bad522d92ae9db7ed52205f042f7',1,'lpcUART.h']]],
   ['umcr_5flb',['UMCR_LB',['../lpcUART_8h.html#ab2162f8bb6a4205b52233f72a2faa14c',1,'lpcUART.h']]],
   ['umcr_5frts',['UMCR_RTS',['../lpcUART_8h.html#aaae53cfdbe0a95d52d2e6dfc58ad4485',1,'lpcUART.h']]],

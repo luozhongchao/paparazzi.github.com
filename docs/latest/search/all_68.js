@@ -68,6 +68,7 @@ var searchData=
   ['has_5fdata',['has_data',['../structuart__state.html#a062fe5d66f14b2bba7f0dd24e5d4367d',1,'uart_state']]],
   ['have_5fvelned',['have_velned',['../structGpsUbx.html#aef27cd7016751d0cdd3dd2c945f57a8b',1,'GpsUbx']]],
   ['hb_5f1_2e1_2eh',['hb_1.1.h',['../hb__1_81_8h.html',1,'']]],
+  ['hdr_5ferror',['hdr_error',['../structUM6Packet.html#a98fbb2f9be0e5eb73ac56ba598827461',1,'UM6Packet']]],
   ['head',['head',['../structfifo__t.html#ae93028e986799fceacecbd153729f855',1,'fifo_t::head()'],['../structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3',1,'adc_buf::head()']]],
   ['heading',['heading',['../ahrs__infrared_8c.html#ac5682e48513a771560df50e3b213e61a',1,'ahrs_infrared.c']]],
   ['heading_5faligned',['heading_aligned',['../structAhrsFloatCmpl.html#a996f7205483de026b06c55a3aeee916c',1,'AhrsFloatCmpl::heading_aligned()'],['../structAhrsIntCmpl.html#a2f27b41c380c54597eca80e5f61d4cd1',1,'AhrsIntCmpl::heading_aligned()']]],

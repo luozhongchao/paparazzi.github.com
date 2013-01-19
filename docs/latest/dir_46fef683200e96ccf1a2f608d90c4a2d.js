@@ -2,6 +2,8 @@ var dir_46fef683200e96ccf1a2f608d90c4a2d =
 [
     [ "ahrs_aligner.c", "ahrs__aligner_8c.html", "ahrs__aligner_8c" ],
     [ "ahrs_aligner.h", "ahrs__aligner_8h.html", "ahrs__aligner_8h" ],
+    [ "ahrs_extern_quat.c", "ahrs__extern__quat_8c.html", "ahrs__extern__quat_8c" ],
+    [ "ahrs_extern_quat.h", "ahrs__extern__quat_8h.html", "ahrs__extern__quat_8h" ],
     [ "ahrs_float_cmpl.c", "ahrs__float__cmpl_8c.html", "ahrs__float__cmpl_8c" ],
     [ "ahrs_float_cmpl.h", "ahrs__float__cmpl_8h.html", "ahrs__float__cmpl_8h" ],
     [ "ahrs_float_dcm.c", "ahrs__float__dcm_8c.html", "ahrs__float__dcm_8c" ],

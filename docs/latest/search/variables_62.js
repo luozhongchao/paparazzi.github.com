@@ -183,7 +183,7 @@ var searchData=
   ['buf_5flight_5fsol_5fdn',['buf_light_sol_dn',['../light__solar_8c.html#aa0bba5249b781b1416caa6b66c88a5d9',1,'light_solar.c']]],
   ['buf_5flight_5fsol_5fup',['buf_light_sol_up',['../light__solar_8c.html#a5d427462d5459fa08a65ad9a78c2e259',1,'light_solar.c']]],
   ['buf_5flight_5ftemt',['buf_light_temt',['../light__temt_8c.html#af882154dfd2d4c4aac7e5d6e98566d4a',1,'light_temt.c']]],
-  ['buf_5fout',['buf_out',['../stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a0f86716c577c0364777e95880fd405b5',1,'imu_crista_arch.c']]],
+  ['buf_5fout',['buf_out',['../stm32_2subsystems_2imu_2imu__crista__arch_8c.html#a0f86716c577c0364777e95880fd405b5',1,'buf_out():&#160;imu_crista_arch.c'],['../imu__um6_8c.html#a865f25e235004aeb12c0fee65b8136d5',1,'buf_out():&#160;imu_um6.c']]],
   ['buf_5foutput',['buf_output',['../baro__MS5534A_8c.html#ae30fd2e57603738f981e445af5074669',1,'buf_output():&#160;baro_MS5534A.c'],['../sd__card_8c.html#ae30fd2e57603738f981e445af5074669',1,'buf_output():&#160;sd_card.c'],['../sd__card_8h.html#ae30fd2e57603738f981e445af5074669',1,'buf_output():&#160;sd_card.c']]],
   ['buf_5fpid',['buf_PID',['../enose_8c.html#ae6e4133fb90f7c5230e11f111a76c397',1,'enose.c']]],
   ['buf_5fsrc',['buf_src',['../test__board_8c.html#a4c2a2e7e7e644f508a1549bddcbf2095',1,'test_board.c']]],

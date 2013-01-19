@@ -14,6 +14,7 @@ var searchData=
   ['dat_5fpin',['DAT_PIN',['../humid__sht_8h.html#a0e4e1e3e3be953864f931e22cb963134',1,'humid_sht.h']]],
   ['data',['data',['../structMedianFilterInt.html#ae6f5b78df8926b1eb941a66bd0114434',1,'MedianFilterInt::data()'],['../structHmc5843.html#a6da913bbd89cbfcb53e5fa60bdc5c910',1,'Hmc5843::data()'],['../structVN100__Req__Packet.html#a941183f05234efec4ffe4d228240c9ff',1,'VN100_Req_Packet::Data()'],['../structVN100__Res__Packet.html#a2ffa8d739d484bfaceed3e846bd5e86b',1,'VN100_Res_Packet::Data()']]],
   ['data_5favailable',['data_available',['../structBaroBoard.html#a4f77396b0cfbf61466f2405ee7144359',1,'BaroBoard::data_available()'],['../structads1114__periph.html#a356e5a2bcac9dd882f5ffe3cf346d380',1,'ads1114_periph::data_available()'],['../structHmc5843.html#aac1003c5a9ee5a5fb898a4b33d1140eb',1,'Hmc5843::data_available()'],['../lisa__overo__link_8h.html#ad9636c84365cd0534987d1dc1d6bb602a2d0cc703f09e78588dcf94f96365dd04',1,'DATA_AVAILABLE():&#160;lisa_overo_link.h']]],
+  ['data_5fchk',['data_chk',['../imu__um6_8c.html#a004d9fd363b52aa0d92a3b14d366180f',1,'imu_um6.c']]],
   ['data_5fclr',['DATA_CLR',['../humid__sht_8h.html#a304b342c8a2033227f5c131a2114050b',1,'humid_sht.h']]],
   ['data_5fin',['DATA_IN',['../humid__sht_8h.html#abebff40b775e10e37faa4ec7b45d6a89',1,'humid_sht.h']]],
   ['data_5findex',['data_index',['../MPPT_8c.html#a847e6e7abcd92c5e0a4be683cf21d85f',1,'MPPT.c']]],
