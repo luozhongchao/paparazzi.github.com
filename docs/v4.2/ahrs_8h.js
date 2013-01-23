@@ -1,5 +1,7 @@
 var ahrs_8h =
 [
+    [ "Ahrs", "structAhrs.html", "structAhrs" ],
+    [ "AhrsFloat", "structAhrsFloat.html", "structAhrsFloat" ],
     [ "AHRS_FLOAT_OF_INT32", "ahrs_8h.html#adc92e9ace6a9cb153ff10d8d13d0229e", null ],
     [ "AHRS_IMU_INT_OF_FLOAT", "ahrs_8h.html#a9539cd641858adb4e179edaeff518e8a", null ],
     [ "AHRS_INT_OF_FLOAT", "ahrs_8h.html#a2c00af74e05da701fdf3bbaef91792bb", null ],

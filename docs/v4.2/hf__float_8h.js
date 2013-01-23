@@ -1,5 +1,6 @@
 var hf__float_8h =
 [
+    [ "HfilterFloat", "structHfilterFloat.html", "structHfilterFloat" ],
     [ "AHRS_PROPAGATE_FREQUENCY", "hf__float_8h.html#a8b1ace7fb278ed8284cb2e3579f14798", null ],
     [ "DT_HFILTER", "hf__float_8h.html#a2ce79e63483fe0760f8a7c793ec4a05f", null ],
     [ "HFF_FREQ", "hf__float_8h.html#afd277e77eaa74cd61e8edb134714988a", null ],

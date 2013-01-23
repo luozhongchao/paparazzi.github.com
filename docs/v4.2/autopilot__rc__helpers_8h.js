@@ -1,5 +1,6 @@
 var autopilot__rc__helpers_8h =
 [
+    [ "AUTOPILOT_STICK_CENTER_THRESHOLD", "autopilot__rc__helpers_8h.html#a7f4862b02da72ab20a01b363df541947", null ],
     [ "AUTOPILOT_THROTTLE_THRESHOLD", "autopilot__rc__helpers_8h.html#a745dcdb712b34556e5bea0b416760894", null ],
     [ "AUTOPILOT_YAW_THRESHOLD", "autopilot__rc__helpers_8h.html#a5844738d9e11a99f5799b6eaa0d57480", null ],
     [ "PITCH_STICK_CENTERED", "autopilot__rc__helpers_8h.html#a5541af1f39db9db37eb4e4d1673aac4c", null ],

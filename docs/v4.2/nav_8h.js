@@ -31,7 +31,12 @@ var nav_8h =
     [ "NormCourse", "nav_8h.html#a397bca15d146964a80f93abd74763384", null ],
     [ "Oval", "nav_8h.html#a3e1c9983a7508c42235e2fead19db8b1", null ],
     [ "Square", "nav_8h.html#a5b322de63943d278a002687f820ac41c", null ],
-    [ "oval_status", "nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcf", null ],
+    [ "oval_status", "nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcf", [
+      [ "OR12", "nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcfa65e326a040572bfc5a61c079d8bfca25", null ],
+      [ "OC2", "nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcfa06833c96276f88424e14772ee87ac437", null ],
+      [ "OR21", "nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcfae5d99807c6a564838a7fed8239ef311b", null ],
+      [ "OC1", "nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcfa5f636214b976745986c087710a2dde17", null ]
+    ] ],
     [ "fly_to_xy", "nav_8h.html#ae9d11d2e378b23ecbee86419cbf341f0", null ],
     [ "nav_approaching_xy", "nav_8h.html#a771b907350b836982ba4e31fd4bcbf4b", null ],
     [ "nav_circle_XY", "nav_8h.html#ad1b9d2e8da4a32477ca8bedc0bca86fe", null ],

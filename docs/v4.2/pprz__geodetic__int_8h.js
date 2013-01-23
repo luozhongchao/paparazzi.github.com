@@ -1,5 +1,11 @@
 var pprz__geodetic__int_8h =
 [
+    [ "EcefCoor_i", "structEcefCoor__i.html", "structEcefCoor__i" ],
+    [ "LlaCoor_i", "structLlaCoor__i.html", "structLlaCoor__i" ],
+    [ "NedCoor_i", "structNedCoor__i.html", "structNedCoor__i" ],
+    [ "EnuCoor_i", "structEnuCoor__i.html", "structEnuCoor__i" ],
+    [ "UtmCoor_i", "structUtmCoor__i.html", "structUtmCoor__i" ],
+    [ "LtpDef_i", "structLtpDef__i.html", "structLtpDef__i" ],
     [ "CM_OF_M", "pprz__geodetic__int_8h.html#ac1c9373f4e9310feecc165355eaec87f", null ],
     [ "ECEF_BFP_OF_REAL", "pprz__geodetic__int_8h.html#a43a1d756fad1a36400271289458d88fc", null ],
     [ "ECEF_FLOAT_OF_BFP", "pprz__geodetic__int_8h.html#a32b7872d03139c904b76beed354cc68d", null ],

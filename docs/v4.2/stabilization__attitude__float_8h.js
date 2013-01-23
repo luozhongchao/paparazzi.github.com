@@ -1,5 +1,6 @@
 var stabilization__attitude__float_8h =
 [
+    [ "FloatAttitudeGains", "structFloatAttitudeGains.html", "structFloatAttitudeGains" ],
     [ "STABILIZATION_ATTITUDE_FLOAT_GAIN_IDX_DEFAULT", "stabilization__attitude__float_8h.html#ad2e0741246ea1f5e24f70ec5a686d7e3", null ],
     [ "STABILIZATION_ATTITUDE_FLOAT_GAIN_NB", "stabilization__attitude__float_8h.html#a2b505ebed6773daa97c80398a9076350", null ],
     [ "stabilization_attitude_gain_schedule", "stabilization__attitude__float_8h.html#ad56ee50f489feb63a2af75f0024d892c", null ],

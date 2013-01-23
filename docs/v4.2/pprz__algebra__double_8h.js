@@ -1,5 +1,12 @@
 var pprz__algebra__double_8h =
 [
+    [ "DoubleVect2", "structDoubleVect2.html", "structDoubleVect2" ],
+    [ "DoubleVect3", "structDoubleVect3.html", "structDoubleVect3" ],
+    [ "DoubleQuat", "structDoubleQuat.html", "structDoubleQuat" ],
+    [ "DoubleMat33", "structDoubleMat33.html", "structDoubleMat33" ],
+    [ "DoubleRMat", "structDoubleRMat.html", "structDoubleRMat" ],
+    [ "DoubleEulers", "structDoubleEulers.html", "structDoubleEulers" ],
+    [ "DoubleRates", "structDoubleRates.html", "structDoubleRates" ],
     [ "DOUBLE_EULERS_OF_QUAT", "pprz__algebra__double_8h.html#af56db5ad752a153d0b6960808754e84c", null ],
     [ "DOUBLE_MAT33_VECT3_MUL", "pprz__algebra__double_8h.html#a9eea6a0f34ccaa4c1fe6fdae4462a6a6", null ],
     [ "DOUBLE_MAT33_VECT3_TRANSP_MUL", "pprz__algebra__double_8h.html#a3026941306378e0a390519230d45c9c9", null ],

@@ -214,7 +214,7 @@ var searchData=
   ['navverticalthrottlemode',['NavVerticalThrottleMode',['../navigation_8h.html#a6f740d9f9313ba73fa7dcd9dd53c4440',1,'NavVerticalThrottleMode():&#160;navigation.h'],['../nav_8h.html#a6f740d9f9313ba73fa7dcd9dd53c4440',1,'NavVerticalThrottleMode():&#160;nav.h']]],
   ['nb_5facs',['NB_ACS',['../traffic__info_8h.html#aa9ad271011923751218b103cae2e0bfd',1,'traffic_info.h']]],
   ['nb_5facs_5fid',['NB_ACS_ID',['../traffic__info_8h.html#aa556f49efe565705c817f8a7c01f97a9',1,'traffic_info.h']]],
-  ['nb_5fadc',['NB_ADC',['../stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4',1,'adc_arch.h']]],
+  ['nb_5fadc',['NB_ADC',['../stm32_2mcu__periph_2adc__arch_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4',1,'NB_ADC():&#160;adc_arch.h'],['../adc_8h.html#a4628f122bb2c9b76cea4c5883eccd9a4',1,'NB_ADC():&#160;adc.h']]],
   ['nb_5fadc1_5fchannels',['NB_ADC1_CHANNELS',['../stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9a596e80cea76930927c00013d83c987cd',1,'adc_arch.h']]],
   ['nb_5fadc2_5fchannels',['NB_ADC2_CHANNELS',['../stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45a61bc683067c20bc2dd8dd2d1de04d9a4',1,'adc_arch.h']]],
   ['nb_5fanalog_5fimu_5fadc',['NB_ANALOG_IMU_ADC',['../imu__analog_8h.html#aa951d9420e2582f372f30512a5c47940',1,'imu_analog.h']]],

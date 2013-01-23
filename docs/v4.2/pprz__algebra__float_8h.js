@@ -1,5 +1,12 @@
 var pprz__algebra__float_8h =
 [
+    [ "FloatVect2", "structFloatVect2.html", "structFloatVect2" ],
+    [ "FloatVect3", "structFloatVect3.html", "structFloatVect3" ],
+    [ "FloatQuat", "structFloatQuat.html", "structFloatQuat" ],
+    [ "FloatMat33", "structFloatMat33.html", "structFloatMat33" ],
+    [ "FloatRMat", "structFloatRMat.html", "structFloatRMat" ],
+    [ "FloatEulers", "structFloatEulers.html", "structFloatEulers" ],
+    [ "FloatRates", "structFloatRates.html", "structFloatRates" ],
     [ "FLOAT_ANGLE_NORMALIZE", "pprz__algebra__float_8h.html#a082a3591f2701fdcc77609946f1457ad", null ],
     [ "FLOAT_EULERS_NORM", "pprz__algebra__float_8h.html#abe8ac26f75cf7ed1d1abaac2057904c7", null ],
     [ "FLOAT_EULERS_OF_QUAT", "pprz__algebra__float_8h.html#abb9c6838cd4e08e827697d46129aa65d", null ],
@@ -72,6 +79,7 @@ var pprz__algebra__float_8h =
     [ "FLOAT_VECT3_SMUL", "pprz__algebra__float_8h.html#aa3c2387563382b1ecb24148d09e8b603", null ],
     [ "FLOAT_VECT3_SUB", "pprz__algebra__float_8h.html#a3c971ae8f35ffab12ddec5743683d4e3", null ],
     [ "FLOAT_VECT3_ZERO", "pprz__algebra__float_8h.html#a41de102be6b28101c9568380f729a88d", null ],
+    [ "M_SQRT2", "pprz__algebra__float_8h.html#a66b3ab30f1332874326ed93969e496e0", null ],
     [ "float_rmat_reorthogonalize", "pprz__algebra__float_8h.html#a49632b88ccee042652b8706a2fde6d0c", null ],
     [ "renorm_factor", "pprz__algebra__float_8h.html#a25ae277549c4186c3a29e6414b42f2e3", null ]
 ];

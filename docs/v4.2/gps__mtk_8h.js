@@ -1,5 +1,6 @@
 var gps__mtk_8h =
 [
+    [ "GpsMtk", "structGpsMtk.html", "structGpsMtk" ],
     [ "__GpsLink", "gps__mtk_8h.html#ab289c425d7a9205c6967a627e7bf250b", null ],
     [ "_GpsLink", "gps__mtk_8h.html#ac6a92e682d6ac01b41c965dbd3985d1a", null ],
     [ "GPS_MTK_MAX_PAYLOAD", "gps__mtk_8h.html#a04ed0db652ad814c6180f0e2d2469320", null ],

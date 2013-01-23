@@ -9,12 +9,52 @@ var OSAMNav_8c =
     [ "Takeoff_Height", "OSAMNav_8c.html#af154b7e19b5771012f81d51f12f3001e", null ],
     [ "Takeoff_MinSpeed", "OSAMNav_8c.html#acb95b1f3ec6438f933df979885a4ac2a", null ],
     [ "Takeoff_Speed", "OSAMNav_8c.html#a6e9a68be1e55ed84e119c2423756d6e2", null ],
-    [ "FlowerStatus", "OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551", null ],
-    [ "FLStatus", "OSAMNav_8c.html#a9dbd76495d70a6f62b70274c35348271", null ],
-    [ "LandingStatus", "OSAMNav_8c.html#a61a75394da51ededcb57cd59a9e3cefe", null ],
-    [ "line_status", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4", null ],
-    [ "SurveyStatus", "OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5", null ],
-    [ "TakeoffStatus", "OSAMNav_8c.html#a537434c0146d72f1c0f111539eb1945a", null ],
+    [ "FlowerStatus", "OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551", [
+      [ "Outside", "OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551a97428abf4f6a11dfc00d53c330031e95", null ],
+      [ "FlowerLine", "OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551a67ace41cbedde07dc60db766a1f42b2f", null ],
+      [ "Circle", "OSAMNav_8c.html#ab3972f7766a79f22a1ed10c84e294551ad3ce82743a8255ccd69f5b67d257c489", null ]
+    ] ],
+    [ "FLStatus", "OSAMNav_8c.html#a9dbd76495d70a6f62b70274c35348271", [
+      [ "FLInitialize", "OSAMNav_8c.html#a9dbd76495d70a6f62b70274c35348271a33ce4a7fa85476cf7381b53581cb6d4e", null ],
+      [ "FLCircleS", "OSAMNav_8c.html#a9dbd76495d70a6f62b70274c35348271a352136f9228a3db3455edf0ad4fa08e7", null ],
+      [ "FLLine", "OSAMNav_8c.html#a9dbd76495d70a6f62b70274c35348271a2af689876914fe460a0e44980689f906", null ],
+      [ "FLFinished", "OSAMNav_8c.html#a9dbd76495d70a6f62b70274c35348271aee96ee9abb5a1cd4e95f91afc0914059", null ]
+    ] ],
+    [ "LandingStatus", "OSAMNav_8c.html#a61a75394da51ededcb57cd59a9e3cefe", [
+      [ "CircleDown", "OSAMNav_8c.html#a61a75394da51ededcb57cd59a9e3cefea587a2621465b195891d7300ba54bff0b", null ],
+      [ "LandingWait", "OSAMNav_8c.html#a61a75394da51ededcb57cd59a9e3cefea6f11e1187e7e7fb6372a5aeda36a161f", null ],
+      [ "Final", "OSAMNav_8c.html#a61a75394da51ededcb57cd59a9e3cefeab068018251f551730c472862a3b2fca9", null ],
+      [ "Approach", "OSAMNav_8c.html#a61a75394da51ededcb57cd59a9e3cefeaa19b7b7f6eb8f8eedb2055bf1050f81f", null ]
+    ] ],
+    [ "line_status", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4", [
+      [ "LR12", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4acfcd68d903867d509a779613b2ccfba5", null ],
+      [ "LQC21", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a04ad51045635dee83d454860ae6b135c", null ],
+      [ "LTC2", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a8b5deafb5a78d799c0691bef43de80ce", null ],
+      [ "LQC22", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a31099427ddf1cb13114e28c9472b3c68", null ],
+      [ "LR21", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a383219705a1e85c6f680e43d1f304f5b", null ],
+      [ "LQC12", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4aca3f9b2462e0f5298f41a92f75fa11cd", null ],
+      [ "LTC1", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4ad74fa6a689e1a6c8373a3359bba8d124", null ],
+      [ "LQC11", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a7f637cfcb9990910ded6a6f84bafed9b", null ],
+      [ "LR12", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4acfcd68d903867d509a779613b2ccfba5", null ],
+      [ "LQC21", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a04ad51045635dee83d454860ae6b135c", null ],
+      [ "LTC2", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a8b5deafb5a78d799c0691bef43de80ce", null ],
+      [ "LQC22", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a31099427ddf1cb13114e28c9472b3c68", null ],
+      [ "LR21", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a383219705a1e85c6f680e43d1f304f5b", null ],
+      [ "LQC12", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4aca3f9b2462e0f5298f41a92f75fa11cd", null ],
+      [ "LTC1", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4ad74fa6a689e1a6c8373a3359bba8d124", null ],
+      [ "LQC11", "OSAMNav_8c.html#ab8af100196e813e8f45013a015da1dc4a7f637cfcb9990910ded6a6f84bafed9b", null ]
+    ] ],
+    [ "SurveyStatus", "OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5", [
+      [ "Init", "OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5a1ff76aa808bb8209a13fcdbaf330587e", null ],
+      [ "Entry", "OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5a6429a96682b7c66ac1c02883210c1d87", null ],
+      [ "Sweep", "OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5a6e181b59624c49600dfdb1df3b47272f", null ],
+      [ "SweepCircle", "OSAMNav_8c.html#a8c59693bfb0c154698979de6e77bb0c5ac555870e8a5a6176a7a76bd11a66065c", null ]
+    ] ],
+    [ "TakeoffStatus", "OSAMNav_8c.html#a537434c0146d72f1c0f111539eb1945a", [
+      [ "Launch", "OSAMNav_8c.html#a537434c0146d72f1c0f111539eb1945aaf8b29e7d78989059f62735943a6b5e25", null ],
+      [ "Throttle", "OSAMNav_8c.html#a537434c0146d72f1c0f111539eb1945aa600160e844f132b8c8745e373e0ef454", null ],
+      [ "Finished", "OSAMNav_8c.html#a537434c0146d72f1c0f111539eb1945aab68c130eb6caa378c2c394e9054bbb63", null ]
+    ] ],
     [ "BungeeTakeoff", "OSAMNav_8c.html#a77610706017cbfb06ae7449b91382a01", null ],
     [ "DistanceEquation", "OSAMNav_8c.html#a250687678f587f466e7611a982c6a34d", null ],
     [ "EvaluateLineForX", "OSAMNav_8c.html#a369fb753abd22e08ec5990479b0dcbcf", null ],

@@ -1,5 +1,6 @@
 var gps__skytraq_8h =
 [
+    [ "GpsSkytraq", "structGpsSkytraq.html", "structGpsSkytraq" ],
     [ "__GpsLink", "gps__skytraq_8h.html#ab289c425d7a9205c6967a627e7bf250b", null ],
     [ "_GpsLink", "gps__skytraq_8h.html#ac6a92e682d6ac01b41c965dbd3985d1a", null ],
     [ "GPS_SKYTRAQ_ERR_CHECKSUM", "gps__skytraq_8h.html#a94762703351081e88d2eb64796289f09", null ],

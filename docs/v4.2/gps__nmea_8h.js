@@ -1,5 +1,6 @@
 var gps__nmea_8h =
 [
+    [ "GpsNmea", "structGpsNmea.html", "structGpsNmea" ],
     [ "__GpsLink", "gps__nmea_8h.html#ab289c425d7a9205c6967a627e7bf250b", null ],
     [ "_GpsLink", "gps__nmea_8h.html#ac6a92e682d6ac01b41c965dbd3985d1a", null ],
     [ "GPS_NB_CHANNELS", "gps__nmea_8h.html#a63f1b81cf4a1e8e0fe80f065224826fe", null ],

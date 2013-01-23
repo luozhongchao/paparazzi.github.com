@@ -1,5 +1,6 @@
 var imu__aspirin_8h =
 [
+    [ "ImuAspirin", "structImuAspirin.html", "structImuAspirin" ],
     [ "ASPIRIN_ACCEL_TIMEOUT", "imu__aspirin_8h.html#a921646a056c0d8db6afd55d0467d0ca5", null ],
     [ "ASPIRIN_GYRO_TIMEOUT", "imu__aspirin_8h.html#aecd8b6c5ae659db1c8fa12b2587f5b36", null ],
     [ "foo_handler", "imu__aspirin_8h.html#a23553118551649e9fe4ddf7d2f3f96a7", null ],
@@ -29,7 +30,12 @@ var imu__aspirin_8h =
     [ "IMU_GYRO_R_SIGN", "imu__aspirin_8h.html#a91fa3d93fbfb5edbdf7f3b34436b53da", null ],
     [ "ImuEvent", "imu__aspirin_8h.html#a5b61834fdd9dc32e2f93b974354c7402", null ],
     [ "ImuMagEvent", "imu__aspirin_8h.html#a62850cb40d836d423b8e389ab9c9bc26", null ],
-    [ "AspirinStatus", "imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8", null ],
+    [ "AspirinStatus", "imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8", [
+      [ "AspirinStatusUninit", "imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd", null ],
+      [ "AspirinStatusIdle", "imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a1b79e5ac74270b36feeacbdc6a2dcc7a", null ],
+      [ "AspirinStatusReadingGyro", "imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8ab37b7939ff4b174c1ebf94ed48fa1162", null ],
+      [ "AspirinStatusReadingMag", "imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8af9fe0832964e38413e3e1b8880521d50", null ]
+    ] ],
     [ "accel_copy_spi", "imu__aspirin_8h.html#acf82b1a211622d1291452cd776ec76b5", null ],
     [ "gyro_copy_i2c", "imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0", null ],
     [ "gyro_read_i2c", "imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf", null ],

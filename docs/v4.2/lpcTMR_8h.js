@@ -1,5 +1,6 @@
 var lpcTMR_8h =
 [
+    [ "pwmTmrRegs_t", "structpwmTmrRegs__t.html", "structpwmTmrRegs__t" ],
     [ "PWMIR_MASK", "lpcTMR_8h.html#a1d2dc87805a649d0aff1cb9b2aec07fb", null ],
     [ "PWMIR_MR0I", "lpcTMR_8h.html#a1619a385ef8bd12867b7ef4f99cd3c6d", null ],
     [ "PWMIR_MR1I", "lpcTMR_8h.html#abbf99f7de9a23b941f3942c18eca096c", null ],

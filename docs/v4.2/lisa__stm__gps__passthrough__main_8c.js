@@ -1,5 +1,6 @@
 var lisa__stm__gps__passthrough__main_8c =
 [
+    [ "uart_state", "structuart__state.html", "structuart__state" ],
     [ "__attribute__", "lisa__stm__gps__passthrough__main_8c.html#ab898071398b359603a35c202e9c65f3b", null ],
     [ "main", "lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
     [ "main_event", "lisa__stm__gps__passthrough__main_8c.html#a319a645047f275499aa30b0bc08c6e10", null ],

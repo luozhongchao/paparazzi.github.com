@@ -1,5 +1,6 @@
 var stabilization__attitude__ref__int_8h =
 [
+    [ "Int32RefModel", "structInt32RefModel.html", "structInt32RefModel" ],
     [ "ANGLE_REF_NORMALIZE", "stabilization__attitude__ref__int_8h.html#ac57c1d722e1b973e0e9891338bf1d2c0", null ],
     [ "REF_ACCEL_FRAC", "stabilization__attitude__ref__int_8h.html#a94a3fc964bb686c26cc9fe01d9c7a50f", null ],
     [ "REF_ANGLE_FRAC", "stabilization__attitude__ref__int_8h.html#afdc520b26f7e5b77c2c7a59bf568f1f7", null ],

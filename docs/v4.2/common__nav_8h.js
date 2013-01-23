@@ -1,5 +1,6 @@
 var common__nav_8h =
 [
+    [ "point", "structpoint.html", "structpoint" ],
     [ "Height", "common__nav_8h.html#af637c15f691fc23f50337eb194758ec7", null ],
     [ "NavSetGroundReferenceHere", "common__nav_8h.html#ac51da095b4a1038ac7be8d3be9b9573e", null ],
     [ "NavSetWaypointHere", "common__nav_8h.html#af6eb4097676a1a2eaea357f56751e669", null ],

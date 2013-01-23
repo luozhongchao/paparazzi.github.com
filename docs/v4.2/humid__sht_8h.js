@@ -1,6 +1,7 @@
 var humid__sht_8h =
 [
     [ "ACK", "humid__sht_8h.html#a6f6489887e08bff4887d0bc5dcf214d8", null ],
+    [ "DAT_PIN", "humid__sht_8h.html#a0e4e1e3e3be953864f931e22cb963134", null ],
     [ "DATA_CLR", "humid__sht_8h.html#a304b342c8a2033227f5c131a2114050b", null ],
     [ "DATA_IN", "humid__sht_8h.html#abebff40b775e10e37faa4ec7b45d6a89", null ],
     [ "DATA_INIT", "humid__sht_8h.html#aba8d80881f02df64b578b543caba4ed9", null ],
@@ -12,6 +13,7 @@ var humid__sht_8h =
     [ "RESET", "humid__sht_8h.html#ab702106cf3b3e96750b6845ded4e0299", null ],
     [ "SCK_CLR", "humid__sht_8h.html#a512a5703d0f1c6944a2eedac4f187df5", null ],
     [ "SCK_INIT", "humid__sht_8h.html#a83e790423dcaa420f3c61563ab87af6e", null ],
+    [ "SCK_PIN", "humid__sht_8h.html#a01153037fca70cfac03c8d67f17d766a", null ],
     [ "SCK_SET", "humid__sht_8h.html#acf3bb8b7e02613e72ae86932b074f04f", null ],
     [ "SHT_IDLE", "humid__sht_8h.html#a50b19c0f93aefeedbfe334f81064159a", null ],
     [ "SHT_MEASURING_HUMID", "humid__sht_8h.html#a4fc00fb9919f9d430d6fa80bc1079a50", null ],

@@ -2,6 +2,7 @@ var ins__module_8h =
 [
     [ "__InsLink", "ins__module_8h.html#a06985cd7205d2d359dc64331d6b041a3", null ],
     [ "_InsLink", "ins__module_8h.html#af225537bb9f171850c015b0b4c9498b5", null ],
+    [ "INS_FORMAT", "ins__module_8h.html#af7a0eee39bb6bb96792762bbbb34cb4a", null ],
     [ "InsBuffer", "ins__module_8h.html#a89717e256a6b1749410d36d3e3691acb", null ],
     [ "InsEventCheckAndHandle", "ins__module_8h.html#adce0f39efa999513f584120bdfa1526f", null ],
     [ "InsLink", "ins__module_8h.html#ab3afefe3da54fd2e9d9b14c042d4ec96", null ],

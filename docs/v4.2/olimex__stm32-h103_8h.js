@@ -1,4 +1,4 @@
-var olimex__stm32-h103_8h =
+var olimex__stm32_h103_8h =
 [
     [ "AHB_CLK", "olimex__stm32-h103_8h.html#add4f03b6c5c9bcabeba314491a310346", null ],
     [ "LED_1_GPIO", "olimex__stm32-h103_8h.html#a37154c806d85fb9f9158f86bb55e9ee0", null ],

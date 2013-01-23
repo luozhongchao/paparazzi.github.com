@@ -1,5 +1,6 @@
 var hmc5843_8h =
 [
+    [ "Hmc5843", "structHmc5843.html", "structHmc5843" ],
     [ "HMC5843_ADDR", "hmc5843_8h.html#af5698fe0de8ea262fc27e0680c3270e2", null ],
     [ "HMC5843_REG_CFGA", "hmc5843_8h.html#aac65cd100da1008bbfe627969a2c5d31", null ],
     [ "HMC5843_REG_CFGB", "hmc5843_8h.html#ab1ebcfb757f531b54ea60d83dacdb461", null ],

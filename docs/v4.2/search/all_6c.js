@@ -182,6 +182,7 @@ var searchData=
   ['light_2ec',['light.c',['../light_8c.html',1,'']]],
   ['light_2eh',['light.h',['../light_8h.html',1,'']]],
   ['light_5fcnt',['light_cnt',['../light__solar_8c.html#a831ddfb4155fdd57df9ff70f0df6033b',1,'light_cnt():&#160;light_solar.c'],['../light__solar_8h.html#a831ddfb4155fdd57df9ff70f0df6033b',1,'light_cnt():&#160;light_solar.c']]],
+  ['light_5fled_5fstrobe',['LIGHT_LED_STROBE',['../light_8h.html#a4b7458780574fd74d37dbe62a9bc35b1',1,'light.h']]],
   ['light_5fnb',['LIGHT_NB',['../light__solar_8h.html#a625b0cd4756749febeb68c16df8085f9',1,'light_solar.h']]],
   ['light_5fsolar_2ec',['light_solar.c',['../light__solar_8c.html',1,'']]],
   ['light_5fsolar_2eh',['light_solar.h',['../light__solar_8h.html',1,'']]],

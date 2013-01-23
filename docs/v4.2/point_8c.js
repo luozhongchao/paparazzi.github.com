@@ -1,5 +1,7 @@
 var point_8c =
 [
+    [ "VECTOR", "structVECTOR.html", "structVECTOR" ],
+    [ "MATRIX", "structMATRIX.html", "structMATRIX" ],
     [ "vMultiplyMatrixByVector", "point_8c.html#a0e392f07c1bc4a72fa292c1fb98fbffe", null ],
     [ "vPoint", "point_8c.html#a3317a3a368f54d6c89acfbbaa49b4ed2", null ],
     [ "vSubtractVectors", "point_8c.html#a553fdfb308cb850023076e6a58842796", null ],

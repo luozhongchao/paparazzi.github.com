@@ -1,5 +1,6 @@
 var stm32_2subsystems_2radio__control_2spektrum__arch_8c =
 [
+    [ "SpektrumStateStruct", "structSpektrumStateStruct.html", "structSpektrumStateStruct" ],
     [ "__PrimaryUart", "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a5b8645bdbfde4df9bbfd10fa1e085968", null ],
     [ "__SecondaryUart", "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a25565951b5e960eccfa27d12fecdfbca", null ],
     [ "_PrimaryUart", "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a740973878a8ab8df043a7527aec05039", null ],

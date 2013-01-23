@@ -1,5 +1,6 @@
 var traffic__info_8h =
 [
+    [ "ac_info_", "structac__info__.html", "structac__info__" ],
     [ "NB_ACS", "traffic__info_8h.html#aa9ad271011923751218b103cae2e0bfd", null ],
     [ "NB_ACS_ID", "traffic__info_8h.html#aa556f49efe565705c817f8a7c01f97a9", null ],
     [ "SetAcInfo", "traffic__info_8h.html#a9c6b528a41fdb94abf2163b08523e82c", null ],

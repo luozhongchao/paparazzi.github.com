@@ -1,5 +1,6 @@
 var ads1114_8h =
 [
+    [ "ads1114_periph", "structads1114__periph.html", "structads1114__periph" ],
     [ "_Ads1114Event", "ads1114_8h.html#a15684b2aef9bf39de5a2644f9b872370", null ],
     [ "ADS1114_1_COMP_LAT", "ads1114_8h.html#a828a66e01b5e778e446624de97c50b05", null ],
     [ "ADS1114_1_COMP_MODE", "ads1114_8h.html#a0f1c99e89e223ac3bb0dfbc3567068ee", null ],

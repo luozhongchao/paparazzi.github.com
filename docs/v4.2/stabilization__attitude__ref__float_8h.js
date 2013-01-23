@@ -1,5 +1,6 @@
 var stabilization__attitude__ref__float_8h =
 [
+    [ "FloatRefModel", "structFloatRefModel.html", "structFloatRefModel" ],
     [ "stab_att_ref_accel", "stabilization__attitude__ref__float_8h.html#a40375b94775800b50d2f5f4121a394d7", null ],
     [ "stab_att_ref_euler", "stabilization__attitude__ref__float_8h.html#a141d82bdde469aa835758b7d0a490884", null ],
     [ "stab_att_ref_model", "stabilization__attitude__ref__float_8h.html#a6d05bb547230d7a24a5fb3864aabb826", null ],

@@ -1,5 +1,6 @@
 var lpc21_2subsystems_2settings__arch_8c =
 [
+    [ "FlashInfo", "structFlashInfo.html", "structFlashInfo" ],
     [ "BOUND", "lpc21_2subsystems_2settings__arch_8c.html#aa3d3687532e25854c63dca906abf1032", null ],
     [ "FCHK", "lpc21_2subsystems_2settings__arch_8c.html#a486ad2adc27b733aa4476b6ddcfa2edb", null ],
     [ "FSIZ", "lpc21_2subsystems_2settings__arch_8c.html#aad7842fbef06c8ec39045d2bf58455b9", null ],

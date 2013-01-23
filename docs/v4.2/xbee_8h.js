@@ -1,5 +1,6 @@
 var xbee_8h =
 [
+    [ "xbee_transport", "structxbee__transport.html", "structxbee__transport" ],
     [ "GROUND_STATION_ADDR", "xbee_8h.html#a3bf53f52f231baaaa5780f3e2720c7c4", null ],
     [ "NO_FRAME_ID", "xbee_8h.html#a3c3297ca8e2c20dc18641e62083e64a1", null ],
     [ "ReadXBeeBuffer", "xbee_8h.html#a7520b197bab0895e41da94633849ee58", null ],

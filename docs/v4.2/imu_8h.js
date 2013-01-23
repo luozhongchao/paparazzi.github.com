@@ -1,5 +1,7 @@
 var imu_8h =
 [
+    [ "Imu", "structImu.html", "structImu" ],
+    [ "ImuFloat", "structImuFloat.html", "structImuFloat" ],
     [ "IMU_ACCEL_X_NEUTRAL", "imu_8h.html#a01dac8935d4166bc144b115219cddbc4", null ],
     [ "IMU_ACCEL_Y_NEUTRAL", "imu_8h.html#a199acc0383b0e1d7e3841bc3297cc0fb", null ],
     [ "IMU_ACCEL_Z_NEUTRAL", "imu_8h.html#a2b487e2376edc35048f5d78cd4968221", null ],

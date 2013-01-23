@@ -365,7 +365,7 @@ var searchData=
   ['trim',['trim',['../structSupervision.html#adaed113d04062f70130e0738b1a13f41',1,'Supervision']]],
   ['trim_5fpprz',['TRIM_PPRZ',['../paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7',1,'paparazzi.h']]],
   ['trim_5fupprz',['TRIM_UPPRZ',['../paparazzi_8h.html#a3e070a9f163110692ed4b0f6a95b41c6',1,'paparazzi.h']]],
-  ['true',['True',['../types_8h.html#a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b',1,'True():&#160;types.h'],['../inttypes_8h.html#a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b',1,'True():&#160;inttypes.h']]],
+  ['true',['True',['../types_8h.html#a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b',1,'True():&#160;types.h'],['../inttypes_8h.html#a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b',1,'True():&#160;inttypes.h'],['../imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'TRUE():&#160;imu_chimu.h']]],
   ['tsr',['tsr',['../structspiRegs__t.html#a745d9b0cab70dac8ef5ab51b84f86eee',1,'spiRegs_t']]],
   ['tunnel_5fhw_2ec',['tunnel_hw.c',['../tunnel__hw_8c.html',1,'']]],
   ['turn1',['TURN1',['../poly__survey__adv_8h.html#aa46eae8395ef867c63e26dd5d86e97d5a2884693247786bd3ade63a8dca2a4630',1,'poly_survey_adv.h']]],

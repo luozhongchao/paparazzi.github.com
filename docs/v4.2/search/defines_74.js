@@ -164,6 +164,7 @@ var searchData=
   ['trigger_5fit',['TRIGGER_IT',['../lpc21_2mcu__periph_2sys__time__arch_8c.html#a0003e5ff9c1eecd4cdc1aa1a67c24785',1,'TRIGGER_IT():&#160;sys_time_arch.c'],['../lpc21_2modules_2core_2trigger__ext__hw_8h.html#a0003e5ff9c1eecd4cdc1aa1a67c24785',1,'TRIGGER_IT():&#160;trigger_ext_hw.h']]],
   ['trim_5fpprz',['TRIM_PPRZ',['../paparazzi_8h.html#a6fff2a38e48dea3e7e91896c6ab60cf7',1,'paparazzi.h']]],
   ['trim_5fupprz',['TRIM_UPPRZ',['../paparazzi_8h.html#a3e070a9f163110692ed4b0f6a95b41c6',1,'paparazzi.h']]],
+  ['true',['TRUE',['../imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'imu_chimu.h']]],
   ['two_5fpi_5finteg_5feuler',['TWO_PI_INTEG_EULER',['../ahrs__int__cmpl__euler_8c.html#a02f00c6c5b6cc09a006df904693a14a2',1,'ahrs_int_cmpl_euler.c']]],
   ['tx_5fbuf_5fsize',['TX_BUF_SIZE',['../audio__telemetry_8h.html#a5d3fb1970e1e98050006978a14b3d95e',1,'audio_telemetry.h']]],
   ['tx_5foptions',['TX_OPTIONS',['../xbee_8h.html#af0093afc7470e4155e0c7b59e955d7bd',1,'xbee.h']]],
