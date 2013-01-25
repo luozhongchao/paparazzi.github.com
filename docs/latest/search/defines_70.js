@@ -87,6 +87,7 @@ var searchData=
   ['periodic_5fsend_5fadc',['PERIODIC_SEND_ADC',['../ap__downlink_8h.html#a361aa734182552513e1a604499c3544a',1,'PERIODIC_SEND_ADC():&#160;ap_downlink.h'],['../fbw__downlink_8h.html#a361aa734182552513e1a604499c3544a',1,'PERIODIC_SEND_ADC():&#160;fbw_downlink.h']]],
   ['periodic_5fsend_5fahrs',['PERIODIC_SEND_AHRS',['../ins__vn100_8h.html#a5a85c2d0ea59d26cdde20b689dede4c8',1,'ins_vn100.h']]],
   ['periodic_5fsend_5fahrs_5feuler_5fint',['PERIODIC_SEND_AHRS_EULER_INT',['../telemetry_8h.html#aaac4f18b8e53aac9f81ac213efa47d94',1,'telemetry.h']]],
+  ['periodic_5fsend_5fahrs_5fgyro_5fbias_5fint',['PERIODIC_SEND_AHRS_GYRO_BIAS_INT',['../telemetry_8h.html#a7af147a9d9c4147d2693c155864a9cb6',1,'telemetry.h']]],
   ['periodic_5fsend_5fahrs_5flkf',['PERIODIC_SEND_AHRS_LKF',['../telemetry_8h.html#ab9bf71b3b8895aa9113ae71fcfe1a174',1,'telemetry.h']]],
   ['periodic_5fsend_5fahrs_5flkf_5facc_5fdbg',['PERIODIC_SEND_AHRS_LKF_ACC_DBG',['../telemetry_8h.html#a91a15eadb7869ec9f8b6aad895b9b8f8',1,'telemetry.h']]],
   ['periodic_5fsend_5fahrs_5flkf_5fdebug',['PERIODIC_SEND_AHRS_LKF_DEBUG',['../telemetry_8h.html#ae0bbca85dbe07797cc02055859c84c35',1,'telemetry.h']]],

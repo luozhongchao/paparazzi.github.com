@@ -2,6 +2,7 @@ var telemetry_8h =
 [
     [ "PERIODIC_SEND_ACTUATORS", "telemetry_8h.html#aa134fd1db52cbf4539e6d13c9d8db784", null ],
     [ "PERIODIC_SEND_AHRS_EULER_INT", "telemetry_8h.html#aaac4f18b8e53aac9f81ac213efa47d94", null ],
+    [ "PERIODIC_SEND_AHRS_GYRO_BIAS_INT", "telemetry_8h.html#a7af147a9d9c4147d2693c155864a9cb6", null ],
     [ "PERIODIC_SEND_AHRS_LKF", "telemetry_8h.html#ab9bf71b3b8895aa9113ae71fcfe1a174", null ],
     [ "PERIODIC_SEND_AHRS_LKF_ACC_DBG", "telemetry_8h.html#a91a15eadb7869ec9f8b6aad895b9b8f8", null ],
     [ "PERIODIC_SEND_AHRS_LKF_DEBUG", "telemetry_8h.html#ae0bbca85dbe07797cc02055859c84c35", null ],
