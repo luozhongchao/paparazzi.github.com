@@ -1,5 +1,11 @@
 var NAVTREEINDEX35 =
 {
+"module__demo_module.html":[2,84],
+"module__demo_module.html#files":[2,84,1],
+"module__demo_module.html#functions":[2,84,0],
+"module__demo_module.html#headers":[2,84,1,0],
+"module__demo_module.html#init_functions":[2,84,0,0],
+"module__demo_module.html#module_xml__demo_module":[2,84,1,2],
 "module__demo_module.html#periodic_functions":[2,84,0,1],
 "module__demo_module.html#sources":[2,84,1,1],
 "module__deploy_sonar_buoy.html":[2,85],
@@ -243,11 +249,5 @@ var NAVTREEINDEX35 =
 "module__imu_ppzuav.html#functions":[2,72,0],
 "module__imu_ppzuav.html#headers":[2,72,1,0],
 "module__imu_ppzuav.html#init_functions":[2,72,0,0],
-"module__imu_ppzuav.html#module_xml__imu_ppzuav":[2,72,1,2],
-"module__imu_ppzuav.html#periodic_functions":[2,72,0,2],
-"module__imu_ppzuav.html#sources":[2,72,1,1],
-"module__infrared_adc.html":[2,73],
-"module__infrared_adc.html#configuration":[2,73,0],
-"module__infrared_adc.html#configure":[2,73,0,0],
-"module__infrared_adc.html#files":[2,73,2]
+"module__imu_ppzuav.html#module_xml__imu_ppzuav":[2,72,1,2]
 };

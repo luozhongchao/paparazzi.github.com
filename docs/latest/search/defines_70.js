@@ -325,6 +325,7 @@ var searchData=
   ['pwm_5fservo_5f6_5fpinsel_5fmask',['PWM_SERVO_6_PINSEL_MASK',['../lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a8d12af88c4c8197a882fc04cd45c7e74',1,'actuators_pwm_arch.h']]],
   ['pwm_5fservo_5f6_5fpinsel_5fval',['PWM_SERVO_6_PINSEL_VAL',['../lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a15713fb21abf6621deac46a51742d4e9',1,'actuators_pwm_arch.h']]],
   ['pwm_5ftics_5fof_5fusec',['PWM_TICS_OF_USEC',['../servos__4015__hw_8h.html#a70db79614b8d64133d2810db9d9f59ef',1,'servos_4015_hw.h']]],
+  ['pwm_5fvic_5fslot',['PWM_VIC_SLOT',['../servos__4015__hw_8c.html#a769e4188fbfc4b0fe6d8cd49c3f9546e',1,'PWM_VIC_SLOT():&#160;servos_4015_hw.c'],['../servos__4015__hw__new_8c.html#a769e4188fbfc4b0fe6d8cd49c3f9546e',1,'PWM_VIC_SLOT():&#160;servos_4015_hw_new.c']]],
   ['pwmir',['PWMIR',['../LPC21xx_8h.html#a2b2175b1d001571946445be90075beb6',1,'LPC21xx.h']]],
   ['pwmir_5fmask',['PWMIR_MASK',['../lpcTMR_8h.html#a1d2dc87805a649d0aff1cb9b2aec07fb',1,'lpcTMR.h']]],
   ['pwmir_5fmr0i',['PWMIR_MR0I',['../lpcTMR_8h.html#a1619a385ef8bd12867b7ef4f99cd3c6d',1,'lpcTMR.h']]],

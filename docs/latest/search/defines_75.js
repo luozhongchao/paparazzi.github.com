@@ -160,6 +160,7 @@ var searchData=
   ['updatemedianfilterratesint',['UpdateMedianFilterRatesInt',['../median__filter_8h.html#acd05707df38c78d3a0c0a8b8d4e0058f',1,'median_filter.h']]],
   ['updatemedianfiltervect3int',['UpdateMedianFilterVect3Int',['../median__filter_8h.html#a0e78f662145c412ae8c4e57fcc38e2ef',1,'median_filter.h']]],
   ['updateslot',['UpdateSlot',['../formation_8h.html#a0ff1d13f5d959fc708fd23b931f13dd9',1,'formation.h']]],
+  ['usb_5fvic_5fslot',['USB_VIC_SLOT',['../usb__ser__hw_8c.html#a09ea23eda8e8a5b5f05dce5038fa9bc1',1,'usb_ser_hw.c']]],
   ['usbschavailable',['UsbSChAvailable',['../usb__serial_8h.html#ac35d9463a5a038cb76cbbab16293509a',1,'usb_serial.h']]],
   ['usbscheckfreespace',['UsbSCheckFreeSpace',['../usb__serial_8h.html#a307e2e8623a44862ee705bb62e0d2e98',1,'usb_serial.h']]],
   ['usbsgetch',['UsbSGetch',['../usb__serial_8h.html#a1a2c3b8bab59655e69775eaf5562901e',1,'usb_serial.h']]],

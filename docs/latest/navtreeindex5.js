@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"ahrs__infrared_8c.html#a8428916e937864198ba37b1ea356aaac":[8,0,0,0,10,1,14,5],
 "ahrs__infrared_8c.html#a8bf83860498b05e7e94484cdcbcb1b7a":[8,0,0,0,10,1,14,3],
 "ahrs__infrared_8c.html#aa3721663c9df7c7af5613486a3566afb":[8,0,0,0,10,1,14,1],
 "ahrs__infrared_8c.html#ac5682e48513a771560df50e3b213e61a":[8,0,0,0,10,1,14,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "alt__srf08_8h.html#a8d4ac3b6c173c6dbb775ddc7fc691c9c":[8,0,0,0,7,29,9,39],
 "alt__srf08_8h.html#a906c8c6113cd61c04bd9a096df719ed5":[8,0,0,0,7,29,9,43],
 "alt__srf08_8h.html#a9794c9bcf52d8ba6fff91b861ed5df61":[8,0,0,0,7,29,9,4],
-"alt__srf08_8h.html#a9923f3f5e600add774e6f46a256fda08":[8,0,0,0,7,29,9,54],
-"alt__srf08_8h.html#a998b93ec75e91e718a258f8dbf9c9808":[8,0,0,0,7,29,9,0]
+"alt__srf08_8h.html#a9923f3f5e600add774e6f46a256fda08":[8,0,0,0,7,29,9,54]
 };

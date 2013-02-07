@@ -3,6 +3,7 @@ var baro__scp_8c =
     [ "DOWNLINK_DEVICE", "baro__scp_8c.html#a2978a46b47cbc9d17a0924014ff9658b", null ],
     [ "ScpSelect", "baro__scp_8c.html#a9e60b794eccc68ab30b26df788ce68a6", null ],
     [ "ScpUnselect", "baro__scp_8c.html#af0e8c521c4a6f8b4c96543ac299fd736", null ],
+    [ "SPI1_VIC_SLOT", "baro__scp_8c.html#ad43efa9901f253a6a901a4bddd1b7f5f", null ],
     [ "SS_IOCLR", "baro__scp_8c.html#a83179147187ea68373af5b653809b109", null ],
     [ "SS_IODIR", "baro__scp_8c.html#a83780199bd871c42c41102dba1ca9fa5", null ],
     [ "SS_IOSET", "baro__scp_8c.html#a73ced30854f76375618fa490b47d0bf9", null ],

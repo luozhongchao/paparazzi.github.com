@@ -8,6 +8,7 @@ var ADS8344_8c =
     [ "ADS8344Unselect", "ADS8344_8c.html#aa9817622c338285730aca3a5c84c289c", null ],
     [ "POWER_MODE", "ADS8344_8c.html#a4e7bf0c205872c6db180b06792a62118", null ],
     [ "SGL_DIF", "ADS8344_8c.html#a87866f9987fb38ca70a19a737bbd0628", null ],
+    [ "SPI1_VIC_SLOT", "ADS8344_8c.html#ad43efa9901f253a6a901a4bddd1b7f5f", null ],
     [ "SSP_CPHA", "ADS8344_8c.html#a0b293b59617ad1f7284da53de8c948e1", null ],
     [ "SSP_CPOL", "ADS8344_8c.html#a2955ab679aed69df4a1053e6435118f4", null ],
     [ "SSP_DSS", "ADS8344_8c.html#a44c745fbeb1d568abe96cfaabab66fc6", null ],

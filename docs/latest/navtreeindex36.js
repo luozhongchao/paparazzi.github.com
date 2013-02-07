@@ -1,5 +1,11 @@
 var NAVTREEINDEX36 =
 {
+"module__imu_ppzuav.html#periodic_functions":[2,72,0,2],
+"module__imu_ppzuav.html#sources":[2,72,1,1],
+"module__infrared_adc.html":[2,73],
+"module__infrared_adc.html#configuration":[2,73,0],
+"module__infrared_adc.html#configure":[2,73,0,0],
+"module__infrared_adc.html#files":[2,73,2],
 "module__infrared_adc.html#functions":[2,73,1],
 "module__infrared_adc.html#headers":[2,73,2,0],
 "module__infrared_adc.html#init_functions":[2,73,1,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX36 =
 "module__servo_switch.html#configuration":[2,99,0],
 "module__servo_switch.html#define":[2,99,0,0],
 "module__servo_switch.html#files":[2,99,2],
-"module__servo_switch.html#functions":[2,99,1],
-"module__servo_switch.html#headers":[2,99,2,0],
-"module__servo_switch.html#init_functions":[2,99,1,0],
-"module__servo_switch.html#module_xml__servo_switch":[2,99,2,2],
-"module__servo_switch.html#periodic_functions":[2,99,1,1],
-"module__servo_switch.html#sources":[2,99,2,1],
-"module__sonar_maxbotix_booz.html":[2,100]
+"module__servo_switch.html#functions":[2,99,1]
 };

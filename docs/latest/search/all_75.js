@@ -251,6 +251,7 @@ var searchData=
   ['usb_5fser_5fhw_2ec',['usb_ser_hw.c',['../usb__ser__hw_8c.html',1,'']]],
   ['usb_5fserial_2eh',['usb_serial.h',['../usb__serial_8h.html',1,'']]],
   ['usb_5ftunnel_2ec',['usb_tunnel.c',['../usb__tunnel_8c.html',1,'']]],
+  ['usb_5fvic_5fslot',['USB_VIC_SLOT',['../usb__ser__hw_8c.html#a09ea23eda8e8a5b5f05dce5038fa9bc1',1,'usb_ser_hw.c']]],
   ['usbinthandler',['USBIntHandler',['../usb__ser__hw_8c.html#ae891f923dd9e5e6d7630c5ffc64ce0ec',1,'usb_ser_hw.c']]],
   ['usbschavailable',['UsbSChAvailable',['../usb__serial_8h.html#ac35d9463a5a038cb76cbbab16293509a',1,'usb_serial.h']]],
   ['usbscheckfreespace',['UsbSCheckFreeSpace',['../usb__serial_8h.html#a307e2e8623a44862ee705bb62e0d2e98',1,'usb_serial.h']]],

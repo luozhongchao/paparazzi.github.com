@@ -1,5 +1,6 @@
 var spi__slave__hs__arch_8c =
 [
+    [ "SPI1_VIC_SLOT", "spi__slave__hs__arch_8c.html#ad43efa9901f253a6a901a4bddd1b7f5f", null ],
     [ "SSP_CPHA", "spi__slave__hs__arch_8c.html#a0b293b59617ad1f7284da53de8c948e1", null ],
     [ "SSP_CPOL", "spi__slave__hs__arch_8c.html#a2955ab679aed69df4a1053e6435118f4", null ],
     [ "SSP_DDS", "spi__slave__hs__arch_8c.html#a6e117d3c5fa3fb0c56dd4ebf950381b2", null ],

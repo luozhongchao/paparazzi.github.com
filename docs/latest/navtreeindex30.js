@@ -1,5 +1,8 @@
 var NAVTREEINDEX30 =
 {
+"lpc21_2mcu__periph_2uart__arch_8h.html#aa0cf2ae3ca9d45757f9b91b202d42576":[8,0,0,0,0,0,1,16,21],
+"lpc21_2mcu__periph_2uart__arch_8h.html#ab282ae5b7fb59155ee42d1b6c9a80683":[8,0,0,0,0,0,1,16,5],
+"lpc21_2mcu__periph_2uart__arch_8h.html#ab30064c2e8bf2501cf5e309a5af3c1f8":[8,0,0,0,0,0,1,16,23],
 "lpc21_2mcu__periph_2uart__arch_8h.html#ab5b3220ceeee0f07cd228b31a242a68d":[8,0,0,0,0,0,1,16,19],
 "lpc21_2mcu__periph_2uart__arch_8h.html#ab9fda1c06de033256a894c932570d333":[8,0,0,0,0,0,1,16,11],
 "lpc21_2mcu__periph_2uart__arch_8h.html#ac218a939a272ddb73abe4b2dd6994c6b":[8,0,0,0,0,0,1,16,12],
@@ -246,8 +249,5 @@ var NAVTREEINDEX30 =
 "lpc21_2subsystems_2radio__control_2spektrum__arch_8c.html#a52ba41a99ccfcfe10a8850b7121850e3":[8,0,0,0,0,0,4,3,2,1],
 "lpc21_2subsystems_2radio__control_2spektrum__arch_8c.html#a54d9f82d77bd5b30ce7a5c39eb1f9e15":[8,0,0,0,0,0,4,3,2,3],
 "lpc21_2subsystems_2radio__control_2spektrum__arch_8c.html#a6ba4bebf68f7ff39f4569dfe3b1f2832":[8,0,0,0,0,0,4,3,2,0],
-"lpc21_2subsystems_2radio__control_2spektrum__arch_8c.html#a90fd99c9ddce4a4f47f093d999d16a63":[8,0,0,0,0,0,4,3,2,2],
-"lpc21_2subsystems_2radio__control_2spektrum__arch_8c.html#af871da7c10e72980ef21424337791c76":[8,0,0,0,0,0,4,3,2,4],
-"lpc21_2subsystems_2radio__control_2spektrum__arch_8c_source.html":[8,0,0,0,0,0,4,3,2],
-"lpc21_2subsystems_2radio__control_2spektrum__arch_8h.html":[8,0,0,0,0,0,4,3,3]
+"lpc21_2subsystems_2radio__control_2spektrum__arch_8c.html#a90fd99c9ddce4a4f47f093d999d16a63":[8,0,0,0,0,0,4,3,2,2]
 };

@@ -79,7 +79,7 @@ var searchData=
   ['i2cidle',['I2CIdle',['../group__i2c.html#gga9bec282875cd65e00172e875ef785beca9ab9b8398c146fca315edd21fc934788',1,'i2c.h']]],
   ['i2creadingbyte',['I2CReadingByte',['../group__i2c.html#gga9bec282875cd65e00172e875ef785becac904115143956dd682fcfecccab3596e',1,'i2c.h']]],
   ['i2creadinglastbyte',['I2CReadingLastByte',['../group__i2c.html#gga9bec282875cd65e00172e875ef785becaf0e511ed8b351bcaa8a3236ac0a8b71f',1,'i2c.h']]],
-  ['i2creceive',['I2CReceive',['../group__i2c.html#ga00a95780fb7894110f4a5ae895931ba6',1,'I2CReceive():&#160;i2c.h'],['../lpc21_2mcu__periph_2i2c__arch_8c.html#acdbd394ef74a63a820f27896dac939a0',1,'I2cReceive(void *reg, bool_t ack):&#160;i2c_arch.c']]],
+  ['i2creceive',['I2cReceive',['../lpc21_2mcu__periph_2i2c__arch_8c.html#acdbd394ef74a63a820f27896dac939a0',1,'I2cReceive(void *reg, bool_t ack):&#160;i2c_arch.c'],['../group__i2c.html#ga00a95780fb7894110f4a5ae895931ba6',1,'I2CReceive():&#160;i2c.h']]],
   ['i2cregs_5ft',['i2cRegs_t',['../structi2cRegs__t.html',1,'']]],
   ['i2crestartrequested',['I2CRestartRequested',['../group__i2c.html#gga9bec282875cd65e00172e875ef785becafe8a830655f0caf0bbf6355b1a36c997',1,'i2c.h']]],
   ['i2csendack',['I2cSendAck',['../lpc21_2mcu__periph_2i2c__arch_8c.html#a99165833cfce5b128c3d56e4c6d54da7',1,'i2c_arch.c']]],

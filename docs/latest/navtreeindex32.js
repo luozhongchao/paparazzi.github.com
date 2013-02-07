@@ -1,5 +1,8 @@
 var NAVTREEINDEX32 =
 {
+"lpcVIC_8h.html#a6eb2cb655311a0360a42870cc5677488":[8,0,0,0,0,0,0,12,19],
+"lpcVIC_8h.html#a71c74fd076a074295aa77406cc9d1904":[8,0,0,0,0,0,0,12,6],
+"lpcVIC_8h.html#a7758c6ebd2996ea5f838d9c18c65eb21":[8,0,0,0,0,0,0,12,29],
 "lpcVIC_8h.html#a777ee69a34d5c1e0155a58b1e2fa39b5":[8,0,0,0,0,0,0,12,7],
 "lpcVIC_8h.html#a81696b546bfd3a04849d4b53f4f53595":[8,0,0,0,0,0,0,12,20],
 "lpcVIC_8h.html#a84a3a138ad5dd2d886314cdb33792bca":[8,0,0,0,0,0,0,12,11],
@@ -98,10 +101,11 @@ var NAVTREEINDEX32 =
 "mag__micromag__fw_8h.html#afea70fcedcb86e03ae2fc616c5d81942":[8,0,0,0,7,29,45,21],
 "mag__micromag__fw_8h_source.html":[8,0,0,0,7,29,45],
 "mag__micromag__fw__hw_8c.html":[8,0,0,0,0,0,2,3,0],
-"mag__micromag__fw__hw_8c.html#a8c65dd4394b59699e4799c2e9ccd1915":[8,0,0,0,0,0,2,3,0,1],
-"mag__micromag__fw__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b":[8,0,0,0,0,0,2,3,0,0],
-"mag__micromag__fw__hw_8c.html#aa105625a4ec7ecf95c0802c3edfade05":[8,0,0,0,0,0,2,3,0,2],
-"mag__micromag__fw__hw_8c.html#afe3f773b3af5d8e6379f98ddb4714069":[8,0,0,0,0,0,2,3,0,3],
+"mag__micromag__fw__hw_8c.html#a8c65dd4394b59699e4799c2e9ccd1915":[8,0,0,0,0,0,2,3,0,2],
+"mag__micromag__fw__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b":[8,0,0,0,0,0,2,3,0,1],
+"mag__micromag__fw__hw_8c.html#aa105625a4ec7ecf95c0802c3edfade05":[8,0,0,0,0,0,2,3,0,3],
+"mag__micromag__fw__hw_8c.html#ad43efa9901f253a6a901a4bddd1b7f5f":[8,0,0,0,0,0,2,3,0,0],
+"mag__micromag__fw__hw_8c.html#afe3f773b3af5d8e6379f98ddb4714069":[8,0,0,0,0,0,2,3,0,4],
 "mag__micromag__fw__hw_8c_source.html":[8,0,0,0,0,0,2,3,0],
 "mag__micromag__fw__hw_8h.html":[8,0,0,0,0,0,2,3,1],
 "mag__micromag__fw__hw_8h.html#a246336323af6cba0abbf49dd751f5e81":[8,0,0,0,0,0,2,3,1,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX32 =
 "max11040_8c.html#a7406f7fffb5ca06e68e13b5ec94e72f8":[8,0,0,0,7,0,2,2],
 "max11040_8c.html#a756d8fe388c82698f2f9aa3239be5818":[8,0,0,0,7,0,2,1],
 "max11040_8c.html#a7f47379299318cf9a2a7974eeba0ce62":[8,0,0,0,7,0,2,3],
-"max11040_8c.html#aa1bb45760662b5ca384304d42f5de290":[8,0,0,0,7,0,2,4],
-"max11040_8c.html#ad524936246e2178793abb15ceccbc1fe":[8,0,0,0,7,0,2,7],
-"max11040_8c.html#af487ad16014706304f80627dd3f056fb":[8,0,0,0,7,0,2,0],
-"max11040_8c_source.html":[8,0,0,0,7,0,2],
-"max11040_8h.html":[8,0,0,0,7,0,3]
+"max11040_8c.html#aa1bb45760662b5ca384304d42f5de290":[8,0,0,0,7,0,2,4]
 };

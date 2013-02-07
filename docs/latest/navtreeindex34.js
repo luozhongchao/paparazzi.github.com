@@ -1,5 +1,11 @@
 var NAVTREEINDEX34 =
 {
+"module__adc_generic.html#configure":[2,1,0,0],
+"module__adc_generic.html#files":[2,1,2],
+"module__adc_generic.html#functions":[2,1,1],
+"module__adc_generic.html#headers":[2,1,2,0],
+"module__adc_generic.html#init_functions":[2,1,1,0],
+"module__adc_generic.html#module_xml__adc_generic":[2,1,2,2],
 "module__adc_generic.html#periodic_functions":[2,1,1,1],
 "module__adc_generic.html#sources":[2,1,2,1],
 "module__ahrs_chimu_spi.html":[2,22],
@@ -243,11 +249,5 @@ var NAVTREEINDEX34 =
 "module__charge_sens.html#init_functions":[2,33,0,0],
 "module__charge_sens.html#module_xml__charge_sens":[2,33,1,2],
 "module__charge_sens.html#periodic_functions":[2,33,0,2],
-"module__charge_sens.html#sources":[2,33,1,1],
-"module__demo_module.html":[2,84],
-"module__demo_module.html#files":[2,84,1],
-"module__demo_module.html#functions":[2,84,0],
-"module__demo_module.html#headers":[2,84,1,0],
-"module__demo_module.html#init_functions":[2,84,0,0],
-"module__demo_module.html#module_xml__demo_module":[2,84,1,2]
+"module__charge_sens.html#sources":[2,33,1,1]
 };

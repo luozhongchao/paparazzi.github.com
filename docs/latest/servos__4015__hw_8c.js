@@ -1,5 +1,6 @@
 var servos__4015__hw_8c =
 [
+    [ "PWM_VIC_SLOT", "servos__4015__hw_8c.html#a769e4188fbfc4b0fe6d8cd49c3f9546e", null ],
     [ "PWMIR_MRI_SERV0", "servos__4015__hw_8c.html#a2762eff90061545b3470f10b6153a7c6", null ],
     [ "PWMIR_MRI_SERV1", "servos__4015__hw_8c.html#a16686d3f5c9a6c9d1a6d2c9e898b063b", null ],
     [ "PWMLER_LATCH_SERV0", "servos__4015__hw_8c.html#a1de01e33a505282015edaba8d4ba08aa", null ],

@@ -1,5 +1,14 @@
 var NAVTREEINDEX54 =
 {
+"structImuAspirin.html#a2093de4dc7222dfaf1e00e6af7743755":[7,0,73,10],
+"structImuAspirin.html#a30496a2189b7666a243e42d985846a63":[7,0,73,4],
+"structImuAspirin.html#a3e60a747f5a4f228f17bdb6924e2ce9c":[7,0,73,9],
+"structImuAspirin.html#a40486875cbf504e0b6c08ae0726e991b":[7,0,73,1],
+"structImuAspirin.html#a659333de53a58ee21c8d734c97b240d9":[7,0,73,5],
+"structImuAspirin.html#a6999a418c1b4aa1c64a88393570a6880":[7,0,73,6],
+"structImuAspirin.html#a84d7387ff83c15c48935607f77c8b8b1":[7,0,73,8],
+"structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a":[7,0,73,3],
+"structImuAspirin.html#acf3231ec6e6b6e136d2f3db538d7b605":[7,0,73,7],
 "structImuAspirin.html#ae12dea21d7b8529620b1927313e97497":[7,0,73,2],
 "structImuAspirin.html#af59e47c2622b9887a2b3b9fed1c97fe0":[7,0,73,0],
 "structImuAspirin2.html":[7,0,74],
@@ -240,14 +249,5 @@ var NAVTREEINDEX54 =
 "structSc18Is600.html#a410a918ed5fd1639f8600211480c5be8":[7,0,126,2],
 "structSc18Is600.html#a585fc94273f6258ad9e642fb6102b712":[7,0,126,0],
 "structSc18Is600.html#a722c9537f72c79e04de8ac34775a669b":[7,0,126,1],
-"structSc18Is600.html#ae619e989eea32e01a2da3a29ef4215c4":[7,0,126,3],
-"structSpektrumStateStruct.html":[7,0,129],
-"structSpektrumStateStruct.html#a01b6d84d55b3141f935b2ab3af595488":[7,0,129,0],
-"structSpektrumStateStruct.html#a0f1bca7c6c4c57019ffea65b382a25de":[7,0,129,1],
-"structSpektrumStateStruct.html#a1c93c27ba60960fbe990e4f460259654":[7,0,129,2],
-"structSpektrumStateStruct.html#a683a66bf67d632cc013d4f352f920af8":[7,0,129,6],
-"structSpektrumStateStruct.html#a7455739b989c950a44275261a4edba48":[7,0,129,9],
-"structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c":[7,0,129,4],
-"structSpektrumStateStruct.html#aad2f4a8760ecd6a4bd62455d8f4569d4":[7,0,129,5],
-"structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23":[7,0,129,8]
+"structSc18Is600.html#ae619e989eea32e01a2da3a29ef4215c4":[7,0,126,3]
 };

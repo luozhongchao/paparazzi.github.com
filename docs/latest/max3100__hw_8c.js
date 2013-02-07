@@ -4,6 +4,7 @@ var max3100__hw_8c =
     [ "PINSEL1_MOSI", "max3100__hw_8c.html#a83fe52dea5a9e78230b1b751d64d81d2", null ],
     [ "PINSEL1_SCK", "max3100__hw_8c.html#a3d65fe8634fad2755d523e202674a1b0", null ],
     [ "PINSEL1_SSEL", "max3100__hw_8c.html#a232db58a94564ed9dfd068333e683b41", null ],
+    [ "SPI1_VIC_SLOT", "max3100__hw_8c.html#ad43efa9901f253a6a901a4bddd1b7f5f", null ],
     [ "SSP_CPHA", "max3100__hw_8c.html#a0b293b59617ad1f7284da53de8c948e1", null ],
     [ "SSP_CPOL", "max3100__hw_8c.html#a2955ab679aed69df4a1053e6435118f4", null ],
     [ "SSP_DSS", "max3100__hw_8c.html#a44c745fbeb1d568abe96cfaabab66fc6", null ],

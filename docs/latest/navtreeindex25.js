@@ -1,5 +1,7 @@
 var NAVTREEINDEX25 =
 {
+"ins__xsens_8c.html#a8ad9d86df432b5781940d3e8d4ed38d8":[8,0,0,0,7,19,13,44],
+"ins__xsens_8c.html#a8b9d20805bf2e2f6650b54e078430b54":[8,0,0,0,7,19,13,28],
 "ins__xsens_8c.html#a8cb976f9e02352af6815c51a4b18faec":[8,0,0,0,7,19,13,23],
 "ins__xsens_8c.html#a8cc30b8cc0fb84cf89bd40f5e701c2b1":[8,0,0,0,7,19,13,26],
 "ins__xsens_8c.html#a934ca0061f712fc5b516fb27f5ee24a1":[8,0,0,0,7,19,13,47],
@@ -247,7 +249,5 @@ var NAVTREEINDEX25 =
 "jsbsim__ahrs_8c.html#ae73eb249a7855e34f52f6b873bb64807":[8,0,0,0,0,2,8,3],
 "jsbsim__ahrs_8c_source.html":[8,0,0,0,0,2,8],
 "jsbsim__gps_8c.html":[8,0,0,0,0,2,9],
-"jsbsim__gps_8c.html#a05f70ae561aee3dbb2745771d44bf422":[8,0,0,0,0,2,9,2],
-"jsbsim__gps_8c.html#a1e5ac4a144342a18c18f45efe6196698":[8,0,0,0,0,2,9,1],
-"jsbsim__gps_8c.html#adadf586b1ed35a6d820c57a1107a9a2b":[8,0,0,0,0,2,9,0]
+"jsbsim__gps_8c.html#a05f70ae561aee3dbb2745771d44bf422":[8,0,0,0,0,2,9,2]
 };

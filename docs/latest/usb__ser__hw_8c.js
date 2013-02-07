@@ -14,6 +14,7 @@ var usb__ser__hw_8c =
     [ "MAX_PACKET_SIZE", "usb__ser__hw_8c.html#a879456c3b8e2853f7044d764e9c180d4", null ],
     [ "SET_CONTROL_LINE_STATE", "usb__ser__hw_8c.html#a437869c339749d5d011060cd5676659e", null ],
     [ "SET_LINE_CODING", "usb__ser__hw_8c.html#a91a9c047339a1a5918b6a923af6d1af6", null ],
+    [ "USB_VIC_SLOT", "usb__ser__hw_8c.html#a09ea23eda8e8a5b5f05dce5038fa9bc1", null ],
     [ "VCOM_FIFO_SIZE", "usb__ser__hw_8c.html#a8c7c58c5dba905e6348263134f6b4fbd", null ],
     [ "BulkOut", "usb__ser__hw_8c.html#a23baeb57e01ecb41d700cca080b35309", null ],
     [ "fifo_avail", "usb__ser__hw_8c.html#a14ec031da793cb08aa5e3e3b5d551431", null ],
