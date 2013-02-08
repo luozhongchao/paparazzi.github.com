@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -144,20 +144,26 @@ $(document).ready(function(){initNavTree('lpc21_2subsystems_2radio__control_2ppm
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#elif defined PPM_PULSE_TYPE &amp;&amp; PPM_PULSE_TYPE == PPM_PULSE_TYPE_NEGATIVE</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span>  <a class="code" href="LPC21xx_8h.html#a5a2498c5217384197c415a4f860d7b7d">T0CCR</a> = <a class="code" href="booz__1_80_8h.html#ad25058c1245a5a986632aae0f3f91ebc">PPM_CCR_CRF</a> | <a class="code" href="booz__1_80_8h.html#a527cf6cfbed24e043ed4ee710baed3f1">PPM_CCR_CRI</a>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#error &quot;ppm_arch.h: Unknown PM_PULSE_TYPE&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#error &quot;ppm_arch.h: Unknown PPM_PULSE_TYPE&quot;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span>  <a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c.html#a571f5404ba9f1f7f138fcc3945d9202b">ppm_last_pulse_time</a> = 0;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c.html#af8b27ee063d6f72bd69fabb1a9913820" title="State machine for decoding ppm frames.">ppm_cur_pulse</a> = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a1beed9c63b07301d72b3516543545652">RADIO_CONTROL_NB_CHANNEL</a>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c.html#a7dd96af6b908956574fb02bb01513079">ppm_data_valid</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="ppm_8c.html#a40135dd9f74fd7e3e77d603b0dd4e3e7">ppm_frame_available</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifdef USE_PPM_RSSI_GPIO</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span>  <span class="comment">/* select pin as GPIO (input) : should be default ?*/</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">//PPM_RSSI_PINSEL |= PPM_RSSI_VAL &lt;&lt; PPM_RSSI_PINSEL_BIT;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">//ClearBit(PPM_RSSI_IODIR, PPM_RSSI_BIT);</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_3f7617cb4a5e4fe5cc816b7b3bbdea3a.html">lpc21</a></li><li class="navelem"><a class="el" href="dir_49e3baf8e4d0208391e8a23720cf4bc3.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_f690f2529ef2764b7e6effd3da88a775.html">radio_control</a></li><li class="navelem"><a class="el" href="lpc21_2subsystems_2radio__control_2ppm__arch_8c.html">ppm_arch.c</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:15 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:13 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

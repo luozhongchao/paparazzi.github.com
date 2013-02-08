@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('imu__navgo_8h.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -111,9 +112,15 @@ $(document).ready(function(){initNavTree('imu__navgo_8h.html','');});
 <div class="title">imu_navgo.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interface for the IMU on the NavGo board.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;std.h&quot;</code><br/>
 <code>#include &quot;generated/airframe.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="imu_8h_source.html">subsystems/imu.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="itg3200_8h_source.html">peripherals/itg3200.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="adxl345__i2c_8h_source.html">peripherals/adxl345_i2c.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="hmc58xx_8h_source.html">peripherals/hmc58xx.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for imu_navgo.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -121,7 +128,7 @@ $(document).ready(function(){initNavTree('imu__navgo_8h.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__navgo_8h__incl.png" border="0" usemap="#sw_2airborne_2boards_2navgo_2imu__navgo_8h" alt=""/></div>
 <map name="sw_2airborne_2boards_2navgo_2imu__navgo_8h" id="sw_2airborne_2boards_2navgo_2imu__navgo_8h">
-<area shape="rect" id="node7" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="180,101,319,131"/><area shape="rect" id="node9" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="203,179,381,208"/><area shape="rect" id="node25" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="425,179,615,208"/><area shape="rect" id="node12" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="349,256,504,285"/><area shape="rect" id="node19" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="85,256,235,285"/></map>
+<area shape="rect" id="node7" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="225,111,364,140"/><area shape="rect" id="node32" href="itg3200_8h.html" title="Driver for the gyro ITG3200 from InvenSense." alt="" coords="553,111,711,140"/><area shape="rect" id="node44" href="adxl345__i2c_8h.html" title="Driver for the accelerometer ADXL345 from Analog Devices using I2C." alt="" coords="957,102,1104,149"/><area shape="rect" id="node54" href="hmc58xx_8h.html" title="peripherals/hmc58xx.h" alt="" coords="768,111,933,140"/><area shape="rect" id="node9" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="669,207,848,236"/><area shape="rect" id="node25" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="187,207,376,236"/><area shape="rect" id="node12" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="277,303,432,332"/><area shape="rect" id="node19" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="699,303,848,332"/><area shape="rect" id="node36" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="923,207,1053,236"/><area shape="rect" id="node42" href="itg3200__regs_8h.html" title="Register defs for ITG3200 and IMU3000 gyros." alt="" coords="451,198,595,245"/><area shape="rect" id="node49" href="adxl345_8h.html" title="Analog Devices ADXL345 accelerometer driver common interface (I2C and SPI)." alt="" coords="1307,207,1464,236"/><area shape="rect" id="node52" href="adxl345__regs_8h.html" title="Register and address definitions for ADXL345 accelerometer." alt="" coords="1307,294,1453,341"/><area shape="rect" id="node59" href="hmc58xx__regs_8h.html" title="Register defs for Honeywell HMC5843 and HMC5883 magnetometers." alt="" coords="1077,198,1232,245"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -130,11 +137,15 @@ $(document).ready(function(){initNavTree('imu__navgo_8h.html','');});
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__navgo_8h__dep__incl.png" border="0" usemap="#sw_2airborne_2boards_2navgo_2imu__navgo_8hdep" alt=""/></div>
 <map name="sw_2airborne_2boards_2navgo_2imu__navgo_8hdep" id="sw_2airborne_2boards_2navgo_2imu__navgo_8hdep">
-<area shape="rect" id="node3" href="imu__navgo_8c.html" title="sw/airborne/boards\l/navgo/imu_navgo.c" alt="" coords="5,102,155,149"/></map>
+<area shape="rect" id="node3" href="imu__navgo_8c.html" title="Driver for the IMU on the NavGo board." alt="" coords="5,102,155,149"/></map>
 </div>
 </div>
 <p><a href="imu__navgo_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImuNavgo.html">ImuNavgo</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a1b1c79353b8a69a2d7faecd6721efbb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a1b1c79353b8a69a2d7faecd6721efbb8">IMU_GYRO_P_SIGN</a>&#160;&#160;&#160;1</td></tr>
@@ -146,20 +157,32 @@ Macros</h2></td></tr>
 <tr class="memitem:a34ef05992d74a9dc07c6a20feffd6eef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a34ef05992d74a9dc07c6a20feffd6eef">IMU_MAG_X_SIGN</a>&#160;&#160;&#160;1</td></tr>
 <tr class="memitem:a127929c4b5a458043f7ef2e0fa2a4e54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a127929c4b5a458043f7ef2e0fa2a4e54">IMU_MAG_Y_SIGN</a>&#160;&#160;&#160;1</td></tr>
 <tr class="memitem:a8612bd2fe2f927e8f283a9a8e60010f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a8612bd2fe2f927e8f283a9a8e60010f5">IMU_MAG_Z_SIGN</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memitem:a5b61834fdd9dc32e2f93b974354c7402"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a5b61834fdd9dc32e2f93b974354c7402">ImuEvent</a>(_gyro_handler, _accel_handler, _mag_handler)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a090687272e402bae057eb68e39e6218f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f">imu_navgo_event</a> (void)</td></tr>
 <tr class="memitem:a3d112410a2bef99c6c7cd1dd6a79e77e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a3d112410a2bef99c6c7cd1dd6a79e77e">imu_navgo_downlink_raw</a> (void)</td></tr>
+<tr class="memitem:a9d95db588addd0a03f6e7e749fbb032a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a9d95db588addd0a03f6e7e749fbb032a">ImuEvent</a> (void(*_gyro_handler)(void), void(*_accel_handler)(void), void(*_mag_handler)(void))</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:afbbfe5fb78cd2de203ea88848ed1524d"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#afbbfe5fb78cd2de203ea88848ed1524d">gyr_valid</a></td></tr>
-<tr class="memitem:a8ed404ef3ddf50958703e92a017973ef"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a></td></tr>
-<tr class="memitem:a8271a0a8d22406f5117416a7fe284a7b"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a8271a0a8d22406f5117416a7fe284a7b">mag_valid</a></td></tr>
+<tr class="memitem:a97fa4a18bac4d98bb58486a17a028548"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structImuNavgo.html">ImuNavgo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__navgo_8h.html#a97fa4a18bac4d98bb58486a17a028548">imu_navgo</a></td></tr>
 </table>
-<h2>Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Interface for the IMU on the NavGo board. </p>
+<p>Interface for the IMU on the Umarim board.</p>
+<ul>
+<li>Gyroscope: Invensense ITG-3200</li>
+<li>Accelerometer: Analog Devices ADXL345</li>
+<li>Magnetometer: Honeywell HMC5883L</li>
+</ul>
+<ul>
+<li>Gyroscope: Invensense ITG-3200</li>
+<li>Accelerometer: Analog Devices ADXL345 </li>
+</ul>
+
+<p>Definition in file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+</div><h2>Macro Definition Documentation</h2>
 <a class="anchor" id="a4198979ecdab243efc790d5b739a4645"></a>
 <div class="memitem">
 <div class="memproto">
@@ -170,7 +193,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00038">38</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00051">51</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
 
 </div>
 </div>
@@ -184,7 +207,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00039">39</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00052">52</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
 
 </div>
 </div>
@@ -198,7 +221,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00040">40</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00053">53</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
 
 </div>
 </div>
@@ -212,7 +235,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00033">33</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00046">46</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
 
 </div>
 </div>
@@ -226,7 +249,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00034">34</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00047">47</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
 
 </div>
 </div>
@@ -240,7 +263,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00035">35</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00048">48</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
 
 </div>
 </div>
@@ -254,7 +277,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00043">43</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00056">56</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
 
 </div>
 </div>
@@ -268,7 +291,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00044">44</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00057">57</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
 
 </div>
 </div>
@@ -282,58 +305,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00045">45</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5b61834fdd9dc32e2f93b974354c7402"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ImuEvent</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_gyro_handler, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_accel_handler, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_mag_handler&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{ \</div>
-<div class="line">  imu_navgo_event();                                            \</div>
-<div class="line">  if (<a class="code" href="imu__navgo_8c.html#afbbfe5fb78cd2de203ea88848ed1524d">gyr_valid</a>) {                                              \</div>
-<div class="line">    gyr_valid = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                                          \</div>
-<div class="line">    _gyro_handler();                                            \</div>
-<div class="line">  }                                                             \</div>
-<div class="line">  if (<a class="code" href="imu__navgo_8c.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a>) {                                              \</div>
-<div class="line">    acc_valid = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                                          \</div>
-<div class="line">    _accel_handler();                                           \</div>
-<div class="line">  }                                                             \</div>
-<div class="line">  if (<a class="code" href="imu__navgo_8c.html#a8271a0a8d22406f5117416a7fe284a7b">mag_valid</a>) {                                              \</div>
-<div class="line">    mag_valid = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                                          \</div>
-<div class="line">    _mag_handler();                                             \</div>
-<div class="line">  }                                                             \</div>
-<div class="line">}</div>
-</div><!-- fragment -->
 <p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00058">58</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
-
-<p>Referenced by <a class="el" href="main__ap_8c_source.html#l00590">event_task_ap()</a>, <a class="el" href="firmwares_2rotorcraft_2main_8c_source.html#l00214">main_event()</a>, and <a class="el" href="hs__gyro_8c_source.html#l00077">main_event_task()</a>.</p>
 
 </div>
 </div>
@@ -352,7 +324,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8c_source.html#l00100">100</a> of file <a class="el" href="imu__navgo_8c_source.html">imu_navgo.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8c_source.html#l00104">104</a> of file <a class="el" href="imu__navgo_8c_source.html">imu_navgo.c</a>.</p>
 
 <p>References <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="imu_8h_source.html#l00050">Imu::mag_unscaled</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00161">Int32Rates::p</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00162">Int32Rates::q</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00163">Int32Rates::r</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00070">Int32Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00071">Int32Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00072">Int32Vect3::z</a>.</p>
 
@@ -372,9 +344,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__navgo_8c_source.html#l00107">107</a> of file <a class="el" href="imu__navgo_8c_source.html">imu_navgo.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__navgo_8c_source.html#l00111">111</a> of file <a class="el" href="imu__navgo_8c_source.html">imu_navgo.c</a>.</p>
 
-<p>References <a class="el" href="imu__navgo_8c_source.html#l00056">acc_valid</a>, <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="adxl345_8i2c_8c_source.html#l00040">adxl345_data</a>, <a class="el" href="adxl345_8i2c_8c_source.html#l00038">adxl345_data_available</a>, <a class="el" href="adxl345_8i2c_8c_source.html#l00116">adxl345_event()</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__navgo_8c_source.html#l00055">gyr_valid</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="hmc58xx_8c_source.html#l00039">hmc58xx_data</a>, <a class="el" href="hmc58xx_8c_source.html#l00037">hmc58xx_data_available</a>, <a class="el" href="hmc58xx_8c_source.html#l00109">hmc58xx_event()</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="itg3200_8c_source.html#l00041">itg3200_data</a>, <a class="el" href="itg3200_8c_source.html#l00039">itg3200_data_available</a>, <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>, <a class="el" href="imu_8h_source.html#l00050">Imu::mag_unscaled</a>, <a class="el" href="imu__navgo_8c_source.html#l00057">mag_valid</a>, <a class="el" href="imu__navgo_8c_source.html#l00060">median_mag</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00161">Int32Rates::p</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00162">Int32Rates::q</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00163">Int32Rates::r</a>, <a class="el" href="pprz__algebra_8h_source.html#l00294">RATES_ASSIGN</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="median__filter_8h_source.html#l00107">UpdateMedianFilterRatesInt</a>, <a class="el" href="median__filter_8h_source.html#l00095">UpdateMedianFilterVect3Int</a>, <a class="el" href="pprz__algebra_8h_source.html#l00097">VECT3_ASSIGN</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00046">Int16Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00047">Int16Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00048">Int16Vect3::z</a>.</p>
+<p>References <a class="el" href="imu__navgo_8h_source.html#l00064">ImuNavgo::acc_valid</a>, <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="imu__navgo_8h_source.html#l00067">ImuNavgo::adxl</a>, <a class="el" href="adxl345__i2c_8c_source.html#l00114">adxl345_i2c_event()</a>, <a class="el" href="structAdxl345__I2c.html#ac450e1dbb222b22c07617858b90415e2">Adxl345_I2c::data</a>, <a class="el" href="structHmc58xx.html#a6f09ee91bf8521fd28a892f02d84a2e0">Hmc58xx::data</a>, <a class="el" href="structItg3200.html#a993eccdef6b4fa3950a05b914031588f">Itg3200::data</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00044">Adxl345_I2c::data_available</a>, <a class="el" href="hmc58xx_8h_source.html#l00065">Hmc58xx::data_available</a>, <a class="el" href="itg3200_8h_source.html#l00075">Itg3200::data_available</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__navgo_8h_source.html#l00063">ImuNavgo::gyr_valid</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="imu__navgo_8h_source.html#l00068">ImuNavgo::hmc</a>, <a class="el" href="hmc58xx_8c_source.html#l00136">hmc58xx_event()</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="imu__navgo_8c_source.html#l00055">imu_navgo</a>, <a class="el" href="imu__navgo_8h_source.html#l00066">ImuNavgo::itg</a>, <a class="el" href="itg3200_8c_source.html#l00125">itg3200_event()</a>, <a class="el" href="imu_8h_source.html#l00050">Imu::mag_unscaled</a>, <a class="el" href="imu__navgo_8h_source.html#l00065">ImuNavgo::mag_valid</a>, <a class="el" href="imu__navgo_8c_source.html#l00053">median_mag</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00161">Int32Rates::p</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00162">Int32Rates::q</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00163">Int32Rates::r</a>, <a class="el" href="itg3200_8h_source.html#l00077">Itg3200::rates</a>, <a class="el" href="pprz__algebra_8h_source.html#l00294">RATES_ASSIGN</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="median__filter_8h_source.html#l00107">UpdateMedianFilterRatesInt</a>, <a class="el" href="median__filter_8h_source.html#l00095">UpdateMedianFilterVect3Int</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00046">Adxl345_I2c::vect</a>, <a class="el" href="hmc58xx_8h_source.html#l00067">Hmc58xx::vect</a>, <a class="el" href="pprz__algebra_8h_source.html#l00097">VECT3_ASSIGN</a>, <a class="el" href="pprz__algebra_8h_source.html#l00111">VECT3_COPY</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00046">Int16Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00047">Int16Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00048">Int16Vect3::z</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__navgo_8h_source.html#l00078">ImuEvent()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -383,52 +357,92 @@ Variables</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__navgo_8h_a090687272e402bae057eb68e39e6218f_cgraph.png" border="0" usemap="#imu__navgo_8h_a090687272e402bae057eb68e39e6218f_cgraph" alt=""/></div>
 <map name="imu__navgo_8h_a090687272e402bae057eb68e39e6218f_cgraph" id="imu__navgo_8h_a090687272e402bae057eb68e39e6218f_cgraph">
-<area shape="rect" id="node3" href="adxl345_8extra__i2c_8h.html#a7e4739c3ab3b83ea5ddaaa67efd54b5b" title="adxl345_event" alt="" coords="193,5,308,35"/><area shape="rect" id="node7" href="hmc58xx_8c.html#a5dfc81676df57d6b0bf826e7df04293b" title="hmc58xx_event" alt="" coords="189,59,312,88"/><area shape="rect" id="node11" href="itg3200_8c.html#abbd9f419105e8ef332066830f3c35026" title="itg3200_event" alt="" coords="195,112,307,141"/><area shape="rect" id="node5" href="adxl345_8i2c_8c.html#a1daa0b49b15ae18573f9992f9299d882" title="adxl345_send_config" alt="" coords="364,5,519,35"/><area shape="rect" id="node9" href="hmc58xx_8c.html#a7e515e7c715aa7e726e197cf91c9682d" title="hmc58xx_send_config" alt="" coords="360,59,523,88"/><area shape="rect" id="node13" href="itg3200_8c.html#a0ee4b71b6ac01d3b718675855cf4928d" title="itg3200_send_config" alt="" coords="365,112,517,141"/></map>
+<area shape="rect" id="node3" href="adxl345__i2c_8c.html#ad3a91ed9ff763d88416c0ed443960a3d" title="adxl345_i2c_event" alt="" coords="191,5,329,35"/><area shape="rect" id="node11" href="hmc58xx_8c.html#a6514a605dad1e4bb5664bf885cca676b" title="hmc58xx_event" alt="" coords="199,59,321,88"/><area shape="rect" id="node18" href="itg3200_8c.html#aaa9c768fbf93b62e8c6f74ebcc07cf45" title="itg3200_event" alt="" coords="204,112,316,141"/><area shape="rect" id="node5" href="adxl345__i2c_8c.html#a521ef1cb737664a85721febc7f7f8284" title="adxl345_i2c_send_config" alt="" coords="380,5,559,35"/><area shape="rect" id="node7" href="adxl345__i2c_8c.html#a3a2e564f46dd67289f4098089a6de76b" title="adxl345_i2c_tx_reg" alt="" coords="612,5,756,35"/><area shape="rect" id="node9" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="808,59,899,88"/><area shape="rect" id="node13" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb" title="Configuration function called once before normal use." alt="" coords="388,59,551,88"/><area shape="rect" id="node15" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9" title="hmc58xx_i2c_tx_reg" alt="" coords="608,59,760,88"/><area shape="rect" id="node20" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="393,112,545,141"/><area shape="rect" id="node22" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="613,112,755,141"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="imu__navgo_8h_a090687272e402bae057eb68e39e6218f_icgraph.png" border="0" usemap="#imu__navgo_8h_a090687272e402bae057eb68e39e6218f_icgraph" alt=""/></div>
+<map name="imu__navgo_8h_a090687272e402bae057eb68e39e6218f_icgraph" id="imu__navgo_8h_a090687272e402bae057eb68e39e6218f_icgraph">
+<area shape="rect" id="node3" href="imu__navgo_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="189,5,272,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9d95db588addd0a03f6e7e749fbb032a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ImuEvent </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(void)&#160;</td>
+          <td class="paramname"><em>_gyro_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void)&#160;</td>
+          <td class="paramname"><em>_accel_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void)&#160;</td>
+          <td class="paramname"><em>_mag_handler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="imu__navgo_8h_source.html#l00078">78</a> of file <a class="el" href="imu__navgo_8h_source.html">imu_navgo.h</a>.</p>
+
+<p>References <a class="el" href="imu__navgo_8h_source.html#l00064">ImuNavgo::acc_valid</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__navgo_8h_source.html#l00063">ImuNavgo::gyr_valid</a>, <a class="el" href="imu__navgo_8c_source.html#l00055">imu_navgo</a>, <a class="el" href="imu__navgo_8c_source.html#l00111">imu_navgo_event()</a>, and <a class="el" href="imu__navgo_8h_source.html#l00065">ImuNavgo::mag_valid</a>.</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="imu__navgo_8h_a9d95db588addd0a03f6e7e749fbb032a_cgraph.png" border="0" usemap="#imu__navgo_8h_a9d95db588addd0a03f6e7e749fbb032a_cgraph" alt=""/></div>
+<map name="imu__navgo_8h_a9d95db588addd0a03f6e7e749fbb032a_cgraph" id="imu__navgo_8h_a9d95db588addd0a03f6e7e749fbb032a_cgraph">
+<area shape="rect" id="node3" href="imu__navgo_8c.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="137,59,271,88"/><area shape="rect" id="node5" href="adxl345__i2c_8c.html#ad3a91ed9ff763d88416c0ed443960a3d" title="adxl345_i2c_event" alt="" coords="321,5,460,35"/><area shape="rect" id="node13" href="hmc58xx_8c.html#a6514a605dad1e4bb5664bf885cca676b" title="hmc58xx_event" alt="" coords="329,59,452,88"/><area shape="rect" id="node20" href="itg3200_8c.html#aaa9c768fbf93b62e8c6f74ebcc07cf45" title="itg3200_event" alt="" coords="335,112,447,141"/><area shape="rect" id="node7" href="adxl345__i2c_8c.html#a521ef1cb737664a85721febc7f7f8284" title="adxl345_i2c_send_config" alt="" coords="511,5,689,35"/><area shape="rect" id="node9" href="adxl345__i2c_8c.html#a3a2e564f46dd67289f4098089a6de76b" title="adxl345_i2c_tx_reg" alt="" coords="743,5,887,35"/><area shape="rect" id="node11" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="939,59,1029,88"/><area shape="rect" id="node15" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb" title="Configuration function called once before normal use." alt="" coords="519,59,681,88"/><area shape="rect" id="node17" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9" title="hmc58xx_i2c_tx_reg" alt="" coords="739,59,891,88"/><area shape="rect" id="node22" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="524,112,676,141"/><area shape="rect" id="node24" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="744,112,885,141"/></map>
 </div>
 </p>
 
 </div>
 </div>
 <h2>Variable Documentation</h2>
-<a class="anchor" id="a8ed404ef3ddf50958703e92a017973ef"></a>
+<a class="anchor" id="a97fa4a18bac4d98bb58486a17a028548"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool_t acc_valid</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__navgo_8c_source.html#l00056">56</a> of file <a class="el" href="imu__navgo_8c_source.html">imu_navgo.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afbbfe5fb78cd2de203ea88848ed1524d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool_t gyr_valid</td>
+          <td class="memname">struct <a class="el" href="structImuNavgo.html">ImuNavgo</a> imu_navgo</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="imu__navgo_8c_source.html#l00055">55</a> of file <a class="el" href="imu__navgo_8c_source.html">imu_navgo.c</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="a8271a0a8d22406f5117416a7fe284a7b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool_t mag_valid</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__navgo_8c_source.html#l00057">57</a> of file <a class="el" href="imu__navgo_8c_source.html">imu_navgo.c</a>.</p>
+<p>Referenced by <a class="el" href="imu__navgo_8c_source.html#l00057">imu_impl_init()</a>, <a class="el" href="imu__navgo_8c_source.html#l00111">imu_navgo_event()</a>, <a class="el" href="imu__navgo_8c_source.html#l00086">imu_periodic()</a>, and <a class="el" href="imu__navgo_8h_source.html#l00078">ImuEvent()</a>.</p>
 
 </div>
 </div>
@@ -438,7 +452,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e030268cd18297cf6282390f76bfcf7f.html">boards</a></li><li class="navelem"><a class="el" href="dir_4b28a472501cd3c8e4b2c011bdbc883b.html">navgo</a></li><li class="navelem"><a class="el" href="imu__navgo_8h.html">imu_navgo.h</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:16 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:15 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

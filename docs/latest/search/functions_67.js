@@ -77,7 +77,5 @@ var searchData=
   ['gv_5fadapt_5frun',['gv_adapt_run',['../guidance__v__adpt_8h.html#ad32d6994dcf557c56c23e442e28663c7',1,'guidance_v_adpt.h']]],
   ['gv_5fset_5fref',['gv_set_ref',['../guidance__v__ref_8h.html#a3a0f74494b5860403484eca3b6e63de1',1,'guidance_v_ref.h']]],
   ['gv_5fupdate_5fref_5ffrom_5fz_5fsp',['gv_update_ref_from_z_sp',['../guidance__v__ref_8h.html#aa913f06f6ed21d9c65b587c9791ecd08',1,'guidance_v_ref.h']]],
-  ['gv_5fupdate_5fref_5ffrom_5fzd_5fsp',['gv_update_ref_from_zd_sp',['../guidance__v__ref_8h.html#ac3e33519086aecdad63f5113569fa36f',1,'guidance_v_ref.h']]],
-  ['gyro_5fcopy_5fi2c',['gyro_copy_i2c',['../imu__aspirin_8h.html#a5077f55f4da39620ca421a35ce1ebcf0',1,'imu_aspirin.h']]],
-  ['gyro_5fread_5fi2c',['gyro_read_i2c',['../imu__aspirin_8h.html#a9a61e26cb14b3c3732f1e9e4dd552edf',1,'imu_aspirin.h']]]
+  ['gv_5fupdate_5fref_5ffrom_5fzd_5fsp',['gv_update_ref_from_zd_sp',['../guidance__v__ref_8h.html#ac3e33519086aecdad63f5113569fa36f',1,'guidance_v_ref.h']]]
 ];

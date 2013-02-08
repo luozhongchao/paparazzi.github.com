@@ -8,7 +8,6 @@ var searchData=
   ['altitude_20filter',['Altitude filter',['../module__alt_filter.html',1,'onboard_modules']]],
   ['angle_20of_20attack_20using_20internal_20adc',['Angle of Attack using internal ADC',['../module__aoa_adc.html',1,'onboard_modules']]],
   ['acam_20picocap_20capacitance_20sensor',['ACAM Picocap capacitance sensor',['../module__humid_pcap01.html',1,'onboard_modules']]],
-  ['aspirin_20imu_20_28all_20i2c_20version_29',['Aspirin IMU (all I2C version)',['../module__imu_aspirin_i2c.html',1,'onboard_modules']]],
   ['arduimu_20v2',['ArduIMU v2',['../module__ins_arduimu.html',1,'onboard_modules']]],
   ['arduimu_20v2',['ArduIMU v2',['../module__ins_arduimu_basic.html',1,'onboard_modules']]]
 ];

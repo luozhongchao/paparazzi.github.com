@@ -2,7 +2,6 @@ var rotorcraft_2guidance_2guidance__v_8c =
 [
     [ "FF_CMD_FRAC", "rotorcraft_2guidance_2guidance__v_8c.html#a7b742dbc14825348962b81a827011fdc", null ],
     [ "GUIDANCE_V_C", "rotorcraft_2guidance_2guidance__v_8c.html#aa0f41746a6abcf647cc576a9d67a29a5", null ],
-    [ "GUIDANCE_V_GAIN_SCALER", "rotorcraft_2guidance_2guidance__v_8c.html#aa7d8074ced77d4cf46ddef29b792a4ce", null ],
     [ "GUIDANCE_V_USE_REF", "rotorcraft_2guidance_2guidance__v_8c.html#a16359294662b66c27957d73c45cb8ff6", null ],
     [ "GuidanceVSetRef", "rotorcraft_2guidance_2guidance__v_8c.html#a5afd25189bac50d07da4062d162c30cd", null ],
     [ "MAX_BANK_COEF", "rotorcraft_2guidance_2guidance__v_8c.html#a232d2115795c960358872a24a0f8ed23", null ],

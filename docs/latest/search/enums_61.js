@@ -5,8 +5,10 @@ var searchData=
   ['actuators_5fasctec_5fcmds',['actuators_asctec_cmds',['../actuators__asctec_8h.html#a82d0d12190beb7d9db322455bf6a4d1d',1,'actuators_asctec.h']]],
   ['adc1_5fchannels',['adc1_channels',['../stm32_2mcu__periph_2adc__arch_8h.html#ac1dbdbf706177270f68597836106d8c9',1,'adc_arch.h']]],
   ['adc2_5fchannels',['adc2_channels',['../stm32_2mcu__periph_2adc__arch_8h.html#a33afbc7bbad301d909dfd2faaeae1b45',1,'adc_arch.h']]],
+  ['adxl345confstatus',['Adxl345ConfStatus',['../adxl345_8h.html#aa006d32535082f7872bc58cd529c9177',1,'adxl345.h']]],
+  ['adxl345ranges',['Adxl345Ranges',['../adxl345__regs_8h.html#abc3494afc65a86812ed33040266ce16f',1,'adxl345_regs.h']]],
+  ['adxl345rates',['Adxl345Rates',['../adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133',1,'adxl345_regs.h']]],
   ['arming_5fstate',['arming_state',['../autopilot__arming__switch_8h.html#abd7b974a7084669ffc2893dd65db427e',1,'arming_state():&#160;autopilot_arming_switch.h'],['../autopilot__arming__yaw_8h.html#abd7b974a7084669ffc2893dd65db427e',1,'arming_state():&#160;autopilot_arming_yaw.h']]],
   ['arming_5fthrottle_5fstate',['arming_throttle_state',['../autopilot__arming__throttle_8h.html#a67f42ccf33e2918fef63b1a6c729e759',1,'autopilot_arming_throttle.h']]],
-  ['aspirin2status',['Aspirin2Status',['../subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76',1,'imu_aspirin2.h']]],
-  ['aspirinstatus',['AspirinStatus',['../imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8',1,'imu_aspirin.h']]]
+  ['aspirin2status',['Aspirin2Status',['../subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76',1,'imu_aspirin2.h']]]
 ];

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -112,10 +112,9 @@ $(document).ready(function(){initNavTree('imu__aspirin_8c.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Driver for the Aspirin v1.x IMU.  
+<p>Driver for the Aspirin v1.x IMU using SPI for the accelerometer.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="imu_8h_source.html">subsystems/imu.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="hmc5843_8h_source.html">peripherals/hmc5843.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="i2c_8h_source.html">mcu_periph/i2c.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="spi_8h_source.html">mcu_periph/spi.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -125,355 +124,178 @@ $(document).ready(function(){initNavTree('imu__aspirin_8c.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__aspirin_8c__incl.png" border="0" usemap="#sw_2airborne_2subsystems_2imu_2imu__aspirin_8c" alt=""/></div>
 <map name="sw_2airborne_2subsystems_2imu_2imu__aspirin_8c" id="sw_2airborne_2subsystems_2imu_2imu__aspirin_8c">
-<area shape="rect" id="node3" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="331,101,469,131"/><area shape="rect" id="node30" href="hmc5843_8h.html" title="peripherals/hmc5843.h" alt="" coords="881,179,1049,208"/><area shape="rect" id="node33" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="989,265,1120,295"/><area shape="rect" id="node43" href="spi_8h.html" title="Architecture independent SPI (Serial Peripheral Interface) API." alt="" coords="709,101,840,131"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="407,179,585,208"/><area shape="rect" id="node22" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="5,179,195,208"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="152,265,307,295"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="421,265,571,295"/></map>
+<area shape="rect" id="node3" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="324,101,463,131"/><area shape="rect" id="node30" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="701,256,832,285"/><area shape="rect" id="node36" href="spi_8h.html" title="Architecture independent SPI (Serial Peripheral Interface) API." alt="" coords="659,101,789,131"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="400,179,579,208"/><area shape="rect" id="node22" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="5,179,195,208"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="157,256,312,285"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="477,256,627,285"/></map>
 </div>
 </div>
 <p><a href="imu__aspirin_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:acb451ad1ab622550e7a1ba1e535d2a4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#acb451ad1ab622550e7a1ba1e535d2a4d">ASPIRIN_ACCEL_RATE</a>&#160;&#160;&#160;<a class="el" href="adxl345_8h.html#a214c453f4226ec0f8105672900320e36">ADXL345_RATE_800</a></td></tr>
-<tr class="memitem:aba10b2e800f8ec5b603df37f9b752fd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#aba10b2e800f8ec5b603df37f9b752fd9">ADXL345_SLAVE_IDX</a>&#160;&#160;&#160;<a class="el" href="group__spi.html#gaf58a9c9069d93bd0664d2197c87ce9ff">SPI_SLAVE2</a></td></tr>
-<tr class="memitem:ac0618ea628aedaa3ea0099dbcc83a44a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a">ADXL345_SPI_DEV</a>&#160;&#160;&#160;<a class="el" href="group__spi.html#gabc3004247e95c09c15cfdf7d3e6402b7">spi2</a></td></tr>
-<tr class="memitem:a6a4e522675e16652ff09958a124f9098"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a6a4e522675e16652ff09958a124f9098">ITG3200_SMPLRT_DIV</a>&#160;&#160;&#160;0x0E</td></tr>
-<tr class="memitem:a79b3f63caffaadab21d6443a3b08cf64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a79b3f63caffaadab21d6443a3b08cf64">ITG3200_FS_SEL</a>&#160;&#160;&#160;0x3</td></tr>
-<tr class="memitem:a86cfe9749207da7380d0d71cf67d2a52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a86cfe9749207da7380d0d71cf67d2a52">ITG3200_DLPF_CFG</a>&#160;&#160;&#160;<a class="el" href="itg3200_8h.html#a134ce782c0b3a3b0b595b8a4b8875594">ITG3200_DLPF_256HZ</a></td></tr>
-<tr class="memitem:a843b7fc9886a8cb6d324b5c0378ba8ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a843b7fc9886a8cb6d324b5c0378ba8ef">ITG3200_CLK_SEL</a>&#160;&#160;&#160;0x1</td></tr>
-<tr class="memitem:a79e01c2784da8d83042a7177ec455570"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a79e01c2784da8d83042a7177ec455570">I2C2TransmitWithRetry</a>(_t, _s_addr, _len)</td></tr>
+<tr class="memitem:a9c94db83e7bda0afd2853b29e55f253d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a9c94db83e7bda0afd2853b29e55f253d">ASPIRIN_SPI_SLAVE_IDX</a>&#160;&#160;&#160;<a class="el" href="group__spi.html#gaf58a9c9069d93bd0664d2197c87ce9ff">SPI_SLAVE2</a></td></tr>
+<tr class="memitem:a2c6c6177be0f7713947b52eb42972611"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a2c6c6177be0f7713947b52eb42972611">ASPIRIN_SPI_DEV</a>&#160;&#160;&#160;<a class="el" href="group__spi.html#gabc3004247e95c09c15cfdf7d3e6402b7">spi2</a></td></tr>
+<tr class="memitem:af1d248f093de63a072372faaa60379bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#af1d248f093de63a072372faaa60379bb">ASPIRIN_I2C_DEV</a>&#160;&#160;&#160;i2c2</td></tr>
+<tr class="memitem:acb451ad1ab622550e7a1ba1e535d2a4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#acb451ad1ab622550e7a1ba1e535d2a4d">ASPIRIN_ACCEL_RATE</a>&#160;&#160;&#160;<a class="el" href="adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133aec148620e07d4a66cdb3fb5e9c4ccb0c">ADXL345_RATE_800HZ</a></td></tr>
+<tr class="memitem:a15394594a2ff3d526d3adf8ea72fd6d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a15394594a2ff3d526d3adf8ea72fd6d5">ASPIRIN_GYRO_LOWPASS</a>&#160;&#160;&#160;<a class="el" href="itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baaa119474be2bb5a743e26e129b39589d2">ITG3200_DLPF_256HZ</a></td></tr>
+<tr class="memdesc:a15394594a2ff3d526d3adf8ea72fd6d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">gyro internal lowpass frequency  <a href="#a15394594a2ff3d526d3adf8ea72fd6d5"></a><br/></td></tr>
+<tr class="memitem:a16ac417e3af7b9c76fc18246f2bd75d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a16ac417e3af7b9c76fc18246f2bd75d3">ASPIRIN_GYRO_SMPLRT_DIV</a>&#160;&#160;&#160;14</td></tr>
+<tr class="memdesc:a16ac417e3af7b9c76fc18246f2bd75d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">gyro sample rate divider  <a href="#a16ac417e3af7b9c76fc18246f2bd75d3"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6c50650e0db3095a18d009fbf776d75c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a6c50650e0db3095a18d009fbf776d75c">adxl345_write_to_reg</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _reg, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _val)</td></tr>
-<tr class="memitem:ad3c6a8e87c499edd13e2b41b79310f15"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15">adxl345_trans_cb</a> (struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *trans)</td></tr>
-<tr class="memitem:ab7c80140d9eeadd485b63fa5d1f923f8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8">configure_gyro</a> (void)</td></tr>
-<tr class="memitem:aaa839943b533e49b18a6c9b81dd928f2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2">configure_accel</a> (void)</td></tr>
-<tr class="memitem:a79565ef3973d9b120d9c909c2a06f313"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a79565ef3973d9b120d9c909c2a06f313">send_i2c_msg_with_retry</a> (struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a> *t)</td></tr>
 <tr class="memitem:ad32faae58e391642ec8048cb11011998"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a> (void)</td></tr>
 <tr class="memitem:a6623d4c90e7b1bfb73abc0da1195f29b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a> (void)</td></tr>
+<tr class="memitem:aa229c37c4339ad08d83c4d72f30a1fd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#aa229c37c4339ad08d83c4d72f30a1fd5">imu_aspirin_event</a> (void)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:aeafeb2e52542aacfde056216e597ab1a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structImuAspirin.html">ImuAspirin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a">imu_aspirin</a></td></tr>
-<tr class="memitem:ab66e3cc5401f90168f123f14caa42141"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structspi__transaction.html">spi_transaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141">aspirin_adxl345</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Driver for the Aspirin v1.x IMU. </p>
+<div class="textblock"><p>Driver for the Aspirin v1.x IMU using SPI for the accelerometer. </p>
+<p>Driver for the Aspirin v1.x IMU using I2C for the accelerometer.</p>
 
 <p>Definition in file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
 </div><h2>Macro Definition Documentation</h2>
-<a class="anchor" id="aba10b2e800f8ec5b603df37f9b752fd9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ADXL345_SLAVE_IDX&#160;&#160;&#160;<a class="el" href="group__spi.html#gaf58a9c9069d93bd0664d2197c87ce9ff">SPI_SLAVE2</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00039">39</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00098">imu_impl_init()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac0618ea628aedaa3ea0099dbcc83a44a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ADXL345_SPI_DEV&#160;&#160;&#160;<a class="el" href="group__spi.html#gabc3004247e95c09c15cfdf7d3e6402b7">spi2</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00043">43</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00131">imu_periodic()</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="acb451ad1ab622550e7a1ba1e535d2a4d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ASPIRIN_ACCEL_RATE&#160;&#160;&#160;<a class="el" href="adxl345_8h.html#a214c453f4226ec0f8105672900320e36">ADXL345_RATE_800</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00034">34</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00194">configure_accel()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a79e01c2784da8d83042a7177ec455570"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define I2C2TransmitWithRetry</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_t, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_s_addr, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_len&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{ \</div>
-<div class="line">    _t.type = <a class="code" href="group__i2c.html#ggae433e858ea905e29d6ac9a70bc79352ea7bf029a65bd3dbb742ad3e2bb7e10c6d">I2CTransTx</a>;                           \</div>
-<div class="line">    _t.slave_addr = _s_addr;                        \</div>
-<div class="line">    _t.len_r = 0;                                   \</div>
-<div class="line">    _t.len_w = _len;                                \</div>
-<div class="line">    send_i2c_msg_with_retry(&amp;(_t));                 \</div>
-<div class="line">  }</div>
-</div><!-- fragment -->
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00090">90</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00159">configure_gyro()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a843b7fc9886a8cb6d324b5c0378ba8ef"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG3200_CLK_SEL&#160;&#160;&#160;0x1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00058">58</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00159">configure_gyro()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a86cfe9749207da7380d0d71cf67d2a52"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG3200_DLPF_CFG&#160;&#160;&#160;<a class="el" href="itg3200_8h.html#a134ce782c0b3a3b0b595b8a4b8875594">ITG3200_DLPF_256HZ</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00054">54</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00159">configure_gyro()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a79b3f63caffaadab21d6443a3b08cf64"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG3200_FS_SEL&#160;&#160;&#160;0x3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00051">51</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00159">configure_gyro()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6a4e522675e16652ff09958a124f9098"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG3200_SMPLRT_DIV&#160;&#160;&#160;0x0E</td>
+          <td class="memname">#define ASPIRIN_ACCEL_RATE&#160;&#160;&#160;<a class="el" href="adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133aec148620e07d4a66cdb3fb5e9c4ccb0c">ADXL345_RATE_800HZ</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00048">48</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
 
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00159">configure_gyro()</a>.</p>
+<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00077">imu_impl_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a15394594a2ff3d526d3adf8ea72fd6d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASPIRIN_GYRO_LOWPASS&#160;&#160;&#160;<a class="el" href="itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baaa119474be2bb5a743e26e129b39589d2">ITG3200_DLPF_256HZ</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gyro internal lowpass frequency </p>
+
+<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00055">55</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00077">imu_impl_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16ac417e3af7b9c76fc18246f2bd75d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASPIRIN_GYRO_SMPLRT_DIV&#160;&#160;&#160;14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gyro sample rate divider </p>
+
+<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00064">64</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00077">imu_impl_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af1d248f093de63a072372faaa60379bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASPIRIN_I2C_DEV&#160;&#160;&#160;i2c2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00044">44</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00077">imu_impl_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2c6c6177be0f7713947b52eb42972611"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASPIRIN_SPI_DEV&#160;&#160;&#160;<a class="el" href="group__spi.html#gabc3004247e95c09c15cfdf7d3e6402b7">spi2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00040">40</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00077">imu_impl_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c94db83e7bda0afd2853b29e55f253d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASPIRIN_SPI_SLAVE_IDX&#160;&#160;&#160;<a class="el" href="group__spi.html#gaf58a9c9069d93bd0664d2197c87ce9ff">SPI_SLAVE2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00036">36</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00077">imu_impl_init()</a>.</p>
 
 </div>
 </div>
 <h2>Function Documentation</h2>
-<a class="anchor" id="ad3c6a8e87c499edd13e2b41b79310f15"></a>
+<a class="anchor" id="aa229c37c4339ad08d83c4d72f30a1fd5"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void adxl345_trans_cb </td>
+          <td class="memname">void imu_aspirin_event </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> *&#160;</td>
-          <td class="paramname"><em>trans</em></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00152">152</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00127">127</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
 
-<p>References <a class="el" href="imu__aspirin_8h_source.html#l00144">ImuAspirin::accel_available</a>, <a class="el" href="imu__aspirin_8h_source.html#l00134">AspirinStatusUninit</a>, <a class="el" href="imu__aspirin_8c_source.html#l00062">imu_aspirin</a>, <a class="el" href="imu__aspirin_8h_source.html#l00141">ImuAspirin::status</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>References <a class="el" href="imu__aspirin_8h_source.html#l00046">ImuAspirin::acc_adxl</a>, <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="imu__aspirin_8h_source.html#l00043">ImuAspirin::accel_valid</a>, <a class="el" href="adxl345__spi_8c_source.html#l00126">adxl345_spi_event()</a>, <a class="el" href="structAdxl345__Spi.html#a9585da86bdf47c3bd7706fcd203bbf6e">Adxl345_Spi::data</a>, <a class="el" href="structHmc58xx.html#a6f09ee91bf8521fd28a892f02d84a2e0">Hmc58xx::data</a>, <a class="el" href="structItg3200.html#a993eccdef6b4fa3950a05b914031588f">Itg3200::data</a>, <a class="el" href="adxl345__spi_8h_source.html#l00046">Adxl345_Spi::data_available</a>, <a class="el" href="hmc58xx_8h_source.html#l00065">Hmc58xx::data_available</a>, <a class="el" href="itg3200_8h_source.html#l00075">Itg3200::data_available</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__aspirin_8h_source.html#l00047">ImuAspirin::gyro_itg</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="imu__aspirin_8h_source.html#l00044">ImuAspirin::gyro_valid</a>, <a class="el" href="hmc58xx_8c_source.html#l00136">hmc58xx_event()</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="imu__aspirin_8c_source.html#l00075">imu_aspirin</a>, <a class="el" href="itg3200_8c_source.html#l00125">itg3200_event()</a>, <a class="el" href="imu__aspirin_8h_source.html#l00048">ImuAspirin::mag_hmc</a>, <a class="el" href="imu_8h_source.html#l00050">Imu::mag_unscaled</a>, <a class="el" href="imu__aspirin_8h_source.html#l00045">ImuAspirin::mag_valid</a>, <a class="el" href="itg3200_8h_source.html#l00077">Itg3200::rates</a>, <a class="el" href="pprz__algebra_8h_source.html#l00301">RATES_COPY</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="hmc58xx_8h_source.html#l00068">Hmc58xx::value</a>, <a class="el" href="adxl345__spi_8h_source.html#l00048">Adxl345_Spi::vect</a>, <a class="el" href="pprz__algebra_8h_source.html#l00111">VECT3_COPY</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00070">Int32Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00071">Int32Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00072">Int32Vect3::z</a>.</p>
 
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00098">imu_impl_init()</a>.</p>
+<p>Referenced by <a class="el" href="imu__aspirin_8h_source.html#l00063">ImuEvent()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="imu__aspirin_8c_ad3c6a8e87c499edd13e2b41b79310f15_icgraph.png" border="0" usemap="#imu__aspirin_8c_ad3c6a8e87c499edd13e2b41b79310f15_icgraph" alt=""/></div>
-<map name="imu__aspirin_8c_ad3c6a8e87c499edd13e2b41b79310f15_icgraph" id="imu__aspirin_8c_ad3c6a8e87c499edd13e2b41b79310f15_icgraph">
-<area shape="rect" id="node3" href="imu__aspirin_8c.html#ad32faae58e391642ec8048cb11011998" title="imu_impl_init" alt="" coords="189,5,296,35"/></map>
+<div class="center"><img src="imu__aspirin_8c_aa229c37c4339ad08d83c4d72f30a1fd5_cgraph.png" border="0" usemap="#imu__aspirin_8c_aa229c37c4339ad08d83c4d72f30a1fd5_cgraph" alt=""/></div>
+<map name="imu__aspirin_8c_aa229c37c4339ad08d83c4d72f30a1fd5_cgraph" id="imu__aspirin_8c_aa229c37c4339ad08d83c4d72f30a1fd5_cgraph">
+<area shape="rect" id="node3" href="adxl345__spi_8c.html#ad173a40977f6e9ba53b9e5a90edd82fd" title="adxl345_spi_event" alt="" coords="193,59,332,88"/><area shape="rect" id="node13" href="hmc58xx_8c.html#a6514a605dad1e4bb5664bf885cca676b" title="hmc58xx_event" alt="" coords="201,112,324,141"/><area shape="rect" id="node21" href="itg3200_8c.html#aaa9c768fbf93b62e8c6f74ebcc07cf45" title="itg3200_event" alt="" coords="207,165,319,195"/><area shape="rect" id="node5" href="adxl345__spi_8c.html#a058719d4e8c1943ada72dd98d56713d1" title="adxl345_spi_send_config" alt="" coords="383,59,561,88"/><area shape="rect" id="node7" href="adxl345_8h.html#ac6863633d46c7db4982eb0f78fec8a3f" title="adxl345_data_format" alt="" coords="624,5,781,35"/><area shape="rect" id="node9" href="adxl345__spi_8c.html#aae763e182a428fc73d70dcccda195417" title="adxl345_spi_write_to_reg" alt="" coords="612,59,793,88"/><area shape="rect" id="node11" href="group__spi.html#gaf1bcfc102840a0e6287b4db20bd78337" title="Submit a spi transaction." alt="" coords="843,59,933,88"/><area shape="rect" id="node15" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb" title="Configuration function called once before normal use." alt="" coords="391,112,553,141"/><area shape="rect" id="node17" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9" title="hmc58xx_i2c_tx_reg" alt="" coords="627,112,779,141"/><area shape="rect" id="node19" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="843,139,933,168"/><area shape="rect" id="node23" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="396,165,548,195"/><area shape="rect" id="node25" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="632,165,773,195"/></map>
 </div>
 </p>
 
-</div>
-</div>
-<a class="anchor" id="a6c50650e0db3095a18d009fbf776d75c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void adxl345_write_to_reg </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>_reg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>_val</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00020">20</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aaa839943b533e49b18a6c9b81dd928f2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void configure_accel </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00194">194</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>References <a class="el" href="adxl345_8h_source.html#l00033">ADXL345_FULL_RES</a>, <a class="el" href="adxl345_8h_source.html#l00032">ADXL345_INT_INVERT</a>, <a class="el" href="adxl345_8h_source.html#l00035">ADXL345_RANGE_16G</a>, <a class="el" href="adxl345_8h_source.html#l00009">ADXL345_REG_BW_RATE</a>, <a class="el" href="adxl345_8h_source.html#l00012">ADXL345_REG_DATA_FORMAT</a>, <a class="el" href="adxl345_8h_source.html#l00011">ADXL345_REG_INT_ENABLE</a>, <a class="el" href="adxl345_8h_source.html#l00010">ADXL345_REG_POWER_CTL</a>, <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00020">adxl345_write_to_reg()</a>, and <a class="el" href="imu__aspirin_8c_source.html#l00034">ASPIRIN_ACCEL_RATE</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00131">imu_periodic()</a>.</p>
-
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="imu__aspirin_8c_aaa839943b533e49b18a6c9b81dd928f2_cgraph.png" border="0" usemap="#imu__aspirin_8c_aaa839943b533e49b18a6c9b81dd928f2_cgraph" alt=""/></div>
-<map name="imu__aspirin_8c_aaa839943b533e49b18a6c9b81dd928f2_cgraph" id="imu__aspirin_8c_aaa839943b533e49b18a6c9b81dd928f2_cgraph">
-<area shape="rect" id="node3" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4" title="adxl345_write_to_reg" alt="" coords="176,5,333,35"/></map>
-</div>
-</p>
-
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="imu__aspirin_8c_aaa839943b533e49b18a6c9b81dd928f2_icgraph.png" border="0" usemap="#imu__aspirin_8c_aaa839943b533e49b18a6c9b81dd928f2_icgraph" alt=""/></div>
-<map name="imu__aspirin_8c_aaa839943b533e49b18a6c9b81dd928f2_icgraph" id="imu__aspirin_8c_aaa839943b533e49b18a6c9b81dd928f2_icgraph">
-<area shape="rect" id="node3" href="imu__aspirin_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="177,5,279,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ab7c80140d9eeadd485b63fa5d1f923f8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void configure_gyro </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00159">159</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="imu__aspirin_8c_source.html#l00090">I2C2TransmitWithRetry</a>, <a class="el" href="imu__aspirin_8h_source.html#l00142">ImuAspirin::i2c_trans_gyro</a>, <a class="el" href="imu__aspirin_8c_source.html#l00062">imu_aspirin</a>, <a class="el" href="imu__aspirin_8c_source.html#l00058">ITG3200_CLK_SEL</a>, <a class="el" href="imu__aspirin_8c_source.html#l00054">ITG3200_DLPF_CFG</a>, <a class="el" href="imu__aspirin_8c_source.html#l00051">ITG3200_FS_SEL</a>, <a class="el" href="itg3200_8extra_8h_source.html#l00060">ITG3200_I2C_ADDR</a>, <a class="el" href="itg3200_8h_source.html#l00033">ITG3200_REG_DLPF_FS</a>, <a class="el" href="itg3200_8h_source.html#l00034">ITG3200_REG_INT_CFG</a>, <a class="el" href="itg3200_8h_source.html#l00044">ITG3200_REG_PWR_MGM</a>, <a class="el" href="itg3200_8h_source.html#l00032">ITG3200_REG_SMPLRT_DIV</a>, and <a class="el" href="imu__aspirin_8c_source.html#l00048">ITG3200_SMPLRT_DIV</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00131">imu_periodic()</a>.</p>
-
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="imu__aspirin_8c_ab7c80140d9eeadd485b63fa5d1f923f8_icgraph.png" border="0" usemap="#imu__aspirin_8c_ab7c80140d9eeadd485b63fa5d1f923f8_icgraph" alt=""/></div>
-<map name="imu__aspirin_8c_ab7c80140d9eeadd485b63fa5d1f923f8_icgraph" id="imu__aspirin_8c_ab7c80140d9eeadd485b63fa5d1f923f8_icgraph">
-<area shape="rect" id="node3" href="imu__aspirin_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="172,5,273,35"/></map>
+<div class="center"><img src="imu__aspirin_8c_aa229c37c4339ad08d83c4d72f30a1fd5_icgraph.png" border="0" usemap="#imu__aspirin_8c_aa229c37c4339ad08d83c4d72f30a1fd5_icgraph" alt=""/></div>
+<map name="imu__aspirin_8c_aa229c37c4339ad08d83c4d72f30a1fd5_icgraph" id="imu__aspirin_8c_aa229c37c4339ad08d83c4d72f30a1fd5_icgraph">
+<area shape="rect" id="node3" href="imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="192,5,275,35"/></map>
 </div>
 </p>
 
@@ -492,19 +314,21 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo:</a></b></dt><dd>drdy int handling for adxl345 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>eoc interrupt for itg3200, polling for now (including status reg) </dd></dl>
 
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00098">98</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00077">77</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
 
-<p>References <a class="el" href="imu__aspirin_8h_source.html#l00144">ImuAspirin::accel_available</a>, <a class="el" href="imu__aspirin_8h_source.html#l00146">ImuAspirin::accel_rx_buf</a>, <a class="el" href="imu__aspirin_8h_source.html#l00145">ImuAspirin::accel_tx_buf</a>, <a class="el" href="imu__aspirin_8c_source.html#l00039">ADXL345_SLAVE_IDX</a>, <a class="el" href="imu__aspirin_8c_source.html#l00152">adxl345_trans_cb()</a>, <a class="el" href="spi_8h_source.html#l00152">spi_transaction::after_cb</a>, <a class="el" href="imu__aspirin_8c_source.html#l00064">aspirin_adxl345</a>, <a class="el" href="imu__aspirin_8h_source.html#l00134">AspirinStatusUninit</a>, <a class="el" href="spi_8h_source.html#l00149">spi_transaction::bitorder</a>, <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="spi_8h_source.html#l00150">spi_transaction::cdiv</a>, <a class="el" href="spi_8h_source.html#l00147">spi_transaction::cpha</a>, <a class="el" href="spi_8h_source.html#l00146">spi_transaction::cpol</a>, <a class="el" href="spi_8h_source.html#l00148">spi_transaction::dss</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__aspirin_8h_source.html#l00151">ImuAspirin::gyro_available_blaaa</a>, <a class="el" href="hmc5843_8c_source.html#l00016">hmc5843_init()</a>, <a class="el" href="imu__aspirin_8h_source.html#l00142">ImuAspirin::i2c_trans_gyro</a>, <a class="el" href="i2c_8h_source.html#l00054">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00047">I2CTransTxRx</a>, <a class="el" href="imu__aspirin_8c_source.html#l00062">imu_aspirin</a>, <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00015">imu_aspirin_arch_init()</a>, <a class="el" href="spi_8h_source.html#l00140">spi_transaction::input_buf</a>, <a class="el" href="spi_8h_source.html#l00142">spi_transaction::input_length</a>, <a class="el" href="itg3200_8h_source.html#l00027">ITG3200_ADDR</a>, <a class="el" href="itg3200_8h_source.html#l00038">ITG3200_REG_GYRO_XOUT_H</a>, <a class="el" href="i2c_8h_source.html#l00080">i2c_transaction::len_r</a>, <a class="el" href="i2c_8h_source.html#l00081">i2c_transaction::len_w</a>, <a class="el" href="imu__aspirin_8h_source.html#l00149">ImuAspirin::mag_available</a>, <a class="el" href="spi_8h_source.html#l00141">spi_transaction::output_buf</a>, <a class="el" href="spi_8h_source.html#l00143">spi_transaction::output_length</a>, <a class="el" href="spi_8h_source.html#l00145">spi_transaction::select</a>, <a class="el" href="i2c_8h_source.html#l00079">i2c_transaction::slave_addr</a>, <a class="el" href="spi_8h_source.html#l00144">spi_transaction::slave_idx</a>, <a class="el" href="spi_8h_source.html#l00069">SPICphaEdge2</a>, <a class="el" href="spi_8h_source.html#l00078">SPICpolIdleHigh</a>, <a class="el" href="spi_8h_source.html#l00116">SPIDiv64</a>, <a class="el" href="spi_8h_source.html#l00084">SPIDss8bit</a>, <a class="el" href="spi_8h_source.html#l00106">SPIMSBFirst</a>, <a class="el" href="spi_8h_source.html#l00057">SPISelectUnselect</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, <a class="el" href="imu__aspirin_8h_source.html#l00141">ImuAspirin::status</a>, and <a class="el" href="i2c_8h_source.html#l00078">i2c_transaction::type</a>.</p>
+<p>References <a class="el" href="imu__aspirin_8h_source.html#l00046">ImuAspirin::acc_adxl</a>, <a class="el" href="imu__aspirin_8h_source.html#l00043">ImuAspirin::accel_valid</a>, <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00048">ASPIRIN_ACCEL_RATE</a>, <a class="el" href="imu__aspirin_8c_source.html#l00055">ASPIRIN_GYRO_LOWPASS</a>, <a class="el" href="imu__aspirin_8c_source.html#l00064">ASPIRIN_GYRO_SMPLRT_DIV</a>, <a class="el" href="imu__aspirin_8c_source.html#l00044">ASPIRIN_I2C_DEV</a>, <a class="el" href="imu__aspirin_8c_source.html#l00040">ASPIRIN_SPI_DEV</a>, <a class="el" href="imu__aspirin_8c_source.html#l00036">ASPIRIN_SPI_SLAVE_IDX</a>, <a class="el" href="adxl345__spi_8h_source.html#l00051">Adxl345_Spi::config</a>, <a class="el" href="itg3200_8h_source.html#l00080">Itg3200::config</a>, <a class="el" href="itg3200_8h_source.html#l00055">Itg3200Config::dlpf_cfg</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__aspirin_8h_source.html#l00047">ImuAspirin::gyro_itg</a>, <a class="el" href="imu__aspirin_8h_source.html#l00044">ImuAspirin::gyro_valid</a>, <a class="el" href="hmc58xx__regs_8h_source.html#l00031">HMC58XX_ADDR</a>, <a class="el" href="hmc58xx_8c_source.html#l00062">hmc58xx_init()</a>, <a class="el" href="hmc58xx_8h_source.html#l00056">HMC_TYPE_5843</a>, <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00015">imu_aspirin_arch_init()</a>, <a class="el" href="itg3200__regs_8h_source.html#l00031">ITG3200_ADDR</a>, <a class="el" href="itg3200_8c_source.html#l00048">itg3200_init()</a>, <a class="el" href="imu__aspirin_8h_source.html#l00048">ImuAspirin::mag_hmc</a>, <a class="el" href="imu__aspirin_8h_source.html#l00045">ImuAspirin::mag_valid</a>, <a class="el" href="adxl345_8h_source.html#l00051">Adxl345Config::rate</a>, <a class="el" href="itg3200_8h_source.html#l00053">Itg3200Config::smplrt_div</a>, and <a class="el" href="hmc58xx_8h_source.html#l00071">Hmc58xx::type</a>.</p>
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__aspirin_8c_ad32faae58e391642ec8048cb11011998_cgraph.png" border="0" usemap="#imu__aspirin_8c_ad32faae58e391642ec8048cb11011998_cgraph" alt=""/></div>
 <map name="imu__aspirin_8c_ad32faae58e391642ec8048cb11011998_cgraph" id="imu__aspirin_8c_ad32faae58e391642ec8048cb11011998_cgraph">
-<area shape="rect" id="node3" href="imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15" title="adxl345_trans_cb" alt="" coords="172,5,305,35"/><area shape="rect" id="node5" href="hmc5843_8c.html#af07ba9764727d8692eb33cd271080cdc" title="hmc5843_init" alt="" coords="185,59,292,88"/><area shape="rect" id="node9" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a592698b1cfe18b6c6a33e450221ea2cf" title="imu_aspirin_arch_init" alt="" coords="161,112,316,141"/><area shape="rect" id="node7" href="sim_2peripherals_2hmc5843__arch_8c.html#ac346fa452f9a5c3412581aba7e5af4e7" title="hmc5843_arch_init" alt="" coords="367,59,508,88"/></map>
+<area shape="rect" id="node3" href="adxl345__spi_8c.html#a2c3a96cfe3f877128294bc0b9e60a0fc" title="adxl345_spi_init" alt="" coords="177,17,300,47"/><area shape="rect" id="node7" href="hmc58xx_8c.html#a1daa9072b668998f936fb469e5c6c515" title="Initialize Hmc58xx struct and set default config options." alt="" coords="185,79,292,108"/><area shape="rect" id="node11" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a592698b1cfe18b6c6a33e450221ea2cf" title="imu_aspirin_arch_init" alt="" coords="161,132,316,161"/><area shape="rect" id="node13" href="itg3200_8c.html#a240c1ab04d15bb3f556189887939765f" title="Initialize Itg3200 struct and set default config options." alt="" coords="191,185,287,215"/><area shape="rect" id="node5" href="adxl345_8h.html#a5e8e2514332efd14ec188331fba0b6fc" title="adxl345_set_default\l_config" alt="" coords="371,5,520,51"/><area shape="rect" id="node9" href="hmc58xx_8c.html#a2165794d296c28b9d22eb0490ec3049b" title="hmc58xx_set_default\l_config" alt="" coords="367,74,524,121"/><area shape="rect" id="node15" href="itg3200_8c.html#afb54551377578d676facc80c71379182" title="itg3200_set_default\l_config" alt="" coords="372,177,519,223"/></map>
 </div>
 </p>
 
@@ -524,79 +348,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00131">131</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00116">116</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
 
-<p>References <a class="el" href="imu__aspirin_8h_source.html#l00145">ImuAspirin::accel_tx_buf</a>, <a class="el" href="adxl345_8h_source.html#l00013">ADXL345_REG_DATA_X0</a>, <a class="el" href="imu__aspirin_8c_source.html#l00043">ADXL345_SPI_DEV</a>, <a class="el" href="imu__aspirin_8c_source.html#l00064">aspirin_adxl345</a>, <a class="el" href="imu__aspirin_8h_source.html#l00135">AspirinStatusIdle</a>, <a class="el" href="imu__aspirin_8h_source.html#l00134">AspirinStatusUninit</a>, <a class="el" href="imu__aspirin_8c_source.html#l00194">configure_accel()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00159">configure_gyro()</a>, <a class="el" href="imu__aspirin_8h_source.html#l00151">ImuAspirin::gyro_available_blaaa</a>, <a class="el" href="hmc5843_8c_source.html#l00103">hmc5843_periodic()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00062">imu_aspirin</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00469">spi_submit()</a>, <a class="el" href="imu__aspirin_8h_source.html#l00141">ImuAspirin::status</a>, <a class="el" href="imu__aspirin_8h_source.html#l00148">ImuAspirin::time_since_last_accel_reading</a>, <a class="el" href="imu__aspirin_8h_source.html#l00147">ImuAspirin::time_since_last_reading</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>References <a class="el" href="imu__aspirin_8h_source.html#l00046">ImuAspirin::acc_adxl</a>, <a class="el" href="adxl345__spi_8h_source.html#l00061">adxl345_spi_periodic()</a>, <a class="el" href="imu__aspirin_8h_source.html#l00047">ImuAspirin::gyro_itg</a>, <a class="el" href="hmc58xx_8h_source.html#l00084">hmc58xx_periodic()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00075">imu_aspirin</a>, <a class="el" href="itg3200_8h_source.html#l00093">itg3200_periodic()</a>, and <a class="el" href="imu__aspirin_8h_source.html#l00048">ImuAspirin::mag_hmc</a>.</p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__aspirin_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph.png" border="0" usemap="#imu__aspirin_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" alt=""/></div>
 <map name="imu__aspirin_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" id="imu__aspirin_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph">
-<area shape="rect" id="node3" href="imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2" title="configure_accel" alt="" coords="167,5,287,35"/><area shape="rect" id="node7" href="imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8" title="configure_gyro" alt="" coords="169,59,284,88"/><area shape="rect" id="node9" href="hmc5843_8c.html#ab17f5e43fbd1dcadea20ede30e06568b" title="hmc5843_periodic" alt="" coords="157,112,296,141"/><area shape="rect" id="node20" href="group__spi.html#gaf1bcfc102840a0e6287b4db20bd78337" title="Submit a spi transaction." alt="" coords="181,165,272,195"/><area shape="rect" id="node5" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a0da22ea879c21f520b5238bdef9a40b4" title="adxl345_write_to_reg" alt="" coords="344,5,501,35"/><area shape="rect" id="node11" href="stm32_2peripherals_2hmc5843__arch_8c.html#aea219a14b12c8fb0fe874ebde7a9a806" title="hmc5843_arch_reset" alt="" coords="344,59,501,88"/><area shape="rect" id="node13" href="group__i2c.html#ga54cb2dd83ed5b0dacc02764aa234f564" title="i2c_idle" alt="" coords="388,112,457,141"/><area shape="rect" id="node15" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="549,191,640,220"/><area shape="rect" id="node17" href="hmc5843_8c.html#a179b6346fe1a63338f44c42fcda2fcf8" title="send_config" alt="" coords="373,216,472,245"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a79565ef3973d9b120d9c909c2a06f313"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void send_i2c_msg_with_retry </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a> *&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00076">76</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>References <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00333">i2c_submit()</a>, <a class="el" href="i2c_8h_source.html#l00054">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00051">I2CTransPending</a>, <a class="el" href="i2c_8h_source.html#l00052">I2CTransRunning</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
-
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="imu__aspirin_8c_a79565ef3973d9b120d9c909c2a06f313_cgraph.png" border="0" usemap="#imu__aspirin_8c_a79565ef3973d9b120d9c909c2a06f313_cgraph" alt=""/></div>
-<map name="imu__aspirin_8c_a79565ef3973d9b120d9c909c2a06f313_cgraph" id="imu__aspirin_8c_a79565ef3973d9b120d9c909c2a06f313_cgraph">
-<area shape="rect" id="node3" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="237,5,328,35"/></map>
+<area shape="rect" id="node3" href="adxl345__spi_8h.html#aa96b23656a71720f2d9ad4251e655775" title="convenience function: read or start configuration if not already initialized" alt="" coords="157,71,312,100"/><area shape="rect" id="node18" href="hmc58xx_8h.html#a353064a5a9c6b47a14f4b9543545b4ec" title="convenience function: read or start configuration if not already initialized" alt="" coords="167,175,303,204"/><area shape="rect" id="node31" href="itg3200_8h.html#a2e5bd5bfe60106c8c05d1a26bcce2263" title="convenience function: read or start configuration if not already initialized" alt="" coords="172,253,297,283"/><area shape="rect" id="node5" href="adxl345__spi_8c.html#add9575711d304680e75e41b11bb9e511" title="adxl345_spi_read" alt="" coords="632,5,765,35"/><area shape="rect" id="node9" href="adxl345__spi_8c.html#a453c33c44618c770b2f3adc12bed69d7" title="adxl345_spi_start_configure" alt="" coords="360,71,560,100"/><area shape="rect" id="node7" href="group__spi.html#gaf1bcfc102840a0e6287b4db20bd78337" title="Submit a spi transaction." alt="" coords="1069,45,1160,75"/><area shape="rect" id="node11" href="adxl345__spi_8c.html#a058719d4e8c1943ada72dd98d56713d1" title="adxl345_spi_send_config" alt="" coords="609,71,788,100"/><area shape="rect" id="node13" href="adxl345_8h.html#ac6863633d46c7db4982eb0f78fec8a3f" title="adxl345_data_format" alt="" coords="851,44,1008,73"/><area shape="rect" id="node15" href="adxl345__spi_8c.html#aae763e182a428fc73d70dcccda195417" title="adxl345_spi_write_to_reg" alt="" coords="839,97,1020,127"/><area shape="rect" id="node20" href="hmc58xx_8c.html#a883e49acd3049ead17c6c29a3b020c72" title="hmc58xx_read" alt="" coords="641,148,756,177"/><area shape="rect" id="node24" href="hmc58xx_8c.html#a89a7b5456b1a87c83aef85779c4fc5e9" title="hmc58xx_start_configure" alt="" coords="369,200,551,229"/><area shape="rect" id="node22" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="1069,228,1160,257"/><area shape="rect" id="node26" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb" title="Configuration function called once before normal use." alt="" coords="617,201,780,231"/><area shape="rect" id="node28" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9" title="hmc58xx_i2c_tx_reg" alt="" coords="853,201,1005,231"/><area shape="rect" id="node33" href="itg3200_8c.html#afc931399829e2d90c671d326e016329a" title="itg3200_read" alt="" coords="407,253,513,283"/><area shape="rect" id="node36" href="itg3200_8c.html#a37fd9870e73caee0513811101150ae87" title="itg3200_start_configure" alt="" coords="373,307,547,336"/><area shape="rect" id="node38" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="623,307,775,336"/><area shape="rect" id="node40" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="859,307,1000,336"/></map>
 </div>
 </p>
 
 </div>
 </div>
 <h2>Variable Documentation</h2>
-<a class="anchor" id="ab66e3cc5401f90168f123f14caa42141"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structspi__transaction.html">spi_transaction</a> aspirin_adxl345</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00064">64</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00098">imu_impl_init()</a>, and <a class="el" href="imu__aspirin_8c_source.html#l00131">imu_periodic()</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="aeafeb2e52542aacfde056216e597ab1a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -607,9 +376,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00062">62</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__aspirin_8c_source.html#l00075">75</a> of file <a class="el" href="imu__aspirin_8c_source.html">imu_aspirin.c</a>.</p>
 
-<p>Referenced by <a class="el" href="imu__aspirin_8h_source.html#l00190">accel_copy_spi()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00152">adxl345_trans_cb()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00159">configure_gyro()</a>, <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00075">dma1_c4_irq_handler()</a>, <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00044">exti15_10_irq_handler()</a>, <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00082">exti15_10_isr()</a>, <a class="el" href="imu__aspirin_8h_source.html#l00182">gyro_copy_i2c()</a>, <a class="el" href="imu__aspirin_8h_source.html#l00175">gyro_read_i2c()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00098">imu_impl_init()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00131">imu_periodic()</a>, and <a class="el" href="imu__aspirin_8h_source.html#l00198">ImuEvent()</a>.</p>
+<p>Referenced by <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00075">dma1_c4_irq_handler()</a>, <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00044">exti15_10_irq_handler()</a>, <a class="el" href="stm32_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00085">exti15_10_isr()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00127">imu_aspirin_event()</a>, <a class="el" href="imu__aspirin__i2c_8c_source.html#l00129">imu_aspirin_i2c_event()</a>, <a class="el" href="imu__aspirin_8c_source.html#l00116">imu_periodic()</a>, and <a class="el" href="imu__aspirin_8h_source.html#l00063">ImuEvent()</a>.</p>
 
 </div>
 </div>
@@ -619,7 +388,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8b2fa0708e2db44c1b91938af97bac44.html">imu</a></li><li class="navelem"><a class="el" href="imu__aspirin_8c.html">imu_aspirin.c</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:18 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:16 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

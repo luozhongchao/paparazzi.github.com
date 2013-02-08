@@ -7,8 +7,13 @@ var searchData=
   ['imu',['Imu',['../structImu.html',1,'']]],
   ['imuaspirin',['ImuAspirin',['../structImuAspirin.html',1,'']]],
   ['imuaspirin2',['ImuAspirin2',['../structImuAspirin2.html',1,'']]],
+  ['imuaspirini2c',['ImuAspirinI2c',['../structImuAspirinI2c.html',1,'']]],
+  ['imubooz2',['ImuBooz2',['../structImuBooz2.html',1,'']]],
   ['imufloat',['ImuFloat',['../structImuFloat.html',1,'']]],
+  ['imunavgo',['ImuNavgo',['../structImuNavgo.html',1,'']]],
   ['imunps',['ImuNps',['../structImuNps.html',1,'']]],
+  ['imuppzuav',['ImuPpzuav',['../structImuPpzuav.html',1,'']]],
+  ['imuumarim',['ImuUmarim',['../structImuUmarim.html',1,'']]],
   ['imuxsens',['ImuXsens',['../structImuXsens.html',1,'']]],
   ['infrared',['Infrared',['../structInfrared.html',1,'']]],
   ['infrared_5fraw',['Infrared_raw',['../structInfrared__raw.html',1,'']]],
@@ -29,5 +34,7 @@ var searchData=
   ['int64rates',['Int64Rates',['../structInt64Rates.html',1,'']]],
   ['int64vect2',['Int64Vect2',['../structInt64Vect2.html',1,'']]],
   ['int64vect3',['Int64Vect3',['../structInt64Vect3.html',1,'']]],
-  ['intermcudata',['InterMcuData',['../structInterMcuData.html',1,'']]]
+  ['intermcudata',['InterMcuData',['../structInterMcuData.html',1,'']]],
+  ['itg3200',['Itg3200',['../structItg3200.html',1,'']]],
+  ['itg3200config',['Itg3200Config',['../structItg3200Config.html',1,'']]]
 ];

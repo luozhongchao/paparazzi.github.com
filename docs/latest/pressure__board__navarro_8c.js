@@ -4,7 +4,7 @@ var pressure__board__navarro_8c =
     [ "PBN_AIRSPEED_SCALE", "pressure__board__navarro_8c.html#a847d7abbe28e648dd10cd7993b5749f9", null ],
     [ "PBN_ALTITUDE_SCALE", "pressure__board__navarro_8c.html#a082640ee73177d8935bb912ffd26fac9", null ],
     [ "PBN_I2C_ADDR", "pressure__board__navarro_8c.html#a7d535b9729217f3e86e019506de4db74", null ],
-    [ "PBN_I2C_DEVICE", "pressure__board__navarro_8c.html#ac9d66bd91ce545b64bf75af6b959ac55", null ],
+    [ "PBN_I2C_DEV", "pressure__board__navarro_8c.html#a7a9ccfb43e45d31d21d51eade10571ac", null ],
     [ "PBN_OFFSET_FILTER", "pressure__board__navarro_8c.html#ad4649cb55be3bc1a54b3837ac5a19e31", null ],
     [ "PBN_START_DELAY", "pressure__board__navarro_8c.html#a2ce5853d5004c95e2ce46bb869604ffb", null ],
     [ "pbn_init", "pressure__board__navarro_8c.html#a6f2976579b7761af83296829f78faba0", null ],

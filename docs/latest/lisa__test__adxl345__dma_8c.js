@@ -3,6 +3,7 @@ var lisa__test__adxl345__dma_8c =
     [ "ADXL345_SLAVE_IDX", "lisa__test__adxl345__dma_8c.html#aba10b2e800f8ec5b603df37f9b752fd9", null ],
     [ "ADXL345_SPI_DEV", "lisa__test__adxl345__dma_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a", null ],
     [ "CONFIGURED", "lisa__test__adxl345__dma_8c.html#a514476189fbaf15c716d5e846955d2b8", null ],
+    [ "Int16FromBuf", "lisa__test__adxl345__dma_8c.html#ae7e949d1dd6f5a5a814fac0cd6936966", null ],
     [ "adxl345_trans_cb", "lisa__test__adxl345__dma_8c.html#ad3c6a8e87c499edd13e2b41b79310f15", null ],
     [ "exti2_isr", "lisa__test__adxl345__dma_8c.html#a40747dba0f93159403e51109a87575fd", null ],
     [ "hw_init", "lisa__test__adxl345__dma_8c.html#ae58df14f30461cb37e8607aca5522846", null ],

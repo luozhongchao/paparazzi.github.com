@@ -11,6 +11,7 @@ var searchData=
   ['hmc5843_5farch_2eh',['hmc5843_arch.h',['../sim_2peripherals_2hmc5843__arch_8h.html',1,'']]],
   ['hmc58xx_2ec',['hmc58xx.c',['../hmc58xx_8c.html',1,'']]],
   ['hmc58xx_2eh',['hmc58xx.h',['../hmc58xx_8h.html',1,'']]],
+  ['hmc58xx_5fregs_2eh',['hmc58xx_regs.h',['../hmc58xx__regs_8h.html',1,'']]],
   ['hs_5fgyro_2ec',['hs_gyro.c',['../hs__gyro_8c.html',1,'']]],
   ['humid_5fdpicco_2ec',['humid_dpicco.c',['../humid__dpicco_8c.html',1,'']]],
   ['humid_5fdpicco_2eh',['humid_dpicco.h',['../humid__dpicco_8h.html',1,'']]],

@@ -1,18 +1,11 @@
 var imu__ppzuav_8c =
 [
-    [ "DOWNLINK_DEVICE", "imu__ppzuav_8c.html#a2978a46b47cbc9d17a0924014ff9658b", null ],
-    [ "HMC5843_NO_IRQ", "imu__ppzuav_8c.html#aca87afeed8190e9a8b0c6c69d40db1cb", null ],
-    [ "ITG_STA_DAT_OFFSET", "imu__ppzuav_8c.html#af77280fcfbb79c418e0585b86532168d", null ],
-    [ "PERIODIC_FREQUENCY", "imu__ppzuav_8c.html#a3f944845df880412588796aeca80105e", null ],
+    [ "IMU_PPZUAV_ACCEL_RATE", "imu__ppzuav_8c.html#a8a1b45ebc8e5b1582058c7d84a2e89b1", null ],
+    [ "IMU_PPZUAV_GYRO_LOWPASS", "imu__ppzuav_8c.html#a2b8f05a9bd0a74946665d9a7d2c0de3a", null ],
+    [ "IMU_PPZUAV_GYRO_SMPLRT_DIV", "imu__ppzuav_8c.html#a87e6cc99d80fa8d8dc65f122960036e6", null ],
+    [ "IMU_PPZUAV_I2C_DEV", "imu__ppzuav_8c.html#a0c6d46a04df7b97db971b8d1d4912282", null ],
     [ "imu_impl_init", "imu__ppzuav_8c.html#ad32faae58e391642ec8048cb11011998", null ],
     [ "imu_periodic", "imu__ppzuav_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b", null ],
-    [ "ppzuavimu_module_downlink_raw", "imu__ppzuav_8c.html#aa53cfc3e58bd48ef1991f7cf4dde8c4b", null ],
-    [ "ppzuavimu_module_event", "imu__ppzuav_8c.html#aa30df9e1b268e5e729d2a0036f4771d5", null ],
-    [ "acc_valid", "imu__ppzuav_8c.html#a8ed404ef3ddf50958703e92a017973ef", null ],
-    [ "gyr_valid", "imu__ppzuav_8c.html#afbbfe5fb78cd2de203ea88848ed1524d", null ],
-    [ "imu", "imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc", null ],
-    [ "mag_valid", "imu__ppzuav_8c.html#a8271a0a8d22406f5117416a7fe284a7b", null ],
-    [ "ppzuavimu_adxl345", "imu__ppzuav_8c.html#ac262de3bf472eb2d4372c7f684bfae14", null ],
-    [ "ppzuavimu_hmc5843", "imu__ppzuav_8c.html#a4787f36e1a642268e08e8c03fa02dfe7", null ],
-    [ "ppzuavimu_itg3200", "imu__ppzuav_8c.html#a39226793f6172fa3d2f03d96a7d6b89d", null ]
+    [ "imu_ppzuav_event", "imu__ppzuav_8c.html#a51ff6c245630bbf2701dc550ce24ef23", null ],
+    [ "imu_ppzuav", "imu__ppzuav_8c.html#af1c3503ad92f5c5878d0fc80cf43779f", null ]
 ];

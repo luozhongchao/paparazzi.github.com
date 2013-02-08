@@ -171,7 +171,6 @@ var searchData=
   ['guidance_5fv_5fadapt_5fnoise_5ffactor',['GUIDANCE_V_ADAPT_NOISE_FACTOR',['../guidance__v__adpt_8h.html#a3720e5c2d1efce3423181db33b9f1ef5',1,'guidance_v_adpt.h']]],
   ['guidance_5fv_5fadapt_5fx0',['GUIDANCE_V_ADAPT_X0',['../guidance__v__adpt_8h.html#a412fb8a43254a0c560ae329b0e671866',1,'guidance_v_adpt.h']]],
   ['guidance_5fv_5fc',['GUIDANCE_V_C',['../rotorcraft_2guidance_2guidance__v_8c.html#aa0f41746a6abcf647cc576a9d67a29a5',1,'guidance_v.c']]],
-  ['guidance_5fv_5fgain_5fscaler',['GUIDANCE_V_GAIN_SCALER',['../rotorcraft_2guidance_2guidance__v_8c.html#aa7d8074ced77d4cf46ddef29b792a4ce',1,'guidance_v.c']]],
   ['guidance_5fv_5fmode_5fclimb',['GUIDANCE_V_MODE_CLIMB',['../rotorcraft_2guidance_2guidance__v_8h.html#a77dd92d59de41da4a0e7987a218266c9',1,'guidance_v.h']]],
   ['guidance_5fv_5fmode_5fhover',['GUIDANCE_V_MODE_HOVER',['../rotorcraft_2guidance_2guidance__v_8h.html#ad9ee5da48b80fa2cd7db8d79af0e185a',1,'guidance_v.h']]],
   ['guidance_5fv_5fmode_5fkill',['GUIDANCE_V_MODE_KILL',['../rotorcraft_2guidance_2guidance__v_8h.html#a992efb12755c87117b1a6a3197ab3728',1,'guidance_v.h']]],
@@ -221,6 +220,5 @@ var searchData=
   ['gv_5fzd_5fref_5ffrac',['GV_ZD_REF_FRAC',['../guidance__v__ref_8h.html#a055f3597b97d42c30aa9332337149c19',1,'guidance_v_ref.h']]],
   ['gv_5fzdd_5fref_5ffrac',['GV_ZDD_REF_FRAC',['../guidance__v__ref_8h.html#a56ce61e48bdd6a1384b5d330e79d38d6',1,'guidance_v_ref.h']]],
   ['gv_5fzeta_5fomega',['GV_ZETA_OMEGA',['../guidance__v__ref_8h.html#a04a4ea4ccba6d527a9323ddf4273ffb2',1,'guidance_v_ref.h']]],
-  ['gv_5fzeta_5fomega_5ffrac',['GV_ZETA_OMEGA_FRAC',['../guidance__v__ref_8h.html#ade30d0d306bc65506c54c5f9d41a8952',1,'guidance_v_ref.h']]],
-  ['gyroevent',['GyroEvent',['../itg3200_8extra_8h.html#a1c26f88891af4250f93a7c56376048ad',1,'itg3200.extra.h']]]
+  ['gv_5fzeta_5fomega_5ffrac',['GV_ZETA_OMEGA_FRAC',['../guidance__v__ref_8h.html#ade30d0d306bc65506c54c5f9d41a8952',1,'guidance_v_ref.h']]]
 ];

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -129,48 +129,50 @@ $(document).ready(function(){initNavTree('imu__b2_8c_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="imu__b2_8c.html#ad32faae58e391642ec8048cb11011998">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="max1168_8c.html#a6130e20b7ea3c56aa94a9e449b773b4a">max1168_init</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#if defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_MS2100</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span>  <a class="code" href="ms2100_8c.html#afb7a7007f9faecc8810acf64cd97c204">ms2100_init</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#elif defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_AMI601</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span>  <a class="code" href="ami601_8c.html#a371838c77c193499b453d769fb6d4cc2">ami601_init</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#elif defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_HMC5843</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span>  <a class="code" href="hmc5843_8c.html#af07ba9764727d8692eb33cd271080cdc">hmc5843_init</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#elif defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_HMC58XX</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span>  <a class="code" href="hmc58xx_8c.html#a7bc4b0378663330442beb515f4e9cc54">hmc58xx_init</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="imu__b2_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// read adc</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="max1168_8h.html#aa486ed979a22e63816a79fdc2fe2926a">Max1168Periodic</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// read mag</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#if defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_MS2100</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span>  <a class="code" href="ms2100_8h.html#a876bc5d53943acd2e6f8a2338a7ad8b7">Ms2100Periodic</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_AMI601</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span>  RunOnceEvery(10, { <a class="code" href="ami601_8c.html#a71d937e3a4fb4dd1db1861fa6711b417">ami601_read</a>(); });</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_HMC58XX</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span>  RunOnceEvery(5,<a class="code" href="hmc58xx_8h.html#afa213aad9b52961c76f35a6767a54e72">Hmc58xxPeriodic</a>());</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="imu_8h.html" title="Inertial Measurement Unit interface.">subsystems/imu.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="imu__b2_8h.html#aa75cb0a1fd97e613b36c9f1869ca9c31">   31</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structImuBooz2.html">ImuBooz2</a> <a class="code" href="imu__b2_8c.html#aa75cb0a1fd97e613b36c9f1869ca9c31">imu_b2</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="imu__b2_8c.html#ad32faae58e391642ec8048cb11011998">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="max1168_8c.html#a6130e20b7ea3c56aa94a9e449b773b4a">max1168_init</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#if defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_MS2100</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>  <a class="code" href="ms2100_8c.html#abd4a73602ed7661eccacb070eb07896a">ms2100_init</a>(&amp;<a class="code" href="ms2100_8c.html#a030d0b0b09d4acb5b2bc5d4d53c9d546">ms2100</a>, &amp;(MS2100_SPI_DEV), MS2100_SLAVE_IDX);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#elif defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_AMI601</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span>  <a class="code" href="ami601_8c.html#a371838c77c193499b453d769fb6d4cc2">ami601_init</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#elif defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_HMC5843</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span>  <a class="code" href="hmc5843_8c.html#af07ba9764727d8692eb33cd271080cdc">hmc5843_init</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#elif defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_HMC58XX</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span>  <a class="code" href="hmc58xx_8c.html#a1daa9072b668998f936fb469e5c6c515" title="Initialize Hmc58xx struct and set default config options.">hmc58xx_init</a>(&amp;<a class="code" href="imu__b2_8c.html#aa75cb0a1fd97e613b36c9f1869ca9c31">imu_b2</a>.mag_hmc, &amp;(IMU_B2_I2C_DEV), <a class="code" href="hmc58xx__regs_8h.html#a6c2e847bfa656938d60e07a11013ab67">HMC58XX_ADDR</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="imu__b2_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="imu__navgo_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// read adc</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="max1168_8h.html#aa486ed979a22e63816a79fdc2fe2926a">Max1168Periodic</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// read mag</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#if defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_MS2100</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span>  <a class="code" href="ms2100_8h.html#a0e51ef51908d14a288ac177672fe39e8">ms2100_periodic</a>(&amp;<a class="code" href="ms2100_8c.html#a030d0b0b09d4acb5b2bc5d4d53c9d546">ms2100</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_AMI601</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor"></span>  RunOnceEvery(10, { <a class="code" href="ami601_8c.html#a71d937e3a4fb4dd1db1861fa6711b417">ami601_read</a>(); });</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if defined IMU_B2_MAG_TYPE &amp;&amp; IMU_B2_MAG_TYPE == IMU_B2_MAG_HMC58XX</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span>  RunOnceEvery(5, <a class="code" href="hmc58xx_8h.html#a353064a5a9c6b47a14f4b9543545b4ec" title="convenience function: read or start configuration if not already initialized">hmc58xx_periodic</a>(&amp;<a class="code" href="imu__b2_8c.html#aa75cb0a1fd97e613b36c9f1869ca9c31">imu_b2</a>.mag_hmc));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8b2fa0708e2db44c1b91938af97bac44.html">imu</a></li><li class="navelem"><a class="el" href="imu__b2_8c.html">imu_b2.c</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:16 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:14 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

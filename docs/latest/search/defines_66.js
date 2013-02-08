@@ -101,7 +101,6 @@ var searchData=
   ['fms_5ftest_5fsignal_5fdefault_5famplitude',['FMS_TEST_SIGNAL_DEFAULT_AMPLITUDE',['../vi__test__signal_8c.html#a2bb1c70e411d7afa301700d69b3bfadc',1,'vi_test_signal.c']]],
   ['fms_5ftest_5fsignal_5fdefault_5fmode',['FMS_TEST_SIGNAL_DEFAULT_MODE',['../vi__test__signal_8c.html#a83964ee398d454c4ed5046ce366046e7',1,'vi_test_signal.c']]],
   ['fms_5ftest_5fsignal_5fdefault_5fperiod',['FMS_TEST_SIGNAL_DEFAULT_PERIOD',['../vi__test__signal_8c.html#a030f7a4fca39e7719e7586ee545fa445',1,'vi_test_signal.c']]],
-  ['foo_5fhandler',['foo_handler',['../imu__aspirin_8h.html#a23553118551649e9fe4ddf7d2f3f96a7',1,'imu_aspirin.h']]],
   ['force_5fclimb_5fgain',['FORCE_CLIMB_GAIN',['../potential_8c.html#ad0b5aeaf048b2d7b5836418d13eb93e5',1,'potential.c']]],
   ['force_5fmax_5fdist',['FORCE_MAX_DIST',['../potential_8c.html#a9bff43b295c79baf79697717512f3b5b',1,'potential.c']]],
   ['force_5fpos_5fgain',['FORCE_POS_GAIN',['../potential_8c.html#a70ae37200fbabaceb0665d702cfe63d0',1,'potential.c']]],

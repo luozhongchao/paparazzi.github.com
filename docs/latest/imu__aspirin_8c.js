@@ -1,20 +1,13 @@
 var imu__aspirin_8c =
 [
-    [ "ADXL345_SLAVE_IDX", "imu__aspirin_8c.html#aba10b2e800f8ec5b603df37f9b752fd9", null ],
-    [ "ADXL345_SPI_DEV", "imu__aspirin_8c.html#ac0618ea628aedaa3ea0099dbcc83a44a", null ],
     [ "ASPIRIN_ACCEL_RATE", "imu__aspirin_8c.html#acb451ad1ab622550e7a1ba1e535d2a4d", null ],
-    [ "I2C2TransmitWithRetry", "imu__aspirin_8c.html#a79e01c2784da8d83042a7177ec455570", null ],
-    [ "ITG3200_CLK_SEL", "imu__aspirin_8c.html#a843b7fc9886a8cb6d324b5c0378ba8ef", null ],
-    [ "ITG3200_DLPF_CFG", "imu__aspirin_8c.html#a86cfe9749207da7380d0d71cf67d2a52", null ],
-    [ "ITG3200_FS_SEL", "imu__aspirin_8c.html#a79b3f63caffaadab21d6443a3b08cf64", null ],
-    [ "ITG3200_SMPLRT_DIV", "imu__aspirin_8c.html#a6a4e522675e16652ff09958a124f9098", null ],
-    [ "adxl345_trans_cb", "imu__aspirin_8c.html#ad3c6a8e87c499edd13e2b41b79310f15", null ],
-    [ "adxl345_write_to_reg", "imu__aspirin_8c.html#a6c50650e0db3095a18d009fbf776d75c", null ],
-    [ "configure_accel", "imu__aspirin_8c.html#aaa839943b533e49b18a6c9b81dd928f2", null ],
-    [ "configure_gyro", "imu__aspirin_8c.html#ab7c80140d9eeadd485b63fa5d1f923f8", null ],
+    [ "ASPIRIN_GYRO_LOWPASS", "imu__aspirin_8c.html#a15394594a2ff3d526d3adf8ea72fd6d5", null ],
+    [ "ASPIRIN_GYRO_SMPLRT_DIV", "imu__aspirin_8c.html#a16ac417e3af7b9c76fc18246f2bd75d3", null ],
+    [ "ASPIRIN_I2C_DEV", "imu__aspirin_8c.html#af1d248f093de63a072372faaa60379bb", null ],
+    [ "ASPIRIN_SPI_DEV", "imu__aspirin_8c.html#a2c6c6177be0f7713947b52eb42972611", null ],
+    [ "ASPIRIN_SPI_SLAVE_IDX", "imu__aspirin_8c.html#a9c94db83e7bda0afd2853b29e55f253d", null ],
+    [ "imu_aspirin_event", "imu__aspirin_8c.html#aa229c37c4339ad08d83c4d72f30a1fd5", null ],
     [ "imu_impl_init", "imu__aspirin_8c.html#ad32faae58e391642ec8048cb11011998", null ],
     [ "imu_periodic", "imu__aspirin_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b", null ],
-    [ "send_i2c_msg_with_retry", "imu__aspirin_8c.html#a79565ef3973d9b120d9c909c2a06f313", null ],
-    [ "aspirin_adxl345", "imu__aspirin_8c.html#ab66e3cc5401f90168f123f14caa42141", null ],
     [ "imu_aspirin", "imu__aspirin_8c.html#aeafeb2e52542aacfde056216e597ab1a", null ]
 ];

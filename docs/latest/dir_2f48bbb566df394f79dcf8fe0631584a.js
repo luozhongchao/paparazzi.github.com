@@ -36,8 +36,6 @@ var dir_2f48bbb566df394f79dcf8fe0631584a =
     [ "ezcurrent.h", "ezcurrent_8h.html", "ezcurrent_8h" ],
     [ "imu_aspirin2.c", "modules_2sensors_2imu__aspirin2_8c.html", "modules_2sensors_2imu__aspirin2_8c" ],
     [ "imu_aspirin2.h", "modules_2sensors_2imu__aspirin2_8h.html", "modules_2sensors_2imu__aspirin2_8h" ],
-    [ "imu_ppzuav.c", "imu__ppzuav_8c.html", "imu__ppzuav_8c" ],
-    [ "imu_ppzuav.h", "imu__ppzuav_8h.html", "imu__ppzuav_8h" ],
     [ "infrared_adc.h", "modules_2sensors_2infrared__adc_8h.html", null ],
     [ "infrared_i2c.h", "modules_2sensors_2infrared__i2c_8h.html", null ],
     [ "mag_hmc5843.c", "mag__hmc5843_8c.html", "mag__hmc5843_8c" ],

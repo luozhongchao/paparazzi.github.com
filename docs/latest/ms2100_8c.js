@@ -1,12 +1,13 @@
 var ms2100_8c =
 [
-    [ "ms2100_event", "ms2100_8c.html#ac2445f143caccd1ae1cc65ec78e92e10", null ],
-    [ "ms2100_init", "ms2100_8c.html#afb7a7007f9faecc8810acf64cd97c204", null ],
-    [ "ms2100_read", "ms2100_8c.html#af928ca4aba257b5a6e851e6d0930a68e", null ],
-    [ "ms2100_control_byte", "ms2100_8c.html#ab922a93f4d8c44a3a0dbed71a9a96022", null ],
-    [ "ms2100_cur_axe", "ms2100_8c.html#aeefbe2167ffbe7990ad518d3d7366758", null ],
-    [ "ms2100_status", "ms2100_8c.html#a6bc00c4ab8630dc17d8c0d2793811fff", null ],
-    [ "ms2100_trans", "ms2100_8c.html#ae966096c493a5564ebb9ed97d7906c92", null ],
-    [ "ms2100_val", "ms2100_8c.html#a5924fbd914786d31a0f74f89dd4fc321", null ],
-    [ "ms2100_values", "ms2100_8c.html#a1f40b469ba063a5b3b81ef496dc9156d", null ]
+    [ "Int16FromBuf", "ms2100_8c.html#ae7e949d1dd6f5a5a814fac0cd6936966", null ],
+    [ "MS2100_DIVISOR", "ms2100_8c.html#aa96b4afcd65d895c0beb19d87d69f357", null ],
+    [ "MS2100_DIVISOR_1024", "ms2100_8c.html#ab10d9fb2626e7509b26d1646823e8eea", null ],
+    [ "MS2100_DIVISOR_128", "ms2100_8c.html#a469cbea42a0f4f0762dd5e0f90b24c38", null ],
+    [ "MS2100_DIVISOR_256", "ms2100_8c.html#ab8f21ab2517fa009bac5a34cdb0e1ff1", null ],
+    [ "MS2100_DIVISOR_512", "ms2100_8c.html#a8eb0650122528421861db0102c490b2b", null ],
+    [ "ms2100_event", "ms2100_8c.html#a8673737a1d9906b6fecf14548450668c", null ],
+    [ "ms2100_init", "ms2100_8c.html#abd4a73602ed7661eccacb070eb07896a", null ],
+    [ "ms2100_read", "ms2100_8c.html#adc17005cdb56cddec08160d402d4e420", null ],
+    [ "ms2100", "ms2100_8c.html#a030d0b0b09d4acb5b2bc5d4d53c9d546", null ]
 ];

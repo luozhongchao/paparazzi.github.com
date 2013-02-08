@@ -1,6 +1,7 @@
 var searchData=
 [
   ['g_5fdt',['G_Dt',['../ahrs__float__dcm_8c.html#a8afcaa0b0df0db5ad885df050d994a7f',1,'ahrs_float_dcm.c']]],
+  ['gain',['gain',['../structHmc58xxConfig.html#a86907824abf6570ce4572e912d21cfe0',1,'Hmc58xxConfig']]],
   ['gain_5fidx',['gain_idx',['../stabilization__attitude__quat__float_8c.html#a88471162c0f269059f892bf96fbc7260',1,'stabilization_attitude_quat_float.c']]],
   ['gainlibrary',['gainlibrary',['../gain__scheduling_8c.html#a5b3f2ec9266c8b0bd6d859d5c9790492',1,'gainlibrary():&#160;gain_scheduling.c'],['../gain__scheduling_8h.html#a5b3f2ec9266c8b0bd6d859d5c9790492',1,'gainlibrary():&#160;gain_scheduling.c']]],
   ['gcalstatus',['gCalStatus',['../structCHIMU__PARSER__DATA.html#aef84e707b8e8fbf399dbdbc3fdd4e903',1,'CHIMU_PARSER_DATA']]],
@@ -96,15 +97,16 @@ var searchData=
   ['gv_5fz_5fref',['gv_z_ref',['../guidance__v__ref_8h.html#a61ea35c28ade47f77f09a012aa0f4fe4',1,'guidance_v_ref.h']]],
   ['gv_5fzd_5fref',['gv_zd_ref',['../guidance__v__ref_8h.html#af5b4bf2932d63454e537de13ae5f58f3',1,'guidance_v_ref.h']]],
   ['gv_5fzdd_5fref',['gv_zdd_ref',['../guidance__v__ref_8h.html#a191284ac9220e67a39aff1ddf6c818eb',1,'guidance_v_ref.h']]],
-  ['gyr_5fvalid',['gyr_valid',['../imu__navgo_8c.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_navgo.c'],['../imu__navgo_8h.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_navgo.c'],['../imu__umarim_8c.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_umarim.c'],['../imu__umarim_8h.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_navgo.c'],['../modules_2sensors_2imu__aspirin2_8c.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_aspirin2.c'],['../modules_2sensors_2imu__aspirin2_8h.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_navgo.c'],['../imu__ppzuav_8c.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_ppzuav.c'],['../imu__ppzuav_8h.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_navgo.c']]],
+  ['gyr_5fvalid',['gyr_valid',['../structImuNavgo.html#abe5dfe17c50e12430f6ffa6c14bb51ff',1,'ImuNavgo::gyr_valid()'],['../structImuUmarim.html#aa51a4292791307482666fc2e7ceaf6b9',1,'ImuUmarim::gyr_valid()'],['../imu__umarim_8h.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_aspirin2.c'],['../modules_2sensors_2imu__aspirin2_8c.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_aspirin2.c'],['../modules_2sensors_2imu__aspirin2_8h.html#afbbfe5fb78cd2de203ea88848ed1524d',1,'gyr_valid():&#160;imu_aspirin2.c']]],
   ['gyro',['gyro',['../structVi__imu__info.html#aa6d86a777c2f00a72daa264ddf72b225',1,'Vi_imu_info::gyro()'],['../structImu.html#a556257d57db669a3e42ccc6c77fff286',1,'Imu::gyro()'],['../structImuFloat.html#a1f00019520e4f25f2be4f66832c3f7bd',1,'ImuFloat::gyro()']]],
   ['gyro_5favailable',['gyro_available',['../structImuXsens.html#a94db1d3d9439421cb8406277ae38d472',1,'ImuXsens::gyro_available()'],['../structImuNps.html#acdb60db0f4e817b6bd5b2a0b1d96615b',1,'ImuNps::gyro_available()']]],
-  ['gyro_5favailable_5fblaaa',['gyro_available_blaaa',['../structImuAspirin.html#ab0ac1d858c880dfae7855a492307819a',1,'ImuAspirin']]],
   ['gyro_5fbias',['gyro_bias',['../structAhrsFloatCmpl.html#a0022d20b44e1d701ed8dc0ccda589a2e',1,'AhrsFloatCmpl::gyro_bias()'],['../structAhrsFloatDCM.html#aae8cc61944a9c33bfbc8067f39060ad8',1,'AhrsFloatDCM::gyro_bias()'],['../structAhrsIntCmplEuler.html#a44b547510655944e0ed0c8dbe6651dc1',1,'AhrsIntCmplEuler::gyro_bias()'],['../structAhrsIntCmpl.html#a664ad4d65fdfc251cd2aa7f59ba06f67',1,'AhrsIntCmpl::gyro_bias()']]],
+  ['gyro_5fitg',['gyro_itg',['../structImuAspirin.html#a7a313abc3125cdc8289b06c24ad6b3df',1,'ImuAspirin::gyro_itg()'],['../structImuAspirinI2c.html#a450b49a4cfca7cbe6008834bce5b7b4a',1,'ImuAspirinI2c::gyro_itg()'],['../structImuPpzuav.html#a1bf36a90af8ea5c24cf7a400970f7d3b',1,'ImuPpzuav::gyro_itg()']]],
   ['gyro_5fneutral',['gyro_neutral',['../structImu.html#aa15ae274818b1d781a10f3c3de482900',1,'Imu']]],
   ['gyro_5fprev',['gyro_prev',['../structImu.html#a7ac65ce9270568f68550482ef718678c',1,'Imu::gyro_prev()'],['../structImuFloat.html#a4e6d27e23a43ed68d0618b4832035b72',1,'ImuFloat::gyro_prev()']]],
   ['gyro_5fready_5ffor_5fread',['gyro_ready_for_read',['../lisa__test__aspirin_8c.html#abc4c2308ba5f25c05a3e9649352116ca',1,'gyro_ready_for_read():&#160;lisa_test_aspirin.c'],['../lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca',1,'gyro_ready_for_read():&#160;lisa_test_itg3200.c']]],
   ['gyro_5fstate',['gyro_state',['../lisa__test__itg3200_8c.html#abefa58e269e2b435d5bb95045deea991',1,'lisa_test_itg3200.c']]],
   ['gyro_5fsum',['gyro_sum',['../ahrs__aligner_8c.html#af1cca58ed89c86a319265f768f1b5e40',1,'ahrs_aligner.c']]],
-  ['gyro_5funscaled',['gyro_unscaled',['../structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75',1,'Imu']]]
+  ['gyro_5funscaled',['gyro_unscaled',['../structImu.html#a65a1e2b593c19ba1254060fd9a2f5b75',1,'Imu']]],
+  ['gyro_5fvalid',['gyro_valid',['../structImuAspirin.html#a72b1ee3d51c788c6ef8e78118040e343',1,'ImuAspirin::gyro_valid()'],['../structImuAspirinI2c.html#a240a4dd9316059a095d4849c71c3f057',1,'ImuAspirinI2c::gyro_valid()'],['../structImuPpzuav.html#ab6672851103add91dad7a38c4a00c1b6',1,'ImuPpzuav::gyro_valid()']]]
 ];

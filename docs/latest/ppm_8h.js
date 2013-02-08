@@ -5,6 +5,7 @@ var ppm_8h =
     [ "PPM_PULSE_TYPE_POSITIVE", "ppm_8h.html#a82fe0b5a8e61ca21551ac0a2382c3d13", null ],
     [ "RADIO_CONTROL_NB_CHANNEL", "ppm_8h.html#a1beed9c63b07301d72b3516543545652", null ],
     [ "RadioControlEvent", "ppm_8h.html#a48c5aff514f8ac1ab891bb12b748922b", null ],
+    [ "RssiValid", "ppm_8h.html#aff86239e269183d4e903b962066905e8", null ],
     [ "ppm_arch_init", "ppm_8h.html#aa933c6924c3511448e65fc31e2d26129", null ],
     [ "ppm_cur_pulse", "ppm_8h.html#af8b27ee063d6f72bd69fabb1a9913820", null ],
     [ "ppm_data_valid", "ppm_8h.html#a7dd96af6b908956574fb02bb01513079", null ],

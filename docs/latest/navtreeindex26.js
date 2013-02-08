@@ -1,6 +1,5 @@
 var NAVTREEINDEX26 =
 {
-"jsbsim__gps_8c.html#a1e5ac4a144342a18c18f45efe6196698":[8,0,0,0,0,2,9,1],
 "jsbsim__gps_8c.html#adadf586b1ed35a6d820c57a1107a9a2b":[8,0,0,0,0,2,9,0],
 "jsbsim__gps_8c_source.html":[8,0,0,0,0,2,9],
 "jsbsim__hw_8c.html":[8,0,0,0,0,2,10],
@@ -249,5 +248,6 @@ var NAVTREEINDEX26 =
 "link__mcu__usart_8c.html#ae0f3d22b59d3ccabd6fca1b76f04cea5":[8,0,0,0,22,21],
 "link__mcu__usart_8c.html#ae665b7cbe256183f1a2bcb6bf5400795":[8,0,0,0,22,17],
 "link__mcu__usart_8c.html#ae722e0fce0398661d09fd16516b0157a":[8,0,0,0,22,13],
-"link__mcu__usart_8c.html#aebbc0839e447c2342eff6bfd4011a245":[8,0,0,0,22,12]
+"link__mcu__usart_8c.html#aebbc0839e447c2342eff6bfd4011a245":[8,0,0,0,22,12],
+"link__mcu__usart_8c.html#aec4f6ff46123230012994546ef8f5290":[8,0,0,0,22,24]
 };

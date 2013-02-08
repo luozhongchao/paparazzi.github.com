@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -105,12 +105,14 @@ $(document).ready(function(){initNavTree('hmc58xx_8c.html','');});
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">hmc58xx.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Driver for Honeywell HMC5843 and HMC5883 magnetometers.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="hmc58xx_8h_source.html">peripherals/hmc58xx.h</a>&quot;</code><br/>
 <code>#include &quot;std.h&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -120,114 +122,98 @@ $(document).ready(function(){initNavTree('hmc58xx_8c.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="hmc58xx_8c__incl.png" border="0" usemap="#sw_2airborne_2peripherals_2hmc58xx_8c" alt=""/></div>
 <map name="sw_2airborne_2peripherals_2hmc58xx_8c" id="sw_2airborne_2peripherals_2hmc58xx_8c">
-<area shape="rect" id="node3" href="hmc58xx_8h.html" title="peripherals/hmc58xx.h" alt="" coords="92,101,257,131"/><area shape="rect" id="node7" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="589,256,720,285"/><area shape="rect" id="node14" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="132,179,311,208"/><area shape="rect" id="node17" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="411,256,565,285"/><area shape="rect" id="node23" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="147,256,296,285"/></map>
+<area shape="rect" id="node3" href="hmc58xx_8h.html" title="peripherals/hmc58xx.h" alt="" coords="524,101,689,131"/><area shape="rect" id="node7" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="55,275,185,304"/><area shape="rect" id="node14" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="327,188,505,217"/><area shape="rect" id="node29" href="hmc58xx__regs_8h.html" title="Register defs for Honeywell HMC5843 and HMC5883 magnetometers." alt="" coords="529,179,684,226"/><area shape="rect" id="node17" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="209,275,364,304"/><area shape="rect" id="node23" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="529,275,679,304"/></map>
 </div>
 </div>
 <p><a href="hmc58xx_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:afcefaf6d3c25e7596caa31a3e7fa3f2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#afcefaf6d3c25e7596caa31a3e7fa3f2f">HMC_CONF_UNINIT</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memitem:a084f9988bd73c5494f2dec070a4d0fda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a084f9988bd73c5494f2dec070a4d0fda">HMC_CONF_CRA</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memitem:ad792e7a8c10d4dc2bc66fe96ba7605c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#ad792e7a8c10d4dc2bc66fe96ba7605c9">HMC_CONF_CRB</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memitem:a13820cb31504b5cec19eb6b951fa1211"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a13820cb31504b5cec19eb6b951fa1211">HMC_CONF_MODE</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memitem:ae9e7cc827b91233c35989a8b1d04399d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#ae9e7cc827b91233c35989a8b1d04399d">HMC_CONF_DONE</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memitem:a658376d24165b198b16affb22c6cc387"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a658376d24165b198b16affb22c6cc387">HMC58XX_DEFAULT_DO</a>&#160;&#160;&#160;0x6</td></tr>
+<tr class="memitem:a4b941e1292efc13b3f7b660ea636c1d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a4b941e1292efc13b3f7b660ea636c1d0">HMC58XX_DEFAULT_MS</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="memitem:a035c2f50aad18e10db025c532b0d65ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a035c2f50aad18e10db025c532b0d65ce">HMC58XX_DEFAULT_GN</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="memitem:aa058757dd96b25f4220e3d97465ca0c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#aa058757dd96b25f4220e3d97465ca0c3">HMC58XX_DEFAULT_MD</a>&#160;&#160;&#160;0x0</td></tr>
 <tr class="memitem:ae7e949d1dd6f5a5a814fac0cd6936966"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#ae7e949d1dd6f5a5a814fac0cd6936966">Int16FromBuf</a>(_buf, _idx)&#160;&#160;&#160;((<a class="el" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>)((_buf[_idx]&lt;&lt;8) | _buf[_idx+1]))</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7bc4b0378663330442beb515f4e9cc54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a7bc4b0378663330442beb515f4e9cc54">hmc58xx_init</a> (void)</td></tr>
-<tr class="memitem:a7e515e7c715aa7e726e197cf91c9682d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a7e515e7c715aa7e726e197cf91c9682d">hmc58xx_send_config</a> (void)</td></tr>
-<tr class="memitem:a0759fe531ca1af0b3feb5e9ef6d0b8d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a0759fe531ca1af0b3feb5e9ef6d0b8d3">hmc58xx_configure</a> (void)</td></tr>
-<tr class="memitem:a9ce741ae20e4335027b7ed2a29defade"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a9ce741ae20e4335027b7ed2a29defade">hmc58xx_read</a> (void)</td></tr>
-<tr class="memitem:a5dfc81676df57d6b0bf826e7df04293b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a5dfc81676df57d6b0bf826e7df04293b">hmc58xx_event</a> (void)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aedbd33536aa225bbbac08d08eef6a366"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#aedbd33536aa225bbbac08d08eef6a366">hmc58xx_data_available</a></td></tr>
-<tr class="memitem:ada204971309d505949fd5648d8e35d04"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt16Vect3.html">Int16Vect3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#ada204971309d505949fd5648d8e35d04">hmc58xx_data</a></td></tr>
-<tr class="memitem:ae2b3a0e954ae65a0b55af88c465e2b91"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#ae2b3a0e954ae65a0b55af88c465e2b91">hmc58xx_i2c_trans</a></td></tr>
-<tr class="memitem:abee39ee454bea955d47058ca408f3660"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#abee39ee454bea955d47058ca408f3660">hmc58xx_initialized</a></td></tr>
-<tr class="memitem:a001931b31cad8116187269398e5fe665"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a001931b31cad8116187269398e5fe665">hmc58xx_init_status</a></td></tr>
+<tr class="memitem:a2165794d296c28b9d22eb0490ec3049b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a2165794d296c28b9d22eb0490ec3049b">hmc58xx_set_default_config</a> (struct <a class="el" href="structHmc58xxConfig.html">Hmc58xxConfig</a> *<a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>)</td></tr>
+<tr class="memitem:a1daa9072b668998f936fb469e5c6c515"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a1daa9072b668998f936fb469e5c6c515">hmc58xx_init</a> (struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *hmc, struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *i2c_p, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> addr)</td></tr>
+<tr class="memdesc:a1daa9072b668998f936fb469e5c6c515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <a class="el" href="structHmc58xx.html">Hmc58xx</a> struct and set default config options.  <a href="#a1daa9072b668998f936fb469e5c6c515"></a><br/></td></tr>
+<tr class="memitem:afadf91048494baf761fa6cf8fda062d9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9">hmc58xx_i2c_tx_reg</a> (struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *hmc, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> reg, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>)</td></tr>
+<tr class="memitem:a2eff0c407b139d17a73bf75a611c32cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb">hmc58xx_send_config</a> (struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *hmc)</td></tr>
+<tr class="memdesc:a2eff0c407b139d17a73bf75a611c32cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration function called once before normal use.  <a href="#a2eff0c407b139d17a73bf75a611c32cb"></a><br/></td></tr>
+<tr class="memitem:a89a7b5456b1a87c83aef85779c4fc5e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a89a7b5456b1a87c83aef85779c4fc5e9">hmc58xx_start_configure</a> (struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *hmc)</td></tr>
+<tr class="memitem:a883e49acd3049ead17c6c29a3b020c72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a883e49acd3049ead17c6c29a3b020c72">hmc58xx_read</a> (struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *hmc)</td></tr>
+<tr class="memitem:a6514a605dad1e4bb5664bf885cca676b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmc58xx_8c.html#a6514a605dad1e4bb5664bf885cca676b">hmc58xx_event</a> (struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *hmc)</td></tr>
 </table>
-<h2>Macro Definition Documentation</h2>
-<a class="anchor" id="a084f9988bd73c5494f2dec070a4d0fda"></a>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Driver for Honeywell HMC5843 and HMC5883 magnetometers. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>DRDY/IRQ handling </dd></dl>
+
+<p>Definition in file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+</div><h2>Macro Definition Documentation</h2>
+<a class="anchor" id="a658376d24165b198b16affb22c6cc387"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HMC_CONF_CRA&#160;&#160;&#160;1</td>
+          <td class="memname">#define HMC58XX_DEFAULT_DO&#160;&#160;&#160;0x6</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00030">30</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00036">36</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
 
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00057">hmc58xx_send_config()</a>.</p>
+<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_set_default_config()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad792e7a8c10d4dc2bc66fe96ba7605c9"></a>
+<a class="anchor" id="a035c2f50aad18e10db025c532b0d65ce"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HMC_CONF_CRB&#160;&#160;&#160;2</td>
+          <td class="memname">#define HMC58XX_DEFAULT_GN&#160;&#160;&#160;0x1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00031">31</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00042">42</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
 
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00057">hmc58xx_send_config()</a>.</p>
+<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_set_default_config()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae9e7cc827b91233c35989a8b1d04399d"></a>
+<a class="anchor" id="aa058757dd96b25f4220e3d97465ca0c3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HMC_CONF_DONE&#160;&#160;&#160;4</td>
+          <td class="memname">#define HMC58XX_DEFAULT_MD&#160;&#160;&#160;0x0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00033">33</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00045">45</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
 
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00057">hmc58xx_send_config()</a>.</p>
+<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_set_default_config()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a13820cb31504b5cec19eb6b951fa1211"></a>
+<a class="anchor" id="a4b941e1292efc13b3f7b660ea636c1d0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HMC_CONF_MODE&#160;&#160;&#160;3</td>
+          <td class="memname">#define HMC58XX_DEFAULT_MS&#160;&#160;&#160;0x0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00032">32</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00039">39</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
 
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00057">hmc58xx_send_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afcefaf6d3c25e7596caa31a3e7fa3f2f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define HMC_CONF_UNINIT&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00029">29</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
-
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00088">hmc58xx_configure()</a>, <a class="el" href="hmc58xx_8c_source.html#l00109">hmc58xx_event()</a>, and <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_init()</a>.</p>
+<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_set_default_config()</a>.</p>
 
 </div>
 </div>
@@ -255,142 +241,240 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00107">107</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00134">134</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
 
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00109">hmc58xx_event()</a>.</p>
+<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00136">hmc58xx_event()</a>.</p>
 
 </div>
 </div>
 <h2>Function Documentation</h2>
-<a class="anchor" id="a0759fe531ca1af0b3feb5e9ef6d0b8d3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void hmc58xx_configure </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00088">88</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
-
-<p>References <a class="el" href="hmc58xx_8c_source.html#l00041">hmc58xx_i2c_trans</a>, <a class="el" href="hmc58xx_8c_source.html#l00044">hmc58xx_init_status</a>, <a class="el" href="hmc58xx_8c_source.html#l00057">hmc58xx_send_config()</a>, <a class="el" href="hmc58xx_8c_source.html#l00029">HMC_CONF_UNINIT</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
-
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="hmc58xx_8c_a0759fe531ca1af0b3feb5e9ef6d0b8d3_cgraph.png" border="0" usemap="#hmc58xx_8c_a0759fe531ca1af0b3feb5e9ef6d0b8d3_cgraph" alt=""/></div>
-<map name="hmc58xx_8c_a0759fe531ca1af0b3feb5e9ef6d0b8d3_cgraph" id="hmc58xx_8c_a0759fe531ca1af0b3feb5e9ef6d0b8d3_cgraph">
-<area shape="rect" id="node3" href="hmc58xx_8c.html#a7e515e7c715aa7e726e197cf91c9682d" title="hmc58xx_send_config" alt="" coords="200,5,363,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a5dfc81676df57d6b0bf826e7df04293b"></a>
+<a class="anchor" id="a6514a605dad1e4bb5664bf885cca676b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void hmc58xx_event </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *&#160;</td>
+          <td class="paramname"><em>hmc</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00109">109</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00136">136</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="hmc58xx_8c_source.html#l00039">hmc58xx_data</a>, <a class="el" href="hmc58xx_8c_source.html#l00037">hmc58xx_data_available</a>, <a class="el" href="hmc58xx_8c_source.html#l00041">hmc58xx_i2c_trans</a>, <a class="el" href="hmc58xx_8c_source.html#l00044">hmc58xx_init_status</a>, <a class="el" href="hmc58xx_8c_source.html#l00043">hmc58xx_initialized</a>, <a class="el" href="hmc58xx_8c_source.html#l00057">hmc58xx_send_config()</a>, <a class="el" href="hmc58xx_8c_source.html#l00029">HMC_CONF_UNINIT</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00054">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="hmc58xx_8c_source.html#l00107">Int16FromBuf</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00046">Int16Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00047">Int16Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00048">Int16Vect3::z</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="structHmc58xx.html#a6f09ee91bf8521fd28a892f02d84a2e0">Hmc58xx::data</a>, <a class="el" href="hmc58xx_8h_source.html#l00065">Hmc58xx::data_available</a>, <a class="el" href="hmc58xx_8c_source.html#l00087">hmc58xx_send_config()</a>, <a class="el" href="hmc58xx_8h_source.html#l00048">HMC_CONF_UNINIT</a>, <a class="el" href="hmc58xx_8h_source.html#l00056">HMC_TYPE_5843</a>, <a class="el" href="hmc58xx_8h_source.html#l00062">Hmc58xx::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00054">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="hmc58xx_8h_source.html#l00064">Hmc58xx::init_status</a>, <a class="el" href="hmc58xx_8h_source.html#l00063">Hmc58xx::initialized</a>, <a class="el" href="hmc58xx_8c_source.html#l00134">Int16FromBuf</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="hmc58xx_8h_source.html#l00071">Hmc58xx::type</a>, <a class="el" href="hmc58xx_8h_source.html#l00067">Hmc58xx::vect</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00046">Int16Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00047">Int16Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00048">Int16Vect3::z</a>.</p>
 
-<p>Referenced by <a class="el" href="imu__navgo_8c_source.html#l00107">imu_navgo_event()</a>.</p>
+<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00127">imu_aspirin_event()</a>, <a class="el" href="imu__aspirin__i2c_8c_source.html#l00129">imu_aspirin_i2c_event()</a>, <a class="el" href="imu__navgo_8c_source.html#l00111">imu_navgo_event()</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00115">imu_ppzuav_event()</a>, and <a class="el" href="mag__hmc58xx_8c_source.html#l00047">mag_hmc58xx_module_event()</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a6514a605dad1e4bb5664bf885cca676b_cgraph.png" border="0" usemap="#hmc58xx_8c_a6514a605dad1e4bb5664bf885cca676b_cgraph" alt=""/></div>
+<map name="hmc58xx_8c_a6514a605dad1e4bb5664bf885cca676b_cgraph" id="hmc58xx_8c_a6514a605dad1e4bb5664bf885cca676b_cgraph">
+<area shape="rect" id="node3" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb" title="Configuration function called once before normal use." alt="" coords="176,5,339,35"/><area shape="rect" id="node5" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9" title="hmc58xx_i2c_tx_reg" alt="" coords="387,5,539,35"/><area shape="rect" id="node7" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="587,5,677,35"/></map>
+</div>
+</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="hmc58xx_8c_a5dfc81676df57d6b0bf826e7df04293b_cgraph.png" border="0" usemap="#hmc58xx_8c_a5dfc81676df57d6b0bf826e7df04293b_cgraph" alt=""/></div>
-<map name="hmc58xx_8c_a5dfc81676df57d6b0bf826e7df04293b_cgraph" id="hmc58xx_8c_a5dfc81676df57d6b0bf826e7df04293b_cgraph">
-<area shape="rect" id="node3" href="hmc58xx_8c.html#a7e515e7c715aa7e726e197cf91c9682d" title="hmc58xx_send_config" alt="" coords="176,5,339,35"/></map>
+<div class="center"><img src="hmc58xx_8c_a6514a605dad1e4bb5664bf885cca676b_icgraph.png" border="0" usemap="#hmc58xx_8c_a6514a605dad1e4bb5664bf885cca676b_icgraph" alt=""/></div>
+<map name="hmc58xx_8c_a6514a605dad1e4bb5664bf885cca676b_icgraph" id="hmc58xx_8c_a6514a605dad1e4bb5664bf885cca676b_icgraph">
+<area shape="rect" id="node3" href="imu__aspirin_8h.html#aa229c37c4339ad08d83c4d72f30a1fd5" title="imu_aspirin_event" alt="" coords="192,5,331,35"/><area shape="rect" id="node7" href="imu__aspirin__i2c_8h.html#a6369e8522e39224b5076e7837c0032f2" title="imu_aspirin_i2c_event" alt="" coords="180,59,343,88"/><area shape="rect" id="node11" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="195,112,328,141"/><area shape="rect" id="node15" href="imu__ppzuav_8h.html#a51ff6c245630bbf2701dc550ce24ef23" title="imu_ppzuav_event" alt="" coords="191,165,332,195"/><area shape="rect" id="node19" href="mag__hmc58xx_8h.html#a6e8146871b55ac8c4d4353e3aa95e8cb" title="mag_hmc58xx_module\l_event" alt="" coords="176,218,347,265"/><area shape="rect" id="node5" href="imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="395,5,477,35"/><area shape="rect" id="node9" href="imu__aspirin__i2c_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="395,59,477,88"/><area shape="rect" id="node13" href="imu__navgo_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="395,112,477,141"/><area shape="rect" id="node17" href="imu__ppzuav_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="395,165,477,195"/></map>
 </div>
 </p>
 
+</div>
+</div>
+<a class="anchor" id="afadf91048494baf761fa6cf8fda062d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void hmc58xx_i2c_tx_reg </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *&#160;</td>
+          <td class="paramname"><em>hmc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00076">76</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="hmc58xx_8h_source.html#l00061">Hmc58xx::i2c_p</a>, <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00333">i2c_submit()</a>, <a class="el" href="hmc58xx_8h_source.html#l00062">Hmc58xx::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00045">I2CTransTx</a>, <a class="el" href="i2c_8h_source.html#l00080">i2c_transaction::len_r</a>, <a class="el" href="i2c_8h_source.html#l00081">i2c_transaction::len_w</a>, <a class="el" href="i2c_8h_source.html#l00078">i2c_transaction::type</a>, and <a class="el" href="temp__tcouple__adc_8c_source.html#l00052">val</a>.</p>
+
+<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00087">hmc58xx_send_config()</a>.</p>
+
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="hmc58xx_8c_a5dfc81676df57d6b0bf826e7df04293b_icgraph.png" border="0" usemap="#hmc58xx_8c_a5dfc81676df57d6b0bf826e7df04293b_icgraph" alt=""/></div>
-<map name="hmc58xx_8c_a5dfc81676df57d6b0bf826e7df04293b_icgraph" id="hmc58xx_8c_a5dfc81676df57d6b0bf826e7df04293b_icgraph">
-<area shape="rect" id="node3" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="177,5,311,35"/></map>
+<div class="center"><img src="hmc58xx_8c_afadf91048494baf761fa6cf8fda062d9_cgraph.png" border="0" usemap="#hmc58xx_8c_afadf91048494baf761fa6cf8fda062d9_cgraph" alt=""/></div>
+<map name="hmc58xx_8c_afadf91048494baf761fa6cf8fda062d9_cgraph" id="hmc58xx_8c_afadf91048494baf761fa6cf8fda062d9_cgraph">
+<area shape="rect" id="node3" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="205,5,296,35"/></map>
 </div>
 </p>
-
-</div>
-</div>
-<a class="anchor" id="a7bc4b0378663330442beb515f4e9cc54"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void hmc58xx_init </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00048">48</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
-
-<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="hmc58xx_8h_source.html#l00034">HMC58XX_ADDR</a>, <a class="el" href="hmc58xx_8c_source.html#l00041">hmc58xx_i2c_trans</a>, <a class="el" href="hmc58xx_8c_source.html#l00044">hmc58xx_init_status</a>, <a class="el" href="hmc58xx_8c_source.html#l00043">hmc58xx_initialized</a>, <a class="el" href="hmc58xx_8c_source.html#l00029">HMC_CONF_UNINIT</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00079">i2c_transaction::slave_addr</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__navgo_8c_source.html#l00062">imu_impl_init()</a>.</p>
 
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="hmc58xx_8c_a7bc4b0378663330442beb515f4e9cc54_icgraph.png" border="0" usemap="#hmc58xx_8c_a7bc4b0378663330442beb515f4e9cc54_icgraph" alt=""/></div>
-<map name="hmc58xx_8c_a7bc4b0378663330442beb515f4e9cc54_icgraph" id="hmc58xx_8c_a7bc4b0378663330442beb515f4e9cc54_icgraph">
-<area shape="rect" id="node3" href="imu_8h.html#ad32faae58e391642ec8048cb11011998" title="imu_impl_init" alt="" coords="160,32,267,61"/><area shape="rect" id="node5" href="imu_8h.html#a86a06fe7a9831292bd92867da2d12f80" title="imu_init" alt="" coords="315,32,387,61"/><area shape="rect" id="node7" href="main_8h.html#a092df25ac46a6a4ca72c023d8821f9b2" title="main_init" alt="" coords="435,5,515,35"/><area shape="rect" id="node9" href="main__ap_8h.html#a0913f0248fbbe56a5ec65e10e36c9f30" title="init_ap" alt="" coords="443,59,507,88"/><area shape="rect" id="node11" href="sim__ap_8c.html#a739fbef2e03619a863b4d7fd8d0da157" title="sim_init" alt="" coords="564,59,633,88"/></map>
+<div class="center"><img src="hmc58xx_8c_afadf91048494baf761fa6cf8fda062d9_icgraph.png" border="0" usemap="#hmc58xx_8c_afadf91048494baf761fa6cf8fda062d9_icgraph" alt=""/></div>
+<map name="hmc58xx_8c_afadf91048494baf761fa6cf8fda062d9_icgraph" id="hmc58xx_8c_afadf91048494baf761fa6cf8fda062d9_icgraph">
+<area shape="rect" id="node3" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb" title="Configuration function called once before normal use." alt="" coords="205,279,368,308"/><area shape="rect" id="node5" href="hmc58xx_8h.html#a89a7b5456b1a87c83aef85779c4fc5e9" title="hmc58xx_start_configure" alt="" coords="417,220,599,249"/><area shape="rect" id="node31" href="hmc58xx_8h.html#a6514a605dad1e4bb5664bf885cca676b" title="hmc58xx_event" alt="" coords="447,336,569,365"/><area shape="rect" id="node7" href="hmc58xx_8h.html#a353064a5a9c6b47a14f4b9543545b4ec" title="convenience function: read or start configuration if not already initialized" alt="" coords="665,187,801,216"/><area shape="rect" id="node9" href="imu_8h.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="901,125,1003,155"/><area shape="rect" id="node29" href="mag__hmc58xx_8h.html#a2e48d1806ea88022ff1f1c8b01b53f42" title="mag_hmc58xx_module\l_periodic" alt="" coords="867,178,1037,225"/><area shape="rect" id="node11" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="1104,59,1213,88"/><area shape="rect" id="node19" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="1105,125,1212,155"/><area shape="rect" id="node25" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="1087,205,1231,235"/><area shape="rect" id="node13" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="1292,5,1455,35"/><area shape="rect" id="node17" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1347,59,1400,88"/><area shape="rect" id="node15" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1516,5,1569,35"/><area shape="rect" id="node21" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="1280,112,1467,141"/><area shape="rect" id="node23" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="1305,165,1441,195"/><area shape="rect" id="node27" href="hs__gyro_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1347,219,1400,248"/><area shape="rect" id="node33" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="667,244,800,273"/><area shape="rect" id="node37" href="mag__hmc58xx_8h.html#a6e8146871b55ac8c4d4353e3aa95e8cb" title="mag_hmc58xx_module\l_event" alt="" coords="648,297,819,343"/><area shape="rect" id="node39" href="imu__aspirin_8h.html#aa229c37c4339ad08d83c4d72f30a1fd5" title="imu_aspirin_event" alt="" coords="664,367,803,396"/><area shape="rect" id="node43" href="imu__aspirin__i2c_8h.html#a6369e8522e39224b5076e7837c0032f2" title="imu_aspirin_i2c_event" alt="" coords="652,420,815,449"/><area shape="rect" id="node47" href="imu__ppzuav_8h.html#a51ff6c245630bbf2701dc550ce24ef23" title="imu_ppzuav_event" alt="" coords="663,473,804,503"/><area shape="rect" id="node35" href="imu__navgo_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="911,248,993,277"/><area shape="rect" id="node41" href="imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="911,367,993,396"/><area shape="rect" id="node45" href="imu__aspirin__i2c_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="911,420,993,449"/><area shape="rect" id="node49" href="imu__ppzuav_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="911,473,993,503"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a9ce741ae20e4335027b7ed2a29defade"></a>
+<a class="anchor" id="a1daa9072b668998f936fb469e5c6c515"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hmc58xx_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *&#160;</td>
+          <td class="paramname"><em>hmc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *&#160;</td>
+          <td class="paramname"><em>i2c_p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize <a class="el" href="structHmc58xx.html">Hmc58xx</a> struct and set default config options. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hmc</td><td><a class="el" href="structHmc58xx.html">Hmc58xx</a> struct </td></tr>
+    <tr><td class="paramname">i2c_p</td><td>I2C periperal to use </td></tr>
+    <tr><td class="paramname">addr</td><td>I2C address of HMC58xx </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00062">62</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+
+<p>References <a class="el" href="hmc58xx_8h_source.html#l00070">Hmc58xx::config</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_set_default_config()</a>, <a class="el" href="hmc58xx_8h_source.html#l00048">HMC_CONF_UNINIT</a>, <a class="el" href="hmc58xx_8h_source.html#l00057">HMC_TYPE_5883</a>, <a class="el" href="hmc58xx_8h_source.html#l00061">Hmc58xx::i2c_p</a>, <a class="el" href="hmc58xx_8h_source.html#l00062">Hmc58xx::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="hmc58xx_8h_source.html#l00064">Hmc58xx::init_status</a>, <a class="el" href="hmc58xx_8h_source.html#l00063">Hmc58xx::initialized</a>, <a class="el" href="i2c_8h_source.html#l00079">i2c_transaction::slave_addr</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="hmc58xx_8h_source.html#l00071">Hmc58xx::type</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__navgo_8c_source.html#l00057">imu_impl_init()</a>, and <a class="el" href="mag__hmc58xx_8c_source.html#l00039">mag_hmc58xx_module_init()</a>.</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a1daa9072b668998f936fb469e5c6c515_cgraph.png" border="0" usemap="#hmc58xx_8c_a1daa9072b668998f936fb469e5c6c515_cgraph" alt=""/></div>
+<map name="hmc58xx_8c_a1daa9072b668998f936fb469e5c6c515_cgraph" id="hmc58xx_8c_a1daa9072b668998f936fb469e5c6c515_cgraph">
+<area shape="rect" id="node3" href="hmc58xx_8c.html#a2165794d296c28b9d22eb0490ec3049b" title="hmc58xx_set_default\l_config" alt="" coords="161,5,319,51"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a1daa9072b668998f936fb469e5c6c515_icgraph.png" border="0" usemap="#hmc58xx_8c_a1daa9072b668998f936fb469e5c6c515_icgraph" alt=""/></div>
+<map name="hmc58xx_8c_a1daa9072b668998f936fb469e5c6c515_icgraph" id="hmc58xx_8c_a1daa9072b668998f936fb469e5c6c515_icgraph">
+<area shape="rect" id="node3" href="imu_8h.html#ad32faae58e391642ec8048cb11011998" title="imu_impl_init" alt="" coords="205,32,312,61"/><area shape="rect" id="node13" href="mag__hmc58xx_8h.html#a90faf068c63090984e7b7cc057390107" title="mag_hmc58xx_module_init" alt="" coords="160,85,357,115"/><area shape="rect" id="node5" href="imu_8h.html#a86a06fe7a9831292bd92867da2d12f80" title="imu_init" alt="" coords="405,32,477,61"/><area shape="rect" id="node7" href="main_8h.html#a092df25ac46a6a4ca72c023d8821f9b2" title="main_init" alt="" coords="525,5,605,35"/><area shape="rect" id="node9" href="main__ap_8h.html#a0913f0248fbbe56a5ec65e10e36c9f30" title="init_ap" alt="" coords="533,59,597,88"/><area shape="rect" id="node11" href="sim__ap_8c.html#a739fbef2e03619a863b4d7fd8d0da157" title="sim_init" alt="" coords="655,59,724,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a883e49acd3049ead17c6c29a3b020c72"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void hmc58xx_read </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *&#160;</td>
+          <td class="paramname"><em>hmc</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00099">99</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00123">123</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="hmc58xx_8h_source.html#l00034">HMC58XX_ADDR</a>, <a class="el" href="hmc58xx_8h_source.html#l00070">HMC58XX_I2C_DEVICE</a>, <a class="el" href="hmc58xx_8c_source.html#l00041">hmc58xx_i2c_trans</a>, <a class="el" href="hmc58xx_8c_source.html#l00043">hmc58xx_initialized</a>, <a class="el" href="hmc58xx_8h_source.html#l00040">HMC58XX_REG_DATXM</a>, <a class="el" href="i2c_8h_source.html#l00192">I2CTransceive</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="hmc58xx__regs_8h_source.html#l00037">HMC58XX_REG_DATXM</a>, <a class="el" href="hmc58xx_8h_source.html#l00061">Hmc58xx::i2c_p</a>, <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00333">i2c_submit()</a>, <a class="el" href="hmc58xx_8h_source.html#l00062">Hmc58xx::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00047">I2CTransTxRx</a>, <a class="el" href="hmc58xx_8h_source.html#l00063">Hmc58xx::initialized</a>, <a class="el" href="i2c_8h_source.html#l00080">i2c_transaction::len_r</a>, <a class="el" href="i2c_8h_source.html#l00081">i2c_transaction::len_w</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="i2c_8h_source.html#l00078">i2c_transaction::type</a>.</p>
+
+<p>Referenced by <a class="el" href="hmc58xx_8h_source.html#l00084">hmc58xx_periodic()</a>.</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a883e49acd3049ead17c6c29a3b020c72_cgraph.png" border="0" usemap="#hmc58xx_8c_a883e49acd3049ead17c6c29a3b020c72_cgraph" alt=""/></div>
+<map name="hmc58xx_8c_a883e49acd3049ead17c6c29a3b020c72_cgraph" id="hmc58xx_8c_a883e49acd3049ead17c6c29a3b020c72_cgraph">
+<area shape="rect" id="node3" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="171,5,261,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a883e49acd3049ead17c6c29a3b020c72_icgraph.png" border="0" usemap="#hmc58xx_8c_a883e49acd3049ead17c6c29a3b020c72_icgraph" alt=""/></div>
+<map name="hmc58xx_8c_a883e49acd3049ead17c6c29a3b020c72_icgraph" id="hmc58xx_8c_a883e49acd3049ead17c6c29a3b020c72_icgraph">
+<area shape="rect" id="node3" href="hmc58xx_8h.html#a353064a5a9c6b47a14f4b9543545b4ec" title="convenience function: read or start configuration if not already initialized" alt="" coords="172,156,308,185"/><area shape="rect" id="node5" href="imu_8h.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="392,125,493,155"/><area shape="rect" id="node25" href="mag__hmc58xx_8h.html#a2e48d1806ea88022ff1f1c8b01b53f42" title="mag_hmc58xx_module\l_periodic" alt="" coords="357,178,528,225"/><area shape="rect" id="node7" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="595,59,704,88"/><area shape="rect" id="node15" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="596,125,703,155"/><area shape="rect" id="node21" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="577,205,721,235"/><area shape="rect" id="node9" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="783,5,945,35"/><area shape="rect" id="node13" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="837,59,891,88"/><area shape="rect" id="node11" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1007,5,1060,35"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="771,112,957,141"/><area shape="rect" id="node19" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="796,165,932,195"/><area shape="rect" id="node23" href="hs__gyro_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="837,219,891,248"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a7e515e7c715aa7e726e197cf91c9682d"></a>
+<a class="anchor" id="a2eff0c407b139d17a73bf75a611c32cb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -400,8 +484,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void hmc58xx_send_config </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *&#160;</td>
+          <td class="paramname"><em>hmc</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -412,103 +496,120 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00057">57</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+<p>Configuration function called once before normal use. </p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="hmc58xx_8h_source.html#l00034">HMC58XX_ADDR</a>, <a class="el" href="hmc58xx_8h_source.html#l00065">HMC58XX_CRA</a>, <a class="el" href="hmc58xx_8h_source.html#l00066">HMC58XX_CRB</a>, <a class="el" href="hmc58xx_8h_source.html#l00070">HMC58XX_I2C_DEVICE</a>, <a class="el" href="hmc58xx_8c_source.html#l00041">hmc58xx_i2c_trans</a>, <a class="el" href="hmc58xx_8c_source.html#l00044">hmc58xx_init_status</a>, <a class="el" href="hmc58xx_8c_source.html#l00043">hmc58xx_initialized</a>, <a class="el" href="hmc58xx_8h_source.html#l00062">HMC58XX_MD</a>, <a class="el" href="hmc58xx_8h_source.html#l00037">HMC58XX_REG_CFGA</a>, <a class="el" href="hmc58xx_8h_source.html#l00038">HMC58XX_REG_CFGB</a>, <a class="el" href="hmc58xx_8h_source.html#l00039">HMC58XX_REG_MODE</a>, <a class="el" href="hmc58xx_8c_source.html#l00030">HMC_CONF_CRA</a>, <a class="el" href="hmc58xx_8c_source.html#l00031">HMC_CONF_CRB</a>, <a class="el" href="hmc58xx_8c_source.html#l00033">HMC_CONF_DONE</a>, <a class="el" href="hmc58xx_8c_source.html#l00032">HMC_CONF_MODE</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00184">I2CTransmit</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00087">87</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
 
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00088">hmc58xx_configure()</a>, and <a class="el" href="hmc58xx_8c_source.html#l00109">hmc58xx_event()</a>.</p>
+<p>References <a class="el" href="hmc58xx_8h_source.html#l00070">Hmc58xx::config</a>, <a class="el" href="hmc58xx_8h_source.html#l00042">Hmc58xxConfig::gain</a>, <a class="el" href="hmc58xx_8c_source.html#l00076">hmc58xx_i2c_tx_reg()</a>, <a class="el" href="hmc58xx__regs_8h_source.html#l00034">HMC58XX_REG_CFGA</a>, <a class="el" href="hmc58xx__regs_8h_source.html#l00035">HMC58XX_REG_CFGB</a>, <a class="el" href="hmc58xx__regs_8h_source.html#l00036">HMC58XX_REG_MODE</a>, <a class="el" href="hmc58xx_8h_source.html#l00049">HMC_CONF_CRA</a>, <a class="el" href="hmc58xx_8h_source.html#l00050">HMC_CONF_CRB</a>, <a class="el" href="hmc58xx_8h_source.html#l00052">HMC_CONF_DONE</a>, <a class="el" href="hmc58xx_8h_source.html#l00051">HMC_CONF_MODE</a>, <a class="el" href="hmc58xx_8h_source.html#l00062">Hmc58xx::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="hmc58xx_8h_source.html#l00064">Hmc58xx::init_status</a>, <a class="el" href="hmc58xx_8h_source.html#l00063">Hmc58xx::initialized</a>, <a class="el" href="hmc58xx_8h_source.html#l00041">Hmc58xxConfig::meas</a>, <a class="el" href="hmc58xx_8h_source.html#l00043">Hmc58xxConfig::mode</a>, <a class="el" href="hmc58xx_8h_source.html#l00040">Hmc58xxConfig::rate</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00136">hmc58xx_event()</a>, and <a class="el" href="hmc58xx_8c_source.html#l00112">hmc58xx_start_configure()</a>.</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="hmc58xx_8c_a7e515e7c715aa7e726e197cf91c9682d_icgraph.png" border="0" usemap="#hmc58xx_8c_a7e515e7c715aa7e726e197cf91c9682d_icgraph" alt=""/></div>
-<map name="hmc58xx_8c_a7e515e7c715aa7e726e197cf91c9682d_icgraph" id="hmc58xx_8c_a7e515e7c715aa7e726e197cf91c9682d_icgraph">
-<area shape="rect" id="node3" href="hmc58xx_8h.html#a0759fe531ca1af0b3feb5e9ef6d0b8d3" title="hmc58xx_configure" alt="" coords="216,5,363,35"/><area shape="rect" id="node5" href="hmc58xx_8h.html#a5dfc81676df57d6b0bf826e7df04293b" title="hmc58xx_event" alt="" coords="228,59,351,88"/><area shape="rect" id="node7" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="412,59,545,88"/></map>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a2eff0c407b139d17a73bf75a611c32cb_cgraph.png" border="0" usemap="#hmc58xx_8c_a2eff0c407b139d17a73bf75a611c32cb_cgraph" alt=""/></div>
+<map name="hmc58xx_8c_a2eff0c407b139d17a73bf75a611c32cb_cgraph" id="hmc58xx_8c_a2eff0c407b139d17a73bf75a611c32cb_cgraph">
+<area shape="rect" id="node3" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9" title="hmc58xx_i2c_tx_reg" alt="" coords="216,5,368,35"/><area shape="rect" id="node5" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="416,5,507,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a2eff0c407b139d17a73bf75a611c32cb_icgraph.png" border="0" usemap="#hmc58xx_8c_a2eff0c407b139d17a73bf75a611c32cb_icgraph" alt=""/></div>
+<map name="hmc58xx_8c_a2eff0c407b139d17a73bf75a611c32cb_icgraph" id="hmc58xx_8c_a2eff0c407b139d17a73bf75a611c32cb_icgraph">
+<area shape="rect" id="node3" href="hmc58xx_8h.html#a6514a605dad1e4bb5664bf885cca676b" title="hmc58xx_event" alt="" coords="247,155,369,184"/><area shape="rect" id="node23" href="hmc58xx_8h.html#a89a7b5456b1a87c83aef85779c4fc5e9" title="hmc58xx_start_configure" alt="" coords="217,261,399,291"/><area shape="rect" id="node5" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="467,5,600,35"/><area shape="rect" id="node9" href="mag__hmc58xx_8h.html#a6e8146871b55ac8c4d4353e3aa95e8cb" title="mag_hmc58xx_module\l_event" alt="" coords="448,58,619,105"/><area shape="rect" id="node11" href="imu__aspirin_8h.html#aa229c37c4339ad08d83c4d72f30a1fd5" title="imu_aspirin_event" alt="" coords="464,128,603,157"/><area shape="rect" id="node15" href="imu__aspirin__i2c_8h.html#a6369e8522e39224b5076e7837c0032f2" title="imu_aspirin_i2c_event" alt="" coords="452,181,615,211"/><area shape="rect" id="node19" href="imu__ppzuav_8h.html#a51ff6c245630bbf2701dc550ce24ef23" title="imu_ppzuav_event" alt="" coords="463,235,604,264"/><area shape="rect" id="node7" href="imu__navgo_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="711,5,793,35"/><area shape="rect" id="node13" href="imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="711,128,793,157"/><area shape="rect" id="node17" href="imu__aspirin__i2c_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="711,181,793,211"/><area shape="rect" id="node21" href="imu__ppzuav_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="711,235,793,264"/><area shape="rect" id="node25" href="hmc58xx_8h.html#a353064a5a9c6b47a14f4b9543545b4ec" title="convenience function: read or start configuration if not already initialized" alt="" coords="465,288,601,317"/><area shape="rect" id="node27" href="imu_8h.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="701,288,803,317"/><area shape="rect" id="node47" href="mag__hmc58xx_8h.html#a2e48d1806ea88022ff1f1c8b01b53f42" title="mag_hmc58xx_module\l_periodic" alt="" coords="667,341,837,387"/><area shape="rect" id="node29" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="904,221,1013,251"/><area shape="rect" id="node37" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="905,288,1012,317"/><area shape="rect" id="node43" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="887,368,1031,397"/><area shape="rect" id="node31" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="1092,168,1255,197"/><area shape="rect" id="node35" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1147,221,1200,251"/><area shape="rect" id="node33" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1316,168,1369,197"/><area shape="rect" id="node39" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="1080,275,1267,304"/><area shape="rect" id="node41" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="1105,328,1241,357"/><area shape="rect" id="node45" href="hs__gyro_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1147,381,1200,411"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<h2>Variable Documentation</h2>
-<a class="anchor" id="ada204971309d505949fd5648d8e35d04"></a>
+<a class="anchor" id="a2165794d296c28b9d22eb0490ec3049b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void hmc58xx_set_default_config </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structHmc58xxConfig.html">Hmc58xxConfig</a> *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00048">48</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+
+<p>References <a class="el" href="hmc58xx_8h_source.html#l00042">Hmc58xxConfig::gain</a>, <a class="el" href="hmc58xx_8c_source.html#l00036">HMC58XX_DEFAULT_DO</a>, <a class="el" href="hmc58xx_8c_source.html#l00042">HMC58XX_DEFAULT_GN</a>, <a class="el" href="hmc58xx_8c_source.html#l00045">HMC58XX_DEFAULT_MD</a>, <a class="el" href="hmc58xx_8c_source.html#l00039">HMC58XX_DEFAULT_MS</a>, <a class="el" href="hmc58xx_8h_source.html#l00041">Hmc58xxConfig::meas</a>, <a class="el" href="hmc58xx_8h_source.html#l00043">Hmc58xxConfig::mode</a>, and <a class="el" href="hmc58xx_8h_source.html#l00040">Hmc58xxConfig::rate</a>.</p>
+
+<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00062">hmc58xx_init()</a>.</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a2165794d296c28b9d22eb0490ec3049b_icgraph.png" border="0" usemap="#hmc58xx_8c_a2165794d296c28b9d22eb0490ec3049b_icgraph" alt=""/></div>
+<map name="hmc58xx_8c_a2165794d296c28b9d22eb0490ec3049b_icgraph" id="hmc58xx_8c_a2165794d296c28b9d22eb0490ec3049b_icgraph">
+<area shape="rect" id="node3" href="hmc58xx_8h.html#a1daa9072b668998f936fb469e5c6c515" title="Initialize Hmc58xx struct and set default config options." alt="" coords="213,59,320,88"/><area shape="rect" id="node5" href="imu_8h.html#ad32faae58e391642ec8048cb11011998" title="imu_impl_init" alt="" coords="413,32,520,61"/><area shape="rect" id="node15" href="mag__hmc58xx_8h.html#a90faf068c63090984e7b7cc057390107" title="mag_hmc58xx_module_init" alt="" coords="368,85,565,115"/><area shape="rect" id="node7" href="imu_8h.html#a86a06fe7a9831292bd92867da2d12f80" title="imu_init" alt="" coords="613,32,685,61"/><area shape="rect" id="node9" href="main_8h.html#a092df25ac46a6a4ca72c023d8821f9b2" title="main_init" alt="" coords="733,5,813,35"/><area shape="rect" id="node11" href="main__ap_8h.html#a0913f0248fbbe56a5ec65e10e36c9f30" title="init_ap" alt="" coords="741,59,805,88"/><area shape="rect" id="node13" href="sim__ap_8c.html#a739fbef2e03619a863b4d7fd8d0da157" title="sim_init" alt="" coords="863,59,932,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a89a7b5456b1a87c83aef85779c4fc5e9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structInt16Vect3.html">Int16Vect3</a> hmc58xx_data</td>
+          <td class="memname">void hmc58xx_start_configure </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structHmc58xx.html">Hmc58xx</a> *&#160;</td>
+          <td class="paramname"><em>hmc</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00039">39</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
+<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00112">112</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
 
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00109">hmc58xx_event()</a>, <a class="el" href="imu__navgo_8c_source.html#l00107">imu_navgo_event()</a>, and <a class="el" href="mag__hmc58xx_8c_source.html#l00031">mag_hmc58xx_report()</a>.</p>
+<p>References <a class="el" href="hmc58xx_8c_source.html#l00087">hmc58xx_send_config()</a>, <a class="el" href="hmc58xx_8h_source.html#l00048">HMC_CONF_UNINIT</a>, <a class="el" href="hmc58xx_8h_source.html#l00062">Hmc58xx::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="hmc58xx_8h_source.html#l00064">Hmc58xx::init_status</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
 
+<p>Referenced by <a class="el" href="hmc58xx_8h_source.html#l00084">hmc58xx_periodic()</a>.</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a89a7b5456b1a87c83aef85779c4fc5e9_cgraph.png" border="0" usemap="#hmc58xx_8c_a89a7b5456b1a87c83aef85779c4fc5e9_cgraph" alt=""/></div>
+<map name="hmc58xx_8c_a89a7b5456b1a87c83aef85779c4fc5e9_cgraph" id="hmc58xx_8c_a89a7b5456b1a87c83aef85779c4fc5e9_cgraph">
+<area shape="rect" id="node3" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb" title="Configuration function called once before normal use." alt="" coords="237,5,400,35"/><area shape="rect" id="node5" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9" title="hmc58xx_i2c_tx_reg" alt="" coords="448,5,600,35"/><area shape="rect" id="node7" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="648,5,739,35"/></map>
 </div>
-<a class="anchor" id="aedbd33536aa225bbbac08d08eef6a366"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool_t hmc58xx_data_available</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+</p>
 
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00037">37</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
-
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00109">hmc58xx_event()</a>, and <a class="el" href="imu__navgo_8c_source.html#l00107">imu_navgo_event()</a>.</p>
-
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="hmc58xx_8c_a89a7b5456b1a87c83aef85779c4fc5e9_icgraph.png" border="0" usemap="#hmc58xx_8c_a89a7b5456b1a87c83aef85779c4fc5e9_icgraph" alt=""/></div>
+<map name="hmc58xx_8c_a89a7b5456b1a87c83aef85779c4fc5e9_icgraph" id="hmc58xx_8c_a89a7b5456b1a87c83aef85779c4fc5e9_icgraph">
+<area shape="rect" id="node3" href="hmc58xx_8h.html#a353064a5a9c6b47a14f4b9543545b4ec" title="convenience function: read or start configuration if not already initialized" alt="" coords="239,156,375,185"/><area shape="rect" id="node5" href="imu_8h.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="459,125,560,155"/><area shape="rect" id="node25" href="mag__hmc58xx_8h.html#a2e48d1806ea88022ff1f1c8b01b53f42" title="mag_hmc58xx_module\l_periodic" alt="" coords="424,178,595,225"/><area shape="rect" id="node7" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="661,59,771,88"/><area shape="rect" id="node15" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="663,125,769,155"/><area shape="rect" id="node21" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="644,205,788,235"/><area shape="rect" id="node9" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="849,5,1012,35"/><area shape="rect" id="node13" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="904,59,957,88"/><area shape="rect" id="node11" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1073,5,1127,35"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="837,112,1024,141"/><area shape="rect" id="node19" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="863,165,999,195"/><area shape="rect" id="node23" href="hs__gyro_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="904,219,957,248"/></map>
 </div>
-<a class="anchor" id="ae2b3a0e954ae65a0b55af88c465e2b91"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a> hmc58xx_i2c_trans</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00041">41</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
-
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00088">hmc58xx_configure()</a>, <a class="el" href="hmc58xx_8c_source.html#l00109">hmc58xx_event()</a>, <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_init()</a>, <a class="el" href="hmc58xx_8c_source.html#l00099">hmc58xx_read()</a>, and <a class="el" href="hmc58xx_8c_source.html#l00057">hmc58xx_send_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a001931b31cad8116187269398e5fe665"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> hmc58xx_init_status</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00044">44</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
-
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00088">hmc58xx_configure()</a>, <a class="el" href="hmc58xx_8c_source.html#l00109">hmc58xx_event()</a>, <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_init()</a>, and <a class="el" href="hmc58xx_8c_source.html#l00057">hmc58xx_send_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abee39ee454bea955d47058ca408f3660"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool_t hmc58xx_initialized</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="hmc58xx_8c_source.html#l00043">43</a> of file <a class="el" href="hmc58xx_8c_source.html">hmc58xx.c</a>.</p>
-
-<p>Referenced by <a class="el" href="hmc58xx_8c_source.html#l00109">hmc58xx_event()</a>, <a class="el" href="hmc58xx_8c_source.html#l00048">hmc58xx_init()</a>, <a class="el" href="hmc58xx_8c_source.html#l00099">hmc58xx_read()</a>, and <a class="el" href="hmc58xx_8c_source.html#l00057">hmc58xx_send_config()</a>.</p>
+</p>
 
 </div>
 </div>
@@ -518,7 +619,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_0a48ba2c0a76794adfddddc873522f67.html">peripherals</a></li><li class="navelem"><a class="el" href="hmc58xx_8c.html">hmc58xx.c</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:18 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:16 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -1,7 +1,7 @@
 var hmc5843_8c =
 [
     [ "bswap_16", "hmc5843_8c.html#ad409605fabe125b1d222acb94a3f480f", null ],
-    [ "HMC5843_I2C_DEVICE", "hmc5843_8c.html#a316d6da124e637cc394463aea5f74248", null ],
+    [ "HMC5843_I2C_DEV", "hmc5843_8c.html#ae2e07f4c71bdc3f01c46f1a37005e82c", null ],
     [ "HMC5843_TIMEOUT", "hmc5843_8c.html#a2c38f68b878a6bfcb87ce07314d7ff68", null ],
     [ "exti9_5_irq_handler", "hmc5843_8c.html#a2b53e4c66c30098f313d5f0945c3baf5", null ],
     [ "hmc5843_idle_task", "hmc5843_8c.html#a46613c2c46ce03746f184a11df775d6a", null ],

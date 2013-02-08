@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -105,8 +105,7 @@ $(document).ready(function(){initNavTree('itg3200_8c.html','');});
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">itg3200.c File Reference</div>  </div>
 </div><!--header-->
@@ -114,7 +113,7 @@ $(document).ready(function(){initNavTree('itg3200_8c.html','');});
 
 <p>Driver for ITG3200.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="itg3200_8extra_8h_source.html">peripherals/itg3200.extra.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="itg3200_8h_source.html">peripherals/itg3200.h</a>&quot;</code><br/>
 <code>#include &quot;std.h&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for itg3200.c:</div>
@@ -123,39 +122,29 @@ $(document).ready(function(){initNavTree('itg3200_8c.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="itg3200_8c__incl.png" border="0" usemap="#sw_2airborne_2peripherals_2itg3200_8c" alt=""/></div>
 <map name="sw_2airborne_2peripherals_2itg3200_8c" id="sw_2airborne_2peripherals_2itg3200_8c">
-<area shape="rect" id="node3" href="itg3200_8extra_8h.html" title="Driver for the gyro ITG3200 from InvenSense, this extra header allows standalone operation of the ITG..." alt="" coords="100,101,295,131"/><area shape="rect" id="node7" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="108,179,287,208"/><area shape="rect" id="node23" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="565,256,696,285"/><area shape="rect" id="node29" href="itg3200_8h.html" title="peripherals/itg3200.h" alt="" coords="361,179,519,208"/><area shape="rect" id="node10" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="296,256,451,285"/><area shape="rect" id="node17" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="123,256,272,285"/></map>
+<area shape="rect" id="node3" href="itg3200_8h.html" title="Driver for the gyro ITG3200 from InvenSense." alt="" coords="119,101,276,131"/><area shape="rect" id="node7" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="108,188,287,217"/><area shape="rect" id="node23" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="565,275,696,304"/><area shape="rect" id="node29" href="itg3200__regs_8h.html" title="Register defs for ITG3200 and IMU3000 gyros." alt="" coords="361,179,505,226"/><area shape="rect" id="node10" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="296,275,451,304"/><area shape="rect" id="node17" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="123,275,272,304"/></map>
 </div>
 </div>
 <p><a href="itg3200_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab5e5e46e3888af502ebae44b78660328"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#ab5e5e46e3888af502ebae44b78660328">ITG_CONF_UNINIT</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memitem:a3c3dbe166f5899ca23f5df6e4bd2a34a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a3c3dbe166f5899ca23f5df6e4bd2a34a">ITG_CONF_SD</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memitem:a334c1fd3d20309a55047a779308523c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a334c1fd3d20309a55047a779308523c0">ITG_CONF_DF</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memitem:af2b77ab753d1a74f7b94f88980638bee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#af2b77ab753d1a74f7b94f88980638bee">ITG_CONF_INT</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memitem:a47f347d667d2121c6897e641f47ff31d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a47f347d667d2121c6897e641f47ff31d">ITG_CONF_PWR</a>&#160;&#160;&#160;4</td></tr>
-<tr class="memitem:a233600c58679b221d482874ac3c30802"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a233600c58679b221d482874ac3c30802">ITG_CONF_DONE</a>&#160;&#160;&#160;5</td></tr>
 <tr class="memitem:ae7e949d1dd6f5a5a814fac0cd6936966"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#ae7e949d1dd6f5a5a814fac0cd6936966">Int16FromBuf</a>(_buf, _idx)&#160;&#160;&#160;((<a class="el" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>)((_buf[_idx]&lt;&lt;8) | _buf[_idx+1]))</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac056fd4208bcb0f6560eec96ea03345c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#ac056fd4208bcb0f6560eec96ea03345c">itg3200_init</a> (void)</td></tr>
-<tr class="memitem:a0ee4b71b6ac01d3b718675855cf4928d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a0ee4b71b6ac01d3b718675855cf4928d">itg3200_send_config</a> (void)</td></tr>
-<tr class="memitem:a6c3f852c37d6d602d2fd35a6b9e28daf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a6c3f852c37d6d602d2fd35a6b9e28daf">itg3200_configure</a> (void)</td></tr>
-<tr class="memitem:afd4acbb440c1611c4fc069a5baeb1cfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#afd4acbb440c1611c4fc069a5baeb1cfc">itg3200_read</a> (void)</td></tr>
-<tr class="memitem:abbd9f419105e8ef332066830f3c35026"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#abbd9f419105e8ef332066830f3c35026">itg3200_event</a> (void)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a28360d513fc271e12167cdf766e60f26"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a28360d513fc271e12167cdf766e60f26">itg3200_data_available</a></td></tr>
-<tr class="memitem:ae276233bc1629ca3dd2a582e7e252c21"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInt32Rates.html">Int32Rates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#ae276233bc1629ca3dd2a582e7e252c21">itg3200_data</a></td></tr>
-<tr class="memitem:a0478482f756ab1b2f3771a5a91d9296a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a0478482f756ab1b2f3771a5a91d9296a">itg3200_i2c_trans</a></td></tr>
-<tr class="memitem:a2df8ed7451b6e731058fec338b7142a2"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a2df8ed7451b6e731058fec338b7142a2">itg3200_initialized</a></td></tr>
-<tr class="memitem:ab88b010187fac4a999ff70f1a61a6f36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#ab88b010187fac4a999ff70f1a61a6f36">itg3200_init_status</a></td></tr>
+<tr class="memitem:afb54551377578d676facc80c71379182"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#afb54551377578d676facc80c71379182">itg3200_set_default_config</a> (struct <a class="el" href="structItg3200Config.html">Itg3200Config</a> *<a class="el" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>)</td></tr>
+<tr class="memitem:a240c1ab04d15bb3f556189887939765f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a240c1ab04d15bb3f556189887939765f">itg3200_init</a> (struct <a class="el" href="structItg3200.html">Itg3200</a> *itg, struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *i2c_p, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> addr)</td></tr>
+<tr class="memdesc:a240c1ab04d15bb3f556189887939765f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <a class="el" href="structItg3200.html">Itg3200</a> struct and set default config options.  <a href="#a240c1ab04d15bb3f556189887939765f"></a><br/></td></tr>
+<tr class="memitem:a7b349504704c56277b218842850b117c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a7b349504704c56277b218842850b117c">itg3200_i2c_tx_reg</a> (struct <a class="el" href="structItg3200.html">Itg3200</a> *itg, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> reg, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>)</td></tr>
+<tr class="memitem:afe8ddf75a27aa350a6270539e5fabd0c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c">itg3200_send_config</a> (struct <a class="el" href="structItg3200.html">Itg3200</a> *itg)</td></tr>
+<tr class="memitem:a37fd9870e73caee0513811101150ae87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#a37fd9870e73caee0513811101150ae87">itg3200_start_configure</a> (struct <a class="el" href="structItg3200.html">Itg3200</a> *itg)</td></tr>
+<tr class="memitem:afc931399829e2d90c671d326e016329a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#afc931399829e2d90c671d326e016329a">itg3200_read</a> (struct <a class="el" href="structItg3200.html">Itg3200</a> *itg)</td></tr>
+<tr class="memitem:aaa9c768fbf93b62e8c6f74ebcc07cf45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itg3200_8c.html#aaa9c768fbf93b62e8c6f74ebcc07cf45">itg3200_event</a> (struct <a class="el" href="structItg3200.html">Itg3200</a> *itg)</td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Driver for ITG3200. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>DRDY/IRQ handling </dd></dl>
 
 <p>Definition in file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
 </div><h2>Macro Definition Documentation</h2>
@@ -183,238 +172,240 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00115">115</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
+<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00123">123</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
 
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a334c1fd3d20309a55047a779308523c0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG_CONF_DF&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00032">32</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a233600c58679b221d482874ac3c30802"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG_CONF_DONE&#160;&#160;&#160;5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00035">35</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af2b77ab753d1a74f7b94f88980638bee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG_CONF_INT&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00033">33</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a47f347d667d2121c6897e641f47ff31d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG_CONF_PWR&#160;&#160;&#160;4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00034">34</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3c3dbe166f5899ca23f5df6e4bd2a34a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG_CONF_SD&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00031">31</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab5e5e46e3888af502ebae44b78660328"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ITG_CONF_UNINIT&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00030">30</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00096">itg3200_configure()</a>, <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>, and <a class="el" href="itg3200_8c_source.html#l00050">itg3200_init()</a>.</p>
+<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00125">itg3200_event()</a>.</p>
 
 </div>
 </div>
 <h2>Function Documentation</h2>
-<a class="anchor" id="a6c3f852c37d6d602d2fd35a6b9e28daf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void itg3200_configure </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00096">96</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>References <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="itg3200_8c_source.html#l00043">itg3200_i2c_trans</a>, <a class="el" href="itg3200_8c_source.html#l00046">itg3200_init_status</a>, <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>, <a class="el" href="itg3200_8c_source.html#l00030">ITG_CONF_UNINIT</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
-
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="itg3200_8c_a6c3f852c37d6d602d2fd35a6b9e28daf_cgraph.png" border="0" usemap="#itg3200_8c_a6c3f852c37d6d602d2fd35a6b9e28daf_cgraph" alt=""/></div>
-<map name="itg3200_8c_a6c3f852c37d6d602d2fd35a6b9e28daf_cgraph" id="itg3200_8c_a6c3f852c37d6d602d2fd35a6b9e28daf_cgraph">
-<area shape="rect" id="node3" href="itg3200_8c.html#a0ee4b71b6ac01d3b718675855cf4928d" title="itg3200_send_config" alt="" coords="191,5,343,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="abbd9f419105e8ef332066830f3c35026"></a>
+<a class="anchor" id="aaa9c768fbf93b62e8c6f74ebcc07cf45"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void itg3200_event </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structItg3200.html">Itg3200</a> *&#160;</td>
+          <td class="paramname"><em>itg</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00117">117</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
+<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00125">125</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00054">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="itg3200_8c_source.html#l00115">Int16FromBuf</a>, <a class="el" href="itg3200_8c_source.html#l00041">itg3200_data</a>, <a class="el" href="itg3200_8c_source.html#l00039">itg3200_data_available</a>, <a class="el" href="itg3200_8c_source.html#l00043">itg3200_i2c_trans</a>, <a class="el" href="itg3200_8c_source.html#l00046">itg3200_init_status</a>, <a class="el" href="itg3200_8c_source.html#l00045">itg3200_initialized</a>, <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>, <a class="el" href="itg3200_8c_source.html#l00030">ITG_CONF_UNINIT</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00161">Int32Rates::p</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00162">Int32Rates::q</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00163">Int32Rates::r</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="structItg3200.html#a993eccdef6b4fa3950a05b914031588f">Itg3200::data</a>, <a class="el" href="itg3200_8h_source.html#l00075">Itg3200::data_available</a>, <a class="el" href="itg3200_8h_source.html#l00072">Itg3200::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00054">I2CTransFailed</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="itg3200_8h_source.html#l00074">Itg3200::init_status</a>, <a class="el" href="itg3200_8h_source.html#l00073">Itg3200::initialized</a>, <a class="el" href="itg3200_8c_source.html#l00123">Int16FromBuf</a>, <a class="el" href="itg3200_8c_source.html#l00072">itg3200_send_config()</a>, <a class="el" href="itg3200_8h_source.html#l00062">ITG_CONF_UNINIT</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00161">Int32Rates::p</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00162">Int32Rates::q</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00163">Int32Rates::r</a>, <a class="el" href="itg3200_8h_source.html#l00077">Itg3200::rates</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
-<p>Referenced by <a class="el" href="imu__navgo_8c_source.html#l00107">imu_navgo_event()</a>, and <a class="el" href="imu__umarim_8c_source.html#l00088">imu_umarim_event()</a>.</p>
+<p>Referenced by <a class="el" href="imu__aspirin_8c_source.html#l00127">imu_aspirin_event()</a>, <a class="el" href="imu__aspirin__i2c_8c_source.html#l00129">imu_aspirin_i2c_event()</a>, <a class="el" href="imu__navgo_8c_source.html#l00111">imu_navgo_event()</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00115">imu_ppzuav_event()</a>, and <a class="el" href="imu__umarim_8c_source.html#l00090">imu_umarim_event()</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_aaa9c768fbf93b62e8c6f74ebcc07cf45_cgraph.png" border="0" usemap="#itg3200_8c_aaa9c768fbf93b62e8c6f74ebcc07cf45_cgraph" alt=""/></div>
+<map name="itg3200_8c_aaa9c768fbf93b62e8c6f74ebcc07cf45_cgraph" id="itg3200_8c_aaa9c768fbf93b62e8c6f74ebcc07cf45_cgraph">
+<area shape="rect" id="node3" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="169,5,321,35"/><area shape="rect" id="node5" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="372,5,513,35"/><area shape="rect" id="node7" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="563,5,653,35"/></map>
+</div>
+</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="itg3200_8c_abbd9f419105e8ef332066830f3c35026_cgraph.png" border="0" usemap="#itg3200_8c_abbd9f419105e8ef332066830f3c35026_cgraph" alt=""/></div>
-<map name="itg3200_8c_abbd9f419105e8ef332066830f3c35026_cgraph" id="itg3200_8c_abbd9f419105e8ef332066830f3c35026_cgraph">
-<area shape="rect" id="node3" href="itg3200_8c.html#a0ee4b71b6ac01d3b718675855cf4928d" title="itg3200_send_config" alt="" coords="169,5,321,35"/></map>
+<div class="center"><img src="itg3200_8c_aaa9c768fbf93b62e8c6f74ebcc07cf45_icgraph.png" border="0" usemap="#itg3200_8c_aaa9c768fbf93b62e8c6f74ebcc07cf45_icgraph" alt=""/></div>
+<map name="itg3200_8c_aaa9c768fbf93b62e8c6f74ebcc07cf45_icgraph" id="itg3200_8c_aaa9c768fbf93b62e8c6f74ebcc07cf45_icgraph">
+<area shape="rect" id="node3" href="imu__aspirin_8h.html#aa229c37c4339ad08d83c4d72f30a1fd5" title="imu_aspirin_event" alt="" coords="180,5,319,35"/><area shape="rect" id="node7" href="imu__aspirin__i2c_8h.html#a6369e8522e39224b5076e7837c0032f2" title="imu_aspirin_i2c_event" alt="" coords="168,59,331,88"/><area shape="rect" id="node11" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="183,112,316,141"/><area shape="rect" id="node15" href="imu__ppzuav_8h.html#a51ff6c245630bbf2701dc550ce24ef23" title="imu_ppzuav_event" alt="" coords="179,165,320,195"/><area shape="rect" id="node19" href="imu__umarim_8h.html#a01860ce0d2bbd0db6c993e609c0745de" title="imu_umarim_event" alt="" coords="176,219,323,248"/><area shape="rect" id="node5" href="imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="379,5,461,35"/><area shape="rect" id="node9" href="imu__aspirin__i2c_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="379,59,461,88"/><area shape="rect" id="node13" href="imu__navgo_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="379,112,461,141"/><area shape="rect" id="node17" href="imu__ppzuav_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="379,165,461,195"/><area shape="rect" id="node21" href="imu__umarim_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="379,219,461,248"/></map>
 </div>
 </p>
 
+</div>
+</div>
+<a class="anchor" id="a7b349504704c56277b218842850b117c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void itg3200_i2c_tx_reg </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structItg3200.html">Itg3200</a> *&#160;</td>
+          <td class="paramname"><em>itg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00061">61</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
+
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="itg3200_8h_source.html#l00071">Itg3200::i2c_p</a>, <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00333">i2c_submit()</a>, <a class="el" href="itg3200_8h_source.html#l00072">Itg3200::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00045">I2CTransTx</a>, <a class="el" href="i2c_8h_source.html#l00080">i2c_transaction::len_r</a>, <a class="el" href="i2c_8h_source.html#l00081">i2c_transaction::len_w</a>, <a class="el" href="i2c_8h_source.html#l00078">i2c_transaction::type</a>, and <a class="el" href="temp__tcouple__adc_8c_source.html#l00052">val</a>.</p>
+
+<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00072">itg3200_send_config()</a>.</p>
+
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="itg3200_8c_abbd9f419105e8ef332066830f3c35026_icgraph.png" border="0" usemap="#itg3200_8c_abbd9f419105e8ef332066830f3c35026_icgraph" alt=""/></div>
-<map name="itg3200_8c_abbd9f419105e8ef332066830f3c35026_icgraph" id="itg3200_8c_abbd9f419105e8ef332066830f3c35026_icgraph">
-<area shape="rect" id="node3" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="175,5,308,35"/><area shape="rect" id="node5" href="imu__umarim_8h.html#a01860ce0d2bbd0db6c993e609c0745de" title="imu_umarim_event" alt="" coords="168,59,315,88"/></map>
+<div class="center"><img src="itg3200_8c_a7b349504704c56277b218842850b117c_cgraph.png" border="0" usemap="#itg3200_8c_a7b349504704c56277b218842850b117c_cgraph" alt=""/></div>
+<map name="itg3200_8c_a7b349504704c56277b218842850b117c_cgraph" id="itg3200_8c_a7b349504704c56277b218842850b117c_cgraph">
+<area shape="rect" id="node3" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="197,5,288,35"/></map>
 </div>
 </p>
-
-</div>
-</div>
-<a class="anchor" id="ac056fd4208bcb0f6560eec96ea03345c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void itg3200_init </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00050">50</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="itg3200_8h_source.html#l00027">ITG3200_ADDR</a>, <a class="el" href="itg3200_8c_source.html#l00043">itg3200_i2c_trans</a>, <a class="el" href="itg3200_8c_source.html#l00046">itg3200_init_status</a>, <a class="el" href="itg3200_8c_source.html#l00045">itg3200_initialized</a>, <a class="el" href="itg3200_8c_source.html#l00030">ITG_CONF_UNINIT</a>, <a class="el" href="i2c_8h_source.html#l00079">i2c_transaction::slave_addr</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__navgo_8c_source.html#l00062">imu_impl_init()</a>.</p>
 
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="itg3200_8c_ac056fd4208bcb0f6560eec96ea03345c_icgraph.png" border="0" usemap="#itg3200_8c_ac056fd4208bcb0f6560eec96ea03345c_icgraph" alt=""/></div>
-<map name="itg3200_8c_ac056fd4208bcb0f6560eec96ea03345c_icgraph" id="itg3200_8c_ac056fd4208bcb0f6560eec96ea03345c_icgraph">
+<div class="center"><img src="itg3200_8c_a7b349504704c56277b218842850b117c_icgraph.png" border="0" usemap="#itg3200_8c_a7b349504704c56277b218842850b117c_icgraph" alt=""/></div>
+<map name="itg3200_8c_a7b349504704c56277b218842850b117c_icgraph" id="itg3200_8c_a7b349504704c56277b218842850b117c_icgraph">
+<area shape="rect" id="node3" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="199,205,351,235"/><area shape="rect" id="node5" href="itg3200_8h.html#a37fd9870e73caee0513811101150ae87" title="itg3200_start_configure" alt="" coords="400,152,573,181"/><area shape="rect" id="node29" href="itg3200_8h.html#aaa9c768fbf93b62e8c6f74ebcc07cf45" title="itg3200_event" alt="" coords="431,259,543,288"/><area shape="rect" id="node7" href="itg3200_8h.html#a2e5bd5bfe60106c8c05d1a26bcce2263" title="convenience function: read or start configuration if not already initialized" alt="" coords="640,125,765,155"/><area shape="rect" id="node9" href="imu_8h.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="833,125,935,155"/><area shape="rect" id="node11" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="1003,59,1112,88"/><area shape="rect" id="node19" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="1004,125,1111,155"/><area shape="rect" id="node25" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="985,205,1129,235"/><area shape="rect" id="node13" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="1191,5,1353,35"/><area shape="rect" id="node17" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1245,59,1299,88"/><area shape="rect" id="node15" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1415,5,1468,35"/><area shape="rect" id="node21" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="1179,112,1365,141"/><area shape="rect" id="node23" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="1204,165,1340,195"/><area shape="rect" id="node27" href="hs__gyro_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1245,219,1299,248"/><area shape="rect" id="node31" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="636,179,769,208"/><area shape="rect" id="node35" href="imu__umarim_8h.html#a01860ce0d2bbd0db6c993e609c0745de" title="imu_umarim_event" alt="" coords="629,232,776,261"/><area shape="rect" id="node39" href="imu__aspirin_8h.html#aa229c37c4339ad08d83c4d72f30a1fd5" title="imu_aspirin_event" alt="" coords="633,285,772,315"/><area shape="rect" id="node43" href="imu__aspirin__i2c_8h.html#a6369e8522e39224b5076e7837c0032f2" title="imu_aspirin_i2c_event" alt="" coords="621,339,784,368"/><area shape="rect" id="node47" href="imu__ppzuav_8h.html#a51ff6c245630bbf2701dc550ce24ef23" title="imu_ppzuav_event" alt="" coords="632,392,773,421"/><area shape="rect" id="node33" href="imu__navgo_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="843,179,925,208"/><area shape="rect" id="node37" href="imu__umarim_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="843,232,925,261"/><area shape="rect" id="node41" href="imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="843,285,925,315"/><area shape="rect" id="node45" href="imu__aspirin__i2c_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="843,339,925,368"/><area shape="rect" id="node49" href="imu__ppzuav_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="843,392,925,421"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a240c1ab04d15bb3f556189887939765f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void itg3200_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structItg3200.html">Itg3200</a> *&#160;</td>
+          <td class="paramname"><em>itg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structi2c__periph.html">i2c_periph</a> *&#160;</td>
+          <td class="paramname"><em>i2c_p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize <a class="el" href="structItg3200.html">Itg3200</a> struct and set default config options. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">itg</td><td><a class="el" href="structItg3200.html">Itg3200</a> struct </td></tr>
+    <tr><td class="paramname">i2c_p</td><td>I2C periperal to use </td></tr>
+    <tr><td class="paramname">addr</td><td>I2C address of ITG3200 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00048">48</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
+
+<p>References <a class="el" href="itg3200_8h_source.html#l00080">Itg3200::config</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="itg3200_8h_source.html#l00071">Itg3200::i2c_p</a>, <a class="el" href="itg3200_8h_source.html#l00072">Itg3200::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="itg3200_8h_source.html#l00074">Itg3200::init_status</a>, <a class="el" href="itg3200_8h_source.html#l00073">Itg3200::initialized</a>, <a class="el" href="itg3200_8c_source.html#l00033">itg3200_set_default_config()</a>, <a class="el" href="itg3200_8h_source.html#l00062">ITG_CONF_UNINIT</a>, <a class="el" href="i2c_8h_source.html#l00079">i2c_transaction::slave_addr</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__navgo_8c_source.html#l00057">imu_impl_init()</a>.</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_a240c1ab04d15bb3f556189887939765f_cgraph.png" border="0" usemap="#itg3200_8c_a240c1ab04d15bb3f556189887939765f_cgraph" alt=""/></div>
+<map name="itg3200_8c_a240c1ab04d15bb3f556189887939765f_cgraph" id="itg3200_8c_a240c1ab04d15bb3f556189887939765f_cgraph">
+<area shape="rect" id="node3" href="itg3200_8c.html#afb54551377578d676facc80c71379182" title="itg3200_set_default\l_config" alt="" coords="151,5,297,51"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_a240c1ab04d15bb3f556189887939765f_icgraph.png" border="0" usemap="#itg3200_8c_a240c1ab04d15bb3f556189887939765f_icgraph" alt=""/></div>
+<map name="itg3200_8c_a240c1ab04d15bb3f556189887939765f_icgraph" id="itg3200_8c_a240c1ab04d15bb3f556189887939765f_icgraph">
 <area shape="rect" id="node3" href="imu_8h.html#ad32faae58e391642ec8048cb11011998" title="imu_impl_init" alt="" coords="149,32,256,61"/><area shape="rect" id="node5" href="imu_8h.html#a86a06fe7a9831292bd92867da2d12f80" title="imu_init" alt="" coords="304,32,376,61"/><area shape="rect" id="node7" href="main_8h.html#a092df25ac46a6a4ca72c023d8821f9b2" title="main_init" alt="" coords="424,5,504,35"/><area shape="rect" id="node9" href="main__ap_8h.html#a0913f0248fbbe56a5ec65e10e36c9f30" title="init_ap" alt="" coords="432,59,496,88"/><area shape="rect" id="node11" href="sim__ap_8c.html#a739fbef2e03619a863b4d7fd8d0da157" title="sim_init" alt="" coords="553,59,623,88"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="afd4acbb440c1611c4fc069a5baeb1cfc"></a>
+<a class="anchor" id="afc931399829e2d90c671d326e016329a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void itg3200_read </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structItg3200.html">Itg3200</a> *&#160;</td>
+          <td class="paramname"><em>itg</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00107">107</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
+<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00112">112</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="i2c_8h_source.html#l00192">I2CTransceive</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="itg3200_8extra_8h_source.html#l00060">ITG3200_I2C_ADDR</a>, <a class="el" href="itg3200_8extra_8h_source.html#l00065">ITG3200_I2C_DEVICE</a>, <a class="el" href="itg3200_8c_source.html#l00043">itg3200_i2c_trans</a>, <a class="el" href="itg3200_8c_source.html#l00045">itg3200_initialized</a>, <a class="el" href="itg3200_8h_source.html#l00035">ITG3200_REG_INT_STATUS</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
+<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="itg3200_8h_source.html#l00071">Itg3200::i2c_p</a>, <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00333">i2c_submit()</a>, <a class="el" href="itg3200_8h_source.html#l00072">Itg3200::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00047">I2CTransTxRx</a>, <a class="el" href="itg3200_8h_source.html#l00073">Itg3200::initialized</a>, <a class="el" href="itg3200__regs_8h_source.html#l00039">ITG3200_REG_INT_STATUS</a>, <a class="el" href="i2c_8h_source.html#l00080">i2c_transaction::len_r</a>, <a class="el" href="i2c_8h_source.html#l00081">i2c_transaction::len_w</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="i2c_8h_source.html#l00078">i2c_transaction::type</a>.</p>
+
+<p>Referenced by <a class="el" href="itg3200_8h_source.html#l00093">itg3200_periodic()</a>.</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_afc931399829e2d90c671d326e016329a_cgraph.png" border="0" usemap="#itg3200_8c_afc931399829e2d90c671d326e016329a_cgraph" alt=""/></div>
+<map name="itg3200_8c_afc931399829e2d90c671d326e016329a_cgraph" id="itg3200_8c_afc931399829e2d90c671d326e016329a_cgraph">
+<area shape="rect" id="node3" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="160,5,251,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_afc931399829e2d90c671d326e016329a_icgraph.png" border="0" usemap="#itg3200_8c_afc931399829e2d90c671d326e016329a_icgraph" alt=""/></div>
+<map name="itg3200_8c_afc931399829e2d90c671d326e016329a_icgraph" id="itg3200_8c_afc931399829e2d90c671d326e016329a_icgraph">
+<area shape="rect" id="node3" href="itg3200_8h.html#a2e5bd5bfe60106c8c05d1a26bcce2263" title="convenience function: read or start configuration if not already initialized" alt="" coords="161,125,287,155"/><area shape="rect" id="node5" href="imu_8h.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="337,125,439,155"/><area shape="rect" id="node7" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="507,59,616,88"/><area shape="rect" id="node15" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="508,125,615,155"/><area shape="rect" id="node21" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="489,205,633,235"/><area shape="rect" id="node9" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="695,5,857,35"/><area shape="rect" id="node13" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="749,59,803,88"/><area shape="rect" id="node11" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="919,5,972,35"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="683,112,869,141"/><area shape="rect" id="node19" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="708,165,844,195"/><area shape="rect" id="node23" href="hs__gyro_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="749,219,803,248"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a0ee4b71b6ac01d3b718675855cf4928d"></a>
+<a class="anchor" id="afe8ddf75a27aa350a6270539e5fabd0c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -424,8 +415,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void itg3200_send_config </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structItg3200.html">Itg3200</a> *&#160;</td>
+          <td class="paramname"><em>itg</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -436,103 +427,110 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00059">59</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
+<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00072">72</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
 
-<p>References <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00184">I2CTransmit</a>, <a class="el" href="itg3200_8extra_8h_source.html#l00055">ITG3200_DLPF_FS</a>, <a class="el" href="itg3200_8extra_8h_source.html#l00060">ITG3200_I2C_ADDR</a>, <a class="el" href="itg3200_8extra_8h_source.html#l00065">ITG3200_I2C_DEVICE</a>, <a class="el" href="itg3200_8c_source.html#l00043">itg3200_i2c_trans</a>, <a class="el" href="itg3200_8c_source.html#l00046">itg3200_init_status</a>, <a class="el" href="itg3200_8c_source.html#l00045">itg3200_initialized</a>, <a class="el" href="itg3200_8extra_8h_source.html#l00049">ITG3200_INT_CFG</a>, <a class="el" href="itg3200_8extra_8h_source.html#l00056">ITG3200_PWR_MGM</a>, <a class="el" href="itg3200_8h_source.html#l00033">ITG3200_REG_DLPF_FS</a>, <a class="el" href="itg3200_8h_source.html#l00034">ITG3200_REG_INT_CFG</a>, <a class="el" href="itg3200_8h_source.html#l00044">ITG3200_REG_PWR_MGM</a>, <a class="el" href="itg3200_8h_source.html#l00032">ITG3200_REG_SMPLRT_DIV</a>, <a class="el" href="itg3200_8extra_8h_source.html#l00040">ITG3200_SMPLRT_DIV</a>, <a class="el" href="itg3200_8c_source.html#l00032">ITG_CONF_DF</a>, <a class="el" href="itg3200_8c_source.html#l00035">ITG_CONF_DONE</a>, <a class="el" href="itg3200_8c_source.html#l00033">ITG_CONF_INT</a>, <a class="el" href="itg3200_8c_source.html#l00034">ITG_CONF_PWR</a>, <a class="el" href="itg3200_8c_source.html#l00031">ITG_CONF_SD</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
+<p>References <a class="el" href="itg3200_8h_source.html#l00057">Itg3200Config::clk_sel</a>, <a class="el" href="itg3200_8h_source.html#l00080">Itg3200::config</a>, <a class="el" href="itg3200_8h_source.html#l00055">Itg3200Config::dlpf_cfg</a>, <a class="el" href="itg3200_8h_source.html#l00054">Itg3200Config::fs_sel</a>, <a class="el" href="itg3200_8h_source.html#l00072">Itg3200::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="itg3200_8h_source.html#l00074">Itg3200::init_status</a>, <a class="el" href="itg3200_8h_source.html#l00073">Itg3200::initialized</a>, <a class="el" href="itg3200_8h_source.html#l00056">Itg3200Config::int_cfg</a>, <a class="el" href="itg3200_8c_source.html#l00061">itg3200_i2c_tx_reg()</a>, <a class="el" href="itg3200__regs_8h_source.html#l00037">ITG3200_REG_DLPF_FS</a>, <a class="el" href="itg3200__regs_8h_source.html#l00038">ITG3200_REG_INT_CFG</a>, <a class="el" href="itg3200__regs_8h_source.html#l00048">ITG3200_REG_PWR_MGM</a>, <a class="el" href="itg3200__regs_8h_source.html#l00036">ITG3200_REG_SMPLRT_DIV</a>, <a class="el" href="itg3200_8h_source.html#l00064">ITG_CONF_DF</a>, <a class="el" href="itg3200_8h_source.html#l00067">ITG_CONF_DONE</a>, <a class="el" href="itg3200_8h_source.html#l00065">ITG_CONF_INT</a>, <a class="el" href="itg3200_8h_source.html#l00066">ITG_CONF_PWR</a>, <a class="el" href="itg3200_8h_source.html#l00063">ITG_CONF_SD</a>, <a class="el" href="itg3200_8h_source.html#l00053">Itg3200Config::smplrt_div</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00096">itg3200_configure()</a>, and <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>.</p>
+<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00125">itg3200_event()</a>, and <a class="el" href="itg3200_8c_source.html#l00101">itg3200_start_configure()</a>.</p>
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="itg3200_8c_a0ee4b71b6ac01d3b718675855cf4928d_icgraph.png" border="0" usemap="#itg3200_8c_a0ee4b71b6ac01d3b718675855cf4928d_icgraph" alt=""/></div>
-<map name="itg3200_8c_a0ee4b71b6ac01d3b718675855cf4928d_icgraph" id="itg3200_8c_a0ee4b71b6ac01d3b718675855cf4928d_icgraph">
-<area shape="rect" id="node3" href="itg3200_8extra_8h.html#a6c3f852c37d6d602d2fd35a6b9e28daf" title="itg3200_configure" alt="" coords="208,5,344,35"/><area shape="rect" id="node5" href="itg3200_8extra_8h.html#abbd9f419105e8ef332066830f3c35026" title="itg3200_event" alt="" coords="220,59,332,88"/><area shape="rect" id="node7" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="399,32,532,61"/><area shape="rect" id="node9" href="imu__umarim_8h.html#a01860ce0d2bbd0db6c993e609c0745de" title="imu_umarim_event" alt="" coords="392,85,539,115"/></map>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_afe8ddf75a27aa350a6270539e5fabd0c_cgraph.png" border="0" usemap="#itg3200_8c_afe8ddf75a27aa350a6270539e5fabd0c_cgraph" alt=""/></div>
+<map name="itg3200_8c_afe8ddf75a27aa350a6270539e5fabd0c_cgraph" id="itg3200_8c_afe8ddf75a27aa350a6270539e5fabd0c_cgraph">
+<area shape="rect" id="node3" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="209,5,351,35"/><area shape="rect" id="node5" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="400,5,491,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_afe8ddf75a27aa350a6270539e5fabd0c_icgraph.png" border="0" usemap="#itg3200_8c_afe8ddf75a27aa350a6270539e5fabd0c_icgraph" alt=""/></div>
+<map name="itg3200_8c_afe8ddf75a27aa350a6270539e5fabd0c_icgraph" id="itg3200_8c_afe8ddf75a27aa350a6270539e5fabd0c_icgraph">
+<area shape="rect" id="node3" href="itg3200_8h.html#aaa9c768fbf93b62e8c6f74ebcc07cf45" title="itg3200_event" alt="" coords="239,139,351,168"/><area shape="rect" id="node25" href="itg3200_8h.html#a37fd9870e73caee0513811101150ae87" title="itg3200_start_configure" alt="" coords="208,219,381,248"/><area shape="rect" id="node5" href="imu__navgo_8h.html#a090687272e402bae057eb68e39e6218f" title="imu_navgo_event" alt="" coords="444,5,577,35"/><area shape="rect" id="node9" href="imu__umarim_8h.html#a01860ce0d2bbd0db6c993e609c0745de" title="imu_umarim_event" alt="" coords="437,59,584,88"/><area shape="rect" id="node13" href="imu__aspirin_8h.html#aa229c37c4339ad08d83c4d72f30a1fd5" title="imu_aspirin_event" alt="" coords="441,112,580,141"/><area shape="rect" id="node17" href="imu__aspirin__i2c_8h.html#a6369e8522e39224b5076e7837c0032f2" title="imu_aspirin_i2c_event" alt="" coords="429,165,592,195"/><area shape="rect" id="node21" href="imu__ppzuav_8h.html#a51ff6c245630bbf2701dc550ce24ef23" title="imu_ppzuav_event" alt="" coords="440,219,581,248"/><area shape="rect" id="node7" href="imu__navgo_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="651,5,733,35"/><area shape="rect" id="node11" href="imu__umarim_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="651,59,733,88"/><area shape="rect" id="node15" href="imu__aspirin_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="651,112,733,141"/><area shape="rect" id="node19" href="imu__aspirin__i2c_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="651,165,733,195"/><area shape="rect" id="node23" href="imu__ppzuav_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="651,219,733,248"/><area shape="rect" id="node27" href="itg3200_8h.html#a2e5bd5bfe60106c8c05d1a26bcce2263" title="convenience function: read or start configuration if not already initialized" alt="" coords="448,272,573,301"/><area shape="rect" id="node29" href="imu_8h.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="641,272,743,301"/><area shape="rect" id="node31" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="811,205,920,235"/><area shape="rect" id="node39" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="812,272,919,301"/><area shape="rect" id="node45" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="793,352,937,381"/><area shape="rect" id="node33" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="999,152,1161,181"/><area shape="rect" id="node37" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1053,205,1107,235"/><area shape="rect" id="node35" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1223,152,1276,181"/><area shape="rect" id="node41" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="987,259,1173,288"/><area shape="rect" id="node43" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="1012,312,1148,341"/><area shape="rect" id="node47" href="hs__gyro_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="1053,365,1107,395"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<h2>Variable Documentation</h2>
-<a class="anchor" id="ae276233bc1629ca3dd2a582e7e252c21"></a>
+<a class="anchor" id="afb54551377578d676facc80c71379182"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structInt32Rates.html">Int32Rates</a> itg3200_data</td>
+          <td class="memname">void itg3200_set_default_config </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structItg3200Config.html">Itg3200Config</a> *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00041">41</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
+<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00033">33</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
 
-<p>Referenced by <a class="el" href="imu__navgo_8c_source.html#l00107">imu_navgo_event()</a>, <a class="el" href="imu__umarim_8c_source.html#l00088">imu_umarim_event()</a>, and <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>.</p>
+<p>References <a class="el" href="itg3200_8h_source.html#l00057">Itg3200Config::clk_sel</a>, <a class="el" href="itg3200_8h_source.html#l00055">Itg3200Config::dlpf_cfg</a>, <a class="el" href="itg3200_8h_source.html#l00054">Itg3200Config::fs_sel</a>, <a class="el" href="itg3200_8h_source.html#l00056">Itg3200Config::int_cfg</a>, <a class="el" href="itg3200_8h_source.html#l00049">ITG3200_DEFAULT_CLK_SEL</a>, <a class="el" href="itg3200_8h_source.html#l00045">ITG3200_DEFAULT_DLPF_CFG</a>, <a class="el" href="itg3200_8h_source.html#l00043">ITG3200_DEFAULT_FS_SEL</a>, <a class="el" href="itg3200_8h_source.html#l00047">ITG3200_DEFAULT_INT_CFG</a>, <a class="el" href="itg3200_8h_source.html#l00041">ITG3200_DEFAULT_SMPLRT_DIV</a>, and <a class="el" href="itg3200_8h_source.html#l00053">Itg3200Config::smplrt_div</a>.</p>
+
+<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00048">itg3200_init()</a>.</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_afb54551377578d676facc80c71379182_icgraph.png" border="0" usemap="#itg3200_8c_afb54551377578d676facc80c71379182_icgraph" alt=""/></div>
+<map name="itg3200_8c_afb54551377578d676facc80c71379182_icgraph" id="itg3200_8c_afb54551377578d676facc80c71379182_icgraph">
+<area shape="rect" id="node3" href="itg3200_8h.html#a0cce475e76197e5ec00589884656a7ff" title="Initialize Itg3200 struct and set default config options." alt="" coords="203,32,299,61"/><area shape="rect" id="node5" href="imu_8h.html#ad32faae58e391642ec8048cb11011998" title="imu_impl_init" alt="" coords="347,32,453,61"/><area shape="rect" id="node7" href="imu_8h.html#a86a06fe7a9831292bd92867da2d12f80" title="imu_init" alt="" coords="501,32,573,61"/><area shape="rect" id="node9" href="main_8h.html#a092df25ac46a6a4ca72c023d8821f9b2" title="main_init" alt="" coords="621,5,701,35"/><area shape="rect" id="node11" href="main__ap_8h.html#a0913f0248fbbe56a5ec65e10e36c9f30" title="init_ap" alt="" coords="629,59,693,88"/><area shape="rect" id="node13" href="sim__ap_8c.html#a739fbef2e03619a863b4d7fd8d0da157" title="sim_init" alt="" coords="751,59,820,88"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a28360d513fc271e12167cdf766e60f26"></a>
+<a class="anchor" id="a37fd9870e73caee0513811101150ae87"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool_t itg3200_data_available</td>
+          <td class="memname">void itg3200_start_configure </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structItg3200.html">Itg3200</a> *&#160;</td>
+          <td class="paramname"><em>itg</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00039">39</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
+<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00101">101</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
 
-<p>Referenced by <a class="el" href="imu__navgo_8c_source.html#l00107">imu_navgo_event()</a>, <a class="el" href="imu__umarim_8c_source.html#l00088">imu_umarim_event()</a>, and <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>.</p>
+<p>References <a class="el" href="itg3200_8h_source.html#l00072">Itg3200::i2c_trans</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="itg3200_8h_source.html#l00074">Itg3200::init_status</a>, <a class="el" href="itg3200_8c_source.html#l00072">itg3200_send_config()</a>, <a class="el" href="itg3200_8h_source.html#l00062">ITG_CONF_UNINIT</a>, and <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>.</p>
 
+<p>Referenced by <a class="el" href="itg3200_8h_source.html#l00093">itg3200_periodic()</a>.</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_a37fd9870e73caee0513811101150ae87_cgraph.png" border="0" usemap="#itg3200_8c_a37fd9870e73caee0513811101150ae87_cgraph" alt=""/></div>
+<map name="itg3200_8c_a37fd9870e73caee0513811101150ae87_cgraph" id="itg3200_8c_a37fd9870e73caee0513811101150ae87_cgraph">
+<area shape="rect" id="node3" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="228,5,380,35"/><area shape="rect" id="node5" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="431,5,572,35"/><area shape="rect" id="node7" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="621,5,712,35"/></map>
 </div>
-<a class="anchor" id="a0478482f756ab1b2f3771a5a91d9296a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a> itg3200_i2c_trans</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+</p>
 
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00043">43</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00096">itg3200_configure()</a>, <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>, <a class="el" href="itg3200_8c_source.html#l00050">itg3200_init()</a>, <a class="el" href="itg3200_8c_source.html#l00107">itg3200_read()</a>, and <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>.</p>
-
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="itg3200_8c_a37fd9870e73caee0513811101150ae87_icgraph.png" border="0" usemap="#itg3200_8c_a37fd9870e73caee0513811101150ae87_icgraph" alt=""/></div>
+<map name="itg3200_8c_a37fd9870e73caee0513811101150ae87_icgraph" id="itg3200_8c_a37fd9870e73caee0513811101150ae87_icgraph">
+<area shape="rect" id="node3" href="itg3200_8h.html#a2e5bd5bfe60106c8c05d1a26bcce2263" title="convenience function: read or start configuration if not already initialized" alt="" coords="228,125,353,155"/><area shape="rect" id="node5" href="imu_8h.html#a6623d4c90e7b1bfb73abc0da1195f29b" title="imu_periodic" alt="" coords="404,125,505,155"/><area shape="rect" id="node7" href="test__adc_8c.html#a49a0e950c9c9d7b7f39d50a6e39e0aa4" title="main_periodic" alt="" coords="573,59,683,88"/><area shape="rect" id="node15" href="main__ap_8h.html#aaae462f08bad040640b5d7d9dac4e5d3" title="Run at PERIODIC_FREQUENCY (60Hz if not defined)" alt="" coords="575,125,681,155"/><area shape="rect" id="node21" href="hs__gyro_8c.html#a791eaf74023b4de8d10fbfe0de040ed8" title="main_periodic_task" alt="" coords="556,205,700,235"/><area shape="rect" id="node9" href="main_8h.html#acfa2a521a46d9beb8a3fa77bb0c9e407" title="handle_periodic_tasks" alt="" coords="761,5,924,35"/><area shape="rect" id="node13" href="lisa__stm__gps__passthrough__main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="816,59,869,88"/><area shape="rect" id="node11" href="firmwares_2fixedwing_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="985,5,1039,35"/><area shape="rect" id="node17" href="main__ap_8h.html#a43fd973b44bcc2c2583cf8287048212f" title="handle_periodic_tasks_ap" alt="" coords="749,112,936,141"/><area shape="rect" id="node19" href="sim__ap_8c.html#a4f982dacbb35ccfc3e0fcaa64156a2a0" title="sim_periodic_task" alt="" coords="775,165,911,195"/><area shape="rect" id="node23" href="hs__gyro_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="816,219,869,248"/></map>
 </div>
-<a class="anchor" id="ab88b010187fac4a999ff70f1a61a6f36"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> itg3200_init_status</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00046">46</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00096">itg3200_configure()</a>, <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>, <a class="el" href="itg3200_8c_source.html#l00050">itg3200_init()</a>, and <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2df8ed7451b6e731058fec338b7142a2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool_t itg3200_initialized</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="itg3200_8c_source.html#l00045">45</a> of file <a class="el" href="itg3200_8c_source.html">itg3200.c</a>.</p>
-
-<p>Referenced by <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>, <a class="el" href="itg3200_8c_source.html#l00050">itg3200_init()</a>, <a class="el" href="itg3200_8c_source.html#l00107">itg3200_read()</a>, and <a class="el" href="itg3200_8c_source.html#l00059">itg3200_send_config()</a>.</p>
+</p>
 
 </div>
 </div>
@@ -542,7 +540,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_0a48ba2c0a76794adfddddc873522f67.html">peripherals</a></li><li class="navelem"><a class="el" href="itg3200_8c.html">itg3200.c</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:18 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:16 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

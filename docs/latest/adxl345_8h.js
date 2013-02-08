@@ -1,29 +1,14 @@
 var adxl345_8h =
 [
-    [ "ADXL345_ADDR", "adxl345_8h.html#aae2344e3068fa610bf770f497a5582b7", null ],
-    [ "ADXL345_ADDR_ALT", "adxl345_8h.html#a646d6b4b77e059d8ae93506700cd6a0c", null ],
-    [ "ADXL345_FULL_RES", "adxl345_8h.html#a3d50abf02ab8bea3939b9093b152eec4", null ],
-    [ "ADXL345_INT_INVERT", "adxl345_8h.html#a50b70186263b37c82dc4dd4a27ce6dd9", null ],
-    [ "ADXL345_JUSTIFY_MSB", "adxl345_8h.html#a953b113cba55a22f1d7c507c1ec25d52", null ],
-    [ "ADXL345_RANGE_16G", "adxl345_8h.html#a8cb06ef9eec9ffa9a68ea76ac50bda7c", null ],
-    [ "ADXL345_RANGE_2G", "adxl345_8h.html#afa89d0888b9e734ad7f992dec25c1fa7", null ],
-    [ "ADXL345_RANGE_4G", "adxl345_8h.html#a5e66e140e085d6e8fdc98ce7f8b87290", null ],
-    [ "ADXL345_RANGE_8G", "adxl345_8h.html#a1b3f9e470894f3452c818c3167076be6", null ],
-    [ "ADXL345_RATE_100", "adxl345_8h.html#ad99fa8a458639c2bb08cfcf0abf990a9", null ],
-    [ "ADXL345_RATE_1600", "adxl345_8h.html#ab48a552434e1e882bfc8fa9266843efd", null ],
-    [ "ADXL345_RATE_200", "adxl345_8h.html#a93b49258a0fc436648e49232ff2f5a1c", null ],
-    [ "ADXL345_RATE_3200", "adxl345_8h.html#a9adcc3f0aa616dd909fd50e60f376b7f", null ],
-    [ "ADXL345_RATE_400", "adxl345_8h.html#a7d24c1e74567e88b0d90d8e6e163a9e4", null ],
-    [ "ADXL345_RATE_50", "adxl345_8h.html#acf25be1a64a51865d53a30ea521c5929", null ],
-    [ "ADXL345_RATE_800", "adxl345_8h.html#a214c453f4226ec0f8105672900320e36", null ],
-    [ "ADXL345_REG_BW_RATE", "adxl345_8h.html#a51ce19e9e208c52fb41348c472b428ab", null ],
-    [ "ADXL345_REG_DATA_FORMAT", "adxl345_8h.html#a599ba3e5ed5a1ff931b9b268590a54a3", null ],
-    [ "ADXL345_REG_DATA_X0", "adxl345_8h.html#a26d195d59722f158ccb2d2f0da63b32e", null ],
-    [ "ADXL345_REG_DATA_X1", "adxl345_8h.html#a3d981883864e2d64f37b9f821735ab65", null ],
-    [ "ADXL345_REG_DATA_Y0", "adxl345_8h.html#a96b83c2b10e01c1609492d1d09caf840", null ],
-    [ "ADXL345_REG_DATA_Y1", "adxl345_8h.html#aac86e8521969d628eaf3aaf34d82ff95", null ],
-    [ "ADXL345_REG_DATA_Z0", "adxl345_8h.html#a01105c1c90dd962858ffce4560734e85", null ],
-    [ "ADXL345_REG_DATA_Z1", "adxl345_8h.html#a4480f41850b6a7a5324c3bf3403468f7", null ],
-    [ "ADXL345_REG_INT_ENABLE", "adxl345_8h.html#ae54dd63a35ee5baec0ba7bfa8892d005", null ],
-    [ "ADXL345_REG_POWER_CTL", "adxl345_8h.html#aa8b343258a85689467d33fb6e7a92d18", null ]
+    [ "Adxl345Config", "structAdxl345Config.html", "structAdxl345Config" ],
+    [ "Adxl345ConfStatus", "adxl345_8h.html#aa006d32535082f7872bc58cd529c9177", [
+      [ "ADXL_CONF_UNINIT", "adxl345_8h.html#aa006d32535082f7872bc58cd529c9177ae80bfd865b45a8a8708ec7ed2a1af76e", null ],
+      [ "ADXL_CONF_RATE", "adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a9cc54611609e5e75f9d5ddb13f7a397d", null ],
+      [ "ADXL_CONF_POWER", "adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a205a7c7d7b8e032cc6a417d77df929db", null ],
+      [ "ADXL_CONF_INT", "adxl345_8h.html#aa006d32535082f7872bc58cd529c9177aaa99fc542908dac52f3a47a43c56609b", null ],
+      [ "ADXL_CONF_FORMAT", "adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a6a9a83b7903ab2aae85a5ae83aeda936", null ],
+      [ "ADXL_CONF_DONE", "adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a999e954e9d6680cc9a96810a73b059a8", null ]
+    ] ],
+    [ "adxl345_data_format", "adxl345_8h.html#ac6863633d46c7db4982eb0f78fec8a3f", null ],
+    [ "adxl345_set_default_config", "adxl345_8h.html#a5e8e2514332efd14ec188331fba0b6fc", null ]
 ];

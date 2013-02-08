@@ -323,18 +323,6 @@ var onboard_modules =
         [ "Raw ins_arduimu_basic.xml file:", "module__ins_arduimu_basic.html#module_xml__ins_arduimu_basic", null ]
       ] ]
     ] ],
-    [ "Ins Aspirin Via I2C", "module__ins_aspirin_via_i2c.html", [
-      [ "Files", "module__ins_aspirin_via_i2c.html#files", [
-        [ "Header Files", "module__ins_aspirin_via_i2c.html#headers", null ],
-        [ "Raw ins_aspirin_via_i2c.xml file:", "module__ins_aspirin_via_i2c.html#module_xml__ins_aspirin_via_i2c", null ]
-      ] ]
-    ] ],
-    [ "Ins Ppzuavimu", "module__ins_ppzuavimu.html", [
-      [ "Files", "module__ins_ppzuavimu.html#files", [
-        [ "Header Files", "module__ins_ppzuavimu.html#headers", null ],
-        [ "Raw ins_ppzuavimu.xml file:", "module__ins_ppzuavimu.html#module_xml__ins_ppzuavimu", null ]
-      ] ]
-    ] ],
     [ "VectorNav VN100 (SPI)", "module__ins_vn100.html", [
       [ "Module configuration options", "module__ins_vn100.html#configuration", [
         [ "Define Options", "module__ins_vn100.html#define", null ]
@@ -867,30 +855,6 @@ var onboard_modules =
         [ "Raw ezcurrent.xml file:", "module__ezcurrent.html#module_xml__ezcurrent", null ]
       ] ]
     ] ],
-    [ "Aspirin IMU (all I2C version)", "module__imu_aspirin_i2c.html", [
-      [ "Module functions", "module__imu_aspirin_i2c.html#functions", [
-        [ "Init Functions", "module__imu_aspirin_i2c.html#init_functions", null ],
-        [ "Event Functions", "module__imu_aspirin_i2c.html#event_functions", null ],
-        [ "Periodic Functions", "module__imu_aspirin_i2c.html#periodic_functions", null ]
-      ] ],
-      [ "Files", "module__imu_aspirin_i2c.html#files", [
-        [ "Header Files", "module__imu_aspirin_i2c.html#headers", null ],
-        [ "Source Files", "module__imu_aspirin_i2c.html#sources", null ],
-        [ "Raw imu_aspirin_i2c.xml file:", "module__imu_aspirin_i2c.html#module_xml__imu_aspirin_i2c", null ]
-      ] ]
-    ] ],
-    [ "Imu Ppzuav", "module__imu_ppzuav.html", [
-      [ "Module functions", "module__imu_ppzuav.html#functions", [
-        [ "Init Functions", "module__imu_ppzuav.html#init_functions", null ],
-        [ "Event Functions", "module__imu_ppzuav.html#event_functions", null ],
-        [ "Periodic Functions", "module__imu_ppzuav.html#periodic_functions", null ]
-      ] ],
-      [ "Files", "module__imu_ppzuav.html#files", [
-        [ "Header Files", "module__imu_ppzuav.html#headers", null ],
-        [ "Source Files", "module__imu_ppzuav.html#sources", null ],
-        [ "Raw imu_ppzuav.xml file:", "module__imu_ppzuav.html#module_xml__imu_ppzuav", null ]
-      ] ]
-    ] ],
     [ "Infrared sensor using ADC", "module__infrared_adc.html", [
       [ "Module configuration options", "module__infrared_adc.html#configuration", [
         [ "Configure Options", "module__infrared_adc.html#configure", null ]
@@ -927,6 +891,22 @@ var onboard_modules =
         [ "Header Files", "module__mag_hmc5843.html#headers", null ],
         [ "Source Files", "module__mag_hmc5843.html#sources", null ],
         [ "Raw mag_hmc5843.xml file:", "module__mag_hmc5843.html#module_xml__mag_hmc5843", null ]
+      ] ]
+    ] ],
+    [ "HMC58xx magnetometer", "module__mag_hmc58xx.html", [
+      [ "Module configuration options", "module__mag_hmc58xx.html#configuration", [
+        [ "Configure Options", "module__mag_hmc58xx.html#configure", null ],
+        [ "Define Options", "module__mag_hmc58xx.html#define", null ]
+      ] ],
+      [ "Module functions", "module__mag_hmc58xx.html#functions", [
+        [ "Init Functions", "module__mag_hmc58xx.html#init_functions", null ],
+        [ "Event Functions", "module__mag_hmc58xx.html#event_functions", null ],
+        [ "Periodic Functions", "module__mag_hmc58xx.html#periodic_functions", null ]
+      ] ],
+      [ "Files", "module__mag_hmc58xx.html#files", [
+        [ "Header Files", "module__mag_hmc58xx.html#headers", null ],
+        [ "Source Files", "module__mag_hmc58xx.html#sources", null ],
+        [ "Raw mag_hmc58xx.xml file:", "module__mag_hmc58xx.html#module_xml__mag_hmc58xx", null ]
       ] ]
     ] ],
     [ "Micromag magnetometer", "module__mag_micromag_fw.html", [

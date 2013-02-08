@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -107,53 +107,76 @@ $(document).ready(function(){initNavTree('adxl345_8h_source.html','');});
 <div class="title">adxl345.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="adxl345_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ADXL345_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/* default I2C address */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aae2344e3068fa610bf770f497a5582b7">    5</a></span>&#160;<span class="preprocessor">#define ADXL345_ADDR            0xA6</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a646d6b4b77e059d8ae93506700cd6a0c">    6</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_ADDR_ALT        0x3A</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/* Registers */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a51ce19e9e208c52fb41348c472b428ab">    9</a></span>&#160;<span class="preprocessor">#define ADXL345_REG_BW_RATE     0x2C</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aa8b343258a85689467d33fb6e7a92d18">   10</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_REG_POWER_CTL   0x2D</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="adxl345_8h.html#ae54dd63a35ee5baec0ba7bfa8892d005">   11</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_REG_INT_ENABLE  0x2E</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a599ba3e5ed5a1ff931b9b268590a54a3">   12</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_REG_DATA_FORMAT 0x31</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a26d195d59722f158ccb2d2f0da63b32e">   13</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_REG_DATA_X0     0x32</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a3d981883864e2d64f37b9f821735ab65">   14</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_REG_DATA_X1     0x33</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a96b83c2b10e01c1609492d1d09caf840">   15</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_REG_DATA_Y0     0x34</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aac86e8521969d628eaf3aaf34d82ff95">   16</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_REG_DATA_Y1     0x35</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a01105c1c90dd962858ffce4560734e85">   17</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_REG_DATA_Z0     0x36</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a4480f41850b6a7a5324c3bf3403468f7">   18</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_REG_DATA_Z1     0x37</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/* Selectable data rates in ADXL345_REG_BW_RATE</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * bandwith is always half of data rate</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a9adcc3f0aa616dd909fd50e60f376b7f">   23</a></span>&#160;<span class="preprocessor">#define ADXL345_RATE_3200 0x0F</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="adxl345_8h.html#ab48a552434e1e882bfc8fa9266843efd">   24</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RATE_1600 0x0E</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a214c453f4226ec0f8105672900320e36">   25</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RATE_800  0x0D</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a7d24c1e74567e88b0d90d8e6e163a9e4">   26</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RATE_400  0x0C</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a93b49258a0fc436648e49232ff2f5a1c">   27</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RATE_200  0x0B</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="adxl345_8h.html#ad99fa8a458639c2bb08cfcf0abf990a9">   28</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RATE_100  0x0A</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="adxl345_8h.html#acf25be1a64a51865d53a30ea521c5929">   29</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RATE_50   0x09</span></div>
+<a href="adxl345_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2013 Felix Ruess &lt;felix.ruess@gmail.com&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is part of paparazzi.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * paparazzi is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * the Free Software Foundation; either version 2, or (at your option)</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * any later version.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * paparazzi is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * along with paparazzi; see the file COPYING.  If not, write to</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * the Free Software Foundation, 59 Temple Place - Suite 330,</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Boston, MA 02111-1307, USA.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef ADXL345_H</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_H</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/* data format bits, range */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a50b70186263b37c82dc4dd4a27ce6dd9">   32</a></span>&#160;<span class="preprocessor">#define ADXL345_INT_INVERT  0x20</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a3d50abf02ab8bea3939b9093b152eec4">   33</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_FULL_RES    0x08</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a953b113cba55a22f1d7c507c1ec25d52">   34</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_JUSTIFY_MSB 0x04</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a8cb06ef9eec9ffa9a68ea76ac50bda7c">   35</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RANGE_16G   0x03</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a1b3f9e470894f3452c818c3167076be6">   36</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RANGE_8G    0x02</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a5e66e140e085d6e8fdc98ce7f8b87290">   37</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RANGE_4G    0x01</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="adxl345_8h.html#afa89d0888b9e734ad7f992dec25c1fa7">   38</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ADXL345_RANGE_2G    0x00</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ADXL345_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;std.h&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/* Include address and register definition */</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="adxl345__regs_8h.html" title="Register and address definitions for ADXL345 accelerometer.">peripherals/adxl345_regs.h</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177">   36</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177">Adxl345ConfStatus</a> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177ae80bfd865b45a8a8708ec7ed2a1af76e">   37</a></span>&#160;  <a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177ae80bfd865b45a8a8708ec7ed2a1af76e">ADXL_CONF_UNINIT</a> = 0,</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a9cc54611609e5e75f9d5ddb13f7a397d">   38</a></span>&#160;  <a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a9cc54611609e5e75f9d5ddb13f7a397d">ADXL_CONF_RATE</a>   = 1,</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a205a7c7d7b8e032cc6a417d77df929db">   39</a></span>&#160;  <a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a205a7c7d7b8e032cc6a417d77df929db">ADXL_CONF_POWER</a>  = 2,</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177aaa99fc542908dac52f3a47a43c56609b">   40</a></span>&#160;  <a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177aaa99fc542908dac52f3a47a43c56609b">ADXL_CONF_INT</a>    = 3,</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a6a9a83b7903ab2aae85a5ae83aeda936">   41</a></span>&#160;  <a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a6a9a83b7903ab2aae85a5ae83aeda936">ADXL_CONF_FORMAT</a> = 4,</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a999e954e9d6680cc9a96810a73b059a8">   42</a></span>&#160;  <a class="code" href="adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a999e954e9d6680cc9a96810a73b059a8">ADXL_CONF_DONE</a>   = 5</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="structAdxl345Config.html">   45</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structAdxl345Config.html">Adxl345Config</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="structAdxl345Config.html#a9afc67ca469a7b354835c24b28137621">   46</a></span>&#160;  bool_t <a class="code" href="structAdxl345Config.html#a9afc67ca469a7b354835c24b28137621" title="Enable Data Ready Interrupt.">drdy_int_enable</a>;   </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="structAdxl345Config.html#a7756303adffbd4db9544cf913c6ecba9">   47</a></span>&#160;  bool_t <a class="code" href="structAdxl345Config.html#a7756303adffbd4db9544cf913c6ecba9" title="Invert Interrupt FALSE: active high, TRUE: active low.">int_invert</a>;        </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="structAdxl345Config.html#aae40365094e01152c5638a51caa2c52e">   48</a></span>&#160;  bool_t <a class="code" href="structAdxl345Config.html#aae40365094e01152c5638a51caa2c52e" title="Full Resolution: FALSE: 10bit, TRUE: full with 4mg/LSB.">full_res</a>;          </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="structAdxl345Config.html#a6359097c27eff4791d327c4cf2934877">   49</a></span>&#160;  bool_t <a class="code" href="structAdxl345Config.html#a6359097c27eff4791d327c4cf2934877" title="justify: FALSE: right with sign-extension, TRUE: MSB (left)">justify_msb</a>;       </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="structAdxl345Config.html#a6ee5db11ac7e24698803d3f5b1ec54fb">   50</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="adxl345__regs_8h.html#abc3494afc65a86812ed33040266ce16f" title="Selectable range in ADXL345_REG_DATA_FORMAT.">Adxl345Ranges</a> <a class="code" href="structAdxl345Config.html#a6ee5db11ac7e24698803d3f5b1ec54fb" title="g Range">range</a>; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="structAdxl345Config.html#a3ddf6d2e394d53c1d7e329fcf9565f80">   51</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133" title="Selectable data rates in ADXL345_REG_BW_RATE bandwith is always half of data rate.">Adxl345Rates</a> <a class="code" href="structAdxl345Config.html#a3ddf6d2e394d53c1d7e329fcf9565f80" title="Data Output Rate.">rate</a>;   </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="adxl345_8h.html#a5e8e2514332efd14ec188331fba0b6fc">   54</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="adxl345_8h.html#a5e8e2514332efd14ec188331fba0b6fc">adxl345_set_default_config</a>(<span class="keyword">struct</span> <a class="code" href="structAdxl345Config.html">Adxl345Config</a> *<a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  c-&gt;<a class="code" href="structAdxl345Config.html#a3ddf6d2e394d53c1d7e329fcf9565f80" title="Data Output Rate.">rate</a> = <a class="code" href="adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133ac96d8707cb3edd68386f6025091a1426">ADXL345_RATE_100HZ</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  c-&gt;<a class="code" href="structAdxl345Config.html#a9afc67ca469a7b354835c24b28137621" title="Enable Data Ready Interrupt.">drdy_int_enable</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  c-&gt;<a class="code" href="structAdxl345Config.html#a7756303adffbd4db9544cf913c6ecba9" title="Invert Interrupt FALSE: active high, TRUE: active low.">int_invert</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  c-&gt;<a class="code" href="structAdxl345Config.html#aae40365094e01152c5638a51caa2c52e" title="Full Resolution: FALSE: 10bit, TRUE: full with 4mg/LSB.">full_res</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  c-&gt;<a class="code" href="structAdxl345Config.html#a6359097c27eff4791d327c4cf2934877" title="justify: FALSE: right with sign-extension, TRUE: MSB (left)">justify_msb</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  c-&gt;<a class="code" href="structAdxl345Config.html#a6ee5db11ac7e24698803d3f5b1ec54fb" title="g Range">range</a> = <a class="code" href="adxl345__regs_8h.html#abc3494afc65a86812ed33040266ce16fae5641dd5b58e2fdb7018903fb9c4e21b">ADXL345_RANGE_16G</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="adxl345_8h.html#ac6863633d46c7db4982eb0f78fec8a3f">   64</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="adxl345_8h.html#ac6863633d46c7db4982eb0f78fec8a3f">adxl345_data_format</a>(<span class="keyword">struct</span> <a class="code" href="structAdxl345Config.html">Adxl345Config</a> *<a class="code" href="discsurvey_8c.html#a9036cf5ddfd07954ab577403db961e84">c</a>)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">return</span> ((c-&gt;<a class="code" href="structAdxl345Config.html#a7756303adffbd4db9544cf913c6ecba9" title="Invert Interrupt FALSE: active high, TRUE: active low.">int_invert</a> &lt;&lt; 5) | (c-&gt;<a class="code" href="structAdxl345Config.html#aae40365094e01152c5638a51caa2c52e" title="Full Resolution: FALSE: 10bit, TRUE: full with 4mg/LSB.">full_res</a> &lt;&lt; 3) | (c-&gt;<a class="code" href="structAdxl345Config.html#a6359097c27eff4791d327c4cf2934877" title="justify: FALSE: right with sign-extension, TRUE: MSB (left)">justify_msb</a> &lt;&lt; 2) | (c-&gt;<a class="code" href="structAdxl345Config.html#a6ee5db11ac7e24698803d3f5b1ec54fb" title="g Range">range</a>));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif // ADXL345_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_0a48ba2c0a76794adfddddc873522f67.html">peripherals</a></li><li class="navelem"><a class="el" href="adxl345_8h.html">adxl345.h</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:15 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:14 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

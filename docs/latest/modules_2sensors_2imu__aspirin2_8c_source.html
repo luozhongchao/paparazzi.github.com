@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -147,9 +147,9 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// #include &quot;../../peripherals/hmc5843.h&quot;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Results</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a8271a0a8d22406f5117416a7fe284a7b">   41</a></span>&#160;<span class="keyword">volatile</span> bool_t <a class="code" href="imu__navgo_8c.html#a8271a0a8d22406f5117416a7fe284a7b">mag_valid</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#afbbfe5fb78cd2de203ea88848ed1524d">   42</a></span>&#160;<span class="keyword">volatile</span> bool_t <a class="code" href="imu__navgo_8c.html#afbbfe5fb78cd2de203ea88848ed1524d">gyr_valid</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a8ed404ef3ddf50958703e92a017973ef">   43</a></span>&#160;<span class="keyword">volatile</span> bool_t <a class="code" href="imu__navgo_8c.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="modules_2sensors_2imu__aspirin2_8h.html#a8271a0a8d22406f5117416a7fe284a7b">   41</a></span>&#160;<span class="keyword">volatile</span> bool_t <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a8271a0a8d22406f5117416a7fe284a7b">mag_valid</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="modules_2sensors_2imu__aspirin2_8h.html#afbbfe5fb78cd2de203ea88848ed1524d">   42</a></span>&#160;<span class="keyword">volatile</span> bool_t <a class="code" href="imu__umarim_8h.html#afbbfe5fb78cd2de203ea88848ed1524d">gyr_valid</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="modules_2sensors_2imu__aspirin2_8h.html#a8ed404ef3ddf50958703e92a017973ef">   43</a></span>&#160;<span class="keyword">volatile</span> bool_t <a class="code" href="imu__umarim_8h.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Communication</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">   46</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi2c__transaction.html">i2c_transaction</a> <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>;</div>
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// -switch to gyroX clock</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a5ec5b6507bf2191e70f03ed3ae26074c">MPU60X0_REG_PWR_MGMT_1</a>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = 0x01;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEV,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// MPU60X0_REG_PWR_MGMT_2: Nothing should be in standby: default OK</span></div>
@@ -203,28 +203,28 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span>  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a2b7ce956fb494e1a661a645dba83afde">MPU60X0_REG_CONFIG</a>;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (2 &lt;&lt; 3) | (3 &lt;&lt; 0);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEV,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="comment">// MPU60X0_REG_SMPLRT_DIV</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">// -100Hz output = 1kHz / (9 + 1)</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#aaa8b385c8d2539602ded2330fb3bcc57">MPU60X0_REG_SMPLRT_DIV</a>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = 9;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEV,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// MPU60X0_REG_GYRO_CONFIG</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// -2000deg/sec</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a28332b01b4b9f2bdbc89887e11eb406f">MPU60X0_REG_GYRO_CONFIG</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (3&lt;&lt;3);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEV,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="comment">// MPU60X0_REG_ACCEL_CONFIG</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="comment">// 16g, no HPFL</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a83dd394cafdbc08b8afc3dafe80c6d15">MPU60X0_REG_ACCEL_CONFIG</a>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[1] = (3&lt;&lt;3);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEV,&amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#ac4f80563bab524eee997c5c27ef570a4">status</a> == <a class="code" href="group__i2c.html#ggab31a87ef6e90ddd08be846de32e8a442adfa4e1bf79d0b917c2c6c473b0955cd3">I2CTransPending</a>);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
@@ -235,7 +235,7 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">  // no interrupts for now, but set data ready interrupt to enable reading status bits</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">  aspirin2_mpu60x0.buf[0] = ITG3200_REG_INT_CFG;</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">  aspirin2_mpu60x0.buf[1] = 0x01;</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEVICE,&amp;aspirin2_mpu60x0);</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEV,&amp;aspirin2_mpu60x0);</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">    while(aspirin2_mpu60x0.status == I2CTransPending);</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
@@ -246,21 +246,21 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">  ppzuavimu_hmc5843.buf[0] = HMC5843_REG_CFGA;  // set to rate to max speed: 50Hz no bias</span></div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">  ppzuavimu_hmc5843.buf[1] = 0x00 | (0x06 &lt;&lt; 2);</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">  ppzuavimu_hmc5843.len_w = 2;</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEVICE,&amp;ppzuavimu_hmc5843);</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEV,&amp;ppzuavimu_hmc5843);</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">    while(ppzuavimu_hmc5843.status == I2CTransPending);</span></div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">  ppzuavimu_hmc5843.type = I2CTransTx;</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">  ppzuavimu_hmc5843.buf[0] = HMC5843_REG_CFGB;  // set to gain to 1 Gauss</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">  ppzuavimu_hmc5843.buf[1] = 0x01&lt;&lt;5;</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">  ppzuavimu_hmc5843.len_w = 2;</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEVICE,&amp;ppzuavimu_hmc5843);</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEV,&amp;ppzuavimu_hmc5843);</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">    while(ppzuavimu_hmc5843.status == I2CTransPending);</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">  ppzuavimu_hmc5843.type = I2CTransTx;</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">  ppzuavimu_hmc5843.buf[0] = HMC5843_REG_MODE;  // set to continuous mode</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">  ppzuavimu_hmc5843.buf[1] = 0x00;</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">  ppzuavimu_hmc5843.len_w = 2;</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEVICE,&amp;ppzuavimu_hmc5843);</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEV,&amp;ppzuavimu_hmc5843);</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">    while(ppzuavimu_hmc5843.status == I2CTransPending);</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
@@ -272,7 +272,7 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5">len_r</a> = 21;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#afe675669c727a98bd998283d940b2636">len_w</a> = 1;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] = <a class="code" href="mpu60X0_8h.html#a4f448949c60adfeee3f9234a95187569">MPU60X0_REG_INT_STATUS</a>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEVICE, &amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <a class="code" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa">i2c_submit</a>(&amp;PPZUAVIMU_I2C_DEV, &amp;<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">  // Start reading the latest accelerometer data</span></div>
@@ -280,7 +280,7 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">  ppzuavimu_adxl345.len_r = 6;</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">  ppzuavimu_adxl345.len_w = 1;</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">  ppzuavimu_adxl345.buf[0] = ADXL345_REG_DATA_X0;</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEVICE, &amp;ppzuavimu_adxl345);</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEV, &amp;ppzuavimu_adxl345);</span></div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="comment">// Start reading the latest magnetometer data</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#if PERIODIC_FREQUENCY &gt; 60</span></div>
@@ -290,7 +290,7 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">  ppzuavimu_hmc5843.len_r = 6;</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">  ppzuavimu_hmc5843.len_w = 1;</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">  ppzuavimu_hmc5843.buf[0] = HMC5843_REG_DATXM;</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEVICE, &amp;ppzuavimu_hmc5843);</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">  i2c_submit(&amp;PPZUAVIMU_I2C_DEV, &amp;ppzuavimu_hmc5843);</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#if PERIODIC_FREQUENCY &gt; 60</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor"></span>  });</div>
@@ -329,8 +329,8 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// Is this is new data</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69">aspirin2_mpu60x0</a>.<a class="code" href="structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee">buf</a>[0] &amp; 0x01)</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      <a class="code" href="imu__navgo_8c.html#afbbfe5fb78cd2de203ea88848ed1524d">gyr_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      <a class="code" href="imu__navgo_8c.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      <a class="code" href="imu__umarim_8h.html#afbbfe5fb78cd2de203ea88848ed1524d">gyr_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      <a class="code" href="imu__umarim_8h.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a> = <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    {</div>
@@ -381,7 +381,7 @@ $(document).ready(function(){initNavTree('modules_2sensors_2imu__aspirin2_8c_sou
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_2f48bbb566df394f79dcf8fe0631584a.html">sensors</a></li><li class="navelem"><a class="el" href="modules_2sensors_2imu__aspirin2_8c.html">imu_aspirin2.c</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:15 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:14 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

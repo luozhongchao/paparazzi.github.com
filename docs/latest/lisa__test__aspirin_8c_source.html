@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('lisa__test__aspirin_8c_source.html',''
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="downlink_8h.html" title="Common code for AP and FBW telemetry.">subsystems/datalink/downlink.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API">led.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itg3200_8h.html">peripherals/itg3200.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itg3200_8h.html" title="Driver for the gyro ITG3200 from InvenSense.">peripherals/itg3200.h</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hmc5843_8h.html">peripherals/hmc5843.h</a>&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="boards_2booz_2test__baro_8c.html#afaa8374e20b79aaf7cfcea5ad9467ab1">main_init</a>( <span class="keywordtype">void</span> );</div>
@@ -196,21 +196,21 @@ $(document).ready(function(){initNavTree('lisa__test__aspirin_8c_source.html',''
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">switch</span> (foo) {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">case</span> 2:</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">/* set gyro range to 2000deg/s and low pass at 256Hz */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    i2c2.buf[0] = <a class="code" href="itg3200_8h.html#a653510a2ba2abd795efbfc86e643a447">ITG3200_REG_DLPF_FS</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    i2c2.buf[0] = <a class="code" href="itg3200__regs_8h.html#a653510a2ba2abd795efbfc86e643a447">ITG3200_REG_DLPF_FS</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    i2c2.buf[1] = 0x03;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    i2c2_transmit(<a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>, 2, &amp;<a class="code" href="test__mc__asctec__v1__simple_8c.html#aa194420931c3cc3de99fa9a069d0145b">i2c_done</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    i2c2_transmit(<a class="code" href="itg3200__regs_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>, 2, &amp;<a class="code" href="test__mc__asctec__v1__simple_8c.html#aa194420931c3cc3de99fa9a069d0145b">i2c_done</a>);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">case</span> 3:</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">/* switch to gyroX clock */</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    i2c2.buf[0] = <a class="code" href="itg3200_8h.html#a85621ed4be861a41e44f01cd79c29015">ITG3200_REG_PWR_MGM</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    i2c2.buf[0] = <a class="code" href="itg3200__regs_8h.html#a85621ed4be861a41e44f01cd79c29015">ITG3200_REG_PWR_MGM</a>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    i2c2.buf[1] = 0x01;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    i2c2_transmit(<a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>, 2, &amp;<a class="code" href="test__mc__asctec__v1__simple_8c.html#aa194420931c3cc3de99fa9a069d0145b">i2c_done</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    i2c2_transmit(<a class="code" href="itg3200__regs_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>, 2, &amp;<a class="code" href="test__mc__asctec__v1__simple_8c.html#aa194420931c3cc3de99fa9a069d0145b">i2c_done</a>);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">case</span> 4:</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">/* enable interrupt on data ready, idle hight */</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    i2c2.buf[0] = <a class="code" href="itg3200_8h.html#a355f46a6c4c401c94d75a04ffef2161e">ITG3200_REG_INT_CFG</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    i2c2.buf[0] = <a class="code" href="itg3200__regs_8h.html#a355f46a6c4c401c94d75a04ffef2161e">ITG3200_REG_INT_CFG</a>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    i2c2.buf[1] = (0x01 | 0x01&lt;&lt;7);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    i2c2_transmit(<a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>, 2, &amp;<a class="code" href="test__mc__asctec__v1__simple_8c.html#aa194420931c3cc3de99fa9a069d0145b">i2c_done</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    i2c2_transmit(<a class="code" href="itg3200__regs_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>, 2, &amp;<a class="code" href="test__mc__asctec__v1__simple_8c.html#aa194420931c3cc3de99fa9a069d0145b">i2c_done</a>);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">case</span> 5:</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">/* set mag rate to 50Hz */</span></div>
@@ -384,8 +384,8 @@ $(document).ready(function(){initNavTree('lisa__test__aspirin_8c_source.html',''
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="lisa__test__aspirin_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> &amp;&amp; <a class="code" href="test__mc__asctec__v1__simple_8c.html#aa194420931c3cc3de99fa9a069d0145b">i2c_done</a> &amp;&amp; foo&gt;=5) {</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">/* read gyros */</span></div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">/* reads 8 bytes from address 0x1b */</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    i2c2.buf[0] = <a class="code" href="itg3200_8h.html#ad5cb0cc5cd2bd2a6785d66355028ee23">ITG3200_REG_TEMP_OUT_H</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    i2c2_transceive(<a class="code" href="itg3200_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>,1, 8, &amp;<a class="code" href="test__mc__asctec__v1__simple_8c.html#aa194420931c3cc3de99fa9a069d0145b">i2c_done</a>);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    i2c2.buf[0] = <a class="code" href="itg3200__regs_8h.html#ad5cb0cc5cd2bd2a6785d66355028ee23">ITG3200_REG_TEMP_OUT_H</a>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    i2c2_transceive(<a class="code" href="itg3200__regs_8h.html#a4ffba30a33af0aa24898fb6a309ef56c">ITG3200_ADDR</a>,1, 8, &amp;<a class="code" href="test__mc__asctec__v1__simple_8c.html#aa194420931c3cc3de99fa9a069d0145b">i2c_done</a>);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="lisa__test__aspirin_8c.html#abc4c2308ba5f25c05a3e9649352116ca">gyro_ready_for_read</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  }</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -418,7 +418,7 @@ $(document).ready(function(){initNavTree('lisa__test__aspirin_8c_source.html',''
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_619681cec2e2b8e1da0a59f060b05c88.html">lisa</a></li><li class="navelem"><a class="el" href="dir_6f32681793dbeebbfb239f11d8f7e4ea.html">test</a></li><li class="navelem"><a class="el" href="lisa__test__aspirin_8c.html">lisa_test_aspirin.c</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:15 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:13 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

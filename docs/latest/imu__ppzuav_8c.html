@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: sw/airborne/modules/sensors/imu_ppzuav.c File Reference</title>
+<title>Paparazzi UAS: sw/airborne/subsystems/imu/imu_ppzuav.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -111,108 +111,108 @@ $(document).ready(function(){initNavTree('imu__ppzuav_8c.html','');});
 <div class="title">imu_ppzuav.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;math.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="imu__ppzuav_8h_source.html">imu_ppzuav.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="imu_8h_source.html">subsystems/imu.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="i2c_8h_source.html">mcu_periph/i2c.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br/>
-<code>#include &quot;mcu_periph/gpio_arch.h&quot;</code><br/>
-<code>#include &quot;<a class="el" href="uart_8h_source.html">mcu_periph/uart.h</a>&quot;</code><br/>
-<code>#include &quot;messages.h&quot;</code><br/>
-<code>#include &quot;<a class="el" href="downlink_8h_source.html">subsystems/datalink/downlink.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="itg3200_8h_source.html">../../peripherals/itg3200.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="adxl345_8h_source.html">../../peripherals/adxl345.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="hmc5843_8h_source.html">../../peripherals/hmc5843.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for imu_ppzuav.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="imu__ppzuav_8c__incl.png" border="0" usemap="#sw_2airborne_2modules_2sensors_2imu__ppzuav_8c" alt=""/></div>
-<map name="sw_2airborne_2modules_2sensors_2imu__ppzuav_8c" id="sw_2airborne_2modules_2sensors_2imu__ppzuav_8c">
-<area shape="rect" id="node5" href="imu__ppzuav_8h.html" title="imu_ppzuav.h" alt="" coords="1011,111,1120,140"/><area shape="rect" id="node34" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="41,399,172,428"/><area shape="rect" id="node40" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="1441,111,1495,140"/><area shape="rect" id="node44" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="743,111,881,140"/><area shape="rect" id="node51" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="1215,102,1367,149"/><area shape="rect" id="node84" href="itg3200_8h.html" title="../../peripherals/itg3200.h" alt="" coords="1716,111,1897,140"/><area shape="rect" id="node86" href="adxl345_8h.html" title="../../peripherals/adxl345.h" alt="" coords="1921,111,2103,140"/><area shape="rect" id="node88" href="hmc5843_8h.html" title="../../peripherals/hmc5843.h" alt="" coords="229,303,421,332"/><area shape="rect" id="node9" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="880,207,1019,236"/><area shape="rect" id="node11" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="849,303,1028,332"/><area shape="rect" id="node27" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="576,303,765,332"/><area shape="rect" id="node14" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="620,399,775,428"/><area shape="rect" id="node21" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="900,399,1049,428"/><area shape="rect" id="node53" href="inttypes_8h.html" title="inttypes.h" alt="" coords="1863,399,1948,428"/><area shape="rect" id="node59" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="1567,198,1719,245"/><area shape="rect" id="node72" href="xbee_8h.html" title="subsystems/datalink\l/xbee.h" alt="" coords="1215,198,1367,245"/><area shape="rect" id="node79" href="w5100_8h.html" title="subsystems/datalink\l/w5100.h" alt="" coords="1391,198,1543,245"/><area shape="rect" id="node63" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1460,294,1612,341"/><area shape="rect" id="node68" href="transport_8h.html" title="generic transport header" alt="" coords="1636,294,1788,341"/><area shape="rect" id="node76" href="xbee24_8h.html" title="subsystems/datalink\l/xbee24.h" alt="" coords="1284,294,1436,341"/></map>
+<div class="center"><img src="imu__ppzuav_8c__incl.png" border="0" usemap="#sw_2airborne_2subsystems_2imu_2imu__ppzuav_8c" alt=""/></div>
+<map name="sw_2airborne_2subsystems_2imu_2imu__ppzuav_8c" id="sw_2airborne_2subsystems_2imu_2imu__ppzuav_8c">
+<area shape="rect" id="node3" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="327,101,465,131"/><area shape="rect" id="node30" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="640,256,771,285"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="409,179,588,208"/><area shape="rect" id="node22" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="15,179,204,208"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="147,256,301,285"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="325,256,475,285"/></map>
 </div>
 </div>
 <p><a href="imu__ppzuav_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a2978a46b47cbc9d17a0924014ff9658b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a2978a46b47cbc9d17a0924014ff9658b">DOWNLINK_DEVICE</a>&#160;&#160;&#160;DOWNLINK_AP_DEVICE</td></tr>
-<tr class="memitem:aca87afeed8190e9a8b0c6c69d40db1cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#aca87afeed8190e9a8b0c6c69d40db1cb">HMC5843_NO_IRQ</a></td></tr>
-<tr class="memitem:a3f944845df880412588796aeca80105e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a3f944845df880412588796aeca80105e">PERIODIC_FREQUENCY</a>&#160;&#160;&#160;60</td></tr>
-<tr class="memitem:af77280fcfbb79c418e0585b86532168d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#af77280fcfbb79c418e0585b86532168d">ITG_STA_DAT_OFFSET</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memitem:a0c6d46a04df7b97db971b8d1d4912282"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a0c6d46a04df7b97db971b8d1d4912282">IMU_PPZUAV_I2C_DEV</a>&#160;&#160;&#160;i2c0</td></tr>
+<tr class="memitem:a8a1b45ebc8e5b1582058c7d84a2e89b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a8a1b45ebc8e5b1582058c7d84a2e89b1">IMU_PPZUAV_ACCEL_RATE</a>&#160;&#160;&#160;<a class="el" href="adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133ae3c8093e169c38c2a412e2e43af297be">ADXL345_RATE_50HZ</a></td></tr>
+<tr class="memdesc:a8a1b45ebc8e5b1582058c7d84a2e89b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">adxl345 accelerometer output rate, lowpass is set to half of rate  <a href="#a8a1b45ebc8e5b1582058c7d84a2e89b1"></a><br/></td></tr>
+<tr class="memitem:a2b8f05a9bd0a74946665d9a7d2c0de3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a2b8f05a9bd0a74946665d9a7d2c0de3a">IMU_PPZUAV_GYRO_LOWPASS</a>&#160;&#160;&#160;<a class="el" href="itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baafa79ff64a32dd58353247295a33eb5ad">ITG3200_DLPF_20HZ</a></td></tr>
+<tr class="memdesc:a2b8f05a9bd0a74946665d9a7d2c0de3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">gyro internal lowpass frequency  <a href="#a2b8f05a9bd0a74946665d9a7d2c0de3a"></a><br/></td></tr>
+<tr class="memitem:a87e6cc99d80fa8d8dc65f122960036e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a87e6cc99d80fa8d8dc65f122960036e6">IMU_PPZUAV_GYRO_SMPLRT_DIV</a>&#160;&#160;&#160;19</td></tr>
+<tr class="memdesc:a87e6cc99d80fa8d8dc65f122960036e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">gyro sample rate divider  <a href="#a87e6cc99d80fa8d8dc65f122960036e6"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad32faae58e391642ec8048cb11011998"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#ad32faae58e391642ec8048cb11011998">imu_impl_init</a> (void)</td></tr>
 <tr class="memitem:a6623d4c90e7b1bfb73abc0da1195f29b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b">imu_periodic</a> (void)</td></tr>
-<tr class="memitem:aa53cfc3e58bd48ef1991f7cf4dde8c4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#aa53cfc3e58bd48ef1991f7cf4dde8c4b">ppzuavimu_module_downlink_raw</a> (void)</td></tr>
-<tr class="memitem:aa30df9e1b268e5e729d2a0036f4771d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#aa30df9e1b268e5e729d2a0036f4771d5">ppzuavimu_module_event</a> (void)</td></tr>
+<tr class="memitem:a51ff6c245630bbf2701dc550ce24ef23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a51ff6c245630bbf2701dc550ce24ef23">imu_ppzuav_event</a> (void)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8271a0a8d22406f5117416a7fe284a7b"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a8271a0a8d22406f5117416a7fe284a7b">mag_valid</a></td></tr>
-<tr class="memitem:afbbfe5fb78cd2de203ea88848ed1524d"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#afbbfe5fb78cd2de203ea88848ed1524d">gyr_valid</a></td></tr>
-<tr class="memitem:a8ed404ef3ddf50958703e92a017973ef"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a></td></tr>
-<tr class="memitem:a4787f36e1a642268e08e8c03fa02dfe7"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a4787f36e1a642268e08e8c03fa02dfe7">ppzuavimu_hmc5843</a></td></tr>
-<tr class="memitem:a39226793f6172fa3d2f03d96a7d6b89d"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a39226793f6172fa3d2f03d96a7d6b89d">ppzuavimu_itg3200</a></td></tr>
-<tr class="memitem:ac262de3bf472eb2d4372c7f684bfae14"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#ac262de3bf472eb2d4372c7f684bfae14">ppzuavimu_adxl345</a></td></tr>
-<tr class="memitem:a77b76ed533bc56f50d714f8958dd26cc"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structImu.html">Imu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#a77b76ed533bc56f50d714f8958dd26cc">imu</a></td></tr>
-<tr class="memdesc:a77b76ed533bc56f50d714f8958dd26cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">global IMU state  <a href="#a77b76ed533bc56f50d714f8958dd26cc"></a><br/></td></tr>
+<tr class="memitem:af1c3503ad92f5c5878d0fc80cf43779f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structImuPpzuav.html">ImuPpzuav</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__ppzuav_8c.html#af1c3503ad92f5c5878d0fc80cf43779f">imu_ppzuav</a></td></tr>
 </table>
 <h2>Macro Definition Documentation</h2>
-<a class="anchor" id="a2978a46b47cbc9d17a0924014ff9658b"></a>
+<a class="anchor" id="a8a1b45ebc8e5b1582058c7d84a2e89b1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DOWNLINK_DEVICE&#160;&#160;&#160;DOWNLINK_AP_DEVICE</td>
+          <td class="memname">#define IMU_PPZUAV_ACCEL_RATE&#160;&#160;&#160;<a class="el" href="adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133ae3c8093e169c38c2a412e2e43af297be">ADXL345_RATE_50HZ</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00035">35</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+<p>adxl345 accelerometer output rate, lowpass is set to half of rate </p>
+
+<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00042">42</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__ppzuav_8c_source.html#l00080">imu_impl_init()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aca87afeed8190e9a8b0c6c69d40db1cb"></a>
+<a class="anchor" id="a2b8f05a9bd0a74946665d9a7d2c0de3a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HMC5843_NO_IRQ</td>
+          <td class="memname">#define IMU_PPZUAV_GYRO_LOWPASS&#160;&#160;&#160;<a class="el" href="itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baafa79ff64a32dd58353247295a33eb5ad">ITG3200_DLPF_20HZ</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00040">40</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+<p>gyro internal lowpass frequency </p>
+
+<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00055">55</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__ppzuav_8c_source.html#l00080">imu_impl_init()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af77280fcfbb79c418e0585b86532168d"></a>
+<a class="anchor" id="a87e6cc99d80fa8d8dc65f122960036e6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ITG_STA_DAT_OFFSET&#160;&#160;&#160;3</td>
+          <td class="memname">#define IMU_PPZUAV_GYRO_SMPLRT_DIV&#160;&#160;&#160;19</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="imu__ppzuav_8c_source.html#l00207">ppzuavimu_module_event()</a>.</p>
+<p>gyro sample rate divider </p>
+
+<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00068">68</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__ppzuav_8c_source.html#l00080">imu_impl_init()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3f944845df880412588796aeca80105e"></a>
+<a class="anchor" id="a0c6d46a04df7b97db971b8d1d4912282"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PERIODIC_FREQUENCY&#160;&#160;&#160;60</td>
+          <td class="memname">#define IMU_PPZUAV_I2C_DEV&#160;&#160;&#160;i2c0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00061">61</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00036">36</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__ppzuav_8c_source.html#l00080">imu_impl_init()</a>.</p>
 
 </div>
 </div>
@@ -230,10 +230,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo:</a></b></dt><dd>drdy int handling for adxl345 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>eoc interrupt for itg3200, polling for now (including status reg) </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo:</a></b></dt><dd>drdy int handling for adxl345 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>eoc interrupt for itg3200, polling for now (including status reg) </dd></dl>
 
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00064">64</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00080">80</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
 
-<p>References <a class="el" href="adxl345_8h_source.html#l00005">ADXL345_ADDR</a>, <a class="el" href="adxl345_8h_source.html#l00033">ADXL345_FULL_RES</a>, <a class="el" href="adxl345_8h_source.html#l00035">ADXL345_RANGE_16G</a>, <a class="el" href="adxl345_8h_source.html#l00028">ADXL345_RATE_100</a>, <a class="el" href="adxl345_8h_source.html#l00029">ADXL345_RATE_50</a>, <a class="el" href="adxl345_8h_source.html#l00009">ADXL345_REG_BW_RATE</a>, <a class="el" href="adxl345_8h_source.html#l00012">ADXL345_REG_DATA_FORMAT</a>, <a class="el" href="adxl345_8h_source.html#l00010">ADXL345_REG_POWER_CTL</a>, <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="lpc21_2mcu__periph_2gpio__arch_8h_source.html#l00005">GPIO_ARCH_SET_SPI_CS_HIGH</a>, <a class="el" href="hmc5843_8h_source.html#l00055">HMC5843_ADDR</a>, <a class="el" href="hmc5843_8h_source.html#l00058">HMC5843_REG_CFGA</a>, <a class="el" href="hmc5843_8h_source.html#l00059">HMC5843_REG_CFGB</a>, <a class="el" href="hmc5843_8h_source.html#l00060">HMC5843_REG_MODE</a>, <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00333">i2c_submit()</a>, <a class="el" href="i2c_8h_source.html#l00051">I2CTransPending</a>, <a class="el" href="i2c_8h_source.html#l00045">I2CTransTx</a>, <a class="el" href="itg3200_8h_source.html#l00027">ITG3200_ADDR</a>, <a class="el" href="itg3200_8h_source.html#l00033">ITG3200_REG_DLPF_FS</a>, <a class="el" href="itg3200_8h_source.html#l00034">ITG3200_REG_INT_CFG</a>, <a class="el" href="itg3200_8h_source.html#l00044">ITG3200_REG_PWR_MGM</a>, <a class="el" href="itg3200_8h_source.html#l00032">ITG3200_REG_SMPLRT_DIV</a>, <a class="el" href="i2c_8h_source.html#l00081">i2c_transaction::len_w</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00053">ppzuavimu_adxl345</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00051">ppzuavimu_hmc5843</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00052">ppzuavimu_itg3200</a>, <a class="el" href="i2c_8h_source.html#l00079">i2c_transaction::slave_addr</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, and <a class="el" href="i2c_8h_source.html#l00078">i2c_transaction::type</a>.</p>
+<p>References <a class="el" href="imu__ppzuav_8h_source.html#l00086">ImuPpzuav::acc_adxl</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00083">ImuPpzuav::accel_valid</a>, <a class="el" href="adxl345__regs_8h_source.html#l00032">ADXL345_ADDR</a>, <a class="el" href="adxl345__i2c_8c_source.html#l00036">adxl345_i2c_init()</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00049">Adxl345_I2c::config</a>, <a class="el" href="itg3200_8h_source.html#l00080">Itg3200::config</a>, <a class="el" href="itg3200_8h_source.html#l00055">Itg3200Config::dlpf_cfg</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00087">ImuPpzuav::gyro_itg</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00084">ImuPpzuav::gyro_valid</a>, <a class="el" href="hmc58xx__regs_8h_source.html#l00031">HMC58XX_ADDR</a>, <a class="el" href="hmc58xx_8c_source.html#l00062">hmc58xx_init()</a>, <a class="el" href="hmc58xx_8h_source.html#l00056">HMC_TYPE_5843</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00042">IMU_PPZUAV_ACCEL_RATE</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00055">IMU_PPZUAV_GYRO_LOWPASS</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00068">IMU_PPZUAV_GYRO_SMPLRT_DIV</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00036">IMU_PPZUAV_I2C_DEV</a>, <a class="el" href="itg3200__regs_8h_source.html#l00031">ITG3200_ADDR</a>, <a class="el" href="itg3200_8c_source.html#l00048">itg3200_init()</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00088">ImuPpzuav::mag_hmc</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00085">ImuPpzuav::mag_valid</a>, <a class="el" href="adxl345_8h_source.html#l00051">Adxl345Config::rate</a>, <a class="el" href="itg3200_8h_source.html#l00053">Itg3200Config::smplrt_div</a>, and <a class="el" href="hmc58xx_8h_source.html#l00071">Hmc58xx::type</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -242,7 +246,7 @@ Variables</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__ppzuav_8c_ad32faae58e391642ec8048cb11011998_cgraph.png" border="0" usemap="#imu__ppzuav_8c_ad32faae58e391642ec8048cb11011998_cgraph" alt=""/></div>
 <map name="imu__ppzuav_8c_ad32faae58e391642ec8048cb11011998_cgraph" id="imu__ppzuav_8c_ad32faae58e391642ec8048cb11011998_cgraph">
-<area shape="rect" id="node3" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="160,5,251,35"/></map>
+<area shape="rect" id="node3" href="adxl345__i2c_8c.html#a8d4cfcfb4d533b36f9a60cd9cc5d6632" title="adxl345_i2c_init" alt="" coords="160,21,283,51"/><area shape="rect" id="node7" href="hmc58xx_8c.html#a1daa9072b668998f936fb469e5c6c515" title="Initialize Hmc58xx struct and set default config options." alt="" coords="168,83,275,112"/><area shape="rect" id="node11" href="itg3200_8c.html#a240c1ab04d15bb3f556189887939765f" title="Initialize Itg3200 struct and set default config options." alt="" coords="173,144,269,173"/><area shape="rect" id="node5" href="adxl345_8h.html#a5e8e2514332efd14ec188331fba0b6fc" title="adxl345_set_default\l_config" alt="" coords="336,5,485,51"/><area shape="rect" id="node9" href="hmc58xx_8c.html#a2165794d296c28b9d22eb0490ec3049b" title="hmc58xx_set_default\l_config" alt="" coords="332,74,489,121"/><area shape="rect" id="node13" href="itg3200_8c.html#afb54551377578d676facc80c71379182" title="itg3200_set_default\l_config" alt="" coords="337,143,484,190"/></map>
 </div>
 </p>
 
@@ -262,9 +266,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00169">169</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00104">104</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
 
-<p>References <a class="el" href="adxl345_8h_source.html#l00013">ADXL345_REG_DATA_X0</a>, <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="hmc5843_8h_source.html#l00061">HMC5843_REG_DATXM</a>, <a class="el" href="lpc21_2mcu__periph_2i2c__arch_8c_source.html#l00333">i2c_submit()</a>, <a class="el" href="i2c_8h_source.html#l00047">I2CTransTxRx</a>, <a class="el" href="itg3200_8h_source.html#l00035">ITG3200_REG_INT_STATUS</a>, <a class="el" href="i2c_8h_source.html#l00080">i2c_transaction::len_r</a>, <a class="el" href="i2c_8h_source.html#l00081">i2c_transaction::len_w</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00053">ppzuavimu_adxl345</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00051">ppzuavimu_hmc5843</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00052">ppzuavimu_itg3200</a>, and <a class="el" href="i2c_8h_source.html#l00078">i2c_transaction::type</a>.</p>
+<p>References <a class="el" href="imu__ppzuav_8h_source.html#l00086">ImuPpzuav::acc_adxl</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00059">adxl345_i2c_periodic()</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00087">ImuPpzuav::gyro_itg</a>, <a class="el" href="hmc58xx_8h_source.html#l00084">hmc58xx_periodic()</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00078">imu_ppzuav</a>, <a class="el" href="itg3200_8h_source.html#l00093">itg3200_periodic()</a>, and <a class="el" href="imu__ppzuav_8h_source.html#l00088">ImuPpzuav::mag_hmc</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -273,18 +277,18 @@ Variables</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__ppzuav_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph.png" border="0" usemap="#imu__ppzuav_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" alt=""/></div>
 <map name="imu__ppzuav_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" id="imu__ppzuav_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph">
-<area shape="rect" id="node3" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="157,5,248,35"/></map>
+<area shape="rect" id="node3" href="adxl345__i2c_8h.html#a6c19aa3cb79c5fb9405cd7fb1e803b3c" title="convenience function: read or start configuration if not already initialized" alt="" coords="157,59,312,88"/><area shape="rect" id="node16" href="hmc58xx_8h.html#a353064a5a9c6b47a14f4b9543545b4ec" title="convenience function: read or start configuration if not already initialized" alt="" coords="167,137,303,167"/><area shape="rect" id="node28" href="itg3200_8h.html#a2e5bd5bfe60106c8c05d1a26bcce2263" title="convenience function: read or start configuration if not already initialized" alt="" coords="172,216,297,245"/><area shape="rect" id="node5" href="adxl345__i2c_8c.html#a090f88095fe86b3d1f3f0b82cddff295" title="adxl345_i2c_read" alt="" coords="632,5,765,35"/><area shape="rect" id="node9" href="adxl345__i2c_8c.html#a0671648f2612cb43f9a59a87d3e724b3" title="Start configuration if not already done." alt="" coords="360,59,560,88"/><area shape="rect" id="node7" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="1037,137,1128,167"/><area shape="rect" id="node11" href="adxl345__i2c_8c.html#a521ef1cb737664a85721febc7f7f8284" title="adxl345_i2c_send_config" alt="" coords="609,59,788,88"/><area shape="rect" id="node13" href="adxl345__i2c_8c.html#a3a2e564f46dd67289f4098089a6de76b" title="adxl345_i2c_tx_reg" alt="" coords="841,57,985,87"/><area shape="rect" id="node18" href="hmc58xx_8c.html#a883e49acd3049ead17c6c29a3b020c72" title="hmc58xx_read" alt="" coords="856,111,971,140"/><area shape="rect" id="node21" href="hmc58xx_8c.html#a89a7b5456b1a87c83aef85779c4fc5e9" title="hmc58xx_start_configure" alt="" coords="369,163,551,192"/><area shape="rect" id="node23" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb" title="Configuration function called once before normal use." alt="" coords="617,164,780,193"/><area shape="rect" id="node25" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9" title="hmc58xx_i2c_tx_reg" alt="" coords="837,164,989,193"/><area shape="rect" id="node30" href="itg3200_8c.html#afc931399829e2d90c671d326e016329a" title="itg3200_read" alt="" coords="407,216,513,245"/><area shape="rect" id="node33" href="itg3200_8c.html#a37fd9870e73caee0513811101150ae87" title="itg3200_start_configure" alt="" coords="373,269,547,299"/><area shape="rect" id="node35" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="623,269,775,299"/><area shape="rect" id="node37" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="843,268,984,297"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="aa53cfc3e58bd48ef1991f7cf4dde8c4b"></a>
+<a class="anchor" id="a51ff6c245630bbf2701dc550ce24ef23"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ppzuavimu_module_downlink_raw </td>
+          <td class="memname">void imu_ppzuav_event </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -293,136 +297,50 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00200">200</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00115">115</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
 
-<p>References <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="imu_8h_source.html#l00050">Imu::mag_unscaled</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00161">Int32Rates::p</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00162">Int32Rates::q</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00163">Int32Rates::r</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00070">Int32Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00071">Int32Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00072">Int32Vect3::z</a>.</p>
+<p>References <a class="el" href="imu__ppzuav_8h_source.html#l00086">ImuPpzuav::acc_adxl</a>, <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00083">ImuPpzuav::accel_valid</a>, <a class="el" href="adxl345__i2c_8c_source.html#l00114">adxl345_i2c_event()</a>, <a class="el" href="structAdxl345__I2c.html#ac450e1dbb222b22c07617858b90415e2">Adxl345_I2c::data</a>, <a class="el" href="structHmc58xx.html#a6f09ee91bf8521fd28a892f02d84a2e0">Hmc58xx::data</a>, <a class="el" href="structItg3200.html#a993eccdef6b4fa3950a05b914031588f">Itg3200::data</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00044">Adxl345_I2c::data_available</a>, <a class="el" href="hmc58xx_8h_source.html#l00065">Hmc58xx::data_available</a>, <a class="el" href="itg3200_8h_source.html#l00075">Itg3200::data_available</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00087">ImuPpzuav::gyro_itg</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00084">ImuPpzuav::gyro_valid</a>, <a class="el" href="hmc58xx_8c_source.html#l00136">hmc58xx_event()</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00078">imu_ppzuav</a>, <a class="el" href="itg3200_8c_source.html#l00125">itg3200_event()</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00088">ImuPpzuav::mag_hmc</a>, <a class="el" href="imu_8h_source.html#l00050">Imu::mag_unscaled</a>, <a class="el" href="imu__ppzuav_8h_source.html#l00085">ImuPpzuav::mag_valid</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00161">Int32Rates::p</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00162">Int32Rates::q</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00163">Int32Rates::r</a>, <a class="el" href="itg3200_8h_source.html#l00077">Itg3200::rates</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00046">Adxl345_I2c::vect</a>, <a class="el" href="hmc58xx_8h_source.html#l00067">Hmc58xx::vect</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00046">Int16Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00070">Int32Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00047">Int16Vect3::y</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00071">Int32Vect3::y</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00048">Int16Vect3::z</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00072">Int32Vect3::z</a>.</p>
 
+<p>Referenced by <a class="el" href="imu__ppzuav_8h_source.html#l00095">ImuEvent()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="imu__ppzuav_8c_a51ff6c245630bbf2701dc550ce24ef23_cgraph.png" border="0" usemap="#imu__ppzuav_8c_a51ff6c245630bbf2701dc550ce24ef23_cgraph" alt=""/></div>
+<map name="imu__ppzuav_8c_a51ff6c245630bbf2701dc550ce24ef23_cgraph" id="imu__ppzuav_8c_a51ff6c245630bbf2701dc550ce24ef23_cgraph">
+<area shape="rect" id="node3" href="adxl345__i2c_8c.html#ad3a91ed9ff763d88416c0ed443960a3d" title="adxl345_i2c_event" alt="" coords="199,5,337,35"/><area shape="rect" id="node11" href="hmc58xx_8c.html#a6514a605dad1e4bb5664bf885cca676b" title="hmc58xx_event" alt="" coords="207,59,329,88"/><area shape="rect" id="node18" href="itg3200_8c.html#aaa9c768fbf93b62e8c6f74ebcc07cf45" title="itg3200_event" alt="" coords="212,112,324,141"/><area shape="rect" id="node5" href="adxl345__i2c_8c.html#a521ef1cb737664a85721febc7f7f8284" title="adxl345_i2c_send_config" alt="" coords="388,5,567,35"/><area shape="rect" id="node7" href="adxl345__i2c_8c.html#a3a2e564f46dd67289f4098089a6de76b" title="adxl345_i2c_tx_reg" alt="" coords="620,5,764,35"/><area shape="rect" id="node9" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="816,59,907,88"/><area shape="rect" id="node13" href="hmc58xx_8c.html#a2eff0c407b139d17a73bf75a611c32cb" title="Configuration function called once before normal use." alt="" coords="396,59,559,88"/><area shape="rect" id="node15" href="hmc58xx_8c.html#afadf91048494baf761fa6cf8fda062d9" title="hmc58xx_i2c_tx_reg" alt="" coords="616,59,768,88"/><area shape="rect" id="node20" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="401,112,553,141"/><area shape="rect" id="node22" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="621,112,763,141"/></map>
 </div>
-<a class="anchor" id="aa30df9e1b268e5e729d2a0036f4771d5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ppzuavimu_module_event </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+</p>
 
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00207">207</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
-
-<p>References <a class="el" href="imu__navgo_8c_source.html#l00056">acc_valid</a>, <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="i2c_8h_source.html#l00082">i2c_transaction::buf</a>, <a class="el" href="imu__navgo_8c_source.html#l00055">gyr_valid</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="i2c_8h_source.html#l00055">I2CTransDone</a>, <a class="el" href="i2c_8h_source.html#l00053">I2CTransSuccess</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="imu__ppzuav_8c.html#af77280fcfbb79c418e0585b86532168d">ITG_STA_DAT_OFFSET</a>, <a class="el" href="imu_8h_source.html#l00050">Imu::mag_unscaled</a>, <a class="el" href="imu__navgo_8c_source.html#l00057">mag_valid</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00053">ppzuavimu_adxl345</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00051">ppzuavimu_hmc5843</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00052">ppzuavimu_itg3200</a>, <a class="el" href="pprz__algebra_8h_source.html#l00294">RATES_ASSIGN</a>, <a class="el" href="i2c_8h_source.html#l00083">i2c_transaction::status</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, and <a class="el" href="pprz__algebra_8h_source.html#l00097">VECT3_ASSIGN</a>.</p>
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="imu__ppzuav_8c_a51ff6c245630bbf2701dc550ce24ef23_icgraph.png" border="0" usemap="#imu__ppzuav_8c_a51ff6c245630bbf2701dc550ce24ef23_icgraph" alt=""/></div>
+<map name="imu__ppzuav_8c_a51ff6c245630bbf2701dc550ce24ef23_icgraph" id="imu__ppzuav_8c_a51ff6c245630bbf2701dc550ce24ef23_icgraph">
+<area shape="rect" id="node3" href="imu__ppzuav_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="197,5,280,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
 <h2>Variable Documentation</h2>
-<a class="anchor" id="a8ed404ef3ddf50958703e92a017973ef"></a>
+<a class="anchor" id="af1c3503ad92f5c5878d0fc80cf43779f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool_t acc_valid</td>
+          <td class="memname">struct <a class="el" href="structImuPpzuav.html">ImuPpzuav</a> imu_ppzuav</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00048">48</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00078">78</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="afbbfe5fb78cd2de203ea88848ed1524d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool_t gyr_valid</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00047">47</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a77b76ed533bc56f50d714f8958dd26cc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structImu.html">Imu</a> imu</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>global IMU state </p>
-
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00057">57</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8271a0a8d22406f5117416a7fe284a7b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool_t mag_valid</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00046">46</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac262de3bf472eb2d4372c7f684bfae14"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a> ppzuavimu_adxl345</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00053">53</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__ppzuav_8c_source.html#l00064">imu_impl_init()</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00169">imu_periodic()</a>, and <a class="el" href="imu__ppzuav_8c_source.html#l00207">ppzuavimu_module_event()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4787f36e1a642268e08e8c03fa02dfe7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a> ppzuavimu_hmc5843</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00051">51</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__ppzuav_8c_source.html#l00064">imu_impl_init()</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00169">imu_periodic()</a>, and <a class="el" href="imu__ppzuav_8c_source.html#l00207">ppzuavimu_module_event()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a39226793f6172fa3d2f03d96a7d6b89d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structi2c__transaction.html">i2c_transaction</a> ppzuavimu_itg3200</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__ppzuav_8c_source.html#l00052">52</a> of file <a class="el" href="imu__ppzuav_8c_source.html">imu_ppzuav.c</a>.</p>
-
-<p>Referenced by <a class="el" href="imu__ppzuav_8c_source.html#l00064">imu_impl_init()</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00169">imu_periodic()</a>, and <a class="el" href="imu__ppzuav_8c_source.html#l00207">ppzuavimu_module_event()</a>.</p>
+<p>Referenced by <a class="el" href="imu__ppzuav_8c_source.html#l00104">imu_periodic()</a>, <a class="el" href="imu__ppzuav_8c_source.html#l00115">imu_ppzuav_event()</a>, and <a class="el" href="imu__ppzuav_8h_source.html#l00095">ImuEvent()</a>.</p>
 
 </div>
 </div>
@@ -431,8 +349,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_2f48bbb566df394f79dcf8fe0631584a.html">sensors</a></li><li class="navelem"><a class="el" href="imu__ppzuav_8c.html">imu_ppzuav.c</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:18 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8b2fa0708e2db44c1b91938af97bac44.html">imu</a></li><li class="navelem"><a class="el" href="imu__ppzuav_8c.html">imu_ppzuav.c</a></li>
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:16 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

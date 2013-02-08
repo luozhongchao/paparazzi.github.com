@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-437-g7b8a6df</span>
+   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -111,6 +111,9 @@ $(document).ready(function(){initNavTree('imu__umarim_8c.html','');});
 <div class="title">imu_umarim.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Driver for the IMU on the Umarim board.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;math.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="imu__umarim_8h_source.html">imu_umarim.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="i2c_8h_source.html">mcu_periph/i2c.h</a>&quot;</code><br/>
@@ -118,8 +121,6 @@ $(document).ready(function(){initNavTree('imu__umarim_8c.html','');});
 <code>#include &quot;<a class="el" href="uart_8h_source.html">mcu_periph/uart.h</a>&quot;</code><br/>
 <code>#include &quot;messages.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="downlink_8h_source.html">subsystems/datalink/downlink.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="itg3200_8extra_8h_source.html">peripherals/itg3200.extra.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="adxl345_8extra__i2c_8h_source.html">peripherals/adxl345.extra_i2c.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for imu_umarim.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -127,7 +128,7 @@ $(document).ready(function(){initNavTree('imu__umarim_8c.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__umarim_8c__incl.png" border="0" usemap="#sw_2airborne_2boards_2umarim_2imu__umarim_8c" alt=""/></div>
 <map name="sw_2airborne_2boards_2umarim_2imu__umarim_8c" id="sw_2airborne_2boards_2umarim_2imu__umarim_8c">
-<area shape="rect" id="node5" href="imu__umarim_8h.html" title="imu_umarim.h" alt="" coords="537,111,652,140"/><area shape="rect" id="node35" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="767,303,897,332"/><area shape="rect" id="node41" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="2248,111,2301,140"/><area shape="rect" id="node43" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="2085,111,2224,140"/><area shape="rect" id="node50" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="1500,102,1652,149"/><area shape="rect" id="node83" href="itg3200_8extra_8h.html" title="Driver for the gyro ITG3200 from InvenSense, this extra header allows standalone operation of the ITG..." alt="" coords="639,207,833,236"/><area shape="rect" id="node90" href="adxl345_8extra__i2c_8h.html" title="peripherals/adxl345.extra\l_i2c.h" alt="" coords="908,198,1092,245"/><area shape="rect" id="node11" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="476,207,615,236"/><area shape="rect" id="node13" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="513,303,692,332"/><area shape="rect" id="node29" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="68,303,257,332"/><area shape="rect" id="node16" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="156,389,311,419"/><area shape="rect" id="node23" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="543,389,692,419"/><area shape="rect" id="node52" href="inttypes_8h.html" title="inttypes.h" alt="" coords="1804,389,1889,419"/><area shape="rect" id="node58" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="1788,198,1940,245"/><area shape="rect" id="node71" href="xbee_8h.html" title="subsystems/datalink\l/xbee.h" alt="" coords="1255,198,1407,245"/><area shape="rect" id="node78" href="w5100_8h.html" title="subsystems/datalink\l/w5100.h" alt="" coords="1431,198,1583,245"/><area shape="rect" id="node62" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1511,294,1663,341"/><area shape="rect" id="node67" href="transport_8h.html" title="generic transport header" alt="" coords="1687,294,1839,341"/><area shape="rect" id="node75" href="xbee24_8h.html" title="subsystems/datalink\l/xbee24.h" alt="" coords="1335,294,1487,341"/><area shape="rect" id="node88" href="itg3200_8h.html" title="peripherals/itg3200.h" alt="" coords="332,303,489,332"/><area shape="rect" id="node95" href="adxl345_8h.html" title="peripherals/adxl345.h" alt="" coords="921,303,1079,332"/></map>
+<area shape="rect" id="node5" href="imu__umarim_8h.html" title="imu_umarim.h" alt="" coords="848,111,963,140"/><area shape="rect" id="node39" href="i2c_8h.html" title="Architecture independent I2C (Inter&#45;Integrated Circuit Bus) API." alt="" coords="883,303,1013,332"/><area shape="rect" id="node58" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="1075,111,1128,140"/><area shape="rect" id="node60" href="uart_8h.html" title="arch independent UART (Universal Asynchronous Receiver/Transmitter) API" alt="" coords="2097,111,2236,140"/><area shape="rect" id="node67" href="downlink_8h.html" title="Common code for AP and FBW telemetry." alt="" coords="1408,102,1560,149"/><area shape="rect" id="node11" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="468,207,607,236"/><area shape="rect" id="node35" href="itg3200_8h.html" title="Driver for the gyro ITG3200 from InvenSense." alt="" coords="631,207,788,236"/><area shape="rect" id="node47" href="adxl345__i2c_8h.html" title="Driver for the accelerometer ADXL345 from Analog Devices using I2C." alt="" coords="824,198,971,245"/><area shape="rect" id="node13" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="448,303,627,332"/><area shape="rect" id="node29" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="67,303,256,332"/><area shape="rect" id="node16" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="157,399,312,428"/><area shape="rect" id="node23" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="427,399,576,428"/><area shape="rect" id="node45" href="itg3200__regs_8h.html" title="Register defs for ITG3200 and IMU3000 gyros." alt="" coords="280,294,424,341"/><area shape="rect" id="node52" href="adxl345_8h.html" title="Analog Devices ADXL345 accelerometer driver common interface (I2C and SPI)." alt="" coords="701,303,859,332"/><area shape="rect" id="node55" href="adxl345__regs_8h.html" title="Register and address definitions for ADXL345 accelerometer." alt="" coords="701,390,848,437"/><area shape="rect" id="node69" href="inttypes_8h.html" title="inttypes.h" alt="" coords="1899,399,1984,428"/><area shape="rect" id="node75" href="pprz__transport_8h.html" title="Extra datalink using PPRZ protocol." alt="" coords="1672,198,1824,245"/><area shape="rect" id="node88" href="xbee_8h.html" title="subsystems/datalink\l/xbee.h" alt="" coords="1320,198,1472,245"/><area shape="rect" id="node95" href="w5100_8h.html" title="subsystems/datalink\l/w5100.h" alt="" coords="1496,198,1648,245"/><area shape="rect" id="node79" href="datalink_8h.html" title="Handling of messages coming from ground and other A/Cs." alt="" coords="1496,294,1648,341"/><area shape="rect" id="node84" href="transport_8h.html" title="generic transport header" alt="" coords="1672,294,1824,341"/><area shape="rect" id="node92" href="xbee24_8h.html" title="subsystems/datalink\l/xbee24.h" alt="" coords="1320,294,1472,341"/></map>
 </div>
 </div>
 <p><a href="imu__umarim_8c_source.html">Go to the source code of this file.</a></p>
@@ -135,6 +136,7 @@ $(document).ready(function(){initNavTree('imu__umarim_8c.html','');});
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a2978a46b47cbc9d17a0924014ff9658b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__umarim_8c.html#a2978a46b47cbc9d17a0924014ff9658b">DOWNLINK_DEVICE</a>&#160;&#160;&#160;DOWNLINK_AP_DEVICE</td></tr>
+<tr class="memitem:a9f60b55e552164b51b469f8f924dc0e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__umarim_8c.html#a9f60b55e552164b51b469f8f924dc0e4">UMARIM_ACCEL_RATE</a>&#160;&#160;&#160;<a class="el" href="adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133ae3c8093e169c38c2a412e2e43af297be">ADXL345_RATE_50HZ</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -145,10 +147,17 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:afbbfe5fb78cd2de203ea88848ed1524d"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__umarim_8c.html#afbbfe5fb78cd2de203ea88848ed1524d">gyr_valid</a></td></tr>
-<tr class="memitem:a8ed404ef3ddf50958703e92a017973ef"><td class="memItemLeft" align="right" valign="top">volatile bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__umarim_8c.html#a8ed404ef3ddf50958703e92a017973ef">acc_valid</a></td></tr>
+<tr class="memitem:a23d3807bb76e3aa8d1f5ee3afef22d2d"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structImuUmarim.html">ImuUmarim</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imu__umarim_8c.html#a23d3807bb76e3aa8d1f5ee3afef22d2d">imu_umarim</a></td></tr>
 </table>
-<h2>Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Driver for the IMU on the Umarim board. </p>
+<ul>
+<li>Gyroscope: Invensense ITG-3200</li>
+<li>Accelerometer: Analog Devices ADXL345 </li>
+</ul>
+
+<p>Definition in file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+</div><h2>Macro Definition Documentation</h2>
 <a class="anchor" id="a2978a46b47cbc9d17a0924014ff9658b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -159,7 +168,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00035">35</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00043">43</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f60b55e552164b51b469f8f924dc0e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UMARIM_ACCEL_RATE&#160;&#160;&#160;<a class="el" href="adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133ae3c8093e169c38c2a412e2e43af297be">ADXL345_RATE_50HZ</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00047">47</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+
+<p>Referenced by <a class="el" href="imu__umarim_8c_source.html#l00053">imu_impl_init()</a>.</p>
 
 </div>
 </div>
@@ -178,9 +203,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00057">57</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00053">53</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
 
-<p>References <a class="el" href="adxl345_8i2c_8c_source.html#l00049">adxl345_init()</a>, and <a class="el" href="itg3200_8c_source.html#l00050">itg3200_init()</a>.</p>
+<p>References <a class="el" href="imu__umarim_8h_source.html#l00110">ImuUmarim::acc_valid</a>, <a class="el" href="imu__umarim_8h_source.html#l00112">ImuUmarim::adxl</a>, <a class="el" href="adxl345__regs_8h_source.html#l00033">ADXL345_ADDR_ALT</a>, <a class="el" href="adxl345__i2c_8c_source.html#l00036">adxl345_i2c_init()</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00049">Adxl345_I2c::config</a>, <a class="el" href="itg3200_8h_source.html#l00080">Itg3200::config</a>, <a class="el" href="itg3200_8h_source.html#l00055">Itg3200Config::dlpf_cfg</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__umarim_8h_source.html#l00109">ImuUmarim::gyr_valid</a>, <a class="el" href="imu__umarim_8h_source.html#l00111">ImuUmarim::itg</a>, <a class="el" href="itg3200__regs_8h_source.html#l00032">ITG3200_ADDR_ALT</a>, <a class="el" href="itg3200__regs_8h_source.html#l00056">ITG3200_DLPF_20HZ</a>, <a class="el" href="itg3200_8c_source.html#l00048">itg3200_init()</a>, <a class="el" href="adxl345_8h_source.html#l00051">Adxl345Config::rate</a>, <a class="el" href="itg3200_8h_source.html#l00053">Itg3200Config::smplrt_div</a>, and <a class="el" href="imu__umarim_8c_source.html#l00047">UMARIM_ACCEL_RATE</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -189,7 +214,7 @@ Variables</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__umarim_8c_ad32faae58e391642ec8048cb11011998_cgraph.png" border="0" usemap="#imu__umarim_8c_ad32faae58e391642ec8048cb11011998_cgraph" alt=""/></div>
 <map name="imu__umarim_8c_ad32faae58e391642ec8048cb11011998_cgraph" id="imu__umarim_8c_ad32faae58e391642ec8048cb11011998_cgraph">
-<area shape="rect" id="node3" href="adxl345_8extra__i2c_8h.html#aa1cecab7e55764cb5c393ec00ed2a00c" title="adxl345_init" alt="" coords="160,5,259,35"/><area shape="rect" id="node5" href="itg3200_8c.html#ac056fd4208bcb0f6560eec96ea03345c" title="itg3200_init" alt="" coords="161,59,257,88"/></map>
+<area shape="rect" id="node3" href="adxl345__i2c_8c.html#a8d4cfcfb4d533b36f9a60cd9cc5d6632" title="adxl345_i2c_init" alt="" coords="160,17,283,47"/><area shape="rect" id="node7" href="itg3200_8c.html#a240c1ab04d15bb3f556189887939765f" title="Initialize Itg3200 struct and set default config options." alt="" coords="173,75,269,104"/><area shape="rect" id="node5" href="adxl345_8h.html#a5e8e2514332efd14ec188331fba0b6fc" title="adxl345_set_default\l_config" alt="" coords="332,5,481,51"/><area shape="rect" id="node9" href="itg3200_8c.html#afb54551377578d676facc80c71379182" title="itg3200_set_default\l_config" alt="" coords="333,74,480,121"/></map>
 </div>
 </p>
 
@@ -209,9 +234,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00069">69</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00072">72</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
 
-<p>References <a class="el" href="adxl345_8extra__i2c_8h_source.html#l00088">Adxl345Periodic</a>, and <a class="el" href="itg3200_8extra_8h_source.html#l00086">Itg3200Periodic</a>.</p>
+<p>References <a class="el" href="imu__umarim_8h_source.html#l00112">ImuUmarim::adxl</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00059">adxl345_i2c_periodic()</a>, <a class="el" href="imu__umarim_8c_source.html#l00051">imu_umarim</a>, <a class="el" href="imu__umarim_8h_source.html#l00111">ImuUmarim::itg</a>, and <a class="el" href="itg3200_8h_source.html#l00093">itg3200_periodic()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="imu__umarim_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph.png" border="0" usemap="#imu__umarim_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" alt=""/></div>
+<map name="imu__umarim_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph" id="imu__umarim_8c_a6623d4c90e7b1bfb73abc0da1195f29b_cgraph">
+<area shape="rect" id="node3" href="adxl345__i2c_8h.html#a6c19aa3cb79c5fb9405cd7fb1e803b3c" title="convenience function: read or start configuration if not already initialized" alt="" coords="157,59,312,88"/><area shape="rect" id="node16" href="itg3200_8h.html#a2e5bd5bfe60106c8c05d1a26bcce2263" title="convenience function: read or start configuration if not already initialized" alt="" coords="172,112,297,141"/><area shape="rect" id="node5" href="adxl345__i2c_8c.html#a090f88095fe86b3d1f3f0b82cddff295" title="adxl345_i2c_read" alt="" coords="632,5,765,35"/><area shape="rect" id="node9" href="adxl345__i2c_8c.html#a0671648f2612cb43f9a59a87d3e724b3" title="Start configuration if not already done." alt="" coords="360,59,560,88"/><area shape="rect" id="node7" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="1029,84,1120,113"/><area shape="rect" id="node11" href="adxl345__i2c_8c.html#a521ef1cb737664a85721febc7f7f8284" title="adxl345_i2c_send_config" alt="" coords="609,59,788,88"/><area shape="rect" id="node13" href="adxl345__i2c_8c.html#a3a2e564f46dd67289f4098089a6de76b" title="adxl345_i2c_tx_reg" alt="" coords="837,57,981,87"/><area shape="rect" id="node18" href="itg3200_8c.html#afc931399829e2d90c671d326e016329a" title="itg3200_read" alt="" coords="856,111,963,140"/><area shape="rect" id="node21" href="itg3200_8c.html#a37fd9870e73caee0513811101150ae87" title="itg3200_start_configure" alt="" coords="373,163,547,192"/><area shape="rect" id="node23" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="623,163,775,192"/><area shape="rect" id="node25" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="839,164,980,193"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -229,7 +265,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00081">81</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00083">83</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
 
 <p>References <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00161">Int32Rates::p</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00162">Int32Rates::q</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00163">Int32Rates::r</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00070">Int32Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00071">Int32Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00072">Int32Vect3::z</a>.</p>
 
@@ -249,49 +285,50 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00088">88</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00090">90</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
 
-<p>References <a class="el" href="imu__navgo_8c_source.html#l00056">acc_valid</a>, <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="adxl345_8i2c_8c_source.html#l00040">adxl345_data</a>, <a class="el" href="adxl345_8i2c_8c_source.html#l00038">adxl345_data_available</a>, <a class="el" href="adxl345_8i2c_8c_source.html#l00116">adxl345_event()</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__navgo_8c_source.html#l00055">gyr_valid</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="itg3200_8c_source.html#l00041">itg3200_data</a>, <a class="el" href="itg3200_8c_source.html#l00039">itg3200_data_available</a>, <a class="el" href="itg3200_8c_source.html#l00117">itg3200_event()</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00161">Int32Rates::p</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00162">Int32Rates::q</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00163">Int32Rates::r</a>, <a class="el" href="pprz__algebra_8h_source.html#l00294">RATES_ASSIGN</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="pprz__algebra_8h_source.html#l00097">VECT3_ASSIGN</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00046">Int16Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00047">Int16Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00048">Int16Vect3::z</a>.</p>
+<p>References <a class="el" href="imu__umarim_8h_source.html#l00110">ImuUmarim::acc_valid</a>, <a class="el" href="imu_8h_source.html#l00049">Imu::accel_unscaled</a>, <a class="el" href="imu__umarim_8h_source.html#l00112">ImuUmarim::adxl</a>, <a class="el" href="adxl345__i2c_8c_source.html#l00114">adxl345_i2c_event()</a>, <a class="el" href="structAdxl345__I2c.html#ac450e1dbb222b22c07617858b90415e2">Adxl345_I2c::data</a>, <a class="el" href="structItg3200.html#a993eccdef6b4fa3950a05b914031588f">Itg3200::data</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00044">Adxl345_I2c::data_available</a>, <a class="el" href="itg3200_8h_source.html#l00075">Itg3200::data_available</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="imu__umarim_8h_source.html#l00109">ImuUmarim::gyr_valid</a>, <a class="el" href="imu_8h_source.html#l00048">Imu::gyro_unscaled</a>, <a class="el" href="modules_2sensors_2imu__aspirin2_8c_source.html#l00050">imu</a>, <a class="el" href="imu__umarim_8c_source.html#l00051">imu_umarim</a>, <a class="el" href="imu__umarim_8h_source.html#l00111">ImuUmarim::itg</a>, <a class="el" href="itg3200_8c_source.html#l00125">itg3200_event()</a>, <a class="el" href="itg3200_8h_source.html#l00077">Itg3200::rates</a>, <a class="el" href="pprz__algebra_8h_source.html#l00301">RATES_COPY</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="adxl345__i2c_8h_source.html#l00046">Adxl345_I2c::vect</a>, <a class="el" href="pprz__algebra_8h_source.html#l00097">VECT3_ASSIGN</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00046">Int16Vect3::x</a>, <a class="el" href="pprz__algebra__int_8h_source.html#l00047">Int16Vect3::y</a>, and <a class="el" href="pprz__algebra__int_8h_source.html#l00048">Int16Vect3::z</a>.</p>
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p>Referenced by <a class="el" href="imu__umarim_8h_source.html#l00128">ImuEvent()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="imu__umarim_8c_a01860ce0d2bbd0db6c993e609c0745de_cgraph.png" border="0" usemap="#imu__umarim_8c_a01860ce0d2bbd0db6c993e609c0745de_cgraph" alt=""/></div>
 <map name="imu__umarim_8c_a01860ce0d2bbd0db6c993e609c0745de_cgraph" id="imu__umarim_8c_a01860ce0d2bbd0db6c993e609c0745de_cgraph">
-<area shape="rect" id="node3" href="adxl345_8extra__i2c_8h.html#a7e4739c3ab3b83ea5ddaaa67efd54b5b" title="adxl345_event" alt="" coords="200,5,315,35"/><area shape="rect" id="node7" href="itg3200_8c.html#abbd9f419105e8ef332066830f3c35026" title="itg3200_event" alt="" coords="201,59,313,88"/><area shape="rect" id="node5" href="adxl345_8i2c_8c.html#a1daa0b49b15ae18573f9992f9299d882" title="adxl345_send_config" alt="" coords="363,5,517,35"/><area shape="rect" id="node9" href="itg3200_8c.html#a0ee4b71b6ac01d3b718675855cf4928d" title="itg3200_send_config" alt="" coords="364,59,516,88"/></map>
+<area shape="rect" id="node3" href="adxl345__i2c_8c.html#ad3a91ed9ff763d88416c0ed443960a3d" title="adxl345_i2c_event" alt="" coords="201,5,340,35"/><area shape="rect" id="node11" href="itg3200_8c.html#aaa9c768fbf93b62e8c6f74ebcc07cf45" title="itg3200_event" alt="" coords="215,59,327,88"/><area shape="rect" id="node5" href="adxl345__i2c_8c.html#a521ef1cb737664a85721febc7f7f8284" title="adxl345_i2c_send_config" alt="" coords="391,5,569,35"/><area shape="rect" id="node7" href="adxl345__i2c_8c.html#a3a2e564f46dd67289f4098089a6de76b" title="adxl345_i2c_tx_reg" alt="" coords="619,5,763,35"/><area shape="rect" id="node9" href="group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa" title="i2c_submit" alt="" coords="811,32,901,61"/><area shape="rect" id="node13" href="itg3200_8c.html#afe8ddf75a27aa350a6270539e5fabd0c" title="itg3200_send_config" alt="" coords="404,59,556,88"/><area shape="rect" id="node15" href="itg3200_8c.html#a7b349504704c56277b218842850b117c" title="itg3200_i2c_tx_reg" alt="" coords="620,59,761,88"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="imu__umarim_8c_a01860ce0d2bbd0db6c993e609c0745de_icgraph.png" border="0" usemap="#imu__umarim_8c_a01860ce0d2bbd0db6c993e609c0745de_icgraph" alt=""/></div>
+<map name="imu__umarim_8c_a01860ce0d2bbd0db6c993e609c0745de_icgraph" id="imu__umarim_8c_a01860ce0d2bbd0db6c993e609c0745de_icgraph">
+<area shape="rect" id="node3" href="imu__umarim_8h.html#a9d95db588addd0a03f6e7e749fbb032a" title="ImuEvent" alt="" coords="200,5,283,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
 <h2>Variable Documentation</h2>
-<a class="anchor" id="a8ed404ef3ddf50958703e92a017973ef"></a>
+<a class="anchor" id="a23d3807bb76e3aa8d1f5ee3afef22d2d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile bool_t acc_valid</td>
+          <td class="memname">struct <a class="el" href="structImuUmarim.html">ImuUmarim</a> imu_umarim</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00055">55</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00051">51</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="afbbfe5fb78cd2de203ea88848ed1524d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile bool_t gyr_valid</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="imu__umarim_8c_source.html#l00054">54</a> of file <a class="el" href="imu__umarim_8c_source.html">imu_umarim.c</a>.</p>
+<p>Referenced by <a class="el" href="imu__umarim_8c_source.html#l00072">imu_periodic()</a>, <a class="el" href="imu__umarim_8c_source.html#l00090">imu_umarim_event()</a>, and <a class="el" href="imu__umarim_8h_source.html#l00128">ImuEvent()</a>.</p>
 
 </div>
 </div>
@@ -301,7 +338,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e030268cd18297cf6282390f76bfcf7f.html">boards</a></li><li class="navelem"><a class="el" href="dir_414104448893b1ba2b157e67b87d5a33.html">umarim</a></li><li class="navelem"><a class="el" href="imu__umarim_8c.html">imu_umarim.c</a></li>
-    <li class="footer">Generated on Thu Feb 7 2013 04:00:16 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 04:00:15 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

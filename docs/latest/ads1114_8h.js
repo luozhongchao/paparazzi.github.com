@@ -28,7 +28,7 @@ var ads1114_8h =
     [ "ADS1114_2_OS", "ads1114_8h.html#a5ced42a273b96f55947fc397d3ae2ee4", null ],
     [ "ADS1114_2_PGA", "ads1114_8h.html#a97e8023f4f5bb292caaa1b89c826c819", null ],
     [ "Ads1114_2Event", "ads1114_8h.html#a4020b88dc5dee9fc6ab82f4103d91175", null ],
-    [ "ADS1114_I2C_DEVICE", "ads1114_8h.html#a1c9bb5bd80247d09e8c302106a6b7c60", null ],
+    [ "ADS1114_I2C_DEV", "ads1114_8h.html#a266a280750169c3bcb8ddfca1a935402", null ],
     [ "ADS1114_POINTER_CONFIG_REG", "ads1114_8h.html#aafae103198ebfb38ca2a0de2a3ec68e0", null ],
     [ "ADS1114_POINTER_CONV_REG", "ads1114_8h.html#af1ae9279a23301b436a1faccfc6e8f66", null ],
     [ "Ads1114Event", "ads1114_8h.html#a95351e73a4dfe90ea157b044127f5756", null ],

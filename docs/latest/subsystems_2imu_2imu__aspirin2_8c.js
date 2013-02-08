@@ -1,5 +1,11 @@
 var subsystems_2imu_2imu__aspirin2_8c =
 [
+    [ "HMC58XX_CRA", "subsystems_2imu_2imu__aspirin2_8c.html#a39cf7c1941c077d34a6606ac27f8e804", null ],
+    [ "HMC58XX_CRB", "subsystems_2imu_2imu__aspirin2_8c.html#a3c56a9582419d8793d126fee919e97de", null ],
+    [ "HMC58XX_DO", "subsystems_2imu_2imu__aspirin2_8c.html#a37f4036eb3a74b5ecfdb8ecfb08bd82c", null ],
+    [ "HMC58XX_GN", "subsystems_2imu_2imu__aspirin2_8c.html#ae775bcff083f907cad7f2d3caa188f46", null ],
+    [ "HMC58XX_MD", "subsystems_2imu_2imu__aspirin2_8c.html#a7eb82e0d48c6278579f2cfbdd0347f60", null ],
+    [ "HMC58XX_MS", "subsystems_2imu_2imu__aspirin2_8c.html#a1a38bc22938339bda9589c5794c645b4", null ],
     [ "MPU6000_SLAVE_IDX", "subsystems_2imu_2imu__aspirin2_8c.html#accc2d61152a9b41c4e03d09c4a4cbe07", null ],
     [ "MPU6000_SPI_DEV", "subsystems_2imu_2imu__aspirin2_8c.html#a938277375a679897d534c11a669eb1be", null ],
     [ "imu_impl_init", "subsystems_2imu_2imu__aspirin2_8c.html#ad32faae58e391642ec8048cb11011998", null ],

@@ -1,12 +1,26 @@
 var searchData=
 [
   ['active',['ACTIVE',['../formation_8h.html#a4c0e214062079ff665c54dbc682bb832a33cf1d8ef1d06ee698a7fabf40eb3a7f',1,'formation.h']]],
+  ['adxl345_5frange_5f16g',['ADXL345_RANGE_16G',['../adxl345__regs_8h.html#abc3494afc65a86812ed33040266ce16fae5641dd5b58e2fdb7018903fb9c4e21b',1,'adxl345_regs.h']]],
+  ['adxl345_5frange_5f2g',['ADXL345_RANGE_2G',['../adxl345__regs_8h.html#abc3494afc65a86812ed33040266ce16fadbe3b6f849ede28b1367a75f650fdc62',1,'adxl345_regs.h']]],
+  ['adxl345_5frange_5f4g',['ADXL345_RANGE_4G',['../adxl345__regs_8h.html#abc3494afc65a86812ed33040266ce16faf4839f1f2c196d523d8be06641263548',1,'adxl345_regs.h']]],
+  ['adxl345_5frange_5f8g',['ADXL345_RANGE_8G',['../adxl345__regs_8h.html#abc3494afc65a86812ed33040266ce16fa84324e3172d029f3e0c74370b120d215',1,'adxl345_regs.h']]],
+  ['adxl345_5frate_5f100hz',['ADXL345_RATE_100HZ',['../adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133ac96d8707cb3edd68386f6025091a1426',1,'adxl345_regs.h']]],
+  ['adxl345_5frate_5f1600hz',['ADXL345_RATE_1600HZ',['../adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133a8938ab644a0cacafd7db996599f2ee04',1,'adxl345_regs.h']]],
+  ['adxl345_5frate_5f200hz',['ADXL345_RATE_200HZ',['../adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133a0f60aba2f2021f4a5c72e2496bc07f5c',1,'adxl345_regs.h']]],
+  ['adxl345_5frate_5f25hz',['ADXL345_RATE_25HZ',['../adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133a18fbf3b2cfd37c93a09f7c0abc488dcf',1,'adxl345_regs.h']]],
+  ['adxl345_5frate_5f3200hz',['ADXL345_RATE_3200HZ',['../adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133a6a845117a54e58391585e920587fa3b8',1,'adxl345_regs.h']]],
+  ['adxl345_5frate_5f400hz',['ADXL345_RATE_400HZ',['../adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133a1effa53540194dcfd29dc2483a8abeb9',1,'adxl345_regs.h']]],
+  ['adxl345_5frate_5f50hz',['ADXL345_RATE_50HZ',['../adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133ae3c8093e169c38c2a412e2e43af297be',1,'adxl345_regs.h']]],
+  ['adxl345_5frate_5f800hz',['ADXL345_RATE_800HZ',['../adxl345__regs_8h.html#a746dd7df1b3e0f992547870f19047133aec148620e07d4a66cdb3fb5e9c4ccb0c',1,'adxl345_regs.h']]],
+  ['adxl_5fconf_5fdone',['ADXL_CONF_DONE',['../adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a999e954e9d6680cc9a96810a73b059a8',1,'adxl345.h']]],
+  ['adxl_5fconf_5fformat',['ADXL_CONF_FORMAT',['../adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a6a9a83b7903ab2aae85a5ae83aeda936',1,'adxl345.h']]],
+  ['adxl_5fconf_5fint',['ADXL_CONF_INT',['../adxl345_8h.html#aa006d32535082f7872bc58cd529c9177aaa99fc542908dac52f3a47a43c56609b',1,'adxl345.h']]],
+  ['adxl_5fconf_5fpower',['ADXL_CONF_POWER',['../adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a205a7c7d7b8e032cc6a417d77df929db',1,'adxl345.h']]],
+  ['adxl_5fconf_5frate',['ADXL_CONF_RATE',['../adxl345_8h.html#aa006d32535082f7872bc58cd529c9177a9cc54611609e5e75f9d5ddb13f7a397d',1,'adxl345.h']]],
+  ['adxl_5fconf_5funinit',['ADXL_CONF_UNINIT',['../adxl345_8h.html#aa006d32535082f7872bc58cd529c9177ae80bfd865b45a8a8708ec7ed2a1af76e',1,'adxl345.h']]],
   ['approach',['Approach',['../OSAMNav_8c.html#a61a75394da51ededcb57cd59a9e3cefeaa19b7b7f6eb8f8eedb2055bf1050f81f',1,'OSAMNav.c']]],
   ['aspirin2statusidle',['Aspirin2StatusIdle',['../subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76a8c933368ac7cc8f34ded19bd6c4b107f',1,'imu_aspirin2.h']]],
   ['aspirin2statusreading',['Aspirin2StatusReading',['../subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76a5021f80159c3b4142898d479321fbd1c',1,'imu_aspirin2.h']]],
-  ['aspirin2statusuninit',['Aspirin2StatusUninit',['../subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76a6bbdbff14b3dab84f985d3d8167ab2fd',1,'imu_aspirin2.h']]],
-  ['aspirinstatusidle',['AspirinStatusIdle',['../imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a1b79e5ac74270b36feeacbdc6a2dcc7a',1,'imu_aspirin.h']]],
-  ['aspirinstatusreadinggyro',['AspirinStatusReadingGyro',['../imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8ab37b7939ff4b174c1ebf94ed48fa1162',1,'imu_aspirin.h']]],
-  ['aspirinstatusreadingmag',['AspirinStatusReadingMag',['../imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8af9fe0832964e38413e3e1b8880521d50',1,'imu_aspirin.h']]],
-  ['aspirinstatusuninit',['AspirinStatusUninit',['../imu__aspirin_8h.html#a05bb617db315fb2e3eb15541cecd4fd8a072e0ffd29f974690157c9c2ca9d48fd',1,'imu_aspirin.h']]]
+  ['aspirin2statusuninit',['Aspirin2StatusUninit',['../subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76a6bbdbff14b3dab84f985d3d8167ab2fd',1,'imu_aspirin2.h']]]
 ];

@@ -137,6 +137,7 @@ var searchData=
   ['rotorcraft_5fcam_5fstick_5ftilt_5finc',['ROTORCRAFT_CAM_STICK_TILT_INC',['../rotorcraft__cam_8h.html#abc571d6b199150468ea05e30a1f6d3f6',1,'rotorcraft_cam.h']]],
   ['rotorcraft_5fcam_5fuse_5fpan',['ROTORCRAFT_CAM_USE_PAN',['../rotorcraft__cam_8h.html#a17b684c400fcff7720d1096e2cba7a74',1,'rotorcraft_cam.h']]],
   ['rotorcraft_5fcam_5fuse_5ftilt',['ROTORCRAFT_CAM_USE_TILT',['../rotorcraft__cam_8h.html#a2d9ecb115620709d71bf6fbdf71e0608',1,'rotorcraft_cam.h']]],
+  ['rssivalid',['RssiValid',['../ppm_8h.html#aff86239e269183d4e903b962066905e8',1,'ppm.h']]],
   ['rtc',['RTC',['../LPC21xx_8h.html#a5359a088f5d8b20ce74d920e46059304',1,'LPC21xx.h']]],
   ['rtcaldom',['RTCALDOM',['../LPC21xx_8h.html#ac0d794f38fdde237f315a7345896289a',1,'LPC21xx.h']]],
   ['rtcaldow',['RTCALDOW',['../LPC21xx_8h.html#a6db7d89524be6bd3a8353efd2e99b3b9',1,'LPC21xx.h']]],

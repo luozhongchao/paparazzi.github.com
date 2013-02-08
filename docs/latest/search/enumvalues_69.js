@@ -29,5 +29,18 @@ var searchData=
   ['ir_5fmlx_5frd_5fid_5f2',['IR_MLX_RD_ID_2',['../ir__mlx_8h.html#a76604b115855851177887708e56a17d8acfe45eeaca298e662b7b5375ffa209f3',1,'ir_mlx.h']]],
   ['ir_5fmlx_5frd_5fid_5f3',['IR_MLX_RD_ID_3',['../ir__mlx_8h.html#a76604b115855851177887708e56a17d8ab3b182fb05e183d116375d260d453387',1,'ir_mlx.h']]],
   ['ir_5fmlx_5frd_5fobj_5ftemp',['IR_MLX_RD_OBJ_TEMP',['../ir__mlx_8h.html#a76604b115855851177887708e56a17d8a5772c7510e9176f4baa3d15ada7c56e2',1,'ir_mlx.h']]],
-  ['ir_5fmlx_5funinit',['IR_MLX_UNINIT',['../ir__mlx_8h.html#a76604b115855851177887708e56a17d8a686ba51c188d0c035ddecfe44a5005eb',1,'ir_mlx.h']]]
+  ['ir_5fmlx_5funinit',['IR_MLX_UNINIT',['../ir__mlx_8h.html#a76604b115855851177887708e56a17d8a686ba51c188d0c035ddecfe44a5005eb',1,'ir_mlx.h']]],
+  ['itg3200_5fdlpf_5f05hz',['ITG3200_DLPF_05HZ',['../itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baa797c73c1e5b069897caa15cc5660b07c',1,'itg3200_regs.h']]],
+  ['itg3200_5fdlpf_5f10hz',['ITG3200_DLPF_10HZ',['../itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baaab905dc1acde615b3c25169c94776cda',1,'itg3200_regs.h']]],
+  ['itg3200_5fdlpf_5f188hz',['ITG3200_DLPF_188HZ',['../itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baa172c794d185d6e3658fde6b266fa4591',1,'itg3200_regs.h']]],
+  ['itg3200_5fdlpf_5f20hz',['ITG3200_DLPF_20HZ',['../itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baafa79ff64a32dd58353247295a33eb5ad',1,'itg3200_regs.h']]],
+  ['itg3200_5fdlpf_5f256hz',['ITG3200_DLPF_256HZ',['../itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baaa119474be2bb5a743e26e129b39589d2',1,'itg3200_regs.h']]],
+  ['itg3200_5fdlpf_5f42hz',['ITG3200_DLPF_42HZ',['../itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baa4293d642cf7eec60da7f45303ceff6be',1,'itg3200_regs.h']]],
+  ['itg3200_5fdlpf_5f98hz',['ITG3200_DLPF_98HZ',['../itg3200__regs_8h.html#ac72d80a8255d15cb5794228f862e26baa2b94466db23d47addab5bd8c2888357b',1,'itg3200_regs.h']]],
+  ['itg_5fconf_5fdf',['ITG_CONF_DF',['../itg3200_8h.html#af4ecc3fa080959344238782150fee737acb801d9423b1613cc11c27d45c1c5e38',1,'itg3200.h']]],
+  ['itg_5fconf_5fdone',['ITG_CONF_DONE',['../itg3200_8h.html#af4ecc3fa080959344238782150fee737acaf23918ac91ac2011415b3d26751530',1,'itg3200.h']]],
+  ['itg_5fconf_5fint',['ITG_CONF_INT',['../itg3200_8h.html#af4ecc3fa080959344238782150fee737a3ca7b223738dd57975ff9616ddd8560e',1,'itg3200.h']]],
+  ['itg_5fconf_5fpwr',['ITG_CONF_PWR',['../itg3200_8h.html#af4ecc3fa080959344238782150fee737a9ea66ae2085091f77b30e6438fc4800e',1,'itg3200.h']]],
+  ['itg_5fconf_5fsd',['ITG_CONF_SD',['../itg3200_8h.html#af4ecc3fa080959344238782150fee737a6f329c4fd150456c9684150e71dd8b28',1,'itg3200.h']]],
+  ['itg_5fconf_5funinit',['ITG_CONF_UNINIT',['../itg3200_8h.html#af4ecc3fa080959344238782150fee737abd709f0e9c131a84aebaab7d42d838da',1,'itg3200.h']]]
 ];
