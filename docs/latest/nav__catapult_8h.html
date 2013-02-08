@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
+   &#160;<span id="projectnumber">v4.9_devel-482-gac4470c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -147,15 +147,22 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a1f9c6847f3fe9019fbe8a7b406b8cc72"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav__catapult_8h.html#a1f9c6847f3fe9019fbe8a7b406b8cc72">nav_catapult_motor_delay</a></td></tr>
+<tr class="memitem:a65489f348730ec6c246161e4d7b0f928"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav__catapult_8h.html#a65489f348730ec6c246161e4d7b0f928">nav_catapult_motor_delay</a></td></tr>
 <tr class="memitem:a6803958747912a7e558830cfa0a83016"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav__catapult_8h.html#a6803958747912a7e558830cfa0a83016">nav_catapult_acceleration_threshold</a></td></tr>
-<tr class="memitem:a42bc1a22fca1daa815853c7c7ca0b6cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav__catapult_8h.html#a42bc1a22fca1daa815853c7c7ca0b6cc">nav_catapult_heading_delay</a></td></tr>
+<tr class="memitem:abf1646b21522836957567318ffaefd2d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav__catapult_8h.html#abf1646b21522836957567318ffaefd2d">nav_catapult_heading_delay</a></td></tr>
 <tr class="memitem:aa26f9a9c248db58f29f546944be2cf4c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav__catapult_8h.html#aa26f9a9c248db58f29f546944be2cf4c">nav_catapult_initial_pitch</a></td></tr>
 <tr class="memitem:aee421b9216367f9e94954796dadc0d12"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nav__catapult_8h.html#aee421b9216367f9e94954796dadc0d12">nav_catapult_initial_throttle</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>catapult launch timing system </p>
-<p>Phase 1: -Zero Roll, Climb Pitch, Zero Throttle Phase 2: After Feeling the Start Acceleration -Zero Roll, Climb Pitch, Full Throttle Phase 3: After feeling the GPS heading (time based) -Place climb 300m in front of us -GoTo(climb)</p>
+<ul>
+<li>Phase 1: Zero Roll, Climb Pitch, Zero Throttle</li>
+<li>Phase 2: After detecting the Start Acceleration<br/>
+ Zero Roll, Climb Pitch, Full Throttle</li>
+<li>Phase 3: After getting the GPS heading (time based)<br/>
+ Place climb 300m in front of us<br/>
+ GoTo(climb)</li>
+</ul>
 
 <p>Definition in file <a class="el" href="nav__catapult_8h_source.html">nav_catapult.h</a>.</p>
 </div><h2>Function Documentation</h2>
@@ -183,7 +190,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="nav__catapult_8c_source.html#l00151">151</a> of file <a class="el" href="nav__catapult_8c_source.html">nav_catapult.c</a>.</p>
+<p>Definition at line <a class="el" href="nav__catapult_8c_source.html#l00152">152</a> of file <a class="el" href="nav__catapult_8c_source.html">nav_catapult.c</a>.</p>
 
 <p>References <a class="el" href="downlink_8h_source.html#l00061">DefaultChannel</a>, <a class="el" href="downlink_8h_source.html#l00065">DefaultDevice</a>, <a class="el" href="ap__downlink_8h_source.html#l00112">DownlinkSendWp</a>, <a class="el" href="navigation_8h_source.html#l00203">GetPosAlt</a>, <a class="el" href="navigation_8h_source.html#l00201">GetPosX</a>, <a class="el" href="navigation_8h_source.html#l00202">GetPosY</a>, <a class="el" href="nav__catapult_8c_source.html#l00059">nav_catapult_armed</a>, <a class="el" href="nav__catapult_8c_source.html#l00078">nav_catapult_heading_delay</a>, <a class="el" href="nav__catapult_8c_source.html#l00084">nav_catapult_initial_pitch</a>, <a class="el" href="nav__catapult_8c_source.html#l00090">nav_catapult_initial_throttle</a>, <a class="el" href="nav__catapult_8c_source.html#l00060">nav_catapult_launch</a>, <a class="el" href="nav__catapult_8c_source.html#l00072">nav_catapult_motor_delay</a>, <a class="el" href="nav__catapult_8c_source.html#l00094">nav_catapult_x</a>, <a class="el" href="nav__catapult_8c_source.html#l00095">nav_catapult_y</a>, <a class="el" href="navigation_8h_source.html#l00179">NavAttitude</a>, <a class="el" href="navigation_8h_source.html#l00110">NavGotoWaypoint</a>, <a class="el" href="navigation_8h_source.html#l00160">NavVerticalAltitudeMode</a>, <a class="el" href="navigation_8h_source.html#l00150">NavVerticalAutoThrottleMode</a>, <a class="el" href="navigation_8h_source.html#l00172">NavVerticalThrottleMode</a>, <a class="el" href="state_8h_source.html#l00672">stateGetPositionEnu_f()</a>, <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>, <a class="el" href="navigation_8h_source.html#l00100">WaypointAlt</a>, <a class="el" href="navigation_8h_source.html#l00098">WaypointX</a>, <a class="el" href="navigation_8h_source.html#l00099">WaypointY</a>, <a class="el" href="pprz__geodetic__float_8h_source.html#l00073">EnuCoor_f::x</a>, and <a class="el" href="pprz__geodetic__float_8h_source.html#l00074">EnuCoor_f::y</a>.</p>
 
@@ -266,7 +273,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="nav__catapult_8c_source.html#l00140">140</a> of file <a class="el" href="nav__catapult_8c_source.html">nav_catapult.c</a>.</p>
+<p>Definition at line <a class="el" href="nav__catapult_8c_source.html#l00141">141</a> of file <a class="el" href="nav__catapult_8c_source.html">nav_catapult.c</a>.</p>
 
 <p>References <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="nav__catapult_8c_source.html#l00059">nav_catapult_armed</a>, <a class="el" href="nav__catapult_8c_source.html#l00060">nav_catapult_launch</a>, and <a class="el" href="imu__chimu_8h_source.html#l00144">TRUE</a>.</p>
 
@@ -309,19 +316,19 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a42bc1a22fca1daa815853c7c7ca0b6cc"></a>
+<a class="anchor" id="abf1646b21522836957567318ffaefd2d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int nav_catapult_heading_delay</td>
+          <td class="memname">float nav_catapult_heading_delay</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="nav__catapult_8c_source.html#l00078">78</a> of file <a class="el" href="nav__catapult_8c_source.html">nav_catapult.c</a>.</p>
 
-<p>Referenced by <a class="el" href="nav__catapult_8c_source.html#l00151">nav_catapult()</a>, and <a class="el" href="nav__catapult_8c_source.html#l00100">nav_catapult_highrate_module()</a>.</p>
+<p>Referenced by <a class="el" href="nav__catapult_8c_source.html#l00152">nav_catapult()</a>, and <a class="el" href="nav__catapult_8c_source.html#l00100">nav_catapult_highrate_module()</a>.</p>
 
 </div>
 </div>
@@ -337,7 +344,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="nav__catapult_8c_source.html#l00084">84</a> of file <a class="el" href="nav__catapult_8c_source.html">nav_catapult.c</a>.</p>
 
-<p>Referenced by <a class="el" href="nav__catapult_8c_source.html#l00151">nav_catapult()</a>.</p>
+<p>Referenced by <a class="el" href="nav__catapult_8c_source.html#l00152">nav_catapult()</a>.</p>
 
 </div>
 </div>
@@ -353,23 +360,23 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="nav__catapult_8c_source.html#l00090">90</a> of file <a class="el" href="nav__catapult_8c_source.html">nav_catapult.c</a>.</p>
 
-<p>Referenced by <a class="el" href="nav__catapult_8c_source.html#l00151">nav_catapult()</a>, and <a class="el" href="nav__catapult_8c_source.html#l00100">nav_catapult_highrate_module()</a>.</p>
+<p>Referenced by <a class="el" href="nav__catapult_8c_source.html#l00152">nav_catapult()</a>, and <a class="el" href="nav__catapult_8c_source.html#l00100">nav_catapult_highrate_module()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1f9c6847f3fe9019fbe8a7b406b8cc72"></a>
+<a class="anchor" id="a65489f348730ec6c246161e4d7b0f928"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int nav_catapult_motor_delay</td>
+          <td class="memname">float nav_catapult_motor_delay</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="nav__catapult_8c_source.html#l00072">72</a> of file <a class="el" href="nav__catapult_8c_source.html">nav_catapult.c</a>.</p>
 
-<p>Referenced by <a class="el" href="nav__catapult_8c_source.html#l00151">nav_catapult()</a>, and <a class="el" href="nav__catapult_8c_source.html#l00100">nav_catapult_highrate_module()</a>.</p>
+<p>Referenced by <a class="el" href="nav__catapult_8c_source.html#l00152">nav_catapult()</a>, and <a class="el" href="nav__catapult_8c_source.html#l00100">nav_catapult_highrate_module()</a>.</p>
 
 </div>
 </div>
@@ -379,7 +386,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_984e899df90dd104b2eabcdbb76ec71f.html">nav</a></li><li class="navelem"><a class="el" href="nav__catapult_8h.html">nav_catapult.h</a></li>
-    <li class="footer">Generated on Fri Feb 8 2013 04:00:16 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 19:54:33 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

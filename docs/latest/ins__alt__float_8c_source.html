@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-468-g6fddc8c</span>
+   &#160;<span id="projectnumber">v4.9_devel-482-gac4470c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -281,64 +281,70 @@ $(document).ready(function(){initNavTree('ins__alt__float_8c_source.html','');})
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    R = <a class="code" href="baro__ets_8c.html#a08006eac33ce8a0d71f86d8da34d74c9">baro_ets_r</a>;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    SIGMA2 = <a class="code" href="baro__ets_8c.html#ab5e7ce908ff9c92597572cb7f84ecdd3">baro_ets_sigma2</a>;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#elif USE_BARO_BMP</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="baro__bmp_8c.html#a0e9983a0ccda14f96a31ab76d7ebb700">baro_bmp_enabled</a>) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    DT = <a class="code" href="baro__bmp_8h.html#a2eecec94958f9a1575f7d7bbc29b62e5">BARO_BMP_DT</a>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    R = <a class="code" href="baro__bmp_8c.html#a715ab4e2838f0af7be8d7d55b82a1ac9">baro_bmp_r</a>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    SIGMA2 = <a class="code" href="baro__bmp_8c.html#acb0831c824befa3750689297f62d4024">baro_bmp_sigma2</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#elif USE_BARO_MS5611</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="baro__ms5611__i2c_8c.html#a072d588808b1e53829dafc596c2cae33">baro_ms5611_enabled</a>) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    DT = <a class="code" href="baro__ms5611__i2c_8h.html#ae0019d9183a58363fc28c2e2c6356d1c">BARO_MS5611_DT</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    R = <a class="code" href="baro__ms5611__i2c_8c.html#ae2486f554e75685d70b6f119ed483267">baro_ms5611_r</a>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    SIGMA2 = <a class="code" href="baro__ms5611__i2c_8c.html#a0155646f7125fc276063f89e78c43c02">baro_ms5611_sigma2</a>;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor"></span>  {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    DT = <a class="code" href="ins__alt__float_8c.html#a36d06c582d5656fceff20d62a6d82e8b">GPS_DT</a>;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    R = <a class="code" href="ins__alt__float_8c.html#a64f433aa84bea43c5ef47b59b1cab4d3">GPS_R</a>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    SIGMA2 = <a class="code" href="ins__alt__float_8c.html#a17c1061a286341e39e171901d384e445">GPS_SIGMA2</a>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordtype">float</span> q[2][2];</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  q[0][0] = DT*DT*DT*DT/4.;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  q[0][1] = DT*DT*DT/2.;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  q[1][0] = DT*DT*DT/2.;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  q[1][1] = DT*DT;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#elif USE_BARO_BMP</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (<a class="code" href="baro__bmp_8c.html#a0e9983a0ccda14f96a31ab76d7ebb700">baro_bmp_enabled</a>) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    DT = <a class="code" href="baro__bmp_8h.html#a2eecec94958f9a1575f7d7bbc29b62e5">BARO_BMP_DT</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    R = <a class="code" href="baro__bmp_8c.html#a715ab4e2838f0af7be8d7d55b82a1ac9">baro_bmp_r</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    SIGMA2 = <a class="code" href="baro__bmp_8c.html#acb0831c824befa3750689297f62d4024">baro_bmp_sigma2</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif // USE_BAROMETER</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor"></span>  {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    DT = <a class="code" href="ins__alt__float_8c.html#a36d06c582d5656fceff20d62a6d82e8b">GPS_DT</a>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    R = <a class="code" href="ins__alt__float_8c.html#a64f433aa84bea43c5ef47b59b1cab4d3">GPS_R</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    SIGMA2 = <a class="code" href="ins__alt__float_8c.html#a17c1061a286341e39e171901d384e445">GPS_SIGMA2</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="comment">/* predict */</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <a class="code" href="ins__alt__float_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a> += <a class="code" href="ins__alt__float_8c.html#a863b6863992cc4e38bf85268acc93535">estimator_z_dot</a> * DT;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  p[0][0] = p[0][0]+p[1][0]*DT+DT*(p[0][1]+p[1][1]*DT) + SIGMA2*q[0][0];</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  p[0][1] = p[0][1]+p[1][1]*DT + SIGMA2*q[0][1];</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  p[1][0] = p[1][0]+p[1][1]*DT + SIGMA2*q[1][0];</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  p[1][1] = p[1][1] + SIGMA2*q[1][1];</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="comment">/* error estimate */</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordtype">float</span> e = p[0][0] + <a class="code" href="agl__vfilter_8c.html#a5c71a5e59a53413cd6c270266d63b031">R</a>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordflow">if</span> (fabs(e) &gt; 1e-5) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">float</span> k_0 = p[0][0] / e;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">float</span> k_1 =  p[1][0] / e;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    e = z_meas - <a class="code" href="ins__alt__float_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a>;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">/* correction */</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    estimator_z += k_0 * e;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="ins__alt__float_8c.html#a863b6863992cc4e38bf85268acc93535">estimator_z_dot</a> += k_1 * e;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    p[1][0] = -p[0][0]*k_1+p[1][0];</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    p[1][1] = -p[0][1]*k_1+p[1][1];</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    p[0][0] = p[0][0] * (1-k_0);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    p[0][1] = p[0][1] * (1-k_0);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keywordtype">float</span> q[2][2];</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  q[0][0] = DT*DT*DT*DT/4.;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  q[0][1] = DT*DT*DT/2.;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  q[1][0] = DT*DT*DT/2.;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  q[1][1] = DT*DT;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="comment">/* predict */</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <a class="code" href="ins__alt__float_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a> += <a class="code" href="ins__alt__float_8c.html#a863b6863992cc4e38bf85268acc93535">estimator_z_dot</a> * DT;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  p[0][0] = p[0][0]+p[1][0]*DT+DT*(p[0][1]+p[1][1]*DT) + SIGMA2*q[0][0];</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  p[0][1] = p[0][1]+p[1][1]*DT + SIGMA2*q[0][1];</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  p[1][0] = p[1][0]+p[1][1]*DT + SIGMA2*q[1][0];</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  p[1][1] = p[1][1] + SIGMA2*q[1][1];</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="comment">/* error estimate */</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordtype">float</span> e = p[0][0] + <a class="code" href="agl__vfilter_8c.html#a5c71a5e59a53413cd6c270266d63b031">R</a>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">if</span> (fabs(e) &gt; 1e-5) {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">float</span> k_0 = p[0][0] / e;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">float</span> k_1 =  p[1][0] / e;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    e = z_meas - <a class="code" href="ins__alt__float_8c.html#ae6fb57e3cab488ae76f30e5a33e24af8" title="altitude above MSL in meters">estimator_z</a>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">/* correction */</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    estimator_z += k_0 * e;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="ins__alt__float_8c.html#a863b6863992cc4e38bf85268acc93535">estimator_z_dot</a> += k_1 * e;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#ifdef DEBUG_ALT_KALMAN</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor"></span>  DOWNLINK_SEND_ALT_KALMAN(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,<a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,&amp;(p[0][0]),&amp;(p[0][1]),&amp;(p[1][0]), &amp;(p[1][1]));</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    p[1][0] = -p[0][0]*k_1+p[1][0];</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    p[1][1] = -p[0][1]*k_1+p[1][1];</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    p[0][0] = p[0][0] * (1-k_0);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    p[0][1] = p[0][1] * (1-k_0);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#ifdef DEBUG_ALT_KALMAN</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor"></span>  DOWNLINK_SEND_ALT_KALMAN(<a class="code" href="downlink_8h.html#a891b19a3eba08208d4e550aa6c6188dd" title="SITL.">DefaultChannel</a>,<a class="code" href="downlink_8h.html#a028b405f95cecb4af565b17c8ee71d80">DefaultDevice</a>,&amp;(p[0][0]),&amp;(p[0][1]),&amp;(p[1][0]), &amp;(p[1][1]));</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_800f0b451dc44a2b86d16d857cea778d.html">ins</a></li><li class="navelem"><a class="el" href="ins__alt__float_8c.html">ins_alt_float.c</a></li>
-    <li class="footer">Generated on Fri Feb 8 2013 04:00:14 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 8 2013 19:54:31 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

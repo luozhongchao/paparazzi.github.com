@@ -1145,6 +1145,9 @@ var onboard_modules =
       ] ]
     ] ],
     [ "Catapult", "module__nav_catapult.html", [
+      [ "Module configuration options", "module__nav_catapult.html#configuration", [
+        [ "Define Options", "module__nav_catapult.html#define", null ]
+      ] ],
       [ "Module functions", "module__nav_catapult.html#functions", [
         [ "Init Functions", "module__nav_catapult.html#init_functions", null ],
         [ "Periodic Functions", "module__nav_catapult.html#periodic_functions", null ]
