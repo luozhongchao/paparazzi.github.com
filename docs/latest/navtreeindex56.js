@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3":[7,0,6,1],
+"structadc__buf.html#ab453b0005ea1cc8b8cbf62aff579f60b":[7,0,6,3],
 "structadc__buf.html#aceea4ff785000051676babf3e5f25287":[7,0,6,0],
 "structads1114__periph.html":[7,0,8],
 "structads1114__periph.html#a356e5a2bcac9dd882f5ffe3cf346d380":[7,0,8,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "structscbRegs__t.html#a0e45c1e297fb530d79e599bff035f514":[7,0,140,7],
 "structscbRegs__t.html#a10cbe3da1bfffec8627f5a911b9868f3":[7,0,140,15],
 "structscbRegs__t.html#a170421c99421ce0a8b575606e72c19c4":[7,0,140,13],
-"structscbRegs__t.html#a270527b46f8fabfe3cdd5c08c7eec550":[7,0,140,14],
-"structscbRegs__t.html#a32e0204bcb52f6cfd60d06782d05c99a":[7,0,140,22],
-"structscbRegs__t.html#a37142170690ba5a84193e3219287c8e2":[7,0,140,8]
+"structscbRegs__t.html#a270527b46f8fabfe3cdd5c08c7eec550":[7,0,140,14]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"module__i2c_abuse_test.html#event_functions":[2,5,0,1],
+"module__i2c_abuse_test.html#files":[2,5,1],
 "module__i2c_abuse_test.html#functions":[2,5,0],
 "module__i2c_abuse_test.html#headers":[2,5,1,0],
 "module__i2c_abuse_test.html#init_functions":[2,5,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "module__pwm_meas.html#sources":[2,12,1,1],
 "module__rotorcraft_cam.html":[2,9],
 "module__rotorcraft_cam.html#af_section":[2,9,0,0],
-"module__rotorcraft_cam.html#configuration":[2,9,0],
-"module__rotorcraft_cam.html#files":[2,9,2],
-"module__rotorcraft_cam.html#functions":[2,9,1]
+"module__rotorcraft_cam.html#configuration":[2,9,0]
 };

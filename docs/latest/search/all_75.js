@@ -205,6 +205,8 @@ var searchData=
   ['um6uninit',['UM6Uninit',['../imu__um6_8h.html#a26ca138779c71e0bc7de2b8b338d91fca0a15c4dce3599a0cf01ce7e5d0f4a5b4',1,'imu_um6.h']]],
   ['umarim_5f1_2e0_2eh',['umarim_1.0.h',['../umarim__1_80_8h.html',1,'']]],
   ['umarim_5faccel_5frate',['UMARIM_ACCEL_RATE',['../imu__umarim_8c.html#a9f60b55e552164b51b469f8f924dc0e4',1,'imu_umarim.c']]],
+  ['umarim_5fgyro_5flowpass',['UMARIM_GYRO_LOWPASS',['../imu__umarim_8c.html#a831c49a0628544c9b5229201bcadeb6f',1,'imu_umarim.c']]],
+  ['umarim_5fgyro_5fsmplrt_5fdiv',['UMARIM_GYRO_SMPLRT_DIV',['../imu__umarim_8c.html#a9424c13918a177c84c6b2c8b3ff09cf1',1,'imu_umarim.c']]],
   ['umarim_5flite_5f2_2e0_2eh',['umarim_lite_2.0.h',['../umarim__lite__2_80_8h.html',1,'']]],
   ['umcr_5fdtr',['UMCR_DTR',['../lpcUART_8h.html#aac28bad522d92ae9db7ed52205f042f7',1,'lpcUART.h']]],
   ['umcr_5flb',['UMCR_LB',['../lpcUART_8h.html#ab2162f8bb6a4205b52233f72a2faa14c',1,'lpcUART.h']]],

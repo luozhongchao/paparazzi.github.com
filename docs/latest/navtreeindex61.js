@@ -1,5 +1,7 @@
 var NAVTREEINDEX61 =
 {
+"tiny__2_81_8h.html#aa8ade7e32d46ae622ee886a90b1ea9c8":[8,0,0,0,1,22,10],
+"tiny__2_81_8h.html#aa8b07cb021b87d0c5868a3cb2851510e":[8,0,0,0,1,22,73],
 "tiny__2_81_8h.html#aaa37fe060b308c5808f70b01dda594af":[8,0,0,0,1,22,33],
 "tiny__2_81_8h.html#aabb4946529ad070470a4fdb279b02719":[8,0,0,0,1,22,60],
 "tiny__2_81_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf":[8,0,0,0,1,22,70],
@@ -137,10 +139,10 @@ var NAVTREEINDEX61 =
 "types_8h.html#a273cf69d639a59973b6019625df33e30":[8,0,0,0,0,0,0,14,4],
 "types_8h.html#a2ba621978a511250f7250fb10e05ffbe":[8,0,0,0,0,0,0,14,1],
 "types_8h.html#a7c6368b321bd9acd0149b030bb8275ed":[8,0,0,0,0,0,0,14,8],
-"types_8h.html#a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b":[8,0,0,0,0,0,0,14,8,3],
 "types_8h.html#a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b":[8,0,0,0,0,0,0,14,8,1],
-"types_8h.html#a7c6368b321bd9acd0149b030bb8275edaf9d46b7804d93a4fcde88489a1b68c24":[8,0,0,0,0,0,0,14,8,2],
+"types_8h.html#a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b":[8,0,0,0,0,0,0,14,8,3],
 "types_8h.html#a7c6368b321bd9acd0149b030bb8275edaf9d46b7804d93a4fcde88489a1b68c24":[8,0,0,0,0,0,0,14,8,0],
+"types_8h.html#a7c6368b321bd9acd0149b030bb8275edaf9d46b7804d93a4fcde88489a1b68c24":[8,0,0,0,0,0,0,14,8,2],
 "types_8h.html#aaa5d1cd013383c889537491c3cfd9aad":[8,0,0,0,0,0,0,14,6],
 "types_8h.html#aba7bc1797add20fe3efdf37ced1182c5":[8,0,0,0,0,0,0,14,7],
 "types_8h.html#adec1df1b8b51cb32b77e5b86fff46471":[8,0,0,0,0,0,0,14,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX61 =
 "umarim__lite__2_80_8h.html#a43abb7ff318cb315c8b5134ee8d96fd2":[8,0,0,0,1,27,19],
 "umarim__lite__2_80_8h.html#a474279f28350114950d862951d72de66":[8,0,0,0,1,27,6],
 "umarim__lite__2_80_8h.html#a4b04c8175ead918a9ee42816b06a04e8":[8,0,0,0,1,27,31],
-"umarim__lite__2_80_8h.html#a4b145b7a3f8f184e22eb317cf231eb28":[8,0,0,0,1,27,39],
-"umarim__lite__2_80_8h.html#a4e4204874a63b2a01811ee2819285f58":[8,0,0,0,1,27,18],
-"umarim__lite__2_80_8h.html#a527cf6cfbed24e043ed4ee710baed3f1":[8,0,0,0,1,27,21]
+"umarim__lite__2_80_8h.html#a4b145b7a3f8f184e22eb317cf231eb28":[8,0,0,0,1,27,39]
 };

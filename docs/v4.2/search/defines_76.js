@@ -295,7 +295,7 @@ var searchData=
   ['vn100_5freg_5fypr_5fsize',['VN100_REG_YPR_SIZE',['../VN100_8h.html#a8316d1a0d614e18198736d33f6b31703',1,'VN100.h']]],
   ['vn100_5fspi_5fbuffer_5fsize',['VN100_SPI_BUFFER_SIZE',['../VN100_8h.html#abcb1b6349c92dfa9dbae913ec30b9a19',1,'VN100.h']]],
   ['vn100_5fwordofbytes',['VN100_WordOfBytes',['../VN100_8h.html#acaceff71c29258142d716504690f1773',1,'VN100.h']]],
-  ['voltageofadc',['VoltageOfAdc',['../tiny__2_80_8h.html#a3a244669d0d9c86f4339f5d6fe83fdb9',1,'VoltageOfAdc():&#160;tiny_2.0.h'],['../electrical_8c.html#a3a244669d0d9c86f4339f5d6fe83fdb9',1,'VoltageOfAdc():&#160;electrical.c']]],
+  ['voltageofadc',['VoltageOfAdc',['../electrical_8c.html#a3a244669d0d9c86f4339f5d6fe83fdb9',1,'electrical.c']]],
   ['vpbdiv',['VPBDIV',['../LPC21xx_8h.html#a88438a1bf4f6b60ce42a6385b172ca4d',1,'LPC21xx.h']]],
   ['vpbdiv_5fvalue',['VPBDIV_VALUE',['../lpcSCB_8h.html#afcffdd2a4f43249779157957ddc111aa',1,'lpcSCB.h']]]
 ];

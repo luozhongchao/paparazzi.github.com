@@ -236,7 +236,7 @@ var searchData=
   ['spistream_5fmax_5ftx_5fparallel_5ftransactions',['SPISTREAM_MAX_TX_PARALLEL_TRANSACTIONS',['../lisa__spistream_8h.html#a598c48a790127600533ec232689951ad',1,'lisa_spistream.h']]],
   ['spistream_5frx_5fbuffer_5fsize',['SPISTREAM_RX_BUFFER_SIZE',['../lisa__spistream_8h.html#a8b6e73fd6bb18acfa7ec88266acacb20',1,'lisa_spistream.h']]],
   ['spistream_5ftx_5fmax_5fbuffer_5fpackages',['SPISTREAM_TX_MAX_BUFFER_PACKAGES',['../lisa__spistream_8h.html#a79c613fbd040f3b37447598e6f561e39',1,'lisa_spistream.h']]],
-  ['square',['Square',['../nav_8h.html#a5b322de63943d278a002687f820ac41c',1,'Square():&#160;nav.h'],['../pprz__algebra_8h.html#a26f8bb75deabaaf4adafe0a093144971',1,'SQUARE():&#160;pprz_algebra.h']]],
+  ['square',['SQUARE',['../pprz__algebra_8h.html#a26f8bb75deabaaf4adafe0a093144971',1,'SQUARE():&#160;pprz_algebra.h'],['../nav_8h.html#a5b322de63943d278a002687f820ac41c',1,'Square():&#160;nav.h']]],
   ['srf08_5fcentimeters',['SRF08_CENTIMETERS',['../alt__srf08_8h.html#a998b93ec75e91e718a258f8dbf9c9808',1,'alt_srf08.h']]],
   ['srf08_5fcommand',['SRF08_COMMAND',['../alt__srf08_8h.html#a1e2bb814ce99da4e5b5de1d1dcc168f9',1,'alt_srf08.h']]],
   ['srf08_5fecho_5f1',['SRF08_ECHO_1',['../alt__srf08_8h.html#a57f1f7ac7eb84b44e15a0f8d48b97b0a',1,'alt_srf08.h']]],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"stm32_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a11c780a31ca1af3dc366bba41f431989":[8,0,0,0,0,3,2,0,1,5],
+"stm32_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a318935d8d5191df9ebfcae4a9165c3f4":[8,0,0,0,0,3,2,0,1,2],
 "stm32_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a3e02a20951a8d18ade2922fd0c3fac1f":[8,0,0,0,0,3,2,0,1,0],
 "stm32_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a472606a13476f0804e5e3abfab77ea35":[8,0,0,0,0,3,2,0,1,3],
 "stm32_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a68d4247d6cfc6a0dc584ca7a7f41115b":[8,0,0,0,0,3,2,0,1,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "structAhrsIntCmplEuler.html#a65da0278b786a678fc1bd6fd9fb61cee":[7,0,17,8],
 "structAhrsIntCmplEuler.html#a6607073c810f78bb3f4d31d8fddfbe6e":[7,0,17,5],
 "structAhrsIntCmplEuler.html#a91b1cd71a4f7814bfe5c355c04ef28f9":[7,0,17,6],
-"structAhrsIntCmplEuler.html#ae9bf815ee507229b24307a97fa1ce5f2":[7,0,17,1],
-"structAhrsIntExternQuat.html":[7,0,18],
-"structAhrsIntExternQuat.html#a1b70c4e8bfd84731fd158b417c003dcd":[7,0,18,1]
+"structAhrsIntCmplEuler.html#ae9bf815ee507229b24307a97fa1ce5f2":[7,0,17,1]
 };

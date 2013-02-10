@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"structAhrsIntExternQuat.html":[7,0,18],
+"structAhrsIntExternQuat.html#a1b70c4e8bfd84731fd158b417c003dcd":[7,0,18,1],
 "structAhrsIntExternQuat.html#a70f08ae198bff41733a1c1218ec2040f":[7,0,18,3],
 "structAhrsIntExternQuat.html#ac33c7d7b27b7576c03118493ed073f59":[7,0,18,2],
 "structAhrsIntExternQuat.html#ae24954a365ff275819997dbd1b785827":[7,0,18,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "structGpsUbx.html#af60e30d905e5ec46775a57eeb2025df9":[7,0,68,0],
 "structHfilterFloat.html":[7,0,69],
 "structHfilterFloat.html#a0d390aab7aa6ed5be9fb5a046e4914a4":[7,0,69,0],
-"structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9":[7,0,69,6],
-"structHfilterFloat.html#a3161286a7c402bf00b108cf84127542b":[7,0,69,3],
-"structHfilterFloat.html#a6e01846a801cbd7fe3ae1f69df70ce3b":[7,0,69,2]
+"structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9":[7,0,69,6]
 };

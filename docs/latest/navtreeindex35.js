@@ -1,5 +1,7 @@
 var NAVTREEINDEX35 =
 {
+"module__cam_segment.html#files":[2,8,1],
+"module__cam_segment.html#functions":[2,8,0],
 "module__cam_segment.html#headers":[2,8,1,0],
 "module__cam_segment.html#init_functions":[2,8,0,0],
 "module__cam_segment.html#module_xml__cam_segment":[2,8,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX35 =
 "module__humid_sht_i2c.html#module_xml__humid_sht_i2c":[2,39,2,2],
 "module__humid_sht_i2c.html#periodic_functions":[2,39,1,2],
 "module__humid_sht_i2c.html#sources":[2,39,2,1],
-"module__i2c_abuse_test.html":[2,5],
-"module__i2c_abuse_test.html#event_functions":[2,5,0,1],
-"module__i2c_abuse_test.html#files":[2,5,1]
+"module__i2c_abuse_test.html":[2,5]
 };

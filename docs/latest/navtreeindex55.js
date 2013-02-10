@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"structLtpDef__f.html#a908ef9c9a408a734f41b7dedc4cce995":[7,0,117,3],
+"structLtpDef__f.html#ae17fe4c9b5d766b04cb0e73ee5115caf":[7,0,117,1],
 "structLtpDef__f.html#af2c652507c79f868a67743428e5d47d3":[7,0,117,0],
 "structLtpDef__f.html#af4b32660ab75022dc43333a7e7a383e7":[7,0,117,2],
 "structLtpDef__i.html":[7,0,118],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "structadcRegs__t.html#aef9f9010fef01ddde8afbbb4e32c376d":[7,0,7,10],
 "structadcRegs__t.html#afa04521ab0ed7e0e16376778a8315278":[7,0,7,6],
 "structadc__buf.html":[7,0,6],
-"structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b":[7,0,6,2],
-"structadc__buf.html#a16c2adc67586f7762c266a0be7671bc3":[7,0,6,1],
-"structadc__buf.html#ab453b0005ea1cc8b8cbf62aff579f60b":[7,0,6,3]
+"structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b":[7,0,6,2]
 };
