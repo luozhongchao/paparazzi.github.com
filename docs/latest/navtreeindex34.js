@@ -1,5 +1,8 @@
 var NAVTREEINDEX34 =
 {
+"median__filter_8h.html#ad96676fac5735734649123e78f96deed":[8,0,0,0,2,0,12],
+"median__filter_8h.html#aee74cc51a39b22672908e6b0232b056f":[8,0,0,0,2,0,14],
+"median__filter_8h_source.html":[8,0,0,0,2,0],
 "micromag_8c.html":[8,0,0,0,26],
 "micromag_8c.html#a2316ec8758ece1995c6e4ef923d7da6b":[8,0,0,0,26,1],
 "micromag_8c.html#a4203779ce87bbb6b4fbbd6af0b1b08bb":[8,0,0,0,26,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX34 =
 "module__cam_roll.html#functions":[2,7,0],
 "module__cam_roll.html#headers":[2,7,1,0],
 "module__cam_roll.html#init_functions":[2,7,0,0],
-"module__cam_roll.html#module_xml__cam_roll":[2,7,1,2],
-"module__cam_roll.html#periodic_functions":[2,7,0,1],
-"module__cam_roll.html#sources":[2,7,1,1],
-"module__cam_segment.html":[2,8]
+"module__cam_roll.html#module_xml__cam_roll":[2,7,1,2]
 };

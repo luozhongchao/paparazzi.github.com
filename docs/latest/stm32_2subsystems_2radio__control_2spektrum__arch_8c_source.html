@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-489-g4dd3f12</span>
+   &#160;<span id="projectnumber">v4.9_devel-494-g214e09c</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -191,11 +191,11 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#add408507e1d1fb9bf77fd5b54ca541d5">   83</a></span>&#160;<a class="code" href="structSpektrumStateStruct.html">SpektrumStateType</a> <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#add408507e1d1fb9bf77fd5b54ca541d5">PrimarySpektrumState</a> = {1,0,0,0,0,0,0,0,0};</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#ifdef RADIO_CONTROL_SPEKTRUM_SECONDARY_PORT</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;Using secondary spektrum receiver.&quot;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor"></span><a class="code" href="structSpektrumStateStruct.html">SpektrumStateType</a> SecondarySpektrumState = {1,0,0,0,0,0,0,0,0};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor"></span>PRINT_CONFIG_MSG(<span class="stringliteral">&quot;Using secondary spektrum receiver.&quot;</span>)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<a class="code" href="structSpektrumStateStruct.html">SpektrumStateType</a> SecondarySpektrumState = {1,0,0,0,0,0,0,0,0};</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#pragma message &quot;NOT using secondary spektrum receiver.&quot;</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor"></span>PRINT_CONFIG_MSG(<span class="stringliteral">&quot;NOT using secondary spektrum receiver.&quot;</span>)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c">   91</a></span>&#160;<a class="code" href="types_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a> <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c">SpektrumBuf</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ace6cf51a5f170c61c5c5598f93329478">SPEKTRUM_CHANNELS_PER_FRAME</a>*<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#acb180c84399fe9bba1e58aa96a86deb2">MAX_SPEKTRUM_FRAMES</a>];</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">/* the order of the channels on a spektrum is always as follows :</span></div>
@@ -481,20 +481,20 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="preprocessor"></span>  <span class="comment">/* If we have two receivers and at least one of them has new data */</span></div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> BestReceiver;</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  <span class="keywordflow">if</span> ((PrimarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c">RcAvailable</a>) ||</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      (SecondarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c">RcAvailable</a>)) {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      (SecondarySpektrumState.RcAvailable)) {</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="comment">/* if both receivers have new data select the one  */</span></div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="comment">/* that has had the least number of frames lost    */</span></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span> ((PrimarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c">RcAvailable</a>) &amp;&amp;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        (SecondarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c">RcAvailable</a>)) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        (SecondarySpektrumState.RcAvailable)) {</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;      BestReceiver  = (PrimarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#ae73eb7b5b6d2fbc1ebf98416b9959d94">LostFrameCnt</a></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                       &lt;= SecondarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#ae73eb7b5b6d2fbc1ebf98416b9959d94">LostFrameCnt</a>) ? 0 : 1;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                       &lt;= SecondarySpektrumState.LostFrameCnt) ? 0 : 1;</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;      <span class="comment">/* if only one of the receivers have new data use it */</span></div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;      BestReceiver  = (PrimarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c">RcAvailable</a>) ? 0 : 1;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    }</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="comment">/* clear the data ready flags */</span></div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    PrimarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c">RcAvailable</a> = 0;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    SecondarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c">RcAvailable</a> = 0;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    SecondarySpektrumState.RcAvailable = 0;</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor"></span>  <span class="comment">/* if we have one receiver and it has new data */</span></div>
@@ -508,19 +508,19 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="preprocessor"></span>      ChannelData = PrimarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a7455739b989c950a44275261a4edba48">values</a>[i];</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor"></span>      ChannelData = (!BestReceiver) ? PrimarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a7455739b989c950a44275261a4edba48">values</a>[i] :</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                                 SecondarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#a7455739b989c950a44275261a4edba48">values</a>[i];</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                                 SecondarySpektrumState.values[i];</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;#endif</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;      <span class="comment">/* find out the channel number and its value by  */</span></div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;      <span class="comment">/* using the EncodingType which is only received */</span></div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;      <span class="comment">/* from the main receiver                        */</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;      <span class="keywordflow">switch</span>(<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#afb5047901d3fea90c147a5477a9e441d">EncodingType</a>) {</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;      <span class="keywordflow">switch</span>(EncodingType) {</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="keywordflow">case</span>(0) : <span class="comment">/* 10 bit */</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;          ChannelNum = (ChannelData &gt;&gt; 10) &amp; 0x0f;</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;          <span class="comment">/* don&#39;t bother decoding unused channels */</span></div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;          <span class="keywordflow">if</span> (ChannelNum &lt; <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a1beed9c63b07301d72b3516543545652">RADIO_CONTROL_NB_CHANNEL</a>) {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;           <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c">SpektrumBuf</a>[ChannelNum] = ChannelData &amp; 0x3ff;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;           <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c">SpektrumBuf</a>[ChannelNum] -= 0x200;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;           <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c">SpektrumBuf</a>[ChannelNum] *= <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>/0x156;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;           SpektrumBuf[ChannelNum] = ChannelData &amp; 0x3ff;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;           SpektrumBuf[ChannelNum] -= 0x200;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;           SpektrumBuf[ChannelNum] *= <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>/0x156;</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;           ChannelCnt++;</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;          }</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;          <span class="keywordflow">break</span>;</div>
@@ -529,9 +529,9 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;          ChannelNum = (ChannelData &gt;&gt; 11) &amp; 0x0f;</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;          <span class="comment">/* don&#39;t bother decoding unused channels */</span></div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;          <span class="keywordflow">if</span> (ChannelNum &lt; <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a1beed9c63b07301d72b3516543545652">RADIO_CONTROL_NB_CHANNEL</a>) {</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c">SpektrumBuf</a>[ChannelNum] = ChannelData &amp; 0x7ff;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c">SpektrumBuf</a>[ChannelNum] -= 0x400;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c">SpektrumBuf</a>[ChannelNum] *= <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>/0x2AC;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            SpektrumBuf[ChannelNum] = ChannelData &amp; 0x7ff;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            SpektrumBuf[ChannelNum] -= 0x400;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            SpektrumBuf[ChannelNum] *= <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>/0x2AC;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            ChannelCnt++;</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;          }</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;          <span class="keywordflow">break</span>;</div>
@@ -550,12 +550,12 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;      <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a009f85397fd864a703ce54da8f02daa8">time_since_last_frame</a> = 0;</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;      <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a8843219fc855f8ca70c1d29cf3d8c7b4">status</a> = <a class="code" href="radio__control_8h.html#ac96a9e3f6c17299d532eb572ef0ea415">RC_OK</a>;</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (MaxChannelNum + 1); i++) {</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[i] = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a3cbf49f914dbdf858b587b7d669aef8c">SpektrumBuf</a>[i];</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[i] = SpektrumBuf[i];</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keywordflow">if</span> (i == <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a393c67e7c336f4e58413e3cb07378511">RADIO_THROTTLE</a> ) {</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;          <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[i] += <a class="code" href="paparazzi_8h.html#a54d332726575cca5fb2774bfcfbe36a9">MAX_PPRZ</a>;</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;          <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[i] /= 2;</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        }</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[i] *= <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ab2352f6b9919fc81cb508682732349a3">SpektrumSigns</a>[i];</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[i] *= SpektrumSigns[i];</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;      }</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;      (*frame_handler)();</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    }</div>
@@ -605,8 +605,8 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;  <span class="keywordflow">if</span> (PrimarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a>)</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    --PrimarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a>;</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<span class="preprocessor">#ifdef RADIO_CONTROL_SPEKTRUM_SECONDARY_PORT</span></div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (SecondarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a>)</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    --SecondarySpektrumState.<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a>;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span> (SecondarySpektrumState.SpektrumTimer)</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    --SecondarySpektrumState.SpektrumTimer;</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;</div>
@@ -865,7 +865,7 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_ebfa5059daba0d85a68f1520147b1a51.html">stm32</a></li><li class="navelem"><a class="el" href="dir_71548ae744da26ac2c7ca213b679dc43.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_b14b085d0c57bddb3031abea4661d10b.html">radio_control</a></li><li class="navelem"><a class="el" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html">spektrum_arch.c</a></li>
-    <li class="footer">Generated on Sun Feb 10 2013 04:00:08 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Feb 12 2013 04:00:13 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"imu__nps_8h.html#a60e8f1f35a15a535130669093e80e858":[8,0,0,0,10,4,15,5],
 "imu__nps_8h.html#a62850cb40d836d423b8e389ab9c9bc26":[8,0,0,0,10,4,15,20],
 "imu__nps_8h.html#a6f808c71190e714287442af3bb7008b3":[8,0,0,0,10,4,15,18],
 "imu__nps_8h.html#a8ac88fc00cde506229b92c6a1e2c3122":[8,0,0,0,10,4,15,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "infrared__i2c_8c.html#ad96573fe02e312b16afe40a9fab92956":[8,0,0,0,10,8,5,11],
 "infrared__i2c_8c.html#adb9448639911594432d760f80443b4d7":[8,0,0,0,10,8,5,20],
 "infrared__i2c_8c_source.html":[8,0,0,0,10,8,5],
-"ins_8c.html":[8,0,0,0,10,23],
-"ins_8c.html#a93b83435a11f973aa9aceab13c2f2b3f":[8,0,0,0,10,23,0]
+"ins_8c.html":[8,0,0,0,10,23]
 };

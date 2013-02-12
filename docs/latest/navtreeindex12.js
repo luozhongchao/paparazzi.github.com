@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"deploy__sonar__buoy_8c.html#a3f443817420f5074c289a8189d6a5cb4":[8,0,0,0,7,10,0,1],
 "deploy__sonar__buoy_8c.html#afa4a947f87d2bd4b6e76201f7c68264f":[8,0,0,0,7,10,0,3],
 "deploy__sonar__buoy_8c_source.html":[8,0,0,0,7,10,0],
 "deploy__sonar__buoy_8h.html":[8,0,0,0,7,10,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "energy__ctrl_8c.html#a56244df6f6f2b1e99747e854a6357d92":[8,0,0,0,3,0,0,0,47],
 "energy__ctrl_8c.html#a5920205ac05cd681abf9f4dce7086597":[8,0,0,0,3,0,0,0,52],
 "energy__ctrl_8c.html#a5bd299dd0de5503b8d89214c741fcfc3":[8,0,0,0,3,0,0,0,45],
-"energy__ctrl_8c.html#a5e7e32a93a7c3fe1f0f3b0826277e087":[8,0,0,0,3,0,0,0,31],
-"energy__ctrl_8c.html#a6c37af0b620267b3b6f6e0807f67352c":[8,0,0,0,3,0,0,0,35]
+"energy__ctrl_8c.html#a5e7e32a93a7c3fe1f0f3b0826277e087":[8,0,0,0,3,0,0,0,31]
 };

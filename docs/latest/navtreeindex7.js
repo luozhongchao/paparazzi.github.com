@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"atmega__i2c__cam__ctrl_8h.html#aeb25c30f109ccd0c3046715e4f3df6b5":[8,0,0,0,7,11,1,3],
 "atmega__i2c__cam__ctrl_8h_source.html":[8,0,0,0,7,11,1],
 "audio__telemetry_8h.html":[8,0,0,0,10,2,0],
 "audio__telemetry_8h.html#a06b1e2ecf631b73ff6c6bcfc640e6726":[8,0,0,0,10,2,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "baro__bmp_8c.html#ac9e2f079b03497055001c48b6fdbe21a":[8,0,0,0,7,29,14,7],
 "baro__bmp_8c.html#acb0831c824befa3750689297f62d4024":[8,0,0,0,7,29,14,21],
 "baro__bmp_8c.html#acdbac238d50c61bcfae520aa7460fba8":[8,0,0,0,7,29,14,13],
-"baro__bmp_8c.html#adc14a0d61a0c006af04a0cb6929dff72":[8,0,0,0,7,29,14,32],
-"baro__bmp_8c.html#adc3f4eb02e1f8092352cadd06a253ebc":[8,0,0,0,7,29,14,31]
+"baro__bmp_8c.html#adc14a0d61a0c006af04a0cb6929dff72":[8,0,0,0,7,29,14,32]
 };

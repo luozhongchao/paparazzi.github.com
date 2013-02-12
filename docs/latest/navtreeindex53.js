@@ -1,5 +1,8 @@
 var NAVTREEINDEX53 =
 {
+"structAhrsIntCmplEuler.html#a6607073c810f78bb3f4d31d8fddfbe6e":[7,0,17,5],
+"structAhrsIntCmplEuler.html#a91b1cd71a4f7814bfe5c355c04ef28f9":[7,0,17,6],
+"structAhrsIntCmplEuler.html#ae9bf815ee507229b24307a97fa1ce5f2":[7,0,17,1],
 "structAhrsIntExternQuat.html":[7,0,18],
 "structAhrsIntExternQuat.html#a1b70c4e8bfd84731fd158b417c003dcd":[7,0,18,1],
 "structAhrsIntExternQuat.html#a70f08ae198bff41733a1c1218ec2040f":[7,0,18,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX53 =
 "structGpsUbx.html#ae2861c04c3c0c9810eb094f56d562685":[7,0,68,3],
 "structGpsUbx.html#aeb13797cdc4c59bcbe6208d2aa8b53f9":[7,0,68,10],
 "structGpsUbx.html#aef27cd7016751d0cdd3dd2c945f57a8b":[7,0,68,4],
-"structGpsUbx.html#af60e30d905e5ec46775a57eeb2025df9":[7,0,68,0],
-"structHfilterFloat.html":[7,0,69],
-"structHfilterFloat.html#a0d390aab7aa6ed5be9fb5a046e4914a4":[7,0,69,0],
-"structHfilterFloat.html#a18b85c18ddbcb7d5344995a69729d8d9":[7,0,69,6]
+"structGpsUbx.html#af60e30d905e5ec46775a57eeb2025df9":[7,0,68,0]
 };

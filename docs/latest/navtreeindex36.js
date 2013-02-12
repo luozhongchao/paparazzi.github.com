@@ -1,5 +1,8 @@
 var NAVTREEINDEX36 =
 {
+"module__humid_sht_i2c.html#periodic_functions":[2,39,1,2],
+"module__humid_sht_i2c.html#sources":[2,39,2,1],
+"module__i2c_abuse_test.html":[2,5],
 "module__i2c_abuse_test.html#event_functions":[2,5,0,1],
 "module__i2c_abuse_test.html#files":[2,5,1],
 "module__i2c_abuse_test.html#functions":[2,5,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX36 =
 "module__pwm_meas.html#headers":[2,12,1,0],
 "module__pwm_meas.html#init_functions":[2,12,0,0],
 "module__pwm_meas.html#module_xml__pwm_meas":[2,12,1,2],
-"module__pwm_meas.html#sources":[2,12,1,1],
-"module__rotorcraft_cam.html":[2,9],
-"module__rotorcraft_cam.html#af_section":[2,9,0,0],
-"module__rotorcraft_cam.html#configuration":[2,9,0]
+"module__pwm_meas.html#sources":[2,12,1,1]
 };

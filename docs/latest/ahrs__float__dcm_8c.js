@@ -1,5 +1,6 @@
 var ahrs__float__dcm_8c =
 [
+    [ "AHRS_PROPAGATE_FREQUENCY", "ahrs__float__dcm_8c.html#a8b1ace7fb278ed8284cb2e3579f14798", null ],
     [ "INS_PITCH_NEUTRAL_DEFAULT", "ahrs__float__dcm_8c.html#a4ed952896c549e2304de785adfda2bf9", null ],
     [ "INS_ROLL_NEUTRAL_DEFAULT", "ahrs__float__dcm_8c.html#ae6d192ab41d6346816347a696bdd6dd1", null ],
     [ "ahrs_align", "ahrs__float__dcm_8c.html#a81e17b09f47068c02c345da1523f589b", null ],

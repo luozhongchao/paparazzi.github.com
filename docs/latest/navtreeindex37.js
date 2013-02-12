@@ -1,5 +1,8 @@
 var NAVTREEINDEX37 =
 {
+"module__rotorcraft_cam.html":[2,9],
+"module__rotorcraft_cam.html#af_section":[2,9,0,0],
+"module__rotorcraft_cam.html#configuration":[2,9,0],
 "module__rotorcraft_cam.html#files":[2,9,2],
 "module__rotorcraft_cam.html#functions":[2,9,1],
 "module__rotorcraft_cam.html#headers":[2,9,2,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX37 =
 "motor__mixing_8h_source.html":[8,0,0,0,10,0,13],
 "mpl3115_8c.html":[8,0,0,0,8,22],
 "mpl3115_8c.html#a0148160700e54f08dc81c724c20b8882":[8,0,0,0,8,22,7],
-"mpl3115_8c.html#a188e467a8832badebc74377d22bad625":[8,0,0,0,8,22,8],
-"mpl3115_8c.html#a1960c6d41d19b8990ba059d300172df1":[8,0,0,0,8,22,3],
-"mpl3115_8c.html#a1e5d15a6a5cdf0fdda483e68f3811670":[8,0,0,0,8,22,9],
-"mpl3115_8c.html#a2ab0e5dfce81f1fa227bd1053bc446d3":[8,0,0,0,8,22,1]
+"mpl3115_8c.html#a188e467a8832badebc74377d22bad625":[8,0,0,0,8,22,8]
 };

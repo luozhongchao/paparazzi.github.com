@@ -1,5 +1,8 @@
 var NAVTREEINDEX64 =
 {
+"xbee_8h.html#a19bd0485f76f5454e8809b130a532112":[8,0,0,0,10,2,11,34],
+"xbee_8h.html#a1cb9404e5d6593c351c49a7b1e648acc":[8,0,0,0,10,2,11,21],
+"xbee_8h.html#a24441b040bd97a1c460b9c7cc7d47f34":[8,0,0,0,10,2,11,25],
 "xbee_8h.html#a26d92af89b7dd86b11d7d45868dab63f":[8,0,0,0,10,2,11,37],
 "xbee_8h.html#a37cc871f23cf2b4198c5b8a59911fc72":[8,0,0,0,10,2,11,40],
 "xbee_8h.html#a3ba644353e6b47a2f52b29ad7b271159":[8,0,0,0,10,2,11,17],

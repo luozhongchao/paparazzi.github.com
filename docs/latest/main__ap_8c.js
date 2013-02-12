@@ -1,5 +1,7 @@
 var main__ap_8c =
 [
+    [ "AHRS_CORRECT_FREQUENCY", "main__ap_8c.html#a647070039c9438a2a4746bf61b43fb58", null ],
+    [ "AHRS_PROPAGATE_FREQUENCY", "main__ap_8c.html#a8b1ace7fb278ed8284cb2e3579f14798", null ],
     [ "KILL_MODE_DISTANCE", "main__ap_8c.html#a1f8fa85842c4d2ac6c69cf4d960ee0d6", null ],
     [ "LOW_BATTERY_DELAY", "main__ap_8c.html#adbada4ca14c3072188a193d5805bb1aa", null ],
     [ "MIN_SPEED_FOR_TAKEOFF", "main__ap_8c.html#af7a652e72bf6906c11f8c5c1442359e1", null ],
