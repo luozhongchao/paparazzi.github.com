@@ -26,7 +26,7 @@ var dir_2f48bbb566df394f79dcf8fe0631584a =
     [ "baro_mpl3115.h", "baro__mpl3115_8h.html", "baro__mpl3115_8h" ],
     [ "baro_MS5534A.c", "baro__MS5534A_8c.html", "baro__MS5534A_8c" ],
     [ "baro_MS5534A.h", "modules_2sensors_2baro__MS5534A_8h.html", null ],
-    [ "baro_ms5611_i2c.c", "baro__ms5611__i2c_8c.html", "baro__ms5611__i2c_8c" ],
+    [ "baro_ms5611_i2c.c", "modules_2sensors_2baro__ms5611__i2c_8c.html", "modules_2sensors_2baro__ms5611__i2c_8c" ],
     [ "baro_ms5611_i2c.h", "baro__ms5611__i2c_8h.html", "baro__ms5611__i2c_8h" ],
     [ "baro_scp.c", "baro__scp_8c.html", "baro__scp_8c" ],
     [ "baro_scp.h", "baro__scp_8h.html", "baro__scp_8h" ],

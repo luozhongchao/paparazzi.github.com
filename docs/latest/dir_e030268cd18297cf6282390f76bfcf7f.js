@@ -10,7 +10,7 @@ var dir_e030268cd18297cf6282390f76bfcf7f =
     [ "booz_1.0.h", "booz__1_80_8h.html", "booz__1_80_8h" ],
     [ "classix_1.0.h", "classix__1_80_8h.html", "classix__1_80_8h" ],
     [ "hb_1.1.h", "hb__1_81_8h.html", "hb__1_81_8h" ],
-    [ "lia_1.1.h", "lia__1_81_8h.html", null ],
+    [ "lia_1.1.h", "lia__1_81_8h.html", "lia__1_81_8h" ],
     [ "lisa_l_1.0.h", "lisa__l__1_80_8h.html", "lisa__l__1_80_8h" ],
     [ "lisa_m_1.0.h", "lisa__m__1_80_8h.html", "lisa__m__1_80_8h" ],
     [ "lisa_m_2.0.h", "lisa__m__2_80_8h.html", "lisa__m__2_80_8h" ],

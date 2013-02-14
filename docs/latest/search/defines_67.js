@@ -11,8 +11,6 @@ var searchData=
   ['generic_5fcom_5fi2c_5fdev',['GENERIC_COM_I2C_DEV',['../generic__com_8c.html#a0834a23b3f10ab714acb0a90ce47d55d',1,'generic_com.c']]],
   ['generic_5fcom_5fslave_5faddr',['GENERIC_COM_SLAVE_ADDR',['../generic__com_8c.html#abd24cc3366ec5c1b317cba3d31b49784',1,'generic_com.c']]],
   ['geo_5fepoch',['GEO_EPOCH',['../pprz__geodetic__wmm2010_8h.html#a8d79cd0cafb7b536b1a0dc7741958570',1,'pprz_geodetic_wmm2010.h']]],
-  ['get_5fcur_5ftime_5ffloat',['GET_CUR_TIME_FLOAT',['../sys__time_8h.html#a57a3461ff42beeef4177ab451a2dee20',1,'sys_time.h']]],
-  ['get_5fcur_5ftime_5fusec',['GET_CUR_TIME_USEC',['../stm32_2mcu__periph_2sys__time__arch_8h.html#a9c5d574ee58bf9c4ecdd544f57466be8',1,'sys_time_arch.h']]],
   ['get_5fline_5fcoding',['GET_LINE_CODING',['../usb__ser__hw_8c.html#a6698d8d2ca56fafdc943aec2cede1daf',1,'usb_ser_hw.c']]],
   ['getmedianfiltereulerint',['GetMedianFilterEulerInt',['../median__filter_8h.html#a5f6b0c0ca141e3af9a93a2942d664424',1,'median_filter.h']]],
   ['getmedianfilterratesint',['GetMedianFilterRatesInt',['../median__filter_8h.html#a46a823b547fbf28d0dcc590bcfb0fdc8',1,'median_filter.h']]],

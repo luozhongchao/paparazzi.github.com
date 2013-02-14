@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-501-ge157a2e</span>
+   &#160;<span id="projectnumber">v4.9_devel-515-g74e93c6</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -104,13 +104,15 @@ $(document).ready(function(){initNavTree('lpc21_2subsystems_2imu_2imu__aspirin__
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">imu_aspirin_arch.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="imu_8h_source.html">subsystems/imu.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br/>
+<code>#include &quot;std.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="LPC21xx_8h_source.html">LPC21xx.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for imu_aspirin_arch.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -118,101 +120,73 @@ $(document).ready(function(){initNavTree('lpc21_2subsystems_2imu_2imu__aspirin__
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h__incl.png" border="0" usemap="#sw_2airborne_2arch_2lpc21_2subsystems_2imu_2imu__aspirin__arch_8h" alt=""/></div>
 <map name="sw_2airborne_2arch_2lpc21_2subsystems_2imu_2imu__aspirin__arch_8h" id="sw_2airborne_2arch_2lpc21_2subsystems_2imu_2imu__aspirin__arch_8h">
-<area shape="rect" id="node3" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="346,117,484,147"/><area shape="rect" id="node30" href="led_8h.html" title="arch independent LED (Light Emitting Diodes) API" alt="" coords="508,117,562,147"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="88,195,267,224"/><area shape="rect" id="node22" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="320,195,510,224"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="287,272,442,301"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="23,272,172,301"/></map>
+<area shape="rect" id="node3" href="imu_8h.html" title="Inertial Measurement Unit interface." alt="" coords="333,117,472,147"/><area shape="rect" id="node31" href="LPC21xx_8h.html" title="LPC21xx.h" alt="" coords="1187,117,1275,147"/><area shape="rect" id="node5" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="409,195,588,224"/><area shape="rect" id="node22" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="15,195,204,224"/><area shape="rect" id="node9" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="147,272,301,301"/><area shape="rect" id="node16" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="325,272,475,301"/><area shape="rect" id="node33" href="lpcWD_8h.html" title="lpcWD.h" alt="" coords="1493,195,1565,224"/><area shape="rect" id="node35" href="lpcTMR_8h.html" title="lpcTMR.h" alt="" coords="1589,195,1667,224"/><area shape="rect" id="node37" href="lpcUART_8h.html" title="lpcUART.h" alt="" coords="1691,195,1773,224"/><area shape="rect" id="node39" href="lpcI2C_8h.html" title="lpcI2C.h" alt="" coords="1797,195,1869,224"/><area shape="rect" id="node41" href="lpcSPI_8h.html" title="lpcSPI.h" alt="" coords="691,195,763,224"/><area shape="rect" id="node43" href="lpcRTC_8h.html" title="lpcRTC.h" alt="" coords="787,195,861,224"/><area shape="rect" id="node45" href="lpcGPIO_8h.html" title="lpcGPIO.h" alt="" coords="885,195,968,224"/><area shape="rect" id="node47" href="lpcPIN_8h.html" title="lpcPIN.h" alt="" coords="992,195,1064,224"/><area shape="rect" id="node49" href="lpcADC_8h.html" title="lpcADC.h" alt="" coords="1088,195,1168,224"/><area shape="rect" id="node51" href="lpcSCB_8h.html" title="lpcSCB.h" alt="" coords="1192,195,1269,224"/><area shape="rect" id="node53" href="lpcVIC_8h.html" title="lpcVIC.h" alt="" coords="1293,195,1365,224"/><area shape="rect" id="node55" href="lpcCAN_8h.html" title="lpcCAN.h" alt="" coords="1389,195,1469,224"/></map>
 </div>
 </div>
 <p><a href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a552b127e5851e16196b24b0dc8f552c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#a552b127e5851e16196b24b0dc8f552c3">ASPIRIN_GYRO_EOC_IODIR</a>&#160;&#160;&#160;<a class="el" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a></td></tr>
+<tr class="memitem:ab76e63df9485e2458c2224d779183036"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#ab76e63df9485e2458c2224d779183036">ASPIRIN_GYRO_EOC_IOPIN</a>&#160;&#160;&#160;<a class="el" href="LPC21xx_8h.html#ae59e36a0559936fc523d1e789d73d867">IO0PIN</a></td></tr>
+<tr class="memitem:a0313a8fa59c31132a6824c24b8a67e86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#a0313a8fa59c31132a6824c24b8a67e86">ASPIRIN_GYRO_EOC_PIN</a>&#160;&#160;&#160;16</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a592698b1cfe18b6c6a33e450221ea2cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#a592698b1cfe18b6c6a33e450221ea2cf">imu_aspirin_arch_init</a> (void)</td></tr>
 <tr class="memitem:a61fed49b72c37c140656df83a6d3590a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#a61fed49b72c37c140656df83a6d3590a">imu_aspirin_arch_int_enable</a> (void)</td></tr>
 <tr class="memitem:a69f47336a47c791d6054ee4a6b498469"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#a69f47336a47c791d6054ee4a6b498469">imu_aspirin_arch_int_disable</a> (void)</td></tr>
-<tr class="memitem:a0da22ea879c21f520b5238bdef9a40b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#a0da22ea879c21f520b5238bdef9a40b4">adxl345_write_to_reg</a> (<a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> addr, <a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="temp__tcouple__adc_8c.html#a530497e1435a9d2606cd3b9b2336de34">val</a>)</td></tr>
-<tr class="memitem:a4e57ac411062e6dd77b008c0d1b2bb9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#a4e57ac411062e6dd77b008c0d1b2bb9c">adxl345_clear_rx_buf</a> (void)</td></tr>
-<tr class="memitem:a80c467720e9ce786f3aa08857a4216b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#a80c467720e9ce786f3aa08857a4216b2">adxl345_start_reading_data</a> (void)</td></tr>
+<tr class="memitem:aa848c00f7d5b5143b7db5b6337d1e230"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html#aa848c00f7d5b5143b7db5b6337d1e230">imu_aspirin_eoc</a> (void)</td></tr>
 </table>
+<h2>Macro Definition Documentation</h2>
+<a class="anchor" id="a552b127e5851e16196b24b0dc8f552c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASPIRIN_GYRO_EOC_IODIR&#160;&#160;&#160;<a class="el" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html#l00009">9</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html">imu_aspirin_arch.h</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00019">imu_aspirin_arch_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab76e63df9485e2458c2224d779183036"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASPIRIN_GYRO_EOC_IOPIN&#160;&#160;&#160;<a class="el" href="LPC21xx_8h.html#ae59e36a0559936fc523d1e789d73d867">IO0PIN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html#l00010">10</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html">imu_aspirin_arch.h</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html#l00018">imu_aspirin_eoc()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0313a8fa59c31132a6824c24b8a67e86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASPIRIN_GYRO_EOC_PIN&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html#l00011">11</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html">imu_aspirin_arch.h</a>.</p>
+
+<p>Referenced by <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00019">imu_aspirin_arch_init()</a>, and <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html#l00018">imu_aspirin_eoc()</a>.</p>
+
+</div>
+</div>
 <h2>Function Documentation</h2>
-<a class="anchor" id="a4e57ac411062e6dd77b008c0d1b2bb9c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void adxl345_clear_rx_buf </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00032">32</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a80c467720e9ce786f3aa08857a4216b2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void adxl345_start_reading_data </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0da22ea879c21f520b5238bdef9a40b4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void adxl345_write_to_reg </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>addr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>val</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00020">20</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a592698b1cfe18b6c6a33e450221ea2cf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void imu_aspirin_arch_init </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00015">15</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a69f47336a47c791d6054ee4a6b498469"></a>
 <div class="memitem">
 <div class="memproto">
@@ -227,7 +201,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00011">11</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00015">15</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
 
 </div>
 </div>
@@ -245,7 +219,35 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00007">7</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html#l00011">11</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8c_source.html">imu_aspirin_arch.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa848c00f7d5b5143b7db5b6337d1e230"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int imu_aspirin_eoc </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html#l00018">18</a> of file <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html">imu_aspirin_arch.h</a>.</p>
+
+<p>References <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html#l00010">ASPIRIN_GYRO_EOC_IOPIN</a>, and <a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h_source.html#l00011">ASPIRIN_GYRO_EOC_PIN</a>.</p>
 
 </div>
 </div>
@@ -255,7 +257,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_3f7617cb4a5e4fe5cc816b7b3bbdea3a.html">lpc21</a></li><li class="navelem"><a class="el" href="dir_49e3baf8e4d0208391e8a23720cf4bc3.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_e29d5afa31a5be7073904e7c44570d02.html">imu</a></li><li class="navelem"><a class="el" href="lpc21_2subsystems_2imu_2imu__aspirin__arch_8h.html">imu_aspirin_arch.h</a></li>
-    <li class="footer">Generated on Wed Feb 13 2013 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Feb 14 2013 04:00:19 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

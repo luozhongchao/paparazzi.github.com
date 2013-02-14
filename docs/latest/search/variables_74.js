@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['t0',['t0',['../structGpsTimeSync.html#a9d1c20191d82597e79144ca7c655db2d',1,'GpsTimeSync']]],
+  ['t0_5fticks',['t0_ticks',['../structGpsTimeSync.html#a62bc223d24475ca9f5ba01a4dbdf59c5',1,'GpsTimeSync']]],
   ['t0_5ftow',['t0_tow',['../structGpsTimeSync.html#a8f4002623b4a2a838d6e69181b533bd4',1,'GpsTimeSync']]],
   ['t0_5ftow_5ffrac',['t0_tow_frac',['../structGpsTimeSync.html#a36bdae78da6e3c513f7a5aec65ae6416',1,'GpsTimeSync']]],
   ['t1',['t1',['../lisa__test__hmc5843_8c.html#a9f08dc346d7da778a7f64f3a951114c1',1,'lisa_test_hmc5843.c']]],

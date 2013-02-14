@@ -6,6 +6,7 @@ var main__ap_8c =
     [ "LOW_BATTERY_DELAY", "main__ap_8c.html#adbada4ca14c3072188a193d5805bb1aa", null ],
     [ "MIN_SPEED_FOR_TAKEOFF", "main__ap_8c.html#af7a652e72bf6906c11f8c5c1442359e1", null ],
     [ "MODULES_C", "main__ap_8c.html#ac3c586d9cc5d614d34061b3844a1e45b", null ],
+    [ "MODULES_FREQUENCY", "main__ap_8c.html#af90f93831d0ad977ef9c81c0caa633a3", null ],
     [ "RC_LOST_MODE", "main__ap_8c.html#ad2d4961da684eacdb42ba6907edc216d", null ],
     [ "attitude_loop", "main__ap_8c.html#a315546d9034361bbc6970b3792dc8b67", null ],
     [ "copy_from_to_fbw", "main__ap_8c.html#ab8d2d846e05038e13cfb45b8bb8f0921", null ],

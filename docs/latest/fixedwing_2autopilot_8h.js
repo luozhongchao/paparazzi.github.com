@@ -10,7 +10,6 @@ var fixedwing_2autopilot_8h =
     [ "LATERAL_MODE_ROLL", "fixedwing_2autopilot_8h.html#a7ea379002f6ec803be3f49e0993dd63a", null ],
     [ "LATERAL_MODE_ROLL_RATE", "fixedwing_2autopilot_8h.html#a17ef68647a4f71cd1d0b379388cf440f", null ],
     [ "ModeUpdate", "fixedwing_2autopilot_8h.html#a1bf7cecdbe3f008fdb8dd8404c4e510f", null ],
-    [ "MODULES_FREQUENCY", "fixedwing_2autopilot_8h.html#af90f93831d0ad977ef9c81c0caa633a3", null ],
     [ "NAVIGATION_FREQUENCY", "fixedwing_2autopilot_8h.html#aba17f9ac72f7e9dd1dcd95457bf5c87f", null ],
     [ "PPRZ_MODE_AUTO1", "fixedwing_2autopilot_8h.html#aad97f5d43922c63769f4a4ea97b9df8d", null ],
     [ "PPRZ_MODE_AUTO2", "fixedwing_2autopilot_8h.html#a7248dd1183b2fe1d11cdc66a01fe5744", null ],

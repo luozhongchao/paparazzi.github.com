@@ -101,7 +101,7 @@ var searchData=
   ['reg_5fsipr',['REG_SIPR',['../w5100_8c.html#a7821c0fdbad5da65159ded1d7149e7a3',1,'w5100.c']]],
   ['reg_5fsubr',['REG_SUBR',['../w5100_8c.html#a6d96f27f55e86e2e4840625d5f968cd7',1,'w5100.c']]],
   ['reg_5ftx_5fmem',['REG_TX_MEM',['../w5100_8c.html#a7a2cb6f59c40efdd86c06d66ba775ab1',1,'w5100.c']]],
-  ['remap_5fservos_5f5and6',['REMAP_SERVOS_5AND6',['../lisa__m__1_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'REMAP_SERVOS_5AND6():&#160;lisa_m_1.0.h'],['../lisa__m__2_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'REMAP_SERVOS_5AND6():&#160;lisa_m_2.0.h']]],
+  ['remap_5fservos_5f5and6',['REMAP_SERVOS_5AND6',['../lia__1_81_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'REMAP_SERVOS_5AND6():&#160;lia_1.1.h'],['../lisa__m__1_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'REMAP_SERVOS_5AND6():&#160;lisa_m_1.0.h'],['../lisa__m__2_80_8h.html#a7053b924ff47f99a36f4f4489424e526',1,'REMAP_SERVOS_5AND6():&#160;lisa_m_2.0.h']]],
   ['reserved',['RESERVED',['../gps__ubx__ucenter_8c.html#a56701f18aaad537f7fc0e9be309503c3',1,'gps_ubx_ucenter.c']]],
   ['reset',['RESET',['../humid__sht_8h.html#ab702106cf3b3e96750b6845ded4e0299',1,'humid_sht.h']]],
   ['return',['Return',['../common__flight__plan_8h.html#a067ebcdcacb7ae66d3a69ef859c5e930',1,'common_flight_plan.h']]],
