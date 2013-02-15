@@ -21,7 +21,6 @@ var searchData=
   ['eight_5fstatus',['eight_status',['../nav_8c.html#af4a85437e319605798991baf6a5c1b4b',1,'nav.c']]],
   ['elapsed',['elapsed',['../structsys__time__timer.html#af705c881b01c20d92164b4c111f57acb',1,'sys_time_timer']]],
   ['electrical',['electrical',['../electrical_8c.html#a935f74638cd658e7dac75915bcb63bde',1,'electrical():&#160;electrical.c'],['../electrical_8h.html#a935f74638cd658e7dac75915bcb63bde',1,'electrical():&#160;electrical.c']]],
-  ['electrical_5fpriv',['electrical_priv',['../electrical_8c.html#a0613a3827ada86b780d3a6136a6366bb',1,'electrical.c']]],
   ['electrical_5ftid',['electrical_tid',['../main__fbw_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe',1,'electrical_tid():&#160;main_fbw.c'],['../firmwares_2rotorcraft_2main_8c.html#a447fbe99f4dc78a3fa46e02fb396f1fe',1,'electrical_tid():&#160;main.c']]],
   ['elev',['elev',['../structSVinfo.html#a296d46cd0ebd7609174b75c1ed5e7905',1,'SVinfo']]],
   ['emr',['emr',['../structpwmTmrRegs__t.html#aecb455d317e88728454727caa448c876',1,'pwmTmrRegs_t']]],

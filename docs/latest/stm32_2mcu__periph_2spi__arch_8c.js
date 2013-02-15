@@ -1,5 +1,6 @@
 var stm32_2mcu__periph_2spi__arch_8c =
 [
+    [ "locm3_spi_comm", "structlocm3__spi__comm.html", "structlocm3__spi__comm" ],
     [ "spi_periph_dma", "structspi__periph__dma.html", "structspi__periph__dma" ],
     [ "SPI_SELECT_SLAVE0_PERIPH", "stm32_2mcu__periph_2spi__arch_8c.html#a36b52cd82ac80095040ec2ceefef4f70", null ],
     [ "SPI_SELECT_SLAVE0_PIN", "stm32_2mcu__periph_2spi__arch_8c.html#a697b8e633c428bd167844542c8c1453f", null ],
@@ -20,11 +21,12 @@ var stm32_2mcu__periph_2spi__arch_8c =
     [ "dma1_channel3_isr", "stm32_2mcu__periph_2spi__arch_8c.html#a6abe8340eace6d5c19e4f722cd290a0a", null ],
     [ "dma1_channel4_isr", "stm32_2mcu__periph_2spi__arch_8c.html#ac13fd4f156b4a88afac6d174103a88a8", null ],
     [ "dma1_channel5_isr", "stm32_2mcu__periph_2spi__arch_8c.html#ad26a5c303d0c6a60f586099c85109e9d", null ],
-    [ "dma2_channel1_isr", "stm32_2mcu__periph_2spi__arch_8c.html#a2ed33a829d80508c811ad7b38fd1f4a1", null ],
-    [ "dma2_channel2_isr", "stm32_2mcu__periph_2spi__arch_8c.html#a790d44453472c9b63d20f315425b4e37", null ],
-    [ "process_rx_dma_interrupt", "stm32_2mcu__periph_2spi__arch_8c.html#a0691bd5fba1792e012d73c002cb44a95", null ],
-    [ "process_tx_dma_interrupt", "stm32_2mcu__periph_2spi__arch_8c.html#a28927664346f77a7fc1aeb8994b7869c", null ],
-    [ "spi0_arch_init", "stm32_2mcu__periph_2spi__arch_8c.html#gab8cb9f918fae47c201bf233a0b3b282f", null ],
+    [ "get_comm_signature", "stm32_2mcu__periph_2spi__arch_8c.html#a1b67d6591f383aeac5cadbcc070af2d3", null ],
+    [ "get_transaction_signature", "stm32_2mcu__periph_2spi__arch_8c.html#a0c1bcbefaf569036eb191e18ea849a7a", null ],
+    [ "process_rx_dma_interrupt", "stm32_2mcu__periph_2spi__arch_8c.html#ad55db59fe845c613959d0fe874905e5d", null ],
+    [ "process_tx_dma_interrupt", "stm32_2mcu__periph_2spi__arch_8c.html#a5114d28c589cb22186e8ef72301dc8f4", null ],
+    [ "set_comm_from_transaction", "stm32_2mcu__periph_2spi__arch_8c.html#af29aa7d9b5af1ef2b42450937767535f", null ],
+    [ "set_default_comm_config", "stm32_2mcu__periph_2spi__arch_8c.html#ac13da083b304f2ec1892ca8dcf98442f", null ],
     [ "spi1_arch_init", "stm32_2mcu__periph_2spi__arch_8c.html#gaaba00866ddaf960c0c761e61f81e5216", null ],
     [ "spi2_arch_init", "stm32_2mcu__periph_2spi__arch_8c.html#gae6c7e2bb3fb354f3b98282386b41bf70", null ],
     [ "spi_arch_int_disable", "stm32_2mcu__periph_2spi__arch_8c.html#a42f17f52b327c1192801fc39493f43c5", null ],
@@ -38,7 +40,6 @@ var stm32_2mcu__periph_2spi__arch_8c =
     [ "spi_submit", "stm32_2mcu__periph_2spi__arch_8c.html#gaf1bcfc102840a0e6287b4db20bd78337", null ],
     [ "SpiSlaveSelect", "stm32_2mcu__periph_2spi__arch_8c.html#ab639bd461acc9159f2a8566bfe1ebdd0", null ],
     [ "SpiSlaveUnselect", "stm32_2mcu__periph_2spi__arch_8c.html#af3a0a783f898c0211f2c0e5498c746a0", null ],
-    [ "spi0_dma", "stm32_2mcu__periph_2spi__arch_8c.html#a7d8ebbd3680a7fc3e33eaf638f396c18", null ],
     [ "spi1_dma", "stm32_2mcu__periph_2spi__arch_8c.html#a1fcd46a62bab151ce1f91b72cdbe3568", null ],
     [ "spi2_dma", "stm32_2mcu__periph_2spi__arch_8c.html#a3ef76c50f4063e0bd8f6ad418ceb8d59", null ]
 ];

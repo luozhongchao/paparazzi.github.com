@@ -1,6 +1,7 @@
 var searchData=
 [
   ['paparazzi_2eh',['paparazzi.h',['../paparazzi_8h.html',1,'']]],
+  ['pc_5fsim_2eh',['pc_sim.h',['../pc__sim_8h.html',1,'']]],
   ['photogrammetry_5fcalculator_2ec',['photogrammetry_calculator.c',['../photogrammetry__calculator_8c.html',1,'']]],
   ['photogrammetry_5fcalculator_2eh',['photogrammetry_calculator.h',['../photogrammetry__calculator_8h.html',1,'']]],
   ['plug_5fsys_2ec',['plug_sys.c',['../plug__sys_8c.html',1,'']]],
@@ -12,8 +13,8 @@ var searchData=
   ['potential_2eh',['potential.h',['../potential_8h.html',1,'']]],
   ['ppm_2ec',['ppm.c',['../ppm_8c.html',1,'']]],
   ['ppm_2eh',['ppm.h',['../ppm_8h.html',1,'']]],
-  ['ppm_5farch_2ec',['ppm_arch.c',['../lpc21_2subsystems_2radio__control_2ppm__arch_8c.html',1,'']]],
   ['ppm_5farch_2ec',['ppm_arch.c',['../sim_2subsystems_2radio__control_2ppm__arch_8c.html',1,'']]],
+  ['ppm_5farch_2ec',['ppm_arch.c',['../lpc21_2subsystems_2radio__control_2ppm__arch_8c.html',1,'']]],
   ['ppm_5farch_2ec',['ppm_arch.c',['../stm32_2subsystems_2radio__control_2ppm__arch_8c.html',1,'']]],
   ['ppm_5farch_2eh',['ppm_arch.h',['../stm32_2subsystems_2radio__control_2ppm__arch_8h.html',1,'']]],
   ['ppm_5farch_2eh',['ppm_arch.h',['../lpc21_2subsystems_2radio__control_2ppm__arch_8h.html',1,'']]],

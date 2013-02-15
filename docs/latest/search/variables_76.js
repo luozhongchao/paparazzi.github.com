@@ -124,6 +124,5 @@ var searchData=
   ['vn100_5ftrans',['vn100_trans',['../ins__vn100_8c.html#ae8a66511f5a1d4eea4a23def9763c6b5',1,'ins_vn100.c']]],
   ['volt_5fgeiger',['volt_geiger',['../geiger__counter_8c.html#af9dbdd1fb84676af7d2a603f1f7717d3',1,'geiger_counter.c']]],
   ['vpbdiv',['vpbdiv',['../structscbRegs__t.html#a32e0204bcb52f6cfd60d06782d05c99a',1,'scbRegs_t']]],
-  ['vsupply',['vsupply',['../structElectrical.html#aa06d22221dc04d5615b4bbc0a7e66556',1,'Electrical::vsupply()'],['../fixedwing_2autopilot_8c.html#a32da1e6e29634773a0e491df93f92414',1,'vsupply():&#160;autopilot.c'],['../fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414',1,'vsupply():&#160;autopilot.c']]],
-  ['vsupply_5fadc_5fbuf',['vsupply_adc_buf',['../electrical_8c.html#aabbc7f0c61aae2bb04d7e3bdc1b89bf9',1,'electrical.c']]]
+  ['vsupply',['vsupply',['../structElectrical.html#aa06d22221dc04d5615b4bbc0a7e66556',1,'Electrical::vsupply()'],['../fixedwing_2autopilot_8c.html#a32da1e6e29634773a0e491df93f92414',1,'vsupply():&#160;autopilot.c'],['../fixedwing_2autopilot_8h.html#a32da1e6e29634773a0e491df93f92414',1,'vsupply():&#160;autopilot.c']]]
 ];

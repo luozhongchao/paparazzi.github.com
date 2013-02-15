@@ -1,6 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"geiger__counter_8h_source.html":[8,0,0,0,7,23,5],
 "generic__com_8c.html":[8,0,0,0,7,6,0],
 "generic__com_8c.html#a0834a23b3f10ab714acb0a90ce47d55d":[8,0,0,0,7,6,0,2],
 "generic__com_8c.html#a0a7332f7d2ae2b60fb67c96ec27d63fd":[8,0,0,0,7,6,0,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX15 =
 "gps__i2c_8h.html#afc96fab20be790f0a3a1be5ecec77f1d":[8,0,0,0,7,17,1,16],
 "gps__i2c_8h_source.html":[8,0,0,0,7,17,1],
 "gps__mtk_8c.html":[8,0,0,0,10,3,0],
-"gps__mtk_8c.html#a055c901580d554679ae017967d2748bb":[8,0,0,0,10,3,0,5]
+"gps__mtk_8c.html#a055c901580d554679ae017967d2748bb":[8,0,0,0,10,3,0,5],
+"gps__mtk_8c.html#a0dbd8a4ae0cb32d47178f1c1e7cfaca1":[8,0,0,0,10,3,0,6]
 };

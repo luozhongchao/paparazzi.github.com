@@ -1,5 +1,16 @@
 var NAVTREEINDEX43 =
 {
+"pprz__algebra__float_8h.html#a3bb4b57ed80281639f9664668734949a":[8,0,0,0,5,2,63],
+"pprz__algebra__float_8h.html#a3c971ae8f35ffab12ddec5743683d4e3":[8,0,0,0,5,2,78],
+"pprz__algebra__float_8h.html#a3e4e268c0bbddfa691dfb186f5b5df65":[8,0,0,0,5,2,70],
+"pprz__algebra__float_8h.html#a41de102be6b28101c9568380f729a88d":[8,0,0,0,5,2,79],
+"pprz__algebra__float_8h.html#a45c10889966e867daaf4373aa1a62dc1":[8,0,0,0,5,2,25],
+"pprz__algebra__float_8h.html#a469b1761a7b4d20e30a9f34d1ff0968f":[8,0,0,0,5,2,61],
+"pprz__algebra__float_8h.html#a49632b88ccee042652b8706a2fde6d0c":[8,0,0,0,5,2,81],
+"pprz__algebra__float_8h.html#a52cfb535525f92ea9535275cc3000edf":[8,0,0,0,5,2,45],
+"pprz__algebra__float_8h.html#a5996ac3cdf53e08d3db415a8c6f3c459":[8,0,0,0,5,2,71],
+"pprz__algebra__float_8h.html#a5daf03b0b46397ee463de3a3df18db42":[8,0,0,0,5,2,23],
+"pprz__algebra__float_8h.html#a5e6f8a854ad67e7770f45b8032d13ca7":[8,0,0,0,5,2,62],
 "pprz__algebra__float_8h.html#a66b3ab30f1332874326ed93969e496e0":[8,0,0,0,5,2,80],
 "pprz__algebra__float_8h.html#a66cfaf1e0dc85b6893c1c2760cdcf177":[8,0,0,0,5,2,22],
 "pprz__algebra__float_8h.html#a6c560f142efcae02a87327372e550707":[8,0,0,0,5,2,48],
@@ -238,16 +249,5 @@ var NAVTREEINDEX43 =
 "pprz__geodetic__float_8c_source.html":[8,0,0,0,5,7],
 "pprz__geodetic__float_8h.html":[8,0,0,0,5,8],
 "pprz__geodetic__float_8h.html#a197187e7b04018beddfcd6a7a4ab3972":[8,0,0,0,5,8,6],
-"pprz__geodetic__float_8h.html#a2a82ebdce90a3e41d54f72c5e787fcd0":[8,0,0,0,5,8,11],
-"pprz__geodetic__float_8h.html#a3045a5a383aa4ebf5b8a9763773b9b6d":[8,0,0,0,5,8,18],
-"pprz__geodetic__float_8h.html#a30c2e47ec9a898079c04e8b08496b455":[8,0,0,0,5,8,15],
-"pprz__geodetic__float_8h.html#a4340e37afc6f80c38d66c36c8840bfb9":[8,0,0,0,5,8,10],
-"pprz__geodetic__float_8h.html#a47f5b349030d33970728f4c332c70cf0":[8,0,0,0,5,8,7],
-"pprz__geodetic__float_8h.html#a624697fcf875d02030d046161c4609b7":[8,0,0,0,5,8,17],
-"pprz__geodetic__float_8h.html#a65bc5ba8b61d014ca659035759cc001c":[8,0,0,0,5,8,8],
-"pprz__geodetic__float_8h.html#a9703caac26c4b1272c010037fd661956":[8,0,0,0,5,8,9],
-"pprz__geodetic__float_8h.html#ab8d5cb7292ea74802e7a94e265c0703a":[8,0,0,0,5,8,13],
-"pprz__geodetic__float_8h.html#aba90b4f88dce2d3eadce9c28fcde2d54":[8,0,0,0,5,8,20],
-"pprz__geodetic__float_8h.html#ac36c2e51de3064e3919a1f58f884342e":[8,0,0,0,5,8,19],
-"pprz__geodetic__float_8h.html#ac44c5ea35811dcd7f50fb3741d0c12ad":[8,0,0,0,5,8,12]
+"pprz__geodetic__float_8h.html#a2a82ebdce90a3e41d54f72c5e787fcd0":[8,0,0,0,5,8,11]
 };

@@ -99,6 +99,7 @@ var searchData=
   ['tx_5fbyte_5fidx',['tx_byte_idx',['../audio__telemetry_8h.html#a0b504cdee1abb3ed00518fb9d53d40e9',1,'audio_telemetry.h']]],
   ['tx_5fchan',['tx_chan',['../structspi__periph__dma.html#aff566f47d98f3f04370908401ad6c47d',1,'spi_periph_dma']]],
   ['tx_5fdata',['tx_data',['../test__can_8c.html#a52f9d1d6fab7eefdcd9e8cd9814fd591',1,'test_can.c']]],
+  ['tx_5fdummy_5fbuf',['tx_dummy_buf',['../structspi__periph__dma.html#ab6928810bc72c3743672cd6116fcb2f3',1,'spi_periph_dma']]],
   ['tx_5fextract_5fidx',['tx_extract_idx',['../structuart__periph.html#a24b5a50167052cd5e744eb381208f658',1,'uart_periph::tx_extract_idx()'],['../structw5100__periph.html#a0faa006a1d7adfbbeccee552f08e5990',1,'w5100_periph::tx_extract_idx()']]],
   ['tx_5fhead',['tx_head',['../audio__telemetry__hw_8c.html#a44b0e5832359fc4bae0c4ae44ff1b65c',1,'tx_head():&#160;audio_telemetry_hw.c'],['../audio__telemetry_8h.html#a44b0e5832359fc4bae0c4ae44ff1b65c',1,'tx_head():&#160;audio_telemetry_hw.c']]],
   ['tx_5fidx_5fbuf',['tx_idx_buf',['../structspi__periph.html#abc8a928c600b119ddffed3496001a84e',1,'spi_periph']]],

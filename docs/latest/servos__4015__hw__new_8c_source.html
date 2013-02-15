@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-515-g74e93c6</span>
+   &#160;<span id="projectnumber">v4.9_devel-527-g1a15a4e</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -161,13 +161,13 @@ $(document).ready(function(){initNavTree('servos__4015__hw__new_8c_source.html',
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">/* address of the ISR */</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="armVIC_8h.html#a9981283e4fb9cc3322368f2aa07e3256">_VIC_ADDR</a>(<a class="code" href="servos__4015__hw__new_8c.html#a769e4188fbfc4b0fe6d8cd49c3f9546e">PWM_VIC_SLOT</a>) = (<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a>)<a class="code" href="servos__4015__hw_8c.html#acc0989397cc1f16c3baa379ad4395382">PWM_ISR</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">/* set clock, data and reset pins as output */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a> |= _BV(<a class="code" href="tiny__sim_8h.html#abd61619a45dec8e3a80f47bc3fd45733">SERV0_CLOCK_PIN</a>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="LPC21xx_8h.html#ac181571868f065174ab2d366611a6ce1">IO1DIR</a> |= _BV(<a class="code" href="tiny__sim_8h.html#a4936372e85b573e63c6b0f81fa45c31c">SERV0_DATA_PIN</a>) | _BV(<a class="code" href="tiny__sim_8h.html#ab705748aaa5b3ab9a5cfca6a42fb4543">SERV0_RESET_PIN</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a> |= _BV(<a class="code" href="tiny__sim_8h.html#a9c9c7db1b11d582739dff2915d7dc3dd">SERV1_CLOCK_PIN</a>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="LPC21xx_8h.html#ac181571868f065174ab2d366611a6ce1">IO1DIR</a> |= _BV(<a class="code" href="tiny__sim_8h.html#af5d1a54ef7cb17a85238d6129c2099b7">SERV1_DATA_PIN</a>) | _BV(<a class="code" href="tiny__sim_8h.html#a9293ae9be1db9c6b6835e1777ef72392">SERV1_RESET_PIN</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a> |= _BV(SERV0_CLOCK_PIN);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="LPC21xx_8h.html#ac181571868f065174ab2d366611a6ce1">IO1DIR</a> |= _BV(SERV0_DATA_PIN) | _BV(SERV0_RESET_PIN);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="LPC21xx_8h.html#aacf5b0c18685afd32ed41af9c3934479">IO0DIR</a> |= _BV(SERV1_CLOCK_PIN);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="LPC21xx_8h.html#ac181571868f065174ab2d366611a6ce1">IO1DIR</a> |= _BV(SERV1_DATA_PIN) | _BV(SERV1_RESET_PIN);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">/* Configure the two servo clocks as PWM  */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="tiny__sim_8h.html#a07160647a17ada6be12019a3316c199c">SERV0_CLOCK_PINSEL</a> |= <a class="code" href="tiny__sim_8h.html#a216efd114e1b1098daee981e8194c70e">SERV0_CLOCK_PINSEL_VAL</a> &lt;&lt; <a class="code" href="tiny__sim_8h.html#a594c198e0534badd387ad722591df4f6">SERV0_CLOCK_PINSEL_BIT</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="tiny__sim_8h.html#a44d2796defd4e9c33460dbf08f71daf6">SERV1_CLOCK_PINSEL</a> |= <a class="code" href="tiny__sim_8h.html#a05e3e07ec17f6bd9693cdacea5d36373">SERV1_CLOCK_PINSEL_VAL</a> &lt;&lt; <a class="code" href="tiny__sim_8h.html#a5bf0cbfae26751205c28e55b22cc5aef">SERV1_CLOCK_PINSEL_BIT</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  SERV0_CLOCK_PINSEL |= SERV0_CLOCK_PINSEL_VAL &lt;&lt; SERV0_CLOCK_PINSEL_BIT;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  SERV1_CLOCK_PINSEL |= SERV1_CLOCK_PINSEL_VAL &lt;&lt; SERV1_CLOCK_PINSEL_BIT;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">/* set first pulse to be very long */</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="LPC21xx_8h.html#ad34cff834a0ab5903e41eb36b87ee4ab">PWMMR0</a> = 0XFFFFFF;</div>
@@ -208,9 +208,9 @@ $(document).ready(function(){initNavTree('servos__4015__hw__new_8c_source.html',
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="armVIC_8h.html#a4291eb8e6c7a50f7cfb8b3dcc28154ea">ISR_ENTRY</a>();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="servos__4015__hw__new_8c.html#a9a5aa8c5ab796d9829a49fb69b226455">servos_idx</a> == 0) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">/* lower serv0 reset */</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="LPC21xx_8h.html#a2ebbd9fce18e5ae73751ed93d0b2f70b">IO1CLR</a> = _BV(<a class="code" href="tiny__sim_8h.html#ab705748aaa5b3ab9a5cfca6a42fb4543">SERV0_RESET_PIN</a>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="LPC21xx_8h.html#a2ebbd9fce18e5ae73751ed93d0b2f70b">IO1CLR</a> = _BV(SERV0_RESET_PIN);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">/* raise serv0 data  */</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="LPC21xx_8h.html#ac128251b4ae8d958ce27236ad9dd2a0d">IO1SET</a> = _BV(<a class="code" href="tiny__sim_8h.html#a4936372e85b573e63c6b0f81fa45c31c">SERV0_DATA_PIN</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="LPC21xx_8h.html#ac128251b4ae8d958ce27236ad9dd2a0d">IO1SET</a> = _BV(SERV0_DATA_PIN);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">/* start pulsing serv0 */</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="servos__4015__hw__new_8c.html#ab3666720fb0417644a2f8fddfe1df3b2">PWMMR_SERV0</a> = 0XFFF;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">/* stop pulsing serv1 */</span></div>
@@ -224,7 +224,7 @@ $(document).ready(function(){initNavTree('servos__4015__hw__new_8c_source.html',
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="servos__4015__hw__new_8c.html#a9a5aa8c5ab796d9829a49fb69b226455">servos_idx</a> &lt; 4) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">/* lower serv0 data */</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="LPC21xx_8h.html#a2ebbd9fce18e5ae73751ed93d0b2f70b">IO1CLR</a> = _BV(<a class="code" href="tiny__sim_8h.html#a4936372e85b573e63c6b0f81fa45c31c">SERV0_DATA_PIN</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="LPC21xx_8h.html#a2ebbd9fce18e5ae73751ed93d0b2f70b">IO1CLR</a> = _BV(SERV0_DATA_PIN);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="LPC21xx_8h.html#ad34cff834a0ab5903e41eb36b87ee4ab">PWMMR0</a> = <a class="code" href="servos__4015__hw_8c.html#a0aa50148c78707ea0b28584413671fcb">servos_values</a>[<a class="code" href="servos__4015__hw__new_8c.html#a9a5aa8c5ab796d9829a49fb69b226455">servos_idx</a>];</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="servos__4015__hw_8c.html#ab97f8d95b7ca4a7363e3e62be967e421">servos_delay</a> -= <a class="code" href="servos__4015__hw_8c.html#a0aa50148c78707ea0b28584413671fcb">servos_values</a>[<a class="code" href="servos__4015__hw__new_8c.html#a9a5aa8c5ab796d9829a49fb69b226455">servos_idx</a>];</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="LPC21xx_8h.html#abbdbfb41ac54a3b3b550127bd9d12bbb">PWMLER</a> = <a class="code" href="lpcTMR_8h.html#affae87152eb7bf40ab68a0e7f81b786f">PWMLER_LATCH0</a>;</div>
@@ -232,11 +232,11 @@ $(document).ready(function(){initNavTree('servos__4015__hw__new_8c_source.html',
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  }</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="servos__4015__hw__new_8c.html#a9a5aa8c5ab796d9829a49fb69b226455">servos_idx</a> == 4) {</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">/* raise serv0 reset */</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="LPC21xx_8h.html#ac128251b4ae8d958ce27236ad9dd2a0d">IO1SET</a> = _BV(<a class="code" href="tiny__sim_8h.html#a9293ae9be1db9c6b6835e1777ef72392">SERV1_RESET_PIN</a>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="LPC21xx_8h.html#ac128251b4ae8d958ce27236ad9dd2a0d">IO1SET</a> = _BV(SERV1_RESET_PIN);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">/* lower serv1 reset */</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="LPC21xx_8h.html#a2ebbd9fce18e5ae73751ed93d0b2f70b">IO1CLR</a> = _BV(<a class="code" href="tiny__sim_8h.html#a9293ae9be1db9c6b6835e1777ef72392">SERV1_RESET_PIN</a>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="LPC21xx_8h.html#a2ebbd9fce18e5ae73751ed93d0b2f70b">IO1CLR</a> = _BV(SERV1_RESET_PIN);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">/* raise serv1 data */</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="LPC21xx_8h.html#ac128251b4ae8d958ce27236ad9dd2a0d">IO1SET</a> = _BV(<a class="code" href="tiny__sim_8h.html#af5d1a54ef7cb17a85238d6129c2099b7">SERV1_DATA_PIN</a>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="LPC21xx_8h.html#ac128251b4ae8d958ce27236ad9dd2a0d">IO1SET</a> = _BV(SERV1_DATA_PIN);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">/* stop pulsing serv0 */</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="servos__4015__hw__new_8c.html#ab3666720fb0417644a2f8fddfe1df3b2">PWMMR_SERV0</a> = 0;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">/* start pulsing serv1 */</span></div>
@@ -252,7 +252,7 @@ $(document).ready(function(){initNavTree('servos__4015__hw__new_8c_source.html',
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  }</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="servos__4015__hw__new_8c.html#a9a5aa8c5ab796d9829a49fb69b226455">servos_idx</a> &lt; <a class="code" href="servos__4015__hw_8h.html#a01d345e483b0f49e71e53e8b1abdb1e7">_4015_NB_CHANNELS</a>) {</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">/* clear serv1 data */</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="LPC21xx_8h.html#a2ebbd9fce18e5ae73751ed93d0b2f70b">IO1CLR</a> = _BV(<a class="code" href="tiny__sim_8h.html#af5d1a54ef7cb17a85238d6129c2099b7">SERV1_DATA_PIN</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="LPC21xx_8h.html#a2ebbd9fce18e5ae73751ed93d0b2f70b">IO1CLR</a> = _BV(SERV1_DATA_PIN);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="LPC21xx_8h.html#ad34cff834a0ab5903e41eb36b87ee4ab">PWMMR0</a> = <a class="code" href="servos__4015__hw_8c.html#a0aa50148c78707ea0b28584413671fcb">servos_values</a>[<a class="code" href="servos__4015__hw__new_8c.html#a9a5aa8c5ab796d9829a49fb69b226455">servos_idx</a>];</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="servos__4015__hw_8c.html#ab97f8d95b7ca4a7363e3e62be967e421">servos_delay</a> -= <a class="code" href="servos__4015__hw_8c.html#a0aa50148c78707ea0b28584413671fcb">servos_values</a>[<a class="code" href="servos__4015__hw__new_8c.html#a9a5aa8c5ab796d9829a49fb69b226455">servos_idx</a>];</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="LPC21xx_8h.html#abbdbfb41ac54a3b3b550127bd9d12bbb">PWMLER</a> = <a class="code" href="lpcTMR_8h.html#affae87152eb7bf40ab68a0e7f81b786f">PWMLER_LATCH0</a>;</div>
@@ -260,7 +260,7 @@ $(document).ready(function(){initNavTree('servos__4015__hw__new_8c_source.html',
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  }</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">/* raise serv1 reset */</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="LPC21xx_8h.html#ac128251b4ae8d958ce27236ad9dd2a0d">IO1SET</a> = _BV(<a class="code" href="tiny__sim_8h.html#a9293ae9be1db9c6b6835e1777ef72392">SERV1_RESET_PIN</a>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="LPC21xx_8h.html#ac128251b4ae8d958ce27236ad9dd2a0d">IO1SET</a> = _BV(SERV1_RESET_PIN);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">/* command the delay */</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="LPC21xx_8h.html#ad34cff834a0ab5903e41eb36b87ee4ab">PWMMR0</a> = <a class="code" href="servos__4015__hw_8c.html#ab97f8d95b7ca4a7363e3e62be967e421">servos_delay</a>;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="LPC21xx_8h.html#abbdbfb41ac54a3b3b550127bd9d12bbb">PWMLER</a> = <a class="code" href="lpcTMR_8h.html#affae87152eb7bf40ab68a0e7f81b786f">PWMLER_LATCH0</a>;</div>
@@ -278,7 +278,7 @@ $(document).ready(function(){initNavTree('servos__4015__hw__new_8c_source.html',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_3f7617cb4a5e4fe5cc816b7b3bbdea3a.html">lpc21</a></li><li class="navelem"><a class="el" href="dir_49e3baf8e4d0208391e8a23720cf4bc3.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_80cb3fc769cdc36e6ce40c9587f936a1.html">actuators</a></li><li class="navelem"><a class="el" href="servos__4015__hw__new_8c.html">servos_4015_hw_new.c</a></li>
-    <li class="footer">Generated on Thu Feb 14 2013 04:00:17 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Feb 15 2013 04:00:09 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

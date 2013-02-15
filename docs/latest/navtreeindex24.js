@@ -1,6 +1,5 @@
 var NAVTREEINDEX24 =
 {
-"ins__alt__float_8c.html#a17c1061a286341e39e171901d384e445":[8,0,0,0,10,5,2,4],
 "ins__alt__float_8c.html#a1f6b0359983c020b715218db99e244f2":[8,0,0,0,10,5,2,0],
 "ins__alt__float_8c.html#a249edac9d1f7e6743ad020a0309dd9dc":[8,0,0,0,10,5,2,1],
 "ins__alt__float_8c.html#a27e0d1780b58ba41c14610e35c069363":[8,0,0,0,10,5,2,19],
@@ -249,5 +248,6 @@ var NAVTREEINDEX24 =
 "ins__xsens_8c.html#a6345aa5f7a6fc2de9539539d91bf0cba":[8,0,0,0,7,19,13,25],
 "ins__xsens_8c.html#a652663821df4bab2d8e705a9d39cb8da":[8,0,0,0,7,19,13,48],
 "ins__xsens_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b":[8,0,0,0,7,19,13,21],
-"ins__xsens_8c.html#a6b6eb281542b6309396be4ebf947d593":[8,0,0,0,7,19,13,63]
+"ins__xsens_8c.html#a6b6eb281542b6309396be4ebf947d593":[8,0,0,0,7,19,13,63],
+"ins__xsens_8c.html#a6d32f38b168332331f5b42ca5f2911fe":[8,0,0,0,7,19,13,30]
 };

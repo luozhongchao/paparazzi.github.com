@@ -5,7 +5,5 @@ var electrical_8c =
     [ "VoltageOfAdc", "electrical_8c.html#a3a244669d0d9c86f4339f5d6fe83fdb9", null ],
     [ "electrical_init", "electrical_8c.html#ac5e9a56281268bdf6ddec2143b25f16a", null ],
     [ "electrical_periodic", "electrical_8c.html#aeef6ce2fb40e76ed52df5a1d45646ba1", null ],
-    [ "electrical", "electrical_8c.html#a935f74638cd658e7dac75915bcb63bde", null ],
-    [ "electrical_priv", "electrical_8c.html#a0613a3827ada86b780d3a6136a6366bb", null ],
-    [ "vsupply_adc_buf", "electrical_8c.html#aabbc7f0c61aae2bb04d7e3bdc1b89bf9", null ]
+    [ "electrical", "electrical_8c.html#a935f74638cd658e7dac75915bcb63bde", null ]
 ];
