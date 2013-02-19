@@ -1,5 +1,17 @@
 var NAVTREEINDEX41 =
 {
+"navgo__1_80_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf":[8,0,0,0,1,16,39],
+"navgo__1_80_8h.html#ab6906a1f3d77eb3e6cd99414d714fe90":[8,0,0,0,1,16,15],
+"navgo__1_80_8h.html#ad25058c1245a5a986632aae0f3f91ebc":[8,0,0,0,1,16,18],
+"navgo__1_80_8h.html#ad5a6636ee170fccf62a748fc72374d3b":[8,0,0,0,1,16,1],
+"navgo__1_80_8h.html#addec7d88e04ddfe6ac90caf602636c51":[8,0,0,0,1,16,3],
+"navgo__1_80_8h.html#ae74a702840b15e71530a2716b1ef497c":[8,0,0,0,1,16,41],
+"navgo__1_80_8h.html#ae7a2417096c8215257d073da4d6d4c5f":[8,0,0,0,1,16,38],
+"navgo__1_80_8h.html#ae9777b9865cf5793a17c08d5f9367d43":[8,0,0,0,1,16,34],
+"navgo__1_80_8h.html#aeadbfa32342d0cb241c1b0be7adf0c04":[8,0,0,0,1,16,25],
+"navgo__1_80_8h.html#af3f98c0f26c4e20e3d490398b3869466":[8,0,0,0,1,16,33],
+"navgo__1_80_8h.html#af8df7cce5dd52da8571b6774d51bda77":[8,0,0,0,1,16,2],
+"navgo__1_80_8h_source.html":[8,0,0,0,1,16],
 "navigation_8c.html":[8,0,0,0,3,1,12],
 "navigation_8c.html#a0243c612aa8a71a8fbe453c05f536aaa":[8,0,0,0,3,1,12,32],
 "navigation_8c.html#a069e6b8f68b2e117cbbe03f29e30a2e3":[8,0,0,0,3,1,12,8],
@@ -237,17 +249,5 @@ var NAVTREEINDEX41 =
 "peripherals_2mcp355x_8h.html#afea2582f132d52f27d13ca404fc52167":[8,0,0,0,8,21,4],
 "peripherals_2mcp355x_8h_source.html":[8,0,0,0,8,21],
 "photogrammetry__calculator_8c.html":[8,0,0,0,7,5,2],
-"photogrammetry__calculator_8c.html#a03a06704ec5b13c223bf3c083ee43eca":[8,0,0,0,7,5,2,3],
-"photogrammetry__calculator_8c.html#a03d0582dacb6e6dc77f266530c9c3682":[8,0,0,0,7,5,2,8],
-"photogrammetry__calculator_8c.html#a1dbe925a7f90228d2b3ca852585492d0":[8,0,0,0,7,5,2,14],
-"photogrammetry__calculator_8c.html#a35cc5dcc88bdfb0be7fd97367dc7e037":[8,0,0,0,7,5,2,15],
-"photogrammetry__calculator_8c.html#a4417b4836a8a82e7a8f11b640602e648":[8,0,0,0,7,5,2,11],
-"photogrammetry__calculator_8c.html#a45930e976ca587d4b9d1d0e225f23410":[8,0,0,0,7,5,2,7],
-"photogrammetry__calculator_8c.html#a46c42018ddb4b3cf3810f1918345493f":[8,0,0,0,7,5,2,1],
-"photogrammetry__calculator_8c.html#a4bd1fab8b9b0a126bbeec060873df996":[8,0,0,0,7,5,2,9],
-"photogrammetry__calculator_8c.html#a56876ea9e35c1ab1049a67f41a301243":[8,0,0,0,7,5,2,5],
-"photogrammetry__calculator_8c.html#a57cb602a707e9632e91510b358e2646b":[8,0,0,0,7,5,2,4],
-"photogrammetry__calculator_8c.html#a69953c65c48eabde87a9592256c65750":[8,0,0,0,7,5,2,12],
-"photogrammetry__calculator_8c.html#a816c05df8d7498b4b3af2a174ac97a04":[8,0,0,0,7,5,2,6],
-"photogrammetry__calculator_8c.html#aaef17d7d73cee2415737a44ac40533bc":[8,0,0,0,7,5,2,0]
+"photogrammetry__calculator_8c.html#a03a06704ec5b13c223bf3c083ee43eca":[8,0,0,0,7,5,2,3]
 };

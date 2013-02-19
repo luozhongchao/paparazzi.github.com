@@ -622,7 +622,8 @@ var onboard_modules =
     ] ],
     [ "Angle of Attack using internal ADC", "module__aoa_adc.html", [
       [ "Module configuration options", "module__aoa_adc.html#configuration", [
-        [ "Configure Options", "module__aoa_adc.html#configure", null ]
+        [ "Configure Options", "module__aoa_adc.html#configure", null ],
+        [ "Define Options", "module__aoa_adc.html#define", null ]
       ] ],
       [ "Module functions", "module__aoa_adc.html#functions", [
         [ "Init Functions", "module__aoa_adc.html#init_functions", null ],

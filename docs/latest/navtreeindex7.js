@@ -1,5 +1,8 @@
 var NAVTREEINDEX7 =
 {
+"atmega__i2c__cam__ctrl_8h.html#a9aa5dbe7af9ddeb4f68c6bd2f0c7cf1e":[8,0,0,0,7,11,1,2],
+"atmega__i2c__cam__ctrl_8h.html#ad7c06f4d1c398ba41252eb2e7ecd1a85":[8,0,0,0,7,11,1,4],
+"atmega__i2c__cam__ctrl_8h.html#ad9550c6832195e042f97ce9313de9962":[8,0,0,0,7,11,1,0],
 "atmega__i2c__cam__ctrl_8h.html#aeb25c30f109ccd0c3046715e4f3df6b5":[8,0,0,0,7,11,1,3],
 "atmega__i2c__cam__ctrl_8h_source.html":[8,0,0,0,7,11,1],
 "audio__telemetry_8h.html":[8,0,0,0,10,2,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX7 =
 "baro__bmp_8c.html#abf1bb133810021aca59f5e4e050ea887":[8,0,0,0,7,29,14,33],
 "baro__bmp_8c.html#ac156dfea2a80620e6fbe7fe87b3cd19f":[8,0,0,0,7,29,14,5],
 "baro__bmp_8c.html#ac61db1c8d70ce52b2e2192350c1a4cba":[8,0,0,0,7,29,14,10],
-"baro__bmp_8c.html#ac9e2f079b03497055001c48b6fdbe21a":[8,0,0,0,7,29,14,7],
-"baro__bmp_8c.html#acb0831c824befa3750689297f62d4024":[8,0,0,0,7,29,14,21],
-"baro__bmp_8c.html#acdbac238d50c61bcfae520aa7460fba8":[8,0,0,0,7,29,14,13],
-"baro__bmp_8c.html#adc14a0d61a0c006af04a0cb6929dff72":[8,0,0,0,7,29,14,32]
+"baro__bmp_8c.html#ac9e2f079b03497055001c48b6fdbe21a":[8,0,0,0,7,29,14,7]
 };

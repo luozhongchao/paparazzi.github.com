@@ -85,6 +85,7 @@ var searchData=
   ['border_5fline_5finit',['border_line_init',['../border__line_8c.html#adaf3f7d80de1dcd6c4bad052c3397894',1,'border_line_init(void):&#160;border_line.c'],['../border__line_8h.html#adaf3f7d80de1dcd6c4bad052c3397894',1,'border_line_init(void):&#160;border_line.c']]],
   ['bound_5fcommands',['bound_commands',['../motor__mixing_8c.html#ad73ee7ccd2962e63ce77477f90e6d0ca',1,'motor_mixing.c']]],
   ['bound_5fcommands_5fstep',['bound_commands_step',['../motor__mixing_8c.html#a32824363dfc8e0863aa3f6160c50c537',1,'motor_mixing.c']]],
+  ['bswap16',['bswap16',['../gps__skytraq_8c.html#a4e53651134885da8ecc0858a04249828',1,'gps_skytraq.c']]],
   ['bulkout',['BulkOut',['../usb__ser__hw_8c.html#a23baeb57e01ecb41d700cca080b35309',1,'usb_ser_hw.c']]],
   ['bungeetakeoff',['BungeeTakeoff',['../OSAMNav_8c.html#a77610706017cbfb06ae7449b91382a01',1,'BungeeTakeoff(void):&#160;OSAMNav.c'],['../OSAMNav_8h.html#a77610706017cbfb06ae7449b91382a01',1,'BungeeTakeoff(void):&#160;OSAMNav.c']]]
 ];

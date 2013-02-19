@@ -43,7 +43,7 @@ var searchData=
   ['ref',['ref',['../temp__tcouple__adc_8c.html#a241f0aa542718c2480a4fa6ce56070f7',1,'temp_tcouple_adc.c']]],
   ['ref_5falt_5finit',['ref_alt_init',['../baro__amsys_8c.html#a00e20ebd6b78b77ed709bffa5219c051',1,'baro_amsys.c']]],
   ['ref_5fidx',['ref_idx',['../stabilization__attitude__ref__quat__float_8c.html#af81d456d5849e9c7920d727a2cd09e12',1,'stabilization_attitude_ref_quat_float.c']]],
-  ['ref_5fltp',['ref_ltp',['../gps__skytraq_8c.html#a4e7b232db3956138594fe0744fae98de',1,'gps_skytraq.c']]],
+  ['ref_5fltp',['ref_ltp',['../structGpsSkytraq.html#a72009b3f638ff38b068b37447c25179b',1,'GpsSkytraq']]],
   ['ref_5fsensor_5fsamples',['ref_sensor_samples',['../ahrs__aligner_8c.html#add17db62c42b1076a998bac38c552708',1,'ahrs_aligner.c']]],
   ['reg_5faddr',['reg_addr',['../structi2c__periph.html#ab87b1de4062efa2a073a28748b9cec38',1,'i2c_periph::reg_addr()'],['../structspi__periph.html#a655488ef6fbcef7c997285db2ac03b4d',1,'spi_periph::reg_addr()'],['../structuart__periph.html#af4dc75629753b4166767a7a0b44e8828',1,'uart_periph::reg_addr()']]],
   ['regid',['RegID',['../structVN100__Req__Packet.html#afc67a1c0741d1cf924678307e5f34972',1,'VN100_Req_Packet::RegID()'],['../structVN100__Res__Packet.html#a11355ffb4b3a9f416f298f8bb14db232',1,'VN100_Res_Packet::RegID()']]],

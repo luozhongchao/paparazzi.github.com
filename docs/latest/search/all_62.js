@@ -478,6 +478,7 @@ var searchData=
   ['br',['br',['../structlocm3__spi__comm.html#a4cad91595a548863ba7648823124bd81',1,'locm3_spi_comm']]],
   ['bs_5frunning',['BS_RUNNING',['../baro_8h.html#a40cc650f3a4b0b2f99d360f1a38addf4a4134e0992db0b1b7099ae1c7b87102cb',1,'baro.h']]],
   ['bs_5funinitialized',['BS_UNINITIALIZED',['../baro_8h.html#a40cc650f3a4b0b2f99d360f1a38addf4aed52327eb45c59d150acbe45ba842096',1,'baro.h']]],
+  ['bswap16',['bswap16',['../gps__skytraq_8c.html#a4e53651134885da8ecc0858a04249828',1,'gps_skytraq.c']]],
   ['bswap_5f16',['bswap_16',['../hmc5843_8c.html#ad409605fabe125b1d222acb94a3f480f',1,'hmc5843.c']]],
   ['bsy',['BSY',['../LPC21xx_8h.html#af9a90580df99520af90316de6949f41f',1,'LPC21xx.h']]],
   ['buf',['buf',['../structfifo__t.html#a6179dabda649717df17b5a38dbf0d744',1,'fifo_t::buf()'],['../structBaroBoard.html#ae0641a99787ef38d44a1b429e584d6fe',1,'BaroBoard::buf()'],['../structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee',1,'i2c_transaction::buf()'],['../structHmc5843.html#aa412be64bb1d1bb528accac3f73d1a90',1,'Hmc5843::buf()'],['../structAccBuf.html#a2cd392e6607dbb33eee6319a5517a0ed',1,'AccBuf::buf()']]],
