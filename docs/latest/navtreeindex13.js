@@ -1,13 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"energy__ctrl_8c.html#ab4065ae5c48f475e71a58912ef369529":[8,0,0,0,3,0,0,0,0],
-"energy__ctrl_8c.html#ab78a678ff1021823256d747800db3140":[8,0,0,0,3,0,0,0,8],
-"energy__ctrl_8c.html#abce76ecdbe377a7dee4611131b720a66":[8,0,0,0,3,0,0,0,4],
-"energy__ctrl_8c.html#ac2157f339c7b2f374ece7b5448fe7816":[8,0,0,0,3,0,0,0,39],
-"energy__ctrl_8c.html#ac48c5fff2d5aca1dd1fc58622709d7eb":[8,0,0,0,3,0,0,0,10],
-"energy__ctrl_8c.html#ac57d0222b7dcef37b5319177ffe6ffdc":[8,0,0,0,3,0,0,0,26],
-"energy__ctrl_8c.html#ad4e989e42aa23948f14c82731b0e12af":[8,0,0,0,3,0,0,0,29],
-"energy__ctrl_8c.html#ad583c655b2e3c499eb34f7e93e4cb1b1":[8,0,0,0,3,0,0,0,7],
 "energy__ctrl_8c.html#adddca7473e9b7d77cd07d78d5bc70439":[8,0,0,0,3,0,0,0,24],
 "energy__ctrl_8c.html#adeb7dc89a42be2b72adbbda095ee308a":[8,0,0,0,3,0,0,0,37],
 "energy__ctrl_8c.html#ae17e9d86a71c407d6b0751f0e09e8493":[8,0,0,0,3,0,0,0,32],
@@ -249,5 +241,13 @@ var NAVTREEINDEX13 =
 "fixedwing_2guidance_2guidance__v_8c.html#afa5597f66c8d01e0afcfa047afe6964b":[8,0,0,0,3,0,0,3,34],
 "fixedwing_2guidance_2guidance__v_8c_source.html":[8,0,0,0,3,0,0,3],
 "fixedwing_2guidance_2guidance__v_8h.html":[8,0,0,0,3,0,0,4],
-"fixedwing_2guidance_2guidance__v_8h.html#a0bad2f99ac96d4e7754e05c3b642da79":[8,0,0,0,3,0,0,4,20]
+"fixedwing_2guidance_2guidance__v_8h.html#a0bad2f99ac96d4e7754e05c3b642da79":[8,0,0,0,3,0,0,4,20],
+"fixedwing_2guidance_2guidance__v_8h.html#a13a612f67d692b3b56116ef4a4e972ac":[8,0,0,0,3,0,0,4,9],
+"fixedwing_2guidance_2guidance__v_8h.html#a19a937eeeb0bc25db36047be49dc3bb9":[8,0,0,0,3,0,0,4,0],
+"fixedwing_2guidance_2guidance__v_8h.html#a1af92e71e824b4844687575c13ce58b4":[8,0,0,0,3,0,0,4,32],
+"fixedwing_2guidance_2guidance__v_8h.html#a1cfa14f60ff70e208b29b3279e4542d7":[8,0,0,0,3,0,0,4,22],
+"fixedwing_2guidance_2guidance__v_8h.html#a1ee0cbf7d1ed331f44539840507a7436":[8,0,0,0,3,0,0,4,41],
+"fixedwing_2guidance_2guidance__v_8h.html#a2904f40396f6ba3b4f0eddffaca927f8":[8,0,0,0,3,0,0,4,10],
+"fixedwing_2guidance_2guidance__v_8h.html#a345620770956c3ae1cd3391b2e6bc4d7":[8,0,0,0,3,0,0,4,25],
+"fixedwing_2guidance_2guidance__v_8h.html#a38f0bbceda8812281fc650c2c1aac6c8":[8,0,0,0,3,0,0,4,13]
 };
