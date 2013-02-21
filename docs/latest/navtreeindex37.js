@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"module__light_solar.html#sources":[2,41,1,1],
+"module__light_temt.html":[2,42],
 "module__light_temt.html#files":[2,42,1],
 "module__light_temt.html#functions":[2,42,0],
 "module__light_temt.html#headers":[2,42,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX37 =
 "module__wind_gfi.html#headers":[2,47,1,0],
 "module__wind_gfi.html#init_functions":[2,47,0,0],
 "module__wind_gfi.html#module_xml__wind_gfi":[2,47,1,2],
-"module__wind_gfi.html#periodic_functions":[2,47,0,2],
-"module__wind_gfi.html#sources":[2,47,1,1],
-"module__windturbine.html":[2,48]
+"module__wind_gfi.html#periodic_functions":[2,47,0,2]
 };

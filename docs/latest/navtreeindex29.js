@@ -1,5 +1,7 @@
 var NAVTREEINDEX29 =
 {
+"lisa__test__adxl345_8c.html#a514476189fbaf15c716d5e846955d2b8":[8,0,0,0,4,1,2,3],
+"lisa__test__adxl345_8c.html#a6fa455971d2245e1c1e0e6918b3863d9":[8,0,0,0,4,1,2,1],
 "lisa__test__adxl345_8c.html#a791eaf74023b4de8d10fbfe0de040ed8":[8,0,0,0,4,1,2,9],
 "lisa__test__adxl345_8c.html#a796a9ac81334e56c79537da011a0d40f":[8,0,0,0,4,1,2,0],
 "lisa__test__adxl345_8c.html#a7cebb03b0c23cce4e13ca34789f475a4":[8,0,0,0,4,1,2,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX29 =
 "lpc21_2mcu__periph_2i2c__arch_8c.html#a01409add519ec96f88feb3cd5f00740b":[8,0,0,0,0,0,1,5,7],
 "lpc21_2mcu__periph_2i2c__arch_8c.html#a512c156108b054d32fb4e221d2e057f7":[8,0,0,0,0,0,1,5,4],
 "lpc21_2mcu__periph_2i2c__arch_8c.html#a900cc057905958b330a39d51c86203a0":[8,0,0,0,0,0,1,5,8],
-"lpc21_2mcu__periph_2i2c__arch_8c.html#a981976ae466e6a26c1e91774e12c2bd9":[8,0,0,0,0,0,1,5,5],
-"lpc21_2mcu__periph_2i2c__arch_8c.html#a99165833cfce5b128c3d56e4c6d54da7":[8,0,0,0,0,0,1,5,10],
-"lpc21_2mcu__periph_2i2c__arch_8c.html#a9d8406f02daf5d8461ce53d7d97c3cfa":[8,0,0,0,0,0,1,5,13]
+"lpc21_2mcu__periph_2i2c__arch_8c.html#a981976ae466e6a26c1e91774e12c2bd9":[8,0,0,0,0,0,1,5,5]
 };

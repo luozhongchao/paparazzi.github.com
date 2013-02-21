@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"photogrammetry__calculator_8c.html#ac2994a385abc1ac526b1d8e015e9bb96":[8,0,0,0,7,5,2,13],
+"photogrammetry__calculator_8c.html#acb860b8d55c0af9b2536f35bace9ecf4":[8,0,0,0,7,5,2,10],
 "photogrammetry__calculator_8c_source.html":[8,0,0,0,7,5,2],
 "photogrammetry__calculator_8h.html":[8,0,0,0,7,5,3],
 "photogrammetry__calculator_8h.html#a03d0582dacb6e6dc77f266530c9c3682":[8,0,0,0,7,5,3,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "pprz__algebra__float_8h.html#a35a457f5e4c2e6e4f3fc2f0b82c3409f":[8,0,0,0,5,2,41],
 "pprz__algebra__float_8h.html#a37771817d997b294fb506a9e0892c915":[8,0,0,0,5,2,31],
 "pprz__algebra__float_8h.html#a3bb4b57ed80281639f9664668734949a":[8,0,0,0,5,2,63],
-"pprz__algebra__float_8h.html#a3c971ae8f35ffab12ddec5743683d4e3":[8,0,0,0,5,2,78],
-"pprz__algebra__float_8h.html#a3e4e268c0bbddfa691dfb186f5b5df65":[8,0,0,0,5,2,70],
-"pprz__algebra__float_8h.html#a41de102be6b28101c9568380f729a88d":[8,0,0,0,5,2,79]
+"pprz__algebra__float_8h.html#a3c971ae8f35ffab12ddec5743683d4e3":[8,0,0,0,5,2,78]
 };

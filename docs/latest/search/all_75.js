@@ -150,6 +150,7 @@ var searchData=
   ['uint',['UInt',['../unionVN100__Param.html#adbe313d9cb7774810f07231de6da2a90',1,'VN100_Param']]],
   ['uint16',['Uint16',['../baro__MS5534A_8c.html#a74d47f787409c697774310e45ab7995b',1,'baro_MS5534A.c']]],
   ['uint16_5ft',['uint16_t',['../types_8h.html#a273cf69d639a59973b6019625df33e30',1,'uint16_t():&#160;types.h'],['../inttypes_8h.html#a273cf69d639a59973b6019625df33e30',1,'uint16_t():&#160;inttypes.h']]],
+  ['uint16frombuf',['Uint16FromBuf',['../ezcurrent_8c.html#a7da58e837c66e66d6705f3d602dfe62c',1,'ezcurrent.c']]],
   ['uint16vect3',['Uint16Vect3',['../structUint16Vect3.html',1,'']]],
   ['uint32_5ft',['uint32_t',['../types_8h.html#a06896e8c53f721507066c079052171f8',1,'uint32_t():&#160;types.h'],['../inttypes_8h.html#a06896e8c53f721507066c079052171f8',1,'uint32_t():&#160;inttypes.h']]],
   ['uint64_5ft',['uint64_t',['../types_8h.html#aaa5d1cd013383c889537491c3cfd9aad',1,'uint64_t():&#160;types.h'],['../inttypes_8h.html#aaa5d1cd013383c889537491c3cfd9aad',1,'uint64_t():&#160;inttypes.h']]],

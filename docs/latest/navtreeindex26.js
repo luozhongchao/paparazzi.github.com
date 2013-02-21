@@ -1,5 +1,7 @@
 var NAVTREEINDEX26 =
 {
+"jsbsim__gps_8c.html":[8,0,0,0,0,2,9],
+"jsbsim__gps_8c.html#a05f70ae561aee3dbb2745771d44bf422":[8,0,0,0,0,2,9,2],
 "jsbsim__gps_8c.html#a1e5ac4a144342a18c18f45efe6196698":[8,0,0,0,0,2,9,1],
 "jsbsim__gps_8c.html#adadf586b1ed35a6d820c57a1107a9a2b":[8,0,0,0,0,2,9,0],
 "jsbsim__gps_8c_source.html":[8,0,0,0,0,2,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX26 =
 "light__solar_8c.html#a661e1b4ad75b88ab19e0d16c232d9f6d":[8,0,0,0,7,23,20,0],
 "light__solar_8c.html#a831ddfb4155fdd57df9ff70f0df6033b":[8,0,0,0,7,23,20,9],
 "light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d":[8,0,0,0,7,23,20,10],
-"light__solar_8c.html#aa0bba5249b781b1416caa6b66c88a5d9":[8,0,0,0,7,23,20,6],
-"light__solar_8c.html#aa2fc12bc4b6f834047b0918b0e3541aa":[8,0,0,0,7,23,20,2],
-"light__solar_8c.html#ac0e039b9f8ad2272b10b4129733d1114":[8,0,0,0,7,23,20,4]
+"light__solar_8c.html#aa0bba5249b781b1416caa6b66c88a5d9":[8,0,0,0,7,23,20,6]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX64 =
 {
+"w5100_8c.html#abf3016ffe8faf50c1bf56f6f21ceb261":[8,0,0,0,10,2,8,43],
+"w5100_8c.html#ac3249d8a1bb38835870a1fc6a8c61524":[8,0,0,0,10,2,8,49],
 "w5100_8c.html#ac5b78f6ff9ae6c8cd4a286b9b45f7d5e":[8,0,0,0,10,2,8,45],
 "w5100_8c.html#aca7e83929212b5df9f13df77ba480a6d":[8,0,0,0,10,2,8,66],
 "w5100_8c.html#acd3caafdf38d3dd4bf97d4dd8da30f50":[8,0,0,0,10,2,8,33],

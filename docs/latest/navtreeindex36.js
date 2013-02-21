@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"module__gain_scheduling.html#files":[2,84,1],
+"module__gain_scheduling.html#functions":[2,84,0],
 "module__gain_scheduling.html#headers":[2,84,1,0],
 "module__gain_scheduling.html#init_functions":[2,84,0,0],
 "module__gain_scheduling.html#module_xml__gain_scheduling":[2,84,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "module__light_solar.html#headers":[2,41,1,0],
 "module__light_solar.html#init_functions":[2,41,0,0],
 "module__light_solar.html#module_xml__light_solar":[2,41,1,2],
-"module__light_solar.html#periodic_functions":[2,41,0,1],
-"module__light_solar.html#sources":[2,41,1,1],
-"module__light_temt.html":[2,42]
+"module__light_solar.html#periodic_functions":[2,41,0,1]
 };

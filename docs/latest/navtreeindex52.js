@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"stm32_2mcu__periph_2adc__arch_8c.html#a566f642cb026377ff51f9d43b3a54728":[8,0,0,0,0,3,0,0,7],
+"stm32_2mcu__periph_2adc__arch_8c.html#a83fd981d2e66f9adad6a6b23a63b3678":[8,0,0,0,0,3,0,0,5],
 "stm32_2mcu__periph_2adc__arch_8c.html#a918bbd68206b96e41cfc53f82e0302c6":[8,0,0,0,0,3,0,0,4],
 "stm32_2mcu__periph_2adc__arch_8c.html#aab487aca11cc57fb49587571d20c2188":[8,0,0,0,0,3,0,0,9],
 "stm32_2mcu__periph_2adc__arch_8c.html#acd02461f91550e084771478dfdd1ca54":[8,0,0,0,0,3,0,0,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#af38434843fde1e03292e09a8658f9fbb":[8,0,0,0,0,3,2,2,2,31],
 "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#afb5047901d3fea90c147a5477a9e441d":[8,0,0,0,0,3,2,2,2,35],
 "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#afc6cede7e395db0695616d28f54d7812":[8,0,0,0,0,3,2,2,2,8],
-"stm32_2subsystems_2radio__control_2spektrum__arch_8c_source.html":[8,0,0,0,0,3,2,2,2],
-"stm32_2subsystems_2radio__control_2spektrum__arch_8h.html":[8,0,0,0,0,3,2,2,3],
-"stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a0a504ca751f60fabf7900b13916561a6":[8,0,0,0,0,3,2,2,3,15]
+"stm32_2subsystems_2radio__control_2spektrum__arch_8c_source.html":[8,0,0,0,0,3,2,2,2]
 };

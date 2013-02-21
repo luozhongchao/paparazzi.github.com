@@ -1,5 +1,7 @@
 var NAVTREEINDEX35 =
 {
+"module__baro_amsys.html#configuration":[2,59,0],
+"module__baro_amsys.html#define":[2,59,0,0],
 "module__baro_amsys.html#event_functions":[2,59,1,1],
 "module__baro_amsys.html#files":[2,59,2],
 "module__baro_amsys.html#functions":[2,59,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX35 =
 "module__formation_flight.html#init_functions":[2,49,0,0],
 "module__formation_flight.html#module_xml__formation_flight":[2,49,1,2],
 "module__formation_flight.html#sources":[2,49,1,1],
-"module__gain_scheduling.html":[2,84],
-"module__gain_scheduling.html#files":[2,84,1],
-"module__gain_scheduling.html#functions":[2,84,0]
+"module__gain_scheduling.html":[2,84]
 };

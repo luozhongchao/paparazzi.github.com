@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-536-g92e234d</span>
+   &#160;<span id="projectnumber">v4.9_devel-543-g52ad2ff</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -270,7 +270,7 @@ $(document).ready(function(){initNavTree('gps__ubx_8c_source.html','');});
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      <span class="comment">// I4 max = 2^31 = 214 * 1e5 * 100 &lt; 360 * 1e7: overflow on angles over 214 deg -&gt; casted to -214 deg</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="comment">// solution: First to radians, and then scale to 1e-7 radians</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <span class="comment">// First x 10 for loosing less resolution, then to radians, then multiply x 10 again</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS heading in rad*1e7 (CW/north)">course</a> = (RadOfDeg(UBX_NAV_VELNED_Heading(<a class="code" href="gps__ubx_8c.html#a2b88e29de56e1f30ae0447c5488b4e66">gps_ubx</a>.<a class="code" href="structGpsUbx.html#abcf68cd0264e306ef6fa16123286bb8f">msg_buf</a>)*10)) * 10;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS course over ground in rad*1e7 (CW/north)">course</a> = (RadOfDeg(UBX_NAV_VELNED_Heading(<a class="code" href="gps__ubx_8c.html#a2b88e29de56e1f30ae0447c5488b4e66">gps_ubx</a>.<a class="code" href="structGpsUbx.html#abcf68cd0264e306ef6fa16123286bb8f">msg_buf</a>)*10)) * 10;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a2d6027f58f74a82bd49944931a2a2beb" title="course accuracy in rad*1e7">cacc</a> = (RadOfDeg(UBX_NAV_VELNED_CAcc(<a class="code" href="gps__ubx_8c.html#a2b88e29de56e1f30ae0447c5488b4e66">gps_ubx</a>.<a class="code" href="structGpsUbx.html#abcf68cd0264e306ef6fa16123286bb8f">msg_buf</a>)*10)) * 10;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a0568d6804839a44b26cd61ffd86046ad" title="GPS time of week in ms.">tow</a> = UBX_NAV_VELNED_ITOW(<a class="code" href="gps__ubx_8c.html#a2b88e29de56e1f30ae0447c5488b4e66">gps_ubx</a>.<a class="code" href="structGpsUbx.html#abcf68cd0264e306ef6fa16123286bb8f">msg_buf</a>);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <a class="code" href="gps__ubx_8c.html#a2b88e29de56e1f30ae0447c5488b4e66">gps_ubx</a>.<a class="code" href="structGpsUbx.html#aef27cd7016751d0cdd3dd2c945f57a8b">have_velned</a> = 1;</div>
@@ -394,7 +394,7 @@ $(document).ready(function(){initNavTree('gps__ubx_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8c4cbb881db224ddaf0756e79ed706ce.html">gps</a></li><li class="navelem"><a class="el" href="gps__ubx_8c.html">gps_ubx.c</a></li>
-    <li class="footer">Generated on Wed Feb 20 2013 04:00:12 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Feb 21 2013 04:00:11 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

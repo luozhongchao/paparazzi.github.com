@@ -116,6 +116,7 @@ var searchData=
   ['uiir_5frls_5fint',['UIIR_RLS_INT',['../lpcUART_8h.html#a48f031449857b6a2778a083236d3337b',1,'lpcUART.h']]],
   ['uiir_5fthre_5fint',['UIIR_THRE_INT',['../lpcUART_8h.html#a0084f36f33eed08f938cd95b3560fc25',1,'lpcUART.h']]],
   ['uint16',['Uint16',['../baro__MS5534A_8c.html#a74d47f787409c697774310e45ab7995b',1,'baro_MS5534A.c']]],
+  ['uint16frombuf',['Uint16FromBuf',['../ezcurrent_8c.html#a7da58e837c66e66d6705f3d602dfe62c',1,'ezcurrent.c']]],
   ['ulcr_5fbreak_5fenable',['ULCR_BREAK_ENABLE',['../lpcUART_8h.html#a0d81d677903d3a5003c69d656ffe2bf8',1,'lpcUART.h']]],
   ['ulcr_5fchar_5f5',['ULCR_CHAR_5',['../lpcUART_8h.html#adeeeae6058aa7bcf227665e2203dbff4',1,'lpcUART.h']]],
   ['ulcr_5fchar_5f6',['ULCR_CHAR_6',['../lpcUART_8h.html#ad71d67ec7212f5bff65488ca3d123265',1,'lpcUART.h']]],

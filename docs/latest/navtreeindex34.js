@@ -1,5 +1,7 @@
 var NAVTREEINDEX34 =
 {
+"max1168_8h.html#a8a9c6e4cbbb5f10cb9c8b7ce995331e0":[8,0,0,0,8,19,6],
+"max1168_8h.html#a9337391d68c11f108e7d6aedf6c917fa":[8,0,0,0,8,19,11],
 "max1168_8h.html#a957376acfc8fbd7b917f20a18e6c5a6c":[8,0,0,0,8,19,15],
 "max1168_8h.html#a999938d39447a23c8a37f5b082335cf7":[8,0,0,0,8,19,1],
 "max1168_8h.html#a9e1e6bea5d27c4027fb0bba20acd9320":[8,0,0,0,8,19,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX34 =
 "module__aoa_adc.html#module_xml__aoa_adc":[2,52,2,2],
 "module__aoa_adc.html#periodic_functions":[2,52,1,1],
 "module__aoa_adc.html#sources":[2,52,2,1],
-"module__baro_amsys.html":[2,59],
-"module__baro_amsys.html#configuration":[2,59,0],
-"module__baro_amsys.html#define":[2,59,0,0]
+"module__baro_amsys.html":[2,59]
 };
