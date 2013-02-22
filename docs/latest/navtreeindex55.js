@@ -1,5 +1,9 @@
 var NAVTREEINDEX55 =
 {
+"structImuNavgo.html#af8d77dcbb8339e8bcd43661b8032b0ab":[7,0,84,3],
+"structImuNps.html":[7,0,85],
+"structImuNps.html#acdb60db0f4e817b6bd5b2a0b1d96615b":[7,0,85,1],
+"structImuNps.html#ae9310ba211a69592dade8f317e221784":[7,0,85,2],
 "structImuNps.html#affdfaed8b6dbb49c41b8615817a80cbb":[7,0,85,0],
 "structImuPpzuav.html":[7,0,86],
 "structImuPpzuav.html#a1637fcdc61619ac875a1174f48a67c72":[7,0,86,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX55 =
 "structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f":[7,0,138,5],
 "structRadioControl.html#a8843219fc855f8ca70c1d29cf3d8c7b4":[7,0,138,3],
 "structRadioControl.html#a8a646c0d264de984fd5aeb22525bbf16":[7,0,138,2],
-"structRadioControl.html#aa6eb017ab6023648e26cedd9de0c6c8c":[7,0,138,1],
-"structRadioControl.html#ab19a0ca633267915e1e0ca584d31ef88":[7,0,138,0],
-"structSVinfo.html":[7,0,156],
-"structSVinfo.html#a0069a8447d794d029e89b885d6d17d42":[7,0,156,0],
-"structSVinfo.html#a0f082bb982115960077c5c4f8cab9653":[7,0,156,4]
+"structRadioControl.html#aa6eb017ab6023648e26cedd9de0c6c8c":[7,0,138,1]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX57 =
 {
+"structgpioRegs__t.html#a526599cc874869ca547009a5d880c06a":[7,0,62,11],
+"structgpioRegs__t.html#a543e8f1df6739d7100544ab4bfbbc536":[7,0,62,4],
+"structgpioRegs__t.html#a5a3b64b1b5b0080e1693dd7989c37f1a":[7,0,62,12],
+"structgpioRegs__t.html#a82d037a4b26a543dbae3d72ecc3f2f41":[7,0,62,2],
 "structgpioRegs__t.html#a85b4cf63a50d41b89a4347c0f5b32e73":[7,0,62,3],
 "structgpioRegs__t.html#ad666ab3b57b8307792728ede72163ef2":[7,0,62,13],
 "structgpioRegs__t.html#ae0c15c3cbe409af6d6b441a95d760264":[7,0,62,14],
@@ -245,9 +249,5 @@ var NAVTREEINDEX57 =
 "structspi__periph__dma.html#ab6928810bc72c3743672cd6116fcb2f3":[7,0,146,9],
 "structspi__periph__dma.html#adb59c8e81f08334ba8c085b0af3d3276":[7,0,146,1],
 "structspi__periph__dma.html#aefcd5ba30da5eaf93f6d3e0a29ee9467":[7,0,146,4],
-"structspi__periph__dma.html#aff566f47d98f3f04370908401ad6c47d":[7,0,146,8],
-"structspi__transaction.html":[7,0,147],
-"structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539":[7,0,147,5],
-"structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485":[7,0,147,4],
-"structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba":[7,0,147,11]
+"structspi__periph__dma.html#aff566f47d98f3f04370908401ad6c47d":[7,0,146,8]
 };

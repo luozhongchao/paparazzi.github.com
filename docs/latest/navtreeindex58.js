@@ -1,5 +1,9 @@
 var NAVTREEINDEX58 =
 {
+"structspi__transaction.html":[7,0,147],
+"structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539":[7,0,147,5],
+"structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485":[7,0,147,4],
+"structspi__transaction.html#a2716d9d8e12e4b02d9093bfbe01346ba":[7,0,147,11],
 "structspi__transaction.html#a34d366d59c97ab1993da279ec6c19658":[7,0,147,1],
 "structspi__transaction.html#a42f7b32b71120469bf60af28f5880177":[7,0,147,0],
 "structspi__transaction.html#a48d6946f5d63c9c313bdaa442b894406":[7,0,147,10],
@@ -245,9 +249,5 @@ var NAVTREEINDEX58 =
 "subsystems_2imu_2imu__aspirin2_8h.html#ada91099469f16df2d8aeafa82d365c4b":[8,0,0,0,10,4,5,4],
 "subsystems_2imu_2imu__aspirin2_8h.html#adb9273d5a997fde171fc41b58191f597":[8,0,0,0,10,4,5,27],
 "subsystems_2imu_2imu__aspirin2_8h.html#add633a5c57327e0ab4958252e6b7ca97":[8,0,0,0,10,4,5,40],
-"subsystems_2imu_2imu__aspirin2_8h.html#ae4ae2cd9131c03b2087647cf04c63a53":[8,0,0,0,10,4,5,34],
-"subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76":[8,0,0,0,10,4,5,37],
-"subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76a5021f80159c3b4142898d479321fbd1c":[8,0,0,0,10,4,5,37,2],
-"subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76a6bbdbff14b3dab84f985d3d8167ab2fd":[8,0,0,0,10,4,5,37,0],
-"subsystems_2imu_2imu__aspirin2_8h.html#ae562638bdeb6632b293d8b0f91fd7a76a8c933368ac7cc8f34ded19bd6c4b107f":[8,0,0,0,10,4,5,37,1]
+"subsystems_2imu_2imu__aspirin2_8h.html#ae4ae2cd9131c03b2087647cf04c63a53":[8,0,0,0,10,4,5,34]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX38 =
 {
+"module__wind_gfi.html#headers":[2,47,1,0],
+"module__wind_gfi.html#init_functions":[2,47,0,0],
+"module__wind_gfi.html#module_xml__wind_gfi":[2,47,1,2],
+"module__wind_gfi.html#periodic_functions":[2,47,0,2],
 "module__wind_gfi.html#sources":[2,47,1,1],
 "module__windturbine.html":[2,48],
 "module__windturbine.html#files":[2,48,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX38 =
 "mpu60X0_8h.html#aaa8b385c8d2539602ded2330fb3bcc57":[8,0,0,0,8,24,53],
 "mpu60X0_8h.html#aaef69047ad11803e6d41e13ac5d194e0":[8,0,0,0,8,24,36],
 "mpu60X0_8h.html#ab34ba5ac294bb75dbb26815e34b345e3":[8,0,0,0,8,24,24],
-"mpu60X0_8h.html#abd644a040c0db6c5fb0228bb2b9b5882":[8,0,0,0,8,24,32],
-"mpu60X0_8h.html#ac37c03a163978a74c5d40c341713e090":[8,0,0,0,8,24,9],
-"mpu60X0_8h.html#acbff57b13dbcd3c9c21dcc54202bf7cd":[8,0,0,0,8,24,33],
-"mpu60X0_8h.html#ace7e3e1e303b603f39e69d3c64e270bd":[8,0,0,0,8,24,1],
-"mpu60X0_8h.html#ad69e7def9866107db3ba215aa0b4025b":[8,0,0,0,8,24,46]
+"mpu60X0_8h.html#abd644a040c0db6c5fb0228bb2b9b5882":[8,0,0,0,8,24,32]
 };
