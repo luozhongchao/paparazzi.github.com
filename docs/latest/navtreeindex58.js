@@ -1,5 +1,8 @@
 var NAVTREEINDEX58 =
 {
+"structspi__periph__dma.html#adb59c8e81f08334ba8c085b0af3d3276":[7,0,146,1],
+"structspi__periph__dma.html#aefcd5ba30da5eaf93f6d3e0a29ee9467":[7,0,146,4],
+"structspi__periph__dma.html#aff566f47d98f3f04370908401ad6c47d":[7,0,146,8],
 "structspi__transaction.html":[7,0,147],
 "structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539":[7,0,147,5],
 "structspi__transaction.html#a1ffecb70c8f221ab1296d06e61448485":[7,0,147,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX58 =
 "subsystems_2imu_2imu__aspirin2_8h.html#ad39374d8ce5353f9af985915d6e9c0fa":[8,0,0,0,10,4,5,36],
 "subsystems_2imu_2imu__aspirin2_8h.html#ad48a5b859139ea2355c40f5abf5aa8aa":[8,0,0,0,10,4,5,12],
 "subsystems_2imu_2imu__aspirin2_8h.html#ad8bdd9e68ab45b4ec5950f2e718d8f6c":[8,0,0,0,10,4,5,15],
-"subsystems_2imu_2imu__aspirin2_8h.html#ada91099469f16df2d8aeafa82d365c4b":[8,0,0,0,10,4,5,4],
-"subsystems_2imu_2imu__aspirin2_8h.html#adb9273d5a997fde171fc41b58191f597":[8,0,0,0,10,4,5,27],
-"subsystems_2imu_2imu__aspirin2_8h.html#add633a5c57327e0ab4958252e6b7ca97":[8,0,0,0,10,4,5,40],
-"subsystems_2imu_2imu__aspirin2_8h.html#ae4ae2cd9131c03b2087647cf04c63a53":[8,0,0,0,10,4,5,34]
+"subsystems_2imu_2imu__aspirin2_8h.html#ada91099469f16df2d8aeafa82d365c4b":[8,0,0,0,10,4,5,4]
 };

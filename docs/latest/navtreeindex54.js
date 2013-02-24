@@ -1,5 +1,8 @@
 var NAVTREEINDEX54 =
 {
+"structDoubleVect2.html#affadcf01db2266a4f51b772f6dde199d":[7,0,38,1],
+"structDoubleVect3.html":[7,0,39],
+"structDoubleVect3.html#a1e604dfad58d149b370252ea98f36888":[7,0,39,1],
 "structDoubleVect3.html#a6e75853abc1bc1b6f125b1dbc7fc53ae":[7,0,39,2],
 "structDoubleVect3.html#a755f3938a6c152764ae2b73bc2994840":[7,0,39,0],
 "structDownlinkTransport.html":[7,0,40],
@@ -246,8 +249,5 @@ var NAVTREEINDEX54 =
 "structImuFloat.html#aefb97d688ccc0e607c2ddeee87be135a":[7,0,83,2],
 "structImuNavgo.html":[7,0,84],
 "structImuNavgo.html#a003590f52ce87b03400f98d81829544c":[7,0,84,0],
-"structImuNavgo.html#a5a28d3ca17282628544ddec886b50c8c":[7,0,84,1],
-"structImuNavgo.html#a757339b64878f92dc34360937bc12e08":[7,0,84,4],
-"structImuNavgo.html#abe5dfe17c50e12430f6ffa6c14bb51ff":[7,0,84,2],
-"structImuNavgo.html#adb1f234610a5877511f9aca243c5c589":[7,0,84,5]
+"structImuNavgo.html#a5a28d3ca17282628544ddec886b50c8c":[7,0,84,1]
 };

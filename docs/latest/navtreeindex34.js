@@ -1,5 +1,8 @@
 var NAVTREEINDEX34 =
 {
+"max1168_8h.html#a403d4573afbec409132c311da5818b27":[8,0,0,0,8,19,3],
+"max1168_8h.html#a6130e20b7ea3c56aa94a9e449b773b4a":[8,0,0,0,8,19,16],
+"max1168_8h.html#a67a6b3799058c2c09b36bfed6a45bf4e":[8,0,0,0,8,19,2],
 "max1168_8h.html#a6faf5052c12050ec2b7062284341893a":[8,0,0,0,8,19,9],
 "max1168_8h.html#a712f39d80c2b46e08a4d0230bf74bef2":[8,0,0,0,8,19,14],
 "max1168_8h.html#a75d305dc9d1c36c6a4589c300e02afb2":[8,0,0,0,8,19,12],
@@ -246,8 +249,5 @@ var NAVTREEINDEX34 =
 "module__aoa_adc.html#configuration":[2,52,0],
 "module__aoa_adc.html#configure":[2,52,0,0],
 "module__aoa_adc.html#define":[2,52,0,1],
-"module__aoa_adc.html#files":[2,52,2],
-"module__aoa_adc.html#functions":[2,52,1],
-"module__aoa_adc.html#headers":[2,52,2,0],
-"module__aoa_adc.html#init_functions":[2,52,1,0]
+"module__aoa_adc.html#files":[2,52,2]
 };

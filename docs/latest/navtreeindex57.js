@@ -1,5 +1,8 @@
 var NAVTREEINDEX57 =
 {
+"structgpioRegs__t.html#a2db4ec53ef6d8eb6709640a18a2c6437":[7,0,62,9],
+"structgpioRegs__t.html#a314a25cbf5c19e35c7d39db77c8c9a89":[7,0,62,6],
+"structgpioRegs__t.html#a430919585eed29e81475978a731656cc":[7,0,62,0],
 "structgpioRegs__t.html#a526599cc874869ca547009a5d880c06a":[7,0,62,11],
 "structgpioRegs__t.html#a543e8f1df6739d7100544ab4bfbbc536":[7,0,62,4],
 "structgpioRegs__t.html#a5a3b64b1b5b0080e1693dd7989c37f1a":[7,0,62,12],
@@ -246,8 +249,5 @@ var NAVTREEINDEX57 =
 "structspi__periph__dma.html#a88d3abbc4fdda60634150611244814fc":[7,0,146,2],
 "structspi__periph__dma.html#aa2f4122476bc251c47e2d2eca91f296e":[7,0,146,7],
 "structspi__periph__dma.html#aa38bcf805c46baa4d49f4ace89cfed57":[7,0,146,6],
-"structspi__periph__dma.html#ab6928810bc72c3743672cd6116fcb2f3":[7,0,146,9],
-"structspi__periph__dma.html#adb59c8e81f08334ba8c085b0af3d3276":[7,0,146,1],
-"structspi__periph__dma.html#aefcd5ba30da5eaf93f6d3e0a29ee9467":[7,0,146,4],
-"structspi__periph__dma.html#aff566f47d98f3f04370908401ad6c47d":[7,0,146,8]
+"structspi__periph__dma.html#ab6928810bc72c3743672cd6116fcb2f3":[7,0,146,9]
 };

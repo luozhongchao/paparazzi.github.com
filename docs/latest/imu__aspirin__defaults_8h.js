@@ -23,5 +23,8 @@ var imu__aspirin__defaults_8h =
     [ "IMU_GYRO_R_SENS", "imu__aspirin__defaults_8h.html#af57decce9e96b0726832a410273223f3", null ],
     [ "IMU_GYRO_R_SENS_DEN", "imu__aspirin__defaults_8h.html#aecb2f43265d239ba7661dfcc8523123e", null ],
     [ "IMU_GYRO_R_SENS_NUM", "imu__aspirin__defaults_8h.html#a6f808c71190e714287442af3bb7008b3", null ],
-    [ "IMU_GYRO_R_SIGN", "imu__aspirin__defaults_8h.html#a91fa3d93fbfb5edbdf7f3b34436b53da", null ]
+    [ "IMU_GYRO_R_SIGN", "imu__aspirin__defaults_8h.html#a91fa3d93fbfb5edbdf7f3b34436b53da", null ],
+    [ "IMU_MAG_X_SIGN", "imu__aspirin__defaults_8h.html#a34ef05992d74a9dc07c6a20feffd6eef", null ],
+    [ "IMU_MAG_Y_SIGN", "imu__aspirin__defaults_8h.html#a127929c4b5a458043f7ef2e0fa2a4e54", null ],
+    [ "IMU_MAG_Z_SIGN", "imu__aspirin__defaults_8h.html#a8612bd2fe2f927e8f283a9a8e60010f5", null ]
 ];

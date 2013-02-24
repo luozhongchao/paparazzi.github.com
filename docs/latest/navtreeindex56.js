@@ -1,5 +1,8 @@
 var NAVTREEINDEX56 =
 {
+"structRadioControl.html#a8843219fc855f8ca70c1d29cf3d8c7b4":[7,0,138,3],
+"structRadioControl.html#a8a646c0d264de984fd5aeb22525bbf16":[7,0,138,2],
+"structRadioControl.html#aa6eb017ab6023648e26cedd9de0c6c8c":[7,0,138,1],
 "structRadioControl.html#ab19a0ca633267915e1e0ca584d31ef88":[7,0,138,0],
 "structSVinfo.html":[7,0,156],
 "structSVinfo.html#a0069a8447d794d029e89b885d6d17d42":[7,0,156,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX56 =
 "structforce__.html#a8ed78b56d29dec183917ffa8f59e0691":[7,0,60,4],
 "structgpioRegs__t.html":[7,0,62],
 "structgpioRegs__t.html#a1513d2aecdcf17c3e198398df52f9ac6":[7,0,62,7],
-"structgpioRegs__t.html#a1beae413bf35f3ebd40efa6594fd2da6":[7,0,62,1],
-"structgpioRegs__t.html#a2db4ec53ef6d8eb6709640a18a2c6437":[7,0,62,9],
-"structgpioRegs__t.html#a314a25cbf5c19e35c7d39db77c8c9a89":[7,0,62,6],
-"structgpioRegs__t.html#a430919585eed29e81475978a731656cc":[7,0,62,0]
+"structgpioRegs__t.html#a1beae413bf35f3ebd40efa6594fd2da6":[7,0,62,1]
 };

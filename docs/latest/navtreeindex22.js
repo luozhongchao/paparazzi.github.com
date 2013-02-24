@@ -61,9 +61,11 @@ var NAVTREEINDEX22 =
 "imu__aspirin_8h.html#aeafeb2e52542aacfde056216e597ab1a":[8,0,0,0,10,4,3,4],
 "imu__aspirin_8h_source.html":[8,0,0,0,10,4,3],
 "imu__aspirin__defaults_8h.html":[8,0,0,0,10,4,6],
+"imu__aspirin__defaults_8h.html#a127929c4b5a458043f7ef2e0fa2a4e54":[8,0,0,0,10,4,6,25],
 "imu__aspirin__defaults_8h.html#a1b1c79353b8a69a2d7faecd6721efbb8":[8,0,0,0,10,4,6,15],
 "imu__aspirin__defaults_8h.html#a20144cb4fd6b12baf8d74063f8dc87e3":[8,0,0,0,10,4,6,7],
 "imu__aspirin__defaults_8h.html#a2644576e539bd38bf5d323809e3fd737":[8,0,0,0,10,4,6,13],
+"imu__aspirin__defaults_8h.html#a34ef05992d74a9dc07c6a20feffd6eef":[8,0,0,0,10,4,6,24],
 "imu__aspirin__defaults_8h.html#a3bb03278fbd9117e876b24e1b78a61c5":[8,0,0,0,10,4,6,4],
 "imu__aspirin__defaults_8h.html#a3c4d85605fa8be77fbc356b66c19f509":[8,0,0,0,10,4,6,18],
 "imu__aspirin__defaults_8h.html#a4198979ecdab243efc790d5b739a4645":[8,0,0,0,10,4,6,3],
@@ -71,6 +73,7 @@ var NAVTREEINDEX22 =
 "imu__aspirin__defaults_8h.html#a5ed19364e701726bf4eb06eea5da9acf":[8,0,0,0,10,4,6,16],
 "imu__aspirin__defaults_8h.html#a60e8f1f35a15a535130669093e80e858":[8,0,0,0,10,4,6,5],
 "imu__aspirin__defaults_8h.html#a6f808c71190e714287442af3bb7008b3":[8,0,0,0,10,4,6,22],
+"imu__aspirin__defaults_8h.html#a8612bd2fe2f927e8f283a9a8e60010f5":[8,0,0,0,10,4,6,26],
 "imu__aspirin__defaults_8h.html#a8ac88fc00cde506229b92c6a1e2c3122":[8,0,0,0,10,4,6,0],
 "imu__aspirin__defaults_8h.html#a8acf299c1bfb2daa92b1894556ca50ad":[8,0,0,0,10,4,6,1],
 "imu__aspirin__defaults_8h.html#a91fa3d93fbfb5edbdf7f3b34436b53da":[8,0,0,0,10,4,6,23],
@@ -246,8 +249,5 @@ var NAVTREEINDEX22 =
 "imu__nps_8h.html#a8ac88fc00cde506229b92c6a1e2c3122":[8,0,0,0,10,4,15,1],
 "imu__nps_8h.html#a8acf299c1bfb2daa92b1894556ca50ad":[8,0,0,0,10,4,15,2],
 "imu__nps_8h.html#a9f53be53c139a637ce9c2173bcac9e00":[8,0,0,0,10,4,15,22],
-"imu__nps_8h.html#aa59c24839f4a36f23c98da339dea1224":[8,0,0,0,10,4,15,12],
-"imu__nps_8h.html#aaa4f4a11cc02f0d8aef1e8d97a15746f":[8,0,0,0,10,4,15,14],
-"imu__nps_8h.html#ad08f71586fceaa57ea361681bb6543b7":[8,0,0,0,10,4,15,10],
-"imu__nps_8h.html#ad48a5b859139ea2355c40f5abf5aa8aa":[8,0,0,0,10,4,15,7]
+"imu__nps_8h.html#aa59c24839f4a36f23c98da339dea1224":[8,0,0,0,10,4,15,12]
 };

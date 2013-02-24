@@ -1,5 +1,8 @@
 var NAVTREEINDEX27 =
 {
+"light__solar_8c.html#a2978a46b47cbc9d17a0924014ff9658b":[8,0,0,0,7,23,20,3],
+"light__solar_8c.html#a3d6da179efb385d03ff265c3ad4f74f6":[8,0,0,0,7,23,20,5],
+"light__solar_8c.html#a5d427462d5459fa08a65ad9a78c2e259":[8,0,0,0,7,23,20,7],
 "light__solar_8c.html#a661e1b4ad75b88ab19e0d16c232d9f6d":[8,0,0,0,7,23,20,0],
 "light__solar_8c.html#a831ddfb4155fdd57df9ff70f0df6033b":[8,0,0,0,7,23,20,9],
 "light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d":[8,0,0,0,7,23,20,10],
@@ -246,8 +249,5 @@ var NAVTREEINDEX27 =
 "lisa__m__1_80_8h.html#a37154c806d85fb9f9158f86bb55e9ee0":[8,0,0,0,1,13,21],
 "lisa__m__1_80_8h.html#a3d767e16f12a6ee542079f3c9677192c":[8,0,0,0,1,13,3],
 "lisa__m__1_80_8h.html#a3fc5f96f074d833b909fd75c92b7d2d0":[8,0,0,0,1,13,0],
-"lisa__m__1_80_8h.html#a41dee8ddb2c5c3fb5a8e38460d4a5f19":[8,0,0,0,1,13,44],
-"lisa__m__1_80_8h.html#a4285bdd58098064c3bab3976a78b26fa":[8,0,0,0,1,13,27],
-"lisa__m__1_80_8h.html#a474279f28350114950d862951d72de66":[8,0,0,0,1,13,5],
-"lisa__m__1_80_8h.html#a4da08b59c725550efa312cf16ecdd77c":[8,0,0,0,1,13,59]
+"lisa__m__1_80_8h.html#a41dee8ddb2c5c3fb5a8e38460d4a5f19":[8,0,0,0,1,13,44]
 };

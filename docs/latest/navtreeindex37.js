@@ -1,5 +1,8 @@
 var NAVTREEINDEX37 =
 {
+"module__light_solar.html":[2,41],
+"module__light_solar.html#files":[2,41,1],
+"module__light_solar.html#functions":[2,41,0],
 "module__light_solar.html#headers":[2,41,1,0],
 "module__light_solar.html#init_functions":[2,41,0,0],
 "module__light_solar.html#module_xml__light_solar":[2,41,1,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX37 =
 "module__vehicle_interface_overo_link.html#module_xml__vehicle_interface_overo_link":[2,77,1,2],
 "module__vehicle_interface_overo_link.html#periodic_functions":[2,77,0,2],
 "module__vehicle_interface_overo_link.html#sources":[2,77,1,1],
-"module__wind_gfi.html":[2,47],
-"module__wind_gfi.html#event_functions":[2,47,0,1],
-"module__wind_gfi.html#files":[2,47,1],
-"module__wind_gfi.html#functions":[2,47,0]
+"module__wind_gfi.html":[2,47]
 };

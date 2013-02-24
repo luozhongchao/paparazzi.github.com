@@ -1,5 +1,8 @@
 var NAVTREEINDEX55 =
 {
+"structImuNavgo.html#a757339b64878f92dc34360937bc12e08":[7,0,84,4],
+"structImuNavgo.html#abe5dfe17c50e12430f6ffa6c14bb51ff":[7,0,84,2],
+"structImuNavgo.html#adb1f234610a5877511f9aca243c5c589":[7,0,84,5],
 "structImuNavgo.html#af8d77dcbb8339e8bcd43661b8032b0ab":[7,0,84,3],
 "structImuNps.html":[7,0,85],
 "structImuNps.html#acdb60db0f4e817b6bd5b2a0b1d96615b":[7,0,85,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX55 =
 "structPoint2D.html#a989485fd2d8026ceec5d57e8c7e629ab":[7,0,135,1],
 "structRadioControl.html":[7,0,138],
 "structRadioControl.html#a009f85397fd864a703ce54da8f02daa8":[7,0,138,4],
-"structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f":[7,0,138,5],
-"structRadioControl.html#a8843219fc855f8ca70c1d29cf3d8c7b4":[7,0,138,3],
-"structRadioControl.html#a8a646c0d264de984fd5aeb22525bbf16":[7,0,138,2],
-"structRadioControl.html#aa6eb017ab6023648e26cedd9de0c6c8c":[7,0,138,1]
+"structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f":[7,0,138,5]
 };

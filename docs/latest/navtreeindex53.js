@@ -1,5 +1,8 @@
 var NAVTREEINDEX53 =
 {
+"stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#add408507e1d1fb9bf77fd5b54ca541d5":[8,0,0,0,0,3,2,2,2,37],
+"stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#adf2b5b8ca370a972dc298265eb859894":[8,0,0,0,0,3,2,2,2,19],
+"stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#aeeda81e8dcacff3172020a9f2e2a49d9":[8,0,0,0,0,3,2,2,2,25],
 "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#af38434843fde1e03292e09a8658f9fbb":[8,0,0,0,0,3,2,2,2,31],
 "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#afb5047901d3fea90c147a5477a9e441d":[8,0,0,0,0,3,2,2,2,35],
 "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#afc6cede7e395db0695616d28f54d7812":[8,0,0,0,0,3,2,2,2,8],
@@ -246,8 +249,5 @@ var NAVTREEINDEX53 =
 "structDoubleRates.html#a73bba193cdc5815d6bbf2d0af7fce341":[7,0,36,1],
 "structDoubleRates.html#a7900fc423e0731a60ec3b3a502cef75a":[7,0,36,2],
 "structDoubleVect2.html":[7,0,38],
-"structDoubleVect2.html#a7519f4492e3d607594df79b3d30ad082":[7,0,38,0],
-"structDoubleVect2.html#affadcf01db2266a4f51b772f6dde199d":[7,0,38,1],
-"structDoubleVect3.html":[7,0,39],
-"structDoubleVect3.html#a1e604dfad58d149b370252ea98f36888":[7,0,39,1]
+"structDoubleVect2.html#a7519f4492e3d607594df79b3d30ad082":[7,0,38,0]
 };
