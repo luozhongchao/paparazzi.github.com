@@ -57,6 +57,7 @@ var searchData=
   ['throttlepy',['throttlePy',['../OSAMNav_8c.html#aee80d19bc625bc3648e1ef541a202c60',1,'OSAMNav.c']]],
   ['throttleslope',['ThrottleSlope',['../OSAMNav_8c.html#ac75552b874c562cb699fc56298d01697',1,'OSAMNav.c']]],
   ['thrust_5fcoef',['thrust_coef',['../motor__mixing_8c.html#a9210d61b97637a7c08d7baf222d3b9ec',1,'motor_mixing.c']]],
+  ['ticks_5fper_5fsec',['ticks_per_sec',['../structsys__time.html#a10cff0d019d62eafe6033e71f8bbf62f',1,'sys_time']]],
   ['tim',['tim',['../structscbRegs__t.html#af6beaf73adeef7114c3424da0d4ffc37',1,'scbRegs_t']]],
   ['time_5fsince_5flast_5fframe',['time_since_last_frame',['../structRadioControl.html#a009f85397fd864a703ce54da8f02daa8',1,'RadioControl']]],
   ['timeout',['timeout',['../structLisaOveroLink.html#afc5a5984d79f3a07d2763089546f0f2d',1,'LisaOveroLink::timeout()'],['../structuart__state.html#ad45d7219d55de38ab9cd8a4c7edd6e8a',1,'uart_state::timeout()'],['../structHmc5843.html#ada82622fad1a3e2d09d74032fc65a87d',1,'Hmc5843::timeout()']]],

@@ -67,5 +67,6 @@ var searchData=
   ['ned_5fof_5flla_5fvect_5fi',['ned_of_lla_vect_i',['../pprz__geodetic__int_8c.html#a58243b878d6c96d0bbbae0cc1950da75',1,'ned_of_lla_vect_i(struct NedCoor_i *ned, struct LtpDef_i *def, struct LlaCoor_i *lla):&#160;pprz_geodetic_int.c'],['../pprz__geodetic__int_8h.html#a58243b878d6c96d0bbbae0cc1950da75',1,'ned_of_lla_vect_i(struct NedCoor_i *ned, struct LtpDef_i *def, struct LlaCoor_i *lla):&#160;pprz_geodetic_int.c']]],
   ['nmea_5fparse_5fchar',['nmea_parse_char',['../gps__nmea_8c.html#af2c40746dbb1a1371e3411033e64239a',1,'nmea_parse_char(uint8_t c):&#160;gps_nmea.c'],['../gps__nmea_8h.html#af2c40746dbb1a1371e3411033e64239a',1,'nmea_parse_char(uint8_t c):&#160;gps_nmea.c']]],
   ['nmea_5fparse_5fmsg',['nmea_parse_msg',['../gps__nmea_8c.html#a2f49ea43d042f884e3ec12e5e14abc97',1,'nmea_parse_msg(void):&#160;gps_nmea.c'],['../gps__nmea_8h.html#a2f49ea43d042f884e3ec12e5e14abc97',1,'nmea_parse_msg(void):&#160;gps_nmea.c']]],
-  ['normalize',['Normalize',['../ahrs__float__dcm_8c.html#a231f7602591a267c2669a2af9b9c8749',1,'ahrs_float_dcm.c']]]
+  ['normalize',['Normalize',['../ahrs__float__dcm_8c.html#a231f7602591a267c2669a2af9b9c8749',1,'ahrs_float_dcm.c']]],
+  ['nsec_5fof_5fcpu_5fticks',['nsec_of_cpu_ticks',['../sys__time_8h.html#a259e827ee9dc84a8930a48729ded7baf',1,'sys_time.h']]]
 ];

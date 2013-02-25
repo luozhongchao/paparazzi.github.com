@@ -1,10 +1,5 @@
 var NAVTREEINDEX35 =
 {
-"module__aoa_adc.html#functions":[2,52,1],
-"module__aoa_adc.html#headers":[2,52,2,0],
-"module__aoa_adc.html#init_functions":[2,52,1,0],
-"module__aoa_adc.html#module_xml__aoa_adc":[2,52,2,2],
-"module__aoa_adc.html#periodic_functions":[2,52,1,1],
 "module__aoa_adc.html#sources":[2,52,2,1],
 "module__baro_amsys.html":[2,59],
 "module__baro_amsys.html#configuration":[2,59,0],
@@ -249,5 +244,10 @@ var NAVTREEINDEX35 =
 "module__flight_benchmark.html#module_xml__flight_benchmark":[2,4,1,2],
 "module__flight_benchmark.html#periodic_functions":[2,4,0,1],
 "module__flight_benchmark.html#sources":[2,4,1,1],
-"module__formation_flight.html":[2,49]
+"module__formation_flight.html":[2,49],
+"module__formation_flight.html#files":[2,49,1],
+"module__formation_flight.html#functions":[2,49,0],
+"module__formation_flight.html#headers":[2,49,1,0],
+"module__formation_flight.html#init_functions":[2,49,0,0],
+"module__formation_flight.html#module_xml__formation_flight":[2,49,1,2]
 };

@@ -56,6 +56,8 @@ var searchData=
   ['req_5ftrans',['req_trans',['../structMs2100.html#a94d0d01e5c3a9d851c8cbec1ded9b296',1,'Ms2100']]],
   ['reset',['reset',['../structGpsState.html#ae9f9449dccc1b1f9404d44246245ef7b',1,'GpsState::reset()'],['../baro__MS5534A_8c.html#ae9f68c6af70342cbaad9f8500d0b6f23',1,'reset():&#160;baro_MS5534A.c']]],
   ['residual',['residual',['../structAhrsIntCmplEuler.html#a65da0278b786a678fc1bd6fd9fb61cee',1,'AhrsIntCmplEuler']]],
+  ['resolution_5fcpu_5fticks',['resolution_cpu_ticks',['../structsys__time.html#a6afb6a9b84be1fe714c946b509585de9',1,'sys_time']]],
+  ['resolution_5fsec',['resolution_sec',['../structsys__time.html#a4ba15440fbee3b063c95633d093ce2b9',1,'sys_time']]],
   ['resolve',['resolve',['../structtcas__ac__status.html#a415f4bed7ba6cfa8c1ee181ba8054a4e',1,'tcas_ac_status']]],
   ['resync',['ReSync',['../structSpektrumStateStruct.html#aad2f4a8760ecd6a4bd62455d8f4569d4',1,'SpektrumStateStruct']]],
   ['ret_5fend',['ret_end',['../poly__survey__adv_8c.html#af71842340601e3a253b965eaac766271',1,'poly_survey_adv.c']]],

@@ -113,6 +113,5 @@ var searchData=
   ['norm2pi',['Norm2Pi',['../snav_8c.html#a9d26b9a8d6e9b268e247f2d601b450c8',1,'snav.c']]],
   ['normalizercdl',['NormalizeRcDl',['../rc__datalink_8h.html#a21b56adc7f34d78cef60b12435a9ed56',1,'rc_datalink.h']]],
   ['normcourse',['NormCourse',['../navigation_8h.html#a397bca15d146964a80f93abd74763384',1,'NormCourse():&#160;navigation.h'],['../nav_8h.html#a397bca15d146964a80f93abd74763384',1,'NormCourse():&#160;nav.h']]],
-  ['normxy',['NORMXY',['../cartography_8c.html#afd8dc60935a044f21a240a5fb63b1022',1,'cartography.c']]],
-  ['nsec_5fof_5fsys_5ftime_5fticks',['NSEC_OF_SYS_TIME_TICKS',['../sys__time_8h.html#ab2e8232862c2c9daed4eccaf35ebfbeb',1,'sys_time.h']]]
+  ['normxy',['NORMXY',['../cartography_8c.html#afd8dc60935a044f21a240a5fb63b1022',1,'cartography.c']]]
 ];

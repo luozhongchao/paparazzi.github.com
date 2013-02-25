@@ -1,10 +1,5 @@
 var NAVTREEINDEX36 =
 {
-"module__formation_flight.html#files":[2,49,1],
-"module__formation_flight.html#functions":[2,49,0],
-"module__formation_flight.html#headers":[2,49,1,0],
-"module__formation_flight.html#init_functions":[2,49,0,0],
-"module__formation_flight.html#module_xml__formation_flight":[2,49,1,2],
 "module__formation_flight.html#sources":[2,49,1,1],
 "module__gain_scheduling.html":[2,84],
 "module__gain_scheduling.html#files":[2,84,1],
@@ -249,5 +244,10 @@ var NAVTREEINDEX36 =
 "module__light.html#init_functions":[2,91,1,0],
 "module__light.html#module_xml__light":[2,91,2,2],
 "module__light.html#periodic_functions":[2,91,1,1],
-"module__light.html#sources":[2,91,2,1]
+"module__light.html#sources":[2,91,2,1],
+"module__light_solar.html":[2,41],
+"module__light_solar.html#files":[2,41,1],
+"module__light_solar.html#functions":[2,41,0],
+"module__light_solar.html#headers":[2,41,1,0],
+"module__light_solar.html#init_functions":[2,41,0,0]
 };

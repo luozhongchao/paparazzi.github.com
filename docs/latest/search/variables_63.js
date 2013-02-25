@@ -139,6 +139,7 @@ var searchData=
   ['cpol',['cpol',['../structlocm3__spi__comm.html#a1c177bb06401402fa1790e975164f638',1,'locm3_spi_comm::cpol()'],['../structspi__transaction.html#a1c63fdf45b423a121cf0666a8aaa2539',1,'spi_transaction::cpol()']]],
   ['cpsr',['cpsr',['../structsspRegs__t.html#a685be7294479c4c6a11c06035a0bd4dc',1,'sspRegs_t']]],
   ['cpu_5fload',['cpu_load',['../structSysMon.html#a2ad135a8060d1f64cfab07279db4fb5f',1,'SysMon']]],
+  ['cpu_5fticks_5fper_5fsec',['cpu_ticks_per_sec',['../structsys__time.html#a3c72a20e3a9db56e14d54c8c7cbac0f3',1,'sys_time']]],
   ['cputemp',['cputemp',['../structCHIMU__sensor__data.html#a5690daa586c0c9551527d1ae24068a70',1,'CHIMU_sensor_data']]],
   ['cr',['cr',['../structadcRegs__t.html#a43115d3a9e659d4f536f9be6c55f879f',1,'adcRegs_t::cr()'],['../structscbRegs__t.html#a556e224bb42f75d384d0128faf3e7700',1,'scbRegs_t::cr()'],['../structspiRegs__t.html#a270d1a9e7d4b5998419047e9add141ad',1,'spiRegs_t::cr()']]],
   ['cr0',['cr0',['../structsspRegs__t.html#a754ffce69e4f4ecc1747d442916ed840',1,'sspRegs_t::cr0()'],['../structpwmTmrRegs__t.html#ab10c5987d0a9a7f1343d0c15e8fb4d47',1,'pwmTmrRegs_t::cr0()']]],

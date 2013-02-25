@@ -34,5 +34,7 @@ var searchData=
   ['usb_5flp_5fcan1_5frx0_5firq_5fhandler',['usb_lp_can1_rx0_irq_handler',['../can__arch_8h.html#a709ff5731598a42ba2cf29ddc0bba6a1',1,'can_arch.h']]],
   ['usb_5flp_5fcan_5frx0_5fisr',['usb_lp_can_rx0_isr',['../can__arch_8c.html#aac0d36e759b3f7a070fe08d9dddc9cd0',1,'can_arch.c']]],
   ['usbinthandler',['USBIntHandler',['../usb__ser__hw_8c.html#ae891f923dd9e5e6d7630c5ffc64ce0ec',1,'usb_ser_hw.c']]],
+  ['usec_5fof_5fcpu_5fticks',['usec_of_cpu_ticks',['../sys__time_8h.html#accfe48ce3dfcbde6a29cff779366abb6',1,'sys_time.h']]],
+  ['usec_5fof_5fsys_5ftime_5fticks',['usec_of_sys_time_ticks',['../sys__time_8h.html#adb22f2652f04908fbc644c7274bf7273',1,'sys_time.h']]],
   ['utm_5fof_5flla_5ff',['utm_of_lla_f',['../pprz__geodetic__float_8c.html#af99d4775df518f30b741b49c26eceedd',1,'utm_of_lla_f(struct UtmCoor_f *utm, struct LlaCoor_f *lla):&#160;pprz_geodetic_float.c'],['../pprz__geodetic__float_8h.html#af99d4775df518f30b741b49c26eceedd',1,'utm_of_lla_f(struct UtmCoor_f *utm, struct LlaCoor_f *lla):&#160;pprz_geodetic_float.c']]]
 ];

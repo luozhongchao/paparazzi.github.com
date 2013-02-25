@@ -1,16 +1,5 @@
 var NAVTREEINDEX61 =
 {
-"tiny__0_899_8h.html#a3fc5f96f074d833b909fd75c92b7d2d0":[8,0,0,0,1,21,0],
-"tiny__0_899_8h.html#a43abb7ff318cb315c8b5134ee8d96fd2":[8,0,0,0,1,21,23],
-"tiny__0_899_8h.html#a474279f28350114950d862951d72de66":[8,0,0,0,1,21,6],
-"tiny__0_899_8h.html#a482794539449d37c65de123d0d629acb":[8,0,0,0,1,21,8],
-"tiny__0_899_8h.html#a4b04c8175ead918a9ee42816b06a04e8":[8,0,0,0,1,21,35],
-"tiny__0_899_8h.html#a4e4204874a63b2a01811ee2819285f58":[8,0,0,0,1,21,22],
-"tiny__0_899_8h.html#a527cf6cfbed24e043ed4ee710baed3f1":[8,0,0,0,1,21,25],
-"tiny__0_899_8h.html#a5cbcaa568e20fcd4cc9325927d370860":[8,0,0,0,1,21,3],
-"tiny__0_899_8h.html#a620741f492787e04779bab21e6658113":[8,0,0,0,1,21,17],
-"tiny__0_899_8h.html#a62cb06db3908015c7305ca6833f90159":[8,0,0,0,1,21,39],
-"tiny__0_899_8h.html#a697b8e633c428bd167844542c8c1453f":[8,0,0,0,1,21,38],
 "tiny__0_899_8h.html#a78579f743b58c20ec8d10120d8381148":[8,0,0,0,1,21,19],
 "tiny__0_899_8h.html#a802b2b582b121e4632aa9a491d503720":[8,0,0,0,1,21,15],
 "tiny__0_899_8h.html#a81e5e7496f2d92266f742c9cafbf8e16":[8,0,0,0,1,21,28],
@@ -249,5 +238,16 @@ var NAVTREEINDEX61 =
 "trig__ext__hw_8c.html":[8,0,0,0,0,0,2,3,2],
 "trig__ext__hw_8c.html#a1475a5d212043e635accd9b651da5163":[8,0,0,0,0,0,2,3,2,2],
 "trig__ext__hw_8c.html#a1bff3aeb61914b47d6d91311bccb1578":[8,0,0,0,0,0,2,3,2,4],
-"trig__ext__hw_8c.html#a56e54de86963d409531335bbde34ea10":[8,0,0,0,0,0,2,3,2,0]
+"trig__ext__hw_8c.html#a56e54de86963d409531335bbde34ea10":[8,0,0,0,0,0,2,3,2,0],
+"trig__ext__hw_8c.html#a7b886bd7a08aff09f519e9eee931c171":[8,0,0,0,0,0,2,3,2,3],
+"trig__ext__hw_8c.html#ad7ca2e350f249bba99a8a506cf5892c4":[8,0,0,0,0,0,2,3,2,1],
+"trig__ext__hw_8c_source.html":[8,0,0,0,0,0,2,3,2],
+"trig__ext__hw_8h.html":[8,0,0,0,0,0,2,3,3],
+"trig__ext__hw_8h.html#a1475a5d212043e635accd9b651da5163":[8,0,0,0,0,0,2,3,3,4],
+"trig__ext__hw_8h.html#a1bff3aeb61914b47d6d91311bccb1578":[8,0,0,0,0,0,2,3,3,6],
+"trig__ext__hw_8h.html#a56e54de86963d409531335bbde34ea10":[8,0,0,0,0,0,2,3,3,2],
+"trig__ext__hw_8h.html#a7b886bd7a08aff09f519e9eee931c171":[8,0,0,0,0,0,2,3,3,5],
+"trig__ext__hw_8h.html#a80ce25041c38ee2a1bb26b18549e8423":[8,0,0,0,0,0,2,3,3,3],
+"trig__ext__hw_8h.html#a8fe7de82b6ed9cb997ee90bb5f9855cb":[8,0,0,0,0,0,2,3,3,0],
+"trig__ext__hw_8h.html#afebdecba7de31dba550adc57cf2c5626":[8,0,0,0,0,0,2,3,3,1]
 };

@@ -349,8 +349,6 @@ var searchData=
   ['ms5611_5fspi_5fdev',['MS5611_SPI_DEV',['../baro__ms5611__spi_8c.html#afd80227f5b8dc165b04d4ee75a644115',1,'baro_ms5611_spi.c']]],
   ['ms5611_5fstart_5fconv_5fd1',['MS5611_START_CONV_D1',['../baro__ms5611__i2c_8h.html#a1d497475691f33aee46953d0fc3003e4',1,'MS5611_START_CONV_D1():&#160;baro_ms5611_i2c.h'],['../ms5611_8h.html#a1d497475691f33aee46953d0fc3003e4',1,'MS5611_START_CONV_D1():&#160;ms5611.h']]],
   ['ms5611_5fstart_5fconv_5fd2',['MS5611_START_CONV_D2',['../baro__ms5611__i2c_8h.html#a94a2476bb62db682aa6512deea1dc72a',1,'MS5611_START_CONV_D2():&#160;baro_ms5611_i2c.h'],['../ms5611_8h.html#a94a2476bb62db682aa6512deea1dc72a',1,'MS5611_START_CONV_D2():&#160;ms5611.h']]],
-  ['msec_5fof_5fcpu_5fticks',['MSEC_OF_CPU_TICKS',['../lpc21_2mcu__periph_2sys__time__arch_8h.html#af99860f73edd44bf3a75ecee175aac48',1,'MSEC_OF_CPU_TICKS():&#160;sys_time_arch.h'],['../sim_2mcu__periph_2sys__time__arch_8h.html#af99860f73edd44bf3a75ecee175aac48',1,'MSEC_OF_CPU_TICKS():&#160;sys_time_arch.h'],['../stm32_2mcu__periph_2sys__time__arch_8h.html#af99860f73edd44bf3a75ecee175aac48',1,'MSEC_OF_CPU_TICKS():&#160;sys_time_arch.h']]],
-  ['msec_5fof_5fsys_5ftime_5fticks',['MSEC_OF_SYS_TIME_TICKS',['../sys__time_8h.html#a9bc13f1545b1be913f5b3ef086ede6d4',1,'sys_time.h']]],
   ['msec_5fper_5fweek',['MSEC_PER_WEEK',['../gps_8c.html#afb214dd6709e7dc32173499a040c80e5',1,'gps.c']]],
   ['msg00_5fping',['MSG00_PING',['../imu__chimu_8h.html#ac0d004bb12aaf75aafaa59cefce09349',1,'imu_chimu.h']]],
   ['msg01_5fbias',['MSG01_BIAS',['../imu__chimu_8h.html#a907330144433a7d4815aa5aba5d4b6b7',1,'imu_chimu.h']]],

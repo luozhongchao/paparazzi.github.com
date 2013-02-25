@@ -193,10 +193,8 @@ var searchData=
   ['use_5fonboard_5fcamera',['USE_ONBOARD_CAMERA',['../cartography_8c.html#a080ac69f1b64d76f6d739ca2799c61d2',1,'cartography.c']]],
   ['use_5fref',['USE_REF',['../stabilization__attitude__ref__euler__float_8c.html#a3c99ee2341536555e7a3e17736d4402a',1,'stabilization_attitude_ref_euler_float.c']]],
   ['use_5fusb_5fhigh_5fpclk',['USE_USB_HIGH_PCLK',['../logom__2_86_8h.html#acafa53cbec97b0cd6dd514a5bfd1b9ce',1,'logom_2.6.h']]],
-  ['usec_5fof_5fcpu_5fticks',['USEC_OF_CPU_TICKS',['../lpc21_2mcu__periph_2sys__time__arch_8h.html#a754eb4c595164d55f7728e09b0e84f7e',1,'USEC_OF_CPU_TICKS():&#160;sys_time_arch.h'],['../sim_2mcu__periph_2sys__time__arch_8h.html#a754eb4c595164d55f7728e09b0e84f7e',1,'USEC_OF_CPU_TICKS():&#160;sys_time_arch.h'],['../stm32_2mcu__periph_2sys__time__arch_8h.html#a754eb4c595164d55f7728e09b0e84f7e',1,'USEC_OF_CPU_TICKS():&#160;sys_time_arch.h']]],
-  ['usec_5fof_5frc_5fppm_5fticks',['USEC_OF_RC_PPM_TICKS',['../lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#a0787c18cdf118ffe9896dd867a372a4e',1,'USEC_OF_RC_PPM_TICKS():&#160;ppm_arch.h'],['../sim_2subsystems_2radio__control_2ppm__arch_8h.html#a90e43efe00cc84370f7aaad28816e8ab',1,'USEC_OF_RC_PPM_TICKS():&#160;ppm_arch.h'],['../stm32_2subsystems_2radio__control_2ppm__arch_8h.html#a962b9942b2dfacf94028a3c538341b4e',1,'USEC_OF_RC_PPM_TICKS():&#160;ppm_arch.h']]],
+  ['usec_5fof_5frc_5fppm_5fticks',['USEC_OF_RC_PPM_TICKS',['../lpc21_2subsystems_2radio__control_2ppm__arch_8h.html#a962b9942b2dfacf94028a3c538341b4e',1,'USEC_OF_RC_PPM_TICKS():&#160;ppm_arch.h'],['../sim_2subsystems_2radio__control_2ppm__arch_8h.html#a90e43efe00cc84370f7aaad28816e8ab',1,'USEC_OF_RC_PPM_TICKS():&#160;ppm_arch.h'],['../stm32_2subsystems_2radio__control_2ppm__arch_8h.html#a962b9942b2dfacf94028a3c538341b4e',1,'USEC_OF_RC_PPM_TICKS():&#160;ppm_arch.h']]],
   ['usec_5fof_5fsec',['USEC_OF_SEC',['../sys__time_8h.html#a16b92e3e15d99fcf7029503763a63b61',1,'sys_time.h']]],
-  ['usec_5fof_5fsys_5ftime_5fticks',['USEC_OF_SYS_TIME_TICKS',['../sys__time_8h.html#a7cdc6416e689f231d136618a2c2f8278',1,'sys_time.h']]],
   ['utm_5fhem_5fnorth',['UTM_HEM_NORTH',['../gps__ubx_8c.html#a81b821d6b2b90cd4dd34b36833f667a7',1,'gps_ubx.c']]],
   ['utm_5fhem_5fsouth',['UTM_HEM_SOUTH',['../gps__ubx_8c.html#a32e3449d116d85cc44da6f9fbd9ff871',1,'gps_ubx.c']]]
 ];

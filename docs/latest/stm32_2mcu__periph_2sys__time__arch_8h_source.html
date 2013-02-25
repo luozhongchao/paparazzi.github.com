@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-548-g3f3f5e0</span>
+   &#160;<span id="projectnumber">v4.9_devel-556-gfd7989b</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -142,54 +142,41 @@ $(document).ready(function(){initNavTree('stm32_2mcu__periph_2sys__time__arch_8h
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="sim_2mcu__periph_2sys__time__arch_8c.html#afdd94f850b193691f1bfc60c724b542a">sys_tick_handler</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * sys tick timer is running with AHB_CLK / 8</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#af8a5e19788844087b9d3a9261f6547ec">   47</a></span>&#160;<span class="preprocessor">#define CPU_TICKS_OF_SEC(s)        (uint32_t)((s) * (AHB_CLK / 8) + 0.5)</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#af3e4abc9332366c7cee36d78c8deb080">   48</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SIGNED_CPU_TICKS_OF_SEC(s)  (int32_t)((s) * (AHB_CLK / 8) + 0.5)</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#a07379903f6d763ea54fbfd9de4d2155d">   50</a></span>&#160;<span class="preprocessor">#define SEC_OF_CPU_TICKS(t)  ((t) / (AHB_CLK / 8))</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#af99860f73edd44bf3a75ecee175aac48">   51</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MSEC_OF_CPU_TICKS(t) ((t) / (AHB_CLK / 8000))</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#a754eb4c595164d55f7728e09b0e84f7e">   52</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define USEC_OF_CPU_TICKS(t) ((t) / (AHB_CLK / 8000000))</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#af3a1d6edcddd66ef6e1ac49dc3e99abf">   59</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#af3a1d6edcddd66ef6e1ac49dc3e99abf" title="Get the time in microseconds since startup.">get_sys_time_usec</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a2e86fdabba99a0ac8f6409e0d1e694a3" title="full seconds since startup">nb_sec</a> * 1000000 +</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#a754eb4c595164d55f7728e09b0e84f7e">USEC_OF_CPU_TICKS</a>(<a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a8654f589772b3eef22ab59594c97e513" title="remainder of second in CPU_TICKS">nb_sec_rem</a>) +</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#a754eb4c595164d55f7728e09b0e84f7e">USEC_OF_CPU_TICKS</a>(STK_LOAD - systick_get_value());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/* Generic timer macros */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#a0583c93a24eed5f81e1f647ca63a652a">   66</a></span>&#160;<span class="preprocessor">#define SysTimeTimerStart(_t) { _t = get_sys_time_usec(); }</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#a2dfaf7d6ae83a19972aca429fc687e87">   67</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SysTimeTimer(_t) ( get_sys_time_usec() - (_t))</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#abb950f6634af7da754fa0c6d99d689cb">   68</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SysTimeTimerStop(_t) { _t = ( get_sys_time_usec() - (_t)); }</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa">   73</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait in microseconds.">sys_time_usleep</a>(<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> us) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> start = systick_get_value();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> ticks = <a class="code" href="sys__time_8h.html#a167a98a5809c390ff634c56319833917">CPU_TICKS_OF_USEC</a>(us);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">/* cortex systick counts backwards */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> d = start - ticks;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> end = 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">/* check if it wraps around zero */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">if</span> (d &gt;= 0) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    end = d;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">while</span> (systick_get_value() &gt; end);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">/* wait to zero */</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">while</span> (systick_get_value() &gt; 0);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">/* wrap to reload value, wait the rest */</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    end = STK_LOAD + d;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">while</span> (systick_get_value() &gt; end);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SYS_TIME_ARCH_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#af3a1d6edcddd66ef6e1ac49dc3e99abf">   49</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> <a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#af3a1d6edcddd66ef6e1ac49dc3e99abf" title="Get the time in microseconds since startup.">get_sys_time_usec</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a2e86fdabba99a0ac8f6409e0d1e694a3" title="full seconds since startup">nb_sec</a> * 1000000 +</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="sys__time_8h.html#accfe48ce3dfcbde6a29cff779366abb6">usec_of_cpu_ticks</a>(<a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a8654f589772b3eef22ab59594c97e513" title="remainder of seconds since startup in CPU_TICKS">nb_sec_rem</a>) +</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="sys__time_8h.html#accfe48ce3dfcbde6a29cff779366abb6">usec_of_cpu_ticks</a>(systick_get_reload() - systick_get_value());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/* Generic timer macros */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#a0583c93a24eed5f81e1f647ca63a652a">   56</a></span>&#160;<span class="preprocessor">#define SysTimeTimerStart(_t) { _t = get_sys_time_usec(); }</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#a2dfaf7d6ae83a19972aca429fc687e87">   57</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SysTimeTimer(_t) ( get_sys_time_usec() - (_t))</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#abb950f6634af7da754fa0c6d99d689cb">   58</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SysTimeTimerStop(_t) { _t = ( get_sys_time_usec() - (_t)); }</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa">   64</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa" title="Busy wait in microseconds.">sys_time_usleep</a>(<a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> us) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">/* duration and end time in SYS_TIME_TICKS */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> d_sys_ticks = <a class="code" href="sys__time_8h.html#a46ccccbd8fdf3b1c359475fd05bebd0b">sys_time_ticks_of_usec</a>(us);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> end_nb_tick = <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a08a221fc6226e9b3dce3bdd8ef08803c" title="SYS_TIME_TICKS since startup.">nb_tick</a> + d_sys_ticks;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">/* remainder in CPU_TICKS */</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> rem_cpu_ticks = <a class="code" href="sys__time_8h.html#a8ef407ab9dc5065c7e7768da22bd2ab7">cpu_ticks_of_usec</a>(us) - d_sys_ticks * <a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a6afb6a9b84be1fe714c946b509585de9" title="sys_time_timer resolution in cpu ticks">resolution_cpu_ticks</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">/* cortex systick counts backwards, end value is reload_value - remainder */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="types_8h.html#a06896e8c53f721507066c079052171f8">uint32_t</a> end_cpu_ticks = systick_get_reload() - rem_cpu_ticks;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">/* first wait until end time in SYS_TIME_TICKS */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="structsys__time.html">sys_time</a>.<a class="code" href="structsys__time.html#a08a221fc6226e9b3dce3bdd8ef08803c" title="SYS_TIME_TICKS since startup.">nb_tick</a> &lt; end_nb_tick);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">/* then wait remaining cpu ticks */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">while</span> (systick_get_value() &gt; end_cpu_ticks);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SYS_TIME_ARCH_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_ebfa5059daba0d85a68f1520147b1a51.html">stm32</a></li><li class="navelem"><a class="el" href="dir_0722e4cfffe4ffd4c81bbc7e5d686ba4.html">mcu_periph</a></li><li class="navelem"><a class="el" href="stm32_2mcu__periph_2sys__time__arch_8h.html">sys_time_arch.h</a></li>
-    <li class="footer">Generated on Sun Feb 24 2013 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Mon Feb 25 2013 04:00:12 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>
