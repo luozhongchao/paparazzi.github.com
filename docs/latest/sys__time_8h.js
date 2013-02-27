@@ -2,8 +2,8 @@ var sys__time_8h =
 [
     [ "sys_time_timer", "structsys__time__timer.html", "structsys__time__timer" ],
     [ "sys_time", "structsys__time.html", "structsys__time" ],
+    [ "SYS_TIME_FREQUENCY", "sys__time_8h.html#a1af9cc60972c40f4b83306d8ee75560e", null ],
     [ "SYS_TIME_NB_TIMER", "sys__time_8h.html#ab5a17fcb1104999c805fb6f555b15b19", null ],
-    [ "SYS_TIME_RESOLUTION", "sys__time_8h.html#a7b7fcbba8115359cf2c95a82dcc1a0ed", null ],
     [ "USEC_OF_SEC", "sys__time_8h.html#a16b92e3e15d99fcf7029503763a63b61", null ],
     [ "sys_time_cb", "sys__time_8h.html#a7c75e80c3211af63abc57efa18647726", null ],
     [ "tid_t", "sys__time_8h.html#aa448b29ae120d238dba2cb20079540ab", null ],

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-560-g37b791e</span>
+   &#160;<span id="projectnumber">v4.9_devel-571-g70fc079</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -166,13 +166,18 @@ $(document).ready(function(){initNavTree('uart_8c_source.html','');});
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(space - 1) &gt;= len;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="uart_8h.html#adb9a60ec94a31a08e6454ccf64f24039">   60</a></span>&#160;<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="uart_8c.html#adb9a60ec94a31a08e6454ccf64f24039">uart_getch</a>(<span class="keyword">struct</span> <a class="code" href="structuart__periph.html" title="UART peripheral.">uart_periph</a>* <a class="code" href="ins__alt__float_8c.html#a9d3f100c4375da4d957dbe599d494905">p</a>) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> ret = p-&gt;<a class="code" href="structuart__periph.html#aae582e1021f8139f7461a80477d1dc5b">rx_buf</a>[p-&gt;<a class="code" href="structuart__periph.html#a8f5faa6ee1d323375397db0a68603845">rx_extract_idx</a>];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  p-&gt;<a class="code" href="structuart__periph.html#a8f5faa6ee1d323375397db0a68603845">rx_extract_idx</a> = (p-&gt;<a class="code" href="structuart__periph.html#a8f5faa6ee1d323375397db0a68603845">rx_extract_idx</a> + 1) % <a class="code" href="uart_8h.html#a5bdd6772c246436bb14377095de79b31">UART_RX_BUFFER_SIZE</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_1ca43f6a116d741d80fb1d0555a2b198.html">mcu_periph</a></li><li class="navelem"><a class="el" href="uart_8c.html">uart.c</a></li>
-    <li class="footer">Generated on Tue Feb 26 2013 04:00:16 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Feb 27 2013 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -349,7 +349,7 @@ var searchData=
   ['config_5fdone',['config_done',['../structads1114__periph.html#a92f5a29419a924033bcadd5caf8ad6e7',1,'ads1114_periph']]],
   ['configure_5fgps_5freset_5fpin',['Configure_GPS_RESET_Pin',['../logom__2_86_8h.html#a0fad87177073eb3f02c6fc96a97328e7',1,'Configure_GPS_RESET_Pin():&#160;logom_2.6.h'],['../sdlog__1_80_8h.html#a0fad87177073eb3f02c6fc96a97328e7',1,'Configure_GPS_RESET_Pin():&#160;sdlog_1.0.h'],['../tiny__2_81_8h.html#a0fad87177073eb3f02c6fc96a97328e7',1,'Configure_GPS_RESET_Pin():&#160;tiny_2.1.h']]],
   ['configure_5fsocket',['configure_socket',['../w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4',1,'w5100.c']]],
-  ['configured',['CONFIGURED',['../lisa__test__adxl345_8c.html#a514476189fbaf15c716d5e846955d2b8',1,'CONFIGURED():&#160;lisa_test_adxl345.c'],['../lisa__test__adxl345__dma_8c.html#a514476189fbaf15c716d5e846955d2b8',1,'CONFIGURED():&#160;lisa_test_adxl345_dma.c']]],
+  ['configured',['CONFIGURED',['../lisa__test__adxl345__dma_8c.html#a514476189fbaf15c716d5e846955d2b8',1,'lisa_test_adxl345_dma.c']]],
   ['conp',['conp',['../structscbRegs__t.html#a0c5c2b212f7b9962718a9aac0ccf1fc4',1,'scbRegs_t']]],
   ['conset',['conset',['../structi2cRegs__t.html#a16b10d1ca824a8c0aa8fccf9957dc133',1,'i2cRegs_t']]],
   ['consumed',['consumed',['../structElectrical.html#aded18d0de371b25162f53cb5f6e1e6a1',1,'Electrical']]],

@@ -111,7 +111,7 @@ var searchData=
   ['wp_5fa',['wp_a',['../snav_8c.html#a09c4031a2263a02d4ba3b5b0580db9e3',1,'snav.c']]],
   ['wp_5fspeed_5fmax',['wp_speed_max',['../vi__datalink_8c.html#ac28bed701abb0a0d81a2aef8070f6639',1,'vi_datalink.c']]],
   ['wp_5fta',['wp_ta',['../snav_8c.html#a686de5154e3c1082f2de26c201328689',1,'snav.c']]],
-  ['write_5fto_5freg',['write_to_reg',['../lisa__test__adxl345_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95',1,'write_to_reg(uint8_t addr, uint8_t val):&#160;lisa_test_adxl345.c'],['../lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95',1,'write_to_reg(uint8_t addr, uint8_t val):&#160;lisa_test_adxl345_dma.c']]],
+  ['write_5fto_5freg',['write_to_reg',['../lisa__test__adxl345__dma_8c.html#a49e92ddc14319ecfc71e3e0f92e1ce95',1,'lisa_test_adxl345_dma.c']]],
   ['writepcap01_5ffirmware',['writePCAP01_firmware',['../humid__pcap01_8h.html#a7ec863182ab246920078b78e17003bd4',1,'humid_pcap01.h']]],
   ['writepcap01_5fsram',['writePCAP01_SRAM',['../humid__pcap01_8c.html#ab2cb1ad8c696c29efe17a06b6c53d01f',1,'writePCAP01_SRAM(uint8_t data, uint16_t s_add):&#160;humid_pcap01.c'],['../humid__pcap01_8h.html#ab2cb1ad8c696c29efe17a06b6c53d01f',1,'writePCAP01_SRAM(uint8_t data, uint16_t s_add):&#160;humid_pcap01.c']]]
 ];

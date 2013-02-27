@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-560-g37b791e</span>
+   &#160;<span id="projectnumber">v4.9_devel-571-g70fc079</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -194,18 +194,18 @@ $(document).ready(function(){initNavTree('max3100__hw_8h_source.html','');});
 <div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a50cbcebdad0c5543e4b80a2d58314fc0">   87</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MAX3100_T_BIT 14</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a5a4cc926108ee3820da4b99086e82d2a">   88</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MAX3100_R_BIT 15</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#aa94314adfe741b19852f7599313cea93">   91</a></span>&#160;<span class="preprocessor">#define Uart3100Init() {} </span><span class="comment">/* Already initialized as a module */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#abf432b3b597fde22a79cdfbe2a75de0f">   92</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Uart3100CheckFreeSpace(_len) (((int16_t)max3100_tx_extract_idx - max3100_tx_insert_idx + MAX3100_TX_BUF_LEN - 1) % MAX3100_TX_BUF_LEN &gt;= _len)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#afc04d18c6cd20a3a045b455b49c32abd">   91</a></span>&#160;<span class="preprocessor">#define UART3100Init() {} </span><span class="comment">/* Already initialized as a module */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a09e0a4eeea817d464b450f30bbc19e3f">   92</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define UART3100CheckFreeSpace(_len) (((int16_t)max3100_tx_extract_idx - max3100_tx_insert_idx + MAX3100_TX_BUF_LEN - 1) % MAX3100_TX_BUF_LEN &gt;= _len)</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a7455e9c5a7fc9a2a1c234b0f8e2db5fe">   94</a></span>&#160;<span class="preprocessor">#define Uart3100Transmit(_x) { max3100_putchar(_x); }</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a5eba289503c6c9f2a7cef814170e4d69">   95</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Uart3100SendMessage() {}</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a42c2cc56043c3c7ec4e3980b0c094f1c">   96</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Uart3100Getch() ({\</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#afdd53959acef84a2dab65c9652d8f7bd">   94</a></span>&#160;<span class="preprocessor">#define UART3100Transmit(_x) { max3100_putchar(_x); }</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a7c9ec525f7443255469681928be84baa">   95</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define UART3100SendMessage() {}</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a6017c95ea4db7e30dc7361cc11523492">   96</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define UART3100Getch() ({\</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">   uint8_t ret = max3100_rx_buf[max3100_rx_extract_idx]; \</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">   max3100_rx_extract_idx++; </span><span class="comment">/* Since size=256 */</span><span class="preprocessor">        \</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">   ret;                                                 \</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">})</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a7f515a71a0b1d7c027dec7dd4345c043">  102</a></span>&#160;<span class="preprocessor">#define Uart3100ChAvailable() (max3100_rx_extract_idx != max3100_rx_insert_idx)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a9630b72f98d0b7176c438450304df6da">  102</a></span>&#160;<span class="preprocessor">#define UART3100ChAvailable() (max3100_rx_extract_idx != max3100_rx_insert_idx)</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="max3100__hw_8h.html#a8c3a887b4b8368102717fb3f4dd8a73e">  104</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="max3100__hw_8h.html#a8c3a887b4b8368102717fb3f4dd8a73e">max3100_transmit</a>(<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> data) {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="max3100__hw_8h.html#a54c0691a82d684860d7aa625f3336ab8">Max3100Select</a>();</div>
@@ -274,7 +274,7 @@ $(document).ready(function(){initNavTree('max3100__hw_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_c2abcdd6ccb39c3582929c0e3f5651c2.html">modules</a></li><li class="navelem"><a class="el" href="dir_e883b138f88dc503e5e9af200a557425.html">max3100</a></li><li class="navelem"><a class="el" href="max3100__hw_8h.html">max3100_hw.h</a></li>
-    <li class="footer">Generated on Tue Feb 26 2013 04:00:16 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Feb 27 2013 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

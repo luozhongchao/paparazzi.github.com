@@ -1,8 +1,10 @@
 var searchData=
 [
+  ['uart_5fchar_5favailable',['uart_char_available',['../uart_8h.html#a8fcf1d056b9856747bbe06995a9928ff',1,'uart.h']]],
   ['uart_5fcheck_5ffree_5fspace',['uart_check_free_space',['../uart_8c.html#abd3d741fab97eedc4b48bbda25b74e50',1,'uart_check_free_space(struct uart_periph *p, uint8_t len):&#160;uart.c'],['../uart_8h.html#abd3d741fab97eedc4b48bbda25b74e50',1,'uart_check_free_space(struct uart_periph *p, uint8_t len):&#160;uart.c']]],
   ['uart_5fdisable_5finterrupts',['uart_disable_interrupts',['../lpc21_2mcu__periph_2uart__arch_8c.html#a199e1fae90e1e67b9f8eb64a8dad6f40',1,'uart_arch.c']]],
   ['uart_5fenable_5finterrupts',['uart_enable_interrupts',['../lpc21_2mcu__periph_2uart__arch_8c.html#ac5fd8cc59f0c367eb6ead6403ed92225',1,'uart_arch.c']]],
+  ['uart_5fgetch',['uart_getch',['../uart_8c.html#adb9a60ec94a31a08e6454ccf64f24039',1,'uart_getch(struct uart_periph *p):&#160;uart.c'],['../uart_8h.html#adb9a60ec94a31a08e6454ccf64f24039',1,'uart_getch(struct uart_periph *p):&#160;uart.c']]],
   ['uart_5fhandler',['uart_handler',['../omap_2mcu__periph_2uart__arch_8c.html#ad10dd01bd5b72d929f5a626732567516',1,'uart_arch.c']]],
   ['uart_5fisr',['uart_ISR',['../lpc21_2mcu__periph_2uart__arch_8c.html#acdcaa1de22fab46482eb7cc711743d3e',1,'uart_arch.c']]],
   ['uart_5fperiph_5finit',['uart_periph_init',['../uart_8c.html#a43baf084a9bcc968ef00790e25becbb7',1,'uart_periph_init(struct uart_periph *p):&#160;uart.c'],['../uart_8h.html#a43baf084a9bcc968ef00790e25becbb7',1,'uart_periph_init(struct uart_periph *p):&#160;uart.c']]],

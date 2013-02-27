@@ -38,7 +38,6 @@ var searchData=
   ['lisa_5fstm_5fgps_5fpassthrough_5fmain_2ec',['lisa_stm_gps_passthrough_main.c',['../lisa__stm__gps__passthrough__main_8c.html',1,'']]],
   ['lisa_5fstm_5fpassthrough_5fmain_2ec',['lisa_stm_passthrough_main.c',['../lisa__stm__passthrough__main_8c.html',1,'']]],
   ['lisa_5ftest_5factuators_5fmkk_2ec',['lisa_test_actuators_mkk.c',['../lisa__test__actuators__mkk_8c.html',1,'']]],
-  ['lisa_5ftest_5fadxl345_2ec',['lisa_test_adxl345.c',['../lisa__test__adxl345_8c.html',1,'']]],
   ['lisa_5ftest_5fadxl345_5fdma_2ec',['lisa_test_adxl345_dma.c',['../lisa__test__adxl345__dma_8c.html',1,'']]],
   ['lisa_5ftest_5faspirin_2ec',['lisa_test_aspirin.c',['../lisa__test__aspirin_8c.html',1,'']]],
   ['lisa_5ftest_5fhmc5843_2ec',['lisa_test_hmc5843.c',['../lisa__test__hmc5843_8c.html',1,'']]],
