@@ -37,5 +37,8 @@ var searchData=
   ['cpu_5fticks_5fof_5fnsec',['cpu_ticks_of_nsec',['../sys__time_8h.html#ab9fdc67ec3fff3769bebcd04e7ee86c2',1,'sys_time.h']]],
   ['cpu_5fticks_5fof_5fsec',['cpu_ticks_of_sec',['../sys__time_8h.html#ac32566a6fc1f80520e4484ce581f45a5',1,'sys_time.h']]],
   ['cpu_5fticks_5fof_5fusec',['cpu_ticks_of_usec',['../sys__time_8h.html#a8ef407ab9dc5065c7e7768da22bd2ab7',1,'sys_time.h']]],
+  ['crc_5faccumulate',['crc_accumulate',['../mavlink__decoder_8h.html#ade2bbc31cd3b5b6d839556f56de61957',1,'mavlink_decoder.h']]],
+  ['crc_5fcalculate',['crc_calculate',['../mavlink__decoder_8h.html#ab4264eb7b9e22aabb5cc3191bce35f4c',1,'mavlink_decoder.h']]],
+  ['crc_5finit',['crc_init',['../mavlink__decoder_8h.html#aee738f6e20d31b027afdd966c79befae',1,'mavlink_decoder.h']]],
   ['crcupdate',['CrcUpdate',['../lpc21_2link__mcu__hw_8h.html#a1e52d32bc856d1a2afdd4b20b5294e43',1,'CrcUpdate(uint16_t crc, uint8_t data):&#160;link_mcu_hw.h'],['../stm32_2link__mcu__hw_8h.html#a1e52d32bc856d1a2afdd4b20b5294e43',1,'CrcUpdate(uint16_t crc, uint8_t data):&#160;link_mcu_hw.h']]]
 ];

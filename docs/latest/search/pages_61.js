@@ -9,5 +9,6 @@ var searchData=
   ['angle_20of_20attack_20using_20internal_20adc',['Angle of Attack using internal ADC',['../module__aoa_adc.html',1,'onboard_modules']]],
   ['acam_20picocap_20capacitance_20sensor',['ACAM Picocap capacitance sensor',['../module__humid_pcap01.html',1,'onboard_modules']]],
   ['arduimu_20v2',['ArduIMU v2',['../module__ins_arduimu.html',1,'onboard_modules']]],
-  ['arduimu_20v2',['ArduIMU v2',['../module__ins_arduimu_basic.html',1,'onboard_modules']]]
+  ['arduimu_20v2',['ArduIMU v2',['../module__ins_arduimu_basic.html',1,'onboard_modules']]],
+  ['a_20simple_20mavlink_20decoder',['A simple MAVLINK decoder',['../module__mavlink_decoder.html',1,'onboard_modules']]]
 ];

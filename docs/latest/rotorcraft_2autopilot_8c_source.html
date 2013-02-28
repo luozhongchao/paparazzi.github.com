@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-571-g70fc079</span>
+   &#160;<span id="projectnumber">v4.9_devel-578-g7ce7fc9</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -358,43 +358,47 @@ $(document).ready(function(){initNavTree('rotorcraft_2autopilot_8c_source.html',
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> new_autopilot_mode = 0;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="rotorcraft_2autopilot_8h.html#ab0395a426c32b31601769fdd4cefac34">AP_MODE_OF_PPRZ</a>(<a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>[<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8h.html#a2fab1464ab1748edb2a45a08cf7c422a">RADIO_MODE</a>], new_autopilot_mode);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="comment">/* don&#39;t enter NAV mode if GPS is lost (this also prevents mode oscillations) */</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (!(new_autopilot_mode == <a class="code" href="rotorcraft_2autopilot_8h.html#a5c8305ebe45c377584ec5dd8d65a9ae6">AP_MODE_NAV</a> &amp;&amp; <a class="code" href="gps_8h.html#a3c9ec0734c3ac235abd40c500746de5a">GpsIsLost</a>()))</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <a class="code" href="rotorcraft_2autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(new_autopilot_mode);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="comment">/* if not in FAILSAFE mode check motor and in_flight status, read RC */</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="rotorcraft_2autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> &gt; <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>) {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">/* if there are some commands that should always be set from RC, do it */</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">#ifdef SetAutoCommandsFromRC</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor"></span>    SetAutoCommandsFromRC(<a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136" title="Storage of intermediate command values.">commands</a>, <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">/* if not in NAV_MODE set commands from the rc */</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#ifdef SetCommandsFromRC</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">if</span> (<a class="code" href="rotorcraft_2autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> != <a class="code" href="rotorcraft_2autopilot_8h.html#a5c8305ebe45c377584ec5dd8d65a9ae6">AP_MODE_NAV</a>) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;      SetCommandsFromRC(<a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136" title="Storage of intermediate command values.">commands</a>, <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">/* an arming sequence is used to start/stop motors */</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="autopilot__arming__switch_8h.html#abbbe9ccad851ff6d7ef88e298059b6ce" title="State machine to check if motors should be turned ON or OFF using the kill switch.">autopilot_arming_check_motors_on</a>();</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="fixedwing_2autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a> = ! <a class="code" href="rotorcraft_2autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="rotorcraft_2autopilot_8c.html#a6df3c2f896a0876e023206069155a0dc">autopilot_check_in_flight</a>(<a class="code" href="rotorcraft_2autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a067f5a51ae66cddf397b8b312ae4c383">guidance_v_read_rc</a>();</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <a class="code" href="guidance__h_8c.html#a7db3290fc5f62abc15a1bb1638b4922f">guidance_h_read_rc</a>(<a class="code" href="rotorcraft_2autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (!(new_autopilot_mode == <a class="code" href="rotorcraft_2autopilot_8h.html#a5c8305ebe45c377584ec5dd8d65a9ae6">AP_MODE_NAV</a></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;#<span class="keywordflow">if</span> USE_GPS</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;          &amp;&amp; <a class="code" href="gps_8h.html#a3c9ec0734c3ac235abd40c500746de5a">GpsIsLost</a>()</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;#endif</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;       ))</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      <a class="code" href="rotorcraft_2autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64">autopilot_set_mode</a>(new_autopilot_mode);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="comment">/* if not in FAILSAFE mode check motor and in_flight status, read RC */</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="rotorcraft_2autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> &gt; <a class="code" href="rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36">AP_MODE_FAILSAFE</a>) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">/* if there are some commands that should always be set from RC, do it */</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">#ifdef SetAutoCommandsFromRC</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor"></span>    SetAutoCommandsFromRC(<a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136" title="Storage of intermediate command values.">commands</a>, <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">/* if not in NAV_MODE set commands from the rc */</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="preprocessor">#ifdef SetCommandsFromRC</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">if</span> (<a class="code" href="rotorcraft_2autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5">autopilot_mode</a> != <a class="code" href="rotorcraft_2autopilot_8h.html#a5c8305ebe45c377584ec5dd8d65a9ae6">AP_MODE_NAV</a>) {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      SetCommandsFromRC(<a class="code" href="commands_8c.html#a929b1098e1af3f34ee056eeed9227136" title="Storage of intermediate command values.">commands</a>, <a class="code" href="radio__control_8c.html#a8fe61a8aa3f1859efec4bb06bc1134dc">radio_control</a>.<a class="code" href="structRadioControl.html#a7a57c95d2958828cb2d13bd360622f6f">values</a>);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">/* an arming sequence is used to start/stop motors */</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="autopilot__arming__switch_8h.html#abbbe9ccad851ff6d7ef88e298059b6ce" title="State machine to check if motors should be turned ON or OFF using the kill switch.">autopilot_arming_check_motors_on</a>();</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="fixedwing_2autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c">kill_throttle</a> = ! <a class="code" href="rotorcraft_2autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="rotorcraft_2autopilot_8c.html#a6df3c2f896a0876e023206069155a0dc">autopilot_check_in_flight</a>(<a class="code" href="rotorcraft_2autopilot_8c.html#a7e21dda68d44d395845b5f36e254cd4b">autopilot_motors_on</a>);</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="rotorcraft_2guidance_2guidance__v_8c.html#a067f5a51ae66cddf397b8b312ae4c383">guidance_v_read_rc</a>();</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="guidance__h_8c.html#a7db3290fc5f62abc15a1bb1638b4922f">guidance_h_read_rc</a>(<a class="code" href="rotorcraft_2autopilot_8c.html#a8f3fc6ad7d342f95e555efa1a4a27685">autopilot_in_flight</a>);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_e37d355c72eb7c8e5b43c34bdea5a24b.html">rotorcraft</a></li><li class="navelem"><a class="el" href="rotorcraft_2autopilot_8c.html">autopilot.c</a></li>
-    <li class="footer">Generated on Wed Feb 27 2013 04:00:09 for Paparazzi UAS by
+    <li class="footer">Generated on Thu Feb 28 2013 04:00:12 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

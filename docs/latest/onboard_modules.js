@@ -186,6 +186,19 @@ var onboard_modules =
         [ "Raw extra_dl.xml file:", "module__extra_dl.html#module_xml__extra_dl", null ]
       ] ]
     ] ],
+    [ "A simple MAVLINK decoder", "module__mavlink_decoder.html", [
+      [ "Module configuration options", "module__mavlink_decoder.html#configuration", [
+        [ "Configure Options", "module__mavlink_decoder.html#configure", null ]
+      ] ],
+      [ "Module functions", "module__mavlink_decoder.html#functions", [
+        [ "Event Functions", "module__mavlink_decoder.html#event_functions", null ]
+      ] ],
+      [ "Files", "module__mavlink_decoder.html#files", [
+        [ "Header Files", "module__mavlink_decoder.html#headers", null ],
+        [ "Source Files", "module__mavlink_decoder.html#sources", null ],
+        [ "Raw mavlink_decoder.xml file:", "module__mavlink_decoder.html#module_xml__mavlink_decoder", null ]
+      ] ]
+    ] ],
     [ "Digi Xtend RSSI PWM Module", "module__xtend_rssi.html", [
       [ "Module configuration options", "module__xtend_rssi.html#configuration", [
         [ "Configure Options", "module__xtend_rssi.html#configure", null ]
@@ -1175,6 +1188,17 @@ var onboard_modules =
         [ "Header Files", "module__poles.html#headers", null ],
         [ "Source Files", "module__poles.html#sources", null ],
         [ "Raw poles.xml file:", "module__poles.html#module_xml__poles", null ]
+      ] ]
+    ] ],
+    [ "PX4FLOW optical flow sensor", "module__px4flow.html", [
+      [ "Module functions", "module__px4flow.html#functions", [
+        [ "Init Functions", "module__px4flow.html#init_functions", null ],
+        [ "Periodic Functions", "module__px4flow.html#periodic_functions", null ]
+      ] ],
+      [ "Files", "module__px4flow.html#files", [
+        [ "Header Files", "module__px4flow.html#headers", null ],
+        [ "Source Files", "module__px4flow.html#sources", null ],
+        [ "Raw px4flow.xml file:", "module__px4flow.html#module_xml__px4flow", null ]
       ] ]
     ] ],
     [ "Servo switch", "module__servo_switch.html", [

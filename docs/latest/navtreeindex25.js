@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"ins__xsens_8c.html#a45fdf89b8ca3c3330f19878757d6b16f":[8,0,0,0,7,19,13,4],
 "ins__xsens_8c.html#a473d343a49500ecfb5624bdaf98f1f69":[8,0,0,0,7,19,13,8],
 "ins__xsens_8c.html#a47f12136c89e8cc13ff45e72caab8a19":[8,0,0,0,7,19,13,24],
 "ins__xsens_8c.html#a4b386089bdea5bf512e4c33d39e1210c":[8,0,0,0,7,19,13,55],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "joystick_8h.html#a8718265b29fc6ef3903f580e3ad894b2":[8,0,0,0,18,0],
 "joystick_8h_source.html":[8,0,0,0,18],
 "jsbsim__ahrs_8c.html":[8,0,0,0,0,2,8],
-"jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af":[8,0,0,0,0,2,8,5],
-"jsbsim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b":[8,0,0,0,0,2,8,1]
+"jsbsim__ahrs_8c.html#a1d08d1f86a284110ac777ccb661113af":[8,0,0,0,0,2,8,5]
 };

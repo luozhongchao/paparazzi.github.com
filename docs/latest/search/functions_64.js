@@ -10,6 +10,7 @@ var searchData=
   ['dc_5fstop',['dc_stop',['../dc_8c.html#a47c625a53743f8ad41baaf54a6fcf144',1,'dc_stop(void):&#160;dc.c'],['../dc_8h.html#a47c625a53743f8ad41baaf54a6fcf144',1,'dc_stop(void):&#160;dc.c']]],
   ['dc_5fsurvey',['dc_survey',['../dc_8c.html#a2b50d2725b576697bde98a8bdb358093',1,'dc_survey(float interval, float x, float y):&#160;dc.c'],['../dc_8h.html#a2b50d2725b576697bde98a8bdb358093',1,'dc_survey(float interval, float x, float y):&#160;dc.c']]],
   ['debuginit',['DebugInit',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#aba4ba4d9ae40dd8249c35d07ed2a523a',1,'spektrum_arch.c']]],
+  ['decode_5foptical_5fflow_5fmsg',['decode_optical_flow_msg',['../px4flow_8c.html#a9a3bfd0997e1386b7e6657cdddbd1681',1,'px4flow.c']]],
   ['delay',['Delay',['../test__led_8c.html#aea41b1becfb5d562877fe67cd53d43e9',1,'Delay(volatile uint32_t nCount):&#160;test_led.c'],['../tunnel__hw_8c.html#aea41b1becfb5d562877fe67cd53d43e9',1,'Delay(volatile uint32_t nCount):&#160;tunnel_hw.c']]],
   ['delayms',['DelayMs',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#aeeda81e8dcacff3172020a9f2e2a49d9',1,'spektrum_arch.c']]],
   ['delayus',['DelayUs',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ab13bee1b25d7aa1f0cd6a8a58fc9888c',1,'spektrum_arch.c']]],

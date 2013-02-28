@@ -15,6 +15,7 @@ var sys__time_8h =
     [ "msec_of_sys_time_ticks", "sys__time_8h.html#ab67b78f01783839deb76623ff83981dd", null ],
     [ "nsec_of_cpu_ticks", "sys__time_8h.html#a259e827ee9dc84a8930a48729ded7baf", null ],
     [ "sec_of_sys_time_ticks", "sys__time_8h.html#acec8a90dd9dbe5e618d94c95af7b0be8", null ],
+    [ "signed_cpu_ticks_of_usec", "sys__time_8h.html#afdc0536d84c25c04c02195269a3eaed0", null ],
     [ "sys_time_arch_init", "sys__time_8h.html#a9b31c2feb846b96205ae20ea6883e1c4", null ],
     [ "sys_time_cancel_timer", "sys__time_8h.html#ac2ade8af0c9fbbf866026d99d60f9769", null ],
     [ "sys_time_check_and_ack_timer", "sys__time_8h.html#a2fbb0aec3597ef35c23aeb7d376d1666", null ],
