@@ -6,6 +6,5 @@ var searchData=
   ['max11040_20adc',['Max11040 ADC',['../module__max11040.html',1,'onboard_modules']]],
   ['max3100_20spi_2fuart_20converter',['MAX3100 SPI/Uart converter',['../module__max3100.html',1,'onboard_modules']]],
   ['mcp355x_20adc_20driver_20_28spi_29',['MCP355X ADC driver (SPI)',['../module__mcp355x.html',1,'onboard_modules']]],
-  ['maximum_20power_20point_20tracker',['Maximum Power Point Tracker',['../module__mppt.html',1,'onboard_modules']]],
-  ['maxbotix_20sonar',['Maxbotix Sonar',['../module__sonar_maxbotix_booz.html',1,'onboard_modules']]]
+  ['maximum_20power_20point_20tracker',['Maximum Power Point Tracker',['../module__mppt.html',1,'onboard_modules']]]
 ];

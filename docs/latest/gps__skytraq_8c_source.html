@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-578-g7ce7fc9</span>
+   &#160;<span id="projectnumber">v4.9_devel-586-gdee9912</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -261,7 +261,7 @@ $(document).ready(function(){initNavTree('gps__skytraq_8c_source.html','');});
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <a class="code" href="pprz__geodetic__int_8c.html#ab4eda479f4c01e96082d8a352f16cfea">ned_of_ecef_vect_i</a>(&amp;<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a8c0416718a59e50261890cd870f716ea" title="speed NED in cm/s">ned_vel</a>, &amp;<a class="code" href="gps__skytraq_8c.html#ada32e6bdf968ea13294278923764ed3b">gps_skytraq</a>.<a class="code" href="structGpsSkytraq.html#a72009b3f638ff38b068b37447c25179b">ref_ltp</a>, &amp;<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a61d8a6f16de4a00066cb7026aff117da" title="speed ECEF in cm/s">ecef_vel</a>);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="comment">// ground course in radians</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS course over ground in rad*1e7 (CW/north)">course</a> = ( M_PI_4 + atan2( -<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a8c0416718a59e50261890cd870f716ea" title="speed NED in cm/s">ned_vel</a>.<a class="code" href="structNedCoor__i.html#a77400e63c3818f1e638d15355675e356">y</a>, <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a8c0416718a59e50261890cd870f716ea" title="speed NED in cm/s">ned_vel</a>.<a class="code" href="structNedCoor__i.html#adafb8b35c7dbb285cfc4e60ff0a789aa">x</a> )) * 1e7;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a3665e85487519aef462c0c44cb8e3b40" title="GPS course over ground in rad*1e7 (CW/north)">course</a> = (atan2f( (<span class="keywordtype">float</span>)<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a8c0416718a59e50261890cd870f716ea" title="speed NED in cm/s">ned_vel</a>.<a class="code" href="structNedCoor__i.html#a77400e63c3818f1e638d15355675e356">y</a>, (<span class="keywordtype">float</span>)<a class="code" href="gps_8c.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a>.<a class="code" href="structGpsState.html#a8c0416718a59e50261890cd870f716ea" title="speed NED in cm/s">ned_vel</a>.<a class="code" href="structNedCoor__i.html#adafb8b35c7dbb285cfc4e60ff0a789aa">x</a> )) * 1e7;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      <span class="comment">// GT: gps.cacc = ... ? what should course accuracy be?</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      <span class="comment">// ground speed</span></div>
@@ -377,7 +377,7 @@ $(document).ready(function(){initNavTree('gps__skytraq_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_8c4cbb881db224ddaf0756e79ed706ce.html">gps</a></li><li class="navelem"><a class="el" href="gps__skytraq_8c.html">gps_skytraq.c</a></li>
-    <li class="footer">Generated on Thu Feb 28 2013 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Mar 1 2013 04:00:14 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

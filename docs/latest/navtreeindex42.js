@@ -1,5 +1,17 @@
 var NAVTREEINDEX42 =
 {
+"peripherals_2mcp355x_8h.html#a43936b2cebe162bd29e00181b0282a91":[8,0,0,0,8,21,2],
+"peripherals_2mcp355x_8h.html#afea2582f132d52f27d13ca404fc52167":[8,0,0,0,8,21,4],
+"peripherals_2mcp355x_8h_source.html":[8,0,0,0,8,21],
+"photogrammetry__calculator_8c.html":[8,0,0,0,7,5,2],
+"photogrammetry__calculator_8c.html#a03a06704ec5b13c223bf3c083ee43eca":[8,0,0,0,7,5,2,3],
+"photogrammetry__calculator_8c.html#a03d0582dacb6e6dc77f266530c9c3682":[8,0,0,0,7,5,2,8],
+"photogrammetry__calculator_8c.html#a1dbe925a7f90228d2b3ca852585492d0":[8,0,0,0,7,5,2,14],
+"photogrammetry__calculator_8c.html#a35cc5dcc88bdfb0be7fd97367dc7e037":[8,0,0,0,7,5,2,15],
+"photogrammetry__calculator_8c.html#a4417b4836a8a82e7a8f11b640602e648":[8,0,0,0,7,5,2,11],
+"photogrammetry__calculator_8c.html#a45930e976ca587d4b9d1d0e225f23410":[8,0,0,0,7,5,2,7],
+"photogrammetry__calculator_8c.html#a46c42018ddb4b3cf3810f1918345493f":[8,0,0,0,7,5,2,1],
+"photogrammetry__calculator_8c.html#a4bd1fab8b9b0a126bbeec060873df996":[8,0,0,0,7,5,2,9],
 "photogrammetry__calculator_8c.html#a56876ea9e35c1ab1049a67f41a301243":[8,0,0,0,7,5,2,5],
 "photogrammetry__calculator_8c.html#a57cb602a707e9632e91510b358e2646b":[8,0,0,0,7,5,2,4],
 "photogrammetry__calculator_8c.html#a69953c65c48eabde87a9592256c65750":[8,0,0,0,7,5,2,12],
@@ -237,17 +249,5 @@ var NAVTREEINDEX42 =
 "pprz__algebra__double_8h_source.html":[8,0,0,0,5,1],
 "pprz__algebra__float_8h.html":[8,0,0,0,5,2],
 "pprz__algebra__float_8h.html#a0107b3f3597abb290d29fb836e33260f":[8,0,0,0,5,2,51],
-"pprz__algebra__float_8h.html#a04b54cb036f6baabc215be43f8d85b30":[8,0,0,0,5,2,56],
-"pprz__algebra__float_8h.html#a065afdb3c174b1937304ec3d34f9f2c5":[8,0,0,0,5,2,60],
-"pprz__algebra__float_8h.html#a06cf4d5cd7ee5b43988d30d99ed7467b":[8,0,0,0,5,2,35],
-"pprz__algebra__float_8h.html#a082a3591f2701fdcc77609946f1457ad":[8,0,0,0,5,2,7],
-"pprz__algebra__float_8h.html#a0a76eb680a60ea46d382cee034fbfeb8":[8,0,0,0,5,2,15],
-"pprz__algebra__float_8h.html#a0c65574e95bf57e35799b33fd9a2b0da":[8,0,0,0,5,2,72],
-"pprz__algebra__float_8h.html#a0d231b31a776d56e612d48a34359b646":[8,0,0,0,5,2,52],
-"pprz__algebra__float_8h.html#a0ea8bd3c4096f5a5544672e3f043abf6":[8,0,0,0,5,2,33],
-"pprz__algebra__float_8h.html#a12bbfe128ff80296a2c660d6535ab4a0":[8,0,0,0,5,2,53],
-"pprz__algebra__float_8h.html#a18846a42efecdeae5dab64fbd8645eb9":[8,0,0,0,5,2,27],
-"pprz__algebra__float_8h.html#a2002d50ff30d8c76d3525ceb83f59fc6":[8,0,0,0,5,2,16],
-"pprz__algebra__float_8h.html#a246dd673d453b2571ec3e3325850e71e":[8,0,0,0,5,2,42],
-"pprz__algebra__float_8h.html#a25ada89ae0032821401cba16e7f71065":[8,0,0,0,5,2,57]
+"pprz__algebra__float_8h.html#a04b54cb036f6baabc215be43f8d85b30":[8,0,0,0,5,2,56]
 };

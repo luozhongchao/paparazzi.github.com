@@ -13,6 +13,7 @@ var onboard_modules =
       [ "Meteo modules", "onboard_modules.html#modules_category_meteo", null ],
       [ "Multi modules", "onboard_modules.html#modules_category_multi", null ],
       [ "Sensors modules", "onboard_modules.html#modules_category_sensors", null ],
+      [ "Sonar modules", "onboard_modules.html#modules_category_sonar", null ],
       [ "Vehicle_Interface modules", "onboard_modules.html#modules_category_vehicle_interface", null ],
       [ "Misc modules", "onboard_modules.html#modules_category_misc", null ]
     ] ],
@@ -958,6 +959,36 @@ var onboard_modules =
         [ "Raw trigger_ext.xml file:", "module__trigger_ext.html#module_xml__trigger_ext", null ]
       ] ]
     ] ],
+    [ "Sonar ADC driver", "module__sonar_adc.html", [
+      [ "Module configuration options", "module__sonar_adc.html#configuration", [
+        [ "Configure Options", "module__sonar_adc.html#configure", null ],
+        [ "Define Options", "module__sonar_adc.html#define", null ]
+      ] ],
+      [ "Module functions", "module__sonar_adc.html#functions", [
+        [ "Init Functions", "module__sonar_adc.html#init_functions", null ],
+        [ "Periodic Functions", "module__sonar_adc.html#periodic_functions", null ]
+      ] ],
+      [ "Files", "module__sonar_adc.html#files", [
+        [ "Header Files", "module__sonar_adc.html#headers", null ],
+        [ "Source Files", "module__sonar_adc.html#sources", null ],
+        [ "Raw sonar_adc.xml file:", "module__sonar_adc.html#module_xml__sonar_adc", null ]
+      ] ]
+    ] ],
+    [ "Sonar ADC INS", "module__sonar_maxbotix_booz.html", [
+      [ "Module configuration options", "module__sonar_maxbotix_booz.html#configuration", [
+        [ "Configure Options", "module__sonar_maxbotix_booz.html#configure", null ]
+      ] ],
+      [ "Module functions", "module__sonar_maxbotix_booz.html#functions", [
+        [ "Init Functions", "module__sonar_maxbotix_booz.html#init_functions", null ],
+        [ "Event Functions", "module__sonar_maxbotix_booz.html#event_functions", null ],
+        [ "Periodic Functions", "module__sonar_maxbotix_booz.html#periodic_functions", null ]
+      ] ],
+      [ "Files", "module__sonar_maxbotix_booz.html#files", [
+        [ "Header Files", "module__sonar_maxbotix_booz.html#headers", null ],
+        [ "Source Files", "module__sonar_maxbotix_booz.html#sources", null ],
+        [ "Raw sonar_maxbotix_booz.xml file:", "module__sonar_maxbotix_booz.html#module_xml__sonar_maxbotix_booz", null ]
+      ] ]
+    ] ],
     [ "Vehicule Interface over Datalink", "module__vehicle_interface_datalink.html", [
       [ "Module functions", "module__vehicle_interface_datalink.html#functions", [
         [ "Init Functions", "module__vehicle_interface_datalink.html#init_functions", null ],
@@ -1213,21 +1244,6 @@ var onboard_modules =
         [ "Header Files", "module__servo_switch.html#headers", null ],
         [ "Source Files", "module__servo_switch.html#sources", null ],
         [ "Raw servo_switch.xml file:", "module__servo_switch.html#module_xml__servo_switch", null ]
-      ] ]
-    ] ],
-    [ "Maxbotix Sonar", "module__sonar_maxbotix_booz.html", [
-      [ "Module configuration options", "module__sonar_maxbotix_booz.html#configuration", [
-        [ "Configure Options", "module__sonar_maxbotix_booz.html#configure", null ]
-      ] ],
-      [ "Module functions", "module__sonar_maxbotix_booz.html#functions", [
-        [ "Init Functions", "module__sonar_maxbotix_booz.html#init_functions", null ],
-        [ "Event Functions", "module__sonar_maxbotix_booz.html#event_functions", null ],
-        [ "Periodic Functions", "module__sonar_maxbotix_booz.html#periodic_functions", null ]
-      ] ],
-      [ "Files", "module__sonar_maxbotix_booz.html#files", [
-        [ "Header Files", "module__sonar_maxbotix_booz.html#headers", null ],
-        [ "Source Files", "module__sonar_maxbotix_booz.html#sources", null ],
-        [ "Raw sonar_maxbotix_booz.xml file:", "module__sonar_maxbotix_booz.html#module_xml__sonar_maxbotix_booz", null ]
       ] ]
     ] ]
 ];

@@ -151,7 +151,6 @@ var searchData=
   ['crc',['crc',['../link__mcu__spi_8c.html#aa60093a9a5d5d17864cfda66c47733e3',1,'link_mcu_spi.c']]],
   ['crc_5ferr_5fcnt',['crc_err_cnt',['../structLisaOveroLink.html#ac8c23a522a5eaf9d49feeb864f3adf6c',1,'LisaOveroLink']]],
   ['crc_5ferror',['crc_error',['../structLisaOveroLink.html#a904bb6a30a91b938d057bc7e4aed4bab',1,'LisaOveroLink']]],
-  ['crc_5fextra',['crc_extra',['../mavlink__decoder_8c.html#acb25663f8d789e94a3acccdba960c2f8',1,'crc_extra():&#160;mavlink_decoder.c'],['../mavlink__decoder_8h.html#acb25663f8d789e94a3acccdba960c2f8',1,'crc_extra():&#160;mavlink_decoder.c']]],
   ['cs',['cs',['../structxbee__transport.html#aefbcc1bdcb7c9f103fef13a2222a9928',1,'xbee_transport']]],
   ['csc_5fservo_5fcmd',['csc_servo_cmd',['../lisa__stm__passthrough__main_8c.html#a60ca066681376f87fa7d9f9844c9db3b',1,'lisa_stm_passthrough_main.c']]],
   ['csc_5fvane_5fmsg',['csc_vane_msg',['../lisa__stm__passthrough__main_8c.html#a362061c603859c3b9ea21ba6d6276c4b',1,'csc_vane_msg():&#160;lisa_stm_passthrough_main.c'],['../test__csc__servo_8c.html#a362061c603859c3b9ea21ba6d6276c4b',1,'csc_vane_msg():&#160;test_csc_servo.c']]],

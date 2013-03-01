@@ -31,14 +31,11 @@ var searchData=
   ['compute_5fbody_5forientation_5fand_5frates',['compute_body_orientation_and_rates',['../ahrs__float__cmpl_8c.html#a2e90a05e5a4ca369d0308bb72e68171d',1,'ahrs_float_cmpl.c']]],
   ['compute_5fdist2_5fto_5fhome',['compute_dist2_to_home',['../navigation_8h.html#a4603515f41786b54ea9383a65a9f249e',1,'compute_dist2_to_home(void):&#160;common_nav.c'],['../common__nav_8c.html#a4603515f41786b54ea9383a65a9f249e',1,'compute_dist2_to_home(void):&#160;common_nav.c'],['../common__nav_8h.html#a4603515f41786b54ea9383a65a9f249e',1,'compute_dist2_to_home(void):&#160;common_nav.c']]],
   ['compute_5fground_5fspeed',['compute_ground_speed',['../snav_8c.html#a68858681c254fdbf4ba0bc2a9ec72748',1,'snav.c']]],
-  ['compute_5ftod',['compute_tod',['../bomb_8h.html#a6d63c302f49aef554eb08d3bd7a1e938',1,'compute_tod(void):&#160;bomb.h'],['../nav_8c.html#ad9cc0030bdcfa2192dda22875ca68934',1,'compute_TOD(uint8_t _af, uint8_t _td, uint8_t _tod, float glide_airspeed, float glide_vspeed):&#160;nav.c']]],
+  ['compute_5ftod',['compute_TOD',['../nav_8c.html#ad9cc0030bdcfa2192dda22875ca68934',1,'compute_TOD(uint8_t _af, uint8_t _td, uint8_t _tod, float glide_airspeed, float glide_vspeed):&#160;nav.c'],['../bomb_8h.html#a6d63c302f49aef554eb08d3bd7a1e938',1,'compute_tod(void):&#160;bomb.h']]],
   ['configure_5fsocket',['configure_socket',['../w5100_8c.html#ad88334d2cf04bfaad89b0f8a4c5239a4',1,'w5100.c']]],
   ['copy_5ffrom_5fto_5ffbw',['copy_from_to_fbw',['../main__ap_8c.html#ab8d2d846e05038e13cfb45b8bb8f0921',1,'main_ap.c']]],
   ['cpu_5fticks_5fof_5fnsec',['cpu_ticks_of_nsec',['../sys__time_8h.html#ab9fdc67ec3fff3769bebcd04e7ee86c2',1,'sys_time.h']]],
   ['cpu_5fticks_5fof_5fsec',['cpu_ticks_of_sec',['../sys__time_8h.html#ac32566a6fc1f80520e4484ce581f45a5',1,'sys_time.h']]],
   ['cpu_5fticks_5fof_5fusec',['cpu_ticks_of_usec',['../sys__time_8h.html#a8ef407ab9dc5065c7e7768da22bd2ab7',1,'sys_time.h']]],
-  ['crc_5faccumulate',['crc_accumulate',['../mavlink__decoder_8h.html#ade2bbc31cd3b5b6d839556f56de61957',1,'mavlink_decoder.h']]],
-  ['crc_5fcalculate',['crc_calculate',['../mavlink__decoder_8h.html#ab4264eb7b9e22aabb5cc3191bce35f4c',1,'mavlink_decoder.h']]],
-  ['crc_5finit',['crc_init',['../mavlink__decoder_8h.html#aee738f6e20d31b027afdd966c79befae',1,'mavlink_decoder.h']]],
   ['crcupdate',['CrcUpdate',['../lpc21_2link__mcu__hw_8h.html#a1e52d32bc856d1a2afdd4b20b5294e43',1,'CrcUpdate(uint16_t crc, uint8_t data):&#160;link_mcu_hw.h'],['../stm32_2link__mcu__hw_8h.html#a1e52d32bc856d1a2afdd4b20b5294e43',1,'CrcUpdate(uint16_t crc, uint8_t data):&#160;link_mcu_hw.h']]]
 ];

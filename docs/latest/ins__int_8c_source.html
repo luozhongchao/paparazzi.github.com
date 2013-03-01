@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-578-g7ce7fc9</span>
+   &#160;<span id="projectnumber">v4.9_devel-586-gdee9912</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -282,7 +282,7 @@ $(document).ready(function(){initNavTree('ins__int_8c_source.html','');});
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <a class="code" href="ins_8c.html#a93b83435a11f973aa9aceab13c2f2b3f" title="global INS state">ins</a>.<a class="code" href="structIns.html#a565497311aa048dcd749df94bb5c0b17" title="realign vertically if true">vf_realign</a> = <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      <a class="code" href="ins__alt__float_8c.html#a4be91c3dbe9cbf03c544cd9509da74df">ins_qfe</a> = <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a088741c2889bc0752ef8927b0f8b849f">absolute</a>;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#if USE_SONAR</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor"></span>      <a class="code" href="ins__int__extended_8c.html#a666dca075d406555182a061fbb5595bf">ins_sonar_offset</a> = <a class="code" href="sonar__maxbotix_8c.html#a69fadebe7b519d56f5380f55216f5d9a">sonar_meas</a>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor"></span>      <a class="code" href="ins__int__extended_8c.html#a666dca075d406555182a061fbb5595bf">ins_sonar_offset</a> = <a class="code" href="sonar__adc_8c.html#a69fadebe7b519d56f5380f55216f5d9a">sonar_meas</a>;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor"></span>      <a class="code" href="vf__extended__float_8c.html#a9871b34cda71fc04b9e312b8ce4f11af">vff_realign</a>(0.);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <a class="code" href="ins__int_8c.html#a40b750394f04de20db66008c0b6a9f98">ins_ltp_accel</a>.<a class="code" href="structNedCoor__i.html#a52586e90ccb7aa5f0960bcb480bfcaa3">z</a> = <a class="code" href="pprz__algebra__int_8h.html#a5251aee74e02d2935ee9835ae7bc7b2e">ACCEL_BFP_OF_REAL</a>(<a class="code" href="vf__extended__float_8c.html#ac36a73bd31bb8d32ee5627b70aadd855">vff_zdotdot</a>);</div>
@@ -361,7 +361,7 @@ $(document).ready(function(){initNavTree('ins__int_8c_source.html','');});
 <div class="line"><a name="l00260"></a><span class="lineno"><a class="code" href="ins__int_8c.html#acc04164712bf9640e891c67dc6eeb424">  260</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ins__alt__float_8c.html#acc04164712bf9640e891c67dc6eeb424" title="Update INS state with sonar measurements.">ins_update_sonar</a>() {</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#if USE_SONAR &amp;&amp; USE_VFF</span></div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor"></span>  <span class="keyword">static</span> <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> sonar_filtered = 0;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  sonar_filtered = (<a class="code" href="sonar__maxbotix_8c.html#a69fadebe7b519d56f5380f55216f5d9a">sonar_meas</a> + 2*sonar_filtered) / 3;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  sonar_filtered = (<a class="code" href="sonar__adc_8c.html#a69fadebe7b519d56f5380f55216f5d9a">sonar_meas</a> + 2*sonar_filtered) / 3;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="comment">/* update baro_qfe assuming a flat ground */</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="ins__int__extended_8c.html#a48b29e68cf7ccbd634bea7d5b0b34e3b">ins_update_on_agl</a> &amp;&amp; <a class="code" href="booz_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a">baro</a>.<a class="code" href="structBaro.html#a04ac659bb858b025824e2cccf5061027">status</a> == <a class="code" href="baro_8h.html#a40cc650f3a4b0b2f99d360f1a38addf4a4134e0992db0b1b7099ae1c7b87102cb">BS_RUNNING</a>) {</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a> d_sonar = (((<a class="code" href="types_8h.html#a2ba621978a511250f7250fb10e05ffbe">int32_t</a>)sonar_filtered - <a class="code" href="ins__int__extended_8c.html#a666dca075d406555182a061fbb5595bf">ins_sonar_offset</a>) * INS_SONAR_SENS_NUM) / INS_SONAR_SENS_DEN;</div>
@@ -375,7 +375,7 @@ $(document).ready(function(){initNavTree('ins__int_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_800f0b451dc44a2b86d16d857cea778d.html">ins</a></li><li class="navelem"><a class="el" href="ins__int_8c.html">ins_int.c</a></li>
-    <li class="footer">Generated on Thu Feb 28 2013 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Fri Mar 1 2013 04:00:14 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -22,12 +22,12 @@ var mavlink__decoder_8h =
       [ "MAVLINK_PARSE_STATE_GOT_PAYLOAD", "mavlink__decoder_8h.html#acaeb9b4f7a75e27cafde0ac37aa31826a70250545e55394bc86332ff29f82e8bf", null ],
       [ "MAVLINK_PARSE_STATE_GOT_CRC1", "mavlink__decoder_8h.html#acaeb9b4f7a75e27cafde0ac37aa31826a6da96e625309597402e5e97699207469", null ]
     ] ],
-    [ "crc_accumulate", "mavlink__decoder_8h.html#ade2bbc31cd3b5b6d839556f56de61957", null ],
-    [ "crc_calculate", "mavlink__decoder_8h.html#ab4264eb7b9e22aabb5cc3191bce35f4c", null ],
-    [ "crc_init", "mavlink__decoder_8h.html#aee738f6e20d31b027afdd966c79befae", null ],
+    [ "mavlink_crc_accumulate", "mavlink__decoder_8h.html#a2c0dd18813292f2b50e6a8538b4f11ed", null ],
+    [ "mavlink_crc_calculate", "mavlink__decoder_8h.html#a11c509459ed3de2c4812ca163b095cb3", null ],
+    [ "mavlink_crc_init", "mavlink__decoder_8h.html#ad5394c74f2f0bf1f95b4f4fea574210a", null ],
     [ "mavlink_parse_payload", "mavlink__decoder_8h.html#aa41772ba4cbf3437c3658a415d950124", null ],
     [ "mavlink_register_msg", "mavlink__decoder_8h.html#a25eeab8c2d4bf1615309f5c913d956ab", null ],
     [ "parse_mavlink", "mavlink__decoder_8h.html#a57cda9459960272cbca0c1e75879bf15", null ],
-    [ "crc_extra", "mavlink__decoder_8h.html#acb25663f8d789e94a3acccdba960c2f8", null ],
+    [ "mavlink_crc_extra", "mavlink__decoder_8h.html#a98bf73e8faffc56ea5363cb6bed79073", null ],
     [ "mavlink_tp", "mavlink__decoder_8h.html#a0289ab36ec273d643b6004c920791a8d", null ]
 ];
