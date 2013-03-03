@@ -14,7 +14,6 @@ var searchData=
   ['optical_5fflow_5favailable',['optical_flow_available',['../px4flow_8c.html#ab6dde07b731a2cfdf669184817943837',1,'optical_flow_available():&#160;px4flow.c'],['../px4flow_8h.html#ab6dde07b731a2cfdf669184817943837',1,'optical_flow_available():&#160;px4flow.c']]],
   ['origin',['origin',['../gsm_8c.html#a78dd84bc5e17634eb5b0a4bf29d39c74',1,'gsm.c']]],
   ['orthogonal',['Orthogonal',['../flightzone_8c.html#a99120a21f35efe1b1bbaaa3c2ea28984',1,'flightzone.c']]],
-  ['other_5fdma_5ffinished',['other_dma_finished',['../structspi__periph__dma.html#a7a2c15fa9894bae6ac1025ee358a8f5e',1,'spi_periph_dma']]],
   ['output_5fbuf',['output_buf',['../structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb',1,'spi_transaction']]],
   ['output_5fbuf_5fms5611',['output_buf_ms5611',['../baro__ms5611__spi_8c.html#a10791a98cb4022f7414ebe6adf3dde66',1,'baro_ms5611_spi.c']]],
   ['output_5fbuf_5fp',['output_buf_p',['../structImuAspirin2.html#a7b0380da23e390b24c2bcabefbc393ab',1,'ImuAspirin2']]],

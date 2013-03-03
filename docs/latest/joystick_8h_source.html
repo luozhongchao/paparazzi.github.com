@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: sw/airborne/joystick.h Source File</title>
+<title>Paparazzi UAS: sw/airborne/firmwares/fixedwing/joystick.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-590-gb37d956</span>
+   &#160;<span id="projectnumber">v4.9_devel-608-g7817a76</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -110,30 +110,16 @@ $(document).ready(function(){initNavTree('joystick_8h_source.html','');});
 <a href="joystick_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef JOYSTICK_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define JOYSTICK_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;std.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fixedwing_2stabilization_2stabilization__attitude_8h.html" title="Fixed wing horizontal control.">firmwares/fixedwing/stabilization/stabilization_attitude.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;autopilot.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="joystick_8c.html#a66c62dd4288ab52a75e6e7a524900ef3">joystick_block</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="joystick_8h.html#a8718265b29fc6ef3903f580e3ad894b2">   10</a></span>&#160;<span class="preprocessor">#define JoystickHandeDatalink(_roll_int8, _pitch_int8, _throttle_int8) { \</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">  if (pprz_mode == PPRZ_MODE_AUTO2 &amp;&amp; nav_block == joystick_block) { \</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    h_ctl_roll_setpoint = _roll_int8 * (AUTO1_MAX_ROLL / 0x7f); \</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    h_ctl_pitch_setpoint = _pitch_int8 * (AUTO1_MAX_PITCH / 0x7f); \</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    v_ctl_throttle_setpoint = (MAX_PPRZ/0x7f) * _throttle_int8; \</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">  } \</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* JOYSTICK_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">extern</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="joystick_8h.html#a66c62dd4288ab52a75e6e7a524900ef3">joystick_block</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="joystick_8h.html">joystick.h</a></li>
-    <li class="footer">Generated on Sat Mar 2 2013 04:00:10 for Paparazzi UAS by
+    <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_cb1b347b64b61ba7f369ccfe68448b26.html">fixedwing</a></li><li class="navelem"><a class="el" href="joystick_8h.html">joystick.h</a></li>
+    <li class="footer">Generated on Sun Mar 3 2013 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

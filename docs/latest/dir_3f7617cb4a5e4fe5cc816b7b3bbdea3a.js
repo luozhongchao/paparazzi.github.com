@@ -18,8 +18,6 @@ var dir_3f7617cb4a5e4fe5cc816b7b3bbdea3a =
     [ "link_mcu_hw.h", "lpc21_2link__mcu__hw_8h.html", "lpc21_2link__mcu__hw_8h" ],
     [ "mcu_arch.c", "lpc21_2mcu__arch_8c.html", "lpc21_2mcu__arch_8c" ],
     [ "mcu_arch.h", "lpc21_2mcu__arch_8h.html", "lpc21_2mcu__arch_8h" ],
-    [ "micromag_hw.c", "lpc21_2micromag__hw_8c.html", "lpc21_2micromag__hw_8c" ],
-    [ "micromag_hw.h", "lpc21_2micromag__hw_8h.html", "lpc21_2micromag__hw_8h" ],
     [ "ssp_hw.h", "ssp__hw_8h.html", "ssp__hw_8h" ],
     [ "tacho_mb.c", "tacho__mb_8c.html", "tacho__mb_8c" ],
     [ "tacho_mb.h", "tacho__mb_8h.html", "tacho__mb_8h" ],

@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-590-gb37d956</span>
+   &#160;<span id="projectnumber">v4.9_devel-608-g7817a76</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -161,11 +161,11 @@ Data Fields</h2></td></tr>
 <li>Use this structure to store a request of SPI transaction and submit it using spi_submit function</li>
 <li>The input/output buffers needs to be created separately</li>
 <li>Take care of pointing input_buf/ouput_buf correctly</li>
-<li>input_length and output_length can be different, the larger number of the two specifies the toal number of exchanged bytes,</li>
-<li>if input_length is larger than output length, 0 is sent for the remaining bytes WARNING: For STM32 only, the output_buf size MUST be greater than or equal to the input_buf size. This is only required in the event any transaction has (0 &lt; output_length &lt; input_length). </li>
+<li>input_length and output_length can be different, the larger number of the two specifies the toal number of exchanged words,</li>
+<li>if input_length is larger than output length, 0 is sent for the remaining words </li>
 </ul>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00145">145</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00142">142</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 </div><h2>Field Documentation</h2>
 <a class="anchor" id="a42f7b32b71120469bf60af28f5880177"></a>
 <div class="memitem">
@@ -179,9 +179,9 @@ Data Fields</h2></td></tr>
 
 <p>NULL or function called after the transaction. </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00158">158</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00155">155</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00907">process_rx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00950">process_tx_dma_interrupt()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00331">SpiSlaveAutomaton()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00931">process_rx_dma_interrupt()</a>, and <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00331">SpiSlaveAutomaton()</a>.</p>
 
 </div>
 </div>
@@ -197,9 +197,9 @@ Data Fields</h2></td></tr>
 
 <p>NULL or function called before the transaction. </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00157">157</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00154">154</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, and <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00548">spi_rw()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, and <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00521">spi_start_dma_transaction()</a>.</p>
 
 </div>
 </div>
@@ -215,9 +215,9 @@ Data Fields</h2></td></tr>
 
 <p>MSB/LSB order. </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00155">155</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00152">152</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00141">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00201">set_comm_from_transaction()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00342">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00403">set_comm_from_transaction()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
 
 </div>
 </div>
@@ -233,9 +233,9 @@ Data Fields</h2></td></tr>
 
 <p>prescaler of main clock to use as SPI clock </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00156">156</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00153">153</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00141">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00201">set_comm_from_transaction()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00342">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00403">set_comm_from_transaction()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
 
 </div>
 </div>
@@ -251,9 +251,9 @@ Data Fields</h2></td></tr>
 
 <p>clock phase control </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00153">153</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00150">150</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00141">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00201">set_comm_from_transaction()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00645">spi_slave_register()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00342">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00403">set_comm_from_transaction()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00645">spi_slave_register()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
 
 </div>
 </div>
@@ -269,9 +269,9 @@ Data Fields</h2></td></tr>
 
 <p>clock polarity control </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00152">152</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00149">149</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00141">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00201">set_comm_from_transaction()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00645">spi_slave_register()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00342">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00403">set_comm_from_transaction()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00645">spi_slave_register()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
 
 </div>
 </div>
@@ -287,9 +287,9 @@ Data Fields</h2></td></tr>
 
 <p>data transfer word size </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00154">154</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00151">151</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00141">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00201">set_comm_from_transaction()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00548">spi_rw()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00645">spi_slave_register()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00342">get_transaction_signature()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00931">process_rx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00993">process_tx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00403">set_comm_from_transaction()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00645">spi_slave_register()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00521">spi_start_dma_transaction()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
 
 </div>
 </div>
@@ -305,9 +305,9 @@ Data Fields</h2></td></tr>
 
 <p>pointer to receive buffer for DMA </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00146">146</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00143">143</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00058">mcp355x_event()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00548">spi_rw()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, <a class="el" href="w5100_8c_source.html#l00116">w5100_get()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00058">mcp355x_event()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00521">spi_start_dma_transaction()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, <a class="el" href="w5100_8c_source.html#l00116">w5100_get()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
 
 </div>
 </div>
@@ -323,9 +323,9 @@ Data Fields</h2></td></tr>
 
 <p>number of data words to read </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00148">148</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00145">145</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="ins__vn100_8c_source.html#l00108">ins_configure()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00322">spi_arch_int_enable()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00548">spi_rw()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00728">spi_submit()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00288">SpiAutomaton()</a>, <a class="el" href="ins__vn100_8c_source.html#l00138">vn100_periodic_task()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00117">adxl345_spi_read()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00069">adxl345_spi_write_to_reg()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="ins__vn100_8c_source.html#l00108">ins_configure()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00931">process_rx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00993">process_tx_dma_interrupt()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00137">read_data()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00521">spi_start_dma_transaction()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00272">spi_submit()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00288">SpiAutomaton()</a>, <a class="el" href="ins__vn100_8c_source.html#l00138">vn100_periodic_task()</a>, <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00127">write_to_reg()</a>.</p>
 
 </div>
 </div>
@@ -341,9 +341,9 @@ Data Fields</h2></td></tr>
 
 <p>pointer to transmit buffer for DMA </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00147">147</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00144">144</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00548">spi_rw()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, <a class="el" href="w5100_8c_source.html#l00116">w5100_get()</a>, <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00103">w5100_set()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00521">spi_start_dma_transaction()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, <a class="el" href="w5100_8c_source.html#l00116">w5100_get()</a>, <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00103">w5100_set()</a>.</p>
 
 </div>
 </div>
@@ -359,9 +359,9 @@ Data Fields</h2></td></tr>
 
 <p>number of data words to write </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00149">149</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00146">146</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="ins__vn100_8c_source.html#l00108">ins_configure()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00322">spi_arch_int_enable()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00548">spi_rw()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00728">spi_submit()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00288">SpiAutomaton()</a>, <a class="el" href="ins__vn100_8c_source.html#l00138">vn100_periodic_task()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00117">adxl345_spi_read()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00069">adxl345_spi_write_to_reg()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="ins__vn100_8c_source.html#l00108">ins_configure()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00931">process_rx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00993">process_tx_dma_interrupt()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00137">read_data()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00521">spi_start_dma_transaction()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00272">spi_submit()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00288">SpiAutomaton()</a>, <a class="el" href="ins__vn100_8c_source.html#l00138">vn100_periodic_task()</a>, <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00127">write_to_reg()</a>.</p>
 
 </div>
 </div>
@@ -377,9 +377,9 @@ Data Fields</h2></td></tr>
 
 <p>slave selection behavior </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00151">151</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00148">148</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00907">process_rx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00950">process_tx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00548">spi_rw()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00931">process_rx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00521">spi_start_dma_transaction()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
 
 </div>
 </div>
@@ -395,9 +395,9 @@ Data Fields</h2></td></tr>
 
 <p>slave id: <a class="el" href="group__spi.html#ga0fa22f23eb96f7d513dfbe9802596a32">SPI_SLAVE0</a> to <a class="el" href="group__spi.html#ga20816bc66e8bf5ca76796cb07066ec9f">SPI_SLAVE4</a> </p>
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00150">150</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00147">147</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00150">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00907">process_rx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00950">process_tx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00548">spi_rw()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00149">init_adxl345_spi_trans()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00036">mcp355x_init()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00931">process_rx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00521">spi_start_dma_transaction()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, and <a class="el" href="w5100_8c_source.html#l00155">w5100_init()</a>.</p>
 
 </div>
 </div>
@@ -411,9 +411,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="spi_8h_source.html#l00159">159</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
+<p>Definition at line <a class="el" href="spi_8h_source.html#l00156">156</a> of file <a class="el" href="spi_8h_source.html">spi.h</a>.</p>
 
-<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00130">adxl345_spi_event()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00117">adxl345_spi_read()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00078">adxl345_spi_send_config()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00107">adxl345_spi_start_configure()</a>, <a class="el" href="max1168_8c_source.html#l00099">max1168_event()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00058">mcp355x_event()</a>, <a class="el" href="ms2100_8c_source.html#l00103">ms2100_event()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00907">process_rx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00950">process_tx_dma_interrupt()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00548">spi_rw()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00645">spi_slave_register()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00469">spi_submit()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00331">SpiSlaveAutomaton()</a>, <a class="el" href="ins__vn100_8c_source.html#l00157">vn100_event_task()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, <a class="el" href="ins__vn100_8c_source.html#l00138">vn100_periodic_task()</a>, <a class="el" href="w5100_8c_source.html#l00116">w5100_get()</a>, <a class="el" href="w5100_8c_source.html#l00103">w5100_set()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00130">write_to_reg()</a>.</p>
+<p>Referenced by <a class="el" href="adxl345__spi_8c_source.html#l00130">adxl345_spi_event()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00035">adxl345_spi_init()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00117">adxl345_spi_read()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00078">adxl345_spi_send_config()</a>, <a class="el" href="adxl345__spi_8c_source.html#l00107">adxl345_spi_start_configure()</a>, <a class="el" href="max1168_8c_source.html#l00098">max1168_event()</a>, <a class="el" href="max1168_8c_source.html#l00040">max1168_init()</a>, <a class="el" href="mcp355x_8c_source.html#l00058">mcp355x_event()</a>, <a class="el" href="ms2100_8c_source.html#l00103">ms2100_event()</a>, <a class="el" href="ms2100_8c_source.html#l00047">ms2100_init()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00931">process_rx_dma_interrupt()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00645">spi_slave_register()</a>, <a class="el" href="stm32_2mcu__periph_2spi__arch_8c_source.html#l00521">spi_start_dma_transaction()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00469">spi_submit()</a>, <a class="el" href="lpc21_2mcu__periph_2spi__arch_8c_source.html#l00331">SpiSlaveAutomaton()</a>, <a class="el" href="ins__vn100_8c_source.html#l00157">vn100_event_task()</a>, <a class="el" href="ins__vn100_8c_source.html#l00085">vn100_init()</a>, <a class="el" href="ins__vn100_8c_source.html#l00138">vn100_periodic_task()</a>, <a class="el" href="w5100_8c_source.html#l00116">w5100_get()</a>, <a class="el" href="w5100_8c_source.html#l00103">w5100_set()</a>, and <a class="el" href="lisa__test__adxl345__dma_8c_source.html#l00127">write_to_reg()</a>.</p>
 
 </div>
 </div>
@@ -426,7 +426,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structspi__transaction.html">spi_transaction</a></li>
-    <li class="footer">Generated on Sat Mar 2 2013 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Mar 3 2013 04:00:14 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

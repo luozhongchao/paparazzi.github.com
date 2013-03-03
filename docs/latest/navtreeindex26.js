@@ -1,9 +1,5 @@
 var NAVTREEINDEX26 =
 {
-"jsbsim__ahrs_8c.html#a1db1788a280ee0f6279a9b8fc9124e5b":[8,0,0,0,0,2,8,1],
-"jsbsim__ahrs_8c.html#a31e4e2c10a51f313d79445d44f54aaff":[8,0,0,0,0,2,8,0],
-"jsbsim__ahrs_8c.html#a944f26a7ad5a7811d8b671cd5d5b2dce":[8,0,0,0,0,2,8,4],
-"jsbsim__ahrs_8c.html#ab131e85b2a1263c9cd16e429d1fa9eee":[8,0,0,0,0,2,8,6],
 "jsbsim__ahrs_8c.html#ad0537dfc8e7b1504a61bd86cf944e774":[8,0,0,0,0,2,8,2],
 "jsbsim__ahrs_8c.html#ad38c7c220eeb11d884a7c4c6779f3bda":[8,0,0,0,0,2,8,7],
 "jsbsim__ahrs_8c.html#ae73eb249a7855e34f52f6b873bb64807":[8,0,0,0,0,2,8,3],
@@ -111,13 +107,13 @@ var NAVTREEINDEX26 =
 "lcd__dogm__hw_8h.html#ada283362f76d51d511efca4fdbf588b7":[8,0,0,0,0,0,2,2,1,3],
 "lcd__dogm__hw_8h.html#ae2c254baee0730e62687c33eb5b2ea51":[8,0,0,0,0,0,2,2,1,2],
 "lcd__dogm__hw_8h_source.html":[8,0,0,0,0,0,2,2,1],
-"led_8h.html":[8,0,0,0,19],
-"led_8h.html#a3ab823c4004d96d154dfb8f69d18c47a":[8,0,0,0,19,1],
-"led_8h.html#a76c86a9c700e32e68f48f85271970b7f":[8,0,0,0,19,0],
-"led_8h.html#a9d9d9b1f30592189c3aa7358c626218f":[8,0,0,0,19,4],
-"led_8h.html#aec278ae20b30da80a2fcdcee9d51571b":[8,0,0,0,19,2],
-"led_8h.html#afd0bf6b0eebb00641365dc389a9fc449":[8,0,0,0,19,3],
-"led_8h_source.html":[8,0,0,0,19],
+"led_8h.html":[8,0,0,0,17],
+"led_8h.html#a3ab823c4004d96d154dfb8f69d18c47a":[8,0,0,0,17,1],
+"led_8h.html#a76c86a9c700e32e68f48f85271970b7f":[8,0,0,0,17,0],
+"led_8h.html#a9d9d9b1f30592189c3aa7358c626218f":[8,0,0,0,17,4],
+"led_8h.html#aec278ae20b30da80a2fcdcee9d51571b":[8,0,0,0,17,2],
+"led_8h.html#afd0bf6b0eebb00641365dc389a9fc449":[8,0,0,0,17,3],
+"led_8h_source.html":[8,0,0,0,17],
 "led__cam__ctrl_8c.html":[8,0,0,0,7,11,4],
 "led__cam__ctrl_8c.html#a833f16388be36136f5d7d173200d5e95":[8,0,0,0,7,11,4,0],
 "led__cam__ctrl_8c.html#adaa2e99fa0592d3507c02a961b71d532":[8,0,0,0,7,11,4,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX26 =
 "light_8h_source.html":[8,0,0,0,7,21,1],
 "light__solar_8c.html":[8,0,0,0,7,23,20],
 "light__solar_8c.html#a2978a46b47cbc9d17a0924014ff9658b":[8,0,0,0,7,23,20,3],
-"light__solar_8c.html#a3d6da179efb385d03ff265c3ad4f74f6":[8,0,0,0,7,23,20,5]
+"light__solar_8c.html#a3d6da179efb385d03ff265c3ad4f74f6":[8,0,0,0,7,23,20,5],
+"light__solar_8c.html#a5d427462d5459fa08a65ad9a78c2e259":[8,0,0,0,7,23,20,7],
+"light__solar_8c.html#a661e1b4ad75b88ab19e0d16c232d9f6d":[8,0,0,0,7,23,20,0],
+"light__solar_8c.html#a831ddfb4155fdd57df9ff70f0df6033b":[8,0,0,0,7,23,20,9],
+"light__solar_8c.html#a865f598ce218c5496c018323caf1fb4d":[8,0,0,0,7,23,20,10]
 };

@@ -20,8 +20,6 @@ var dir_c87a6d12365ead88e0b90ddbc1b3c9bb =
     [ "max1167_hw.h", "max1167__hw_8h.html", "max1167__hw_8h" ],
     [ "mcu_arch.c", "sim_2mcu__arch_8c.html", "sim_2mcu__arch_8c" ],
     [ "mcu_arch.h", "sim_2mcu__arch_8h.html", "sim_2mcu__arch_8h" ],
-    [ "micromag_hw.c", "sim_2micromag__hw_8c.html", "sim_2micromag__hw_8c" ],
-    [ "micromag_hw.h", "sim_2micromag__hw_8h.html", "sim_2micromag__hw_8h" ],
     [ "servos_nil.h", "servos__nil_8h.html", "servos__nil_8h" ],
     [ "sim_adc_generic.c", "sim__adc__generic_8c.html", "sim__adc__generic_8c" ],
     [ "sim_ahrs.c", "sim__ahrs_8c.html", "sim__ahrs_8c" ],
