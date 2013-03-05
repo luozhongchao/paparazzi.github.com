@@ -106,6 +106,7 @@ var searchData=
   ['reserved',['RESERVED',['../gps__ubx__ucenter_8c.html#a56701f18aaad537f7fc0e9be309503c3',1,'gps_ubx_ucenter.c']]],
   ['reset',['RESET',['../humid__sht_8h.html#ab702106cf3b3e96750b6845ded4e0299',1,'humid_sht.h']]],
   ['return',['Return',['../common__flight__plan_8h.html#a067ebcdcacb7ae66d3a69ef859c5e930',1,'common_flight_plan.h']]],
+  ['return_5fif_5fnot_5fkillmode',['RETURN_IF_NOT_KILLMODE',['../config__mkk__v2_8c.html#ac2bdc5bac4be9f31620f06812cf54fd9',1,'config_mkk_v2.c']]],
   ['rff',['RFF',['../LPC21xx_8h.html#afc2aa4b88f921be1b8d9575fc4ad8d95',1,'LPC21xx.h']]],
   ['rmask',['RMASK',['../w5100_8c.html#ab313966344db7ce2681d95597427a7b4',1,'w5100.c']]],
   ['rmat_5fbfp_5fof_5freal',['RMAT_BFP_OF_REAL',['../pprz__algebra_8h.html#af7417ee7fc6af4281fe013a3f6267ad7',1,'pprz_algebra.h']]],

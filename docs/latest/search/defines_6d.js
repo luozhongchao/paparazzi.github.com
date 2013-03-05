@@ -199,6 +199,7 @@ var searchData=
   ['morethan',['MoreThan',['../common__flight__plan_8h.html#a9f52cbc05d5f9352c2b5313ceeaa78d6',1,'common_flight_plan.h']]],
   ['motor_5farming_5fdelay',['MOTOR_ARMING_DELAY',['../autopilot__arming__yaw_8h.html#a2ac6665da7b4202f8acb8c81e491e051',1,'autopilot_arming_yaw.h']]],
   ['motor_5fmixing_5fmax_5fmotor',['MOTOR_MIXING_MAX_MOTOR',['../motor__mixing_8c.html#aab8ab943326a4b715a82c0b076a14ca3',1,'motor_mixing.c']]],
+  ['motor_5fmixing_5fmax_5fsaturation_5foffset',['MOTOR_MIXING_MAX_SATURATION_OFFSET',['../motor__mixing_8c.html#a9155e43fb171b7d080a22376cc04e092',1,'motor_mixing.c']]],
   ['motor_5fmixing_5fmin_5fmotor',['MOTOR_MIXING_MIN_MOTOR',['../motor__mixing_8c.html#a59bcef1ef87e6b3e3b13751914876465',1,'motor_mixing.c']]],
   ['motor_5fmixing_5fmin_5fmotor_5fstartup',['MOTOR_MIXING_MIN_MOTOR_STARTUP',['../motor__mixing_8c.html#a860833bbcbacce8e55ad4d1e204ff1a0',1,'motor_mixing.c']]],
   ['motor_5fmixing_5fstop_5fmotor',['MOTOR_MIXING_STOP_MOTOR',['../motor__mixing_8c.html#ab0ed1c7950ddc85efbfb8b23931ab2c1',1,'motor_mixing.c']]],

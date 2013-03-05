@@ -7,6 +7,7 @@ var spi_8h =
     [ "SPI_SLAVE2", "spi_8h.html#gaf58a9c9069d93bd0664d2197c87ce9ff", null ],
     [ "SPI_SLAVE3", "spi_8h.html#ga1b6e7752f4befcdab3201ef0136ab1ea", null ],
     [ "SPI_SLAVE4", "spi_8h.html#ga20816bc66e8bf5ca76796cb07066ec9f", null ],
+    [ "SPI_SLAVE5", "spi_8h.html#ga71fb210f3a500d2eb1555ccd6d61c4d2", null ],
     [ "SPI_TRANSACTION_QUEUE_LEN", "spi_8h.html#ga8ae4597a9e237b75a108cdde49c302a6", null ],
     [ "SPICallback", "spi_8h.html#gaa52d88d236eb343ac78b3192a5c9c4c3", null ],
     [ "SPIBitOrder", "spi_8h.html#gaa97b351a297dda534c3f9cee0d5b4647", [

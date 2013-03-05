@@ -92,6 +92,8 @@ var searchData=
   ['imu_5fppzuav_5fgyro_5flowpass',['IMU_PPZUAV_GYRO_LOWPASS',['../imu__ppzuav_8c.html#a2b8f05a9bd0a74946665d9a7d2c0de3a',1,'imu_ppzuav.c']]],
   ['imu_5fppzuav_5fgyro_5fsmplrt_5fdiv',['IMU_PPZUAV_GYRO_SMPLRT_DIV',['../imu__ppzuav_8c.html#a87e6cc99d80fa8d8dc65f122960036e6',1,'imu_ppzuav.c']]],
   ['imu_5fppzuav_5fi2c_5fdev',['IMU_PPZUAV_I2C_DEV',['../imu__ppzuav_8c.html#a0c6d46a04df7b97db971b8d1d4912282',1,'imu_ppzuav.c']]],
+  ['imu_5fquality_5fassessment_5ffilter_5forder',['IMU_QUALITY_ASSESSMENT_FILTER_ORDER',['../imu__quality__assessment_8c.html#abb606820f03a8961832cb2da9eee3d4e',1,'imu_quality_assessment.c']]],
+  ['imu_5fquality_5fassessment_5freset',['imu_quality_assessment_Reset',['../imu__quality__assessment_8h.html#a59b0ecc42c543005cafb6a96cc26cb3e',1,'imu_quality_assessment.h']]],
   ['imu_5fum6_5faccel_5fproc',['IMU_UM6_ACCEL_PROC',['../imu__um6_8h.html#a948493bc00afabb682c188325845d403',1,'imu_um6.h']]],
   ['imu_5fum6_5fbuffer_5flength',['IMU_UM6_BUFFER_LENGTH',['../imu__um6_8h.html#a8db9e68696724cfebc3bb7ea585b2604',1,'imu_um6.h']]],
   ['imu_5fum6_5fcommunication_5freg',['IMU_UM6_COMMUNICATION_REG',['../imu__um6_8h.html#aaf03b0de9fffeceeebcd06c9403c014c',1,'imu_um6.h']]],

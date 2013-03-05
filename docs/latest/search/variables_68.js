@@ -59,6 +59,8 @@ var searchData=
   ['high_5fbyte_5fbuf',['high_byte_buf',['../structrc__joby__parser__state.html#a985ef6558120442952291238e5e38d83',1,'rc_joby_parser_state']]],
   ['high_5frez_5fbias',['high_rez_bias',['../structAhrsIntCmpl.html#abfd989a08da3cdb1dda25d47d3219fb2',1,'AhrsIntCmpl']]],
   ['high_5frez_5fquat',['high_rez_quat',['../structAhrsIntCmpl.html#a5c0615c4471d16681904ef4baf2b23e1',1,'AhrsIntCmpl']]],
+  ['high_5fspeed_5flogger_5fspi_5flink_5fdata',['high_speed_logger_spi_link_data',['../high__speed__logger__spi__link_8c.html#a5f71f68924d08e716c4a4ad4c5f79b5d',1,'high_speed_logger_spi_link.c']]],
+  ['high_5fspeed_5flogger_5fspi_5flink_5ftransaction',['high_speed_logger_spi_link_transaction',['../high__speed__logger__spi__link_8c.html#a1232a16b20ea060f98ae86078b64d444',1,'high_speed_logger_spi_link.c']]],
   ['highbyte',['HighByte',['../structSpektrumStateStruct.html#a1c93c27ba60960fbe990e4f460259654',1,'SpektrumStateStruct']]],
   ['hmc',['hmc',['../structImuNavgo.html#af8d77dcbb8339e8bcd43661b8032b0ab',1,'ImuNavgo']]],
   ['hmc5843',['hmc5843',['../hmc5843_8c.html#a0d9d6f319b2ad8e47637ad83bb04dbe2',1,'hmc5843():&#160;hmc5843.c'],['../hmc5843_8h.html#a0d9d6f319b2ad8e47637ad83bb04dbe2',1,'hmc5843():&#160;hmc5843.c']]],

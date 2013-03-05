@@ -59,6 +59,9 @@ var searchData=
   ['expected_5fack',['expected_ack',['../gsm_8c.html#a9c33028c5983f61f72f3ce1a2e9b6570',1,'gsm.c']]],
   ['expectedframes',['ExpectedFrames',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a9e647afdd07962700d7c5efd80315115',1,'spektrum_arch.c']]],
   ['ext',['ext',['../structscbRegs__t.html#affab500e3221dbdc83bf2c3524d968f1',1,'scbRegs_t']]],
+  ['extra1',['extra1',['../structhigh__speed__logger__spi__link__data.html#a361a21715443119cae28a7f19178d337',1,'high_speed_logger_spi_link_data']]],
+  ['extra2',['extra2',['../structhigh__speed__logger__spi__link__data.html#a8ee9dfe264f3fdce73a574b6599ce7ba',1,'high_speed_logger_spi_link_data']]],
+  ['extra3',['extra3',['../structhigh__speed__logger__spi__link__data.html#ae9976c332f606390637001b55916ae25',1,'high_speed_logger_spi_link_data']]],
   ['extra_5fpprz_5ftp',['extra_pprz_tp',['../extra__pprz__dl_8c.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c'],['../extra__pprz__dl_8h.html#a23d92289aeb262d1f2dfa1362e583e90',1,'extra_pprz_tp():&#160;extra_pprz_dl.c']]],
   ['ezcurrent_5fi2c_5ftrans',['ezcurrent_i2c_trans',['../ezcurrent_8c.html#aace3bfef7af597fc8329642617405759',1,'ezcurrent.c']]]
 ];

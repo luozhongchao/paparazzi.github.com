@@ -3,6 +3,7 @@ var motor__mixing_8c =
     [ "INT32_MAX", "motor__mixing_8c.html#a181807730d4a375f848ba139813ce04f", null ],
     [ "INT32_MIN", "motor__mixing_8c.html#a688eb21a22db27c2b2bd5836943cdcbe", null ],
     [ "MOTOR_MIXING_MAX_MOTOR", "motor__mixing_8c.html#aab8ab943326a4b715a82c0b076a14ca3", null ],
+    [ "MOTOR_MIXING_MAX_SATURATION_OFFSET", "motor__mixing_8c.html#a9155e43fb171b7d080a22376cc04e092", null ],
     [ "MOTOR_MIXING_MIN_MOTOR", "motor__mixing_8c.html#a59bcef1ef87e6b3e3b13751914876465", null ],
     [ "MOTOR_MIXING_MIN_MOTOR_STARTUP", "motor__mixing_8c.html#a860833bbcbacce8e55ad4d1e204ff1a0", null ],
     [ "MOTOR_MIXING_STOP_MOTOR", "motor__mixing_8c.html#ab0ed1c7950ddc85efbfb8b23931ab2c1", null ],

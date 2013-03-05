@@ -1,6 +1,10 @@
 var searchData=
 [
   ['q',['q',['../structDoubleRates.html#a73bba193cdc5815d6bbf2d0af7fce341',1,'DoubleRates::q()'],['../structFloatRates.html#a128ab43f390d2a0ff80fe4bef003061a',1,'FloatRates::q()'],['../structInt16Rates.html#a42f1c182e191b60ad2d3a31303a8528b',1,'Int16Rates::q()'],['../structInt32Rates.html#a7c820bcf2018e94b89898d36d81d7f4a',1,'Int32Rates::q()'],['../structInt64Rates.html#af99b1f105232c9c619d62040fb3c9d4c',1,'Int64Rates::q()'],['../structCHIMU__attitude__data.html#a33ed9c32c88ed20e755d09a94bda5e08',1,'CHIMU_attitude_data::q()']]],
+  ['q_5fax',['q_ax',['../structimu__quality__assessment__data__struct.html#a59685537e3b49989d467fe6bdc126efe',1,'imu_quality_assessment_data_struct']]],
+  ['q_5fay',['q_ay',['../structimu__quality__assessment__data__struct.html#ad1c99c033f2be4910bbf61447e80274c',1,'imu_quality_assessment_data_struct']]],
+  ['q_5faz',['q_az',['../structimu__quality__assessment__data__struct.html#ae36356e5880d69770e5b30a88d404059',1,'imu_quality_assessment_data_struct']]],
+  ['q_5fm',['q_m',['../structimu__quality__assessment__data__struct.html#a0b37e6ce9fd493c029f9cd67189bbabe',1,'imu_quality_assessment_data_struct']]],
   ['qdr_5fa',['qdr_a',['../snav_8c.html#ae786a20d0336486a81e9f23100179645',1,'snav.c']]],
   ['qdr_5ftd',['qdr_td',['../snav_8c.html#a28df2c58098f1edd9f0aeddff13af3f7',1,'snav.c']]],
   ['qi',['qi',['../structDoubleQuat.html#a426587d46d9d560eaf329a93ed756dc9',1,'DoubleQuat::qi()'],['../structFloatQuat.html#a4e645cefcbdb25a8cfb0fc0c76d63044',1,'FloatQuat::qi()'],['../structInt32Quat.html#a7509e8c87300579e27be3ac50758ee8d',1,'Int32Quat::qi()'],['../structInt64Quat.html#a962cef220070c0af2f8064b3fd6cb47d',1,'Int64Quat::qi()'],['../structSVinfo.html#a0f082bb982115960077c5c4f8cab9653',1,'SVinfo::qi()']]],

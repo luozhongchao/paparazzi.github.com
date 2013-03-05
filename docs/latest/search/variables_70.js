@@ -36,7 +36,7 @@ var searchData=
   ['periodic_5ftime',['periodic_time',['../structSysMon.html#af02dd574fede341d5341274576ab33a4',1,'SysMon']]],
   ['periodic_5ftimer',['periodic_timer',['../sys__mon_8c.html#ad85e58d7097a209fb940f0f13375ee5d',1,'sys_mon.c']]],
   ['pers_5fsettings',['pers_settings',['../settings_8c.html#ac61513879fdb7add6de0457920c8e59e',1,'settings.c']]],
-  ['phi',['phi',['../structDoubleEulers.html#a77bc25333631f7933f890987eed9f577',1,'DoubleEulers::phi()'],['../structFloatEulers.html#a4b2c73d59e89d78354658b20058720e0',1,'FloatEulers::phi()'],['../structInt16Eulers.html#a18af6e9880dcea7aa9f23678f73d583f',1,'Int16Eulers::phi()'],['../structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea',1,'Int32Eulers::phi()'],['../structCHIMU__Euler.html#a011bae956c99e8c3d5ffe6b3054093f4',1,'CHIMU_Euler::phi()']]],
+  ['phi',['phi',['../structDoubleEulers.html#a77bc25333631f7933f890987eed9f577',1,'DoubleEulers::phi()'],['../structFloatEulers.html#a4b2c73d59e89d78354658b20058720e0',1,'FloatEulers::phi()'],['../structInt16Eulers.html#a18af6e9880dcea7aa9f23678f73d583f',1,'Int16Eulers::phi()'],['../structInt32Eulers.html#a72051e19d8b3df78a2b229bffe72b6ea',1,'Int32Eulers::phi()'],['../structCHIMU__Euler.html#a011bae956c99e8c3d5ffe6b3054093f4',1,'CHIMU_Euler::phi()'],['../structhigh__speed__logger__spi__link__data.html#a3d0c766d939ac7dad1afbe28a4d8f2e5',1,'high_speed_logger_spi_link_data::phi()']]],
   ['phi_5fc',['phi_c',['../cam__roll_8c.html#abaeaf62e5dc05d5dff6664e5b7f12649',1,'cam_roll.c']]],
   ['phi_5fddgain',['phi_ddgain',['../stabilization__attitude__quat__float_8c.html#a6ef156cacd8701fc42504415807c85a0',1,'stabilization_attitude_quat_float.c']]],
   ['phi_5fdgain',['phi_dgain',['../stabilization__attitude__quat__float_8c.html#abfebdca3b3d7b428a4fea87b2049091b',1,'stabilization_attitude_quat_float.c']]],
@@ -99,7 +99,7 @@ var searchData=
   ['psa_5fshot_5fdist',['psa_shot_dist',['../poly__survey__adv_8c.html#a6ddbedef713f7afbee3592ebec5c7a56',1,'poly_survey_adv.c']]],
   ['psa_5fstage',['psa_stage',['../poly__survey__adv_8c.html#a78ea7c15fb5e95bf19f58038afbf77db',1,'poly_survey_adv.c']]],
   ['psa_5fsweep_5fwidth',['psa_sweep_width',['../poly__survey__adv_8c.html#ad63bde01e20c2b13c4fbc0903c28603d',1,'poly_survey_adv.c']]],
-  ['psi',['psi',['../structDoubleEulers.html#a00c6a387099e94f2eed59fcdae3a5e28',1,'DoubleEulers::psi()'],['../structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75',1,'FloatEulers::psi()'],['../structInt16Eulers.html#a4decabaf7514d474282db8ff623a3544',1,'Int16Eulers::psi()'],['../structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae',1,'Int32Eulers::psi()'],['../structCHIMU__Euler.html#a775da36ecdad57539dc0f3f359ee315d',1,'CHIMU_Euler::psi()']]],
+  ['psi',['psi',['../structDoubleEulers.html#a00c6a387099e94f2eed59fcdae3a5e28',1,'DoubleEulers::psi()'],['../structFloatEulers.html#adafcac96d547392e830b872ac4dcdc75',1,'FloatEulers::psi()'],['../structInt16Eulers.html#a4decabaf7514d474282db8ff623a3544',1,'Int16Eulers::psi()'],['../structInt32Eulers.html#a825be67fd89b9a420fda84770e2b11ae',1,'Int32Eulers::psi()'],['../structCHIMU__Euler.html#a775da36ecdad57539dc0f3f359ee315d',1,'CHIMU_Euler::psi()'],['../structhigh__speed__logger__spi__link__data.html#abbe15ef040d65450c08214cc51be8447',1,'high_speed_logger_spi_link_data::psi()']]],
   ['psi_5fddgain',['psi_ddgain',['../stabilization__attitude__quat__float_8c.html#ab4b427a6ece97e8bba3204a98a2d0c70',1,'stabilization_attitude_quat_float.c']]],
   ['psi_5fdgain',['psi_dgain',['../stabilization__attitude__quat__float_8c.html#ac41812b6b29af7745c721969d2405d53',1,'stabilization_attitude_quat_float.c']]],
   ['psi_5fdgain_5fd',['psi_dgain_d',['../stabilization__attitude__quat__float_8c.html#adef931635fc8e3bbec237a6782563913',1,'stabilization_attitude_quat_float.c']]],
@@ -111,5 +111,6 @@ var searchData=
   ['pwm_5finput_5fduty_5fvalid',['pwm_input_duty_valid',['../pwm__input_8c.html#a8bba700f504dc9a8af8bfce95e08eb6e',1,'pwm_input.c']]],
   ['pwm_5finput_5fperiod_5ftics',['pwm_input_period_tics',['../pwm__input_8c.html#aa342afd936d8faba75ed025c2adb56bf',1,'pwm_input.c']]],
   ['pwm_5finput_5fperiod_5fvalid',['pwm_input_period_valid',['../pwm__input_8c.html#a1c3301e7803a112db96d86605e0d4832',1,'pwm_input.c']]],
-  ['pwm_5flatch_5fvalue',['pwm_latch_value',['../lpc21_2subsystems_2actuators_2actuators__pwm__arch_8c.html#a6f09ce76df5c397c80d8bb9c1ab32d1a',1,'pwm_latch_value():&#160;actuators_pwm_arch.c'],['../lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a6f09ce76df5c397c80d8bb9c1ab32d1a',1,'pwm_latch_value():&#160;actuators_pwm_arch.c']]]
+  ['pwm_5flatch_5fvalue',['pwm_latch_value',['../lpc21_2subsystems_2actuators_2actuators__pwm__arch_8c.html#a6f09ce76df5c397c80d8bb9c1ab32d1a',1,'pwm_latch_value():&#160;actuators_pwm_arch.c'],['../lpc21_2subsystems_2actuators_2actuators__pwm__arch_8h.html#a6f09ce76df5c397c80d8bb9c1ab32d1a',1,'pwm_latch_value():&#160;actuators_pwm_arch.c']]],
+  ['pwmscaling',['PwmScaling',['../structconfig__mkk__v2__eeprom__t.html#a8bbb09e5dbe96b2bf0cf88a406cc4f1e',1,'config_mkk_v2_eeprom_t']]]
 ];

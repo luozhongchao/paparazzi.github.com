@@ -120,6 +120,8 @@ var searchData=
   ['bind_5fpin_5fperiph',['BIND_PIN_PERIPH',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ab610b31bacaeaa0d945c1b9adebb9049',1,'spektrum_arch.c']]],
   ['bind_5fpin_5fport',['BIND_PIN_PORT',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a7fe270978e883ae4fb0389b6b898a231',1,'spektrum_arch.c']]],
   ['bit_5fx_5fis_5fset_5fin_5freg',['BIT_X_IS_SET_IN_REG',['../stm32_2mcu__periph_2i2c__arch_8c.html#a007bb527478e35deb7dd7bac8a81ae96',1,'i2c_arch.c']]],
+  ['bitconf_5freverse_5frotation',['BITCONF_REVERSE_ROTATION',['../config__mkk__v2_8h.html#a230599862486926a541bc4f6dcbdd3ba',1,'config_mkk_v2.h']]],
+  ['bl_5freadmode_5fconfig',['BL_READMODE_CONFIG',['../config__mkk__v2_8c.html#a1711b702d11f359be27a1b5ce4e3d155',1,'config_mkk_v2.c']]],
   ['blink_5fmin',['BLINK_MIN',['../usb__tunnel_8c.html#ad8468070a9db37b05ec8c5cadfbfc733',1,'usb_tunnel.c']]],
   ['block',['Block',['../common__flight__plan_8h.html#a3e749f8fe41a97ef62de0dd622dbe3e9',1,'common_flight_plan.h']]],
   ['bmp085_5faddr',['BMP085_ADDR',['../lisa__m_2baro__board_8h.html#aefb2c1d287bd704a83e1cae55f5bb1db',1,'baro_board.h']]],

@@ -465,7 +465,10 @@ var searchData=
   ['gyro_5fbias',['gyro_bias',['../structAhrsFloatCmpl.html#a0022d20b44e1d701ed8dc0ccda589a2e',1,'AhrsFloatCmpl::gyro_bias()'],['../structAhrsFloatDCM.html#aae8cc61944a9c33bfbc8067f39060ad8',1,'AhrsFloatDCM::gyro_bias()'],['../structAhrsIntCmplEuler.html#a44b547510655944e0ed0c8dbe6651dc1',1,'AhrsIntCmplEuler::gyro_bias()'],['../structAhrsIntCmpl.html#a664ad4d65fdfc251cd2aa7f59ba06f67',1,'AhrsIntCmpl::gyro_bias()']]],
   ['gyro_5fitg',['gyro_itg',['../structImuAspirin.html#a7a313abc3125cdc8289b06c24ad6b3df',1,'ImuAspirin::gyro_itg()'],['../structImuAspirinI2c.html#a450b49a4cfca7cbe6008834bce5b7b4a',1,'ImuAspirinI2c::gyro_itg()'],['../structImuPpzuav.html#a1bf36a90af8ea5c24cf7a400970f7d3b',1,'ImuPpzuav::gyro_itg()']]],
   ['gyro_5fneutral',['gyro_neutral',['../structImu.html#aa15ae274818b1d781a10f3c3de482900',1,'Imu']]],
+  ['gyro_5fp',['gyro_p',['../structhigh__speed__logger__spi__link__data.html#ab3eb8c5c216273a432919dab1ced5013',1,'high_speed_logger_spi_link_data']]],
   ['gyro_5fprev',['gyro_prev',['../structImu.html#a7ac65ce9270568f68550482ef718678c',1,'Imu::gyro_prev()'],['../structImuFloat.html#a4e6d27e23a43ed68d0618b4832035b72',1,'ImuFloat::gyro_prev()']]],
+  ['gyro_5fq',['gyro_q',['../structhigh__speed__logger__spi__link__data.html#a6692a22871d6c0a007c9505bacc6fe93',1,'high_speed_logger_spi_link_data']]],
+  ['gyro_5fr',['gyro_r',['../structhigh__speed__logger__spi__link__data.html#a21031472bd33dd0491a3df8c065d2507',1,'high_speed_logger_spi_link_data']]],
   ['gyro_5fready_5ffor_5fread',['gyro_ready_for_read',['../lisa__test__aspirin_8c.html#abc4c2308ba5f25c05a3e9649352116ca',1,'gyro_ready_for_read():&#160;lisa_test_aspirin.c'],['../lisa__test__itg3200_8c.html#abc4c2308ba5f25c05a3e9649352116ca',1,'gyro_ready_for_read():&#160;lisa_test_itg3200.c']]],
   ['gyro_5fstate',['gyro_state',['../lisa__test__itg3200_8c.html#abefa58e269e2b435d5bb95045deea991',1,'lisa_test_itg3200.c']]],
   ['gyro_5fsum',['gyro_sum',['../ahrs__aligner_8c.html#af1cca58ed89c86a319265f768f1b5e40',1,'ahrs_aligner.c']]],
@@ -477,5 +480,6 @@ var searchData=
   ['geiger_20counter_20sensor',['Geiger counter sensor',['../module__geiger_counter.html',1,'onboard_modules']]],
   ['generic_20com',['Generic com',['../module__generic_com.html',1,'onboard_modules']]],
   ['geo_20mag_20modell',['Geo Mag modell',['../module__geo_mag.html',1,'onboard_modules']]],
-  ['gsm_20module',['GSM module',['../module__gsm.html',1,'onboard_modules']]]
+  ['gsm_20module',['GSM module',['../module__gsm.html',1,'onboard_modules']]],
+  ['give_20comparable_20with_20imu_20health_20information_3a',['Give comparable with IMU Health information:',['../module__imu_quality_assessment.html',1,'onboard_modules']]]
 ];

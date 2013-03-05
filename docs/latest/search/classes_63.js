@@ -9,5 +9,7 @@ var searchData=
   ['chimu_5fquaternion',['CHIMU_Quaternion',['../structCHIMU__Quaternion.html',1,'']]],
   ['chimu_5fsensor_5fdata',['CHIMU_sensor_data',['../structCHIMU__sensor__data.html',1,'']]],
   ['chimu_5fvector',['CHIMU_Vector',['../structCHIMU__Vector.html',1,'']]],
-  ['complex',['complex',['../structcomplex.html',1,'']]]
+  ['complex',['complex',['../structcomplex.html',1,'']]],
+  ['config_5fmkk_5fv2_5feeprom_5ft',['config_mkk_v2_eeprom_t',['../structconfig__mkk__v2__eeprom__t.html',1,'']]],
+  ['config_5fmkk_5fv2_5fstruct',['config_mkk_v2_struct',['../structconfig__mkk__v2__struct.html',1,'']]]
 ];

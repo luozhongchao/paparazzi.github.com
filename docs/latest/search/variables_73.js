@@ -52,6 +52,8 @@ var searchData=
   ['set1',['set1',['../structgpioRegs__t.html#ad666ab3b57b8307792728ede72163ef2',1,'gpioRegs_t']]],
   ['set2',['set2',['../structgpioRegs__t.html#ae0c15c3cbe409af6d6b441a95d760264',1,'gpioRegs_t']]],
   ['set3',['set3',['../structgpioRegs__t.html#afd87496cb986eabf148efd4baf69b605',1,'gpioRegs_t']]],
+  ['setmask',['SetMask',['../structconfig__mkk__v2__eeprom__t.html#a7802f52fbf698d965ac45e9f83986c20',1,'config_mkk_v2_eeprom_t']]],
+  ['setpoint',['setpoint',['../structactuators__mkk__v2__struct.html#aea0ba4118b532d04c2df7295ee69535f',1,'actuators_mkk_v2_struct']]],
   ['settings_5fstore_5fnow',['settings_store_now',['../settings_8c.html#a13f5ba1374d451bc61a957f86034111f',1,'settings_store_now():&#160;settings.c'],['../settings_8h.html#a13f5ba1374d451bc61a957f86034111f',1,'settings_store_now():&#160;settings.c']]],
   ['sff_5fgrp_5fsa',['sff_grp_sa',['../structcan__accept__Regs__t.html#a128ad3ccd1845af8673fcf975d90eaa5',1,'can_accept_Regs_t']]],
   ['sff_5fsa',['sff_sa',['../structcan__accept__Regs__t.html#a18a0ec299507acf164e7b4630f7e2ce2',1,'can_accept_Regs_t']]],

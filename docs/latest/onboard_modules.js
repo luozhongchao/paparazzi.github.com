@@ -77,6 +77,17 @@ var onboard_modules =
         [ "Raw i2c_abuse_test.xml file:", "module__i2c_abuse_test.html#module_xml__i2c_abuse_test", null ]
       ] ]
     ] ],
+    [ "Give comparable with IMU Health information:", "module__imu_quality_assessment.html", [
+      [ "Module functions", "module__imu_quality_assessment.html#functions", [
+        [ "Init Functions", "module__imu_quality_assessment.html#init_functions", null ],
+        [ "Periodic Functions", "module__imu_quality_assessment.html#periodic_functions", null ]
+      ] ],
+      [ "Files", "module__imu_quality_assessment.html#files", [
+        [ "Header Files", "module__imu_quality_assessment.html#headers", null ],
+        [ "Source Files", "module__imu_quality_assessment.html#sources", null ],
+        [ "Raw imu_quality_assessment.xml file:", "module__imu_quality_assessment.html#module_xml__imu_quality_assessment", null ]
+      ] ]
+    ] ],
     [ "Camera control for fixedwing", "module__cam_point.html", [
       [ "Module functions", "module__cam_point.html#functions", [
         [ "Init Functions", "module__cam_point.html#init_functions", null ],
@@ -1048,6 +1059,17 @@ var onboard_modules =
         [ "Raw bat_checker.xml file:", "module__bat_checker.html#module_xml__bat_checker", null ]
       ] ]
     ] ],
+    [ "Configure Mikrokopter MKK v2", "module__configure_actuators_mkk_v2.html", [
+      [ "Module functions", "module__configure_actuators_mkk_v2.html#functions", [
+        [ "Init Functions", "module__configure_actuators_mkk_v2.html#init_functions", null ],
+        [ "Periodic Functions", "module__configure_actuators_mkk_v2.html#periodic_functions", null ]
+      ] ],
+      [ "Files", "module__configure_actuators_mkk_v2.html#files", [
+        [ "Header Files", "module__configure_actuators_mkk_v2.html#headers", null ],
+        [ "Source Files", "module__configure_actuators_mkk_v2.html#sources", null ],
+        [ "Raw configure_actuators_mkk_v2.xml file:", "module__configure_actuators_mkk_v2.html#module_xml__configure_actuators_mkk_v2", null ]
+      ] ]
+    ] ],
     [ "Demo module", "module__demo_module.html", [
       [ "Module functions", "module__demo_module.html#functions", [
         [ "Init Functions", "module__demo_module.html#init_functions", null ],
@@ -1141,6 +1163,17 @@ var onboard_modules =
         [ "Header Files", "module__gsm.html#headers", null ],
         [ "Source Files", "module__gsm.html#sources", null ],
         [ "Raw gsm.xml file:", "module__gsm.html#module_xml__gsm", null ]
+      ] ]
+    ] ],
+    [ "Connect to external High-Speed SD-logger via SPI", "module__high_speed_logger_spi_link.html", [
+      [ "Module functions", "module__high_speed_logger_spi_link.html#functions", [
+        [ "Init Functions", "module__high_speed_logger_spi_link.html#init_functions", null ],
+        [ "Periodic Functions", "module__high_speed_logger_spi_link.html#periodic_functions", null ]
+      ] ],
+      [ "Files", "module__high_speed_logger_spi_link.html#files", [
+        [ "Header Files", "module__high_speed_logger_spi_link.html#headers", null ],
+        [ "Source Files", "module__high_speed_logger_spi_link.html#sources", null ],
+        [ "Raw high_speed_logger_spi_link.xml file:", "module__high_speed_logger_spi_link.html#module_xml__high_speed_logger_spi_link", null ]
       ] ]
     ] ],
     [ "EA DOG-M163 LCD (SPI)", "module__lcd_dogm.html", [

@@ -152,6 +152,7 @@ var searchData=
   ['before_5fcb',['before_cb',['../structspi__transaction.html#a34d366d59c97ab1993da279ec6c19658',1,'spi_transaction']]],
   ['benchm_5fgo',['benchm_go',['../flight__benchmark_8c.html#a8c709967a01a8d99fadd6c0ab518866e',1,'benchm_go():&#160;flight_benchmark.c'],['../flight__benchmark_8h.html#a8c709967a01a8d99fadd6c0ab518866e',1,'benchm_go():&#160;flight_benchmark.c']]],
   ['benchm_5freset',['benchm_reset',['../flight__benchmark_8c.html#afd37080e7f63ab019b5d51a883585ad3',1,'benchm_reset():&#160;flight_benchmark.c'],['../flight__benchmark_8h.html#afd37080e7f63ab019b5d51a883585ad3',1,'benchm_reset():&#160;flight_benchmark.c']]],
+  ['bitconfig',['BitConfig',['../structconfig__mkk__v2__eeprom__t.html#aef8e0755855eea19f213b876ebcec849',1,'config_mkk_v2_eeprom_t']]],
   ['bitorder',['bitorder',['../structspi__transaction.html#af804a20f8372631a24aad61be1383307',1,'spi_transaction']]],
   ['block_5ftime',['block_time',['../common__flight__plan_8c.html#ae3eebf6396d9b2539b27b9477c46724d',1,'block_time():&#160;common_flight_plan.c'],['../common__flight__plan_8h.html#ae3eebf6396d9b2539b27b9477c46724d',1,'block_time():&#160;common_flight_plan.c']]],
   ['bmp_5fac1',['bmp_ac1',['../baro__bmp_8c.html#aa704e4c55611ac50067506ab71c1f546',1,'baro_bmp.c']]],

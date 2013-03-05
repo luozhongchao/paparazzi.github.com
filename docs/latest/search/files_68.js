@@ -3,6 +3,8 @@ var searchData=
   ['hb_5f1_2e1_2eh',['hb_1.1.h',['../hb__1_81_8h.html',1,'']]],
   ['hf_5ffloat_2ec',['hf_float.c',['../hf__float_8c.html',1,'']]],
   ['hf_5ffloat_2eh',['hf_float.h',['../hf__float_8h.html',1,'']]],
+  ['high_5fspeed_5flogger_5fspi_5flink_2ec',['high_speed_logger_spi_link.c',['../high__speed__logger__spi__link_8c.html',1,'']]],
+  ['high_5fspeed_5flogger_5fspi_5flink_2eh',['high_speed_logger_spi_link.h',['../high__speed__logger__spi__link_8h.html',1,'']]],
   ['hmc5843_2ec',['hmc5843.c',['../hmc5843_8c.html',1,'']]],
   ['hmc5843_2eh',['hmc5843.h',['../hmc5843_8h.html',1,'']]],
   ['hmc5843_5farch_2ec',['hmc5843_arch.c',['../sim_2peripherals_2hmc5843__arch_8c.html',1,'']]],

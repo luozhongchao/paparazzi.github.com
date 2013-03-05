@@ -5,6 +5,7 @@ var searchData=
   ['i2c_5ftransaction',['i2c_transaction',['../structi2c__transaction.html',1,'']]],
   ['i2cregs_5ft',['i2cRegs_t',['../structi2cRegs__t.html',1,'']]],
   ['imu',['Imu',['../structImu.html',1,'']]],
+  ['imu_5fquality_5fassessment_5fdata_5fstruct',['imu_quality_assessment_data_struct',['../structimu__quality__assessment__data__struct.html',1,'']]],
   ['imuaspirin',['ImuAspirin',['../structImuAspirin.html',1,'']]],
   ['imuaspirin2',['ImuAspirin2',['../structImuAspirin2.html',1,'']]],
   ['imuaspirini2c',['ImuAspirinI2c',['../structImuAspirinI2c.html',1,'']]],
