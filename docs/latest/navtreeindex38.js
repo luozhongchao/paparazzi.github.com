@@ -1,5 +1,9 @@
 var NAVTREEINDEX38 =
 {
+"module__sonar_maxbotix_booz.html#event_functions":[2,79,1,1],
+"module__sonar_maxbotix_booz.html#files":[2,79,2],
+"module__sonar_maxbotix_booz.html#functions":[2,79,1],
+"module__sonar_maxbotix_booz.html#headers":[2,79,2,0],
 "module__sonar_maxbotix_booz.html#init_functions":[2,79,1,0],
 "module__sonar_maxbotix_booz.html#module_xml__sonar_maxbotix_booz":[2,79,2,2],
 "module__sonar_maxbotix_booz.html#periodic_functions":[2,79,1,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX38 =
 "motor__mixing_8h.html#aa6be133f8fea4274105384f0276801a1":[8,0,0,0,10,0,17,1],
 "motor__mixing_8h.html#ad7abde7201bcb01c91540ada4f707d51":[8,0,0,0,10,0,17,2],
 "motor__mixing_8h_source.html":[8,0,0,0,10,0,17],
-"mpl3115_8c.html":[8,0,0,0,8,22],
-"mpl3115_8c.html#a0148160700e54f08dc81c724c20b8882":[8,0,0,0,8,22,7],
-"mpl3115_8c.html#a188e467a8832badebc74377d22bad625":[8,0,0,0,8,22,8],
-"mpl3115_8c.html#a1960c6d41d19b8990ba059d300172df1":[8,0,0,0,8,22,3],
-"mpl3115_8c.html#a1e5d15a6a5cdf0fdda483e68f3811670":[8,0,0,0,8,22,9]
+"mpl3115_8c.html":[8,0,0,0,8,22]
 };

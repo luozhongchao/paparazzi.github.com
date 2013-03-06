@@ -20,6 +20,6 @@ var actuators__asctec__v2_8h =
       [ "SET_ADDR", "actuators__asctec__v2_8h.html#a4fc4c81cd178f2e57a6d8ce74785742ea94edc8e83fd7d0718449d0caeb168ad9", null ]
     ] ],
     [ "actuators_asctec_v2_init", "actuators__asctec__v2_8h.html#a30996eb62dcda40e1db73c73085c1605", null ],
-    [ "actuators_asctec_v2_set", "actuators__asctec__v2_8h.html#a7dd096d8f5629bc0334433df7a6c74ea", null ],
+    [ "actuators_asctec_v2_set", "actuators__asctec__v2_8h.html#a18a8926daf19ec365257e7ad661540a0", null ],
     [ "actuators_asctec_v2", "actuators__asctec__v2_8h.html#a4b4665aff82e322b473fb57569821f20", null ]
 ];

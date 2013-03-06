@@ -1,5 +1,9 @@
 var NAVTREEINDEX47 =
 {
+"sdlog__1_80_8h.html#a9554c21ac4db9f0b888079de6c70521a":[8,0,0,0,1,20,41],
+"sdlog__1_80_8h.html#a9b6dd90e1f8fb64d936679da4a87e7df":[8,0,0,0,1,20,42],
+"sdlog__1_80_8h.html#aa8ade7e32d46ae622ee886a90b1ea9c8":[8,0,0,0,1,20,7],
+"sdlog__1_80_8h.html#aa8b07cb021b87d0c5868a3cb2851510e":[8,0,0,0,1,20,67],
 "sdlog__1_80_8h.html#aa8cbb3355883e35c18820bfa63c4ce3a":[8,0,0,0,1,20,58],
 "sdlog__1_80_8h.html#aabb4946529ad070470a4fdb279b02719":[8,0,0,0,1,20,56],
 "sdlog__1_80_8h.html#aad615ff6a6f5e1f55769b625fd8ec8bf":[8,0,0,0,1,20,64],
@@ -245,9 +249,5 @@ var NAVTREEINDEX47 =
 "sim_2peripherals_2max1168__arch_8c.html#a712f39d80c2b46e08a4d0230bf74bef2":[8,0,0,0,0,2,2,2,0],
 "sim_2peripherals_2max1168__arch_8c.html#adad993f2bbd2ca52aea0b0f97931863a":[8,0,0,0,0,2,2,2,1],
 "sim_2peripherals_2max1168__arch_8c_source.html":[8,0,0,0,0,2,2,2],
-"sim_2peripherals_2max1168__arch_8h.html":[8,0,0,0,0,2,2,3],
-"sim_2peripherals_2max1168__arch_8h_source.html":[8,0,0,0,0,2,2,3],
-"sim_2subsystems_2actuators_2actuators__pwm__arch_8c.html":[8,0,0,0,0,2,3,0,0],
-"sim_2subsystems_2actuators_2actuators__pwm__arch_8c.html#a8f67fe525140a6f4b07b3416bc70f606":[8,0,0,0,0,2,3,0,0,0],
-"sim_2subsystems_2actuators_2actuators__pwm__arch_8c_source.html":[8,0,0,0,0,2,3,0,0]
+"sim_2peripherals_2max1168__arch_8h.html":[8,0,0,0,0,2,2,3]
 };

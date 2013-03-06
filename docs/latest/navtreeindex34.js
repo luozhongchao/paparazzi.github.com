@@ -1,5 +1,9 @@
 var NAVTREEINDEX34 =
 {
+"max11040__hw_8c.html#a164f15a88635b4b330466a8a46442263":[8,0,0,0,0,0,2,0,0,4],
+"max11040__hw_8c.html#a4dbe9d4c32590147b4ef21ef12da135a":[8,0,0,0,0,0,2,0,0,2],
+"max11040__hw_8c.html#a9bf3da0c1ae5359ecca54d4da98f259b":[8,0,0,0,0,0,2,0,0,1],
+"max11040__hw_8c.html#aa105625a4ec7ecf95c0802c3edfade05":[8,0,0,0,0,0,2,0,0,3],
 "max11040__hw_8c.html#ad43efa9901f253a6a901a4bddd1b7f5f":[8,0,0,0,0,0,2,0,0,0],
 "max11040__hw_8c_source.html":[8,0,0,0,0,0,2,0,0],
 "max11040__hw_8h.html":[8,0,0,0,0,0,2,0,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX34 =
 "module__airspeed_ads1114.html#module_xml__airspeed_ads1114":[2,56,1,2],
 "module__airspeed_ads1114.html#periodic_functions":[2,56,0,0],
 "module__airspeed_ads1114.html#sources":[2,56,1,1],
-"module__airspeed_amsys.html":[2,57],
-"module__airspeed_amsys.html#configuration":[2,57,0],
-"module__airspeed_amsys.html#define":[2,57,0,0],
-"module__airspeed_amsys.html#event_functions":[2,57,1,1],
-"module__airspeed_amsys.html#files":[2,57,2]
+"module__airspeed_amsys.html":[2,57]
 };

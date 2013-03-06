@@ -1,5 +1,9 @@
 var NAVTREEINDEX30 =
 {
+"lpc21_2gpio_8h.html#a45716c6e09dddb48e50c238883b20082":[8,0,0,0,0,0,10,0],
+"lpc21_2gpio_8h.html#a499638202f8a2fc6cc65518d389f562d":[8,0,0,0,0,0,10,5],
+"lpc21_2gpio_8h.html#a4c5ea8cef0cc99fb9f39f32b2fe1a4a7":[8,0,0,0,0,0,10,7],
+"lpc21_2gpio_8h.html#a75d84f5a39675b4830689f9333228ed4":[8,0,0,0,0,0,10,2],
 "lpc21_2gpio_8h.html#a7628c28ebab9103d441d9327a8259d1f":[8,0,0,0,0,0,10,9],
 "lpc21_2gpio_8h.html#aa38513c5676312aa95275c6c7523b466":[8,0,0,0,0,0,10,6],
 "lpc21_2gpio_8h.html#aa8b0f00c752944319a68e6e3d9098782":[8,0,0,0,0,0,10,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX30 =
 "lpc21_2modules_2core_2trigger__ext__hw_8h_source.html":[8,0,0,0,0,0,2,1,1],
 "lpc21_2peripherals_2max1168__arch_8c.html":[8,0,0,0,0,0,3,0],
 "lpc21_2peripherals_2max1168__arch_8c.html#a712f39d80c2b46e08a4d0230bf74bef2":[8,0,0,0,0,0,3,0,1],
-"lpc21_2peripherals_2max1168__arch_8c.html#ab3a8b665f5a12cd2487f4e3aa86046b7":[8,0,0,0,0,0,3,0,0],
-"lpc21_2peripherals_2max1168__arch_8c_source.html":[8,0,0,0,0,0,3,0],
-"lpc21_2peripherals_2max1168__arch_8h.html":[8,0,0,0,0,0,3,1],
-"lpc21_2peripherals_2max1168__arch_8h.html#a6d195924a779db27644bdec45b2ae473":[8,0,0,0,0,0,3,1,0],
-"lpc21_2peripherals_2max1168__arch_8h.html#a723945125238455c8a49645e84e5b589":[8,0,0,0,0,0,3,1,1]
+"lpc21_2peripherals_2max1168__arch_8c.html#ab3a8b665f5a12cd2487f4e3aa86046b7":[8,0,0,0,0,0,3,0,0]
 };

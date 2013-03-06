@@ -1,5 +1,9 @@
 var NAVTREEINDEX35 =
 {
+"module__airspeed_amsys.html#configuration":[2,57,0],
+"module__airspeed_amsys.html#define":[2,57,0,0],
+"module__airspeed_amsys.html#event_functions":[2,57,1,1],
+"module__airspeed_amsys.html#files":[2,57,2],
 "module__airspeed_amsys.html#functions":[2,57,1],
 "module__airspeed_amsys.html#headers":[2,57,2,0],
 "module__airspeed_amsys.html#init_functions":[2,57,1,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX35 =
 "module__digital_cam_i2c.html#sources":[2,20,2,1],
 "module__digital_cam_servo.html":[2,21],
 "module__digital_cam_servo.html#configuration":[2,21,0],
-"module__digital_cam_servo.html#define":[2,21,0,0],
-"module__digital_cam_servo.html#files":[2,21,2],
-"module__digital_cam_servo.html#functions":[2,21,1],
-"module__digital_cam_servo.html#headers":[2,21,2,0],
-"module__digital_cam_servo.html#init_functions":[2,21,1,0]
+"module__digital_cam_servo.html#define":[2,21,0,0]
 };

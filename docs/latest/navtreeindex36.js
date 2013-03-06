@@ -1,5 +1,9 @@
 var NAVTREEINDEX36 =
 {
+"module__digital_cam_servo.html#files":[2,21,2],
+"module__digital_cam_servo.html#functions":[2,21,1],
+"module__digital_cam_servo.html#headers":[2,21,2,0],
+"module__digital_cam_servo.html#init_functions":[2,21,1,0],
 "module__digital_cam_servo.html#module_xml__digital_cam_servo":[2,21,2,2],
 "module__digital_cam_servo.html#periodic_functions":[2,21,1,1],
 "module__digital_cam_servo.html#sources":[2,21,2,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX36 =
 "module__ins_arduimu_basic.html#periodic_functions":[2,28,1,2],
 "module__ins_arduimu_basic.html#sources":[2,28,2,1],
 "module__ins_vn100.html":[2,29],
-"module__ins_vn100.html#configuration":[2,29,0],
-"module__ins_vn100.html#define":[2,29,0,0],
-"module__ins_vn100.html#event_functions":[2,29,1,1],
-"module__ins_vn100.html#files":[2,29,2],
-"module__ins_vn100.html#functions":[2,29,1]
+"module__ins_vn100.html#configuration":[2,29,0]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX54 =
 {
+"structAhrsIntCmpl.html#a92752ed156f572b0032ddae5b7fc2a0c":[7,0,19,11],
+"structAhrsIntCmpl.html#a953a248c107b246727e6cc5e59d78b14":[7,0,19,7],
+"structAhrsIntCmpl.html#abfd989a08da3cdb1dda25d47d3219fb2":[7,0,19,3],
+"structAhrsIntCmpl.html#acf3812d8e1e73767000eef27b06a0da1":[7,0,19,12],
 "structAhrsIntCmpl.html#adaf100ba8b72591eada0f273324fde26":[7,0,19,6],
 "structAhrsIntCmpl.html#aef05ef5216308fa52417f70f789a5410":[7,0,19,8],
 "structAhrsIntCmplEuler.html":[7,0,20],
@@ -245,9 +249,5 @@ var NAVTREEINDEX54 =
 "structGpsTimeSync.html#a8f4002623b4a2a838d6e69181b533bd4":[7,0,73,1],
 "structGpsUbx.html":[7,0,74],
 "structGpsUbx.html#a06e462850fe08f5c24755cc9ca51c374":[7,0,74,5],
-"structGpsUbx.html#a1be0000a5b6ffa38d85f75f7dd78433e":[7,0,74,1],
-"structGpsUbx.html#a5c60da634702f46ed7724917835bf9f9":[7,0,74,15],
-"structGpsUbx.html#a5c9a344ace51ec9df8f73bf0ceef8800":[7,0,74,14],
-"structGpsUbx.html#a7be8da098d5686651fd8a0e42a0a45b9":[7,0,74,6],
-"structGpsUbx.html#a8fa3fb28ad54bc1abc8c4b843450659c":[7,0,74,8]
+"structGpsUbx.html#a1be0000a5b6ffa38d85f75f7dd78433e":[7,0,74,1]
 };
