@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-647-g4167134</span>
+   &#160;<span id="projectnumber">v4.9_devel-649-gbd2d801</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -354,117 +354,116 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment"> *****************************************************************************/</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
-<div class="line"><a name="l00248"></a><span class="lineno"><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#adf2b5b8ca370a972dc298265eb859894">  248</a></span>&#160;<span class="preprocessor">#define SpektrumParser(_c, _SpektrumState, _receiver)  {                      \</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">  uint16_t ChannelData;                                                       \</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">  uint8_t TimedOut;                                                           \</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="preprocessor">  static uint8_t TmpEncType = 0;        </span><span class="comment">/* 0 = 10bit, 1 = 11 bit        */</span><span class="preprocessor">    \</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="preprocessor">  static uint8_t TmpExpFrames = 0;      </span><span class="comment">/* # of frames for channel data */</span><span class="preprocessor">    \</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">   TimedOut = (!_SpektrumState.SpektrumTimer) ? 1 : 0;                        \</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">  </span><span class="comment">/* If we have just started the resync process or */</span><span class="preprocessor">                         \</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor">  </span><span class="comment">/* if we have recieved a character before our    */</span><span class="preprocessor">                         \</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">  </span><span class="comment">/* 7ms wait has finished                         */</span><span class="preprocessor">                         \</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor">  if ((_SpektrumState.ReSync == 1) ||                                         \</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">      ((_SpektrumState.Sync == 0) &amp;&amp; (!TimedOut))) {                          \</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">    _SpektrumState.ReSync = 0;                                                \</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">    _SpektrumState.SpektrumTimer = MIN_FRAME_SPACE;                           \</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">    _SpektrumState.Sync = 0;                                                  \</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">    _SpektrumState.ChannelCnt = 0;                                            \</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">    _SpektrumState.FrameCnt = 0;                                              \</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">    _SpektrumState.SecondFrame = 0;                                           \</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">    return;                                                                   \</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="preprocessor">  }                                                                           \</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">  </span><span class="comment">/* the first byte of a new frame. It was received */</span><span class="preprocessor">                        \</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">  </span><span class="comment">/* more than 7ms after the last received byte.    */</span><span class="preprocessor">                        \</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">  </span><span class="comment">/* It represents the number of lost frames so far.*/</span><span class="preprocessor">                        \</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">  if (_SpektrumState.Sync == 0) {                                             \</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="preprocessor">      _SpektrumState.LostFrameCnt = _c;                                       \</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor">      if(_receiver) </span><span class="comment">/* secondary receiver */</span><span class="preprocessor">                                  \</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">        _SpektrumState.LostFrameCnt = _SpektrumState.LostFrameCnt &lt;&lt; 8;       \</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">      _SpektrumState.Sync = 1;                                                \</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">      _SpektrumState.SpektrumTimer = MAX_BYTE_SPACE;                          \</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">      return;                                                                 \</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor">  }                                                                           \</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">  </span><span class="comment">/* all other bytes should be recieved within     */</span><span class="preprocessor">                         \</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="preprocessor">  </span><span class="comment">/* MAX_BYTE_SPACE time of the last byte received */</span><span class="preprocessor">                         \</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">  </span><span class="comment">/* otherwise something went wrong resynchronise  */</span><span class="preprocessor">                         \</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="preprocessor">  if(TimedOut) {                                                              \</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="preprocessor">    _SpektrumState.ReSync = 1;                                                \</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">    </span><span class="comment">/* next frame not expected sooner than 7ms     */</span><span class="preprocessor">                         \</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor">    _SpektrumState.SpektrumTimer = MIN_FRAME_SPACE;                           \</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor">    return;                                                                   \</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor">  }                                                                           \</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">  </span><span class="comment">/* second character determines resolution and frame rate for main */</span><span class="preprocessor">        \</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">  </span><span class="comment">/* receiver or low byte of LostFrameCount for secondary receiver  */</span><span class="preprocessor">        \</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">  if(_SpektrumState.Sync == 1) {                                              \</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="preprocessor">    if(_receiver) {                                                           \</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="preprocessor">      _SpektrumState.LostFrameCnt +=_c;                                       \</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="preprocessor">      TmpExpFrames = ExpectedFrames;                                          \</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="preprocessor">    } else {                                                                  \</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="preprocessor"> \</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="preprocessor">      </span><span class="comment">/* protocol that is still 10 bit but without using the full range.    */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="preprocessor">      TmpEncType =(_c &amp; 0x10)&gt;&gt;4;      </span><span class="comment">/* 0 = 10bit, 1 = 11 bit             */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">      TmpExpFrames = _c &amp; 0x03;        </span><span class="comment">/* 1 = 1 frame contains all channels */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">                                       </span><span class="comment">/* 2 = 2 channel data in 2 frames    */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">    }                                                                         \</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">    _SpektrumState.Sync = 2;                                                  \</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor">    _SpektrumState.SpektrumTimer = MAX_BYTE_SPACE;                            \</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">    return;                                                                   \</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">  }                                                                           \</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">  </span><span class="comment">/* high byte of channel data if this is the first byte */</span><span class="preprocessor">                   \</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">  </span><span class="comment">/* of channel data and the most significant bit is set */</span><span class="preprocessor">                   \</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">  </span><span class="comment">/* then this is the second frame of channel data.      */</span><span class="preprocessor">                   \</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">  if(_SpektrumState.Sync == 2) {                                              \</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">    _SpektrumState.HighByte = _c;                                             \</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">    if (_SpektrumState.ChannelCnt == 0) {                                     \</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor">      _SpektrumState.SecondFrame = (_SpektrumState.HighByte &amp; 0x80) ? 1 : 0;  \</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">    }                                                                         \</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">    _SpektrumState.Sync = 3;                                                  \</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="preprocessor">    _SpektrumState.SpektrumTimer = MAX_BYTE_SPACE;                            \</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="preprocessor">    return;                                                                   \</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="preprocessor">  }                                                                           \</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor">  </span><span class="comment">/* low byte of channel data */</span><span class="preprocessor">                                              \</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor">  if(_SpektrumState.Sync == 3) {                                              \</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">    _SpektrumState.Sync = 2;                                                  \</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor">    _SpektrumState.SpektrumTimer = MAX_BYTE_SPACE;                            \</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor">    </span><span class="comment">/* we overwrite the buffer now so rc data is not available now */</span><span class="preprocessor">         \</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">    _SpektrumState.RcAvailable = 0;                                           \</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor">    ChannelData = ((uint16_t)_SpektrumState.HighByte &lt;&lt; 8) | _c;              \</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">    _SpektrumState.values[_SpektrumState.ChannelCnt                           \</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">                          + (_SpektrumState.SecondFrame * 7)] = ChannelData;  \</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">    _SpektrumState.ChannelCnt ++;                                             \</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">  }                                                                           \</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">                                                                              \</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">  </span><span class="comment">/* If we have a whole frame */</span><span class="preprocessor">                                              \</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor">  if(_SpektrumState.ChannelCnt &gt;= SPEKTRUM_CHANNELS_PER_FRAME) {              \</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">    </span><span class="comment">/* how many frames did we expect ? */</span><span class="preprocessor">                                     \</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">    ++_SpektrumState.FrameCnt;                                                \</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor">    if (_SpektrumState.FrameCnt == TmpExpFrames)                              \</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="preprocessor">    {                                                                         \</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">      </span><span class="comment">/* set the rc_available_flag */</span><span class="preprocessor">                                         \</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="preprocessor">      _SpektrumState.RcAvailable = 1;                                         \</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="preprocessor">      _SpektrumState.FrameCnt = 0;                                            \</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor">    }                                                                         \</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="preprocessor">    if(!_receiver) { </span><span class="comment">/* main receiver */</span><span class="preprocessor">                                      \</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">      EncodingType = TmpEncType;         </span><span class="comment">/* only update on a good */</span><span class="preprocessor">          \</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">      ExpectedFrames = TmpExpFrames;     </span><span class="comment">/* main receiver frame   */</span><span class="preprocessor">          \</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">    }                                                                         \</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">    _SpektrumState.Sync = 0;                                                  \</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">    _SpektrumState.ChannelCnt = 0;                                            \</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">    _SpektrumState.SecondFrame = 0;                                           \</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">    _SpektrumState.SpektrumTimer = MIN_FRAME_SPACE;                           \</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">  }                                                                           \</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">}                                                                             \</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="preprocessor"></span><span class="comment">/*****************************************************************************</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno"><a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a91a9fd24df5bc3eb82b8d5baba46959d">  248</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a91a9fd24df5bc3eb82b8d5baba46959d">SpektrumParser</a>(<a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _c, <a class="code" href="structSpektrumStateStruct.html">SpektrumStateType</a>* spektrum_state, bool_t secondary_receiver)  {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> ChannelData;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> TimedOut;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> TmpEncType = 0;        <span class="comment">/* 0 = 10bit, 1 = 11 bit        */</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keyword">static</span> <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> TmpExpFrames = 0;      <span class="comment">/* # of frames for channel data */</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;   TimedOut = (!spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a>) ? 1 : 0;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="comment">/* If we have just started the resync process or */</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="comment">/* if we have recieved a character before our    */</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="comment">/* 7ms wait has finished                         */</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="keywordflow">if</span> ((spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#aad2f4a8760ecd6a4bd62455d8f4569d4">ReSync</a> == 1) ||</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      ((spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> == 0) &amp;&amp; (!TimedOut))) {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#aad2f4a8760ecd6a4bd62455d8f4569d4">ReSync</a> = 0;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a> = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a714b4ef35a5a4e267bbb73a7754f1ab5">MIN_FRAME_SPACE</a>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> = 0;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a01b6d84d55b3141f935b2ab3af595488">ChannelCnt</a> = 0;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a0f1bca7c6c4c57019ffea65b382a25de">FrameCnt</a> = 0;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a683a66bf67d632cc013d4f352f920af8">SecondFrame</a> = 0;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="comment">/* the first byte of a new frame. It was received */</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="comment">/* more than 7ms after the last received byte.    */</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="comment">/* It represents the number of lost frames so far.*/</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordflow">if</span> (spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> == 0) {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#ae73eb7b5b6d2fbc1ebf98416b9959d94">LostFrameCnt</a> = _c;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      <span class="keywordflow">if</span>(secondary_receiver) <span class="comment">/* secondary receiver */</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#ae73eb7b5b6d2fbc1ebf98416b9959d94">LostFrameCnt</a> = spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#ae73eb7b5b6d2fbc1ebf98416b9959d94">LostFrameCnt</a> &lt;&lt; 8;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> = 1;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a> = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a7b58ddee63424da5177ac65351561a36">MAX_BYTE_SPACE</a>;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="comment">/* all other bytes should be recieved within     */</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="comment">/* MAX_BYTE_SPACE time of the last byte received */</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="comment">/* otherwise something went wrong resynchronise  */</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keywordflow">if</span>(TimedOut) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#aad2f4a8760ecd6a4bd62455d8f4569d4">ReSync</a> = 1;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">/* next frame not expected sooner than 7ms     */</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a> = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a714b4ef35a5a4e267bbb73a7754f1ab5">MIN_FRAME_SPACE</a>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="comment">/* second character determines resolution and frame rate for main */</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <span class="comment">/* receiver or low byte of LostFrameCount for secondary receiver  */</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keywordflow">if</span>(spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> == 1) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">if</span>(secondary_receiver) {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#ae73eb7b5b6d2fbc1ebf98416b9959d94">LostFrameCnt</a> +=_c;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      TmpExpFrames = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a9e647afdd07962700d7c5efd80315115">ExpectedFrames</a>;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;      <span class="comment">/* protocol that is still 10 bit but without using the full range.    */</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      TmpEncType =(_c &amp; 0x10)&gt;&gt;4;      <span class="comment">/* 0 = 10bit, 1 = 11 bit             */</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      TmpExpFrames = _c &amp; 0x03;        <span class="comment">/* 1 = 1 frame contains all channels */</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                                       <span class="comment">/* 2 = 2 channel data in 2 frames    */</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> = 2;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a> = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a7b58ddee63424da5177ac65351561a36">MAX_BYTE_SPACE</a>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="comment">/* high byte of channel data if this is the first byte */</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="comment">/* of channel data and the most significant bit is set */</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="comment">/* then this is the second frame of channel data.      */</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keywordflow">if</span>(spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> == 2) {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a1c93c27ba60960fbe990e4f460259654">HighByte</a> = _c;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">if</span> (spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a01b6d84d55b3141f935b2ab3af595488">ChannelCnt</a> == 0) {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a683a66bf67d632cc013d4f352f920af8">SecondFrame</a> = (spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a1c93c27ba60960fbe990e4f460259654">HighByte</a> &amp; 0x80) ? 1 : 0;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> = 3;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a> = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a7b58ddee63424da5177ac65351561a36">MAX_BYTE_SPACE</a>;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  }</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="comment">/* low byte of channel data */</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keywordflow">if</span>(spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> == 3) {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> = 2;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a> = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a7b58ddee63424da5177ac65351561a36">MAX_BYTE_SPACE</a>;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="comment">/* we overwrite the buffer now so rc data is not available now */</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c">RcAvailable</a> = 0;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    ChannelData = ((<a class="code" href="types_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a1c93c27ba60960fbe990e4f460259654">HighByte</a> &lt;&lt; 8) | _c;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a7455739b989c950a44275261a4edba48">values</a>[spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a01b6d84d55b3141f935b2ab3af595488">ChannelCnt</a></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                          + (spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a683a66bf67d632cc013d4f352f920af8">SecondFrame</a> * 7)] = ChannelData;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a01b6d84d55b3141f935b2ab3af595488">ChannelCnt</a> ++;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  }</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="comment">/* If we have a whole frame */</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <span class="keywordflow">if</span>(spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a01b6d84d55b3141f935b2ab3af595488">ChannelCnt</a> &gt;= <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ace6cf51a5f170c61c5c5598f93329478">SPEKTRUM_CHANNELS_PER_FRAME</a>) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">/* how many frames did we expect ? */</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    ++spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a0f1bca7c6c4c57019ffea65b382a25de">FrameCnt</a>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">if</span> (spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a0f1bca7c6c4c57019ffea65b382a25de">FrameCnt</a> == TmpExpFrames)</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;      <span class="comment">/* set the rc_available_flag */</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;      spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c">RcAvailable</a> = 1;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;      spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a0f1bca7c6c4c57019ffea65b382a25de">FrameCnt</a> = 0;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span>(!secondary_receiver) { <span class="comment">/* main receiver */</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;      EncodingType = TmpEncType;         <span class="comment">/* only update on a good */</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;      ExpectedFrames = TmpExpFrames;     <span class="comment">/* main receiver frame   */</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#acdc56f52743d61faddedb3a719ffcd23">Sync</a> = 0;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a01b6d84d55b3141f935b2ab3af595488">ChannelCnt</a> = 0;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#a683a66bf67d632cc013d4f352f920af8">SecondFrame</a> = 0;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    spektrum_state-&gt;<a class="code" href="structSpektrumStateStruct.html#af82f4fa47bac75a2a1de4dbba699b729">SpektrumTimer</a> = <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a714b4ef35a5a4e267bbb73a7754f1ab5">MIN_FRAME_SPACE</a>;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  }</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">/*****************************************************************************</span></div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment"> * RadioControlEventImp decodes channel data stored by uart irq handlers</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment"> * and calls callback funtion</span></div>
@@ -576,7 +575,7 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;  <span class="comment">/* TIM6 configuration */</span></div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;  timer_set_mode(TIM6, TIM_CR1_CKD_CK_INT,</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;           TIM_CR1_CMS_EDGE, TIM_CR1_DIR_DOWN);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;             TIM_CR1_CMS_EDGE, TIM_CR1_DIR_DOWN);</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;  <span class="comment">/* 100 microseconds ie 0.1 millisecond */</span></div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;  timer_set_period(TIM6, <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a94fea3742c90d2c73341748bf2de72d4">TIM_TICS_FOR_100us</a>-1);</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;  timer_set_prescaler(TIM6, ((<a class="code" href="beth_8h.html#add4f03b6c5c9bcabeba314491a310346">AHB_CLK</a> / <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a0226810de0b855055d200ed2877d308b">TIM_FREQ_1000000</a>) - 1));</div>
@@ -627,7 +626,7 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;  <span class="comment">/* Init GPIOS */</span></div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;  <span class="comment">/* Primary UART Rx pin as floating input */</span></div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;  gpio_set_mode(<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_BANK), GPIO_MODE_INPUT,</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;          GPIO_CNF_INPUT_FLOAT, <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_PIN));</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            GPIO_CNF_INPUT_FLOAT, <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_PIN));</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;  <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_REMAP);</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;</div>
@@ -692,7 +691,7 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;  <span class="keywordflow">if</span> (((USART_CR1(<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_DEV)) &amp; USART_CR1_RXNEIE) != 0) &amp;&amp;</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;      ((USART_SR(<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_DEV)) &amp; USART_SR_RXNE) != 0)) {</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> b = usart_recv(<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_DEV));</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#adf2b5b8ca370a972dc298265eb859894">SpektrumParser</a>(b, PrimarySpektrumState, 0);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a91a9fd24df5bc3eb82b8d5baba46959d">SpektrumParser</a>(b, &amp;PrimarySpektrumState, <a class="code" href="imu__chimu_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;  }</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;}</div>
@@ -714,7 +713,7 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;  <span class="keywordflow">if</span> (((USART_CR1(UART5) &amp; USART_CR1_RXNEIE) != 0) &amp;&amp;</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;      ((USART_SR(UART5) &amp; USART_SR_RXNE) != 0)) {</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> b = usart_recv(UART5);</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#adf2b5b8ca370a972dc298265eb859894">SpektrumParser</a>(b, SecondarySpektrumState, 1);</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#a91a9fd24df5bc3eb82b8d5baba46959d">SpektrumParser</a>(b, &amp;SecondarySpektrumState, <a class="code" href="imu__chimu_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;  }</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;}</div>
@@ -730,7 +729,7 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;  rcc_peripheral_enable_clock(&amp;RCC_APB2ENR, RCC_APB2ENR_IOPCEN);</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;  gpio_set_mode(GPIOC, GPIO_MODE_OUTPUT_50_MHZ,</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;          GPIO_CNF_OUTPUT_PUSHPULL, GPIO5);</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;            GPIO_CNF_OUTPUT_PUSHPULL, GPIO5);</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;  gpio_clear(GPIOC, GPIO5);</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;}</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;</div>
@@ -757,7 +756,7 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;  <span class="comment">/* Init GPIO for the bind pin */</span></div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;  gpio_set(GPIOC, GPIO3);</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;  gpio_set_mode(GPIOC, GPIO_MODE_INPUT,</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;          GPIO_CNF_INPUT_PULL_UPDOWN, GPIO3);</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            GPIO_CNF_INPUT_PULL_UPDOWN, GPIO3);</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;  <span class="comment">/* exit if the BIND_PIN is high, it needs to</span></div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;<span class="comment">     be pulled low at startup to initiate bind */</span></div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;  <span class="keywordflow">if</span> (gpio_get(GPIOC, GPIO3) != 0)</div>
@@ -771,7 +770,7 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;  <span class="comment">/* Master receiver Rx push-pull */</span></div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;  gpio_set_mode(<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_BANK), GPIO_MODE_OUTPUT_50_MHZ,</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    GPIO_CNF_OUTPUT_PUSHPULL, <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_PIN));</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;      GPIO_CNF_OUTPUT_PUSHPULL, <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_PIN));</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;  <span class="comment">/* Master receiver RX line, drive high */</span></div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;  gpio_set(<a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_BANK), <a class="code" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ac3ad4ff72c99e96f3ffe89593a3f5f74">PrimaryUart</a>(_PIN));</div>
@@ -865,7 +864,7 @@ $(document).ready(function(){initNavTree('stm32_2subsystems_2radio__control_2spe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_fc6475eb39ea0144fb6697b809fd11a9.html">arch</a></li><li class="navelem"><a class="el" href="dir_ebfa5059daba0d85a68f1520147b1a51.html">stm32</a></li><li class="navelem"><a class="el" href="dir_71548ae744da26ac2c7ca213b679dc43.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_b14b085d0c57bddb3031abea4661d10b.html">radio_control</a></li><li class="navelem"><a class="el" href="stm32_2subsystems_2radio__control_2spektrum__arch_8c.html">spektrum_arch.c</a></li>
-    <li class="footer">Generated on Sun Mar 10 2013 04:00:13 for Paparazzi UAS by
+    <li class="footer">Generated on Mon Mar 11 2013 04:00:12 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

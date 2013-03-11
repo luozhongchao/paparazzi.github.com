@@ -172,7 +172,6 @@ var searchData=
   ['speeds_5fbfp_5fof_5freal',['SPEEDS_BFP_OF_REAL',['../pprz__algebra_8h.html#ab2e4a9721f74470ea3cbd5078067dc2b',1,'pprz_algebra.h']]],
   ['speeds_5ffloat_5fof_5fbfp',['SPEEDS_FLOAT_OF_BFP',['../pprz__algebra_8h.html#adf154f506ff4a4349048244cc4f47190',1,'pprz_algebra.h']]],
   ['spektrum_5fchannels_5fper_5fframe',['SPEKTRUM_CHANNELS_PER_FRAME',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#ace6cf51a5f170c61c5c5598f93329478',1,'spektrum_arch.c']]],
-  ['spektrumparser',['SpektrumParser',['../stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#adf2b5b8ca370a972dc298265eb859894',1,'spektrum_arch.c']]],
   ['spi0',['SPI0',['../LPC21xx_8h.html#af26e39c91b262cc480085abcc450d3d5',1,'LPC21xx.h']]],
   ['spi0if',['SPI0IF',['../LPC21xx_8h.html#a4c5a8a6d70a612c4a426ac83ab38dbeb',1,'LPC21xx.h']]],
   ['spi1',['SPI1',['../LPC21xx_8h.html#ad483be344a28ac800be8f03654a9612f',1,'LPC21xx.h']]],
