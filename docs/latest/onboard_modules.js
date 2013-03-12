@@ -77,7 +77,7 @@ var onboard_modules =
         [ "Raw i2c_abuse_test.xml file:", "module__i2c_abuse_test.html#module_xml__i2c_abuse_test", null ]
       ] ]
     ] ],
-    [ "Give comparable with IMU Health information:", "module__imu_quality_assessment.html", [
+    [ "Give comparable with IMU Health information", "module__imu_quality_assessment.html", [
       [ "Module functions", "module__imu_quality_assessment.html#functions", [
         [ "Init Functions", "module__imu_quality_assessment.html#init_functions", null ],
         [ "Periodic Functions", "module__imu_quality_assessment.html#periodic_functions", null ]
