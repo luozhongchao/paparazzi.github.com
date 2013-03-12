@@ -715,6 +715,18 @@ var onboard_modules =
         [ "Raw airspeed_ets.xml file:", "module__airspeed_ets.html#module_xml__airspeed_ets", null ]
       ] ]
     ] ],
+    [ "Airspeed Otf", "module__airspeed_otf.html", [
+      [ "Module functions", "module__airspeed_otf.html#functions", [
+        [ "Init Functions", "module__airspeed_otf.html#init_functions", null ],
+        [ "Event Functions", "module__airspeed_otf.html#event_functions", null ],
+        [ "Periodic Functions", "module__airspeed_otf.html#periodic_functions", null ]
+      ] ],
+      [ "Files", "module__airspeed_otf.html#files", [
+        [ "Header Files", "module__airspeed_otf.html#headers", null ],
+        [ "Source Files", "module__airspeed_otf.html#sources", null ],
+        [ "Raw airspeed_otf.xml file:", "module__airspeed_otf.html#module_xml__airspeed_otf", null ]
+      ] ]
+    ] ],
     [ "SRF08 ultrasonic range meter", "module__alt_srf08.html", [
       [ "Module functions", "module__alt_srf08.html#functions", [
         [ "Init Functions", "module__alt_srf08.html#init_functions", null ],
