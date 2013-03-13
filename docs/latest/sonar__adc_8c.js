@@ -10,5 +10,5 @@ var sonar__adc_8c =
     [ "sonar_distance", "sonar__adc_8c.html#acd89ccf677819e72bab6e8478f1da7b7", null ],
     [ "sonar_meas", "sonar__adc_8c.html#a69fadebe7b519d56f5380f55216f5d9a", null ],
     [ "sonar_offset", "sonar__adc_8c.html#a355cba79f0a120f30c525bb6ba80a3a0", null ],
-    [ "sonar_scale", "sonar__adc_8c.html#ae96dd201c26c66c7f4e5eb06c2da6902", null ]
+    [ "sonar_scale", "sonar__adc_8c.html#a89a06a7457a87851d2dd9dc8ae9416aa", null ]
 ];
