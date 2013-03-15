@@ -35,9 +35,9 @@ var group__i2c =
     [ "i2c_event", "group__i2c.html#ga05763355d0e087ba41feab61dd773fe6", null ],
     [ "i2c_idle", "group__i2c.html#ga54cb2dd83ed5b0dacc02764aa234f564", null ],
     [ "i2c_init", "group__i2c.html#ga6b8ffbb119f71ec012b6a2c0a2f92279", null ],
-    [ "i2c_receive", "group__i2c.html#ga10efadbea7d8e15af7c688c18bc877d3", null ],
+    [ "i2c_receive", "group__i2c.html#ga9bdc2f5162d3e77dd58b7541ddcbe5d1", null ],
     [ "i2c_setbitrate", "group__i2c.html#ga886c0abe64ca0d366a35abba80cf2eff", null ],
     [ "i2c_submit", "group__i2c.html#ga4c9979d0fb22ed964efa6a006ce8dbfa", null ],
-    [ "i2c_transceive", "group__i2c.html#ga735d7755b84c50df004d07610ae1d116", null ],
-    [ "i2c_transmit", "group__i2c.html#ga107ff0fa620cc2b239e8a9c9727dca88", null ]
+    [ "i2c_transceive", "group__i2c.html#gae029fe6bf43eaf9e46428fec7e7b91c7", null ],
+    [ "i2c_transmit", "group__i2c.html#ga68659e03504627925829f2f12c2ec6d2", null ]
 ];
