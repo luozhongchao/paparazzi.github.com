@@ -458,7 +458,7 @@ var searchData=
   ['cur_5fpos_5fy',['cur_pos_y',['../nav_8h.html#a9db617e643c0032d53f3df6852a2a590',1,'nav.h']]],
   ['cur_5ftest',['cur_test',['../test__board_8c.html#ae327491554de2d9c5359466a70e8990f',1,'cur_test():&#160;test_board.c'],['../test__board_8h.html#ae327491554de2d9c5359466a70e8990f',1,'cur_test():&#160;test_board.c']]],
   ['curbuf',['curbuf',['../structw5100__periph.html#a8390523247b7ac82b4c4ddf6c3302eed',1,'w5100_periph']]],
-  ['current',['current',['../structElectrical.html#aad2e82bde4cf4c3851ead15ad1dca550',1,'Electrical::current()'],['../structactuators__mkk__v2__telemetry__struct.html#a58c17a1c35c9f37190f944cbb2e5dc73',1,'actuators_mkk_v2_telemetry_struct::Current()'],['../main__ap_8c.html#ae6a404c4d3d4da15402e4a8629e7e272',1,'current():&#160;main_ap.c']]],
+  ['current',['Current',['../structactuators__mkk__v2__telemetry__struct.html#a58c17a1c35c9f37190f944cbb2e5dc73',1,'actuators_mkk_v2_telemetry_struct::Current()'],['../structElectrical.html#aad2e82bde4cf4c3851ead15ad1dca550',1,'Electrical::current()'],['../main__ap_8c.html#ae6a404c4d3d4da15402e4a8629e7e272',1,'current():&#160;main_ap.c']]],
   ['current_5fbyte',['current_byte',['../structrc__joby__parser__state.html#a185ede271ec00fa8fd66cd252adf1faf',1,'rc_joby_parser_state']]],
   ['current_5fchannel',['current_channel',['../structrc__joby__parser__state.html#a4e1061feba247be3113709e370f97e5f',1,'rc_joby_parser_state']]],
   ['current_5festimation_5fnonlinearity',['CURRENT_ESTIMATION_NONLINEARITY',['../electrical_8c.html#ab5b8cca2fda6d0ea38b687fc6737f462',1,'electrical.c']]],

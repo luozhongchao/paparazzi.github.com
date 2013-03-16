@@ -1,5 +1,6 @@
 var NAVTREEINDEX57 =
 {
+"structVi__ahrs__info.html#a66c48ea7afc8ba945d04e182efa49641":[7,0,186,1],
 "structVi__ahrs__info.html#abbdf276534da86017f0c40f4572bbed7":[7,0,186,0],
 "structVi__command.html":[7,0,187],
 "structVi__command.html#a15dc924407c5289fc8d1b7c5dfdc2235":[7,0,187,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX57 =
 "structi2c__periph.html#ab87b1de4062efa2a073a28748b9cec38":[7,0,81,3],
 "structi2c__periph.html#ad0b6c0f7fa20c6925a5686f87d645800":[7,0,81,4],
 "structi2c__periph.html#ad3bd507a4aa9e144366dc2c8a6291240":[7,0,81,7],
-"structi2c__periph.html#adc23e331e23ecbdabc4510adeb43f8c2":[7,0,81,1],
-"structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85":[7,0,81,6]
+"structi2c__periph.html#adc23e331e23ecbdabc4510adeb43f8c2":[7,0,81,1]
 };

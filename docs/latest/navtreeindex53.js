@@ -223,7 +223,8 @@ var NAVTREEINDEX53 =
 "structActuatorsAsctecV2.html#a9830efe141bc3e6ba682b80f6d24d163":[7,0,6,1],
 "structActuatorsAsctecV2.html#ac100afb65635c28fdfba71224bd19086":[7,0,6,4],
 "structActuatorsMkk.html":[7,0,7],
-"structActuatorsMkk.html#aa0d77df760e4f8a4ad2d9bcc869f920c":[7,0,7,0],
+"structActuatorsMkk.html#aa0d77df760e4f8a4ad2d9bcc869f920c":[7,0,7,1],
+"structActuatorsMkk.html#ace349686b8fa35bbeccbfdc9b9fcd47a":[7,0,7,0],
 "structActuatorsSkiron.html":[7,0,8],
 "structActuatorsSkiron.html#a0e9925535b84d90eb046a481e8a0ece3":[7,0,8,0],
 "structAdxl345Config.html":[7,0,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX53 =
 "structAdxl345__Spi.html":[7,0,13],
 "structAdxl345__Spi.html#a0f237f13adcb7f3fdeef33660371596b":[7,0,13,5],
 "structAdxl345__Spi.html#a512217bb149d9b72cad0218cef323d66":[7,0,13,0],
-"structAdxl345__Spi.html#a68103d90d3633cbe6cef3276009e1a30":[7,0,13,10],
-"structAdxl345__Spi.html#a6cfefbc11d04077d2d2f619b7b64cf21":[7,0,13,8]
+"structAdxl345__Spi.html#a68103d90d3633cbe6cef3276009e1a30":[7,0,13,10]
 };

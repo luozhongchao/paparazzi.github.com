@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"subsystems_2sensors_2infrared__adc_8h_source.html":[8,0,0,0,10,8,4],
 "subsystems_2sensors_2infrared__i2c_8h.html":[8,0,0,0,10,8,6],
 "subsystems_2sensors_2infrared__i2c_8h.html#a0f8a5f04d45e175173ba0fc62539f5cd":[8,0,0,0,10,8,6,12],
 "subsystems_2sensors_2infrared__i2c_8h.html#a26af96a2c6479f74b514bcfc12612104":[8,0,0,0,10,8,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "temp__temod_8h.html#a40dbb5e2d191dcd22c11a598d5169295":[8,0,0,0,7,25,29,3],
 "temp__temod_8h.html#a5307a6263ab57d6c7083d67d49f8d517":[8,0,0,0,7,25,29,0],
 "temp__temod_8h.html#a8f75417a11757685dd18f1c90f4e5e83":[8,0,0,0,7,25,29,1],
-"temp__temod_8h.html#aaaf211bc5462b03ca020351920b40586":[8,0,0,0,7,25,29,6],
-"temp__temod_8h.html#acaab54d6e397dba4b085c68b909c6c11":[8,0,0,0,7,25,29,5]
+"temp__temod_8h.html#aaaf211bc5462b03ca020351920b40586":[8,0,0,0,7,25,29,6]
 };

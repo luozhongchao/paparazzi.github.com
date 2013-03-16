@@ -1,5 +1,6 @@
 var NAVTREEINDEX58 =
 {
+"structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85":[7,0,81,6],
 "structi2c__transaction.html":[7,0,82],
 "structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee":[7,0,82,0],
 "structi2c__transaction.html#a53b3cfd6febadfef15cdd1136adb20a5":[7,0,82,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX58 =
 "structspistream__config__t.html#a3c0ccedef88b27dc7ebdf4889ae5a179":[7,0,161,0],
 "structspistream__config__t.html#abfeded542df9069160c7bac2b789cc71":[7,0,161,1],
 "structspistream__message__range__t.html":[7,0,162],
-"structspistream__message__range__t.html#a3f00a11321c2e49eef6f3578b9138c60":[7,0,162,1],
-"structspistream__message__range__t.html#add7b6e576d928bc47bf6bec8f3e9bfab":[7,0,162,0]
+"structspistream__message__range__t.html#a3f00a11321c2e49eef6f3578b9138c60":[7,0,162,1]
 };

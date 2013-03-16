@@ -1,5 +1,6 @@
 var NAVTREEINDEX56 =
 {
+"structInt64Vect3.html#ad80765081fab6e9bd85a7e923b7cb729":[7,0,114,2],
 "structInt64Vect3.html#ae0ab7d03358e5ef140313eecffe69610":[7,0,114,0],
 "structInterMcuData.html":[7,0,115],
 "structInterMcuData.html#a30d7bc91c50adccf2d572c21a43b1556":[7,0,115,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX56 =
 "structVehicleInterface.html#a63dca4642131593d26db22a363a88693":[7,0,185,3],
 "structVehicleInterface.html#aadd55a31046784d08346ca94a76ce893":[7,0,185,0],
 "structVehicleInterface.html#ad561aa0f6e51fcc56e7379bd73806823":[7,0,185,2],
-"structVi__ahrs__info.html":[7,0,186],
-"structVi__ahrs__info.html#a66c48ea7afc8ba945d04e182efa49641":[7,0,186,1]
+"structVi__ahrs__info.html":[7,0,186]
 };

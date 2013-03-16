@@ -179,6 +179,7 @@ var searchData=
   ['stdinout_5frx_5fextract_5fidx',['stdinout_rx_extract_idx',['../sim_2mcu__periph_2uart__arch_8h.html#ac428ee82e1ce894c2aae41eee7a7d915',1,'stdinout_rx_extract_idx():&#160;sim_uart_hw.c'],['../sim__uart__hw_8c.html#ac428ee82e1ce894c2aae41eee7a7d915',1,'stdinout_rx_extract_idx():&#160;sim_uart_hw.c']]],
   ['stdinout_5frx_5finsert_5fidx',['stdinout_rx_insert_idx',['../sim_2mcu__periph_2uart__arch_8h.html#afa004242a7f51630731843575654a481',1,'stdinout_rx_insert_idx():&#160;sim_uart_hw.c'],['../sim__uart__hw_8c.html#afa004242a7f51630731843575654a481',1,'stdinout_rx_insert_idx():&#160;sim_uart_hw.c']]],
   ['strobe_5flight_5fmode',['strobe_light_mode',['../light_8c.html#a3f7ea03b21bbece9eb5773417c54e321',1,'strobe_light_mode():&#160;light.c'],['../light_8h.html#a3f7ea03b21bbece9eb5773417c54e321',1,'strobe_light_mode():&#160;light.c']]],
+  ['submit_5ferr_5fcnt',['submit_err_cnt',['../structActuatorsMkk.html#ace349686b8fa35bbeccbfdc9b9fcd47a',1,'ActuatorsMkk']]],
   ['subnet',['subnet',['../w5100_8c.html#a77df0a4bb15ed6f86b91f4afe49b09e1',1,'w5100.c']]],
   ['sum',['sum',['../structadc__buf.html#a0adbcdd2a1f78f3746dad3be8936ed5b',1,'adc_buf']]],
   ['sum_5fcycle_5fperiodic',['sum_cycle_periodic',['../sys__mon_8c.html#a0eb1be10c3d329fdebb17ba0750dc56d',1,'sys_mon.c']]],

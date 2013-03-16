@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"structspistream__message__range__t.html#add7b6e576d928bc47bf6bec8f3e9bfab":[7,0,162,0],
 "structspistream__state__t.html":[7,0,163],
 "structspistream__state__t.html#a88acf6088aa2261f68f314e91c7b5fb8":[7,0,163,1],
 "structspistream__state__t.html#acbfb9d8663c03138985eae1d3c0a46f1":[7,0,163,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "subsystems_2sensors_2infrared__adc_8h.html":[8,0,0,0,10,8,4],
 "subsystems_2sensors_2infrared__adc_8h.html#a246a1412611e4887b2bd242f67504af2":[8,0,0,0,10,8,4,1],
 "subsystems_2sensors_2infrared__adc_8h.html#a29f0aefb8b8d33559dc1db02be8b5020":[8,0,0,0,10,8,4,2],
-"subsystems_2sensors_2infrared__adc_8h.html#afd9b914e78df4722702ab0113752a2b0":[8,0,0,0,10,8,4,0],
-"subsystems_2sensors_2infrared__adc_8h_source.html":[8,0,0,0,10,8,4]
+"subsystems_2sensors_2infrared__adc_8h.html#afd9b914e78df4722702ab0113752a2b0":[8,0,0,0,10,8,4,0]
 };

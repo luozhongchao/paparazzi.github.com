@@ -87,18 +87,18 @@ var NAVTREEINDEX =
 "stabilization__attitude__ref__euler__int_8h.html",
 "state_8h.html#ga616679a87131f44dd89c8357cb318366",
 "stm32_2mcu__periph_2sys__time__arch_8h.html#abb950f6634af7da754fa0c6d99d689cb",
-"structAdxl345__Spi.html#a8367246d82f38553b39c476ac2dfa1f7",
-"structGpsNmea.html",
-"structInt64Vect3.html#ae0ab7d03358e5ef140313eecffe69610",
-"structVi__ahrs__info.html#abbdf276534da86017f0c40f4572bbed7",
-"structi2c__transaction.html",
-"structspistream__state__t.html",
-"subsystems_2sensors_2infrared__i2c_8h.html",
-"temp__temod_8h.html#aecb2f9444fdd44ab336fef4b805dee7d",
-"tiny__0_899_8h.html#aaa37fe060b308c5808f70b01dda594af",
-"trig__ext__hw_8c_source.html",
-"usb__serial_8h.html#a307e2e8623a44862ee705bb62e0d2e98",
-"w5100_8c.html#a77df0a4bb15ed6f86b91f4afe49b09e1"
+"structAdxl345__Spi.html#a6cfefbc11d04077d2d2f619b7b64cf21",
+"structGpsMtk.html#acf709045a4a9bf0ff074430ec9cdc0c8",
+"structInt64Vect3.html#ad80765081fab6e9bd85a7e923b7cb729",
+"structVi__ahrs__info.html#a66c48ea7afc8ba945d04e182efa49641",
+"structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85",
+"structspistream__message__range__t.html#add7b6e576d928bc47bf6bec8f3e9bfab",
+"subsystems_2sensors_2infrared__adc_8h_source.html",
+"temp__temod_8h.html#acaab54d6e397dba4b085c68b909c6c11",
+"tiny__0_899_8h.html#aa8ade7e32d46ae622ee886a90b1ea9c8",
+"trig__ext__hw_8c.html#ad7ca2e350f249bba99a8a506cf5892c4",
+"usb__serial_8h.html#a284d5c98bc74fad4e34a70b16963f811",
+"w5100_8c.html#a7541b688a494a557f407330d46bdbb49"
 ];
 
 var navTreeSubIndices = new Array();

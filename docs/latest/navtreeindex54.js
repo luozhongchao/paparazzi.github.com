@@ -1,5 +1,6 @@
 var NAVTREEINDEX54 =
 {
+"structAdxl345__Spi.html#a6cfefbc11d04077d2d2f619b7b64cf21":[7,0,13,8],
 "structAdxl345__Spi.html#a8367246d82f38553b39c476ac2dfa1f7":[7,0,13,6],
 "structAdxl345__Spi.html#a9585da86bdf47c3bd7706fcd203bbf6e":[7,0,13,1],
 "structAdxl345__Spi.html#aa6540d8535d83c0b6749431846d63fe4":[7,0,13,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX54 =
 "structGpsMtk.html#a591fa9a11dfd088689c7a68ace83f13a":[7,0,69,13],
 "structGpsMtk.html#a5a5581d97622d8c0e3a84f14a9e2f1d0":[7,0,69,4],
 "structGpsMtk.html#a60ed02a92f87eda1548d7454332fc3b3":[7,0,69,1],
-"structGpsMtk.html#ac2b19e8d7c8ce778f551fae04e4852e7":[7,0,69,6],
-"structGpsMtk.html#acf709045a4a9bf0ff074430ec9cdc0c8":[7,0,69,14]
+"structGpsMtk.html#ac2b19e8d7c8ce778f551fae04e4852e7":[7,0,69,6]
 };
