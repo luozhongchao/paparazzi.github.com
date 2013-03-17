@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-663-ga650e1e</span>
+   &#160;<span id="projectnumber">v4.9_devel-664-g7f899b5</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -117,8 +117,6 @@ $(document).ready(function(){initNavTree('ahrs__sim_8c.html','');});
 <code>#include &quot;<a class="el" href="ahrs__sim_8h_source.html">subsystems/ahrs/ahrs_sim.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="pprz__algebra__float_8h_source.html">math/pprz_algebra_float.h</a>&quot;</code><br/>
 <code>#include &quot;generated/airframe.h&quot;</code><br/>
-<code>#include &lt;<a class="el" href="inttypes_8h_source.html">inttypes.h</a>&gt;</code><br/>
-<code>#include &lt;caml/mlvalues.h&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for ahrs_sim.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -126,7 +124,7 @@ $(document).ready(function(){initNavTree('ahrs__sim_8c.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="ahrs__sim_8c__incl.png" border="0" usemap="#sw_2airborne_2subsystems_2ahrs_2ahrs__sim_8c" alt=""/></div>
 <map name="sw_2airborne_2subsystems_2ahrs_2ahrs__sim_8c" id="sw_2airborne_2subsystems_2ahrs_2ahrs__sim_8c">
-<area shape="rect" id="node3" href="ahrs_8h.html" title="Attitude and Heading Reference System interface." alt="" coords="600,197,741,227"/><area shape="rect" id="node23" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="63,448,252,477"/><area shape="rect" id="node51" href="ahrs__sim_8h.html" title="Interface to set the AHRS from the simple OCaml simulator." alt="" coords="648,102,811,149"/><area shape="rect" id="node58" href="inttypes_8h.html" title="inttypes.h" alt="" coords="1016,111,1101,140"/><area shape="rect" id="node7" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="681,448,860,477"/><area shape="rect" id="node29" href="state_8h.html" title="API to get/set the generic vehicle states." alt="" coords="407,275,473,304"/><area shape="rect" id="node10" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="204,525,359,555"/><area shape="rect" id="node17" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="808,525,957,555"/><area shape="rect" id="node33" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations." alt="" coords="605,353,755,399"/><area shape="rect" id="node39" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations." alt="" coords="195,353,344,399"/><area shape="rect" id="node44" href="pprz__orientation__conversion_8h.html" title="Generic orientation representation and conversion." alt="" coords="419,353,581,399"/><area shape="rect" id="node35" href="pprz__geodetic_8h.html" title="pprz_geodetic.h" alt="" coords="419,448,541,477"/></map>
+<area shape="rect" id="node3" href="ahrs_8h.html" title="Attitude and Heading Reference System interface." alt="" coords="600,197,741,227"/><area shape="rect" id="node23" href="pprz__algebra__float_8h.html" title="Paparazzi floating point algebra." alt="" coords="63,448,252,477"/><area shape="rect" id="node51" href="ahrs__sim_8h.html" title="Interface to set the AHRS from the simple OCaml simulator." alt="" coords="648,102,811,149"/><area shape="rect" id="node7" href="pprz__algebra__int_8h.html" title="Paparazzi fixed point algebra." alt="" coords="681,448,860,477"/><area shape="rect" id="node29" href="state_8h.html" title="API to get/set the generic vehicle states." alt="" coords="407,275,473,304"/><area shape="rect" id="node10" href="pprz__algebra_8h.html" title="math/pprz_algebra.h" alt="" coords="204,525,359,555"/><area shape="rect" id="node17" href="pprz__trig__int_8h.html" title="math/pprz_trig_int.h" alt="" coords="808,525,957,555"/><area shape="rect" id="node33" href="pprz__geodetic__int_8h.html" title="Paparazzi fixed point math for geodetic calculations." alt="" coords="605,353,755,399"/><area shape="rect" id="node39" href="pprz__geodetic__float_8h.html" title="Paparazzi floating point math for geodetic calculations." alt="" coords="195,353,344,399"/><area shape="rect" id="node44" href="pprz__orientation__conversion_8h.html" title="Generic orientation representation and conversion." alt="" coords="419,353,581,399"/><area shape="rect" id="node35" href="pprz__geodetic_8h.html" title="pprz_geodetic.h" alt="" coords="419,448,541,477"/></map>
 </div>
 </div>
 <p><a href="ahrs__sim_8c_source.html">Go to the source code of this file.</a></p>
@@ -185,9 +183,9 @@ Variables</h2></td></tr>
 <p>Aligns the AHRS. </p>
 <p>Called after ahrs_aligner has run to set initial attitude and biases. Must set the ahrs status to AHRS_RUNNING. Needs to be implemented by each AHRS algorithm. </p>
 
-<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00081">81</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00078">78</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
 
-<p>References <a class="el" href="ahrs_8c_source.html#l00030">ahrs</a>, <a class="el" href="ahrs_8h_source.html#l00036">AHRS_RUNNING</a>, <a class="el" href="ahrs_8h_source.html#l00045">Ahrs::status</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00057">update_ahrs_from_sim()</a>.</p>
+<p>References <a class="el" href="ahrs_8c_source.html#l00030">ahrs</a>, <a class="el" href="ahrs_8h_source.html#l00036">AHRS_RUNNING</a>, <a class="el" href="ahrs_8h_source.html#l00045">Ahrs::status</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00054">update_ahrs_from_sim()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -219,7 +217,7 @@ Variables</h2></td></tr>
 <p>AHRS initialization. </p>
 <p>Called at startup. Needs to be implemented by each AHRS algorithm. </p>
 
-<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00072">72</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00069">69</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
 
 <p>References <a class="el" href="ahrs_8c_source.html#l00030">ahrs</a>, <a class="el" href="ahrs_8h_source.html#l00036">AHRS_RUNNING</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00017">ahrs_sim_available</a>, <a class="el" href="ahrs_8h_source.html#l00035">AHRS_UNINIT</a>, <a class="el" href="imu__chimu_8h_source.html#l00048">CHIMU_BROADCAST</a>, <a class="el" href="imu__chimu_8c_source.html#l00083">CHIMU_Checksum()</a>, <a class="el" href="imu__chimu_8c_source.html#l00109">CHIMU_Init()</a>, <a class="el" href="imu__chimu_8h_source.html#l00047">CHIMU_STX</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00015">ins_pitch_neutral</a>, <a class="el" href="ahrs__float__dcm_8c_source.html#l00071">INS_PITCH_NEUTRAL_DEFAULT</a>, <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00014">ins_roll_neutral</a>, <a class="el" href="ahrs__float__dcm_8c_source.html#l00068">INS_ROLL_NEUTRAL_DEFAULT</a>, <a class="el" href="ins__module_8h_source.html#l00085">InsSend</a>, <a class="el" href="ins__module_8h_source.html#l00083">InsSend1</a>, <a class="el" href="imu__chimu_8h_source.html#l00060">MSG09_ESTIMATOR</a>, <a class="el" href="imu__chimu_8h_source.html#l00067">MSG10_UARTSETTINGS</a>, <a class="el" href="ins__module_8h.html#a664a8d539ee7893c78e101c06152fc18">new_ins_attitude</a>, and <a class="el" href="ahrs_8h_source.html#l00045">Ahrs::status</a>.</p>
 
@@ -253,9 +251,9 @@ Variables</h2></td></tr>
 <p>Propagation. </p>
 <p>Usually integrates the gyro rates to angles. Reads the global <a class="el" href="imu_8h.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a> data struct. Needs to be implemented by each AHRS algorithm. </p>
 
-<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00093">93</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00090">90</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
 
-<p>References <a class="el" href="jsbsim__ahrs_8c_source.html#l00017">ahrs_sim_available</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00057">update_ahrs_from_sim()</a>.</p>
+<p>References <a class="el" href="jsbsim__ahrs_8c_source.html#l00017">ahrs_sim_available</a>, <a class="el" href="imu__chimu_8h_source.html#l00141">FALSE</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00054">update_ahrs_from_sim()</a>.</p>
 
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -287,7 +285,7 @@ Variables</h2></td></tr>
 <p>Update AHRS state with accerleration measurements. </p>
 <p>Reads the global <a class="el" href="imu_8h.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a> data struct. Needs to be implemented by each AHRS algorithm. </p>
 
-<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00100">100</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00097">97</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
 
 </div>
 </div>
@@ -308,7 +306,7 @@ Variables</h2></td></tr>
 <p>Update AHRS state with GPS measurements. </p>
 <p>Reads the global <a class="el" href="gps_8h.html#a5cf954024f8e0433b21db7439c5bee9d" title="global GPS state">gps</a> data struct. Needs to be implemented by each AHRS algorithm. </p>
 
-<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00106">106</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00103">103</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
 
 <p>References <a class="el" href="imu__chimu_8c_source.html#l00083">CHIMU_Checksum()</a>, <a class="el" href="gps_8h_source.html#l00078">GpsState::fix</a>, <a class="el" href="imu__chimu_8h_source.html#l00113">FloatSwap</a>, <a class="el" href="gps_8c_source.html#l00033">gps</a>, <a class="el" href="gps_8h_source.html#l00043">GPS_FIX_3D</a>, <a class="el" href="ins__module_8h_source.html#l00085">InsSend</a>, and <a class="el" href="gps_8h_source.html#l00071">GpsState::speed_3d</a>.</p>
 
@@ -342,7 +340,7 @@ Variables</h2></td></tr>
 <p>Update AHRS state with magnetometer measurements. </p>
 <p>Reads the global <a class="el" href="imu_8h.html#a77b76ed533bc56f50d714f8958dd26cc" title="global IMU state">imu</a> data struct. Needs to be implemented by each AHRS algorithm. </p>
 
-<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00103">103</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00100">100</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
 
 </div>
 </div>
@@ -360,11 +358,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00057">57</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
+<p>Definition at line <a class="el" href="ahrs__sim_8c_source.html#l00054">54</a> of file <a class="el" href="ahrs__sim_8c_source.html">ahrs_sim.c</a>.</p>
 
 <p>References <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00015">ins_pitch_neutral</a>, <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00014">ins_roll_neutral</a>, <a class="el" href="pprz__algebra__float_8h_source.html#l00079">FloatEulers::phi</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00014">sim_p</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00011">sim_phi</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00013">sim_psi</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00015">sim_q</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00016">sim_r</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00012">sim_theta</a>, <a class="el" href="state_8h_source.html#l01062">stateSetBodyRates_f()</a>, <a class="el" href="state_8h_source.html#l00995">stateSetNedToBodyEulers_f()</a>, and <a class="el" href="pprz__algebra__float_8h_source.html#l00080">FloatEulers::theta</a>.</p>
 
-<p>Referenced by <a class="el" href="ahrs__sim_8c_source.html#l00081">ahrs_align()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00093">ahrs_propagate()</a>.</p>
+<p>Referenced by <a class="el" href="ahrs__sim_8c_source.html#l00078">ahrs_align()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00090">ahrs_propagate()</a>.</p>
 
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -419,7 +417,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="jsbsim__ahrs_8c_source.html#l00014">14</a> of file <a class="el" href="jsbsim__ahrs_8c_source.html">jsbsim_ahrs.c</a>.</p>
 
-<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c_source.html#l00028">ArduIMU_periodic()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00032">provide_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00057">update_ahrs_from_sim()</a>.</p>
+<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c_source.html#l00028">ArduIMU_periodic()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00032">provide_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00054">update_ahrs_from_sim()</a>.</p>
 
 </div>
 </div>
@@ -437,7 +435,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="jsbsim__ahrs_8c_source.html#l00011">11</a> of file <a class="el" href="jsbsim__ahrs_8c_source.html">jsbsim_ahrs.c</a>.</p>
 
-<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00026">ArduIMU_periodic()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00022">provide_attitude()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00057">update_ahrs_from_sim()</a>.</p>
+<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00026">ArduIMU_periodic()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00022">provide_attitude()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00054">update_ahrs_from_sim()</a>.</p>
 
 </div>
 </div>
@@ -455,7 +453,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="jsbsim__ahrs_8c_source.html#l00013">13</a> of file <a class="el" href="jsbsim__ahrs_8c_source.html">jsbsim_ahrs.c</a>.</p>
 
-<p>Referenced by <a class="el" href="sim__ahrs_8c_source.html#l00022">provide_attitude()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00057">update_ahrs_from_sim()</a>.</p>
+<p>Referenced by <a class="el" href="sim__ahrs_8c_source.html#l00022">provide_attitude()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00054">update_ahrs_from_sim()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +471,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="jsbsim__ahrs_8c_source.html#l00015">15</a> of file <a class="el" href="jsbsim__ahrs_8c_source.html">jsbsim_ahrs.c</a>.</p>
 
-<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c_source.html#l00028">ArduIMU_periodic()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00032">provide_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00057">update_ahrs_from_sim()</a>.</p>
+<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c_source.html#l00028">ArduIMU_periodic()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00032">provide_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00054">update_ahrs_from_sim()</a>.</p>
 
 </div>
 </div>
@@ -491,7 +489,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="jsbsim__ahrs_8c_source.html#l00016">16</a> of file <a class="el" href="jsbsim__ahrs_8c_source.html">jsbsim_ahrs.c</a>.</p>
 
-<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c_source.html#l00028">ArduIMU_periodic()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00032">provide_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00057">update_ahrs_from_sim()</a>.</p>
+<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu__basic_8c_source.html#l00028">ArduIMU_periodic()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00032">provide_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00054">update_ahrs_from_sim()</a>.</p>
 
 </div>
 </div>
@@ -509,7 +507,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="jsbsim__ahrs_8c_source.html#l00012">12</a> of file <a class="el" href="jsbsim__ahrs_8c_source.html">jsbsim_ahrs.c</a>.</p>
 
-<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00026">ArduIMU_periodic()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00022">provide_attitude()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00057">update_ahrs_from_sim()</a>.</p>
+<p>Referenced by <a class="el" href="arch_2sim_2modules_2ins_2ins__arduimu_8c_source.html#l00026">ArduIMU_periodic()</a>, <a class="el" href="sim__ahrs_8c_source.html#l00022">provide_attitude()</a>, <a class="el" href="jsbsim__ahrs_8c_source.html#l00020">provide_attitude_and_rates()</a>, and <a class="el" href="ahrs__sim_8c_source.html#l00054">update_ahrs_from_sim()</a>.</p>
 
 </div>
 </div>
@@ -519,7 +517,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_12d6ec7aac5a4a9b8cee17e35022d7c7.html">subsystems</a></li><li class="navelem"><a class="el" href="dir_46fef683200e96ccf1a2f608d90c4a2d.html">ahrs</a></li><li class="navelem"><a class="el" href="ahrs__sim_8c.html">ahrs_sim.c</a></li>
-    <li class="footer">Generated on Sat Mar 16 2013 04:00:12 for Paparazzi UAS by
+    <li class="footer">Generated on Sun Mar 17 2013 04:00:13 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>
