@@ -1,5 +1,6 @@
 var NAVTREEINDEX31 =
 {
+"lpc21_2modules_2core_2trigger__ext__hw_8h.html#a33405bb22d1ef9e3253824ab4b6ac6ed":[8,0,0,0,0,0,2,1,1,15],
 "lpc21_2modules_2core_2trigger__ext__hw_8h.html#a5658c774b5ef4bc5375472a1beba9ddc":[8,0,0,0,0,0,2,1,1,14],
 "lpc21_2modules_2core_2trigger__ext__hw_8h.html#a651b72487f8a491b294cdc86f22fae6c":[8,0,0,0,0,0,2,1,1,16],
 "lpc21_2modules_2core_2trigger__ext__hw_8h.html#a6c500043393b6b4f4fee22f5d7935941":[8,0,0,0,0,0,2,1,1,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX31 =
 "lpcADC_8h_source.html":[8,0,0,0,0,0,0,1],
 "lpcCAN_8h.html":[8,0,0,0,0,0,0,2],
 "lpcCAN_8h_source.html":[8,0,0,0,0,0,0,2],
-"lpcEMC_8h.html":[8,0,0,0,0,0,0,3],
-"lpcEMC_8h_source.html":[8,0,0,0,0,0,0,3]
+"lpcEMC_8h.html":[8,0,0,0,0,0,0,3]
 };

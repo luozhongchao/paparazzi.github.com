@@ -1,5 +1,15 @@
 var NAVTREEINDEX56 =
 {
+"structInt64Quat.html#adccab6d6a8cf3b6333eeb5cbc510939c":[7,0,111,2],
+"structInt64Rates.html":[7,0,112],
+"structInt64Rates.html#a25556c78d8f5eaeab686329f6104da26":[7,0,112,2],
+"structInt64Rates.html#ad21d711fd40730ea136ebe9d7bd56b66":[7,0,112,0],
+"structInt64Rates.html#af99b1f105232c9c619d62040fb3c9d4c":[7,0,112,1],
+"structInt64Vect2.html":[7,0,113],
+"structInt64Vect2.html#a1766beec73eccabb8c608cbbd6626386":[7,0,113,1],
+"structInt64Vect2.html#a7e958b5c345dc9dd295ef95ca53c36d0":[7,0,113,0],
+"structInt64Vect3.html":[7,0,114],
+"structInt64Vect3.html#a10c7f90e7de4ec4c223b6545785260b4":[7,0,114,1],
 "structInt64Vect3.html#ad80765081fab6e9bd85a7e923b7cb729":[7,0,114,2],
 "structInt64Vect3.html#ae0ab7d03358e5ef140313eecffe69610":[7,0,114,0],
 "structInterMcuData.html":[7,0,115],
@@ -239,15 +249,5 @@ var NAVTREEINDEX56 =
 "structVN100__Res__Packet.html":[7,0,194],
 "structVN100__Res__Packet.html#a11355ffb4b3a9f416f298f8bb14db232":[7,0,194,3],
 "structVN100__Res__Packet.html#a222edba75feead594b31bec79da82090":[7,0,194,0],
-"structVN100__Res__Packet.html#a2ffa8d739d484bfaceed3e846bd5e86b":[7,0,194,1],
-"structVN100__Res__Packet.html#a42be581f2cfc78b3e93e0f0a7f2df767":[7,0,194,2],
-"structVN100__Res__Packet.html#a9f78d8190e6812fb9cded7c2672eb13e":[7,0,194,4],
-"structVehicleInterface.html":[7,0,185],
-"structVehicleInterface.html#a110d0b9ef3c54f7c7f30e622844680f3":[7,0,185,1],
-"structVehicleInterface.html#a1bfd15310f8c8127120cad9efcdb05ed":[7,0,185,4],
-"structVehicleInterface.html#a57880e1cae1569eec6aa5bb86a4caa98":[7,0,185,5],
-"structVehicleInterface.html#a63dca4642131593d26db22a363a88693":[7,0,185,3],
-"structVehicleInterface.html#aadd55a31046784d08346ca94a76ce893":[7,0,185,0],
-"structVehicleInterface.html#ad561aa0f6e51fcc56e7379bd73806823":[7,0,185,2],
-"structVi__ahrs__info.html":[7,0,186]
+"structVN100__Res__Packet.html#a2ffa8d739d484bfaceed3e846bd5e86b":[7,0,194,1]
 };

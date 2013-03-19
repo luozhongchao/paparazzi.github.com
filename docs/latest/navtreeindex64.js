@@ -1,5 +1,15 @@
 var NAVTREEINDEX64 =
 {
+"usb__ser__hw_8c.html#adfd6ebb4b8039e06d214b227db30e3b2":[8,0,0,0,0,0,24,18],
+"usb__ser__hw_8c.html#ae891f923dd9e5e6d7630c5ffc64ce0ec":[8,0,0,0,0,0,24,22],
+"usb__ser__hw_8c.html#ae9e700bbf9ad6ed809b2879eeda18417":[8,0,0,0,0,0,24,19],
+"usb__ser__hw_8c.html#aec6510e77946e82acb50893b55bf0b36":[8,0,0,0,0,0,24,26],
+"usb__ser__hw_8c_source.html":[8,0,0,0,0,0,24],
+"usb__serial_8h.html":[8,0,0,0,6,14],
+"usb__serial_8h.html#a1084ec1786de3eaaa9c1d5b5dcf396fc":[8,0,0,0,6,14,3],
+"usb__serial_8h.html#a184633f63ad351d8e70857d9e5ba4a3e":[8,0,0,0,6,14,9],
+"usb__serial_8h.html#a19a213d00cf249a4d4d60dbf1a9907d3":[8,0,0,0,6,14,11],
+"usb__serial_8h.html#a1a2c3b8bab59655e69775eaf5562901e":[8,0,0,0,6,14,2],
 "usb__serial_8h.html#a284d5c98bc74fad4e34a70b16963f811":[8,0,0,0,6,14,12],
 "usb__serial_8h.html#a307e2e8623a44862ee705bb62e0d2e98":[8,0,0,0,6,14,1],
 "usb__serial_8h.html#a497f2c3bbcb2e24f2040db6881de17da":[8,0,0,0,6,14,8],
@@ -239,15 +249,5 @@ var NAVTREEINDEX64 =
 "w5100_8c.html#a39c39cab10e51d6a05cc91620a96739f":[8,0,0,0,10,2,9,37],
 "w5100_8c.html#a3a4ec6731e43710788d3e51f7749259c":[8,0,0,0,10,2,9,40],
 "w5100_8c.html#a455780f8178c7ad9c93bb668b60724fb":[8,0,0,0,10,2,9,42],
-"w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1":[8,0,0,0,10,2,9,31],
-"w5100_8c.html#a4cdd6442983378560bfe178ea1ff28aa":[8,0,0,0,10,2,9,0],
-"w5100_8c.html#a4f8005d214ef828947e404654ac5ac73":[8,0,0,0,10,2,9,27],
-"w5100_8c.html#a4fff7f755daec515393ac34063aeff48":[8,0,0,0,10,2,9,30],
-"w5100_8c.html#a505d2ef52cf63a10ae2ed61dbd4a9fb3":[8,0,0,0,10,2,9,56],
-"w5100_8c.html#a51ab444129c13f6f6f44765945b7c1f7":[8,0,0,0,10,2,9,53],
-"w5100_8c.html#a5a5439784bef7bc3f7fe02c31c6ebc46":[8,0,0,0,10,2,9,18],
-"w5100_8c.html#a6049f750c09da977b6299efd5a0af246":[8,0,0,0,10,2,9,29],
-"w5100_8c.html#a627f213804256ddcafeb943052fa63e5":[8,0,0,0,10,2,9,61],
-"w5100_8c.html#a636f8b657f22576bcfad360f742bfad9":[8,0,0,0,10,2,9,24],
-"w5100_8c.html#a6d96f27f55e86e2e4840625d5f968cd7":[8,0,0,0,10,2,9,8]
+"w5100_8c.html#a4922ca8ccdd9ce56b2457d477a6c88d1":[8,0,0,0,10,2,9,31]
 };

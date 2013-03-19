@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Paparazzi UAS: Airspeed Otf</title>
+<title>Paparazzi UAS: OTF! airspeed/flow angle sensor</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-664-g7f899b5</span>
+   &#160;<span id="projectnumber">v4.9_devel-679-g6f70adf</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -98,11 +98,24 @@ $(document).ready(function(){initNavTree('module__airspeed_otf.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Airspeed Otf </div>  </div>
+<div class="title">OTF! airspeed/flow angle sensor </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Module XML file: <code>airspeed_otf.xml</code> </p>
-<p>No detailed description...</p>
+<p>Driver for the Aeroprobe On-The-Fly! air data computer. </p>
+<pre class="fragment">  The Aeroprobe On-The-Fly! air data computer measures 
+  air pressure from a 5-hole pitot tube and can write
+  resulting data to an SD card or transmit it through an
+  UART. It outputs speed, angle of attack, angle of
+  sideslip and altitude.
+</pre><h1><a class="anchor" id="configuration"></a>
+Module configuration options</h1>
+<h2><a class="anchor" id="configure"></a>
+Configure Options</h2>
+<ul>
+<li><b>name:</b> <code>OTF_UART</code> <b>value:</b> <em>UARTX</em> <br/>
+ Description: UART on which computer is connected</li>
+</ul>
 <h1><a class="anchor" id="functions"></a>
 Module functions</h1>
 <h2><a class="anchor" id="init_functions"></a>
@@ -148,7 +161,17 @@ Raw airspeed_otf.xml file:</h2>
 <div class="line"></div>
 <div class="line">&lt;module name=<span class="stringliteral">&quot;airspeed_otf&quot;</span> dir=<span class="stringliteral">&quot;sensors&quot;</span>&gt;</div>
 <div class="line">  &lt;doc&gt;</div>
-<div class="line">    &lt;description&gt;&lt;/description&gt;</div>
+<div class="line">    &lt;description&gt;</div>
+<div class="line">      OTF! airspeed/flow angle sensor </div>
+<div class="line">      Driver <span class="keywordflow">for</span> the Aeroprobe On-The-Fly! air data computer.</div>
+<div class="line"></div>
+<div class="line">      The Aeroprobe On-The-Fly! air data computer measures </div>
+<div class="line">      air pressure from a 5-hole pitot tube and can write</div>
+<div class="line">      resulting data to an SD card or transmit it through an</div>
+<div class="line">      UART. It outputs speed, angle of attack, angle of</div>
+<div class="line">      sideslip and altitude. </div>
+<div class="line">    &lt;/description&gt;</div>
+<div class="line">    &lt;configure name=<span class="stringliteral">&quot;OTF_UART&quot;</span> value=<span class="stringliteral">&quot;UARTX&quot;</span> description=<span class="stringliteral">&quot;UART on which computer is connected&quot;</span>/&gt;</div>
 <div class="line">  &lt;/doc&gt;</div>
 <div class="line">  &lt;header&gt;</div>
 <div class="line">    &lt;file name=<span class="stringliteral">&quot;met_module.h&quot;</span>/&gt;</div>
@@ -159,18 +182,19 @@ Raw airspeed_otf.xml file:</h2>
 <div class="line">  &lt;<span class="keyword">event</span> fun=<span class="stringliteral">&quot;airspeed_otf_event()&quot;</span>/&gt;</div>
 <div class="line">  &lt;makefile target=<span class="stringliteral">&quot;ap&quot;</span>&gt;</div>
 <div class="line">    &lt;file name=<span class="stringliteral">&quot;airspeed_otf.c&quot;</span>/&gt;</div>
-<div class="line">    &lt;define name=<span class="stringliteral">&quot;USE_UART$(OTF_UART_NR)&quot;</span>/&gt;</div>
-<div class="line">    &lt;define name=<span class="stringliteral">&quot;MET_LINK&quot;</span> value=<span class="stringliteral">&quot;UART$(OTF_UART_NR)&quot;</span>/&gt;</div>
-<div class="line">    &lt;define name=<span class="stringliteral">&quot;UART$(OTF_UART_NR)_BAUD&quot;</span> value=<span class="stringliteral">&quot;B115200&quot;</span>/&gt;</div>
+<div class="line">    &lt;define name=<span class="stringliteral">&quot;USE_$(OTF_UART)&quot;</span>/&gt;</div>
+<div class="line">    &lt;define name=<span class="stringliteral">&quot;MET_LINK&quot;</span> value=<span class="stringliteral">&quot;$(OTF_UART)&quot;</span>/&gt;</div>
+<div class="line">    &lt;define name=<span class="stringliteral">&quot;$(OTF_UART)_BAUD&quot;</span> value=<span class="stringliteral">&quot;B115200&quot;</span>/&gt;</div>
 <div class="line">  &lt;/makefile&gt;</div>
 <div class="line">&lt;/module&gt;</div>
+<div class="line"></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="onboard_modules.html">Onboard Modules</a></li>
-    <li class="footer">Generated on Sun Mar 17 2013 04:00:14 for Paparazzi UAS by
+    <li class="footer">Generated on Tue Mar 19 2013 04:00:16 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

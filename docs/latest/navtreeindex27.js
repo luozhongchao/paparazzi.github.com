@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"led__cam__ctrl_8h.html":[8,0,0,0,7,12,5],
 "led__cam__ctrl_8h.html#a083ec1623bd3e3eb99edae0c55fd4b23":[8,0,0,0,7,12,5,0],
 "led__cam__ctrl_8h.html#a7c9891620f73eb93e8d917c5ff17451f":[8,0,0,0,7,12,5,3],
 "led__cam__ctrl_8h.html#a9642f48627a6517582c38e3593939e28":[8,0,0,0,7,12,5,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "lisa__l_2baro__board_8c.html":[8,0,0,0,1,2,0],
 "lisa__l_2baro__board_8c.html#a0c000c34c542d400cd2a45608f714d12":[8,0,0,0,1,2,0,3],
 "lisa__l_2baro__board_8c.html#a115a7458b744530fecafb4a548e5d92a":[8,0,0,0,1,2,0,11],
-"lisa__l_2baro__board_8c.html#a23ed77c56ba44b3ed3cc3b8e378bdb00":[8,0,0,0,1,2,0,10],
-"lisa__l_2baro__board_8c.html#a4e4ed9edbc6819d4b3f967eee7429fb8":[8,0,0,0,1,2,0,5]
+"lisa__l_2baro__board_8c.html#a23ed77c56ba44b3ed3cc3b8e378bdb00":[8,0,0,0,1,2,0,10]
 };

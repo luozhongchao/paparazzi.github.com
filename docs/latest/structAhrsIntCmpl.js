@@ -6,7 +6,6 @@ var structAhrsIntCmpl =
     [ "high_rez_bias", "structAhrsIntCmpl.html#abfd989a08da3cdb1dda25d47d3219fb2", null ],
     [ "high_rez_quat", "structAhrsIntCmpl.html#a5c0615c4471d16681904ef4baf2b23e1", null ],
     [ "imu_rate", "structAhrsIntCmpl.html#a544e178838b7d0b277173a90aba30ef8", null ],
-    [ "ltp_to_imu_euler", "structAhrsIntCmpl.html#adaf100ba8b72591eada0f273324fde26", null ],
     [ "ltp_to_imu_quat", "structAhrsIntCmpl.html#a953a248c107b246727e6cc5e59d78b14", null ],
     [ "ltp_vel_norm", "structAhrsIntCmpl.html#aef05ef5216308fa52417f70f789a5410", null ],
     [ "ltp_vel_norm_valid", "structAhrsIntCmpl.html#a57470b48028419d9ef592c7db474d9f7", null ],

@@ -243,6 +243,7 @@ var searchData=
   ['ap_5fmode_5fattitude_5fdirect',['AP_MODE_ATTITUDE_DIRECT',['../rotorcraft_2autopilot_8h.html#a51250d87ce9f6ec96177cb331c1c1263',1,'autopilot.h']]],
   ['ap_5fmode_5fattitude_5frc_5fclimb',['AP_MODE_ATTITUDE_RC_CLIMB',['../rotorcraft_2autopilot_8h.html#ac976014a5a04dc8be7670673840e7680',1,'autopilot.h']]],
   ['ap_5fmode_5fattitude_5fz_5fhold',['AP_MODE_ATTITUDE_Z_HOLD',['../rotorcraft_2autopilot_8h.html#a8f1633b822937ff9ec8b030bbda4bc5c',1,'autopilot.h']]],
+  ['ap_5fmode_5fcare_5ffree_5fdirect',['AP_MODE_CARE_FREE_DIRECT',['../rotorcraft_2autopilot_8h.html#ae51fcaa5debee4095469034ae93ea08d',1,'autopilot.h']]],
   ['ap_5fmode_5ffailsafe',['AP_MODE_FAILSAFE',['../rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36',1,'autopilot.h']]],
   ['ap_5fmode_5fhover_5fclimb',['AP_MODE_HOVER_CLIMB',['../rotorcraft_2autopilot_8h.html#a291a5a57a4550cbc7936e2067eab0a17',1,'autopilot.h']]],
   ['ap_5fmode_5fhover_5fdirect',['AP_MODE_HOVER_DIRECT',['../rotorcraft_2autopilot_8h.html#a0bd4fa6ac04cd59a3aeac1d2de763bc9',1,'autopilot.h']]],

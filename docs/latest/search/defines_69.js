@@ -140,7 +140,7 @@ var searchData=
   ['ins_5fvn100_5fset_5fbaud',['INS_VN100_SET_BAUD',['../ins__vn100_8h.html#a23229ffeb720c7d5d3f20b8eea1cee77',1,'ins_vn100.h']]],
   ['ins_5fyaw_5fneutral_5fdefault',['INS_YAW_NEUTRAL_DEFAULT',['../ins__vn100_8c.html#a365ce013c6173931397c8585232aa33d',1,'ins_vn100.c']]],
   ['insbuffer',['InsBuffer',['../ins__module_8h.html#a89717e256a6b1749410d36d3e3691acb',1,'ins_module.h']]],
-  ['inseventcheckandhandle',['InsEventCheckAndHandle',['../ins__module_8h.html#adce0f39efa999513f584120bdfa1526f',1,'InsEventCheckAndHandle():&#160;ins_module.h'],['../met__module_8h.html#adce0f39efa999513f584120bdfa1526f',1,'InsEventCheckAndHandle():&#160;met_module.h']]],
+  ['inseventcheckandhandle',['InsEventCheckAndHandle',['../ins__module_8h.html#adce0f39efa999513f584120bdfa1526f',1,'ins_module.h']]],
   ['inslink',['InsLink',['../ins__module_8h.html#ab3afefe3da54fd2e9d9b14c042d4ec96',1,'ins_module.h']]],
   ['inssend',['InsSend',['../ins__module_8h.html#af27360f089335b4c4d7152078108d6f0',1,'ins_module.h']]],
   ['inssend1',['InsSend1',['../ins__module_8h.html#abc64615da516da14734f05936dfb3f57',1,'ins_module.h']]],

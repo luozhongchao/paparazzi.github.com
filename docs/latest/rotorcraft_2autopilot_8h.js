@@ -4,6 +4,7 @@ var rotorcraft_2autopilot_8h =
     [ "AP_MODE_ATTITUDE_DIRECT", "rotorcraft_2autopilot_8h.html#a51250d87ce9f6ec96177cb331c1c1263", null ],
     [ "AP_MODE_ATTITUDE_RC_CLIMB", "rotorcraft_2autopilot_8h.html#ac976014a5a04dc8be7670673840e7680", null ],
     [ "AP_MODE_ATTITUDE_Z_HOLD", "rotorcraft_2autopilot_8h.html#a8f1633b822937ff9ec8b030bbda4bc5c", null ],
+    [ "AP_MODE_CARE_FREE_DIRECT", "rotorcraft_2autopilot_8h.html#ae51fcaa5debee4095469034ae93ea08d", null ],
     [ "AP_MODE_FAILSAFE", "rotorcraft_2autopilot_8h.html#ac01e66c09ff9aa539479ea5e5b120d36", null ],
     [ "AP_MODE_HOVER_CLIMB", "rotorcraft_2autopilot_8h.html#a291a5a57a4550cbc7936e2067eab0a17", null ],
     [ "AP_MODE_HOVER_DIRECT", "rotorcraft_2autopilot_8h.html#a0bd4fa6ac04cd59a3aeac1d2de763bc9", null ],

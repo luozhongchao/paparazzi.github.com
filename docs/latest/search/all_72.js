@@ -114,7 +114,7 @@ var searchData=
   ['rc_5fspk_5fsync_5f2',['RC_SPK_SYNC_2',['../spektrum__dx7se_8h.html#a0b6ec86d1fd5c83baa2fbd4509b30f03',1,'RC_SPK_SYNC_2():&#160;spektrum_dx7se.h'],['../spektrum__dx7se__joby_8h.html#a0b6ec86d1fd5c83baa2fbd4509b30f03',1,'RC_SPK_SYNC_2():&#160;spektrum_dx7se_joby.h']]],
   ['rc_5fspk_5fthrow',['rc_spk_throw',['../lpc21_2subsystems_2radio__control_2spektrum__arch_8c.html#af871da7c10e72980ef21424337791c76',1,'rc_spk_throw():&#160;spektrum_arch.c'],['../lpc21_2subsystems_2radio__control_2spektrum__arch_8h.html#af871da7c10e72980ef21424337791c76',1,'rc_spk_throw():&#160;spektrum_arch.c']]],
   ['rc_5fspk_5fthrows',['RC_SPK_THROWS',['../spektrum__dx7se_8h.html#aa765b184d938f5978566fca429ca33d6',1,'RC_SPK_THROWS():&#160;spektrum_dx7se.h'],['../spektrum__dx7se__joby_8h.html#aa765b184d938f5978566fca429ca33d6',1,'RC_SPK_THROWS():&#160;spektrum_dx7se_joby.h']]],
-  ['rc_5fupdate_5ffreq',['RC_UPDATE_FREQ',['../stabilization__attitude__rc__setpoint_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e',1,'stabilization_attitude_rc_setpoint.h']]],
+  ['rc_5fupdate_5ffreq',['RC_UPDATE_FREQ',['../stabilization__attitude__rc__setpoint_8c.html#a0dfaa7b497c5532a21ba0b8313b9311e',1,'stabilization_attitude_rc_setpoint.c']]],
   ['rcavailable',['RcAvailable',['../structSpektrumStateStruct.html#a99ad58a2649e7b0039ac571b5f4bfa0c',1,'SpektrumStateStruct']]],
   ['rcchannel',['RcChannel',['../rc__settings_8c.html#a1208e80268eeb8b24ab1a67f2ecedb54',1,'rc_settings.c']]],
   ['rclink',['RcLink',['../lpc21_2subsystems_2radio__control_2spektrum__arch_8h.html#a58576435eb4ebe4d5c836af6b6ff70bf',1,'RcLink():&#160;spektrum_arch.h'],['../joby_8h.html#a58576435eb4ebe4d5c836af6b6ff70bf',1,'RcLink():&#160;joby.h']]],

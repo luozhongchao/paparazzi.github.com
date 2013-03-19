@@ -1,5 +1,15 @@
 var NAVTREEINDEX55 =
 {
+"structGpsMtk.html#a38f9bcda01299c0a0caed07e24b05945":[7,0,69,10],
+"structGpsMtk.html#a3aa5c85e028eee66f715449e369da10a":[7,0,69,9],
+"structGpsMtk.html#a42472178f04fa801d0778e5381e67478":[7,0,69,8],
+"structGpsMtk.html#a452bdbf72b89a87ee833c5ce9b575012":[7,0,69,5],
+"structGpsMtk.html#a4dfb0920b82ea4a0a39716d80e7f27f4":[7,0,69,2],
+"structGpsMtk.html#a4fbbd87a0acc4d241e817b7f8470d6b2":[7,0,69,0],
+"structGpsMtk.html#a591fa9a11dfd088689c7a68ace83f13a":[7,0,69,13],
+"structGpsMtk.html#a5a5581d97622d8c0e3a84f14a9e2f1d0":[7,0,69,4],
+"structGpsMtk.html#a60ed02a92f87eda1548d7454332fc3b3":[7,0,69,1],
+"structGpsMtk.html#ac2b19e8d7c8ce778f551fae04e4852e7":[7,0,69,6],
 "structGpsMtk.html#acf709045a4a9bf0ff074430ec9cdc0c8":[7,0,69,14],
 "structGpsNmea.html":[7,0,70],
 "structGpsNmea.html#a3e2868479c45938a05a9eb0e9cea04cf":[7,0,70,3],
@@ -239,15 +249,5 @@ var NAVTREEINDEX55 =
 "structInt64Quat.html":[7,0,111],
 "structInt64Quat.html#a962cef220070c0af2f8064b3fd6cb47d":[7,0,111,0],
 "structInt64Quat.html#a9e497f25fd3979ac0985933952f48222":[7,0,111,1],
-"structInt64Quat.html#aa4ea113b357039ce8b712284b92da054":[7,0,111,3],
-"structInt64Quat.html#adccab6d6a8cf3b6333eeb5cbc510939c":[7,0,111,2],
-"structInt64Rates.html":[7,0,112],
-"structInt64Rates.html#a25556c78d8f5eaeab686329f6104da26":[7,0,112,2],
-"structInt64Rates.html#ad21d711fd40730ea136ebe9d7bd56b66":[7,0,112,0],
-"structInt64Rates.html#af99b1f105232c9c619d62040fb3c9d4c":[7,0,112,1],
-"structInt64Vect2.html":[7,0,113],
-"structInt64Vect2.html#a1766beec73eccabb8c608cbbd6626386":[7,0,113,1],
-"structInt64Vect2.html#a7e958b5c345dc9dd295ef95ca53c36d0":[7,0,113,0],
-"structInt64Vect3.html":[7,0,114],
-"structInt64Vect3.html#a10c7f90e7de4ec4c223b6545785260b4":[7,0,114,1]
+"structInt64Quat.html#aa4ea113b357039ce8b712284b92da054":[7,0,111,3]
 };

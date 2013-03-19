@@ -1,6 +1,7 @@
 var guidance__h_8h =
 [
     [ "GUIDANCE_H_MODE_ATTITUDE", "guidance__h_8h.html#a68ef1d14541e83675e37b38a6f57cd29", null ],
+    [ "GUIDANCE_H_MODE_CARE_FREE", "guidance__h_8h.html#ab5186150bd081e971a07f229c81be028", null ],
     [ "GUIDANCE_H_MODE_HOVER", "guidance__h_8h.html#a2f2f695a8fcb314dc64bf0b82811937d", null ],
     [ "GUIDANCE_H_MODE_KILL", "guidance__h_8h.html#aca30783fe715ec77589d55fdaa7b76e5", null ],
     [ "GUIDANCE_H_MODE_NAV", "guidance__h_8h.html#a0695fb38a9f3b93b7be3484568e0be1a", null ],

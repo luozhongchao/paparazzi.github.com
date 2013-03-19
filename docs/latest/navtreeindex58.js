@@ -1,5 +1,15 @@
 var NAVTREEINDEX58 =
 {
+"structi2c__periph.html":[7,0,81],
+"structi2c__periph.html#a4b1270562d3320ff0151bd7856ec0c6e":[7,0,81,0],
+"structi2c__periph.html#a4e572be9f28f1037d7c749a223329aaf":[7,0,81,8],
+"structi2c__periph.html#a63002740b27aaaf9d847b17001302d9c":[7,0,81,9],
+"structi2c__periph.html#a76d89c1653cd5da167ec5ce1edaf3d7c":[7,0,81,2],
+"structi2c__periph.html#a80acb31fe9dd4114470fb7df86b72901":[7,0,81,5],
+"structi2c__periph.html#ab87b1de4062efa2a073a28748b9cec38":[7,0,81,3],
+"structi2c__periph.html#ad0b6c0f7fa20c6925a5686f87d645800":[7,0,81,4],
+"structi2c__periph.html#ad3bd507a4aa9e144366dc2c8a6291240":[7,0,81,7],
+"structi2c__periph.html#adc23e331e23ecbdabc4510adeb43f8c2":[7,0,81,1],
 "structi2c__periph.html#af293727ce3c1ee16e7b5f51ac5e8ce85":[7,0,81,6],
 "structi2c__transaction.html":[7,0,82],
 "structi2c__transaction.html#a295b2671835ae06b28905433cd1096ee":[7,0,82,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX58 =
 "structspi__transaction.html#af804a20f8372631a24aad61be1383307":[7,0,158,2],
 "structspi__transaction.html#afcc49de6913e59398111a070be5aeda2":[7,0,158,13],
 "structspistream__buffers__t.html":[7,0,160],
-"structspistream__buffers__t.html#a369eb744301a0c61b52e7960d8fb80ef":[7,0,160,2],
-"structspistream__buffers__t.html#a473a9e2b792e6ee0f6316ece25a9bcf6":[7,0,160,4],
-"structspistream__buffers__t.html#a68f2b4376c476a0ab4e722a885a25657":[7,0,160,0],
-"structspistream__buffers__t.html#ace1a531a12cd14598b5455f178d97277":[7,0,160,5],
-"structspistream__buffers__t.html#acefebcb97025f87f1a89c7a560ba5437":[7,0,160,1],
-"structspistream__buffers__t.html#af7a77ff132b68700226df296b9e3f134":[7,0,160,3],
-"structspistream__config__t.html":[7,0,161],
-"structspistream__config__t.html#a3c0ccedef88b27dc7ebdf4889ae5a179":[7,0,161,0],
-"structspistream__config__t.html#abfeded542df9069160c7bac2b789cc71":[7,0,161,1],
-"structspistream__message__range__t.html":[7,0,162],
-"structspistream__message__range__t.html#a3f00a11321c2e49eef6f3578b9138c60":[7,0,162,1]
+"structspistream__buffers__t.html#a369eb744301a0c61b52e7960d8fb80ef":[7,0,160,2]
 };

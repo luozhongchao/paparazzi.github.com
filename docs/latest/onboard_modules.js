@@ -715,7 +715,10 @@ var onboard_modules =
         [ "Raw airspeed_ets.xml file:", "module__airspeed_ets.html#module_xml__airspeed_ets", null ]
       ] ]
     ] ],
-    [ "Airspeed Otf", "module__airspeed_otf.html", [
+    [ "OTF! airspeed/flow angle sensor", "module__airspeed_otf.html", [
+      [ "Module configuration options", "module__airspeed_otf.html#configuration", [
+        [ "Configure Options", "module__airspeed_otf.html#configure", null ]
+      ] ],
       [ "Module functions", "module__airspeed_otf.html#functions", [
         [ "Init Functions", "module__airspeed_otf.html#init_functions", null ],
         [ "Event Functions", "module__airspeed_otf.html#event_functions", null ],

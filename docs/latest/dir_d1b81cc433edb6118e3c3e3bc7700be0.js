@@ -7,6 +7,7 @@ var dir_d1b81cc433edb6118e3c3e3bc7700be0 =
     [ "stabilization_attitude_int.h", "stabilization__attitude__int_8h.html", "stabilization__attitude__int_8h" ],
     [ "stabilization_attitude_quat_float.c", "stabilization__attitude__quat__float_8c.html", "stabilization__attitude__quat__float_8c" ],
     [ "stabilization_attitude_quat_int.c", "stabilization__attitude__quat__int_8c.html", "stabilization__attitude__quat__int_8c" ],
+    [ "stabilization_attitude_rc_setpoint.c", "stabilization__attitude__rc__setpoint_8c.html", "stabilization__attitude__rc__setpoint_8c" ],
     [ "stabilization_attitude_rc_setpoint.h", "stabilization__attitude__rc__setpoint_8h.html", "stabilization__attitude__rc__setpoint_8h" ],
     [ "stabilization_attitude_ref.h", "stabilization__attitude__ref_8h.html", "stabilization__attitude__ref_8h" ],
     [ "stabilization_attitude_ref_euler_float.c", "stabilization__attitude__ref__euler__float_8c.html", "stabilization__attitude__ref__euler__float_8c" ],

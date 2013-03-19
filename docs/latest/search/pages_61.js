@@ -5,7 +5,6 @@ var searchData=
   ['ads1114_20airspeed_20sensor',['ADS1114 airspeed sensor',['../module__airspeed_ads1114.html',1,'onboard_modules']]],
   ['airspeed_20amsys_20_28i2c_29',['Airspeed AMSYS (I2C)',['../module__airspeed_amsys.html',1,'onboard_modules']]],
   ['airspeed_20ets_20_28i2c_29',['Airspeed ETS (I2C)',['../module__airspeed_ets.html',1,'onboard_modules']]],
-  ['airspeed_20otf',['Airspeed Otf',['../module__airspeed_otf.html',1,'onboard_modules']]],
   ['altitude_20filter',['Altitude filter',['../module__alt_filter.html',1,'onboard_modules']]],
   ['angle_20of_20attack_20using_20internal_20adc',['Angle of Attack using internal ADC',['../module__aoa_adc.html',1,'onboard_modules']]],
   ['acam_20picocap_20capacitance_20sensor',['ACAM Picocap capacitance sensor',['../module__humid_pcap01.html',1,'onboard_modules']]],

@@ -1,5 +1,16 @@
 var NAVTREEINDEX53 =
 {
+"stm32_2mcu__periph_2spi__arch_8c.html#gafc9125c5764a6749703ae4f1303a16f3":[8,0,0,0,0,3,0,8,35],
+"stm32_2mcu__periph_2spi__arch_8c_source.html":[8,0,0,0,0,3,0,8],
+"stm32_2mcu__periph_2spi__arch_8h.html":[8,0,0,0,0,3,0,9],
+"stm32_2mcu__periph_2spi__arch_8h_source.html":[8,0,0,0,0,3,0,9],
+"stm32_2mcu__periph_2sys__time__arch_8c.html":[8,0,0,0,0,3,0,10],
+"stm32_2mcu__periph_2sys__time__arch_8c.html#a9b31c2feb846b96205ae20ea6883e1c4":[8,0,0,0,0,3,0,10,1],
+"stm32_2mcu__periph_2sys__time__arch_8c.html#afdd94f850b193691f1bfc60c724b542a":[8,0,0,0,0,3,0,10,0],
+"stm32_2mcu__periph_2sys__time__arch_8c_source.html":[8,0,0,0,0,3,0,10],
+"stm32_2mcu__periph_2sys__time__arch_8h.html":[8,0,0,0,0,3,0,11],
+"stm32_2mcu__periph_2sys__time__arch_8h.html#a0583c93a24eed5f81e1f647ca63a652a":[8,0,0,0,0,3,0,11,1],
+"stm32_2mcu__periph_2sys__time__arch_8h.html#a2dfaf7d6ae83a19972aca429fc687e87":[8,0,0,0,0,3,0,11,0],
 "stm32_2mcu__periph_2sys__time__arch_8h.html#abb950f6634af7da754fa0c6d99d689cb":[8,0,0,0,0,3,0,11,2],
 "stm32_2mcu__periph_2sys__time__arch_8h.html#ac7670fcda069c778861e6d2e36f212aa":[8,0,0,0,0,3,0,11,5],
 "stm32_2mcu__periph_2sys__time__arch_8h.html#af3a1d6edcddd66ef6e1ac49dc3e99abf":[8,0,0,0,0,3,0,11,3],
@@ -238,16 +249,5 @@ var NAVTREEINDEX53 =
 "structAdxl345Config.html#aae40365094e01152c5638a51caa2c52e":[7,0,14,1],
 "structAdxl345__I2c.html":[7,0,12],
 "structAdxl345__I2c.html#a1452312b7893660c3ab1a1d6b1ecb16d":[7,0,12,0],
-"structAdxl345__I2c.html#a2a016ddd3c9f5b71cf481ba50a8bca8d":[7,0,12,7],
-"structAdxl345__I2c.html#a428a0ceb8df2c18d62aa93a31eef816c":[7,0,12,3],
-"structAdxl345__I2c.html#a5baf912d9e3d02f6bf44065bd69e82cd":[7,0,12,8],
-"structAdxl345__I2c.html#a6a3030442fa39c4bcc6baed44a6a94d8":[7,0,12,5],
-"structAdxl345__I2c.html#a904bfa189c4c6c9c42793f533b6f81bb":[7,0,12,6],
-"structAdxl345__I2c.html#ac450e1dbb222b22c07617858b90415e2":[7,0,12,1],
-"structAdxl345__I2c.html#ad1e53b5678adb8192335cf9acb81b538":[7,0,12,2],
-"structAdxl345__I2c.html#ad3ab43e6fd2a09d14d8c2b01ffa05154":[7,0,12,4],
-"structAdxl345__Spi.html":[7,0,13],
-"structAdxl345__Spi.html#a0f237f13adcb7f3fdeef33660371596b":[7,0,13,5],
-"structAdxl345__Spi.html#a512217bb149d9b72cad0218cef323d66":[7,0,13,0],
-"structAdxl345__Spi.html#a68103d90d3633cbe6cef3276009e1a30":[7,0,13,10]
+"structAdxl345__I2c.html#a2a016ddd3c9f5b71cf481ba50a8bca8d":[7,0,12,7]
 };

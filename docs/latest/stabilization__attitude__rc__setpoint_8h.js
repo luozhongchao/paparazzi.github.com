@@ -1,12 +1,12 @@
 var stabilization__attitude__rc__setpoint_8h =
 [
     [ "PITCH_DEADBAND_EXCEEDED", "stabilization__attitude__rc__setpoint_8h.html#a502a88bbc096e471006af59f53dc060a", null ],
-    [ "RC_UPDATE_FREQ", "stabilization__attitude__rc__setpoint_8h.html#a0dfaa7b497c5532a21ba0b8313b9311e", null ],
     [ "ROLL_DEADBAND_EXCEEDED", "stabilization__attitude__rc__setpoint_8h.html#ade5e3cdd965d34f8d9076b0724f54c02", null ],
     [ "YAW_DEADBAND_EXCEEDED", "stabilization__attitude__rc__setpoint_8h.html#a908110653d45fd82871ee768ffe38317", null ],
-    [ "stabilization_attitude_read_rc_roll_pitch_earth_quat_f", "stabilization__attitude__rc__setpoint_8h.html#a24bfef588516ec3298735cd90a41ebd0", null ],
-    [ "stabilization_attitude_read_rc_roll_pitch_quat_f", "stabilization__attitude__rc__setpoint_8h.html#a1cfb0dd0e377d4eb4090bab758c6890d", null ],
-    [ "stabilization_attitude_read_rc_setpoint_eulers", "stabilization__attitude__rc__setpoint_8h.html#a6ff670e2f11091810d8534deb2899185", null ],
-    [ "stabilization_attitude_read_rc_setpoint_eulers_f", "stabilization__attitude__rc__setpoint_8h.html#aef80d4c7fedea68a6c45f7d181deda09", null ],
-    [ "stabilization_attitude_read_rc_setpoint_quat_f", "stabilization__attitude__rc__setpoint_8h.html#a3d647a4366d4be6b8ffd5f6d4653058c", null ]
+    [ "stabilization_attitude_read_rc_roll_pitch_earth_quat_f", "stabilization__attitude__rc__setpoint_8h.html#a03c4937f25fa5795496024b6ed8eeae7", null ],
+    [ "stabilization_attitude_read_rc_roll_pitch_quat_f", "stabilization__attitude__rc__setpoint_8h.html#a1700308a4ecb46cc5ca8691e78ce69a3", null ],
+    [ "stabilization_attitude_read_rc_setpoint_eulers", "stabilization__attitude__rc__setpoint_8h.html#a0722fad1f388d7a2f210cbf08a4d2913", null ],
+    [ "stabilization_attitude_read_rc_setpoint_eulers_f", "stabilization__attitude__rc__setpoint_8h.html#a6189af1f1c10b4d9719811d909912ebe", null ],
+    [ "stabilization_attitude_read_rc_setpoint_quat_f", "stabilization__attitude__rc__setpoint_8h.html#a76ee04bb23d6f8df9a998e8681af384d", null ],
+    [ "stabilization_attitude_reset_care_free_heading", "stabilization__attitude__rc__setpoint_8h.html#abdf70201d8682a7d5b567fc6f3790063", null ]
 ];

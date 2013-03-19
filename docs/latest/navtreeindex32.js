@@ -1,5 +1,6 @@
 var NAVTREEINDEX32 =
 {
+"lpcEMC_8h_source.html":[8,0,0,0,0,0,0,3],
 "lpcGPIO_8h.html":[8,0,0,0,0,0,0,4],
 "lpcGPIO_8h_source.html":[8,0,0,0,0,0,0,4],
 "lpcI2C_8h.html":[8,0,0,0,0,0,0,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX32 =
 "mag__hmc58xx_8c.html#a2e48d1806ea88022ff1f1c8b01b53f42":[8,0,0,0,7,32,42,3],
 "mag__hmc58xx_8c.html#a6e8146871b55ac8c4d4353e3aa95e8cb":[8,0,0,0,7,32,42,1],
 "mag__hmc58xx_8c.html#a90faf068c63090984e7b7cc057390107":[8,0,0,0,7,32,42,2],
-"mag__hmc58xx_8c_source.html":[8,0,0,0,7,32,42],
-"mag__hmc58xx_8h.html":[8,0,0,0,7,32,43]
+"mag__hmc58xx_8c_source.html":[8,0,0,0,7,32,42]
 };
