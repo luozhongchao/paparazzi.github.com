@@ -1,5 +1,12 @@
 var NAVTREEINDEX31 =
 {
+"lpc21_2modules_2core_2trigger__ext__hw_8c_source.html":[8,0,0,0,0,0,2,1,0],
+"lpc21_2modules_2core_2trigger__ext__hw_8h.html":[8,0,0,0,0,0,2,1,1],
+"lpc21_2modules_2core_2trigger__ext__hw_8h.html#a0003e5ff9c1eecd4cdc1aa1a67c24785":[8,0,0,0,0,0,2,1,1,23],
+"lpc21_2modules_2core_2trigger__ext__hw_8h.html#a10d8b57f93e85abf7f1099c711ae270e":[8,0,0,0,0,0,2,1,1,0],
+"lpc21_2modules_2core_2trigger__ext__hw_8h.html#a1d678859b8b58a1b7d6596177edf79fd":[8,0,0,0,0,0,2,1,1,10],
+"lpc21_2modules_2core_2trigger__ext__hw_8h.html#a2b51651b87481409b2b46af51fb34681":[8,0,0,0,0,0,2,1,1,1],
+"lpc21_2modules_2core_2trigger__ext__hw_8h.html#a2f096d99be83a27b53d1c8af8a703f9d":[8,0,0,0,0,0,2,1,1,21],
 "lpc21_2modules_2core_2trigger__ext__hw_8h.html#a33405bb22d1ef9e3253824ab4b6ac6ed":[8,0,0,0,0,0,2,1,1,15],
 "lpc21_2modules_2core_2trigger__ext__hw_8h.html#a5658c774b5ef4bc5375472a1beba9ddc":[8,0,0,0,0,0,2,1,1,14],
 "lpc21_2modules_2core_2trigger__ext__hw_8h.html#a651b72487f8a491b294cdc86f22fae6c":[8,0,0,0,0,0,2,1,1,16],
@@ -242,12 +249,5 @@ var NAVTREEINDEX31 =
 "lpc21_2subsystems_2settings__arch_8c.html#aed46837b36ee6e611f0b3de2642d39bf":[8,0,0,0,0,0,4,4,4],
 "lpc21_2subsystems_2settings__arch_8c.html#af50e260c5c244f4e63142dcf15c6cd26":[8,0,0,0,0,0,4,4,7],
 "lpc21_2subsystems_2settings__arch_8c.html#af58fc6a8eb405fce577ee6780fcaf6d1":[8,0,0,0,0,0,4,4,9],
-"lpc21_2subsystems_2settings__arch_8c_source.html":[8,0,0,0,0,0,4,4],
-"lpc21_2subsystems_2settings__arch_8h.html":[8,0,0,0,0,0,4,5],
-"lpc21_2subsystems_2settings__arch_8h_source.html":[8,0,0,0,0,0,4,5],
-"lpcADC_8h.html":[8,0,0,0,0,0,0,1],
-"lpcADC_8h_source.html":[8,0,0,0,0,0,0,1],
-"lpcCAN_8h.html":[8,0,0,0,0,0,0,2],
-"lpcCAN_8h_source.html":[8,0,0,0,0,0,0,2],
-"lpcEMC_8h.html":[8,0,0,0,0,0,0,3]
+"lpc21_2subsystems_2settings__arch_8c_source.html":[8,0,0,0,0,0,4,4]
 };

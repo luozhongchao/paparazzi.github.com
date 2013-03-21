@@ -1,5 +1,12 @@
 var NAVTREEINDEX54 =
 {
+"structAdxl345Config.html#a6ee5db11ac7e24698803d3f5b1ec54fb":[7,0,14,4],
+"structAdxl345Config.html#a7756303adffbd4db9544cf913c6ecba9":[7,0,14,2],
+"structAdxl345Config.html#a9afc67ca469a7b354835c24b28137621":[7,0,14,0],
+"structAdxl345Config.html#aae40365094e01152c5638a51caa2c52e":[7,0,14,1],
+"structAdxl345__I2c.html":[7,0,12],
+"structAdxl345__I2c.html#a1452312b7893660c3ab1a1d6b1ecb16d":[7,0,12,0],
+"structAdxl345__I2c.html#a2a016ddd3c9f5b71cf481ba50a8bca8d":[7,0,12,7],
 "structAdxl345__I2c.html#a428a0ceb8df2c18d62aa93a31eef816c":[7,0,12,3],
 "structAdxl345__I2c.html#a5baf912d9e3d02f6bf44065bd69e82cd":[7,0,12,8],
 "structAdxl345__I2c.html#a6a3030442fa39c4bcc6baed44a6a94d8":[7,0,12,5],
@@ -242,12 +249,5 @@ var NAVTREEINDEX54 =
 "structFloatVect3.html#adeaa53529844ee1fa7df48e61c3994f7":[7,0,64,2],
 "structGeoMagVect.html":[7,0,66],
 "structGeoMagVect.html#a4a34a14c4dfef79d3c3cc9ba3875fced":[7,0,66,2],
-"structGeoMagVect.html#a4a73d66428a39b27c19d8ec813f699aa":[7,0,66,3],
-"structGeoMagVect.html#a738a146d57a985196e40458eaf7ebfdb":[7,0,66,1],
-"structGeoMagVect.html#af824842bef1cc8e81693d8779f8f5aaa":[7,0,66,0],
-"structGpsMtk.html":[7,0,69],
-"structGpsMtk.html#a024b9f5f34836c6a109a5ca0cb3f8913":[7,0,69,12],
-"structGpsMtk.html#a091cf7d70df3af29e8d27e61b67f5865":[7,0,69,7],
-"structGpsMtk.html#a0e175612bfc03126f5a22700d85ab747":[7,0,69,11],
-"structGpsMtk.html#a27b19c29ab2245b2ef17cf6e1f6ef2da":[7,0,69,3]
+"structGeoMagVect.html#a4a73d66428a39b27c19d8ec813f699aa":[7,0,66,3]
 };

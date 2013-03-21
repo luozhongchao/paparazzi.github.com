@@ -1,5 +1,12 @@
 var NAVTREEINDEX32 =
 {
+"lpc21_2subsystems_2settings__arch_8h.html":[8,0,0,0,0,0,4,5],
+"lpc21_2subsystems_2settings__arch_8h_source.html":[8,0,0,0,0,0,4,5],
+"lpcADC_8h.html":[8,0,0,0,0,0,0,1],
+"lpcADC_8h_source.html":[8,0,0,0,0,0,0,1],
+"lpcCAN_8h.html":[8,0,0,0,0,0,0,2],
+"lpcCAN_8h_source.html":[8,0,0,0,0,0,0,2],
+"lpcEMC_8h.html":[8,0,0,0,0,0,0,3],
 "lpcEMC_8h_source.html":[8,0,0,0,0,0,0,3],
 "lpcGPIO_8h.html":[8,0,0,0,0,0,0,4],
 "lpcGPIO_8h_source.html":[8,0,0,0,0,0,0,4],
@@ -242,12 +249,5 @@ var NAVTREEINDEX32 =
 "mag__hmc5843_8h.html#ab4a98865f9a38e801fad6328688f3879":[8,0,0,0,7,32,41,3],
 "mag__hmc5843_8h.html#ab7a6af07f53893a688602516e01efa92":[8,0,0,0,7,32,41,1],
 "mag__hmc5843_8h_source.html":[8,0,0,0,7,32,41],
-"mag__hmc58xx_8c.html":[8,0,0,0,7,32,42],
-"mag__hmc58xx_8c.html#a1b2f96ce247698794fc585a663c37364":[8,0,0,0,7,32,42,5],
-"mag__hmc58xx_8c.html#a1f0b94bc284931c532700ebc1d8f1ac8":[8,0,0,0,7,32,42,4],
-"mag__hmc58xx_8c.html#a2978a46b47cbc9d17a0924014ff9658b":[8,0,0,0,7,32,42,0],
-"mag__hmc58xx_8c.html#a2e48d1806ea88022ff1f1c8b01b53f42":[8,0,0,0,7,32,42,3],
-"mag__hmc58xx_8c.html#a6e8146871b55ac8c4d4353e3aa95e8cb":[8,0,0,0,7,32,42,1],
-"mag__hmc58xx_8c.html#a90faf068c63090984e7b7cc057390107":[8,0,0,0,7,32,42,2],
-"mag__hmc58xx_8c_source.html":[8,0,0,0,7,32,42]
+"mag__hmc58xx_8c.html":[8,0,0,0,7,32,42]
 };

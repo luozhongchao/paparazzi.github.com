@@ -1,5 +1,12 @@
 var NAVTREEINDEX37 =
 {
+"module__i2c_abuse_test.html#functions":[2,5,0],
+"module__i2c_abuse_test.html#headers":[2,5,1,0],
+"module__i2c_abuse_test.html#init_functions":[2,5,0,0],
+"module__i2c_abuse_test.html#module_xml__i2c_abuse_test":[2,5,1,2],
+"module__i2c_abuse_test.html#periodic_functions":[2,5,0,2],
+"module__i2c_abuse_test.html#sources":[2,5,1,1],
+"module__imu_quality_assessment.html":[2,6],
 "module__imu_quality_assessment.html#files":[2,6,1],
 "module__imu_quality_assessment.html#functions":[2,6,0],
 "module__imu_quality_assessment.html#headers":[2,6,1,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX37 =
 "module__poles.html#module_xml__poles":[2,102,0,2],
 "module__poles.html#sources":[2,102,0,1],
 "module__potential.html":[2,52],
-"module__potential.html#files":[2,52,1],
-"module__potential.html#functions":[2,52,0],
-"module__potential.html#headers":[2,52,1,0],
-"module__potential.html#init_functions":[2,52,0,0],
-"module__potential.html#module_xml__potential":[2,52,1,2],
-"module__potential.html#sources":[2,52,1,1],
-"module__pwm_meas.html":[2,13],
-"module__pwm_meas.html#files":[2,13,1]
+"module__potential.html#files":[2,52,1]
 };

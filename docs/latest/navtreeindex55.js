@@ -1,5 +1,12 @@
 var NAVTREEINDEX55 =
 {
+"structGeoMagVect.html#a738a146d57a985196e40458eaf7ebfdb":[7,0,66,1],
+"structGeoMagVect.html#af824842bef1cc8e81693d8779f8f5aaa":[7,0,66,0],
+"structGpsMtk.html":[7,0,69],
+"structGpsMtk.html#a024b9f5f34836c6a109a5ca0cb3f8913":[7,0,69,12],
+"structGpsMtk.html#a091cf7d70df3af29e8d27e61b67f5865":[7,0,69,7],
+"structGpsMtk.html#a0e175612bfc03126f5a22700d85ab747":[7,0,69,11],
+"structGpsMtk.html#a27b19c29ab2245b2ef17cf6e1f6ef2da":[7,0,69,3],
 "structGpsMtk.html#a38f9bcda01299c0a0caed07e24b05945":[7,0,69,10],
 "structGpsMtk.html#a3aa5c85e028eee66f715449e369da10a":[7,0,69,9],
 "structGpsMtk.html#a42472178f04fa801d0778e5381e67478":[7,0,69,8],
@@ -242,12 +249,5 @@ var NAVTREEINDEX55 =
 "structInt32Vect2.html":[7,0,109],
 "structInt32Vect2.html#a0945fb6906f0eaba2bfdb5c2fefdb051":[7,0,109,1],
 "structInt32Vect2.html#a91ffcd57e82c034206721483e7b7c7f8":[7,0,109,0],
-"structInt32Vect3.html":[7,0,110],
-"structInt32Vect3.html#a5c1b16eb951fe60e8fe3f00217268c36":[7,0,110,2],
-"structInt32Vect3.html#aacbde96e85265b05620b8d4a04790911":[7,0,110,0],
-"structInt32Vect3.html#ab617257f46107ac52602d44e6b8f274c":[7,0,110,1],
-"structInt64Quat.html":[7,0,111],
-"structInt64Quat.html#a962cef220070c0af2f8064b3fd6cb47d":[7,0,111,0],
-"structInt64Quat.html#a9e497f25fd3979ac0985933952f48222":[7,0,111,1],
-"structInt64Quat.html#aa4ea113b357039ce8b712284b92da054":[7,0,111,3]
+"structInt32Vect3.html":[7,0,110]
 };

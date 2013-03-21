@@ -1,5 +1,12 @@
 var NAVTREEINDEX45 =
 {
+"pprz__geodetic__wmm2010_8h.html#a27c719d328a05f8348ccf8d1961565d0":[8,0,0,0,5,14,13],
+"pprz__geodetic__wmm2010_8h.html#a2d093208ab0191f4e8d97959f47868e1":[8,0,0,0,5,14,18],
+"pprz__geodetic__wmm2010_8h.html#a34de3ba9150fa0efc7ec7267a9ff0c14":[8,0,0,0,5,14,6],
+"pprz__geodetic__wmm2010_8h.html#a355ec7441e99aa2036bd3844ce708fdd":[8,0,0,0,5,14,16],
+"pprz__geodetic__wmm2010_8h.html#a456afafddc80399b883e504aca3f5329":[8,0,0,0,5,14,22],
+"pprz__geodetic__wmm2010_8h.html#a57f76a5e5afe004c3b985f11b4f1b13e":[8,0,0,0,5,14,19],
+"pprz__geodetic__wmm2010_8h.html#a5aa3b0a443540fe85d7d89509782970b":[8,0,0,0,5,14,2],
 "pprz__geodetic__wmm2010_8h.html#a62100c08a958cf03a315d5b72a4a3c4a":[8,0,0,0,5,14,4],
 "pprz__geodetic__wmm2010_8h.html#a62e18ae35976dd22c318d2edb0796606":[8,0,0,0,5,14,21],
 "pprz__geodetic__wmm2010_8h.html#a73c5974d5caf8bd336ecb273356e2a09":[8,0,0,0,5,14,8],
@@ -242,12 +249,5 @@ var NAVTREEINDEX45 =
 "rotorcraft_2autopilot_8c.html#a0db277a81196cdbbeb50b18244516ca5":[8,0,0,0,3,1,2,13],
 "rotorcraft_2autopilot_8c.html#a1914661233fbbed6c2ee653b99757652":[8,0,0,0,3,1,2,5],
 "rotorcraft_2autopilot_8c.html#a2420bfd42441204f7fa1c47721a304e6":[8,0,0,0,3,1,2,16],
-"rotorcraft_2autopilot_8c.html#a253b2721020bd7b569406cd2b3fa5947":[8,0,0,0,3,1,2,9],
-"rotorcraft_2autopilot_8c.html#a3aaa2cf16ee3b25e8fca9bbd1d579d64":[8,0,0,0,3,1,2,6],
-"rotorcraft_2autopilot_8c.html#a3e41cabeeeed6f149349c977139aac36":[8,0,0,0,3,1,2,14],
-"rotorcraft_2autopilot_8c.html#a3f1a87c0a714ae1fe65f5214086d8c9c":[8,0,0,0,3,1,2,18],
-"rotorcraft_2autopilot_8c.html#a4a1fdd432ddb0277a0918cbd2095b4be":[8,0,0,0,3,1,2,0],
-"rotorcraft_2autopilot_8c.html#a4a3dedaf4d4da879348f946a9f3f4611":[8,0,0,0,3,1,2,7],
-"rotorcraft_2autopilot_8c.html#a643a1732fc06296050835ab61968d726":[8,0,0,0,3,1,2,10],
-"rotorcraft_2autopilot_8c.html#a6df3c2f896a0876e023206069155a0dc":[8,0,0,0,3,1,2,2]
+"rotorcraft_2autopilot_8c.html#a253b2721020bd7b569406cd2b3fa5947":[8,0,0,0,3,1,2,9]
 };

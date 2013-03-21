@@ -2,7 +2,9 @@ var ir__mlx_8c =
 [
     [ "DOWNLINK_DEVICE", "ir__mlx_8c.html#a2978a46b47cbc9d17a0924014ff9658b", null ],
     [ "MLX90614_ADDR", "ir__mlx_8c.html#af57cd108cf3cd4e21dc471263b2236ec", null ],
+    [ "MLX90614_GENERAL_ADDR", "ir__mlx_8c.html#a492b5f051a760672642d8fb9363b068d", null ],
     [ "MLX_I2C_DEV", "ir__mlx_8c.html#ae878bfb8ea2ec6daae857ad3463e7ba3", null ],
+    [ "ir_mlx_crc", "ir__mlx_8c.html#abec14daa20f3cc4623a14a5a3d9d67f0", null ],
     [ "ir_mlx_event", "ir__mlx_8c.html#a0097058c5ba263b0ba9c61611ab05b65", null ],
     [ "ir_mlx_init", "ir__mlx_8c.html#a49e78943609681665f3b25d276746fba", null ],
     [ "ir_mlx_periodic", "ir__mlx_8c.html#a04ee1c3eac1d77cc60f05955f5f4e5f2", null ],

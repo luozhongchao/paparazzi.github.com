@@ -1,5 +1,12 @@
 var NAVTREEINDEX38 =
 {
+"module__potential.html#functions":[2,52,0],
+"module__potential.html#headers":[2,52,1,0],
+"module__potential.html#init_functions":[2,52,0,0],
+"module__potential.html#module_xml__potential":[2,52,1,2],
+"module__potential.html#sources":[2,52,1,1],
+"module__pwm_meas.html":[2,13],
+"module__pwm_meas.html#files":[2,13,1],
 "module__pwm_meas.html#functions":[2,13,0],
 "module__pwm_meas.html#headers":[2,13,1,0],
 "module__pwm_meas.html#init_functions":[2,13,0,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX38 =
 "modules_2sensors_2baro__ms5611__i2c_8c.html#adaaa5ff7ccd30c90b45e7d98a6fb0e15":[8,0,0,0,7,32,28,16],
 "modules_2sensors_2baro__ms5611__i2c_8c.html#ae2486f554e75685d70b6f119ed483267":[8,0,0,0,7,32,28,11],
 "modules_2sensors_2baro__ms5611__i2c_8c.html#afd15b3c514cb6c7763b0db2788665185":[8,0,0,0,7,32,28,6],
-"modules_2sensors_2baro__ms5611__i2c_8c_source.html":[8,0,0,0,7,32,28],
-"modules_2sensors_2imu__aspirin2_8c.html":[8,0,0,0,7,32,36],
-"modules_2sensors_2imu__aspirin2_8c.html#a2978a46b47cbc9d17a0924014ff9658b":[8,0,0,0,7,32,36,0],
-"modules_2sensors_2imu__aspirin2_8c.html#a3f944845df880412588796aeca80105e":[8,0,0,0,7,32,36,3],
-"modules_2sensors_2imu__aspirin2_8c.html#a4c587c06e98269dc2e52b7cd8139b636":[8,0,0,0,7,32,36,1],
-"modules_2sensors_2imu__aspirin2_8c.html#a6623d4c90e7b1bfb73abc0da1195f29b":[8,0,0,0,7,32,36,7],
-"modules_2sensors_2imu__aspirin2_8c.html#a77b76ed533bc56f50d714f8958dd26cc":[8,0,0,0,7,32,36,11],
-"modules_2sensors_2imu__aspirin2_8c.html#a7d6a84769a45f4df472eedbe69512b69":[8,0,0,0,7,32,36,9]
+"modules_2sensors_2baro__ms5611__i2c_8c_source.html":[8,0,0,0,7,32,28]
 };

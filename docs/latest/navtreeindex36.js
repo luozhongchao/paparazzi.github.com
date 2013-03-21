@@ -1,5 +1,12 @@
 var NAVTREEINDEX36 =
 {
+"module__charge_sens.html#functions":[2,33,0],
+"module__charge_sens.html#headers":[2,33,1,0],
+"module__charge_sens.html#init_functions":[2,33,0,0],
+"module__charge_sens.html#module_xml__charge_sens":[2,33,1,2],
+"module__charge_sens.html#periodic_functions":[2,33,0,2],
+"module__charge_sens.html#sources":[2,33,1,1],
+"module__configure_actuators_mkk_v2.html":[2,86],
 "module__configure_actuators_mkk_v2.html#files":[2,86,1],
 "module__configure_actuators_mkk_v2.html#functions":[2,86,0],
 "module__configure_actuators_mkk_v2.html#headers":[2,86,1,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX36 =
 "module__humid_sht_i2c.html#sources":[2,41,2,1],
 "module__i2c_abuse_test.html":[2,5],
 "module__i2c_abuse_test.html#event_functions":[2,5,0,1],
-"module__i2c_abuse_test.html#files":[2,5,1],
-"module__i2c_abuse_test.html#functions":[2,5,0],
-"module__i2c_abuse_test.html#headers":[2,5,1,0],
-"module__i2c_abuse_test.html#init_functions":[2,5,0,0],
-"module__i2c_abuse_test.html#module_xml__i2c_abuse_test":[2,5,1,2],
-"module__i2c_abuse_test.html#periodic_functions":[2,5,0,2],
-"module__i2c_abuse_test.html#sources":[2,5,1,1],
-"module__imu_quality_assessment.html":[2,6]
+"module__i2c_abuse_test.html#files":[2,5,1]
 };
