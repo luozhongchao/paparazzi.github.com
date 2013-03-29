@@ -81,6 +81,7 @@ var searchData=
   ['rotorcraft_5fcam_5fpan',['rotorcraft_cam_pan',['../rotorcraft__cam_8c.html#a51ace79b92e7c5ab69438597883a4c8c',1,'rotorcraft_cam_pan():&#160;rotorcraft_cam.c'],['../rotorcraft__cam_8h.html#a51ace79b92e7c5ab69438597883a4c8c',1,'rotorcraft_cam_pan():&#160;rotorcraft_cam.c']]],
   ['rotorcraft_5fcam_5ftilt',['rotorcraft_cam_tilt',['../rotorcraft__cam_8c.html#a6565dd8f5371a7c2509896667262fbea',1,'rotorcraft_cam_tilt():&#160;rotorcraft_cam.c'],['../rotorcraft__cam_8h.html#a6565dd8f5371a7c2509896667262fbea',1,'rotorcraft_cam_tilt():&#160;rotorcraft_cam.c']]],
   ['rotorcraft_5fcam_5ftilt_5fpwm',['rotorcraft_cam_tilt_pwm',['../rotorcraft__cam_8c.html#adda457c04709dca302b7342870c93dc8',1,'rotorcraft_cam_tilt_pwm():&#160;rotorcraft_cam.c'],['../rotorcraft__cam_8h.html#adda457c04709dca302b7342870c93dc8',1,'rotorcraft_cam_tilt_pwm():&#160;rotorcraft_cam.c']]],
+  ['route_5fref',['route_ref',['../guidance__h__ref_8c.html#a98e6f5c079fc9594bf31c62a6b1351a8',1,'guidance_h_ref.c']]],
   ['rsize',['RSIZE',['../w5100_8c.html#a80a9583c56581301cc2877a18176b654',1,'w5100.c']]],
   ['rst',['RST',['../w5100_8c.html#a627f213804256ddcafeb943052fa63e5',1,'w5100.c']]],
   ['rx',['rx',['../structspistream__buffers__t.html#a68f2b4376c476a0ab4e722a885a25657',1,'spistream_buffers_t']]],

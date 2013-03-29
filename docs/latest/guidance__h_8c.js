@@ -2,7 +2,6 @@ var guidance__h_8c =
 [
     [ "GH_GAIN_SCALE", "guidance__h_8c.html#aa3ea72a4226a4ef662a4fc356c552278", null ],
     [ "GUIDANCE_H_AGAIN", "guidance__h_8c.html#a722bbcc0f532796d2697f90fa80e4924", null ],
-    [ "GUIDANCE_H_C", "guidance__h_8c.html#ac6744252764358364619528e3fed73d1", null ],
     [ "GUIDANCE_H_MAX_BANK", "guidance__h_8c.html#ae7c6988762e27257d928face4ee75d5a", null ],
     [ "GuidanceHSetRef", "guidance__h_8c.html#a06b246be8c5a95daf9856057dd2584f9", null ],
     [ "MAX_POS_ERR", "guidance__h_8c.html#a6bfc5d39a496e8a2ddbf5448dd610916", null ],

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['s',['s',['../structCHIMU__Quaternion.html#afe98e94e37bd5df5eaf53ee27feab96e',1,'CHIMU_Quaternion']]],
+  ['s_5froute_5fref',['s_route_ref',['../guidance__h__ref_8c.html#a2e376ecf4be0573de76e0b5e8996a5ec',1,'guidance_h_ref.c']]],
   ['sacc',['sacc',['../structGpsState.html#a2cad112343a238676da447e83d46f4be',1,'GpsState']]],
   ['sample_5fcount',['sample_count',['../structImuFloat.html#a513076472d2abaf33ab768f42cc5ab80',1,'ImuFloat']]],
   ['samples_5fidx',['samples_idx',['../ahrs__aligner_8c.html#a57a40104e0a0d7509b45d80b6fafc82b',1,'ahrs_aligner.c']]],

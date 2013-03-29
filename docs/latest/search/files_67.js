@@ -41,13 +41,15 @@ var searchData=
   ['guidance_5fcommon_2eh',['guidance_common.h',['../guidance__common_8h.html',1,'']]],
   ['guidance_5fh_2ec',['guidance_h.c',['../guidance__h_8c.html',1,'']]],
   ['guidance_5fh_2eh',['guidance_h.h',['../guidance__h_8h.html',1,'']]],
+  ['guidance_5fh_5fref_2ec',['guidance_h_ref.c',['../guidance__h__ref_8c.html',1,'']]],
   ['guidance_5fh_5fref_2eh',['guidance_h_ref.h',['../guidance__h__ref_8h.html',1,'']]],
-  ['guidance_5fv_2ec',['guidance_v.c',['../fixedwing_2guidance_2guidance__v_8c.html',1,'']]],
   ['guidance_5fv_2ec',['guidance_v.c',['../rotorcraft_2guidance_2guidance__v_8c.html',1,'']]],
-  ['guidance_5fv_2eh',['guidance_v.h',['../rotorcraft_2guidance_2guidance__v_8h.html',1,'']]],
+  ['guidance_5fv_2ec',['guidance_v.c',['../fixedwing_2guidance_2guidance__v_8c.html',1,'']]],
   ['guidance_5fv_2eh',['guidance_v.h',['../fixedwing_2guidance_2guidance__v_8h.html',1,'']]],
+  ['guidance_5fv_2eh',['guidance_v.h',['../rotorcraft_2guidance_2guidance__v_8h.html',1,'']]],
   ['guidance_5fv_5fadpt_2eh',['guidance_v_adpt.h',['../guidance__v__adpt_8h.html',1,'']]],
   ['guidance_5fv_5fn_2ec',['guidance_v_n.c',['../guidance__v__n_8c.html',1,'']]],
   ['guidance_5fv_5fn_2eh',['guidance_v_n.h',['../guidance__v__n_8h.html',1,'']]],
+  ['guidance_5fv_5fref_2ec',['guidance_v_ref.c',['../guidance__v__ref_8c.html',1,'']]],
   ['guidance_5fv_5fref_2eh',['guidance_v_ref.h',['../guidance__v__ref_8h.html',1,'']]]
 ];
