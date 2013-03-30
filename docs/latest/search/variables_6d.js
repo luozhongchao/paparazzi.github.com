@@ -77,7 +77,6 @@ var searchData=
   ['meas',['meas',['../structHmc58xxConfig.html#a73ff5bfabdded1c15414c022555e0626',1,'Hmc58xxConfig']]],
   ['measure',['measure',['../structAhrsIntCmplEuler.html#a6607073c810f78bb3f4d31d8fddfbe6e',1,'AhrsIntCmplEuler']]],
   ['measurement',['measurement',['../structAhrsIntCmplEuler.html#a91b1cd71a4f7814bfe5c355c04ef28f9',1,'AhrsIntCmplEuler']]],
-  ['median_5fmag',['median_mag',['../imu__navgo_8c.html#a4310ef79baa15a4ae26783700277d6c9',1,'imu_navgo.c']]],
   ['memmap',['memmap',['../structscbRegs__t.html#a10cbe3da1bfffec8627f5a911b9868f3',1,'scbRegs_t']]],
   ['memory_5fx',['memory_x',['../point_8c.html#a2fa20d42776d64313baaf63d9b6a4d33',1,'point.c']]],
   ['memory_5fy',['memory_y',['../point_8c.html#a9895f1d4ef4cfecb7738442ac220f590',1,'point.c']]],

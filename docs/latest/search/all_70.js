@@ -331,7 +331,7 @@ var searchData=
   ['pllstat',['PLLSTAT',['../LPC21xx_8h.html#ae729ecec265b8f3cc14218bf2811c725',1,'LPC21xx.h']]],
   ['pllstat_5flock',['PLLSTAT_LOCK',['../lpcSCB_8h.html#a60918a6367c165807e7937ce763b7c85',1,'lpcSCB.h']]],
   ['plug_5fsys_2ec',['plug_sys.c',['../plug__sys_8c.html',1,'']]],
-  ['point',['POINT',['../structPOINT.html',1,'POINT'],['../structpoint.html',1,'point']]],
+  ['point',['point',['../structpoint.html',1,'point'],['../structPOINT.html',1,'POINT']]],
   ['point_2ec',['point.c',['../point_8c.html',1,'']]],
   ['point_2eh',['point.h',['../point_8h.html',1,'']]],
   ['point2d',['Point2D',['../structPoint2D.html',1,'Point2D'],['../structpoint2d.html',1,'point2d']]],

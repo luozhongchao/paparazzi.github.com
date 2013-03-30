@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['l3g4200_2ec',['l3g4200.c',['../l3g4200_8c.html',1,'']]],
+  ['l3g4200_2eh',['l3g4200.h',['../l3g4200_8h.html',1,'']]],
+  ['l3g4200_5fregs_2eh',['l3g4200_regs.h',['../l3g4200__regs_8h.html',1,'']]],
   ['lcd_5fdogm_2ec',['lcd_dogm.c',['../lcd__dogm_8c.html',1,'']]],
   ['lcd_5fdogm_2eh',['lcd_dogm.h',['../lcd__dogm_8h.html',1,'']]],
   ['lcd_5fdogm_5fhw_2ec',['lcd_dogm_hw.c',['../lcd__dogm__hw_8c.html',1,'']]],

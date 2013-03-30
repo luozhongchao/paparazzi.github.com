@@ -186,6 +186,8 @@ var searchData=
   ['navglide',['NavGlide',['../navigation_8h.html#aa7303abf34661cdf531cce2f4fddfe86',1,'NavGlide():&#160;navigation.h'],['../nav_8c.html#aa7303abf34661cdf531cce2f4fddfe86',1,'NavGlide():&#160;nav.c']]],
   ['navgo_5f1_2e0_2eh',['navgo_1.0.h',['../navgo__1_80_8h.html',1,'']]],
   ['navgo_5faccel_5frate',['NAVGO_ACCEL_RATE',['../imu__navgo_8c.html#a92f0669e819ddf47e6762ef97fdc80e5',1,'imu_navgo.c']]],
+  ['navgo_5fgyro_5flowpass',['NAVGO_GYRO_LOWPASS',['../imu__navgo_8c.html#a0f374410fbc7e1e2b5c1f7029a178ff6',1,'imu_navgo.c']]],
+  ['navgo_5fgyro_5fsmplrt_5fdiv',['NAVGO_GYRO_SMPLRT_DIV',['../imu__navgo_8c.html#a8736e1bae5fca7b2593482d9336e7965',1,'imu_navgo.c']]],
   ['navgotowaypoint',['NavGotoWaypoint',['../navigation_8h.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c',1,'NavGotoWaypoint():&#160;navigation.h'],['../nav_8h.html#a4bf42a1b0d3b1c6c0faebcda4c531b8c',1,'NavGotoWaypoint():&#160;nav.h']]],
   ['navheading',['NavHeading',['../navigation_8h.html#ac90e1aa0615ba8f354b17674af4b12c8',1,'NavHeading():&#160;navigation.h'],['../nav_8h.html#ac90e1aa0615ba8f354b17674af4b12c8',1,'NavHeading():&#160;nav.h']]],
   ['navigation_2ec',['navigation.c',['../navigation_8c.html',1,'']]],

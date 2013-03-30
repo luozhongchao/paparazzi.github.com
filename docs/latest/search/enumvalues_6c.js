@@ -1,5 +1,17 @@
 var searchData=
 [
+  ['l3g4200_5fdlpf_5f1',['L3G4200_DLPF_1',['../l3g4200__regs_8h.html#a94713c2729d0f2ebb788f0bb5d6a118aa93994205e54e71e8f2146e6d402b6893',1,'l3g4200_regs.h']]],
+  ['l3g4200_5fdlpf_5f2',['L3G4200_DLPF_2',['../l3g4200__regs_8h.html#a94713c2729d0f2ebb788f0bb5d6a118aa6d000681fdad76fbb5ba43e560445c2c',1,'l3g4200_regs.h']]],
+  ['l3g4200_5fdlpf_5f3',['L3G4200_DLPF_3',['../l3g4200__regs_8h.html#a94713c2729d0f2ebb788f0bb5d6a118aa3af0225d5f36af6b1aca98b131d122f4',1,'l3g4200_regs.h']]],
+  ['l3g4200_5fdlpf_5f4',['L3G4200_DLPF_4',['../l3g4200__regs_8h.html#a94713c2729d0f2ebb788f0bb5d6a118aaae082e23985169dbe476bda118ef28fa',1,'l3g4200_regs.h']]],
+  ['l3g4200_5fdr_5f100hz',['L3G4200_DR_100Hz',['../l3g4200__regs_8h.html#ac63e4704b37c785d0f9dd8e9ed7777a7a7420ab1e71931ec5fc8c18df61db369b',1,'l3g4200_regs.h']]],
+  ['l3g4200_5fdr_5f200hz',['L3G4200_DR_200Hz',['../l3g4200__regs_8h.html#ac63e4704b37c785d0f9dd8e9ed7777a7a7ffc733ae59c09b24ef97a3930452efd',1,'l3g4200_regs.h']]],
+  ['l3g4200_5fdr_5f400hz',['L3G4200_DR_400Hz',['../l3g4200__regs_8h.html#ac63e4704b37c785d0f9dd8e9ed7777a7a431fb4217989cc09910f7ebfa6423d0b',1,'l3g4200_regs.h']]],
+  ['l3g4200_5fdr_5f800hz',['L3G4200_DR_800Hz',['../l3g4200__regs_8h.html#ac63e4704b37c785d0f9dd8e9ed7777a7a350387340e7269a1d9b744568faf7102',1,'l3g4200_regs.h']]],
+  ['l3g_5fconf_5fdone',['L3G_CONF_DONE',['../l3g4200_8h.html#aa227b9026f3d2693889a27a753f5d5d1a14098b8966fafd71e8b1578c3de2f562',1,'l3g4200.h']]],
+  ['l3g_5fconf_5freg1',['L3G_CONF_REG1',['../l3g4200_8h.html#aa227b9026f3d2693889a27a753f5d5d1a046143b5ae5413b4b9a6891bf4d0936d',1,'l3g4200.h']]],
+  ['l3g_5fconf_5freg5',['L3G_CONF_REG5',['../l3g4200_8h.html#aa227b9026f3d2693889a27a753f5d5d1ad5afa02f5dbcf6aab5fc4da37093961f',1,'l3g4200.h']]],
+  ['l3g_5fconf_5funinit',['L3G_CONF_UNINIT',['../l3g4200_8h.html#aa227b9026f3d2693889a27a753f5d5d1a0d6decaf2e866985fa08a185a5da4c65',1,'l3g4200.h']]],
   ['landingwait',['LandingWait',['../OSAMNav_8c.html#a61a75394da51ededcb57cd59a9e3cefea6f11e1187e7e7fb6372a5aeda36a161f',1,'OSAMNav.c']]],
   ['launch',['Launch',['../OSAMNav_8c.html#a537434c0146d72f1c0f111539eb1945aaf8b29e7d78989059f62735943a6b5e25',1,'OSAMNav.c']]],
   ['lbs_5fidle',['LBS_IDLE',['../lisa__l_2baro__board_8h.html#afa23cfb2e942619d6fa44f549fe5edffa1a862c5e5d2805638914e054daabe25d',1,'baro_board.h']]],

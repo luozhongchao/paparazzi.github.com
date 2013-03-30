@@ -1,5 +1,13 @@
 var searchData=
 [
+  ['l3g4200_5fevent',['l3g4200_event',['../l3g4200_8c.html#affef29745f5a82cfc679e157c57b9c40',1,'l3g4200_event(struct L3g4200 *l3g):&#160;l3g4200.c'],['../l3g4200_8h.html#affef29745f5a82cfc679e157c57b9c40',1,'l3g4200_event(struct L3g4200 *l3g):&#160;l3g4200.c']]],
+  ['l3g4200_5fi2c_5ftx_5freg',['l3g4200_i2c_tx_reg',['../l3g4200_8c.html#a891e6ea3c7cd89f932116dad069799fe',1,'l3g4200.c']]],
+  ['l3g4200_5finit',['l3g4200_init',['../l3g4200_8c.html#acda51925a723a1df17a65d9e377c6e8f',1,'l3g4200_init(struct L3g4200 *l3g, struct i2c_periph *i2c_p, uint8_t addr):&#160;l3g4200.c'],['../l3g4200_8h.html#ad6a06221520b83286793b8b1c4233b2a',1,'l3g4200_init(struct L3g4200 *itg, struct i2c_periph *i2c_p, uint8_t i2c_address):&#160;l3g4200.c']]],
+  ['l3g4200_5fperiodic',['l3g4200_periodic',['../l3g4200_8h.html#a0bc770c43c3438d6ddf25a05aa2cc572',1,'l3g4200.h']]],
+  ['l3g4200_5fread',['l3g4200_read',['../l3g4200_8c.html#a98a6955be50d60c5afde8a6e87dd8373',1,'l3g4200_read(struct L3g4200 *l3g):&#160;l3g4200.c'],['../l3g4200_8h.html#a98a6955be50d60c5afde8a6e87dd8373',1,'l3g4200_read(struct L3g4200 *l3g):&#160;l3g4200.c']]],
+  ['l3g4200_5fsend_5fconfig',['l3g4200_send_config',['../l3g4200_8c.html#ae602f4d8dcd9c775da7e8233f1f193e5',1,'l3g4200.c']]],
+  ['l3g4200_5fset_5fdefault_5fconfig',['l3g4200_set_default_config',['../l3g4200_8c.html#a67ca73762166a11d1b624e0b30c28039',1,'l3g4200_set_default_config(struct L3g4200Config *c):&#160;l3g4200.c'],['../l3g4200_8h.html#ac7a37a5ffcda973ae1d4c7e7c80d50b9',1,'l3g4200_set_default_config(struct L3g4200Config *conf):&#160;l3g4200.c']]],
+  ['l3g4200_5fstart_5fconfigure',['l3g4200_start_configure',['../l3g4200_8c.html#a04567c5211452c8a7be46d598b33aa84',1,'l3g4200_start_configure(struct L3g4200 *l3g):&#160;l3g4200.c'],['../l3g4200_8h.html#a04567c5211452c8a7be46d598b33aa84',1,'l3g4200_start_configure(struct L3g4200 *l3g):&#160;l3g4200.c']]],
   ['last_5fplume_5fwas_5fhere',['last_plume_was_here',['../anemotaxis_8c.html#a3fa47975128a835ea2b558c2d0249823',1,'anemotaxis.c']]],
   ['lcd_5fcmd',['lcd_cmd',['../lcd__dogm_8c.html#a013ebbab9fe5f1d401ebb0706f6499be',1,'lcd_cmd(uint8_t command):&#160;lcd_dogm.c'],['../lcd__dogm_8h.html#a013ebbab9fe5f1d401ebb0706f6499be',1,'lcd_cmd(uint8_t command):&#160;lcd_dogm.c']]],
   ['lcd_5fdata',['lcd_data',['../lcd__dogm_8c.html#ad0729d2cba627825a089ca1fff12ba29',1,'lcd_data(uint8_t data):&#160;lcd_dogm.c'],['../lcd__dogm_8h.html#ad0729d2cba627825a089ca1fff12ba29',1,'lcd_data(uint8_t data):&#160;lcd_dogm.c']]],

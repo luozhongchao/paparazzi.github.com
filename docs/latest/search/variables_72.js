@@ -13,7 +13,7 @@ var searchData=
   ['rate',['rate',['../structCHIMU__sensor__data.html#a0a62dec0f8bc2b7633ba0699fac00510',1,'CHIMU_sensor_data::rate()'],['../structVi__ahrs__info.html#a66c48ea7afc8ba945d04e182efa49641',1,'Vi_ahrs_info::rate()'],['../structVi__command.html#ae0fc1ebecad84516da1b6d968cd5dda1',1,'Vi_command::rate()'],['../structAdxl345Config.html#a3ddf6d2e394d53c1d7e329fcf9565f80',1,'Adxl345Config::rate()'],['../structHmc58xxConfig.html#ac94b92110a59b8e349bc0e6fdee2e6c9',1,'Hmc58xxConfig::rate()']]],
   ['rate_5fcorrection',['rate_correction',['../structAhrsFloatCmpl.html#a9fe8d56833f8eb8474b8b2fa3712ba82',1,'AhrsFloatCmpl::rate_correction()'],['../structAhrsFloatDCM.html#a9256dacf55a9bdec9a1ba4859c613748',1,'AhrsFloatDCM::rate_correction()'],['../structAhrsIntCmpl.html#a92752ed156f572b0032ddae5b7fc2a0c',1,'AhrsIntCmpl::rate_correction()']]],
   ['rate_5fstatus',['rate_status',['../group__state__rate.html#gaeae71089ee6e103c1f8ca1211cfaf039',1,'State']]],
-  ['rates',['rates',['../structItg3200.html#aabb0112073c7ae404900e87dfb2e8592',1,'Itg3200']]],
+  ['rates',['rates',['../structItg3200.html#aabb0112073c7ae404900e87dfb2e8592',1,'Itg3200::rates()'],['../structL3g4200.html#a70136456aba96654f0a8928fd35f9ed5',1,'L3g4200::rates()']]],
   ['rates_5fd',['rates_d',['../structFloatAttitudeGains.html#a4799da9849806ccd369682d38e5d6826',1,'FloatAttitudeGains']]],
   ['rawintr',['rawIntr',['../structvicRegs__t.html#aabed983c593fd977a94ce2989bc74ce2',1,'vicRegs_t']]],
   ['rbase',['RBASE',['../w5100_8c.html#ab0d925a91f3413188da5760bcb0ab134',1,'w5100.c']]],
