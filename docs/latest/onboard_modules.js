@@ -1000,19 +1000,19 @@ var onboard_modules =
         [ "Raw sonar_adc.xml file:", "module__sonar_adc.html#module_xml__sonar_adc", null ]
       ] ]
     ] ],
-    [ "Sonar ADC INS", "module__sonar_maxbotix_booz.html", [
-      [ "Module configuration options", "module__sonar_maxbotix_booz.html#configuration", [
-        [ "Configure Options", "module__sonar_maxbotix_booz.html#configure", null ]
+    [ "Sonar ADC (INS bindings)", "module__sonar_adc_ins.html", [
+      [ "Module configuration options", "module__sonar_adc_ins.html#configuration", [
+        [ "Configure Options", "module__sonar_adc_ins.html#configure", null ]
       ] ],
-      [ "Module functions", "module__sonar_maxbotix_booz.html#functions", [
-        [ "Init Functions", "module__sonar_maxbotix_booz.html#init_functions", null ],
-        [ "Event Functions", "module__sonar_maxbotix_booz.html#event_functions", null ],
-        [ "Periodic Functions", "module__sonar_maxbotix_booz.html#periodic_functions", null ]
+      [ "Module functions", "module__sonar_adc_ins.html#functions", [
+        [ "Init Functions", "module__sonar_adc_ins.html#init_functions", null ],
+        [ "Event Functions", "module__sonar_adc_ins.html#event_functions", null ],
+        [ "Periodic Functions", "module__sonar_adc_ins.html#periodic_functions", null ]
       ] ],
-      [ "Files", "module__sonar_maxbotix_booz.html#files", [
-        [ "Header Files", "module__sonar_maxbotix_booz.html#headers", null ],
-        [ "Source Files", "module__sonar_maxbotix_booz.html#sources", null ],
-        [ "Raw sonar_maxbotix_booz.xml file:", "module__sonar_maxbotix_booz.html#module_xml__sonar_maxbotix_booz", null ]
+      [ "Files", "module__sonar_adc_ins.html#files", [
+        [ "Header Files", "module__sonar_adc_ins.html#headers", null ],
+        [ "Source Files", "module__sonar_adc_ins.html#sources", null ],
+        [ "Raw sonar_adc_ins.xml file:", "module__sonar_adc_ins.html#module_xml__sonar_adc_ins", null ]
       ] ]
     ] ],
     [ "Vehicule Interface over Datalink", "module__vehicle_interface_datalink.html", [

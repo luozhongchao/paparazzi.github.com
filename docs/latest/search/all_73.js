@@ -6,7 +6,7 @@ var searchData=
   ['sensirion_20sht25_20humidity_20sensor_20_28i2c_29',['Sensirion SHT25 humidity sensor (I2C)',['../module__humid_sht_i2c.html',1,'onboard_modules']]],
   ['servo_20switch',['Servo switch',['../module__servo_switch.html',1,'onboard_modules']]],
   ['sonar_20adc_20driver',['Sonar ADC driver',['../module__sonar_adc.html',1,'onboard_modules']]],
-  ['sonar_20adc_20ins',['Sonar ADC INS',['../module__sonar_maxbotix_booz.html',1,'onboard_modules']]],
+  ['sonar_20adc_20_28ins_20bindings_29',['Sonar ADC (INS bindings)',['../module__sonar_adc_ins.html',1,'onboard_modules']]],
   ['system_20monitor',['System monitor',['../module__sys_mon.html',1,'onboard_modules']]],
   ['s',['s',['../structCHIMU__Quaternion.html#afe98e94e37bd5df5eaf53ee27feab96e',1,'CHIMU_Quaternion']]],
   ['s0spccr',['S0SPCCR',['../LPC21xx_8h.html#a042490d4a2ce295d0bc8c31bd56ce4c6',1,'LPC21xx.h']]],
