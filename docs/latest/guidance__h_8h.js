@@ -8,6 +8,8 @@ var guidance__h_8h =
     [ "GUIDANCE_H_MODE_RATE", "guidance__h_8h.html#aea87a99ee38d15a28913fbe378ca264e", null ],
     [ "GUIDANCE_H_MODE_RC_DIRECT", "guidance__h_8h.html#aa4e386747c6286a7ce74fa13b1dfe6d9", null ],
     [ "guidance_h_SetKi", "guidance__h_8h.html#ad3c24a1e61a41c2ae8ff1a539c396bf7", null ],
+    [ "guidance_h_SetUseRef", "guidance__h_8h.html#a3352ecdb631caf9d3c662f677eba3dfa", null ],
+    [ "GUIDANCE_H_USE_REF", "guidance__h_8h.html#a1e7381c2478adba02ae064f931945492", null ],
     [ "guidance_h_init", "guidance__h_8h.html#a7bc4ea0d5351c2ba6ee160db5a2e9f80", null ],
     [ "guidance_h_mode_changed", "guidance__h_8h.html#a2903786227eb11507928f99870099225", null ],
     [ "guidance_h_read_rc", "guidance__h_8h.html#a7db3290fc5f62abc15a1bb1638b4922f", null ],
@@ -27,5 +29,6 @@ var guidance__h_8h =
     [ "guidance_h_pos_sp", "guidance__h_8h.html#ab5bfbde0d90688c7b32bdd7244be7a0b", null ],
     [ "guidance_h_rc_sp", "guidance__h_8h.html#a48ab657ff45f2b091847a48360a96b52", null ],
     [ "guidance_h_speed_err", "guidance__h_8h.html#a206725a549c15b4fefc505299fa3e08b", null ],
-    [ "guidance_h_speed_ref", "guidance__h_8h.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1", null ]
+    [ "guidance_h_speed_ref", "guidance__h_8h.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1", null ],
+    [ "guidance_h_use_ref", "guidance__h_8h.html#a109adefb6d03f2d96b1cb9c9810db33d", null ]
 ];

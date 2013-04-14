@@ -1,5 +1,9 @@
 var NAVTREEINDEX35 =
 {
+"max3100__hw_8h.html#a384ca14e74856144a7498bf50bd1139e":[8,0,0,0,7,24,1,40],
+"max3100__hw_8h.html#a3c250acce7b74783ba23a9e0f3da5f9b":[8,0,0,0,7,24,1,46],
+"max3100__hw_8h.html#a3e6219e4316fcdfdc4a366fbff9936a9":[8,0,0,0,7,24,1,37],
+"max3100__hw_8h.html#a412cf2bbf73000f0cdda754da1466b70":[8,0,0,0,7,24,1,42],
 "max3100__hw_8h.html#a4c4c0afd23c71e7ee02ef593e068023c":[8,0,0,0,7,24,1,47],
 "max3100__hw_8h.html#a50cbcebdad0c5543e4b80a2d58314fc0":[8,0,0,0,7,24,1,17],
 "max3100__hw_8h.html#a54c0691a82d684860d7aa625f3336ab8":[8,0,0,0,7,24,1,22],
@@ -245,9 +249,5 @@ var NAVTREEINDEX35 =
 "module__baro_hca.html#periodic_functions":[2,66,1,2],
 "module__baro_hca.html#sources":[2,66,2,1],
 "module__baro_mpl3115.html":[2,67],
-"module__baro_mpl3115.html#configuration":[2,67,0],
-"module__baro_mpl3115.html#define":[2,67,0,0],
-"module__baro_mpl3115.html#event_functions":[2,67,1,1],
-"module__baro_mpl3115.html#files":[2,67,2],
-"module__baro_mpl3115.html#functions":[2,67,1]
+"module__baro_mpl3115.html#configuration":[2,67,0]
 };

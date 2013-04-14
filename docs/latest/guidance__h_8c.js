@@ -15,7 +15,7 @@ var guidance__h_8c =
     [ "guidance_h_read_rc", "guidance__h_8c.html#a7db3290fc5f62abc15a1bb1638b4922f", null ],
     [ "guidance_h_run", "guidance__h_8c.html#ac4cf6da90a4278b4d0b2e4f227b33f2c", null ],
     [ "guidance_h_traj_run", "guidance__h_8c.html#a40a1b0fc372c07e0fc9e9a680578fe9b", null ],
-    [ "guidance_h_update_reference", "guidance__h_8c.html#abe5eaebe6416b5b160ab966a4b5bbd17", null ],
+    [ "guidance_h_update_reference", "guidance__h_8c.html#a234421f6d4c2c5474faf6d2a3cf0f5b5", null ],
     [ "guidance_h_accel_ref", "guidance__h_8c.html#a3bc12d05515bf4df86b36fdeb2024d25", null ],
     [ "guidance_h_again", "guidance__h_8c.html#af3f2ebfd0110c37dd1b7f55e5b12d4eb", null ],
     [ "guidance_h_command_body", "guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144", null ],
@@ -32,5 +32,6 @@ var guidance__h_8c =
     [ "guidance_h_rc_sp", "guidance__h_8c.html#a48ab657ff45f2b091847a48360a96b52", null ],
     [ "guidance_h_speed_err", "guidance__h_8c.html#a206725a549c15b4fefc505299fa3e08b", null ],
     [ "guidance_h_speed_ref", "guidance__h_8c.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1", null ],
-    [ "guidance_h_stick_earth_sp", "guidance__h_8c.html#a549244970dd85bfdf7dcf3c8aefa3b56", null ]
+    [ "guidance_h_stick_earth_sp", "guidance__h_8c.html#a549244970dd85bfdf7dcf3c8aefa3b56", null ],
+    [ "guidance_h_use_ref", "guidance__h_8c.html#a109adefb6d03f2d96b1cb9c9810db33d", null ]
 ];

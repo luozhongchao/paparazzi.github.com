@@ -172,6 +172,8 @@ var searchData=
   ['guidance_5fh_5fref_5fomega',['GUIDANCE_H_REF_OMEGA',['../guidance__h__ref_8c.html#acadd2aad2ba12371589c9c19dfe1a3fa',1,'guidance_h_ref.c']]],
   ['guidance_5fh_5fref_5fzeta',['GUIDANCE_H_REF_ZETA',['../guidance__h__ref_8c.html#af4b4f6285bfed906e481741b3afca1af',1,'guidance_h_ref.c']]],
   ['guidance_5fh_5fsetki',['guidance_h_SetKi',['../guidance__h_8h.html#ad3c24a1e61a41c2ae8ff1a539c396bf7',1,'guidance_h.h']]],
+  ['guidance_5fh_5fsetuseref',['guidance_h_SetUseRef',['../guidance__h_8h.html#a3352ecdb631caf9d3c662f677eba3dfa',1,'guidance_h.h']]],
+  ['guidance_5fh_5fuse_5fref',['GUIDANCE_H_USE_REF',['../guidance__h_8h.html#a1e7381c2478adba02ae064f931945492',1,'guidance_h.h']]],
   ['guidance_5fv_5fadapt_5fmax_5faccel',['GUIDANCE_V_ADAPT_MAX_ACCEL',['../guidance__v__adpt_8h.html#a4d62700c8e938a85d29186643e308600',1,'guidance_v_adpt.h']]],
   ['guidance_5fv_5fadapt_5fmax_5fcmd',['GUIDANCE_V_ADAPT_MAX_CMD',['../guidance__v__adpt_8h.html#ad86e4967e4f8918981e037e48aed1ad1',1,'guidance_v_adpt.h']]],
   ['guidance_5fv_5fadapt_5fmin_5fcmd',['GUIDANCE_V_ADAPT_MIN_CMD',['../guidance__v__adpt_8h.html#ab0b57a6956b778c5d67dc08034f8efef',1,'guidance_v_adpt.h']]],

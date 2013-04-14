@@ -1,5 +1,9 @@
 var NAVTREEINDEX45 =
 {
+"pprz__geodetic__float_8h.html#a47f5b349030d33970728f4c332c70cf0":[8,0,0,0,5,8,7],
+"pprz__geodetic__float_8h.html#a624697fcf875d02030d046161c4609b7":[8,0,0,0,5,8,17],
+"pprz__geodetic__float_8h.html#a65bc5ba8b61d014ca659035759cc001c":[8,0,0,0,5,8,8],
+"pprz__geodetic__float_8h.html#a9703caac26c4b1272c010037fd661956":[8,0,0,0,5,8,9],
 "pprz__geodetic__float_8h.html#ab8d5cb7292ea74802e7a94e265c0703a":[8,0,0,0,5,8,13],
 "pprz__geodetic__float_8h.html#aba90b4f88dce2d3eadce9c28fcde2d54":[8,0,0,0,5,8,20],
 "pprz__geodetic__float_8h.html#ac36c2e51de3064e3919a1f58f884342e":[8,0,0,0,5,8,19],
@@ -245,9 +249,5 @@ var NAVTREEINDEX45 =
 "pressure__board__navarro_8h.html#a10b567cd6c9e38e866835add384e30f6":[8,0,0,0,7,32,48,5],
 "pressure__board__navarro_8h.html#a178946c8a3ef12c92d99791774312533":[8,0,0,0,7,32,48,2],
 "pressure__board__navarro_8h.html#a2f424a2f3e32bc17fb4224226b9f49de":[8,0,0,0,7,32,48,14],
-"pressure__board__navarro_8h.html#a41b2311caf36c593094429deaa55e89f":[8,0,0,0,7,32,48,7],
-"pressure__board__navarro_8h.html#a483fad451c8000d3c7f6de5024ec6670":[8,0,0,0,7,32,48,6],
-"pressure__board__navarro_8h.html#a4965ee21378062e4ebb0732176ec9629":[8,0,0,0,7,32,48,8],
-"pressure__board__navarro_8h.html#a61cd37b7705b94968eef0f7a3c7d89df":[8,0,0,0,7,32,48,12],
-"pressure__board__navarro_8h.html#a6f2976579b7761af83296829f78faba0":[8,0,0,0,7,32,48,3]
+"pressure__board__navarro_8h.html#a41b2311caf36c593094429deaa55e89f":[8,0,0,0,7,32,48,7]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX56 =
 {
+"structImuFloat.html#a513076472d2abaf33ab768f42cc5ab80":[7,0,90,7],
+"structImuFloat.html#a88c18f9466813f6460261f3548e37fbb":[7,0,90,3],
+"structImuFloat.html#aa048f78c3c5c2d5ec6d4045bd75705d7":[7,0,90,0],
+"structImuFloat.html#aefb97d688ccc0e607c2ddeee87be135a":[7,0,90,2],
 "structImuNavgo.html":[7,0,91],
 "structImuNavgo.html#a003590f52ce87b03400f98d81829544c":[7,0,91,0],
 "structImuNavgo.html#a5a28d3ca17282628544ddec886b50c8c":[7,0,91,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX56 =
 "structOrientationReps.html#a67db4b57551efc60a23d304820aa6292":[7,0,142,3],
 "structOrientationReps.html#a74e63a71a7d35e89ea968c2e2c0b7369":[7,0,142,6],
 "structOrientationReps.html#a9a12faf04660fa348b0d5e474051c2fc":[7,0,142,4],
-"structOrientationReps.html#ac3014e532f5ca710919668e1dd48c791":[7,0,142,5],
-"structOrientationReps.html#ae5c1f10412db95ffca8c6f309997ac2a":[7,0,142,1],
-"structOrientationReps.html#af08d1a1987ca1989e45279a961bfc072":[7,0,142,2],
-"structPCAP01VALUE.html":[7,0,143],
-"structPCAP01VALUE.html#a1c29142deb5a25214348f570fd250196":[7,0,143,0]
+"structOrientationReps.html#ac3014e532f5ca710919668e1dd48c791":[7,0,142,5]
 };

@@ -17,7 +17,7 @@ var telemetry_8h =
     [ "PERIODIC_SEND_FILTER", "telemetry_8h.html#a15695d977985ca91c290313d6591f699", null ],
     [ "PERIODIC_SEND_FILTER_ALIGNER", "telemetry_8h.html#a86f05af63cdcddd400fe55e85a98c64a", null ],
     [ "PERIODIC_SEND_GPS_INT", "telemetry_8h.html#ada9a2df78234b875c7949122551e5f67", null ],
-    [ "PERIODIC_SEND_GUIDANCE", "telemetry_8h.html#a660336da5d716d96bb92d253f977d20d", null ],
+    [ "PERIODIC_SEND_GUIDANCE_H_INT", "telemetry_8h.html#a60731d29883a885ac4612779552b7548", null ],
     [ "PERIODIC_SEND_GUIDANCE_H_REF", "telemetry_8h.html#afc5f1722a89127bac4f3764d2f49dd8d", null ],
     [ "PERIODIC_SEND_HFF", "telemetry_8h.html#a95fa79b9eb6aa5a10be500a42708a614", null ],
     [ "PERIODIC_SEND_HFF_DBG", "telemetry_8h.html#abde9c5c20287a8d6f9fb2076f6109c5b", null ],

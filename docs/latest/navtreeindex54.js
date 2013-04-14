@@ -1,5 +1,9 @@
 var NAVTREEINDEX54 =
 {
+"stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#acff838020527cf2a316639492d934cd0":[8,0,0,0,0,3,2,2,2,33],
+"stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#add408507e1d1fb9bf77fd5b54ca541d5":[8,0,0,0,0,3,2,2,2,37],
+"stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#aeeda81e8dcacff3172020a9f2e2a49d9":[8,0,0,0,0,3,2,2,2,24],
+"stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#af38434843fde1e03292e09a8658f9fbb":[8,0,0,0,0,3,2,2,2,31],
 "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#afb5047901d3fea90c147a5477a9e441d":[8,0,0,0,0,3,2,2,2,35],
 "stm32_2subsystems_2radio__control_2spektrum__arch_8c.html#afc6cede7e395db0695616d28f54d7812":[8,0,0,0,0,3,2,2,2,8],
 "stm32_2subsystems_2radio__control_2spektrum__arch_8c_source.html":[8,0,0,0,0,3,2,2,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX54 =
 "structDoubleQuat.html#a308df6fc15a5092f850ed3294a34ae84":[7,0,40,1],
 "structDoubleQuat.html#a426587d46d9d560eaf329a93ed756dc9":[7,0,40,0],
 "structDoubleQuat.html#a552b55ff2231e534d47c489e522d94bf":[7,0,40,3],
-"structDoubleRMat.html":[7,0,42],
-"structDoubleRMat.html#a1f8142e3dfe541de26dc117698007423":[7,0,42,0],
-"structDoubleRates.html":[7,0,41],
-"structDoubleRates.html#a37b5d6d0b3733ce3ea196f6c8082eaef":[7,0,41,0],
-"structDoubleRates.html#a73bba193cdc5815d6bbf2d0af7fce341":[7,0,41,1]
+"structDoubleRMat.html":[7,0,42]
 };

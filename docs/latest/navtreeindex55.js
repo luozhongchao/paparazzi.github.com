@@ -1,5 +1,9 @@
 var NAVTREEINDEX55 =
 {
+"structDoubleRMat.html#a1f8142e3dfe541de26dc117698007423":[7,0,42,0],
+"structDoubleRates.html":[7,0,41],
+"structDoubleRates.html#a37b5d6d0b3733ce3ea196f6c8082eaef":[7,0,41,0],
+"structDoubleRates.html#a73bba193cdc5815d6bbf2d0af7fce341":[7,0,41,1],
 "structDoubleRates.html#a7900fc423e0731a60ec3b3a502cef75a":[7,0,41,2],
 "structDoubleVect2.html":[7,0,43],
 "structDoubleVect2.html#a7519f4492e3d607594df79b3d30ad082":[7,0,43,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX55 =
 "structImuFloat.html#a178c1a0180273c5b8c93f036b82b5f0f":[7,0,90,6],
 "structImuFloat.html#a1f00019520e4f25f2be4f66832c3f7bd":[7,0,90,4],
 "structImuFloat.html#a3249aead96a7995e642cdd6911b7956f":[7,0,90,1],
-"structImuFloat.html#a4e6d27e23a43ed68d0618b4832035b72":[7,0,90,5],
-"structImuFloat.html#a513076472d2abaf33ab768f42cc5ab80":[7,0,90,7],
-"structImuFloat.html#a88c18f9466813f6460261f3548e37fbb":[7,0,90,3],
-"structImuFloat.html#aa048f78c3c5c2d5ec6d4045bd75705d7":[7,0,90,0],
-"structImuFloat.html#aefb97d688ccc0e607c2ddeee87be135a":[7,0,90,2]
+"structImuFloat.html#a4e6d27e23a43ed68d0618b4832035b72":[7,0,90,5]
 };

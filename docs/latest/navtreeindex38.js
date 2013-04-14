@@ -1,5 +1,9 @@
 var NAVTREEINDEX38 =
 {
+"module__mag_hmc58xx.html#init_functions":[2,75,1,0],
+"module__mag_hmc58xx.html#module_xml__mag_hmc58xx":[2,75,2,2],
+"module__mag_hmc58xx.html#periodic_functions":[2,75,1,2],
+"module__mag_hmc58xx.html#sources":[2,75,2,1],
 "module__mag_micromag_fw.html":[2,76],
 "module__mag_micromag_fw.html#event_functions":[2,76,0,1],
 "module__mag_micromag_fw.html#files":[2,76,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX38 =
 "module__wind_gfi.html#files":[2,49,1],
 "module__wind_gfi.html#functions":[2,49,0],
 "module__wind_gfi.html#headers":[2,49,1,0],
-"module__wind_gfi.html#init_functions":[2,49,0,0],
-"module__wind_gfi.html#module_xml__wind_gfi":[2,49,1,2],
-"module__wind_gfi.html#periodic_functions":[2,49,0,2],
-"module__wind_gfi.html#sources":[2,49,1,1],
-"module__windturbine.html":[2,50]
+"module__wind_gfi.html#init_functions":[2,49,0,0]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX27 =
 {
+"l3g4200__regs_8h.html#a3701985e9fadbd49ea84ec42d6041b34":[8,0,0,0,8,20,6],
+"l3g4200__regs_8h.html#a534417d7359c6eec3d0efb515e8e09ad":[8,0,0,0,8,20,0],
+"l3g4200__regs_8h.html#a5bcef40399860b219d7c574c956b00c2":[8,0,0,0,8,20,15],
+"l3g4200__regs_8h.html#a5ce1e0507f24e5b56893edddd7a586e2":[8,0,0,0,8,20,16],
 "l3g4200__regs_8h.html#a6358f3eadfb96eee75f8275ee725b43d":[8,0,0,0,8,20,25],
 "l3g4200__regs_8h.html#a679a896ab5be6838b403cca79eb4fc20":[8,0,0,0,8,20,7],
 "l3g4200__regs_8h.html#a6e1e1717b8d38db3eaf4f5074dd550b6":[8,0,0,0,8,20,17],
@@ -245,9 +249,5 @@ var NAVTREEINDEX27 =
 "light__solar_8h.html#ac0e039b9f8ad2272b10b4129733d1114":[8,0,0,0,7,25,21,1],
 "light__solar_8h.html#aca7d0671f027071758d544dd2008cd2c":[8,0,0,0,7,25,21,3],
 "light__solar_8h_source.html":[8,0,0,0,7,25,21],
-"light__temt_8c.html":[8,0,0,0,7,25,22],
-"light__temt_8c.html#a0cdfdd43940fde9fe395ea50cbacd148":[8,0,0,0,7,25,22,3],
-"light__temt_8c.html#a2978a46b47cbc9d17a0924014ff9658b":[8,0,0,0,7,25,22,2],
-"light__temt_8c.html#a661e1b4ad75b88ab19e0d16c232d9f6d":[8,0,0,0,7,25,22,0],
-"light__temt_8c.html#ab0d3b9bd2992f4ac120013dec2cf9a5f":[8,0,0,0,7,25,22,5]
+"light__temt_8c.html":[8,0,0,0,7,25,22]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX37 =
 {
+"module__gps_i2c.html#module_xml__gps_i2c":[2,93,1,2],
+"module__gps_i2c.html#periodic_functions":[2,93,0,2],
+"module__gps_i2c.html#sources":[2,93,1,1],
+"module__gps_ubx_uart.html":[2,22],
 "module__gps_ubx_uart.html#event_functions":[2,22,0,1],
 "module__gps_ubx_uart.html#files":[2,22,1],
 "module__gps_ubx_uart.html#functions":[2,22,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX37 =
 "module__mag_hmc58xx.html#event_functions":[2,75,1,1],
 "module__mag_hmc58xx.html#files":[2,75,2],
 "module__mag_hmc58xx.html#functions":[2,75,1],
-"module__mag_hmc58xx.html#headers":[2,75,2,0],
-"module__mag_hmc58xx.html#init_functions":[2,75,1,0],
-"module__mag_hmc58xx.html#module_xml__mag_hmc58xx":[2,75,2,2],
-"module__mag_hmc58xx.html#periodic_functions":[2,75,1,2],
-"module__mag_hmc58xx.html#sources":[2,75,2,1]
+"module__mag_hmc58xx.html#headers":[2,75,2,0]
 };
