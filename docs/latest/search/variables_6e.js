@@ -73,6 +73,7 @@ var searchData=
   ['nb_5fsec_5frem',['nb_sec_rem',['../structsys__time.html#a8654f589772b3eef22ab59594c97e513',1,'sys_time']]],
   ['nb_5ftick',['nb_tick',['../structsys__time.html#a08a221fc6226e9b3dce3bdd8ef08803c',1,'sys_time']]],
   ['nb_5fwaypoint',['nb_waypoint',['../navigation_8c.html#abee3b60dcf3a8c1cad3036c63f8c3689',1,'nb_waypoint():&#160;navigation.c'],['../navigation_8h.html#abee3b60dcf3a8c1cad3036c63f8c3689',1,'nb_waypoint():&#160;navigation.c'],['../common__nav_8c.html#abee3b60dcf3a8c1cad3036c63f8c3689',1,'nb_waypoint():&#160;common_nav.c'],['../common__nav_8h.html#abee3b60dcf3a8c1cad3036c63f8c3689',1,'nb_waypoint():&#160;navigation.c']]],
+  ['ne_5ferr',['ne_err',['../structuart__periph.html#aa99651ddd6c70ca5aa2d5c6ec0b05cfd',1,'uart_periph']]],
   ['ned_5faccel_5ff',['ned_accel_f',['../group__state__acceleration.html#gad202fd9719da10eb69fe7b37a77523ff',1,'State']]],
   ['ned_5faccel_5fi',['ned_accel_i',['../group__state__acceleration.html#ga2903594bd0aa1978f4b53166eecc37bf',1,'State']]],
   ['ned_5finitialized_5ff',['ned_initialized_f',['../group__state__position.html#gad1b28ec01050632c81bbabb6ef71154c',1,'State']]],

@@ -12,6 +12,7 @@ var searchData=
   ['omega_5fvector',['Omega_Vector',['../ahrs__float__dcm_8c.html#a10d46c1ca1a95938f94c6be161c259bb',1,'ahrs_float_dcm.c']]],
   ['optical_5fflow',['optical_flow',['../px4flow_8c.html#a7f647c5002ceac1107af4247a2567f16',1,'optical_flow():&#160;px4flow.c'],['../px4flow_8h.html#a7f647c5002ceac1107af4247a2567f16',1,'optical_flow():&#160;px4flow.c']]],
   ['optical_5fflow_5favailable',['optical_flow_available',['../px4flow_8c.html#ab6dde07b731a2cfdf669184817943837',1,'optical_flow_available():&#160;px4flow.c'],['../px4flow_8h.html#ab6dde07b731a2cfdf669184817943837',1,'optical_flow_available():&#160;px4flow.c']]],
+  ['ore',['ore',['../structuart__periph.html#af4fa7964e51b251d0fe1b020b3f9c853',1,'uart_periph']]],
   ['origin',['origin',['../gsm_8c.html#a78dd84bc5e17634eb5b0a4bf29d39c74',1,'gsm.c']]],
   ['orthogonal',['Orthogonal',['../flightzone_8c.html#a99120a21f35efe1b1bbaaa3c2ea28984',1,'flightzone.c']]],
   ['output_5fbuf',['output_buf',['../structspi__transaction.html#a81b75a5eca2a775f4dcf89e8f1c519eb',1,'spi_transaction']]],

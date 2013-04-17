@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-778-g24d7fd6-dirty</span>
+   &#160;<span id="projectnumber">v4.9_devel-781-g2056017-dirty</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -985,42 +985,131 @@ $(document).ready(function(){initNavTree('telemetry_8h_source.html','');});
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;<span class="preprocessor">#ifndef SITL</span></div>
-<div class="line"><a name="l00879"></a><span class="lineno"><a class="code" href="telemetry_8h.html#ae3e5ff3d8038f5fdcfc2dd7b27999ade">  879</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_I2C_ERRORS(_trans, _dev) { \</span></div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;<span class="preprocessor">    PERIODIC_SEND_I2C0_ERRORS(_trans, _dev);     \</span></div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;<span class="preprocessor">    PERIODIC_SEND_I2C1_ERRORS(_trans, _dev);     \</span></div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;<span class="preprocessor">    PERIODIC_SEND_I2C2_ERRORS(_trans, _dev);     \</span></div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_I2C_ERRORS(_trans, _dev) {}</span></div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;<span class="preprocessor">#ifdef BOOZ2_TRACK_CAM</span></div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="cam__track_8h.html" title="blob tracking with cmucam">cam_track.h</a>&quot;</span></div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;<span class="preprocessor">#define PERIODIC_SEND_CAM_TRACK(_trans, _dev) DOWNLINK_SEND_NPS_SPEED_POS(_trans, _dev, \</span></div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;<span class="preprocessor">    &amp;target_accel_ned.x, \</span></div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;<span class="preprocessor">    &amp;target_accel_ned.y, \</span></div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;<span class="preprocessor">    &amp;target_accel_ned.z, \</span></div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;<span class="preprocessor">    &amp;target_speed_ned.x, \</span></div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;<span class="preprocessor">    &amp;target_speed_ned.y, \</span></div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;<span class="preprocessor">    &amp;target_speed_ned.z, \</span></div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;<span class="preprocessor">    &amp;target_pos_ned.x, \</span></div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;<span class="preprocessor">    &amp;target_pos_ned.y, \</span></div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;<span class="preprocessor">    &amp;target_pos_ned.z)</span></div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00901"></a><span class="lineno"><a class="code" href="telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763">  901</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_CAM_TRACK(_trans, _dev) {}</span></div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;<span class="preprocessor">#include &quot;generated/settings.h&quot;</span></div>
-<div class="line"><a name="l00905"></a><span class="lineno"><a class="code" href="telemetry_8h.html#aac3b084503a7ef7ccdf84a6651bb82e6">  905</a></span>&#160;<span class="preprocessor">#define PERIODIC_SEND_DL_VALUE(_trans, _dev) PeriodicSendDlValue(_trans, _dev)</span></div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TELEMETRY_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00879"></a><span class="lineno"><a class="code" href="telemetry_8h.html#ae3e5ff3d8038f5fdcfc2dd7b27999ade">  879</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_I2C_ERRORS(_trans, _dev) {        \</span></div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;<span class="preprocessor">    static uint8_t _i2c_nb_cnt = 0;                     \</span></div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;<span class="preprocessor">    switch (_i2c_nb_cnt) {                              \</span></div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;<span class="preprocessor">      case 0:                                           \</span></div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;<span class="preprocessor">        PERIODIC_SEND_I2C0_ERRORS(_trans, _dev); break; \</span></div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="preprocessor">      case 1:                                           \</span></div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;<span class="preprocessor">        PERIODIC_SEND_I2C1_ERRORS(_trans, _dev); break; \</span></div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;<span class="preprocessor">      case 2:                                           \</span></div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;<span class="preprocessor">        PERIODIC_SEND_I2C2_ERRORS(_trans, _dev); break; \</span></div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;<span class="preprocessor">      default:                                          \</span></div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="preprocessor">        break;                                          \</span></div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;<span class="preprocessor">    }                                                   \</span></div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;<span class="preprocessor">    _i2c_nb_cnt++;                                      \</span></div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;<span class="preprocessor">    if (_i2c_nb_cnt == 3)                               \</span></div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;<span class="preprocessor">      _i2c_nb_cnt = 0;                                  \</span></div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_I2C_ERRORS(_trans, _dev) {}</span></div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;<span class="preprocessor">#ifdef BOOZ2_TRACK_CAM</span></div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="cam__track_8h.html" title="blob tracking with cmucam">cam_track.h</a>&quot;</span></div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;<span class="preprocessor">#define PERIODIC_SEND_CAM_TRACK(_trans, _dev) DOWNLINK_SEND_NPS_SPEED_POS(_trans, _dev, \</span></div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;<span class="preprocessor">    &amp;target_accel_ned.x, \</span></div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;<span class="preprocessor">    &amp;target_accel_ned.y, \</span></div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;<span class="preprocessor">    &amp;target_accel_ned.z, \</span></div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;<span class="preprocessor">    &amp;target_speed_ned.x, \</span></div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;<span class="preprocessor">    &amp;target_speed_ned.y, \</span></div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;<span class="preprocessor">    &amp;target_speed_ned.z, \</span></div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;<span class="preprocessor">    &amp;target_pos_ned.x, \</span></div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;<span class="preprocessor">    &amp;target_pos_ned.y, \</span></div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;<span class="preprocessor">    &amp;target_pos_ned.z)</span></div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00912"></a><span class="lineno"><a class="code" href="telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763">  912</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_CAM_TRACK(_trans, _dev) {}</span></div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;<span class="preprocessor">#include &quot;generated/settings.h&quot;</span></div>
+<div class="line"><a name="l00916"></a><span class="lineno"><a class="code" href="telemetry_8h.html#aac3b084503a7ef7ccdf84a6651bb82e6">  916</a></span>&#160;<span class="preprocessor">#define PERIODIC_SEND_DL_VALUE(_trans, _dev) PeriodicSendDlValue(_trans, _dev)</span></div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;<span class="comment"> * Sending of UART errors.</span></div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;<span class="preprocessor">#ifdef USE_UART1</span></div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART1_ERRORS(_trans, _dev) {   \</span></div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;<span class="preprocessor">    const uint8_t _bus1 = 1;                         \</span></div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_UART_ERRORS(_trans, _dev,          \</span></div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;<span class="preprocessor">                             &amp;uart1.ore,             \</span></div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;<span class="preprocessor">                             &amp;uart1.ne_err,          \</span></div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;<span class="preprocessor">                             &amp;uart1.fe_err,          \</span></div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;<span class="preprocessor">                             &amp;_bus1);                \</span></div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00931"></a><span class="lineno"><a class="code" href="telemetry_8h.html#afd6cf40fa4c7cf0ef286f0783becd3ff">  931</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART1_ERRORS(_trans, _dev) {}</span></div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;<span class="preprocessor">#ifdef USE_UART2</span></div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART2_ERRORS(_trans, _dev) {   \</span></div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;<span class="preprocessor">    const uint8_t _bus2 = 2;                         \</span></div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_UART_ERRORS(_trans, _dev,          \</span></div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;<span class="preprocessor">                             &amp;uart2.ore,             \</span></div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;<span class="preprocessor">                             &amp;uart2.ne_err,          \</span></div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;<span class="preprocessor">                             &amp;uart2.fe_err,          \</span></div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;<span class="preprocessor">                             &amp;_bus2);                \</span></div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00944"></a><span class="lineno"><a class="code" href="telemetry_8h.html#ad400f95d628751adf0a86f7f315c8820">  944</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART2_ERRORS(_trans, _dev) {}</span></div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;<span class="preprocessor">#ifdef USE_UART3</span></div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART3_ERRORS(_trans, _dev) {   \</span></div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;<span class="preprocessor">    const uint8_t _bus3 = 3;                         \</span></div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_UART_ERRORS(_trans, _dev,          \</span></div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;<span class="preprocessor">                             &amp;uart3.ore,             \</span></div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;<span class="preprocessor">                             &amp;uart3.ne_err,          \</span></div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;<span class="preprocessor">                             &amp;uart3.fe_err,          \</span></div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;<span class="preprocessor">                             &amp;_bus3);                \</span></div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00957"></a><span class="lineno"><a class="code" href="telemetry_8h.html#abb2646de24380ce6854d922d75c6382c">  957</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART3_ERRORS(_trans, _dev) {}</span></div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;<span class="preprocessor">#ifdef USE_UART5</span></div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART5_ERRORS(_trans, _dev) {   \</span></div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;<span class="preprocessor">    const uint8_t _bus5 = 5;                         \</span></div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;<span class="preprocessor">    DOWNLINK_SEND_UART_ERRORS(_trans, _dev,          \</span></div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;<span class="preprocessor">                             &amp;uart5.ore,             \</span></div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;<span class="preprocessor">                             &amp;uart5.ne_err,          \</span></div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;<span class="preprocessor">                             &amp;uart5.fe_err,          \</span></div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;<span class="preprocessor">                             &amp;_bus5);                \</span></div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00970"></a><span class="lineno"><a class="code" href="telemetry_8h.html#a987d4701f92f700259e5fd216230a2f7">  970</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART5_ERRORS(_trans, _dev) {}</span></div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;<span class="preprocessor">#ifndef SITL</span></div>
+<div class="line"><a name="l00975"></a><span class="lineno"><a class="code" href="telemetry_8h.html#a209edaaf09f699915f925bb02c0fc412">  975</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART_ERRORS(_trans, _dev) {           \</span></div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;<span class="preprocessor">    static uint8_t uart_nb_cnt = 0;                         \</span></div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;<span class="preprocessor">    switch (uart_nb_cnt) {                                  \</span></div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;<span class="preprocessor">      case 0:                                               \</span></div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;<span class="preprocessor">        PERIODIC_SEND_UART1_ERRORS(_trans, _dev); break;    \</span></div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;<span class="preprocessor">      case 1:                                               \</span></div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;<span class="preprocessor">        PERIODIC_SEND_UART2_ERRORS(_trans, _dev); break;    \</span></div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;<span class="preprocessor">      case 2:                                               \</span></div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;<span class="preprocessor">        PERIODIC_SEND_UART3_ERRORS(_trans, _dev); break;    \</span></div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;<span class="preprocessor">      case 3:                                               \</span></div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;<span class="preprocessor">        PERIODIC_SEND_UART5_ERRORS(_trans, _dev); break;    \</span></div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;<span class="preprocessor">      default: break;                                       \</span></div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;<span class="preprocessor">    }                                                       \</span></div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;<span class="preprocessor">    uart_nb_cnt++;                                          \</span></div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;<span class="preprocessor">    if (uart_nb_cnt == 4)                                   \</span></div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;<span class="preprocessor">      uart_nb_cnt = 0;                                      \</span></div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PERIODIC_SEND_UART_ERRORS(_trans, _dev) {}</span></div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TELEMETRY_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_e37d355c72eb7c8e5b43c34bdea5a24b.html">rotorcraft</a></li><li class="navelem"><a class="el" href="telemetry_8h.html">telemetry.h</a></li>
-    <li class="footer">Generated on Sun Apr 14 2013 04:00:09 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Apr 17 2013 04:00:10 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

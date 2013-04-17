@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="penguin_icon.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Paparazzi UAS
-   &#160;<span id="projectnumber">v4.9_devel-778-g24d7fd6-dirty</span>
+   &#160;<span id="projectnumber">v4.9_devel-781-g2056017-dirty</span>
    </div>
    <div id="projectbrief">Paparazzi is a free software Unmanned Aircraft System.</div>
   </td>
@@ -206,6 +206,11 @@ Macros</h2></td></tr>
 <tr class="memitem:ae3e5ff3d8038f5fdcfc2dd7b27999ade"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="telemetry_8h.html#ae3e5ff3d8038f5fdcfc2dd7b27999ade">PERIODIC_SEND_I2C_ERRORS</a>(_trans, _dev)</td></tr>
 <tr class="memitem:a3434caf0d0a83a853b8ccfe66f986763"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="telemetry_8h.html#a3434caf0d0a83a853b8ccfe66f986763">PERIODIC_SEND_CAM_TRACK</a>(_trans, _dev)&#160;&#160;&#160;{}</td></tr>
 <tr class="memitem:aac3b084503a7ef7ccdf84a6651bb82e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="telemetry_8h.html#aac3b084503a7ef7ccdf84a6651bb82e6">PERIODIC_SEND_DL_VALUE</a>(_trans, _dev)&#160;&#160;&#160;PeriodicSendDlValue(_trans, _dev)</td></tr>
+<tr class="memitem:afd6cf40fa4c7cf0ef286f0783becd3ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="telemetry_8h.html#afd6cf40fa4c7cf0ef286f0783becd3ff">PERIODIC_SEND_UART1_ERRORS</a>(_trans, _dev)&#160;&#160;&#160;{}</td></tr>
+<tr class="memitem:ad400f95d628751adf0a86f7f315c8820"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="telemetry_8h.html#ad400f95d628751adf0a86f7f315c8820">PERIODIC_SEND_UART2_ERRORS</a>(_trans, _dev)&#160;&#160;&#160;{}</td></tr>
+<tr class="memitem:abb2646de24380ce6854d922d75c6382c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="telemetry_8h.html#abb2646de24380ce6854d922d75c6382c">PERIODIC_SEND_UART3_ERRORS</a>(_trans, _dev)&#160;&#160;&#160;{}</td></tr>
+<tr class="memitem:a987d4701f92f700259e5fd216230a2f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="telemetry_8h.html#a987d4701f92f700259e5fd216230a2f7">PERIODIC_SEND_UART5_ERRORS</a>(_trans, _dev)&#160;&#160;&#160;{}</td></tr>
+<tr class="memitem:a209edaaf09f699915f925bb02c0fc412"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="telemetry_8h.html#a209edaaf09f699915f925bb02c0fc412">PERIODIC_SEND_UART_ERRORS</a>(_trans, _dev)</td></tr>
 </table>
 <h2>Macro Definition Documentation</h2>
 <a class="anchor" id="aa134fd1db52cbf4539e6d13c9d8db784"></a>
@@ -617,7 +622,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="telemetry_8h_source.html#l00901">901</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
+<p>Definition at line <a class="el" href="telemetry_8h_source.html#l00912">912</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
 
 </div>
 </div>
@@ -645,7 +650,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="telemetry_8h_source.html#l00905">905</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
+<p>Definition at line <a class="el" href="telemetry_8h_source.html#l00916">916</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
 
 </div>
 </div>
@@ -1091,11 +1096,22 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{ \</div>
-<div class="line">    PERIODIC_SEND_I2C0_ERRORS(_trans, _dev);     \</div>
-<div class="line">    PERIODIC_SEND_I2C1_ERRORS(_trans, _dev);     \</div>
-<div class="line">    PERIODIC_SEND_I2C2_ERRORS(_trans, _dev);     \</div>
-<div class="line">}</div>
+<b>Value:</b><div class="fragment"><div class="line">{        \</div>
+<div class="line">    static <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> _i2c_nb_cnt = 0;                     \</div>
+<div class="line">    switch (_i2c_nb_cnt) {                              \</div>
+<div class="line">      case 0:                                           \</div>
+<div class="line">        PERIODIC_SEND_I2C0_ERRORS(_trans, _dev); <span class="keywordflow">break</span>; \</div>
+<div class="line">      case 1:                                           \</div>
+<div class="line">        PERIODIC_SEND_I2C1_ERRORS(_trans, _dev); <span class="keywordflow">break</span>; \</div>
+<div class="line">      case 2:                                           \</div>
+<div class="line">        PERIODIC_SEND_I2C2_ERRORS(_trans, _dev); <span class="keywordflow">break</span>; \</div>
+<div class="line">      default:                                          \</div>
+<div class="line">        break;                                          \</div>
+<div class="line">    }                                                   \</div>
+<div class="line">    _i2c_nb_cnt++;                                      \</div>
+<div class="line">    if (_i2c_nb_cnt == 3)                               \</div>
+<div class="line">      _i2c_nb_cnt = 0;                                  \</div>
+<div class="line">  }</div>
 </div><!-- fragment -->
 <p>Definition at line <a class="el" href="telemetry_8h_source.html#l00879">879</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
 
@@ -1843,6 +1859,163 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="afd6cf40fa4c7cf0ef286f0783becd3ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIODIC_SEND_UART1_ERRORS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_trans, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_dev&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="telemetry_8h_source.html#l00931">931</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad400f95d628751adf0a86f7f315c8820"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIODIC_SEND_UART2_ERRORS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_trans, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_dev&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="telemetry_8h_source.html#l00944">944</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb2646de24380ce6854d922d75c6382c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIODIC_SEND_UART3_ERRORS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_trans, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_dev&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="telemetry_8h_source.html#l00957">957</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a987d4701f92f700259e5fd216230a2f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIODIC_SEND_UART5_ERRORS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_trans, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_dev&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="telemetry_8h_source.html#l00970">970</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a209edaaf09f699915f925bb02c0fc412"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIODIC_SEND_UART_ERRORS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_trans, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_dev&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{           \</div>
+<div class="line">    static <a class="code" href="types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> uart_nb_cnt = 0;                         \</div>
+<div class="line">    switch (uart_nb_cnt) {                                  \</div>
+<div class="line">      case 0:                                               \</div>
+<div class="line">        PERIODIC_SEND_UART1_ERRORS(_trans, _dev); <span class="keywordflow">break</span>;    \</div>
+<div class="line">      case 1:                                               \</div>
+<div class="line">        PERIODIC_SEND_UART2_ERRORS(_trans, _dev); <span class="keywordflow">break</span>;    \</div>
+<div class="line">      case 2:                                               \</div>
+<div class="line">        PERIODIC_SEND_UART3_ERRORS(_trans, _dev); <span class="keywordflow">break</span>;    \</div>
+<div class="line">      case 3:                                               \</div>
+<div class="line">        PERIODIC_SEND_UART5_ERRORS(_trans, _dev); <span class="keywordflow">break</span>;    \</div>
+<div class="line">      default: <span class="keywordflow">break</span>;                                       \</div>
+<div class="line">    }                                                       \</div>
+<div class="line">    uart_nb_cnt++;                                          \</div>
+<div class="line">    if (uart_nb_cnt == 4)                                   \</div>
+<div class="line">      uart_nb_cnt = 0;                                      \</div>
+<div class="line">  }</div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="telemetry_8h_source.html#l00975">975</a> of file <a class="el" href="telemetry_8h_source.html">telemetry.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ac84713ad2a2941cbfb41cf125e5d15dd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2031,7 +2204,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_01fcd3835fb4e7d9331b722d86291b65.html">sw</a></li><li class="navelem"><a class="el" href="dir_5e9153041680afc3c016fd52fa730b56.html">airborne</a></li><li class="navelem"><a class="el" href="dir_e7d2494544042a787a6ee70a779a5e07.html">firmwares</a></li><li class="navelem"><a class="el" href="dir_e37d355c72eb7c8e5b43c34bdea5a24b.html">rotorcraft</a></li><li class="navelem"><a class="el" href="telemetry_8h.html">telemetry.h</a></li>
-    <li class="footer">Generated on Sun Apr 14 2013 04:00:11 for Paparazzi UAS by
+    <li class="footer">Generated on Wed Apr 17 2013 04:00:11 for Paparazzi UAS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

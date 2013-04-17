@@ -387,7 +387,7 @@ var searchData=
   ['guidance_5fh_5fspeed_5fref',['guidance_h_speed_ref',['../guidance__h_8c.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1',1,'guidance_h_speed_ref():&#160;guidance_h.c'],['../guidance__h_8h.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1',1,'guidance_h_speed_ref():&#160;guidance_h.c']]],
   ['guidance_5fh_5fstick_5fearth_5fsp',['guidance_h_stick_earth_sp',['../guidance__h_8c.html#a549244970dd85bfdf7dcf3c8aefa3b56',1,'guidance_h.c']]],
   ['guidance_5fh_5ftraj_5frun',['guidance_h_traj_run',['../guidance__h_8c.html#a40a1b0fc372c07e0fc9e9a680578fe9b',1,'guidance_h.c']]],
-  ['guidance_5fh_5fupdate_5freference',['guidance_h_update_reference',['../guidance__h_8c.html#a234421f6d4c2c5474faf6d2a3cf0f5b5',1,'guidance_h.c']]],
+  ['guidance_5fh_5fupdate_5freference',['guidance_h_update_reference',['../guidance__h_8c.html#aaef8fae11f920120aee046f87777fe9f',1,'guidance_h.c']]],
   ['guidance_5fh_5fuse_5fref',['guidance_h_use_ref',['../guidance__h_8c.html#a109adefb6d03f2d96b1cb9c9810db33d',1,'guidance_h_use_ref():&#160;guidance_h.c'],['../guidance__h_8h.html#a109adefb6d03f2d96b1cb9c9810db33d',1,'guidance_h_use_ref():&#160;guidance_h.c'],['../guidance__h_8h.html#a1e7381c2478adba02ae064f931945492',1,'GUIDANCE_H_USE_REF():&#160;guidance_h.h']]],
   ['guidance_5fv_2ec',['guidance_v.c',['../fixedwing_2guidance_2guidance__v_8c.html',1,'']]],
   ['guidance_5fv_2ec',['guidance_v.c',['../rotorcraft_2guidance_2guidance__v_8c.html',1,'']]],

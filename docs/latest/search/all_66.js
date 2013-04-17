@@ -26,6 +26,7 @@ var searchData=
   ['fchk',['FCHK',['../lpc21_2subsystems_2settings__arch_8c.html#a486ad2adc27b733aa4476b6ddcfa2edb',1,'FCHK():&#160;settings_arch.c'],['../stm32_2subsystems_2settings__arch_8c.html#a486ad2adc27b733aa4476b6ddcfa2edb',1,'FCHK():&#160;settings_arch.c']]],
   ['fcr',['fcr',['../structuartRegs__t.html#a11a9ed56095f7bc1d83169b9c66ce63a',1,'uartRegs_t']]],
   ['fd_5fstdin',['FD_STDIN',['../sim_2mcu__periph_2uart__arch_8h.html#afb041cc5e9927594fdc0a9962f1e58cd',1,'uart_arch.h']]],
+  ['fe_5ferr',['fe_err',['../structuart__periph.html#ab5a088408a0e4d3af31921e2eb1a7811',1,'uart_periph']]],
   ['feed',['feed',['../structscbRegs__t.html#ad094dd6d535108807dcecb4758f74d5e',1,'scbRegs_t::feed()'],['../structwdRegs__t.html#ae8830a4a24b1b9ff9ff7ef084f2d24e4',1,'wdRegs_t::feed()']]],
   ['ff_5fcmd_5ffrac',['FF_CMD_FRAC',['../rotorcraft_2guidance_2guidance__v_8c.html#a7b742dbc14825348962b81a827011fdc',1,'guidance_v.c']]],
   ['fhih_5fhumid',['fhih_humid',['../humid__hih_8c.html#a97fa87a42640823c2a0146be4ef0a8a7',1,'humid_hih.c']]],

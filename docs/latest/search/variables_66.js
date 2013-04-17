@@ -8,6 +8,7 @@ var searchData=
   ['fbw_5fperiodic_5ftid',['fbw_periodic_tid',['../main__fbw_8c.html#a8b339ec2322e68d92dab4078a68bd8c7',1,'main_fbw.c']]],
   ['fbw_5fstate',['fbw_state',['../inter__mcu_8c.html#a1a4da5ac6e76b01f83b00facee8f3dbf',1,'inter_mcu.c']]],
   ['fcr',['fcr',['../structuartRegs__t.html#a11a9ed56095f7bc1d83169b9c66ce63a',1,'uartRegs_t']]],
+  ['fe_5ferr',['fe_err',['../structuart__periph.html#ab5a088408a0e4d3af31921e2eb1a7811',1,'uart_periph']]],
   ['feed',['feed',['../structscbRegs__t.html#ad094dd6d535108807dcecb4758f74d5e',1,'scbRegs_t::feed()'],['../structwdRegs__t.html#ae8830a4a24b1b9ff9ff7ef084f2d24e4',1,'wdRegs_t::feed()']]],
   ['fhih_5fhumid',['fhih_humid',['../humid__hih_8c.html#a97fa87a42640823c2a0146be4ef0a8a7',1,'humid_hih.c']]],
   ['fhumidhtm',['fhumidhtm',['../humid__htm__b71_8c.html#a604202badb317da2867665737ce79875',1,'humid_htm_b71.c']]],

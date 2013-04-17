@@ -9,6 +9,7 @@ var uart_8h =
     [ "B38400", "uart_8h.html#ab282ae5b7fb59155ee42d1b6c9a80683", null ],
     [ "B4800", "uart_8h.html#a3b0ce0abd5ad4af8d485c843c9bab66c", null ],
     [ "B57600", "uart_8h.html#a4bde6a10c31adfe1959fb9724e13029a", null ],
+    [ "B921600", "uart_8h.html#ae2d3cdb046f933a4a6ccd5497516c2a5", null ],
     [ "B9600", "uart_8h.html#ad0539916b8412eb7ddfb9ae02aff0853", null ],
     [ "UART_DEV_NAME_SIZE", "uart_8h.html#a3051c7589823b3d87a8942c960ccada6", null ],
     [ "UART_RX_BUFFER_SIZE", "uart_8h.html#a5bdd6772c246436bb14377095de79b31", null ],

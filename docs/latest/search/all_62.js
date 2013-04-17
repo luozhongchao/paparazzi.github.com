@@ -40,6 +40,7 @@ var searchData=
   ['b4800',['B4800',['../uart_8h.html#a3b0ce0abd5ad4af8d485c843c9bab66c',1,'uart.h']]],
   ['b5',['b5',['../structbmp085__baro__calibration.html#a012317ba09aa45c7a487eb8f77a63d63',1,'bmp085_baro_calibration']]],
   ['b57600',['B57600',['../uart_8h.html#a4bde6a10c31adfe1959fb9724e13029a',1,'uart.h']]],
+  ['b921600',['B921600',['../uart_8h.html#ae2d3cdb046f933a4a6ccd5497516c2a5',1,'uart.h']]],
   ['b9600',['B9600',['../uart_8h.html#ad0539916b8412eb7ddfb9ae02aff0853',1,'uart.h']]],
   ['b_5fperiph',['B_PERIPH',['../tunnel__hw_8c.html#a8924059395dd5a0a281ef4644f3fa75f',1,'tunnel_hw.c']]],
   ['b_5fport',['B_PORT',['../tunnel__hw_8c.html#a04e1bd382a6de1a30d813bb79f30fb02',1,'tunnel_hw.c']]],

@@ -15,7 +15,7 @@ var guidance__h_8c =
     [ "guidance_h_read_rc", "guidance__h_8c.html#a7db3290fc5f62abc15a1bb1638b4922f", null ],
     [ "guidance_h_run", "guidance__h_8c.html#ac4cf6da90a4278b4d0b2e4f227b33f2c", null ],
     [ "guidance_h_traj_run", "guidance__h_8c.html#a40a1b0fc372c07e0fc9e9a680578fe9b", null ],
-    [ "guidance_h_update_reference", "guidance__h_8c.html#a234421f6d4c2c5474faf6d2a3cf0f5b5", null ],
+    [ "guidance_h_update_reference", "guidance__h_8c.html#aaef8fae11f920120aee046f87777fe9f", null ],
     [ "guidance_h_accel_ref", "guidance__h_8c.html#a3bc12d05515bf4df86b36fdeb2024d25", null ],
     [ "guidance_h_again", "guidance__h_8c.html#af3f2ebfd0110c37dd1b7f55e5b12d4eb", null ],
     [ "guidance_h_command_body", "guidance__h_8c.html#aeaa282c7aaf489235488c355f3464144", null ],

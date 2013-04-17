@@ -54,6 +54,7 @@ var searchData=
   ['or',['Or',['../common__flight__plan_8h.html#a930c4658c4c62e1d04058018e9732a26',1,'common_flight_plan.h']]],
   ['or12',['OR12',['../nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcfa65e326a040572bfc5a61c079d8bfca25',1,'nav.h']]],
   ['or21',['OR21',['../nav_8h.html#a6b504fc3b9e256669f3d93dff3372bcfae5d99807c6a564838a7fed8239ef311b',1,'nav.h']]],
+  ['ore',['ore',['../structuart__periph.html#af4fa7964e51b251d0fe1b020b3f9c853',1,'uart_periph']]],
   ['orienationcheckvalid',['orienationCheckValid',['../group__math__orientation__representation.html#ga6b55b77641f1a911a919a4d579932514',1,'pprz_orientation_conversion.h']]],
   ['orientationcalceulers_5ff',['orientationCalcEulers_f',['../group__math__orientation__representation.html#ga8b8bf1c74adb971f399f0dd4f84d9388',1,'pprz_orientation_conversion.c']]],
   ['orientationcalceulers_5fi',['orientationCalcEulers_i',['../group__math__orientation__representation.html#gaa07c68d2ea52188413c8c90ce48b73c8',1,'pprz_orientation_conversion.c']]],
