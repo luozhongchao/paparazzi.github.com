@@ -1,5 +1,11 @@
 var NAVTREEINDEX31 =
 {
+"lpc21_2mcu__periph_2spi__arch_8c.html#a4c328147d259ed459aa71ba246bbf1cf":[8,0,0,0,0,0,1,9,37],
+"lpc21_2mcu__periph_2spi__arch_8c.html#a54b1260ddbea815fbb38efa3d44917b9":[8,0,0,0,0,0,1,9,54],
+"lpc21_2mcu__periph_2spi__arch_8c.html#a5c38f72da3e7ef54561ec617cdde67e5":[8,0,0,0,0,0,1,9,47],
+"lpc21_2mcu__periph_2spi__arch_8c.html#a649c778152304f2059342a5fe38347f6":[8,0,0,0,0,0,1,9,40],
+"lpc21_2mcu__periph_2spi__arch_8c.html#a6666aed242e8cbfb24bb3c9bc99d13da":[8,0,0,0,0,0,1,9,16],
+"lpc21_2mcu__periph_2spi__arch_8c.html#a698702cbfb0f2a42aa90c7eebcce3f79":[8,0,0,0,0,0,1,9,4],
 "lpc21_2mcu__periph_2spi__arch_8c.html#a6c64158fd68cf62e9f342193e6247dc0":[8,0,0,0,0,0,1,9,13],
 "lpc21_2mcu__periph_2spi__arch_8c.html#a725323f569301be53abc825b654588a4":[8,0,0,0,0,0,1,9,14],
 "lpc21_2mcu__periph_2spi__arch_8c.html#a7380b29f54b19837cc7265f92e7cea68":[8,0,0,0,0,0,1,9,18],
@@ -243,11 +249,5 @@ var NAVTREEINDEX31 =
 "lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#ade2fb5e18285a47f44933f493951e595":[8,0,0,0,0,0,4,0,10,10],
 "lpc21_2subsystems_2actuators_2servos__ppm__hw_8h.html#ae2a4eb3b6da0f57c0747c6bda8186398":[8,0,0,0,0,0,4,0,10,11],
 "lpc21_2subsystems_2actuators_2servos__ppm__hw_8h_source.html":[8,0,0,0,0,0,4,0,10],
-"lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html":[8,0,0,0,0,0,4,2,0],
-"lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a25c7fe956a00de07290f7a78d27c7c89":[8,0,0,0,0,0,4,2,0,2],
-"lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a4a669b9d2efca9fcda5db4b642a990e4":[8,0,0,0,0,0,4,2,0,0],
-"lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a592698b1cfe18b6c6a33e450221ea2cf":[8,0,0,0,0,0,4,2,0,3],
-"lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a61fed49b72c37c140656df83a6d3590a":[8,0,0,0,0,0,4,2,0,5],
-"lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#a69f47336a47c791d6054ee4a6b498469":[8,0,0,0,0,0,4,2,0,4],
-"lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html#af28c7f63910b85ce6f653968e38a6a10":[8,0,0,0,0,0,4,2,0,1]
+"lpc21_2subsystems_2imu_2imu__aspirin__arch_8c.html":[8,0,0,0,0,0,4,2,0]
 };

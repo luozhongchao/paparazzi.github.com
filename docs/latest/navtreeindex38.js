@@ -1,5 +1,11 @@
 var NAVTREEINDEX38 =
 {
+"module__mag_hmc58xx.html#configure":[2,75,0,0],
+"module__mag_hmc58xx.html#define":[2,75,0,1],
+"module__mag_hmc58xx.html#event_functions":[2,75,1,1],
+"module__mag_hmc58xx.html#files":[2,75,2],
+"module__mag_hmc58xx.html#functions":[2,75,1],
+"module__mag_hmc58xx.html#headers":[2,75,2,0],
 "module__mag_hmc58xx.html#init_functions":[2,75,1,0],
 "module__mag_hmc58xx.html#module_xml__mag_hmc58xx":[2,75,2,2],
 "module__mag_hmc58xx.html#periodic_functions":[2,75,1,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX38 =
 "module__vehicle_interface_overo_link.html#init_functions":[2,82,0,0],
 "module__vehicle_interface_overo_link.html#module_xml__vehicle_interface_overo_link":[2,82,1,2],
 "module__vehicle_interface_overo_link.html#periodic_functions":[2,82,0,2],
-"module__vehicle_interface_overo_link.html#sources":[2,82,1,1],
-"module__wind_gfi.html":[2,49],
-"module__wind_gfi.html#event_functions":[2,49,0,1],
-"module__wind_gfi.html#files":[2,49,1],
-"module__wind_gfi.html#functions":[2,49,0],
-"module__wind_gfi.html#headers":[2,49,1,0],
-"module__wind_gfi.html#init_functions":[2,49,0,0]
+"module__vehicle_interface_overo_link.html#sources":[2,82,1,1]
 };

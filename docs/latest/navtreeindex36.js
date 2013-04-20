@@ -1,5 +1,11 @@
 var NAVTREEINDEX36 =
 {
+"module__baro_hca.html#init_functions":[2,66,1,0],
+"module__baro_hca.html#module_xml__baro_hca":[2,66,2,2],
+"module__baro_hca.html#periodic_functions":[2,66,1,2],
+"module__baro_hca.html#sources":[2,66,2,1],
+"module__baro_mpl3115.html":[2,67],
+"module__baro_mpl3115.html#configuration":[2,67,0],
 "module__baro_mpl3115.html#define":[2,67,0,0],
 "module__baro_mpl3115.html#event_functions":[2,67,1,1],
 "module__baro_mpl3115.html#files":[2,67,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX36 =
 "module__geo_mag.html#init_functions":[2,92,0,0],
 "module__geo_mag.html#module_xml__geo_mag":[2,92,1,2],
 "module__geo_mag.html#periodic_functions":[2,92,0,2],
-"module__geo_mag.html#sources":[2,92,1,1],
-"module__gps_i2c.html":[2,93],
-"module__gps_i2c.html#event_functions":[2,93,0,1],
-"module__gps_i2c.html#files":[2,93,1],
-"module__gps_i2c.html#functions":[2,93,0],
-"module__gps_i2c.html#headers":[2,93,1,0],
-"module__gps_i2c.html#init_functions":[2,93,0,0]
+"module__geo_mag.html#sources":[2,92,1,1]
 };

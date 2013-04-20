@@ -2,6 +2,7 @@ var guidance__h_8h =
 [
     [ "GUIDANCE_H_MODE_ATTITUDE", "guidance__h_8h.html#a68ef1d14541e83675e37b38a6f57cd29", null ],
     [ "GUIDANCE_H_MODE_CARE_FREE", "guidance__h_8h.html#ab5186150bd081e971a07f229c81be028", null ],
+    [ "GUIDANCE_H_MODE_FORWARD", "guidance__h_8h.html#a026e798a33e20867dc0871f272d0fc38", null ],
     [ "GUIDANCE_H_MODE_HOVER", "guidance__h_8h.html#a2f2f695a8fcb314dc64bf0b82811937d", null ],
     [ "GUIDANCE_H_MODE_KILL", "guidance__h_8h.html#aca30783fe715ec77589d55fdaa7b76e5", null ],
     [ "GUIDANCE_H_MODE_NAV", "guidance__h_8h.html#a0695fb38a9f3b93b7be3484568e0be1a", null ],
@@ -30,5 +31,7 @@ var guidance__h_8h =
     [ "guidance_h_rc_sp", "guidance__h_8h.html#a48ab657ff45f2b091847a48360a96b52", null ],
     [ "guidance_h_speed_err", "guidance__h_8h.html#a206725a549c15b4fefc505299fa3e08b", null ],
     [ "guidance_h_speed_ref", "guidance__h_8h.html#ac6aeed1a6e68b3f3ec08aa90d36ae8f1", null ],
-    [ "guidance_h_use_ref", "guidance__h_8h.html#a109adefb6d03f2d96b1cb9c9810db33d", null ]
+    [ "guidance_h_use_ref", "guidance__h_8h.html#a109adefb6d03f2d96b1cb9c9810db33d", null ],
+    [ "transition_percentage", "guidance__h_8h.html#a03b606d1a31f9d006700fcbbc60d7293", null ],
+    [ "transition_theta_offset", "guidance__h_8h.html#ac5766b598ff030ccbe7b127c796bc307", null ]
 ];

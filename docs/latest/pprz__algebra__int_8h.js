@@ -42,6 +42,7 @@ var pprz__algebra__int_8h =
     [ "INT32_MAT33_DIAG", "pprz__algebra__int_8h.html#a4640715a31d18c68162b9f5f328d1855", null ],
     [ "INT32_MAT33_VECT3_MUL", "pprz__algebra__int_8h.html#a87fa690feca1d068924925f788c48ed9", null ],
     [ "INT32_MAT33_ZERO", "pprz__algebra__int_8h.html#a9aa3f6b50e46f3bf39a39ad122f5307e", null ],
+    [ "INT32_PERCENTAGE_FRAC", "pprz__algebra__int_8h.html#a4d8b60b0ce0eb3bb19fac8f574dce1f1", null ],
     [ "INT32_POS_FRAC", "pprz__algebra__int_8h.html#a1ec0802a57d49a24545916346953dbcb", null ],
     [ "INT32_POS_OF_CM", "pprz__algebra__int_8h.html#ad9229f480252ce5dfb80f1c5882bb303", null ],
     [ "INT32_POS_OF_CM_DEN", "pprz__algebra__int_8h.html#a302d8aca67fe8441f9f08d9229f35b6c", null ],

@@ -485,6 +485,7 @@ var searchData=
   ['int32_5fmat33_5fzero',['INT32_MAT33_ZERO',['../pprz__algebra__int_8h.html#a9aa3f6b50e46f3bf39a39ad122f5307e',1,'pprz_algebra_int.h']]],
   ['int32_5fmax',['INT32_MAX',['../motor__mixing_8c.html#a181807730d4a375f848ba139813ce04f',1,'motor_mixing.c']]],
   ['int32_5fmin',['INT32_MIN',['../motor__mixing_8c.html#a688eb21a22db27c2b2bd5836943cdcbe',1,'motor_mixing.c']]],
+  ['int32_5fpercentage_5ffrac',['INT32_PERCENTAGE_FRAC',['../pprz__algebra__int_8h.html#a4d8b60b0ce0eb3bb19fac8f574dce1f1',1,'pprz_algebra_int.h']]],
   ['int32_5fpos_5ffrac',['INT32_POS_FRAC',['../pprz__algebra__int_8h.html#a1ec0802a57d49a24545916346953dbcb',1,'pprz_algebra_int.h']]],
   ['int32_5fpos_5fof_5fcm',['INT32_POS_OF_CM',['../pprz__algebra__int_8h.html#ad9229f480252ce5dfb80f1c5882bb303',1,'pprz_algebra_int.h']]],
   ['int32_5fpos_5fof_5fcm_5fden',['INT32_POS_OF_CM_DEN',['../pprz__algebra__int_8h.html#a302d8aca67fe8441f9f08d9229f35b6c',1,'pprz_algebra_int.h']]],
